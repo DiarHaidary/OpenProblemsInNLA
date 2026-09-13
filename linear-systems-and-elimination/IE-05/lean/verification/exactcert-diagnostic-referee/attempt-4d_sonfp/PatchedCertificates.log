@@ -1,0 +1,38 @@
+verification/exactcert-diagnostic-referee/PatchedCertificates.lean:31:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+verification/exactcert-diagnostic-referee/PatchedCertificates.lean:33:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+verification/exactcert-diagnostic-referee/PatchedCertificates.lean:35:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+verification/exactcert-diagnostic-referee/PatchedCertificates.lean:40:4: error: Tactic `decide` failed. The elaborator is able to reduce the `Decidable` instance, but the kernel fails with:
+
+  (kernel) declaration has free variables 'NLA.IE05._proved.integer_factor_certificates._proof_1_1', expression: 
+    of_decide_eq_true (id (Eq.refl true))
+verification/exactcert-diagnostic-referee/PatchedCertificates.lean:40:4: error: Tactic `decide` failed. The elaborator is able to reduce the `Decidable` instance, but the kernel fails with:
+
+  (kernel) declaration has free variables 'NLA.IE05._proved.integer_factor_certificates._proof_1_1', expression: 
+    of_decide_eq_true (id (Eq.refl true))
+'NLA.IE05._proved.integer_factor_certificates' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+verification/exactcert-diagnostic-referee/PatchedCertificates.lean:59:21: error: #assert_trust: 'NLA.IE05._proved.integer_factor_certificates' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,58 @@
+#!/usr/bin/env python3
+"""Retain immutable root helper attempts; never write shared package caches."""
+import datetime, hashlib, json, os, pathlib, subprocess, sys, tempfile, time
+
+P = pathlib.Path('/tmp/nla-lean-formalization/next-ie05-statements-draft/lean')
+C = pathlib.Path('/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages')
+T = pathlib.Path('/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1')
+def sha(p): return hashlib.sha256(p.read_bytes()).hexdigest()
+def write(p, value): p.write_text(json.dumps(value, indent=2, sort_keys=True) + '\n')
+
+target = sys.argv[1]
+assert target in ['Scaling', 'QR', 'ExactCertificates', 'CertDiagnostic']
+assert sha(P / 'verification/proof-start.json') == '2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726'
+assert json.loads((P / 'verification/proof-start.json').read_text())['proof_authorized']
+assert sha(P / 'NLA/IE05/Definitions.lean') == 'aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa'
+E = P / ('verification/' + target.lower() + '-development')
+E.mkdir(exist_ok=True)
+A = pathlib.Path(tempfile.mkdtemp(prefix='attempt-', dir=E))
+S = A / 'source'
+(S / 'NLA/IE05').mkdir(parents=True)
+prefix = pathlib.Path(tempfile.mkdtemp(prefix='ie05-root-' + target.lower() + '-', dir='/tmp/nla-lean-formalization/independent-prefixes'))
+(prefix / 'NLA/IE05').mkdir(parents=True)
+(A / 'runner.py.txt').write_bytes(pathlib.Path(__file__).read_bytes())
+modules = ['Definitions', target] if target in ['ExactCertificates', 'CertDiagnostic'] else ['Definitions', 'Scaling'] + (['QR'] if target == 'QR' else [])
+inputs = []
+for module in modules:
+    rel = pathlib.Path('NLA/IE05/' + module + '.lean')
+    (S / rel).write_bytes((P / rel).read_bytes())
+    inputs.append({'path': str(rel), 'sha256': sha(S / rel), 'bytes': (S / rel).stat().st_size})
+pins = []
+for pkg in json.loads((P / 'lake-manifest.json').read_text())['packages']:
+    path = C / pkg['name']
+    rev = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=path, text=True).strip()
+    status = subprocess.check_output(['git', 'status', '--porcelain', '--untracked-files=no'], cwd=path, text=True)
+    assert rev == pkg['rev'] and status == ''
+    pins.append({'name': pkg['name'], 'rev': rev, 'tracked_status': status})
+paths = [prefix] + [C / p['name'] / '.lake/build/lib/lean' for p in pins if (C / p['name'] / '.lake/build/lib/lean').is_dir()] + [T / 'lib/lean']
+assert len(paths) == 11
+env = os.environ.copy()
+env['LEAN_PATH'] = ':'.join(map(str, paths))
+write(A / 'inputs.json', {'utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'sources': inputs, 'pins': pins, 'LEAN_PATH': env['LEAN_PATH'], 'prefix': str(prefix), 'proof_gate_sha256': sha(P / 'verification/proof-start.json')})
+results = []
+for module in modules:
+    cmd = [str(T / 'bin/lean'), '-o', str(prefix / ('NLA/IE05/' + module + '.olean')), 'NLA/IE05/' + module + '.lean']
+    start = time.monotonic()
+    with (A / (module + '.log')).open('wb') as log:
+        proc = subprocess.run(cmd, cwd=S, env=env, stdout=log, stderr=subprocess.STDOUT)
+    result = {'module': module, 'command': cmd, 'cwd': str(S), 'exit_code': proc.returncode, 'seconds': time.monotonic() - start, 'log_sha256': sha(A / (module + '.log'))}
+    results.append(result)
+    write(A / 'results.json', results)
+    print(json.dumps(result), flush=True)
+    print((A / (module + '.log')).read_text(), flush=True)
+    if proc.returncode != 0: break
+objects = [{'path': str(f.relative_to(prefix)), 'sha256': sha(f), 'bytes': f.stat().st_size} for f in sorted(prefix.rglob('*')) if f.is_file()]
+write(A / 'objects.json', objects)
+write(E / 'latest.json', {'attempt': str(A.relative_to(P)), 'prefix': str(prefix), 'target': target, 'success': len(results) == len(modules) and all(r['exit_code'] == 0 for r in results)})
+print(json.dumps({'attempt': str(A), 'objects': len(objects)}), flush=True)
+sys.exit(0 if len(results) == len(modules) and all(r['exit_code'] == 0 for r in results) else 1)

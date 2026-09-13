@@ -1,0 +1,1001 @@
+NLA/IE05/ExactCertificates.lean:35:4: error: failed to synthesize
+  Decidable
+    ((((Matrix.transpose (integerH false) * integerH false) 0 0 = Matrix.diagonal (integerD false) 0 0 ∧
+          (Matrix.transpose (integerH false) * integerH false) 0 (Fin.succ 0) =
+              Matrix.diagonal (integerD false) 0 (Fin.succ 0) ∧
+            (Matrix.transpose (integerH false) * integerH false) 0 (Fin.succ 0).succ =
+                Matrix.diagonal (integerD false) 0 (Fin.succ 0).succ ∧
+              (Matrix.transpose (integerH false) * integerH false) 0 (Fin.succ 0).succ.succ =
+                  Matrix.diagonal (integerD false) 0 (Fin.succ 0).succ.succ ∧
+                (Matrix.transpose (integerH false) * integerH false) 0 (Fin.succ 0).succ.succ.succ =
+                    Matrix.diagonal (integerD false) 0 (Fin.succ 0).succ.succ.succ ∧
+                  (Matrix.transpose (integerH false) * integerH false) 0 (Fin.succ 0).succ.succ.succ.succ =
+                      Matrix.diagonal (integerD false) 0 (Fin.succ 0).succ.succ.succ.succ ∧
+                    (Matrix.transpose (integerH false) * integerH false) 0 (Fin.succ 0).succ.succ.succ.succ.succ =
+                        Matrix.diagonal (integerD false) 0 (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                      (Matrix.transpose (integerH false) * integerH false) 0
+                            (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                          Matrix.diagonal (integerD false) 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                        True) ∧
+        ((Matrix.transpose (integerH false) * integerH false) (Fin.succ 0) 0 =
+              Matrix.diagonal (integerD false) (Fin.succ 0) 0 ∧
+            (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0) (Fin.succ 0) =
+                Matrix.diagonal (integerD false) (Fin.succ 0) (Fin.succ 0) ∧
+              (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0) (Fin.succ 0).succ =
+                  Matrix.diagonal (integerD false) (Fin.succ 0) (Fin.succ 0).succ ∧
+                (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0) (Fin.succ 0).succ.succ =
+                    Matrix.diagonal (integerD false) (Fin.succ 0) (Fin.succ 0).succ.succ ∧
+                  (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ =
+                      Matrix.diagonal (integerD false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ ∧
+                    (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ =
+                        Matrix.diagonal (integerD false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ ∧
+                      (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0)
+                            (Fin.succ 0).succ.succ.succ.succ.succ =
+                          Matrix.diagonal (integerD false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                        (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0)
+                              (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                            Matrix.diagonal (integerD false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                          True) ∧
+          ((Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ 0 =
+                Matrix.diagonal (integerD false) (Fin.succ 0).succ 0 ∧
+              (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ (Fin.succ 0) =
+                  Matrix.diagonal (integerD false) (Fin.succ 0).succ (Fin.succ 0) ∧
+                (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ (Fin.succ 0).succ =
+                    Matrix.diagonal (integerD false) (Fin.succ 0).succ (Fin.succ 0).succ ∧
+                  (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ (Fin.succ 0).succ.succ =
+                      Matrix.diagonal (integerD false) (Fin.succ 0).succ (Fin.succ 0).succ.succ ∧
+                    (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ =
+                        Matrix.diagonal (integerD false) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ ∧
+                      (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ
+                            (Fin.succ 0).succ.succ.succ.succ =
+                          Matrix.diagonal (integerD false) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ ∧
+                        (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ
+                              (Fin.succ 0).succ.succ.succ.succ.succ =
+                            Matrix.diagonal (integerD false) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                          (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                              Matrix.diagonal (integerD false) (Fin.succ 0).succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                            True) ∧
+            ((Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ 0 =
+                  Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ 0 ∧
+                (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ (Fin.succ 0) =
+                    Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ (Fin.succ 0) ∧
+                  (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ (Fin.succ 0).succ =
+                      Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ (Fin.succ 0).succ ∧
+                    (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ =
+                        Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ ∧
+                      (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ
+                            (Fin.succ 0).succ.succ.succ =
+                          Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ ∧
+                        (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ
+                              (Fin.succ 0).succ.succ.succ.succ =
+                            Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ ∧
+                          (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ =
+                              Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                            (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                              True) ∧
+              ((Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ 0 =
+                    Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ 0 ∧
+                  (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ (Fin.succ 0) =
+                      Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ (Fin.succ 0) ∧
+                    (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ =
+                        Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ ∧
+                      (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ
+                            (Fin.succ 0).succ.succ =
+                          Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ ∧
+                        (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ
+                              (Fin.succ 0).succ.succ.succ =
+                            Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ ∧
+                          (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ =
+                              Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ ∧
+                            (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ =
+                                Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                              (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                  Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                True) ∧
+                ((Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ 0 =
+                      Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ 0 ∧
+                    (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) =
+                        Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) ∧
+                      (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ
+                            (Fin.succ 0).succ =
+                          Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ ∧
+                        (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ
+                              (Fin.succ 0).succ.succ =
+                            Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ ∧
+                          (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ =
+                              Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ ∧
+                            (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ =
+                                Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ ∧
+                              (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ =
+                                  Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                    Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                  True) ∧
+                  ((Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ.succ 0 =
+                        Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ 0 ∧
+                      (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ.succ
+                            (Fin.succ 0) =
+                          Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0) ∧
+                        (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ.succ
+                              (Fin.succ 0).succ =
+                            Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ ∧
+                          (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ =
+                              Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ ∧
+                            (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ =
+                                Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ ∧
+                              (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ =
+                                  Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ ∧
+                                (Matrix.transpose (integerH false) * integerH false)
+                                      (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                    Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                  (Matrix.transpose (integerH false) * integerH false)
+                                        (Fin.succ 0).succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                      Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                    True) ∧
+                    ((Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ.succ.succ 0 =
+                          Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ.succ 0 ∧
+                        (Matrix.transpose (integerH false) * integerH false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                              (Fin.succ 0) =
+                            Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0) ∧
+                          (Matrix.transpose (integerH false) * integerH false)
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ =
+                              Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ ∧
+                            (Matrix.transpose (integerH false) * integerH false)
+                                  (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                                Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ ∧
+                              (Matrix.transpose (integerH false) * integerH false)
+                                    (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                  Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ ∧
+                                (Matrix.transpose (integerH false) * integerH false)
+                                      (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                    Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ ∧
+                                  (Matrix.transpose (integerH false) * integerH false)
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ =
+                                      Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                    (Matrix.transpose (integerH false) * integerH false)
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                        Matrix.diagonal (integerD false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                      True) ∧
+                      True) ∧
+      ((integerH false 0 0 = (integerLower false * integerT false) 0 0 ∧
+            integerH false 0 (Fin.succ 0) = (integerLower false * integerT false) 0 (Fin.succ 0) ∧
+              integerH false 0 (Fin.succ 0).succ = (integerLower false * integerT false) 0 (Fin.succ 0).succ ∧
+                integerH false 0 (Fin.succ 0).succ.succ =
+                    (integerLower false * integerT false) 0 (Fin.succ 0).succ.succ ∧
+                  integerH false 0 (Fin.succ 0).succ.succ.succ =
+                      (integerLower false * integerT false) 0 (Fin.succ 0).succ.succ.succ ∧
+                    integerH false 0 (Fin.succ 0).succ.succ.succ.succ =
+                        (integerLower false * integerT false) 0 (Fin.succ 0).succ.succ.succ.succ ∧
+                      integerH false 0 (Fin.succ 0).succ.succ.succ.succ.succ =
+                          (integerLower false * integerT false) 0 (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                        integerH false 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                            (integerLower false * integerT false) 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                          True) ∧
+          (integerH false (Fin.succ 0) 0 = (integerLower false * integerT false) (Fin.succ 0) 0 ∧
+              integerH false (Fin.succ 0) (Fin.succ 0) =
+                  (integerLower false * integerT false) (Fin.succ 0) (Fin.succ 0) ∧
+                integerH false (Fin.succ 0) (Fin.succ 0).succ =
+                    (integerLower false * integerT false) (Fin.succ 0) (Fin.succ 0).succ ∧
+                  integerH false (Fin.succ 0) (Fin.succ 0).succ.succ =
+                      (integerLower false * integerT false) (Fin.succ 0) (Fin.succ 0).succ.succ ∧
+                    integerH false (Fin.succ 0) (Fin.succ 0).succ.succ.succ =
+                        (integerLower false * integerT false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ ∧
+                      integerH false (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ =
+                          (integerLower false * integerT false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ ∧
+                        integerH false (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ =
+                            (integerLower false * integerT false) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                          integerH false (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                              (integerLower false * integerT false) (Fin.succ 0)
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                            True) ∧
+            (integerH false (Fin.succ 0).succ 0 = (integerLower false * integerT false) (Fin.succ 0).succ 0 ∧
+                integerH false (Fin.succ 0).succ (Fin.succ 0) =
+                    (integerLower false * integerT false) (Fin.succ 0).succ (Fin.succ 0) ∧
+                  integerH false (Fin.succ 0).succ (Fin.succ 0).succ =
+                      (integerLower false * integerT false) (Fin.succ 0).succ (Fin.succ 0).succ ∧
+                    integerH false (Fin.succ 0).succ (Fin.succ 0).succ.succ =
+                        (integerLower false * integerT false) (Fin.succ 0).succ (Fin.succ 0).succ.succ ∧
+                      integerH false (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ =
+                          (integerLower false * integerT false) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ ∧
+                        integerH false (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ =
+                            (integerLower false * integerT false) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ ∧
+                          integerH false (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                              (integerLower false * integerT false) (Fin.succ 0).succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                            integerH false (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                (integerLower false * integerT false) (Fin.succ 0).succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                              True) ∧
+              (integerH false (Fin.succ 0).succ.succ 0 =
+                    (integerLower false * integerT false) (Fin.succ 0).succ.succ 0 ∧
+                  integerH false (Fin.succ 0).succ.succ (Fin.succ 0) =
+                      (integerLower false * integerT false) (Fin.succ 0).succ.succ (Fin.succ 0) ∧
+                    integerH false (Fin.succ 0).succ.succ (Fin.succ 0).succ =
+                        (integerLower false * integerT false) (Fin.succ 0).succ.succ (Fin.succ 0).succ ∧
+                      integerH false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ =
+                          (integerLower false * integerT false) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ ∧
+                        integerH false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ =
+                            (integerLower false * integerT false) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ ∧
+                          integerH false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                              (integerLower false * integerT false) (Fin.succ 0).succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ ∧
+                            integerH false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                (integerLower false * integerT false) (Fin.succ 0).succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                              integerH false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                  (integerLower false * integerT false) (Fin.succ 0).succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                True) ∧
+                (integerH false (Fin.succ 0).succ.succ.succ 0 =
+                      (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ 0 ∧
+                    integerH false (Fin.succ 0).succ.succ.succ (Fin.succ 0) =
+                        (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ (Fin.succ 0) ∧
+                      integerH false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ =
+                          (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ ∧
+                        integerH false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ =
+                            (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ ∧
+                          integerH false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                              (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ ∧
+                            integerH false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ ∧
+                              integerH false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                  (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                integerH false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                    (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                  True) ∧
+                  (integerH false (Fin.succ 0).succ.succ.succ.succ 0 =
+                        (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ 0 ∧
+                      integerH false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) =
+                          (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) ∧
+                        integerH false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ =
+                            (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ ∧
+                          integerH false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                              (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ ∧
+                            integerH false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ ∧
+                              integerH false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                  (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ ∧
+                                integerH false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                    (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                  integerH false (Fin.succ 0).succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                      (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                    True) ∧
+                    (integerH false (Fin.succ 0).succ.succ.succ.succ.succ 0 =
+                          (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ 0 ∧
+                        integerH false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0) =
+                            (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0) ∧
+                          integerH false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ =
+                              (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ ∧
+                            integerH false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                                (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ ∧
+                              integerH false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                  (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ ∧
+                                integerH false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                    (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ ∧
+                                  integerH false (Fin.succ 0).succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ =
+                                      (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                    integerH false (Fin.succ 0).succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                        (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                      True) ∧
+                      (integerH false (Fin.succ 0).succ.succ.succ.succ.succ.succ 0 =
+                            (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ.succ 0 ∧
+                          integerH false (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0) =
+                              (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                (Fin.succ 0) ∧
+                            integerH false (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ =
+                                (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ ∧
+                              integerH false (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                                  (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ ∧
+                                integerH false (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                    (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ ∧
+                                  integerH false (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ =
+                                      (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ ∧
+                                    integerH false (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ =
+                                        (integerLower false * integerT false) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                      integerH false (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                            (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                          (integerLower false * integerT false)
+                                            (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                            (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                        True) ∧
+                        True) ∧
+        ((integerLower false 0 0 = 1 ∧
+              integerLower false (Fin.succ 0) (Fin.succ 0) = 1 ∧
+                integerLower false (Fin.succ 0).succ (Fin.succ 0).succ = 1 ∧
+                  integerLower false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ = 1 ∧
+                    integerLower false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ = 1 ∧
+                      integerLower false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ = 1 ∧
+                        integerLower false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                            1 ∧
+                          integerLower false (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                              1 ∧
+                            True) ∧
+            ((0 < 0 → integerLower false 0 0 = 0) ∧
+                (0 < Fin.succ 0 → integerLower false 0 (Fin.succ 0) = 0) ∧
+                  (0 < (Fin.succ 0).succ → integerLower false 0 (Fin.succ 0).succ = 0) ∧
+                    (0 < (Fin.succ 0).succ.succ → integerLower false 0 (Fin.succ 0).succ.succ = 0) ∧
+                      (0 < (Fin.succ 0).succ.succ.succ → integerLower false 0 (Fin.succ 0).succ.succ.succ = 0) ∧
+                        (0 < (Fin.succ 0).succ.succ.succ.succ →
+                            integerLower false 0 (Fin.succ 0).succ.succ.succ.succ = 0) ∧
+                          (0 < (Fin.succ 0).succ.succ.succ.succ.succ →
+                              integerLower false 0 (Fin.succ 0).succ.succ.succ.succ.succ = 0) ∧
+                            (0 < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                integerLower false 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ = 0) ∧
+                              True) ∧
+              ((Fin.succ 0 < 0 → integerLower false (Fin.succ 0) 0 = 0) ∧
+                  (Fin.succ 0 < Fin.succ 0 → integerLower false (Fin.succ 0) (Fin.succ 0) = 0) ∧
+                    (Fin.succ 0 < (Fin.succ 0).succ → integerLower false (Fin.succ 0) (Fin.succ 0).succ = 0) ∧
+                      (Fin.succ 0 < (Fin.succ 0).succ.succ →
+                          integerLower false (Fin.succ 0) (Fin.succ 0).succ.succ = 0) ∧
+                        (Fin.succ 0 < (Fin.succ 0).succ.succ.succ →
+                            integerLower false (Fin.succ 0) (Fin.succ 0).succ.succ.succ = 0) ∧
+                          (Fin.succ 0 < (Fin.succ 0).succ.succ.succ.succ →
+                              integerLower false (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ = 0) ∧
+                            (Fin.succ 0 < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                integerLower false (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ = 0) ∧
+                              (Fin.succ 0 < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                  integerLower false (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ.succ = 0) ∧
+                                True) ∧
+                (((Fin.succ 0).succ < 0 → integerLower false (Fin.succ 0).succ 0 = 0) ∧
+                    ((Fin.succ 0).succ < Fin.succ 0 → integerLower false (Fin.succ 0).succ (Fin.succ 0) = 0) ∧
+                      ((Fin.succ 0).succ < (Fin.succ 0).succ →
+                          integerLower false (Fin.succ 0).succ (Fin.succ 0).succ = 0) ∧
+                        ((Fin.succ 0).succ < (Fin.succ 0).succ.succ →
+                            integerLower false (Fin.succ 0).succ (Fin.succ 0).succ.succ = 0) ∧
+                          ((Fin.succ 0).succ < (Fin.succ 0).succ.succ.succ →
+                              integerLower false (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ = 0) ∧
+                            ((Fin.succ 0).succ < (Fin.succ 0).succ.succ.succ.succ →
+                                integerLower false (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ = 0) ∧
+                              ((Fin.succ 0).succ < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                  integerLower false (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ = 0) ∧
+                                ((Fin.succ 0).succ < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                    integerLower false (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                      0) ∧
+                                  True) ∧
+                  (((Fin.succ 0).succ.succ < 0 → integerLower false (Fin.succ 0).succ.succ 0 = 0) ∧
+                      ((Fin.succ 0).succ.succ < Fin.succ 0 →
+                          integerLower false (Fin.succ 0).succ.succ (Fin.succ 0) = 0) ∧
+                        ((Fin.succ 0).succ.succ < (Fin.succ 0).succ →
+                            integerLower false (Fin.succ 0).succ.succ (Fin.succ 0).succ = 0) ∧
+                          ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ →
+                              integerLower false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ = 0) ∧
+                            ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ.succ →
+                                integerLower false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ = 0) ∧
+                              ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ.succ.succ →
+                                  integerLower false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ = 0) ∧
+                                ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                    integerLower false (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                      0) ∧
+                                  ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                      integerLower false (Fin.succ 0).succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                        0) ∧
+                                    True) ∧
+                    (((Fin.succ 0).succ.succ.succ < 0 → integerLower false (Fin.succ 0).succ.succ.succ 0 = 0) ∧
+                        ((Fin.succ 0).succ.succ.succ < Fin.succ 0 →
+                            integerLower false (Fin.succ 0).succ.succ.succ (Fin.succ 0) = 0) ∧
+                          ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ →
+                              integerLower false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ = 0) ∧
+                            ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ →
+                                integerLower false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ = 0) ∧
+                              ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ.succ →
+                                  integerLower false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ = 0) ∧
+                                ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ →
+                                    integerLower false (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                      0) ∧
+                                  ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                      integerLower false (Fin.succ 0).succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ =
+                                        0) ∧
+                                    ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                        integerLower false (Fin.succ 0).succ.succ.succ
+                                            (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                          0) ∧
+                                      True) ∧
+                      (((Fin.succ 0).succ.succ.succ.succ < 0 →
+                            integerLower false (Fin.succ 0).succ.succ.succ.succ 0 = 0) ∧
+                          ((Fin.succ 0).succ.succ.succ.succ < Fin.succ 0 →
+                              integerLower false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) = 0) ∧
+                            ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ →
+                                integerLower false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ = 0) ∧
+                              ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ →
+                                  integerLower false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ = 0) ∧
+                                ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ →
+                                    integerLower false (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                      0) ∧
+                                  ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ →
+                                      integerLower false (Fin.succ 0).succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ =
+                                        0) ∧
+                                    ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                        integerLower false (Fin.succ 0).succ.succ.succ.succ
+                                            (Fin.succ 0).succ.succ.succ.succ.succ =
+                                          0) ∧
+                                      ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                          integerLower false (Fin.succ 0).succ.succ.succ.succ
+                                              (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                            0) ∧
+                                        True) ∧
+                        (((Fin.succ 0).succ.succ.succ.succ.succ < 0 →
+                              integerLower false (Fin.succ 0).succ.succ.succ.succ.succ 0 = 0) ∧
+                            ((Fin.succ 0).succ.succ.succ.succ.succ < Fin.succ 0 →
+                                integerLower false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0) = 0) ∧
+                              ((Fin.succ 0).succ.succ.succ.succ.succ < (Fin.succ 0).succ →
+                                  integerLower false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ = 0) ∧
+                                ((Fin.succ 0).succ.succ.succ.succ.succ < (Fin.succ 0).succ.succ →
+                                    integerLower false (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                                      0) ∧
+                                  ((Fin.succ 0).succ.succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ →
+                                      integerLower false (Fin.succ 0).succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ =
+                                        0) ∧
+                                    (⋯ → integerLower false (Fin.succ 0).succ.succ.succ.succ.succ ⋯ = ⋯) ∧ ⋯) ∧
+                          ⋯) ∧
+          ⋯)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:35:4: error: failed to synthesize
+  Decidable
+    ((((Matrix.transpose (integerH true) * integerH true) 0 0 = Matrix.diagonal (integerD true) 0 0 ∧
+          (Matrix.transpose (integerH true) * integerH true) 0 (Fin.succ 0) =
+              Matrix.diagonal (integerD true) 0 (Fin.succ 0) ∧
+            (Matrix.transpose (integerH true) * integerH true) 0 (Fin.succ 0).succ =
+                Matrix.diagonal (integerD true) 0 (Fin.succ 0).succ ∧
+              (Matrix.transpose (integerH true) * integerH true) 0 (Fin.succ 0).succ.succ =
+                  Matrix.diagonal (integerD true) 0 (Fin.succ 0).succ.succ ∧
+                (Matrix.transpose (integerH true) * integerH true) 0 (Fin.succ 0).succ.succ.succ =
+                    Matrix.diagonal (integerD true) 0 (Fin.succ 0).succ.succ.succ ∧
+                  (Matrix.transpose (integerH true) * integerH true) 0 (Fin.succ 0).succ.succ.succ.succ =
+                      Matrix.diagonal (integerD true) 0 (Fin.succ 0).succ.succ.succ.succ ∧
+                    (Matrix.transpose (integerH true) * integerH true) 0 (Fin.succ 0).succ.succ.succ.succ.succ =
+                        Matrix.diagonal (integerD true) 0 (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                      (Matrix.transpose (integerH true) * integerH true) 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                          Matrix.diagonal (integerD true) 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                        True) ∧
+        ((Matrix.transpose (integerH true) * integerH true) (Fin.succ 0) 0 =
+              Matrix.diagonal (integerD true) (Fin.succ 0) 0 ∧
+            (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0) (Fin.succ 0) =
+                Matrix.diagonal (integerD true) (Fin.succ 0) (Fin.succ 0) ∧
+              (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0) (Fin.succ 0).succ =
+                  Matrix.diagonal (integerD true) (Fin.succ 0) (Fin.succ 0).succ ∧
+                (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0) (Fin.succ 0).succ.succ =
+                    Matrix.diagonal (integerD true) (Fin.succ 0) (Fin.succ 0).succ.succ ∧
+                  (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ =
+                      Matrix.diagonal (integerD true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ ∧
+                    (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ =
+                        Matrix.diagonal (integerD true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ ∧
+                      (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0)
+                            (Fin.succ 0).succ.succ.succ.succ.succ =
+                          Matrix.diagonal (integerD true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                        (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0)
+                              (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                            Matrix.diagonal (integerD true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                          True) ∧
+          ((Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ 0 =
+                Matrix.diagonal (integerD true) (Fin.succ 0).succ 0 ∧
+              (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ (Fin.succ 0) =
+                  Matrix.diagonal (integerD true) (Fin.succ 0).succ (Fin.succ 0) ∧
+                (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ (Fin.succ 0).succ =
+                    Matrix.diagonal (integerD true) (Fin.succ 0).succ (Fin.succ 0).succ ∧
+                  (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ (Fin.succ 0).succ.succ =
+                      Matrix.diagonal (integerD true) (Fin.succ 0).succ (Fin.succ 0).succ.succ ∧
+                    (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ =
+                        Matrix.diagonal (integerD true) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ ∧
+                      (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ
+                            (Fin.succ 0).succ.succ.succ.succ =
+                          Matrix.diagonal (integerD true) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ ∧
+                        (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ
+                              (Fin.succ 0).succ.succ.succ.succ.succ =
+                            Matrix.diagonal (integerD true) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                          (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                              Matrix.diagonal (integerD true) (Fin.succ 0).succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                            True) ∧
+            ((Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ 0 =
+                  Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ 0 ∧
+                (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ (Fin.succ 0) =
+                    Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ (Fin.succ 0) ∧
+                  (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ (Fin.succ 0).succ =
+                      Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ (Fin.succ 0).succ ∧
+                    (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ =
+                        Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ ∧
+                      (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ
+                            (Fin.succ 0).succ.succ.succ =
+                          Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ ∧
+                        (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ
+                              (Fin.succ 0).succ.succ.succ.succ =
+                            Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ ∧
+                          (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ =
+                              Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                            (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                              True) ∧
+              ((Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ 0 =
+                    Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ 0 ∧
+                  (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ (Fin.succ 0) =
+                      Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ (Fin.succ 0) ∧
+                    (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ =
+                        Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ ∧
+                      (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ
+                            (Fin.succ 0).succ.succ =
+                          Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ ∧
+                        (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ
+                              (Fin.succ 0).succ.succ.succ =
+                            Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ ∧
+                          (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ =
+                              Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ ∧
+                            (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ =
+                                Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                              (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                  Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                True) ∧
+                ((Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ 0 =
+                      Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ 0 ∧
+                    (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) =
+                        Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) ∧
+                      (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ
+                            (Fin.succ 0).succ =
+                          Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ ∧
+                        (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ
+                              (Fin.succ 0).succ.succ =
+                            Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ ∧
+                          (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ =
+                              Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ ∧
+                            (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ =
+                                Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ ∧
+                              (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ =
+                                  Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                    Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                  True) ∧
+                  ((Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ 0 =
+                        Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ 0 ∧
+                      (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ
+                            (Fin.succ 0) =
+                          Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0) ∧
+                        (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ
+                              (Fin.succ 0).succ =
+                            Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ ∧
+                          (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ =
+                              Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ ∧
+                            (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ =
+                                Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ ∧
+                              (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ =
+                                  Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ ∧
+                                (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ =
+                                    Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                  (Matrix.transpose (integerH true) * integerH true)
+                                        (Fin.succ 0).succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                      Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                    True) ∧
+                    ((Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ.succ 0 =
+                          Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ.succ 0 ∧
+                        (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                              (Fin.succ 0) =
+                            Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0) ∧
+                          (Matrix.transpose (integerH true) * integerH true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ =
+                              Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ ∧
+                            (Matrix.transpose (integerH true) * integerH true)
+                                  (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                                Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ ∧
+                              (Matrix.transpose (integerH true) * integerH true)
+                                    (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                  Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ ∧
+                                (Matrix.transpose (integerH true) * integerH true)
+                                      (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                    Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ ∧
+                                  (Matrix.transpose (integerH true) * integerH true)
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ =
+                                      Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                    (Matrix.transpose (integerH true) * integerH true)
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                        Matrix.diagonal (integerD true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                      True) ∧
+                      True) ∧
+      ((integerH true 0 0 = (integerLower true * integerT true) 0 0 ∧
+            integerH true 0 (Fin.succ 0) = (integerLower true * integerT true) 0 (Fin.succ 0) ∧
+              integerH true 0 (Fin.succ 0).succ = (integerLower true * integerT true) 0 (Fin.succ 0).succ ∧
+                integerH true 0 (Fin.succ 0).succ.succ = (integerLower true * integerT true) 0 (Fin.succ 0).succ.succ ∧
+                  integerH true 0 (Fin.succ 0).succ.succ.succ =
+                      (integerLower true * integerT true) 0 (Fin.succ 0).succ.succ.succ ∧
+                    integerH true 0 (Fin.succ 0).succ.succ.succ.succ =
+                        (integerLower true * integerT true) 0 (Fin.succ 0).succ.succ.succ.succ ∧
+                      integerH true 0 (Fin.succ 0).succ.succ.succ.succ.succ =
+                          (integerLower true * integerT true) 0 (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                        integerH true 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                            (integerLower true * integerT true) 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                          True) ∧
+          (integerH true (Fin.succ 0) 0 = (integerLower true * integerT true) (Fin.succ 0) 0 ∧
+              integerH true (Fin.succ 0) (Fin.succ 0) = (integerLower true * integerT true) (Fin.succ 0) (Fin.succ 0) ∧
+                integerH true (Fin.succ 0) (Fin.succ 0).succ =
+                    (integerLower true * integerT true) (Fin.succ 0) (Fin.succ 0).succ ∧
+                  integerH true (Fin.succ 0) (Fin.succ 0).succ.succ =
+                      (integerLower true * integerT true) (Fin.succ 0) (Fin.succ 0).succ.succ ∧
+                    integerH true (Fin.succ 0) (Fin.succ 0).succ.succ.succ =
+                        (integerLower true * integerT true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ ∧
+                      integerH true (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ =
+                          (integerLower true * integerT true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ ∧
+                        integerH true (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ =
+                            (integerLower true * integerT true) (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                          integerH true (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                              (integerLower true * integerT true) (Fin.succ 0)
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                            True) ∧
+            (integerH true (Fin.succ 0).succ 0 = (integerLower true * integerT true) (Fin.succ 0).succ 0 ∧
+                integerH true (Fin.succ 0).succ (Fin.succ 0) =
+                    (integerLower true * integerT true) (Fin.succ 0).succ (Fin.succ 0) ∧
+                  integerH true (Fin.succ 0).succ (Fin.succ 0).succ =
+                      (integerLower true * integerT true) (Fin.succ 0).succ (Fin.succ 0).succ ∧
+                    integerH true (Fin.succ 0).succ (Fin.succ 0).succ.succ =
+                        (integerLower true * integerT true) (Fin.succ 0).succ (Fin.succ 0).succ.succ ∧
+                      integerH true (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ =
+                          (integerLower true * integerT true) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ ∧
+                        integerH true (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ =
+                            (integerLower true * integerT true) (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ ∧
+                          integerH true (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                              (integerLower true * integerT true) (Fin.succ 0).succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                            integerH true (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                (integerLower true * integerT true) (Fin.succ 0).succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                              True) ∧
+              (integerH true (Fin.succ 0).succ.succ 0 = (integerLower true * integerT true) (Fin.succ 0).succ.succ 0 ∧
+                  integerH true (Fin.succ 0).succ.succ (Fin.succ 0) =
+                      (integerLower true * integerT true) (Fin.succ 0).succ.succ (Fin.succ 0) ∧
+                    integerH true (Fin.succ 0).succ.succ (Fin.succ 0).succ =
+                        (integerLower true * integerT true) (Fin.succ 0).succ.succ (Fin.succ 0).succ ∧
+                      integerH true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ =
+                          (integerLower true * integerT true) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ ∧
+                        integerH true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ =
+                            (integerLower true * integerT true) (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ ∧
+                          integerH true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                              (integerLower true * integerT true) (Fin.succ 0).succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ ∧
+                            integerH true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                (integerLower true * integerT true) (Fin.succ 0).succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                              integerH true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                  (integerLower true * integerT true) (Fin.succ 0).succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                True) ∧
+                (integerH true (Fin.succ 0).succ.succ.succ 0 =
+                      (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ 0 ∧
+                    integerH true (Fin.succ 0).succ.succ.succ (Fin.succ 0) =
+                        (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ (Fin.succ 0) ∧
+                      integerH true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ =
+                          (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ ∧
+                        integerH true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ =
+                            (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ ∧
+                          integerH true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                              (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ ∧
+                            integerH true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ.succ ∧
+                              integerH true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                  (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                integerH true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                    (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                  True) ∧
+                  (integerH true (Fin.succ 0).succ.succ.succ.succ 0 =
+                        (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ 0 ∧
+                      integerH true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) =
+                          (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) ∧
+                        integerH true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ =
+                            (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ ∧
+                          integerH true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                              (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ ∧
+                            integerH true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ.succ ∧
+                              integerH true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                  (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ.succ ∧
+                                integerH true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                    (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                  integerH true (Fin.succ 0).succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                      (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                    True) ∧
+                    (integerH true (Fin.succ 0).succ.succ.succ.succ.succ 0 =
+                          (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ 0 ∧
+                        integerH true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0) =
+                            (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0) ∧
+                          integerH true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ =
+                              (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ ∧
+                            integerH true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                                (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ.succ ∧
+                              integerH true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                  (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ.succ ∧
+                                integerH true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                    (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ.succ ∧
+                                  integerH true (Fin.succ 0).succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ =
+                                      (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                    integerH true (Fin.succ 0).succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                        (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                      True) ∧
+                      (integerH true (Fin.succ 0).succ.succ.succ.succ.succ.succ 0 =
+                            (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ.succ 0 ∧
+                          integerH true (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0) =
+                              (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                (Fin.succ 0) ∧
+                            integerH true (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ =
+                                (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                  (Fin.succ 0).succ ∧
+                              integerH true (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                                  (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                    (Fin.succ 0).succ.succ ∧
+                                integerH true (Fin.succ 0).succ.succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                    (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                      (Fin.succ 0).succ.succ.succ ∧
+                                  integerH true (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ =
+                                      (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                        (Fin.succ 0).succ.succ.succ.succ ∧
+                                    integerH true (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ =
+                                        (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ ∧
+                                      integerH true (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                            (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                          (integerLower true * integerT true) (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                            (Fin.succ 0).succ.succ.succ.succ.succ.succ ∧
+                                        True) ∧
+                        True) ∧
+        ((integerLower true 0 0 = 1 ∧
+              integerLower true (Fin.succ 0) (Fin.succ 0) = 1 ∧
+                integerLower true (Fin.succ 0).succ (Fin.succ 0).succ = 1 ∧
+                  integerLower true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ = 1 ∧
+                    integerLower true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ = 1 ∧
+                      integerLower true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ = 1 ∧
+                        integerLower true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                            1 ∧
+                          integerLower true (Fin.succ 0).succ.succ.succ.succ.succ.succ
+                                (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                              1 ∧
+                            True) ∧
+            ((0 < 0 → integerLower true 0 0 = 0) ∧
+                (0 < Fin.succ 0 → integerLower true 0 (Fin.succ 0) = 0) ∧
+                  (0 < (Fin.succ 0).succ → integerLower true 0 (Fin.succ 0).succ = 0) ∧
+                    (0 < (Fin.succ 0).succ.succ → integerLower true 0 (Fin.succ 0).succ.succ = 0) ∧
+                      (0 < (Fin.succ 0).succ.succ.succ → integerLower true 0 (Fin.succ 0).succ.succ.succ = 0) ∧
+                        (0 < (Fin.succ 0).succ.succ.succ.succ →
+                            integerLower true 0 (Fin.succ 0).succ.succ.succ.succ = 0) ∧
+                          (0 < (Fin.succ 0).succ.succ.succ.succ.succ →
+                              integerLower true 0 (Fin.succ 0).succ.succ.succ.succ.succ = 0) ∧
+                            (0 < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                integerLower true 0 (Fin.succ 0).succ.succ.succ.succ.succ.succ = 0) ∧
+                              True) ∧
+              ((Fin.succ 0 < 0 → integerLower true (Fin.succ 0) 0 = 0) ∧
+                  (Fin.succ 0 < Fin.succ 0 → integerLower true (Fin.succ 0) (Fin.succ 0) = 0) ∧
+                    (Fin.succ 0 < (Fin.succ 0).succ → integerLower true (Fin.succ 0) (Fin.succ 0).succ = 0) ∧
+                      (Fin.succ 0 < (Fin.succ 0).succ.succ →
+                          integerLower true (Fin.succ 0) (Fin.succ 0).succ.succ = 0) ∧
+                        (Fin.succ 0 < (Fin.succ 0).succ.succ.succ →
+                            integerLower true (Fin.succ 0) (Fin.succ 0).succ.succ.succ = 0) ∧
+                          (Fin.succ 0 < (Fin.succ 0).succ.succ.succ.succ →
+                              integerLower true (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ = 0) ∧
+                            (Fin.succ 0 < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                integerLower true (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ = 0) ∧
+                              (Fin.succ 0 < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                  integerLower true (Fin.succ 0) (Fin.succ 0).succ.succ.succ.succ.succ.succ = 0) ∧
+                                True) ∧
+                (((Fin.succ 0).succ < 0 → integerLower true (Fin.succ 0).succ 0 = 0) ∧
+                    ((Fin.succ 0).succ < Fin.succ 0 → integerLower true (Fin.succ 0).succ (Fin.succ 0) = 0) ∧
+                      ((Fin.succ 0).succ < (Fin.succ 0).succ →
+                          integerLower true (Fin.succ 0).succ (Fin.succ 0).succ = 0) ∧
+                        ((Fin.succ 0).succ < (Fin.succ 0).succ.succ →
+                            integerLower true (Fin.succ 0).succ (Fin.succ 0).succ.succ = 0) ∧
+                          ((Fin.succ 0).succ < (Fin.succ 0).succ.succ.succ →
+                              integerLower true (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ = 0) ∧
+                            ((Fin.succ 0).succ < (Fin.succ 0).succ.succ.succ.succ →
+                                integerLower true (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ = 0) ∧
+                              ((Fin.succ 0).succ < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                  integerLower true (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ = 0) ∧
+                                ((Fin.succ 0).succ < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                    integerLower true (Fin.succ 0).succ (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                      0) ∧
+                                  True) ∧
+                  (((Fin.succ 0).succ.succ < 0 → integerLower true (Fin.succ 0).succ.succ 0 = 0) ∧
+                      ((Fin.succ 0).succ.succ < Fin.succ 0 →
+                          integerLower true (Fin.succ 0).succ.succ (Fin.succ 0) = 0) ∧
+                        ((Fin.succ 0).succ.succ < (Fin.succ 0).succ →
+                            integerLower true (Fin.succ 0).succ.succ (Fin.succ 0).succ = 0) ∧
+                          ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ →
+                              integerLower true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ = 0) ∧
+                            ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ.succ →
+                                integerLower true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ = 0) ∧
+                              ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ.succ.succ →
+                                  integerLower true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ = 0) ∧
+                                ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                    integerLower true (Fin.succ 0).succ.succ (Fin.succ 0).succ.succ.succ.succ.succ =
+                                      0) ∧
+                                  ((Fin.succ 0).succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                      integerLower true (Fin.succ 0).succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                        0) ∧
+                                    True) ∧
+                    (((Fin.succ 0).succ.succ.succ < 0 → integerLower true (Fin.succ 0).succ.succ.succ 0 = 0) ∧
+                        ((Fin.succ 0).succ.succ.succ < Fin.succ 0 →
+                            integerLower true (Fin.succ 0).succ.succ.succ (Fin.succ 0) = 0) ∧
+                          ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ →
+                              integerLower true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ = 0) ∧
+                            ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ →
+                                integerLower true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ = 0) ∧
+                              ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ.succ →
+                                  integerLower true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ = 0) ∧
+                                ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ →
+                                    integerLower true (Fin.succ 0).succ.succ.succ (Fin.succ 0).succ.succ.succ.succ =
+                                      0) ∧
+                                  ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                      integerLower true (Fin.succ 0).succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ.succ =
+                                        0) ∧
+                                    ((Fin.succ 0).succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                        integerLower true (Fin.succ 0).succ.succ.succ
+                                            (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                          0) ∧
+                                      True) ∧
+                      (((Fin.succ 0).succ.succ.succ.succ < 0 →
+                            integerLower true (Fin.succ 0).succ.succ.succ.succ 0 = 0) ∧
+                          ((Fin.succ 0).succ.succ.succ.succ < Fin.succ 0 →
+                              integerLower true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0) = 0) ∧
+                            ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ →
+                                integerLower true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ = 0) ∧
+                              ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ →
+                                  integerLower true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ = 0) ∧
+                                ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ →
+                                    integerLower true (Fin.succ 0).succ.succ.succ.succ (Fin.succ 0).succ.succ.succ =
+                                      0) ∧
+                                  ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ →
+                                      integerLower true (Fin.succ 0).succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ.succ =
+                                        0) ∧
+                                    ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ →
+                                        integerLower true (Fin.succ 0).succ.succ.succ.succ
+                                            (Fin.succ 0).succ.succ.succ.succ.succ =
+                                          0) ∧
+                                      ((Fin.succ 0).succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ.succ.succ.succ →
+                                          integerLower true (Fin.succ 0).succ.succ.succ.succ
+                                              (Fin.succ 0).succ.succ.succ.succ.succ.succ =
+                                            0) ∧
+                                        True) ∧
+                        (((Fin.succ 0).succ.succ.succ.succ.succ < 0 →
+                              integerLower true (Fin.succ 0).succ.succ.succ.succ.succ 0 = 0) ∧
+                            ((Fin.succ 0).succ.succ.succ.succ.succ < Fin.succ 0 →
+                                integerLower true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0) = 0) ∧
+                              ((Fin.succ 0).succ.succ.succ.succ.succ < (Fin.succ 0).succ →
+                                  integerLower true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ = 0) ∧
+                                ((Fin.succ 0).succ.succ.succ.succ.succ < (Fin.succ 0).succ.succ →
+                                    integerLower true (Fin.succ 0).succ.succ.succ.succ.succ (Fin.succ 0).succ.succ =
+                                      0) ∧
+                                  ((Fin.succ 0).succ.succ.succ.succ.succ < (Fin.succ 0).succ.succ.succ →
+                                      integerLower true (Fin.succ 0).succ.succ.succ.succ.succ
+                                          (Fin.succ 0).succ.succ.succ =
+                                        0) ∧
+                                    (⋯ → integerLower true (Fin.succ 0).succ.succ.succ.succ.succ ⋯ = ⋯) ∧ ⋯) ∧
+                          ⋯) ∧
+          ⋯)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+'NLA.IE05._proved.integer_factor_certificates' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/ExactCertificates.lean:54:21: error: #assert_trust: 'NLA.IE05._proved.integer_factor_certificates' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]

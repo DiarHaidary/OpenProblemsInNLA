@@ -1,0 +1,27 @@
+NLA/IE05/Witness.lean:31:50: warning: This simp argument is unused:
+  Matrix.diagonal_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [castIntegerMatrix, h]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/IE05/Witness.lean:108:36: error: Application type mismatch: The argument
+  integerT b
+has type
+  IntMat 8
+but is expected to have type
+  Matrix (Fin 8) (Fin 8) ℝ
+in the application
+  tailProduct ?m.15 (integerT b)
+'NLA.IE05._proved.castIntegerMatrix_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.castIntegerMatrix_tailProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.castIntegerMatrix_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.real_factor_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.normalizedInteger_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.normalizedInteger_path_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/IE05/Witness.lean:160:21: error(lean.unknownIdentifier): Unknown constant `normalizedInteger_trajectory_entry`
+NLA/IE05/Witness.lean:161:14: error(lean.unknownIdentifier): Unknown constant `normalizedInteger_trajectory_entry`
+'NLA.IE05._proved.normalizedInteger_firstGrowth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.integerLower_false_prescribed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.canonical_integer_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.witness_orthogonal_path' depends on axioms: [propext, Classical.choice, Quot.sound]

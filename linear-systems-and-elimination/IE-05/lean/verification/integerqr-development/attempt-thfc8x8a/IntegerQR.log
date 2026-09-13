@@ -1,0 +1,59 @@
+NLA/IE05/IntegerQR.lean:29:8: error: Function expected at
+  Matrix.det_of_isUpperTriangular ?m.68
+but this term has type
+  Matrix.det ?m.63 = ∏ i, ?m.63 i i
+
+Note: Expected a function because this term is being applied to the argument
+  htri
+NLA/IE05/IntegerQR.lean:32:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+NLA/IE05/IntegerQR.lean:39:8: error: Tactic `rfl` failed: Expected the goal to be a binary relation
+
+Hint: Reflexivity tactics can only be used on goals of the form `x ~ x` or `R x x`
+
+case h₀
+n : ℕ
+L H T : Mat n
+d : Fin n → ℝ
+hd : ∀ (j : Fin n), 0 < d j
+hGram : Matrix.transpose H * H = Matrix.diagonal d
+hLU : H = L * T
+hT : UpperTriangular T
+hTp : ∀ (i : Fin n), 0 < T i i
+htri : Matrix.IsUpperTriangular T
+hdet : 0 < Matrix.det T
+hunit : IsUnit (Matrix.det T)
+this : Invertible T := Matrix.invertibleOfIsUnitDet T hunit
+hInv : Matrix.IsUpperTriangular T⁻¹
+i : Fin n
+⊢ ∀ b ∈ Finset.univ, b ≠ i → T i b * T⁻¹ b i = 0
+NLA/IE05/IntegerQR.lean:40:16: error: Tactic `introN` failed: There are no additional binders or `let` bindings in the goal to introduce
+
+case h₁
+n : ℕ
+L H T : Mat n
+d : Fin n → ℝ
+hd : ∀ (j : Fin n), 0 < d j
+hGram : Matrix.transpose H * H = Matrix.diagonal d
+hLU : H = L * T
+hT : UpperTriangular T
+hTp : ∀ (i : Fin n), 0 < T i i
+htri : Matrix.IsUpperTriangular T
+hdet : 0 < Matrix.det T
+hunit : IsUnit (Matrix.det T)
+this : Invertible T := Matrix.invertibleOfIsUnitDet T hunit
+hInv : Matrix.IsUpperTriangular T⁻¹
+i : Fin n
+j : i ∉ Finset.univ
+⊢ T i i * T⁻¹ i i = 0
+NLA/IE05/IntegerQR.lean:44:6: error: No goals to be solved
+'NLA.IE05._proved.normalizedQRQ_of_gram_lu' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/IntegerQR.lean:69:21: error: #assert_trust: 'NLA.IE05._proved.normalizedQRQ_of_gram_lu' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx

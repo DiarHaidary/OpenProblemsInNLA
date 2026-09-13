@@ -1,0 +1,619 @@
+27916ca1e378b13ba1a08f1eb3ecb285fde12408 blob 15982
+{
+  "schema_version": 1,
+  "repository": "https://github.com/sgstepaniants/Forsythe",
+  "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+  "lean_toolchain": "leanprover/lean4:v4.33.1",
+  "files": [
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/Comparator/Axioms.lean",
+      "destination": ".tools/comparator/Comparator/Axioms.lean",
+      "sha256": "863c5e1329811be0427880e08c171de733343491c5a3619b5dbf2e12b34c6125",
+      "bytes": 2389
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/Comparator/Compare.lean",
+      "destination": ".tools/comparator/Comparator/Compare.lean",
+      "sha256": "9bc34cb7de5a069a6fef7f3b13b20fea22f1d52603f74320a93d519b735ad3dd",
+      "bytes": 4089
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/Comparator/Util.lean",
+      "destination": ".tools/comparator/Comparator/Util.lean",
+      "sha256": "693d845330dd7122565aeb19314a3e3de4b49f9a8a7ac6e1fadbc9ab374b9f88",
+      "bytes": 788
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/Comparator.lean",
+      "destination": ".tools/comparator/Comparator.lean",
+      "sha256": "6c73ecd5bd429cf85e0aaa75b7c6f874ec0598d5afca60dcf5711d44e6bdef23",
+      "bytes": 204
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/LICENSE",
+      "destination": ".tools/comparator/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/Main.lean",
+      "destination": ".tools/comparator/Main.lean",
+      "sha256": "e6d9b43bbd8bbdd66ae6f87d7a3e69d6a2e0ba7fdc666b2559f2026f8c83b361",
+      "bytes": 13137
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/lake-manifest.json",
+      "destination": ".tools/comparator/lake-manifest.json",
+      "sha256": "07475af243cee7cbd6e80c52efd4063d103c23ba5c50dd412a7c4ab7fb3f7d50",
+      "bytes": 327
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/lakefile.toml",
+      "destination": ".tools/comparator/lakefile.toml",
+      "sha256": "4e6fdebbd221c88558c8c3bff1482375c82d1fc90390919ada60344d1b9c83ba",
+      "bytes": 210
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/lean-toolchain",
+      "destination": ".tools/comparator/lean-toolchain",
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/runtests.lean",
+      "destination": ".tools/comparator/runtests.lean",
+      "sha256": "8540bee573b302716dc3db78845229e3f6df20e3df962b342dd42d780848177c",
+      "bytes": 5595
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_axiom_issue/Challenge.lean",
+      "destination": ".tools/comparator/tests/projects/simple_axiom_issue/Challenge.lean",
+      "sha256": "d6400c174574f3216a2c02f61f559415c0352f74051baeee3f959055d8534b9c",
+      "bytes": 55
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_axiom_issue/Solution.lean",
+      "destination": ".tools/comparator/tests/projects/simple_axiom_issue/Solution.lean",
+      "sha256": "005b3b1b863f37c16fc6330cdc84d05e060f4a779d942a219432f8858325e244",
+      "bytes": 96
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_axiom_issue/config.json",
+      "destination": ".tools/comparator/tests/projects/simple_axiom_issue/config.json",
+      "sha256": "6e0c311b855acc0446e352844d77a625007466f759ce985d071895bc0f70991c",
+      "bytes": 205
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_axiom_issue/test.json",
+      "destination": ".tools/comparator/tests/projects/simple_axiom_issue/test.json",
+      "sha256": "2f23c866623acb1f410e8d54f7264126e525966f38589837bb2bac5a12d90cba",
+      "bytes": 27
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_kind_mismatch/Challenge.lean",
+      "destination": ".tools/comparator/tests/projects/simple_kind_mismatch/Challenge.lean",
+      "sha256": "d6400c174574f3216a2c02f61f559415c0352f74051baeee3f959055d8534b9c",
+      "bytes": 55
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_kind_mismatch/Solution.lean",
+      "destination": ".tools/comparator/tests/projects/simple_kind_mismatch/Solution.lean",
+      "sha256": "005b3b1b863f37c16fc6330cdc84d05e060f4a779d942a219432f8858325e244",
+      "bytes": 96
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_kind_mismatch/config.json",
+      "destination": ".tools/comparator/tests/projects/simple_kind_mismatch/config.json",
+      "sha256": "6e0c311b855acc0446e352844d77a625007466f759ce985d071895bc0f70991c",
+      "bytes": 205
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_kind_mismatch/test.json",
+      "destination": ".tools/comparator/tests/projects/simple_kind_mismatch/test.json",
+      "sha256": "2f23c866623acb1f410e8d54f7264126e525966f38589837bb2bac5a12d90cba",
+      "bytes": 27
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_match/Challenge.lean",
+      "destination": ".tools/comparator/tests/projects/simple_match/Challenge.lean",
+      "sha256": "d6400c174574f3216a2c02f61f559415c0352f74051baeee3f959055d8534b9c",
+      "bytes": 55
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_match/Solution.lean",
+      "destination": ".tools/comparator/tests/projects/simple_match/Solution.lean",
+      "sha256": "4460098a661949cca3d8d81a104c666bc2f42ae3ca1c988a20c66b0f8ad2e4d6",
+      "bytes": 55
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_match/config.json",
+      "destination": ".tools/comparator/tests/projects/simple_match/config.json",
+      "sha256": "6e0c311b855acc0446e352844d77a625007466f759ce985d071895bc0f70991c",
+      "bytes": 205
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_match/test.json",
+      "destination": ".tools/comparator/tests/projects/simple_match/test.json",
+      "sha256": "66eedf861d9f204e07568b236433dd99adc1fc925cef72ddc760b39a3799958c",
+      "bytes": 27
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_mismatch/Challenge.lean",
+      "destination": ".tools/comparator/tests/projects/simple_mismatch/Challenge.lean",
+      "sha256": "d6400c174574f3216a2c02f61f559415c0352f74051baeee3f959055d8534b9c",
+      "bytes": 55
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_mismatch/Solution.lean",
+      "destination": ".tools/comparator/tests/projects/simple_mismatch/Solution.lean",
+      "sha256": "f4f32cc82b9fe2012a2b9901c6e51d7b2fbe3d5b3aca105745c513554d6055ca",
+      "bytes": 39
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_mismatch/config.json",
+      "destination": ".tools/comparator/tests/projects/simple_mismatch/config.json",
+      "sha256": "6e0c311b855acc0446e352844d77a625007466f759ce985d071895bc0f70991c",
+      "bytes": 205
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_mismatch/test.json",
+      "destination": ".tools/comparator/tests/projects/simple_mismatch/test.json",
+      "sha256": "2f23c866623acb1f410e8d54f7264126e525966f38589837bb2bac5a12d90cba",
+      "bytes": 27
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/LICENSE",
+      "destination": ".tools/landrun/LICENSE",
+      "sha256": "f613c30920743111429f7c1cb801f49ccaafe8ae3319b3b0a5f8aca94e5fc082",
+      "bytes": 1070
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/cmd/landrun/main.go",
+      "destination": ".tools/landrun/cmd/landrun/main.go",
+      "sha256": "40ecf8680ef5857512f13c8391105404d907074f03535d95e0f0dd570cc441ff",
+      "bytes": 6559
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/cmd/landrun/main_test.go",
+      "destination": ".tools/landrun/cmd/landrun/main_test.go",
+      "sha256": "1d2548c48b195f33ee7ec903b761eee6b82822f4e671f7a8dbf271b40a66f602",
+      "bytes": 1041
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/go.mod",
+      "destination": ".tools/landrun/go.mod",
+      "sha256": "92873259cb8ed0f2765cd99a1b3dc36b768fef859d13ffecb155df33b5b309b1",
+      "bytes": 252
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/go.sum",
+      "destination": ".tools/landrun/go.sum",
+      "sha256": "a6a5ec06c4b78ca140c76fdbe171b82a5521a808abc5805ea6eba568e29763e5",
+      "bytes": 1394
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/elfdeps.go",
+      "destination": ".tools/landrun/internal/elfdeps/elfdeps.go",
+      "sha256": "99f6fcd463fd64c296142aae9f074de2d8a1f728246c347c913ad4ba4ac2f30d",
+      "bytes": 10173
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/elfdeps_test.go",
+      "destination": ".tools/landrun/internal/elfdeps/elfdeps_test.go",
+      "sha256": "c225ff886e97b506ccc93b18d303ac98183a7139535b5dde406c37ee07165ee8",
+      "bytes": 13213
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/testdata/liba.c",
+      "destination": ".tools/landrun/internal/elfdeps/testdata/liba.c",
+      "sha256": "453782a58a745f850fe2af228f8908e783e81127f468ef4e747eda1feae75255",
+      "bytes": 22
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/testdata/libb.c",
+      "destination": ".tools/landrun/internal/elfdeps/testdata/libb.c",
+      "sha256": "c3b8a9f314e04f1c043be604d24914955fdc9451346fbf85a49044518044883c",
+      "bytes": 33
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/testdata/main.c",
+      "destination": ".tools/landrun/internal/elfdeps/testdata/main.c",
+      "sha256": "1389c20d320b5e2783952206b211bc26da6391f295cbc54d7216753e7edf8d89",
+      "bytes": 39
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/exec/runner.go",
+      "destination": ".tools/landrun/internal/exec/runner.go",
+      "sha256": "671877fe01e50c8cedab09891c3666846f76e391558a6fdba74dc49ab792cc34",
+      "bytes": 408
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/log/log.go",
+      "destination": ".tools/landrun/internal/log/log.go",
+      "sha256": "b6e8c45c68b34e5cdb2019d1ed25768f54a1b5496d51c3016680dfbb1fed5fda",
+      "bytes": 1187
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/log/log_test.go",
+      "destination": ".tools/landrun/internal/log/log_test.go",
+      "sha256": "20e7940846d3f44b6049bfb0f9b828f8223a2cf638b0930e91f0bbd93704dce5",
+      "bytes": 734
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/sandbox/sandbox.go",
+      "destination": ".tools/landrun/internal/sandbox/sandbox.go",
+      "sha256": "a6ee5899479d44fc3fdd0011dfb7586716df00235cddb59997c115f5a4f430cc",
+      "bytes": 10229
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/landrun/internal/sandbox/sandbox_test.go",
+      "destination": ".tools/landrun/internal/sandbox/sandbox_test.go",
+      "sha256": "d5407e6fb8e655d17afa7858fc751168ea36e9e28576ff96e199f5fc4a335b86",
+      "bytes": 9171
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/Export/Parse.lean",
+      "destination": ".tools/lean4export/Export/Parse.lean",
+      "sha256": "1f943b5cc776eece6d528937b976509c8bd57d10bc69a39b1c119bfb6d664286",
+      "bytes": 20491
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/Export.lean",
+      "destination": ".tools/lean4export/Export.lean",
+      "sha256": "6e9f24262253678960b05b8392a1774a3cbf36b21ed2fc1b834906659b8ca95a",
+      "bytes": 16016
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/LICENSE",
+      "destination": ".tools/lean4export/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/Main.lean",
+      "destination": ".tools/lean4export/Main.lean",
+      "sha256": "bd8e350903f1382b25fe767f9086dd9882000f01085f7046ea06545e7848842a",
+      "bytes": 751
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/Test.lean",
+      "destination": ".tools/lean4export/Test.lean",
+      "sha256": "44f8995f47633ca77364740af03a719e90a2c58690fa90b237487b541bb04804",
+      "bytes": 18368
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/format_ndjson.md",
+      "destination": ".tools/lean4export/format_ndjson.md",
+      "sha256": "f82a21e17e4258a1043895d0653ea4333bef8cb07aad2e3d6c1fc4be52b138e3",
+      "bytes": 6098
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/lake-manifest.json",
+      "destination": ".tools/lean4export/lake-manifest.json",
+      "sha256": "f1b9d60d0ebd46f79f48e6833deefeaa835fdee12b4078241635ee14b6a0f07a",
+      "bytes": 117
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/lakefile.toml",
+      "destination": ".tools/lean4export/lakefile.toml",
+      "sha256": "54dde3aba280f32035c882dcd2f2039e738e20ed45ca538337b65cc69c02f7df",
+      "bytes": 207
+    },
+    {
+      "source": "lean-proof/reproduction/tool-sources/lean4export/lean-toolchain",
+      "destination": ".tools/lean4export/lean-toolchain",
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    {
+      "source": "lean-proof/LICENSE",
+      "destination": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358
+    },
+    {
+      "source": "lean-proof/lean-toolchain",
+      "destination": "lean-toolchain",
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    {
+      "source": "lean-proof/scripts/strict_landrun.py",
+      "destination": "scripts/strict_landrun.py",
+      "sha256": "4d6172274dd6109b1171dc01548512aa1af31f1e8fed88aa40b3c8b831345e1c",
+      "bytes": 2817
+    },
+    {
+      "source": "lean-proof/scripts/comparator-lean-4.33.1.patch",
+      "destination": "scripts/comparator-lean-4.33.1.patch",
+      "sha256": "755fd2bf8f2f82a05f30d66e7c1492b704c676f2ca2ea9e7c32694fa761a0620",
+      "bytes": 536
+    },
+    {
+      "source": "lean-proof/reproduction/checks/PinnedReplayProbe.lean",
+      "destination": "reproduction/checks/PinnedReplayProbe.lean",
+      "sha256": "c2091eef3120a7850b3e73118de3cc787ee28ef5c97c6643e102cbd639c90a31",
+      "bytes": 3732
+    },
+    {
+      "source": "lean-proof/reproduction/checks/run_replay.sh",
+      "destination": "reproduction/checks/run_replay.sh",
+      "sha256": "6aba451c334d12438f63e8c14ba2e61bead41214540e2721e0857ed1726222e9",
+      "bytes": 929
+    },
+    {
+      "source": "lean-proof/reproduction/checks/comparator_regressions.py",
+      "destination": "reproduction/checks/comparator_regressions.py",
+      "sha256": "1c3fcf394f7073a7decbf1be0bc66f18b81ed537a489b9f652911035543c3890",
+      "bytes": 3861
+    },
+    {
+      "source": "lean-proof/reproduction/checks/sandbox_probe.py",
+      "destination": "reproduction/checks/sandbox_probe.py",
+      "sha256": "5ea755758af4966d6f3a857529f9da583662a8c7e906dcc0dc7b2a6978daf61e",
+      "bytes": 8753
+    }
+  ]
+}
+
+1c1b1a8bab053f8c0a746922a673a560f955878f blob 33
+PyYAML==6.0.3
+jsonschema==4.26.0
+
+4dc2a05185359f431bd3173ee578dfb7231569cb blob 193
+#!/usr/bin/env bash
+# SPDX-License-Identifier: Apache-2.0
+set -euo pipefail
+script_dir="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+exec python3 "$script_dir/harness.py" selftest "$@"
+
+abc962637a86ee118b2f16a762859740cfc3bf12 blob 2666
+# Verification-tool provenance and licence notices
+
+The NLA driver (`bootstrap.sh`, `verify.sh`, `harness.py` and its tests) is
+Copyright (c) 2026 George Stepaniants, licensed under Apache-2.0. It was
+developed with Codex assistance. See `LICENSE-APACHE-2.0`.
+
+`source-lock.json` fetches exact files from
+[sgstepaniants/Forsythe, commit
+8d1b0c0545a77b40245e84705aa7d273e6c81e62](https://github.com/sgstepaniants/Forsythe/tree/8d1b0c0545a77b40245e84705aa7d273e6c81e62/lean-proof).
+Every fetched file has an independent SHA256 digest and byte count. No
+mathematical Forsythe proof is fetched: the Lean test declarations exercise
+the checker itself. Original notices and licence texts remain in place.
+
+The fetched sources comprise:
+
+- Lean FRO's Comparator, Apache-2.0, including the original author and
+  copyright notices. Forsythe's distribution adapts the kernel replay call
+  to Lean 4.33.1 and records the exact one-line change in
+  `scripts/comparator-lean-4.33.1.patch`. It retains statement, transitive
+  axiom, kernel replay, constructor/recursor and quotient consistency checks.
+- Lean FRO's lean4export, Apache-2.0, compiled for Lean 4.33.1.
+- Landrun 0.1.18, MIT, Copyright (c) 2025 Armin ranjbar; see
+  `LICENSE-LANDRUN-MIT` and its original fetched licence.
+- Forsythe's strict Landrun/Bubblewrap adapter and sandbox, kernel replay,
+  and Comparator regression probes, under its `lean-proof/LICENSE`
+  (Apache-2.0). These files are fetched without modification.
+
+The driver derives a noninteractive CI copy of the sandbox probe: its two
+systemd `--pty` options become `--pipe`, and service/caller deadlines are added.
+Every assertion and isolation property remains unchanged. The original source
+and its hash remain intact, and the derived source hash is checked and recorded.
+The derived copy also prints each case's start for noninteractive diagnostics.
+Its probe-only Landrun arguments permit execution of `/usr/bin/bwrap` so the
+nested escape control actually exercises namespace/write isolation on modern
+Landlock hosts. This does not change the Comparator sandbox or waive a denial
+assertion; the original host's best-effort Landlock behavior differed.
+
+NLA adds a generic committed-project snapshot driver, recorded tool/source
+hashes, configuration checks, and two additional negative controls for
+`sorryAx` and Lean 4.33.1's generated native-execution axiom. NLA does not claim that the tool authors
+reviewed this integration, and does not substitute Forsythe's historical
+verification logs for a new run on an NLA theorem.
+
+The licences grant code reuse; they do not establish mathematical verification
+or author endorsement of NLA's results.
+
+261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64 blob 11357
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+

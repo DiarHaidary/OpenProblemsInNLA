@@ -1,0 +1,514 @@
+{
+  "actual_roots": [
+    "NLA.IE05._proved.integer_factor_certificates",
+    "NLA.IE05._proved.integer_entry_certificates",
+    "NLA.IE05._proved.numerical_gap_positive",
+    "NLA.IE05._proved.normalizedQRQ_of_gram_lu"
+  ],
+  "total": 36,
+  "project_declarations": 34,
+  "additional_actual_core_integer_declarations": 2,
+  "declarations": {
+    "NLA.IE05._proved.integer_factor_certificates": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.IntMat": {
+      "kind": "definition",
+      "axioms": []
+    },
+    "NLA.IE05.integerH": {
+      "kind": "definition",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "NLA.IE05.integerH.match_1": {
+      "kind": "definition",
+      "axioms": []
+    },
+    "NLA.IE05.integerD": {
+      "kind": "definition",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "NLA.IE05.integerLower": {
+      "kind": "definition",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "NLA.IE05.integerLower._proof_1": {
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "NLA.IE05.integerT": {
+      "kind": "definition",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "NLA.IE05.UnitLower": {
+      "kind": "definition",
+      "axioms": []
+    },
+    "NLA.IE05.UpperTriangular": {
+      "kind": "definition",
+      "axioms": []
+    },
+    "NLA.IE05._proved.integer_factor_certificates._proof_1_1": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "Int.instDecidableEq": {
+      "kind": "definition",
+      "axioms": []
+    },
+    "Int.decEq": {
+      "kind": "definition",
+      "axioms": []
+    },
+    "NLA.IE05._proved.integerLowerZeroDecidable": {
+      "kind": "definition",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "NLA.IE05._proved.integerTZeroDecidable": {
+      "kind": "definition",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "NLA.IE05._proved.integer_factor_certificates._proof_1_2": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.integer_entry_certificates": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.tailProduct": {
+      "kind": "definition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.integer_entry_certificates._proof_1_1": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.numerical_gap_positive": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.normalizedQRQ_of_gram_lu": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.Mat": {
+      "kind": "definition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.normalizedQRQ": {
+      "kind": "definition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.normalizedQRQ._proof_1": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.euclideanColumns": {
+      "kind": "definition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.euclideanColumns._proof_1": {
+      "kind": "theorem",
+      "axioms": [
+        "propext"
+      ]
+    },
+    "NLA.IE05.scaledColumns": {
+      "kind": "definition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.PositiveQR": {
+      "kind": "definition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05.Orthogonal": {
+      "kind": "definition",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.orthogonal_iff_orthonormal_columns": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.euclideanColumns_inner": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.positiveQR_inner": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.positiveQR_column": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    "NLA.IE05._proved.scaledColumns_orthogonal": {
+      "kind": "theorem",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  },
+  "edges": {
+    "NLA.IE05._proved.integer_factor_certificates": [
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "NLA.IE05.UnitLower",
+      "NLA.IE05.UpperTriangular",
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "NLA.IE05.UnitLower",
+      "NLA.IE05.UpperTriangular",
+      "NLA.IE05._proved.integer_factor_certificates._proof_1_1",
+      "NLA.IE05._proved.integer_factor_certificates._proof_1_2"
+    ],
+    "NLA.IE05.IntMat": [],
+    "NLA.IE05.integerH": [
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerH.match_1",
+      "NLA.IE05.IntMat"
+    ],
+    "NLA.IE05.integerH.match_1": [],
+    "NLA.IE05.integerD": [
+      "NLA.IE05.integerH.match_1"
+    ],
+    "NLA.IE05.integerLower": [
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerLower._proof_1"
+    ],
+    "NLA.IE05.integerLower._proof_1": [],
+    "NLA.IE05.integerT": [
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerH.match_1",
+      "NLA.IE05.IntMat"
+    ],
+    "NLA.IE05.UnitLower": [],
+    "NLA.IE05.UpperTriangular": [],
+    "NLA.IE05._proved.integer_factor_certificates._proof_1_1": [
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "Int.instDecidableEq",
+      "NLA.IE05._proved.integerLowerZeroDecidable",
+      "NLA.IE05._proved.integerTZeroDecidable"
+    ],
+    "Int.instDecidableEq": [
+      "Int.decEq"
+    ],
+    "Int.decEq": [],
+    "NLA.IE05._proved.integerLowerZeroDecidable": [
+      "NLA.IE05.integerLower",
+      "Int.instDecidableEq",
+      "NLA.IE05.integerLower"
+    ],
+    "NLA.IE05._proved.integerTZeroDecidable": [
+      "NLA.IE05.integerT",
+      "Int.instDecidableEq",
+      "NLA.IE05.integerT"
+    ],
+    "NLA.IE05._proved.integer_factor_certificates._proof_1_2": [
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "NLA.IE05.IntMat",
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "Int.instDecidableEq",
+      "NLA.IE05._proved.integerLowerZeroDecidable",
+      "NLA.IE05._proved.integerTZeroDecidable"
+    ],
+    "NLA.IE05._proved.integer_entry_certificates": [
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.tailProduct",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "NLA.IE05._proved.integer_entry_certificates._proof_1_1"
+    ],
+    "NLA.IE05.tailProduct": [],
+    "NLA.IE05._proved.integer_entry_certificates._proof_1_1": [
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.tailProduct",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "NLA.IE05.integerH",
+      "NLA.IE05.integerD",
+      "NLA.IE05.tailProduct",
+      "NLA.IE05.integerLower",
+      "NLA.IE05.integerT",
+      "Int.instDecidableEq"
+    ],
+    "NLA.IE05._proved.numerical_gap_positive": [],
+    "NLA.IE05._proved.normalizedQRQ_of_gram_lu": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.UpperTriangular",
+      "NLA.IE05.normalizedQRQ",
+      "NLA.IE05.scaledColumns",
+      "NLA.IE05.Mat",
+      "NLA.IE05.UpperTriangular",
+      "NLA.IE05.scaledColumns",
+      "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR",
+      "NLA.IE05.Orthogonal",
+      "NLA.IE05._proved.scaledColumns_orthogonal"
+    ],
+    "NLA.IE05.Mat": [],
+    "NLA.IE05.normalizedQRQ": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.Mat",
+      "NLA.IE05.normalizedQRQ._proof_1",
+      "NLA.IE05.euclideanColumns"
+    ],
+    "NLA.IE05.normalizedQRQ._proof_1": [],
+    "NLA.IE05.euclideanColumns": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.Mat",
+      "NLA.IE05.euclideanColumns._proof_1"
+    ],
+    "NLA.IE05.euclideanColumns._proof_1": [],
+    "NLA.IE05.scaledColumns": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.Mat"
+    ],
+    "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.PositiveQR",
+      "NLA.IE05.normalizedQRQ",
+      "NLA.IE05.Mat",
+      "NLA.IE05.PositiveQR",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.Orthogonal",
+      "NLA.IE05._proved.orthogonal_iff_orthonormal_columns",
+      "NLA.IE05.UpperTriangular",
+      "NLA.IE05.normalizedQRQ",
+      "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR"
+    ],
+    "NLA.IE05.PositiveQR": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.Mat",
+      "NLA.IE05.Orthogonal",
+      "NLA.IE05.UpperTriangular"
+    ],
+    "NLA.IE05.Orthogonal": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.Mat"
+    ],
+    "NLA.IE05._proved.orthogonal_iff_orthonormal_columns": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.Orthogonal",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.Mat",
+      "NLA.IE05.Orthogonal",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05._proved.euclideanColumns_inner"
+    ],
+    "NLA.IE05._proved.euclideanColumns_inner": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.Mat",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.euclideanColumns._proof_1"
+    ],
+    "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.PositiveQR",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.Mat",
+      "NLA.IE05.PositiveQR",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.Orthogonal",
+      "NLA.IE05._proved.orthogonal_iff_orthonormal_columns",
+      "NLA.IE05.UpperTriangular",
+      "NLA.IE05._proved.positiveQR_inner",
+      "Int.instDecidableEq",
+      "NLA.IE05._proved.positiveQR_column"
+    ],
+    "NLA.IE05._proved.positiveQR_inner": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.PositiveQR",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.Mat",
+      "NLA.IE05.PositiveQR",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05._proved.euclideanColumns_inner",
+      "NLA.IE05.UpperTriangular",
+      "NLA.IE05.Orthogonal"
+    ],
+    "NLA.IE05._proved.positiveQR_column": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.PositiveQR",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.Mat",
+      "NLA.IE05.PositiveQR",
+      "NLA.IE05.euclideanColumns",
+      "NLA.IE05.euclideanColumns._proof_1",
+      "NLA.IE05.UpperTriangular",
+      "NLA.IE05.Orthogonal"
+    ],
+    "NLA.IE05._proved.scaledColumns_orthogonal": [
+      "NLA.IE05.Mat",
+      "NLA.IE05.Orthogonal",
+      "NLA.IE05.scaledColumns",
+      "NLA.IE05.Mat",
+      "NLA.IE05.Orthogonal",
+      "NLA.IE05.scaledColumns"
+    ]
+  },
+  "decide_kernel_auxiliaries": [
+    "NLA.IE05._proved.integer_factor_certificates._proof_1_1",
+    "NLA.IE05._proved.integer_factor_certificates._proof_1_2",
+    "NLA.IE05._proved.integer_entry_certificates._proof_1_1"
+  ],
+  "module_local_instance_constants": [
+    "NLA.IE05._proved.integerLowerZeroDecidable",
+    "NLA.IE05._proved.integerTZeroDecidable"
+  ],
+  "required_actual_dependencies": [
+    "NLA.IE05._proved.integerLowerZeroDecidable",
+    "NLA.IE05._proved.integerTZeroDecidable",
+    "Int.instDecidableEq",
+    "Int.decEq",
+    "NLA.IE05.integerH",
+    "NLA.IE05.integerLower",
+    "NLA.IE05.integerT",
+    "NLA.IE05.integerD",
+    "NLA.IE05.tailProduct",
+    "NLA.IE05.UnitLower",
+    "NLA.IE05.UpperTriangular",
+    "NLA.IE05.normalizedQRQ",
+    "NLA.IE05.scaledColumns",
+    "NLA.IE05._proved.scaledColumns_orthogonal",
+    "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR",
+    "Matrix.det_of_isUpperTriangular",
+    "Matrix.blockTriangular_inv_of_blockTriangular",
+    "Matrix.mul_nonsing_inv",
+    "Real.sqrt_pos"
+  ],
+  "expected_diagnostic_definitions_in_actual_closure": false
+}

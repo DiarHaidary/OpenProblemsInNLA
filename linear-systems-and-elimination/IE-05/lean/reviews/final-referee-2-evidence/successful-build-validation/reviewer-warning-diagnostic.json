@@ -1,0 +1,24 @@
+{
+  "origin": "Reviewer-generated proof-free expected Prop expressions retain frozen binder names that are unused in their conclusion. Their forall hypotheses remain in the exact compared types.",
+  "warnings": [
+    "Inspect.lean:9:13: warning: Variable name `hn` is not explicitly referenced.",
+    "Inspect.lean:15:5: warning: Variable name `hp` is not explicitly referenced.",
+    "Inspect.lean:19:13: warning: Variable name `hn` is not explicitly referenced.",
+    "Inspect.lean:20:26: warning: Variable name `hp` is not explicitly referenced.",
+    "Inspect.lean:24:25: warning: Variable name `hA` is not explicitly referenced.",
+    "Inspect.lean:30:13: warning: Variable name `hn` is not explicitly referenced.",
+    "Inspect.lean:35:13: warning: Variable name `hn` is not explicitly referenced.",
+    "Inspect.lean:42:5: warning: Variable name `hd` is not explicitly referenced.",
+    "Inspect.lean:42:25: warning: Variable name `hH` is not explicitly referenced.",
+    "Inspect.lean:47:5: warning: Variable name `hL` is not explicitly referenced.",
+    "Inspect.lean:47:24: warning: Variable name `hLb` is not explicitly referenced.",
+    "Inspect.lean:48:5: warning: Variable name `hT` is not explicitly referenced.",
+    "Inspect.lean:48:30: warning: Variable name `hTp` is not explicitly referenced.",
+    "Inspect.lean:48:53: warning: Variable name `hd` is not explicitly referenced."
+  ],
+  "proof_source_warnings": 0,
+  "Lean_errors": 0,
+  "all_Lean_exits": 0,
+  "correction": "Replace the overstrict Python any-warning policy with exact classification of these 14 harmless expected-type binder warnings; no Lean source change or rebuild.",
+  "failed_result_preserved_unchanged": true
+}

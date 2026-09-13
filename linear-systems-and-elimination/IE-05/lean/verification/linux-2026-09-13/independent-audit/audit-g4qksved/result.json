@@ -1,0 +1,1385 @@
+{
+  "actual_Linux": {
+    "Challenge_build_jobs": 2380,
+    "Challenge_intended_holes": 17,
+    "Solution_build_jobs": 3089,
+    "attempt": 1,
+    "exports": [
+      "NLA.IE05.entryMax_semantics",
+      "NLA.IE05.schurStep_bound",
+      "NLA.IE05.gepp_growth_bound",
+      "NLA.IE05.firstPath_semantics",
+      "NLA.IE05.orthogonalGrowthSet_bounded",
+      "NLA.IE05.candidate_positiveQR",
+      "NLA.IE05.scaledColumns_orthogonal",
+      "NLA.IE05.scaledLU_trajectory",
+      "NLA.IE05.integer_factor_certificates",
+      "NLA.IE05.integer_entry_certificates",
+      "NLA.IE05.canonical_integer_identification",
+      "NLA.IE05.witness_orthogonal_path",
+      "NLA.IE05.bounded_growth_data",
+      "NLA.IE05.numerical_gap_positive",
+      "NLA.IE05.witness_strict_growth",
+      "NLA.IE05.supremum_strict_gap",
+      "NLA.IE05.orthogonalExtremizerConjecture"
+    ],
+    "job": 103708463461,
+    "overall_workflow": "failure; exactly two unrelated elan installer HTTP 500 failures",
+    "result": "default-kernel and Comparator accepted",
+    "runner": "Ubuntu 24.04.5 / x86_64 / UID 1001",
+    "standard_three_source_axiom_reports": 89
+  },
+  "all_committed_and_runtime_inputs_match": 2543,
+  "attempt": 1,
+  "candidate": "71cf72f9db2af0f01b5cfa7f18a69e28310eb52f",
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f96df5dc42253f8edbd48c9871ec85a3166975525b2d0acbc521e64adfb9856d"
+    },
+    {
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "commit",
+        "71cf72f9db2af0f01b5cfa7f18a69e28310eb52f"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5305ed083d50cafa463fd517d00eb51c50c219f38c8f06bc531e65a9c3b77619"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "8224c5ba49ce68198e18124245e3e736ed9ca569"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b5e980fa1f171ac540465212341dfc589d4f34d33c0b59d54a520dd3b0a4f1f5"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:linear-systems-and-elimination/IE-05/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e73a125386b91fd7ba4381ff166dba9c006f61588cb238a3fd752ba161a39963"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "bdc232929d8772208feaabc4de61f5f4e2c3e1e3"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1b94eda6df18066f2f09b66b8b28a18ca071c0c2fb070b536dc8c798992ae434"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:linear-systems-and-elimination/IE-05/solution.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "eedf9ea1f32aef67c47cff269267336a74657301ea1fd12f87a6dbe44662abc3"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "7b002a9d94c5d25a3575ddf77a80005d73213218"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7282b644fa4f83612393c2a0d9679a77f0e30b10c2cad1aa94002b3c3fed3d3a"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:linear-systems-and-elimination/IE-05/solution.tex"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a71703d12f0e204095a8929ec000881169ff24525bbb811004440116b99f6b88"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "0449a45d8a55cf968673e48cdca2abf8048e66f0"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5405d9d3332972d814f81bdc831d63e2c4b344efc644d817b5cf3b2bcc3369ba"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "934abae8ddb812f7f6a533d374ffaf8d4945b41d69ddadcac9a5de70ed8c1c6a"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "30f28d6aae3e7e45f462eea6f4af13cad3395efd"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "18d49f30a3ef26f4c88a85c8ea1fc9e5c4e1702b4be6061d39aec892e96a4af7"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/full-proof.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1c6deb12d2848eaabcd3620f4ba8a684510e44e68fd1778e17612390076443c1"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "488cd05cc75cbbea991ac2e6828ca4d71b31b8ef"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "65629d58b94a2b5921955d5af6c3f30b69c59388dd48c2d8606ed58674eac7e4"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/independent-review.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "992fbcac6425ad2a635f00abd51491abedceaaf5998312b5e5a3aee974a4fa28"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "ec0c82fbba64ca463dd6cfe2eb3497d008376538"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "0438a2cf8ea2d43bea3d4f2c508338b413e05b3736807d7d59225b130d425922"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/independent-review/exact_matrix_review.py"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f2d28be08ee5f2f629883babaa24ac25d50d3fd39a4efbe07d621f8f89d95c16"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "0d5f296cf7cab0ae02475f7ec249335a2011d7ca"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a3b98531a7aa0ebf238211ca4404c447431853a250693d6744d9e535aa802f3b"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/independent-review/exact_matrix_review.json"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b30eb0b06353d18f449591aa348e9306bb4215907c25a34dbf779ae61632f04c"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "068cfaa01779067dbb2866d45c33b49dd68c9c07"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b08a4da019782d96572ba30702eaa33a688debb0c6bf0c95493a8b201478e77f"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/recovery/RECOVERY_NOTES.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d74569b2ab467f57061d13abfe13b88c00811ff1613bc6cf2cdbed1bd61c3cc6"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "a72a0c304f2ac3520049d9bbb1159ea969a7e57c"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a3ba2afb7bac18bc2cb6594b194755be32203324a01bbab460507b8c9af53c2d"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/recovery/solution.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8f5584b75fef0bf4b0d91432172a867e70e41840d2850f6986cea26dcaf64162"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "78e9fbcb34fb4a956f1b2bf10f579b0e662edb0b"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "763c0c84ff76f6aafea9d38d39ab47cbf58787d464209ad601ee62970bfedf8c"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/recovery/certificate.json"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c602c0bc615f845e28c99cb2b4d87e7a10c88c1f03dfe209c6f5fcd032a6f3f6"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "a26599d592ef4863181c39da63961e518be1e4de"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4891bf5daea96103fea29592690502382bf2e2687280273c3b7f921d073ba9d5"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/recovery/independent_check.py"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ff84e96cc27af4928fef1c234b8a38cd113fae3a44c35513c6d7c747c4959e0b"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "84dd23d9b4ede0b692f486440a3835f402f6aa0d"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9f6b463a586b660512101ed68372e09ae172d323804ee2019f31d1a03792fae7"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/recovery/verify_exact.py"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e024c2b1953d7891f33b96fa3783e8147349422098b3d8fbc994545129613432"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "28279316e8139ab55132ec697482af02055cbaf1"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c00621c06229978269d52c6d44e71f806cea694ed691e4a3fb248856a2c7cfe0"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/verification/integer_counterexample.py"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8692d489c39b743ef5369536f1d2c2e91015ad489ec7d24e22441767fc88f6dd"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "0f8637398bffefe62afc714e46ed86d8c9ca6e99"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "04c56bc789674b03a23b3d574393960632a86ee62679b40e0d7a3f8ea657fb77"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/verification/integer_counterexample.json"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "07498a110beac760ada69368c8b314571377ab18b76bd2bfc48fbd73db621a7d"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "779ad6cb10d7f4311cb459af2406b618ae38e599"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f6263a46558e50dcafb4e21cce2cf758a770e7c0c8d185b4c43f8a743d5945d4"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/verification/verify_ie05.py"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "89e0ff89904c66082708a8e07c80ca3ce60d1a6c71f0fd6e396c2a800a06ad09"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "277d892d86a45db62362954c9429f3e6f707e182"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f37d5e2e0d298f15b97f50e112c2e11caea8ea2e48edfd10e21c6c04161ab999"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/verification/verify_recovery_relation.py"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4c01cc06d68d0ef34aed57c13d0691bad2715bd9c6f1d870d288cecad112fee8"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "a4ab36e0a24eabaea353f5b831b646fcae39fb40"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c4df92a60390b3b49063808e6328681f3d14cf7285e29abc7c8c748928bae57f"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/stepaniants-ie05-2026-09-11/verification/source-check.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d5e5a1c8dd900202361fa198e9a551dc0f5b54a1ede8c535d9baa5074f32490f"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "7eb638704c183dc5a4ad1f2e3d9103416fedd92b"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:AGENTS.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f5b346bfcdb8ebbf85792308ef71126dd97369cb5b35cb0d359955721b2c8166"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "ade2131e55f0372fd3a8de1634864e84c37def61"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:CONTRIBUTING.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c7d291ef9e130c61b6296c8b52f5dba4b67cdd035d82e328adb423a289a93d60"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "b1810237bc80efe04b4bb08f74d1e974b1bf80f7"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:problem_ids.json"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "07370c8f204363eefc4e40f17fdb5e6ca01c98c17471e25eeb4dd6317f21f6e8"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "24bfdfd61a643984c9607081a922e89313c47c83"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3125f50d726c785b7bad727d611e1790adb20ac03eefb3fdffaec19f0f138fa4"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "5d1d8c908923a687f4779fd1a539237bd29a1a1a"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/REVIEW.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c7ab4316dcdae0ce64420fe0511418df535255c41ba58a551d0b5ae4dd67f6f1"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "e61bade6af2c59233db4bd1ccc906eafe8d10e5a"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "7d903b9d237c672b31c7f282f0da12c48c4ca383c4a0c5dcbdde6180e3b08da7"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "19f4a46a1bc0e4798dca7bcb7ed57281b1c8c996"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/v0.4.schema.json"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a001827625202a79444f7d0432eb4f2a39da2e4a7dfcf8cd4ceadeacbd4d014c"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "8f338f8f163e04d4fb7b6af5cdf969af92177c4b"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/HARNESS.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "42888b474591e90c2930752e41a46959d7ead7c4053722e945332a7937f5f272"
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "blob",
+        "27916ca1e378b13ba1a08f1eb3ecb285fde12408"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b"
+    },
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/source-lock.json"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "638a86ad853a8db19aeade7faebad11ff502ae231bdb3a1772747a4d3312c0ea"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/Comparator/Axioms.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "863c5e1329811be0427880e08c171de733343491c5a3619b5dbf2e12b34c6125"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/Comparator/Compare.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9bc34cb7de5a069a6fef7f3b13b20fea22f1d52603f74320a93d519b735ad3dd"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/Comparator/Util.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "693d845330dd7122565aeb19314a3e3de4b49f9a8a7ac6e1fadbc9ab374b9f88"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/Comparator.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6c73ecd5bd429cf85e0aaa75b7c6f874ec0598d5afca60dcf5711d44e6bdef23"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/LICENSE"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/Main.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "e6d9b43bbd8bbdd66ae6f87d7a3e69d6a2e0ba7fdc666b2559f2026f8c83b361"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/lake-manifest.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "07475af243cee7cbd6e80c52efd4063d103c23ba5c50dd412a7c4ab7fb3f7d50"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/lakefile.toml"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4e6fdebbd221c88558c8c3bff1482375c82d1fc90390919ada60344d1b9c83ba"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/lean-toolchain"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/runtests.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "8540bee573b302716dc3db78845229e3f6df20e3df962b342dd42d780848177c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_axiom_issue/Challenge.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d6400c174574f3216a2c02f61f559415c0352f74051baeee3f959055d8534b9c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_axiom_issue/Solution.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "005b3b1b863f37c16fc6330cdc84d05e060f4a779d942a219432f8858325e244"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_axiom_issue/config.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6e0c311b855acc0446e352844d77a625007466f759ce985d071895bc0f70991c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_axiom_issue/test.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "2f23c866623acb1f410e8d54f7264126e525966f38589837bb2bac5a12d90cba"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_kind_mismatch/Challenge.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d6400c174574f3216a2c02f61f559415c0352f74051baeee3f959055d8534b9c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_kind_mismatch/Solution.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "005b3b1b863f37c16fc6330cdc84d05e060f4a779d942a219432f8858325e244"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_kind_mismatch/config.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6e0c311b855acc0446e352844d77a625007466f759ce985d071895bc0f70991c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_kind_mismatch/test.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "2f23c866623acb1f410e8d54f7264126e525966f38589837bb2bac5a12d90cba"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_match/Challenge.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d6400c174574f3216a2c02f61f559415c0352f74051baeee3f959055d8534b9c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_match/Solution.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4460098a661949cca3d8d81a104c666bc2f42ae3ca1c988a20c66b0f8ad2e4d6"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_match/config.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6e0c311b855acc0446e352844d77a625007466f759ce985d071895bc0f70991c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_match/test.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "66eedf861d9f204e07568b236433dd99adc1fc925cef72ddc760b39a3799958c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_mismatch/Challenge.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d6400c174574f3216a2c02f61f559415c0352f74051baeee3f959055d8534b9c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_mismatch/Solution.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f4f32cc82b9fe2012a2b9901c6e51d7b2fbe3d5b3aca105745c513554d6055ca"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_mismatch/config.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6e0c311b855acc0446e352844d77a625007466f759ce985d071895bc0f70991c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/comparator/tests/projects/simple_mismatch/test.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "2f23c866623acb1f410e8d54f7264126e525966f38589837bb2bac5a12d90cba"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/LICENSE"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f613c30920743111429f7c1cb801f49ccaafe8ae3319b3b0a5f8aca94e5fc082"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/cmd/landrun/main.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "40ecf8680ef5857512f13c8391105404d907074f03535d95e0f0dd570cc441ff"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/cmd/landrun/main_test.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1d2548c48b195f33ee7ec903b761eee6b82822f4e671f7a8dbf271b40a66f602"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/go.mod"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "92873259cb8ed0f2765cd99a1b3dc36b768fef859d13ffecb155df33b5b309b1"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/go.sum"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a6a5ec06c4b78ca140c76fdbe171b82a5521a808abc5805ea6eba568e29763e5"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/elfdeps.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "99f6fcd463fd64c296142aae9f074de2d8a1f728246c347c913ad4ba4ac2f30d"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/elfdeps_test.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c225ff886e97b506ccc93b18d303ac98183a7139535b5dde406c37ee07165ee8"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/testdata/liba.c"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "453782a58a745f850fe2af228f8908e783e81127f468ef4e747eda1feae75255"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/testdata/libb.c"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c3b8a9f314e04f1c043be604d24914955fdc9451346fbf85a49044518044883c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/elfdeps/testdata/main.c"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1389c20d320b5e2783952206b211bc26da6391f295cbc54d7216753e7edf8d89"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/exec/runner.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "671877fe01e50c8cedab09891c3666846f76e391558a6fdba74dc49ab792cc34"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/log/log.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b6e8c45c68b34e5cdb2019d1ed25768f54a1b5496d51c3016680dfbb1fed5fda"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/log/log_test.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "20e7940846d3f44b6049bfb0f9b828f8223a2cf638b0930e91f0bbd93704dce5"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/sandbox/sandbox.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "a6ee5899479d44fc3fdd0011dfb7586716df00235cddb59997c115f5a4f430cc"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/landrun/internal/sandbox/sandbox_test.go"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "d5407e6fb8e655d17afa7858fc751168ea36e9e28576ff96e199f5fc4a335b86"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/Export/Parse.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1f943b5cc776eece6d528937b976509c8bd57d10bc69a39b1c119bfb6d664286"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/Export.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6e9f24262253678960b05b8392a1774a3cbf36b21ed2fc1b834906659b8ca95a"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/LICENSE"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/Main.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "bd8e350903f1382b25fe767f9086dd9882000f01085f7046ea06545e7848842a"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/Test.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "44f8995f47633ca77364740af03a719e90a2c58690fa90b237487b541bb04804"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/format_ndjson.md"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f82a21e17e4258a1043895d0653ea4333bef8cb07aad2e3d6c1fc4be52b138e3"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/lake-manifest.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "f1b9d60d0ebd46f79f48e6833deefeaa835fdee12b4078241635ee14b6a0f07a"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/lakefile.toml"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "54dde3aba280f32035c882dcd2f2039e738e20ed45ca538337b65cc69c02f7df"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/tool-sources/lean4export/lean-toolchain"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/LICENSE"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/lean-toolchain"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/scripts/strict_landrun.py"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "4d6172274dd6109b1171dc01548512aa1af31f1e8fed88aa40b3c8b831345e1c"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/scripts/comparator-lean-4.33.1.patch"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "755fd2bf8f2f82a05f30d66e7c1492b704c676f2ca2ea9e7c32694fa761a0620"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/checks/PinnedReplayProbe.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "c2091eef3120a7850b3e73118de3cc787ee28ef5c97c6643e102cbd639c90a31"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/checks/run_replay.sh"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "6aba451c334d12438f63e8c14ba2e61bead41214540e2721e0857ed1726222e9"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/checks/comparator_regressions.py"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "1c3fcf394f7073a7decbf1be0bc66f18b81ed537a489b9f652911035543c3890"
+    },
+    {
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/reproduction/checks/sandbox_probe.py"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "5ea755758af4966d6f3a857529f9da583662a8c7e906dcc0dc7b2a6978daf61e"
+    },
+    {
+      "argv": [
+        "python3",
+        "tools/lean/validate_manifest.py",
+        "/tmp/nla-lean-ie05-worktree/linear-systems-and-elimination/IE-05/lean"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 1,
+      "stderr_sha256": "9da32df7af256ede1c34b02ffee8683cb5ba4f90901abc3b052978a6d85fa454",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "error": "Traceback (most recent call last):\n  File \"/tmp/nla-lean-formalization/ie05-linux-operational-review/audit.py\", line 154, in <module>\n    command(['python3','tools/lean/validate_manifest.py',str(P)],'schema-and-coverage')\n  File \"/tmp/nla-lean-formalization/ie05-linux-operational-review/audit.py\", line 27, in command\n    assert c.returncode==0,(label,c.stderr.decode(errors='replace'));return c.stdout\nAssertionError: ('schema-and-coverage', 'Traceback (most recent call last):\\n  File \"/private/tmp/nla-lean-ie05-worktree/tools/lean/validate_manifest.py\", line 11, in <module>\\n    import yaml\\nModuleNotFoundError: No module named \\'yaml\\'\\n')\n",
+  "historical_preservation": {
+    "archive_redirects_checked": 39,
+    "historical_inventories": {
+      "DRAFT-INVENTORY.json": 102,
+      "reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json": 2116,
+      "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json": 2010,
+      "reviews/final-referee-2-evidence/attempt-gxrxb23r/frozen-before.json": 1800,
+      "reviews/proof-freeze.json": 1800,
+      "reviews/statement-freeze.json": 733,
+      "reviews/statement-referee-1-evidence/input-snapshot/DRAFT-INVENTORY.json": 102,
+      "reviews/statement-referee-1-evidence/input-snapshot/verification/original-source-inventory.json": 27,
+      "reviews/statement-referee-1-evidence/inputs.json": 103,
+      "reviews/statement-referee-1-evidence/inspector-inputs.json": 2,
+      "reviews/statement-referee-1-evidence/outer-manifest.json": 123,
+      "reviews/statement-referee-2-evidence/EVIDENCE-SEAL.json": 490,
+      "reviews/statement-referee-2-evidence/api-source-binding.json": 7,
+      "reviews/statement-referee-2-evidence/input-binding.json": 103,
+      "reviews/statement-referee-2-evidence/inputs/DRAFT-INVENTORY.json": 102,
+      "reviews/statement-referee-2-evidence/inputs/verification/original-source-inventory.json": 27,
+      "verification/assembly-handoff/EVIDENCE-MANIFEST.json": 21,
+      "verification/certificates-qr-handoff/EVIDENCE-MANIFEST.json": 1353,
+      "verification/certificates-qr-handoff/INPUTS.json": 1210,
+      "verification/exactcert-diagnostic-referee/EVIDENCE-MANIFEST.json": 54,
+      "verification/final-review-root-acceptance/EVIDENCE-MANIFEST.json": 10,
+      "verification/gepp-development/EVIDENCE-MANIFEST.json": 150,
+      "verification/lu-development/EVIDENCE-MANIFEST.json": 68,
+      "verification/original-source-inventory.json": 27,
+      "verification/qr-scaling-handoff/EVIDENCE-MANIFEST.json": 847,
+      "verification/statement-acceptance/EVIDENCE-MANIFEST.json": 13,
+      "verification/statement-gate-preflight/EVIDENCE-SEAL.json": 14,
+      "verification/statement-gate-preflight/proposed-input-binding.json": 718,
+      "verification/witness-development/EVIDENCE-MANIFEST.json": 148
+    },
+    "independent_packaging_inventory_members": 4854,
+    "nested_EVIDENCE_MANIFEST_files": 13,
+    "original_Git_sources": 27,
+    "original_accepted": 2338,
+    "proof": 1800,
+    "statements": 733
+  },
+  "success": false,
+  "utc": "2026-09-13T12:58:14.312812+00:00"
+}

@@ -1,0 +1,428 @@
+{
+  "actual_contract_type_and_axiom_reports": 17,
+  "actual_definition_axiom_reports": {
+    "AdmissiblePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AdmissiblePivot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FirstAvailablePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FirstAvailablePivot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "IntMat": [],
+    "Mat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OrthogonalExtremizerConjecture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PivotPath": [],
+    "PositiveQR": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnitLower": [],
+    "UpperTriangular": [],
+    "activeMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "activeMaxNN": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "candidateQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "candidateR": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "castIntegerMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "entryMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "entryMaxNN": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "euclideanColumns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "firstGrowth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "firstPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "firstPivotIndex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "firstTrajectory": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "growth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerD": [
+      "propext"
+    ],
+    "integerH": [
+      "propext"
+    ],
+    "integerLower": [
+      "propext"
+    ],
+    "integerT": [
+      "propext"
+    ],
+    "noSwapPath": [],
+    "normalizedInteger": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "normalizedQRQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "orthogonalGrowthSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "orthogonalGrowthSup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "prescribedLower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "rowSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "scaledColumns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "schurStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "tailProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "trajectory": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "witnessQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "all_eight_own_objects_hashed_then_removed": true,
+  "auditor_source": {
+    "bytes": 5848,
+    "sha256": "090b3520adf678efe315b6654d522dbfa63a14261bdacb2ce7983667df63067c"
+  },
+  "authoritative_linux_comparator": false,
+  "axiom_class_counts": {
+    "no_axioms": 5,
+    "propext_only": 4,
+    "standard_three": 32
+  },
+  "challenge_placeholder_warnings": 17,
+  "driver_exit_code": 1,
+  "driver_failure": "Postprocessing regex counted only 36 depends-on-axioms lines and omitted five does-not-depend-on-any-axioms lines; all four Lean commands already exited zero. The failed runner, result and logs are retained unchanged.",
+  "explicit_definition_kernel_assertions": 41,
+  "inspected_pinned_apis": {
+    "leancert/LeanCert/Tactic/Verification.lean": {
+      "bytes": 29145,
+      "read_lines": [
+        [
+          584,
+          679
+        ]
+      ],
+      "read_only_existing_objects": {
+        ".lake/build/lib/lean/LeanCert/Tactic/Verification.olean": {
+          "bytes": 1854432,
+          "sha256": "dddbaecdbdfad90b602bbbbf308610a3a0c1ecfcfadf78eca297a6cfb734d4dc"
+        },
+        ".lake/build/lib/lean/LeanCert/Tactic/Verification.olean.hash": {
+          "bytes": 16,
+          "sha256": "621239b0f3e06e400ab6e33ff6dff3798027323bf5931c3ab6741bcbd6cfd0eb"
+        }
+      },
+      "revision": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "semantic_check": "assert_trust kernel collects declaration axiom closure and rejects sorryAx, custom axioms and native compiler axioms.",
+      "sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+      "source_binding_command": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+        "show",
+        "621a43d7cf21f87872392a01e874f2f1dbddc926:LeanCert/Tactic/Verification.lean"
+      ],
+      "source_equals_pinned_git": true
+    },
+    "mathlib/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.lean": {
+      "bytes": 18228,
+      "read_lines": [
+        [
+          40,
+          125
+        ],
+        [
+          189,
+          284
+        ]
+      ],
+      "read_only_existing_objects": {
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.olean": {
+          "bytes": 232312,
+          "sha256": "310f1d500f9054dea61f4053e8ed94e07ee6c36c6a2b17402e6722e07a5972f3"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.olean.hash": {
+          "bytes": 16,
+          "sha256": "7f071c97147f4b8ddfc5942082578e94a69216efc92cedd40b6e675303eb72e7"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.olean.private": {
+          "bytes": 623784,
+          "sha256": "7a180f6d834b78a4c13ab7f77c09d3db32ed5e4aac421d572390ea42522441fe"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.olean.private.hash": {
+          "bytes": 16,
+          "sha256": "4d68b39f1b7991efd508c70f5c69bca63435ac55dbbcb002e0e5fdd3dd6198af"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.olean.server": {
+          "bytes": 15544,
+          "sha256": "6efc93d974f140b1f86aa070dd8abe41b8c31510f6386278a912e59380085bf7"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.olean.server.hash": {
+          "bytes": 16,
+          "sha256": "88e80c2418ce0ff5a4e9f4f5986665989116d7ea2f7d093a2f95ff5a51671bdd"
+        }
+      },
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "semantic_check": "Gram-Schmidt uses preceding ordered indices and scales residual by inverse actual norm; nonzero and orthonormality depend on linear independence.",
+      "sha256": "3399658e2c7a854d583fdcc093993d1587cf4cd40dd7bc385247ba51f3a2a72f",
+      "source_binding_command": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.lean"
+      ],
+      "source_equals_pinned_git": true
+    },
+    "mathlib/Mathlib/Analysis/InnerProductSpace/PiL2.lean": {
+      "bytes": 61065,
+      "read_lines": [
+        [
+          67,
+          157
+        ]
+      ],
+      "read_only_existing_objects": {
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/PiL2.olean": {
+          "bytes": 1744520,
+          "sha256": "b91d760b8301aecd3c50e3427e182fb2abadac4c009acc9374284e5962df04c8"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/PiL2.olean.hash": {
+          "bytes": 16,
+          "sha256": "99d32350c2595d62cf9267394a25ba3f083db5ced1025be0b6bbde2575c9c1c1"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/PiL2.olean.private": {
+          "bytes": 2633472,
+          "sha256": "85870513831f67b9fc39ce35a3d82a8e570dd7e5731d114204b0aacf78c960e1"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/PiL2.olean.private.hash": {
+          "bytes": 16,
+          "sha256": "e6bd61fd3c480c3888078def3f4ae8f4b6a3a67ab2bb3a35440902932cb8d7f6"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/PiL2.olean.server": {
+          "bytes": 57008,
+          "sha256": "6e97702f5f25194fcfc9c407600f7fb23e5181cb3c8f984547a82233e5269783"
+        },
+        ".lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/PiL2.olean.server.hash": {
+          "bytes": 16,
+          "sha256": "792c8d5e78e014af4d757f15572699e8d79891897cd739520b150b450398b397"
+        }
+      },
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "semantic_check": "EuclideanSpace is PiLp 2 and its norm is sqrt of the sum of squared entry norms.",
+      "sha256": "1f9827b2db67213c725a2dcc3fec52a87772966d1fbd3fc6857a019dbd7a6053",
+      "source_binding_command": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/PiL2.lean"
+      ],
+      "source_equals_pinned_git": true
+    },
+    "mathlib/Mathlib/Data/Finset/Lattice/Fold.lean": {
+      "bytes": 32514,
+      "read_lines": [
+        [
+          32,
+          98
+        ]
+      ],
+      "read_only_existing_objects": {
+        ".lake/build/lib/lean/Mathlib/Data/Finset/Lattice/Fold.olean": {
+          "bytes": 483728,
+          "sha256": "79e0311268cfc05da4e78b15bafd847f8929584d1ae4e1a62a41748a282a8ff8"
+        },
+        ".lake/build/lib/lean/Mathlib/Data/Finset/Lattice/Fold.olean.hash": {
+          "bytes": 16,
+          "sha256": "0def402c8950b4e40268be6c137df9497ccd65bffbc3f95acc7e02096e532644"
+        },
+        ".lake/build/lib/lean/Mathlib/Data/Finset/Lattice/Fold.olean.private": {
+          "bytes": 1140336,
+          "sha256": "25d7fd19fdcbee48e476db091d0953d5b8856fea2e1ad37416e6da99679f8ccf"
+        },
+        ".lake/build/lib/lean/Mathlib/Data/Finset/Lattice/Fold.olean.private.hash": {
+          "bytes": 16,
+          "sha256": "58d3a0666b5a7c5a54c66735d87a53eb2a50cf0cc1aefa59bc4917b611af164f"
+        },
+        ".lake/build/lib/lean/Mathlib/Data/Finset/Lattice/Fold.olean.server": {
+          "bytes": 53872,
+          "sha256": "b6401197ae932a66a764c02a1c2982bcdc82fa4a970cb9ed41a49f1a0297b9a8"
+        },
+        ".lake/build/lib/lean/Mathlib/Data/Finset/Lattice/Fold.olean.server.hash": {
+          "bytes": 16,
+          "sha256": "adbf92a2d300cd764a166eacb882e390afd83f126af9d9898644a56ca25e9a6c"
+        }
+      },
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "semantic_check": "Finset.sup is the lattice fold with bottom; NNReal bottom is zero and nonempty finite maxima are attained.",
+      "sha256": "79b80dd5aa12886d31c582ab00585627dc4e7f1d7607c7b707484f38d95ce2f4",
+      "source_binding_command": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Data/Finset/Lattice/Fold.lean"
+      ],
+      "source_equals_pinned_git": true
+    },
+    "mathlib/Mathlib/Order/ConditionallyCompleteLattice/Basic.lean": {
+      "bytes": 35618,
+      "read_lines": [
+        [
+          180,
+          220
+        ]
+      ],
+      "read_only_existing_objects": {
+        ".lake/build/lib/lean/Mathlib/Order/ConditionallyCompleteLattice/Basic.olean": {
+          "bytes": 478464,
+          "sha256": "598bb2debb2f93bb2db71cb761bd739657bb33a348de5aa7a18829b691588896"
+        },
+        ".lake/build/lib/lean/Mathlib/Order/ConditionallyCompleteLattice/Basic.olean.hash": {
+          "bytes": 16,
+          "sha256": "6e33aa4ef93768f6ace060dd0f9b322c2ee839b560fda8dd41816f58ee38f0fa"
+        },
+        ".lake/build/lib/lean/Mathlib/Order/ConditionallyCompleteLattice/Basic.olean.private": {
+          "bytes": 791464,
+          "sha256": "12736d41b4e908ca6462d3352adc8fdb7595f7eced846b90c3b70fc6bb2bc04b"
+        },
+        ".lake/build/lib/lean/Mathlib/Order/ConditionallyCompleteLattice/Basic.olean.private.hash": {
+          "bytes": 16,
+          "sha256": "23b2a96d85f549ea636e5586c87eadc3986b1a3080313035f0e605c995046b0f"
+        },
+        ".lake/build/lib/lean/Mathlib/Order/ConditionallyCompleteLattice/Basic.olean.server": {
+          "bytes": 44896,
+          "sha256": "1833ddf81408d0d024507cb048bf3db50abb0c0255b02c670a54897a8b5db8bc"
+        },
+        ".lake/build/lib/lean/Mathlib/Order/ConditionallyCompleteLattice/Basic.olean.server.hash": {
+          "bytes": 16,
+          "sha256": "c7be5dd603f4e760923a2c1ce77a5acec823620c6f93896ff672eccbb2b23b54"
+        }
+      },
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "semantic_check": "le_csSup requires genuine boundedness; csSup_le requires nonemptiness.",
+      "sha256": "4e4c9abe9993f2334c389d6cb4b75b31b44bb66bb87b65a95b3abac2dbd9fcc8",
+      "source_binding_command": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Order/ConditionallyCompleteLattice/Basic.lean"
+      ],
+      "source_equals_pinned_git": true
+    }
+  },
+  "lean_commands_exit_zero": 4,
+  "mathematical_proof": false,
+  "original_and_snapshot_103_inputs_unchanged": true,
+  "own_generated_bytes": 1030698,
+  "pass": true,
+  "phase": "independent statement referee 1 post-run audit",
+  "pins_clean_before_and_after": true,
+  "retained_run_result": {
+    "bytes": 20275,
+    "sha256": "efb3750f40b09cc2af4f5a4640b225b6a3f7313df73937269db4e281f904e6cc"
+  }
+}

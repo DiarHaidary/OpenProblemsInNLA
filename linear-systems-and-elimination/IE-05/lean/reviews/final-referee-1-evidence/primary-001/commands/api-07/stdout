@@ -1,0 +1,31 @@
+526-variable [LinearOrder α]
+527-
+528:theorem exists_max_image (s : Finset β) (f : β → α) (h : s.Nonempty) :
+529-    ∃ x ∈ s, ∀ x' ∈ s, f x' ≤ f x := by
+530-  obtain ⟨y, hy⟩ := max_of_nonempty (h.image f)
+531-  rcases mem_image.mp (mem_of_max hy) with ⟨x, hx, rfl⟩
+532-  exact ⟨x, hx, fun x' hx' => le_max_of_eq (mem_image_of_mem f hx') hy⟩
+533-
+534-theorem exists_min_image (s : Finset β) (f : β → α) (h : s.Nonempty) :
+535-    ∃ x ∈ s, ∀ x' ∈ s, f x ≤ f x' :=
+536:  @exists_max_image αᵒᵈ β _ s f h
+537-
+538-end ExistsMaxMin
+539-
+540-theorem isGLB_iff_isLeast [LinearOrder α] (i : α) (s : Finset α) (hs : s.Nonempty) :
+541-    IsGLB (s : Set α) i ↔ IsLeast (↑s) i := by
+542-  refine ⟨fun his => ?_, IsLeast.isGLB⟩
+543-  suffices i = min' s hs by
+544-    rw [this]
+--
+562-end Finset
+563-
+564:theorem Multiset.exists_max_image {α R : Type*} [LinearOrder R] (f : α → R) {s : Multiset α}
+565-    (hs : s ≠ 0) : ∃ y ∈ s, ∀ z ∈ s, f z ≤ f y := by
+566-  classical
+567:  obtain ⟨y, hys, hy⟩ := Finset.exists_max_image s.toFinset f (toFinset_nonempty.mpr hs)
+568-  exact ⟨y, mem_toFinset.mp hys, fun _ hz ↦ hy _ (mem_toFinset.mpr hz)⟩
+569-
+570-theorem Multiset.exists_min_image {α R : Type*} [LinearOrder R] (f : α → R) {s : Multiset α}
+571-    (hs : s ≠ 0) : ∃ y ∈ s, ∀ z ∈ s, f y ≤ f z :=
+572:  @exists_max_image α Rᵒᵈ _ f s hs

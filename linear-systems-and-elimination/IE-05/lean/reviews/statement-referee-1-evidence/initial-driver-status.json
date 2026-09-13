@@ -1,0 +1,24 @@
+{
+  "record_origin": "Reviewer record of actual tool-returned driver status; this is not an additional execution or a fabricated raw transcript.",
+  "runner_snapshot": "runner.py",
+  "runner_sha256": "641b38df2591fbe0286b4a72d736ae19773f42ef641c47d93af2cb8e35df7fb3",
+  "commands": [
+    {
+      "argv": ["python3", "/tmp/ie05-referee1-runner.py", "bind"],
+      "cwd": "/tmp",
+      "exit_code": 0,
+      "result": "Verified 103 draft input files and 27 pinned Git blob bindings.",
+      "inputs_json_sha256": "34c99ecea8c55d76cd82eac8ab33198588052032782d27f868fec6f36cd604dd"
+    },
+    {
+      "argv": ["python3", "/tmp/ie05-referee1-runner.py", "lean"],
+      "cwd": "/tmp",
+      "exit_code": 1,
+      "result": "All four recorded Lean module commands exited zero. The driver subsequently failed at its log-parsing assertion because five no-axiom reports use another wording.",
+      "actual_exception": "AssertionError: (36, 41)",
+      "failing_line": "assert len(reports)==len(names),(len(reports),len(names))",
+      "retained_lean_result_sha256": "efb3750f40b09cc2af4f5a4640b225b6a3f7313df73937269db4e281f904e6cc",
+      "resolution": "Separate audit-results.py checks both report forms against the retained immutable source and raw Lean logs; no Lean source change or mathematical recompilation was required."
+    }
+  ]
+}

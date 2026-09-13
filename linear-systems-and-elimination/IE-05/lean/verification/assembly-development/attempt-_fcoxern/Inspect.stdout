@@ -1,0 +1,1532 @@
+Inspect.lean:10:13: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:16:5: warning: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:20:13: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:21:26: warning: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:25:25: warning: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:31:13: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:36:13: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:43:5: warning: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:43:25: warning: Variable name `hH` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hH
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:48:5: warning: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:48:24: warning: Variable name `hLb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hLb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:49:5: warning: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:49:30: warning: Variable name `hTp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hTp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Inspect.lean:49:53: warning: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+EXACT_FROZEN_TYPE NLA.IE05.entryMax_semantics: ∀ {n : ℕ},
+  1 ≤ n →
+    ∀ (A : NLA.IE05.Mat n),
+      0 ≤ NLA.IE05.entryMax A ∧ (∀ (i j : Fin n), |A i j| ≤ NLA.IE05.entryMax A) ∧ ∃ i j, NLA.IE05.entryMax A = |A i j|
+EXACT_FROZEN_TYPE NLA.IE05.schurStep_bound: ∀ {n : ℕ} (S : NLA.IE05.Mat n) (k p : Fin n),
+  NLA.IE05.AdmissiblePivot S k p → NLA.IE05.activeMax (NLA.IE05.schurStep S k p) (↑k + 1) ≤ 2 * NLA.IE05.activeMax S ↑k
+EXACT_FROZEN_TYPE NLA.IE05.gepp_growth_bound: ∀ {n : ℕ},
+  1 ≤ n →
+    ∀ (A : NLA.IE05.Mat n) (path : NLA.IE05.PivotPath n),
+      NLA.IE05.AdmissiblePath A path →
+        0 < NLA.IE05.entryMax A ∧ 1 ≤ NLA.IE05.growth A path ∧ NLA.IE05.growth A path ≤ 2 ^ (n - 1)
+EXACT_FROZEN_TYPE NLA.IE05.firstPath_semantics: ∀ {n : ℕ} (A : NLA.IE05.Mat n),
+  Matrix.det A ≠ 0 →
+    NLA.IE05.FirstAvailablePath A (NLA.IE05.firstPath A) ∧
+      (∀ (k : ℕ), NLA.IE05.trajectory A (NLA.IE05.firstPath A) k = NLA.IE05.firstTrajectory A k) ∧
+        ∀ (path : NLA.IE05.PivotPath n), NLA.IE05.FirstAvailablePath A path → path = NLA.IE05.firstPath A
+EXACT_FROZEN_TYPE NLA.IE05.orthogonalGrowthSet_bounded: ∀ (n : ℕ),
+  2 ≤ n →
+    (NLA.IE05.orthogonalGrowthSet n).Nonempty ∧
+      BddAbove (NLA.IE05.orthogonalGrowthSet n) ∧ ∀ r ∈ NLA.IE05.orthogonalGrowthSet n, 1 ≤ r ∧ r ≤ 2 ^ (n - 1)
+EXACT_FROZEN_TYPE NLA.IE05.candidate_positiveQR: ∀ (n : ℕ),
+  2 ≤ n →
+    NLA.IE05.PositiveQR (NLA.IE05.prescribedLower n) (NLA.IE05.candidateQ n) (NLA.IE05.candidateR n) ∧
+      ∀ (Q R : NLA.IE05.Mat n),
+        NLA.IE05.PositiveQR (NLA.IE05.prescribedLower n) Q R → Q = NLA.IE05.candidateQ n ∧ R = NLA.IE05.candidateR n
+EXACT_FROZEN_TYPE NLA.IE05.scaledColumns_orthogonal: ∀ {n : ℕ} (H : NLA.IE05.Mat n) (d : Fin n → ℝ),
+  (∀ (j : Fin n), 0 < d j) →
+    Matrix.transpose H * H = Matrix.diagonal d → NLA.IE05.Orthogonal (NLA.IE05.scaledColumns H d)
+EXACT_FROZEN_TYPE NLA.IE05.scaledLU_trajectory: ∀ {n : ℕ} (L T : NLA.IE05.Mat n) (d : Fin n → ℝ),
+  NLA.IE05.UnitLower L →
+    (∀ (i j : Fin n), j < i → |L i j| ≤ 1) →
+      NLA.IE05.UpperTriangular T →
+        (∀ (i : Fin n), 0 < T i i) →
+          (∀ (j : Fin n), 0 < d j) →
+            NLA.IE05.FirstAvailablePath (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) ∧
+              NLA.IE05.firstPath (NLA.IE05.scaledColumns (L * T) d) = NLA.IE05.noSwapPath n ∧
+                ∀ k ≤ n,
+                  NLA.IE05.trajectory (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) k =
+                    NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T k) d
+EXACT_FROZEN_TYPE NLA.IE05.integer_factor_certificates: ∀ (b : Bool),
+  Matrix.transpose (NLA.IE05.integerH b) * NLA.IE05.integerH b = Matrix.diagonal (NLA.IE05.integerD b) ∧
+    NLA.IE05.integerH b = NLA.IE05.integerLower b * NLA.IE05.integerT b ∧
+      NLA.IE05.UnitLower (NLA.IE05.integerLower b) ∧
+        NLA.IE05.UpperTriangular (NLA.IE05.integerT b) ∧
+          (∀ (i j : Fin 8), j < i → |NLA.IE05.integerLower b i j| ≤ 1) ∧
+            (∀ (i : Fin 8), 0 < NLA.IE05.integerT b i i) ∧ ∀ (j : Fin 8), 0 < NLA.IE05.integerD b j
+EXACT_FROZEN_TYPE NLA.IE05.integer_entry_certificates: (∀ (i j : Fin 8),
+    5272 * NLA.IE05.integerH true i j ^ 2 ≤ 3969 * NLA.IE05.integerD true j) ∧
+  NLA.IE05.integerD true 7 = 5272 ∧
+    NLA.IE05.integerH false 2 2 = 51 ∧
+      NLA.IE05.integerD false 2 = 3286 ∧
+        (∀ (k i j : Fin 8),
+            k ≤ i →
+              k ≤ j →
+                NLA.IE05.tailProduct (NLA.IE05.integerLower false) (NLA.IE05.integerT false) (↑k) i j ^ 2 ≤
+                  5462 * NLA.IE05.integerD false j) ∧
+          NLA.IE05.tailProduct (NLA.IE05.integerLower true) (NLA.IE05.integerT true) 7 7 7 = 5272
+EXACT_FROZEN_TYPE NLA.IE05.canonical_integer_identification: NLA.IE05.candidateQ 8 = NLA.IE05.normalizedInteger false ∧
+  NLA.IE05.firstPath (NLA.IE05.candidateQ 8) = NLA.IE05.noSwapPath 8
+EXACT_FROZEN_TYPE NLA.IE05.witness_orthogonal_path: NLA.IE05.Orthogonal NLA.IE05.witnessQ ∧
+  NLA.IE05.firstPath NLA.IE05.witnessQ = NLA.IE05.noSwapPath 8 ∧
+    NLA.IE05.FirstAvailablePath NLA.IE05.witnessQ (NLA.IE05.noSwapPath 8) ∧
+      NLA.IE05.AdmissiblePath NLA.IE05.witnessQ (NLA.IE05.noSwapPath 8)
+EXACT_FROZEN_TYPE NLA.IE05.bounded_growth_data: NLA.IE05.entryMax NLA.IE05.witnessQ ≤ 63 / √5272 ∧
+  5272 / 63 ≤ NLA.IE05.firstGrowth NLA.IE05.witnessQ ∧
+    51 / √3286 ≤ NLA.IE05.entryMax (NLA.IE05.candidateQ 8) ∧
+      0 ≤ NLA.IE05.firstGrowth (NLA.IE05.candidateQ 8) ∧
+        NLA.IE05.firstGrowth (NLA.IE05.candidateQ 8) ^ 2 ≤ 17948132 / 2601
+EXACT_FROZEN_TYPE NLA.IE05.numerical_gap_positive: (5272 / 63) ^ 2 - 17948132 / 2601 = 117335164 / 1147041 ∧
+  0 < 117335164 / 1147041
+EXACT_FROZEN_TYPE NLA.IE05.witness_strict_growth: NLA.IE05.firstGrowth (NLA.IE05.candidateQ 8) <
+  NLA.IE05.firstGrowth NLA.IE05.witnessQ
+EXACT_FROZEN_TYPE NLA.IE05.supremum_strict_gap: NLA.IE05.firstGrowth (NLA.IE05.candidateQ 8) <
+  NLA.IE05.orthogonalGrowthSup 8
+EXACT_FROZEN_TYPE NLA.IE05.orthogonalExtremizerConjecture: ¬NLA.IE05.OrthogonalExtremizerConjecture
+ACTUAL_DECL NLA.IE05.entryMax_semantics AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.entryMax_semantics: [NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.entryMax_semantics_proved]
+ACTUAL_DECL NLA.IE05.Mat AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.Mat: []
+ACTUAL_DECL NLA.IE05.entryMax AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.entryMax: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.entryMaxNN]
+ACTUAL_DECL NLA.IE05.entryMaxNN AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.entryMaxNN: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.entryMax_semantics_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.entryMax_semantics_proved: [NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.entryMax_nonneg_proved,
+ NLA.IE05.abs_le_entryMax_proved,
+ NLA.IE05.entryMax_semantics_proved._proof_1_1,
+ NLA.IE05.entryMaxNN]
+ACTUAL_DECL NLA.IE05.entryMax_nonneg_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.entryMax_nonneg_proved: [NLA.IE05.Mat, NLA.IE05.entryMax, NLA.IE05.Mat, NLA.IE05.entryMaxNN]
+ACTUAL_DECL NLA.IE05.abs_le_entryMax_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.abs_le_entryMax_proved: [NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.entryMaxNN,
+ NLA.IE05.entryMax]
+ACTUAL_DECL NLA.IE05.entryMax_semantics_proved._proof_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.entryMax_semantics_proved._proof_1_1: []
+ACTUAL_DECL NLA.IE05.schurStep_bound AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.schurStep_bound: [NLA.IE05.Mat,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.activeMax,
+ NLA.IE05.schurStep,
+ NLA.IE05.Mat,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.schurStep_bound_proved]
+ACTUAL_DECL NLA.IE05.AdmissiblePivot AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.AdmissiblePivot: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.activeMax AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeMax: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.activeMaxNN]
+ACTUAL_DECL NLA.IE05.activeMaxNN AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeMaxNN: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.schurStep AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.schurStep: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.rowSwap]
+ACTUAL_DECL NLA.IE05.rowSwap AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.rowSwap: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.schurStep_bound_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.schurStep_bound_proved: [NLA.IE05.Mat,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.activeMax,
+ NLA.IE05.schurStep,
+ NLA.IE05.Mat,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.rowSwap,
+ NLA.IE05.activeMax,
+ NLA.IE05.activeMax_nonneg_proved,
+ NLA.IE05.abs_le_activeMax_proved,
+ _private.NLA.IE05.GEPP.0.NLA.IE05.swap_active,
+ NLA.IE05.rowSwap.eq_1,
+ NLA.IE05.activeMax_le_proved,
+ NLA.IE05.schurStep]
+ACTUAL_DECL NLA.IE05.activeMax_nonneg_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeMax_nonneg_proved: [NLA.IE05.Mat, NLA.IE05.activeMax, NLA.IE05.Mat, NLA.IE05.activeMaxNN]
+ACTUAL_DECL NLA.IE05.abs_le_activeMax_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.abs_le_activeMax_proved: [NLA.IE05.Mat,
+ NLA.IE05.activeMax,
+ NLA.IE05.Mat,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.activeMax]
+ACTUAL_DECL _private.NLA.IE05.GEPP.0.NLA.IE05.swap_active AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE _private.NLA.IE05.GEPP.0.NLA.IE05.swap_active: []
+ACTUAL_DECL NLA.IE05.rowSwap.eq_1 AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.rowSwap.eq_1: [NLA.IE05.Mat, NLA.IE05.rowSwap, NLA.IE05.Mat, NLA.IE05.rowSwap]
+ACTUAL_DECL NLA.IE05.activeMax_le_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeMax_le_proved: [NLA.IE05.Mat, NLA.IE05.activeMax, NLA.IE05.Mat, NLA.IE05.activeMaxNN]
+ACTUAL_DECL NLA.IE05.gepp_growth_bound AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.gepp_growth_bound: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.entryMax,
+ NLA.IE05.growth,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.gepp_growth_bound_proved]
+ACTUAL_DECL NLA.IE05.PivotPath AXIOMS []
+ACTUAL_EDGE NLA.IE05.PivotPath: []
+ACTUAL_DECL NLA.IE05.AdmissiblePath AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.AdmissiblePath: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.trajectory]
+ACTUAL_DECL NLA.IE05.trajectory AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.trajectory: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory._f]
+ACTUAL_DECL NLA.IE05.trajectory._f AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.trajectory._f: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory.match_1,
+ NLA.IE05.schurStep]
+ACTUAL_DECL NLA.IE05.trajectory.match_1 AXIOMS []
+ACTUAL_EDGE NLA.IE05.trajectory.match_1: []
+ACTUAL_DECL NLA.IE05.growth AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.growth: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax]
+ACTUAL_DECL NLA.IE05.gepp_growth_bound_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.gepp_growth_bound_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.entryMax,
+ NLA.IE05.growth,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.gepp_growth_bound_proved._proof_1_1,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax,
+ NLA.IE05.abs_le_entryMax_proved,
+ NLA.IE05.peakMax,
+ NLA.IE05.peakMax_le_proved,
+ NLA.IE05.activeMax,
+ NLA.IE05.gepp_stage_bound_proved,
+ NLA.IE05.gepp_growth_bound_proved._proof_1_2,
+ NLA.IE05.growth,
+ NLA.IE05.entryMax_le_peakMax_proved]
+ACTUAL_DECL NLA.IE05.gepp_growth_bound_proved._proof_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.gepp_growth_bound_proved._proof_1_1: []
+ACTUAL_DECL NLA.IE05.peakMax AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.peakMax: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.trajectory]
+ACTUAL_DECL NLA.IE05.peakMax_le_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.peakMax_le_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.peakMax,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.activeMaxNN]
+ACTUAL_DECL NLA.IE05.gepp_stage_bound_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.gepp_stage_bound_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax,
+ NLA.IE05.activeMax_zero_proved,
+ NLA.IE05.gepp_stage_bound_proved._proof_1_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.schurStep_bound_proved]
+ACTUAL_DECL NLA.IE05.activeMax_zero_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeMax_zero_proved: [NLA.IE05.Mat,
+ NLA.IE05.activeMax,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.activeMax,
+ NLA.IE05.activeMaxNN]
+ACTUAL_DECL NLA.IE05.gepp_stage_bound_proved._proof_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.gepp_stage_bound_proved._proof_1_1: []
+ACTUAL_DECL NLA.IE05.gepp_growth_bound_proved._proof_1_2 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.gepp_growth_bound_proved._proof_1_2: []
+ACTUAL_DECL NLA.IE05.entryMax_le_peakMax_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.entryMax_le_peakMax_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.entryMax,
+ NLA.IE05.peakMax,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax_le_peakMax_proved._proof_1_1,
+ NLA.IE05.peakMax,
+ NLA.IE05.activeMax_le_peakMax_proved,
+ NLA.IE05.entryMax,
+ NLA.IE05.activeMax_zero_proved]
+ACTUAL_DECL NLA.IE05.entryMax_le_peakMax_proved._proof_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.entryMax_le_peakMax_proved._proof_1_1: []
+ACTUAL_DECL NLA.IE05.activeMax_le_peakMax_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeMax_le_peakMax_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.peakMax,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.trajectory]
+ACTUAL_DECL NLA.IE05.firstPath_semantics AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPath_semantics: [NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPath_semantics_proved]
+ACTUAL_DECL NLA.IE05.FirstAvailablePath AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.FirstAvailablePath: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.trajectory]
+ACTUAL_DECL NLA.IE05.FirstAvailablePivot AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.FirstAvailablePivot: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.AdmissiblePivot]
+ACTUAL_DECL NLA.IE05.firstPath AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPath: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstTrajectory]
+ACTUAL_DECL NLA.IE05.firstPivotIndex AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPivotIndex: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.firstTrajectory AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstTrajectory: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.firstTrajectory._f]
+ACTUAL_DECL NLA.IE05.firstTrajectory._f AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstTrajectory._f: [NLA.IE05.Mat,
+ NLA.IE05.Mat,
+ NLA.IE05.trajectory.match_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.firstPivotIndex]
+ACTUAL_DECL NLA.IE05.firstPath_semantics_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPath_semantics_proved: [NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_firstAvailable_proved,
+ NLA.IE05.activeInjective_nonzero_column_proved,
+ NLA.IE05.firstTrajectory_activeInjective_proved,
+ NLA.IE05.trajectory_firstPath_eq_proved,
+ NLA.IE05.firstPath_eq_of_firstAvailable_proved]
+ACTUAL_DECL NLA.IE05.firstPivotIndex_firstAvailable_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPivotIndex_firstAvailable_proved: [NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex_spec_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_DECL NLA.IE05.firstPivotIndex_spec_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPivotIndex_spec_proved: [NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux,
+ NLA.IE05.firstPivotIndex_spec_proved._proof_1_2]
+ACTUAL_DECL _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active]
+ACTUAL_DECL _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate]
+ACTUAL_DECL _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff]
+ACTUAL_DECL _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore]
+ACTUAL_DECL NLA.IE05.firstPivotIndex_spec_proved._proof_1_2 AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPivotIndex_spec_proved._proof_1_2: [NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex]
+ACTUAL_DECL NLA.IE05.activeInjective_nonzero_column_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeInjective_nonzero_column_proved: [NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1]
+ACTUAL_DECL NLA.IE05.ActiveInjective AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.ActiveInjective: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1: []
+ACTUAL_DECL NLA.IE05.firstTrajectory_activeInjective_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstTrajectory_activeInjective_proved: [NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.activeInjective_initial_proved,
+ NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_firstAvailable_proved,
+ NLA.IE05.activeInjective_nonzero_column_proved,
+ NLA.IE05.schurStep,
+ NLA.IE05.activeInjective_schur_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_DECL NLA.IE05.activeInjective_initial_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeInjective_initial_proved: [NLA.IE05.Mat, NLA.IE05.ActiveInjective, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1: []
+ACTUAL_DECL NLA.IE05.activeInjective_schur_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeInjective_schur_proved: [NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.schurStep,
+ NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.rowSwap,
+ NLA.IE05.activeInjective_rowSwap_proved,
+ NLA.IE05.rowSwap.eq_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.activeInjective_schur_proved._proof_1_2,
+ NLA.IE05.activeInjective_schur_proved._proof_1_3,
+ NLA.IE05.schurStep_mulVec_proved]
+ACTUAL_DECL NLA.IE05.activeInjective_rowSwap_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeInjective_rowSwap_proved: [NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.rowSwap,
+ NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.rowSwap,
+ _private.NLA.IE05.GEPP.0.NLA.IE05.swap_active]
+ACTUAL_DECL NLA.IE05.activeInjective_schur_proved._proof_1_2 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeInjective_schur_proved._proof_1_2: []
+ACTUAL_DECL NLA.IE05.activeInjective_schur_proved._proof_1_3 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.activeInjective_schur_proved._proof_1_3: []
+ACTUAL_DECL NLA.IE05.schurStep_mulVec_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.schurStep_mulVec_proved: [NLA.IE05.Mat,
+ NLA.IE05.schurStep,
+ NLA.IE05.rowSwap,
+ NLA.IE05.Mat,
+ NLA.IE05.schurStep,
+ NLA.IE05.rowSwap,
+ NLA.IE05.schurStep_mulVec_proved._simp_1_1]
+ACTUAL_DECL NLA.IE05.schurStep_mulVec_proved._simp_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.schurStep_mulVec_proved._simp_1_1: []
+ACTUAL_DECL NLA.IE05.trajectory_firstPath_eq_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.trajectory_firstPath_eq_proved: [NLA.IE05.Mat,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstPath,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.Mat,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstPath,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.schurStep,
+ NLA.IE05.firstPivotIndex]
+ACTUAL_DECL NLA.IE05.firstPath_eq_of_firstAvailable_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPath_eq_of_firstAvailable_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved,
+ NLA.IE05.schurStep,
+ NLA.IE05.firstPath]
+ACTUAL_DECL NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved: [NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_spec_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_DECL NLA.IE05.orthogonalGrowthSet_bounded AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.orthogonalGrowthSet_bounded: [NLA.IE05.orthogonalGrowthSet,
+ NLA.IE05.orthogonalGrowthSet_bounded_proved]
+ACTUAL_DECL NLA.IE05.orthogonalGrowthSet AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.orthogonalGrowthSet: [NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.growth]
+ACTUAL_DECL NLA.IE05.Orthogonal AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.Orthogonal: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.orthogonalGrowthSet_bounded_proved AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.orthogonalGrowthSet_bounded_proved: [NLA.IE05.orthogonalGrowthSet,
+ NLA.IE05.orthogonalGrowthSet,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.growth,
+ NLA.IE05.entryMax,
+ NLA.IE05.gepp_growth_bound_proved,
+ NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.firstPath_semantics_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_DECL NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1: []
+ACTUAL_DECL NLA.IE05.candidate_positiveQR AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.candidate_positiveQR: [NLA.IE05.PositiveQR,
+ NLA.IE05.prescribedLower,
+ NLA.IE05.candidateQ,
+ NLA.IE05.candidateR,
+ NLA.IE05.Mat,
+ NLA.IE05._proved.candidate_positiveQR]
+ACTUAL_DECL NLA.IE05.PositiveQR AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.PositiveQR: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.Orthogonal, NLA.IE05.UpperTriangular]
+ACTUAL_DECL NLA.IE05.UpperTriangular AXIOMS []
+ACTUAL_EDGE NLA.IE05.UpperTriangular: []
+ACTUAL_DECL NLA.IE05.prescribedLower AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.prescribedLower: [NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05.candidateQ AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.candidateQ: [NLA.IE05.Mat, NLA.IE05.normalizedQRQ, NLA.IE05.prescribedLower]
+ACTUAL_DECL NLA.IE05.normalizedQRQ AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.normalizedQRQ: [NLA.IE05.Mat,
+ NLA.IE05.Mat,
+ NLA.IE05.normalizedQRQ._proof_1,
+ NLA.IE05.euclideanColumns]
+ACTUAL_DECL NLA.IE05.normalizedQRQ._proof_1 AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.normalizedQRQ._proof_1: []
+ACTUAL_DECL NLA.IE05.euclideanColumns AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.euclideanColumns: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.euclideanColumns._proof_1]
+ACTUAL_DECL NLA.IE05.euclideanColumns._proof_1 AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.euclideanColumns._proof_1: []
+ACTUAL_DECL NLA.IE05.candidateR AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.candidateR: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.candidateQ, NLA.IE05.prescribedLower]
+ACTUAL_DECL NLA.IE05._proved.candidate_positiveQR AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.candidate_positiveQR: [NLA.IE05.PositiveQR,
+ NLA.IE05.prescribedLower,
+ NLA.IE05.candidateQ,
+ NLA.IE05.candidateR,
+ NLA.IE05.Mat,
+ NLA.IE05.prescribedLower,
+ NLA.IE05._proved.prescribedLower_det,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.candidateQ,
+ NLA.IE05.candidateR,
+ NLA.IE05.Mat,
+ NLA.IE05._proved.normalizedQRQ_positiveQR,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.Orthogonal]
+ACTUAL_DECL NLA.IE05._proved.prescribedLower_det AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.prescribedLower_det: [NLA.IE05.prescribedLower, NLA.IE05.prescribedLower]
+ACTUAL_DECL NLA.IE05._proved.normalizedQRQ_positiveQR AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedQRQ_positiveQR: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05._proved.normalizedQRQ_orthogonal,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05._proved.normalizedQRQ_upper,
+ NLA.IE05._proved.normalizedQRQ_diagonal_pos]
+ACTUAL_DECL NLA.IE05._proved.normalizedQRQ_orthogonal AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedQRQ_orthogonal: [NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05._proved.orthogonal_iff_orthonormal_columns,
+ NLA.IE05._proved.euclideanColumns_normalizedQRQ,
+ NLA.IE05._proved.euclideanColumns_linearIndependent]
+ACTUAL_DECL NLA.IE05._proved.orthogonal_iff_orthonormal_columns AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.orthogonal_iff_orthonormal_columns: [NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05._proved.euclideanColumns_inner]
+ACTUAL_DECL NLA.IE05._proved.euclideanColumns_inner AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.euclideanColumns_inner: [NLA.IE05.Mat,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.euclideanColumns._proof_1]
+ACTUAL_DECL NLA.IE05._proved.euclideanColumns_normalizedQRQ AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.euclideanColumns_normalizedQRQ: [NLA.IE05.Mat,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.Mat,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.normalizedQRQ]
+ACTUAL_DECL NLA.IE05._proved.euclideanColumns_linearIndependent AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.euclideanColumns_linearIndependent: [NLA.IE05.Mat, NLA.IE05.euclideanColumns, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05._proved.normalizedQRQ_upper AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedQRQ_upper: [NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.Mat,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05._proved.euclideanColumns_inner,
+ NLA.IE05._proved.euclideanColumns_normalizedQRQ]
+ACTUAL_DECL NLA.IE05._proved.normalizedQRQ_diagonal_pos AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedQRQ_diagonal_pos: [NLA.IE05.Mat,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.Mat,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05._proved.euclideanColumns_inner,
+ NLA.IE05._proved.euclideanColumns_normalizedQRQ,
+ NLA.IE05._proved.gramSchmidt_inner_original,
+ NLA.IE05._proved.euclideanColumns_linearIndependent]
+ACTUAL_DECL NLA.IE05._proved.gramSchmidt_inner_original AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.gramSchmidt_inner_original: []
+ACTUAL_DECL NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Orthogonal,
+ NLA.IE05._proved.orthogonal_iff_orthonormal_columns,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05._proved.gramSchmidt_eq_of_positiveQR]
+ACTUAL_DECL NLA.IE05._proved.gramSchmidt_eq_of_positiveQR AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.gramSchmidt_eq_of_positiveQR: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Orthogonal,
+ NLA.IE05._proved.orthogonal_iff_orthonormal_columns,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05._proved.positiveQR_inner,
+ NLA.IE05._proved.positiveQR_column]
+ACTUAL_DECL NLA.IE05._proved.positiveQR_inner AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.positiveQR_inner: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05._proved.euclideanColumns_inner,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.Orthogonal]
+ACTUAL_DECL NLA.IE05._proved.positiveQR_column AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.positiveQR_column: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.euclideanColumns._proof_1,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.Orthogonal]
+ACTUAL_DECL NLA.IE05.scaledColumns_orthogonal AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.scaledColumns_orthogonal: [NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.Mat,
+ NLA.IE05._proved.scaledColumns_orthogonal]
+ACTUAL_DECL NLA.IE05.scaledColumns AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.scaledColumns: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05._proved.scaledColumns_orthogonal AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.scaledColumns_orthogonal: [NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.scaledColumns]
+ACTUAL_DECL NLA.IE05.scaledLU_trajectory AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.scaledLU_trajectory: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05._proved.scaledLU_trajectory]
+ACTUAL_DECL NLA.IE05.UnitLower AXIOMS []
+ACTUAL_EDGE NLA.IE05.UnitLower: []
+ACTUAL_DECL NLA.IE05.noSwapPath AXIOMS []
+ACTUAL_EDGE NLA.IE05.noSwapPath: [NLA.IE05.PivotPath]
+ACTUAL_DECL NLA.IE05.tailProduct AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.tailProduct: []
+ACTUAL_DECL NLA.IE05._proved.scaledLU_trajectory AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.scaledLU_trajectory: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.scaled_noSwap_trajectory,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05._proved.scaled_tail_firstAvailable,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.firstPath_eq_of_firstAvailable_proved]
+ACTUAL_DECL NLA.IE05._proved.scaled_noSwap_trajectory AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.scaled_noSwap_trajectory: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.tailProduct_zero,
+ NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.trajectory.eq_2,
+ NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2,
+ NLA.IE05._proved.scaled_tail_schur]
+ACTUAL_DECL NLA.IE05._proved.tailProduct_zero AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.tailProduct_zero: [NLA.IE05.Mat, NLA.IE05.tailProduct, NLA.IE05.Mat, NLA.IE05.tailProduct]
+ACTUAL_DECL NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1: []
+ACTUAL_DECL NLA.IE05.trajectory.eq_2 AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.trajectory.eq_2: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.schurStep,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory]
+ACTUAL_DECL NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2 AXIOMS [propext, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2: []
+ACTUAL_DECL NLA.IE05._proved.scaled_tail_schur AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.scaled_tail_schur: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.schurStep,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.schurStep,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.tailProduct_pivot_column,
+ NLA.IE05._proved.tailProduct_pivot_row,
+ NLA.IE05._proved.tailProduct_split,
+ NLA.IE05.rowSwap]
+ACTUAL_DECL NLA.IE05._proved.tailProduct_pivot_column AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.tailProduct_pivot_column: [NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.tailProduct]
+ACTUAL_DECL NLA.IE05._proved.tailProduct_pivot_row AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.tailProduct_pivot_row: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.tailProduct]
+ACTUAL_DECL NLA.IE05._proved.tailProduct_split AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.tailProduct_split: [NLA.IE05.Mat,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.tailProduct_split._proof_1_1]
+ACTUAL_DECL NLA.IE05._proved.tailProduct_split._proof_1_1 AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.tailProduct_split._proof_1_1: []
+ACTUAL_DECL NLA.IE05._proved.scaled_tail_firstAvailable AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.scaled_tail_firstAvailable: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.tailProduct_pivot_row,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.scaledColumns,
+ NLA.IE05._proved.tailProduct_pivot_column]
+ACTUAL_DECL NLA.IE05.integer_factor_certificates AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.integer_factor_certificates: [NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05._proved.integer_factor_certificates]
+ACTUAL_DECL NLA.IE05.IntMat AXIOMS []
+ACTUAL_EDGE NLA.IE05.IntMat: []
+ACTUAL_DECL NLA.IE05.integerH AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerH: [NLA.IE05.IntMat, NLA.IE05.integerH.match_1, NLA.IE05.IntMat]
+ACTUAL_DECL NLA.IE05.integerH.match_1 AXIOMS []
+ACTUAL_EDGE NLA.IE05.integerH.match_1: []
+ACTUAL_DECL NLA.IE05.integerD AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerD: [NLA.IE05.integerH.match_1]
+ACTUAL_DECL NLA.IE05.integerLower AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerLower: [NLA.IE05.IntMat, NLA.IE05.integerLower._proof_1]
+ACTUAL_DECL NLA.IE05.integerLower._proof_1 AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerLower._proof_1: []
+ACTUAL_DECL NLA.IE05.integerT AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerT: [NLA.IE05.IntMat, NLA.IE05.integerH.match_1, NLA.IE05.IntMat]
+ACTUAL_DECL NLA.IE05._proved.integer_factor_certificates AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_factor_certificates: [NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05._proved.integer_factor_certificates._proof_1_1,
+ NLA.IE05._proved.integer_factor_certificates._proof_1_2]
+ACTUAL_DECL NLA.IE05._proved.integer_factor_certificates._proof_1_1 AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_factor_certificates._proof_1_1: [NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05._proved.integerLowerZeroDecidable,
+ NLA.IE05._proved.integerTZeroDecidable]
+ACTUAL_DECL NLA.IE05._proved.integerLowerZeroDecidable AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05._proved.integerLowerZeroDecidable: [NLA.IE05.integerLower, NLA.IE05.integerLower]
+ACTUAL_DECL NLA.IE05._proved.integerTZeroDecidable AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05._proved.integerTZeroDecidable: [NLA.IE05.integerT, NLA.IE05.integerT]
+ACTUAL_DECL NLA.IE05._proved.integer_factor_certificates._proof_1_2 AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_factor_certificates._proof_1_2: [NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05._proved.integerLowerZeroDecidable,
+ NLA.IE05._proved.integerTZeroDecidable]
+ACTUAL_DECL NLA.IE05.integer_entry_certificates AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.integer_entry_certificates: [NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05._proved.integer_entry_certificates]
+ACTUAL_DECL NLA.IE05._proved.integer_entry_certificates AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_entry_certificates: [NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05._proved.integer_entry_certificates._proof_1_1]
+ACTUAL_DECL NLA.IE05._proved.integer_entry_certificates._proof_1_1 AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_entry_certificates._proof_1_1: [NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT]
+ACTUAL_DECL NLA.IE05.canonical_integer_identification AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.canonical_integer_identification: [NLA.IE05.Mat,
+ NLA.IE05.candidateQ,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.noSwapPath,
+ NLA.IE05._proved.canonical_integer_identification]
+ACTUAL_DECL NLA.IE05.normalizedInteger AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.normalizedInteger: [NLA.IE05.Mat,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD]
+ACTUAL_DECL NLA.IE05.castIntegerMatrix AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.castIntegerMatrix: [NLA.IE05.IntMat, NLA.IE05.Mat, NLA.IE05.IntMat]
+ACTUAL_DECL NLA.IE05._proved.canonical_integer_identification AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.canonical_integer_identification: [NLA.IE05.Mat,
+ NLA.IE05.candidateQ,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.candidateQ,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.noSwapPath,
+ NLA.IE05._proved.real_factor_certificates,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.prescribedLower,
+ NLA.IE05.scaledColumns,
+ NLA.IE05._proved.integerLower_false_prescribed,
+ NLA.IE05._proved.normalizedQRQ_of_gram_lu,
+ NLA.IE05.trajectory,
+ NLA.IE05.tailProduct,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05._proved.normalizedInteger_path_trajectory]
+ACTUAL_DECL NLA.IE05._proved.real_factor_certificates AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.real_factor_certificates: [NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05._proved.integer_factor_certificates,
+ NLA.IE05._proved.castIntegerMatrix_mul,
+ NLA.IE05._proved.castIntegerMatrix_diagonal,
+ NLA.IE05._proved.castIntegerMatrix_unitLower,
+ NLA.IE05._proved.castIntegerMatrix_upper,
+ NLA.IE05._proved.castIntegerMatrix_lower_bound]
+ACTUAL_DECL NLA.IE05._proved.castIntegerMatrix_mul AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.castIntegerMatrix_mul: [NLA.IE05.IntMat,
+ NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.IntMat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05._proved.castIntegerMatrix_diagonal AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.castIntegerMatrix_diagonal: [NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.castIntegerMatrix]
+ACTUAL_DECL NLA.IE05._proved.castIntegerMatrix_unitLower AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.castIntegerMatrix_unitLower: [NLA.IE05.IntMat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.IntMat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.castIntegerMatrix]
+ACTUAL_DECL NLA.IE05._proved.castIntegerMatrix_upper AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.castIntegerMatrix_upper: [NLA.IE05.IntMat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.IntMat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.castIntegerMatrix]
+ACTUAL_DECL NLA.IE05._proved.castIntegerMatrix_lower_bound AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.castIntegerMatrix_lower_bound: [NLA.IE05.IntMat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.IntMat,
+ NLA.IE05.castIntegerMatrix]
+ACTUAL_DECL NLA.IE05._proved.integerLower_false_prescribed AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integerLower_false_prescribed: [NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.integerLower,
+ NLA.IE05.prescribedLower,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.integerLower,
+ NLA.IE05.prescribedLower,
+ NLA.IE05.integerLower._proof_1]
+ACTUAL_DECL NLA.IE05._proved.normalizedQRQ_of_gram_lu AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedQRQ_of_gram_lu: [NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.scaledColumns,
+ NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR,
+ NLA.IE05.Orthogonal,
+ NLA.IE05._proved.scaledColumns_orthogonal]
+ACTUAL_DECL NLA.IE05._proved.normalizedInteger_path_trajectory AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedInteger_path_trajectory: [NLA.IE05.FirstAvailablePath,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.Mat,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.integerD,
+ NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.real_factor_certificates,
+ NLA.IE05._proved.scaledLU_trajectory,
+ NLA.IE05._proved.castIntegerMatrix_tailProduct]
+ACTUAL_DECL NLA.IE05._proved.castIntegerMatrix_tailProduct AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.castIntegerMatrix_tailProduct: [NLA.IE05.IntMat,
+ NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.tailProduct,
+ NLA.IE05.IntMat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.tailProduct]
+ACTUAL_DECL NLA.IE05.witness_orthogonal_path AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.witness_orthogonal_path: [NLA.IE05.Orthogonal,
+ NLA.IE05.witnessQ,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05._proved.witness_orthogonal_path]
+ACTUAL_DECL NLA.IE05.witnessQ AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.witnessQ: [NLA.IE05.Mat, NLA.IE05.normalizedInteger]
+ACTUAL_DECL NLA.IE05._proved.witness_orthogonal_path AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.witness_orthogonal_path: [NLA.IE05.Orthogonal,
+ NLA.IE05.witnessQ,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.Mat,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.integerD,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.witnessQ,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05._proved.normalizedInteger_path_trajectory,
+ NLA.IE05._proved.normalizedInteger_orthogonal,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_DECL NLA.IE05._proved.normalizedInteger_orthogonal AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedInteger_orthogonal: [NLA.IE05.Orthogonal,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.Mat,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05._proved.real_factor_certificates,
+ NLA.IE05._proved.scaledColumns_orthogonal]
+ACTUAL_DECL NLA.IE05.bounded_growth_data AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.bounded_growth_data: [NLA.IE05.entryMax,
+ NLA.IE05.witnessQ,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05._proved.bounded_growth_data]
+ACTUAL_DECL NLA.IE05.firstGrowth AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.firstGrowth: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.growth, NLA.IE05.firstPath]
+ACTUAL_DECL NLA.IE05._proved.bounded_growth_data AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.bounded_growth_data: [NLA.IE05.entryMax,
+ NLA.IE05.witnessQ,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05.entryMax,
+ NLA.IE05.witnessQ,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05._proved.witness_entryMax_upper,
+ NLA.IE05._proved.witness_growth_lower,
+ NLA.IE05._proved.candidate_entryMax_lower,
+ NLA.IE05._proved.candidate_growth_nonneg,
+ NLA.IE05._proved.candidate_growth_sq_upper]
+ACTUAL_DECL NLA.IE05._proved.witness_entryMax_upper AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.witness_entryMax_upper: [NLA.IE05.entryMax,
+ NLA.IE05.witnessQ,
+ NLA.IE05._proved.entryMax_le_from_entries,
+ NLA.IE05.witnessQ,
+ NLA.IE05._proved.abs_div_sqrt_le,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05._proved.integerD_real_pos,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05._proved.integer_entry_certificates]
+ACTUAL_DECL NLA.IE05._proved.entryMax_le_from_entries AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.entryMax_le_from_entries: [NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.activeMax,
+ NLA.IE05.activeMax_zero_proved,
+ NLA.IE05.activeMax_le_proved]
+ACTUAL_DECL NLA.IE05._proved.abs_div_sqrt_le AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.abs_div_sqrt_le: []
+ACTUAL_DECL NLA.IE05._proved.integerD_real_pos AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integerD_real_pos: [NLA.IE05.integerD,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.integerT,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.UnitLower,
+ NLA.IE05.Mat,
+ NLA.IE05.integerH,
+ NLA.IE05._proved.real_factor_certificates]
+ACTUAL_DECL NLA.IE05._proved.witness_growth_lower AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.witness_growth_lower: [NLA.IE05.firstGrowth,
+ NLA.IE05.witnessQ,
+ NLA.IE05.entryMax,
+ NLA.IE05.witnessQ,
+ NLA.IE05.growth,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.gepp_growth_bound_proved,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.Orthogonal,
+ NLA.IE05._proved.witness_orthogonal_path,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.peakMax,
+ NLA.IE05._proved.witness_entryMax_upper,
+ NLA.IE05._proved.witness_peak_lower]
+ACTUAL_DECL NLA.IE05._proved.witness_peak_lower AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.witness_peak_lower: [NLA.IE05.peakMax,
+ NLA.IE05.witnessQ,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.witnessQ,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.abs_le_activeMax_proved,
+ NLA.IE05.peakMax,
+ NLA.IE05._proved.witness_final_pivot,
+ NLA.IE05.activeMax_le_peakMax_proved]
+ACTUAL_DECL NLA.IE05._proved.witness_final_pivot AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.witness_final_pivot: [NLA.IE05.trajectory,
+ NLA.IE05.witnessQ,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.trajectory,
+ NLA.IE05.witnessQ,
+ NLA.IE05.noSwapPath,
+ NLA.IE05._proved.integer_entry_certificates,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05._proved.normalizedInteger_trajectory_entry]
+ACTUAL_DECL NLA.IE05._proved.normalizedInteger_trajectory_entry AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedInteger_trajectory_entry: [NLA.IE05.trajectory,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.integerD,
+ NLA.IE05.trajectory,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.integerD,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.castIntegerMatrix,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05._proved.normalizedInteger_path_trajectory]
+ACTUAL_DECL NLA.IE05._proved.candidate_entryMax_lower AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.candidate_entryMax_lower: [NLA.IE05.entryMax,
+ NLA.IE05.candidateQ,
+ NLA.IE05.entryMax,
+ NLA.IE05.candidateQ,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.noSwapPath,
+ NLA.IE05._proved.canonical_integer_identification,
+ NLA.IE05.abs_le_entryMax_proved,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05._proved.integer_entry_certificates]
+ACTUAL_DECL NLA.IE05._proved.candidate_growth_nonneg AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.candidate_growth_nonneg: [NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05._proved.growth_nonneg,
+ NLA.IE05.candidateQ,
+ NLA.IE05.firstPath]
+ACTUAL_DECL NLA.IE05._proved.growth_nonneg AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.growth_nonneg: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.growth,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax,
+ NLA.IE05.entryMax_nonneg_proved]
+ACTUAL_DECL NLA.IE05._proved.candidate_growth_sq_upper AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.candidate_growth_sq_upper: [NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05._proved.candidate_growth_nonneg,
+ NLA.IE05._proved.candidate_growth_upper]
+ACTUAL_DECL NLA.IE05._proved.candidate_growth_upper AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.candidate_growth_upper: [NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05.entryMax,
+ NLA.IE05.candidateQ,
+ NLA.IE05._proved.candidate_entryMax_lower,
+ NLA.IE05.peakMax,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05._proved.canonical_integer_identification,
+ NLA.IE05._proved.candidate_peak_upper,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.growth]
+ACTUAL_DECL NLA.IE05._proved.candidate_peak_upper AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.candidate_peak_upper: [NLA.IE05.peakMax,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.peakMax_le_proved,
+ NLA.IE05.normalizedInteger,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.activeMax_le_proved,
+ NLA.IE05.trajectory,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.integerD,
+ NLA.IE05._proved.normalizedInteger_trajectory_entry,
+ NLA.IE05._proved.abs_div_sqrt_le_sqrt,
+ NLA.IE05._proved.integerD_real_pos,
+ NLA.IE05.integerH,
+ NLA.IE05._proved.integer_entry_certificates]
+ACTUAL_DECL NLA.IE05._proved.abs_div_sqrt_le_sqrt AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.abs_div_sqrt_le_sqrt: []
+ACTUAL_DECL NLA.IE05.numerical_gap_positive AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.numerical_gap_positive: [NLA.IE05._proved.numerical_gap_positive]
+ACTUAL_DECL NLA.IE05._proved.numerical_gap_positive AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.numerical_gap_positive: []
+ACTUAL_DECL NLA.IE05.witness_strict_growth AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.witness_strict_growth: [NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05.witnessQ,
+ NLA.IE05._proved.witness_strict_growth]
+ACTUAL_DECL NLA.IE05._proved.witness_strict_growth AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.witness_strict_growth: [NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05.witnessQ,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05._proved.candidate_growth_sq_upper,
+ NLA.IE05._proved.numerical_gap_positive,
+ NLA.IE05.witnessQ,
+ NLA.IE05._proved.witness_growth_lower]
+ACTUAL_DECL NLA.IE05.supremum_strict_gap AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.supremum_strict_gap: [NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05.orthogonalGrowthSup,
+ NLA.IE05._proved.supremum_strict_gap]
+ACTUAL_DECL NLA.IE05.orthogonalGrowthSup AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.orthogonalGrowthSup: [NLA.IE05.orthogonalGrowthSet]
+ACTUAL_DECL NLA.IE05._proved.supremum_strict_gap AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.supremum_strict_gap: [NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05.orthogonalGrowthSup,
+ NLA.IE05.orthogonalGrowthSet,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.witnessQ,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.growth,
+ NLA.IE05.firstPath,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05._proved.witness_orthogonal_path,
+ NLA.IE05.orthogonalGrowthSup,
+ NLA.IE05.orthogonalGrowthSet_bounded_proved,
+ NLA.IE05.candidateQ,
+ NLA.IE05._proved.witness_strict_growth]
+ACTUAL_DECL NLA.IE05.orthogonalExtremizerConjecture AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.orthogonalExtremizerConjecture: [NLA.IE05.OrthogonalExtremizerConjecture,
+ NLA.IE05._proved.orthogonalExtremizerConjecture]
+ACTUAL_DECL NLA.IE05.OrthogonalExtremizerConjecture AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.OrthogonalExtremizerConjecture: [NLA.IE05.orthogonalGrowthSup,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ]
+ACTUAL_DECL NLA.IE05._proved.orthogonalExtremizerConjecture AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.orthogonalExtremizerConjecture: [NLA.IE05.OrthogonalExtremizerConjecture,
+ NLA.IE05.OrthogonalExtremizerConjecture,
+ NLA.IE05.orthogonalGrowthSup,
+ NLA.IE05.firstGrowth,
+ NLA.IE05.candidateQ,
+ NLA.IE05._proved.supremum_strict_gap]
+RETAINED_DEPENDENCY NLA.IE05._proved.normalizedQRQ_of_gram_lu
+RETAINED_DEPENDENCY NLA.IE05._proved.integer_factor_certificates
+RETAINED_DEPENDENCY NLA.IE05._proved.integer_entry_certificates
+RETAINED_DEPENDENCY NLA.IE05._proved.normalizedInteger_path_trajectory
+RETAINED_DEPENDENCY NLA.IE05._proved.normalizedInteger_trajectory_entry
+RETAINED_DEPENDENCY NLA.IE05._proved.scaledLU_trajectory
+RETAINED_DEPENDENCY NLA.IE05._proved.witness_growth_lower
+RETAINED_DEPENDENCY NLA.IE05._proved.candidate_growth_sq_upper
+RETAINED_DEPENDENCY NLA.IE05._proved.numerical_gap_positive
+RETAINED_DEPENDENCY NLA.IE05.firstPath_semantics_proved
+RETAINED_DEPENDENCY NLA.IE05.gepp_growth_bound_proved
+RETAINED_DEPENDENCY NLA.IE05.orthogonalGrowthSet_bounded_proved
+RETAINED_DEPENDENCY NLA.IE05.trajectory
+RETAINED_DEPENDENCY NLA.IE05.firstPath
+RETAINED_DEPENDENCY NLA.IE05.schurStep
+RETAINED_DEPENDENCY NLA.IE05.AdmissiblePath
+RETAINED_DEPENDENCY NLA.IE05.Orthogonal
+RETAINED_DEPENDENCY NLA.IE05.PositiveQR
+RETAINED_DEPENDENCY NLA.IE05.normalizedQRQ
+RETAINED_DEPENDENCY NLA.IE05.firstGrowth
+RETAINED_DEPENDENCY NLA.IE05.growth
+RETAINED_DEPENDENCY NLA.IE05.entryMax
+RETAINED_DEPENDENCY NLA.IE05.peakMax
+RETAINED_DEPENDENCY NLA.IE05.orthogonalGrowthSet
+RETAINED_DEPENDENCY NLA.IE05.orthogonalGrowthSup
+RETAINED_DEPENDENCY NLA.IE05.OrthogonalExtremizerConjecture
+RETAINED_DEPENDENCY Real.sq_sqrt
+RETAINED_DEPENDENCY le_csSup
+RETAINED_DEPENDENCY InnerProductSpace.gramSchmidtNormed
+RETAINED_DEPENDENCY of_decide_eq_true
+COMPLETE_ASSEMBLY roots=17, closure=181, required=30
+'NLA.IE05.entryMax_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.schurStep_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.gepp_growth_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.firstPath_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.orthogonalGrowthSet_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.candidate_positiveQR' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.scaledColumns_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.scaledLU_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.integer_factor_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.canonical_integer_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.witness_orthogonal_path' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.bounded_growth_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.witness_strict_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.supremum_strict_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.orthogonalExtremizerConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]

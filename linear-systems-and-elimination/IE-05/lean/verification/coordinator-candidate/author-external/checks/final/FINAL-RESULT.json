@@ -1,0 +1,36 @@
+{
+  "README_and_correspondence_relative_links": "PASS",
+  "actual_linux_comparator": "pending",
+  "candidate_handoff": {
+    "bytes": 5931,
+    "sha256": "c0f1b96cabf0b00d065272260d94e143464ec4d6422f4677e308783397025f58"
+  },
+  "candidate_inputs": {
+    "bytes": 468845,
+    "sha256": "b1259a165e924357b5474dcb9620ab316dec218e31a95665138cde4359f285e7"
+  },
+  "commands": [
+    {
+      "argv": [
+        "python3",
+        "verification/candidate-package/verify_inventory.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "/tmp/nla-lean-formalization/venv/bin/python",
+        "verification/candidate-package/audit_metadata.py"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "final_package_files": 2405,
+  "independent_packaging_approval": "pending",
+  "live_source_selection": {
+    "bytes": 2808,
+    "sha256": "cea388df5779e0f0ceb27c753a4355cf1a32c68d4fc66c13512f5dd16cc758df"
+  },
+  "read_only_whole_package_bytes_and_membership": true,
+  "result": "PASS"
+}

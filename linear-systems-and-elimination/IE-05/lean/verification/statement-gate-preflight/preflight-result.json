@@ -1,0 +1,151 @@
+{
+  "actual_read_only_commands": 85,
+  "check_groups": [
+    {
+      "check": "complete outer seal",
+      "exact_sole_self_exclusion": true,
+      "members": 123,
+      "pass": true,
+      "path": "reviews/statement-referee-1-evidence/outer-manifest.json"
+    },
+    {
+      "check": "complete outer seal",
+      "exact_sole_self_exclusion": true,
+      "members": 490,
+      "pass": true,
+      "path": "reviews/statement-referee-2-evidence/EVIDENCE-SEAL.json"
+    },
+    {
+      "check": "all draft and review inputs unchanged",
+      "draft_count": 103,
+      "full_reviewed_input_count": 718,
+      "pass": true
+    },
+    {
+      "check": "original sources independently rebound to Git",
+      "count": 27,
+      "pass": true
+    },
+    {
+      "axiom_counts": {
+        "none": 5,
+        "propext": 4,
+        "standard_three": 32
+      },
+      "check": "exact statements, inspector sources and actual logs",
+      "contracts": 17,
+      "definitions": 41,
+      "pass": true,
+      "types_from_retained_fresh_compile": true
+    },
+    {
+      "check": "fresh execution receipts and failure distinctions",
+      "pass": true,
+      "referee1_Lean_commands": 4,
+      "referee1_replayed_audit": true,
+      "referee2_Lean_commands": 6
+    },
+    {
+      "check": "current exact read-only dependency and API identities",
+      "imported_object_files": 26,
+      "packages": 10,
+      "pass": true,
+      "source_API_files": 9
+    },
+    {
+      "check": "all nested input/source/attempt manifests and JSON parse",
+      "nested_JSON_documents": 111,
+      "pass": true,
+      "remote_policy_source_lock_entries": 58,
+      "snapshot_roots": 3
+    },
+    {
+      "candidate_bounds": 204,
+      "canonical_modification": [
+        8,
+        2
+      ],
+      "check": "independent numerical receipts agree",
+      "new_Lean_theorem": false,
+      "pass": true,
+      "witness_bounds": 64
+    }
+  ],
+  "coordinator_acceptance_required": true,
+  "draft_inputs": 103,
+  "failed_preflight_retained": {
+    "exit_code": 1,
+    "reason": "Own verifier expected bytes in a SHA-only numerical manuscript binding; corrected field check, all source/evidence unchanged.",
+    "result": {
+      "bytes": 521221,
+      "sha256": "e26390bf3208562e815fbbaaf5dfa9f018b8a50d9ad81f5481662e5e5aef24c9"
+    },
+    "script": {
+      "bytes": 31954,
+      "sha256": "ea7519b1c5dce8d44f0f48b6c6e6d6f5310c0a8c5169b0f8e7e78239d4b1ef0a"
+    }
+  },
+  "historical_execution_scope": {
+    "historical_referee2_commands_checked": 183,
+    "new_preflight_Lean_compiles": 0,
+    "referee1": {
+      "fresh_Lean_exits": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "outer_driver_exit": 1,
+      "resolution": "separate retained-log audit, no additional Lean execution"
+    },
+    "referee2": {
+      "first_fresh_Lean_exits": [
+        0,
+        0,
+        0
+      ],
+      "first_outer_postcheck_exit": 1,
+      "resolution": "new empty-prefix Lean rerun after own parser correction",
+      "second_fresh_Lean_exits": [
+        0,
+        0,
+        0
+      ],
+      "second_outer_driver_exit": 0
+    }
+  },
+  "is_statement_freeze": false,
+  "limitations": [
+    "Successful historical Lean exits and source/log bindings are audited; no new Lean compile or Comparator run occurs.",
+    "Removed private objects cannot be rehashed now. Their historical hashes, matching shared object identities, cleanup receipts, and current absence are checked.",
+    "Original source-lock remote harness artifacts and structural Schiffer/Forsythe example identities are source-bound historical metadata, not an assertion of a current harness or external-example run."
+  ],
+  "nested_JSON_documents": 111,
+  "new_Lean_compile": false,
+  "new_mathematical_approval": false,
+  "original_Git_bindings": 27,
+  "outer_seal_members": [
+    123,
+    490
+  ],
+  "pass": true,
+  "phase": "coordinator-helper mechanical evidence preflight",
+  "portable_verifier": {
+    "bytes": 32031,
+    "sha256": "26b3081d0e59e2b99dd7c3cc2c4f22a35d81eab717442f934d802f2c34cc6e85"
+  },
+  "proof_authorized": false,
+  "proposed_input_binding": {
+    "bytes": 144874,
+    "sha256": "ef6165de5d5129ed19871e0cb1000ece1f50040c2453e9937a71f1d58e82cfe0"
+  },
+  "reviewed_files": 718,
+  "successful_command": {
+    "bytes": 509,
+    "sha256": "28bb4d980a1a9c5f42dc1aca0052140825b6be75bd8a8502f3e6321f28d32795"
+  },
+  "successful_raw_result": {
+    "bytes": 520668,
+    "sha256": "bd9349956b8867f17071c3d2c97900e28178d13b4b412d4ab2fb98119ddfb045"
+  }
+}

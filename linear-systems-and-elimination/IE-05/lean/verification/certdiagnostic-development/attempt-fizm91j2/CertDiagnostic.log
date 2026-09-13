@@ -1,0 +1,228 @@
+Int.instDecidableEq 1 1
+(integerH false 0 0).instDecidableEq 1
+Nat.decidableForallFin fun i => Eq.{1} (integerLower false i i) 1
+Matrix.decidableEq.{0, 0, 0} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+  (Matrix.diagonal.{0, 0} (integerD false))
+[Meta.synthInstance] ✅️ Decidable
+      (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+        (Matrix.diagonal.{0, 0} (integerD false)))
+  [Meta.synthInstance] ✅️ new goal Decidable
+        (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+          (Matrix.diagonal.{0, 0} (integerD false)))
+    [Meta.synthInstance.instances] #[@decidableEq_of_subsingleton.{?u.10}, @RCLike.toDecidableEq.{?u.11}, @LinearOrder.toDecidableEq.{?u.12}, @Matrix.decidableEq.{?u.13,
+            ?u.14, ?u.15}]
+  [Meta.synthInstance.apply] ✅️ apply @Matrix.decidableEq.{0, 0,
+          0} to Decidable
+        (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+          (Matrix.diagonal.{0, 0} (integerD false)))
+    [Meta.synthInstance.tryResolve] ✅️ Decidable
+          (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+            (Matrix.diagonal.{0, 0}
+              (integerD
+                false))) ≟ Decidable
+          (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+            (Matrix.diagonal.{0, 0} (integerD false)))
+    [Meta.synthInstance] ✅️ new goal DecidableEq.{1} ℤ
+      [Meta.synthInstance.instances] #[@decidableEq_of_subsingleton.{?u.16}, @RCLike.toDecidableEq.{?u.17}, @LinearOrder.toDecidableEq.{?u.18}, Int.instDecidableEq]
+  [Meta.synthInstance.apply] ✅️ apply Int.instDecidableEq to DecidableEq.{1} ℤ
+    [Meta.synthInstance.tryResolve] ✅️ Decidable (Eq.{1} a b) ≟ Decidable (Eq.{1} a b)
+    [Meta.synthInstance.answer] ✅️ DecidableEq.{1} ℤ
+  [Meta.synthInstance.resume] ✅️ propagating DecidableEq.{1}
+        ℤ to subgoal DecidableEq.{1}
+        ℤ of Decidable
+        (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+          (Matrix.diagonal.{0, 0} (integerD false)))
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance] ✅️ new goal Fintype.{0} (Fin 8)
+      [Meta.synthInstance.instances] #[@Unique.fintype.{?u.16}, Fin.fintype]
+  [Meta.synthInstance.apply] ✅️ apply Fin.fintype to Fintype.{0} (Fin 8)
+    [Meta.synthInstance.tryResolve] ✅️ Fintype.{0} (Fin 8) ≟ Fintype.{0} (Fin 8)
+    [Meta.synthInstance.answer] ✅️ Fintype.{0} (Fin 8)
+  [Meta.synthInstance.resume] ✅️ propagating Fintype.{0}
+        (Fin
+          8) to subgoal Fintype.{0}
+        (Fin
+          8) of Decidable
+        (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+          (Matrix.diagonal.{0, 0} (integerD false)))
+    [Meta.synthInstance.resume] size: 2
+  [Meta.synthInstance.resume] ✅️ propagating Fintype.{0}
+        (Fin
+          8) to subgoal Fintype.{0}
+        (Fin
+          8) of Decidable
+        (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+          (Matrix.diagonal.{0, 0} (integerD false)))
+    [Meta.synthInstance.resume] size: 3
+    [Meta.synthInstance.answer] ✅️ Decidable
+          (Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+            (Matrix.diagonal.{0, 0} (integerD false)))
+  [Meta.synthInstance] result Matrix.decidableEq.{0, 0, 0}
+        (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (integerH false)) (integerH false))
+        (Matrix.diagonal.{0, 0} (integerD false))
+[Meta.synthInstance] ✅️ HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+      (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+  [Meta.synthInstance] ✅️ new goal HMul.{0, 0, _tc.0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+        (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) _tc.1
+    [Meta.synthInstance.instances] #[@instHMul.{?u.11}, @Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{?u.12, ?u.13,
+            ?u.14, ?u.15}]
+  [Meta.synthInstance.apply] ✅️ apply @Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{0, 0, 0,
+          0} to HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+        (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance.tryResolve] ✅️ HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+          (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+          (Matrix.{0, 0, 0} (Fin 8) (Fin 8)
+            ℤ) ≟ HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+          (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance] ✅️ new goal Fintype.{0} (Fin 8)
+      [Meta.synthInstance.instances] #[@Unique.fintype.{?u.16}, Fin.fintype]
+  [Meta.synthInstance.apply] ✅️ apply Fin.fintype to Fintype.{0} (Fin 8)
+    [Meta.synthInstance.tryResolve] ✅️ Fintype.{0} (Fin 8) ≟ Fintype.{0} (Fin 8)
+    [Meta.synthInstance.answer] ✅️ Fintype.{0} (Fin 8)
+  [Meta.synthInstance.resume] ✅️ propagating Fintype.{0}
+        (Fin
+          8) to subgoal Fintype.{0}
+        (Fin
+          8) of HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+        (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance] ✅️ new goal Mul.{0} ℤ
+      [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.toMul.{?u.16}, @Semigroup.toMul.{?u.17}, @CommMagma.toMul.{?u.18}, @MulOne.toMul.{?u.19}, @MulZeroClass.toMul.{?u.20}, @Distrib.toMul.{?u.21}, Int.instMul]
+  [Meta.synthInstance.apply] ✅️ apply Int.instMul to Mul.{0} ℤ
+    [Meta.synthInstance.tryResolve] ✅️ Mul.{0} ℤ ≟ Mul.{0} ℤ
+    [Meta.synthInstance.answer] ✅️ Mul.{0} ℤ
+  [Meta.synthInstance.resume] ✅️ propagating Mul.{0}
+        ℤ to subgoal Mul.{0}
+        ℤ of HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+        (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance.resume] size: 2
+    [Meta.synthInstance] ✅️ new goal AddCommMonoid.{0} ℤ
+      [Meta.synthInstance.instances] #[@ESeminormedAddCommMonoid.toAddCommMonoid.{?u.16}, @AddCancelCommMonoid.toAddCommMonoid.{?u.17}, @SubtractionCommMonoid.toAddCommMonoid.{?u.18}, @AddCommGroup.toAddCommMonoid.{?u.19}, @AddCommMonoidWithOne.toAddCommMonoid.{?u.20}, @NonUnitalNonAssocSemiring.toAddCommMonoid.{?u.21}, @Semiring.toAddCommMonoid.{?u.22}, @LinearOrderedAddCommMonoidWithTop.toAddCommMonoid.{?u.23}, @LinearOrderedAddCommGroupWithTop.toAddCommMonoid.{?u.24}, Int.instAddCommMonoid]
+  [Meta.synthInstance.apply] ✅️ apply Int.instAddCommMonoid to AddCommMonoid.{0} ℤ
+    [Meta.synthInstance.tryResolve] ✅️ AddCommMonoid.{0} ℤ ≟ AddCommMonoid.{0} ℤ
+    [Meta.synthInstance.answer] ✅️ AddCommMonoid.{0} ℤ
+  [Meta.synthInstance.resume] ✅️ propagating AddCommMonoid.{0}
+        ℤ to subgoal AddCommMonoid.{0}
+        ℤ of HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+        (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance.resume] size: 3
+    [Meta.synthInstance.answer] ✅️ HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+          (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+  [Meta.synthInstance] result Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{0, 0, 0, 0}
+[Meta.synthInstance] ✅️ HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (IntMat 8)
+      (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+  [Meta.synthInstance] ✅️ new goal HMul.{0, 0, _tc.0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (IntMat 8) _tc.1
+    [Meta.synthInstance.instances] #[@instHMul.{?u.11}, @Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{?u.12, ?u.13,
+            ?u.14, ?u.15}]
+  [Meta.synthInstance.apply] ✅️ apply @Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{0, 0, 0,
+          0} to HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (IntMat 8) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance.tryResolve] ✅️ HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (IntMat 8)
+          (Matrix.{0, 0, 0} (Fin 8) (Fin 8)
+            ℤ) ≟ HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+          (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance] ✅️ new goal Fintype.{0} (Fin 8)
+      [Meta.synthInstance.instances] #[@Unique.fintype.{?u.16}, Fin.fintype]
+  [Meta.synthInstance.apply] ✅️ apply Fin.fintype to Fintype.{0} (Fin 8)
+    [Meta.synthInstance.tryResolve] ✅️ Fintype.{0} (Fin 8) ≟ Fintype.{0} (Fin 8)
+    [Meta.synthInstance.answer] ✅️ Fintype.{0} (Fin 8)
+  [Meta.synthInstance.resume] ✅️ propagating Fintype.{0}
+        (Fin
+          8) to subgoal Fintype.{0}
+        (Fin 8) of HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (IntMat 8) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance] ✅️ new goal Mul.{0} ℤ
+      [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.toMul.{?u.16}, @Semigroup.toMul.{?u.17}, @CommMagma.toMul.{?u.18}, @MulOne.toMul.{?u.19}, @MulZeroClass.toMul.{?u.20}, @Distrib.toMul.{?u.21}, Int.instMul]
+  [Meta.synthInstance.apply] ✅️ apply Int.instMul to Mul.{0} ℤ
+    [Meta.synthInstance.tryResolve] ✅️ Mul.{0} ℤ ≟ Mul.{0} ℤ
+    [Meta.synthInstance.answer] ✅️ Mul.{0} ℤ
+  [Meta.synthInstance.resume] ✅️ propagating Mul.{0}
+        ℤ to subgoal Mul.{0}
+        ℤ of HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (IntMat 8) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance.resume] size: 2
+    [Meta.synthInstance] ✅️ new goal AddCommMonoid.{0} ℤ
+      [Meta.synthInstance.instances] #[@ESeminormedAddCommMonoid.toAddCommMonoid.{?u.16}, @AddCancelCommMonoid.toAddCommMonoid.{?u.17}, @SubtractionCommMonoid.toAddCommMonoid.{?u.18}, @AddCommGroup.toAddCommMonoid.{?u.19}, @AddCommMonoidWithOne.toAddCommMonoid.{?u.20}, @NonUnitalNonAssocSemiring.toAddCommMonoid.{?u.21}, @Semiring.toAddCommMonoid.{?u.22}, @LinearOrderedAddCommMonoidWithTop.toAddCommMonoid.{?u.23}, @LinearOrderedAddCommGroupWithTop.toAddCommMonoid.{?u.24}, Int.instAddCommMonoid]
+  [Meta.synthInstance.apply] ✅️ apply Int.instAddCommMonoid to AddCommMonoid.{0} ℤ
+    [Meta.synthInstance.tryResolve] ✅️ AddCommMonoid.{0} ℤ ≟ AddCommMonoid.{0} ℤ
+    [Meta.synthInstance.answer] ✅️ AddCommMonoid.{0} ℤ
+  [Meta.synthInstance.resume] ✅️ propagating AddCommMonoid.{0}
+        ℤ to subgoal AddCommMonoid.{0}
+        ℤ of HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (IntMat 8) (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+    [Meta.synthInstance.resume] size: 3
+    [Meta.synthInstance.answer] ✅️ HMul.{0, 0, 0} (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ) (IntMat 8)
+          (Matrix.{0, 0, 0} (Fin 8) (Fin 8) ℤ)
+  [Meta.synthInstance] result Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{0, 0, 0, 0}
+[Meta.synthInstance] ✅️ DecidableEq.{1} (Fin 8)
+  [Meta.synthInstance] ✅️ new goal (a b : Fin 8) → Decidable (Eq.{1} a b)
+    [Meta.synthInstance.instances] #[@decidableEq_of_subsingleton.{?u.10}, @RCLike.toDecidableEq.{?u.11}, @LinearOrder.toDecidableEq.{?u.12}, instDecidableEqFin]
+  [Meta.synthInstance.apply] ✅️ apply instDecidableEqFin to (a b : Fin 8) → Decidable (Eq.{1} a b)
+    [Meta.synthInstance.tryResolve] ✅️ Decidable (Eq.{1} a b) ≟ Decidable (Eq.{1} a b)
+    [Meta.synthInstance.answer] ✅️ (a b : Fin 8) → Decidable (Eq.{1} a b)
+  [Meta.synthInstance] result instDecidableEqFin 8
+[Meta.synthInstance] ✅️ Zero.{0} ℤ
+  [Meta.synthInstance] ✅️ new goal Zero.{0} ℤ
+    [Meta.synthInstance.instances] #[@Lean.Grind.AddCommMonoid.toZero.{?u.10}, @Zero.ofOfNat0.{?u.11}, @AddZero.toZero.{?u.12}, @NegZeroClass.toZero.{?u.13}, @MulZeroClass.toZero.{?u.14}]
+  [Meta.synthInstance.apply] ✅️ apply @MulZeroClass.toZero.{0} to Zero.{0} ℤ
+    [Meta.synthInstance.tryResolve] ✅️ Zero.{0} ℤ ≟ Zero.{0} ℤ
+    [Meta.synthInstance] ✅️ new goal MulZeroClass.{0} ℤ
+      [Meta.synthInstance.instances] #[@SemigroupWithZero.toMulZeroClass.{?u.15}, @MulZeroOneClass.toMulZeroClass.{?u.16}, @NonUnitalNonAssocSemiring.toMulZeroClass.{?u.17}, @instMulZeroClassOfSemiring.{?u.18}]
+  [Meta.synthInstance.apply] ✅️ apply @instMulZeroClassOfSemiring.{0} to MulZeroClass.{0} ℤ
+    [Meta.synthInstance.tryResolve] ✅️ MulZeroClass.{0} ℤ ≟ MulZeroClass.{0} ℤ
+    [Meta.synthInstance] ✅️ new goal Semiring.{0} ℤ
+      [Meta.synthInstance.instances] #[@Ring.toSemiring.{?u.19}, @CommSemiring.toSemiring.{?u.20}, @DivisionSemiring.toSemiring.{?u.21}, @IdemSemiring.toSemiring.{?u.22}, Int.instSemiring]
+  [Meta.synthInstance.apply] ✅️ apply Int.instSemiring to Semiring.{0} ℤ
+    [Meta.synthInstance.tryResolve] ✅️ Semiring.{0} ℤ ≟ Semiring.{0} ℤ
+    [Meta.synthInstance.answer] ✅️ Semiring.{0} ℤ
+  [Meta.synthInstance.resume] ✅️ propagating Semiring.{0} ℤ to subgoal Semiring.{0} ℤ of MulZeroClass.{0} ℤ
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance.answer] ✅️ MulZeroClass.{0} ℤ
+  [Meta.synthInstance.resume] ✅️ propagating MulZeroClass.{0} ℤ to subgoal MulZeroClass.{0} ℤ of Zero.{0} ℤ
+    [Meta.synthInstance.resume] size: 2
+    [Meta.synthInstance.answer] ✅️ Zero.{0} ℤ
+  [Meta.synthInstance] result MulZeroClass.toZero.{0}
+(integerLower false 0 0).instDecidableEq 1
+[Meta.synthInstance] ✅️ Decidable (Eq.{1} (integerLower false 0 0) 1)
+  [Meta.synthInstance] ✅️ new goal Decidable (Eq.{1} (integerLower false 0 0) 1)
+    [Meta.synthInstance.instances] #[@decidableEq_of_subsingleton.{?u.6}, @RCLike.toDecidableEq.{?u.7}, @LinearOrder.toDecidableEq.{?u.8}, Int.instDecidableEq]
+  [Meta.synthInstance.apply] ✅️ apply Int.instDecidableEq to Decidable (Eq.{1} (integerLower false 0 0) 1)
+    [Meta.synthInstance.tryResolve] ✅️ Decidable
+          (Eq.{1} (integerLower false 0 0) 1) ≟ Decidable (Eq.{1} (integerLower false 0 0) 1)
+    [Meta.synthInstance.answer] ✅️ Decidable (Eq.{1} (integerLower false 0 0) 1)
+  [Meta.synthInstance] result (integerLower false 0 0).instDecidableEq 1
+[Meta.synthInstance] ✅️ OfNat.{0} (Fin 8) 0
+  [Meta.synthInstance] ✅️ new goal OfNat.{0} (Fin 8) 0
+    [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.ofNat.{?u.3}, @instOfNatAtLeastTwo.{?u.4}, @Zero.toOfNat0.{?u.5}, @Fin.instOfNat]
+  [Meta.synthInstance.apply] ✅️ apply @Fin.instOfNat to OfNat.{0} (Fin 8) 0
+    [Meta.synthInstance.tryResolve] ✅️ OfNat.{0} (Fin 8) 0 ≟ OfNat.{0} (Fin 8) 0
+    [Meta.synthInstance] ✅️ new goal NeZero.{0} 8
+      [Meta.synthInstance.instances] #[@NeZero.of_gt'.{?u.6}, @Invertible.toNeZero.{?u.7}, Nat.AtLeastTwo.toNeZero, @Nat.instNeZeroSucc]
+  [Meta.synthInstance.apply] ✅️ apply @Nat.instNeZeroSucc to NeZero.{0} 8
+    [Meta.synthInstance.tryResolve] ✅️ NeZero.{0} 8 ≟ NeZero.{0} (HAdd.hAdd.{0, 0, 0} 7 1)
+    [Meta.synthInstance.answer] ✅️ NeZero.{0} 8
+  [Meta.synthInstance.resume] ✅️ propagating NeZero.{0}
+        (HAdd.hAdd.{0, 0, 0} 7 1) to subgoal NeZero.{0} 8 of OfNat.{0} (Fin 8) 0
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance.answer] ✅️ OfNat.{0} (Fin 8) 0
+  [Meta.synthInstance] result Fin.instOfNat
+[Meta.synthInstance] ✅️ OfNat.{0} (Fin 8) 0
+  [Meta.synthInstance] result Fin.instOfNat (cached)
+[Meta.synthInstance] 💥️ OfNat.{?u.5} ?m.5 1
+  [Meta.synthInstance] ✅️ new goal OfNat.{?u.5} ?m.5 1
+    [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.ofNat.{?u.6}, @instOfNatAtLeastTwo.{?u.7}, @Pi.instOfNat.{?u.8,
+            ?u.9}, @One.toOfNat1.{?u.10}, @Std.Time.Internal.Bounded.LE.instOfNatHAddIntCast, @Lean.Json.instOfNat, @Std.Time.Week.instOfNatOrdinal, @Int16.instOfNat, @Std.Time.Hour.instOfNatOffset, @Aesop.Nanos.instOfNat, @Std.Time.Millisecond.instOfNatOrdinal, @Std.Time.Day.Ordinal.instOfNatOfYear, @UInt64.instOfNat, @Std.Time.Week.Aligned.instOfNatOrdinal, @Rat.instOfNat, @Lean.JsonNumber.instOfNat, @Std.Time.Week.OfYear.instOfNatOrdinal, @Std.Time.Second.instOfNatOrdinal, @Int8.instOfNat, @instOfNatFloat, @Std.Time.Month.instOfNatQuarter, @BitVec.instOfNat, Dyadic.instOfNat, @Std.Time.Internal.UnitVal.instOfNat, @Int64.instOfNat, @Std.Time.Second.instOfNatOffset, Lean.Level.instOfNat, @instOfNat, @Std.Time.Day.instOfNatOffset, @Id.instOfNat.{?u.11}, @Std.Time.Nanosecond.instOfNatOrdinal, @Std.Time.Minute.instOfNatOffset, @Std.Time.Year.instOfNatOffset, @UInt16.instOfNat, @Std.Time.Weekday.instOfNatOrdinal, instOfNatNat, @Std.Time.Day.instOfNatOrdinal, @Std.Time.Millisecond.instOfNatOffset, @Std.Time.Timestamp.instOfNat, @UInt32.instOfNat, @Std.Time.Month.instOfNatOffset, @Lean.instOfNatLeanOptionValue, @Std.Time.Nanosecond.instOfNatOffset, @Lean.JsonRpc.instOfNatRequestID, @UInt8.instOfNat, @Fin.instOfNat, @ISize.instOfNat, @Std.Time.instOfNatDuration, @Std.Time.Week.instOfNatOffset, @instOfNatFloat32, @Std.Time.WallTime.instOfNat, @Std.Time.Hour.instOfNatOrdinal, @Std.Time.Minute.instOfNatOrdinal, @Std.Time.Month.instOfNatOrdinal, @Int32.instOfNat, @USize.instOfNat, instOfNatPNatOfNeZeroNat, @Lean.Grind.CommRing.OfCommSemiring.instOfNatQ.{?u.12}]
+  [Meta.synthInstance.apply] 💥️ apply @Lean.Grind.CommRing.OfCommSemiring.instOfNatQ.{?u.12} to OfNat.{?u.5} ?m.5 1
+    [Meta.synthInstance.tryResolve] 💥️ OfNat.{?u.5} ?m.5
+          1 ≟ OfNat.{?u.12} (Lean.Grind.Ring.OfSemiring.Q.{?u.12} ?m.8) ?m.10
+[Meta.synthInstance] 💥️ OfNat.{?u.5} ?m.5 1
+  [Meta.synthInstance] ✅️ new goal OfNat.{?u.5} ?m.5 1
+    [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.ofNat.{?u.6}, @instOfNatAtLeastTwo.{?u.7}, @Pi.instOfNat.{?u.8,
+            ?u.9}, @One.toOfNat1.{?u.10}, @Std.Time.Internal.Bounded.LE.instOfNatHAddIntCast, @Lean.Json.instOfNat, @Std.Time.Week.instOfNatOrdinal, @Int16.instOfNat, @Std.Time.Hour.instOfNatOffset, @Aesop.Nanos.instOfNat, @Std.Time.Millisecond.instOfNatOrdinal, @Std.Time.Day.Ordinal.instOfNatOfYear, @UInt64.instOfNat, @Std.Time.Week.Aligned.instOfNatOrdinal, @Rat.instOfNat, @Lean.JsonNumber.instOfNat, @Std.Time.Week.OfYear.instOfNatOrdinal, @Std.Time.Second.instOfNatOrdinal, @Int8.instOfNat, @instOfNatFloat, @Std.Time.Month.instOfNatQuarter, @BitVec.instOfNat, Dyadic.instOfNat, @Std.Time.Internal.UnitVal.instOfNat, @Int64.instOfNat, @Std.Time.Second.instOfNatOffset, Lean.Level.instOfNat, @instOfNat, @Std.Time.Day.instOfNatOffset, @Id.instOfNat.{?u.11}, @Std.Time.Nanosecond.instOfNatOrdinal, @Std.Time.Minute.instOfNatOffset, @Std.Time.Year.instOfNatOffset, @UInt16.instOfNat, @Std.Time.Weekday.instOfNatOrdinal, instOfNatNat, @Std.Time.Day.instOfNatOrdinal, @Std.Time.Millisecond.instOfNatOffset, @Std.Time.Timestamp.instOfNat, @UInt32.instOfNat, @Std.Time.Month.instOfNatOffset, @Lean.instOfNatLeanOptionValue, @Std.Time.Nanosecond.instOfNatOffset, @Lean.JsonRpc.instOfNatRequestID, @UInt8.instOfNat, @Fin.instOfNat, @ISize.instOfNat, @Std.Time.instOfNatDuration, @Std.Time.Week.instOfNatOffset, @instOfNatFloat32, @Std.Time.WallTime.instOfNat, @Std.Time.Hour.instOfNatOrdinal, @Std.Time.Minute.instOfNatOrdinal, @Std.Time.Month.instOfNatOrdinal, @Int32.instOfNat, @USize.instOfNat, instOfNatPNatOfNeZeroNat, @Lean.Grind.CommRing.OfCommSemiring.instOfNatQ.{?u.12}]
+  [Meta.synthInstance.apply] 💥️ apply @Lean.Grind.CommRing.OfCommSemiring.instOfNatQ.{?u.12} to OfNat.{?u.5} ?m.5 1
+    [Meta.synthInstance.tryResolve] 💥️ OfNat.{?u.5} ?m.5
+          1 ≟ OfNat.{?u.12} (Lean.Grind.Ring.OfSemiring.Q.{?u.12} ?m.8) ?m.10
+[Meta.synthInstance] ✅️ OfNat.{0} ℤ 1
+  [Meta.synthInstance] ✅️ new goal OfNat.{0} ℤ 1
+    [Meta.synthInstance.instances] #[@Lean.Grind.Semiring.ofNat.{?u.6}, @instOfNatAtLeastTwo.{?u.7}, @One.toOfNat1.{?u.8}, @instOfNat]
+  [Meta.synthInstance.apply] ✅️ apply @instOfNat to OfNat.{0} ℤ 1
+    [Meta.synthInstance.tryResolve] ✅️ OfNat.{0} ℤ 1 ≟ OfNat.{0} ℤ 1
+    [Meta.synthInstance.answer] ✅️ OfNat.{0} ℤ 1
+  [Meta.synthInstance] result instOfNat

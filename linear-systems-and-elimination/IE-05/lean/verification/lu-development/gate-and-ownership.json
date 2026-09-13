@@ -1,0 +1,31 @@
+{
+  "utc": "2026-09-13T07:48:30.540256+00:00",
+  "scope": "Exactly the approved generic scaledLU_trajectory contract",
+  "author": "formal_review_standards AI agent",
+  "coordinator_assignment": "New LUTrajectory.lean, separate lu-development and completion report; preserve all sealed helpers and frozen statements. Root retains numerical certificates and real-growth work.",
+  "owned": [
+    "NLA/IE05/LUTrajectory.lean",
+    "verification/lu-development/",
+    "reviews/lu-completion.md"
+  ],
+  "exports_planned": [
+    "NLA.IE05._proved.scaledLU_trajectory"
+  ],
+  "proof_gate_sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+  "statement_freeze_sha256": "bd329885eb323bd4f3fd40879649b56c201918d8c2bd6f63fbd0e86f48ca770c",
+  "preserved_frozen_inputs": 733,
+  "imported_handoffs_read_and_verified": [
+    {
+      "manifest": "verification/gepp-development/EVIDENCE-MANIFEST.json",
+      "sha256": "f3854e99028561510756f6c58d024841d2e8cab4ce8d9315d45ac4b25eebd0d1",
+      "verified_bound_files": 150
+    },
+    {
+      "manifest": "verification/qr-scaling-handoff/EVIDENCE-MANIFEST.json",
+      "sha256": "b328744f06c3af7d3ae119ba28dc6d5a078ed79675d3e89fe888b6000c2f58c6",
+      "verified_bound_files": 847
+    }
+  ],
+  "independent_review": false,
+  "status_or_git_changes_authorized": false
+}

@@ -1,0 +1,157 @@
+NLA/IE05/GEPP.lean:27:38: error: Type mismatch
+  Finset.le_sup (Finset.mem_univ (i, j))
+has type
+  ?m.18 (i, j) ≤ Finset.univ.sup ?m.18
+but is expected to have type
+  ‖A i j‖₊ ≤ entryMaxNN A
+NLA/IE05/GEPP.lean:51:6: error: Type mismatch: After simplification, term
+  h ij.1 ij.2 hij.left hij.right
+ has type
+  @LE.le ℝ Real.instLE |S ij.1 ij.2| C
+but is expected to have type
+  @LE.le ℝ Real.instLE |S ij.1 ij.2| ↑⟨C, hC⟩
+NLA/IE05/GEPP.lean:64:37: error: Application type mismatch: The argument
+  Finset.le_sup (Finset.mem_univ ij)
+has type
+  ?m.107 ij ≤ Finset.univ.sup ?m.107
+but is expected to have type
+  ‖A ij.1 ij.2‖₊ ≤ entryMaxNN A
+in the application
+  le_antisymm (Finset.sup_le hmax) (Finset.le_sup (Finset.mem_univ ij))
+NLA/IE05/GEPP.lean:101:79: error: Type mismatch
+  abs_sub_le ?m.245 ?m.246
+has type
+  ∀ (c : ?m.241), |?m.245 - c| ≤ |?m.245 - ?m.246| + |?m.246 - c|
+but is expected to have type
+  |B i j - B i k / B k k * B k j| ≤ |B i j| + |B i k / B k k * B k j|
+NLA/IE05/GEPP.lean:109:85: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+NLA/IE05/GEPP.lean:109:87: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+NLA/IE05/GEPP.lean:113:2: error: Type mismatch
+  NNReal.coe_le_coe.mpr (Finset.le_sup (Finset.mem_univ k))
+has type
+  ↑(?m.17 k) ≤ ↑(Finset.univ.sup ?m.17)
+but is expected to have type
+  activeMax (trajectory A path ↑k) ↑k ≤ peakMax A path
+NLA/IE05/GEPP.lean:118:95: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  LE Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+NLA/IE05/GEPP.lean:118:97: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  OfNat Type 0
+numerals are polymorphic in Lean, but the numeral `0` cannot be used in a context where the expected type is
+  Type
+due to the absence of the instance above
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+NLA/IE05/GEPP.lean:155:4: error: 'change' tactic failed, pattern
+  1 ≤ peakMax A path / entryMax A
+is not definitionally equal to target
+  1 ≤ growth A path
+NLA/IE05/GEPP.lean:157:4: error: 'change' tactic failed, pattern
+  peakMax A path / entryMax A ≤ 2 ^ (n - 1)
+is not definitionally equal to target
+  growth A path ≤ 2 ^ (n - 1)
+NLA/IE05/GEPP.lean:181:57: error: Application type mismatch: The argument
+  1
+has type
+  ℝ
+but is expected to have type
+  ?m.52 j k
+in the application
+  Pi.single k 1
+NLA/IE05/GEPP.lean:227:62: error: unsolved goals
+n : ℕ
+S : Mat n
+k p : Fin n
+hp : k ≤ p
+hne : S p k ≠ 0
+hS : ActiveInjective S ↑k
+B : Mat n := rowSwap S k p
+hB : ActiveInjective (rowSwap S k p) ↑k
+hkk : B k k ≠ 0
+x : Fin n → ℝ
+hx : ∀ (j : Fin n), ↑j < ↑k + 1 → x j = 0
+hrows : ∀ (i : Fin n), ↑k + 1 ≤ ↑i → Matrix.mulVec (schurStep S k p) x i = 0
+c : ℝ := -Matrix.mulVec B x k / B k k
+y : Fin n → ℝ := x + Pi.single k c
+hysupp : ∀ (j : Fin n), ↑j < ↑k → y j = 0
+i : Fin n
+⊢ ∑ x_1, B i x_1 * (x x_1 + if x_1 = k then c else 0) = ∑ x_1, B i x_1 * x x_1 + B i k * c
+NLA/IE05/GEPP.lean:234:4: error: unsolved goals
+case pos
+n : ℕ
+S : Mat n
+k p : Fin n
+hp : k ≤ p
+hne : S p k ≠ 0
+hS : ActiveInjective S ↑k
+B : Mat n := rowSwap S k p
+hB : ActiveInjective (rowSwap S k p) ↑k
+hkk : B k k ≠ 0
+x : Fin n → ℝ
+hx : ∀ (j : Fin n), ↑j < ↑k + 1 → x j = 0
+hrows : ∀ (i : Fin n), ↑k + 1 ≤ ↑i → Matrix.mulVec (schurStep S k p) x i = 0
+c : ℝ := -Matrix.mulVec B x k / B k k
+y : Fin n → ℝ := x + Pi.single k c
+hysupp : ∀ (j : Fin n), ↑j < ↑k → y j = 0
+hmul : ∀ (i : Fin n), Matrix.mulVec B y i = Matrix.mulVec B x i + B i k * c
+hi : ↑k ≤ ↑k
+⊢ Matrix.mulVec B x k * (1 + -1) = 0
+NLA/IE05/GEPP.lean:226:13: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [y, hne, hx j (by omega)]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/IE05/GEPP.lean:229:13: warning: This simp argument is unused:
+  Matrix.mulVec_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [y, Matrix.mulVec, dotProduct, Pi.single_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/IE05/GEPP.lean:286:21: error: #assert_trust: 'NLA.IE05.entryMax_semantics_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.entryMax_semantics_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:288:21: error: #assert_trust: 'NLA.IE05.schurStep_bound_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.schurStep_bound_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:290:21: error: #assert_trust: 'NLA.IE05.gepp_growth_bound_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.gepp_growth_bound_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.IE05.activeInjective_initial_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:294:21: error: #assert_trust: 'NLA.IE05.activeInjective_nonzero_column_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.activeInjective_nonzero_column_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.IE05.activeInjective_rowSwap_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.schurStep_mulVec_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:300:21: error: #assert_trust: 'NLA.IE05.activeInjective_schur_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.activeInjective_schur_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:302:21: error: #assert_trust: 'NLA.IE05.firstTrajectory_activeInjective_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstTrajectory_activeInjective_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:304:21: error: #assert_trust: 'NLA.IE05.firstPath_semantics_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPath_semantics_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:306:21: error: #assert_trust: 'NLA.IE05.orthogonalGrowthSet_bounded_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.orthogonalGrowthSet_bounded_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

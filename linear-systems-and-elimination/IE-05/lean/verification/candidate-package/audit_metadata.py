@@ -1,0 +1,142 @@
+#!/usr/bin/env python3
+"""Read-only package metadata and preserved-source audit; no new Lean proof check."""
+from __future__ import annotations
+import contextlib
+import hashlib
+import io
+import json
+from pathlib import Path
+import re
+import sys
+
+# Importing retained helper source must not create a package __pycache__ file.
+sys.dont_write_bytecode = True
+import importlib.util
+import yaml
+
+P = Path(__file__).resolve().parents[2]
+E = P / 'verification/candidate-package'
+
+def require(ok, message):
+    if not ok:
+        raise ValueError(message)
+
+def record(p):
+    b = p.read_bytes()
+    return {'sha256': hashlib.sha256(b).hexdigest(), 'bytes': len(b)}
+
+def unique_pairs(pairs):
+    value = {}
+    for k, v in pairs:
+        require(k not in value, f'Duplicate JSON key: {k!r}')
+        value[k] = v
+    return value
+
+def load(p):
+    return json.loads(p.read_text(), object_pairs_hook=unique_pairs)
+
+def lean_code(s):
+    """Remove nested Lean comments and strings for a bounded lexical sanity check."""
+    out = []
+    i = 0
+    depth = 0
+    while i < len(s):
+        if depth:
+            if s.startswith('/-', i): depth += 1; i += 2
+            elif s.startswith('-/', i): depth -= 1; i += 2
+            else: i += 1
+        elif s.startswith('/-', i): depth = 1; i += 2; out.append(' ')
+        elif s.startswith('--', i):
+            j = s.find('\n', i)
+            i = len(s) if j < 0 else j
+        elif s[i] == '"':
+            i += 1
+            while i < len(s):
+                if s[i] == '\\': i += 2
+                elif s[i] == '"': i += 1; break
+                else: i += 1
+            out.append(' ')
+        else: out.append(s[i]); i += 1
+    require(depth == 0, 'Unclosed Lean comment in lexical check')
+    return ''.join(out)
+
+def main():
+    references = load(E / 'schema/SOURCE-RECORDS.json')
+    for rel, expected in references.items():
+        require(record(E / rel) == {k: expected[k] for k in ('sha256', 'bytes')}, f'Pinned validator/schema source changed: {rel}')
+    require(record(E / 'schema/v0.4.schema.json')['sha256'] == '25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce', 'Actual pinned v0.4 schema changed')
+    spec = importlib.util.spec_from_file_location('ie05_pinned_manifest_validator', E / 'schema/validate_manifest.py')
+    validator = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(validator)
+    output = io.StringIO()
+    with contextlib.redirect_stdout(output):
+        validator.validate(P, load(E / 'schema/v0.4.schema.json'))
+    metadata = yaml.load((P / 'formalization.yaml').read_text(), Loader=validator.UniqueSafeLoader)
+    config = load(P / 'comparator.json')
+    names = config['theorem_names']
+    require(len(names) == 17 and len(set(names)) == 17, 'Expected 17 distinct exports')
+    require(config['challenge_module'] == 'Challenge' and config['solution_module'] == 'Solution', 'Comparator module boundary')
+    require(config['definition_names'] == [], 'Comparator definition exceptions')
+    require(config['permitted_axioms'] == ['propext', 'Classical.choice', 'Quot.sound'], 'Comparator permitted axioms')
+    before = load(E / 'PRE-PACKAGE-INPUTS.json')['files']
+    source_names = [p.relative_to(P).as_posix() for p in sorted((P / 'NLA/IE05').glob('*.lean'))] + ['Challenge.lean', 'Solution.lean']
+    require(len(source_names) == 14, 'Expected 12 final NLA modules plus Challenge and Solution')
+    source_records = {}
+    trust_count = 0
+    for rel in source_names:
+        actual = record(P / rel)
+        require(actual == before[rel], f'Accepted mathematical source changed: {rel}')
+        source_records[rel] = actual
+        code = lean_code((P / rel).read_text())
+        if rel != 'Challenge.lean':
+            bad = re.search(r'\b(sorry|admit|axiom|unsafe|partial|native_decide)\b', code)
+            require(bad is None, f'Unexpected proof-source token {bad.group() if bad else None}: {rel}')
+            require(re.search(r'^\s*import\s+.*\bChallenge\b', code, re.M) is None, f'Proof imports Challenge: {rel}')
+            trust_count += len(re.findall(r'#assert_trust\s+kernel\s+\S+', code))
+        else:
+            require(len(re.findall(r'\bsorry\b', code)) == 17, 'Challenge reference placeholder count')
+    require(trust_count == 89, 'Final literal explicit kernel assertion count changed')
+    require((P / 'Solution.lean').read_bytes() == b'import NLA.IE05.Proof\n', 'Solution entry point')
+    proof = lean_code((P / 'NLA/IE05/Proof.lean').read_text())
+    actual_names = ['NLA.IE05.' + n for n in re.findall(r'^theorem\s+(\w+)\b', proof, re.M)]
+    require(actual_names == names, 'Actual declared final exports do not match metadata/config order')
+    for rel in ['lean-toolchain', 'lake-manifest.json', 'comparator.json', 'NUMERICAL_TARGETS.md', 'PROOF-MAP.md']:
+        require(record(P / rel) == before[rel], f'Frozen support file changed: {rel}')
+    require((P / 'lean-toolchain').read_text().strip() == 'leanprover/lean4:v4.33.1', 'Lean toolchain')
+    lake = (P / 'lakefile.toml').read_text()
+    require(re.findall(r'^defaultTargets\s*=\s*(.*)$', lake, re.M) == ['["Solution"]'], 'Candidate must default to Solution')
+    old_lake = (E / 'archive/pre-package/lakefile.toml').read_text()
+    require((P / 'lakefile.toml').read_text() == old_lake.replace('defaultTargets = ["Challenge"]', 'defaultTargets = ["Solution"]'), 'Unexpected Lake configuration change')
+    pins = {d['name']: d['rev'] for d in load(P / 'lake-manifest.json')['packages']}
+    require(len(pins) == 10 and metadata['toolchain']['dependencies'] == pins, 'All ten exact dependency pins')
+    require(metadata['toolchain']['lean'] == 'leanprover/lean4:v4.33.1', 'Metadata toolchain')
+    for result in metadata['status']['main_results']:
+        require(result['file'] == 'NLA/IE05/Proof.lean' and result['literature_dependencies'] == [], 'Actual result file or unproved premise')
+        require(result['axioms'] == config['permitted_axioms'], 'Per-result axiom metadata')
+    require(metadata['status']['actual_linux_comparator'] == metadata['status']['independent_packaging_approval'] == 'pending', 'Premature approval claim')
+    require(metadata['status']['whole_problem_verified'] is False and metadata['status']['canonical_status'] == 'Solved', 'Canonical verification/status claim')
+    require(metadata['reproduction']['authoritative_Linux']['status'] == 'pending', 'Premature Linux reproduction claim')
+    require(metadata['project']['authors'] == ['George Stepaniants'], 'Author attribution')
+    require(metadata['project']['affiliations']['George Stepaniants'] == 'Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA', 'Full affiliation')
+    require(metadata['project']['license'] == 'Apache-2.0' and (P / 'LICENSE').is_file() and (P / 'NOTICE.md').is_file(), 'License and attribution files')
+    require(any(s.get('authors') == ['John Peca-Medlin'] and s.get('author_endorsement') == 'not-contacted' for s in metadata['sources']), 'Conjecture attribution or invented endorsement')
+    require('subsequently authored this candidate package' in metadata['automation']['notes'], 'Chronological independence disclosure')
+    require([a['declaration'] for a in metadata['alignment']] == names, 'Full source alignment')
+    gate = load(P / 'verification/final-review-acceptance.json')
+    require([r['verdict'] for r in gate['reviews']] == ['APPROVE', 'APPROVE'], 'Accepted independent mathematical verdicts')
+    require(metadata['review']['final_math_acceptance']['sha256'] == record(P / 'verification/final-review-acceptance.json')['sha256'], 'Gate binding')
+    for rel in ['README.md', 'SourceCorrespondence.md', 'formalization.yaml', 'NOTICE.md']:
+        text = (P / rel).read_text()
+        require(re.search(r'[\w.+-]+@[\w.-]+\.[A-Za-z]{2,}', text) is None, f'Unrequested contact address: {rel}')
+    print(json.dumps({
+        'result': 'PASS', 'scope': 'packaging-author metadata and preserved-source audit; no new Lean compilation, actual-type inspection or independent approval',
+        'pinned_schema_validator_output': output.getvalue().strip(),
+        'accepted_mathematical_source_files': source_records,
+        'configured_exports': names, 'literal_final_source_kernel_assertions': trust_count,
+        'final_source_sorries': 0, 'isolated_challenge_placeholders': 17,
+        'dependency_pin_count': len(pins), 'candidate_default_target': 'Solution',
+        'actual_linux_comparator': 'pending', 'canonical_status': 'Solved',
+    }, indent=2, sort_keys=True))
+
+if __name__ == '__main__':
+    main()

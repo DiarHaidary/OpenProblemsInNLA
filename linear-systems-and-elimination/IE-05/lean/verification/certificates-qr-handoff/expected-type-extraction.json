@@ -1,0 +1,21 @@
+{
+  "Challenge_sha256": "0ccd5424f990587b1bb7170c674cba4645d9427286c916e2e19387234ccf250e",
+  "ExactCertificates_sha256": "5ee8f9bc7bc79b4e0e80b85c81952ae32689661dac405edd1559f92d6eb643af",
+  "headers": {
+    "integer_factor_certificates": {
+      "Challenge_header": "\u2200 b : Bool,\n      (integerH b).transpose * integerH b = Matrix.diagonal (integerD b) \u2227\n      integerH b = integerLower b * integerT b \u2227\n      UnitLower (integerLower b) \u2227 UpperTriangular (integerT b) \u2227\n      (\u2200 i j, j < i \u2192 |integerLower b i j| \u2264 1) \u2227\n      (\u2200 i, 0 < integerT b i i) \u2227 (\u2200 j, 0 < integerD b j)",
+      "actual_header": "\u2200 b : Bool,\n      (integerH b).transpose * integerH b = Matrix.diagonal (integerD b) \u2227\n      integerH b = integerLower b * integerT b \u2227\n      UnitLower (integerLower b) \u2227 UpperTriangular (integerT b) \u2227\n      (\u2200 i j, j < i \u2192 |integerLower b i j| \u2264 1) \u2227\n      (\u2200 i, 0 < integerT b i i) \u2227 (\u2200 j, 0 < integerD b j)",
+      "equal_modulo_whitespace": true
+    },
+    "integer_entry_certificates": {
+      "Challenge_header": "(\u2200 i j : Fin 8, 5272 * (integerH true i j) ^ 2 \u2264 3969 * integerD true j) \u2227\n    integerD true 7 = 5272 \u2227\n    integerH false 2 2 = 51 \u2227 integerD false 2 = 3286 \u2227\n    (\u2200 k i j : Fin 8, k \u2264 i \u2192 k \u2264 j \u2192\n      (tailProduct (integerLower false) (integerT false) k.val i j) ^ 2 \u2264\n        5462 * integerD false j) \u2227\n    tailProduct (integerLower true) (integerT true) 7 7 7 = 5272",
+      "actual_header": "(\u2200 i j : Fin 8, 5272 * (integerH true i j) ^ 2 \u2264 3969 * integerD true j) \u2227\n    integerD true 7 = 5272 \u2227\n    integerH false 2 2 = 51 \u2227 integerD false 2 = 3286 \u2227\n    (\u2200 k i j : Fin 8, k \u2264 i \u2192 k \u2264 j \u2192\n      (tailProduct (integerLower false) (integerT false) k.val i j) ^ 2 \u2264\n        5462 * integerD false j) \u2227\n    tailProduct (integerLower true) (integerT true) 7 7 7 = 5272",
+      "equal_modulo_whitespace": true
+    },
+    "numerical_gap_positive": {
+      "Challenge_header": "((5272 : \u211d) / 63) ^ 2 - (17948132 : \u211d) / 2601 =\n      (117335164 : \u211d) / 1147041 \u2227\n      0 < (117335164 : \u211d) / 1147041",
+      "actual_header": "((5272 : \u211d) / 63) ^ 2 - (17948132 : \u211d) / 2601 =\n      (117335164 : \u211d) / 1147041 \u2227\n      0 < (117335164 : \u211d) / 1147041",
+      "equal_modulo_whitespace": true
+    }
+  }
+}

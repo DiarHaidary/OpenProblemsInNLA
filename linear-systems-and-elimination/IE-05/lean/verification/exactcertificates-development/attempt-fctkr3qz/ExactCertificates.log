@@ -1,0 +1,17 @@
+NLA/IE05/ExactCertificates.lean:31:2: error: failed to synthesize
+  Decidable
+    (∀ (b : Bool),
+      Matrix.transpose (integerH b) * integerH b = Matrix.diagonal (integerD b) ∧
+        integerH b = integerLower b * integerT b ∧
+          ((∀ (i : Fin 8), integerLower b i i = 1) ∧ ∀ (i j : Fin 8), i < j → integerLower b i j = 0) ∧
+            (∀ (i j : Fin 8), j < i → integerT b i j = 0) ∧
+              (∀ (i j : Fin 8), j < i → |integerLower b i j| ≤ 1) ∧
+                (∀ (i : Fin 8), 0 < integerT b i i) ∧ ∀ (j : Fin 8), 0 < integerD b j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+'NLA.IE05._proved.integer_factor_certificates' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/ExactCertificates.lean:50:21: error: #assert_trust: 'NLA.IE05._proved.integer_factor_certificates' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]

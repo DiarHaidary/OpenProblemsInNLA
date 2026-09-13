@@ -1,0 +1,5 @@
+{
+  "reason": "Collect all missing named-dependency expectations in one diagnostic rather than stopping at the first. Every requirement still fails closed. Mathematical source and exact type comparisons remain unchanged.",
+  "initial_missing_named_dependency": "NLA.IE05._proved.castIntegerMatrix_transpose",
+  "observation": "The helper is rfl and is itself an audited root; the simplifier can remove this named rewrite because the equality is definitional. The next diagnostic will check all other expectations before changing any list."
+}

@@ -1,0 +1,51 @@
+195-
+196-@[to_dual csInf_le]
+197:theorem le_csSup (h₁ : BddAbove s) (h₂ : a ∈ s) : a ≤ sSup s :=
+198-  (isLUB_csSup (nonempty_of_mem h₂) h₁).1 h₂
+199-
+200-@[to_dual le_csInf]
+201:theorem csSup_le (h₁ : s.Nonempty) (h₂ : ∀ b ∈ s, b ≤ a) : sSup s ≤ a :=
+202-  (isLUB_csSup h₁ ⟨a, h₂⟩).2 h₂
+203-
+204-@[to_dual csInf_le_of_le]
+205:theorem le_csSup_of_le (hs : BddAbove s) (hb : b ∈ s) (h : a ≤ b) : a ≤ sSup s :=
+206-  le_trans h (le_csSup hs hb)
+207-
+208-@[to_dual (attr := gcongr low)]
+209-theorem csSup_le_csSup (ht : BddAbove t) (hs : s.Nonempty) (h : s ⊆ t) : sSup s ≤ sSup t :=
+210-  csSup_le hs fun _ ha => le_csSup ht (h ha)
+211-
+212-@[to_dual csInf_le_iff]
+213:theorem le_csSup_iff (h : BddAbove s) (hs : s.Nonempty) : a ≤ sSup s ↔ ∀ b ∈ upperBounds s, a ≤ b :=
+214-  ⟨fun h _ hb => le_trans h (csSup_le hs hb), fun hb => hb _ fun _ => le_csSup h⟩
+215-
+216-@[to_dual]
+217-theorem IsLUB.csSup_eq (H : IsLUB s a) (ne : s.Nonempty) : sSup s = a :=
+218-  (isLUB_csSup ne ⟨a, H.1⟩).unique H
+219-
+220-instance (priority := 100) ConditionallyCompleteLattice.toConditionallyCompletePartialOrder :
+221-    ConditionallyCompletePartialOrder α where
+--
+515-  simpa only [not_le, not_forall₂, exists_prop] using (csSup_le_iff' hb).not
+516-
+517:theorem le_csSup_iff' {s : Set α} {a : α} (h : BddAbove s) :
+518-    a ≤ sSup s ↔ ∀ b, b ∈ upperBounds s → a ≤ b :=
+519-  ⟨fun h _ hb => le_trans h (csSup_le' hb), fun hb => hb _ fun _ => le_csSup h⟩
+520-
+521-theorem le_csInf_iff'' {s : Set α} {a : α} (ne : s.Nonempty) :
+522-    a ≤ sInf s ↔ ∀ b : α, b ∈ s → a ≤ b :=
+523-  le_csInf_iff (OrderBot.bddBelow _) ne
+524-
+525-theorem csInf_le' (h : a ∈ s) : sInf s ≤ a := csInf_le (OrderBot.bddBelow _) h
+--
+688-
+689-@[to_dual csInf_image_le]
+690:theorem le_csSup_image {s : Set α} {c : α} (hcs : c ∈ s) (h_bdd : BddAbove s) :
+691-    f c ≤ sSup (f '' s) :=
+692-  le_csSup (map_bddAbove h_mono h_bdd) (mem_image_of_mem f hcs)
+693-
+694-@[to_dual le_csInf_image]
+695-theorem csSup_image_le {s : Set α} (hs : s.Nonempty) {B : α} (hB : B ∈ upperBounds s) :
+696-    sSup (f '' s) ≤ f B :=
+697-  csSup_le (Nonempty.image f hs) (h_mono.mem_upperBounds_image hB)
+698-

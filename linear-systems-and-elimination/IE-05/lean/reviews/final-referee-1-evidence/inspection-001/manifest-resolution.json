@@ -1,0 +1,22 @@
+{
+  "all_attempts_preserved": [
+    "run-001",
+    "run-002",
+    "run-003"
+  ],
+  "initial_source_manifest": {
+    "path": "source-manifest.json",
+    "resolution": "Its original preparation-time basenames resolve to the immutable run-001 snapshots, before reviewer-only inspector edits.",
+    "sha256": "95b2f165dfbb084827d59457aa519026d3b3218ecd1eabdc1dd98e9ccd76e274",
+    "snapshots": {
+      "RefereeInspect.lean": "run-001/RefereeInspect.lean",
+      "RefereeReference.lean": "run-001/RefereeReference.lean"
+    }
+  },
+  "latest_source": {
+    "RefereeInspect.lean": {
+      "sha256": "13287cddb60f4c056ae00e83ec4bb3247119078dac8ae1bc2f9fda570f574edd",
+      "snapshot": "run-003/RefereeInspect.lean"
+    }
+  }
+}

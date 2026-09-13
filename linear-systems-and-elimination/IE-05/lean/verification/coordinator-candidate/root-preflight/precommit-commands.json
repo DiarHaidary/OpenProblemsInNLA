@@ -1,0 +1,121 @@
+[
+  {
+    "label": "installed-independent-seal",
+    "argv": [
+      "/Users/georgestepaniants/miniforge3/bin/python3",
+      "-B",
+      "/private/tmp/nla-lean-ie05-worktree/linear-systems-and-elimination/IE-05/lean/verification/coordinator-candidate/verify_installed_packaging.py"
+    ],
+    "cwd": "/private/tmp/nla-lean-ie05-worktree",
+    "returncode": 0,
+    "stdout": {
+      "sha256": "b977c687103e3e963b2a8aff2cdcefa2f25dd79639bc20e95eb0ac1b958a3d4a",
+      "bytes": 552
+    },
+    "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "label": "candidate-fixed-archives",
+    "argv": [
+      "/Users/georgestepaniants/miniforge3/bin/python3",
+      "-B",
+      "/private/tmp/nla-lean-ie05-worktree/linear-systems-and-elimination/IE-05/lean/verification/candidate-package/verify_inventory.py",
+      "--candidate-members-only"
+    ],
+    "cwd": "/private/tmp/nla-lean-ie05-worktree",
+    "returncode": 0,
+    "stdout": {
+      "sha256": "1e3b6ad209ab48077000349f09002c2ecd4966a6fc0d4071fb5c56082f0a7a81",
+      "bytes": 2567
+    },
+    "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "label": "candidate-metadata",
+    "argv": [
+      "/tmp/nla-lean-formalization/venv/bin/python",
+      "-B",
+      "/private/tmp/nla-lean-ie05-worktree/linear-systems-and-elimination/IE-05/lean/verification/candidate-package/audit_metadata.py"
+    ],
+    "cwd": "/private/tmp/nla-lean-ie05-worktree",
+    "returncode": 0,
+    "stdout": {
+      "sha256": "9fdb4e9fbfd9b46eb27970101980f899af0d513e6ee0b57bcc103b67b4c3aaa9",
+      "bytes": 3256
+    },
+    "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "label": "current-v04-schema",
+    "argv": [
+      "/tmp/nla-lean-formalization/venv/bin/python",
+      "-B",
+      "tools/lean/validate_manifest.py",
+      "/private/tmp/nla-lean-ie05-worktree/linear-systems-and-elimination/IE-05/lean"
+    ],
+    "cwd": "/private/tmp/nla-lean-ie05-worktree",
+    "returncode": 0,
+    "stdout": {
+      "sha256": "96c646e88eea3ea19837bcec29f47d288e1b7e9a67ac067ce639570c43a22f1c",
+      "bytes": 64
+    },
+    "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "label": "permanent-IDs",
+    "argv": [
+      "/Users/georgestepaniants/miniforge3/bin/python3",
+      "-B",
+      "tools/validate_problem_ids.py",
+      "--base-ref",
+      "origin/main"
+    ],
+    "cwd": "/private/tmp/nla-lean-ie05-worktree",
+    "returncode": 0,
+    "stdout": {
+      "sha256": "44cc74bfe8f011df4389835465a6043310e12828a092e8c74d318f50d26da3a0",
+      "bytes": 56
+    },
+    "stderr": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  {
+    "label": "permanent-ID-tests",
+    "argv": [
+      "/Users/georgestepaniants/miniforge3/bin/python3",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_problem_ids.py",
+      "-v"
+    ],
+    "cwd": "/private/tmp/nla-lean-ie05-worktree",
+    "returncode": 0,
+    "stdout": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "stderr": {
+      "sha256": "79f5d50264f3d460b17451d1681ad139b4ac7a9203e0b7548ce57acf104357b1",
+      "bytes": 1467
+    }
+  }
+]

@@ -1,0 +1,29 @@
+{
+  "utc": "2026-09-13T07:11:35.296459+00:00",
+  "status": "Both independent statement approvals accepted by the coordinator",
+  "root_read_complete_reports_statements_numerical_targets_correspondence_preflight_source": true,
+  "root_role": "Statement numerical-design contributor and prospective proof contributor; not an independent statement referee",
+  "statement_freeze_sha256": "bd329885eb323bd4f3fd40879649b56c201918d8c2bd6f63fbd0e86f48ca770c",
+  "frozen_inputs": 733,
+  "original_Git_sources": 27,
+  "read_only_preflight_reexecuted": true,
+  "actual_read_only_commands": 85,
+  "configured_contracts": 17,
+  "definition_kernel_trust_reports": 41,
+  "full_preflight_output_sha256": "37dfeb10c1413da61cb129e1d678fae2c8dc15795f02b160c6ad75a106414181",
+  "reviewed_anchors": {
+    "reviews/statement-referee-1.md": "13aa3e9b73c1fde94d2b45c4ec327a44b0e4470c685fa58478526a122cb25c10",
+    "reviews/statement-referee-1-evidence/outer-manifest.json": "26f09fc4bff996802f57dea898de457d4105d0454e1700288da96f578222561b",
+    "reviews/statement-referee-2.md": "d5b204c4bcc727e52c52c60855e5a393debdba5bc5a2d5567c1c715e5de18730",
+    "reviews/statement-referee-2-evidence/EVIDENCE-SEAL.json": "f21212db9edcfba43dccbf92bb1eb75fea56b63fc464fa636abb756aa81c7a52",
+    "verification/statement-gate-preflight/EVIDENCE-SEAL.json": "7f012a16fa8d947511176a634b28d63ebdfc4331f48532b16e513284e397f6c3",
+    "verification/statement-gate-preflight/preflight-result.json": "4c9c522155833039463c16e2d46f2215753635bbc2eab158f5419cc64b8be6ae",
+    "verification/statement-gate-preflight/proposed-input-binding.json": "ef6165de5d5129ed19871e0cb1000ece1f50040c2453e9937a71f1d58e82cfe0",
+    "verification/statement-gate-preflight/verify_preflight.py": "26b3081d0e59e2b99dd7c3cc2c4f22a35d81eab717442f934d802f2c34cc6e85",
+    "NLA/IE05/Definitions.lean": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+    "Challenge.lean": "0ccd5424f990587b1bb7170c674cba4645d9427286c916e2e19387234ccf250e"
+  },
+  "new_Lean_compile": false,
+  "initial_coordinator_diagnostic": "First full read-only preflight passed; coordinator then compared ordered declaration names against sorted JSON object keys and failed. The first source/result and postcheck diagnostic are retained. Corrected name-set check preserves the original Comparator declaration order, with a new successful complete read-only preflight.",
+  "historical_driver_note": "The prior one-shot author/reviewer/preflight tree checks retain their pre-implementation scopes; inspect their snapshots and manifests after later proof additions instead of rerunning them against an expanded live tree."
+}

@@ -1,0 +1,33 @@
+NLA/IE05/ExactCertificates.lean:31:73: error: failed to synthesize
+  Decidable
+    (Matrix.transpose (integerH false) * integerH false = Matrix.diagonal (integerD false) ∧
+      integerH false = integerLower false * integerT false ∧
+        ((∀ (i : Fin 8), integerLower false i i = 1) ∧ ∀ (i j : Fin 8), i < j → integerLower false i j = 0) ∧
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ∧
+            (∀ (i j : Fin 8), j < i → |integerLower false i j| ≤ 1) ∧
+              (∀ (i : Fin 8), 0 < integerT false i i) ∧ ∀ (j : Fin 8), 0 < integerD false j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:31:73: error: failed to synthesize
+  Decidable
+    (Matrix.transpose (integerH true) * integerH true = Matrix.diagonal (integerD true) ∧
+      integerH true = integerLower true * integerT true ∧
+        ((∀ (i : Fin 8), integerLower true i i = 1) ∧ ∀ (i j : Fin 8), i < j → integerLower true i j = 0) ∧
+          (∀ (i j : Fin 8), j < i → integerT true i j = 0) ∧
+            (∀ (i j : Fin 8), j < i → |integerLower true i j| ≤ 1) ∧
+              (∀ (i : Fin 8), 0 < integerT true i i) ∧ ∀ (j : Fin 8), 0 < integerD true j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:31:25: warning: This simp argument is unused:
+  Matrix.ext_iff
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [UnitLower, UpperTriangular]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'NLA.IE05._proved.integer_factor_certificates' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/ExactCertificates.lean:50:21: error: #assert_trust: 'NLA.IE05._proved.integer_factor_certificates' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]

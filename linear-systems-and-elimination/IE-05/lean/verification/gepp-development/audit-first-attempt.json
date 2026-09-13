@@ -1,0 +1,6 @@
+{
+  "observed_exit_code": 1,
+  "observed_failure": "AssertionError: NLA/IE05/Pivot.lean at the raw-word structural scanner",
+  "cause": "The comment text partial-pivot matched the raw token partial. Actual Lean source and all kernel/type/dependency checks already pass. The diagnostic scanner must ignore Lean comments and quoted strings before checking declaration keywords.",
+  "proof_changes": false
+}

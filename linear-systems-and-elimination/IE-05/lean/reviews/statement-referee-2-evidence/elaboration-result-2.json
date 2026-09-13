@@ -1,0 +1,454 @@
+{
+  "axiom_reports": {
+    "AdmissiblePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "AdmissiblePivot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FirstAvailablePath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "FirstAvailablePivot": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "IntMat": [],
+    "Mat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "Orthogonal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "OrthogonalExtremizerConjecture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "PivotPath": [],
+    "PositiveQR": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "UnitLower": [],
+    "UpperTriangular": [],
+    "activeMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "activeMaxNN": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "candidateQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "candidateR": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "castIntegerMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "entryMax": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "entryMaxNN": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "euclideanColumns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "firstGrowth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "firstPath": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "firstPivotIndex": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "firstTrajectory": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "growth": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "integerD": [
+      "propext"
+    ],
+    "integerH": [
+      "propext"
+    ],
+    "integerLower": [
+      "propext"
+    ],
+    "integerT": [
+      "propext"
+    ],
+    "noSwapPath": [],
+    "normalizedInteger": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "normalizedQRQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "orthogonalGrowthSet": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "orthogonalGrowthSup": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "prescribedLower": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "rowSwap": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "scaledColumns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "schurStep": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "tailProduct": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "trajectory": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "witnessQ": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "comparison_configuration": {
+    "challenge_module": "Challenge",
+    "definition_names": [],
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "solution_module": "Solution",
+    "theorem_names": [
+      "NLA.IE05.entryMax_semantics",
+      "NLA.IE05.schurStep_bound",
+      "NLA.IE05.gepp_growth_bound",
+      "NLA.IE05.firstPath_semantics",
+      "NLA.IE05.orthogonalGrowthSet_bounded",
+      "NLA.IE05.candidate_positiveQR",
+      "NLA.IE05.scaledColumns_orthogonal",
+      "NLA.IE05.scaledLU_trajectory",
+      "NLA.IE05.integer_factor_certificates",
+      "NLA.IE05.integer_entry_certificates",
+      "NLA.IE05.canonical_integer_identification",
+      "NLA.IE05.witness_orthogonal_path",
+      "NLA.IE05.bounded_growth_data",
+      "NLA.IE05.numerical_gap_positive",
+      "NLA.IE05.witness_strict_growth",
+      "NLA.IE05.supremum_strict_gap",
+      "NLA.IE05.orthogonalExtremizerConjecture"
+    ]
+  },
+  "definition_names": [
+    "Mat",
+    "IntMat",
+    "PivotPath",
+    "Orthogonal",
+    "UpperTriangular",
+    "UnitLower",
+    "prescribedLower",
+    "euclideanColumns",
+    "normalizedQRQ",
+    "candidateQ",
+    "candidateR",
+    "PositiveQR",
+    "rowSwap",
+    "schurStep",
+    "trajectory",
+    "AdmissiblePivot",
+    "FirstAvailablePivot",
+    "AdmissiblePath",
+    "FirstAvailablePath",
+    "firstPivotIndex",
+    "firstTrajectory",
+    "firstPath",
+    "noSwapPath",
+    "entryMaxNN",
+    "entryMax",
+    "activeMaxNN",
+    "activeMax",
+    "growth",
+    "firstGrowth",
+    "orthogonalGrowthSet",
+    "orthogonalGrowthSup",
+    "OrthogonalExtremizerConjecture",
+    "scaledColumns",
+    "tailProduct",
+    "integerLower",
+    "integerH",
+    "integerD",
+    "integerT",
+    "castIntegerMatrix",
+    "normalizedInteger",
+    "witnessQ"
+  ],
+  "definition_trust_count": 41,
+  "definitions_warnings": 0,
+  "explicit_environment": {
+    "GIT_OPTIONAL_LOCKS": "0",
+    "LEAN_PATH": "/private/tmp/nla-lean-formalization/next-ie05-statements-draft/lean/reviews/statement-referee-2-evidence/private-objects-m0qygl8h:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "imported_package_objects_copied": false,
+  "inspector_sha256": "a803b82286d7785726b1ad36b86b2ada45bf134d70bf190b561fa354ce162544",
+  "inspector_warnings": 0,
+  "intentional_challenge_warnings": 17,
+  "lean_binary": "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+  "lean_binary_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+  "objects": {
+    "Challenge.olean": {
+      "bytes": 104552,
+      "sha256": "5b332964fd54d8a83eeb52a7947d7d4802a2340d61b6f29da76feba6b5e6a2bb"
+    },
+    "NLA/IE05/Definitions.olean": {
+      "bytes": 879680,
+      "sha256": "e3a2b1a032febaec2bbf1b0b55ec6adb52e81db6bb981784caeb6aac0193a063"
+    },
+    "Referee2Inspect.olean": {
+      "bytes": 2120,
+      "sha256": "226f070a24a500845c063991de16964c61516c1ddcaed967e04b8fc707d5a0ac"
+    }
+  },
+  "own_objects_hashed_then_removed": true,
+  "package_build_or_download": false,
+  "package_postflight": [
+    {
+      "name": "leancert",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean",
+      "revision": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "mathlib",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "plausible",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean",
+      "revision": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "revision": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "importGraph",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean",
+      "revision": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "revision": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "aesop",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean",
+      "revision": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "Qq",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean",
+      "revision": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "batteries",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean",
+      "revision": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "Cli",
+      "object_directory": null,
+      "revision": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "role": "tooling only, not imported",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "tracked_status_clean": true
+    }
+  ],
+  "package_preflight": [
+    {
+      "name": "leancert",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean",
+      "revision": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "mathlib",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "plausible",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean",
+      "revision": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "revision": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "importGraph",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean",
+      "revision": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "revision": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "aesop",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean",
+      "revision": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "Qq",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean",
+      "revision": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "batteries",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean",
+      "revision": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "role": "read-only dependency",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "tracked_status_clean": true
+    },
+    {
+      "name": "Cli",
+      "object_directory": null,
+      "revision": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "role": "tooling only, not imported",
+      "source_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "tracked_status_clean": true
+    }
+  ],
+  "pass_": true,
+  "phase": "statement-only independent macOS elaboration",
+  "prefix_initially_empty": true,
+  "private_prefix": "/private/tmp/nla-lean-formalization/next-ie05-statements-draft/lean/reviews/statement-referee-2-evidence/private-objects-m0qygl8h",
+  "private_prefix_absent_after": true,
+  "proofs_established": false,
+  "statement_count": 17,
+  "version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)"
+}

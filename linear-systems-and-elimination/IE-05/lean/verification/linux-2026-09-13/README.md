@@ -27,3 +27,16 @@ as a substitute for the sealed attempt-1 target evidence.
 This is a verification archive, not a new mathematical claim. The proof's
 scope and two final mathematical reviews remain documented in the project
 root and `reviews/`.
+
+The final operational reviewer was `/root/leancert_examples`, as identified in
+the final report and `FINAL.json`. The retained `ROLE.json` records the
+earlier assignment to `/root/mf16_final_referee`; it is historical collection
+metadata and does not identify the reviewer who issued the final operational
+verdict. Both files remain unchanged inside the sealed evidence.
+
+The subsequent upstream [PR #232](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/232)
+also passed its fresh IE-05 verification at publication revision
+`0a2b7f5e0db531e7091c607d9aa70b40eaaa70c5`:
+[run 34759047159, target job 103728484166](https://github.com/ajt60gaibb/OpenProblemsInNLA/actions/runs/34759047159/job/103728484166).
+That later result supplements the independently audited original candidate run;
+it does not change the scope or contents of the historical audit.

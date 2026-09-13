@@ -1,0 +1,124 @@
+/- Independent RA20 statement referee2: no proof or Challenge import.
+Actual declaration inspection; not an implementation or certification of the holes.
+-/
+import NLA.RA20.Definitions
+import LeanCert.Tactic.Verification
+import Lean.Util.FoldConsts
+
+#check Algebra.IsSmoothAt
+#check Algebra.smoothLocus
+#check Algebra.FormallySmooth
+#check Algebra.basicOpen_subset_smoothLocus_iff_smooth
+#check MvPolynomial.vanishingIdeal
+#check MvPolynomial.pointToPoint
+#check MvPolynomial.pderiv
+#check fderiv
+#check Matrix.rank
+#check Cardinal.mk
+#synth IsAlgClosed ℂ
+#synth CharZero ℂ
+#synth Algebra ℂ (NLA.RA20.CoordinateRing 3 3)
+#synth NormedSpace ℂ (NLA.RA20.Mat 3)
+#synth CompleteSpace (NLA.RA20.Mat 3)
+
+open Lean Elab Command in
+run_cmd do
+  let env ← getEnv
+  let mut pending := [``NLA.RA20.criticalCountConjecture]
+  let mut seen : List Name := []
+  let mut allUsed : List Name := []
+  for _ in [:1000] do
+    match pending with
+    | [] => pure ()
+    | name :: rest =>
+      pending := rest
+      unless seen.contains name do
+        seen := name :: seen
+        let some ci := env.find? name | throwError "Missing definition {name}"
+        if ci.isUnsafe || ci.isPartial then throwError "Unsafe/partial definition {name}"
+        let some body := ci.value? (allowOpaque := true) | throwError "Bodyless definition {name}"
+        let used := ci.type.getUsedConstants.toList ++ body.getUsedConstants.toList
+        allUsed := used ++ allUsed
+        for ax in (← liftCoreM <| collectAxioms name) do
+          unless [``propext, ``Classical.choice, ``Quot.sound].contains ax do
+            throwError "Forbidden definition axiom: {name}: {ax}"
+        let next := used.filter (fun n => n.toString.startsWith "NLA.RA20.")
+        logInfo m!"ACTUAL_DEFINITION_EDGE {name}: {next}"
+        pending := next ++ pending
+  unless pending.isEmpty do throwError "Incomplete definition traversal"
+  for need in [``NLA.RA20.variety, ``NLA.RA20.definingIdeal,
+      ``NLA.RA20.SmoothPoint, ``NLA.RA20.TangentVector,
+      ``NLA.RA20.fullFrobeniusDistance, ``NLA.RA20.HasCriticalCount,
+      ``NLA.RA20.HasGenericCriticalCount, ``Algebra.smoothLocus,
+      ``MvPolynomial.vanishingIdeal, ``MvPolynomial.pointToPoint,
+      ``MvPolynomial.pderiv, ``fderiv, ``Matrix.rank, ``Cardinal.mk] do
+    unless allUsed.contains need do throwError "Missing actual semantic dependency {need}"
+    logInfo m!"REQUIRED_DEFINITION: {need}"
+  for forbidden in [``NLA.RA20.ExactlyOneZero, ``NLA.RA20.candidate,
+      ``NLA.RA20.GenericData, ``NLA.RA20.abcIdeal, ``sorryAx] do
+    if allUsed.contains forbidden then throwError "Witness predicate defines target: {forbidden}"
+  logInfo m!"INSPECTED_TARGET_DEFINITIONS: {seen.length}"
+
+set_option pp.all true in
+#print NLA.RA20.variety
+set_option pp.all true in
+#print NLA.RA20.definingIdeal
+set_option pp.all true in
+#print NLA.RA20.SmoothPoint
+set_option pp.all true in
+#print NLA.RA20.TangentVector
+set_option pp.all true in
+#print NLA.RA20.fullFrobeniusDistance
+set_option pp.all true in
+#print NLA.RA20.SmoothCriticalPoint
+set_option pp.all true in
+#print NLA.RA20.HasCriticalCount
+set_option pp.all true in
+#print NLA.RA20.HasGenericCriticalCount
+set_option pp.all true in
+#print NLA.RA20.criticalCountConjecture
+set_option pp.all true in
+#print NLA.RA20.abcIdeal
+set_option pp.all true in
+#print NLA.RA20.planeCoordinates
+
+#assert_trust kernel NLA.RA20.coordinates
+#print axioms NLA.RA20.coordinates
+#assert_trust kernel NLA.RA20.matrixOfCoordinates
+#print axioms NLA.RA20.matrixOfCoordinates
+#assert_trust kernel NLA.RA20.variety
+#print axioms NLA.RA20.variety
+#assert_trust kernel NLA.RA20.coordinateVariety
+#print axioms NLA.RA20.coordinateVariety
+#assert_trust kernel NLA.RA20.definingIdeal
+#print axioms NLA.RA20.definingIdeal
+#assert_trust kernel NLA.RA20.SmoothPoint
+#print axioms NLA.RA20.SmoothPoint
+#assert_trust kernel NLA.RA20.TangentVector
+#print axioms NLA.RA20.TangentVector
+#assert_trust kernel NLA.RA20.fullFrobeniusDistance
+#print axioms NLA.RA20.fullFrobeniusDistance
+#assert_trust kernel NLA.RA20.SmoothCriticalPoint
+#print axioms NLA.RA20.SmoothCriticalPoint
+#assert_trust kernel NLA.RA20.criticalSet
+#print axioms NLA.RA20.criticalSet
+#assert_trust kernel NLA.RA20.HasCriticalCount
+#print axioms NLA.RA20.HasCriticalCount
+#assert_trust kernel NLA.RA20.HasGenericCriticalCount
+#print axioms NLA.RA20.HasGenericCriticalCount
+#assert_trust kernel NLA.RA20.predictedCount
+#print axioms NLA.RA20.predictedCount
+#assert_trust kernel NLA.RA20.criticalCountConjecture
+#print axioms NLA.RA20.criticalCountConjecture
+#assert_trust kernel NLA.RA20.hollow
+#print axioms NLA.RA20.hollow
+#assert_trust kernel NLA.RA20.abcPolynomial
+#print axioms NLA.RA20.abcPolynomial
+#assert_trust kernel NLA.RA20.abcIdeal
+#print axioms NLA.RA20.abcIdeal
+#assert_trust kernel NLA.RA20.GenericData
+#print axioms NLA.RA20.GenericData
+#assert_trust kernel NLA.RA20.candidate
+#print axioms NLA.RA20.candidate
+#assert_trust kernel NLA.RA20.planeCoordinates
+#print axioms NLA.RA20.planeCoordinates

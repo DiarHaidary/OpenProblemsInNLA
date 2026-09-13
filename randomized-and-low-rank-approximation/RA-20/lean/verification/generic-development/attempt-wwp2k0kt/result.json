@@ -1,0 +1,152 @@
+{
+  "utc": "2026-09-13T05:04:53.781941+00:00",
+  "owner": "/root",
+  "role": "RA20 implementation helper, not an independent review",
+  "gate_ownership_sha256": "568261f301cfe9868ee548316bc7fadbe465383c4272fa7dcc81475bd7c26d6d",
+  "source": "NLA/RA20/Generic.lean",
+  "source_sha256": "47676372aa8e028a2c12bf6c23951b0edf5b7404a18abd24487d36399b7fb007",
+  "command": [
+    "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+    "-o",
+    "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-al7ckpco/NLA/RA20/Generic.olean",
+    "-i",
+    "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-al7ckpco/NLA/RA20/Generic.ilean",
+    "/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Generic.lean"
+  ],
+  "exit_code": 0,
+  "seconds": 4.950260125042405,
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-al7ckpco:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "fresh_prefix": "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-al7ckpco",
+  "prior_target_objects_used": false,
+  "pins_before": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "clean": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "clean": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "clean": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "clean": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "clean": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "clean": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "clean": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "clean": true
+    }
+  ],
+  "pins_after": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "clean": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "clean": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "clean": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "clean": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "clean": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "clean": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "clean": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "clean": true
+    }
+  ],
+  "raw_log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f",
+  "scope": "Fresh macOS Definitions and generic intersection checks; no claim of Linux replay or full RA20 proof",
+  "generated_objects_hashed_then_removed": [
+    {
+      "path": "NLA/RA20/Generic.ilean",
+      "sha256": "ed07d16e3e3c4b5a397f089bff861b66efe81ce68d066e24564d20138bfb3881",
+      "bytes": 9729
+    },
+    {
+      "path": "NLA/RA20/Generic.olean",
+      "sha256": "ad805261d81b07dac699acf05e5bb2f6182109e1a415580902140561ec14cf73",
+      "bytes": 338088
+    },
+    {
+      "path": "NLA/RA20/Definitions.ilean",
+      "sha256": "81d40673638d6ce677fe0df86407536e905cd064061001e3a18e3b1387de1c93",
+      "bytes": 14134
+    },
+    {
+      "path": "NLA/RA20/Definitions.olean",
+      "sha256": "f8d082ff59f13b2081ffb02bc5960064648027ece1b126a863e4a5e2c81be402",
+      "bytes": 221216
+    }
+  ],
+  "frozen_statement_inputs_preserved": 68,
+  "actual_explicit_kernel_and_standard_three_reports": 4,
+  "verdict": "PASS"
+}

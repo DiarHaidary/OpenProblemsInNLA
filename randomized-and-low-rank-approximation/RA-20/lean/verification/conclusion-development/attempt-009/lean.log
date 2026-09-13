@@ -1,0 +1,29 @@
+NLA/RA20/Count.lean:26:2: error: Tactic `rfl` failed: The left-hand side
+  Cardinal.mk (Fin 3)
+is not definitionally equal to the right-hand side
+  3
+
+U : Mat 3
+hU : GenericData U
+he : criticalSet 3 3 U = Set.range (candidate U)
+hi : Function.Injective (candidate U)
+⊢ Cardinal.mk (Fin 3) = 3
+NLA/RA20/Count.lean:30:2: error: unsolved goals
+case refine_1
+⊢ ¬![0, 1, 1] 2 = 0 ∧ ¬![1, 0, 1] 2 = 0
+NLA/RA20/Count.lean:51:21: error: #assert_trust: 'NLA.RA20.critical_count_three' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+NLA/RA20/Count.lean:52:21: error: #assert_trust: 'NLA.RA20.generic_count_three_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+NLA/RA20/Count.lean:53:21: error: #assert_trust: 'NLA.RA20.generic_count_not_four_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+NLA/RA20/Count.lean:54:21: error: #assert_trust: 'NLA.RA20.not_criticalCountConjecture_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.critical_count_three' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.RA20.generic_count_three_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.RA20.generic_count_not_four_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.RA20.not_criticalCountConjecture_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

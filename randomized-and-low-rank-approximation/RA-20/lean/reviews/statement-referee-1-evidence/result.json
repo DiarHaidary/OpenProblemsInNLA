@@ -1,0 +1,220 @@
+{
+  "utc": "2026-09-13T04:14:16.328274+00:00",
+  "reviewer": "/root",
+  "role": "Independent RA20 statement referee1; no statement/proof contribution",
+  "scope": "Local macOS statement/definitions only; no claimed proof or Linux result",
+  "freeze_sha256": "6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8",
+  "prefix": "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-statements-ljjkajdp",
+  "initial_prefix_empty": true,
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-statements-ljjkajdp:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "pins": [
+    {
+      "url": "https://github.com/alerad/leancert",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "name": "leancert",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "inherited": false,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "name": "mathlib",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.33.1",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/plausible",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "name": "plausible",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "name": "LeanSearchClient",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.33.0",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    }
+  ],
+  "commands": [
+    {
+      "source": "NLA/RA20/Definitions.lean",
+      "sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-statements-ljjkajdp/NLA/RA20/Definitions.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-statements-ljjkajdp/NLA/RA20/Definitions.ilean",
+        "/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Definitions.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.9120340410154313,
+      "log": "NLA-RA20-Definitions.lean.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "axiom_reports": 0
+    },
+    {
+      "source": "Challenge.lean",
+      "sha256": "eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-statements-ljjkajdp/Challenge.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-statements-ljjkajdp/Challenge.ilean",
+        "/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/Challenge.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.902357332990505,
+      "log": "Challenge.lean.log",
+      "log_sha256": "327a035038340b62e079e8f80a37d41d8bfef7173dc2092e985f87f1a7c15574",
+      "axiom_reports": 0
+    },
+    {
+      "source": "reviews/statement-referee-1-evidence/Inspect.lean",
+      "sha256": "5cbe0370c9c27f985a0b9282a060275a8b974843b7ecfb9229852e76f94420d0",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-statements-ljjkajdp/reviews/statement-referee-1-evidence/Inspect.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-statements-ljjkajdp/reviews/statement-referee-1-evidence/Inspect.ilean",
+        "/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/reviews/statement-referee-1-evidence/Inspect.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 5.181764958018903,
+      "log": "reviews-statement-referee-1-evidence-Inspect.lean.log",
+      "log_sha256": "5ce7c2a882dd1fc73c759209b4a98e59da241211ba62eb3601ae4f398e524822",
+      "axiom_reports": 9
+    }
+  ],
+  "ten_pins_after_clean": true,
+  "status": "PASS fresh exact statement and definition checks",
+  "all_68_frozen_inputs_and_16_source_blobs_preserved": true,
+  "generated_objects": [
+    {
+      "path": "Challenge.olean",
+      "sha256": "d590f2ea0790a4575eae792edd7cc7863bc8fa2d5045f9494744619bb97e1f2d",
+      "bytes": 94648
+    },
+    {
+      "path": "Challenge.ilean",
+      "sha256": "1f8c816d10b683a1fc1a847eb5be72d166fb740c4bb6b9d6f829910db5140b31",
+      "bytes": 8882
+    },
+    {
+      "path": "NLA/RA20/Definitions.ilean",
+      "sha256": "81d40673638d6ce677fe0df86407536e905cd064061001e3a18e3b1387de1c93",
+      "bytes": 14134
+    },
+    {
+      "path": "NLA/RA20/Definitions.olean",
+      "sha256": "f8d082ff59f13b2081ffb02bc5960064648027ece1b126a863e4a5e2c81be402",
+      "bytes": 221216
+    },
+    {
+      "path": "reviews/statement-referee-1-evidence/Inspect.olean",
+      "sha256": "828f82d0341ef46d7aa1056d61632fa6a7c50f2ba11ce50e59d35b3a7e4c0b02",
+      "bytes": 3168
+    },
+    {
+      "path": "reviews/statement-referee-1-evidence/Inspect.ilean",
+      "sha256": "9da06b045d96643c7e7b7c0bf2a7da205ed7bcdac01295ad6d9f472ad8a9e521",
+      "bytes": 3315
+    }
+  ]
+}

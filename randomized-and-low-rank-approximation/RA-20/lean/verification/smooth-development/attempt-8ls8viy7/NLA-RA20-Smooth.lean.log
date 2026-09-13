@@ -1,0 +1,45 @@
+'NLA.RA20.triple_product_not_formallySmooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:102:8: error(lean.unknownIdentifier): Unknown constant `Submonoid.map_comap_of_surjective`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:112:6: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (IsLocalization.map ?m.79 ?m.77 ?hy) ((algebraMap ?m.68 ?m.71) ?x)
+in the target expression
+  (↑↑(IsLocalization.map (ABCLocal p) (Ideal.Quotient.mk abcIdeal) ⋯)).toFun
+      ((algebraMap ABCPoly (ABCPolynomialLocal p)) ((algebraMap ℂ ABCPoly) r)) =
+    (algebraMap ℂ (ABCLocal p)) r
+
+p : PrimeSpectrum ABCCoordinateRing
+r : ℂ
+⊢ (↑↑(IsLocalization.map (ABCLocal p) (Ideal.Quotient.mk abcIdeal) ⋯)).toFun
+      ((algebraMap ABCPoly (ABCPolynomialLocal p)) ((algebraMap ℂ ABCPoly) r)) =
+    (algebraMap ℂ (ABCLocal p)) r
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  invalid have declaration, term
+    le_rfl
+  has type
+    (abcPreimagePrime p).primeCompl ≤ (abcPreimagePrime p).primeCompl
+  but is expected to have type
+    (abcPreimagePrime p).primeCompl ≤ Submonoid.comap (Ideal.Quotient.mk abcIdeal) p.asIdeal.primeCompl
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:120:8: error: Function expected at
+  IsLocalization.map_eq ?m.32 ?m.33
+but this term has type
+  (IsLocalization.map ?m.28 ?m.26 ?m.32) ((algebraMap ?m.17 ?m.20) ?m.33) = (algebraMap ?m.23 ?m.28) (?m.26 ?m.33)
+
+Note: Expected a function because this term is being applied to the argument
+  _
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:124:2: warning: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:136:22: error: typeclass instance problem is stuck
+  IsLocalization ?m.62 (ABCLocal p)
+
+Note: Lean will not try to resolve this typeclass instance problem because the third type argument to `IsLocalization` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+'NLA.RA20.formallySmooth_of_retraction' depends on axioms: [propext, Classical.choice, Quot.sound]

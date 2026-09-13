@@ -1,0 +1,177 @@
+{
+  "utc": "2026-09-13T05:01:59.692931+00:00",
+  "status": "PASS",
+  "scope": "RA20 author helper contracts 1 and 2 only; macOS local, no authoritative Linux or Comparator claim",
+  "source_sha256": "67adf1643bd62089a62d857c404bdb5ee1bbbd192984ed5f1169b8c5ec71f5f1",
+  "frozen_project_inputs": 68,
+  "original_source_git_blobs": 16,
+  "source_freeze_sha256": "6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8",
+  "gate_sha256": "9fe55d622e50390cb3ed439989b9393455fa48eb50d42d84fb33c20fd8c883f3",
+  "roles_sha256": "a81af5049b95b824f36043bf78619a68ee14579923a11a1f4a97dad8004a09cf",
+  "exact_frozen_signatures": 2,
+  "safe_actual_project_declarations": 46,
+  "required_retained_dependencies": 24,
+  "source_kernel_assertions": 6,
+  "source_axiom_reports": 2,
+  "diagnostic_kernel_assertions": 6,
+  "diagnostic_axiom_reports": 6,
+  "successful_commands": 4,
+  "retained_failed_commands": 2,
+  "ten_clean_read_only_pins": [
+    {
+      "name": "leancert",
+      "revision": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "source_clean": true
+    },
+    {
+      "name": "mathlib",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_clean": true
+    },
+    {
+      "name": "plausible",
+      "revision": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "source_clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "source_clean": true
+    },
+    {
+      "name": "importGraph",
+      "revision": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "source_clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "source_clean": true
+    },
+    {
+      "name": "aesop",
+      "revision": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "source_clean": true
+    },
+    {
+      "name": "Qq",
+      "revision": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "source_clean": true
+    },
+    {
+      "name": "batteries",
+      "revision": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "source_clean": true
+    },
+    {
+      "name": "Cli",
+      "revision": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "source_clean": true
+    }
+  ],
+  "private_prefix_retained_for_authorized_next_modules": "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep",
+  "results": [
+    {
+      "utc": "2026-09-13T04:57:16.250073+00:00",
+      "source": "NLA/RA20/Definitions.lean",
+      "sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/NLA/RA20/Definitions.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/NLA/RA20/Definitions.ilean",
+        "NLA/RA20/Definitions.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean",
+      "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "exit_code": 0,
+      "seconds": 5.7101174159906805
+    },
+    {
+      "utc": "2026-09-13T04:57:48.471452+00:00",
+      "source": "NLA/RA20/Algebra.lean",
+      "sha256": "4fc06fe4a12d80a04a9bc976232cd3b166c1c025f319450ae773ca17f4450d6d",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/NLA/RA20/Algebra.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/NLA/RA20/Algebra.ilean",
+        "NLA/RA20/Algebra.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean",
+      "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "exit_code": 1,
+      "seconds": 12.58188433398027
+    },
+    {
+      "utc": "2026-09-13T04:59:07.429911+00:00",
+      "source": "NLA/RA20/Algebra.lean",
+      "sha256": "00915428032557413178024e249b2cfd4f625eab78d53a68825c88f3d3586348",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/NLA/RA20/Algebra.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/NLA/RA20/Algebra.ilean",
+        "NLA/RA20/Algebra.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean",
+      "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "exit_code": 1,
+      "seconds": 11.66266354196705
+    },
+    {
+      "utc": "2026-09-13T04:59:38.730813+00:00",
+      "source": "NLA/RA20/Algebra.lean",
+      "sha256": "67adf1643bd62089a62d857c404bdb5ee1bbbd192984ed5f1169b8c5ec71f5f1",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/NLA/RA20/Algebra.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/NLA/RA20/Algebra.ilean",
+        "NLA/RA20/Algebra.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean",
+      "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "exit_code": 0,
+      "seconds": 8.744242332992144
+    },
+    {
+      "utc": "2026-09-13T05:00:43.751262+00:00",
+      "source": "verification/algebra-development/Reference.lean",
+      "sha256": "62828a2791babe5af86df927bab679d37c360614d5236dd97c7fac445857b60f",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/verification/algebra-development/Reference.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/verification/algebra-development/Reference.ilean",
+        "verification/algebra-development/Reference.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean",
+      "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "exit_code": 0,
+      "seconds": 5.793195915990509
+    },
+    {
+      "utc": "2026-09-13T05:01:05.223099+00:00",
+      "source": "verification/algebra-development/Inspect.lean",
+      "sha256": "457cd3855475275c6c93735b4bcee15d63ef475ee5b6480a20a25ddfd653c6bb",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/verification/algebra-development/Inspect.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep/verification/algebra-development/Inspect.ilean",
+        "verification/algebra-development/Inspect.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean",
+      "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-algebra-fgvzb9ep:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+      "exit_code": 0,
+      "seconds": 7.951279083034024
+    }
+  ]
+}

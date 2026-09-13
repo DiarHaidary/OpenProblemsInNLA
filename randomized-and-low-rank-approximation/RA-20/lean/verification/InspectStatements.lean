@@ -1,0 +1,45 @@
+import NLA.RA20.Definitions
+import LeanCert.Tactic.Verification
+
+/-! Definition/instance inspection only: no Challenge proof or new theorem. -/
+set_option pp.universes true in
+#check NLA.RA20.criticalCountConjecture
+#check NLA.RA20.SmoothPoint
+#check NLA.RA20.TangentVector
+#check NLA.RA20.SmoothCriticalPoint
+#check Algebra.smoothLocus
+#check Algebra.IsSmoothAt
+#check MvPolynomial.vanishingIdeal
+#check MvPolynomial.pointToPoint
+#check Matrix.rank
+#check fderiv
+#check Cardinal.mk
+#print NLA.RA20.SmoothPoint
+#print NLA.RA20.TangentVector
+#print NLA.RA20.HasGenericCriticalCount
+#print NLA.RA20.criticalCountConjecture
+#print NLA.RA20.fullFrobeniusDistance
+#synth CommRing (NLA.RA20.CoordinateRing 3 3)
+#synth Algebra ℂ (NLA.RA20.CoordinateRing 3 3)
+#synth TopologicalSpace (NLA.RA20.Mat 3)
+#synth IsTopologicalAddGroup (NLA.RA20.Mat 3)
+#synth ContinuousSMul ℂ (NLA.RA20.Mat 3)
+#synth IsAlgClosed ℂ
+#assert_trust kernel NLA.RA20.variety
+#assert_trust kernel NLA.RA20.definingIdeal
+#assert_trust kernel NLA.RA20.SmoothPoint
+#assert_trust kernel NLA.RA20.TangentVector
+#assert_trust kernel NLA.RA20.fullFrobeniusDistance
+#assert_trust kernel NLA.RA20.SmoothCriticalPoint
+#assert_trust kernel NLA.RA20.HasCriticalCount
+#assert_trust kernel NLA.RA20.HasGenericCriticalCount
+#assert_trust kernel NLA.RA20.criticalCountConjecture
+#print axioms NLA.RA20.variety
+#print axioms NLA.RA20.definingIdeal
+#print axioms NLA.RA20.SmoothPoint
+#print axioms NLA.RA20.TangentVector
+#print axioms NLA.RA20.fullFrobeniusDistance
+#print axioms NLA.RA20.SmoothCriticalPoint
+#print axioms NLA.RA20.HasCriticalCount
+#print axioms NLA.RA20.HasGenericCriticalCount
+#print axioms NLA.RA20.criticalCountConjecture

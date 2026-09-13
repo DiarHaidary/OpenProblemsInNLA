@@ -1,0 +1,62 @@
+def NLA.RA20.variety : (n : ℕ) → ℕ → Set (NLA.RA20.Mat n) :=
+fun n s => {X | Matrix.IsSymm X ∧ Matrix.rank X ≤ 2 ∧ ∀ (i : Fin n), ↑i < s → X i i = 0}
+'NLA.RA20.variety' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.definingIdeal : (n : ℕ) → ℕ → Ideal (NLA.RA20.Poly n) :=
+fun n s => MvPolynomial.vanishingIdeal ℂ (NLA.RA20.coordinateVariety n s)
+'NLA.RA20.definingIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.SmoothPoint : (n : ℕ) → ℕ → NLA.RA20.Mat n → Prop :=
+fun n s X =>
+  X ∈ NLA.RA20.variety n s ∧
+    ∃ p,
+      PrimeSpectrum.comap (Ideal.Quotient.mk (NLA.RA20.definingIdeal n s)) p =
+          MvPolynomial.pointToPoint (NLA.RA20.coordinates X) ∧
+        p ∈ Algebra.smoothLocus ℂ (NLA.RA20.CoordinateRing n s)
+'NLA.RA20.SmoothPoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.TangentVector : (n : ℕ) → ℕ → NLA.RA20.Mat n → NLA.RA20.Mat n → Prop :=
+fun n s X Z =>
+  ∀ p ∈ NLA.RA20.definingIdeal n s,
+    ∑ ij, (MvPolynomial.eval (NLA.RA20.coordinates X)) ((MvPolynomial.pderiv ij) p) * NLA.RA20.coordinates Z ij = 0
+'NLA.RA20.TangentVector' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.fullFrobeniusDistance : {n : ℕ} → NLA.RA20.Mat n → NLA.RA20.Mat n → ℂ :=
+fun {n} U X => ∑ i, ∑ j, (X i j - U i j) ^ 2
+'NLA.RA20.fullFrobeniusDistance' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.SmoothCriticalPoint : (n : ℕ) → ℕ → NLA.RA20.Mat n → NLA.RA20.Mat n → Prop :=
+fun n s U X =>
+  NLA.RA20.SmoothPoint n s X ∧
+    ∀ (Z : NLA.RA20.Mat n), NLA.RA20.TangentVector n s X Z → (fderiv ℂ (NLA.RA20.fullFrobeniusDistance U) X) Z = 0
+'NLA.RA20.SmoothCriticalPoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.HasCriticalCount : (n : ℕ) → ℕ → NLA.RA20.Mat n → ℕ → Prop :=
+fun n s U m => Cardinal.mk { X // X ∈ NLA.RA20.criticalSet n s U } = ↑m
+'NLA.RA20.HasCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.HasGenericCriticalCount : ℕ → ℕ → ℕ → Prop :=
+fun n s m =>
+  ∃ q,
+    (∃ U, Matrix.IsSymm U ∧ (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0) ∧
+      ∀ (U : NLA.RA20.Mat n),
+        Matrix.IsSymm U → (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0 → NLA.RA20.HasCriticalCount n s U m
+'NLA.RA20.HasGenericCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.predictedCount : ℕ → ℕ → ℕ :=
+fun n s =>
+  if s = 1 then 3 * (n - 1) - 2
+  else if s = 2 then 9 * (n - 2) - 2 else if s = 3 then 27 * (n - 3) + 4 else if s = 4 then 81 * (n - 4) + 28 else 0
+'NLA.RA20.predictedCount' does not depend on any axioms
+def NLA.RA20.criticalCountConjecture : Prop :=
+∀ (n s : ℕ), 3 ≤ n → 1 ≤ s → s ≤ 4 → s ≤ n → NLA.RA20.HasGenericCriticalCount n s (NLA.RA20.predictedCount n s)
+'NLA.RA20.criticalCountConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+@[reducible] def Algebra.IsSmoothAt.{u_1, u_2} : (R : Type u_1) →
+  {A : Type u_2} → [inst : CommRing R] → [inst_1 : CommRing A] → [Algebra R A] → (p : Ideal A) → [p.IsPrime] → Prop :=
+fun R {A} [CommRing R] [CommRing A] [Algebra R A] p [p.IsPrime] => Algebra.FormallySmooth R (Localization.AtPrime p)
+def Algebra.smoothLocus.{u_1, u_2} : (R : Type u_1) →
+  (A : Type u_2) → [inst : CommRing R] → [inst_1 : CommRing A] → [Algebra R A] → Set (PrimeSpectrum A) :=
+fun R A [CommRing R] [CommRing A] [Algebra R A] => {p | Algebra.IsSmoothAt R p.asIdeal}
+MvPolynomial.vanishingIdeal.{u_1, u_2, u_3} (k : Type u_1) {K : Type u_2} [Field k] [Field K] [Algebra k K]
+  {σ : Type u_3} (V : Set (σ → K)) : Ideal (MvPolynomial σ k)
+MvPolynomial.pointToPoint.{u_1, u_2, u_3} {k : Type u_1} {K : Type u_2} [Field k] [Field K] [Algebra k K] {σ : Type u_3}
+  (x : σ → K) : PrimeSpectrum (MvPolynomial σ k)
+Matrix.rank.{um, un, uR} {m : Type um} {n : Type un} {R : Type uR} [Fintype n] [CommSemiring R] (A : Matrix m n R) : ℕ
+fderiv.{u_4, u_5, u_6} (𝕜 : Type u_4) [NontriviallyNormedField 𝕜] {E : Type u_5} [AddCommGroup E] [Module 𝕜 E]
+  [TopologicalSpace E] {F : Type u_6} [AddCommGroup F] [Module 𝕜 F] [TopologicalSpace F] (f : E → F) (x : E) : E →L[𝕜] F
+Cardinal.mk.{u} : Type u → Cardinal.{u}
+Complex.isAlgClosed
+Module.Finite.matrix
+(4, 7, 4, 28)

@@ -1,0 +1,125 @@
+/- Fresh independent referee 2 diagnostic. Reference admits only its renamed
+contract declarations; the actual theorem closure must never reach them.
+This does not execute Comparator or the external default Lean kernel. -/
+import Solution
+import reviews.«final-referee-2-evidence».Reference
+import Lean.Util.FoldConsts
+
+set_option maxHeartbeats 2000000
+set_option leancert.trust "kernel"
+
+open Lean Elab Command in
+run_cmd do
+  let env ← getEnv
+  let pairs := [(``NLA.RA20.hollow_variety_semantics, ``NLA.RA20.RefereeTwoContract.hollow_variety_semantics),
+    (``NLA.RA20.reduced_coordinate_ring, ``NLA.RA20.RefereeTwoContract.reduced_coordinate_ring),
+    (``NLA.RA20.algebraic_smooth_locus, ``NLA.RA20.RefereeTwoContract.algebraic_smooth_locus),
+    (``NLA.RA20.algebraic_tangent_space, ``NLA.RA20.RefereeTwoContract.algebraic_tangent_space),
+    (``NLA.RA20.full_frobenius_differential, ``NLA.RA20.RefereeTwoContract.full_frobenius_differential),
+    (``NLA.RA20.hollow_distance_semantics, ``NLA.RA20.RefereeTwoContract.hollow_distance_semantics),
+    (``NLA.RA20.generic_critical_locus, ``NLA.RA20.RefereeTwoContract.generic_critical_locus),
+    (``NLA.RA20.component_hessians, ``NLA.RA20.RefereeTwoContract.component_hessians),
+    (``NLA.RA20.generic_data_intersection, ``NLA.RA20.RefereeTwoContract.generic_data_intersection),
+    (``NLA.RA20.generic_count_three, ``NLA.RA20.RefereeTwoContract.generic_count_three),
+    (``NLA.RA20.generic_count_not_four, ``NLA.RA20.RefereeTwoContract.generic_count_not_four),
+    (``NLA.RA20.not_criticalCountConjecture, ``NLA.RA20.RefereeTwoContract.not_criticalCountConjecture)]
+  for (actual, reference) in pairs do
+    let some a := env.find? actual | throwError "Missing export {actual}"
+    let some b := env.find? reference | throwError "Missing reference {reference}"
+    match a with
+    | .thmInfo _ => pure ()
+    | _ => throwError "Export must be a proved theorem {actual}"
+    liftTermElabM do
+      unless ← Lean.Meta.isDefEq a.type b.type do
+        throwError "Frozen contract type mismatch {actual}"
+    unless (← liftCoreM <| collectAxioms reference).contains ``sorryAx do
+      throwError "Reference admission missing {reference}"
+    logInfo m!"EXACT_REFERENCE_TYPE {actual}: {a.type}"
+  let isProject := fun n : Name => n.toString.startsWith "NLA.RA20." ||
+    n.toString.startsWith "_private.NLA.RA20."
+  let mut pending := pairs.map Prod.fst
+  let mut visited : List Name := []
+  let mut used : List Name := []
+  for _ in [:10000] do
+    match pending with
+    | [] => pure ()
+    | name :: rest =>
+      pending := rest
+      unless visited.contains name do
+        if name.toString.startsWith "NLA.RA20.RefereeTwoContract." then
+          throwError "Admitted reference reached from actual proof {name}"
+        visited := name :: visited
+        let some ci := env.find? name | throwError "Missing dependency {name}"
+        if ci.isUnsafe || ci.isPartial then throwError "Unsafe or partial project declaration {name}"
+        let axioms ← liftCoreM <| collectAxioms name
+        for ax in axioms do
+          unless [``propext, ``Classical.choice, ``Quot.sound].contains ax do
+            throwError "Forbidden transitive axiom {name}: {ax}"
+        let body ← match ci.value? (allowOpaque := true) with
+          | some expr => pure expr.getUsedConstants.toList
+          | none => match ci with
+            | .inductInfo _ | .ctorInfo _ | .recInfo _ => pure []
+            | _ => throwError "Unexplained bodyless project declaration {name}"
+        let deps := ci.type.getUsedConstants.toList ++ body
+        used := deps ++ used
+        let next := deps.filter isProject
+        logInfo m!"PROJECT_DECL {name}: axioms={axioms.toList}; project_dependencies={next}"
+        pending := next ++ pending
+  unless pending.isEmpty do throwError "Incomplete project closure traversal"
+  let required := [``NLA.RA20.variety, ``NLA.RA20.definingIdeal,
+    ``NLA.RA20.SmoothPoint, ``NLA.RA20.TangentVector,
+    ``NLA.RA20.SmoothCriticalPoint, ``NLA.RA20.fullFrobeniusDistance,
+    ``NLA.RA20.HasCriticalCount, ``NLA.RA20.HasGenericCriticalCount,
+    ``NLA.RA20.predictedCount, ``NLA.RA20.criticalCountConjecture,
+    ``NLA.RA20.reducedCoordinateEquiv, ``NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+    ``NLA.RA20.abc_smooth_locus_iff, ``NLA.RA20.smoothLocus_comap_algEquiv,
+    ``NLA.RA20.polyDirectional_hollowPullback,
+    ``NLA.RA20.generic_critical_exhaustion, ``NLA.RA20.generic_candidate_injective,
+    ``NLA.RA20.generic_data_intersection_proved,
+    ``NLA.RA20.symmetricParameter_reconstruct, ``NLA.RA20.critical_count_three,
+    ``NLA.RA20.generic_count_not_four_proved,
+    ``MvPolynomial.vanishingIdeal_zeroLocus_eq_radical, ``MvPolynomial.funext,
+    ``Algebra.smoothLocus, ``MvPolynomial.pderiv, ``fderiv,
+    ``Cardinal.mk, ``Cardinal.mk_range_eq]
+  for need in required do
+    unless used.contains need do throwError "Missing substantive dependency {need}"
+    logInfo m!"MATERIAL_DEPENDENCY {need}"
+  for forbidden in [``sorryAx, `Lean.ofReduceBool, `Lean.trustCompiler] do
+    if used.contains forbidden then throwError "Forbidden direct dependency {forbidden}"
+  logInfo m!"CLOSURE_COMPLETE declarations={visited.length}; material_dependencies={required.length}"
+
+set_option pp.all true in
+#print NLA.RA20.SmoothPoint
+set_option pp.all true in
+#print NLA.RA20.TangentVector
+set_option pp.all true in
+#print NLA.RA20.HasGenericCriticalCount
+set_option pp.all true in
+#print NLA.RA20.HasCriticalCount
+set_option pp.all true in
+#print NLA.RA20.criticalCountConjecture
+
+#assert_trust kernel NLA.RA20.hollow_variety_semantics
+#print axioms NLA.RA20.hollow_variety_semantics
+#assert_trust kernel NLA.RA20.reduced_coordinate_ring
+#print axioms NLA.RA20.reduced_coordinate_ring
+#assert_trust kernel NLA.RA20.algebraic_smooth_locus
+#print axioms NLA.RA20.algebraic_smooth_locus
+#assert_trust kernel NLA.RA20.algebraic_tangent_space
+#print axioms NLA.RA20.algebraic_tangent_space
+#assert_trust kernel NLA.RA20.full_frobenius_differential
+#print axioms NLA.RA20.full_frobenius_differential
+#assert_trust kernel NLA.RA20.hollow_distance_semantics
+#print axioms NLA.RA20.hollow_distance_semantics
+#assert_trust kernel NLA.RA20.generic_critical_locus
+#print axioms NLA.RA20.generic_critical_locus
+#assert_trust kernel NLA.RA20.component_hessians
+#print axioms NLA.RA20.component_hessians
+#assert_trust kernel NLA.RA20.generic_data_intersection
+#print axioms NLA.RA20.generic_data_intersection
+#assert_trust kernel NLA.RA20.generic_count_three
+#print axioms NLA.RA20.generic_count_three
+#assert_trust kernel NLA.RA20.generic_count_not_four
+#print axioms NLA.RA20.generic_count_not_four
+#assert_trust kernel NLA.RA20.not_criticalCountConjecture
+#print axioms NLA.RA20.not_criticalCountConjecture

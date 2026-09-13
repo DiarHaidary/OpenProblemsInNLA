@@ -1,0 +1,26 @@
+'NLA.RA20.hollow_variety_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/RA20/Algebra.lean:185:4: error: Type mismatch: After simplification, term
+  hv
+ has type
+  (MvPolynomial.aeval
+        (coordinates (hollow (x (0, 1)) (x (0, 2)) (Matrix.vecHead (Matrix.vecTail ![x (0, 2), x (1, 2)])))))
+      p =
+    0
+but is expected to have type
+  (MvPolynomial.aeval x) p = 0
+NLA/RA20/Algebra.lean:194:57: error: unsolved goals
+p : Poly 3
+⊢ (Ideal.Quotient.mk abcIdeal) (hollowPullback p) = 0 ↔ hollowPullback p ∈ abcIdeal
+NLA/RA20/Algebra.lean:206:59: error: unsolved goals
+i j : Fin 3
+⊢ ((Ideal.quotientEquivAlgOfEq ℂ reducedCoordinateEquiv._proof_4).trans
+        (Ideal.quotientKerAlgEquivOfSurjective hollowQuotientMap_surjective))
+      ((Ideal.Quotient.mk (definingIdeal 3 3)) (MvPolynomial.X (i, j))) =
+    (Ideal.Quotient.mk abcIdeal) (polynomialHollow i j)
+NLA/RA20/Algebra.lean:219:21: error: #assert_trust: 'NLA.RA20.definingIdeal_eq_comap_abcIdeal' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+NLA/RA20/Algebra.lean:220:21: error: #assert_trust: 'NLA.RA20.reduced_coordinate_ring_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.reduced_coordinate_ring_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

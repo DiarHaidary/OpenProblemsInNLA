@@ -1,0 +1,19 @@
+{
+  "scope": "Three owner-supplied Geometry elaboration repairs only; all mathematical statements, other proof modules, reviewed boundary, and resources unchanged",
+  "new_snapshot_compiled": false,
+  "prior_run_id": 34772992724,
+  "prior_run_result": "LeanCert Verification, Definitions, Numeric, Minimax, WeightedDraft, WeightedBridgeDraft, FullMinimumDraft and SubsetBoundsDraft passed. Only SubsetGeometryDraft failed; Final/Solution skipped.",
+  "preserved_prior_snapshot": "history/run-34772992724",
+  "changed_source": {
+    "NLA/IE16/SubsetGeometryDraft.lean": {
+      "old_sha256": "a9324fbe3b761aa40a8a79ea8ff3245cc06877fda713ea7f400062ad79fd6bb2",
+      "new_sha256": "3230b02827781fb99221770d82951cdafa8102c87987c4b669c0fa1d47fceb15"
+    }
+  },
+  "repairs": [
+    "Expose exact pair-domain injectivity target with change",
+    "Expose image cardinality with change instead of attempting rw on let-valued Finset H",
+    "Use pinned inv_lt_iff_one_lt_mul\u2080 to turn the reciprocal bound into a product inequality"
+  ],
+  "resources": "Unchanged remote-only sequential compiler; -M4096 -j1; GNU timeout120s per module"
+}

@@ -1,0 +1,36 @@
+{
+  "scope": "Numeric/Minimax helper repairs and mechanical Lean 4.33 syntax compatibility; reviewed boundary and canonical status unchanged",
+  "new_snapshot_compiled": false,
+  "prior_run_id": 34771972369,
+  "prior_run_result": "LeanCert Verification and Definitions passed; Numeric and Minimax failed; dependent modules skipped",
+  "preserved_prior_snapshot": "history/run-34771972369",
+  "changed_or_new_source": {
+    "NLA/IE16/Minimax.lean": {
+      "old_sha256": "4d2a8c38b3413e716a53ff81b9718089b4dbb48c4f0f1ab2e1ea0a92e87465c5",
+      "new_sha256": "e8ae5136546606b8a9867e31ca9efc96cef5bd492c5cdc4e4248e5eeca99c653"
+    },
+    "NLA/IE16/Numeric.lean": {
+      "old_sha256": "c90b9378f26691bba31056c333fb92ea8406f21a64a82d4c72ef4f40c79887fa",
+      "new_sha256": "b82b3aed9d4d454f4bce467151c77ba34a35a1b59ab1b67b966df4483816a501"
+    },
+    "NLA/IE16/WeightedDraft.lean": {
+      "old_sha256": "1163f0f71fb5ce4f39374f09a1ea452a9580c853f8d1e17aad1b4a7482a21c36",
+      "new_sha256": "1375e2bdc3f645fab03a0895c4ed43571d1e0b8d9fb19da6d4dfcb225a460f02"
+    },
+    "NUMERIC_OPTIMIZATION.md": {
+      "old_sha256": null,
+      "new_sha256": "91e60f63b801078264a1a370a7f4b0fc835745539982d51d9e3e888db274d047"
+    }
+  },
+  "repairs": [
+    "Replace removed sum ... in syntax by sum ... membership syntax in Minimax and WeightedDraft",
+    "Use Real.norm_eq_abs before abs_of_pos",
+    "Make scalar Lagrange sum and interpolation rewrites explicit",
+    "Prove root real/imaginary components once and use complex coordinate pairs linear in sqrt(3)",
+    "Reduce injectivity to rational coordinate comparisons after cancellation of sqrt(3)",
+    "Limit exact algebraic powers to degrees 2 through 7 and specialize literal rewrite exponents",
+    "Expand finite sums by Fin.sum_univ_three",
+    "Normalize finite equalities in a simp-only phase to avoid inverse simplification recursion"
+  ],
+  "resources": "No increase to Lean memory, threads, wall-clock bounds, or local compilation; existing remote-only driver unchanged"
+}

@@ -1,0 +1,67 @@
+[
+  {
+    "name": "ids-origin",
+    "command": [
+      "python3",
+      "tools/validate_problem_ids.py",
+      "--base-ref",
+      "origin/main"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "ids-upstream",
+    "command": [
+      "python3",
+      "tools/validate_problem_ids.py",
+      "--base-ref",
+      "b73cd1804e40e0d101294eedb156984f0d62b4a6"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "catalog",
+    "command": [
+      "python3",
+      "tools/update_catalog.py",
+      "--base-ref",
+      "origin/main"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "id-tests",
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-p",
+      "test_problem_ids.py",
+      "-v"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "math-format",
+    "command": [
+      "python3",
+      "tools/format_math.py",
+      "--check",
+      "IE-16"
+    ],
+    "returncode": 0
+  },
+  {
+    "name": "manifest",
+    "command": [
+      "/tmp/nla-lean-formalization/venv/bin/python",
+      "-B",
+      "tools/lean/validate_manifest.py",
+      "linear-systems-and-elimination/IE-16/lean"
+    ],
+    "returncode": 0
+  }
+]

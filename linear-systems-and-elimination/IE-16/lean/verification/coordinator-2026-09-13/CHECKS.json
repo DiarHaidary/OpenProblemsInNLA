@@ -1,0 +1,114 @@
+{
+  "scope": "Coordinator source/evidence audit of an existing Linux run; no new compiler execution and no independent mathematical referee claim.",
+  "reviewer": "OpenAI Codex primary agent /root",
+  "candidate_commit": "697a2a1d88337a6747aa5c82fb6e554d3ff1b356",
+  "linux_run": 34774629327,
+  "linux_job": 103770408910,
+  "project": "linear-systems-and-elimination/IE-16/lean",
+  "input_count": 281,
+  "all_input_hashes_match_git_candidate": true,
+  "target_contract_count": 15,
+  "actual_axioms": {
+    "NLA.IE16.explicitL_card": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.explicitL_admissible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.witness_feasible": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.witness_objective": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.full_minimum_exact": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.full_minimum_isLeast": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.full_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.every_five_point_subset_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.every_five_point_subset_minimum_isLeast": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.subset_max_upper": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.subset_max_positive": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.ratio_lower_bound": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.ratio_exceeds_candidate": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.counterexample": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ],
+    "NLA.IE16.not_IE16Conjecture": [
+      "Classical.choice",
+      "Quot.sound",
+      "propext"
+    ]
+  },
+  "all_replay_comparator_sandbox_and_negative_controls_pass": true,
+  "raw_sha256": {
+    "comparator-controls.log": "e73fc5f632809931ad3306ca10ec6fd2234770269524a0841e13328cb8168a98",
+    "comparator.log": "f226bbdaf0c47e4dff3127d1711b00819ccf0e7d275b320521191e2fc0087d9f",
+    "dependencies.log": "740fcb700c777ae28e11ddf7c40e50a87ba79bbe97b1a1e1d21a314fea802b4d",
+    "kernel-controls.log": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+    "mathlib-cache.log": "0aa5d4b7d82986b00d9680b25f9b3b5c4e63f6316a48241a09ce72937f383c30",
+    "negative-native.log": "6584a4361939c36d6986d600ff072c3779e441cd8d55b79915b7c90eb53ca788",
+    "negative-sorry.log": "74bf7510a52a6c63a3fb1d4abfbb87cc0564b4af451811b4b732d0b1764a63ba",
+    "result.json": "3fa4b80021abb07a0df3921d33e1bd3c16d07df732578453bf312250f06fc9dd",
+    "sandbox.log": "066191f7057e0be4d7e95453cfb883a94255246b6907d1a6a5b5b8ff958cc503",
+    "user-service.log": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a"
+  },
+  "proof_and_boundary_sha256": {
+    "Challenge.lean": "85cbe24c7657d9ddc37728db5bb1740a80ddab60e3eb4676e329df40a7b1737c",
+    "NLA/IE16/Definitions.lean": "e4681f2083d71d8980adcd70e7cf26367e0e84dbc1773f4d2f082bf2417c9507",
+    "NLA/IE16/FinalContractsDraft.lean": "a0aa3d1e08cf699c06a397540987f166f76693c87c8ed427f8d30836a9b01752",
+    "NLA/IE16/FullMinimumDraft.lean": "78f9c847d1438c5ce1b53c49bf0178ccde7a8cb542ad07a0b99172542c7c95e6",
+    "NLA/IE16/Minimax.lean": "d933b2609842519f9af59b21699af15414a2768376fa9a7deb9decb84fd9842c",
+    "NLA/IE16/Numeric.lean": "1acf85379ec7c69a632726920ef6be780fa059ccb1e3e6c9f8273b2f7625164f",
+    "NLA/IE16/SubsetBoundsDraft.lean": "6a3bef42b0356e36db434099e87a4aa4d01682c2de09092497035fe796a33709",
+    "NLA/IE16/SubsetGeometryDraft.lean": "e0f73f3268d289371906e3df7388249b51e7ae93c0b1b7c0b5c8fe04449d48ab",
+    "NLA/IE16/WeightedBridgeDraft.lean": "e68654e1a1f21c1f29b2391edf69374365438c583ff4181323be29a39f6fd008",
+    "NLA/IE16/WeightedDraft.lean": "d87c2fe573fbdd31a85ca7170ee9f9700fd406243f44e4631f0feb243694a9e1",
+    "Solution.lean": "9ec27288b7d4824b91a8c0006c7be1fd7e6493b2444ce45941bdb9104b17a419"
+  }
+}

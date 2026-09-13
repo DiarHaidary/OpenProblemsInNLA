@@ -1,0 +1,15 @@
+@@ Status
+-Status: **statement stage**. `Definitions.lean` and `Challenge.lean` are
+-proof-independent and contain deliberate placeholders. No proof module or
+-solution is present. Implementation must wait for two independent statement
+-reviews.
++Status: **proof implementation stage**. `Definitions.lean` is proof-independent;
++`Challenge.lean` contains the deliberate placeholders that the proof modules
++replace. The approved statement boundary is preserved while the proof is
++implemented under `NLA/IE16/`. No completed proof or Linux result is claimed
++until the later verification gates pass.
+@@ Frozen sources
+-`verification/source-snapshot/`; `SOURCE_HASHES.json` binds every copied input
+-to its upstream blob hash.
++`verification/source-snapshot/`; `SOURCE_HASHES.json` binds every copied input
++to its upstream SHA-256 content hash.

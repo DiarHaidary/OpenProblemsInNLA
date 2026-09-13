@@ -1,0 +1,168 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json
+version: v0.4
+project:
+  name: 'IE-16: finite complex-spectrum counterexample to the normal-GMRES subset bound'
+  description: 'Statement-first Lean formalization of Sidney Holden’s exact nine-point,
+    degree-four counterexample to the complete IE-16 universal inequality.'
+  authors:
+  - George Stepaniants
+  affiliations:
+    George Stepaniants: Department of Computing and Mathematical Sciences, California Institute
+      of Technology, Pasadena, California, USA
+  responsible_maintainers:
+  - George Stepaniants
+  license: Apache-2.0
+repository:
+  role: substantive-development
+sources:
+- title: 'IE-16 — A sharp subset bound for worst-case normal GMRES'
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/b73cd1804e40e0d101294eedb156984f0d62b4a6/linear-systems-and-elimination/IE-16/README.md
+  type: web-post
+  location: Complete canonical problem statement
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: 'All original quantifiers are retained: finite distinct nonzero complex spectra, n >= 3,
+    and every 1 <= k <= n - 2.'
+- title: 'IE-16: A counterexample and the failure of every universal subset constant'
+  authors:
+  - Sidney Holden
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/b73cd1804e40e0d101294eedb156984f0d62b4a6/references/holden-ie16-2026-09-12/submitted/source/solution.tex
+  type: manuscript
+  location: 'Theorem Explicit counterexample and Sections 2–3'
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: 'Only the finite nine-point witness is in scope; the stronger amplification theorem is omitted.'
+- title: 'IE-16 exact finite certificate'
+  authors:
+  - Sidney Holden
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/b73cd1804e40e0d101294eedb156984f0d62b4a6/references/holden-ie16-2026-09-12/submitted/code/verify.py
+  type: software
+  location: Exact arithmetic certificate and 126 subset checks
+  relationship: other
+  author_endorsement: not-contacted
+  note: 'The executable certificate is supplementary evidence and is not imported as an axiom.'
+related_formalizations:
+- id: https://github.com/sgstepaniants/Forsythe/tree/8d1b0c0545a77b40245e84705aa7d273e6c81e62/lean-proof
+  relationship: other
+  note: 'Statement-first LeanCert and Comparator workflow reference; no Forsythe theorem is imported.'
+- id: https://github.com/jaumededios/Schiffer/tree/2938e277969c329caf154e48a3d8823f3635c7f1
+  relationship: other
+  note: 'Proof organization reference; no Schiffer theorem or source code is imported.'
+automation:
+  methods:
+  - method: agent
+    framework: OpenAI Codex
+    tool_setup: 'Multiple agents; two independent statement reviews before proof, pinned Lean 4.33.1,
+      Mathlib and LeanCert, exact finite complex algebra, and kernel-only numeric certification.'
+    prompting_notes: 'Preserve the full IE-16 target. Use the finite witness, symmetry reduction,
+      Lagrange subset bounds and exact rational inequalities; do not replace M_k or subset maxima by lookup tables.'
+    notes: 'AI-assisted formalization requested by George Stepaniants. No external human peer review,
+      source-author endorsement, priority certification, or measured cost is claimed.'
+status:
+  scope: 'Statement-only boundary; the complete finite counterexample, explicit full/subset infimum
+    attainment bridges, positive subset maximum, and full universal negation are declared in
+    Challenge.lean with intentional placeholders. No Lean proof is claimed yet.'
+  sorry_count: 15
+  sorry_in_definitions: 0
+  axioms:
+  - sorryAx
+  main_results:
+  - declaration: NLA.IE16.explicitL_card
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.explicitL_admissible
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.witness_feasible
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.witness_objective
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.full_minimum_exact
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.full_minimum_isLeast
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.full_lower_bound
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.every_five_point_subset_upper
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.every_five_point_subset_minimum_isLeast
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.subset_max_upper
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.subset_max_positive
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.ratio_lower_bound
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.ratio_exceeds_candidate
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.counterexample
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+  - declaration: NLA.IE16.not_IE16Conjecture
+    file: Challenge.lean
+    sorry_count: 1
+    axioms: [sorryAx]
+    comparator_config: comparator.json
+review:
+  status: statement-stage-pending-two-independent-reviews
+  reviewers: []
+  notes: 'The fifteen placeholders are deliberate and excluded from any final proof claim. No statement
+    approval, proof implementation, Linux run or Comparator result is claimed.'
+alignment:
+- source: 'Original IE-16 universal subset inequality'
+  declarations:
+  - NLA.IE16.IE16Conjecture
+- source: 'Holden finite nine-point counterexample: exact full-set minimum and subset maximum bound'
+  declarations:
+  - NLA.IE16.ExplicitCertificate
+  - NLA.IE16.counterexample
+- source: 'Complete negative answer to the original universal target'
+  declarations:
+  - NLA.IE16.not_IE16Conjecture
+acknowledgements: 'Sidney Holden for the informal negative resolution and exact certificate; Mathlib and
+  LeanCert contributors; Schiffer, Forsythe and the Lean Comparator workflow. Formalization by George
+  Stepaniants with AI-agent assistance.'
+toolchain:
+  lean: leanprover/lean4:v4.33.1
+  leancert: 621a43d7cf21f87872392a01e874f2f1dbddc926
+  mathlib: 0df444a360eaa60ab8c11dca51a86af692955474
+  dependency_manifest: lake-manifest.json

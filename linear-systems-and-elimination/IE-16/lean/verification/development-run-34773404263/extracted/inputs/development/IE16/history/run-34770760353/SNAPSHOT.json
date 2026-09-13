@@ -1,0 +1,27 @@
+{
+  "purpose": "Exact source preservation of first actual Linux development compiler run; not formal verification",
+  "commit": "d820c88c8720dd5dcadda222d11520af9725290e",
+  "run_id": 34770760353,
+  "job_id": 103759807859,
+  "conclusion": "failure",
+  "compiled_successfully": [
+    "LeanCert.Tactic.Verification",
+    "NLA.IE16.Definitions"
+  ],
+  "failed": [
+    "NLA.IE16.Numeric"
+  ],
+  "skipped": [
+    "NLA.IE16.Minimax"
+  ],
+  "files": {
+    "NLA/IE16/Numeric.lean": "750d8b122ce740ec15a3a5e4e5b146db4a735fa193d186c1057d721dd7addbfc",
+    "NLA/IE16/Minimax.lean": "2da43a7f59a13a4ff6408f222489b3d705376047cc2cf031c57fc1ad51e758f8",
+    "NLA/IE16/WeightedDraft.lean": "1e18ba3e3ac619d1e79f84798117c0a32097ed0d4de493236c7cb2706f7669fe",
+    "SOURCE_INPUTS.json": "544c87f8c705ede29bc9cf9b12721b9909f804c41e9ee108cc09e4e653239ee9",
+    "SOURCE_CHANGES.json": "b4bba930e4c8a44dfa70cbd90c0e1ddf426310d2301968fb508ccafb6d771685",
+    "ci_compile.py": "4026e4f0bc8916112eb5010a05b550f6544e6354e546faaf6d2ec693773b8dd4",
+    "README.md": "5ef1332aec0fd191cd07944e72849047b984bdad7664e0ce58f4c66bf3d6dd65",
+    "lean-ie16-development.yml": "bd0810a4bfde379d5e215219450fb02821ae5e132198db6a8b30f72f0ac13be4"
+  }
+}

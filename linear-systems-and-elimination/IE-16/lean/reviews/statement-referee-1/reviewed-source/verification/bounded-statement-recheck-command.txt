@@ -1,0 +1,6 @@
+# Aggregate fresh statement recheck.  This is the only post-change local
+# compiler invocation; bounded_lean.py fixes 2 GiB, one thread, and 90 s.
+MI22=/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean
+DEPENDENCY_LEAN_PATH=$MI22/.lake/packages/Cli/.lake/build/lib/lean:$MI22/.lake/packages/batteries/.lake/build/lib/lean:$MI22/.lake/packages/Qq/.lake/build/lib/lean:$MI22/.lake/packages/aesop/.lake/build/lib/lean:$MI22/.lake/packages/proofwidgets/.lake/build/lib/lean:$MI22/.lake/packages/importGraph/.lake/build/lib/lean:$MI22/.lake/packages/LeanSearchClient/.lake/build/lib/lean:$MI22/.lake/packages/plausible/.lake/build/lib/lean:$MI22/.lake/packages/mathlib/.lake/build/lib/lean:$MI22/.lake/packages/leancert/.lake/build/lib/lean
+cd "$MI22"
+LEAN_PATH=$DEPENDENCY_LEAN_PATH python3 /tmp/nla-lean-formalization/bounded_lean.py -q -R /tmp/nla-lean-ie16-project -o /tmp/nla-lean-ie16-project/recheck/All.olean /tmp/nla-lean-ie16-project/recheck/All.lean

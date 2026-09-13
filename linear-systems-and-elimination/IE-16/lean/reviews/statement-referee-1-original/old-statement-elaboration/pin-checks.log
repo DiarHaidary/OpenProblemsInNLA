@@ -1,0 +1,57 @@
+# Lean toolchain pin
+lean-toolchain: leanprover/lean4:v4.33.1
+
+manifest package revisions:
+10:   "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+11:   "name": "leancert",
+13:   "inputRev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+22:   "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+23:   "name": "mathlib",
+25:   "inputRev": "v4.33.1",
+34:   "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+35:   "name": "plausible",
+37:   "inputRev": "main",
+46:   "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+47:   "name": "LeanSearchClient",
+49:   "inputRev": "main",
+58:   "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+59:   "name": "importGraph",
+61:   "inputRev": "main",
+70:   "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+71:   "name": "proofwidgets",
+73:   "inputRev": "main",
+82:   "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+83:   "name": "aesop",
+85:   "inputRev": "master",
+94:   "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+95:   "name": "Qq",
+97:   "inputRev": "master",
+106:   "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+107:   "name": "batteries",
+109:   "inputRev": "main",
+118:   "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+119:   "name": "Cli",
+121:   "inputRev": "v4.33.0",
+126: "name": "NLAIE16",
+
+lakefile requires:
+1:name = "NLAIE16"
+3:defaultTargets = ["Challenge"]
+6:name = "leancert"
+7:git = "https://github.com/alerad/leancert"
+8:rev = "621a43d7cf21f87872392a01e874f2f1dbddc926"
+10:[[lean_lib]]
+11:name = "NLA"
+13:[[lean_lib]]
+14:name = "Challenge"
+16:[[lean_lib]]
+17:name = "Solution"
+
+lean version:
+Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+
+package-local .lake directories (must be empty):
+
+placeholder counts:
+Definitions.sorry=       0
+Challenge.sorry=      12

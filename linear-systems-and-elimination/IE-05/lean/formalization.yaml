@@ -254,6 +254,8 @@ review:
     file: reviews/proof-freeze.json
     sha256: 72d9a694d6c337937c6edd28ee632dc4a92464ac2dc7ba58ef98f5322405f251
   candidate_inventory: verification/candidate-inputs.json
+  publication_inventory: verification/publication-inputs.json
+  inventory_phase_note: The candidate inventory is an immutable historical selection. The publication inventory binds the complete current tree, including the refreshed README and metadata and later operational evidence.
   candidate_archive_map: verification/candidate-package/ARCHIVE-MAP.json
 reproduction:
   local_development:
@@ -264,11 +266,10 @@ reproduction:
       have the accepted independent macOS checks.
   package_integrity:
     commands:
-    - python3 verification/candidate-package/verify_inventory.py
-    - python3 verification/candidate-package/audit_metadata.py
+    - python3 verification/verify_publication.py
     prerequisites: Python 3.9 or newer; the metadata audit also requires the pinned PyYAML and jsonschema
       requirements in tools/lean/requirements.txt.
-    note: Read-only package checks, not mathematical approval or a Lean runtime check.
+    note: Read-only verification of the current publication inventory, immutable historical source inventories, current metadata and sealed operational evidence; not a new mathematical approval or Lean runtime check. The retained candidate-package verifiers describe the earlier phase.
   authoritative_Linux:
     status: accepted
     cwd: repository root

@@ -59,24 +59,32 @@ inspection in both independent source checks found only `propext`,
 The authoritative Linux run and independent operational audit are archived in
 [`verification/linux-2026-09-13/`](verification/linux-2026-09-13/).
 
-From this directory, the following checks only package integrity and metadata;
-it does not run Lean or grant independent approval:
+From this directory, the following checks the published package's integrity
+and metadata; it does not run Lean or grant independent approval:
 
 ```sh
-python3 verification/candidate-package/verify_inventory.py
-python3 verification/candidate-package/audit_metadata.py
+python3 verification/verify_publication.py
 ```
 
-The metadata check also requires the PyYAML and jsonschema dependencies recorded
+The check requires the PyYAML and jsonschema dependencies recorded
 in `verification/candidate-package/schema/requirements.txt`.
 
-The archive-aware verifier checks every member of all 29 historical inventories,
-the full 2,338-file accepted draft, original source blob identities, and the
-complete [`verification/candidate-inputs.json`](verification/candidate-inputs.json)
-selection. Only three exact path-and-hash versions redirect to preserved wrapper
-archives; no inventory name or basename is excluded. Seven small pinned library
-source archives make an old external-source inventory portable. No dependency
-cache or Git object store is included.
+The verifier checks every file in the current
+[`publication inventory`](verification/publication-inputs.json), with that
+inventory itself as the sole exclusion, and the complete sealed operational
+evidence. It also checks all 29 historical inventories, the full 2,338-file
+accepted draft, original source blob identities and the unchanged members of
+the 2,404-file [historical candidate selection](verification/candidate-inputs.json).
+Exactly two candidate metadata files, this README and `formalization.yaml`,
+were refreshed for publication; their current bytes are bound by the new
+inventory. The historical candidate inventory and its original verifier are
+retained unchanged. Their default commands describe the earlier phase and
+must not be used as a check of the later publication tree.
+
+Within the earlier accepted-draft checks, three exact path-and-hash versions
+redirect to preserved wrapper archives. Seven small pinned library source
+archives make an old external-source inventory portable. No dependency cache
+or Git object store is included.
 
 The accepted mathematical gate is
 [`verification/final-review-acceptance.json`](verification/final-review-acceptance.json),

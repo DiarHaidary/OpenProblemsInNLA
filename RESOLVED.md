@@ -21,6 +21,13 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### MI-05 — order-four determinant identities and partial classes — Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 2.1 and Sections 3–7](references/holden-mi05-2026-09-13/report.pdf) give a fourteen-term signed identity, optimal positive-obstruction representations, an all-complex-spectra unitary ball of radius $`1/100`$, a support-direction criterion and a sharp real-orthogonal obstruction bound. [Submission and verified affiliation](references/holden-mi05-2026-09-13/README.md) · [Proof source](references/holden-mi05-2026-09-13/report.tex).
+
+A separate [independent informal Codex AI-agent audit](references/holden-mi05-2026-09-13/independent-review.md) passed the stated partial scope. The [retained original MI-05 target](matrix-inequalities-and-norms/MI-05/README.md) remains open for arbitrary normal pairs: negative common weights do not refute its spectrum-dependent convex-hull inclusion. No Lean verification, external human peer review or historical novelty claim is asserted. The status remains Partially resolved and the open count is unchanged.
+
+
 ### RA-14 — query-complexity partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** [Sidney Holden, verified affiliation and submission record](references/holden-ra14-2026-09-12/README.md). The [research note](references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, establishes the universal rank lower bound, the large-rank regime and a spectral-to-PCA reduction giving matching bounds under a retained polynomial dimension hypothesis. [Independent informal AI-agent review](references/holden-ra14-2026-09-12/independent-review.md). The [original RA-14 target](randomized-and-low-rank-approximation/RA-14/README.md) remains open in the other simultaneous finite-parameter regimes. No full resolution, external human peer review or Lean verification is asserted.

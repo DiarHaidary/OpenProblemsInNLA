@@ -3,7 +3,7 @@
 **Difficulty:** extreme  
 **Importance:** broadly interesting  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-10
+**Last checked:** 2026-09-13
 
 **Rating rationale:** This decades-old spectral enclosure conjecture for arbitrary normal pairs is a major matrix-theory barrier with consequences for determinant and spectral analysis.
 
@@ -16,6 +16,16 @@ For every integer $`n\ge1`$, let $`A,B\in\mathbb C^{n\times n}`$ be normal matri
 ```
 
 Here $`S_n`$ is the permutation group and the convex hull is taken in $`\mathbb C\cong\mathbb R^2`$.
+
+## Partial result — 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](../../references/holden-mi05-2026-09-13/README.md).
+
+[Theorem 2.1](../../references/holden-mi05-2026-09-13/report.pdf) gives a fourteen-term signed determinant identity for every order-four complex unitary and every pair of complex spectra. Theorems 3.1–3.2 establish optimal common negative mass on the positive-obstruction regions and show that at most one such obstruction is positive. Corollary 4.1 and Theorem 4.2 prove the original inclusion for a specified class of relative unitaries, including an operator-norm ball of radius $`1/100`$ around the displayed Hadamard matrix; Corollary 4.3 extends these classes by block sums. Theorem 5.1 reduces the remaining support directions, and Theorem 7.2 gives a sharp real-orthogonal obstruction bound. [Proof source](../../references/holden-mi05-2026-09-13/report.tex).
+
+**The unrestricted target remains open.** The manuscript does not establish the determinant inclusion for arbitrary order-four unitaries, much less all dimensions. Negative spectrum-independent weights are not counterexamples to the spectrum-dependent convex-hull assertion. The zero-obstruction classification is also left open. These are partial results under the retained original assumptions and quantifiers, not a full resolution.
+
+The stated partial results passed a separate [independent informal Codex AI-agent audit](../../references/holden-mi05-2026-09-13/independent-review.md), with fresh [exact and regression checks](../../references/holden-mi05-2026-09-13/verification/audit.json). No Lean verification, external human peer review or novelty claim is asserted. The original ID, path, statement and source credit are retained.
 
 ## Why it matters
 

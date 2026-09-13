@@ -1,0 +1,405 @@
+{
+  "head": "589ec79798ee42adc7a7160a376c67252280a121",
+  "status": "PASS",
+  "checks": {
+    "whole_file_row_audit": {
+      "modules": 48,
+      "literal_row_theorems": 384,
+      "rows_per_family": 128,
+      "columns_per_theorem": 128,
+      "ordered_family_obligations": 49152,
+      "all_expected_sources_exact": true
+    },
+    "independent_matrix_and_factorization": {
+      "rows": 128,
+      "columns": 128,
+      "width": 127,
+      "atom_family_counts": [
+        64,
+        7,
+        21,
+        35
+      ],
+      "exact_entry_products": 16384,
+      "family_entry_identities": [
+        16384,
+        16384,
+        16384,
+        16384
+      ],
+      "rational_product_all_exact": true,
+      "W_V_H_entrywise_nonnegative": true,
+      "denominators_all_positive": true,
+      "denominator_values": [
+        1,
+        4,
+        9,
+        16,
+        25,
+        36
+      ],
+      "target_entry_values": [
+        0,
+        1,
+        4,
+        9,
+        16,
+        25,
+        36
+      ],
+      "rank_conclusion": "rank_+(C_7) <= 127 < 128; no claim of exact rank 127"
+    },
+    "secondary_artifact_comparisons": {
+      "Lean_pair_four_masks_match_complete_combination_sets": true,
+      "retained_Lean_W_V_d_arrays_equal_independent_factors": true,
+      "submitted_JSON_equal_independent_factors": true,
+      "all_four_numeric_CSVs_equal_independent_factors": true,
+      "none_used_as_original_matrix_oracle": true
+    },
+    "negative_controls": {
+      "omitted_singleton_family_detected": true,
+      "mutated_factor_entry_detected": true,
+      "natural_subtraction_target_corruption_detected": true
+    }
+  },
+  "row_modules": [
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block00",
+      "row_start": 0,
+      "row_end": 7,
+      "sha256": "de06fa4cd43fc6ad6982ebf821958f6c8267106d50dda8ce9d9b3cfec5913d61",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block01",
+      "row_start": 8,
+      "row_end": 15,
+      "sha256": "f092d372933088c042d140413a238b32f630810d39fe880262dff30f83f017d0",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block02",
+      "row_start": 16,
+      "row_end": 23,
+      "sha256": "9293dec609a90b25884e7b6488da69072ceb97245f3d18bd34e997a3448c177e",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block03",
+      "row_start": 24,
+      "row_end": 31,
+      "sha256": "143274fbbfbde939085c9b37b7ef20966813f44a5afc6b24d74574deffff2e4b",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block04",
+      "row_start": 32,
+      "row_end": 39,
+      "sha256": "f80ff26a2aa1fb86ae4cd59f57a49e916656c2ab50d572aef5a988462ce71d28",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block05",
+      "row_start": 40,
+      "row_end": 47,
+      "sha256": "76876af51590835038837ebbedfd8963f2d514f8162e871b9cdc8653a6799d15",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block06",
+      "row_start": 48,
+      "row_end": 55,
+      "sha256": "dbea7d8edfe49408c6442cb1f7c536ee0e4d86391be78aeb86d32a52621585c4",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block07",
+      "row_start": 56,
+      "row_end": 63,
+      "sha256": "af55aa164e07c06050fb1862f92b0e6a23f950e9a6e33ae5a8680c8dc245621d",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block08",
+      "row_start": 64,
+      "row_end": 71,
+      "sha256": "47a1c810bf1088f4f364ebfd75a9090f1550a32efcc350f4fe58ed206b9d24c6",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block09",
+      "row_start": 72,
+      "row_end": 79,
+      "sha256": "797f23a6d42e101dee622acd3a7df0b35c21e0e7b7a796de51765e8c97e3761e",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block10",
+      "row_start": 80,
+      "row_end": 87,
+      "sha256": "4332d0f3e70b34bcc047ae7e78537627bab6fddcb2180b6c793ac0931c36cc07",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block11",
+      "row_start": 88,
+      "row_end": 95,
+      "sha256": "6ccfa9ce029fe61deb72c2198b9646ba298efc42a56de1158f37e45acf569764",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block12",
+      "row_start": 96,
+      "row_end": 103,
+      "sha256": "711dc5ebfed0c4c8ae5600fd659d943768fa106115e239f9f397cde23dcc145b",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block13",
+      "row_start": 104,
+      "row_end": 111,
+      "sha256": "9dc6961bc34f0496eb65403888d4e342f1c20d0398100cbe7a5210509ffbf618",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block14",
+      "row_start": 112,
+      "row_end": 119,
+      "sha256": "8f1a93acca83c5a2a9f9ecff3b1697ba80288a969ea34eb7136f2f9ece93013e",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Singleton.Block15",
+      "row_start": 120,
+      "row_end": 127,
+      "sha256": "bb417e14367b068e28174b3a2869a47a0945f4833b439c1215b74604adfa6944",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block00",
+      "row_start": 0,
+      "row_end": 7,
+      "sha256": "b79f22173a1dedf9478561976b34de2551b01e9e76afa3d43c34269d03937993",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block01",
+      "row_start": 8,
+      "row_end": 15,
+      "sha256": "cf858d4232535d02fb4d162e64816d832a910869250656da9b3ba0c4750aab2d",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block02",
+      "row_start": 16,
+      "row_end": 23,
+      "sha256": "1d5247c1ca46504ecd7ab585a12bcbdbfa347ca60c242d057fd47e1643fb6b4e",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block03",
+      "row_start": 24,
+      "row_end": 31,
+      "sha256": "d95e7bb8709d5f000bb61a92074cf9160cea53a1f2894e7e491c5df384730b4d",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block04",
+      "row_start": 32,
+      "row_end": 39,
+      "sha256": "743c60c863391b3e0f253ffe5de3194988fa121fb258ed63b4f5a70d86f30655",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block05",
+      "row_start": 40,
+      "row_end": 47,
+      "sha256": "7cffa3bc8c74278da598a7695b9f3fd96e3f847a50d5b6e7bf0fc418b6cdeb51",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block06",
+      "row_start": 48,
+      "row_end": 55,
+      "sha256": "149b3c3d82f0eb02f04140e39d3167d24d9e7e3f3ebef4e42f5daa0bb9134a1d",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block07",
+      "row_start": 56,
+      "row_end": 63,
+      "sha256": "69aaba7da3f6f2e747b72c345a5b62c41a36f82ec20983e31e183860657f4a55",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block08",
+      "row_start": 64,
+      "row_end": 71,
+      "sha256": "2fd52c986852f1d8d457d19c0e89b63600c4b86e66d9f3a20592b75050ac577f",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block09",
+      "row_start": 72,
+      "row_end": 79,
+      "sha256": "0334d8faa53ae47388cdc90c0f090dce265ffa1242c01fc0e29be10d187c3612",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block10",
+      "row_start": 80,
+      "row_end": 87,
+      "sha256": "3b43ca67c12597b6e9340028df7c6235278ba90f571121d05f53a5a8915ae2c1",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block11",
+      "row_start": 88,
+      "row_end": 95,
+      "sha256": "2e6da70b667a7bacbdd768bb90eef82633c26e1c066308d3fba0332e40cf457b",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block12",
+      "row_start": 96,
+      "row_end": 103,
+      "sha256": "ea32035cdd452eee117dd9b19d76448878504e618898ec4c197d3af00276dd4f",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block13",
+      "row_start": 104,
+      "row_end": 111,
+      "sha256": "3bcaae822d8c2e06324fb5904253e0c693c5dd13fea55fc1283bfaeb8fa859cd",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block14",
+      "row_start": 112,
+      "row_end": 119,
+      "sha256": "3c6258955331769cbe18a0c75656c4d84e7ad04dea9ac477fd1551ab8e342ad7",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Pair.Block15",
+      "row_start": 120,
+      "row_end": 127,
+      "sha256": "ed4f0f3125528d843621ee6b127996702ddd146400a4423948eed0629f70ddc1",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block00",
+      "row_start": 0,
+      "row_end": 7,
+      "sha256": "a43707705632f40f408440e3fd1bee24c27cf4c3401a51388ac36a0ee042f5bc",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block01",
+      "row_start": 8,
+      "row_end": 15,
+      "sha256": "a485ca8012cef2a0f1805405456c1f5833a239af8ac087c6ea4161e26d781368",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block02",
+      "row_start": 16,
+      "row_end": 23,
+      "sha256": "ac881c24bc2731c5681c2e171d08c2d9653c88fcdb11b2d14eb80fcac07bd6fc",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block03",
+      "row_start": 24,
+      "row_end": 31,
+      "sha256": "6cdcbc3b790dc1184ffc3892c1911fd633d1c710085bbdb80a17833f9fcb8d08",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block04",
+      "row_start": 32,
+      "row_end": 39,
+      "sha256": "4d63a0ad31b2f577b8d1ca04ab632e0b0c9605373fa4cd97a05f60a0080aabee",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block05",
+      "row_start": 40,
+      "row_end": 47,
+      "sha256": "f1f5fabbe981666d5318c61aee881f2cc4ae04fb80eab7b26b76fbbce55e1bfd",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block06",
+      "row_start": 48,
+      "row_end": 55,
+      "sha256": "bbf486b448a4c3d738e7237f6ff9474352f2886fedf61c151710396012336d69",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block07",
+      "row_start": 56,
+      "row_end": 63,
+      "sha256": "358a86b85ceeba6db3ca10834c0b77bcdaf7f5164312090ca2a6a007da2917a5",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block08",
+      "row_start": 64,
+      "row_end": 71,
+      "sha256": "6c2436cae31570c2e76f362dbdfc53a9649d64f9ff5ef53d45a617eaa584bbcb",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block09",
+      "row_start": 72,
+      "row_end": 79,
+      "sha256": "f4c421e0082bf84ea1c4eada8b6c56340f9a260ee01b61fc2b380a7ed3c11ace",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block10",
+      "row_start": 80,
+      "row_end": 87,
+      "sha256": "65e445c3e879079d686ac8cc01c61af9bca0534f059dbf41a47495e7e8eab1f1",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block11",
+      "row_start": 88,
+      "row_end": 95,
+      "sha256": "625aff3fd3d278a8292a8472ededc751793f72a779b0f38a4bfedc136f3a04cd",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block12",
+      "row_start": 96,
+      "row_end": 103,
+      "sha256": "e0cff5ab40f32edda9389b25e63a2401659eaca2067485a7c2fddf72c677fb7f",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block13",
+      "row_start": 104,
+      "row_end": 111,
+      "sha256": "6258b117a10dc3a73f736ff206a71de1e5f1acd742c5689ef60b3f5b87f6af01",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block14",
+      "row_start": 112,
+      "row_end": 119,
+      "sha256": "42d4cc2ed30b60631a2835e7fe6ae30eeda8c385c5c459d11eeb7975c4deced4",
+      "full_source_matches_reviewed_template": true
+    },
+    {
+      "module": "NLA.NR03.RowCertificate.Four.Block15",
+      "row_start": 120,
+      "row_end": 127,
+      "sha256": "fd0f46cc382069bc780c4a8d3fd1a1b7902860ca0b55b2efaebffdd2dd0ce862",
+      "full_source_matches_reviewed_template": true
+    }
+  ],
+  "reviewer_script_sha256": "06a88149952e9e47157c75ff2f1a2f70510520ff45f022ca02dd6977610b13f3",
+  "scope": "Independent finite exact arithmetic and complete literal-source audit. Does not claim a new local Lean compilation or authenticate remote canonical receipts."
+}

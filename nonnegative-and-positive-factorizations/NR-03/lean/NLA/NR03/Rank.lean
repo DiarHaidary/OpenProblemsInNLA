@@ -37,6 +37,7 @@ theorem scaled_certificate_gives_factorization
   refine ⟨W, V, d, hd, hid, ?_⟩
   refine ⟨?_, ?_, ?_⟩
   · intro i k
+    change (0 : ℝ) ≤ (W i k : ℝ)
     exact_mod_cast (Nat.zero_le (W i k))
   · intro k j
     apply div_nonneg

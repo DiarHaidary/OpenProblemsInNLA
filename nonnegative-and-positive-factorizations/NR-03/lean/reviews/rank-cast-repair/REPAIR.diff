@@ -1,0 +1,10 @@
+--- a/nonnegative-and-positive-factorizations/NR-03/lean/NLA/NR03/Rank.lean
++++ b/nonnegative-and-positive-factorizations/NR-03/lean/NLA/NR03/Rank.lean
+@@ -37,6 +37,7 @@
+   refine ⟨W, V, d, hd, hid, ?_⟩
+   refine ⟨?_, ?_, ?_⟩
+   · intro i k
++    change (0 : ℝ) ≤ (W i k : ℝ)
+     exact_mod_cast (Nat.zero_le (W i k))
+   · intro k j
+     apply div_nonneg

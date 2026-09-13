@@ -36,7 +36,8 @@ imported as Lean axioms or accepted as a trusted checker result.
 
 ## Modular candidate packaging
 
-The canonical candidate contains 58 active implementation modules copied
+At canonical commit `523c5aeaddd8bf7c2dc01afb053bb0dea8811335`,
+the candidate contained 58 active implementation modules copied
 byte-identically from `development/NR03` at commit
 `3b3eb8f3fa384e4b3bf640d48bca87cf40db9565`. That commit includes the reviewed
 certificate-bridge overlay on `fe4140cced3fc4b4efdd4ef4e202d27156a1cd4f`;
@@ -49,3 +50,14 @@ and canonical sandbox controls remain pending. The development driver, row
 generator, historical probes, optional drafts, and diagnostic records are
 provenance material and are not imported by the canonical Lean proof. This
 packaging record makes no complete verification or status claim.
+
+
+## Statement-preserving canonical Rank cast repair
+
+After canonical run 34783909558 reported a cast elaboration error, the current
+Rank.lean inserts only `change (0 : ℝ) ≤ (W i k : ℝ)` before the existing
+left-factor nonnegativity tactic. The target is definitionally unchanged.
+`reviews/rank-cast-repair/` retains the exact old/new hashes, diff, and two
+independent source-delta approvals. All other 57 active modules, every frozen
+statement and all pins remain unchanged from the preceding package. Full
+canonical acceptance remains pending a successful actual rerun.

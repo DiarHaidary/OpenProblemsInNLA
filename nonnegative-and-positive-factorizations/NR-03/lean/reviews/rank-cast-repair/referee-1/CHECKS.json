@@ -1,0 +1,40 @@
+{
+  "reviewer": "Independent AI agent /root/nr03_independent_referee; no implementation authorship",
+  "scope": "One-line private Rank elaboration repair only",
+  "verdict": "APPROVE_SOURCE_DELTA_PENDING_ACTUAL_CANONICAL_RUN",
+  "base_commit": "523c5aeaddd8bf7c2dc01afb053bb0dea8811335",
+  "base_Rank_sha256": "3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876",
+  "new_Rank_sha256": "1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e",
+  "private_inputs_sha256": {
+    "HASHES.json": "45f3fb055edfb4b392126c79e411a35b1d10b1d2a31db6e3216382a17bf74241",
+    "REPAIR.diff": "5945e57ff5f49802b5dad6cf4ae9d92188b02611fd9a86b7d780c9dfc7547bc1",
+    "REPAIR.md": "9c62e02a9157748c2da67c1903746a4eff274b0bc64185c93d36eb5e1a4e7452",
+    "Rank.lean": "1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e"
+  },
+  "checks": {
+    "exactly_one_line_inserted": true,
+    "removing_line_recovers_exact_base_bytes": true,
+    "all_ten_theorem_signatures_identical": true,
+    "all_other_Rank_source_bytes_identical": true,
+    "goal_definitionally_equal_via_castNatMatrix": true,
+    "explicit_real_cast_matches_reported_error": true,
+    "no_added_assumptions_or_new_modules_or_axioms": true
+  },
+  "pinned_API": {
+    "mathlib_commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "file": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/Mathlib/Data/Nat/Cast/Order/Ring.lean",
+    "sha256": "005f95e3c0d18bc11034eff9c7f726e719d61cac7d8fafa1e739096d6d4da255",
+    "declaration": "Nat.cast_nonneg",
+    "line": 30
+  },
+  "prior_source_review_sha256": "7ed2951165c48e0eb92e8215aee9371d321257d3bee6888250b877c879a18edd",
+  "actual_failure_review_sha256": "deea7e46cbc86ca73cca3a495cc1fdc58b096041d2acee4bca426de1baee1513",
+  "limitations": [
+    "No local Lean/Lake execution or dependency download",
+    "No source edits, Git mutations, or new CI action",
+    "This review does not establish that the patched full graph compiles",
+    "Final Comparator/default-kernel/LeanCert/axiom/sandbox acceptance and exact runtime input binding remain pending"
+  ],
+  "compiled_acceptance": false,
+  "nr03_counted": false
+}

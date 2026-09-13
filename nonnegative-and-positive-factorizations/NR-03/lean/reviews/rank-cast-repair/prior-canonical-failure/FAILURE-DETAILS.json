@@ -1,0 +1,2056 @@
+{
+  "scope": "Actual canonical build failure; implementer operational audit only",
+  "run": 34783909558,
+  "job": 103795825608,
+  "commit": "523c5aeaddd8bf7c2dc01afb053bb0dea8811335",
+  "job_started_at": "2026-09-13T21:28:23Z",
+  "job_completed_at": "2026-09-13T21:47:23Z",
+  "elapsed_seconds": 1140.0,
+  "exact_failing_source": "NLA/NR03/Rank.lean:40:4",
+  "exact_diagnostic": "mod_cast has type (0 : \u2115) \u2264 W i k but is expected to have type (0 : \u211d) \u2264 castNatMatrix W i k",
+  "comparator_process_exit": 1,
+  "row_modules_built": 48,
+  "actual_closed_row_axiom_diagnostics": 384,
+  "actual_standard_axiom_diagnostics": {
+    "NLA.NR03.genericD_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.CertificateBridge.full_sum_decomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.CertificateBridge.full_identity_of_components": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.CertificateBridge.scaled_identity_of_full": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row13": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row14": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row15": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row18": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row19": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row20": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row21": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row22": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row23": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row24": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row25": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row26": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row27": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row28": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row29": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row30": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row31": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row32": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row33": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row34": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row35": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row36": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row37": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row38": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row39": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row40": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row41": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row42": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row43": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row44": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row45": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row46": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row47": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row48": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row49": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row50": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row51": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row52": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row53": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row54": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row55": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row56": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row57": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row58": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row59": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row60": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row61": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row62": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row63": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row64": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row65": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row66": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row67": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row68": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row69": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row70": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row71": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row72": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row73": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row74": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row75": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row76": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row77": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row78": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row79": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row80": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row81": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row82": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row83": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row84": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row85": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row86": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row87": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row88": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row89": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row90": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row91": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row92": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row93": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row94": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row95": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row96": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row97": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row98": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row99": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row100": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row101": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row102": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row103": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row104": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row105": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row106": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row107": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row108": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row109": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row110": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row111": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row112": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row113": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row114": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row115": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row116": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row117": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row118": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row119": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row120": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row121": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row122": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row123": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row124": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row125": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row126": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Singleton.row127": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row13": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row14": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row15": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row18": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row19": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row20": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row21": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row22": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row23": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row24": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row25": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row26": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row27": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row28": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row29": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row30": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row31": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row32": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row33": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row34": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row35": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row36": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row37": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row38": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row39": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row40": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row41": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row42": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row43": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row44": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row45": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row46": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row47": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row48": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row49": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row50": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row51": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row52": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row53": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row54": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row55": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row56": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row57": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row58": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row59": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row60": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row61": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row62": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row63": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row64": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row65": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row66": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row67": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row68": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row69": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row70": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row71": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row72": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row73": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row74": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row75": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row76": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row77": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row78": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row79": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row80": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row81": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row82": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row83": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row84": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row85": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row86": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row87": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row88": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row89": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row90": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row91": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row92": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row93": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row94": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row95": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row96": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row97": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row98": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row99": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row100": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row101": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row102": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row103": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row104": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row105": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row106": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row107": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row108": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row109": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row110": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row111": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row112": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row113": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row114": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row115": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row116": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row117": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row118": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row119": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row120": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row121": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row122": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row123": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row124": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row125": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row126": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Pair.row127": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row0": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row1": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row2": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row3": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row4": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row5": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row6": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row7": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row8": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row9": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row10": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row11": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row12": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row13": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row14": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row15": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row16": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row17": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row18": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row19": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row20": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row21": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row22": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row23": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row24": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row25": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row26": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row27": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row28": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row29": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row30": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row31": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row32": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row33": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row34": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row35": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row36": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row37": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row38": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row39": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row40": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row41": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row42": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row43": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row44": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row45": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row46": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row47": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row48": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row49": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row50": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row51": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row52": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row53": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row54": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row55": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row56": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row57": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row58": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row59": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row60": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row61": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row62": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row63": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row64": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row65": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row66": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row67": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row68": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row69": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row70": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row71": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row72": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row73": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row74": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row75": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row76": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row77": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row78": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row79": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row80": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row81": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row82": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row83": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row84": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row85": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row86": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row87": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row88": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row89": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row90": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row91": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row92": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row93": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row94": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row95": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row96": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row97": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row98": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row99": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row100": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row101": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row102": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row103": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row104": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row105": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row106": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row107": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row108": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row109": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row110": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row111": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row112": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row113": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row114": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row115": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row116": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row117": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row118": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row119": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row120": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row121": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row122": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row123": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row124": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row125": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row126": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.RowCertificate.Four.row127": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.singleton_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.pair_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.four_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.full_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.generic_scaled_identity": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "actual_family_identities": [
+    "NLA.NR03.singleton_identity",
+    "NLA.NR03.pair_identity",
+    "NLA.NR03.four_identity"
+  ],
+  "actual_unconditional_certificate_identities": [
+    "NLA.NR03.full_identity",
+    "NLA.NR03.generic_scaled_identity"
+  ],
+  "certificate_lake_duration": "2.2s",
+  "rank_failed_lake_duration": "2.3s",
+  "actual_dependency_checkout_pins": {
+    "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+    "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+  },
+  "control_results": {
+    "user-service.log": {
+      "expected_exit": 0,
+      "actual_expected_markers_present": true,
+      "sha256": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a"
+    },
+    "sandbox.log": {
+      "expected_exit": 0,
+      "actual_expected_markers_present": true,
+      "sha256": "e52148c96d59673068fc1f0f0eec2ddcf899f7fb81e5e9f7b7cd443aa6a10e49"
+    },
+    "kernel-controls.log": {
+      "expected_exit": 0,
+      "actual_expected_markers_present": true,
+      "sha256": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361"
+    },
+    "comparator-controls.log": {
+      "expected_exit": 0,
+      "actual_expected_markers_present": true,
+      "sha256": "2e4f2f3621cce5484b75763ce9fc325ef139a458c5feba202af43c8ee8960391"
+    },
+    "negative-sorry.log": {
+      "expected_exit": 1,
+      "actual_expected_markers_present": true,
+      "sha256": "c572b43c9d2d457d76f559052c44874f3067c10613f0fd09eb6c2ca4c0ae0f95"
+    },
+    "negative-native.log": {
+      "expected_exit": 1,
+      "actual_expected_markers_present": true,
+      "sha256": "1f0f529a09434221632d6bce4e81acb90e01639a158b9d05c208d236d8dd05cf"
+    }
+  },
+  "candidate_git_inputs_retained": 102,
+  "raw_accepted_result_input_inventory_available": false,
+  "public_export_diagnostics_observed": 0,
+  "Solution_built": false,
+  "full_default_kernel_reached": false,
+  "full_Comparator_accepted": false,
+  "canonical_problem_verified": false,
+  "local_Lean_Lake_executed": false,
+  "new_run_or_source_change": false,
+  "raw_sha256": {
+    "comparator-controls.log": "2e4f2f3621cce5484b75763ce9fc325ef139a458c5feba202af43c8ee8960391",
+    "comparator.log": "d2e9fd0c1f454c4c623134c7d7f0ae6903bc82df9851fbb80cc0241303bce6fe",
+    "dependencies.log": "740fcb700c777ae28e11ddf7c40e50a87ba79bbe97b1a1e1d21a314fea802b4d",
+    "kernel-controls.log": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+    "mathlib-cache.log": "1079a84a995ff0d6e85472f212c24a033fc71b1ef80edfe66866675110a47c3b",
+    "negative-native.log": "1f0f529a09434221632d6bce4e81acb90e01639a158b9d05c208d236d8dd05cf",
+    "negative-sorry.log": "c572b43c9d2d457d76f559052c44874f3067c10613f0fd09eb6c2ca4c0ae0f95",
+    "sandbox.log": "e52148c96d59673068fc1f0f0eec2ddcf899f7fb81e5e9f7b7cd443aa6a10e49",
+    "user-service.log": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a"
+  }
+}

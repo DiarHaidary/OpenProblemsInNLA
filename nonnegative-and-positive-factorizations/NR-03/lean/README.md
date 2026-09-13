@@ -48,7 +48,8 @@ The package retains the ten deliberate contracts in `Challenge.lean`:
 10. negation of the complete universal target at `n = 7`.
 
 The active implementation is the 58-module graph at reviewed development
-commit `3b3eb8f3fa384e4b3bf640d48bca87cf40db9565`. It includes the exact
+commit `3b3eb8f3fa384e4b3bf640d48bca87cf40db9565`, with the one-line
+canonical Rank cast repair recorded in [`reviews/rank-cast-repair/`](reviews/rank-cast-repair/). It includes the exact
 seven-path certificate-bridge overlay on `fe4140cced3fc4b4efdd4ef4e202d27156a1cd4f`, recorded in
 [`certificate-bridge/INTEGRATION-PATHS.json`](certificate-bridge/INTEGRATION-PATHS.json).
 It has five foundational modules, one certificate-bridge support module, 48
@@ -97,8 +98,9 @@ was run to prepare this draft, and no build artifacts or dependency caches are
 included.
 
 The unchanged foundations, all 48 row modules, `FamilyIdentities.lean`,
-`Rank.lean`, `Solution.lean`, the frozen boundary, and all pinned project files
-remain byte-identical to the recorded source commit. The overlay replaces only
+`Solution.lean`, the frozen boundary, and all pinned project files
+remain byte-identical to the recorded source commit. `Rank.lean` has the
+one-line, statement-preserving cast repair recorded below. The bridge overlay replaces only
 `NLA/NR03/Certificate.lean` and adds `NLA/NR03/CertificateBridge.lean` in the
 active graph; the exact seven development paths and their hashes are retained
 in `ACTIVE-MODULE-MANIFEST.json` and the `certificate-bridge/` provenance
@@ -133,3 +135,19 @@ Current package hashes are recorded in `reviews/proof-candidate-hashes.json`.
 The bridge diagnostic receipt retains its historical package metadata binding;
 the inventory records the later documentation transition. Its checked Lean
 sources are unchanged.
+
+
+## Canonical cast repair awaiting verification
+
+[Canonical run 34783909558](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34783909558)
+compiled all 384 row certificates, the complete family assembly, and the full
+unconditional matrix identity. It then failed at Rank.lean's left-factor
+nonnegativity cast. The [retained failure report](reviews/rank-cast-repair/prior-canonical-failure/FAILURE-REVIEW.md)
+records this partial outcome and explicitly withholds complete acceptance.
+
+The sole Lean edit exposes the definitionally identical real cast goal before
+the existing tactic. Both [first](reviews/rank-cast-repair/referee-1/REVIEW.md)
+and [second](reviews/rank-cast-repair/referee-2/REVIEW.md) independent source-delta
+reviews approve it. All ten frozen contracts and every other active source
+byte remain unchanged. The repaired full graph still requires the actual
+LeanCert, Comparator, default-kernel and sandbox/rejection checks.

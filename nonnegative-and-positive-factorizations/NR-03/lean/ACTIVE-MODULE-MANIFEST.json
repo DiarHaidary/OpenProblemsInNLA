@@ -1,6 +1,6 @@
 {
   "purpose": "NR-03 canonical source package; modular proof candidate pending authoritative verification",
-  "status": "source-only; conditional bridge diagnostic recorded; complete graph has no Lean/Lake/Comparator verification claim",
+  "status": "58-module candidate: actual full row and Certificate build passed in prior canonical run; one-line Rank cast repair awaits complete verifier rerun",
   "author": "George Stepaniants",
   "affiliation": "Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA",
   "email_published": false,
@@ -378,8 +378,10 @@
     {
       "path": "NLA/NR03/Rank.lean",
       "source_path": "development/NR03/NLA/NR03/Rank.lean",
-      "sha256": "3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876",
-      "bytes": 4051
+      "sha256": "1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e",
+      "bytes": 4090,
+      "source_sha256_before_canonical_repair": "3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876",
+      "source_relation": "One definitional change tactic inserted after canonical failure; see canonical_rank_repair."
     },
     {
       "path": "Solution.lean",
@@ -531,5 +533,22 @@
       "comparator_executed": false,
       "whole_problem_verified": false
     }
+  },
+  "source_commit_scope": "Reviewed development baseline; every active module is unchanged except the one-line canonical Rank cast repair recorded below.",
+  "canonical_rank_repair": {
+    "base_commit": "523c5aeaddd8bf7c2dc01afb053bb0dea8811335",
+    "source_path": "NLA/NR03/Rank.lean",
+    "old_sha256": "3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876",
+    "new_sha256": "1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e",
+    "diff": "reviews/rank-cast-repair/REPAIR.diff",
+    "diff_sha256": "5945e57ff5f49802b5dad6cf4ae9d92188b02611fd9a86b7d780c9dfc7547bc1",
+    "reviews": [
+      "reviews/rank-cast-repair/referee-1/REVIEW.md",
+      "reviews/rank-cast-repair/referee-2/REVIEW.md"
+    ],
+    "actual_prior_run": 34783909558,
+    "status": "Two source-delta approvals; actual complete canonical rerun pending",
+    "frozen_statements_unchanged": true,
+    "all_other_active_modules_unchanged": true
   }
 }

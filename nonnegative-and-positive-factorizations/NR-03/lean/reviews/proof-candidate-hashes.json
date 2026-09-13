@@ -1,5 +1,5 @@
 {
-  "status": "source-only 58-module proof candidate; conditional bridge diagnostic recorded; complete graph uncompiled",
+  "status": "58-module candidate with reviewed one-line Rank repair; actual complete canonical acceptance pending",
   "base_commit": "50838e37dd793830e2cecd1055cfc7e0349490f1",
   "implementation_source_commit": "3b3eb8f3fa384e4b3bf640d48bca87cf40db9565",
   "solution_exports": [
@@ -27,10 +27,10 @@
     "result": "clean",
     "note": "This lexical scan is source hygiene only and is not a proof result."
   },
-  "proof_status": "The bridge-only Linux diagnostic passed, but no complete Lean/Lake compilation, LeanCert result, Comparator result, default-kernel result, or solved-status claim is included.",
+  "proof_status": "Prior canonical run compiled every row, full families and unconditional Certificate, then failed Rank cast elaboration. The one-line repair has two source approvals; no complete acceptance or status claim.",
   "self_exclusion": "This manifest is intentionally excluded from its own hash inventory.",
   "files_excluding_this_manifest": {
-    "ACTIVE-MODULE-MANIFEST.json": "7401a066bb8d976d57730a88ad1d07ea39bec5ee199fa7821e6fcce128e7a793",
+    "ACTIVE-MODULE-MANIFEST.json": "3d02090c6c90fb0d244a6763d0c1c67c663c03e39a21e041c9c1eb3512b58a5d",
     "Challenge.lean": "4f1764cf9c604f33ed6f285e83ca32ebd1ae1fb1fd8f763a1c4a719ef068c335",
     "FULL-ROW-COVERAGE.md": "b22d7d39e3978afe625dc8ff567e2558f6ea0ac0c6f93dc40f97bea9ae147336",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
@@ -43,7 +43,7 @@
     "NLA/NR03/FamilyDefs.lean": "1e01f68f20dafa07be2e2a3beca832f0a3925b90a0e1fcc496d087082bdf9415",
     "NLA/NR03/FamilyIdentities.lean": "9772ad9df0c7e2953a28a415b35d3b831332f309ed6cea5b94861be9f9f04dfa",
     "NLA/NR03/Index.lean": "c404d36ba7ce9888f5bf31ac959ccc78be2a380d628b83972f6c8940cb709370",
-    "NLA/NR03/Rank.lean": "3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876",
+    "NLA/NR03/Rank.lean": "1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e",
     "NLA/NR03/RowCertificate/Four/Block00.lean": "a43707705632f40f408440e3fd1bee24c27cf4c3401a51388ac36a0ee042f5bc",
     "NLA/NR03/RowCertificate/Four/Block01.lean": "a485ca8012cef2a0f1805405456c1f5833a239af8ac087c6ea4161e26d781368",
     "NLA/NR03/RowCertificate/Four/Block02.lean": "ac881c24bc2731c5681c2e171d08c2d9653c88fcdb11b2d14eb80fcac07bd6fc",
@@ -93,8 +93,8 @@
     "NLA/NR03/RowCertificate/Singleton/Block14.lean": "8f1a93acca83c5a2a9f9ecff3b1697ba80288a969ea34eb7136f2f9ece93013e",
     "NLA/NR03/RowCertificate/Singleton/Block15.lean": "bb417e14367b068e28174b3a2869a47a0945f4833b439c1215b74604adfa6944",
     "NUMERICAL_TARGETS.md": "817a0978869dcaf2bb918d846e4143df480665e5db3bc841cf4070bd3f683c42",
-    "README.md": "061b53b181701e7923430306be43827162f5c737b342a72dfcdcbd39b9c23678",
-    "SOURCE_MAP.md": "a830a713de7a73c1ceb62f9f7adaccfc0654b11ae57a0892f8927a71cf6a4ff7",
+    "README.md": "aa2a54fb419765037f567e716e5b4021c5bd671773c01277f7c705ab1c2a3003",
+    "SOURCE_MAP.md": "97c78f5e6b404577060e3239b7733e7d6ce0dd32dc45b84e7e4b6650dd71c2b4",
     "Solution.lean": "4a0ae10fcd53d4a894a7e72b9d39c4fad8da1e814428b9df16648d85abb9ddb1",
     "certificate-bridge/DISCHARGE-GRAPH.json": "bd37bf43c3cf2aa87697bc4004f21cdd208a2e93144cf6c5474e80d7570feadc",
     "certificate-bridge/INTEGRATION-PATHS.json": "300c2c34207f9d3706adbe45f27b310cfacda211222e3a67348bc633a3a24756",
@@ -112,6 +112,17 @@
     "reviews/bridge-diagnostic/RECEIPT.json": "253055eb37919147d63c7627979902c0458333c27281dc4d9bc3af5d5e68f751",
     "reviews/bridge-diagnostic/RUN-REVIEW.md": "1c0a4f4ec3d114b8a020eaa82f20879dfe648dc3d4bd4e379acd1597e8366417",
     "reviews/implementation-progress.md": "cc6108500cbfb81232b4ae0383a7f8ec7cfcf42d169036437150c3d9516ed0e5",
+    "reviews/rank-cast-repair/HASHES.json": "45f3fb055edfb4b392126c79e411a35b1d10b1d2a31db6e3216382a17bf74241",
+    "reviews/rank-cast-repair/REPAIR.diff": "5945e57ff5f49802b5dad6cf4ae9d92188b02611fd9a86b7d780c9dfc7547bc1",
+    "reviews/rank-cast-repair/REPAIR.md": "9c62e02a9157748c2da67c1903746a4eff274b0bc64185c93d36eb5e1a4e7452",
+    "reviews/rank-cast-repair/prior-canonical-failure/FAILURE-DETAILS.json": "92312bea2f93729ee9991cff9f6206a92ca296b7bb1b4a052f20a915cb7bc5e5",
+    "reviews/rank-cast-repair/prior-canonical-failure/FAILURE-REVIEW.md": "d50783d6d942cdfe616a83664b83d9c8d90e96e7a5d44d2898da7ef78c812bd9",
+    "reviews/rank-cast-repair/prior-canonical-failure/FETCH-CHECKS.json": "d1389d950d0d230718444ad478b6f2ed9cc6e82ebd09fc517d25792598c5f0b2",
+    "reviews/rank-cast-repair/prior-canonical-failure/independent-failure-review.md": "deea7e46cbc86ca73cca3a495cc1fdc58b096041d2acee4bca426de1baee1513",
+    "reviews/rank-cast-repair/referee-1/CHECKS.json": "75dc8f82266eba8bfb516b114a830760cc19be6d686ccc4099a560dfb3fd5d1a",
+    "reviews/rank-cast-repair/referee-1/REVIEW.md": "a52e0d091be59339a14db2793a89e046237e59d04cae74f624073b8e15ccd070",
+    "reviews/rank-cast-repair/referee-2/CHECKS.json": "b7cc75fcd96dcd9707f7ba53e511dff231a008a3cde5877dcd2560aa72929563",
+    "reviews/rank-cast-repair/referee-2/REVIEW.md": "48d192162cc5c97fbc974d9ce6f12e0d9210217b6f40b8b2cd7c74b956d248cc",
     "reviews/statement-referee-1/REVIEW.md": "db4255bd7ade806289258b869a4dd574f3e355627a3f3a07a9a41cb4d5b52bbb",
     "reviews/statement-referee-1/SELECTED-EVIDENCE.json": "df04236a52094e6752f5fc055495f97a8e373dd1a6ab689420ab9c16995c3fc3",
     "reviews/statement-referee-1/actual-types-axioms.log": "d7becf7e52e4bd8a28c51537ad94d42a476856fa1932d21cd10ca350c87f1981",
@@ -150,10 +161,10 @@
   },
   "conditional_diagnostic_receipt": "reviews/bridge-diagnostic/RECEIPT.json",
   "packaging_transition": {
-    "scope": "Canonical documentation updates after the frozen private package; all 58 active Lean sources unchanged",
+    "scope": "Previous metadata transition through canonical523; subsequent one-line Rank repair is separately recorded in canonical_rank_repair.",
     "historical_bridge_receipt": "reviews/bridge-diagnostic/RECEIPT.json",
     "historical_active_manifest_sha256": "51d66231ff8f2672120d2fa29f62dfcce1be30ab97d625966b53ce3c778c2d73",
-    "current_active_manifest_sha256": "7401a066bb8d976d57730a88ad1d07ea39bec5ee199fa7821e6fcce128e7a793",
+    "current_active_manifest_sha256": "3d02090c6c90fb0d244a6763d0c1c67c663c03e39a21e041c9c1eb3512b58a5d",
     "historical_receipt_is_preserved": true,
     "corrected_metadata_paths": [
       "README.md",
@@ -162,5 +173,21 @@
       "certificate-bridge/README.md"
     ],
     "current_inventory_scope": "All current package files except this self-excluded manifest"
+  },
+  "canonical_rank_repair": {
+    "base_commit": "523c5aeaddd8bf7c2dc01afb053bb0dea8811335",
+    "source_path": "NLA/NR03/Rank.lean",
+    "old_sha256": "3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876",
+    "new_sha256": "1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e",
+    "diff": "reviews/rank-cast-repair/REPAIR.diff",
+    "diff_sha256": "5945e57ff5f49802b5dad6cf4ae9d92188b02611fd9a86b7d780c9dfc7547bc1",
+    "reviews": [
+      "reviews/rank-cast-repair/referee-1/REVIEW.md",
+      "reviews/rank-cast-repair/referee-2/REVIEW.md"
+    ],
+    "actual_prior_run": 34783909558,
+    "status": "Two source-delta approvals; actual complete canonical rerun pending",
+    "frozen_statements_unchanged": true,
+    "all_other_active_modules_unchanged": true
   }
 }

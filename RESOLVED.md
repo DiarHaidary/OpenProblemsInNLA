@@ -21,6 +21,10 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### RA-14 — Restricted Krylov and shifted-posterior continuation
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 2.2](references/holden-ra14-v6-2026-09-13/report.pdf) gives matching finite-parameter bounds only for the deterministic-width fully charged block span-query class; Theorems 10.1 and 11.2 concern a conditional posterior and an ensemble-average rank-one algorithm. These new scopes passed an [independent informal Codex AI-agent review](references/holden-ra14-v6-2026-09-13/independent-review.md). The unrestricted finite-accuracy gap and [original target](randomized-and-low-rank-approximation/RA-14/README.md) remain unchanged. [Submission, authorship and verified affiliation](references/holden-ra14-v6-2026-09-13/README.md). No Lean verification or external human peer review is claimed.
+
 ### MI-05 — order-four determinant identities and partial classes — Sidney Holden
 
 **Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 2.1 and Sections 3–7](references/holden-mi05-2026-09-13/report.pdf) give a fourteen-term signed identity, optimal positive-obstruction representations, an all-complex-spectra unitary ball of radius $`1/100`$, a support-direction criterion and a sharp real-orthogonal obstruction bound. [Submission and verified affiliation](references/holden-mi05-2026-09-13/README.md) · [Proof source](references/holden-mi05-2026-09-13/report.tex).

@@ -43,3 +43,5 @@ The RE-03 archive lacks some historical continuation test programs. Only its ava
 The optional RA-17 saved-certificate checker had two reproduced false-acceptance paths. The [maintainer correction](../../references/holden-ra17-continuation-2026-09-13/MAINTAINER_CHECKER_CORRECTION.md) records the tested fix while preserving the original submission manifest and archives.
 
 Final local validation passed all 77 repository tests without skips, the 17 permanent-ID tests, and the 10 checker regressions on the integrated files. Catalog regeneration reports 24 Lean verified, 77 Solved, 46 Open and 70 Partially resolved entries: 217 permanent IDs, with 116 targets still counted as open.
+
+The final [independent preservation review](preservation-review.md) passed on commit `b7495d4cf9442c2e1a12956dbd99edc0b8ad5477`. This final publication commit adds only audit records and this link. The [checker repair cross-review](pr-223-checker-repair-cross-review.md) independently verifies the exact repair and optimized-Python controls.

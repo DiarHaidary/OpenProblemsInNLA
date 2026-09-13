@@ -32,6 +32,8 @@ permitted only `propext`, `Classical.choice` and `Quot.sound`, and passed the
 recorded rejection and sandbox controls. The [permanent verification archive](lean/verification/linux-2026-09-13/)
 contains the uploaded artifacts and the independent operational seal.
 
+The [source correspondence](lean/SourceCorrespondence.md) is preserved from the earlier candidate phase; its “Solved” status and pending-Linux wording are historical and superseded by this verification record.
+
 **Mathematical proof and Lean formalization:** George Stepaniants, Department
 of Computing and Mathematical Sciences, California Institute of Technology,
 Pasadena, California, USA, with AI-agent assistance. John Peca-Medlin retains

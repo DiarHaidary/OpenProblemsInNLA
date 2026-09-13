@@ -1,0 +1,225 @@
+{
+  "result": "PASS",
+  "reviewed_head": "5ce3e36cacbebcafda267eb6a9f2a42c461b189b",
+  "method": "Independent Python integer/Fraction arithmetic and active-source inspection; not Lean compilation or CI authentication",
+  "source_hashes": {
+    "Solution": "3e12274c074f9d221230bd3939a76d433532b067c7123a12effe2b9e6f6a5c9a",
+    "NLA.IE05.Proof": "f8ef9d1901845439e7c09f4e9d004eb49d87ed28d8a6d567d48ac4d16199a950",
+    "NLA.IE05.Growth": "82f12e85d35fac9b60eea228f68abaeacf21538ec2a029faa6427709b0b323b6",
+    "NLA.IE05.GrowthBounds": "3aa83977f50095643fdc93469a95661c55c15a10bd9f8ba04e59dc71988a6160",
+    "NLA.IE05.GEPP": "f9cfa58bd03aa49748bfde358147197bf73b165701cb67b58e1af2ec926c8b98",
+    "NLA.IE05.Pivot": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+    "NLA.IE05.Definitions": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+    "NLA.IE05.Witness": "4fa2cfeef00d80f28475bf221082a786f2b035f1e77e47b1bfd70bc13f2e57b6",
+    "NLA.IE05.ExactCertificates": "5ee8f9bc7bc79b4e0e80b85c81952ae32689661dac405edd1559f92d6eb643af",
+    "NLA.IE05.LUTrajectory": "96d71b7a46ec692f9e84e6450adacfa71b9c79ef69ff17222e44173f3e6abcbb",
+    "NLA.IE05.IntegerQR": "fc87524d6aceddf208722daa33c855384e772425d54fd654f5f531250c67cc44",
+    "NLA.IE05.QR": "cb9e1d6d91f5e194cd2c50e2f0ae9efc3ebcb55f005078038b6c1d20747fe127",
+    "NLA.IE05.Scaling": "0422f5ca2ac3cccf1f18a90e64aba5f9ead6f650d830e8813aa07e1541eeb3f5"
+  },
+  "active_import_graph": {
+    "Solution": [
+      "NLA.IE05.Proof"
+    ],
+    "NLA.IE05.Proof": [
+      "NLA.IE05.Growth"
+    ],
+    "NLA.IE05.Growth": [
+      "NLA.IE05.Witness",
+      "NLA.IE05.GrowthBounds"
+    ],
+    "NLA.IE05.GrowthBounds": [
+      "NLA.IE05.GEPP"
+    ],
+    "NLA.IE05.GEPP": [
+      "NLA.IE05.Pivot",
+      "Mathlib.LinearAlgebra.Matrix.NonsingularInverse",
+      "Mathlib.Data.Finset.Max"
+    ],
+    "NLA.IE05.Pivot": [
+      "NLA.IE05.Definitions",
+      "Mathlib.Data.List.MinMax",
+      "Mathlib.Data.List.FinRange",
+      "Mathlib.Tactic",
+      "LeanCert.Tactic.Verification"
+    ],
+    "NLA.IE05.Definitions": [
+      "Mathlib.Analysis.InnerProductSpace.GramSchmidtOrtho",
+      "Mathlib.Analysis.InnerProductSpace.PiL2",
+      "Mathlib.LinearAlgebra.Matrix.Determinant.Basic",
+      "Mathlib.LinearAlgebra.Matrix.Notation",
+      "Mathlib.Analysis.Real.Sqrt",
+      "Mathlib.Order.ConditionallyCompleteLattice.Basic"
+    ],
+    "NLA.IE05.Witness": [
+      "NLA.IE05.IntegerQR",
+      "NLA.IE05.LUTrajectory",
+      "NLA.IE05.ExactCertificates"
+    ],
+    "NLA.IE05.ExactCertificates": [
+      "NLA.IE05.Definitions",
+      "Mathlib.Tactic.NormNum",
+      "LeanCert.Tactic.Verification"
+    ],
+    "NLA.IE05.LUTrajectory": [
+      "NLA.IE05.Pivot"
+    ],
+    "NLA.IE05.IntegerQR": [
+      "NLA.IE05.QR"
+    ],
+    "NLA.IE05.QR": [
+      "NLA.IE05.Scaling",
+      "Mathlib.LinearAlgebra.Matrix.Block",
+      "Mathlib.LinearAlgebra.Matrix.NonsingularInverse"
+    ],
+    "NLA.IE05.Scaling": [
+      "NLA.IE05.Definitions",
+      "LeanCert.Tactic.Verification"
+    ]
+  },
+  "statement_text_matches": 17,
+  "arithmetic": {
+    "false": {
+      "label": "candidate",
+      "gram_and_lu": "PASS",
+      "active_entries_checked": 204,
+      "first_available_ties_zero_based": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7
+        ]
+      ],
+      "squared_stage_maxima": [
+        "2601/3286",
+        "4608/2731",
+        "15488/2731",
+        "59168/2731",
+        "233928/2731",
+        "932978/2731",
+        "2731/2",
+        "5462"
+      ],
+      "squared_growth": "17948132/2601"
+    },
+    "true": {
+      "label": "witness",
+      "gram_and_lu": "PASS",
+      "active_entries_checked": 204,
+      "first_available_ties_zero_based": [
+        [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          4,
+          5,
+          6,
+          7
+        ],
+        [
+          5,
+          6,
+          7
+        ],
+        [
+          6,
+          7
+        ],
+        [
+          7
+        ]
+      ],
+      "squared_stage_maxima": [
+        "3969/5272",
+        "2209/1318",
+        "29929/5272",
+        "28561/1318",
+        "56448/659",
+        "450241/1318",
+        "7198489/5272",
+        "5272"
+      ],
+      "squared_growth": "27793984/3969"
+    }
+  },
+  "squared_growth_gap": "117335164/1147041",
+  "total_active_entries": 408,
+  "canonical_pdf_sha256": "3a86ceb2ff863850964c34c827907c71139409d240c5859087b3fb46a3c998fa"
+}

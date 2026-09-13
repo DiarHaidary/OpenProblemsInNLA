@@ -50,6 +50,10 @@ On 2026-09-08 the [source record](https://arxiv.org/abs/2304.03191) still listed
 
 Rechecked [Bakshi–Narayanan, Theorem 1.1 and Open Question 1.10](https://arxiv.org/html/2304.03191v1). Fixed-rank spectral complexity is settled in the theorem's sufficiently-large-dimension regime; growing-rank and simultaneous finite-parameter dependence remain unresolved. Later query-complexity searches and the [SODA 2026 block-size paper](https://doi.org/10.1137/1.9781611978971.42) did not settle the full target.
 
+## Earlier partial results — 12 September 2026
+
+Holden's [first report](../../references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, established the universal rank lower bound, the large-rank regime and a charged spectral-to-PCA reduction yielding matching bounds under a polynomial dimension hypothesis. Its [independent review](../../references/holden-ra14-2026-09-12/independent-review.md) and [submission record](../../references/holden-ra14-2026-09-12/README.md) are retained. The finite-accuracy result below strengthens the lower bound while the full joint characterization remains open.
+
 ## Finite-accuracy partial result — 13 September 2026
 
 **Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](../../references/holden-ra14-v5-2026-09-13/README.md).

@@ -18,6 +18,10 @@ Theorem 2.1 and Sections 3–5 give an exact finite algebraic prescription for e
 
 A separate Codex agent independently audited the complete argument and its correspondence with this unchanged target. This is informal AI-agent review, not external human peer review or formal verification. No Lean verification or historical-priority claim is made. Whether a structural formula is preferred for the historical problem is exposed for maintainer review; it is not silently added to this entry's completion criterion.
 
+## Earlier partial contribution — 12 September 2026
+
+Holden's [earlier theorem](../../references/holden-matrix-2026-09-12/MI-16/result.md) determined the maximum for every one-exceptional-eigenvalue spectrum by comparing explicit support-size polynomials. Its [independent review](../../references/holden-matrix-2026-09-12/verification/MI-16-review.md) and [submission record](../../references/holden-matrix-2026-09-12/README.md) remain available. That partial result preceded the all-spectrum determination above.
+
 ## Problem statement
 
 For every integer $`n\ge1`$ and every real list $`\lambda=(\lambda_1,\ldots,\lambda_n)`$ with $`\lambda_i\ge0`$, determine the exact value of

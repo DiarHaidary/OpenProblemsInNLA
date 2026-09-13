@@ -14,6 +14,10 @@
 
 The [independent Codex AI-agent informal audit](../../references/holden-ra04-full-proof-2026-09-13/verification/independent-review.md) passed, supporting `Solved` under repository policy. No external human peer review or formal verification is asserted; no Lean was performed. [Source, reproduction and review](../../references/holden-ra04-full-proof-2026-09-13/README.md) · [Affiliation, provenance and earlier partial submissions](../../references/holden-ra04-full-proof-2026-09-13/SUBMISSION.md). Ratings are historical; the original target is retained.
 
+## Earlier partial contributions — 12–13 September 2026
+
+Holden's [first report](../../references/holden-ra04-2026-09-12/RA04_partial_results.pdf) proved an all-input bound with an extra logarithmic term and the requested order in several restricted regimes. Its [independent review](../../references/holden-ra04-2026-09-12/verification/independent-review.md) is retained. The [continuation, Sections 3–8](../../references/holden-ra04-continuation-2026-09-13/report.md), added narrow-band convergence and exact recovery with few distinct lower eigenvalues; its [independent review](../../references/holden-ra04-continuation-2026-09-13/verification/independent-review.md) is also retained. These partial scopes preceded the unrestricted resolution above.
+
 ## Original target (retained)
 
 Let $`A\in\mathbb R^{n\times d}`$ have singular values $`\sigma_1\geq\sigma_2\geq\cdots`$. Fix integers $`1\leq b\leq k`$, set $`t=\lceil k/b\rceil`$, and set $`k'=bt\leq\mathop{\mathrm{rank}}\nolimits(A)`$. Define

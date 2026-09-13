@@ -27,6 +27,10 @@ disclose AI assistance and credit [PR #186](https://github.com/ajt60gaibb/OpenPr
 whose partial results left the universal upper bound open.
 The original target below is retained; ratings above are historical.
 
+## Earlier supporting results — 12 September 2026
+
+Holden's [Theorems 1 and 2](../../references/holden-matrix-2026-09-12/MI-27/result.md) established projection equivalence and a strictly positive order-two sharpness family. The [independent review](../../references/holden-matrix-2026-09-12/verification/MI-20-MI-27-review.md) remains available. Those results left the universal upper bound open; the full proof above supplies it.
+
 ## Problem statement
 
 For every integer $`n\ge1`$ and positive definite $`A,B\in\mathbb C^{n\times n}`$ with $`\mathop{\mathrm{tr}}\nolimits(A+B)=1`$, set $`a=\mathop{\mathrm{tr}}\nolimits A`$, $`b=\mathop{\mathrm{tr}}\nolimits B`$. Is

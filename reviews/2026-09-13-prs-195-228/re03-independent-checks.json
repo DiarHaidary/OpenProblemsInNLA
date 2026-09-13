@@ -1,0 +1,114 @@
+{
+  "seed": 913226,
+  "scope": "Floating-point implementation regressions, not theorem certification",
+  "records": [
+    {
+      "n": 8,
+      "k": 1,
+      "kind": "zero",
+      "queries": 86,
+      "budget": 162,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "n": 8,
+      "k": 1,
+      "kind": "hodlr",
+      "queries": 70,
+      "budget": 162,
+      "relative_error": 5.561906958372408e-16,
+      "passed": true
+    },
+    {
+      "n": 8,
+      "k": 1,
+      "kind": "dense",
+      "queries": 82,
+      "budget": 162,
+      "relative_error": 0.4566275258363825,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "k": 1,
+      "kind": "zero",
+      "queries": 162,
+      "budget": 242,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "k": 1,
+      "kind": "hodlr",
+      "queries": 162,
+      "budget": 242,
+      "relative_error": 1.249120109853087e-15,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "k": 1,
+      "kind": "dense",
+      "queries": 134,
+      "budget": 242,
+      "relative_error": 0.705676038950049,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "k": 2,
+      "kind": "zero",
+      "queries": 101,
+      "budget": 194,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "k": 2,
+      "kind": "hodlr",
+      "queries": 110,
+      "budget": 194,
+      "relative_error": 1.1418761438808874e-15,
+      "passed": true
+    },
+    {
+      "n": 16,
+      "k": 2,
+      "kind": "dense",
+      "queries": 87,
+      "budget": 194,
+      "relative_error": 0.453731249208149,
+      "passed": true
+    },
+    {
+      "n": 32,
+      "k": 2,
+      "kind": "zero",
+      "queries": 173,
+      "budget": 294,
+      "relative_error": 0.0,
+      "passed": true
+    },
+    {
+      "n": 32,
+      "k": 2,
+      "kind": "hodlr",
+      "queries": 191,
+      "budget": 294,
+      "relative_error": 1.6825009623917666e-15,
+      "passed": true
+    },
+    {
+      "n": 32,
+      "k": 2,
+      "kind": "dense",
+      "queries": 187,
+      "budget": 294,
+      "relative_error": 0.7702194875575045,
+      "passed": true
+    }
+  ]
+}

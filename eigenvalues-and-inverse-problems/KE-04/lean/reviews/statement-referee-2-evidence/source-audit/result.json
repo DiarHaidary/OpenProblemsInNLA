@@ -1,0 +1,602 @@
+{
+  "utc": "2026-09-13T08:20:21.123257+00:00",
+  "scope": "Fresh read-only Git/blob identities and selected API searches; no new public status or exhaustive literature claim",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "cat-file",
+        "--batch"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "stdin_utf8": "5830ed4fb06da0659414a3deb2a40ad327aca052:AGENTS.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:CONTRIBUTING.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/README.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/REVIEW.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/README.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/v0.4.schema.json\n5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/README.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.tex\n5830ed4fb06da0659414a3deb2a40ad327aca052:problem_ids.json\n5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/README.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/README.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/reviews/KE-04-review.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/HARNESS.md\n5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/source-lock.json\nfe025e14d2639cbae59f98cacf4023d83addcb89:eigenvalues-and-inverse-problems/KE-04/solution.md\nb4123194697bdf6f8f82518c1dd7d6c40a30c2e0:eigenvalues-and-inverse-problems/KE-04/README.md\n",
+      "exit_code": 0,
+      "stdout": "git-batch-1.stdout",
+      "stderr": "git-batch-1.stderr",
+      "stdout_sha256": "6c116dcf2526b80aa20a479e54ca8fc48ff1dccabadc191fb0fea72250c41f4e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "cat-file",
+        "--batch"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "stdin_utf8": "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/Challenge.lean\n8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/LICENSE\n8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/NUMERICAL_TARGETS.md\n8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/ProofProject/CheckedMultivariateBound.lean\n8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/comparator.json\n",
+      "exit_code": 0,
+      "stdout": "git-batch-2.stdout",
+      "stderr": "git-batch-2.stderr",
+      "stdout_sha256": "51064f7a7e9becc032ec41488469919351d558990d5d4ad1174cf9c792b02aaa",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "cat-file",
+        "--batch"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "stdin_utf8": "621a43d7cf21f87872392a01e874f2f1dbddc926:LeanCert/Tactic/Verification.lean\n",
+      "exit_code": 0,
+      "stdout": "git-batch-3.stdout",
+      "stderr": "git-batch-3.stderr",
+      "stdout_sha256": "1302aae20f59fa1889fcb791db5cfd4466000f767ce4dd78f4777f75011c8289",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "cat-file",
+        "--batch"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "stdin_utf8": "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/PiL2.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/Positive.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/Spectrum.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/Order.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/PosDef.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/Spectrum.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Data/Fin/Rev.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Dimension/Constructions.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/LinearIndependent/Defs.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Matrix/Hermitian.lean\n0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Matrix/PosDef.lean\n",
+      "exit_code": 0,
+      "stdout": "git-batch-4.stdout",
+      "stderr": "git-batch-4.stderr",
+      "stdout_sha256": "6f0ca64d47aa1f951f6fcd7f068fc035b8e336de5dea32d9701c688988e48643",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "cat-file",
+        "--batch"
+      ],
+      "cwd": "/tmp/nla-lean-formalization/leancert-examples/Schiffer",
+      "stdin_utf8": "2938e277969c329caf154e48a3d8823f3635c7f1:Schiffer/Challenge.lean\n",
+      "exit_code": 0,
+      "stdout": "git-batch-5.stdout",
+      "stderr": "git-batch-5.stderr",
+      "stdout_sha256": "f49f1ab7cc555c21e4eb60e43d72df1b4bfa83357d5c862e7db4e537bd42fe7c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "-A",
+        "5",
+        "-B",
+        "2",
+        "irreducible_def eigenvalues|irreducible_def eigenvectorBasis|eigenvalues_antitone|roots_charpoly_eq_eigenvalues|eigenvalues_eq_eigenvalues_iff|theorem apply_eigenvectorBasis",
+        "Mathlib/Analysis/InnerProductSpace/Spectrum.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "stdin_utf8": null,
+      "exit_code": 0,
+      "stdout": "spectral.stdout",
+      "stderr": "spectral.stderr",
+      "stdout_sha256": "f9f41c547bed43d8af1f62c9079eb842b4fc69ba5f9aae7b7e7b59aab8c97088",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "-A",
+        "4",
+        "-B",
+        "2",
+        "def toEuclideanLin|toLpLin_apply|reindex_apply|def reindex|exists_orthonormalBasis|def orthonormalBasis",
+        "Mathlib/Analysis/InnerProductSpace/PiL2.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "stdin_utf8": null,
+      "exit_code": 0,
+      "stdout": "real-action-and-basis.stdout",
+      "stderr": "real-action-and-basis.stderr",
+      "stdout_sha256": "aa0657a6f70cd9f7d790322bf6d3865863c5849e4f8e21dab68e21e974123fbc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "-A",
+        "4",
+        "-B",
+        "2",
+        "range_linearCombination|finrank_span_eq_card|finrank_sup_add_finrank_inf_eq|linearIndependent_iff_injective_fintypeLinearCombination",
+        "Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean",
+        "Mathlib/LinearAlgebra/Dimension/Constructions.lean",
+        "Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean",
+        "Mathlib/LinearAlgebra/LinearIndependent/Defs.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "stdin_utf8": null,
+      "exit_code": 0,
+      "stdout": "subspace-apis.stdout",
+      "stderr": "subspace-apis.stderr",
+      "stdout_sha256": "bce9e4edfcd329582b8724719a0242e843b8550201dddd32cc50b25be398bf9b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "-A",
+        "4",
+        "-B",
+        "2",
+        "dotProduct_mulVec_zero_iff|mul_mul_conjTranspose_same|rev_le_rev|def revPerm|theorem rev_rev",
+        "Mathlib/Analysis/Matrix/Order.lean",
+        "Mathlib/LinearAlgebra/Matrix/PosDef.lean",
+        "Mathlib/Data/Fin/Rev.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "stdin_utf8": null,
+      "exit_code": 0,
+      "stdout": "PSD-and-reversal.stdout",
+      "stderr": "PSD-and-reversal.stderr",
+      "stdout_sha256": "a478138a0e95d18b969b7b8167bf5761945fbc44488923c47526d81c20fa69dc",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "-A",
+        "8",
+        "-B",
+        "3",
+        "assert_trust|collectAxioms|def foundational|foundationalAxioms|register_option leancert.trust",
+        "LeanCert/Tactic/Verification.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "stdin_utf8": null,
+      "exit_code": 0,
+      "stdout": "LeanCert-kernel.stdout",
+      "stderr": "LeanCert-kernel.stderr",
+      "stdout_sha256": "bfa1a676057ed9857f7faf3c4f2dfcd5cc4ffbe976a7e597de012b4c068010ad",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "files": {
+    "verification/original-sources/AGENTS.md": {
+      "sha256": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162",
+      "bytes": 1272,
+      "git_blob": "7eb638704c183dc5a4ad1f2e3d9103416fedd92b",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "AGENTS.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/CONTRIBUTING.md": {
+      "sha256": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3",
+      "bytes": 10507,
+      "git_blob": "ade2131e55f0372fd3a8de1634864e84c37def61",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "CONTRIBUTING.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/docs/lean/README.md": {
+      "sha256": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6",
+      "bytes": 7278,
+      "git_blob": "24bfdfd61a643984c9607081a922e89313c47c83",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "docs/lean/README.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/docs/lean/REVIEW.md": {
+      "sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553",
+      "bytes": 3110,
+      "git_blob": "5d1d8c908923a687f4779fd1a539237bd29a1a1a",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "docs/lean/REVIEW.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/docs/lean/schema/README.md": {
+      "sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb",
+      "bytes": 525,
+      "git_blob": "e61bade6af2c59233db4bd1ccc906eafe8d10e5a",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "docs/lean/schema/README.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/docs/lean/schema/v0.4.schema.json": {
+      "sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
+      "bytes": 12694,
+      "git_blob": "19f4a46a1bc0e4798dca7bcb7ed57281b1c8c996",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "docs/lean/schema/v0.4.schema.json",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/README.md": {
+      "sha256": "20ff79f2a4c9fbbd456a5167f6e634df7473a6415141fcfc01d85b49fea8a057",
+      "bytes": 4072,
+      "git_blob": "c1279c5ad212b584b4c2da77b57070e025745b58",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "eigenvalues-and-inverse-problems/KE-04/README.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.md": {
+      "sha256": "dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6",
+      "bytes": 5279,
+      "git_blob": "b3d6a9d06c30e10bea00af027c418a9bf5ae1386",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "eigenvalues-and-inverse-problems/KE-04/solution.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.tex": {
+      "sha256": "06ef0d4fa338bfc981892856c175c2c9bc828fd48edbdec32b048c752d659c8f",
+      "bytes": 7259,
+      "git_blob": "471bb42cb27beb0b360466c1bc4642520258f021",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "eigenvalues-and-inverse-problems/KE-04/solution.tex",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/problem_ids.json": {
+      "sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763",
+      "bytes": 13264,
+      "git_blob": "b1810237bc80efe04b4bb08f74d1e974b1bf80f7",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "problem_ids.json",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/references/colbrook-2026-09-11/README.md": {
+      "sha256": "d8d9bcbe3ead5700ece3a26c355e6e6a0b949d33d2f0fd6bf0923d3d6914c5e2",
+      "bytes": 6825,
+      "git_blob": "1979a2b6a14e4950cd719e8d02cac9ce74527862",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "references/colbrook-2026-09-11/README.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/references/colbrook-2026-09-11/verification/README.md": {
+      "sha256": "659832e5fbd443013bc5d176016b41444fd19c447cc4b03fa1bb021f6759d646",
+      "bytes": 1026,
+      "git_blob": "18fcfecef5b973e81d51cc8f62a58a5000dd9cc7",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "references/colbrook-2026-09-11/verification/README.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/references/colbrook-2026-09-11/verification/reviews/KE-04-review.md": {
+      "sha256": "299abf4d5f6b5ae14245d812c91f87a3ee8696f111d38be7306e486e18f867b6",
+      "bytes": 8450,
+      "git_blob": "6bb63b66f42608017bfc9ae4b637d391e841699e",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "references/colbrook-2026-09-11/verification/reviews/KE-04-review.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/tools/lean/HARNESS.md": {
+      "sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4",
+      "bytes": 5538,
+      "git_blob": "8f338f8f163e04d4fb7b6af5cdf969af92177c4b",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "tools/lean/HARNESS.md",
+      "Git_content_equal": true
+    },
+    "verification/original-sources/tools/lean/source-lock.json": {
+      "sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+      "bytes": 15982,
+      "git_blob": "27916ca1e378b13ba1a08f1eb3ecb285fde12408",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "source_path": "tools/lean/source-lock.json",
+      "Git_content_equal": true
+    },
+    "verification/original-submission/solution.md": {
+      "sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d",
+      "bytes": 4791,
+      "git_blob": "5e9eb9eb9529e41cc3d4d4e6a5b87b0166c3d68c",
+      "commit": "fe025e14d2639cbae59f98cacf4023d83addcb89",
+      "source_path": "eigenvalues-and-inverse-problems/KE-04/solution.md",
+      "Git_content_equal": true
+    },
+    "verification/original-target/README.md": {
+      "sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669",
+      "bytes": 2711,
+      "git_blob": "0b52d4dda8485714c7a4f44aa0baa9542d90d6f4",
+      "commit": "b4123194697bdf6f8f82518c1dd7d6c40a30c2e0",
+      "source_path": "eigenvalues-and-inverse-problems/KE-04/README.md",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/forsythe/lean-proof/Challenge.lean": {
+      "sha256": "bcbc89b32f46f6d9c33bbc919d4b08b0e3e797e8b87745485e1decd059c07a8d",
+      "bytes": 1399,
+      "git_blob": "2cabb9fd34b1f8de999a3d53efc8503494e2ba8b",
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "source_path": "lean-proof/Challenge.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/forsythe/lean-proof/LICENSE": {
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "bytes": 11358,
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "source_path": "lean-proof/LICENSE",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/forsythe/lean-proof/NUMERICAL_TARGETS.md": {
+      "sha256": "2e25ed916080e6405f7b0a39e45641ef6f88389f26a6a142bc3036528dfc4119",
+      "bytes": 5589,
+      "git_blob": "a7739eccde1bbdb9717dd255a3de0f298a2b5bb8",
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "source_path": "lean-proof/NUMERICAL_TARGETS.md",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/forsythe/lean-proof/ProofProject/CheckedMultivariateBound.lean": {
+      "sha256": "cddab7954e4e6616f9bf65bcb967e2ac166b5e8fecab686a04cd218a4e22aa18",
+      "bytes": 14537,
+      "git_blob": "f7d9788eeb70f7d82d44094fbfc891f31c0bd19a",
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "source_path": "lean-proof/ProofProject/CheckedMultivariateBound.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/forsythe/lean-proof/comparator.json": {
+      "sha256": "b18070414f3dd6a2626878dd19cd5aff5dc22a0feb51a469bb6c57d862a48bf7",
+      "bytes": 460,
+      "git_blob": "296c735f1da161a23017733f6cf21a0fe09b9769",
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "source_path": "lean-proof/comparator.json",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/leancert/LeanCert/Tactic/Verification.lean": {
+      "sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+      "bytes": 29145,
+      "git_blob": "367d4660480a1bfa93e43cedba07e60a65686a40",
+      "commit": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "source_path": "LeanCert/Tactic/Verification.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/PiL2.lean": {
+      "sha256": "1f9827b2db67213c725a2dcc3fec52a87772966d1fbd3fc6857a019dbd7a6053",
+      "bytes": 61065,
+      "git_blob": "a938a909f274d3e80ab0fdb44aa490022fd40d2d",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean": {
+      "sha256": "e96b2c28a53ab1a17abcccec25f17682a914be43273346afbddfde8503e7b24d",
+      "bytes": 26516,
+      "git_blob": "578903d597077486a26060d23ebd1937e89d1fa9",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/Analysis/InnerProductSpace/Positive.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/Spectrum.lean": {
+      "sha256": "f12ef613416053c759ef30179147744c64eeec90f7467644cb30e64d532d7aa6",
+      "bytes": 24198,
+      "git_blob": "b6eaae80d2bd5e753624f407c7ce74ab8576f3f9",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/Analysis/InnerProductSpace/Spectrum.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/Order.lean": {
+      "sha256": "eb786ba4435f1955c504da52de2beae76647d814922266c8aac8f082bbc3e2da",
+      "bytes": 16271,
+      "git_blob": "b6fbcb31433461f6e2ae1b9131933eaccd2bd9e4",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/Analysis/Matrix/Order.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/PosDef.lean": {
+      "sha256": "d019fb2cae81293d8505e2a2543a6f5fe7c1819e4860454d00e15ef74528a43d",
+      "bytes": 5724,
+      "git_blob": "a9e7fd020b3fd7c24ed488dc93a0109cc2dd39ea",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/Analysis/Matrix/PosDef.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/Spectrum.lean": {
+      "sha256": "1ad47effa0a5fbc373ebb6cf52a6b85a66b25d3c5a86394f3dd5932ffbfc3afe",
+      "bytes": 11285,
+      "git_blob": "9d66310769306016a2de31122a7af5af7b2050b2",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/Analysis/Matrix/Spectrum.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/Data/Fin/Rev.lean": {
+      "sha256": "cd616713110393338bd880146a89ac3dce464df31d107d96fa652164727f4888",
+      "bytes": 4156,
+      "git_blob": "d67ae035753e494465327ad51c8873265d5d3922",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/Data/Fin/Rev.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Dimension/Constructions.lean": {
+      "sha256": "039f43b60c6dc3dec90e085beb9ee9dfe46da0d2a4d83f730ee274f337f29548",
+      "bytes": 25316,
+      "git_blob": "b3f30440e9fa016ac167564f92d2ea54ec34fe5f",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/LinearAlgebra/Dimension/Constructions.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean": {
+      "sha256": "2b383a91a6e4566f630b2c682506d4305a0098d9d085387e9e3bdb1d3126f129",
+      "bytes": 19548,
+      "git_blob": "6c25b2c94354e59763d4c687223144db9a5f66c2",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean": {
+      "sha256": "f8e79ad4a35781c09b7de25fcf491f1d17306cb50a7446d985cabedfc09f20da",
+      "bytes": 23450,
+      "git_blob": "0b39c121234c53105bdbe4d92604d9afb2e3ee3e",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/LinearIndependent/Defs.lean": {
+      "sha256": "a52ccf21d86a16e690674f4a978da5a2a531f602c659d661c7d21586bb9994d1",
+      "bytes": 43235,
+      "git_blob": "7aa2a50b4add8f54e839dd5b18624e7512ba7339",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/LinearAlgebra/LinearIndependent/Defs.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Matrix/Hermitian.lean": {
+      "sha256": "9f4e84cafd93f05935d8accc2846a4d624c1fe994c53ab348b8338464bf5cb21",
+      "bytes": 15986,
+      "git_blob": "f47d0fc51adc7c376ea734c00b0ab1997aee3c0c",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/LinearAlgebra/Matrix/Hermitian.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Matrix/PosDef.lean": {
+      "sha256": "09290b5923e167fcf959df64d00b039c7b99c4b236755728219bf5b5feaac24a",
+      "bytes": 27238,
+      "git_blob": "4599e2ec208e7f4d063176cb1cf3da34fa727b71",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "source_path": "Mathlib/LinearAlgebra/Matrix/PosDef.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/schiffer/Schiffer/Challenge.lean": {
+      "sha256": "bc31fcc14f816c2e3b756bdea74c6c791aae2d34fa055ae2a8c6a218b209f267",
+      "bytes": 5473,
+      "git_blob": "b6bf7b83c80180f408e11515bd6b970f230c7dab",
+      "commit": "2938e277969c329caf154e48a3d8823f3635c7f1",
+      "source_path": "Schiffer/Challenge.lean",
+      "Git_content_equal": true
+    },
+    "verification/api-evidence-complete/tauceti/README.md": {
+      "sha256": "67960eaa4f2d7f623273efd06b31bde3b28915546aca5d0942352c0156cbecf4",
+      "bytes": 4398,
+      "git_blob": "4e1e7fecde59b54aeba5317120e45260fe0209ba",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "README.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/README.md": {
+      "sha256": "a4f1ee85d2a772510e76dc8b5ec9166fff3980aabb9dacac81faccc83e0fd3e2",
+      "bytes": 1658,
+      "git_blob": "62575c64850fe6baaaf3dfbe8344b59c5e4e9237",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/README.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/_common.md": {
+      "sha256": "00fc21b79826edd959e12a552d061a7297bb6e3c2e1cde1ddc15e265131d981a",
+      "bytes": 5831,
+      "git_blob": "506416058bdc19591c2fd8429a8a5d555ae83d0c",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/_common.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/api-design.md": {
+      "sha256": "bd8605a58f46f0023e15eaa9374e1cfccdb2d4369ca07e6700657bcd41087387",
+      "bytes": 3406,
+      "git_blob": "69238f8e64a77d6fb780c1b252ad1fa14691cce1",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/api-design.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/attribution.md": {
+      "sha256": "04e2956b91409b5abce91f934db00218fddb0fc5ba7e6776bf748690554c71db",
+      "bytes": 1116,
+      "git_blob": "5bad5b89cf6776c7e10984f89a2370a28bc468ea",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/attribution.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/correctness.md": {
+      "sha256": "24eb3f6504809e7e938b02daeb75179fd7d99338bda63f125f7229a2e4b1ca06",
+      "bytes": 2531,
+      "git_blob": "a0a8db82a04fac15c397d3ab89a4ccee58616842",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/correctness.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/documentation.md": {
+      "sha256": "cd2c5855e21c6f6b62ca22733438e6264b6e5943f417fce9c7db368531858623",
+      "bytes": 1448,
+      "git_blob": "82e83064fbe2a14833e9fc9b13626f1b613f85f9",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/documentation.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/generality.md": {
+      "sha256": "b793f946b84a7b079626271cb8c81f219b8e21dfebf0263620dc4b091c9a84c7",
+      "bytes": 901,
+      "git_blob": "c8a098a35ca6b4fb593ae716a2d8bf6a48160c18",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/generality.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/naming.md": {
+      "sha256": "0983aba631ccc181eace2deb213ade3dcd467769e90a8fa1db3ff710348f24b8",
+      "bytes": 1910,
+      "git_blob": "9e69d160218ccff102f4eb6b202883bf6d7e7f21",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/naming.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/placement.md": {
+      "sha256": "c480cd252d2d0d24cddbe03e714babe5b6b966dd8be1fcba753dfd9da74fa024",
+      "bytes": 2549,
+      "git_blob": "94f92ad56a4185cde74c714cfd088ec0fb8a7e89",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/placement.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/proof-quality.md": {
+      "sha256": "346768b1a3445343e5fad4d0f78dcb601f5f633cbc7abd81ba189ac4d15ecb83",
+      "bytes": 1578,
+      "git_blob": "9ca7d4b380674a7d38c14e0d8d06cab31d667c43",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/proof-quality.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/reuse.md": {
+      "sha256": "43325e91f32f5f2e5819012caae8c42b72326dfff86599c1feb1ba498ca14a3b",
+      "bytes": 3014,
+      "git_blob": "1911ba70cbb44577a21da7df07f1c1adfc243208",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/reuse.md",
+      "reconstructed_pinned_tree_binding": true
+    },
+    "verification/api-evidence-complete/tauceti/rubrics/scope.md": {
+      "sha256": "e29b9221af3b89ffbbfd8c540457d54f0589f8375150581b689f264655da9d43",
+      "bytes": 3361,
+      "git_blob": "b30869b0eac32d1d34d6265cede5cbf42869e24c",
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "source_path": "rubrics/scope.md",
+      "reconstructed_pinned_tree_binding": true
+    }
+  },
+  "errors": [],
+  "tauceti_trees_reconstructed": {
+    ".github/workflows": "0120b4817c079a9fe9d9a275dd1f4ed7374ce79e",
+    "rubrics/references": "5f92713e256255e60382c345a749681632b2f869",
+    ".github": "53855d83705de31b4d7a9289dd2160a8e190897b",
+    "rubrics": "f8263deb6c2eca55e5008923aeea763e97351d5b",
+    "runner": "c78f23a91c92710d3c5a69353ec7edd042c669a7",
+    "tests": "f45401f2b7661cd003fea63a42d015e8420653e8",
+    "": "239214b6d320b7d812f8d6547410a0c5625e65ec"
+  },
+  "original_current_proof_block": {
+    "bytes": 2622,
+    "sha256": "3ba1bd9a62a00aaf787758af6312e4787ca8d6db02b4487e8b956ce0553977a7",
+    "equal": true
+  },
+  "canonical_status_at_pinned_base": "Solved; permanent ID/path retained",
+  "source_counts": {
+    "original_Git_files": 17,
+    "selected_reference_files": 33,
+    "selected_Git_reference_files": 20,
+    "TauCeti_tree_bound_files": 13
+  },
+  "status": "PASS exact originals and selected source bindings",
+  "success": true
+}

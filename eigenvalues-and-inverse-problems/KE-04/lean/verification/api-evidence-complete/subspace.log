@@ -1,0 +1,43 @@
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:27:between `E` and `EuclideanSpace 𝕜 ι`. Then `stdOrthonormalBasis` shows that such an equivalence
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:47:- `Orthonormal.exists_orthonormalBasis_extension`: provides an existential result of an
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:50:- `exists_orthonormalBasis`: provides an orthonormal basis on a finite-dimensional vector space
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:52:- `stdOrthonormalBasis`: provides an arbitrarily-chosen `OrthonormalBasis` of a given
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1034:theorem Orthonormal.exists_orthonormalBasis_extension (hv : Orthonormal 𝕜 ((↑) : v → E)) :
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1047:theorem Orthonormal.exists_orthonormalBasis_extension_of_card_eq {ι : Type*} [Fintype ι]
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1054:  obtain ⟨Y, b₀, hX, hb₀⟩ := hX.exists_orthonormalBasis_extension
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1070:theorem _root_.exists_orthonormalBasis :
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1072:  let ⟨w, hw, _, hw''⟩ := (orthonormal_empty 𝕜 E).exists_orthonormalBasis_extension
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1076:irreducible_def stdOrthonormalBasis : OrthonormalBasis (Fin (finrank 𝕜 E)) 𝕜 E := by
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1077:  let b := Classical.choose (Classical.choose_spec <| exists_orthonormalBasis 𝕜 E)
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1104:  let b := hV.collectedOrthonormalBasis hV' fun i => stdOrthonormalBasis 𝕜 (V i)
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1112:  (hV.collectedOrthonormalBasis hV' fun i => stdOrthonormalBasis 𝕜 (V i)).reindex
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1129:    hV.collectedOrthonormalBasis_mem hV' (fun i => stdOrthonormalBasis 𝕜 (V i))
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1164:  (stdOrthonormalBasis _ _).reindex <| finCongr <| finrank_orthogonal_span_singleton hv
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1190:      (stdOrthonormalBasis 𝕜 Sᗮ).repr.trans
+Mathlib/Analysis/InnerProductSpace/PiL2.lean:1191:        ((stdOrthonormalBasis 𝕜 LSᗮ).reindex <| finCongr dim_LS_perp).repr.symm
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:123:theorem range_linearCombination : LinearMap.range (linearCombination R v) = span R (range v) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:142:  rw [← LinearMap.range_eq_top, range_linearCombination]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:169:/-- A version of `Finsupp.range_linearCombination` which is useful for going in the other
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:171:theorem span_eq_range_linearCombination (s : Set M) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:173:  rw [range_linearCombination, Subtype.range_coe_subtype, Set.ofPred_mem_eq]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:177:  (SetLike.ext_iff.1 <| span_eq_range_linearCombination _ _) x
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:182:  simp only [← Finsupp.range_linearCombination, LinearMap.mem_range, linearCombination_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:343:theorem Fintype.range_linearCombination :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:346:      LinearEquiv.range, Submodule.map_top, Finsupp.range_linearCombination]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:351:  rw [← LinearMap.range_eq_top, Fintype.range_linearCombination]
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:53:theorem finrank_sup_add_finrank_inf_eq (s t : Submodule K V) [FiniteDimensional K s]
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:63:  rw [← finrank_sup_add_finrank_inf_eq]
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:69:  rw [← Submodule.finrank_sup_add_finrank_inf_eq s t, hdisjoint.eq_bot, finrank_bot, add_zero]
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:81:  convert! s.finrank_sup_add_finrank_inf_eq t
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:94:      have aux := finrank_sup_add_finrank_inf_eq W (span K {v})
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:110:  rw [← Nat.add_left_inj, finrank_sup_add_finrank_inf_eq, add_assoc,
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:245:  rw [← finrank_sup_add_finrank_inf_eq, h.codisjoint.eq_top, h.disjoint.eq_bot, finrank_bot,
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:264:  rw [← finrank_span_eq_card lin_ind] at card_eq
+Mathlib/LinearAlgebra/LinearIndependent/Defs.lean:136:theorem linearIndependent_iff_injective_fintypeLinearCombination [Fintype ι] :
+Mathlib/LinearAlgebra/LinearIndependent/Defs.lean:141:  linearIndependent_iff_injective_fintypeLinearCombination
+Mathlib/LinearAlgebra/LinearIndependent/Defs.lean:268:  simp_rw [linearIndependent_iff_injective_fintypeLinearCombination,
+Mathlib/LinearAlgebra/LinearIndependent/Defs.lean:335:  rw [← Finsupp.range_linearCombination, LinearMap.coe_range]
+Mathlib/LinearAlgebra/LinearIndependent/Defs.lean:454:  · simp_rw [← Finsupp.range_linearCombination]; exact fun c ↦ ⟨c, rfl⟩
+Mathlib/LinearAlgebra/LinearIndependent/Defs.lean:457:    Finsupp.range_linearCombination]
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:428:  rw [Finsupp.span_eq_range_linearCombination, ← lift_strictMono.le_iff_le]
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:461:theorem finrank_span_eq_card [Nontrivial R] {ι : Type*} [Fintype ι] {b : ι → M}

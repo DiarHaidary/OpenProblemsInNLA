@@ -1,0 +1,59 @@
+{
+  "campaign": "Only current recorded KE04 campaign reservation is this coordinator-assigned statement-only task, as captured in original-source-inventory.json; not an approval.",
+  "canonical_path": "eigenvalues-and-inverse-problems/KE-04/README.md",
+  "canonical_status": "Solved",
+  "conclusion": "No competing KE-04 Lean formalization found within these all-state title/body searches and the pinned canonical tree; no claim about private, deleted or unidentifiably named work.",
+  "evidence": "verification/eligibility-attempt-kvdvfcpy/eligibility-query.json",
+  "evidence_sha256": "38da17ff2e812af3fc977c3c3ae10a37527595bc2d734066feb8e4dd1e5221d5",
+  "existing_canonical_lean_files": [],
+  "independent_statement_approval": false,
+  "initial_failure": "eligibility-initial-failure.json retains the first preflight failure and states its missing raw child diagnostics explicitly.",
+  "observed_eligible_for_statement_drafting": true,
+  "phase": "bounded KE-04 statement-draft eligibility",
+  "proof_authorized": false,
+  "queries": [
+    {
+      "all_states": true,
+      "incomplete_results": false,
+      "query": "repo:ajt60gaibb/OpenProblemsInNLA is:pr in:title,body \"KE-04\"",
+      "returned_prs": [
+        {
+          "classification": "Historical original Colbrook mathematical submission including KE-04; not a competing Lean formalization.",
+          "number": 6,
+          "state": "closed",
+          "title": "Record 18 independently reviewed resolutions and four partial results by Matthew J. Colbrook",
+          "url": "https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/6"
+        }
+      ],
+      "total_count": 1,
+      "url": "https://api.github.com/search/issues?q=repo%3Aajt60gaibb%2FOpenProblemsInNLA+is%3Apr+in%3Atitle%2Cbody+%22KE-04%22&per_page=100"
+    },
+    {
+      "all_states": true,
+      "incomplete_results": false,
+      "query": "repo:ajt60gaibb/OpenProblemsInNLA is:pr in:title,body KE04",
+      "returned_prs": [],
+      "total_count": 0,
+      "url": "https://api.github.com/search/issues?q=repo%3Aajt60gaibb%2FOpenProblemsInNLA+is%3Apr+in%3Atitle%2Cbody+KE04&per_page=100"
+    },
+    {
+      "all_states": true,
+      "incomplete_results": false,
+      "query": "repo:ajt60gaibb/OpenProblemsInNLA is:pr in:title,body \"block Lanczos\"",
+      "returned_prs": [
+        {
+          "classification": "Unrelated KE-05 mathematical resolution; not a KE-04 formalization.",
+          "number": 143,
+          "state": "closed",
+          "title": "KE-05: disprove spectrum-uniform interpolation bounds",
+          "url": "https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/143"
+        }
+      ],
+      "total_count": 1,
+      "url": "https://api.github.com/search/issues?q=repo%3Aajt60gaibb%2FOpenProblemsInNLA+is%3Apr+in%3Atitle%2Cbody+%22block+Lanczos%22&per_page=100"
+    }
+  ],
+  "query_utc": "2026-09-13T06:58:52.032700+00:00",
+  "scope": "Current upstream main and all-state upstream PR title/body searches for KE-04, KE04, and block Lanczos; not private, deleted, or unidentifiably named work.",
+  "upstream_main": "5830ed4fb06da0659414a3deb2a40ad327aca052"
+}

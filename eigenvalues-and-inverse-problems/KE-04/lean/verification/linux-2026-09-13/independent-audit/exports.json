@@ -1,0 +1,168 @@
+{
+  "comparator_theorem_count": 24,
+  "yaml_decl_count": 24,
+  "comparator_names": [
+    "NLA.KE04.real_matrix_semantics",
+    "NLA.KE04.krylov_range_semantics",
+    "NLA.KE04.krylov_nesting_and_shift",
+    "NLA.KE04.fullBlockDimension_iff_independent",
+    "NLA.KE04.fullBlockDimension_prefix",
+    "NLA.KE04.lastFullBlockIteration_exists",
+    "NLA.KE04.krylovBasis_exists",
+    "NLA.KE04.frameProjection_semantics",
+    "NLA.KE04.compression_semantics",
+    "NLA.KE04.orderedSpectrum_semantics",
+    "NLA.KE04.compression_basis_independent",
+    "NLA.KE04.interval_index_validity",
+    "NLA.KE04.quadratic_semantics",
+    "NLA.KE04.spectral_gap_quadratic_psd",
+    "NLA.KE04.spectral_window_subspace",
+    "NLA.KE04.krylov_intersection_nonzero",
+    "NLA.KE04.psd_zero_form_iff_kernel",
+    "NLA.KE04.compressedQuadratic_semantics",
+    "NLA.KE04.quadratic_forms_agree",
+    "NLA.KE04.later_quadratic_identity",
+    "NLA.KE04.fullRank_quadratic_nonannihilation",
+    "NLA.KE04.strictIntervalOccupancy",
+    "NLA.KE04.fullPrefix_implies_canonical",
+    "NLA.KE04.blockLanczosConjecture"
+  ],
+  "yaml_names": [
+    "NLA.KE04.real_matrix_semantics",
+    "NLA.KE04.krylov_range_semantics",
+    "NLA.KE04.krylov_nesting_and_shift",
+    "NLA.KE04.fullBlockDimension_iff_independent",
+    "NLA.KE04.fullBlockDimension_prefix",
+    "NLA.KE04.lastFullBlockIteration_exists",
+    "NLA.KE04.krylovBasis_exists",
+    "NLA.KE04.frameProjection_semantics",
+    "NLA.KE04.compression_semantics",
+    "NLA.KE04.orderedSpectrum_semantics",
+    "NLA.KE04.compression_basis_independent",
+    "NLA.KE04.interval_index_validity",
+    "NLA.KE04.quadratic_semantics",
+    "NLA.KE04.spectral_gap_quadratic_psd",
+    "NLA.KE04.spectral_window_subspace",
+    "NLA.KE04.krylov_intersection_nonzero",
+    "NLA.KE04.psd_zero_form_iff_kernel",
+    "NLA.KE04.compressedQuadratic_semantics",
+    "NLA.KE04.quadratic_forms_agree",
+    "NLA.KE04.later_quadratic_identity",
+    "NLA.KE04.fullRank_quadratic_nonannihilation",
+    "NLA.KE04.strictIntervalOccupancy",
+    "NLA.KE04.fullPrefix_implies_canonical",
+    "NLA.KE04.blockLanczosConjecture"
+  ],
+  "sets_match": true,
+  "proof_occurrence_counts": {
+    "real_matrix_semantics": 4,
+    "krylov_range_semantics": 4,
+    "krylov_nesting_and_shift": 4,
+    "fullBlockDimension_iff_independent": 4,
+    "fullBlockDimension_prefix": 4,
+    "lastFullBlockIteration_exists": 4,
+    "krylovBasis_exists": 4,
+    "frameProjection_semantics": 4,
+    "compression_semantics": 4,
+    "orderedSpectrum_semantics": 4,
+    "compression_basis_independent": 4,
+    "interval_index_validity": 4,
+    "quadratic_semantics": 4,
+    "spectral_gap_quadratic_psd": 4,
+    "spectral_window_subspace": 4,
+    "krylov_intersection_nonzero": 4,
+    "psd_zero_form_iff_kernel": 4,
+    "compressedQuadratic_semantics": 4,
+    "quadratic_forms_agree": 4,
+    "later_quadratic_identity": 4,
+    "fullRank_quadratic_nonannihilation": 4,
+    "strictIntervalOccupancy": 4,
+    "fullPrefix_implies_canonical": 4,
+    "blockLanczosConjecture": 4
+  },
+  "all_exports_textually_present": true,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_scan": [
+    {
+      "file": "NLA/KE04/Completion.lean",
+      "bytes": 3587,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/Definitions.lean",
+      "bytes": 6450,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/Frames.lean",
+      "bytes": 8253,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/Intersection.lean",
+      "bytes": 1634,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/Krylov.lean",
+      "bytes": 9730,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/Nonannihilation.lean",
+      "bytes": 6266,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/Proof.lean",
+      "bytes": 10543,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/Spectral.lean",
+      "bytes": 5448,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/SpectralWindow.lean",
+      "bytes": 6217,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "NLA/KE04/Transport.lean",
+      "bytes": 7589,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    },
+    {
+      "file": "Solution.lean",
+      "bytes": 22,
+      "sorry": 0,
+      "sorryAx": 0,
+      "native_decide": 0
+    }
+  ]
+}

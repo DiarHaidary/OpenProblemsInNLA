@@ -1,0 +1,319 @@
+{
+  "challenge_sha256": "a27de227d483072e395b6658a97cbf31296503c7fab36e5f9dbf248b2efa299e",
+  "contracts": [
+    {
+      "name": "real_matrix_semantics",
+      "frozen_signature": " {n m : \u2115} (A : Mat n) (M : Rect n m) :\n    (A.IsHermitian \u2194 A.transpose = A) \u2227\n      (\u2200 (x : Vec m) i, act M x i = \u2211 j, M i j * x j) \u2227\n      (M.transpose * M = 1 \u2194 Orthonormal \u211d (column M))",
+      "arguments_in_source_order": [
+        "n",
+        "m",
+        "A",
+        "M"
+      ],
+      "implementation": "@_proved.real_matrix_semantics n m A M"
+    },
+    {
+      "name": "krylov_range_semantics",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (V : Rect n p) (ell : \u2115) :\n    krylov A V ell = LinearMap.range (krylovCombination A V ell) \u2227\n      (\u2200 x, x \u2208 krylov A V ell \u2194 \u2203 c : Fin ell \u00d7 Fin p \u2192 \u211d,\n        x = \u2211 rc, c rc \u2022 column (A ^ rc.1.val * V) rc.2) \u2227\n      Module.finrank \u211d (krylov A V ell) \u2264 ell * p",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "V",
+        "ell"
+      ],
+      "implementation": "@_proved.krylov_range_semantics n p A V ell"
+    },
+    {
+      "name": "krylov_nesting_and_shift",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (V : Rect n p) :\n    krylov A V 0 = \u22a5 \u2227 Monotone (krylov A V) \u2227\n      \u2200 ell x, x \u2208 krylov A V ell \u2192 act A x \u2208 krylov A V (ell + 1)",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "V"
+      ],
+      "implementation": "@_proved.krylov_nesting_and_shift n p A V"
+    },
+    {
+      "name": "fullBlockDimension_iff_independent",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (V : Rect n p)\n    (ell : \u2115) :\n    (FullBlockDimension A V ell \u2194 LinearIndependent \u211d (krylovColumns A V ell)) \u2227\n      (FullColumnRank V \u2194 FullBlockDimension A V 1)",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "V",
+        "ell"
+      ],
+      "implementation": "@_proved.fullBlockDimension_iff_independent n p A V ell"
+    },
+    {
+      "name": "fullBlockDimension_prefix",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (V : Rect n p)\n    (s : \u2115) (hs : FullBlockDimension A V s) :\n    \u2200 ell, ell \u2264 s \u2192 FullBlockDimension A V ell \u2227\n      Function.Injective (krylovCombination A V ell)",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "V",
+        "s",
+        "hs"
+      ],
+      "implementation": "@_proved.fullBlockDimension_prefix n p A V s hs"
+    },
+    {
+      "name": "lastFullBlockIteration_exists",
+      "frozen_signature": " {n p : \u2115} (hp : 0 < p)\n    (A : Mat n) (V : Rect n p) (hV : FullColumnRank V) :\n    \u2203 s, 1 \u2264 s \u2227 LastFullBlockIteration A V s",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "hp",
+        "A",
+        "V",
+        "hV"
+      ],
+      "implementation": "@_proved.lastFullBlockIteration_exists n p hp A V hV"
+    },
+    {
+      "name": "krylovBasis_exists",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (V : Rect n p) (ell : \u2115)\n    (hfull : FullBlockDimension A V ell) :\n    \u2203 Q : Rect n (ell * p), IsKrylovBasis A V ell Q",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "V",
+        "ell",
+        "hfull"
+      ],
+      "implementation": "@_proved.krylovBasis_exists n p A V ell hfull"
+    },
+    {
+      "name": "frameProjection_semantics",
+      "frozen_signature": " {n m : \u2115} (Q : Rect n m)\n    (hQ : Q.transpose * Q = 1) :\n    (frameProjection Q).IsHermitian \u2227\n      frameProjection Q * frameProjection Q = frameProjection Q \u2227\n      (\u2200 x, x \u2208 columnSpace Q \u2194 act (frameProjection Q) x = x) \u2227\n      \u2200 x y, y \u2208 columnSpace Q \u2192\n        inner \u211d y (x - act (frameProjection Q) x) = 0",
+      "arguments_in_source_order": [
+        "n",
+        "m",
+        "Q",
+        "hQ"
+      ],
+      "implementation": "@_proved.frameProjection_semantics n m Q hQ"
+    },
+    {
+      "name": "compression_semantics",
+      "frozen_signature": " {n m : \u2115} (A : Mat n) (hA : A.IsHermitian)\n    (Q : Rect n m) (hQ : Q.transpose * Q = 1) :\n    compression A Q = Q.transpose * A * Q \u2227 (compression A Q).IsHermitian \u2227\n      \u2200 x, x \u2208 columnSpace Q \u2192\n        act Q (act (compression A Q) (act Q.transpose x)) =\n          act (frameProjection Q) (act A x)",
+      "arguments_in_source_order": [
+        "n",
+        "m",
+        "A",
+        "hA",
+        "Q",
+        "hQ"
+      ],
+      "implementation": "@_proved.compression_semantics n m A hA Q hQ"
+    },
+    {
+      "name": "orderedSpectrum_semantics",
+      "frozen_signature": " {m : \u2115} (M : Mat m) (hM : M.IsHermitian) :\n    Monotone (orderedEigenvalues M hM) \u2227\n      (\u2200 r, act M (orderedEigenbasis M hM r) =\n        orderedEigenvalues M hM r \u2022 orderedEigenbasis M hM r) \u2227\n      M.charpoly.roots = Finset.univ.val.map (orderedEigenvalues M hM) \u2227\n      \u2200 i (hi : i < m), eigenvalueAt M hM i = orderedEigenvalues M hM \u27e8i, hi\u27e9",
+      "arguments_in_source_order": [
+        "m",
+        "M",
+        "hM"
+      ],
+      "implementation": "@_proved.orderedSpectrum_semantics m M hM"
+    },
+    {
+      "name": "compression_basis_independent",
+      "frozen_signature": " {n m : \u2115} (A : Mat n) (hA : A.IsHermitian)\n    (Q R : Rect n m) (hQ : Q.transpose * Q = 1) (hR : R.transpose * R = 1)\n    (hspan : columnSpace Q = columnSpace R) :\n    (\u2203 O : Mat m, O.transpose * O = 1 \u2227 R = Q * O \u2227\n      compression A R = O.transpose * compression A Q * O) \u2227\n      (compression A Q).charpoly = (compression A R).charpoly \u2227\n      ritzValues A hA Q = ritzValues A hA R",
+      "arguments_in_source_order": [
+        "n",
+        "m",
+        "A",
+        "hA",
+        "Q",
+        "R",
+        "hQ",
+        "hR",
+        "hspan"
+      ],
+      "implementation": "@_proved.compression_basis_independent n m A hA Q R hQ hR hspan"
+    },
+    {
+      "name": "interval_index_validity",
+      "frozen_signature": " (k p i : \u2115) (hk : 1 \u2264 k)\n    (hi : 1 \u2264 i) (hu : i \u2264 (k - 1) * p) :\n    2 \u2264 k \u2227 0 < p \u2227 i - 1 < k * p \u2227 i + p - 1 < k * p",
+      "arguments_in_source_order": [
+        "k",
+        "p",
+        "i",
+        "hk",
+        "hi",
+        "hu"
+      ],
+      "implementation": "@_proved.interval_index_validity k p i hk hi hu"
+    },
+    {
+      "name": "quadratic_semantics",
+      "frozen_signature": " {m : \u2115} (M : Mat m) (a b : \u211d) :\n    (monicQuadratic a b).Monic \u2227 (monicQuadratic a b).natDegree = 2 \u2227\n      quadraticMatrix M a b = Polynomial.aeval M (monicQuadratic a b) \u2227\n      quadraticMatrix M a b = M ^ 2 - (a + b) \u2022 M + (a * b) \u2022 (1 : Mat m)",
+      "arguments_in_source_order": [
+        "m",
+        "M",
+        "a",
+        "b"
+      ],
+      "implementation": "@_proved.quadratic_semantics m M a b"
+    },
+    {
+      "name": "spectral_gap_quadratic_psd",
+      "frozen_signature": " {m : \u2115} (M : Mat m) (hM : M.IsHermitian)\n    (a b : \u211d) (hab : a \u2264 b)\n    (hgap : \u2200 r, \u00ac (a < orderedEigenvalues M hM r \u2227 orderedEigenvalues M hM r < b)) :\n    (quadraticMatrix M a b).PosSemidef",
+      "arguments_in_source_order": [
+        "m",
+        "M",
+        "hM",
+        "a",
+        "b",
+        "hab",
+        "hgap"
+      ],
+      "implementation": "@_proved.spectral_gap_quadratic_psd m M hM a b hab hgap"
+    },
+    {
+      "name": "spectral_window_subspace",
+      "frozen_signature": " {n m : \u2115} (A : Mat n) (hA : A.IsHermitian)\n    (Q : Rect n m) (hQ : Q.transpose * Q = 1) (i p : \u2115) (hi : i + p < m) :\n    \u2203 E : Submodule \u211d (Vec n), E \u2264 columnSpace Q \u2227 Module.finrank \u211d E = p + 1 \u2227\n      \u2200 x, x \u2208 E \u2192\n        form (compressedQuadratic A Q (ritzValueAt A hA Q i)\n          (ritzValueAt A hA Q (i + p))) x \u2264 0",
+      "arguments_in_source_order": [
+        "n",
+        "m",
+        "A",
+        "hA",
+        "Q",
+        "hQ",
+        "i",
+        "p",
+        "hi"
+      ],
+      "implementation": "@_proved.spectral_window_subspace n m A hA Q hQ i p hi"
+    },
+    {
+      "name": "krylov_intersection_nonzero",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (V : Rect n p)\n    (k : \u2115) (hk : 1 \u2264 k) (hfull : FullBlockDimension A V k)\n    (hprev : FullBlockDimension A V (k - 1)) (E : Submodule \u211d (Vec n))\n    (hE : E \u2264 krylov A V k) (hdim : Module.finrank \u211d E = p + 1) :\n    \u2203 x : Vec n, x \u2260 0 \u2227 x \u2208 E \u2227 x \u2208 krylov A V (k - 1)",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "V",
+        "k",
+        "hk",
+        "hfull",
+        "hprev",
+        "E",
+        "hE",
+        "hdim"
+      ],
+      "implementation": "@_proved.krylov_intersection_nonzero n p A V k hk hfull hprev E hE hdim"
+    },
+    {
+      "name": "psd_zero_form_iff_kernel",
+      "frozen_signature": " {m : \u2115} (M : Mat m) (hM : M.PosSemidef) (x : Vec m) :\n    form M x = 0 \u2194 act M x = 0",
+      "arguments_in_source_order": [
+        "m",
+        "M",
+        "hM",
+        "x"
+      ],
+      "implementation": "@_proved.psd_zero_form_iff_kernel m M hM x"
+    },
+    {
+      "name": "compressedQuadratic_semantics",
+      "frozen_signature": " {n m : \u2115} (A : Mat n) (Q : Rect n m)\n    (a b : \u211d) :\n    (\u2200 x, form (compressedQuadratic A Q a b) x =\n      form (quadraticMatrix (compression A Q) a b) (act Q.transpose x)) \u2227\n      ((quadraticMatrix (compression A Q) a b).PosSemidef \u2192\n        (compressedQuadratic A Q a b).PosSemidef)",
+      "arguments_in_source_order": [
+        "n",
+        "m",
+        "A",
+        "Q",
+        "a",
+        "b"
+      ],
+      "implementation": "@_proved.compressedQuadratic_semantics n m A Q a b"
+    },
+    {
+      "name": "quadratic_forms_agree",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (hA : A.IsHermitian)\n    (V : Rect n p) (k j : \u2115) (hk : 1 \u2264 k) (hkj : k < j)\n    (Qk : Rect n (k * p)) (Qj : Rect n (j * p))\n    (hQk : IsKrylovBasis A V k Qk) (hQj : IsKrylovBasis A V j Qj)\n    (x : Vec n) (hx : x \u2208 krylov A V (k - 1)) (a b : \u211d) :\n    form (compressedQuadratic A Qk a b) x =\n      form (compressedQuadratic A Qj a b) x",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "hA",
+        "V",
+        "k",
+        "j",
+        "hk",
+        "hkj",
+        "Qk",
+        "Qj",
+        "hQk",
+        "hQj",
+        "x",
+        "hx",
+        "a",
+        "b"
+      ],
+      "implementation": "@_proved.quadratic_forms_agree n p A hA V k j hk hkj Qk Qj hQk hQj x hx a b"
+    },
+    {
+      "name": "later_quadratic_identity",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (V : Rect n p)\n    (k j : \u2115) (hk : 1 \u2264 k) (hkj : k < j) (Qj : Rect n (j * p))\n    (hQj : IsKrylovBasis A V j Qj) (x : Vec n)\n    (hx : x \u2208 krylov A V (k - 1)) (a b : \u211d) :\n    act (compressedQuadratic A Qj a b) x = act (quadraticMatrix A a b) x",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "V",
+        "k",
+        "j",
+        "hk",
+        "hkj",
+        "Qj",
+        "hQj",
+        "x",
+        "hx",
+        "a",
+        "b"
+      ],
+      "implementation": "@_proved.later_quadratic_identity n p A V k j hk hkj Qj hQj x hx a b"
+    },
+    {
+      "name": "fullRank_quadratic_nonannihilation",
+      "frozen_signature": " {n p : \u2115} (A : Mat n) (V : Rect n p)\n    (k : \u2115) (hk : 2 \u2264 k) (hfull : FullBlockDimension A V (k + 1))\n    (x : Vec n) (hx : x \u2208 krylov A V (k - 1)) (hne : x \u2260 0) (a b : \u211d) :\n    act (quadraticMatrix A a b) x \u2260 0",
+      "arguments_in_source_order": [
+        "n",
+        "p",
+        "A",
+        "V",
+        "k",
+        "hk",
+        "hfull",
+        "x",
+        "hx",
+        "hne",
+        "a",
+        "b"
+      ],
+      "implementation": "@_proved.fullRank_quadratic_nonannihilation n p A V k hk hfull x hx hne a b"
+    },
+    {
+      "name": "strictIntervalOccupancy",
+      "frozen_signature": " : FullPrefixBlockLanczosClaim",
+      "arguments_in_source_order": [],
+      "implementation": "@_proved.strictIntervalOccupancy"
+    },
+    {
+      "name": "fullPrefix_implies_canonical",
+      "frozen_signature": " : FullPrefixBlockLanczosClaim \u2192 BlockLanczosConjecture",
+      "arguments_in_source_order": [],
+      "implementation": "@_proved.fullPrefix_implies_canonical"
+    },
+    {
+      "name": "blockLanczosConjecture",
+      "frozen_signature": " : BlockLanczosConjecture",
+      "arguments_in_source_order": [],
+      "implementation": "@_proved.blockLanczosConjecture"
+    }
+  ],
+  "proof_sha256": "f3920f297fdd8de840e88cad46322ce69ddcfd106b6dec51dd92fc386ccc76da"
+}

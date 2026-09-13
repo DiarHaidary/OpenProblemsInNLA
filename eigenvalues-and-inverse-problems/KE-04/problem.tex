@@ -34,7 +34,7 @@ iterations},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}KE-04}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-11}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -51,13 +51,73 @@ interlacing across block Lanczos iterations\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} challenging\quad\textbf{Importance:} interesting
 to the community\par}
-{\sffamily\small\bfseries\color{accent}Status: Solved\par}
+{\sffamily\small\bfseries\color{accent}Status: Lean verified\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
 \textbf{Rating rationale:} Challenging reflects a stronger strict
 interlacing law than general compression interlacing supplies; community
 impact is spectral information across block Krylov iterations.
+
+\subsection{Lean proof and verification evidence ---
+2026-09-13}\label{lean-proof-and-verification-evidence-2026-09-13}
+
+\textbf{Formalization: George Stepaniants}, Department of Computing and
+Mathematical Sciences, California Institute of Technology, Pasadena,
+California, USA. Matthew J. Colbrook retains credit for the original
+mathematical proof; D. Šimonová and P. Tichý retain credit for the
+conjecture. The formalization used substantial AI assistance.
+
+The
+\href{https://github.com/sgstepaniants/OpenProblemsInNLA/tree/40b0bf52e73e776e7769f0f12dbbda7cd9fff183/eigenvalues-and-inverse-problems/KE-04/lean}{immutable
+Lean source} proves \textit{NLA.KE04.blockLanczosConjecture}, the
+complete original largest-full-iteration statement. The proof derives it
+from the stronger full-prefix theorem. All 24
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/KE-04/lean/comparator.json}{registered
+theorem declarations} are checked. The proof retains every dimension,
+real symmetric matrix, full-rank starting block, allowed iteration pair,
+strict interval index and independently chosen orthonormal Krylov basis.
+Eigenvalue multiplicities are retained, and no separated-endpoint or
+compatible-basis assumption is added. See the
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/KE-04/lean/SourceCorrespondence.md}{definitions
+and source correspondence} and
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/KE-04/lean/PROOF-MAP.md}{proof
+map}.
+
+Lean is pinned to \textbf{4.33.1}, Mathlib to
+\textit{0df444a360eaa60ab8c11dca51a86af692955474}, and LeanCert to
+\textit{621a43d7cf21f87872392a01e874f2f1dbddc926}. The argument uses
+exact finite-dimensional algebra; LeanCert checks the actual proof
+declarations in kernel mode. The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/KE-04/lean/lake-manifest.json}{full
+dependency manifest} fixes all ten packages.
+
+This campaign ran the real Ubuntu verifier:
+\href{https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34759746409/job/103730400358}{workflow
+34759746409, KE-04 job 103730400358}. Comparator accepted the 24
+independently reviewed statements and proofs, Lean's default kernel
+accepted the exported proofs, and the transitive axiom reports permit
+only \textit{propext}, \textit{Classical.choice}, and
+\textit{Quot.sound}. The actual sandbox and rejection controls passed.
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/KE-04/lean/verification/linux-2026-09-13/README.md}{retained
+logs and independent operational audit} bind the run to the immutable
+source revision. The proof also passed two independent final
+mathematical reviews:
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/KE-04/lean/reviews/final-referee-1.md}{referee
+1} and
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/KE-04/lean/reviews/final-referee-2.md}{referee
+2}. These are AI-agent reviews, not external human peer review.
+
+From a clean checkout, reproduce on non-root Linux with the
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/tools/lean/HARNESS.md}{documented
+prerequisites}:
+
+\begin{verbatim}
+tools/lean/bootstrap.sh /tmp/nla-ke04-check
+tools/lean/verify.sh \
+  eigenvalues-and-inverse-problems/KE-04/lean /tmp/nla-ke04-check
+\end{verbatim}
 
 \subsection{Resolution --- 2026-09-11}\label{resolution-2026-09-11}
 
@@ -93,17 +153,21 @@ checks below are retained.
 statement}\label{original-problem-statement}
 
 Let \(A\in\mathbb R^{n\times n}\) be symmetric and
-\(V\in\mathbb R^{n\times p}\) have full column rank. Write \[
-\mathcal K_j=\operatorname{range}[V,AV,\ldots,A^{j-1}V],
-\] and let \(s\) be the largest integer with \(\dim\mathcal K_s=sp\).
-For \(1\le j\le s\), choose an orthonormal basis \(Q_j\) of
-\(\mathcal K_j\) and order the eigenvalues of \(T_j=Q_j^TAQ_j\) as
+\(V\in\mathbb R^{n\times p}\) have full column rank. Write
+
+\[\mathcal K_j=\mathop{\mathrm{range}}\nolimits[V,AV,\ldots,A^{j-1}V],\]
+
+and let \(s\) be the largest integer with \(\dim\mathcal K_s=sp\). For
+\(1\le j\le s\), choose an orthonormal basis \(Q_j\) of \(\mathcal K_j\)
+and order the eigenvalues of \(T_j=Q_j^TAQ_j\) as
 \(\theta_1^{(j)}\le\cdots\le\theta_{jp}^{(j)}\), with multiplicity.
 
-For every \(1\le k<j\le s\) and \(1\le i\le(k-1)p\), must the open
-interval \[
-(\theta_i^{(k)},\theta_{i+p}^{(k)})
-\] contain an eigenvalue of \(T_j\)? The statement concerns exact
+For every \(1\le k< j\le s\) and \(1\le i\le(k-1)p\), must the open
+interval
+
+\[(\theta_i^{(k)},\theta_{i+p}^{(k)})\]
+
+contain an eigenvalue of \(T_j\)? The statement concerns exact
 arithmetic before the first loss of full block dimension. Although
 Lanczos supplies compatible block tridiagonal representations, the
 spectra do not depend on the chosen bases.

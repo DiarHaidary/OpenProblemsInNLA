@@ -1,0 +1,53 @@
+949-The corresponding induction principle is `Fin.induction`.
+950--/
+951:@[elab_as_elim] def cases {motive : Fin (n + 1) → Sort _}
+952-    (zero : motive 0) (succ : ∀ i : Fin n, motive i.succ) :
+953-    ∀ i : Fin (n + 1), motive i := induction zero fun i _ => succ i
+954-
+955-@[simp, grind =] theorem cases_zero {n} {motive : Fin (n + 1) → Sort _} {zero succ} :
+956-    @Fin.cases n motive zero succ 0 = zero := rfl
+957-
+958:@[simp, grind =] theorem cases_succ {n} {motive : Fin (n + 1) → Sort _} {zero succ} (i : Fin n) :
+959-    @Fin.cases n motive zero succ i.succ = succ i := rfl
+960-
+961:@[simp, grind =] theorem cases_succ' {n} {motive : Fin (n + 1) → Sort _} {zero succ}
+962-    {i : Nat} (h : i + 1 < n + 1) :
+963-    @Fin.cases n motive zero succ ⟨i.succ, h⟩ = succ ⟨i, Nat.lt_of_succ_lt_succ h⟩ := rfl
+964-
+965-theorem forall_fin_succ {P : Fin (n + 1) → Prop} : (∀ i, P i) ↔ P 0 ∧ ∀ i : Fin n, P i.succ :=
+966-  ⟨fun H => ⟨H 0, fun _ => H _⟩, fun ⟨H0, H1⟩ i => Fin.cases H0 H1 i⟩
+967-
+968-theorem exists_fin_succ {P : Fin (n + 1) → Prop} : (∃ i, P i) ↔ P 0 ∨ ∃ i : Fin n, P i.succ :=
+969-  ⟨fun ⟨i, h⟩ => Fin.cases Or.inl (fun i hi => Or.inr ⟨i, hi⟩) i h, fun h =>
+--
+1000-`Fin.induction` is the non-reverse induction principle.
+1001--/
+1002:@[elab_as_elim] def reverseInduction {motive : Fin (n + 1) → Sort _} (last : motive (Fin.last n))
+1003-    (cast : ∀ i : Fin n, motive i.succ → motive (castSucc i)) (i : Fin (n + 1)) : motive i :=
+1004-  let rec go (j : Nat) (h) (h2 : i ≤ j) (x : motive ⟨j, h⟩) : motive i :=
+1005-    if hi : i.1 = j then _root_.cast (by simp [← hi]) x
+1006-    else match j with
+1007-      | 0 => False.elim (by omega)
+1008-      | j + 1 => go j (by omega) (by omega) (cast ⟨j, by omega⟩ x)
+1009-  go _ _ (by omega) last
+1010-
+--
+1041-The corresponding induction principle is `Fin.reverseInduction`.
+1042--/
+1043:@[elab_as_elim] def lastCases {n : Nat} {motive : Fin (n + 1) → Sort _} (last : motive (Fin.last n))
+1044-    (cast : ∀ i : Fin n, motive (castSucc i)) (i : Fin (n + 1)) : motive i :=
+1045-  reverseInduction last (fun i _ => cast i) i
+1046-
+1047:@[simp, grind =] theorem lastCases_last {n : Nat} {motive : Fin (n + 1) → Sort _} {last cast} :
+1048-    (Fin.lastCases last cast (Fin.last n) : motive (Fin.last n)) = last :=
+1049-  reverseInduction_last ..
+1050-
+1051:@[simp, grind =] theorem lastCases_castSucc {n : Nat} {motive : Fin (n + 1) → Sort _} {last cast}
+1052-    (i : Fin n) : (Fin.lastCases last cast (Fin.castSucc i) : motive (Fin.castSucc i)) = cast i :=
+1053-  reverseInduction_castSucc ..
+1054-
+1055-/--
+1056-A case analysis operator for `i : Fin (m + n)` that separately handles the cases where `i < m` and
+1057-where `m ≤ i < m + n`.
+1058-
+1059-The first case, where `i < m`, is handled by `left`. In this case, `i` can be represented as

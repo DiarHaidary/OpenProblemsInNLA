@@ -1,0 +1,12 @@
+{
+  "phase": "first eligibility wrapper attempt",
+  "command": [
+    "python3",
+    "verification/check_eligibility.py"
+  ],
+  "cwd": "/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+  "exit_code": 1,
+  "observed_exception": "AssertionError at assert cp.returncode==0 for git ls-remote",
+  "limitation": "The initial script asserted before writing its preflight record, so underlying git stdout/exit code were not retained; no underlying network reason is claimed. A separate direct git ls-remote before and after this attempt succeeded and returned 5830ed4fb06da0659414a3deb2a40ad327aca052.",
+  "mathematical_elaboration_started": false
+}

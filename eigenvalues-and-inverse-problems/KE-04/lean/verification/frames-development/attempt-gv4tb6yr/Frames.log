@@ -1,0 +1,38 @@
+NLA/KE04/Frames.lean:85:29: warning: `EuclideanSpace.single_apply` has been deprecated: Use `PiLp.single_apply` instead
+
+Note: The updated constant has a different type:
+  ∀ (p : ENNReal) (𝕜 : Type u_1) {ι : Type u_2} [inst : DecidableEq ι] [inst_1 : Zero 𝕜] (i : ι) (a : 𝕜) (j : ι),
+    (PiLp.single p i a).ofLp j = if j = i then a else 0
+instead of
+  ∀ {ι : Type u_1} {𝕜 : Type u_3} [inst : RCLike 𝕜] [inst_1 : DecidableEq ι] (i : ι) (a : 𝕜) (j : ι),
+    (EuclideanSpace.single i a).ofLp j = if j = i then a else 0
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.single_apply` to `PiLp.single_apply x`).
+NLA/KE04/Frames.lean:85:29: warning: This simp argument is unused:
+  EuclideanSpace.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [act_apply, column]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/KE04/Frames.lean:146:36: error(lean.unknownIdentifier): Unknown constant `Set.image_range`
+NLA/KE04/Frames.lean:146:4: error: Type mismatch: After simplification, term
+  hmap
+ has type
+  Submodule.span ℝ (⇑S.subtype '' Set.range ⇑b) = S
+but is expected to have type
+  Submodule.span ℝ (Set.range fun j => ↑(b j)) = S
+'NLA.KE04._proved.real_matrix_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.columnSpace_eq_range_act' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.inner_act_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.frameProjection_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/KE04/Frames.lean:189:21: error: #assert_trust: 'NLA.KE04._proved.submodule_frame_exists' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.submodule_frame_exists' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/KE04/Frames.lean:191:21: error: #assert_trust: 'NLA.KE04._proved.krylovBasis_exists' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.krylovBasis_exists' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.compression_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.compressedQuadratic_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,8 @@
+Mathlib/Analysis/Matrix/Order.lean:26:* `Matrix.PosSemidef.dotProduct_mulVec_zero_iff`: for a positive semi-definite matrix `A`,
+Mathlib/Analysis/Matrix/Order.lean:138:theorem dotProduct_mulVec_zero_iff {A : Matrix n n 𝕜} (hA : PosSemidef A) (x : n → 𝕜) :
+Mathlib/Analysis/Matrix/Order.lean:151:  simpa only [toLinearMap₂'_apply'] using hA.dotProduct_mulVec_zero_iff x
+Mathlib/Analysis/InnerProductSpace/Positive.lean:204:@[simp] theorem _root_.Matrix.isPositive_toEuclideanLin_iff {n : Type*} [Fintype n] [DecidableEq n]
+Mathlib/Analysis/InnerProductSpace/Positive.lean:214:@[simp] theorem posSemidef_toMatrix_iff {ι : Type*} [Fintype ι] [DecidableEq ι]
+Mathlib/Analysis/InnerProductSpace/Positive.lean:217:  rw [← Matrix.isPositive_toEuclideanLin_iff]
+Mathlib/Analysis/InnerProductSpace/Positive.lean:247:    exact posSemidef_toMatrix_iff (stdOrthonormalBasis 𝕜 E) |>.mpr hf |>.trace_nonneg
+Mathlib/Analysis/InnerProductSpace/Positive.lean:561:  rw [← isPositive_toEuclideanLin_iff, ← isPositive_toContinuousLinearMap_iff,

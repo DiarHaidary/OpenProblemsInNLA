@@ -1,0 +1,133 @@
+$ systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-sbvzlkgz/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+Building Challenge
+✔ [2709/2711] Built NLA.KE04.Definitions (2.8s)
+⚠ [2710/2711] Built Challenge (2.6s)
+warning: Challenge.lean:17:8: declaration uses `sorry`
+warning: Challenge.lean:23:8: declaration uses `sorry`
+warning: Challenge.lean:30:8: declaration uses `sorry`
+warning: Challenge.lean:35:8: declaration uses `sorry`
+warning: Challenge.lean:41:8: declaration uses `sorry`
+warning: Challenge.lean:47:8: declaration uses `sorry`
+warning: Challenge.lean:52:8: declaration uses `sorry`
+warning: Challenge.lean:57:8: declaration uses `sorry`
+warning: Challenge.lean:66:8: declaration uses `sorry`
+warning: Challenge.lean:74:8: declaration uses `sorry`
+warning: Challenge.lean:83:8: declaration uses `sorry`
+warning: Challenge.lean:93:8: declaration uses `sorry`
+warning: Challenge.lean:98:8: declaration uses `sorry`
+warning: Challenge.lean:105:8: declaration uses `sorry`
+warning: Challenge.lean:112:8: declaration uses `sorry`
+warning: Challenge.lean:120:8: declaration uses `sorry`
+warning: Challenge.lean:127:8: declaration uses `sorry`
+warning: Challenge.lean:131:8: declaration uses `sorry`
+warning: Challenge.lean:140:8: declaration uses `sorry`
+warning: Challenge.lean:149:8: declaration uses `sorry`
+warning: Challenge.lean:156:8: declaration uses `sorry`
+warning: Challenge.lean:162:8: declaration uses `sorry`
+warning: Challenge.lean:165:8: declaration uses `sorry`
+warning: Challenge.lean:168:8: declaration uses `sorry`
+Build completed successfully (2711 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.KE04.real_matrix_semantics, NLA.KE04.krylov_range_semantics, NLA.KE04.krylov_nesting_and_shift, NLA.KE04.fullBlockDimension_iff_independent, NLA.KE04.fullBlockDimension_prefix, NLA.KE04.lastFullBlockIteration_exists, NLA.KE04.krylovBasis_exists, NLA.KE04.frameProjection_semantics, NLA.KE04.compression_semantics, NLA.KE04.orderedSpectrum_semantics, NLA.KE04.compression_basis_independent, NLA.KE04.interval_index_validity, NLA.KE04.quadratic_semantics, NLA.KE04.spectral_gap_quadratic_psd, NLA.KE04.spectral_window_subspace, NLA.KE04.krylov_intersection_nonzero, NLA.KE04.psd_zero_form_iff_kernel, NLA.KE04.compressedQuadratic_semantics, NLA.KE04.quadratic_forms_agree, NLA.KE04.later_quadratic_identity, NLA.KE04.fullRank_quadratic_nonannihilation, NLA.KE04.strictIntervalOccupancy, NLA.KE04.fullPrefix_implies_canonical, NLA.KE04.blockLanczosConjecture, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+✔ [2711/2722] Built LeanCert.Tactic.Verification (2.3s)
+ℹ [2712/2722] Built NLA.KE04.Frames (5.4s)
+info: NLA/KE04/Frames.lean:182:0: 'NLA.KE04._proved.real_matrix_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Frames.lean:184:0: 'NLA.KE04._proved.columnSpace_eq_range_act' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Frames.lean:186:0: 'NLA.KE04._proved.inner_act_transpose' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Frames.lean:188:0: 'NLA.KE04._proved.frameProjection_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Frames.lean:190:0: 'NLA.KE04._proved.submodule_frame_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Frames.lean:192:0: 'NLA.KE04._proved.krylovBasis_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Frames.lean:194:0: 'NLA.KE04._proved.compression_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Frames.lean:196:0: 'NLA.KE04._proved.compressedQuadratic_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2713/2722] Built NLA.KE04.Spectral (5.8s)
+info: NLA/KE04/Spectral.lean:110:0: 'NLA.KE04._proved.orderedSpectrum_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Spectral.lean:111:0: 'NLA.KE04._proved.quadratic_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Spectral.lean:112:0: 'NLA.KE04._proved.quadratic_apply_eigenvector' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Spectral.lean:113:0: 'NLA.KE04._proved.spectral_gap_quadratic_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Spectral.lean:114:0: 'NLA.KE04._proved.psd_zero_form_iff_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [2714/2722] Built NLA.KE04.Krylov (8.3s)
+warning: NLA/KE04/Krylov.lean:107:25: This simp argument is unused:
+  hr
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [krylovColumns]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+info: NLA/KE04/Krylov.lean:181:0: 'NLA.KE04._proved.act_column_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:183:0: 'NLA.KE04._proved.krylov_eq_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:185:0: 'NLA.KE04._proved.krylov_finrank_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:187:0: 'NLA.KE04._proved.krylov_range_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:189:0: 'NLA.KE04._proved.krylov_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:191:0: 'NLA.KE04._proved.act_mem_krylov_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:193:0: 'NLA.KE04._proved.krylov_nesting_and_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:195:0: 'NLA.KE04._proved.fullBlockDimension_iff_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:197:0: 'NLA.KE04._proved.fullColumnRank_iff_first' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:199:0: 'NLA.KE04._proved.fullBlockDimension_iff_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:201:0: 'NLA.KE04._proved.fullBlockDimension_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:203:0: 'NLA.KE04._proved.fullBlockDimension_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:205:0: 'NLA.KE04._proved.fullBlockDimension_index_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Krylov.lean:207:0: 'NLA.KE04._proved.lastFullBlockIteration_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2715/2722] Built NLA.KE04.SpectralWindow (3.7s)
+info: NLA/KE04/SpectralWindow.lean:136:0: 'NLA.KE04._proved.compression_basis_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/SpectralWindow.lean:137:0: 'NLA.KE04._proved.orthonormal_span_form_nonpos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/SpectralWindow.lean:138:0: 'NLA.KE04._proved.spectral_window_subspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2716/2722] Built NLA.KE04.Intersection (3.2s)
+info: NLA/KE04/Intersection.lean:38:0: 'NLA.KE04._proved.krylov_intersection_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2717/2722] Built NLA.KE04.Nonannihilation (4.5s)
+info: NLA/KE04/Nonannihilation.lean:123:0: 'NLA.KE04._proved.blockExtend' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Nonannihilation.lean:125:0: 'NLA.KE04._proved.blockShift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Nonannihilation.lean:127:0: 'NLA.KE04._proved.krylovCombination_extend' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Nonannihilation.lean:129:0: 'NLA.KE04._proved.krylovCombination_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Nonannihilation.lean:131:0: 'NLA.KE04._proved.blockShift_eq_smul_extend' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Nonannihilation.lean:133:0: 'NLA.KE04._proved.fullRank_krylov_eigenvector_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Nonannihilation.lean:135:0: 'NLA.KE04._proved.act_sub_smul_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Nonannihilation.lean:137:0: 'NLA.KE04._proved.fullRank_quadratic_nonannihilation' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2718/2722] Built NLA.KE04.Transport (4.7s)
+info: NLA/KE04/Transport.lean:141:0: 'NLA.KE04._proved.frame_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:143:0: 'NLA.KE04._proved.frame_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:145:0: 'NLA.KE04._proved.compression_action_coordinates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:147:0: 'NLA.KE04._proved.quadratic_action_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:149:0: 'NLA.KE04._proved.quadratic_form_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:151:0: 'NLA.KE04._proved.compressed_form_expansion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:153:0: 'NLA.KE04._proved.compressed_action_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:155:0: 'NLA.KE04._proved.quadratic_forms_agree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:157:0: 'NLA.KE04._proved.later_quadratic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:159:0: 'NLA.KE04._proved.interval_index_validity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Transport.lean:161:0: 'NLA.KE04._proved.fullPrefix_implies_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2719/2722] Built NLA.KE04.Completion (2.5s)
+info: NLA/KE04/Completion.lean:76:0: 'NLA.KE04._proved.psd_form_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Completion.lean:77:0: 'NLA.KE04._proved.strictIntervalOccupancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Completion.lean:78:0: 'NLA.KE04._proved.blockLanczosConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [2720/2722] Built NLA.KE04.Proof (2.9s)
+info: NLA/KE04/Proof.lean:169:0: 'NLA.KE04.real_matrix_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:171:0: 'NLA.KE04.krylov_range_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:173:0: 'NLA.KE04.krylov_nesting_and_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:175:0: 'NLA.KE04.fullBlockDimension_iff_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:177:0: 'NLA.KE04.fullBlockDimension_prefix' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:179:0: 'NLA.KE04.lastFullBlockIteration_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:181:0: 'NLA.KE04.krylovBasis_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:183:0: 'NLA.KE04.frameProjection_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:185:0: 'NLA.KE04.compression_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:187:0: 'NLA.KE04.orderedSpectrum_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:189:0: 'NLA.KE04.compression_basis_independent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:191:0: 'NLA.KE04.interval_index_validity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:193:0: 'NLA.KE04.quadratic_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:195:0: 'NLA.KE04.spectral_gap_quadratic_psd' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:197:0: 'NLA.KE04.spectral_window_subspace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:199:0: 'NLA.KE04.krylov_intersection_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:201:0: 'NLA.KE04.psd_zero_form_iff_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:203:0: 'NLA.KE04.compressedQuadratic_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:205:0: 'NLA.KE04.quadratic_forms_agree' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:207:0: 'NLA.KE04.later_quadratic_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:209:0: 'NLA.KE04.fullRank_quadratic_nonannihilation' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:211:0: 'NLA.KE04.strictIntervalOccupancy' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:213:0: 'NLA.KE04.fullPrefix_implies_canonical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/KE04/Proof.lean:215:0: 'NLA.KE04.blockLanczosConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [2721/2722] Built Solution (2.2s)
+Build completed successfully (2722 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.KE04.real_matrix_semantics, NLA.KE04.krylov_range_semantics, NLA.KE04.krylov_nesting_and_shift, NLA.KE04.fullBlockDimension_iff_independent, NLA.KE04.fullBlockDimension_prefix, NLA.KE04.lastFullBlockIteration_exists, NLA.KE04.krylovBasis_exists, NLA.KE04.frameProjection_semantics, NLA.KE04.compression_semantics, NLA.KE04.orderedSpectrum_semantics, NLA.KE04.compression_basis_independent, NLA.KE04.interval_index_validity, NLA.KE04.quadratic_semantics, NLA.KE04.spectral_gap_quadratic_psd, NLA.KE04.spectral_window_subspace, NLA.KE04.krylov_intersection_nonzero, NLA.KE04.psd_zero_form_iff_kernel, NLA.KE04.compressedQuadratic_semantics, NLA.KE04.quadratic_forms_agree, NLA.KE04.later_quadratic_identity, NLA.KE04.fullRank_quadratic_nonannihilation, NLA.KE04.strictIntervalOccupancy, NLA.KE04.fullPrefix_implies_canonical, NLA.KE04.blockLanczosConjecture, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+
+EXIT_STATUS=0

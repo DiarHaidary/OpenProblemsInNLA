@@ -1,0 +1,93 @@
+Mathlib/Data/Fin/Rev.lean-33-`i ↦ n-(i+1)`. -/
+Mathlib/Data/Fin/Rev.lean-34-@[simps! apply]
+Mathlib/Data/Fin/Rev.lean:35:def revPerm : Equiv.Perm (Fin n) :=
+Mathlib/Data/Fin/Rev.lean-36-  Involutive.toPerm rev rev_involutive
+Mathlib/Data/Fin/Rev.lean-37-
+Mathlib/Data/Fin/Rev.lean-38-theorem rev_injective : Injective (@rev n) :=
+Mathlib/Data/Fin/Rev.lean-39-  rev_involutive.injective
+--
+Mathlib/Data/Fin/Rev.lean-62-
+Mathlib/Data/Fin/Rev.lean-63-theorem rev_le_iff {i j : Fin n} : rev i ≤ j ↔ rev j ≤ i := by
+Mathlib/Data/Fin/Rev.lean:64:  rw [← rev_le_rev, rev_rev]
+Mathlib/Data/Fin/Rev.lean-65-
+Mathlib/Data/Fin/Rev.lean-66-theorem lt_rev_iff {i j : Fin n} : i < rev j ↔ j < rev i := by
+Mathlib/Data/Fin/Rev.lean-67-  rw [← rev_lt_rev, rev_rev]
+Mathlib/Data/Fin/Rev.lean-68-
+Mathlib/Data/Fin/Rev.lean-69-theorem le_rev_iff {i j : Fin n} : i ≤ rev j ↔ j ≤ rev i := by
+Mathlib/Data/Fin/Rev.lean:70:  rw [← rev_le_rev, rev_rev]
+Mathlib/Data/Fin/Rev.lean-71-
+Mathlib/Data/Fin/Rev.lean-72-theorem val_rev_zero [NeZero n] : ((rev 0 : Fin n) : ℕ) = n.pred := rfl
+Mathlib/Data/Fin/Rev.lean-73-
+Mathlib/Data/Fin/Rev.lean-74-theorem rev_pred {i : Fin (n + 1)} (h : i ≠ 0) (h' := rev_ne_iff.mpr ((rev_last _).symm ▸ h)) :
+--
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-319-
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-320-omit [Fintype m] in variable [Finite m] in
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:321:lemma mul_mul_conjTranspose_same {A : Matrix n n R} (hA : PosSemidef A) (B : Matrix m n R) :
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-322-    PosSemidef (B * A * Bᴴ) := by
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-323-  simpa only [conjTranspose_conjTranspose] using hA.conjTranspose_mul_mul_same Bᴴ
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-324-
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-325-protected lemma pow [StarOrderedRing R] [DecidableEq n]
+--
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-331-  | (k + 2) => by
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-332-    rw [pow_succ, pow_succ']
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:333:    simpa only [hM.isHermitian.eq] using (hM.pow k).mul_mul_conjTranspose_same M
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-334-
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-335-protected lemma inv [DecidableEq n] {M : Matrix n n R'} (hM : M.PosSemidef) : M⁻¹.PosSemidef := by
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-336-  by_cases h : IsUnit M.det
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-337-  · have := (conjTranspose_mul_mul_same hM M⁻¹).conjTranspose
+--
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-450-  simpa only [star_mulVec, dotProduct_mulVec, vecMul_vecMul] using hA.dotProduct_mulVec_pos this
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-451-
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:452:lemma mul_mul_conjTranspose_same {A : Matrix n n R} {B : Matrix m n R} (hA : A.PosDef)
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-453-    (hB : Function.Injective B.vecMul) :
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-454-    (B * A * Bᴴ).PosDef := by
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-455-  replace hB := star_injective.comp <| hB.comp star_injective
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-456-  simp_rw [Function.comp_def, star_vecMul, star_star] at hB
+--
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-467-    PosDef (A * Aᴴ) := by
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-468-  classical
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:469:  simpa using mul_mul_conjTranspose_same .one hA
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-470-
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-471-theorem of_toQuadraticForm' {R : Type*} [CommRing R] [PartialOrder R] [StarRing R] [TrivialStar R]
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-472-    [DecidableEq n] {M : Matrix n n R} (hM : M.IsSymm)
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-473-    (hMq : M.toQuadraticForm'.PosDef) : M.PosDef := by
+--
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-513-
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-514-protected theorem inv [DecidableEq n] {M : Matrix n n K} (hM : M.PosDef) : M⁻¹.PosDef := by
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:515:  have := hM.mul_mul_conjTranspose_same (B := M⁻¹) ?_
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-516-  · let _ := hM.isUnit.invertible
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-517-    simpa using this.conjTranspose
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-518-  · simp only [Matrix.vecMul_injective_iff_isUnit, isUnit_nonsing_inv_iff, hM.isUnit]
+Mathlib/LinearAlgebra/Matrix/PosDef.lean-519-
+--
+Mathlib/Analysis/Matrix/Order.lean-24-
+Mathlib/Analysis/Matrix/Order.lean-25-* `Matrix.instPartialOrder`: the partial order on matrices given by `x ≤ y := (y - x).PosSemidef`.
+Mathlib/Analysis/Matrix/Order.lean:26:* `Matrix.PosSemidef.dotProduct_mulVec_zero_iff`: for a positive semi-definite matrix `A`,
+Mathlib/Analysis/Matrix/Order.lean-27-  we have `x⋆ A x = 0` iff `A x = 0`.
+Mathlib/Analysis/Matrix/Order.lean-28-* `Matrix.toMatrixInnerProductSpace`: the inner product on matrices induced by a
+Mathlib/Analysis/Matrix/Order.lean-29-  positive semi-definite matrix `M`: `⟪x, y⟫ = (y * M * xᴴ).trace`.
+Mathlib/Analysis/Matrix/Order.lean-30-
+--
+Mathlib/Analysis/Matrix/Order.lean-136-
+Mathlib/Analysis/Matrix/Order.lean-137-/-- For `A` positive semidefinite, we have `x⋆ A x = 0` iff `A x = 0`. -/
+Mathlib/Analysis/Matrix/Order.lean:138:theorem dotProduct_mulVec_zero_iff {A : Matrix n n 𝕜} (hA : PosSemidef A) (x : n → 𝕜) :
+Mathlib/Analysis/Matrix/Order.lean-139-    star x ⬝ᵥ A *ᵥ x = 0 ↔ A *ᵥ x = 0 := by
+Mathlib/Analysis/Matrix/Order.lean-140-  classical
+Mathlib/Analysis/Matrix/Order.lean-141-  refine ⟨fun h ↦ ?_, fun h ↦ h ▸ dotProduct_zero _⟩
+Mathlib/Analysis/Matrix/Order.lean-142-  obtain ⟨B, rfl⟩ := CStarAlgebra.nonneg_iff_eq_star_mul_self.mp hA.nonneg
+--
+Mathlib/Analysis/Matrix/Order.lean-149-    {A : Matrix n n 𝕜} (hA : PosSemidef A) (x : n → 𝕜) :
+Mathlib/Analysis/Matrix/Order.lean-150-    Matrix.toLinearMap₂' 𝕜 A (star x) x = 0 ↔ A *ᵥ x = 0 := by
+Mathlib/Analysis/Matrix/Order.lean:151:  simpa only [toLinearMap₂'_apply'] using hA.dotProduct_mulVec_zero_iff x
+Mathlib/Analysis/Matrix/Order.lean-152-
+Mathlib/Analysis/Matrix/Order.lean-153-theorem det_sqrt [DecidableEq n] {A : Matrix n n 𝕜} (hA : A.PosSemidef) :
+Mathlib/Analysis/Matrix/Order.lean-154-    (CFC.sqrt A).det = RCLike.sqrt A.det := by
+Mathlib/Analysis/Matrix/Order.lean-155-  rw [CFC.sqrt_eq_cfc, cfc_nnreal_eq_real _ A, hA.1.cfc_eq, RCLike.sqrt_of_nonneg hA.det_nonneg]
+--
+Mathlib/Analysis/Matrix/Order.lean-298-    simp only [mul_assoc, starRingEnd_apply, ← trace_conjTranspose, conjTranspose_mul,
+Mathlib/Analysis/Matrix/Order.lean-299-      conjTranspose_conjTranspose, hM.isHermitian.eq]
+Mathlib/Analysis/Matrix/Order.lean:300:  re_inner_nonneg x := RCLike.nonneg_iff.mp (hM.mul_mul_conjTranspose_same x).trace_nonneg |>.1
+Mathlib/Analysis/Matrix/Order.lean-301-  add_left := by simp [mul_add]
+Mathlib/Analysis/Matrix/Order.lean-302-  smul_left := by simp
+Mathlib/Analysis/Matrix/Order.lean-303-
+Mathlib/Analysis/Matrix/Order.lean-304-set_option backward.privateInPublic true in

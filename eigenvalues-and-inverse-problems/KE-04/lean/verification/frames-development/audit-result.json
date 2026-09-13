@@ -1,0 +1,440 @@
+{
+  "utc": "2026-09-13T08:55:38.329451+00:00",
+  "pass": true,
+  "scope": "KE04 Frames author helper validation; concurrent Krylov/Spectral and full proof excluded",
+  "source": {
+    "sha256": "bfea6b02091db4e999c2c870b4b1f238cb546ad84df010c7d5431fe82904db0b",
+    "bytes": 8253
+  },
+  "selected_attempt": "attempt-_2m2tvtu",
+  "selected_result": {
+    "sha256": "285163aff817ba3c0000bd8944fb5619c0935e033736cdc263240c20231d9e7d",
+    "bytes": 9250
+  },
+  "platform": "Darwin 23.6.0 arm64",
+  "toolchain": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "fresh_commands": 3,
+  "total_seconds": 21.364057333092205,
+  "exact_contracts": [
+    "real_matrix_semantics",
+    "krylovBasis_exists",
+    "frameProjection_semantics",
+    "compression_semantics",
+    "compressedQuadratic_semantics"
+  ],
+  "actual_roots": [
+    "NLA.KE04._proved.act_apply",
+    "NLA.KE04._proved.act_mul",
+    "NLA.KE04._proved.act_one",
+    "NLA.KE04._proved.inner_eq_sum",
+    "NLA.KE04._proved.inner_act_transpose",
+    "NLA.KE04._proved.inner_act_left",
+    "NLA.KE04._proved.inner_columns",
+    "NLA.KE04._proved.frame_iff_orthonormal",
+    "NLA.KE04._proved.real_matrix_semantics",
+    "NLA.KE04._proved.act_eq_column_sum",
+    "NLA.KE04._proved.columnSpace_eq_range_act",
+    "NLA.KE04._proved.act_transpose_act",
+    "NLA.KE04._proved.frameProjection_act",
+    "NLA.KE04._proved.frameProjection_fixed_iff",
+    "NLA.KE04._proved.frameProjection_semantics",
+    "NLA.KE04._proved.submodule_frame_exists",
+    "NLA.KE04._proved.krylovBasis_exists",
+    "NLA.KE04._proved.compression_semantics",
+    "NLA.KE04._proved.compressedQuadratic_semantics"
+  ],
+  "actual_project_declarations": 38,
+  "retained_dependencies": [
+    "NLA.KE04._proved.act_mul",
+    "NLA.KE04._proved.act_one",
+    "NLA.KE04._proved.inner_eq_sum",
+    "NLA.KE04._proved.inner_act_transpose",
+    "NLA.KE04._proved.inner_act_left",
+    "NLA.KE04._proved.inner_columns",
+    "NLA.KE04._proved.frame_iff_orthonormal",
+    "NLA.KE04._proved.act_eq_column_sum",
+    "NLA.KE04._proved.columnSpace_eq_range_act",
+    "NLA.KE04._proved.act_transpose_act",
+    "NLA.KE04._proved.frameProjection_act",
+    "NLA.KE04._proved.frameProjection_fixed_iff",
+    "NLA.KE04._proved.submodule_frame_exists",
+    "NLA.KE04.column",
+    "NLA.KE04.act",
+    "NLA.KE04.columnSpace",
+    "NLA.KE04.krylov",
+    "NLA.KE04.FullBlockDimension",
+    "NLA.KE04.IsKrylovBasis",
+    "NLA.KE04.frameProjection",
+    "NLA.KE04.compression",
+    "NLA.KE04.compressedQuadratic",
+    "NLA.KE04.quadraticMatrix",
+    "NLA.KE04.form",
+    "Matrix.toLpLin",
+    "Matrix.toLpLin_mul_same",
+    "Matrix.toLpLin_one",
+    "stdOrthonormalBasis",
+    "OrthonormalBasis.reindex",
+    "Orthonormal.comp_linearIsometry",
+    "Submodule.map_span",
+    "Module.Basis.span_eq",
+    "Matrix.PosSemidef.mul_mul_conjTranspose_same",
+    "Matrix.isHermitian_conjTranspose_mul_mul"
+  ],
+  "kernel_assertions": 27,
+  "standard_three_reports": {
+    "NLA/KE04/Definitions.lean": 0,
+    "NLA/KE04/Frames.lean": 8,
+    "verification/frames-development/Inspect.lean": 19
+  },
+  "warnings": {
+    "NLA/KE04/Definitions.lean": [],
+    "NLA/KE04/Frames.lean": [],
+    "verification/frames-development/Inspect.lean": [
+      "Variable name `hfull` is not explicitly referenced.",
+      "Variable name `hQ` is not explicitly referenced.",
+      "Variable name `hA` is not explicitly referenced.",
+      "Variable name `hQ` is not explicitly referenced."
+    ]
+  },
+  "preserved_statement_inputs": 1598,
+  "originals": {
+    "verification/original-sources/AGENTS.md": {
+      "sha256": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162",
+      "bytes": 1272,
+      "git_blob": "7eb638704c183dc5a4ad1f2e3d9103416fedd92b",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "AGENTS.md"
+    },
+    "verification/original-sources/CONTRIBUTING.md": {
+      "sha256": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3",
+      "bytes": 10507,
+      "git_blob": "ade2131e55f0372fd3a8de1634864e84c37def61",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "CONTRIBUTING.md"
+    },
+    "verification/original-sources/docs/lean/README.md": {
+      "sha256": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6",
+      "bytes": 7278,
+      "git_blob": "24bfdfd61a643984c9607081a922e89313c47c83",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "docs/lean/README.md"
+    },
+    "verification/original-sources/docs/lean/REVIEW.md": {
+      "sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553",
+      "bytes": 3110,
+      "git_blob": "5d1d8c908923a687f4779fd1a539237bd29a1a1a",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "docs/lean/REVIEW.md"
+    },
+    "verification/original-sources/docs/lean/schema/README.md": {
+      "sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb",
+      "bytes": 525,
+      "git_blob": "e61bade6af2c59233db4bd1ccc906eafe8d10e5a",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "docs/lean/schema/README.md"
+    },
+    "verification/original-sources/docs/lean/schema/v0.4.schema.json": {
+      "sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
+      "bytes": 12694,
+      "git_blob": "19f4a46a1bc0e4798dca7bcb7ed57281b1c8c996",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "docs/lean/schema/v0.4.schema.json"
+    },
+    "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/README.md": {
+      "sha256": "20ff79f2a4c9fbbd456a5167f6e634df7473a6415141fcfc01d85b49fea8a057",
+      "bytes": 4072,
+      "git_blob": "c1279c5ad212b584b4c2da77b57070e025745b58",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/README.md"
+    },
+    "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.md": {
+      "sha256": "dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6",
+      "bytes": 5279,
+      "git_blob": "b3d6a9d06c30e10bea00af027c418a9bf5ae1386",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/solution.md"
+    },
+    "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.tex": {
+      "sha256": "06ef0d4fa338bfc981892856c175c2c9bc828fd48edbdec32b048c752d659c8f",
+      "bytes": 7259,
+      "git_blob": "471bb42cb27beb0b360466c1bc4642520258f021",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/solution.tex"
+    },
+    "verification/original-sources/problem_ids.json": {
+      "sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763",
+      "bytes": 13264,
+      "git_blob": "b1810237bc80efe04b4bb08f74d1e974b1bf80f7",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "problem_ids.json"
+    },
+    "verification/original-sources/references/colbrook-2026-09-11/README.md": {
+      "sha256": "d8d9bcbe3ead5700ece3a26c355e6e6a0b949d33d2f0fd6bf0923d3d6914c5e2",
+      "bytes": 6825,
+      "git_blob": "1979a2b6a14e4950cd719e8d02cac9ce74527862",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "references/colbrook-2026-09-11/README.md"
+    },
+    "verification/original-sources/references/colbrook-2026-09-11/verification/README.md": {
+      "sha256": "659832e5fbd443013bc5d176016b41444fd19c447cc4b03fa1bb021f6759d646",
+      "bytes": 1026,
+      "git_blob": "18fcfecef5b973e81d51cc8f62a58a5000dd9cc7",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "references/colbrook-2026-09-11/verification/README.md"
+    },
+    "verification/original-sources/references/colbrook-2026-09-11/verification/reviews/KE-04-review.md": {
+      "sha256": "299abf4d5f6b5ae14245d812c91f87a3ee8696f111d38be7306e486e18f867b6",
+      "bytes": 8450,
+      "git_blob": "6bb63b66f42608017bfc9ae4b637d391e841699e",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "references/colbrook-2026-09-11/verification/reviews/KE-04-review.md"
+    },
+    "verification/original-sources/tools/lean/HARNESS.md": {
+      "sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4",
+      "bytes": 5538,
+      "git_blob": "8f338f8f163e04d4fb7b6af5cdf969af92177c4b",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "tools/lean/HARNESS.md"
+    },
+    "verification/original-sources/tools/lean/source-lock.json": {
+      "sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+      "bytes": 15982,
+      "git_blob": "27916ca1e378b13ba1a08f1eb3ecb285fde12408",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "tools/lean/source-lock.json"
+    },
+    "verification/original-submission/solution.md": {
+      "sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d",
+      "bytes": 4791,
+      "git_blob": "5e9eb9eb9529e41cc3d4d4e6a5b87b0166c3d68c",
+      "commit": "fe025e14d2639cbae59f98cacf4023d83addcb89",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/solution.md"
+    },
+    "verification/original-target/README.md": {
+      "sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669",
+      "bytes": 2711,
+      "git_blob": "0b52d4dda8485714c7a4f44aa0baa9542d90d6f4",
+      "commit": "b4123194697bdf6f8f82518c1dd7d6c40a30c2e0",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/README.md"
+    }
+  },
+  "clean_pins": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "tracked_clean": true,
+      "object_directory_present": false
+    }
+  ],
+  "readonly_object_directories": 9,
+  "primary_API_sources": {
+    "verification/frames-development/api-sources/mathlib/Mathlib/Analysis/Normed/Lp/Matrix.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/Analysis/Normed/Lp/Matrix.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "bbe4769e298c51c4f3c7047c0ab97dcebe78c435",
+      "sha256": "976400e4430cbe64214a24e37f3f98c807c30f1c9926c8cbd367ae2fd111e2f9",
+      "bytes": 3247
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/Analysis/InnerProductSpace/Orthonormal.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/Analysis/InnerProductSpace/Orthonormal.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "2eb54e2e982f78120a377efb67989949a449c5ff",
+      "sha256": "8f6d3904a8b6e011cb5f2aea532ce0c1dec796fc4f8292ff59c351fd960c096c",
+      "bytes": 21548
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/Analysis/InnerProductSpace/PiL2.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "a938a909f274d3e80ab0fdb44aa490022fd40d2d",
+      "sha256": "1f9827b2db67213c725a2dcc3fec52a87772966d1fbd3fc6857a019dbd7a6053",
+      "bytes": 61065
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/Analysis/InnerProductSpace/Subspace.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/Analysis/InnerProductSpace/Subspace.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "7b76274671b70610bceead930f805f4dd509d30c",
+      "sha256": "c34900ad513eaffd4a8bcdbe88975f49bebe7498854ede8cb04cae81a6eb3fc7",
+      "bytes": 12360
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/LinearAlgebra/Matrix/PosDef.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/LinearAlgebra/Matrix/PosDef.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "4599e2ec208e7f4d063176cb1cf3da34fa727b71",
+      "sha256": "09290b5923e167fcf959df64d00b039c7b99c4b236755728219bf5b5feaac24a",
+      "bytes": 27238
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/LinearAlgebra/Matrix/Hermitian.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/LinearAlgebra/Matrix/Hermitian.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "f47d0fc51adc7c376ea734c00b0ab1997aee3c0c",
+      "sha256": "9f4e84cafd93f05935d8accc2846a4d624c1fe994c53ab348b8338464bf5cb21",
+      "bytes": 15986
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/LinearAlgebra/Matrix/ConjTranspose.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/LinearAlgebra/Matrix/ConjTranspose.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "ff316045d3c17e6fab76725df885f2ea7a07ca24",
+      "sha256": "10ace10899567db7c2ccd38c0e89e3bdca2261494975a42d3b1a5535c9e3b1b6",
+      "bytes": 17642
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/LinearAlgebra/Basis/Basic.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/LinearAlgebra/Basis/Basic.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "b0fa1439a882d2dfc0e300b12ebc13c06c8f137d",
+      "sha256": "ba20a95ee9dea46dc4c1c041b932837058d201abf185659015c65a762eab4237",
+      "bytes": 12500
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/LinearAlgebra/Span/Basic.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/LinearAlgebra/Span/Basic.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "1d7829afd199c4ddcea6593a169deacc06a73e87",
+      "sha256": "030186742b5758bcfeed49623129d424943c18a58cdce1fae62228309527b70c",
+      "bytes": 40129
+    },
+    "verification/frames-development/api-sources/mathlib/Mathlib/Data/Set/Image.lean": {
+      "package": "mathlib",
+      "upstream_path": "Mathlib/Data/Set/Image.lean",
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "cf5b1e49e7485a3a51fe3c52b50ae5068a171867",
+      "sha256": "67b5664763a0e4fd5080ad4b9d5ae80746643512f33b00a691e4d9fa18609c02",
+      "bytes": 55863
+    },
+    "verification/frames-development/api-sources/leancert/LeanCert/Tactic/Verification.lean": {
+      "package": "leancert",
+      "upstream_path": "LeanCert/Tactic/Verification.lean",
+      "commit": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "git_blob": "367d4660480a1bfa93e43cedba07e60a65686a40",
+      "sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+      "bytes": 29145
+    }
+  },
+  "attempts": {
+    "attempt-_2m2tvtu": {
+      "pass": true,
+      "result": {
+        "sha256": "285163aff817ba3c0000bd8944fb5619c0935e033736cdc263240c20231d9e7d",
+        "bytes": 9250
+      },
+      "commands": [
+        {
+          "source": "NLA/KE04/Definitions.lean",
+          "exit_code": 0
+        },
+        {
+          "source": "NLA/KE04/Frames.lean",
+          "exit_code": 0
+        },
+        {
+          "source": "verification/frames-development/Inspect.lean",
+          "exit_code": 0
+        }
+      ],
+      "removed_own_objects": 6,
+      "removed_logical_bytes": 735363
+    },
+    "attempt-gv4tb6yr": {
+      "pass": false,
+      "result": {
+        "sha256": "2e08c3325786b464a67418dd9cd78382d14351654f34294c355a55a6bdd7d317",
+        "bytes": 7813
+      },
+      "commands": [
+        {
+          "source": "NLA/KE04/Definitions.lean",
+          "exit_code": 0
+        },
+        {
+          "source": "NLA/KE04/Frames.lean",
+          "exit_code": 1
+        }
+      ],
+      "removed_own_objects": 2,
+      "removed_logical_bytes": 303945
+    },
+    "attempt-irwnym99": {
+      "pass": true,
+      "result": {
+        "sha256": "84605e4fcbc98c6a885fa1f1641189c1478d9539d01ec4c0597a154c60d42b41",
+        "bytes": 8115
+      },
+      "commands": [
+        {
+          "source": "NLA/KE04/Definitions.lean",
+          "exit_code": 0
+        },
+        {
+          "source": "NLA/KE04/Frames.lean",
+          "exit_code": 0
+        }
+      ],
+      "removed_own_objects": 4,
+      "removed_logical_bytes": 652545
+    }
+  },
+  "independent_review": false,
+  "actual_linux_comparator": false,
+  "proof_status_metadata_git_canonical_changes": false
+}

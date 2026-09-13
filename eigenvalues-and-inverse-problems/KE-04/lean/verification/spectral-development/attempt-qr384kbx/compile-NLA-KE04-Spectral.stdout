@@ -1,0 +1,56 @@
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:34:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:38:6: error: Type mismatch: After simplification, term
+  Matrix.IsHermitian.roots_charpoly_eq_eigenvalues₀ hM
+ has type
+  (Matrix.charpoly M).roots = ↑(List.ofFn fun i => ⋯.eigenvalues ⋯ (Fin.cast ⋯ i))
+but is expected to have type
+  (Matrix.charpoly M).roots = ↑(List.ofFn (hT.eigenvalues ⋯))
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:51:2: error: unsolved goals
+case refine_1
+m : ℕ
+M : Mat m
+a b : ℝ
+⊢ ((Polynomial.X - Polynomial.C a) * (Polynomial.X - Polynomial.C b)).natDegree = 2
+Try this:
+  [apply] abel_nf
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:53:2: error: unsolved goals
+case refine_3
+m : ℕ
+M : Mat m
+a b : ℝ
+⊢ M * M + (-1 • a • M + -1 • b • (M + -1 • a • 1)) = M * M + (-1 • a • M + (-1 • b • M + (a * b) • 1))
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:51:26: warning: This simp argument is unused:
+  Polynomial.natDegree_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [monicQuadratic]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:54:24: warning: This simp argument is unused:
+  smul_smul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [quadraticMatrix, mul_sub, sub_mul, mul_smul_comm, smul_mul_assoc, mul_one, one_mul, add_smul,
+    pow_two]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:58:60: error: unexpected token 'λ'; expected ')'
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:86:4: error(lean.unknownIdentifier): Unknown identifier `quadratic_apply_eigenvector`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:100:2: error: Type mismatch: After simplification, term
+  Matrix.PosSemidef.dotProduct_mulVec_zero_iff hM x.ofLp
+ has type
+  x.ofLp ⬝ᵥ Matrix.mulVec M x.ofLp = 0 ↔ Matrix.mulVec M x.ofLp = 0
+but is expected to have type
+  Matrix.mulVec M x.ofLp ⬝ᵥ x.ofLp = 0 ↔ Matrix.mulVec M x.ofLp = 0
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:104:40: error(lean.unknownIdentifier): Unknown constant `kernel`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:105:34: error(lean.unknownIdentifier): Unknown constant `kernel`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:106:42: error(lean.unknownIdentifier): Unknown constant `kernel`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:107:41: error(lean.unknownIdentifier): Unknown constant `kernel`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:108:39: error(lean.unknownIdentifier): Unknown constant `kernel`
+'NLA.KE04._proved.orderedSpectrum_semantics' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.quadratic_semantics' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-qr384kbx/src/NLA/KE04/Spectral.lean:111:14: error(lean.unknownIdentifier): Unknown constant `quadratic_apply_eigenvector`
+'NLA.KE04._proved.spectral_gap_quadratic_psd' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.psd_zero_form_iff_kernel' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

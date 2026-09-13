@@ -1,0 +1,142 @@
+{
+  "verdict": "APPROVE",
+  "phase": "independent statement review only",
+  "reviewer": "/root/ra20_final_referee2",
+  "definitions": 27,
+  "definition_closure": 33,
+  "generated_helpers": [
+    "NLA.KE04.act._proof_1",
+    "NLA.KE04.act._proof_2",
+    "NLA.KE04.column._proof_1",
+    "NLA.KE04.orderedEigenvalues._proof_1",
+    "NLA.KE04.orderedEigenvalues._proof_2",
+    "NLA.KE04.ritzValues._proof_1"
+  ],
+  "material_imports_confirmed": [
+    "EuclideanSpace",
+    "Fin.rev",
+    "Fin.revPerm",
+    "Fintype.linearCombination",
+    "Inner.inner",
+    "LinearIndependent",
+    "LinearMap.IsSymmetric",
+    "LinearMap.IsSymmetric.eigenvalues",
+    "LinearMap.IsSymmetric.eigenvectorBasis",
+    "Matrix.IsHermitian",
+    "Matrix.isHermitian_conjTranspose_mul_mul",
+    "Matrix.isSymmetric_toEuclideanLin_iff",
+    "Matrix.toEuclideanLin",
+    "Module.finrank",
+    "OrthonormalBasis.reindex",
+    "Polynomial.C",
+    "Polynomial.X",
+    "Submodule.span",
+    "finrank_euclideanSpace_fin"
+  ],
+  "kernel_trust_commands": 27,
+  "printed_definition_axiom_reports": 27,
+  "contracts": 24,
+  "challenge_admissions": 24,
+  "independently_compiled_modules": 4,
+  "accepted_attempt": "reviews/statement-referee-1-evidence/attempt-nglj5yvu",
+  "accepted_attempt_result": {
+    "bytes": 100299,
+    "sha256": "6ac17ee119a2f1f364dab0c2a095a9555e7ea04f35e7682fe469bc97e1b1d1bf"
+  },
+  "accepted_provenance_audit": "reviews/statement-referee-1-evidence/input-audit-039929qi",
+  "accepted_provenance_result": {
+    "bytes": 57208,
+    "sha256": "f6ee30615beee5cb5f5f5e015ab596abfb3772c60117df20f6c172f8d51d5620"
+  },
+  "all_attempts": [
+    {
+      "path": "attempt-5t4u9ww4",
+      "success": true,
+      "result": {
+        "bytes": 100302,
+        "sha256": "d689fa943638f414fe0e1ea60cd5c2b08d90b886672470b1af203267e1bdfe85"
+      },
+      "commands": 79,
+      "error": null
+    },
+    {
+      "path": "attempt-7tjmj3b0",
+      "success": false,
+      "result": {
+        "bytes": 75153,
+        "sha256": "256b79fb2f2eefc7a3c84cd94eb95b3079846670eb3e2bd3d9162e71acc44320"
+      },
+      "commands": 58,
+      "error": "RuntimeError('command-057-compile-InspectDefinitions exited 1')"
+    },
+    {
+      "path": "attempt-nglj5yvu",
+      "success": true,
+      "result": {
+        "bytes": 100299,
+        "sha256": "6ac17ee119a2f1f364dab0c2a095a9555e7ea04f35e7682fe469bc97e1b1d1bf"
+      },
+      "commands": 79,
+      "error": null
+    },
+    {
+      "path": "input-audit",
+      "success": false,
+      "result": {
+        "bytes": 42280,
+        "sha256": "e1b5ccfed610d0f36bceebcb373ab745333ba6a34821616698ed4ac040a9bc75"
+      },
+      "commands": 40,
+      "error": "AssertionError()"
+    },
+    {
+      "path": "input-audit-039929qi",
+      "success": true,
+      "result": {
+        "bytes": 57208,
+        "sha256": "f6ee30615beee5cb5f5f5e015ab596abfb3772c60117df20f6c172f8d51d5620"
+      },
+      "commands": 56,
+      "error": null
+    },
+    {
+      "path": "input-audit-_jmvo_yj",
+      "success": false,
+      "result": {
+        "bytes": 43621,
+        "sha256": "6e968f26cfd72c61bb6bda84fca013edd92138837fc85164dc8da2a254ffbe7f"
+      },
+      "commands": 41,
+      "error": "AssertionError('verification/api-evidence-complete/spectral.log')"
+    },
+    {
+      "path": "input-audit-w00yn2fr",
+      "success": false,
+      "result": {
+        "bytes": 53748,
+        "sha256": "9898b5f43ad2e760ef6e6724f47e59623df6da3ef78d59fcc6a76a78afc83906"
+      },
+      "commands": 52,
+      "error": "AssertionError()"
+    }
+  ],
+  "recorded_child_commands": 408,
+  "main_attempt_child_commands": 405,
+  "additional_source_git_commands": 3,
+  "main_attempt_exit_code_counts": {
+    "0": 402,
+    "1": 3
+  },
+  "own_objects_hashed_and_removed": 10,
+  "original_inputs_unchanged": 168,
+  "original_git_sources": 17,
+  "api_sources_git_or_archive_bound": 36,
+  "all_actual_27_values_and_24_types_read": true,
+  "source_proof_unchanged_from_original_submission": true,
+  "source_definitions_or_contracts_changed": false,
+  "proof_implemented": false,
+  "statement_frozen": false,
+  "linux_comparator_run": false,
+  "raw_default_kernel_run": false,
+  "second_approval_and_root_acceptance_still_required": true
+}

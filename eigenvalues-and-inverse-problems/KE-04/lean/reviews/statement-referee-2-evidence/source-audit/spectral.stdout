@@ -1,0 +1,76 @@
+277-/-- The eigenvalues for a self-adjoint operator `T` on a
+278-finite-dimensional inner product space `E`, sorted in decreasing order -/
+279:noncomputable irreducible_def eigenvalues (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+280-    Fin n → ℝ :=
+281-  (hT.unsortedEigenvalues hn) ∘ Tuple.sort (hT.unsortedEigenvalues hn) ∘ @Fin.revPerm n
+282-
+283-theorem exists_eigenvalues_eq (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) {μ : 𝕜}
+284-    (hμ : HasEigenvalue T μ) : ∃ i : Fin n, hT.eigenvalues hn i = μ := by
+--
+298-finite-dimensional inner product space `E`.  Eigenvectors are sorted in decreasing
+299-order of their eigenvalues. -/
+300:noncomputable irreducible_def eigenvectorBasis (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+301-    OrthonormalBasis (Fin n) 𝕜 E :=
+302-  (hT.direct_sum_isInternal.subordinateOrthonormalBasis
+303-    hn hT.orthogonalFamily_eigenspaces').reindex
+304-      (Tuple.sort (hT.unsortedEigenvalues hn) * @Fin.revPerm n).symm
+305-
+--
+310-
+311-/-- Eigenvalues are sorted in decreasing order. -/
+312:theorem eigenvalues_antitone (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+313-    Antitone (hT.eigenvalues hn) := by
+314-  rw [eigenvalues_def, ← Function.comp_assoc]
+315-  refine Monotone.comp_antitone ?_ ?_
+316-  · apply Tuple.monotone_sort
+317-  intro _ _ h
+--
+323-
+324-@[simp]
+325:theorem apply_eigenvectorBasis (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) (i : Fin n) :
+326-    T (hT.eigenvectorBasis hn i) = (hT.eigenvalues hn i : 𝕜) • hT.eigenvectorBasis hn i :=
+327-  mem_eigenspace_iff.mp (hT.hasEigenvector_eigenvectorBasis hn i).1
+328-
+329-/-- *Diagonalization theorem*, *spectral theorem*; version 2: A self-adjoint operator `T` on a
+330-finite-dimensional inner product space `E` acts diagonally on the identification of `E` with
+--
+360-    Matrix.charpoly_diagonal]
+361-
+362:theorem roots_charpoly_eq_eigenvalues (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+363-    T.charpoly.roots = Multiset.map (RCLike.ofReal ∘ hT.eigenvalues hn) Finset.univ.val := by
+364-  rw [← charpoly_toMatrix _ (hT.eigenvectorBasis hn).toBasis, toMatrix_eigenvectorBasis,
+365-    Matrix.charpoly_diagonal, Polynomial.roots_prod _ _ (by
+366-      simp [Finset.prod_ne_zero_iff, Polynomial.X_sub_C_ne_zero])]
+367-  simp
+368-
+369:theorem sort_roots_charpoly_eq_eigenvalues (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+370-    (T.charpoly.roots.map RCLike.re).sort (· ≥ ·) = List.ofFn (hT.eigenvalues hn) := by
+371:  simp_rw [hT.roots_charpoly_eq_eigenvalues, Fin.univ_val_map, Multiset.map_coe, List.map_ofFn,
+372-    Function.comp_def, RCLike.ofReal_re, Multiset.coe_sort]
+373-  have := hn.symm
+374-  convert! List.mergeSort_of_pairwise ?_
+375-  simp_rw [decide_eq_true_eq, ← List.sortedGE_iff_pairwise]
+376:  convert! (hT.eigenvalues_antitone hn).sortedGE_ofFn
+377-
+378:theorem eigenvalues_eq_eigenvalues_iff {E' : Type*} [NormedAddCommGroup E'] [InnerProductSpace 𝕜 E']
+379-    [FiniteDimensional 𝕜 E'] {T' : E' →ₗ[𝕜] E'} (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n)
+380-    (hT' : T'.IsSymmetric) (hn' : Module.finrank 𝕜 E' = n) :
+381-    hT.eigenvalues hn = hT'.eigenvalues hn' ↔ T.charpoly = T'.charpoly where
+382-  mp h := by rw [hT.charpoly_eq hn, hT'.charpoly_eq hn', h]
+383-  mpr h := by
+384:    rw [← List.ofFn_inj, ← sort_roots_charpoly_eq_eigenvalues, ← sort_roots_charpoly_eq_eigenvalues,
+385-      h]
+386-
+387-theorem splits_charpoly (hT : T.IsSymmetric) : T.charpoly.Splits := by
+388-  refine Polynomial.splits_iff_card_roots.mpr ?_
+389:  simp [hT.roots_charpoly_eq_eigenvalues rfl, LinearMap.charpoly_natDegree]
+390-
+391-theorem det_eq_prod_eigenvalues (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+392-    T.det = ∏ i, (hT.eigenvalues hn i : 𝕜) := by
+393-  simp [det_eq_prod_roots_charpoly_of_splits hT.splits_charpoly,
+394:    hT.roots_charpoly_eq_eigenvalues hn, List.prod_ofFn]
+395-
+396-end Version2
+397-
+398-end IsSymmetric
+399-

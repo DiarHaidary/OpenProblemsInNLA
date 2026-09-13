@@ -105,6 +105,11 @@ The full proof passed a separate [independent Codex AI-agent informal audit](ref
 
 The complete proof and exact certificates passed a separate [independent informal Codex AI-agent audit](references/holden-pf03-2026-09-13/independent-review.md), including all 54,264 candidate facet supports, 98,790 matrix entries, 18 unit tests and a reviewer-written arithmetic check. No Lean verification, external human peer review or priority claim is asserted. The original ID, canonical path, statement and historical-source credit remain intact.
 
+### PF-01 — further structural partial results — Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Manuscript Sections 2–10](references/holden-pf01-2026-09-13/paper/pf01_structural_obstructions.pdf) establish rank-one-factor counts, a span-five projection theorem, mixed-rank and covering constraints, and the exact 90-dimensional quartic derivative space for the retained [PF-01 target](nonnegative-and-positive-factorizations/PF-01/README.md). These new partial results passed a separate [independent Codex AI-agent audit](references/holden-pf01-2026-09-13/verification/independent-review.md). The exact ranks for all n >= 7 remain unresolved. Prior draft bounds are outside that audit's scope. [Authorship, verified affiliation and reproduction](references/holden-pf01-2026-09-13/README.md). No Lean verification or external human peer review is asserted.
+
+
 ### KE-02, SP-08 and SP-09 — spectral partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** Author: Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](references/holden-spectral-2026-09-12/README.md).

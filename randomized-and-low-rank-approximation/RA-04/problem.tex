@@ -34,7 +34,7 @@ approximation},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}RA-04}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-12}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -51,7 +51,7 @@ singular-value gaps in randomized block Krylov approximation\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} hard\quad\textbf{Importance:} interesting
 to specialist\par}
-{\sffamily\small\bfseries\color{accent}Status: Partially resolved\par}
+{\sffamily\small\bfseries\color{accent}Status: Solved\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
@@ -59,53 +59,44 @@ to specialist\par}
 refinement of an established Krylov bound; specialist impact reflects
 the source's assessment that its practical gain is limited.
 
-\subsection{Partial results ---
-2026-09-12}\label{partial-results-2026-09-12}
+\subsection{Resolution --- affirmative, 13 September
+2026}\label{resolution-affirmative-13-september-2026}
 
-\textbf{Author:} Sidney Holden, Center for Computational Biology,
-Flatiron Institute, Simons Foundation
-(\href{https://www.simonsfoundation.org/people/sidney-holden/}{verified
-affiliation}). The
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/RA04_partial_results.pdf}{complete
-report} and
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/src/report.tex}{editable
-source} establish the following partial results, with \(m=k'=bt\) and
-\(\Delta=\Delta_{k'}^{(b)}\).
+\textbf{Sidney Holden}, Center for Computational Biology, Flatiron
+Institute, Simons Foundation.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-full-proof-2026-09-13/report.pdf}{Theorem
+1.1, Theorem 6.4 and Section 7} settle the exact target below, including
+both norm guarantees, right singular-vector energies and boundary cases,
+without additional spectral assumptions.
 
-Theorem 5.3 proves all three requested guarantees for every admissible
-input with
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-full-proof-2026-09-13/verification/independent-review.md}{independent
+Codex AI-agent informal audit} passed, supporting \textit{Solved} under
+repository policy. No external human peer review or formal verification
+is asserted; no Lean was performed.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-full-proof-2026-09-13/README.md}{Source,
+reproduction and review} ·
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-full-proof-2026-09-13/SUBMISSION.md}{Affiliation,
+provenance and earlier partial submissions}. Ratings are historical; the
+original target is retained.
 
-\[q=O\!\left(\frac{t\log(2m/\Delta)+\log(n/(\delta\varepsilon))}{\sqrt\varepsilon}\right).\]
+\subsection{Earlier partial contributions --- 12--13 September
+2026}\label{earlier-partial-contributions-1213-september-2026}
 
-This has an extra \(t\log m\) term. The requested iteration order holds
-when \(\Delta\leq1/m\) (Corollary 5.4), when the leading spectrum
-consists of exactly \(t\) levels each repeated \(b\) times (Theorem
-6.1), when \(t=2\) with arbitrary admissible leading spectra (Theorem
-7.1), and at the endpoints \(b=1\) and \(b=k\) (Theorem 6.1 and
-Corollary 6.2). Proposition 8.1 gives almost-sure exact optimal
-approximation when \(\mathop{\mathrm{rank}}\nolimits(A)=m\) after
-\(t+1\) blocks. Theorem 4.1 supplies an alternative all-input bound with
-leading term \((m-b+1)\log(3/\Delta)\).
+Holden's
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/RA04_partial_results.pdf}{first
+report} proved an all-input bound with an extra logarithmic term and the
+requested order in several restricted regimes. Its
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/verification/independent-review.md}{independent
+review} is retained. The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-continuation-2026-09-13/report.md}{continuation,
+Sections 3--8}, added narrow-band convergence and exact recovery with
+few distinct lower eigenvalues; its
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-continuation-2026-09-13/verification/independent-review.md}{independent
+review} is also retained. These partial scopes preceded the unrestricted
+resolution above.
 
-\textbf{Remaining target:} the displayed original bound for arbitrary
-growing \(b,t\), nonzero-width leading clusters and \(\Delta>1/m\) is
-neither proved nor disproved. The report's sufficient interpolation
-estimate (IE) remains unproved. Its raw-monomial conditioning
-counterexample (Proposition 9.1) does not refute RA-04, whose algorithm
-depends on the Krylov subspace.
-
-A
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/verification/independent-review.md}{separate
-independent Codex agent review} passed the partial arguments and checked
-the imported convergence theorem against the primary source. This is
-informal AI-agent review, not external human peer review or formal
-verification. It does not meet the complete-resolution requirement for
-\textbf{Solved}.
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/README.md}{Submission
-and reproduction record}.
-
-\subsection{Original problem
-(retained)}\label{original-problem-retained}
+\subsection{Original target (retained)}\label{original-target-retained}
 
 Let \(A\in\mathbb R^{n\times d}\) have singular values
 \(\sigma_1\geq\sigma_2\geq\cdots\). Fix integers \(1\leq b\leq k\), set
@@ -155,7 +146,6 @@ consecutive gap and a leading spectral condition number. The proposed
 bound would explain why a block can accommodate clusters of up to \(b\)
 singular values. It does not ask for a finite-precision extension.
 
-\newpage
 \subsection{References}\label{references}
 
 \begin{enumerate}

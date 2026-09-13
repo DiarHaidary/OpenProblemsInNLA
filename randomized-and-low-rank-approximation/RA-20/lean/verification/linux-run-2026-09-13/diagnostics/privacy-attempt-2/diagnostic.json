@@ -1,0 +1,5 @@
+{
+  "exit_code": 1,
+  "finding": "The literal whitelist in its own Python source is written with byte-string syntax, so the broad regex includes a leading byte-string marker. The corrected scanner recognizes that syntax only when its remaining complete token is one of the same four exact previously identified non-address paths. No additional address or general email pattern is allowed.",
+  "candidate_or_raw_evidence_change": false
+}

@@ -1,0 +1,11 @@
+# Independent review of PR #195 — MI-27
+
+Reviewed 2026-09-13 at `b190a7ca5580669ea98d12e23970581abbe6ae7c`. Result: PASS for the full coefficient-one inequality and sharpness; Solved is appropriate. This is an independent Codex mathematical audit, not Lean verification or external human peer review.
+
+Read the complete 587-line TeX proof, its Markdown counterpart, canonical description and 364-line verifier. The original matrix target and permanent path are retained. The positive-part effect lemma follows from the contraction 2Q-I. At differentiability times the variational comparison with a fixed positive spectral projection establishes the derivative without differentiating that projection; the commutator identity cancels the apparently dangerous factor gamma. Local Lipschitz continuity covers eigenvalue crossings. Both orientations of the hockey-stick divergence are controlled.
+
+Checked the Umegaki integral representation directly against Hirche–Tomamichel, Corollary 2.3, equation (2.22): https://arxiv.org/html/2306.12343v3 . The skew substitutions, two nonnegative kernels, and their exact masses give the binary-entropy constant. Integration of finite differences precedes differentiation of the entropy trace, so the argument does not rely on an unjustified derivative/interchange. Trace-norm duality with the sign of the Hermitian commutator gives the displayed target. The strictly positive two-dimensional family has ratio tending to one. Scalar cases and the appended varying-trace/projection inequalities are consistent.
+
+Reran all six verification groups in isolated Python 3.12.14 (NumPy 2.3.5, SciPy 1.17.0, SymPy 1.14.0): nine exact symbolic identities, 300 positive-part cases and crossing cases, seven high-precision kernel integrals, 20 entropy-integral comparisons, 84 matrix cases, 96 finite-time cases, 32 entropy derivatives and eight sharpness scales passed. Largest entropy-integral discrepancy was 7.33e-15. These computations supplement the universal analytic proof. Rerun evidence: `mi27-rerun.json` in this audit directory.
+
+Visually inspected all seven manuscript and two canonical PDF pages; no clipped mathematics or publication blocker. The shared renderer change only adds MI-27 to its existing reference-page-break list. No blocker found. Preserve the earlier MI-27 partial contribution when integrating.

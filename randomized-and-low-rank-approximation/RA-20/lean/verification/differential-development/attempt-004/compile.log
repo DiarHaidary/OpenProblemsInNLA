@@ -1,0 +1,37 @@
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:62:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:62:63: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:84:13: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:85:4: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:108:13: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  NormedAddCommGroup (Mat n)
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:108:32: error: Application type mismatch: The argument
+  matrixEntry n
+has type
+  Variables n →
+    @ContinuousLinearMap ℂ ℂ Complex.instSemiring Complex.instSemiring (RingHom.id ℂ) (Mat n) instTopologicalSpaceMatrix
+      Matrix.addCommMonoid ℂ PseudoMetricSpace.toUniformSpace.toTopologicalSpace Complex.instAddCommMonoid Matrix.module
+      Semiring.toModule
+but is expected to have type
+  Variables n →
+    @ContinuousLinearMap ℂ ℂ Complex.instSemiring Complex.instSemiring (RingHom.id ℂ) (Mat n)
+      PseudoMetricSpace.toUniformSpace.toTopologicalSpace NormedAddCommGroup.toAddCommGroup.toAddCommMonoid ℂ
+      PseudoMetricSpace.toUniformSpace.toTopologicalSpace Complex.instAddCommMonoid NormedSpace.toModule
+      Semiring.toModule
+in the application
+  sum_squares_fderiv (matrixEntry n)
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:153:21: error: #assert_trust: 'NLA.RA20.full_frobenius_differential_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.full_frobenius_differential_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.RA20.hollow_distance_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.component_hessians_proved' depends on axioms: [propext, Classical.choice, Quot.sound]

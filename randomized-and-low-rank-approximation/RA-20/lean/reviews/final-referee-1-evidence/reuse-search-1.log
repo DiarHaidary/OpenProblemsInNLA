@@ -1,0 +1,11 @@
+Mathlib/RingTheory/Smooth/Quotient.lean:139:  apply (Algebra.FormallySmooth.iff_split_injection surjP).mpr
+Mathlib/RingTheory/Smooth/Quotient.lean:141:  rcases (Algebra.FormallySmooth.iff_split_injection surjP').mp smoothq with ⟨σ, hσ⟩
+Mathlib/RingTheory/Smooth/Local.lean:46:    P.formallySmooth_iff_split_injection]
+Mathlib/RingTheory/Smooth/Pi.lean:32:  fapply FormallySmooth.of_split (Pi.evalAlgHom R A i)
+Mathlib/RingTheory/Smooth/Basic.lean:40:- `Algebra.FormallySmooth.iff_split_surjection`: `A` is formally smooth iff
+Mathlib/RingTheory/Smooth/Basic.lean:44:- `Algebra.FormallySmooth.iff_split_injection`: `A` is formally smooth iff
+Mathlib/RingTheory/Smooth/Basic.lean:287:Also see `Algebra.Extension.formallySmooth_iff_split_injection`
+Mathlib/RingTheory/Smooth/Basic.lean:312:theorem _root_.Algebra.Extension.formallySmooth_iff_split_injection
+Mathlib/RingTheory/Smooth/Basic.lean:315:  refine (Algebra.FormallySmooth.iff_split_injection P.algebraMap_surjective).trans ?_
+Mathlib/RingTheory/Smooth/Basic.lean:437:  rw [Algebra.FormallySmooth.iff_split_surjection (Algebra.ofId R A) h]
+Mathlib/RingTheory/Smooth/NoetherianDescent.lean:222:    (FormallySmooth.iff_split_surjection f P.algebraMap_surjective).mp inferInstance

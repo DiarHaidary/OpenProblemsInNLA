@@ -1,0 +1,78 @@
+/-
+RA-20: actual algebraic smoothness of the reduced union of three planes.
+Formalization: George Stepaniants, Department of Computing and Mathematical Sciences,
+California Institute of Technology, Pasadena, California, USA, with AI assistance.
+Original resolution: the repository's Codex automated maintainer audit.
+The exact infinitesimal lifting and localization APIs are from pinned Mathlib.
+-/
+import NLA.RA20.Definitions
+import Mathlib.RingTheory.Localization.Algebra
+import LeanCert.Tactic.Verification
+import Mathlib.Tactic.Ring
+
+noncomputable section
+
+namespace NLA.RA20
+
+/-- A triple-product hypersurface cannot be formally smooth where every pairwise
+product vanishes. The proof uses an actual square-zero thickening, rather than
+assuming a Jacobian criterion. -/
+theorem triple_product_not_formallySmooth
+    {R P A K : Type*} [CommRing R] [CommRing P] [IsDomain P]
+    [CommRing A] [CommRing K] [Nontrivial K]
+    [Algebra R P] [Algebra R A] [Algebra.FormallySmooth R P]
+    (π : P →ₐ[R] A) (hπ : Function.Surjective π)
+    (a b c : P) (hf : a * b * c ≠ 0)
+    (hker : RingHom.ker π.toRingHom = Ideal.span {a * b * c})
+    (e : P →+* K) (hab : e (a * b) = 0) (hac : e (a * c) = 0)
+    (hbc : e (b * c) = 0) : ¬ Algebra.FormallySmooth R A := by
+  intro hs
+  obtain ⟨g, hg⟩ := (Algebra.FormallySmooth.iff_split_surjection π hπ).mp hs
+  obtain ⟨a', ha'⟩ := Ideal.Quotient.mk_surjective (g (π a))
+  obtain ⟨b', hb'⟩ := Ideal.Quotient.mk_surjective (g (π b))
+  obtain ⟨c', hc'⟩ := Ideal.Quotient.mk_surjective (g (π c))
+  have preimage (x x' : P)
+      (hx : Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2) x' = g (π x)) :
+      ∃ t : P, x' = x + (a * b * c) * t := by
+    have h : π x' = π x := by
+      simpa only [AlgHom.kerSquareLift_mk, AlgHom.comp_apply, AlgHom.id_apply]
+        using (congrArg π.kerSquareLift hx).trans (AlgHom.congr_fun hg (π x))
+    have hm : x' - x ∈ Ideal.span {a * b * c} := by
+      rw [← hker, RingHom.mem_ker]
+      change π (x' - x) = 0
+      rw [map_sub, h, sub_self]
+    obtain ⟨t, ht⟩ := Ideal.mem_span_singleton.mp hm
+    exact ⟨t, by linear_combination ht⟩
+  obtain ⟨u, hu⟩ := preimage a a' ha'
+  obtain ⟨v, hv⟩ := preimage b b' hb'
+  obtain ⟨w, hw⟩ := preimage c c' hc'
+  have hzero : π (a * b * c) = 0 := by
+    change π.toRingHom (a * b * c) = 0
+    apply RingHom.mem_ker.mp
+    rw [hker]
+    exact Ideal.mem_span_singleton_self _
+  have hm : a' * b' * c' ∈ RingHom.ker π.toRingHom ^ 2 := by
+    apply Ideal.Quotient.eq_zero_iff_mem.mp
+    rw [map_mul, map_mul, ha', hb', hc', ← map_mul, ← map_mul,
+      ← map_mul, ← map_mul, hzero, map_zero]
+  rw [hker, Ideal.span_singleton_pow] at hm
+  obtain ⟨t, ht⟩ := Ideal.mem_span_singleton.mp hm
+  have heq :
+      1 + b * c * u + a * c * v + a * b * w +
+        (a * b * c) * (c * u * v + b * u * w + a * v * w) +
+        (a * b * c)^2 * u * v * w = (a * b * c) * t := by
+    apply mul_left_cancel₀ hf
+    calc
+      a * b * c * _ = a' * b' * c' := by rw [hu, hv, hw]; ring
+      _ = (a * b * c)^2 * t := ht.symm
+      _ = (a * b * c) * ((a * b * c) * t) := by ring
+  have hef : e (a * b * c) = 0 := by rw [map_mul, hab, zero_mul]
+  have h01 := congrArg e heq
+  simp only [map_add, map_one, map_mul, map_pow, hef, hab, hac, hbc,
+    zero_mul, add_zero, zero_pow two_ne_zero] at h01
+  exact one_ne_zero h01
+
+#assert_trust kernel triple_product_not_formallySmooth
+#print axioms triple_product_not_formallySmooth
+
+end NLA.RA20

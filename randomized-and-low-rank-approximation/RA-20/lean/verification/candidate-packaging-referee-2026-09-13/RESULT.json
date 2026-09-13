@@ -1,0 +1,543 @@
+{
+  "utc": "2026-09-13T06:38:41.420897+00:00",
+  "status": "INDEPENDENT_FIXED_CANDIDATE_CHECKS_PASS",
+  "reviewer": "/root/ra20_final_referee2",
+  "role": "Independent metadata/reproduction/evidence-preservation reviewer; previously final mathematical referee 2; no new mathematical approval",
+  "author_handoff_sha256": "b2277179cad1d686c684abe6f676fe9680e5510d26935f7c7a72205ba79db4ae",
+  "author_manifest_sha256": "60f056cd293d2b093786a34e55b670975dd6b27e7e927acdbf8513438c28b381",
+  "README_sha256": "83e19faf1bf25a9748de40da3193cfd68690100923a50379553e288c45b5e8bc",
+  "YAML_sha256": "bec9d851e204464fa2d3e29033d5958034665d51c3554d2043f1470bfafd4197",
+  "coordinator_gate_sha256": "a1c7ffebd2c0db8159b9861adf3663051b8e03346b776393553773d97e0abbbb",
+  "author_bound_files": 1010,
+  "author_project_files": 992,
+  "baseline_preserved": 958,
+  "changed_prior_paths": [
+    "README.md"
+  ],
+  "sole_historical_archive_sha256": "7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50",
+  "proof_inputs": 521,
+  "statement_inputs": 68,
+  "original_Git_and_live_and_snapshot_sources": 16,
+  "historical_nested_inventories": [
+    {
+      "file": "reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "360b0d841ebd8cb7219b39997e0b0a2617be32abfef461866d0f022ca134f70d",
+      "bound_files": 699
+    },
+    {
+      "file": "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "7fc642361790960be2d3a584d2842dc688d13511d93220907abc0d7ab951318c",
+      "bound_files": 793
+    },
+    {
+      "file": "reviews/statement-package-manifest.json",
+      "sha256": "f703189ce7532af272df37e521ce9d703d01aaa9733cd7aa7d1f45813b0e5fa6",
+      "bound_files": 70
+    },
+    {
+      "file": "reviews/statement-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "5a0ca5bdd0db73e72739a581cd878eb554d01df0e77b252f13215214a7c97f0d",
+      "bound_files": 12
+    },
+    {
+      "file": "reviews/statement-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "838f724a397105f7ae0c53b5156bc53cbb8c6362e705ba4feaf085c315ba736b",
+      "bound_files": 98
+    },
+    {
+      "file": "verification/algebra-development/EVIDENCE-MANIFEST.json",
+      "sha256": "c17f5f2bc0dc187ab4f024d0ccc2027023dd058f165dff827050b39cdc616f6f",
+      "bound_files": 148
+    },
+    {
+      "file": "verification/conclusion-development/EVIDENCE-MANIFEST.json",
+      "sha256": "08a46ab6aac719684b7376b1e92717e25a3bc8fa5aa2a54429a0c6d4b86466ab",
+      "bound_files": 513
+    },
+    {
+      "file": "verification/critical-development/EVIDENCE-MANIFEST.json",
+      "sha256": "447880d6364257b0b3a6446bf23f7af8431cc6b793089722dc8a964e042aba0e",
+      "bound_files": 77
+    },
+    {
+      "file": "verification/differential-development/EVIDENCE-MANIFEST.json",
+      "sha256": "92bfee1c031660ffe542ace9f04c602009b35dbb95a95b513affca5913ca9a7f",
+      "bound_files": 159
+    },
+    {
+      "file": "verification/generic-development/EVIDENCE-MANIFEST.json",
+      "sha256": "6478ce518b17eb81293c87262c3566b731d42e1e3a4e9986b39806628d466404",
+      "bound_files": 165
+    },
+    {
+      "file": "verification/root-proof-acceptance-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "821cdca57cc846c5a9d76d90f8396942d4efa73eef616f358b8cbca56bd529ff",
+      "bound_files": 3
+    },
+    {
+      "file": "verification/smooth-development/EVIDENCE-MANIFEST.json",
+      "sha256": "50387281334c42d07d268d96ae43d26b029588c7fa75d77d0de8d4dbff7f9187",
+      "bound_files": 89
+    },
+    {
+      "file": "verification/smooth-transport-development/EVIDENCE-MANIFEST.json",
+      "sha256": "33e3483ef20efc2bc3a6b4846922a2d5e08efd2177bba3f580ec52fb10c1c0a4",
+      "bound_files": 13
+    },
+    {
+      "file": "verification/tangent-development/EVIDENCE-MANIFEST.json",
+      "sha256": "30de2c667e003d8576716d2e9df2a6ef0b7f93fa1d5cb37f951f186df6c0f3f5",
+      "bound_files": 180
+    }
+  ],
+  "complete_final_reviews": [
+    {
+      "reviewer": "/root/ra20_final_referee1",
+      "report": "reviews/final-referee-1.md",
+      "sha256": "2a313084cdc1c06be789181bf05d9874bde020483d501151bc224b5af896e345",
+      "evidence": {
+        "file": "reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json",
+        "sha256": "360b0d841ebd8cb7219b39997e0b0a2617be32abfef461866d0f022ca134f70d",
+        "bound_files": 699
+      },
+      "successful_fresh_source_commands": 13,
+      "actual_project_closure": 214,
+      "required_material_dependencies": 39,
+      "source_kernel_assertions": 61,
+      "additional_kernel_assertions": 12,
+      "actual_standard_three_reports": 69
+    },
+    {
+      "reviewer": "/root/ra20_final_referee2",
+      "report": "reviews/final-referee-2.md",
+      "sha256": "d7cfa1404c147ae19cec776e2047c85b6bdfd1484192a1cbbb171ed9afa7dbcf",
+      "evidence": {
+        "file": "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json",
+        "sha256": "7fc642361790960be2d3a584d2842dc688d13511d93220907abc0d7ab951318c",
+        "bound_files": 793
+      },
+      "successful_fresh_source_commands": 13,
+      "actual_project_closure": 214,
+      "required_material_dependencies": 28,
+      "source_kernel_assertions": 61,
+      "additional_kernel_assertions": 12,
+      "actual_standard_three_reports": 69
+    }
+  ],
+  "all_twelve_exact_metadata_alignment_exports": [
+    "NLA.RA20.hollow_variety_semantics",
+    "NLA.RA20.reduced_coordinate_ring",
+    "NLA.RA20.algebraic_smooth_locus",
+    "NLA.RA20.algebraic_tangent_space",
+    "NLA.RA20.full_frobenius_differential",
+    "NLA.RA20.hollow_distance_semantics",
+    "NLA.RA20.generic_critical_locus",
+    "NLA.RA20.component_hessians",
+    "NLA.RA20.generic_data_intersection",
+    "NLA.RA20.generic_count_three",
+    "NLA.RA20.generic_count_not_four",
+    "NLA.RA20.not_criticalCountConjecture"
+  ],
+  "pinned_packages": {
+    "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+    "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+  },
+  "relative_links": [
+    {
+      "document": "README.md",
+      "label": "coordinator accepted both\nreports",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/final-review-acceptance.json",
+      "sha256": "a1c7ffebd2c0db8159b9861adf3663051b8e03346b776393553773d97e0abbbb"
+    },
+    {
+      "document": "README.md",
+      "label": "Definitions",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/NLA/RA20/Definitions.lean",
+      "sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94"
+    },
+    {
+      "document": "README.md",
+      "label": "Solution",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "document": "README.md",
+      "label": "Comparator configuration",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "document": "README.md",
+      "label": "The proof map",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/PROOF_MAP.md",
+      "sha256": "9a1ed03e395a26fd4e3557623caa0bef892a4cd1c0cbc64dd097e5635eda917c"
+    },
+    {
+      "document": "README.md",
+      "label": "Numerical and mathematical targets",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/NUMERICAL_TARGETS.md",
+      "sha256": "49f21f2c6ab50b9f74b11cf0e37312dde08a4b7ddc62a17d37c6e3fb091f6e6d"
+    },
+    {
+      "document": "README.md",
+      "label": "Challenge",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/Challenge.lean",
+      "sha256": "eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9"
+    },
+    {
+      "document": "README.md",
+      "label": "statement freeze",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/reviews/statement-freeze.json",
+      "sha256": "6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8"
+    },
+    {
+      "document": "README.md",
+      "label": "proof-start gate",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/proof-start.json",
+      "sha256": "9fe55d622e50390cb3ed439989b9393455fa48eb50d42d84fb33c20fd8c883f3"
+    },
+    {
+      "document": "README.md",
+      "label": "complete proof freeze",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/proof-freeze.json",
+      "sha256": "f66dfe47527df937de8ed399606206bdaef55717cef8d68808f60834aece0c6f"
+    },
+    {
+      "document": "README.md",
+      "label": "author completion",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/reviews/proof-completion.md",
+      "sha256": "56764086d6f4a4faec342a33a890aaa3fd7ba4882a8447e2e5bcdf30c953f3b5"
+    },
+    {
+      "document": "README.md",
+      "label": "Final referee 1",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/reviews/final-referee-1.md",
+      "sha256": "2a313084cdc1c06be789181bf05d9874bde020483d501151bc224b5af896e345"
+    },
+    {
+      "document": "README.md",
+      "label": "Final referee 2",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/reviews/final-referee-2.md",
+      "sha256": "d7cfa1404c147ae19cec776e2047c85b6bdfd1484192a1cbbb171ed9afa7dbcf"
+    },
+    {
+      "document": "README.md",
+      "label": "final-review gate",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/final-review-acceptance.json",
+      "sha256": "a1c7ffebd2c0db8159b9861adf3663051b8e03346b776393553773d97e0abbbb"
+    },
+    {
+      "document": "README.md",
+      "label": "statement-stage README",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/pre-candidate-README.md",
+      "sha256": "7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50"
+    },
+    {
+      "document": "README.md",
+      "label": "SourceCorrespondence",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/SourceCorrespondence.md",
+      "sha256": "a74bb3d1868a04495a975e7a4a57dba8570f841c3838b35858d2ed5c1e40c36b"
+    },
+    {
+      "document": "README.md",
+      "label": "candidate installation record",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "sha256": "b2277179cad1d686c684abe6f676fe9680e5510d26935f7c7a72205ba79db4ae"
+    },
+    {
+      "document": "README.md",
+      "label": "lake-manifest.json",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/lake-manifest.json",
+      "sha256": "d702ffa473f5b78d8b5dcbd4f1afb640738265470f6124f69bfa13e120ad165a"
+    },
+    {
+      "document": "README.md",
+      "label": "Linux prerequisites and isolation",
+      "target": "tools/lean/HARNESS.md",
+      "sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4"
+    },
+    {
+      "document": "README.md",
+      "label": "formalization.yaml",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/formalization.yaml",
+      "sha256": "bec9d851e204464fa2d3e29033d5958034665d51c3554d2043f1470bfafd4197"
+    },
+    {
+      "document": "README.md",
+      "label": "v0.4 metadata schema",
+      "target": "docs/lean/schema/README.md",
+      "sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb"
+    },
+    {
+      "document": "README.md",
+      "label": "Tau Ceti adaptation",
+      "target": "docs/lean/REVIEW.md",
+      "sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553"
+    },
+    {
+      "document": "verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "label": "installation receipt",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13/installation.json",
+      "sha256": "4ebd760e4d36633039f1fd42f9d3bd3755b9f5696b15391bb18c1ed3e35f39e9"
+    },
+    {
+      "document": "verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "label": "author check results",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13/CHECKS.json",
+      "sha256": "d1aebfbe7e4c7d6fff464225b123229399b5279b1a4d55f2c84674492fb8a45e"
+    },
+    {
+      "document": "verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "label": "preinstallation gate and complete baseline",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13/preflight.json",
+      "sha256": "a6540a7a937fc0298954cf5b508f0354881fec87e832f80f223773c6f9cd0210"
+    },
+    {
+      "document": "verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "label": "complete inventory",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "60f056cd293d2b093786a34e55b670975dd6b27e7e927acdbf8513438c28b381"
+    },
+    {
+      "document": "verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "label": "Publication hygiene results",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13/HYGIENE.json",
+      "sha256": "14450e03cc8663faab295e29247abbdaf6ed06620b276d34d3eceb07b66b6960"
+    },
+    {
+      "document": "verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "label": "the read diagnostic",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13/preflight-read-diagnostic.json",
+      "sha256": "afed99521239fc3aa890cfd32be656afdd2a86d5616f0db3d1361f239ca9a530"
+    },
+    {
+      "document": "verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "label": "Preseal validation",
+      "target": "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13/VALIDATION.json",
+      "sha256": "4fb248d9c004e98f1b34d16ba620db40ba4093501f710bed8fe059d9052f7a8d"
+    }
+  ],
+  "original_immutable_links": [
+    "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/randomized-and-low-rank-approximation/RA-20/README.md",
+    "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/randomized-and-low-rank-approximation/RA-20/solution.md"
+  ],
+  "metadata_file_paths": [
+    {
+      "key": "/status/main_results/0/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/0/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/1/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/1/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/2/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/2/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/3/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/3/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/4/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/4/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/5/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/5/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/6/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/6/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/7/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/7/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/8/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/8/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/9/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/9/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/10/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/10/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/status/main_results/11/file",
+      "path": "Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5"
+    },
+    {
+      "key": "/status/main_results/11/comparator_config",
+      "path": "comparator.json",
+      "sha256": "6c2cdc312b67ae62ce0d453504f83b7bba392d4ef9c0dc21d35dbd20287089c2"
+    },
+    {
+      "key": "/toolchain/dependency_manifest",
+      "path": "lake-manifest.json",
+      "sha256": "d702ffa473f5b78d8b5dcbd4f1afb640738265470f6124f69bfa13e120ad165a"
+    },
+    {
+      "key": "/review/statement_freeze/file",
+      "path": "reviews/statement-freeze.json",
+      "sha256": "6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8"
+    },
+    {
+      "key": "/review/proof_freeze/file",
+      "path": "verification/proof-freeze.json",
+      "sha256": "f66dfe47527df937de8ed399606206bdaef55717cef8d68808f60834aece0c6f"
+    },
+    {
+      "key": "/review/statement_gate/file",
+      "path": "verification/proof-start.json",
+      "sha256": "9fe55d622e50390cb3ed439989b9393455fa48eb50d42d84fb33c20fd8c883f3"
+    },
+    {
+      "key": "/review/statement_reports/0/file",
+      "path": "reviews/statement-referee-1.md",
+      "sha256": "bf0f1decd2e67f6230e9655f4c669be9c868001c8259b4fd2461b8cf90988904"
+    },
+    {
+      "key": "/review/statement_reports/1/file",
+      "path": "reviews/statement-referee-2.md",
+      "sha256": "542cfa5fb183aa7bfa4b79ad9ab1c16bb32b77e713e10414d4c8bae50c0873a2"
+    },
+    {
+      "key": "/review/proof_reports/0/file",
+      "path": "reviews/final-referee-1.md",
+      "sha256": "2a313084cdc1c06be789181bf05d9874bde020483d501151bc224b5af896e345"
+    },
+    {
+      "key": "/review/proof_reports/1/file",
+      "path": "reviews/final-referee-2.md",
+      "sha256": "d7cfa1404c147ae19cec776e2047c85b6bdfd1484192a1cbbb171ed9afa7dbcf"
+    },
+    {
+      "key": "/review/proof_report_evidence/reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "path": "reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "360b0d841ebd8cb7219b39997e0b0a2617be32abfef461866d0f022ca134f70d"
+    },
+    {
+      "key": "/review/proof_report_evidence/reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "path": "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "7fc642361790960be2d3a584d2842dc688d13511d93220907abc0d7ab951318c"
+    },
+    {
+      "key": "/review/coordinator_acceptance/file",
+      "path": "verification/final-review-acceptance.json",
+      "sha256": "a1c7ffebd2c0db8159b9861adf3663051b8e03346b776393553773d97e0abbbb"
+    },
+    {
+      "key": "/review/candidate_documents/frozen_readme_archive",
+      "path": "verification/pre-candidate-README.md",
+      "sha256": "7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50"
+    },
+    {
+      "key": "/review/candidate_documents/installation_evidence",
+      "path": "verification/linux-candidate-2026-09-13/HANDOFF.md",
+      "sha256": "b2277179cad1d686c684abe6f676fe9680e5510d26935f7c7a72205ba79db4ae"
+    },
+    {
+      "key": "/review/standards/adaptation",
+      "path": "../../../docs/lean/REVIEW.md",
+      "sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553"
+    },
+    {
+      "key": "/review/standards/local_schema",
+      "path": "../../../docs/lean/schema/v0.4.schema.json",
+      "sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce"
+    },
+    {
+      "key": "/reproduction/authoritative_Linux/prerequisites_document",
+      "path": "../../../tools/lean/HARNESS.md",
+      "sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4"
+    }
+  ],
+  "audit_diagnostics": "One reviewer link-count assertion failed before correction; complete source/log preserved. Sixteen original Git receipts reused with exact command, successful exit and raw-log hash checks during resume.",
+  "recorded_commands": 21,
+  "new_Lean_builds": 0,
+  "Linux_Comparator_default_kernel_controls": "pending, not run in this audit",
+  "canonical_status": "Solved, unchanged",
+  "operational_review": "pending",
+  "publication": "pending",
+  "candidate_document_email_like_matches": 0
+}

@@ -1,0 +1,147 @@
+import Mathlib.Analysis.Calculus.FDeriv.Basic
+import Mathlib.Analysis.Complex.Basic
+import Mathlib.LinearAlgebra.Matrix.Rank
+import Mathlib.LinearAlgebra.Matrix.Notation
+import Mathlib.RingTheory.Nullstellensatz
+import Mathlib.RingTheory.Smooth.Locus
+import Mathlib.Algebra.MvPolynomial.PDeriv
+
+/-!
+# RA-20: genuine algebraic critical-point definitions (statement draft)
+
+Formalization author: George Stepaniants, Department of Computing and Mathematical
+Sciences, California Institute of Technology, Pasadena, California, USA.
+Original negative-resolution mathematics: the Codex automated maintainer audit
+retained by OpenProblemsInNLA. The conjecture is due to Kubjas, Sodomaco and Tsigaridas.
+
+The smooth locus below is Mathlib's algebraic smooth locus of the reduced
+coordinate ring, not the matrix rank-two stratum or a coordinate-case predicate.
+The tangent space uses the entire vanishing ideal. Distances and derivatives are
+complex bilinear; they contain no complex conjugation. Genericity means a
+nonempty principal Zariski-open set in the full space of symmetric data.
+-/
+
+noncomputable section
+open scoped BigOperators
+
+namespace NLA.RA20
+
+abbrev Mat (n : ℕ) := Matrix (Fin n) (Fin n) ℂ
+abbrev Variables (n : ℕ) := Fin n × Fin n
+abbrev Poly (n : ℕ) := MvPolynomial (Variables n) ℂ
+
+def coordinates {n : ℕ} (X : Mat n) : Variables n → ℂ :=
+  fun ij => X ij.1 ij.2
+
+def matrixOfCoordinates {n : ℕ} (x : Variables n → ℂ) : Mat n :=
+  fun i j => x (i, j)
+
+/-- The actual symmetric rank-at-most-two variety, with the first `s` diagonal
+entries zero. The canonical parameter range is imposed by the conjecture. -/
+def variety (n s : ℕ) : Set (Mat n) :=
+  {X | X.IsSymm ∧ X.rank ≤ 2 ∧ ∀ i : Fin n, i.val < s → X i i = 0}
+
+def coordinateVariety (n s : ℕ) : Set (Variables n → ℂ) :=
+  {x | matrixOfCoordinates x ∈ variety n s}
+
+/-- Taking all polynomials vanishing on the actual point set gives its reduced
+coordinate ring, independently of any proposed equations or chosen generators. -/
+def definingIdeal (n s : ℕ) : Ideal (Poly n) :=
+  MvPolynomial.vanishingIdeal ℂ (coordinateVariety n s)
+
+abbrev CoordinateRing (n s : ℕ) := Poly n ⧸ definingIdeal n s
+
+/-- A point is smooth precisely when its point prime in the reduced coordinate
+ring lies in Mathlib's smooth locus over `ℂ`. The prime is specified by its
+pullback, so no prime, chart, dimension or Jacobian-rank assumption is supplied. -/
+def SmoothPoint (n s : ℕ) (X : Mat n) : Prop :=
+  X ∈ variety n s ∧
+    ∃ p : PrimeSpectrum (CoordinateRing n s),
+      PrimeSpectrum.comap (Ideal.Quotient.mk (definingIdeal n s)) p =
+        MvPolynomial.pointToPoint (coordinates X) ∧
+      p ∈ Algebra.smoothLocus ℂ (CoordinateRing n s)
+
+/-- The Zariski tangent directions annihilate the differentials of every
+polynomial in the reduced defining ideal. -/
+def TangentVector (n s : ℕ) (X Z : Mat n) : Prop :=
+  ∀ p ∈ definingIdeal n s,
+    (∑ ij : Variables n,
+      MvPolynomial.eval (coordinates X) (MvPolynomial.pderiv ij p) *
+        coordinates Z ij) = 0
+
+/-- The complex bilinear extension of the full Frobenius squared distance.
+On symmetric matrices, each off-diagonal term occurs twice. -/
+def fullFrobeniusDistance {n : ℕ} (U X : Mat n) : ℂ :=
+  ∑ i, ∑ j, (X i j - U i j) ^ 2
+
+def SmoothCriticalPoint (n s : ℕ) (U X : Mat n) : Prop :=
+  SmoothPoint n s X ∧
+    ∀ Z : Mat n, TangentVector n s X Z →
+      fderiv ℂ (fullFrobeniusDistance U) X Z = 0
+
+def criticalSet (n s : ℕ) (U : Mat n) : Set (Mat n) :=
+  {X | SmoothCriticalPoint n s U X}
+
+/-- A cardinal equality, so an infinite critical set is never silently assigned
+the finite count zero. -/
+def HasCriticalCount (n s : ℕ) (U : Mat n) (m : ℕ) : Prop :=
+  Cardinal.mk {X : Mat n // X ∈ criticalSet n s U} = (m : Cardinal)
+
+/-- A genuine generic count: the exceptional polynomial need not be the one
+used by the counterexample, and must not vanish identically on symmetric data.
+Any nonempty Zariski-open set contains such a nonempty principal open set. -/
+def HasGenericCriticalCount (n s m : ℕ) : Prop :=
+  ∃ q : Poly n,
+    (∃ U : Mat n, U.IsSymm ∧ MvPolynomial.eval (coordinates U) q ≠ 0) ∧
+    ∀ U : Mat n, U.IsSymm → MvPolynomial.eval (coordinates U) q ≠ 0 →
+      HasCriticalCount n s U m
+
+def predictedCount (n s : ℕ) : ℕ :=
+  if s = 1 then 3 * (n - 1) - 2
+  else if s = 2 then 9 * (n - 2) - 2
+  else if s = 3 then 27 * (n - 3) + 4
+  else if s = 4 then 81 * (n - 4) + 28
+  else 0
+
+/-- All four original formulas and their complete common parameter range. -/
+def criticalCountConjecture : Prop :=
+  ∀ n s : ℕ, 3 ≤ n → 1 ≤ s → s ≤ 4 → s ≤ n →
+    HasGenericCriticalCount n s (predictedCount n s)
+
+def hollow {R : Type*} [Zero R] (a b c : R) : Matrix (Fin 3) (Fin 3) R :=
+  !![0, a, b; a, 0, c; b, c, 0]
+
+def ExactlyOneZero (a b c : ℂ) : Prop :=
+  (a = 0 ∧ b ≠ 0 ∧ c ≠ 0) ∨
+  (a ≠ 0 ∧ b = 0 ∧ c ≠ 0) ∨
+  (a ≠ 0 ∧ b ≠ 0 ∧ c = 0)
+
+abbrev ABCPoly := MvPolynomial (Fin 3) ℂ
+def abcPolynomial : ABCPoly :=
+  MvPolynomial.X 0 * MvPolynomial.X 1 * MvPolynomial.X 2
+def abcIdeal : Ideal ABCPoly := Ideal.span {abcPolynomial}
+abbrev ABCCoordinateRing := ABCPoly ⧸ abcIdeal
+
+def polynomialHollow : Matrix (Fin 3) (Fin 3) ABCPoly :=
+  hollow (MvPolynomial.X 0) (MvPolynomial.X 1) (MvPolynomial.X 2)
+
+/-- The principal-open certificate for generic symmetric three-by-three data. -/
+def genericPolynomial : Poly 3 :=
+  MvPolynomial.X (0, 1) * MvPolynomial.X (0, 2) * MvPolynomial.X (1, 2)
+
+def GenericData (U : Mat 3) : Prop :=
+  U.IsSymm ∧ U 0 1 * U 0 2 * U 1 2 ≠ 0
+
+def candidate (U : Mat 3) (i : Fin 3) : Mat 3 :=
+  if i = 0 then hollow 0 (U 0 2) (U 1 2)
+  else if i = 1 then hollow (U 0 1) 0 (U 1 2)
+  else hollow (U 0 1) (U 0 2) 0
+
+/-- Coordinates on one of the three actual plane components, used only for the
+nondegeneracy supporting theorem; these do not define the smooth locus. -/
+def planeCoordinates (i : Fin 3) (z : Fin 2 → ℂ) : Mat 3 :=
+  if i = 0 then hollow 0 (z 0) (z 1)
+  else if i = 1 then hollow (z 0) 0 (z 1)
+  else hollow (z 0) (z 1) 0
+
+end NLA.RA20

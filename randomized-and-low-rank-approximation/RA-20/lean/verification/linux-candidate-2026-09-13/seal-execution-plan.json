@@ -1,0 +1,19 @@
+{
+  "scope": "Planned final one-shot seal and read-only postseal validation; this plan is not an execution claim",
+  "commands": [
+    [
+      "python3",
+      "seal_inventory.py"
+    ],
+    [
+      "python3",
+      "verify_inventory.py"
+    ]
+  ],
+  "cwd": "/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/linux-candidate-2026-09-13",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "GIT_OPTIONAL_LOCKS": "0"
+  },
+  "postseal_output": "Printed directly to the coordinator; no new file written inside the sealed evidence directory"
+}

@@ -1,0 +1,9 @@
+'NLA.RA20.triple_product_not_formallySmooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:104:73: error: unexpected token 'set_option'; expected 'lemma'
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:123:8: error: typeclass instance problem is stuck
+  IsLocalization ?m.27 (ABCLocal p)
+
+Note: Lean will not try to resolve this typeclass instance problem because the third type argument to `IsLocalization` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+'NLA.RA20.formallySmooth_of_retraction' depends on axioms: [propext, Classical.choice, Quot.sound]

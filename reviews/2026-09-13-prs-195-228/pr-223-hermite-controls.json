@@ -1,0 +1,85 @@
+[
+  {
+    "polynomial": "x**2 + 1",
+    "inertia": {
+      "positive": 1,
+      "negative": 1,
+      "zero": 0,
+      "signature": 0,
+      "congruence_steps": [
+        {
+          "kind": "one",
+          "pivot": "2",
+          "permutation": [
+            0,
+            1
+          ]
+        },
+        {
+          "kind": "one",
+          "pivot": "-2",
+          "permutation": [
+            0
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "polynomial": "x**2",
+    "inertia": {
+      "positive": 1,
+      "negative": 0,
+      "zero": 1,
+      "signature": 1,
+      "congruence_steps": [
+        {
+          "kind": "one",
+          "pivot": "2",
+          "permutation": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "polynomial": "(x - 1)**2*(x**2 + 1)",
+    "inertia": {
+      "positive": 2,
+      "negative": 1,
+      "zero": 1,
+      "signature": 1,
+      "congruence_steps": [
+        {
+          "kind": "one",
+          "pivot": "4",
+          "permutation": [
+            0,
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "kind": "one",
+          "pivot": "-1",
+          "permutation": [
+            0,
+            1,
+            2
+          ]
+        },
+        {
+          "kind": "one",
+          "pivot": "8",
+          "permutation": [
+            0,
+            1
+          ]
+        }
+      ]
+    }
+  }
+]

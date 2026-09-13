@@ -1,0 +1,132 @@
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:41:44: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  π x'
+in the target expression
+  π.toRingHom x' - π.toRingHom x = 0
+
+R : Type u_1
+P : Type u_2
+A : Type u_3
+K : Type u_4
+inst✝⁸ : CommRing R
+inst✝⁷ : CommRing P
+inst✝⁶ : IsDomain P
+inst✝⁵ : CommRing A
+inst✝⁴ : CommRing K
+inst✝³ : Nontrivial K
+inst✝² : Algebra R P
+inst✝¹ : Algebra R A
+inst✝ : Algebra.FormallySmooth R P
+π : P →ₐ[R] A
+hπ : Function.Surjective ⇑π
+a b c : P
+hf : a * b * c ≠ 0
+hker : RingHom.ker π.toRingHom = Ideal.span {a * b * c}
+e : P →+* K
+hab : e (a * b) = 0
+hac : e (a * c) = 0
+hbc : e (b * c) = 0
+hs : Algebra.FormallySmooth R A
+g : A →ₐ[R] P ⧸ RingHom.ker π.toRingHom ^ 2
+hg : π.kerSquareLift.comp g = AlgHom.id R A
+a' : P
+ha' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) a' = g (π a)
+b' : P
+hb' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) b' = g (π b)
+c' : P
+hc' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) c' = g (π c)
+x x' : P
+hx : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) x' = g (π x)
+h : π x' = π x
+⊢ π.toRingHom x' - π.toRingHom x = 0
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:49:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  RingHom.ker π.toRingHom
+in the target expression
+  a * b * c ∈ RingHom.ker π
+
+R : Type u_1
+P : Type u_2
+A : Type u_3
+K : Type u_4
+inst✝⁸ : CommRing R
+inst✝⁷ : CommRing P
+inst✝⁶ : IsDomain P
+inst✝⁵ : CommRing A
+inst✝⁴ : CommRing K
+inst✝³ : Nontrivial K
+inst✝² : Algebra R P
+inst✝¹ : Algebra R A
+inst✝ : Algebra.FormallySmooth R P
+π : P →ₐ[R] A
+hπ : Function.Surjective ⇑π
+a b c : P
+hf : a * b * c ≠ 0
+hker : RingHom.ker π.toRingHom = Ideal.span {a * b * c}
+e : P →+* K
+hab : e (a * b) = 0
+hac : e (a * c) = 0
+hbc : e (b * c) = 0
+hs : Algebra.FormallySmooth R A
+g : A →ₐ[R] P ⧸ RingHom.ker π.toRingHom ^ 2
+hg : π.kerSquareLift.comp g = AlgHom.id R A
+a' : P
+ha' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) a' = g (π a)
+b' : P
+hb' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) b' = g (π b)
+c' : P
+hc' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) c' = g (π c)
+preimage : ∀ (x x' : P), (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) x' = g (π x) → ∃ t, x' = x + a * b * c * t
+u : P
+hu : a' = a + a * b * c * u
+v : P
+hv : b' = b + a * b * c * v
+w : P
+hw : c' = c + a * b * c * w
+⊢ a * b * c ∈ RingHom.ker π
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:55:12: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  Ideal.span {?s ^ ?n}
+in the target expression
+  a' * b' * c' ∈ Ideal.span {a * b * c} ^ 2
+
+R : Type u_1
+P : Type u_2
+A : Type u_3
+K : Type u_4
+inst✝⁸ : CommRing R
+inst✝⁷ : CommRing P
+inst✝⁶ : IsDomain P
+inst✝⁵ : CommRing A
+inst✝⁴ : CommRing K
+inst✝³ : Nontrivial K
+inst✝² : Algebra R P
+inst✝¹ : Algebra R A
+inst✝ : Algebra.FormallySmooth R P
+π : P →ₐ[R] A
+hπ : Function.Surjective ⇑π
+a b c : P
+hf : a * b * c ≠ 0
+hker : RingHom.ker π.toRingHom = Ideal.span {a * b * c}
+e : P →+* K
+hab : e (a * b) = 0
+hac : e (a * c) = 0
+hbc : e (b * c) = 0
+hs : Algebra.FormallySmooth R A
+g : A →ₐ[R] P ⧸ RingHom.ker π.toRingHom ^ 2
+hg : π.kerSquareLift.comp g = AlgHom.id R A
+a' : P
+ha' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) a' = g (π a)
+b' : P
+hb' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) b' = g (π b)
+c' : P
+hc' : (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) c' = g (π c)
+preimage : ∀ (x x' : P), (Ideal.Quotient.mk (RingHom.ker π.toRingHom ^ 2)) x' = g (π x) → ∃ t, x' = x + a * b * c * t
+u : P
+hu : a' = a + a * b * c * u
+v : P
+hv : b' = b + a * b * c * v
+w : P
+hw : c' = c + a * b * c * w
+hzero : π (a * b * c) = 0
+hm : a' * b' * c' ∈ Ideal.span {a * b * c} ^ 2
+⊢ False
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:72:48: error(lean.unknownIdentifier): Unknown constant `kernel`
+'NLA.RA20.triple_product_not_formallySmooth' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,0 +1,88 @@
+{
+  "utc": "2026-09-13T05:19:31.525279+00:00",
+  "status": "PASS scoped Generic helper packaging/inspection, exact contract 9 only",
+  "implementation_author": "/root",
+  "packager_inspector": "/root/mf16_final_referee",
+  "independent_final_mathematical_approval": false,
+  "helper_source_sha256": "47676372aa8e028a2c12bf6c23951b0edf5b7404a18abd24487d36399b7fb007",
+  "frozen_inputs": 68,
+  "original_source_Git_blobs": 16,
+  "nested_statement_inventories": {
+    "reviews/statement-package-manifest.json": {
+      "sha256": "f703189ce7532af272df37e521ce9d703d01aaa9733cd7aa7d1f45813b0e5fa6",
+      "bound_files": 70
+    },
+    "reviews/statement-referee-1-evidence/EVIDENCE-MANIFEST.json": {
+      "sha256": "5a0ca5bdd0db73e72739a581cd878eb554d01df0e77b252f13215214a7c97f0d",
+      "bound_files": 12
+    },
+    "reviews/statement-referee-2-evidence/EVIDENCE-MANIFEST.json": {
+      "sha256": "838f724a397105f7ae0c53b5156bc53cbb8c6362e705ba4feaf085c315ba736b",
+      "bound_files": 98
+    }
+  },
+  "author_attempts": [
+    {
+      "attempt": "attempt-dueo3o_u",
+      "Definitions_command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-9g3le2sf/NLA/RA20/Definitions.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-9g3le2sf/NLA/RA20/Definitions.ilean",
+        "/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Definitions.lean"
+      ],
+      "Definitions_exit_code": 0,
+      "Generic_command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-9g3le2sf/NLA/RA20/Generic.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-9g3le2sf/NLA/RA20/Generic.ilean",
+        "/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Generic.lean"
+      ],
+      "Generic_exit_code": 1,
+      "Generic_source_sha256": "ff8896a2f394c35c4c06eb766d9b6a48d7443ff97bfd9a3fc8aaa76c61499186",
+      "result_sha256": "7dc88d4baec89a13f451f188e3756a5703614037d87d80774c1895613aaf2d02",
+      "Definitions_result_sha256": "7eaf154153fa322ac03190e87b8bdce4ae15200942391db165e2e03ec6638d9c"
+    },
+    {
+      "attempt": "attempt-wwp2k0kt",
+      "Definitions_command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-al7ckpco/NLA/RA20/Definitions.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-al7ckpco/NLA/RA20/Definitions.ilean",
+        "/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Definitions.lean"
+      ],
+      "Definitions_exit_code": 0,
+      "Generic_command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-al7ckpco/NLA/RA20/Generic.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/root-ra20-generic-al7ckpco/NLA/RA20/Generic.ilean",
+        "/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Generic.lean"
+      ],
+      "Generic_exit_code": 0,
+      "Generic_source_sha256": "47676372aa8e028a2c12bf6c23951b0edf5b7404a18abd24487d36399b7fb007",
+      "result_sha256": "fd5346379e4779205a8c8fe7ea1acc250ce1baa77806c35fb3bd8a810876dffb",
+      "Definitions_result_sha256": "bf8223add3648cb26d8447a77a176a4d72cca292b9dd078dd18157773a4d2f88"
+    }
+  ],
+  "author_successful_attempt_commands": 2,
+  "author_successful_attempt_trust_reports": 4,
+  "author_retained_failed_attempt": {
+    "Definitions_commands_passed": 1,
+    "Generic_commands_failed": 1,
+    "partial_failed_module_reports_not_counted_as_acceptance": true
+  },
+  "packager_successful_fresh_source_commands": 4,
+  "packager_trust_reports": 5,
+  "exact_frozen_contract_types": 1,
+  "actual_safe_project_declarations": 15,
+  "material_dependencies": 13,
+  "source_changes": false,
+  "scope": "Local macOS source-only prefix and read-only pinned ten-package MI22 dependencies. No artificial interval; no whole-project result, independent final review, Linux, Comparator or publication claim."
+}

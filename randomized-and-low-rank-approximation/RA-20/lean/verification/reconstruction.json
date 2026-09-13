@@ -1,0 +1,331 @@
+{
+  "status": "PASS",
+  "scope": "Exact symbolic/numerical statement diagnostics only, not a smoothness or generic-count proof and not a Lean certificate",
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "alpha",
+    "beta",
+    "gamma",
+    "d0",
+    "d1",
+    "d2"
+  ],
+  "determinant": [
+    {
+      "exponents": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    }
+  ],
+  "distance": [
+    {
+      "exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "coefficient": "1"
+    },
+    {
+      "exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0
+      ],
+      "coefficient": "1"
+    },
+    {
+      "exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0
+      ],
+      "coefficient": "1"
+    },
+    {
+      "exponents": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "exponents": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "exponents": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "exponents": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "-4"
+    },
+    {
+      "exponents": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "exponents": [
+        0,
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "-4"
+    },
+    {
+      "exponents": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "exponents": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "-4"
+    },
+    {
+      "exponents": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    }
+  ],
+  "constraint_gradient": [
+    [
+      {
+        "exponents": [
+          0,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "1"
+      }
+    ],
+    [
+      {
+        "exponents": [
+          1,
+          0,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "1"
+      }
+    ],
+    [
+      {
+        "exponents": [
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "coefficient": "1"
+      }
+    ]
+  ],
+  "component_checks": [
+    {
+      "zero_coordinate": 0,
+      "free_coordinates": [
+        1,
+        2
+      ],
+      "restricted_Hessian": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "restricted_Hessian_determinant": 16,
+      "rational_coordinates": [
+        0,
+        2,
+        3
+      ],
+      "rational_distance": 16
+    },
+    {
+      "zero_coordinate": 1,
+      "free_coordinates": [
+        0,
+        2
+      ],
+      "restricted_Hessian": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "restricted_Hessian_determinant": 16,
+      "rational_coordinates": [
+        1,
+        0,
+        3
+      ],
+      "rational_distance": 22
+    },
+    {
+      "zero_coordinate": 2,
+      "free_coordinates": [
+        0,
+        1
+      ],
+      "restricted_Hessian": [
+        [
+          4,
+          0
+        ],
+        [
+          0,
+          4
+        ]
+      ],
+      "restricted_Hessian_determinant": 16,
+      "rational_coordinates": [
+        1,
+        2,
+        0
+      ],
+      "rational_distance": 32
+    }
+  ],
+  "future_lift_obstruction_leading_coefficients": {
+    "axis_mod_e3": "c0*e^2",
+    "origin_mod_e4": "e^3"
+  },
+  "actual_geometric_claims_proved": false,
+  "lean_proof_implemented": false
+}

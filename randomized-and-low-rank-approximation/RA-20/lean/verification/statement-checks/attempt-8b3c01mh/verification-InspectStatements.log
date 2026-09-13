@@ -1,0 +1,52 @@
+NLA.RA20.criticalCountConjecture : Prop
+NLA.RA20.SmoothPoint (n s : ℕ) (X : NLA.RA20.Mat n) : Prop
+NLA.RA20.TangentVector (n s : ℕ) (X Z : NLA.RA20.Mat n) : Prop
+NLA.RA20.SmoothCriticalPoint (n s : ℕ) (U X : NLA.RA20.Mat n) : Prop
+Algebra.smoothLocus.{u_1, u_2} (R : Type u_1) (A : Type u_2) [CommRing R] [CommRing A] [Algebra R A] :
+  Set (PrimeSpectrum A)
+Algebra.IsSmoothAt.{u_1, u_2} (R : Type u_1) {A : Type u_2} [CommRing R] [CommRing A] [Algebra R A] (p : Ideal A)
+  [p.IsPrime] : Prop
+MvPolynomial.vanishingIdeal.{u_1, u_2, u_3} (k : Type u_1) {K : Type u_2} [Field k] [Field K] [Algebra k K]
+  {σ : Type u_3} (V : Set (σ → K)) : Ideal (MvPolynomial σ k)
+MvPolynomial.pointToPoint.{u_1, u_2, u_3} {k : Type u_1} {K : Type u_2} [Field k] [Field K] [Algebra k K] {σ : Type u_3}
+  (x : σ → K) : PrimeSpectrum (MvPolynomial σ k)
+Matrix.rank.{um, un, uR} {m : Type um} {n : Type un} {R : Type uR} [Fintype n] [CommSemiring R] (A : Matrix m n R) : ℕ
+fderiv.{u_4, u_5, u_6} (𝕜 : Type u_4) [NontriviallyNormedField 𝕜] {E : Type u_5} [AddCommGroup E] [Module 𝕜 E]
+  [TopologicalSpace E] {F : Type u_6} [AddCommGroup F] [Module 𝕜 F] [TopologicalSpace F] (f : E → F) (x : E) : E →L[𝕜] F
+Cardinal.mk.{u} : Type u → Cardinal.{u}
+def NLA.RA20.SmoothPoint : (n : ℕ) → ℕ → NLA.RA20.Mat n → Prop :=
+fun n s X =>
+  X ∈ NLA.RA20.variety n s ∧
+    ∃ p,
+      PrimeSpectrum.comap (Ideal.Quotient.mk (NLA.RA20.definingIdeal n s)) p =
+          MvPolynomial.pointToPoint (NLA.RA20.coordinates X) ∧
+        p ∈ Algebra.smoothLocus ℂ (NLA.RA20.CoordinateRing n s)
+def NLA.RA20.TangentVector : (n : ℕ) → ℕ → NLA.RA20.Mat n → NLA.RA20.Mat n → Prop :=
+fun n s X Z =>
+  ∀ p ∈ NLA.RA20.definingIdeal n s,
+    ∑ ij, (MvPolynomial.eval (NLA.RA20.coordinates X)) ((MvPolynomial.pderiv ij) p) * NLA.RA20.coordinates Z ij = 0
+def NLA.RA20.HasGenericCriticalCount : ℕ → ℕ → ℕ → Prop :=
+fun n s m =>
+  ∃ q,
+    (∃ U, Matrix.IsSymm U ∧ (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0) ∧
+      ∀ (U : NLA.RA20.Mat n),
+        Matrix.IsSymm U → (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0 → NLA.RA20.HasCriticalCount n s U m
+def NLA.RA20.criticalCountConjecture : Prop :=
+∀ (n s : ℕ), 3 ≤ n → 1 ≤ s → s ≤ 4 → s ≤ n → NLA.RA20.HasGenericCriticalCount n s (NLA.RA20.predictedCount n s)
+def NLA.RA20.fullFrobeniusDistance : {n : ℕ} → NLA.RA20.Mat n → NLA.RA20.Mat n → ℂ :=
+fun {n} U X => ∑ i, ∑ j, (X i j - U i j) ^ 2
+Ideal.Quotient.commRing (NLA.RA20.definingIdeal 3 3)
+Ideal.instAlgebraQuotient ℂ (NLA.RA20.definingIdeal 3 3)
+instTopologicalSpaceMatrix
+instIsTopologicalAddGroupMatrix
+instContinuousSMulMatrix
+Complex.isAlgClosed
+'NLA.RA20.variety' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.definingIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.SmoothPoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.TangentVector' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.fullFrobeniusDistance' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.SmoothCriticalPoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.HasCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.HasGenericCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.criticalCountConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]

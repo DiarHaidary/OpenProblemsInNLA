@@ -1,0 +1,4 @@
+Mathlib/Algebra/MvPolynomial/PDeriv.lean:155:lemma aeval_sumElim_pderiv_inl {S τ : Type*} [CommRing S] [Algebra R S]
+Mathlib/Algebra/MvPolynomial/PDeriv.lean:157:    aeval (Sum.elim X (C ∘ f)) ((pderiv (Sum.inl j)) p) =
+Mathlib/Algebra/MvPolynomial/PDeriv.lean:158:      (pderiv j) ((aeval (Sum.elim X (C ∘ f))) p) := by
+Mathlib/Algebra/MvPolynomial/PDeriv.lean:164:    simp only [Derivation.leibniz, pderiv_X, smul_eq_mul, map_add, map_mul, aeval_X, h]

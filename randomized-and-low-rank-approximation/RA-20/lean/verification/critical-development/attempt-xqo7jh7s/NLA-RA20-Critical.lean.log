@@ -1,0 +1,14 @@
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Critical.lean:20:74: error: unsolved goals
+case «0».«1»
+Z : Mat 3
+hZ : Matrix.IsSymm Z
+hd : ∀ (i : Fin 3), Z i i = 0
+⊢ Z 1 0 = Z 0 1
+
+case «1».«0»
+Z : Mat 3
+hZ : Matrix.IsSymm Z
+hd : ∀ (i : Fin 3), Z i i = 0
+⊢ Z 1 0 = Z 0 1
+'NLA.RA20.hollow_frobenius_differential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.generic_candidate_injective' depends on axioms: [propext, Classical.choice, Quot.sound]

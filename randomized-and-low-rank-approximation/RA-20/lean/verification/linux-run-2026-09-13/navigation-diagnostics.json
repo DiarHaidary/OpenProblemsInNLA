@@ -1,0 +1,14 @@
+{
+  "zsh_unquoted_query": {
+    "command": "gh api repos/sgstepaniants/OpenProblemsInNLA/actions/runs/34743832047/jobs?per_page=100",
+    "exit_code": 1,
+    "raw_output": "zsh:1: no matches found: repos/sgstepaniants/OpenProblemsInNLA/actions/runs/34743832047/jobs?per_page=100\n",
+    "resolution": "Endpoint shell-quoted; successful actual command retained as commands/002-jobs."
+  },
+  "ra09_navigation": {
+    "command": "rg --files /tmp/nla-lean-ra09-worktree | rg linux-(run|operational)",
+    "exit_code": 1,
+    "raw_output": "",
+    "resolution": "Find the actual existing RA09 evidence location before adapting any audit patterns."
+  }
+}

@@ -1,0 +1,16 @@
+NLA/RA20/Algebra.lean:86:42: error: unsolved goals
+case «0».«1»
+X : Mat 3
+h : X ∈ variety 3 3
+hd : ∀ (i : Fin 3), X i i = 0
+⊢ X 1 0 = X 0 1
+
+case «1».«0»
+X : Mat 3
+h : X ∈ variety 3 3
+hd : ∀ (i : Fin 3), X i i = 0
+⊢ X 1 0 = X 0 1
+NLA/RA20/Algebra.lean:107:21: error: #assert_trust: 'NLA.RA20.hollow_variety_semantics_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.hollow_variety_semantics_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

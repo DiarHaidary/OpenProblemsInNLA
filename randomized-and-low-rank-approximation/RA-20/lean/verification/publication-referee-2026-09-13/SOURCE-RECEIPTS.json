@@ -1,0 +1,19 @@
+{
+  "receipt_recorder": {
+    "file": "record.py",
+    "sha256": "b30864cadc4a611347a8f7cf259a82fc157b78017e3e7204a72715419ec215ba"
+  },
+  "initial_successful_preservation_command": {
+    "receipt": "receipts/independent-preservation.json",
+    "actual_source_snapshot": "verify_publication-initial.py",
+    "sha256": "d4398e582800f76a43338125651d200c6ff14a57a774725b38f46609696fe0e4",
+    "note": "Initial source snapshot retained before adding an extra direct equality check against the original Ubuntu artifact input map."
+  },
+  "final_preservation_command": {
+    "receipt": "receipts/independent-preservation-final.json",
+    "source": "verify_publication.py",
+    "sha256": "83b332322910e5dac1e3d40f477c109d62e7002db17a5e3888394f68eed7bf3d"
+  },
+  "navigation_stdin_disclosure": "Three initial diagnostic commands used inline Python passed on stdin. Their exact command source is retained in navigation-stdin.json from the tool-call text. The recorder captured their actual stdout/stderr/exits, but did not itself capture stdin at runtime. They are navigation only; the standalone final preservation verifier rechecks all material assertions.",
+  "read_scope": "The complete final wrappers, canonical Markdown/TeX and all three PDF pages were read. Original proof, Definitions, Challenge, Solution exports, correspondence, standards, author handoff/verifier/archive mapping, actual publication inspector/render drivers, accepted operational report/gate and original artifact receipt were inspected. Prior proofs were not recompiled or independently reapproved by this publication review."
+}

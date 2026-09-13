@@ -1,0 +1,5 @@
+{
+  "exit_code": 1,
+  "reviewer_only_issue": "The script searched the friendly workflow step name in the raw job stream; GitHub records that name in the step API/ZIP filename while the stream contains the actual shell command. The API already records the isolation step as successful. The corrected audit checks its exact API step and preserves all raw command assertions.",
+  "candidate_or_workflow_change": false
+}

@@ -8,7 +8,7 @@
 **Importance:** broadly interesting  
 **Rating rationale:** Extreme because matching information bounds for every adaptive algorithm and growing rank is a fundamental barrier; broad impact includes large-scale spectral computation and data analysis.  
 **Source:** Bakshi–Narayanan, Open Question 1.10.  
-**Last checked:** 2026-09-12  
+**Last checked:** 2026-09-13  
 **Status:** Partially resolved  
 
 ## Problem statement
@@ -50,11 +50,20 @@ On 2026-09-08 the [source record](https://arxiv.org/abs/2304.03191) still listed
 
 Rechecked [Bakshi–Narayanan, Theorem 1.1 and Open Question 1.10](https://arxiv.org/html/2304.03191v1). Fixed-rank spectral complexity is settled in the theorem's sufficiently-large-dimension regime; growing-rank and simultaneous finite-parameter dependence remain unresolved. Later query-complexity searches and the [SODA 2026 block-size paper](https://doi.org/10.1137/1.9781611978971.42) did not settle the full target.
 
+## Earlier partial results — 12 September 2026
 
-## Further partial results — 12 September 2026
+Holden's [first report](../../references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, established the universal rank lower bound, the large-rank regime and a charged spectral-to-PCA reduction yielding matching bounds under a polynomial dimension hypothesis. Its [independent review](../../references/holden-ra14-2026-09-12/independent-review.md) and [submission record](../../references/holden-ra14-2026-09-12/README.md) are retained. The finite-accuracy result below strengthens the lower bound while the full joint characterization remains open.
 
-Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies [*Bounds and a spectral-to-PCA reduction*](../../references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, Sections 2 and 6–8. The [submission record](../../references/holden-ra14-2026-09-12/README.md) includes verified affiliation, source attribution and reproducible checks.
+## Finite-accuracy partial result — 13 September 2026
 
-The note proves a universal lower bound of $`k`$ queries, exact $`k`$-query complexity under a rank-at-most-$`k`$ promise, and hence $`q_{\mathrm{sp}}=\Theta(n)`$ when $`k\ge n/2`$, using exact column recovery for the upper bound. A deterministic spectral-to-PCA postprocessor on symmetric inputs satisfying the stated gap promises uses at most $`k\lceil10/\sqrt{\varepsilon}\rceil`$ extra products. Combining this with the cited PCA lower bound yields $`\Theta(k\log n/\sqrt{\varepsilon})`$ when $`n\ge C_*(k/\varepsilon)^D`$ for universal constants. The polynomial dimension restriction is essential and retained; the exponent is not optimized or explicitly evaluated.
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](../../references/holden-ra14-v5-2026-09-13/README.md).
 
-A separate [independent informal Codex AI-agent audit](../../references/holden-ra14-2026-09-12/independent-review.md) reviews these partial claims. The simultaneous finite-parameter characterization outside these regimes remains unresolved. **Status remains Partially resolved.** No full solution, external human peer review or formal verification is claimed; no Lean verification was performed.
+[Theorem 1.1](../../references/holden-ra14-v5-2026-09-13/report.pdf) establishes, for a universal positive constant $`c`$ and every original admissible parameter triple,
+
+```math
+q_{\mathrm{sp}}(n,k,\varepsilon)\ge c\frac{k}{\sqrt{\varepsilon}}\log\left(1+\frac{n\sqrt{\varepsilon}}{k}\right).
+```
+
+Together with the reproduced upper bound, this gives matching universal-factor bounds when $`\varepsilon\le(k/n)^2`$ and when $`\varepsilon\ge k/n`$, including $`q_{\mathrm{sp}}(n,1,1/n)=\Theta(\sqrt n\log n)`$ for $`n>2`$. Sections 3–10 prove the new lower bound; Appendices A and B reproduce the charged reduction and upper bound. [Proof source](../../references/holden-ra14-v5-2026-09-13/report.tex).
+
+The stated partial result passed a separate [independent informal Codex AI-agent audit](../../references/holden-ra14-v5-2026-09-13/independent-review.md). **RA-14 remains Partially resolved:** at $`k=1`$ and $`\varepsilon=(\log n/n)^2`$, the bounds still leave $`\Omega(n\log\log n/\log n)`$ versus $`O(n)`$, an unbounded factor. The full simultaneous universal-factor target is unchanged. No Lean verification, external human peer review or priority claim is asserted. This continues the earlier partial submission [PR #190](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/190); it does not duplicate a previously pushed full solution.

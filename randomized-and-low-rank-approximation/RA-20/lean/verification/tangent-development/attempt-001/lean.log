@@ -1,0 +1,156 @@
+NLA/RA20/Tangent.lean:26:25: warning: This simp argument is unused:
+  MvPolynomial.pderiv_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [polyDirectional]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/RA20/Tangent.lean:58:18: error: unsolved goals
+case mul_X.«0».«0»
+a b c da db dc : ℂ
+p : MvPolynomial (Variables 3) ℂ
+hp :
+  polyDirectional ![a, b, c] ![da, db, dc] (hollowPullback p) =
+    polyDirectional (coordinates (hollow a b c)) (coordinates (hollow da db dc)) p
+he : (MvPolynomial.eval ![a, b, c]) (hollowPullback p) = (MvPolynomial.eval (coordinates (hollow a b c))) p
+⊢ (MvPolynomial.eval (coordinates !![0, a, b; a, 0, c; b, c, 0])) p = 0 ∨ polyDirectional ![a, b, c] ![da, db, dc] 0 = 0
+
+case mul_X.«1».«1»
+a b c da db dc : ℂ
+p : MvPolynomial (Variables 3) ℂ
+hp :
+  polyDirectional ![a, b, c] ![da, db, dc] (hollowPullback p) =
+    polyDirectional (coordinates (hollow a b c)) (coordinates (hollow da db dc)) p
+he : (MvPolynomial.eval ![a, b, c]) (hollowPullback p) = (MvPolynomial.eval (coordinates (hollow a b c))) p
+⊢ (MvPolynomial.eval (coordinates !![0, a, b; a, 0, c; b, c, 0])) p = 0 ∨ polyDirectional ![a, b, c] ![da, db, dc] 0 = 0
+
+case mul_X.«2».«2»
+a b c da db dc : ℂ
+p : MvPolynomial (Variables 3) ℂ
+hp :
+  polyDirectional ![a, b, c] ![da, db, dc] (hollowPullback p) =
+    polyDirectional (coordinates (hollow a b c)) (coordinates (hollow da db dc)) p
+he : (MvPolynomial.eval ![a, b, c]) (hollowPullback p) = (MvPolynomial.eval (coordinates (hollow a b c))) p
+⊢ (MvPolynomial.eval (coordinates !![0, a, b; a, 0, c; b, c, 0])) p = 0 ∨ polyDirectional ![a, b, c] ![da, db, dc] 0 = 0
+NLA/RA20/Tangent.lean:67:27: warning: This simp argument is unused:
+  polyDirectional_C
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hollowPullback, polynomialHollow, hollow, coordinates, polyDirectional_X]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/RA20/Tangent.lean:79:18: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:79:18: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:79:18: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:86:4: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/RA20/Tangent.lean:91:2: error: Type mismatch: After simplification, term
+  Ideal.subset_span (of_eq_true (Eq.trans Set.mem_singleton_iff._simp_1 (eq_self abcPolynomial)))
+ has type
+  True
+but is expected to have type
+  MvPolynomial.X 0 * MvPolynomial.X 1 * MvPolynomial.X 2 ∈ abcIdeal
+NLA/RA20/Tangent.lean:124:6: error: ring failed, ring expressions not equal
+a b c : ℂ
+h : a * b * c = 0
+Z : Mat 3
+hZ : TangentVector 3 3 (hollow a b c) Z
+hz : ∀ p ∈ definingIdeal 3 3, polyDirectional (coordinates (hollow a b c)) (coordinates Z) p = 0
+ht :
+  (Z 0 1 * !![0, a, b; a, 0, c; b, c, 0] 0 2 + !![0, a, b; a, 0, c; b, c, 0] 0 1 * Z 0 2) *
+        !![0, a, b; a, 0, c; b, c, 0] 1 2 +
+      (MvPolynomial.eval (coordinates !![0, a, b; a, 0, c; b, c, 0])) (MvPolynomial.X (0, 1) * MvPolynomial.X (0, 2)) *
+        Z 1 2 =
+    0
+⊢ b * c * Z 0 1 + b * a * Z 1 2 + c * a * Z 0 2 -
+          Z 0 1 * !![0, a, b; a, 0, c; b, c, 0] 0 2 * !![0, a, b; a, 0, c; b, c, 0] 1 2 -
+        Z 0 2 * !![0, a, b; a, 0, c; b, c, 0] 0 1 * !![0, a, b; a, 0, c; b, c, 0] 1 2 -
+      Z 1 2 *
+        (MvPolynomial.eval (coordinates !![0, a, b; a, 0, c; b, c, 0]))
+          (MvPolynomial.X (0, 1) * MvPolynomial.X (0, 2)) =
+    0
+NLA/RA20/Tangent.lean:128:6: error: Type mismatch: After simplification, term
+  hp
+ has type
+  @Membership.mem ABCPoly (Ideal ABCPoly) SetLike.instMembership abcIdeal (hollowPullback.toRingHom p)
+but is expected to have type
+  @Membership.mem ABCPoly (Ideal ABCPoly) SetLike.instMembership abcIdeal (hollowPullback p)
+NLA/RA20/Tangent.lean:122:50: warning: This simp argument is unused:
+  Matrix.cons_val_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [genericPolynomial, polyDirectional_mul, polyDirectional_X, MvPolynomial.eval_X, coordinates,
+    hollow, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at ht
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/RA20/Tangent.lean:123:8: warning: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [genericPolynomial, polyDirectional_mul, polyDirectional_X, MvPolynomial.eval_X, coordinates,
+    hollow, Matrix.cons_val_zero, Matrix.cons_val_two, Matrix.head_cons, Matrix.tail_cons] at ht
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/RA20/Tangent.lean:123:29: warning: This simp argument is unused:
+  Matrix.cons_val_two
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [genericPolynomial, polyDirectional_mul, polyDirectional_X, MvPolynomial.eval_X, coordinates,
+    hollow, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.tail_cons] at ht
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/RA20/Tangent.lean:123:50: warning: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [genericPolynomial, polyDirectional_mul, polyDirectional_X, MvPolynomial.eval_X, coordinates,
+    hollow, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.tail_cons] at ht
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/RA20/Tangent.lean:123:68: warning: This simp argument is unused:
+  Matrix.tail_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [genericPolynomial, polyDirectional_mul, polyDirectional_X, MvPolynomial.eval_X, coordinates,
+    hollow, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.head_cons] at ht
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/RA20/Tangent.lean:135:21: error: #assert_trust: 'NLA.RA20.polyDirectional_hollowPullback' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+NLA/RA20/Tangent.lean:136:21: error: #assert_trust: 'NLA.RA20.algebraic_tangent_space_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.polyDirectional_hollowPullback' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.RA20.algebraic_tangent_space_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

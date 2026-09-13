@@ -1,0 +1,275 @@
+{"utc": "2026-09-13T05:16:34.325713+00:00", "source": "NLA/RA20/Definitions.lean", "source_sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94", "command": ["/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean", "-o", "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/NLA/RA20/Definitions.olean", "-i", "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/NLA/RA20/Definitions.ilean", "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Definitions.lean"], "exit_code": 0, "seconds": 3.7787640409660526, "evidence": "inspection-attempt-001", "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"}
+
+{"utc": "2026-09-13T05:16:39.047486+00:00", "source": "NLA/RA20/Generic.lean", "source_sha256": "47676372aa8e028a2c12bf6c23951b0edf5b7404a18abd24487d36399b7fb007", "command": ["/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean", "-o", "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/NLA/RA20/Generic.olean", "-i", "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/NLA/RA20/Generic.ilean", "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Generic.lean"], "exit_code": 0, "seconds": 4.720997083000839, "evidence": "inspection-attempt-002", "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"}
+'NLA.RA20.symmetricParameter_isSymm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.symmetricParameter_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.eval_rename_symmetricParameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.generic_data_intersection_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+{"utc": "2026-09-13T05:16:42.958689+00:00", "source": "verification/generic-development/Reference.lean", "source_sha256": "07d9bf767bb1233270d2ed20f989cd4b5dd46511edb82d4910f2f1590d3d6028", "command": ["/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean", "-o", "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/verification/generic-development/Reference.olean", "-i", "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/verification/generic-development/Reference.ilean", "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean"], "exit_code": 0, "seconds": 3.9104925840510987, "evidence": "inspection-attempt-003", "log_sha256": "e34d3df533520caf7b1a4845e9309f6191b8fc0523422c6a4c6dbb825dcff789"}
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:17:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:25:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:32:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:39:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:45:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:50:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:57:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:63:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:72:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:77:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:80:8: warning: declaration uses `sorry`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean:83:8: warning: declaration uses `sorry`
+
+{"utc": "2026-09-13T05:16:47.811404+00:00", "source": "verification/generic-development/Inspect.lean", "source_sha256": "041d4eaa37cee44d6cbe77bba6405fe7801689bb6c782261e312ab6653e2205f", "command": ["/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean", "-o", "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/verification/generic-development/Inspect.olean", "-i", "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/verification/generic-development/Inspect.ilean", "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Inspect.lean"], "exit_code": 0, "seconds": 4.849522167001851, "evidence": "inspection-attempt-004", "log_sha256": "b5274bd0f860ebde81ec8729167d6b3838e91bcfde439cffdb8083ab64dd82f3"}
+EXACT_FROZEN_TYPE NLA.RA20.generic_data_intersection_proved: ∀ (q : NLA.RA20.Poly 3),
+  (∃ U, Matrix.IsSymm U ∧ (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0) →
+    ∃ U, NLA.RA20.GenericData U ∧ (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0
+ACTUAL_AXIOMS NLA.RA20.generic_data_intersection_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_data_intersection_proved: [NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.GenericData,
+ NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.GenericData,
+ NLA.RA20.symmetricParameterIndex,
+ NLA.RA20.symmetricDataCoordinates,
+ NLA.RA20.symmetricParameter,
+ NLA.RA20.eval_rename_symmetricParameter,
+ NLA.RA20.symmetricParameter_reconstruct,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.symmetricParameter_isSymm]
+ACTUAL_AXIOMS NLA.RA20.Poly: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Poly: [NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.Variables: []
+PROJECT_EDGE NLA.RA20.Variables: []
+ACTUAL_AXIOMS NLA.RA20.Mat: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Mat: []
+ACTUAL_AXIOMS NLA.RA20.coordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.coordinates: [NLA.RA20.Mat, NLA.RA20.Variables, NLA.RA20.Mat, NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.GenericData: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.GenericData: [NLA.RA20.Mat, NLA.RA20.Mat, NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.abcPolynomial._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.symmetricParameterIndex: [propext, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricParameterIndex: [NLA.RA20.Variables,
+ NLA.RA20.Variables,
+ NLA.RA20.symmetricParameterIndex._proof_1]
+ACTUAL_AXIOMS NLA.RA20.symmetricParameterIndex._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.symmetricParameterIndex._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.symmetricDataCoordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricDataCoordinates: [NLA.RA20.Mat, NLA.RA20.Mat, NLA.RA20.symmetricDataCoordinates._proof_1]
+ACTUAL_AXIOMS NLA.RA20.symmetricDataCoordinates._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.symmetricDataCoordinates._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.symmetricParameter: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricParameter: [NLA.RA20.Mat, NLA.RA20.symmetricParameterIndex]
+ACTUAL_AXIOMS NLA.RA20.eval_rename_symmetricParameter: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.eval_rename_symmetricParameter: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.symmetricParameterIndex,
+ NLA.RA20.coordinates,
+ NLA.RA20.symmetricParameter,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.symmetricParameterIndex,
+ NLA.RA20.coordinates,
+ NLA.RA20.symmetricParameter]
+ACTUAL_AXIOMS NLA.RA20.symmetricParameter_reconstruct: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricParameter_reconstruct: [NLA.RA20.Mat,
+ NLA.RA20.symmetricParameter,
+ NLA.RA20.symmetricDataCoordinates,
+ NLA.RA20.Mat,
+ NLA.RA20.symmetricParameter,
+ NLA.RA20.symmetricDataCoordinates,
+ NLA.RA20.symmetricDataCoordinates._proof_1,
+ NLA.RA20.symmetricParameterIndex,
+ NLA.RA20.symmetricParameterIndex._proof_1]
+ACTUAL_AXIOMS NLA.RA20.symmetricParameter_isSymm: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricParameter_isSymm: [NLA.RA20.symmetricParameter, NLA.RA20.symmetricParameter]
+RETAINED_DEPENDENCY NLA.RA20.GenericData
+RETAINED_DEPENDENCY NLA.RA20.symmetricParameterIndex
+RETAINED_DEPENDENCY NLA.RA20.symmetricParameter
+RETAINED_DEPENDENCY NLA.RA20.symmetricDataCoordinates
+RETAINED_DEPENDENCY NLA.RA20.symmetricParameter_isSymm
+RETAINED_DEPENDENCY NLA.RA20.symmetricParameter_reconstruct
+RETAINED_DEPENDENCY NLA.RA20.eval_rename_symmetricParameter
+RETAINED_DEPENDENCY MvPolynomial.rename
+RETAINED_DEPENDENCY MvPolynomial.eval
+RETAINED_DEPENDENCY MvPolynomial.eval_rename
+RETAINED_DEPENDENCY MvPolynomial.funext
+RETAINED_DEPENDENCY MvPolynomial.X_ne_zero
+RETAINED_DEPENDENCY mul_ne_zero
+PROJECT_COUNTS declarations=15, required=13
+'NLA.RA20.generic_data_intersection_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.GenericData : (U : NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) → Prop :=
+fun (U : NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) =>
+  And (@Matrix.IsSymm.{0, 0} Complex (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) U)
+    (@Ne.{1} Complex
+      (@HMul.hMul.{0, 0, 0} Complex Complex Complex (@instHMul.{0} Complex Complex.instMul)
+        (@HMul.hMul.{0, 0, 0} Complex Complex Complex (@instHMul.{0} Complex Complex.instMul)
+          (U
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                NLA.RA20.abcPolynomial._proof_1 (nat_lit 0)))
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                NLA.RA20.abcPolynomial._proof_1 (nat_lit 1))))
+          (U
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                NLA.RA20.abcPolynomial._proof_1 (nat_lit 0)))
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                NLA.RA20.abcPolynomial._proof_1 (nat_lit 2)))))
+        (U
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              NLA.RA20.abcPolynomial._proof_1 (nat_lit 1)))
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              NLA.RA20.abcPolynomial._proof_1 (nat_lit 2)))))
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero)))
+def NLA.RA20.symmetricParameter : (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))) → Complex) →
+  NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) :=
+fun (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))) → Complex)
+    (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) =>
+  z
+    (NLA.RA20.symmetricParameterIndex
+      (@Prod.mk.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) i j))
+def NLA.RA20.symmetricDataCoordinates : (U :
+    NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) →
+  Fin (@OfNat.ofNat.{0} Nat (nat_lit 6) (instOfNatNat (nat_lit 6))) → Complex :=
+fun (U : NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) =>
+  @Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 5) (instOfNatNat (nat_lit 5)))
+    (U
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+          NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 0)))
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+          NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 0))))
+    (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4)))
+      (U
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+            NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 1)))
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+            NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 1))))
+      (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+        (U
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 2)))
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 2))))
+        (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+          (U
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 0)))
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 1))))
+          (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))
+            (U
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                  NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 0)))
+              (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+                (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                  NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 2))))
+            (@Matrix.vecCons.{0} Complex (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))
+              (U
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                    NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 1)))
+                (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+                  (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                    NLA.RA20.symmetricDataCoordinates._proof_1 (nat_lit 2))))
+              (@Matrix.vecEmpty.{0} Complex))))))
+theorem NLA.RA20.generic_data_intersection_proved : ∀ (q : NLA.RA20.Poly 3),
+  (∃ U, Matrix.IsSymm U ∧ (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0) →
+    ∃ U, NLA.RA20.GenericData U ∧ (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0 :=
+fun q hq =>
+  Exists.casesOn hq fun U h =>
+    And.casesOn h fun hU hqU =>
+      let f := (MvPolynomial.rename NLA.RA20.symmetricParameterIndex) q;
+      have hf := fun hfzero =>
+        hqU
+          (have h := NLA.RA20.eval_rename_symmetricParameter (NLA.RA20.symmetricDataCoordinates U) q;
+          id
+            (fun h =>
+              Eq.symm
+                (Eq.mp
+                  (congrArg (fun _a => _a = (MvPolynomial.eval (NLA.RA20.coordinates U)) q)
+                    (map_zero (MvPolynomial.eval (NLA.RA20.symmetricDataCoordinates U))))
+                  (Eq.mp
+                    (congrArg
+                      (fun _a =>
+                        (MvPolynomial.eval (NLA.RA20.symmetricDataCoordinates U)) _a =
+                          (MvPolynomial.eval (NLA.RA20.coordinates U)) q)
+                      hfzero)
+                    h)))
+            (Eq.mp
+              (congrArg
+                (fun _a =>
+                  (MvPolynomial.eval (NLA.RA20.symmetricDataCoordinates U))
+                      ((MvPolynomial.rename NLA.RA20.symmetricParameterIndex) q) =
+                    (MvPolynomial.eval (NLA.RA20.coordinates _a)) q)
+                (NLA.RA20.symmetricParameter_reconstruct U hU))
+              h));
+      let g := f * MvPolynomial.X 3 * MvPolynomial.X 4 * MvPolynomial.X 5;
+      have hg :=
+        id
+          (mul_ne_zero (mul_ne_zero (mul_ne_zero hf (MvPolynomial.X_ne_zero 3)) (MvPolynomial.X_ne_zero 4))
+            (MvPolynomial.X_ne_zero 5));
+      have hex :=
+        Decidable.byContradiction fun hn =>
+          hg
+            (MvPolynomial.funext fun z =>
+              Eq.mpr (id (congrArg (Eq ((MvPolynomial.eval z) g)) (map_zero (MvPolynomial.eval z))))
+                (Eq.mp
+                  (Eq.trans (Mathlib.Tactic.Push.not_exists._simp_1 fun z => (MvPolynomial.eval z) g ≠ 0)
+                    (forall_congr fun z => Classical.not_not._simp_2))
+                  hn z));
+      Exists.casesOn hex fun z hz =>
+        have hproduct :=
+          Eq.mpr
+            (id
+              (congrFun' (congrArg Ne (congrArg (HMul.hMul ((MvPolynomial.eval z) f)) (mul_assoc (z 3) (z 4) (z 5))))
+                0))
+            (Eq.mp
+              (congrFun'
+                (congrArg Ne
+                  (Eq.trans
+                    (Eq.trans
+                      (congrArg (⇑(MvPolynomial.eval z))
+                        (Eq.trans (mul_assoc (f * MvPolynomial.X 3) (MvPolynomial.X 4) (MvPolynomial.X 5))
+                          (mul_assoc f (MvPolynomial.X 3) (MvPolynomial.X 4 * MvPolynomial.X 5))))
+                      (map_mul (MvPolynomial.eval z) f (MvPolynomial.X 3 * (MvPolynomial.X 4 * MvPolynomial.X 5))))
+                    (congrArg (HMul.hMul ((MvPolynomial.eval z) f))
+                      (Eq.trans (map_mul (MvPolynomial.eval z) (MvPolynomial.X 3) (MvPolynomial.X 4 * MvPolynomial.X 5))
+                        (congr (congrArg HMul.hMul (MvPolynomial.eval_X 3))
+                          (Eq.trans (map_mul (MvPolynomial.eval z) (MvPolynomial.X 4) (MvPolynomial.X 5))
+                            (congr (congrArg HMul.hMul (MvPolynomial.eval_X 4)) (MvPolynomial.eval_X 5))))))))
+                0)
+              hz);
+        And.casesOn (mul_ne_zero_iff.mp hproduct) fun hfz hcoords =>
+          Exists.intro (NLA.RA20.symmetricParameter z)
+            ⟨⟨NLA.RA20.symmetricParameter_isSymm z, id hcoords⟩,
+              id
+                (fun hfz =>
+                  Eq.mp (congrArg (fun _a => _a ≠ 0) (NLA.RA20.eval_rename_symmetricParameter z q))
+                    (Eq.mp
+                      (congrArg (fun _a => (MvPolynomial.eval z) _a ≠ 0)
+                        (have this := rfl;
+                        this))
+                      hfz))
+                hfz⟩
+

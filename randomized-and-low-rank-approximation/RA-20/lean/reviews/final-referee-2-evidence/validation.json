@@ -1,0 +1,780 @@
+{
+  "utc": "2026-09-13T05:57:44.306697+00:00",
+  "result": "PASS",
+  "proof_freeze_sha256": "f66dfe47527df937de8ed399606206bdaef55717cef8d68808f60834aece0c6f",
+  "frozen_files": 521,
+  "original_sources": 16,
+  "nested_manifests": [
+    {
+      "path": "reviews/statement-freeze.json",
+      "sha256": "6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8",
+      "entries": 68
+    },
+    {
+      "path": "reviews/statement-package-manifest.json",
+      "sha256": "f703189ce7532af272df37e521ce9d703d01aaa9733cd7aa7d1f45813b0e5fa6",
+      "entries": 70
+    },
+    {
+      "path": "reviews/statement-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "5a0ca5bdd0db73e72739a581cd878eb554d01df0e77b252f13215214a7c97f0d",
+      "entries": 12
+    },
+    {
+      "path": "reviews/statement-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "838f724a397105f7ae0c53b5156bc53cbb8c6362e705ba4feaf085c315ba736b",
+      "entries": 98
+    },
+    {
+      "path": "verification/algebra-development/EVIDENCE-MANIFEST.json",
+      "sha256": "c17f5f2bc0dc187ab4f024d0ccc2027023dd058f165dff827050b39cdc616f6f",
+      "entries": 148
+    },
+    {
+      "path": "verification/conclusion-development/EVIDENCE-MANIFEST.json",
+      "sha256": "08a46ab6aac719684b7376b1e92717e25a3bc8fa5aa2a54429a0c6d4b86466ab",
+      "entries": 513
+    },
+    {
+      "path": "verification/critical-development/EVIDENCE-MANIFEST.json",
+      "sha256": "447880d6364257b0b3a6446bf23f7af8431cc6b793089722dc8a964e042aba0e",
+      "entries": 77
+    },
+    {
+      "path": "verification/differential-development/EVIDENCE-MANIFEST.json",
+      "sha256": "92bfee1c031660ffe542ace9f04c602009b35dbb95a95b513affca5913ca9a7f",
+      "entries": 159
+    },
+    {
+      "path": "verification/generic-development/EVIDENCE-MANIFEST.json",
+      "sha256": "6478ce518b17eb81293c87262c3566b731d42e1e3a4e9986b39806628d466404",
+      "entries": 165
+    },
+    {
+      "path": "verification/root-proof-acceptance-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "821cdca57cc846c5a9d76d90f8396942d4efa73eef616f358b8cbca56bd529ff",
+      "entries": 3
+    },
+    {
+      "path": "verification/smooth-development/EVIDENCE-MANIFEST.json",
+      "sha256": "50387281334c42d07d268d96ae43d26b029588c7fa75d77d0de8d4dbff7f9187",
+      "entries": 89
+    },
+    {
+      "path": "verification/smooth-transport-development/EVIDENCE-MANIFEST.json",
+      "sha256": "33e3483ef20efc2bc3a6b4846922a2d5e08efd2177bba3f580ec52fb10c1c0a4",
+      "entries": 13
+    },
+    {
+      "path": "verification/tangent-development/EVIDENCE-MANIFEST.json",
+      "sha256": "30de2c667e003d8576716d2e9df2a6ef0b7f93fa1d5cb37f951f186df6c0f3f5",
+      "entries": 180
+    }
+  ],
+  "source_commands": 13,
+  "command_records_before_after_pins": 70,
+  "real_source_modules": 11,
+  "source_seconds": 75.2135539558949,
+  "exact_type_matches": [
+    "NLA.RA20.hollow_variety_semantics",
+    "NLA.RA20.reduced_coordinate_ring",
+    "NLA.RA20.algebraic_smooth_locus",
+    "NLA.RA20.algebraic_tangent_space",
+    "NLA.RA20.full_frobenius_differential",
+    "NLA.RA20.hollow_distance_semantics",
+    "NLA.RA20.generic_critical_locus",
+    "NLA.RA20.component_hessians",
+    "NLA.RA20.generic_data_intersection",
+    "NLA.RA20.generic_count_three",
+    "NLA.RA20.generic_count_not_four",
+    "NLA.RA20.not_criticalCountConjecture"
+  ],
+  "project_closure_declarations": 214,
+  "material_dependencies": 28,
+  "source_kernel_assertions": 61,
+  "own_kernel_assertions": 12,
+  "printed_axiom_reports": 69,
+  "axiom_reports": [
+    {
+      "command": "reviews/final-referee-2-evidence/command-039",
+      "name": "NLA.RA20.hollow_variety_semantics_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-039",
+      "name": "NLA.RA20.reduced_coordinate_ring_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-040",
+      "name": "NLA.RA20.smoothLocus_comap_algEquiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-041",
+      "name": "NLA.RA20.triple_product_not_formallySmooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-041",
+      "name": "NLA.RA20.formallySmooth_of_retraction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-041",
+      "name": "NLA.RA20.abc_local_not_smooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-041",
+      "name": "NLA.RA20.abc_local_smooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-041",
+      "name": "NLA.RA20.abc_smooth_locus_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-041",
+      "name": "NLA.RA20.abcPoint_comap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-041",
+      "name": "NLA.RA20.reducedPoint_comap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-041",
+      "name": "NLA.RA20.algebraic_smooth_locus_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-042",
+      "name": "NLA.RA20.polyDirectional_hollowPullback",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-042",
+      "name": "NLA.RA20.algebraic_tangent_space_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-043",
+      "name": "NLA.RA20.full_frobenius_differential_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-043",
+      "name": "NLA.RA20.hollow_distance_semantics_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-043",
+      "name": "NLA.RA20.component_hessians_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-044",
+      "name": "NLA.RA20.symmetricParameter_isSymm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-044",
+      "name": "NLA.RA20.symmetricParameter_reconstruct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-044",
+      "name": "NLA.RA20.eval_rename_symmetricParameter",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-044",
+      "name": "NLA.RA20.generic_data_intersection_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.hollow_frobenius_differential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.generic_candidate_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.smoothCritical_hollow_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.critical_first_plane",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.critical_second_plane",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.critical_third_plane",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.generic_candidate_critical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.generic_critical_exhaustion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-045",
+      "name": "NLA.RA20.generic_critical_locus_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-046",
+      "name": "NLA.RA20.critical_count_three",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-046",
+      "name": "NLA.RA20.generic_count_three_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-046",
+      "name": "NLA.RA20.generic_count_not_four_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-046",
+      "name": "NLA.RA20.not_criticalCountConjecture_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.hollow_variety_semantics_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.reduced_coordinate_ring_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.algebraic_smooth_locus_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.algebraic_tangent_space_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.full_frobenius_differential_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.hollow_distance_semantics_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.generic_critical_locus_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.component_hessians_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.generic_data_intersection_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.generic_count_three_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.generic_count_not_four_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-047",
+      "name": "NLA.RA20.not_criticalCountConjecture_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.hollow_variety_semantics",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.reduced_coordinate_ring",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.algebraic_smooth_locus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.algebraic_tangent_space",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.full_frobenius_differential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.hollow_distance_semantics",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.generic_critical_locus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.component_hessians",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.generic_data_intersection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.generic_count_three",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.generic_count_not_four",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-048",
+      "name": "NLA.RA20.not_criticalCountConjecture",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.hollow_variety_semantics",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.reduced_coordinate_ring",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.algebraic_smooth_locus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.algebraic_tangent_space",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.full_frobenius_differential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.hollow_distance_semantics",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.generic_critical_locus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.component_hessians",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.generic_data_intersection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.generic_count_three",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.generic_count_not_four",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "command": "reviews/final-referee-2-evidence/command-050",
+      "name": "NLA.RA20.not_criticalCountConjecture",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "warnings": [
+    {
+      "source": "NLA/RA20/Differential.lean",
+      "text": "NLA/RA20/Differential.lean:103:2: warning: Try this: "
+    },
+    {
+      "source": "NLA/RA20/Differential.lean",
+      "text": "NLA/RA20/Differential.lean:105:2: warning: Try this: "
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:17:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:25:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:32:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:39:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:45:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:50:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:57:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:63:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:72:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:77:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:80:8: warning: declaration uses `sorry`"
+    },
+    {
+      "source": "reviews/final-referee-2-evidence/Reference.lean",
+      "text": "reviews/final-referee-2-evidence/Reference.lean:83:8: warning: declaration uses `sorry`"
+    }
+  ],
+  "owned_prefix_removed_after_hashing": true,
+  "actual_Linux_Comparator_default_kernel_controls": "NOT RUN by this reviewer"
+}

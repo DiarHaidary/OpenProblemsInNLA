@@ -1,0 +1,11 @@
+# Independent review of PR #219 — MD-02
+
+Reviewed 2026-09-13 at `f7705090561ed0cc831bce5ad297983ede2c2b7f`. Result: PASS for the fixed-point reformulation and supporting finite-iterate bounds; the original random-circulant limit remains Open. This is an independent Codex mathematical audit, not Lean verification or external human peer review.
+
+Read all 529 proof lines and both fixed-point and validation implementations. The translation-averaged theta SDP gives the Fourier probability program with the correct real symmetry. The complementary kernel satisfies R1=0 and R^2=I-P0. Weighted logarithmic-barrier stationarity gives the normalized complementary pair and the theta interval. The complementary identity theta(G)theta(G-complement)=n follows by the limiting barrier argument.
+
+The transformation to u=R sqrt(v+u^2) is reversible: the norm identity fixes normalization, and positivity plus Fourier support recovers the unique barrier pair. Nonexpansiveness first confines all iterates; the derivative bound on that bounded region then yields the stated strict contraction. Complementation negates u. The root-moment criterion is an equivalence when t_n/n tends to infinity; the second-moment condition is only sufficient. Inversion classes, including the even-order singleton, give the exact first-iterate variance. The Taylor remainder, orthogonality and Rademacher Poincare factor give the second-iterate constant 68. No independence of later iterates from the kernel is assumed.
+
+The proof expressly leaves the converged-root estimate open. Its deterministic order-n^3 log n iteration count is not bridged by the first two moment bounds. Thus neither a full resolution nor a substantive asymptotic special case is established. Checked the primary random-circulant bibliography at https://arxiv.org/abs/2502.16227 .
+
+Reran the full validator: 188 inversion-class masks and 138 independent Fourier-LP/root comparisons passed; maximum kernel-identity discrepancy was 3.33e-16. These floating-point diagnostics are not interval certificates or asymptotic proofs. Evidence: `md02-validation-summary.json` in this audit directory. Visually inspected all nine manuscript pages and the canonical problem PDF. No blocker; original model, target and permanent ID are preserved.

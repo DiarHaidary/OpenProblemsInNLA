@@ -1,0 +1,41 @@
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:43:2: error: Type mismatch: After simplification, term
+  hs
+ has type
+  HasFDerivAt ((fun x => L x - a) * fun x => L x - a) ((L x - a) • L + (L x - a) • L) x
+but is expected to have type
+  HasFDerivAt (fun y => (L y - a) * (L y - a)) ((L x - a + (L x - a)) • L) x
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:57:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:57:63: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:79:13: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:80:4: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:102:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fderiv ℂ (fun y => ∑ j, ((?L j) y - ?a j) ^ 2) ?x) ?z
+in the target expression
+  (fderiv ℂ (fun Y => ∑ ij, ((matrixEntry n ij) Y - coordinates U ij) ^ 2) X) Z = 2 * ∑ i, ∑ j, (X i j - U i j) * Z i j
+
+n : ℕ
+U X Z : Mat n
+he : fullFrobeniusDistance U = fun Y => ∑ ij, ((matrixEntry n ij) Y - coordinates U ij) ^ 2
+⊢ (fderiv ℂ (fun Y => ∑ ij, ((matrixEntry n ij) Y - coordinates U ij) ^ 2) X) Z = 2 * ∑ i, ∑ j, (X i j - U i j) * Z i j
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  function expected
+    X i
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:147:21: error: #assert_trust: 'NLA.RA20.full_frobenius_differential_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:149:21: error: #assert_trust: 'NLA.RA20.component_hessians_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.full_frobenius_differential_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.RA20.hollow_distance_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.component_hessians_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

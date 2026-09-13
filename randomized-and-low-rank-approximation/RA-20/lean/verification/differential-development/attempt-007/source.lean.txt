@@ -1,0 +1,103 @@
+/- RA-20 differential helper author's diagnostic checks. This is not an
+independent final review, Linux run or Comparator result. Traversal structure is
+adapted from the completed RA-09 referee-2 inspector; every result is rerun here.
+The reference changes the frozen Challenge namespace only. -/
+import NLA.RA20.Differential
+import verification.«differential-development».Reference
+import Lean.Util.FoldConsts
+
+set_option maxHeartbeats 1200000
+set_option leancert.trust "kernel"
+
+open Lean Elab Command in
+run_cmd do
+  let env ← getEnv
+  let pairs := [(``NLA.RA20.full_frobenius_differential_proved,
+      ``NLA.RA20.DifferentialReference.full_frobenius_differential),
+    (``NLA.RA20.hollow_distance_semantics_proved,
+      ``NLA.RA20.DifferentialReference.hollow_distance_semantics),
+    (``NLA.RA20.component_hessians_proved,
+      ``NLA.RA20.DifferentialReference.component_hessians)]
+  for (actual, reference) in pairs do
+    let some a := env.find? actual | throwError "Missing actual theorem {actual}"
+    let some b := env.find? reference | throwError "Missing frozen reference {reference}"
+    match a with
+    | .thmInfo _ => pure ()
+    | _ => throwError "Actual export is not a theorem {actual}"
+    liftTermElabM do
+      unless ← Lean.Meta.isDefEq a.type b.type do
+        throwError "Frozen signature mismatch {actual}"
+    unless (← liftCoreM <| collectAxioms reference).contains ``sorryAx do
+      throwError "Expected diagnostic reference admission {reference}"
+    logInfo m!"EXACT_FROZEN_TYPE {actual}: {a.type}"
+  let isProject := fun n : Name => n.toString.startsWith "NLA.RA20." ||
+    n.toString.startsWith "_private.NLA.RA20."
+  let mut pending := pairs.map Prod.fst
+  let mut seen : List Name := []
+  let mut used : List Name := []
+  for _ in [:8000] do
+    match pending with
+    | [] => pure ()
+    | name :: rest =>
+      pending := rest
+      unless seen.contains name do
+        if name.toString.startsWith "NLA.RA20.DifferentialReference." then
+          throwError "Actual proof reached admitted reference {name}"
+        seen := name :: seen
+        let some ci := env.find? name | throwError "Missing declaration {name}"
+        if ci.isUnsafe || ci.isPartial then throwError "Unsafe or partial declaration {name}"
+        let axioms ← liftCoreM <| collectAxioms name
+        for ax in axioms do
+          unless [``propext, ``Classical.choice, ``Quot.sound].contains ax do
+            throwError "Forbidden transitive axiom {name}: {ax}"
+        logInfo m!"ACTUAL_AXIOMS {name}: {axioms.toList}"
+        let body ← match ci.value? (allowOpaque := true) with
+          | some b => pure b.getUsedConstants.toList
+          | none => match ci with
+            | .inductInfo _ | .ctorInfo _ | .recInfo _ => pure []
+            | _ => throwError "Unexplained bodyless declaration {name}"
+        let deps := ci.type.getUsedConstants.toList ++ body
+        used := deps ++ used
+        let follow := deps.filter isProject
+        logInfo m!"PROJECT_EDGE {name}: {follow}"
+        pending := follow ++ pending
+  unless pending.isEmpty do throwError "Incomplete traversal"
+  let required := [``NLA.RA20.hasFDerivAt_affine_square,
+    ``NLA.RA20.quadraticGradient, ``NLA.RA20.hasFDerivAt_sum_squares,
+    ``NLA.RA20.sum_squares_fderiv, ``NLA.RA20.hasFDerivAt_quadraticGradient,
+    ``NLA.RA20.sum_squares_hessian, ``NLA.RA20.matrixEntry,
+    ``NLA.RA20.matrixEntry_apply, ``NLA.RA20.planeEntry,
+    ``NLA.RA20.planeEntry_apply, ``NLA.RA20.fullFrobeniusDistance,
+    ``NLA.RA20.hollow, ``NLA.RA20.planeCoordinates,
+    ``HasFDerivAt.fderiv, ``HasFDerivAt.mul, ``HasFDerivAt.smul_const]
+  for need in required do
+    unless used.contains need do throwError "Missing material dependency {need}"
+    logInfo m!"RETAINED_DEPENDENCY {need}"
+  for forbidden in [``sorryAx, `Lean.ofReduceBool, `Lean.trustCompiler] do
+    if used.contains forbidden then throwError "Forbidden direct dependency {forbidden}"
+  logInfo m!"PROJECT_COUNTS declarations={seen.length}, required={required.length}"
+
+#assert_trust kernel NLA.RA20.full_frobenius_differential_proved
+#assert_trust kernel NLA.RA20.hollow_distance_semantics_proved
+#assert_trust kernel NLA.RA20.component_hessians_proved
+#assert_trust kernel NLA.RA20.hasFDerivAt_affine_square
+#assert_trust kernel NLA.RA20.hasFDerivAt_sum_squares
+#assert_trust kernel NLA.RA20.hasFDerivAt_quadraticGradient
+#print axioms NLA.RA20.full_frobenius_differential_proved
+#print axioms NLA.RA20.hollow_distance_semantics_proved
+#print axioms NLA.RA20.component_hessians_proved
+#print axioms NLA.RA20.hasFDerivAt_affine_square
+#print axioms NLA.RA20.hasFDerivAt_sum_squares
+#print axioms NLA.RA20.hasFDerivAt_quadraticGradient
+set_option pp.all true in
+#print NLA.RA20.fullFrobeniusDistance
+set_option pp.all true in
+#print NLA.RA20.planeCoordinates
+set_option pp.proofs true in
+#print NLA.RA20.hasFDerivAt_affine_square
+set_option pp.proofs true in
+#print NLA.RA20.sum_squares_hessian
+set_option pp.proofs true in
+#print NLA.RA20.full_frobenius_differential_proved
+set_option pp.proofs true in
+#print NLA.RA20.component_hessians_proved

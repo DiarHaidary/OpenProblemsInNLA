@@ -24,7 +24,7 @@ def lagrangeBasisAtZero (S : Finset ℂ) (z : ℂ) : ℂ :=
   (Lagrange.basis S id z).eval 0
 
 def lagrangeSum (S : Finset ℂ) : ℝ :=
-  ∑ z ∈ S, ‖lagrangeBasisAtZero S z‖
+  ∑ z in S, ‖lagrangeBasisAtZero S z‖
 
 lemma lagrangeBasisAtZero_ne_zero {S : Finset ℂ} {z : ℂ}
     (hz : z ∈ S) (hnz : ∀ w ∈ S, w ≠ 0) :
@@ -42,7 +42,6 @@ lemma lagrangeBasisAtZero_ne_zero {S : Finset ℂ} {z : ℂ}
 
 lemma lagrangeSum_pos {S : Finset ℂ} (hS : S.Nonempty)
     (hnz : ∀ z ∈ S, z ≠ 0) : 0 < lagrangeSum S := by
-  unfold lagrangeSum
   apply Finset.sum_pos'
   · intro z hz
     exact norm_nonneg _
@@ -70,9 +69,8 @@ lemma lagrangeValue_norm {S : Finset ℂ} {z : ℂ}
   have hB : 0 < ‖lagrangeBasisAtZero S z‖ :=
     norm_pos_iff.mpr (lagrangeBasisAtZero_ne_zero hz hnz)
   unfold lagrangeValue
-  rw [norm_mul, Complex.norm_real, Real.norm_eq_abs,
-    abs_of_pos (div_pos hB hA), norm_inv]
-  field_simp [ne_of_gt hA, ne_of_gt hB]
+  rw [norm_mul, Complex.norm_real, abs_of_pos (div_pos hB hA), norm_inv]
+  field_simp
 
 lemma lagrangeAttainer_eval_node {S : Finset ℂ} {z : ℂ}
     (hz : z ∈ S) :
@@ -95,11 +93,10 @@ lemma lagrangeAttainer_eval_zero {S : Finset ℂ} (hS : S.Nonempty)
   simp only [Lagrange.interpolate_apply, Polynomial.eval_finsetSum,
     Polynomial.eval_mul, Polynomial.eval_C, lagrangeBasisAtZero]
   rw [Finset.sum_congr rfl hterm]
-  have hreal : (∑ z ∈ S, ‖lagrangeBasisAtZero S z‖ /
+  have hreal : (∑ z in S, ‖lagrangeBasisAtZero S z‖ /
       lagrangeSum S) = 1 := by
     rw [← Finset.sum_div]
-    change lagrangeSum S / lagrangeSum S = 1
-    exact div_self (ne_of_gt hA)
+    simp [lagrangeSum, ne_of_gt hA]
   exact_mod_cast hreal
 
 lemma lagrangeAttainer_feasible {S : Finset ℂ} (hcard : S.card = 5)
@@ -145,9 +142,8 @@ lemma lagrange_lower_bound {S : Finset ℂ} (hcard : S.card = 5)
     (f := p) Function.injective_id.injOn hdeg
   have heq0 := congrArg (fun q : Poly => q.eval 0) heq
   have hsum : p.eval 0 =
-      ∑ z ∈ S, p.eval z * lagrangeBasisAtZero S z := by
-    simpa [lagrangeBasisAtZero, Lagrange.interpolate_apply,
-      Polynomial.eval_finsetSum, Polynomial.eval_mul, Polynomial.eval_C] using heq0
+      ∑ z in S, p.eval z * lagrangeBasisAtZero S z := by
+    simpa [lagrangeBasisAtZero] using heq0
   have hmax : ∀ z ∈ S, ‖p.eval z‖ ≤ maxModulus S p := by
     intro z hz
     rw [maxModulus_nonempty_eq_sup hS]
@@ -155,12 +151,12 @@ lemma lagrange_lower_bound {S : Finset ℂ} (hcard : S.card = 5)
   have hprod : (1 : ℝ) ≤ maxModulus S p * lagrangeSum S := by
     calc
       1 = ‖p.eval 0‖ := by rw [hp.2]; norm_num
-      _ = ‖∑ z ∈ S, p.eval z * lagrangeBasisAtZero S z‖ := by rw [hsum]
-      _ ≤ ∑ z ∈ S, ‖p.eval z * lagrangeBasisAtZero S z‖ :=
+      _ = ‖∑ z in S, p.eval z * lagrangeBasisAtZero S z‖ := by rw [hsum]
+      _ ≤ ∑ z in S, ‖p.eval z * lagrangeBasisAtZero S z‖ :=
         norm_sum_le _ _
-      _ = ∑ z ∈ S, ‖p.eval z‖ * ‖lagrangeBasisAtZero S z‖ := by
+      _ = ∑ z in S, ‖p.eval z‖ * ‖lagrangeBasisAtZero S z‖ := by
         simp_rw [norm_mul]
-      _ ≤ ∑ z ∈ S, maxModulus S p * ‖lagrangeBasisAtZero S z‖ := by
+      _ ≤ ∑ z in S, maxModulus S p * ‖lagrangeBasisAtZero S z‖ := by
         exact Finset.sum_le_sum fun z hz =>
           mul_le_mul_of_nonneg_right (hmax z hz) (norm_nonneg _)
       _ = maxModulus S p * lagrangeSum S := by

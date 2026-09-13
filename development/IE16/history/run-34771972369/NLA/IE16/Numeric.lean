@@ -31,41 +31,6 @@ private lemma sqrt_three_pow_odd (n : ℕ) :
   rw [pow_succ, pow_mul, Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 3)]
 
 
-private lemma sqrt_three_pow_2 :
-    (Real.sqrt 3) ^ 2 = (3 : ℝ) := by
-  exact Real.sq_sqrt (by norm_num)
-
-private lemma sqrt_three_pow_3 :
-    (Real.sqrt 3) ^ 3 = (3 * Real.sqrt 3 : ℝ) := by
-  have h := sqrt_three_pow_odd 1
-  norm_num at h
-  exact h
-
-private lemma sqrt_three_pow_4 :
-    (Real.sqrt 3) ^ 4 = (9 : ℝ) := by
-  have h := sqrt_three_pow_even 2
-  norm_num at h
-  exact h
-
-private lemma sqrt_three_pow_5 :
-    (Real.sqrt 3) ^ 5 = (9 * Real.sqrt 3 : ℝ) := by
-  have h := sqrt_three_pow_odd 2
-  norm_num at h
-  exact h
-
-private lemma sqrt_three_pow_6 :
-    (Real.sqrt 3) ^ 6 = (27 : ℝ) := by
-  have h := sqrt_three_pow_even 3
-  norm_num at h
-  exact h
-
-private lemma sqrt_three_pow_7 :
-    (Real.sqrt 3) ^ 7 = (27 * Real.sqrt 3 : ℝ) := by
-  have h := sqrt_three_pow_odd 3
-  norm_num at h
-  exact h
-
-
 /- The cubic-root identities are the only irrational algebra used by the
    finite coordinate calculations.  Keeping them named makes later finite
    `fin_cases` proofs readable and keeps interval/numeric work out of Lean. -/
@@ -88,42 +53,6 @@ lemma omega_ne_zero : omega ≠ 0 := by
   have := congrArg Complex.re h
   norm_num [omega] at this
 
-/- Exact rational coordinates of the three cubic roots. The only irrational
-   generator is factored out before the finite injectivity comparisons. -/
-private def rootReal (a : Fin 3) : ℝ :=
-  if a.val = 0 then 1 else -(1 / 2)
-
-private def rootImag (a : Fin 3) : ℝ :=
-  if a.val = 0 then 0 else if a.val = 1 then 1 / 2 else -(1 / 2)
-
-private lemma omega_pow_re (a : Fin 3) :
-    (omega ^ a.val).re = rootReal a := by
-  fin_cases a <;>
-    norm_num [omega, rootReal, pow_succ] <;>
-    nlinarith [Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 3)]
-
-private lemma omega_pow_im (a : Fin 3) :
-    (omega ^ a.val).im = Real.sqrt 3 * rootImag a := by
-  fin_cases a <;>
-    norm_num [omega, rootImag, pow_succ] <;>
-    ring
-
-private lemma clusterPoint_re (a b : Fin 3) :
-    (clusterPoint a b).re = rootReal a + (1 / 1000 : ℝ) * rootReal b := by
-  norm_num [clusterPoint, epsilon, Complex.mul_re, omega_pow_re]
-
-private lemma clusterPoint_im (a b : Fin 3) :
-    (clusterPoint a b).im =
-      Real.sqrt 3 * (rootImag a + (1 / 1000 : ℝ) * rootImag b) := by
-  norm_num [clusterPoint, epsilon, Complex.mul_im, omega_pow_im]
-  ring
-
-private lemma clusterPoint_coordinates (a b : Fin 3) :
-    clusterPoint a b =
-      (⟨rootReal a + (1 / 1000 : ℝ) * rootReal b,
-        Real.sqrt 3 * (rootImag a + (1 / 1000 : ℝ) * rootImag b)⟩ : ℂ) := by
-  exact Complex.ext (clusterPoint_re a b) (clusterPoint_im a b)
-
 lemma clusterPoint_injective :
     Function.Injective (fun ab : Fin 3 × Fin 3 => clusterPoint ab.1 ab.2) := by
   intro x y h
@@ -131,22 +60,19 @@ lemma clusterPoint_injective :
   rcases y with ⟨c, d⟩
   have hre := congrArg Complex.re h
   have him := congrArg Complex.im h
-  rw [clusterPoint_re, clusterPoint_re] at hre
-  rw [clusterPoint_im, clusterPoint_im] at him
-  have hs : Real.sqrt 3 ≠ 0 := ne_of_gt (by positivity : 0 < Real.sqrt 3)
-  have hcoeff : rootImag a + (1 / 1000 : ℝ) * rootImag b =
-      rootImag c + (1 / 1000 : ℝ) * rootImag d := mul_left_cancel₀ hs him
-  clear h him
+  have hs : 0 < Real.sqrt 3 := by positivity
   fin_cases a <;> fin_cases b <;> fin_cases c <;> fin_cases d <;>
-    first | rfl | norm_num [rootReal, rootImag] at *
+    norm_num [clusterPoint, omega, epsilon, Complex.ext_iff, pow_succ, Real.sq_sqrt] at * <;>
+    nlinarith [Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 3)]
 
 lemma clusterPoint_ne_zero (a b : Fin 3) : clusterPoint a b ≠ 0 := by
-  intro h
-  have hr := congrArg Complex.re h
-  rw [clusterPoint_re] at hr
-  clear h
   fin_cases a <;> fin_cases b <;>
-    norm_num [rootReal] at hr
+    intro h
+  all_goals
+    have hr := congrArg Complex.re h
+    have hi := congrArg Complex.im h
+    norm_num [clusterPoint, omega, epsilon, Complex.ext_iff, pow_succ, Real.sq_sqrt] at * <;>
+      nlinarith [Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 3)]
 
 lemma explicitL_card : explicitL.card = 9 := by
   rw [explicitL, Finset.card_image_of_injective _ clusterPoint_injective]
@@ -173,11 +99,11 @@ lemma witness_eval_sq_norm (a b : Fin 3) :
     ‖witnessPolynomial.eval (clusterPoint a b)‖ ^ 2 = exactFullMinimum ^ 2 := by
   fin_cases a <;> fin_cases b <;>
     rw [Complex.sq_norm] <;>
-    norm_num [witnessPolynomial, clusterPoint_coordinates, rootReal, rootImag,
-      epsilon, denominator, exactFullMinimum, Complex.normSq_apply, pow_succ] <;>
+    norm_num [witnessPolynomial, clusterPoint, omega, epsilon, denominator,
+      exactFullMinimum, Complex.normSq_apply, pow_succ] <;>
     ring_nf <;>
-    norm_num [sqrt_three_pow_2, sqrt_three_pow_3, sqrt_three_pow_4,
-      sqrt_three_pow_5, sqrt_three_pow_6, sqrt_three_pow_7] <;>
+    norm_num [sqrt_three_pow_even 1, sqrt_three_pow_even 2, sqrt_three_pow_even 3, sqrt_three_pow_even 4, sqrt_three_pow_even 5, sqrt_three_pow_even 6, sqrt_three_pow_even 7,
+      sqrt_three_pow_odd 1, sqrt_three_pow_odd 2, sqrt_three_pow_odd 3, sqrt_three_pow_odd 4, sqrt_three_pow_odd 5, sqrt_three_pow_odd 6] <;>
     ring
 
 lemma witness_eval_norm (a b : Fin 3) :
@@ -215,9 +141,8 @@ lemma witnessWeight_pos (a b : Fin 3) : 0 < witnessWeight a b := by
 
 lemma witnessWeight_sum :
     (∑ a : Fin 3, ∑ b : Fin 3, witnessWeight a b) = 1 := by
-  simp only [Fin.sum_univ_three, witnessWeight, Fin.ext_iff,
-    Fin.val_zero, Fin.val_one, Fin.val_two]
-  norm_num [witnessWeightDiagonal, witnessWeightOffDiagonal]
+  norm_num [witnessWeight, witnessWeightDiagonal, witnessWeightOffDiagonal,
+    Fin.sum_univ_succ, Fin.ext_iff]
 
 /- Weighted orthogonality is checked in the exact field ℂ.  The four moments
    are the only moments needed for an arbitrary degree-four polynomial whose
@@ -229,15 +154,13 @@ lemma weighted_moment (ell : Fin 4) :
           conj (witnessPolynomial.eval (clusterPoint a b)) *
           clusterPoint a b ^ (ell.val + 1) = 0 := by
   fin_cases ell <;>
-    simp only [Fin.sum_univ_three, witnessWeight, Fin.ext_iff,
-      Fin.val_zero, Fin.val_one, Fin.val_two] <;>
     apply Complex.ext <;>
-    norm_num [witnessWeightDiagonal, witnessWeightOffDiagonal,
-      witnessPolynomial, clusterPoint_coordinates, rootReal, rootImag,
-      epsilon, denominator, Complex.ext_iff, pow_succ] <;>
+    norm_num [witnessWeight, witnessWeightDiagonal, witnessWeightOffDiagonal,
+      witnessPolynomial, clusterPoint, omega, epsilon, denominator,
+      Fin.sum_univ_succ, Fin.ext_iff, Complex.ext_iff, pow_succ] <;>
     ring_nf <;>
-    norm_num [sqrt_three_pow_2, sqrt_three_pow_3, sqrt_three_pow_4,
-      sqrt_three_pow_5, sqrt_three_pow_6, sqrt_three_pow_7] <;>
+    norm_num [sqrt_three_pow_even 1, sqrt_three_pow_even 2, sqrt_three_pow_even 3, sqrt_three_pow_even 4, sqrt_three_pow_even 5, sqrt_three_pow_even 6, sqrt_three_pow_even 7,
+      sqrt_three_pow_odd 1, sqrt_three_pow_odd 2, sqrt_three_pow_odd 3, sqrt_three_pow_odd 4, sqrt_three_pow_odd 5, sqrt_three_pow_odd 6] <;>
     ring
 
 end NLA.IE16

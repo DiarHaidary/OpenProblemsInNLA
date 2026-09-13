@@ -55,11 +55,3 @@ source bytes under `history/run-34770760353` before applying fixes. That first
 artifact omitted two hidden input copies because of the upload default; their
 recorded hashes match the exact Git commit. Subsequent uploads explicitly include
 hidden files. The original artifact remains unchanged in the private run evidence.
-
-Run `34771972369` at commit `28bdf9e85541764b6a5cb2debd647b9cebaea21f`
-retained all 38 input copies, with matching hashes and ten matching dependency
-pins. LeanCert Verification and Definitions passed; Numeric and Minimax failed
-and their descendants were skipped. The retained raw compiler errors motivated
-the next exact coordinate and syntax repairs in `NUMERIC_OPTIMIZATION.md` and
-`SOURCE_CHANGES.json`. None of these development runs establishes final proof
-acceptance. The previous source bytes are under `history/run-34771972369`.

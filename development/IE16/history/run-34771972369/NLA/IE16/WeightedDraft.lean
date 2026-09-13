@@ -26,12 +26,12 @@ lemma weighted_norm_sq_identity {S : Finset ℂ} {pstar p : Poly}
     {m : ℝ} {w : ℂ → ℝ}
     (hS : S.Nonempty)
     (hweights : ∀ z ∈ S, 0 ≤ w z)
-    (hsum : ∑ z ∈ S, w z = 1)
+    (hsum : ∑ z in S, w z = 1)
     (hstar : ∀ z ∈ S, ‖pstar.eval z‖ = m)
-    (horth : ∑ z ∈ S,
+    (horth : ∑ z in S,
         w z * (conj (pstar.eval z) * (p.eval z - pstar.eval z)).re = 0) :
-    ∑ z ∈ S, w z * ‖p.eval z‖ ^ 2 =
-      m ^ 2 + ∑ z ∈ S, w z * ‖p.eval z - pstar.eval z‖ ^ 2 := by
+    ∑ z in S, w z * ‖p.eval z‖ ^ 2 =
+      m ^ 2 + ∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2 := by
   have hterm : ∀ z ∈ S,
       ‖p.eval z‖ ^ 2 =
         ‖pstar.eval z‖ ^ 2 + ‖p.eval z - pstar.eval z‖ ^ 2 +
@@ -48,24 +48,24 @@ lemma weighted_norm_sq_identity {S : Finset ℂ} {pstar p : Poly}
             (p.eval z - pstar.eval z)).re :=
         complex_sq_norm_add _ _
   calc
-    ∑ z ∈ S, w z * ‖p.eval z‖ ^ 2 =
-        ∑ z ∈ S, w z *
+    ∑ z in S, w z * ‖p.eval z‖ ^ 2 =
+        ∑ z in S, w z *
           (‖pstar.eval z‖ ^ 2 + ‖p.eval z - pstar.eval z‖ ^ 2 +
             2 * (conj (pstar.eval z) *
               (p.eval z - pstar.eval z)).re) := by
       exact Finset.sum_congr rfl (fun z hz => congrArg (fun r : ℝ => w z * r)
         (hterm z hz))
-    _ = (∑ z ∈ S, w z * ‖pstar.eval z‖ ^ 2) +
-        (∑ z ∈ S, w z * ‖p.eval z - pstar.eval z‖ ^ 2) +
-        2 * (∑ z ∈ S,
+    _ = (∑ z in S, w z * ‖pstar.eval z‖ ^ 2) +
+        (∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2) +
+        2 * (∑ z in S,
           w z * (conj (pstar.eval z) *
             (p.eval z - pstar.eval z)).re) := by
       calc
-        (∑ z ∈ S, w z *
+        (∑ z in S, w z *
             (‖pstar.eval z‖ ^ 2 + ‖p.eval z - pstar.eval z‖ ^ 2 +
               2 * (conj (pstar.eval z) *
                 (p.eval z - pstar.eval z)).re)) =
-            ∑ z ∈ S,
+            ∑ z in S,
               (w z * ‖pstar.eval z‖ ^ 2 +
                 (w z * ‖p.eval z - pstar.eval z‖ ^ 2 +
                   w z * (2 * (conj (pstar.eval z) *
@@ -73,44 +73,44 @@ lemma weighted_norm_sq_identity {S : Finset ℂ} {pstar p : Poly}
           apply Finset.sum_congr rfl
           intro z hz
           ring
-        _ = (∑ z ∈ S, w z * ‖pstar.eval z‖ ^ 2) +
-              ((∑ z ∈ S, w z * ‖p.eval z - pstar.eval z‖ ^ 2) +
-                (∑ z ∈ S, w z * (2 * (conj (pstar.eval z) *
+        _ = (∑ z in S, w z * ‖pstar.eval z‖ ^ 2) +
+              ((∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2) +
+                (∑ z in S, w z * (2 * (conj (pstar.eval z) *
                   (p.eval z - pstar.eval z)).re))) := by
           rw [Finset.sum_add_distrib, Finset.sum_add_distrib]
-        _ = (∑ z ∈ S, w z * ‖pstar.eval z‖ ^ 2) +
-              (∑ z ∈ S, w z * ‖p.eval z - pstar.eval z‖ ^ 2) +
-              2 * (∑ z ∈ S,
+        _ = (∑ z in S, w z * ‖pstar.eval z‖ ^ 2) +
+              (∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2) +
+              2 * (∑ z in S,
                 w z * (conj (pstar.eval z) *
                   (p.eval z - pstar.eval z)).re) := by
           have hcross :
-              (∑ z ∈ S, w z * (2 * (conj (pstar.eval z) *
+              (∑ z in S, w z * (2 * (conj (pstar.eval z) *
                 (p.eval z - pstar.eval z)).re)) =
-                2 * (∑ z ∈ S, w z * (conj (pstar.eval z) *
+                2 * (∑ z in S, w z * (conj (pstar.eval z) *
                   (p.eval z - pstar.eval z)).re) := by
             calc
-              (∑ z ∈ S, w z * (2 * (conj (pstar.eval z) *
+              (∑ z in S, w z * (2 * (conj (pstar.eval z) *
                   (p.eval z - pstar.eval z)).re)) =
-                  ∑ z ∈ S, 2 * (w z * (conj (pstar.eval z) *
+                  ∑ z in S, 2 * (w z * (conj (pstar.eval z) *
                     (p.eval z - pstar.eval z)).re) := by
                 apply Finset.sum_congr rfl
                 intro z hz
                 ring
-              _ = 2 * (∑ z ∈ S, w z * (conj (pstar.eval z) *
+              _ = 2 * (∑ z in S, w z * (conj (pstar.eval z) *
                     (p.eval z - pstar.eval z)).re) := by
                 rw [Finset.mul_sum]
           rw [hcross]
           ring
-    _ = m ^ 2 + ∑ z ∈ S, w z * ‖p.eval z - pstar.eval z‖ ^ 2 := by
+    _ = m ^ 2 + ∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2 := by
       rw [horth]
-      have hsquare : ∑ z ∈ S, w z * ‖pstar.eval z‖ ^ 2 = m ^ 2 := by
+      have hsquare : ∑ z in S, w z * ‖pstar.eval z‖ ^ 2 = m ^ 2 := by
         calc
-          ∑ z ∈ S, w z * ‖pstar.eval z‖ ^ 2 =
-              ∑ z ∈ S, w z * m ^ 2 := by
+          ∑ z in S, w z * ‖pstar.eval z‖ ^ 2 =
+              ∑ z in S, w z * m ^ 2 := by
             exact Finset.sum_congr rfl (fun z hz =>
               congrArg (fun r : ℝ => w z * r)
                 (congrArg (fun r : ℝ => r ^ 2) (hstar z hz)))
-          _ = (∑ z ∈ S, w z) * m ^ 2 := by rw [Finset.sum_mul]
+          _ = (∑ z in S, w z) * m ^ 2 := by rw [Finset.sum_mul]
           _ = m ^ 2 := by rw [hsum, one_mul]
       rw [hsquare]
       ring
@@ -118,10 +118,10 @@ lemma weighted_norm_sq_identity {S : Finset ℂ} {pstar p : Poly}
 theorem weighted_minimum_lower {S : Finset ℂ} {pstar : Poly} {m : ℝ}
     {w : ℂ → ℝ} (hS : S.Nonempty)
     (hweights : ∀ z ∈ S, 0 ≤ w z)
-    (hsum : ∑ z ∈ S, w z = 1)
+    (hsum : ∑ z in S, w z = 1)
     (hstar : ∀ z ∈ S, ‖pstar.eval z‖ = m)
     {p : Poly} (hp : feasible S 4 p)
-    (horth : ∑ z ∈ S,
+    (horth : ∑ z in S,
         w z * (conj (pstar.eval z) * (p.eval z - pstar.eval z)).re = 0) :
     m ≤ maxModulus S p := by
   have hm : 0 ≤ m := by
@@ -139,19 +139,19 @@ theorem weighted_minimum_lower {S : Finset ℂ} {pstar : Poly} {m : ℝ}
     simp only [dif_pos hS]
     exact Finset.le_sup' _ hz
   have henergy_nonneg : 0 ≤
-      ∑ z ∈ S, w z * ‖p.eval z - pstar.eval z‖ ^ 2 := by
+      ∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2 := by
     apply Finset.sum_nonneg
     intro z hz
     exact mul_nonneg (hweights z hz) (sq_nonneg _)
   have henergy_lower : m ^ 2 ≤
-      ∑ z ∈ S, w z * ‖p.eval z‖ ^ 2 := by
+      ∑ z in S, w z * ‖p.eval z‖ ^ 2 := by
     rw [weighted_norm_sq_identity hS hweights hsum hstar horth]
     linarith
   have henergy_upper :
-      ∑ z ∈ S, w z * ‖p.eval z‖ ^ 2 ≤ (maxModulus S p) ^ 2 := by
+      ∑ z in S, w z * ‖p.eval z‖ ^ 2 ≤ (maxModulus S p) ^ 2 := by
     calc
-      ∑ z ∈ S, w z * ‖p.eval z‖ ^ 2 ≤
-          ∑ z ∈ S, w z * (maxModulus S p) ^ 2 := by
+      ∑ z in S, w z * ‖p.eval z‖ ^ 2 ≤
+          ∑ z in S, w z * (maxModulus S p) ^ 2 := by
         apply Finset.sum_le_sum
         intro z hz
         exact mul_le_mul_of_nonneg_left

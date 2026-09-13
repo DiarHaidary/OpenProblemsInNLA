@@ -1,10 +1,7 @@
-# IS-02 complete Lean formalization
+# IS-02 Lean formalization
 
-This package verifies the complete negative resolution of IS-02. All nine
-exports passed independent mathematical reviews and actual non-root Linux
-Comparator, permitted-axiom and default-kernel checks. The
-[Linux record](verification/linux-2026-09-13/README.md) retains the raw evidence
-and independent operational audit. It proves the exact 4 by 4 counterexample, the
+This package contains a complete proof candidate for the frozen IS-02
+statement boundary. It proves the exact 4 by 4 counterexample, the
 characteristic-polynomial/eigenvalue-multiset bridge for real symmetric
 matrices, spectral uniqueness up to permutation, exclusion from the complete
 vertex-segment locus, and the resulting negation of the universal target.
@@ -13,7 +10,7 @@ The original mathematical counterexample remains credited to Matthew J.
 Colbrook, Department of Applied Mathematics and Theoretical Physics,
 University of Cambridge. The formalization is by George Stepaniants, Department of
 Computing and Mathematical Sciences, California Institute of Technology,
-Pasadena, California, USA.
+Pasadena, California, USA. George's email is intentionally omitted.
 
 `Definitions.lean` and `Challenge.lean` preserve the independently reviewed
 statement boundary. `Solution.lean` proves the same nine declarations in a
@@ -32,17 +29,15 @@ pre-existing dependency artifacts; set `IS02_DEP_ROOT` to the existing
 script checks all ten manifest revisions and clean tracked dependency trees,
 then preserves raw commands and results in its fresh private prefix. The
 two complete independent mathematical reviews and narrow cleanup checks have
-approved the proof. The separate actual Linux Comparator, default-kernel and
-permitted-axiom verification passed on the immutable revision recorded above.
-Those Linux receipts identify the exact checked source; local checks alone
-are not presented as Linux verification.
+approved the proof. Authoritative Linux Comparator verification and catalog
+promotion remain pending. This package does not itself change the
+canonical problem status.
 
 The statement approvals, source correspondence, pinned manifest, and exact
 frozen hashes are retained in `reviews/` and `SOURCE_MAP.md`.
 
 The complete final reports, preserved old-source records, exact cleanup
 correspondence and current proof hashes are in `reviews/FINAL-ACCEPTANCE.json`.
-Run `python3 verification/verify_publication.py` from a full repository checkout
-to check the package inventory, immutable reviewed source, original Linux
-inputs and retained receipts offline; that integrity check does not run Lean
-or replace mathematical review.
+Run `python3 verification/verify_package.py` from a full repository checkout
+to check the package inventory and metadata; that check is separate from
+mathematical and Linux verification.

@@ -2,9 +2,9 @@
 version: v0.4
 project:
   name: 'IS-02: counterexample to the spectral-uniqueness locus condition'
-  description: Complete exact order-four counterexample to the original spectral-uniqueness locus condition,
-    independently reviewed and verified by the actual non-root Linux sandbox, Comparator, permitted-axiom
-    audit and default kernel.
+  description: Complete exact 4 by 4 counterexample formalization with two independent mathematical reviews
+    and accepted presentation cleanup; local kernel-trust checks pass and authoritative Linux Comparator
+    remains pending.
   authors:
   - George Stepaniants
   affiliations:
@@ -42,18 +42,16 @@ automation:
   - method: agent
     framework: OpenAI Codex
     tool_setup: Exact rational identities use Mathlib norm_num, ring and linarith tactics; LeanCert kernel
-      mode audits the resulting declarations for kernel trust. All nine exports passed the actual non-root
-      Linux Comparator and default-kernel checks.
+      mode audits the resulting declarations for kernel trust. Comparator is required for the final authoritative
+      Linux check.
     prompting_notes: Formalize the component/bipartite spectral-uniqueness argument and the complete vertex-segment
       exclusion without assuming either conclusion.
   notes: Two independent statement approvals preceded implementation. Two complete independent mathematical
-    reviews and independent narrow cleanup checks approved the proof. Local kernel-trust checks, actual
-    Ubuntu verification and an independent operational audit passed. Nine intentional Challenge placeholders
-    are isolated from the proved Solution.
+    reviews approved the proof, followed by two independent narrow cleanup checks. Local direct Lean compilation
+    and all nine kernel-trust checks passed. Authoritative Linux verification remains pending.
 status:
-  scope: 'Complete original negative target: exact counterexample, full real symmetric spectral-multiset
-    bridge, uniqueness among all real competitors, exclusion from every original vertex-segment family,
-    and the universal negation.'
+  scope: Complete original negative target proved locally and independently reviewed twice; authoritative
+    Linux gates pending. Canonical status remains Solved.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: &id001
@@ -115,21 +113,19 @@ status:
     axioms: *id001
     comparator_config: comparator.json
     literature_dependencies: []
-  whole_problem_verified: true
+  whole_problem_verified: false
 review:
-  status: Two independent statement and final mathematical approvals, accepted cleanup, actual Linux verification
-    and independent operational audit passed
+  status: Two independent statement and final mathematical approvals, plus accepted cleanup; Linux pending
   reviewers:
-  - "/root \u2014 independent statement referee 1 (AI agent); REVIEW.md sha256 26d6a4900e8c237459425e4b95a5b3c9d0101df5d7a6d564fc76a6a3ca897c4d"
-  - "/root/is02_statement_referee2 \u2014 independent statement referee 2 (AI agent); REVIEW.md sha256\
-    \ a7dcdb93bbb0b3e98f72b73c3a88790092d8d362a289251dbc9148a711f5e5a2"
-  - "/root/nr03_statement_referee2 \u2014 independent final mathematical referee 1 (AI agent)"
-  - "/root \u2014 independent final mathematical referee 2 and cleanup referee (AI agent)"
-  - "/root/is02_cleanup_referee \u2014 independent narrow cleanup referee (AI agent)"
+  - /root — independent statement referee 1 (AI agent); REVIEW.md sha256 26d6a4900e8c237459425e4b95a5b3c9d0101df5d7a6d564fc76a6a3ca897c4d
+  - /root/is02_statement_referee2 — independent statement referee 2 (AI agent); REVIEW.md sha256 a7dcdb93bbb0b3e98f72b73c3a88790092d8d362a289251dbc9148a711f5e5a2
+  - /root/nr03_statement_referee2 — independent final mathematical referee 1 (AI agent)
+  - /root — independent final mathematical referee 2 and cleanup referee (AI agent)
+  - /root/is02_cleanup_referee — independent narrow cleanup referee (AI agent)
   notes: reviews/STATEMENT-ACCEPTANCE.json preserves the pre-proof freeze. reviews/FINAL-ACCEPTANCE.json
-    binds both mathematical reviews and the unchanged final proof after accepted cleanup. verification/linux-2026-09-13
-    retains the actual Linux result and independent operational audit. AI-agent review is not human peer
-    review or official Tau Ceti endorsement.
+    binds both full mathematical reviews, preserved old source and raw logs, exact final mathematical
+    source, two cleanup acceptance reports and corrected Lake configuration. AI-agent review is not human
+    peer review or official Tau Ceti endorsement. Linux verification remains a separate gate.
   statement_freeze:
     definitions_sha256: 4d2d2914838a91a30f12b1e20490c957d2b4e943eb2a51f7415cc2fedd0bf321
     challenge_sha256: d72b58465096cb7049d453206727837eb53b87845a5d8faa97d88f5fb9244cff
@@ -166,15 +162,7 @@ reproduction:
     note: The command invokes the pinned Lean binary directly, writes only to a fresh private output prefix,
       and never runs Lake, downloads dependencies, or rebuilds caches.
   integrity:
-    command: python3 verification/verify_publication.py
-    note: Run from the problem lean directory in a full repository checkout with the shared metadata requirements
-      installed. Checks current package and original verified-input correspondence offline; no new Lean
-      run is implied.
-  linux:
-    status: passed on actual non-root Ubuntu Linux
-    verified_commit: 522f091b9f0d39d4846f5939bcafc1549ba16a55
-    run: https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34766178560
-    evidence: verification/linux-2026-09-13/README.md
-    command: tools/lean/verify.sh eigenvalues-and-inverse-problems/IS-02/lean /tmp/nla-lean-tools
-    note: Run from the repository root after bootstrap with the prerequisites in tools/lean/HARNESS.md.
-      Fresh project verification uses the trusted pinned Mathlib cache.
+    command: python3 verification/verify_package.py
+    note: Run from a full repository checkout with the shared metadata requirements installed. Checks
+      the live package inventory and immutable reviewed mathematical boundary; this is separate from proving
+      theorems.

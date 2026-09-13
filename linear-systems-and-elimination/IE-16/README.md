@@ -2,8 +2,8 @@
 
 **Difficulty:** challenging  
 **Importance:** interesting to the community  
-**Status:** Solved
-**Last checked:** 2026-09-12
+**Status:** Lean verified
+**Last checked:** 2026-09-13
 
 **Historical rating rationale:** Challenging reflects extending a discrete real approximation principle to complex spectra with a sharp constant; community impact concerns usable worst-case GMRES bounds for normal matrices.
 
@@ -20,7 +20,17 @@ M_4(L)=\frac{3003003000}{1001003001001}>\frac{299}{100000},
 
 The ratio is therefore greater than $`13/10>4/\pi`$. Here $`n=9`$ and $`1\le4\le n-2`$, so all original assumptions and quantifiers are addressed by this counterexample. Theorem 1.2 (Sections 4-5) additionally proves that no finite dimension-independent replacement constant exists. The finite counterexample alone settles IE-16 negatively; no case of the original universal truth question remains open.
 
-The complete proof passed a separate [independent Codex AI-agent informal audit](../../references/holden-ie16-2026-09-12/INDEPENDENT-REVIEW.md). The supplied exact-arithmetic verifier passed all 126 subset checks, and reviewer-written rational checks passed independently. This is not external human peer review or formal verification. No Lean verification was performed. [Proof source](solution.tex) · [Exact verifier and certificates](../../references/holden-ie16-2026-09-12/submitted/README.md).
+The complete proof passed a separate [independent Codex AI-agent informal audit](../../references/holden-ie16-2026-09-12/INDEPENDENT-REVIEW.md). The supplied exact-arithmetic verifier passed all 126 subset checks, and reviewer-written rational checks passed independently. That dated informal audit was not external human peer review or formal verification. The separate Lean verification is recorded below. [Proof source](solution.tex) · [Exact verifier and certificates](../../references/holden-ie16-2026-09-12/submitted/README.md).
+
+## Lean proof and verification evidence — 2026-09-13
+
+**Formalization: George Stepaniants**, Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA. Original mathematical proof and exact certificate: **Sidney Holden**, Center for Computational Biology, Flatiron Institute, Simons Foundation.
+
+The [immutable complete Lean proof](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/697a2a1d88337a6747aa5c82fb6e554d3ff1b356/linear-systems-and-elimination/IE-16/lean) uses Lean 4.33.1, [LeanCert 621a43d7cf21](https://github.com/alerad/leancert/tree/621a43d7cf21f87872392a01e874f2f1dbddc926) and [Mathlib 0df444a360ea](https://github.com/leanprover-community/mathlib4/tree/0df444a360eaa60ab8c11dca51a86af692955474), with full pins in the [dependency manifest](lean/lake-manifest.json). The [project guide](lean/README.md), [exact targets](lean/NUMERICAL_TARGETS.md), [definitions](lean/NLA/IE16/Definitions.lean) and [fifteen-contract boundary](lean/Challenge.lean) record the precise source correspondence.
+
+`NLA.IE16.not_IE16Conjecture` negates the complete displayed universal inequality. The nine-point witness at degree four uses arbitrary normalized complex polynomials, actual complex norms and `Real.pi`. The full minimum is attained and equals `3003003000/1001003001001`; every five-point subset has an attained minimum below `23/10000`, and their actual maximum is positive. The ratio exceeds `13/10>4/π`. Exact root coordinates, positive weights and four vanishing moments certify the full optimum. Generic Lagrange interpolation and a finite occupancy argument cover every five-point subset. The stronger unbounded-ratio theorem remains an informal source result outside this formalization; the finite counterexample already settles the original universal target.
+
+The repository ran [successful non-root Ubuntu verification](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34774629327/job/103770408910) on the pinned canonical proof. All fifteen Comparator statements, permitted axiom closures and Lean’s default kernel passed, together with actual sandbox and rejection controls. Every exported theorem reports only `propext`, `Classical.choice` and `Quot.sound`. [Raw evidence and reproduction commands](lean/verification/linux-2026-09-13/README.md), [statement acceptance](lean/reviews/STATEMENT-ACCEPTANCE.json) and [final canonical referee acceptance](lean/reviews/FINAL-ACCEPTANCE.json) preserve the verification scope. AI assistance and independent agent reviews are disclosed; no external human peer review or official Tau Ceti endorsement is claimed.
 
 ## Original problem (retained)
 

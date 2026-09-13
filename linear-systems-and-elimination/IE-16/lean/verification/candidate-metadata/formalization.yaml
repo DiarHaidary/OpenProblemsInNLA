@@ -2,14 +2,15 @@
 version: v0.4
 project:
   name: 'IE-16: finite complex-spectrum counterexample to the normal-GMRES subset bound'
-  description: Complete negative resolution of the original IE-16 universal inequality from Sidney Holden’s
-    exact nine-point, degree-four counterexample. All fifteen independently reviewed contracts passed
-    actual non-root Linux Comparator, standard axiom checks and default-kernel replay.
+  description: Compiled development proof of Sidney Holden’s exact nine-point, degree-four counterexample
+    to the complete IE-16 universal inequality. All ten project modules and fifteen exports pass
+    bounded Linux development elaboration and LeanCert kernel trust assertions. Canonical Comparator,
+    separate default-kernel replay and final compiled-source acceptance remain pending.
   authors:
   - George Stepaniants
   affiliations:
-    George Stepaniants: Department of Computing and Mathematical Sciences, California Institute of Technology,
-      Pasadena, California, USA
+    George Stepaniants: Department of Computing and Mathematical Sciences, California Institute
+      of Technology, Pasadena, California, USA
   responsible_maintainers:
   - George Stepaniants
   license: Apache-2.0
@@ -22,8 +23,8 @@ sources:
   location: Complete canonical problem statement
   relationship: formalizes
   author_endorsement: not-contacted
-  note: 'All original quantifiers are retained: finite distinct nonzero complex spectra, n >= 3, and
-    every 1 <= k <= n - 2.'
+  note: 'All original quantifiers are retained: finite distinct nonzero complex spectra, n >= 3,
+    and every 1 <= k <= n - 2.'
 - title: 'IE-16: A counterexample and the failure of every universal subset constant'
   authors:
   - Sidney Holden
@@ -33,9 +34,10 @@ sources:
     witness and subset estimates; Section 6 Positive weights certify optimality
   relationship: formalizes
   author_endorsement: not-contacted
-  note: The finite witness and Section 6 weighted-moment proof are in scope. The implementation supplies
-    full and subset IsLeast bridges and a uniform Lagrange/occupancy proof of the all-subset bound.
-    The stronger amplification theorem and an operator-level GMRES construction are outside scope.
+  note: The finite witness and Section 6 weighted-moment proof are in scope. The implementation
+    supplies full and subset IsLeast bridges and a uniform Lagrange/occupancy proof of the all-subset
+    bound. The stronger amplification theorem and an operator-level GMRES construction are outside
+    scope.
 - title: IE-16 exact finite certificate
   authors:
   - Sidney Holden
@@ -45,8 +47,8 @@ sources:
   relationship: other
   author_endorsement: not-contacted
   note: Retained exact-arithmetic software and all 126 subset records are supplementary source evidence.
-    The Lean candidate uses generic Lagrange interpolation and uniform occupancy/product bounds; the
-    JSON and Python results are not imported as trusted premises.
+    The Lean candidate uses generic Lagrange interpolation and uniform occupancy/product bounds;
+    the JSON and Python results are not imported as trusted premises.
 related_formalizations:
 - id: https://github.com/sgstepaniants/Forsythe/tree/8d1b0c0545a77b40245e84705aa7d273e6c81e62/lean-proof
   relationship: other
@@ -59,11 +61,10 @@ automation:
   - method: agent
     framework: OpenAI Codex
     tool_setup: AI-assisted proof implementation with independent statement and mathematical source
-      reviews; pinned Lean 4.33.1, Mathlib and LeanCert. Exact rational root coordinates, symbolic powers
-      of sqrt(3), four weighted complex moments, generic Lagrange interpolation and finite nine-label
-      occupancy. Linux development run 34773404263 successfully compiled all ten project modules and
-      all fifteen kernel-trust assertions; canonical run 34774629327 subsequently passed Comparator,
-      default-kernel replay and all controls.
+      reviews; pinned Lean 4.33.1, Mathlib and LeanCert. Exact rational root coordinates, symbolic
+      powers of sqrt(3), four weighted complex moments, generic Lagrange interpolation and finite
+      nine-label occupancy. Linux development run 34773404263 successfully compiled all ten project
+      modules and all fifteen kernel-trust assertions; canonical verification remains pending.
     prompting_notes: Preserve the full IE-16 quantifiers, arbitrary normalized complex polynomials,
       actual norms and Real.pi, attained full/subset minima and a positive maximum over every five-point
       subset. Use Holden’s Section 6 weighted orthogonality and exact uniform product bounds.
@@ -73,36 +74,32 @@ automation:
       after its independent mathematical source review. Read-only Git/source and raw Linux development
       evidence inspection, with the existing metadata schema environment. No local compiler, Lean/Lake
       invocation, proof-source edit or dependency download by the packaging agent.
-    prompting_notes: Preserve source/review provenance, original mathematical credit and formalization
-      affiliation. Historical documentation records its development-only phase. The final mathematical
-      review excludes independent approval of its reviewer’s own metadata drafting.
-  - method: agent
-    framework: OpenAI Codex
-    tool_setup: Publication draft and CI operational record by source implementer /root/is02_cleanup_referee;
-      final metadata integration and review by coordinator /root. Two separate agents /root/lean_iv01_next
-      and /root/nr03_independent_referee supplied independent final mathematical/CI reports. All compilation
-      in this phase ran remotely on Linux.
+    prompting_notes: Preserve exact source and review provenance, source credit and formalization
+      affiliation. Report successful development compilation and measured axiom sets separately
+      from pending canonical Comparator, independent default-kernel replay and final compiled-source
+      reviews. Documentation preparation does not make its preparer a mathematical proof author.
   notes: Formalization requested by George Stepaniants with substantial AI assistance. Source mathematics
     and exact certificate remain credited to Sidney Holden. No external human peer review, source-author
     endorsement, official Tau Ceti service, priority certification or measured cost is claimed.
 status:
-  scope: Complete original universal negation from the exact finite counterexample; all fifteen contracts,
-    including attained full/subset minima and positive actual subset maximum. Stronger amplification
-    is outside formalized scope.
+  scope: 'The complete finite counterexample compiles in bounded Linux development run 34773404263
+    at 281fc3790412b7ab2b05c202c0351b4d259a6382: all fifteen approved contracts, attained full and
+    every-subset minima, a positive subset maximum and the full original universal negation. Development
+    elaboration and kernel-trust assertions passed. Canonical package verification, separate default-kernel
+    replay, Comparator and final independent acceptance remain pending.'
   sorry_count: 0
   sorry_in_definitions: 0
-  placeholder_count_basis: The solution dependency closure passed the canonical Comparator audit at
-    697a2a1d88337a6747aa5c82fb6e554d3ff1b356; fifteen deliberate Challenge placeholders remain isolated
-    from the solution.
-  actual_axiom_closures: 'Measured in the canonical Linux Comparator log for every public export: all
-    fifteen closures are exactly propext, Classical.choice and Quot.sound. Raw comparator.log SHA-256
-    f226bbdaf0c47e4dff3127d1711b00819ccf0e7d275b320521191e2fc0087d9f.'
+  placeholder_count_basis: Lexical source scan at revision 281fc3790412b7ab2b05c202c0351b4d259a6382,
+    excluding fifteen deliberate Challenge placeholders. Zero source placeholders is not successful
+    elaboration or a transitive axiom audit.
+  actual_axiom_closures: 'Measured for every public export in successful development compile-Solution.stdout;
+    all fifteen sets are exactly propext, Classical.choice and Quot.sound. Raw log SHA-256: cc8a1d468d7e386c2f44d502babfea41c8cb22bb72055833a1aa82d2c9771e05.'
   main_results:
   - declaration: NLA.IE16.explicitL_card
     file: NLA/IE16/Numeric.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -111,8 +108,8 @@ status:
   - declaration: NLA.IE16.explicitL_admissible
     file: NLA/IE16/Numeric.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -121,8 +118,8 @@ status:
   - declaration: NLA.IE16.witness_feasible
     file: NLA/IE16/Numeric.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -131,8 +128,8 @@ status:
   - declaration: NLA.IE16.witness_objective
     file: NLA/IE16/Numeric.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -141,8 +138,8 @@ status:
   - declaration: NLA.IE16.full_minimum_exact
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -151,8 +148,8 @@ status:
   - declaration: NLA.IE16.full_minimum_isLeast
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -161,8 +158,8 @@ status:
   - declaration: NLA.IE16.full_lower_bound
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -171,8 +168,8 @@ status:
   - declaration: NLA.IE16.every_five_point_subset_upper
     file: NLA/IE16/SubsetGeometryDraft.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -181,8 +178,8 @@ status:
   - declaration: NLA.IE16.every_five_point_subset_minimum_isLeast
     file: NLA/IE16/SubsetGeometryDraft.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -191,8 +188,8 @@ status:
   - declaration: NLA.IE16.subset_max_upper
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -201,8 +198,8 @@ status:
   - declaration: NLA.IE16.subset_max_positive
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -211,8 +208,8 @@ status:
   - declaration: NLA.IE16.ratio_lower_bound
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -221,8 +218,8 @@ status:
   - declaration: NLA.IE16.ratio_exceeds_candidate
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -231,8 +228,8 @@ status:
   - declaration: NLA.IE16.counterexample
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
@@ -241,31 +238,35 @@ status:
   - declaration: NLA.IE16.not_IE16Conjecture
     file: Solution.lean
     comparator_config: comparator.json
-    verification_status: Canonical Linux Comparator, default-kernel replay, LeanCert kernel assertions
-      and both independent final referees passed.
+    verification_status: bounded Linux development elaboration and kernel-trust assertion passed;
+      canonical Comparator and final acceptance pending
     sorry_count: 0
     axioms:
     - propext
     - Classical.choice
     - Quot.sound
-  whole_problem_verified: true
+  whole_problem_verified: false
   axioms: &id001
   - propext
   - Classical.choice
   - Quot.sound
 review:
-  status: Two pre-proof statement approvals; two independent final mathematical and canonical Linux-evidence
-    approvals; coordinator accepted.
+  status: two statement approvals and two earlier mathematical source reviews retained; successful
+    development compilation; final compiled-source reviews pending
   reviewers:
   - /root/is02_cleanup_referee (independent AI agent)
   - /root (AI agent; independent of statement authorship at that phase)
   - /root/lean_iv01_next (independent AI agent)
   - /root/nr03_independent_referee (independent AI agent)
-  notes: Statement acceptance precedes implementation. Historical source and compiled-development reports
-    retain their exact scopes. The final addenda review the unchanged complete mathematics and actual
-    canonical Linux evidence at 697a2a1d88337a6747aa5c82fb6e554d3ff1b356. Original compiler findings
-    are resolved. Root and the source implementer do not count as independent final referees. Reviews
-    follow the repository’s Tau Ceti adaptation; no official service or human peer review is claimed.
+  notes: reviews/STATEMENT-ACCEPTANCE.json accepted the amended fifteen-contract boundary before
+    implementation. Definitions, Challenge and Comparator hashes remain unchanged; reviewed NUMERICAL_TARGETS
+    bytes are preserved with two recorded wording corrections. Both original mathematical proof-source
+    reports remain scoped to 28bdf9e85541764b6a5cb2debd647b9cebaea21f, whose earlier run failed.
+    Development source 281fc3790412b7ab2b05c202c0351b4d259a6382 now compiles and all fifteen exported
+    axiom sets are measured, but neither old report is silently promoted to approval of changed
+    or integrated source. Both independent referees must supply addenda on the exact final compiled
+    source and resolve prior findings. AI-agent reviews follow the repository adaptation of Tau
+    Ceti and are not an official Tau Ceti service or human peer review.
   statement_reviews:
   - phase: pre-proof statement review
     reviewer: /root/is02_cleanup_referee (independent AI agent)
@@ -286,26 +287,26 @@ review:
     sha256: 4bc5c6770427d37c5e34b49573011a87b91e16065c3ae44de3ab912f1eda2dd0
     reviewed_revision: 28bdf9e85541764b6a5cb2debd647b9cebaea21f
     verdict: mathematical fidelity PASS; mechanical verification BLOCKED
-    compiled_source_addendum: reviews/compiled-referee-1/
-    final_canonical_addendum: reviews/final-referee-1/REVIEW.md
+    compiled_source_addendum: required for the exact ultimately compiled source
   - phase: mathematical proof-source review before successful compilation
     reviewer: /root/nr03_independent_referee (independent AI agent)
     report: reviews/proof-source-referee-2/REVIEW.md
     sha256: 6a4fce37ebc8044184bce76f1838fa2e72caa41054f6eb32106009a6d67425cb
     reviewed_revision: 28bdf9e85541764b6a5cb2debd647b9cebaea21f
     verdict: favorable mathematical source review; implementation changes required by failed elaboration
-    compiled_source_addendum: reviews/compiled-referee-2/
-    final_canonical_addendum: reviews/final-referee-2/REVIEW.md
-  proof_reports:
-  - file: reviews/final-referee-1/REVIEW.md
-    sha256: 6f56a0a9ee992fcadcd9a69ba7b9fe14e99c1ffd9218363153892a0a3ac4fabb
-    verdict: approve full canonical target and actual Linux evidence
-  - file: reviews/final-referee-2/REVIEW.md
-    sha256: dd50dfa185746ecf502c29f4d2465bfdade4ea155d278c3bcb68270aab4d3b18
-    verdict: approve full canonical target and actual Linux evidence
-  final_acceptance:
-    file: reviews/FINAL-ACCEPTANCE.json
-    sha256: 2eeff0e54ee9a1f8fd9e690c4bb2aaf446c9d0433e0fd719dc65684899510703
+    compiled_source_addendum: required for the exact ultimately compiled source
+  required_final_gates:
+  - Integrate the proof under the permanent canonical IE-16 lean path, make Solution the Lake default,
+    and record exact comment/path/configuration transitions from the successful development snapshot
+    without changing the approved mathematical boundary.
+  - Compile the final canonical package with the pinned toolchain and retain its exact input hashes
+    and complete logs; development compilation is already recorded separately.
+  - Complete the independent default-kernel standalone replay and sandboxed Linux Comparator for
+    all fifteen approved contracts against the exact canonical source.
+  - Obtain addenda from both independent proof referees on the exact final compiled source, covering
+    all changes since 28bdf9e8 and resolving previous findings; retain the original reports.
+  - Bind final source, metadata, review addenda and mechanical evidence before any verified-status
+    or count promotion.
 alignment:
 - source: Complete original IE-16 universal inequality
   declarations:
@@ -320,7 +321,8 @@ alignment:
   - NLA.IE16.full_minimum_exact
   - NLA.IE16.full_minimum_isLeast
   - NLA.IE16.full_lower_bound
-- source: Holden Section 2 Lagrange formula and Section 3 every-subset bound; uniform occupancy implementation
+- source: Holden Section 2 Lagrange formula and Section 3 every-subset bound; uniform occupancy
+    implementation
   declarations:
   - NLA.IE16.every_five_point_subset_upper
   - NLA.IE16.every_five_point_subset_minimum_isLeast
@@ -332,10 +334,11 @@ alignment:
   - NLA.IE16.ratio_exceeds_candidate
   - NLA.IE16.counterexample
   - NLA.IE16.not_IE16Conjecture
-acknowledgements: Sidney Holden for the informal negative resolution, positive-weight optimality argument
-  and exact certificate; Mathlib and LeanCert contributors; the Schiffer, Forsythe and Lean Comparator
-  workflow references. Formalization by George Stepaniants, Department of Computing and Mathematical
-  Sciences, California Institute of Technology, Pasadena, California, USA, with AI assistance.
+acknowledgements: Sidney Holden for the informal negative resolution, positive-weight optimality
+  argument and exact certificate; Mathlib and LeanCert contributors; the Schiffer, Forsythe and
+  Lean Comparator workflow references. Formalization by George Stepaniants, Department of Computing
+  and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA, with
+  AI assistance.
 toolchain:
   lean: leanprover/lean4:v4.33.1
   dependency_manifest: lake-manifest.json
@@ -351,38 +354,38 @@ toolchain:
     batteries: 4488d40d070b9700d4d5a6aa342f0d40c31b2a2d
     Cli: 6130a47896ce867c6a4a55373441e59e565bad0f
 fidelity:
-  divergences: The boundary retains every n >= 3, every n-point nonzero complex spectrum and every 1
-    <= k <= n-2. The finite counterexample fixes epsilon=1/1000, n=9 and k=4. Holden’s Section 6 positive
-    weighted orthogonality supplies the full minimum and attainment. Generic complex Lagrange interpolation,
-    injective nine-point labels, complete cluster occupancy and uniform product estimates 109 and 146
-    give the all-subset bound. The 126-row certificate is supplementary; it is not imported as a theorem
-    or used to define M or subsetMax. The stronger amplification/unbounded-ratio theorem, asymptotic
-    limit, operator-level GMRES construction, exact subsetMax value and minimality of dimension are
-    outside scope.
+  divergences: The boundary retains every n >= 3, every n-point nonzero complex spectrum and every
+    1 <= k <= n-2. The finite counterexample fixes epsilon=1/1000, n=9 and k=4. Holden’s Section
+    6 positive weighted orthogonality supplies the full minimum and attainment. Generic complex
+    Lagrange interpolation, injective nine-point labels, complete cluster occupancy and uniform
+    product estimates 109 and 146 give the all-subset bound. The 126-row certificate is supplementary;
+    it is not imported as a theorem or used to define M or subsetMax. The stronger amplification/unbounded-ratio
+    theorem, asymptotic limit, operator-level GMRES construction, exact subsetMax value and minimality
+    of dimension are outside scope.
 proof_route:
 - files:
   - NLA/IE16/Numeric.lean
-  role: Exact nine-point injectivity and nonzero geometry, witness feasibility and equal residual norms,
-    nine positive rational weights summing to one and four vanishing complex moments. The current optimization
-    factors sqrt(3) out of root coordinates before finite comparisons and reduces its powers through
-    degree seven symbolically.
+  role: Exact nine-point injectivity and nonzero geometry, witness feasibility and equal residual
+    norms, nine positive rational weights summing to one and four vanishing complex moments. The
+    current optimization factors sqrt(3) out of root coordinates before finite comparisons and reduces
+    its powers through degree seven symbolically.
 - files:
   - NLA/IE16/WeightedDraft.lean
   - NLA/IE16/WeightedBridgeDraft.lean
   - NLA/IE16/FullMinimumDraft.lean
   role: Generic weighted norm-square identities and the indexed moment bridge bound every normalized
-    complex polynomial of degree at most four. The witness attains that bound, giving IsLeast and M=3003003000/1001003001001
-    > 299/100000. The public full-minimum route uses the indexed bridge.
+    complex polynomial of degree at most four. The witness attains that bound, giving IsLeast and
+    M=3003003000/1001003001001 > 299/100000. The public full-minimum route uses the indexed bridge.
 - files:
   - NLA/IE16/Minimax.lean
   - NLA/IE16/SubsetBoundsDraft.lean
   - NLA/IE16/SubsetGeometryDraft.lean
-  role: Mathlib Lagrange interpolation constructs an attainer on arbitrary five nonzero complex nodes
-    and proves its global lower bound. Injective labels preserve every actual subset. Point modulus
-    >=999/1000, close distance <=13/7500 and any distance <=2603/1500 give strictly positive product
-    denominators and coefficient bounds 109 or 146. Occupancy yields at least four contributions above
-    109 or three above 146. Thus the Lagrange sum exceeds 436 or 438, and every one of the 126 subset
-    minima is below 23/10000.
+  role: Mathlib Lagrange interpolation constructs an attainer on arbitrary five nonzero complex
+    nodes and proves its global lower bound. Injective labels preserve every actual subset. Point
+    modulus >=999/1000, close distance <=13/7500 and any distance <=2603/1500 give strictly positive
+    product denominators and coefficient bounds 109 or 146. Occupancy yields at least four contributions
+    above 109 or three above 146. Thus the Lagrange sum exceeds 436 or 438, and every one of the
+    126 subset minima is below 23/10000.
 - files:
   - NLA/IE16/FinalContractsDraft.lean
   - Solution.lean
@@ -398,56 +401,33 @@ verification:
     run_url: https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34773404263
     evidence_directory: verification/development-run-34773404263/
     source_inventory_sha256: ddc048343c8e1e89b0ed3c51c170d847e6edbd884125708856ecf88a4e149350
-  canonical_package_verification: passed on actual non-root Ubuntu Linux
-  independent_default_kernel_replay: passed in the actual Comparator default-kernel replay phase; no
-    macOS substitute
-  comparator: passed for all fifteen approved contracts with no replaceable definition holes
-  final_compiled_source_reviews: Both independent final mathematical/CI addenda accepted; see reviews/FINAL-ACCEPTANCE.json.
+  canonical_package_verification: pending
+  independent_default_kernel_replay: pending
+  comparator: pending
+  final_compiled_source_reviews: pending
   permitted_axioms: *id001
-  permitted_axioms_note: Policy allowlist; measured sets are separately recorded for each public result.
+  permitted_axioms_note: Policy allowlist; measured sets are separately recorded for each public
+    result.
   actual_axiom_output:
-    file: verification/linux-2026-09-13/operational-record/extracted/verify-20260913T182805Z-4150/comparator.log
-    sha256: f226bbdaf0c47e4dff3127d1711b00819ccf0e7d275b320521191e2fc0087d9f
+    file: verification/development-run-34773404263/extracted/compile-Solution.stdout
+    sha256: cc8a1d468d7e386c2f44d502babfea41c8cb22bb72055833a1aa82d2c9771e05
     exports: 15
-    each_set:
-    - propext
-    - Classical.choice
-    - Quot.sound
+    each_set: *id001
   kernel_assertions: 'All fifteen source #assert_trust kernel commands were accepted by the successful
-    Solution compilation. The assertions are silent on success; actual #print axioms output covers the
-    same fifteen names.'
+    Solution compilation. The assertions are silent on success; actual #print axioms output covers
+    the same fifteen names.'
   earlier_failed_development_run:
     id: 34771972369
     revision: 28bdf9e85541764b6a5cb2debd647b9cebaea21f
-    result: Numeric and Minimax failed elaboration; descendants and Solution were skipped. Both mathematical
-      source reports inspected the retained raw logs.
+    result: Numeric and Minimax failed elaboration; descendants and Solution were skipped. Both
+      mathematical source reports inspected the retained raw logs.
   development_default_target: Challenge; Solution was explicitly compiled by the development driver
   required_publication_default_target: Solution
   package_configuration_transition: verification/candidate-presentation-transition/TRANSITION.json
   canonical_default_target: Solution
   canonical_integration_record: verification/candidate-presentation-transition/INTEGRATION.json
-  canonical_run:
-    id: 34774629327
-    job_id: 103770408910
-    revision: 697a2a1d88337a6747aa5c82fb6e554d3ff1b356
-    run_url: https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34774629327/job/103770408910
-    result: comparator-accepted
-    evidence: verification/linux-2026-09-13/README.md
-    input_count: 281
-    artifact_id: 10322764134
-    artifact_sha256: 1e1662ad25d3ea724277a840f9c4579c034cae08c9f6fce76bc08cd48795eefd
-    result_sha256: 3fa4b80021abb07a0df3921d33e1bd3c16d07df732578453bf312250f06fc9dd
-  controls:
-    sandbox_modes: 2
-    sandbox_negative_option_cases: 4
-    actual_default_kernel_cases: 3
-    comparator_regressions: 5
-    sorryAx: rejected
-    native_decide_axiom: rejected
-    shared_checker_controls_job: skipped because shared tools unchanged; the IE16 target job itself
-      executed all listed controls
 provenance:
-  documentation_only_candidate: false
+  documentation_only_candidate: true
   source_revision: 281fc3790412b7ab2b05c202c0351b4d259a6382
   source_repository: https://github.com/sgstepaniants/OpenProblemsInNLA
   source_path_at_revision: development/IE16
@@ -465,25 +445,12 @@ provenance:
   current_numerical_targets_sha256: 0bea606a903e7956cac9765048db9881f07f29819f405269545f1da12ec6d682
   numerical_targets_correction: verification/num-targets-correction-20260913/
   documentation_inputs_and_hashes: PACKAGING-PROVENANCE.json
-  note: Historical development and statement bytes remain retained. The canonical mathematical files
-    at 697a2a1d88337a6747aa5c82fb6e554d3ff1b356 passed actual Linux verification and both final referee
-    addenda. Publication changes only documentation, records, canonical status and generated indexes/PDF;
-    exact candidate metadata bytes are archived.
+  note: Hashes bind the exact successfully compiled development snapshot. The approved historical
+    metadata hash is retained separately from this replacement documentation. Canonical path,
+    leading-comment and default-target changes are recorded separately under verification/candidate-presentation-transition/.
+    Final source addenda and verification remain pending and cannot be inferred from the development run.
   previous_documentation_candidate:
     source_revision: 5bfb7ddddcc170b08eb9acf7020b74462c7147b4
     manifest_sha256: 55224cefe2eb1c14d402151152b1a7ac4c682d2b06bbf29175a8af8c03a0366e
     note: The original candidate remains byte-for-byte preserved outside this new version.
   development_evidence_check: DEVELOPMENT-EVIDENCE-CHECKS.json
-  canonical_verified_revision: 697a2a1d88337a6747aa5c82fb6e554d3ff1b356
-  candidate_metadata_archive_map: verification/candidate-metadata-map.json
-reproduction:
-  linux:
-    command: tools/lean/verify.sh linear-systems-and-elimination/IE-16/lean /tmp/nla-lean-tools
-    bootstrap: tools/lean/bootstrap.sh /tmp/nla-lean-tools
-    requirements: Run from a clean committed checkout on non-root Linux with tools/lean/HARNESS.md prerequisites;
-      no local Mac Lean/Lake run occurred during this phase.
-    cache: Pinned trusted Mathlib cache used; no claim that all dependencies were rebuilt from source.
-  integrity:
-    command: python3 verification/verify_publication.py
-    scope: Offline complete current package and original verified-input correspondence; does not run
-      Lean or replace mathematical review.

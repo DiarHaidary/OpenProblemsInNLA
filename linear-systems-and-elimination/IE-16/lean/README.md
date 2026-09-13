@@ -1,12 +1,11 @@
-# IE-16 Lean proof candidate
+# IE-16 complete Lean formalization
 
-All ten project modules and all fifteen public exports pass bounded Linux
-development compilation and LeanCert kernel-trust assertions at revision
-`281fc3790412b7ab2b05c202c0351b4d259a6382`, in
-[run 34773404263](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34773404263).
-Canonical Comparator, separate default-kernel replay and final compiled-source
-acceptance remain pending. This candidate does not change the canonical
-problem’s verified status or permanent ID.
+The complete finite counterexample passed actual non-root Linux Comparator,
+permitted-axiom closure and default-kernel replay at
+`697a2a1d88337a6747aa5c82fb6e554d3ff1b356` in [run 34774629327, job 103770408910](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34774629327/job/103770408910).
+The [Linux evidence](verification/linux-2026-09-13/README.md) retains the raw
+records. Both independent final referees approved the complete canonical proof;
+[coordinator acceptance](reviews/FINAL-ACCEPTANCE.json) binds their exact reports.
 
 The target is the original inequality
 `M_k(L) ≤ (4/π) max_{S ⊆ L, |S|=k+1} M_k(S)` for every `n ≥ 3`,
@@ -41,30 +40,30 @@ The stronger amplification theorem and operator-level GMRES construction are
 outside scope.
 
 [Statement acceptance](reviews/STATEMENT-ACCEPTANCE.json) binds both pre-proof
-approvals. The [first](reviews/proof-source-referee-1/REVIEW.md) and
-[second](reviews/proof-source-referee-2/REVIEW.md) independent AI mathematical
-source reviews cover `28bdf9e85541764b6a5cb2debd647b9cebaea21f`, which failed
-Numeric/Minimax elaboration. Both require addenda on the exact final compiled
-source. [PACKAGING-PROVENANCE.json](PACKAGING-PROVENANCE.json) records source,
-boundary and report hashes. The earlier reviewed numerical targets are
-preserved with their two documented wording corrections.
+approvals. Historical source reviews and compiled-development addenda retain
+their exact original scopes. [Final canonical acceptance](reviews/FINAL-ACCEPTANCE.json)
+records both independent final mathematical and Linux-evidence approvals.
+The separate [operational record](verification/linux-2026-09-13/README.md)
+identifies its source-implementer collector and the independent review records.
 
-Lean 4.33.1, Mathlib and LeanCert are pinned in
-[lake-manifest.json](lake-manifest.json). The
-[actual development log](verification/development-run-34773404263/extracted/compile-Solution.stdout)
-reports exactly `propext`, `Classical.choice` and `Quot.sound` for each export.
-[DEVELOPMENT-EVIDENCE-CHECKS.json](DEVELOPMENT-EVIDENCE-CHECKS.json) records
-independent checks of all 60 input copies, ten dependency pins and raw module
-results. The development run compiled Solution explicitly. The canonical package now
-selects Solution as the Lake default. The
-[presentation transition](verification/candidate-presentation-transition/TRANSITION.json)
-records its path, leading-comment and default-target changes; all mathematical
-body bytes and the approved Definitions/Challenge remain unchanged. Final
-canonical verification must still complete the separate default-kernel replay
-and Comparator and retain both final review addenda.
+Lean 4.33.1, Mathlib and LeanCert remain pinned in [lake-manifest.json](lake-manifest.json).
+[The canonical Comparator log](verification/linux-2026-09-13/operational-record/extracted/verify-20260913T182805Z-4150/comparator.log) reports exactly
+`propext`, `Classical.choice` and `Quot.sound` for all fifteen exports and
+contains the successful default-kernel replay and statement-match markers.
+The actual sandbox, kernel and comparator control suites also passed,
+including rejection of `sorryAx` and a native-decide axiom.
 
-Original mathematical resolution and exact certificate: Sidney Holden.
+Solution remains the Lake default. Its definitions, proof bodies, import
+paths and all other mathematical files are byte-identical to the verified
+revision. Only this guide and `formalization.yaml` require archived input
+correspondence in the publication metadata map. Run
+`python3 verification/verify_publication.py` from this directory for an
+offline package-integrity check; authoritative rerun commands require Linux
+and are documented with the retained evidence.
+
+Original mathematical resolution and exact certificate: Sidney Holden,
+Center for Computational Biology, Flatiron Institute, Simons Foundation.
 Formalization: George Stepaniants, Department of Computing and Mathematical
 Sciences, California Institute of Technology, Pasadena, California, USA, with
-AI assistance. Documentation preparation by the second independent AI source
-referee does not constitute mathematical proof authorship.
+AI assistance. Agent reviews are not external human peer review or official
+Tau Ceti endorsement.

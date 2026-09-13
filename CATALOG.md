@@ -2,7 +2,7 @@
 
 **116 problems with open targets:** 46 open and 70 partially resolved. **101 other retained entries**, excluded from the open count.
 
-**Resolution evidence:** 75 solved (published or independently audited); 26 solved with Lean verification.
+**Resolution evidence:** 74 solved (published or independently audited); 27 solved with Lean verification.
 
 Each entry records its own literature-check date. Literature checks are bounded; ratings are editorial. “Impact” uses the canonical `Importance` field.
 
@@ -35,7 +35,7 @@ Retained entries outside the open count:
 | [IE-13](linear-systems-and-elimination/IE-13/README.md) | Sharp growth for unequal lower and upper bandwidths | **✅ SOLVED** | challenging | interesting to specialist | [PDF](linear-systems-and-elimination/IE-13/problem.pdf) · [TeX](linear-systems-and-elimination/IE-13/problem.tex) |
 | [IE-14](linear-systems-and-elimination/IE-14/README.md) | Sharp growth for cyclic tridiagonal matrices | **✅ SOLVED** | challenging | interesting to specialist | [PDF](linear-systems-and-elimination/IE-14/problem.pdf) · [TeX](linear-systems-and-elimination/IE-14/problem.tex) |
 | [IE-15](linear-systems-and-elimination/IE-15/README.md) | Exact small-order growth factors for rook pivoting | **✅ SOLVED** | hard | interesting to specialist | [PDF](linear-systems-and-elimination/IE-15/problem.pdf) · [TeX](linear-systems-and-elimination/IE-15/problem.tex) |
-| [IE-16](linear-systems-and-elimination/IE-16/README.md) | A sharp subset bound for worst-case normal GMRES | **✅ SOLVED** | challenging | interesting to the community | [PDF](linear-systems-and-elimination/IE-16/problem.pdf) · [TeX](linear-systems-and-elimination/IE-16/problem.tex) |
+| [IE-16](linear-systems-and-elimination/IE-16/README.md) | A sharp subset bound for worst-case normal GMRES | **🏆 LEAN VERIFIED** | challenging | interesting to the community | [PDF](linear-systems-and-elimination/IE-16/problem.pdf) · [TeX](linear-systems-and-elimination/IE-16/problem.tex) |
 | [IE-17](linear-systems-and-elimination/IE-17/README.md) | Monotonic optimal backward error along LSMR | **✅ SOLVED** | challenging | interesting to the community | [PDF](linear-systems-and-elimination/IE-17/problem.pdf) · [TeX](linear-systems-and-elimination/IE-17/problem.tex) |
 | [IE-18](linear-systems-and-elimination/IE-18/README.md) | The exact four-step amplification of restarted Anderson acceleration | **🏆 LEAN VERIFIED** | challenging | interesting to the community | [PDF](linear-systems-and-elimination/IE-18/problem.pdf) · [TeX](linear-systems-and-elimination/IE-18/problem.tex) |
 | [IE-19](linear-systems-and-elimination/IE-19/README.md) | Sharp inverse norm bound from upper bounds on matrix entries | **🏆 LEAN VERIFIED** | challenging | interesting to specialist | [PDF](linear-systems-and-elimination/IE-19/problem.pdf) · [TeX](linear-systems-and-elimination/IE-19/problem.tex) |

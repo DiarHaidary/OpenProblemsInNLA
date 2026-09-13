@@ -34,7 +34,7 @@ queries},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}RA-11}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-10}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -51,7 +51,7 @@ trace-estimation complexity using Kronecker matrix-vector queries\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} extreme\quad\textbf{Importance:} interesting
 to the community\par}
-{\sffamily\small\bfseries\color{accent}Status: Open\par}
+{\sffamily\small\bfseries\color{accent}Status: Partially resolved\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
@@ -61,22 +61,50 @@ community impact is reliable computation with tensor-structured matrix
 access.\\
 \textbf{Topic:} Structured randomized trace estimation.
 
+\subsection{Partial results --- Sidney Holden, 13 September
+2026}\label{partial-results-sidney-holden-13-september-2026}
+
+\textbf{The general RA-11 target remains open.} Sidney Holden (Center
+for Computational Biology, Flatiron Institute, Simons Foundation)
+supplies
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra11-2026-09-13/manuscript/ra11_partial_results.pdf}{partial
+results}, with
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra11-2026-09-13/manuscript/ra11_partial_results.tex}{proof
+source},
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra11-2026-09-13/README.md}{verified
+affiliation and submission record}, and a separate
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra11-2026-09-13/independent-review.md}{independent
+informal Codex AI-agent audit}.
+
+Theorem 1.1 gives general upper and lower bounds that do not match
+throughout the parameter range. It yields
+\(Q(n,q,\varepsilon)=\Theta(n^q)\) when \(\varepsilon\le n^{-q}\). Under
+the additional promise that the unknown matrix is a tensor product of
+PSD factors, the manuscript establishes
+\(\Theta(\min\{n,\sqrt q/\varepsilon\})\) queries. It also gives a
+\(q+1\)-call real simulation of a complex product query, promised
+low-rank recovery, and a counterexample to the source's Conjecture 23.
+That counterexample does not settle RA-11.
+
+The audit passed these partial scopes; exact and numerical checks were
+rerun. The surviving question is the unrestricted adaptive complexity
+for arbitrary PSD matrices, uniformly in all three parameters. No full
+resolution, external human peer review, novelty certification or formal
+verification is claimed. No Lean verification was performed. The
+original target follows unchanged.
+
 Let \(n,q\ge2\) be integers and \(0<\varepsilon<1/2\). An unknown real
 symmetric PSD matrix \(M\in\mathbb R^{n^q\times n^q}\) is accessible
 only through an exact oracle which, on input
 \(v_1,\ldots,v_q\in\mathbb R^n\), returns
 
-\[
-M(v_1\otimes\cdots\otimes v_q)\in\mathbb R^{n^q}.
-\]
+\[M(v_1\otimes\cdots\otimes v_q)\in\mathbb R^{n^q}.\]
 
 Let \(Q(n,q,\varepsilon)\) be the smallest integer \(t\) for which a
 randomized algorithm can, for every such \(M\), make at most \(t\)
 oracle calls and output \(\widehat t\in\mathbb R\) satisfying
 
-\[
-\Pr\bigl\{|\widehat t-\operatorname{tr}(M)|\le\varepsilon\operatorname{tr}(M)\bigr\}\ge\frac23.
-\]
+\[\Pr\bigl\{|\widehat t-\mathop{\mathrm{tr}}\nolimits(M)|\le\varepsilon\mathop{\mathrm{tr}}\nolimits(M)\bigr\}\ge\frac23.\]
 
 Queries may depend on previous responses and internal randomness. The
 algorithm may perform arbitrary finite exact arithmetic between calls;

@@ -73,12 +73,3 @@ module wall-clock bound are unchanged. Minimax's three concrete API errors
 are repaired in this snapshot; analogous explicit arguments are supplied in
 the downstream drafts. These changes await new remote feedback. The prior
 source snapshot remains under `history/run-34772589024`.
-
-Run `34772992724` at commit `5bfb7ddddcc170b08eb9acf7020b74462c7147b4`
-compiled Numeric, Minimax, both weighted modules, FullMinimumDraft and
-SubsetBoundsDraft successfully, as well as LeanCert Verification and Definitions.
-Numeric completed in 27.794 seconds. Geometry had three elaboration/API errors,
-so FinalContracts and Solution were skipped. All 55 retained input copies and
-ten dependency pins matched. The current Geometry-only repair is awaiting its
-own compiler feedback; this is still development evidence, not final proof
-acceptance. The prior source is under `history/run-34772992724`.

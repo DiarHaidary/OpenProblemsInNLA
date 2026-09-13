@@ -17,8 +17,7 @@ namespace NLA.IE16.SubsetBounds
 def point (ab : Grid) : ℂ := clusterPoint ab.1 ab.2
 
 lemma point_injective : Function.Injective point := by
-  change Function.Injective (fun ab : Fin 3 × Fin 3 => clusterPoint ab.1 ab.2)
-  exact clusterPoint_injective
+  simpa only [point] using clusterPoint_injective
 
 lemma omega_norm_one : ‖omega‖ = 1 := by
   have hs : ‖omega‖ ^ 2 = (1 : ℝ) := by
@@ -150,8 +149,7 @@ lemma label_coefficient_gt {S : Finset ℂ} {ab : Grid} {h : ℕ} {c : ℝ}
   obtain ⟨K, hK, hKcard⟩ := Finset.exists_subset_card_eq hcount
   let H := K.image point
   have hHcard : H.card = h := by
-    change (K.image point).card = h
-    rw [Finset.card_image_of_injective K point_injective, hKcard]
+    rw [H, Finset.card_image_of_injective K point_injective, hKcard]
   have hH : H ⊆ S.erase (point ab) := by
     intro z hz
     rcases Finset.mem_image.mp hz with ⟨cd, hcd, rfl⟩
@@ -228,7 +226,7 @@ theorem every_five_point_subset_upper (S : Finset ℂ)
   have hlarge := SubsetBounds.lagrange_sum_large hsub hcard
   have hpos : 0 < lagrangeSum S := lagrangeSum_pos hne hnz
   rw [hM]
-  apply (inv_lt_iff_one_lt_mul₀ hpos).mpr
+  apply (inv_lt_iff₀ hpos).mpr
   norm_num [subsetUpperBound] at hlarge ⊢
   nlinarith
 

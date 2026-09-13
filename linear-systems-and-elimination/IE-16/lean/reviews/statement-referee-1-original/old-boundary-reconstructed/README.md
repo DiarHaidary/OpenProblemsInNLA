@@ -1,0 +1,1 @@
+These exact old source bytes were reconstructed by removing the three newly added contracts and certificate fields from the amended live source. SHA-256 equality against the previously read and independently checked old-boundary hashes was required before writing. This does not represent a source snapshot taken before mutation. No candidate source was edited.

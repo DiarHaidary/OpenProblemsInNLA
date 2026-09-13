@@ -1,0 +1,179 @@
+{
+  "created_utc": "2026-09-13T18:16:02.406524+00:00",
+  "checker": "/root/nr03_independent_referee (AI agent; independently inspecting retained development evidence)",
+  "run_id": 34773404263,
+  "source_revision": "281fc3790412b7ab2b05c202c0351b4d259a6382",
+  "run_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34773404263",
+  "input_copies_compared_with_git": 60,
+  "input_inventory_unchanged": true,
+  "module_exit_codes": {
+    "LeanCert.Tactic.Verification": 0,
+    "Definitions": 0,
+    "Numeric": 0,
+    "Minimax": 0,
+    "WeightedDraft": 0,
+    "WeightedBridgeDraft": 0,
+    "FullMinimumDraft": 0,
+    "SubsetBoundsDraft": 0,
+    "SubsetGeometryDraft": 0,
+    "FinalContractsDraft": 0,
+    "Solution": 0
+  },
+  "compile_command_limits": {
+    "memory_mb": 4096,
+    "threads": 1,
+    "wall_seconds_per_module": 120
+  },
+  "dependency_pins": {
+    "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+    "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+  },
+  "public_exports": [
+    "NLA.IE16.explicitL_card",
+    "NLA.IE16.explicitL_admissible",
+    "NLA.IE16.witness_feasible",
+    "NLA.IE16.witness_objective",
+    "NLA.IE16.full_minimum_exact",
+    "NLA.IE16.full_minimum_isLeast",
+    "NLA.IE16.full_lower_bound",
+    "NLA.IE16.every_five_point_subset_upper",
+    "NLA.IE16.every_five_point_subset_minimum_isLeast",
+    "NLA.IE16.subset_max_upper",
+    "NLA.IE16.subset_max_positive",
+    "NLA.IE16.ratio_lower_bound",
+    "NLA.IE16.ratio_exceeds_candidate",
+    "NLA.IE16.counterexample",
+    "NLA.IE16.not_IE16Conjecture"
+  ],
+  "actual_axiom_sets": {
+    "NLA.IE16.explicitL_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.explicitL_admissible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.witness_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.witness_objective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.full_minimum_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.full_minimum_isLeast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.full_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.every_five_point_subset_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.every_five_point_subset_minimum_isLeast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.subset_max_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.subset_max_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.ratio_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.ratio_exceeds_candidate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.not_IE16Conjecture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "kernel_assertions": {
+    "source_commands": 15,
+    "successful_solution_elaboration": true,
+    "note": "Assertions are silent on success; the exact compiled Solution contains all fifteen commands and its raw run exits zero."
+  },
+  "raw_evidence_sha256": {
+    "source-hashes.json": "ddc048343c8e1e89b0ed3c51c170d847e6edbd884125708856ecf88a4e149350",
+    "source-hashes-after.json": "1c9837ce8fc4cee41c621b4781ecb59abef0dcbdc41d57212bdcc65d3a2621ab",
+    "commands.json": "bddef3f2038b8154550ab662c556f1bdc0c7c0621ac8e625ade2fa87cc3a945a",
+    "result.json": "4b399453f99ab66027bd587c65a687668f1cd243a71e6f7156a895c2caa2614a",
+    "module-results.json": "fa50e8926abe47c4cae811acf32a79fe5051a76c59e1a1941077f804326e9b15",
+    "module-dependencies.json": "0f017330928a1a573616962ffb2062238e01765b9383bd9711356c306973984f",
+    "dependency-pins.json": "3d0a9e30bc62fe5e11287d30a00908642d5e19ab2bc9c8ccfb004d3520acedad",
+    "leancert-module.json": "a997e90989ca14c5a2fbe1911dbec2e02b92a87cf4f56d4ead9cafd598884de8",
+    "compile-Definitions.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-Definitions.stdout": "92d2e9f55561d84810bbb82b7de8fe0661ca13a98569c5f7e936af83da22973d",
+    "compile-FinalContractsDraft.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-FinalContractsDraft.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-FullMinimumDraft.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-FullMinimumDraft.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-Minimax.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-Minimax.stdout": "5a8f981af24e632ba1864f2df657a8f39f0122a5b1ec140ce3542e6650a761ab",
+    "compile-Numeric.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-Numeric.stdout": "eaee3d27b7da9b21eae1527ca6b3c2af30de9d7100f8d8a798be96d1899adb40",
+    "compile-Solution.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-Solution.stdout": "cc8a1d468d7e386c2f44d502babfea41c8cb22bb72055833a1aa82d2c9771e05",
+    "compile-SubsetBoundsDraft.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-SubsetBoundsDraft.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-SubsetGeometryDraft.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-SubsetGeometryDraft.stdout": "4263934e99440de7f5c5e52550bdcab387299d284abf217139e9a87a037e9d5e",
+    "compile-WeightedBridgeDraft.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-WeightedBridgeDraft.stdout": "81c4f48c9e8666f79b100aa57e30a9f44ce912563396e44efaafd37d4bf0d8b3",
+    "compile-WeightedDraft.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-WeightedDraft.stdout": "62468d0cc78c2733a4ddbbeff17188b30464085cb3a4380a0349428b24ea3a19",
+    "compile-leancert-verification.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile-leancert-verification.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "final_development_handoff_sha256": "401191cf90206cd69150d3065c88635f61328a7196531b96deab56c8cb5bb046",
+  "leancert_verification_source_sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+  "limitations": {
+    "development_compilation_only": true,
+    "local_compiler_run_by_checker": false,
+    "comparator_executed": false,
+    "independent_default_kernel_replay": false,
+    "final_proof_referees_accepted": false
+  }
+}

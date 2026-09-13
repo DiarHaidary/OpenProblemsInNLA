@@ -1,0 +1,9 @@
+# Fresh Definitions.lean elaboration
+MI22=/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean
+TOOL=/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1
+mkdir -p /tmp/nla-lean-ie16-project/.build/lib/lean/NLA/IE16
+cd "$MI22"
+lake env lean -q -R /tmp/nla-lean-ie16-project -o /tmp/nla-lean-ie16-project/.build/lib/lean/NLA/IE16/Definitions.olean /tmp/nla-lean-ie16-project/linear-systems-and-elimination/IE-16/lean/NLA/IE16/Definitions.lean
+
+# Fresh Challenge.lean elaboration through explicit LEAN_PATH; no package-local .lake
+LEAN_PATH=/tmp/nla-lean-ie16-project/.build/lib/lean:$MI22/.lake/packages/Cli/.lake/build/lib/lean:$MI22/.lake/packages/batteries/.lake/build/lib/lean:$MI22/.lake/packages/Qq/.lake/build/lib/lean:$MI22/.lake/packages/aesop/.lake/build/lib/lean:$MI22/.lake/packages/proofwidgets/.lake/build/lib/lean:$MI22/.lake/packages/importGraph/.lake/build/lib/lean:$MI22/.lake/packages/LeanSearchClient/.lake/build/lib/lean:$MI22/.lake/packages/plausible/.lake/build/lib/lean:$MI22/.lake/packages/mathlib/.lake/build/lib/lean:$MI22/.lake/packages/leancert/.lake/build/lib/lean "$TOOL/bin/lean" -q -R /tmp/nla-lean-ie16-project /tmp/nla-lean-ie16-project/linear-systems-and-elimination/IE-16/lean/Challenge.lean

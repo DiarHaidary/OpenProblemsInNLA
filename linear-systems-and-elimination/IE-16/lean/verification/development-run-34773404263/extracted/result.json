@@ -1,0 +1,434 @@
+{
+  "purpose": "Draft compiler feedback only",
+  "authoritative_verification": false,
+  "canonical_problem_verified": false,
+  "comparator_executed": false,
+  "source_inputs_unchanged": true,
+  "returncode": 0,
+  "driver_error": null,
+  "commands": [
+    {
+      "label": "lake-env",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "600s",
+        "lake",
+        "env",
+        "true"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 47.288
+    },
+    {
+      "label": "pin-leancert",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/leancert",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-mathlib",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-plausible",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/plausible",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-LeanSearchClient",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/LeanSearchClient",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-importGraph",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/importGraph",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-proofwidgets",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/proofwidgets",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-aesop",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/aesop",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-Qq",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/Qq",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-batteries",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/batteries",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "pin-Cli",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "30s",
+        "git",
+        "-C",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/Cli",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 0.002
+    },
+    {
+      "label": "mathlib-cache",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "900s",
+        "lake",
+        "exe",
+        "cache",
+        "get"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 55.573
+    },
+    {
+      "label": "compile-leancert-verification",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-R",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/leancert",
+        "-o",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/leancert/.lake/build/lib/lean/LeanCert/Tactic/Verification.olean",
+        "/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/development/IE16/.lake/packages/leancert/LeanCert/Tactic/Verification.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 2.625
+    },
+    {
+      "label": "compile-Definitions",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/Definitions.olean",
+        "NLA/IE16/Definitions.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 2.26
+    },
+    {
+      "label": "compile-Numeric",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/Numeric.olean",
+        "NLA/IE16/Numeric.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 46.572
+    },
+    {
+      "label": "compile-Minimax",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/Minimax.olean",
+        "NLA/IE16/Minimax.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 2.988
+    },
+    {
+      "label": "compile-WeightedDraft",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/WeightedDraft.olean",
+        "NLA/IE16/WeightedDraft.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 3.329
+    },
+    {
+      "label": "compile-WeightedBridgeDraft",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/WeightedBridgeDraft.olean",
+        "NLA/IE16/WeightedBridgeDraft.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 4.087
+    },
+    {
+      "label": "compile-FullMinimumDraft",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/FullMinimumDraft.olean",
+        "NLA/IE16/FullMinimumDraft.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 2.59
+    },
+    {
+      "label": "compile-SubsetBoundsDraft",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/SubsetBoundsDraft.olean",
+        "NLA/IE16/SubsetBoundsDraft.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 4.267
+    },
+    {
+      "label": "compile-SubsetGeometryDraft",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/SubsetGeometryDraft.olean",
+        "NLA/IE16/SubsetGeometryDraft.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 4.63
+    },
+    {
+      "label": "compile-FinalContractsDraft",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/NLA/IE16/FinalContractsDraft.olean",
+        "NLA/IE16/FinalContractsDraft.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 2.929
+    },
+    {
+      "label": "compile-Solution",
+      "command": [
+        "timeout",
+        "--signal=TERM",
+        "--kill-after=10s",
+        "120s",
+        "lake",
+        "env",
+        "lean",
+        "-M4096",
+        "-j1",
+        "-o",
+        ".lake/build/lib/lean/Solution.olean",
+        "Solution.lean"
+      ],
+      "cwd": "development/IE16",
+      "returncode": 0,
+      "elapsed_seconds": 2.645
+    }
+  ]
+}

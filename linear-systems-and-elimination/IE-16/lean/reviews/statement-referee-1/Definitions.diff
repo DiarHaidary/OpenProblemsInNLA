@@ -1,0 +1,17 @@
+--- original-twelve-contract/Definitions.lean
++++ amended-fifteen-contract/Definitions.lean
+@@ -92,10 +92,14 @@
+   admissible explicitL 9 ∧
+   feasible explicitL 4 witnessPolynomial ∧
+   M explicitL 4 = exactFullMinimum ∧
++  IsLeast (feasibleValues explicitL 4) (M explicitL 4) ∧
+   fullLowerBound < M explicitL 4 ∧
+   (∀ S : Finset ℂ, S ∈ subsetFamily explicitL 4 →
+     M S 4 < subsetUpperBound) ∧
++  (∀ S : Finset ℂ, S ∈ subsetFamily explicitL 4 →
++    IsLeast (feasibleValues S 4) (M S 4)) ∧
+   subsetMax explicitL 4 < subsetUpperBound ∧
++  0 < subsetMax explicitL 4 ∧
+   ratioLowerBound < M explicitL 4 / subsetMax explicitL 4 ∧
+   (4 / Real.pi) < ratioLowerBound
+ 

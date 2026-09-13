@@ -1,0 +1,194 @@
+@[reducible] def NLA.NR03.BoolVec : Nat → Type :=
+fun n => Fin n → Bool
+'NLA.NR03.BoolVec' does not depend on any axioms
+def NLA.NR03.boolToReal : Bool → Real :=
+fun b =>
+  @ite.{1} Real (@Eq.{1} Bool b Bool.true) (instDecidableEqBool b Bool.true)
+    (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne))
+    (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))
+'NLA.NR03.boolToReal' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.boolDot : {n : Nat} → NLA.NR03.BoolVec n → NLA.NR03.BoolVec n → Real :=
+fun {n} a b =>
+  ∑ i,
+    @HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul) (NLA.NR03.boolToReal (a i))
+      (NLA.NR03.boolToReal (b i))
+'NLA.NR03.boolDot' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.cMatrix : (n : Nat) → Matrix.{0, 0, 0} (NLA.NR03.BoolVec n) (NLA.NR03.BoolVec n) Real :=
+fun n a b =>
+  @HPow.hPow.{0, 0, 0} Real Nat Real
+    (@instHPow.{0, 0} Real Nat (@NPow.toPow.{0} Real (@Monoid.toNPow.{0} Real Real.instMonoid)))
+    (@HSub.hSub.{0, 0, 0} Real Real Real (@instHSub.{0} Real Real.instSub)
+      (@OfNat.ofNat.{0} Real (nat_lit 1) (@One.toOfNat1.{0} Real Real.instOne)) (@NLA.NR03.boolDot n a b))
+    (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+'NLA.NR03.cMatrix' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.EntrywiseNonnegative : {ι κ : Type} → Matrix.{0, 0, 0} ι κ Real → Prop :=
+fun {ι κ} X =>
+  ∀ (i : ι) (j : κ),
+    @LE.le.{0} Real Real.instLE (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero)) (X i j)
+'NLA.NR03.EntrywiseNonnegative' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.FactorizationData : {ι κ : Type} →
+  [Fintype.{0} ι] →
+    [Fintype.{0} κ] →
+      Matrix.{0, 0, 0} ι κ Real →
+        (r : Nat) → Matrix.{0, 0, 0} ι (Fin r) Real → Matrix.{0, 0, 0} (Fin r) κ Real → Prop :=
+fun {ι κ} [Fintype.{0} ι] [Fintype.{0} κ] X r W H =>
+  And (@NLA.NR03.EntrywiseNonnegative ι (Fin r) W)
+    (And (@NLA.NR03.EntrywiseNonnegative (Fin r) κ H)
+      (@Eq.{1} (Matrix.{0, 0, 0} ι κ Real)
+        (@HMul.hMul.{0, 0, 0} (Matrix.{0, 0, 0} ι (Fin r) Real) (Matrix.{0, 0, 0} (Fin r) κ Real)
+          (Matrix.{0, 0, 0} ι κ Real)
+          (@Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{0, 0, 0, 0} ι (Fin r) κ Real (Fin.fintype r) Real.instMul
+            Real.instAddCommMonoid)
+          W H)
+        X))
+'NLA.NR03.FactorizationData' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.HasNonnegativeFactorization : {ι κ : Type} →
+  [Fintype.{0} ι] → [Fintype.{0} κ] → Matrix.{0, 0, 0} ι κ Real → Nat → Prop :=
+fun {ι κ} [inst : Fintype.{0} ι] [inst_1 : Fintype.{0} κ] X r =>
+  ∃ W H, @NLA.NR03.FactorizationData ι κ inst inst_1 X r W H
+'NLA.NR03.HasNonnegativeFactorization' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.nonnegativeRank : {ι κ : Type} → [Fintype.{0} ι] → [Fintype.{0} κ] → Matrix.{0, 0, 0} ι κ Real → Nat :=
+fun {ι κ} [inst : Fintype.{0} ι] [inst_1 : Fintype.{0} κ] X =>
+  @dite.{1} Nat (∃ r, @NLA.NR03.HasNonnegativeFactorization ι κ inst inst_1 X r)
+    (Classical.propDecidable (∃ r, @NLA.NR03.HasNonnegativeFactorization ι κ inst inst_1 X r))
+    (fun h =>
+      @Nat.find (@NLA.NR03.HasNonnegativeFactorization ι κ inst inst_1 X)
+        (fun a => Classical.propDecidable (@NLA.NR03.HasNonnegativeFactorization ι κ inst inst_1 X a)) h)
+    fun h => @OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))
+'NLA.NR03.nonnegativeRank' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.targetStatement : Prop :=
+∀ (n : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) n →
+    @Eq.{1} Nat
+      (@NLA.NR03.nonnegativeRank (NLA.NR03.BoolVec n) (NLA.NR03.BoolVec n)
+        (@Pi.instFintype.{0, 0} (Fin n) (fun a => Bool) (instDecidableEqFin n) (Fin.fintype n) fun a => Bool.fintype)
+        (@Pi.instFintype.{0, 0} (Fin n) (fun a => Bool) (instDecidableEqFin n) (Fin.fintype n) fun a => Bool.fintype)
+        (NLA.NR03.cMatrix n))
+      (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+        (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) n)
+'NLA.NR03.targetStatement' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.castNatMatrix : {ι κ : Type} → Matrix.{0, 0, 0} ι κ Nat → Matrix.{0, 0, 0} ι κ Real :=
+fun {ι κ} M i j => @Nat.cast.{0} Real Real.instNatCast (M i j)
+'NLA.NR03.castNatMatrix' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.scaledRightFactor : {κ : Type} →
+  {r : Nat} → Matrix.{0, 0, 0} (Fin r) κ Nat → (κ → Nat) → Matrix.{0, 0, 0} (Fin r) κ Real :=
+fun {κ} {r} V d k j =>
+  @HDiv.hDiv.{0, 0, 0} Real Real Real (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid))
+    (@Nat.cast.{0} Real Real.instNatCast (V k j)) (@Nat.cast.{0} Real Real.instNatCast (d j))
+'NLA.NR03.scaledRightFactor' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+def NLA.NR03.HasScaledIntegerCertificate : {ι κ : Type} →
+  [Fintype.{0} ι] → [Fintype.{0} κ] → Matrix.{0, 0, 0} ι κ Real → Nat → Prop :=
+fun {ι κ} [Fintype.{0} ι] [Fintype.{0} κ] X r =>
+  ∃ W V d,
+    And (∀ (j : κ), @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) (d j))
+      (∀ (i : ι) (j : κ),
+        @Eq.{1} Real
+          (@HMul.hMul.{0, 0, 0} (Matrix.{0, 0, 0} ι (Fin r) Real) (Matrix.{0, 0, 0} (Fin r) κ Real)
+            (Matrix.{0, 0, 0} ι κ Real)
+            (@Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{0, 0, 0, 0} ι (Fin r) κ Real (Fin.fintype r) Real.instMul
+              Real.instAddCommMonoid)
+            (@NLA.NR03.castNatMatrix ι (Fin r) W) (@NLA.NR03.castNatMatrix (Fin r) κ V) i j)
+          (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)
+            (@Nat.cast.{0} Real Real.instNatCast (d j)) (X i j)))
+'NLA.NR03.HasScaledIntegerCertificate' depends on axioms: [propext, Classical.choice.{u}, Quot.sound.{u}]
+NLA.NR03.cMatrix_nonnegative (n : Nat) :
+  @NLA.NR03.EntrywiseNonnegative (NLA.NR03.BoolVec n) (NLA.NR03.BoolVec n) (NLA.NR03.cMatrix n)
+'NLA.NR03.cMatrix_nonnegative' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.NR03.boolVec_seven_card :
+  @Eq.{1} Nat
+    (@Fintype.card.{0} (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+        (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype))
+    (@OfNat.ofNat.{0} Nat (nat_lit 128) (instOfNatNat (nat_lit 128)))
+'NLA.NR03.boolVec_seven_card' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.NR03.nonnegative_rank_attained_minimal {ι κ : Type} [Fintype.{0} ι] [Fintype.{0} κ] (X : Matrix.{0, 0, 0} ι κ Real)
+  (hX : ∃ r, @NLA.NR03.HasNonnegativeFactorization ι κ inst✝ inst✝¹ X r) :
+  And (@NLA.NR03.HasNonnegativeFactorization ι κ inst✝ inst✝¹ X (@NLA.NR03.nonnegativeRank ι κ inst✝ inst✝¹ X))
+    (∀ (r : Nat),
+      @NLA.NR03.HasNonnegativeFactorization ι κ inst✝ inst✝¹ X r →
+        @LE.le.{0} Nat instLENat (@NLA.NR03.nonnegativeRank ι κ inst✝ inst✝¹ X) r)
+'NLA.NR03.nonnegative_rank_attained_minimal' depends on axioms: [propext,
+ sorryAx.{u},
+ Classical.choice.{u},
+ Quot.sound.{u}]
+NLA.NR03.rank_le_of_factorization {ι κ : Type} [Fintype.{0} ι] [Fintype.{0} κ] (X : Matrix.{0, 0, 0} ι κ Real) (r : Nat)
+  (h : @NLA.NR03.HasNonnegativeFactorization ι κ inst✝ inst✝¹ X r) :
+  @LE.le.{0} Nat instLENat (@NLA.NR03.nonnegativeRank ι κ inst✝ inst✝¹ X) r
+'NLA.NR03.rank_le_of_factorization' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.NR03.scaled_certificate_gives_factorization {ι κ : Type} [Fintype.{0} ι] [Fintype.{0} κ]
+  (X : Matrix.{0, 0, 0} ι κ Real) (r : Nat) (h : @NLA.NR03.HasScaledIntegerCertificate ι κ inst✝ inst✝¹ X r) :
+  ∃ W V d,
+    And (∀ (j : κ), @LT.lt.{0} Nat instLTNat (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) (d j))
+      (And
+        (∀ (i : ι) (j : κ),
+          @Eq.{1} Real
+            (@HMul.hMul.{0, 0, 0} (Matrix.{0, 0, 0} ι (Fin r) Real) (Matrix.{0, 0, 0} (Fin r) κ Real)
+              (Matrix.{0, 0, 0} ι κ Real)
+              (@Matrix.instHMulOfFintypeOfMulOfAddCommMonoid.{0, 0, 0, 0} ι (Fin r) κ Real (Fin.fintype r) Real.instMul
+                Real.instAddCommMonoid)
+              (@NLA.NR03.castNatMatrix ι (Fin r) W) (@NLA.NR03.castNatMatrix (Fin r) κ V) i j)
+            (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)
+              (@Nat.cast.{0} Real Real.instNatCast (d j)) (X i j)))
+        (@NLA.NR03.FactorizationData ι κ inst✝ inst✝¹ X r (@NLA.NR03.castNatMatrix ι (Fin r) W)
+          (@NLA.NR03.scaledRightFactor κ r V d)))
+'NLA.NR03.scaled_certificate_gives_factorization' depends on axioms: [propext,
+ sorryAx.{u},
+ Classical.choice.{u},
+ Quot.sound.{u}]
+NLA.NR03.witness_scaled_certificate :
+  @NLA.NR03.HasScaledIntegerCertificate (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+    (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+    (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+      (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype)
+    (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+      (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype)
+    (NLA.NR03.cMatrix (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+    (@OfNat.ofNat.{0} Nat (nat_lit 127) (instOfNatNat (nat_lit 127)))
+'NLA.NR03.witness_scaled_certificate' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.NR03.witness_factorization :
+  @NLA.NR03.HasNonnegativeFactorization (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+    (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+    (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+      (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype)
+    (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+      (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype)
+    (NLA.NR03.cMatrix (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+    (@OfNat.ofNat.{0} Nat (nat_lit 127) (instOfNatNat (nat_lit 127)))
+'NLA.NR03.witness_factorization' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.NR03.witness_rank_upper_bound :
+  @LE.le.{0} Nat instLENat
+    (@NLA.NR03.nonnegativeRank (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+        (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype)
+      (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+        (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype)
+      (NLA.NR03.cMatrix (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))))
+    (@OfNat.ofNat.{0} Nat (nat_lit 127) (instOfNatNat (nat_lit 127)))
+'NLA.NR03.witness_rank_upper_bound' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.NR03.witness_not_full_rank :
+  @LT.lt.{0} Nat instLTNat
+    (@NLA.NR03.nonnegativeRank (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (NLA.NR03.BoolVec (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+      (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+        (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype)
+      (@Pi.instFintype.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) (fun a => Bool)
+        (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+        (Fin.fintype (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))) fun a => Bool.fintype)
+      (NLA.NR03.cMatrix (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7)))))
+    (@HPow.hPow.{0, 0, 0} Nat Nat Nat
+      (@instHPow.{0, 0} Nat Nat (@NPow.toPow.{0} Nat (@Monoid.toNPow.{0} Nat Nat.instMonoid)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 7) (instOfNatNat (nat_lit 7))))
+'NLA.NR03.witness_not_full_rank' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.NR03.not_targetStatement : Not NLA.NR03.targetStatement
+'NLA.NR03.not_targetStatement' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]

@@ -1,0 +1,101 @@
+{
+  "reviewer": "Independent AI agent /root/nr03_independent_referee; no implementation or packaging edits",
+  "phase": "Once-only repaired canonical packaging/source correspondence check; not final mechanical acceptance",
+  "verdict": "APPROVE_SOURCE_PACKAGING_PENDING_CANONICAL_RESULT",
+  "base_commit": "523c5aeaddd8bf7c2dc01afb053bb0dea8811335",
+  "candidate_commit": "f664d07e82aaa60bc9c78dd1946e763168c5c530",
+  "pending_run_id": 34785341662,
+  "package_files": 113,
+  "all_committed_blobs_equal_observed_package_files": true,
+  "current_nonself_inventory_entries": 112,
+  "all_current_inventory_hashes_match": true,
+  "inventory_sha256": "fe56c93a121adbc0ff77467587b882a8800f8e68100c7b8acc2a7a0db205fee1",
+  "integration_receipt_sha256": "cabdc85db13d63af3de05ea0571aa6b040b102b84a383c07e5d9c6c6f5757112",
+  "changed_and_added_paths": {
+    "ACTIVE-MODULE-MANIFEST.json": {
+      "git_status": "M",
+      "sha256": "3d02090c6c90fb0d244a6763d0c1c67c663c03e39a21e041c9c1eb3512b58a5d"
+    },
+    "NLA/NR03/Rank.lean": {
+      "git_status": "M",
+      "sha256": "1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e"
+    },
+    "README.md": {
+      "git_status": "M",
+      "sha256": "aa2a54fb419765037f567e716e5b4021c5bd671773c01277f7c705ab1c2a3003"
+    },
+    "SOURCE_MAP.md": {
+      "git_status": "M",
+      "sha256": "97c78f5e6b404577060e3239b7733e7d6ce0dd32dc45b84e7e4b6650dd71c2b4"
+    },
+    "reviews/proof-candidate-hashes.json": {
+      "git_status": "M",
+      "sha256": "fe56c93a121adbc0ff77467587b882a8800f8e68100c7b8acc2a7a0db205fee1"
+    },
+    "reviews/rank-cast-repair/HASHES.json": {
+      "git_status": "A",
+      "sha256": "45f3fb055edfb4b392126c79e411a35b1d10b1d2a31db6e3216382a17bf74241"
+    },
+    "reviews/rank-cast-repair/REPAIR.diff": {
+      "git_status": "A",
+      "sha256": "5945e57ff5f49802b5dad6cf4ae9d92188b02611fd9a86b7d780c9dfc7547bc1"
+    },
+    "reviews/rank-cast-repair/REPAIR.md": {
+      "git_status": "A",
+      "sha256": "9c62e02a9157748c2da67c1903746a4eff274b0bc64185c93d36eb5e1a4e7452"
+    },
+    "reviews/rank-cast-repair/prior-canonical-failure/FAILURE-DETAILS.json": {
+      "git_status": "A",
+      "sha256": "92312bea2f93729ee9991cff9f6206a92ca296b7bb1b4a052f20a915cb7bc5e5"
+    },
+    "reviews/rank-cast-repair/prior-canonical-failure/FAILURE-REVIEW.md": {
+      "git_status": "A",
+      "sha256": "d50783d6d942cdfe616a83664b83d9c8d90e96e7a5d44d2898da7ef78c812bd9"
+    },
+    "reviews/rank-cast-repair/prior-canonical-failure/FETCH-CHECKS.json": {
+      "git_status": "A",
+      "sha256": "d1389d950d0d230718444ad478b6f2ed9cc6e82ebd09fc517d25792598c5f0b2"
+    },
+    "reviews/rank-cast-repair/prior-canonical-failure/independent-failure-review.md": {
+      "git_status": "A",
+      "sha256": "deea7e46cbc86ca73cca3a495cc1fdc58b096041d2acee4bca426de1baee1513"
+    },
+    "reviews/rank-cast-repair/referee-1/CHECKS.json": {
+      "git_status": "A",
+      "sha256": "75dc8f82266eba8bfb516b114a830760cc19be6d686ccc4099a560dfb3fd5d1a"
+    },
+    "reviews/rank-cast-repair/referee-1/REVIEW.md": {
+      "git_status": "A",
+      "sha256": "a52e0d091be59339a14db2793a89e046237e59d04cae74f624073b8e15ccd070"
+    },
+    "reviews/rank-cast-repair/referee-2/CHECKS.json": {
+      "git_status": "A",
+      "sha256": "b7cc75fcd96dcd9707f7ba53e511dff231a008a3cde5877dcd2560aa72929563"
+    },
+    "reviews/rank-cast-repair/referee-2/REVIEW.md": {
+      "git_status": "A",
+      "sha256": "48d192162cc5c97fbc974d9ce6f12e0d9210217b6f40b8b2cd7c74b956d248cc"
+    }
+  },
+  "checks": {
+    "sole_Lean_change_is_exact_reviewed_one_line_Rank_repair": true,
+    "other_57_active_modules_identical": true,
+    "active_manifest_all_58_hashes_current": true,
+    "frozen_statements_comparator_and_pins_unchanged": true,
+    "all_11_new_receipts_equal_retained_original_bytes": true,
+    "old_failure_and_partial_success_scope_truthful": true,
+    "two_delta_approvals_explicitly_source_only": true,
+    "historical_bridge_manifest_binding_explicitly_preserved": true,
+    "current_README_SOURCE_MAP_and_manifests_record_Rank_exception": true,
+    "attribution_and_no_George_email_policy_preserved": true
+  },
+  "prior_binding_reviews": {
+    "full_source": "7ed2951165c48e0eb92e8215aee9371d321257d3bee6888250b877c879a18edd",
+    "Rank_delta": "a52e0d091be59339a14db2793a89e046237e59d04cae74f624073b8e15ccd070",
+    "prior_canonical_failure": "deea7e46cbc86ca73cca3a495cc1fdc58b096041d2acee4bca426de1baee1513"
+  },
+  "remaining": "Await exact terminal raw canonical evidence; do not combine historical partial runs into final success",
+  "actions": "Read-only Git and filesystem/hash inspection; no network query, compiler, dependency download or project edit",
+  "final_acceptance": false,
+  "nr03_counted": false
+}

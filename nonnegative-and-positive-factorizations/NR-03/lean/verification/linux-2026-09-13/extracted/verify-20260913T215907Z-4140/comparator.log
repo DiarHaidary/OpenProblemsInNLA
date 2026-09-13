@@ -1,0 +1,523 @@
+$ systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-_kxnjgvz/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+Building Challenge
+✔ [1229/1231] Built NLA.NR03.Definitions (1.3s)
+⚠ [1230/1231] Built Challenge (1.3s)
+warning: Challenge.lean:16:8: declaration uses `sorry`
+warning: Challenge.lean:22:8: declaration uses `sorry`
+warning: Challenge.lean:27:8: declaration uses `sorry`
+warning: Challenge.lean:38:8: declaration uses `sorry`
+warning: Challenge.lean:49:8: declaration uses `sorry`
+warning: Challenge.lean:68:8: declaration uses `sorry`
+warning: Challenge.lean:73:8: declaration uses `sorry`
+warning: Challenge.lean:78:8: declaration uses `sorry`
+warning: Challenge.lean:84:8: declaration uses `sorry`
+warning: Challenge.lean:90:8: declaration uses `sorry`
+Build completed successfully (1231 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.NR03.cMatrix_nonnegative, NLA.NR03.boolVec_seven_card, NLA.NR03.nonnegative_rank_attained_minimal, NLA.NR03.rank_le_of_factorization, NLA.NR03.scaled_certificate_gives_factorization, NLA.NR03.witness_scaled_certificate, NLA.NR03.witness_factorization, NLA.NR03.witness_rank_upper_bound, NLA.NR03.witness_not_full_rank, NLA.NR03.not_targetStatement, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+✔ [3008/3066] Built LeanCert.Tactic.Verification (2.5s)
+⚠ [3009/3066] Built NLA.NR03.Encoding (2.9s)
+warning: NLA/NR03/Encoding.lean:92:52: This simp argument is unused:
+  h
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [natBool]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✔ [3010/3066] Built NLA.NR03.FamilyDefs (2.1s)
+✔ [3011/3066] Built NLA.NR03.Index (2.6s)
+⚠ [3012/3066] Built NLA.NR03.Core (3.5s)
+warning: NLA/NR03/Core.lean:102:19: This simp argument is unused:
+  hA
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [natBool, hB]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/NR03/Core.lean:102:23: This simp argument is unused:
+  hB
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [natBool, hA]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [3013/3066] Built NLA.NR03.CertificateBridge (2.5s)
+info: NLA/NR03/CertificateBridge.lean:40:0: NLA.NR03.genericW : Matrix (BoolVec 7) (Fin 127) ℕ
+info: NLA/NR03/CertificateBridge.lean:41:0: NLA.NR03.genericV : Matrix (Fin 127) (BoolVec 7) ℕ
+info: NLA/NR03/CertificateBridge.lean:42:0: NLA.NR03.genericD : BoolVec 7 → ℕ
+info: NLA/NR03/CertificateBridge.lean:43:0: 'NLA.NR03.genericD_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/CertificateBridge.lean:88:0: 'NLA.NR03.CertificateBridge.full_sum_decomposition' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/CertificateBridge.lean:106:0: 'NLA.NR03.CertificateBridge.full_identity_of_components' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/CertificateBridge.lean:143:0: 'NLA.NR03.CertificateBridge.scaled_identity_of_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3014/3066] Built NLA.NR03.RowCertificate.Singleton.Block00 (5.4s)
+info: NLA/NR03/RowCertificate/Singleton/Block00.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row0' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block00.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block00.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block00.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block00.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row4' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block00.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block00.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row6' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block00.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row7' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3015/3066] Built NLA.NR03.RowCertificate.Singleton.Block01 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block01.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block01.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row9' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block01.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row10' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block01.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row11' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block01.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row12' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block01.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row13' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block01.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row14' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block01.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row15' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3016/3066] Built NLA.NR03.RowCertificate.Singleton.Block02 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block02.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block02.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row17' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block02.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row18' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block02.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row19' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block02.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row20' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block02.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row21' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block02.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row22' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block02.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row23' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3017/3066] Built NLA.NR03.RowCertificate.Singleton.Block03 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block03.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row24' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block03.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row25' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block03.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row26' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block03.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row27' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block03.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row28' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block03.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row29' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block03.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row30' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block03.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row31' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3018/3066] Built NLA.NR03.RowCertificate.Singleton.Block04 (3.0s)
+info: NLA/NR03/RowCertificate/Singleton/Block04.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row32' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block04.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row33' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block04.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row34' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block04.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row35' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block04.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row36' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block04.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row37' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block04.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row38' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block04.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row39' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3019/3066] Built NLA.NR03.RowCertificate.Singleton.Block05 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block05.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row40' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block05.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row41' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block05.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row42' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block05.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row43' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block05.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row44' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block05.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row45' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block05.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row46' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block05.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row47' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3020/3066] Built NLA.NR03.RowCertificate.Singleton.Block06 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block06.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row48' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block06.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row49' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block06.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row50' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block06.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row51' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block06.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row52' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block06.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row53' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block06.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row54' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block06.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row55' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3021/3066] Built NLA.NR03.RowCertificate.Singleton.Block07 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block07.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row56' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block07.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row57' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block07.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row58' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block07.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row59' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block07.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row60' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block07.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row61' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block07.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row62' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block07.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row63' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3022/3066] Built NLA.NR03.RowCertificate.Singleton.Block08 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block08.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row64' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block08.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row65' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block08.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row66' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block08.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row67' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block08.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row68' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block08.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row69' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block08.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row70' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block08.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row71' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3023/3066] Built NLA.NR03.RowCertificate.Singleton.Block09 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block09.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row72' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block09.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row73' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block09.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row74' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block09.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row75' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block09.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row76' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block09.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row77' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block09.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row78' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block09.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row79' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3024/3066] Built NLA.NR03.RowCertificate.Singleton.Block10 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block10.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row80' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block10.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row81' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block10.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row82' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block10.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row83' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block10.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row84' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block10.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row85' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block10.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row86' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block10.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row87' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3025/3066] Built NLA.NR03.RowCertificate.Singleton.Block11 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block11.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row88' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block11.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row89' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block11.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row90' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block11.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row91' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block11.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row92' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block11.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row93' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block11.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row94' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block11.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row95' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3026/3066] Built NLA.NR03.RowCertificate.Singleton.Block12 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block12.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row96' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block12.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row97' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block12.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row98' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block12.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row99' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block12.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row100' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block12.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row101' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block12.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row102' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block12.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row103' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3027/3066] Built NLA.NR03.RowCertificate.Singleton.Block13 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block13.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row104' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block13.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row105' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block13.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row106' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block13.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row107' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block13.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row108' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block13.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row109' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block13.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row110' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block13.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row111' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3028/3066] Built NLA.NR03.RowCertificate.Singleton.Block14 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block14.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row112' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block14.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row113' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block14.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row114' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block14.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row115' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block14.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row116' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block14.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row117' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block14.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row118' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block14.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row119' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3029/3066] Built NLA.NR03.RowCertificate.Singleton.Block15 (3.9s)
+info: NLA/NR03/RowCertificate/Singleton/Block15.lean:20:0: 'NLA.NR03.RowCertificate.Singleton.row120' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block15.lean:26:0: 'NLA.NR03.RowCertificate.Singleton.row121' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block15.lean:32:0: 'NLA.NR03.RowCertificate.Singleton.row122' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block15.lean:38:0: 'NLA.NR03.RowCertificate.Singleton.row123' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block15.lean:44:0: 'NLA.NR03.RowCertificate.Singleton.row124' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block15.lean:50:0: 'NLA.NR03.RowCertificate.Singleton.row125' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block15.lean:56:0: 'NLA.NR03.RowCertificate.Singleton.row126' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Singleton/Block15.lean:62:0: 'NLA.NR03.RowCertificate.Singleton.row127' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3030/3066] Built NLA.NR03.RowCertificate.Pair.Block00 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block00.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row0' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block00.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block00.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block00.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block00.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row4' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block00.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block00.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row6' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block00.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row7' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3031/3066] Built NLA.NR03.RowCertificate.Pair.Block01 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block01.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block01.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row9' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block01.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row10' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block01.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row11' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block01.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row12' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block01.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row13' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block01.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row14' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block01.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row15' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3032/3066] Built NLA.NR03.RowCertificate.Pair.Block02 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block02.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block02.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row17' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block02.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row18' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block02.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row19' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block02.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row20' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block02.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row21' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block02.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row22' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block02.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row23' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3033/3066] Built NLA.NR03.RowCertificate.Pair.Block03 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block03.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row24' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block03.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row25' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block03.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row26' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block03.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row27' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block03.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row28' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block03.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row29' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block03.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row30' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block03.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row31' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3034/3066] Built NLA.NR03.RowCertificate.Pair.Block04 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block04.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row32' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block04.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row33' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block04.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row34' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block04.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row35' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block04.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row36' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block04.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row37' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block04.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row38' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block04.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row39' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3035/3066] Built NLA.NR03.RowCertificate.Pair.Block05 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block05.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row40' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block05.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row41' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block05.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row42' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block05.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row43' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block05.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row44' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block05.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row45' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block05.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row46' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block05.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row47' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3036/3066] Built NLA.NR03.RowCertificate.Pair.Block06 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block06.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row48' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block06.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row49' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block06.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row50' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block06.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row51' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block06.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row52' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block06.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row53' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block06.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row54' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block06.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row55' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3037/3066] Built NLA.NR03.RowCertificate.Pair.Block07 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block07.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row56' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block07.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row57' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block07.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row58' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block07.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row59' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block07.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row60' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block07.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row61' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block07.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row62' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block07.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row63' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3038/3066] Built NLA.NR03.RowCertificate.Pair.Block08 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block08.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row64' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block08.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row65' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block08.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row66' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block08.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row67' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block08.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row68' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block08.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row69' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block08.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row70' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block08.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row71' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3039/3066] Built NLA.NR03.RowCertificate.Pair.Block09 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block09.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row72' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block09.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row73' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block09.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row74' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block09.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row75' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block09.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row76' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block09.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row77' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block09.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row78' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block09.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row79' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3040/3066] Built NLA.NR03.RowCertificate.Pair.Block10 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block10.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row80' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block10.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row81' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block10.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row82' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block10.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row83' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block10.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row84' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block10.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row85' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block10.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row86' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block10.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row87' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3041/3066] Built NLA.NR03.RowCertificate.Pair.Block11 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block11.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row88' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block11.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row89' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block11.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row90' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block11.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row91' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block11.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row92' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block11.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row93' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block11.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row94' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block11.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row95' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3042/3066] Built NLA.NR03.RowCertificate.Pair.Block12 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block12.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row96' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block12.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row97' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block12.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row98' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block12.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row99' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block12.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row100' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block12.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row101' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block12.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row102' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block12.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row103' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3043/3066] Built NLA.NR03.RowCertificate.Pair.Block13 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block13.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row104' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block13.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row105' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block13.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row106' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block13.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row107' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block13.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row108' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block13.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row109' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block13.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row110' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block13.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row111' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3044/3066] Built NLA.NR03.RowCertificate.Pair.Block14 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block14.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row112' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block14.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row113' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block14.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row114' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block14.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row115' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block14.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row116' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block14.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row117' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block14.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row118' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block14.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row119' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3045/3066] Built NLA.NR03.RowCertificate.Pair.Block15 (18s)
+info: NLA/NR03/RowCertificate/Pair/Block15.lean:20:0: 'NLA.NR03.RowCertificate.Pair.row120' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block15.lean:26:0: 'NLA.NR03.RowCertificate.Pair.row121' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block15.lean:32:0: 'NLA.NR03.RowCertificate.Pair.row122' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block15.lean:38:0: 'NLA.NR03.RowCertificate.Pair.row123' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block15.lean:44:0: 'NLA.NR03.RowCertificate.Pair.row124' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block15.lean:50:0: 'NLA.NR03.RowCertificate.Pair.row125' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block15.lean:56:0: 'NLA.NR03.RowCertificate.Pair.row126' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Pair/Block15.lean:62:0: 'NLA.NR03.RowCertificate.Pair.row127' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3046/3066] Built NLA.NR03.RowCertificate.Four.Block00 (27s)
+info: NLA/NR03/RowCertificate/Four/Block00.lean:20:0: 'NLA.NR03.RowCertificate.Four.row0' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block00.lean:26:0: 'NLA.NR03.RowCertificate.Four.row1' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block00.lean:32:0: 'NLA.NR03.RowCertificate.Four.row2' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block00.lean:38:0: 'NLA.NR03.RowCertificate.Four.row3' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block00.lean:44:0: 'NLA.NR03.RowCertificate.Four.row4' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block00.lean:50:0: 'NLA.NR03.RowCertificate.Four.row5' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block00.lean:56:0: 'NLA.NR03.RowCertificate.Four.row6' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block00.lean:62:0: 'NLA.NR03.RowCertificate.Four.row7' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3047/3066] Built NLA.NR03.RowCertificate.Four.Block01 (27s)
+info: NLA/NR03/RowCertificate/Four/Block01.lean:20:0: 'NLA.NR03.RowCertificate.Four.row8' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block01.lean:26:0: 'NLA.NR03.RowCertificate.Four.row9' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block01.lean:32:0: 'NLA.NR03.RowCertificate.Four.row10' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block01.lean:38:0: 'NLA.NR03.RowCertificate.Four.row11' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block01.lean:44:0: 'NLA.NR03.RowCertificate.Four.row12' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block01.lean:50:0: 'NLA.NR03.RowCertificate.Four.row13' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block01.lean:56:0: 'NLA.NR03.RowCertificate.Four.row14' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block01.lean:62:0: 'NLA.NR03.RowCertificate.Four.row15' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3048/3066] Built NLA.NR03.RowCertificate.Four.Block02 (27s)
+info: NLA/NR03/RowCertificate/Four/Block02.lean:20:0: 'NLA.NR03.RowCertificate.Four.row16' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block02.lean:26:0: 'NLA.NR03.RowCertificate.Four.row17' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block02.lean:32:0: 'NLA.NR03.RowCertificate.Four.row18' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block02.lean:38:0: 'NLA.NR03.RowCertificate.Four.row19' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block02.lean:44:0: 'NLA.NR03.RowCertificate.Four.row20' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block02.lean:50:0: 'NLA.NR03.RowCertificate.Four.row21' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block02.lean:56:0: 'NLA.NR03.RowCertificate.Four.row22' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block02.lean:62:0: 'NLA.NR03.RowCertificate.Four.row23' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3049/3066] Built NLA.NR03.RowCertificate.Four.Block03 (27s)
+info: NLA/NR03/RowCertificate/Four/Block03.lean:20:0: 'NLA.NR03.RowCertificate.Four.row24' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block03.lean:26:0: 'NLA.NR03.RowCertificate.Four.row25' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block03.lean:32:0: 'NLA.NR03.RowCertificate.Four.row26' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block03.lean:38:0: 'NLA.NR03.RowCertificate.Four.row27' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block03.lean:44:0: 'NLA.NR03.RowCertificate.Four.row28' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block03.lean:50:0: 'NLA.NR03.RowCertificate.Four.row29' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block03.lean:56:0: 'NLA.NR03.RowCertificate.Four.row30' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block03.lean:62:0: 'NLA.NR03.RowCertificate.Four.row31' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3050/3066] Built NLA.NR03.RowCertificate.Four.Block04 (27s)
+info: NLA/NR03/RowCertificate/Four/Block04.lean:20:0: 'NLA.NR03.RowCertificate.Four.row32' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block04.lean:26:0: 'NLA.NR03.RowCertificate.Four.row33' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block04.lean:32:0: 'NLA.NR03.RowCertificate.Four.row34' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block04.lean:38:0: 'NLA.NR03.RowCertificate.Four.row35' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block04.lean:44:0: 'NLA.NR03.RowCertificate.Four.row36' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block04.lean:50:0: 'NLA.NR03.RowCertificate.Four.row37' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block04.lean:56:0: 'NLA.NR03.RowCertificate.Four.row38' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block04.lean:62:0: 'NLA.NR03.RowCertificate.Four.row39' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3051/3066] Built NLA.NR03.RowCertificate.Four.Block05 (27s)
+info: NLA/NR03/RowCertificate/Four/Block05.lean:20:0: 'NLA.NR03.RowCertificate.Four.row40' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block05.lean:26:0: 'NLA.NR03.RowCertificate.Four.row41' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block05.lean:32:0: 'NLA.NR03.RowCertificate.Four.row42' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block05.lean:38:0: 'NLA.NR03.RowCertificate.Four.row43' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block05.lean:44:0: 'NLA.NR03.RowCertificate.Four.row44' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block05.lean:50:0: 'NLA.NR03.RowCertificate.Four.row45' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block05.lean:56:0: 'NLA.NR03.RowCertificate.Four.row46' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block05.lean:62:0: 'NLA.NR03.RowCertificate.Four.row47' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3052/3066] Built NLA.NR03.RowCertificate.Four.Block06 (28s)
+info: NLA/NR03/RowCertificate/Four/Block06.lean:20:0: 'NLA.NR03.RowCertificate.Four.row48' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block06.lean:26:0: 'NLA.NR03.RowCertificate.Four.row49' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block06.lean:32:0: 'NLA.NR03.RowCertificate.Four.row50' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block06.lean:38:0: 'NLA.NR03.RowCertificate.Four.row51' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block06.lean:44:0: 'NLA.NR03.RowCertificate.Four.row52' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block06.lean:50:0: 'NLA.NR03.RowCertificate.Four.row53' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block06.lean:56:0: 'NLA.NR03.RowCertificate.Four.row54' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block06.lean:62:0: 'NLA.NR03.RowCertificate.Four.row55' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3053/3066] Built NLA.NR03.RowCertificate.Four.Block07 (27s)
+info: NLA/NR03/RowCertificate/Four/Block07.lean:20:0: 'NLA.NR03.RowCertificate.Four.row56' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block07.lean:26:0: 'NLA.NR03.RowCertificate.Four.row57' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block07.lean:32:0: 'NLA.NR03.RowCertificate.Four.row58' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block07.lean:38:0: 'NLA.NR03.RowCertificate.Four.row59' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block07.lean:44:0: 'NLA.NR03.RowCertificate.Four.row60' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block07.lean:50:0: 'NLA.NR03.RowCertificate.Four.row61' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block07.lean:56:0: 'NLA.NR03.RowCertificate.Four.row62' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block07.lean:62:0: 'NLA.NR03.RowCertificate.Four.row63' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3054/3066] Built NLA.NR03.RowCertificate.Four.Block08 (27s)
+info: NLA/NR03/RowCertificate/Four/Block08.lean:20:0: 'NLA.NR03.RowCertificate.Four.row64' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block08.lean:26:0: 'NLA.NR03.RowCertificate.Four.row65' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block08.lean:32:0: 'NLA.NR03.RowCertificate.Four.row66' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block08.lean:38:0: 'NLA.NR03.RowCertificate.Four.row67' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block08.lean:44:0: 'NLA.NR03.RowCertificate.Four.row68' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block08.lean:50:0: 'NLA.NR03.RowCertificate.Four.row69' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block08.lean:56:0: 'NLA.NR03.RowCertificate.Four.row70' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block08.lean:62:0: 'NLA.NR03.RowCertificate.Four.row71' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3055/3066] Built NLA.NR03.RowCertificate.Four.Block09 (27s)
+info: NLA/NR03/RowCertificate/Four/Block09.lean:20:0: 'NLA.NR03.RowCertificate.Four.row72' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block09.lean:26:0: 'NLA.NR03.RowCertificate.Four.row73' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block09.lean:32:0: 'NLA.NR03.RowCertificate.Four.row74' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block09.lean:38:0: 'NLA.NR03.RowCertificate.Four.row75' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block09.lean:44:0: 'NLA.NR03.RowCertificate.Four.row76' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block09.lean:50:0: 'NLA.NR03.RowCertificate.Four.row77' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block09.lean:56:0: 'NLA.NR03.RowCertificate.Four.row78' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block09.lean:62:0: 'NLA.NR03.RowCertificate.Four.row79' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3056/3066] Built NLA.NR03.RowCertificate.Four.Block10 (27s)
+info: NLA/NR03/RowCertificate/Four/Block10.lean:20:0: 'NLA.NR03.RowCertificate.Four.row80' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block10.lean:26:0: 'NLA.NR03.RowCertificate.Four.row81' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block10.lean:32:0: 'NLA.NR03.RowCertificate.Four.row82' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block10.lean:38:0: 'NLA.NR03.RowCertificate.Four.row83' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block10.lean:44:0: 'NLA.NR03.RowCertificate.Four.row84' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block10.lean:50:0: 'NLA.NR03.RowCertificate.Four.row85' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block10.lean:56:0: 'NLA.NR03.RowCertificate.Four.row86' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block10.lean:62:0: 'NLA.NR03.RowCertificate.Four.row87' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3057/3066] Built NLA.NR03.RowCertificate.Four.Block11 (27s)
+info: NLA/NR03/RowCertificate/Four/Block11.lean:20:0: 'NLA.NR03.RowCertificate.Four.row88' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block11.lean:26:0: 'NLA.NR03.RowCertificate.Four.row89' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block11.lean:32:0: 'NLA.NR03.RowCertificate.Four.row90' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block11.lean:38:0: 'NLA.NR03.RowCertificate.Four.row91' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block11.lean:44:0: 'NLA.NR03.RowCertificate.Four.row92' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block11.lean:50:0: 'NLA.NR03.RowCertificate.Four.row93' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block11.lean:56:0: 'NLA.NR03.RowCertificate.Four.row94' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block11.lean:62:0: 'NLA.NR03.RowCertificate.Four.row95' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3058/3066] Built NLA.NR03.RowCertificate.Four.Block12 (27s)
+info: NLA/NR03/RowCertificate/Four/Block12.lean:20:0: 'NLA.NR03.RowCertificate.Four.row96' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block12.lean:26:0: 'NLA.NR03.RowCertificate.Four.row97' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block12.lean:32:0: 'NLA.NR03.RowCertificate.Four.row98' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block12.lean:38:0: 'NLA.NR03.RowCertificate.Four.row99' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block12.lean:44:0: 'NLA.NR03.RowCertificate.Four.row100' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block12.lean:50:0: 'NLA.NR03.RowCertificate.Four.row101' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block12.lean:56:0: 'NLA.NR03.RowCertificate.Four.row102' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block12.lean:62:0: 'NLA.NR03.RowCertificate.Four.row103' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3059/3066] Built NLA.NR03.RowCertificate.Four.Block13 (27s)
+info: NLA/NR03/RowCertificate/Four/Block13.lean:20:0: 'NLA.NR03.RowCertificate.Four.row104' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block13.lean:26:0: 'NLA.NR03.RowCertificate.Four.row105' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block13.lean:32:0: 'NLA.NR03.RowCertificate.Four.row106' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block13.lean:38:0: 'NLA.NR03.RowCertificate.Four.row107' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block13.lean:44:0: 'NLA.NR03.RowCertificate.Four.row108' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block13.lean:50:0: 'NLA.NR03.RowCertificate.Four.row109' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block13.lean:56:0: 'NLA.NR03.RowCertificate.Four.row110' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block13.lean:62:0: 'NLA.NR03.RowCertificate.Four.row111' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3060/3066] Built NLA.NR03.RowCertificate.Four.Block14 (27s)
+info: NLA/NR03/RowCertificate/Four/Block14.lean:20:0: 'NLA.NR03.RowCertificate.Four.row112' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block14.lean:26:0: 'NLA.NR03.RowCertificate.Four.row113' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block14.lean:32:0: 'NLA.NR03.RowCertificate.Four.row114' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block14.lean:38:0: 'NLA.NR03.RowCertificate.Four.row115' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block14.lean:44:0: 'NLA.NR03.RowCertificate.Four.row116' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block14.lean:50:0: 'NLA.NR03.RowCertificate.Four.row117' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block14.lean:56:0: 'NLA.NR03.RowCertificate.Four.row118' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block14.lean:62:0: 'NLA.NR03.RowCertificate.Four.row119' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3061/3066] Built NLA.NR03.RowCertificate.Four.Block15 (27s)
+info: NLA/NR03/RowCertificate/Four/Block15.lean:20:0: 'NLA.NR03.RowCertificate.Four.row120' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block15.lean:26:0: 'NLA.NR03.RowCertificate.Four.row121' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block15.lean:32:0: 'NLA.NR03.RowCertificate.Four.row122' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block15.lean:38:0: 'NLA.NR03.RowCertificate.Four.row123' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block15.lean:44:0: 'NLA.NR03.RowCertificate.Four.row124' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block15.lean:50:0: 'NLA.NR03.RowCertificate.Four.row125' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block15.lean:56:0: 'NLA.NR03.RowCertificate.Four.row126' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/RowCertificate/Four/Block15.lean:62:0: 'NLA.NR03.RowCertificate.Four.row127' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3062/3066] Built NLA.NR03.FamilyIdentities (4.5s)
+info: NLA/NR03/FamilyIdentities.lean:160:0: 'NLA.NR03.singleton_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/FamilyIdentities.lean:295:0: 'NLA.NR03.pair_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/FamilyIdentities.lean:430:0: 'NLA.NR03.four_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+warning: NLA/NR03/FamilyIdentities.lean:450:19: This simp argument is unused:
+  ha
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [natBool, hb]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/NR03/FamilyIdentities.lean:450:23: This simp argument is unused:
+  hb
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [natBool, ha]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [3063/3066] Built NLA.NR03.Certificate (1.9s)
+info: NLA/NR03/Certificate.lean:28:0: 'NLA.NR03.full_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/NR03/Certificate.lean:36:0: 'NLA.NR03.generic_scaled_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3064/3066] Built NLA.NR03.Rank (2.1s)
+ℹ [3065/3066] Built Solution (2.2s)
+info: Solution.lean:21:0: 'NLA.NR03.cMatrix_nonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:23:0: 'NLA.NR03.boolVec_seven_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:25:0: 'NLA.NR03.nonnegative_rank_attained_minimal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:27:0: 'NLA.NR03.rank_le_of_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:29:0: 'NLA.NR03.scaled_certificate_gives_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:31:0: 'NLA.NR03.witness_scaled_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:33:0: 'NLA.NR03.witness_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:35:0: 'NLA.NR03.witness_rank_upper_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:37:0: 'NLA.NR03.witness_not_full_rank' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:39:0: 'NLA.NR03.not_targetStatement' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3066 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.NR03.cMatrix_nonnegative, NLA.NR03.boolVec_seven_card, NLA.NR03.nonnegative_rank_attained_minimal, NLA.NR03.rank_le_of_factorization, NLA.NR03.scaled_certificate_gives_factorization, NLA.NR03.witness_scaled_certificate, NLA.NR03.witness_factorization, NLA.NR03.witness_rank_upper_bound, NLA.NR03.witness_not_full_rank, NLA.NR03.not_targetStatement, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+
+EXIT_STATUS=0

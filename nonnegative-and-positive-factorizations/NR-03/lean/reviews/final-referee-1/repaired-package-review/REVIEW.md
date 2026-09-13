@@ -1,0 +1,9 @@
+# NR-03 repaired canonical package: source correspondence
+
+**Approve the source packaging at `f664d07e82aaa60bc9c78dd1946e763168c5c530`, pending the actual terminal canonical result.** Independent AI reviewer `/root/nr03_independent_referee` made no implementation or packaging edits.
+
+All 113 observed package files match their exact committed Git blobs. The refreshed inventory correctly hashes all 112 nonself files; the active manifest correctly binds all 58 Lean files. Relative to canonical523, the only Lean change is the already approved one-line Rank cast repair, SHA-256 `1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e`. The other 57 active modules and the frozen Definitions/Challenge/comparator/pins remain unchanged. The prior complete mathematical source review and exact repair review therefore retain their scope; no repeated full mathematical review was needed.
+
+The four modified metadata files record the Rank exception, the failed earlier run, and the pending rerun. All eleven added failure/repair/referee receipts match the retained originals byte-for-byte. Historical partial compilation and source-only approvals are distinguished from final acceptance. The earlier bridge receipt and its historical metadata binding remain preserved and explained. Existing authorship, full Caltech affiliation, and no-George-email treatment are preserved. No packaging defect was found in this delta.
+
+Canonical run 34785341662 has not been accepted by this review. Its terminal raw Comparator, full trust/axiom outputs, default-kernel replay, isolation/negative controls, and runtime input bindings must be independently checked before an immutable final mechanical acceptance addendum. No network query, compiler/build/cache/download, source edit, Git mutation, workflow action, publication or count change occurred here.

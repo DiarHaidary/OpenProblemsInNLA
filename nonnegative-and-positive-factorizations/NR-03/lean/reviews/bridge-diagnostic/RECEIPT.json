@@ -1,0 +1,90 @@
+{
+  "scope": "Conditional bridge-only Linux development diagnostic; not full NR-03 verification",
+  "run_id": 34782819568,
+  "job_id": 103792798110,
+  "commit": "3b3eb8f3fa384e4b3bf640d48bca87cf40db9565",
+  "workflow_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34782819568",
+  "conclusion": "success",
+  "artifact": {
+    "id": 10325795906,
+    "bytes": 153418,
+    "sha256": "a26f6da9cbd27cc1827af952b7060ff86e75c9f1e2e68990677ef3e8a68ebbf8",
+    "retained_outside_source_package": "/private/tmp/nla-nr03-development-evidence/run-34782819568/artifact.zip"
+  },
+  "raw_evidence": {
+    "run_review_sha256": "1c0a4f4ec3d114b8a020eaa82f20879dfe648dc3d4bd4e379acd1597e8366417",
+    "bridge_results_sha256": "97e41aad632c7bc6831046016940acaca3e21a8e07b1c77a38cea8da07fcb898",
+    "checks_sha256": "21113c86116a0245f66892bebf32a30db26faed562fc92ae5cbebbfcd1de4aed",
+    "commands_sha256": "075d4950490153645c6cdea26d6c9b28b12c6d4ad5a6210836ae42c8f8601338",
+    "result_sha256": "fd7aee6b3b0c45118570d87b2ad2cc6d5f0cfea7d4a4478f7beb9876ef9f852c",
+    "source_hashes_sha256": "aebb945100c4c095a06df55b3f43fb90bedd8a0c8887cb45ce2081beb8ee75fe",
+    "bridge_stdout_sha256": "103425e369d91b638542af2a2363bb04ce87b5ff076a8d04f830ec7917973f30",
+    "bridge_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "evidence_directory": "/private/tmp/nla-nr03-development-evidence/run-34782819568"
+  },
+  "modules": {
+    "LeanCert.Tactic.Verification": {
+      "exit_code": 0,
+      "seconds": 3.16
+    },
+    "Definitions": {
+      "exit_code": 0,
+      "seconds": 2.251
+    },
+    "Encoding": {
+      "exit_code": 0,
+      "seconds": 3.605
+    },
+    "FamilyDefs": {
+      "exit_code": 0,
+      "seconds": 3.356
+    },
+    "Index": {
+      "exit_code": 0,
+      "seconds": 3.573
+    },
+    "CertificateBridge": {
+      "exit_code": 0,
+      "seconds": 3.242
+    }
+  },
+  "bridge_theorems": [
+    "NLA.NR03.CertificateBridge.full_sum_decomposition",
+    "NLA.NR03.CertificateBridge.full_identity_of_components",
+    "NLA.NR03.CertificateBridge.scaled_identity_of_full",
+    "NLA.NR03.genericD_positive"
+  ],
+  "observed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_and_resources": {
+    "actual_source_copies_matching_commit": 107,
+    "dependency_pins_matching_manifest": 10,
+    "limits_unchanged": {
+      "memory_mib": 4096,
+      "threads": 1,
+      "module_timeout_seconds": 120,
+      "workflow_timeout_minutes": 30
+    },
+    "source_inputs_unchanged": true,
+    "local_Lean_Lake_executed": false
+  },
+  "status": {
+    "conditional_bridge_compiled": true,
+    "full_58_module_graph_compiled": false,
+    "final_Certificate_Rank_Solution_compiled": false,
+    "Comparator_executed": false,
+    "default_kernel_and_sandbox_controls_executed": false,
+    "whole_problem_verified": false,
+    "Lean_verified_count_changed": false,
+    "Solved_status_changed": false
+  },
+  "package_bindings": {
+    "NLA/NR03/Certificate.lean": "05cd28513d8e2e7285f1e2039db944cd8beffface3c72df7fc4079555e624fdc",
+    "NLA/NR03/CertificateBridge.lean": "96e7f3d3611fd91b06080cf1d096cb6b9df8b73b69786c7599f703c496ebcc2b",
+    "ACTIVE-MODULE-MANIFEST.json": "51d66231ff8f2672120d2fa29f62dfcce1be30ab97d625966b53ce3c778c2d73"
+  },
+  "independent_review_boundary": "The bridge diagnostic was an implementer operational audit. Full canonical Comparator/default-kernel/sandbox acceptance and two independent final proof reviews remain required."
+}

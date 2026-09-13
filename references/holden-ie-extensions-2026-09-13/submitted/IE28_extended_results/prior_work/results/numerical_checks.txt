@@ -1,0 +1,19 @@
+PASS two regular: coefficient error 1.66412e-147
+PASS two clustered: coefficient error 2.69777e-135
+PASS three separated: coefficient error 1.88019e-116, relative N^3 norm 1.05277e-116
+PASS three right clustered: coefficient error 1.86832e-116, relative N^3 norm 9.4475e-120
+PASS three two small nodes: coefficient error 2.59398e-116, relative N^3 norm 4.73688e-120
+PASS three mixed scales: coefficient error 1.91287e-116, relative N^3 norm 8.57218e-122
+PASS three equally spaced: coefficient error 1.08021e-116, relative N^3 norm 2.25031e-117
+PASS three extreme cluster: coefficient error 2.54282e-117, relative N^3 norm 1.03964e-164
+PASS three extreme mixed scales: coefficient error 1.69104e-117, relative N^3 norm 7.60966e-141
+PASS numerical candidate four irregular: coefficient error 4.93864e-131 (not an existence certificate)
+PASS numerical candidate four equally spaced: coefficient error 5.56085e-118 (not an existence certificate)
+PASS numerical candidate five equally spaced: coefficient error 1.73988e-119 (not an existence certificate)
+PASS numerical candidate six equally spaced: coefficient error 2.57396e-114 (not an existence certificate)
+PASS numerical candidate seven equally spaced: coefficient error 1.40283e-119 (not an existence certificate)
+PASS numerical candidate five separated: coefficient error 3.35783e-136 (not an existence certificate)
+PASS rational grid: 66 triples; maximum coefficient error 3.30576e-51
+PASS input validation: zero, repeated, unordered, and negative nodes rejected
+PASS independent n=3 ansatz refinement: diagonal difference 2.21054e-137
+ALL NUMERICAL CHECKS PASSED in 15.05 seconds

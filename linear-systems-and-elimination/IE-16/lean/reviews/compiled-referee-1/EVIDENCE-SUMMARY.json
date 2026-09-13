@@ -1,0 +1,192 @@
+{
+  "forbidden_standalone_tokens": {
+    "admit": 0,
+    "axiom": 0,
+    "native_decide": 0,
+    "sorry": 0
+  },
+  "mechanical": {
+    "all_command_returncodes_zero": true,
+    "all_comparator_names_have_namespace_suffix_asserts": true,
+    "all_comparator_names_have_namespace_suffix_prints": true,
+    "all_dependency_pins_match": true,
+    "all_module_returncodes_zero": true,
+    "commands": 23,
+    "comparator_theorem_count": 15,
+    "compile_stderr_empty": true,
+    "dependency_pins": [
+      {
+        "actual": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+        "expected": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+        "name": "leancert",
+        "returncode": 0
+      },
+      {
+        "actual": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "expected": "0df444a360eaa60ab8c11dca51a86af692955474",
+        "name": "mathlib",
+        "returncode": 0
+      },
+      {
+        "actual": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+        "expected": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+        "name": "plausible",
+        "returncode": 0
+      },
+      {
+        "actual": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+        "expected": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+        "name": "LeanSearchClient",
+        "returncode": 0
+      },
+      {
+        "actual": "16f02aa7642864af59f1ff0e384a015994db9118",
+        "expected": "16f02aa7642864af59f1ff0e384a015994db9118",
+        "name": "importGraph",
+        "returncode": 0
+      },
+      {
+        "actual": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+        "expected": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+        "name": "proofwidgets",
+        "returncode": 0
+      },
+      {
+        "actual": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+        "expected": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+        "name": "aesop",
+        "returncode": 0
+      },
+      {
+        "actual": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+        "expected": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+        "name": "Qq",
+        "returncode": 0
+      },
+      {
+        "actual": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+        "expected": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+        "name": "batteries",
+        "returncode": 0
+      },
+      {
+        "actual": "6130a47896ce867c6a4a55373441e59e565bad0f",
+        "expected": "6130a47896ce867c6a4a55373441e59e565bad0f",
+        "name": "Cli",
+        "returncode": 0
+      }
+    ],
+    "module_results": {
+      "Definitions": 0,
+      "FinalContractsDraft": 0,
+      "FullMinimumDraft": 0,
+      "LeanCert.Tactic.Verification": 0,
+      "Minimax": 0,
+      "Numeric": 0,
+      "Solution": 0,
+      "SubsetBoundsDraft": 0,
+      "SubsetGeometryDraft": 0,
+      "WeightedBridgeDraft": 0,
+      "WeightedDraft": 0
+    },
+    "solution_assert_count": 15,
+    "solution_axiom_print_count": 15,
+    "solution_stdout_nonempty_lines": 15,
+    "solution_stdout_standard_axiom_lines": 15
+  },
+  "prior_reviewed_commit": "28bdf9e85541764b6a5cb2debd647b9cebaea21f",
+  "raw_evidence": {
+    "commands.json": {
+      "bytes": 9199,
+      "sha256": "bddef3f2038b8154550ab662c556f1bdc0c7c0621ac8e625ade2fa87cc3a945a"
+    },
+    "compile-Numeric.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "compile-Numeric.stdout": {
+      "bytes": 983,
+      "sha256": "eaee3d27b7da9b21eae1527ca6b3c2af30de9d7100f8d8a798be96d1899adb40"
+    },
+    "compile-Solution.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "compile-Solution.stdout": {
+      "bytes": 1361,
+      "sha256": "cc8a1d468d7e386c2f44d502babfea41c8cb22bb72055833a1aa82d2c9771e05"
+    },
+    "compile-SubsetGeometryDraft.stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "compile-SubsetGeometryDraft.stdout": {
+      "bytes": 384,
+      "sha256": "4263934e99440de7f5c5e52550bdcab387299d284abf217139e9a87a037e9d5e"
+    },
+    "dependency-pins.json": {
+      "bytes": 1715,
+      "sha256": "3d0a9e30bc62fe5e11287d30a00908642d5e19ab2bc9c8ccfb004d3520acedad"
+    },
+    "leancert-module.json": {
+      "bytes": 171,
+      "sha256": "a997e90989ca14c5a2fbe1911dbec2e02b92a87cf4f56d4ead9cafd598884de8"
+    },
+    "module-results.json": {
+      "bytes": 266,
+      "sha256": "fa50e8926abe47c4cae811acf32a79fe5051a76c59e1a1941077f804326e9b15"
+    },
+    "result.json": {
+      "bytes": 10298,
+      "sha256": "4b399453f99ab66027bd587c65a687668f1cd243a71e6f7156a895c2caa2614a"
+    },
+    "source-hashes-after.json": {
+      "bytes": 7449,
+      "sha256": "1c9837ce8fc4cee41c621b4781ecb59abef0dcbdc41d57212bdcc65d3a2621ab"
+    },
+    "source-hashes.json": {
+      "bytes": 7869,
+      "sha256": "ddc048343c8e1e89b0ed3c51c170d847e6edbd884125708856ecf88a4e149350"
+    }
+  },
+  "review_date": "2026-09-13",
+  "review_sha256": "7703bbb0c0469123c46f7993d229011e5d6d4a510c60e875cc594caa1e18b68c",
+  "reviewed_commit": "281fc3790412b7ab2b05c202c0351b4d259a6382",
+  "reviewer": "/root/lean_iv01_next",
+  "reviewer_is_ai_agent": true,
+  "run": {
+    "artifact": "/tmp/nla-ie16-development-evidence/run-34773404263/extracted",
+    "attempt": 1,
+    "repository": "sgstepaniants/OpenProblemsInNLA",
+    "run_id": "34773404263"
+  },
+  "selected_source_hashes": {
+    "development/IE16/Challenge.lean": "85cbe24c7657d9ddc37728db5bb1740a80ddab60e3eb4676e329df40a7b1737c",
+    "development/IE16/NLA/IE16/Definitions.lean": "e4681f2083d71d8980adcd70e7cf26367e0e84dbc1773f4d2f082bf2417c9507",
+    "development/IE16/NLA/IE16/FinalContractsDraft.lean": "fde3c36171d26b93b7236974944e0d6275a7b884aa507ed5270a9475800c85ae",
+    "development/IE16/NLA/IE16/FullMinimumDraft.lean": "ec971dbdf3cbe7de0c2707eea2facbc62f613d280e384c245478a98105f57ef0",
+    "development/IE16/NLA/IE16/Minimax.lean": "0ae5e4902f5493f2902c823f10f154192e54b7ad74190a9bbc26f409899ad782",
+    "development/IE16/NLA/IE16/Numeric.lean": "1acf85379ec7c69a632726920ef6be780fa059ccb1e3e6c9f8273b2f7625164f",
+    "development/IE16/NLA/IE16/SubsetBoundsDraft.lean": "d88ff86286f881e342ae19f40ea742fd39e3b0b070f0c259f9709e368da95ce2",
+    "development/IE16/NLA/IE16/SubsetGeometryDraft.lean": "3230b02827781fb99221770d82951cdafa8102c87987c4b669c0fa1d47fceb15",
+    "development/IE16/NLA/IE16/WeightedBridgeDraft.lean": "f4a85c7662a77def42b9804921b510a7ea8a922332458f756e472407bdb76599",
+    "development/IE16/NLA/IE16/WeightedDraft.lean": "e3ab062bd4c33676b3e3a4a856a3292bcc9c5030e02fdff66e9e4bedf78d2704",
+    "development/IE16/NUMERICAL_TARGETS.md": "0bea606a903e7956cac9765048db9881f07f29819f405269545f1da12ec6d682",
+    "development/IE16/Solution.lean": "dea94208561e823f1b76f831b4a8c5c5f419e9214c2b0a10ec5d4abc8612f69c",
+    "development/IE16/comparator.json": "963e1d217de9369cd5b4a3c282e983cb01986512d5221e18e1ea44d087fe7f09",
+    "development/IE16/formalization.yaml": "3a7003dbd9010ee1ed0f8be032e7265815405ebf706a66effbe801a884c2a2f4"
+  },
+  "source_inventory": {
+    "artifact_mismatches": [],
+    "before_after_file_keys_equal": true,
+    "git_mismatches": [],
+    "missing": [],
+    "recorded_files": 60,
+    "source_inputs_unchanged": true
+  },
+  "verdict": {
+    "authoritative_comparator_default_kernel_sandbox": "pending",
+    "compiled_source_and_mathematical_fidelity": "pass",
+    "countable_lean_verified_status": "not_approved"
+  }
+}

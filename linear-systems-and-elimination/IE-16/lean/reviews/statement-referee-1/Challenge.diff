@@ -1,0 +1,25 @@
+--- original-twelve-contract/Challenge.lean
++++ amended-fifteen-contract/Challenge.lean
+@@ -20,13 +20,22 @@
+ 
+ theorem full_minimum_exact : M explicitL 4 = exactFullMinimum := by sorry
+ 
++theorem full_minimum_isLeast :
++    IsLeast (feasibleValues explicitL 4) (M explicitL 4) := by sorry
++
+ theorem full_lower_bound : fullLowerBound < M explicitL 4 := by sorry
+ 
+ theorem every_five_point_subset_upper :
+     ∀ S : Finset ℂ, S ∈ subsetFamily explicitL 4 →
+       M S 4 < subsetUpperBound := by sorry
+ 
++theorem every_five_point_subset_minimum_isLeast :
++    ∀ S : Finset ℂ, S ∈ subsetFamily explicitL 4 →
++      IsLeast (feasibleValues S 4) (M S 4) := by sorry
++
+ theorem subset_max_upper : subsetMax explicitL 4 < subsetUpperBound := by sorry
++
++theorem subset_max_positive : 0 < subsetMax explicitL 4 := by sorry
+ 
+ theorem ratio_lower_bound :
+     ratioLowerBound < M explicitL 4 / subsetMax explicitL 4 := by sorry

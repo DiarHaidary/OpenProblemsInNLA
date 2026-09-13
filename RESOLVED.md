@@ -21,6 +21,16 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### RA-05 — further even-power high-accuracy partial result, Sidney Holden, 2026-09-13
+
+**Partially resolved.** [Theorems 1.1–1.2 and Corollary 1.3](references/holden-ra05-even-power-2026-09-13/manuscript.pdf) prove $`S_{2s}(k,\varepsilon)=\widetilde\Theta_s(k^{s-1}/\varepsilon^2)`$ for each fixed integer $`s\ge2`$ when $`\varepsilon\le k^{-(s+1)/2}`$, with arbitrary input rank and nonnegative original-row weights. The [canonical page](randomized-and-low-rank-approximation/RA-05/README.md) records the all-accuracy upper bound and remaining gaps. A separate [independent informal AI-agent review](references/holden-ra05-even-power-2026-09-13/verification/independent-review.md) passed this partial scope. No Lean verification or external human peer review is asserted. [Author, verified affiliation, provenance and reproduction](references/holden-ra05-even-power-2026-09-13/README.md). Earlier partial results are retained; the full joint classification remains open.
+
+### IE-20, IE-27 and IE-28 — reviewed partial results — Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. The [submission record](references/holden-ie-extensions-2026-09-13/README.md) links the attributed manuscripts, unchanged originals, exact checks and three independent informal AI-agent reviews. IE-20 supplies scalar, breakdown and first-step results; its all-parameter sharp precision target remains open. IE-27 certifies 66 specified stage counts for all positive real shifts and all-stage endpoint shift regimes, leaving intermediate shifts at other stages open. IE-28 proves the two-/three-stage, Laguerre-family and clustered-node cases plus twelve local certificates, leaving arbitrary-node all-stage existence open. The two IE-28 bundles form one submission.
+
+The original targets and permanent IDs are retained: [IE-20](linear-systems-and-elimination/IE-20/README.md), [IE-27](linear-systems-and-elimination/IE-27/README.md), [IE-28](linear-systems-and-elimination/IE-28/README.md). Related [IE-11 supporting certificates](linear-systems-and-elimination/IE-11/README.md) leave its status Open. No full resolution, external human peer review or Lean verification is asserted.
+
 ### 🟡 TR-29 — the two-factor W-state rank — Maximilian Behr
 
 **Partially resolved, 13 September 2026.** Maximilian Behr. [Theorem 1.1](references/behr-tr29-2026-09-13/manuscript/TR29_two_factor_rank.pdf) proves $`R(W_{d_1}\otimes W_{d_2})=2(d_1+d_2-2)`$ for all $`d_1,d_2\ge2`$, settling the case $`k=2`$ of [TR-29](tensor-computations/TR-29/README.md); Corollary 5.4 gives the partially symmetric rank of every bihomogeneous binary monomial with positive exponents. The case $`k\ge3`$ remains open.
@@ -211,11 +221,14 @@ Separate informal Codex AI-agent audits passed these partial scopes. None is Sol
 
 The full argument passed a separate [independent Codex AI-agent audit](references/holden-ie12-2026-09-12/independent-review.md). ChatGPT assistance in the submitted draft and informal automated review are disclosed; no external human peer review, formal verification, practical-speed result or priority certificate is asserted. No Lean verification was performed. The original problem, permanent ID and prior-source attribution are preserved. [Submission record and verified affiliation](references/holden-ie12-2026-09-12/README.md).
 
-### ✅ IE-16 - normal-GMRES subset bound - Sidney Holden
+### 🏆 IE-16 - normal-GMRES subset bound - Sidney Holden; Lean formalization by George Stepaniants
 
 **Solved negatively, 12 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 1.1, Sections 2-3](linear-systems-and-elimination/IE-16/solution.pdf) gives nine distinct nonzero complex points at degree four with full-set/subset ratio greater than 13/10 > 4/π, disproving the original universal bound. Theorem 1.2, Sections 4-5, additionally rules out every finite dimension-independent replacement constant. [Retained original target](linear-systems-and-elimination/IE-16/README.md) · [Proof source](linear-systems-and-elimination/IE-16/solution.tex).
 
-The complete argument passed a separate [independent Codex AI-agent informal audit](references/holden-ie16-2026-09-12/INDEPENDENT-REVIEW.md), including exact checks of all 126 subsets and independent rational calculations. No external human peer review or formal verification is claimed. No Lean verification was performed. The original ID, canonical path and target are retained. [Attribution, verified affiliation and submission record](references/holden-ie16-2026-09-12/README.md).
+The complete argument passed a separate [independent Codex AI-agent informal audit](references/holden-ie16-2026-09-12/INDEPENDENT-REVIEW.md), including exact checks of all 126 subsets and independent rational calculations. That dated informal audit did not establish external human peer review or formal verification. The separate complete Lean verification is recorded below. The original ID, canonical path and target are retained. [Attribution, verified affiliation and submission record](references/holden-ie16-2026-09-12/README.md).
+
+
+**Lean verified — 2026-09-13. Formalization: George Stepaniants**, Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA. The [immutable fifteen-export proof](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/697a2a1d88337a6747aa5c82fb6e554d3ff1b356/linear-systems-and-elimination/IE-16/lean) verifies Holden’s exact finite counterexample and the negation of the complete original inequality, including attained full and subset minima and a positive actual subset maximum. [Actual Ubuntu Comparator, permitted-axiom and default-kernel verification](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34774629327/job/103770408910) passed with all controls; [raw evidence, reproduction and referee records](linear-systems-and-elimination/IE-16/lean/verification/linux-2026-09-13/README.md) preserve the scope. The stronger amplification result remains an informal source result. Sidney Holden retains all mathematical resolution and certificate credit; AI assistance and independent agent reviews are disclosed.
 
 ### KE-01 — partial sparse-solver results — Sidney Holden
 

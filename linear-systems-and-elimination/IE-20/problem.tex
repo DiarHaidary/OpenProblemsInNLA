@@ -34,7 +34,7 @@ steps},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}IE-20}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-10}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -52,7 +52,7 @@ steps\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} extreme\quad\textbf{Importance:} interesting
 to the community\par}
-{\sffamily\small\bfseries\color{accent}Status: Open\par}
+{\sffamily\small\bfseries\color{accent}Status: Partially resolved\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
@@ -77,10 +77,8 @@ is measured against these stored inputs. Assume \(\kappa_2(A)\le K\).
 
 Use the scalar relative-error model with \(u=2^{-p}\):
 
-\[
-\operatorname{fl}(a\circ b)=(a\circ b)(1+\delta),
-\quad |\delta|\le u,\quad \circ\in\{+,-,\times,/\},
-\]
+\[\mathop{\mathrm{fl}}\nolimits(a\circ b)=(a\circ b)(1+\delta),
+\quad |\delta|\le u,\quad \circ\in\{+,-,\times,/\},\]
 
 for nonzero divisors, with no underflow or overflow. Guarantees must
 hold for every choice of permitted operation errors. Products are
@@ -91,36 +89,28 @@ envelope, not an assumption of independent random roundoff.
 
 Run unpreconditioned conjugate gradients with no restarts, residual
 replacement, or reorthogonalization. Initialize \(x_0=0\),
-\(r_0=p_0=b\), and \(\rho_0=\operatorname{fl}(r_0^Tr_0)\). For
-\(j=0,\ldots,n-1\), evaluate
+\(r_0=p_0=b\), and \(\rho_0=\mathop{\mathrm{fl}}\nolimits(r_0^Tr_0)\).
+For \(j=0,\ldots,n-1\), evaluate
 
-\[
-q_j=\operatorname{fl}(Ap_j),\qquad
-d_j=\operatorname{fl}(p_j^Tq_j),\qquad
-\alpha_j=\operatorname{fl}(\rho_j/d_j),
-\]
+\[q_j=\mathop{\mathrm{fl}}\nolimits(Ap_j),\qquad
+d_j=\mathop{\mathrm{fl}}\nolimits(p_j^Tq_j),\qquad
+\alpha_j=\mathop{\mathrm{fl}}\nolimits(\rho_j/d_j),\]
 
-\[
-x_{j+1}=\operatorname{fl}(x_j+\alpha_jp_j),\qquad
-r_{j+1}=\operatorname{fl}(r_j-\alpha_jq_j),
-\]
+\[x_{j+1}=\mathop{\mathrm{fl}}\nolimits(x_j+\alpha_jp_j),\qquad
+r_{j+1}=\mathop{\mathrm{fl}}\nolimits(r_j-\alpha_jq_j),\]
 
 and, if another step is needed,
 
-\[
-\rho_{j+1}=\operatorname{fl}(r_{j+1}^Tr_{j+1}),\qquad
-\beta_j=\operatorname{fl}(\rho_{j+1}/\rho_j),\qquad
-p_{j+1}=\operatorname{fl}(r_{j+1}+\beta_jp_j).
-\]
+\[\rho_{j+1}=\mathop{\mathrm{fl}}\nolimits(r_{j+1}^Tr_{j+1}),\qquad
+\beta_j=\mathop{\mathrm{fl}}\nolimits(\rho_{j+1}/\rho_j),\qquad
+p_{j+1}=\mathop{\mathrm{fl}}\nolimits(r_{j+1}+\beta_jp_j).\]
 
 Stop when the computed residual vector is zero, or before a division by
 zero. The performance criterion is that at least one iterate produced
 before stopping and by step \(n\) satisfies
 
-\[
-\eta(x_j;A,b):=
-\frac{\|b-Ax_j\|_2}{\|A\|_2\|x_j\|_2+\|b\|_2}\le\varepsilon.
-\]
+\[\eta(x_j;A,b):=
+\frac{\|b-Ax_j\|_2}{\|A\|_2\|x_j\|_2+\|b\|_2}\le\varepsilon.\]
 
 Here \(b-Ax_j\) is the true residual, not the recursively updated vector
 \(r_j\). Thus early exact convergence succeeds, while a zero computed
@@ -184,4 +174,38 @@ question. CG backward-accuracy and finite-precision searches located no
 sharp answer for the explicitly fixed arithmetic model here; those
 implementation conventions remain an editorial specialization rather
 than a verbatim source claim.
+
+\subsection{Reviewed partial results --- 13 September
+2026}\label{reviewed-partial-results-13-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/manuscripts/IE-20/report.pdf}{submitted
+report}, Theorem 2.1, gives an exact scalar precision threshold.
+Theorems 3.1--3.2 supply lower-bound constructions, including a joint
+dimension/conditioning breakdown family, and Theorems 4.1--4.2 give
+first-step results. These concern the original fixed recurrence, stored
+inputs and adversarial scalar-error envelope, with success measured
+using the true residual.
+
+Theorem 7.1 also gives sufficient precision bounds using dimension,
+Chebyshev and reciprocal-polynomial stopping horizons; Section 8 draws
+conclusions on specified parameter domains. These upper bounds and their
+failure-conditioned bootstrap passed the written-proof audit.
+
+See the
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/verification/review-ie11-ie20.md}{independent
+informal AI-agent review} for the accepted scope and limitations of the
+longer upper-bound arguments. \textbf{Partially resolved:} a sharp
+worst-case threshold up to universal multiplicative constants for every
+dimension, condition bound and tolerance is not established. In
+particular, the supplied bounds do not match in the regime \(K=n^2\),
+\(\varepsilon=n^{-2}\).
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/README.md}{Submission
+record and verified affiliation}. Substantial AI assistance is
+disclosed. The review is informal automated review, not external human
+peer review or formal verification. No Lean verification was performed.
 \end{document}

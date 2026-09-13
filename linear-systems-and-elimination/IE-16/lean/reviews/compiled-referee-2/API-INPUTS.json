@@ -1,0 +1,45 @@
+{
+  "preserved_previous_inventory_sha256": "b40d487cf5e066df7c9ef98754eb1b8f7a36f03bbedbeba47d2f10a8b7771730",
+  "previous_entries_unchanged": true,
+  "newly_used_api_checks": [
+    {
+      "path": "Mathlib/Algebra/BigOperators/Fin.lean",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "4fe78cba9cdeac4eb8badbdd6359b055031900906fb94f3e51aba6d81451dbd5",
+      "first_line": 118,
+      "last_line": 121,
+      "excerpt": "@[to_additive]\ntheorem prod_univ_three (f : Fin 3 → M) : ∏ i, f i = f 0 * f 1 * f 2 := by\n  rw [prod_univ_castSucc, prod_univ_two]\n  rfl"
+    },
+    {
+      "path": "Mathlib/Algebra/Order/GroupWithZero/Defs.lean",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "01a908236dc99e5040cb487165c1a73fbd4e495d44183e6465f86b42f744dc02",
+      "first_line": 302,
+      "last_line": 308,
+      "excerpt": "@[simp]\ntheorem mul_le_mul_iff_left₀ [MulPosMono α] [MulPosReflectLE α] (a0 : 0 < a) :\n    b * a ≤ c * a ↔ b ≤ c :=\n  @rel_iff_cov α>0 α (fun x y => y * x) (· ≤ ·) _ _ ⟨a, a0⟩ _ _\n\nalias mul_le_mul_iff_of_pos_left := mul_le_mul_iff_right₀\nalias mul_le_mul_iff_of_pos_right := mul_le_mul_iff_left₀"
+    },
+    {
+      "path": "Mathlib/Algebra/Order/GroupWithZero/Basic.lean",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "5ae904bb6c2caab184fbeb514e648544f96ad657860f307d43bbc2217ce535cb",
+      "first_line": 1156,
+      "last_line": 1161,
+      "excerpt": "lemma inv_le_iff_one_le_mul₀ (ha : 0 < a) : a⁻¹ ≤ b ↔ 1 ≤ b * a := by\n  rw [← mul_inv_le_iff₀ ha, one_mul]\n\n/-- See `inv_lt_iff_one_lt_mul₀'` for a version with multiplication on the other side. -/\nlemma inv_lt_iff_one_lt_mul₀ (ha : 0 < a) : a⁻¹ < b ↔ 1 < b * a := by\n  rw [← mul_inv_lt_iff₀ ha, one_mul]"
+    },
+    {
+      "path": "Mathlib/Analysis/Normed/Group/Real.lean",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "eaae958600a11f6a363c1aaf0f5d9d2f85f27a277eb26b6cbfe16e6462922cd4",
+      "first_line": 52,
+      "last_line": 57,
+      "excerpt": "instance norm : Norm ℝ where\n  norm r := |r|\n\n@[simp]\ntheorem norm_eq_abs (r : ℝ) : ‖r‖ = |r| :=\n  rfl"
+    }
+  ],
+  "leancert_assertion_implementation": {
+    "path": "LeanCert/Tactic/Verification.lean",
+    "revision": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+    "lines_inspected": "593-661",
+    "note": "The command collects transitive axioms, rejects sorryAx/custom axioms and rejects native compiler trust for the kernel class; it is silent on success."
+  }
+}

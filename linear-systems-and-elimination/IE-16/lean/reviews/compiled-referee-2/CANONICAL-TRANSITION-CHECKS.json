@@ -1,0 +1,96 @@
+{
+  "transition_manifest_sha256": "7b3d62a89623408f560a3d70e42f93e1347691bbd6f9b20c082499eafdb63570",
+  "transition_manifest_scope": "Canonical candidate preparation; no mathematical source/declaration/import changes, no canonical page/status changes",
+  "files": {
+    "NLA/IE16/Minimax.lean": {
+      "old_sha256": "0ae5e4902f5493f2902c823f10f154192e54b7ad74190a9bbc26f409899ad782",
+      "canonical_sha256": "d933b2609842519f9af59b21699af15414a2768376fa9a7deb9decb84fd9842c",
+      "tail_after_leading_comment_sha256": "bf940f907ff95d57bf38f6fb6d2124f66c66ad5273f234c0cbc0572014e7e808",
+      "only_leading_comment_changed": true,
+      "new_leading_comment": "/- Generic finite-node minimax lemma for IE-16.\n\n  The statement is independent of the particular nine-point coordinates. Its\n  exact complex Lagrange interpolation argument supplies the attained minima\n  for every five-point subset. The full nine-point minimum uses the separate\n  positive-weight bridge.\n-/"
+    },
+    "NLA/IE16/WeightedDraft.lean": {
+      "old_sha256": "e3ab062bd4c33676b3e3a4a856a3292bcc9c5030e02fdff66e9e4bedf78d2704",
+      "canonical_sha256": "d87c2fe573fbdd31a85ca7170ee9f9700fd406243f44e4631f0feb243694a9e1",
+      "tail_after_leading_comment_sha256": "42841cab722f401a5aa9ae67b2deef277ae1962aaa3472328574f81a6d3d3c4e",
+      "only_leading_comment_changed": true,
+      "new_leading_comment": "/- Positive-weight lower bound for a finite full-set minimax problem.\n\n  Numeric.lean supplies the concrete nine-point moments. This module keeps\n  the generic analytic bridge separate from those exact finite calculations.\n-/"
+    },
+    "NLA/IE16/WeightedBridgeDraft.lean": {
+      "old_sha256": "f4a85c7662a77def42b9804921b510a7ea8a922332458f756e472407bdb76599",
+      "canonical_sha256": "e68654e1a1f21c1f29b2391edf69374365438c583ff4181323be29a39f6fd008",
+      "tail_after_leading_comment_sha256": "fb6c97e027cd088b5cd92f13b1ca9f52dbcef064ccd14c0269da6bdfb465afe1",
+      "only_leading_comment_changed": true,
+      "new_leading_comment": "/-\n  Indexed bridge for the full nine-point lower bound.\n\n  The indexed formulation avoids introducing an inverse weight function on\n  the image explicitL: the nine nodes are indexed by Fin 3 × Fin 3, and\n  explicitL is their injective image. The generic weighted identity is\n  combined with the exact moments from Numeric.lean.\n-/"
+    },
+    "NLA/IE16/FullMinimumDraft.lean": {
+      "old_sha256": "ec971dbdf3cbe7de0c2707eea2facbc62f613d280e384c245478a98105f57ef0",
+      "canonical_sha256": "78f9c847d1438c5ce1b53c49bf0178ccde7a8cb542ad07a0b99172542c7c95e6",
+      "tail_after_leading_comment_sha256": "d4a1def255ca565820dac7e93933e473d8e354fd5242ca582875b8430ba9e44e",
+      "only_leading_comment_changed": true,
+      "new_leading_comment": "/-\n  Full-set minimum and infimum-attainment contracts.\n\n  WeightedBridgeDraft.lean supplies the lower bound for every feasible\n  polynomial. This module bridges that bound and the explicit witness to M\n  and IsLeast. Internal suffixed names are exported under the exact public\n  Challenge names by Solution.lean.\n-/"
+    },
+    "NLA/IE16/SubsetBoundsDraft.lean": {
+      "old_sha256": "d88ff86286f881e342ae19f40ea742fd39e3b0b070f0c259f9709e368da95ce2",
+      "canonical_sha256": "6a3bef42b0356e36db434099e87a4aa4d01682c2de09092497035fe796a33709",
+      "tail_after_leading_comment_sha256": "5f6d2bddd74e06e0952730a2c9d9b300d5d026808285e96e0ebf0c2ca60fa380",
+      "only_leading_comment_changed": true,
+      "new_leading_comment": "/- IE-16 subset-bound helpers.\n\nThe numerical statements were written first in SUBSET_BOUND_OPTIMIZATION.md.\nThese generic estimates avoid repeating irrational arithmetic for all 126\nsubsets and supply the complete five-point-subset bound.\n\nGeorge Stepaniants, Department of Computing and Mathematical Sciences,\nCalifornia Institute of Technology. AI-assisted formalization.\n-/"
+    },
+    "NLA/IE16/SubsetGeometryDraft.lean": {
+      "old_sha256": "3230b02827781fb99221770d82951cdafa8102c87987c4b669c0fa1d47fceb15",
+      "canonical_sha256": "e0f73f3268d289371906e3df7388249b51e7ae93c0b1b7c0b5c8fe04449d48ab",
+      "tail_after_leading_comment_sha256": "6010502b7862d45cad17ea0241e3706cbcc8d542ee617246e0bba24326ef681c",
+      "only_leading_comment_changed": true,
+      "new_leading_comment": "/- Bridge from the actual nine complex points to the shared subset bounds.\nAll five-point subsets are retained. The original analytic counterexample is\ndue to Sidney Holden; formalization by George Stepaniants, Department of\nComputing and Mathematical Sciences, California Institute of Technology,\nPasadena, California, USA, with AI assistance.\n-/"
+    },
+    "NLA/IE16/FinalContractsDraft.lean": {
+      "old_sha256": "fde3c36171d26b93b7236974944e0d6275a7b884aa507ed5270a9475800c85ae",
+      "canonical_sha256": "a0aa3d1e08cf699c06a397540987f166f76693c87c8ed427f8d30836a9b01752",
+      "tail_after_leading_comment_sha256": "f75466fa07905d5eed6f6303702604b9b6499c8f10811a6be682f95992f8cfca",
+      "only_leading_comment_changed": true,
+      "new_leading_comment": "/-\n  Finite-family and universal-negation contracts for IE-16.\n\n  The subset geometry module exports the two named helpers used below.\n  This module supplies the finite-family order arguments and final exact\n  rational/π comparisons, without extra hypotheses in the public statements.\n-/"
+    },
+    "Solution.lean": {
+      "old_sha256": "dea94208561e823f1b76f831b4a8c5c5f419e9214c2b0a10ec5d4abc8612f69c",
+      "canonical_sha256": "9ec27288b7d4824b91a8c0006c7be1fd7e6493b2444ce45941bdb9104b17a419",
+      "tail_after_leading_comment_sha256": "b5aa53124a066eaf701e6078c782bc37649e372e77df809abc9454965bc3d327",
+      "only_leading_comment_changed": true,
+      "new_leading_comment": "/-\nComplete proof exports for the frozen IE-16 statement boundary.\n\nOriginal mathematics: Sidney Holden. Formalization: George Stepaniants,\nDepartment of Computing and Mathematical Sciences, California Institute of\nTechnology, Pasadena, California, USA, with AI-agent assistance. The module\nimports the numerical and subset contracts and aliases the remaining\ninternal declarations to the exact public names required by Challenge.\n-/"
+    },
+    "lakefile.toml": {
+      "old_sha256": "e8730401c25cb7f0d4e091ca1a55c28caad55da8266ee05b987b85d82fc4e77d",
+      "canonical_sha256": "b8b951591b3ddb41acf570c3055b8e02aa53e1e6f648be6a966ec8d85a00a716",
+      "only_default_target_changed": true
+    },
+    "NLA/IE16/Definitions.lean": {
+      "sha256": "e4681f2083d71d8980adcd70e7cf26367e0e84dbc1773f4d2f082bf2417c9507",
+      "unchanged": true
+    },
+    "Challenge.lean": {
+      "sha256": "85cbe24c7657d9ddc37728db5bb1740a80ddab60e3eb4676e329df40a7b1737c",
+      "unchanged": true
+    },
+    "NLA/IE16/Numeric.lean": {
+      "sha256": "1acf85379ec7c69a632726920ef6be780fa059ccb1e3e6c9f8273b2f7625164f",
+      "unchanged": true
+    },
+    "comparator.json": {
+      "sha256": "963e1d217de9369cd5b4a3c282e983cb01986512d5221e18e1ea44d087fe7f09",
+      "unchanged": true
+    },
+    "NUMERICAL_TARGETS.md": {
+      "sha256": "0bea606a903e7956cac9765048db9881f07f29819f405269545f1da12ec6d682",
+      "unchanged": true
+    },
+    "lake-manifest.json": {
+      "sha256": "7b20caa01b18a890bbbc64b5c9b507ae2a7484fb2289670b5485f67c0c7b6bb2",
+      "unchanged": true
+    },
+    "lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "unchanged": true
+    }
+  },
+  "canonical_stage": "uncommitted presentation candidate; exact file hashes only, not canonical compiler or Comparator evidence"
+}

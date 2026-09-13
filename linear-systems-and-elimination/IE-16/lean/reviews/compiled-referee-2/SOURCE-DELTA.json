@@ -1,0 +1,225 @@
+{
+  "old_revision": "28bdf9e85541764b6a5cb2debd647b9cebaea21f",
+  "new_revision": "281fc3790412b7ab2b05c202c0351b4d259a6382",
+  "proof_files": {
+    "NLA/IE16/Definitions.lean": {
+      "old_sha256": "e4681f2083d71d8980adcd70e7cf26367e0e84dbc1773f4d2f082bf2417c9507",
+      "new_sha256": "e4681f2083d71d8980adcd70e7cf26367e0e84dbc1773f4d2f082bf2417c9507",
+      "changed": false
+    },
+    "NLA/IE16/FinalContractsDraft.lean": {
+      "old_sha256": "5b4bf1715e97677e1cf532990646aa3dea54c6dee58f50b3af7be55815ddbc7a",
+      "new_sha256": "fde3c36171d26b93b7236974944e0d6275a7b884aa507ed5270a9475800c85ae",
+      "changed": true
+    },
+    "NLA/IE16/FullMinimumDraft.lean": {
+      "old_sha256": "ec971dbdf3cbe7de0c2707eea2facbc62f613d280e384c245478a98105f57ef0",
+      "new_sha256": "ec971dbdf3cbe7de0c2707eea2facbc62f613d280e384c245478a98105f57ef0",
+      "changed": false
+    },
+    "NLA/IE16/Minimax.lean": {
+      "old_sha256": "4d2a8c38b3413e716a53ff81b9718089b4dbb48c4f0f1ab2e1ea0a92e87465c5",
+      "new_sha256": "0ae5e4902f5493f2902c823f10f154192e54b7ad74190a9bbc26f409899ad782",
+      "changed": true
+    },
+    "NLA/IE16/Numeric.lean": {
+      "old_sha256": "c90b9378f26691bba31056c333fb92ea8406f21a64a82d4c72ef4f40c79887fa",
+      "new_sha256": "1acf85379ec7c69a632726920ef6be780fa059ccb1e3e6c9f8273b2f7625164f",
+      "changed": true
+    },
+    "NLA/IE16/SubsetBoundsDraft.lean": {
+      "old_sha256": "d88ff86286f881e342ae19f40ea742fd39e3b0b070f0c259f9709e368da95ce2",
+      "new_sha256": "d88ff86286f881e342ae19f40ea742fd39e3b0b070f0c259f9709e368da95ce2",
+      "changed": false
+    },
+    "NLA/IE16/SubsetGeometryDraft.lean": {
+      "old_sha256": "a9324fbe3b761aa40a8a79ea8ff3245cc06877fda713ea7f400062ad79fd6bb2",
+      "new_sha256": "3230b02827781fb99221770d82951cdafa8102c87987c4b669c0fa1d47fceb15",
+      "changed": true
+    },
+    "NLA/IE16/WeightedBridgeDraft.lean": {
+      "old_sha256": "b082910816dd73ea012d77e2c3c63797b7c7cfee9eaec82fed619a458113c5c5",
+      "new_sha256": "f4a85c7662a77def42b9804921b510a7ea8a922332458f756e472407bdb76599",
+      "changed": true
+    },
+    "NLA/IE16/WeightedDraft.lean": {
+      "old_sha256": "1163f0f71fb5ce4f39374f09a1ea452a9580c853f8d1e17aad1b4a7482a21c36",
+      "new_sha256": "e3ab062bd4c33676b3e3a4a856a3292bcc9c5030e02fdff66e9e4bedf78d2704",
+      "changed": true
+    },
+    "Solution.lean": {
+      "old_sha256": "dea94208561e823f1b76f831b4a8c5c5f419e9214c2b0a10ec5d4abc8612f69c",
+      "new_sha256": "dea94208561e823f1b76f831b4a8c5c5f419e9214c2b0a10ec5d4abc8612f69c",
+      "changed": false
+    }
+  },
+  "changed_files": [
+    "NLA/IE16/FinalContractsDraft.lean",
+    "NLA/IE16/Minimax.lean",
+    "NLA/IE16/Numeric.lean",
+    "NLA/IE16/SubsetGeometryDraft.lean",
+    "NLA/IE16/WeightedBridgeDraft.lean",
+    "NLA/IE16/WeightedDraft.lean"
+  ],
+  "public_signature_checks": {
+    "NLA.IE16.explicitL_card": {
+      "file": "NLA/IE16/Numeric.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": explicitL.card = 9",
+      "normalized_signature_sha256": "51c4d30f80ede3dabecb3bfe58e49f579e8e7bd1fa4d41bae501c04dffcb1a08"
+    },
+    "NLA.IE16.explicitL_admissible": {
+      "file": "NLA/IE16/Numeric.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": admissible explicitL 9",
+      "normalized_signature_sha256": "3034e3b4f543b4ea7d164f897d7200299c118306c0bf827022c3fd8bfd9e74e6"
+    },
+    "NLA.IE16.witness_feasible": {
+      "file": "NLA/IE16/Numeric.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": feasible explicitL 4 witnessPolynomial",
+      "normalized_signature_sha256": "10603ec95a61eafa4d211c36e852c0a38a5f929fc40e665ba2c230d5ee037759"
+    },
+    "NLA.IE16.witness_objective": {
+      "file": "NLA/IE16/Numeric.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": maxModulus explicitL witnessPolynomial = exactFullMinimum",
+      "normalized_signature_sha256": "f247e5cc557d55f110df7845b49130ee7828b2eebe9bda06b129c068b978b64c"
+    },
+    "NLA.IE16.full_minimum_exact": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": M explicitL 4 = exactFullMinimum",
+      "normalized_signature_sha256": "f7e49679ca8d01e14ae314df68f1a404a6e00267c64702b37e594efd4471655d"
+    },
+    "NLA.IE16.full_minimum_isLeast": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": IsLeast (feasibleValues explicitL 4) (M explicitL 4)",
+      "normalized_signature_sha256": "be7a914c24df9855e8c1cec97490fd8085f05392e021e4d06cd26fabbe425fc1"
+    },
+    "NLA.IE16.full_lower_bound": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": fullLowerBound < M explicitL 4",
+      "normalized_signature_sha256": "842793583837908d8474bdaf7692383b01415eca00dd827515ac17d77496980d"
+    },
+    "NLA.IE16.every_five_point_subset_upper": {
+      "file": "NLA/IE16/SubsetGeometryDraft.lean",
+      "signature_unchanged": true,
+      "normalized_signature": "(S : Finset ℂ) (hS : S ∈ subsetFamily explicitL 4) : M S 4 < subsetUpperBound",
+      "normalized_signature_sha256": "522a2355f12e38ee4dce2954061b67b3d2b05bcd650043f1a09028b7fce09d00"
+    },
+    "NLA.IE16.every_five_point_subset_minimum_isLeast": {
+      "file": "NLA/IE16/SubsetGeometryDraft.lean",
+      "signature_unchanged": true,
+      "normalized_signature": "(S : Finset ℂ) (hS : S ∈ subsetFamily explicitL 4) : IsLeast (feasibleValues S 4) (M S 4)",
+      "normalized_signature_sha256": "20a5badadf8551b2caff38e3811ac1c699ba103cfed80a8d006a2722a48dcec8"
+    },
+    "NLA.IE16.subset_max_upper": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": subsetMax explicitL 4 < subsetUpperBound",
+      "normalized_signature_sha256": "9952a6174c89475bbadf9001c4abd548d3f4f2cc2a38eb72bff8c0246776ec56"
+    },
+    "NLA.IE16.subset_max_positive": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": 0 < subsetMax explicitL 4",
+      "normalized_signature_sha256": "aea388724f6960a379fbede1d2cd30b5a172948e01c5d443b6892b202f915c37"
+    },
+    "NLA.IE16.ratio_lower_bound": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": ratioLowerBound < M explicitL 4 / subsetMax explicitL 4",
+      "normalized_signature_sha256": "f61779e2095e30f2d96c7820c2072f6071ac9080337b309cb3af7f0edeea55b8"
+    },
+    "NLA.IE16.ratio_exceeds_candidate": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": (4 / Real.pi) < ratioLowerBound",
+      "normalized_signature_sha256": "31a797411e7898bfd4e390410664ab1c234465e76e9d442b4a79f03ef69f14b2"
+    },
+    "NLA.IE16.counterexample": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": ExplicitCertificate",
+      "normalized_signature_sha256": "0210acbdc1f4b537870b4c73063282edc8ddf63974a16baf2b88ccd56ea6695c"
+    },
+    "NLA.IE16.not_IE16Conjecture": {
+      "file": "Solution.lean",
+      "signature_unchanged": true,
+      "normalized_signature": ": ¬ IE16Conjecture",
+      "normalized_signature_sha256": "7f57bb7b0a16170eeaba6d2174fe05569473dfe5eeaaa6dde2c51ede787b05cb"
+    }
+  },
+  "witness_definitions_unchanged": true,
+  "witness_weight_definitions_unchanged": true,
+  "root_coordinate_check": {
+    "exact_arithmetic": "fractions.Fraction; Q(omega) coordinates transformed to R+J*sqrt(3)*i",
+    "all_nine_coordinates_match": true,
+    "all_real_parts_nonzero": true,
+    "all_nine_pairs_distinct": true,
+    "coordinates": [
+      {
+        "a": 0,
+        "b": 0,
+        "real": "1001/1000",
+        "sqrt3_coefficient": "0"
+      },
+      {
+        "a": 0,
+        "b": 1,
+        "real": "1999/2000",
+        "sqrt3_coefficient": "1/2000"
+      },
+      {
+        "a": 0,
+        "b": 2,
+        "real": "1999/2000",
+        "sqrt3_coefficient": "-1/2000"
+      },
+      {
+        "a": 1,
+        "b": 0,
+        "real": "-499/1000",
+        "sqrt3_coefficient": "1/2"
+      },
+      {
+        "a": 1,
+        "b": 1,
+        "real": "-1001/2000",
+        "sqrt3_coefficient": "1001/2000"
+      },
+      {
+        "a": 1,
+        "b": 2,
+        "real": "-1001/2000",
+        "sqrt3_coefficient": "999/2000"
+      },
+      {
+        "a": 2,
+        "b": 0,
+        "real": "-499/1000",
+        "sqrt3_coefficient": "-1/2"
+      },
+      {
+        "a": 2,
+        "b": 1,
+        "real": "-1001/2000",
+        "sqrt3_coefficient": "-999/2000"
+      },
+      {
+        "a": 2,
+        "b": 2,
+        "real": "-1001/2000",
+        "sqrt3_coefficient": "-1001/2000"
+      }
+    ]
+  },
+  "unchanged_subset_bound_and_occupancy_source": true,
+  "proof_source_diff_sha256": "45bb813ecc59bd299f91c2330718702e4284e5c69cb868016bf3928d849b9278",
+  "previous_exact_certificate_audit_sha256": "6bbdd952d187136b8c03a2ffb91318f5845c851c0ae55a286ba6f565b5f93dae",
+  "previous_api_inventory_sha256": "b40d487cf5e066df7c9ef98754eb1b8f7a36f03bbedbeba47d2f10a8b7771730",
+  "previous_api_files_hashes_rechecked": 7
+}

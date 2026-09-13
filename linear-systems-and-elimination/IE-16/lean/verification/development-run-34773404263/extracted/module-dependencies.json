@@ -1,0 +1,39 @@
+{
+  "Definitions": [],
+  "Numeric": [
+    "Definitions",
+    "LeanCert.Tactic.Verification"
+  ],
+  "Minimax": [
+    "Definitions",
+    "LeanCert.Tactic.Verification"
+  ],
+  "WeightedDraft": [
+    "Minimax"
+  ],
+  "WeightedBridgeDraft": [
+    "WeightedDraft",
+    "Numeric"
+  ],
+  "FullMinimumDraft": [
+    "WeightedBridgeDraft"
+  ],
+  "SubsetBoundsDraft": [
+    "Minimax"
+  ],
+  "SubsetGeometryDraft": [
+    "Numeric",
+    "SubsetBoundsDraft"
+  ],
+  "FinalContractsDraft": [
+    "FullMinimumDraft",
+    "SubsetGeometryDraft"
+  ],
+  "Solution": [
+    "Numeric",
+    "SubsetGeometryDraft",
+    "FullMinimumDraft",
+    "FinalContractsDraft",
+    "LeanCert.Tactic.Verification"
+  ]
+}

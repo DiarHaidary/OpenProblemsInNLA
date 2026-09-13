@@ -1,0 +1,43 @@
+{
+  "python": "3.12.14",
+  "status": "PASS",
+  "global_solution": false,
+  "checks": [
+    {
+      "script": "derive_algebra.py",
+      "returncode": 0,
+      "stdout": "PASS: exact algebra, discriminant, and unique P5 root in (4,5). Not a global proof.\n",
+      "stderr": ""
+    },
+    {
+      "script": "check_intervals.py",
+      "returncode": 0,
+      "stdout": "PASS: 8499 rational interval containment tests\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify_local.py",
+      "returncode": 0,
+      "stdout": "PASS: strict LOCAL maximum\nalpha: ('4.13251707863247285422334685327737126995279153779908769454418052196684', '4.13251707863247285422334685327737126995279153779908769454418052196804')\ncurvature: ('-1.012828670701371899922523399289', '-1.012828670701371899922523399288')\nNot a global proof.\n",
+      "stderr": ""
+    },
+    {
+      "script": "rational_witness.py",
+      "returncode": 0,
+      "stdout": "PASS: exact rational strict-CP witness\nfifth pivot > 4.13251707863247285422334685327737126995279153779\n",
+      "stderr": ""
+    },
+    {
+      "script": "global_model.py",
+      "returncode": 0,
+      "stdout": "PASS: exact LU/Schur identity test\nGenerated global_counterexample.smt2 ; query NOT solved.\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify_layer_hull.py",
+      "returncode": 0,
+      "stdout": "PASS: exact RELAXATION optimum is 81/16\nThis value is NOT g5 and the mixture is NOT a counterexample.\n",
+      "stderr": ""
+    }
+  ]
+}

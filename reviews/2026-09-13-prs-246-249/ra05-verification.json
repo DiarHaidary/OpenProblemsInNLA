@@ -1,0 +1,234 @@
+{
+  "passed": true,
+  "seed": 13092026,
+  "total_finite_assertions": 8453,
+  "categories": {
+    "partition_nonnegative": 1815,
+    "one_cross_rank_exponent": 77,
+    "balanced_rank_exponent": 286,
+    "radial_head_degree": 77,
+    "protected_degrees": 1287,
+    "operator_degree_identity": 1287,
+    "protected_rank_exponent": 1287,
+    "monomial_count": 11,
+    "exact_multinomial_expansion": 14,
+    "density": 12,
+    "head_feature_isotropy": 23,
+    "head_feature_trace": 23,
+    "head_leverage": 23,
+    "mixed_feature_trace": 198,
+    "mixed_feature_covariance": 198,
+    "mixed_leverage": 198,
+    "one_cross_factorization": 46,
+    "one_cross_query_length": 46,
+    "anisotropic_query_length": 34,
+    "balanced_mixed_factorization": 76,
+    "balanced_left_query": 76,
+    "balanced_right_query": 76,
+    "protected_tensor_factorization": 224,
+    "protected_trace_contraction": 224,
+    "left_map_norm_identity": 224,
+    "right_map_norm_bound": 224,
+    "query_nuclear_bound": 224,
+    "complete_residual_expansion": 12,
+    "direct_positive_contraction_cost": 12,
+    "tail_projector_norm": 12,
+    "tail_gaussian_metric_contraction": 12,
+    "odd_degree_operator_output": 22,
+    "left_variance_contraction": 20,
+    "right_variance_contraction": 20,
+    "anisotropic_left_variance": 20,
+    "anisotropic_right_variance": 20,
+    "fractional_cardinality_constraint": 4,
+    "fractional_positive_mass": 4,
+    "fractional_active_halving": 4,
+    "standalone_exact_certificate": 1
+  },
+  "max_scaled_residuals": {
+    "density": 1.1102230246251565e-16,
+    "head_feature_isotropy": 1.6445338776746358e-14,
+    "head_feature_trace": 6.8833827526759706e-15,
+    "mixed_feature_trace": 8.754901565615443e-15,
+    "one_cross_factorization": 3.3204735634833922e-18,
+    "balanced_mixed_factorization": 2.8548870392467244e-18,
+    "protected_tensor_factorization": 4.518586519922988e-16,
+    "protected_trace_contraction": 6.611305577668174e-16,
+    "left_map_norm_identity": 1.1090768681833183e-15,
+    "complete_residual_expansion": 1.5447352888810744e-15,
+    "direct_positive_contraction_cost": 3.979439152843462e-15
+  },
+  "numerical_instances": [
+    {
+      "s": 2,
+      "p": 4,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 35,
+      "probability_components": 11
+    },
+    {
+      "s": 3,
+      "p": 6,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 45,
+      "probability_components": 22
+    },
+    {
+      "s": 4,
+      "p": 8,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 55,
+      "probability_components": 37
+    },
+    {
+      "s": 3,
+      "p": 6,
+      "head_dimension": 3,
+      "tail_dimension": 2,
+      "rows": 60,
+      "probability_components": 22
+    },
+    {
+      "s": 5,
+      "p": 10,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 65,
+      "probability_components": 56
+    },
+    {
+      "s": 6,
+      "p": 12,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 70,
+      "probability_components": 79
+    }
+  ],
+  "degree_audit": [
+    {
+      "s": 2,
+      "counts": {
+        "pure_tail": 3,
+        "one_cross": 2,
+        "balanced": 1,
+        "radial_head": 2,
+        "protected": 2
+      }
+    },
+    {
+      "s": 3,
+      "counts": {
+        "pure_tail": 4,
+        "one_cross": 3,
+        "balanced": 3,
+        "radial_head": 3,
+        "protected": 7
+      }
+    },
+    {
+      "s": 4,
+      "counts": {
+        "pure_tail": 5,
+        "one_cross": 4,
+        "balanced": 6,
+        "radial_head": 4,
+        "protected": 16
+      }
+    },
+    {
+      "s": 5,
+      "counts": {
+        "pure_tail": 6,
+        "one_cross": 5,
+        "balanced": 10,
+        "radial_head": 5,
+        "protected": 30
+      }
+    },
+    {
+      "s": 6,
+      "counts": {
+        "pure_tail": 7,
+        "one_cross": 6,
+        "balanced": 15,
+        "radial_head": 6,
+        "protected": 50
+      }
+    },
+    {
+      "s": 7,
+      "counts": {
+        "pure_tail": 8,
+        "one_cross": 7,
+        "balanced": 21,
+        "radial_head": 7,
+        "protected": 77
+      }
+    },
+    {
+      "s": 8,
+      "counts": {
+        "pure_tail": 9,
+        "one_cross": 8,
+        "balanced": 28,
+        "radial_head": 8,
+        "protected": 112
+      }
+    },
+    {
+      "s": 9,
+      "counts": {
+        "pure_tail": 10,
+        "one_cross": 9,
+        "balanced": 36,
+        "radial_head": 9,
+        "protected": 156
+      }
+    },
+    {
+      "s": 10,
+      "counts": {
+        "pure_tail": 11,
+        "one_cross": 10,
+        "balanced": 45,
+        "radial_head": 10,
+        "protected": 210
+      }
+    },
+    {
+      "s": 11,
+      "counts": {
+        "pure_tail": 12,
+        "one_cross": 11,
+        "balanced": 55,
+        "radial_head": 11,
+        "protected": 275
+      }
+    },
+    {
+      "s": 12,
+      "counts": {
+        "pure_tail": 13,
+        "one_cross": 12,
+        "balanced": 66,
+        "radial_head": 12,
+        "protected": 352
+      }
+    }
+  ],
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5"
+  },
+  "numerical_tolerance": 3e-07,
+  "range_eigenvalue_relative_threshold": 2e-10,
+  "limitations": [
+    "Finite assertions are not independent proofs.",
+    "No asymptotic partial-coloring, restricted-invertibility or random-core oracle is implemented.",
+    "Numerical feature cases need not have globally optimal heads; those tests assert only the stated algebra and norm inequalities.",
+    "The exact certificate illustrates violations, not an asymptotically optimal support lower bound."
+  ]
+}

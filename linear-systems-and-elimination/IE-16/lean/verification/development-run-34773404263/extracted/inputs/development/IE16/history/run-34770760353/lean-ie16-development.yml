@@ -1,0 +1,47 @@
+name: IE-16 draft compilation (not verification)
+
+on:
+  push:
+    branches: [codex/lean-ie16-development]
+    paths:
+      - development/IE16/**
+      - .github/workflows/lean-ie16-development.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  draft-compile:
+    if: github.ref == 'refs/heads/codex/lean-ie16-development'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Record exact draft inputs before dependency setup
+        env:
+          IE16_LOG_DIR: ${{ runner.temp }}/ie16-development-logs
+        run: python3 development/IE16/ci_compile.py --record-inputs
+      - uses: leanprover/lean-action@96e06131c0e9943c780388fd166f55d1e2fa0433
+        with:
+          lake-package-directory: development/IE16
+          auto-config: false
+          build: false
+          test: false
+          lint: false
+          use-mathlib-cache: false
+          use-github-cache: false
+      - name: Compile draft modules sequentially with bounded resources
+        env:
+          IE16_LOG_DIR: ${{ runner.temp }}/ie16-development-logs
+        run: python3 development/IE16/ci_compile.py --compile
+      - name: Retain successful and failed development logs
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: ie16-development-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/ie16-development-logs/
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,0 +1,388 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=0.9in,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage{xcolor,hyperref,fancyhdr}
+\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black,pdftitle={IE-11: Recovered analysis and exact certificates},pdfauthor={Sidney Holden}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{IE-11: recovered analysis}\fancyhead[R]{Exact certificates}
+\fancyfoot[C]{\thepage}
+\setlength{\parskip}{0.35em}\setlength{\parindent}{0pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}\newcommand{\Q}{\mathbb Q}
+\newcommand{\normmax}[1]{\lVert #1\rVert_{\max}}
+\newcommand{\cset}{\mathcal C}\newcommand{\aset}{\mathcal A}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\newcommand{\statusbox}[1]{\begin{center}\fbox{\begin{minipage}{0.92\linewidth}#1\end{minipage}}\end{center}}
+\title{\vspace{-1.1em}\textbf{IE-11: Recovered analysis\newline and exact certificates}\\[0.35em]\large A certified lower-bound construction, a strict local maximum,\\and the remaining global-optimality requirement}
+\author{Sidney Holden\\[3pt]\small Center for Computational Biology, Flatiron Institute\\\small Simons Foundation\\[3pt]\small Prepared with substantial AI assistance}
+\date{13 September 2026}
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+\statusbox{\textbf{Outcome. This is not a full solution of IE-11.} The package certifies the algebraic candidate and strict local maximality on its normalized diagonal-pivot feasible set. It does \emph{not} prove the matching global upper bound, and it does not provide a counterexample. In particular, no exhaustive exclusion of other admissible pivot configurations has been completed.}
+
+\begin{abstract}
+The interrupted work was recovered from its transcript and rebuilt as executable verification scripts. Exact symbolic arithmetic reconstructs the candidate's degree-61 polynomial, checks it coefficient by coefficient against the cited paper, and establishes the uniqueness of its root in $(4,5)$. Integer-based interval arithmetic isolates the associated matrix and proves a strict local maximum in the full 24-variable, fixed-path feasible set, rather than only on the proposed one-dimensional active curve. A separate rational matrix has 100 strict complete-pivoting inequalities, verified using the Python standard library alone. A path-complete bilinear counterexample formulation is supplied, together with the precise global statement still lacking a proof. The candidate and its lower bound are attributed to Chen, Edelman, and Urschel; no priority claim is made for them.
+\end{abstract}
+
+\section{The question and the result actually obtained}
+For a nonsingular real $5\times5$ matrix, Gaussian elimination with complete pivoting chooses a largest-magnitude entry of the current active Schur complement as the next pivot. All choices among tied largest entries are allowed. The problem asks whether the worst possible element growth is
+\[
+ g_5=\alpha,\qquad
+ \alpha=4.132517078632472854223346853277371269952791537799\ldots,
+\]
+where $\alpha$ is the unique root in $(4,5)$ of the polynomial $P_5$ in equation (2.15) of \cite{ceu}. The problem statement explicitly requires control of \emph{all} admissible matrices and pivot paths, not only the candidate's active pattern \cite{ie11}.
+
+The cited work gives the lower-bound construction and the upper bound $4.84$ \cite{ceu}. Consequently, the published enclosure
+\[
+             \alpha\le g_5\le4.84
+\]
+should not be confused with a conclusion that $g_5=\alpha$. The current package does not improve or independently reverify that published upper bound.
+
+\begin{center}
+\begin{tabular}{@{}p{0.56\linewidth}p{0.35\linewidth}@{}}
+\toprule
+Statement & Status in this package\\\midrule
+The reconstructed polynomial is the source's $P_5$ & All 62 coefficients checked\\
+$P_5$ has a unique root in $(4,5)$ & Exact integer certificate\\
+The candidate is feasible and has fifth pivot $\alpha$ & Symbolic and interval certificates\\
+The candidate is a strict local maximum, with $A_{11}=1$ and the diagonal path fixed & Certified in all 24 free entries\\
+A rational matrix has strict CP inequalities and fifth pivot near $\alpha$ & Exact rational certificate\\
+No completely pivoted matrix has growth greater than $\alpha$ & \textbf{Not proved}\\\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Normalization and the complete-pivoting inequalities}
+Fix an admissible pivot path. Its row and column interchanges can be absorbed into initial permutation matrices. Inductively, each active Schur complement is then the corresponding permuted active block of elimination along the diagonal. Row sign changes can make every pivot positive without altering any magnitude comparison. Finally, scaling the matrix by its initial maximum entry gives
+\[
+ A_{11}=p_1=1,\qquad p_k>0\quad(1\le k\le5).
+\]
+These operations account for arbitrary paths, including ties; they do not assume the special matrix structure introduced later.
+
+Use global indices $i,j\in\{k,\ldots,5\}$ for the active matrix $S_k$, and write $p_k=(S_k)_{kk}$. Its recurrence is
+\begin{equation}\label{eq:schur}
+ (S_{k+1})_{ij}=(S_k)_{ij}
+       -\frac{(S_k)_{ik}(S_k)_{kj}}{p_k},\qquad i,j>k.
+\end{equation}
+For $k\le4$, define
+\begin{equation}\label{eq:slack}
+ c_{kij\sigma}(A)=p_k-\sigma(S_k)_{ij},
+ \qquad \sigma\in\{-1,+1\},\quad(i,j)\ne(k,k).
+\end{equation}
+Complete pivoting is equivalent to nonnegativity of these slacks, together with positive pivots. There are exactly
+\[
+       2\bigl((25-1)+(16-1)+(9-1)+(4-1)\bigr)=100
+\]
+nontrivial inequalities. Including the diagonal comparison itself would only add a tautology and positivity information already supplied by $p_k>0$.
+
+At every step $\normmax{S_k}=p_k$, so the normalized growth is $\max_k p_k$. The established complete-pivoting constants for sizes $1,2,3,4$ are $1,2,9/4,4$ \cite{ceu}. Applying them to the leading pivot submatrices shows that $p_k\le4$ for $k\le4$. Since $\alpha>4$, a counterexample to the conjectured upper bound must have $p_5>\alpha$.
+
+\section{An exact two-parameter description of the active candidate}
+The family below reconstructs the active matrix pattern of \cite[Eq.~(2.1)]{ceu}. It is \textbf{not} a parameterization of all completely pivoted matrices.
+
+For parameters $g,z$, set
+\begin{align}
+ x&=\frac{8+4z-8z^2-g(2+z-z^2)}{4z},\label{eq:x}\\
+ d_0&=2x^2z+xz^2+xz-2x-2,
+ &y&=\frac{(g-4)d_0}{2z(z-1)}-1.\label{eq:y}
+\end{align}
+Define the following rational auxiliary quantities:
+\begin{align*}
+ p&=1+z,& d&=2-z(x+z),&a&=-z/y,&c&=\frac{z(x+z)}{1+x},\\
+ r&=\frac{-1+xz}{p},&s&=\frac{1-xc}{p},&
+ t&=\frac{y(z+c)+z(1+x)-d}{r-s},&e&=\frac{p(p-d)}{t}.
+\end{align*}
+Then
+\begin{equation}\label{eq:candidate}
+ A(g,z)=\begin{pmatrix}
+ 1&1&a&-z&c\\
+ x&1+x+z&xa+e&-1&1\\
+ -1&z&d-a+e&-1&-1\\
+ y&y+t&1&1&1\\
+ z&-1&1&-1&1
+ \end{pmatrix}.
+\end{equation}
+All denominators in these formulas and in elimination are certified nonzero on the root box used below.
+
+\subsection{Reduction to one polynomial relation}
+Let
+\[
+ X=1+z^2/y+e,\quad Y=2-(z+x)c,\quad R=-z(1+x),
+ \quad H=1+yz+z(1+x)-tr.
+\]
+Exact rational simplification gives
+\[
+           2H=g,\qquad H(d-R)=d^2-RY.
+\]
+Let $F(g,z)$ be the reduced numerator of $g/2-Y-X$, with the normalization recorded in \code{data/F.txt}. The script \code{derive_algebra.py} constructs $F$ from these rational formulas rather than copying a long displayed polynomial. Its degrees are
+\[
+             \deg_g F=7,\qquad \deg_z F=10.
+\]
+It verifies the following identities by polynomial arithmetic over $\Q$:
+
+\begin{proposition}\label{prop:family}
+On $F(g,z)=0$, wherever the displayed rational formulas are defined, the 23 slacks listed in Appendix~\ref{app:active} vanish. Of these, 21 vanish before imposing $F=0$ and two have numerator divisible by $F$. Moreover,
+\[
+                  p_4=g/2,\qquad p_5=g.
+\]
+\end{proposition}
+\begin{proof}
+Substitute \eqref{eq:candidate} in \eqref{eq:schur} and \eqref{eq:slack}. The code represents each result in the rational function field $\Q(g,z)$. For each nonzero active slack it divides the numerator by $F$ and checks zero remainder. It performs the same numerator-remainder test for $p_5-g$, and checks $p_4-g/2$ as an identically zero rational function. The interval denominator checks in Section~\ref{sec:interval} ensure that these rational identities apply at the isolated root, not at an excluded pole.
+\end{proof}
+The last $2\times2$ Schur block is the scaled sign pattern
+\[
+              S_4=\frac g2\begin{pmatrix}1&1\\-1&1\end{pmatrix}
+\]
+on the relevant part of $F=0$, so its elimination is consistent with $p_5=g$.
+
+\subsection{Polynomial identification and root uniqueness}
+The exact discriminant identity is
+\begin{equation}\label{eq:disc}
+\begin{split}
+ \operatorname{disc}_z F={}&-295147905179352825856\,
+ (g-6)(g-4)^{32}(g-2)^6\\[-0.2em]
+ &\hspace{2em}\cdot(g^2-12g+40)P_5(g).
+\end{split}
+\end{equation}
+The degree-61 factor has leading coefficient $59049$. Its 62 integer coefficients, obtained by factoring this discriminant, are compared exactly with an independent transcription of \cite[Eq.~(2.15)]{ceu}. Both copies are included in the package, and a mismatch makes verification fail.
+
+To count roots in $(4,5)$, form the integer polynomial
+\[
+ Q(t)=(1+t)^{61}P_5\!\left(\frac{4+5t}{1+t}\right).
+\]
+The map $t\mapsto(4+5t)/(1+t)$ bijects $(0,\infty)$ with $(4,5)$. Direct integer expansion shows one sign change in the nonzero coefficient sequence of $Q$, while $P_5(4)<0<P_5(5)$. Descartes' rule gives at most one positive root, and the intermediate value theorem supplies one. Thus $P_5$ has exactly one root in $(4,5)$. The coefficient sequence and sign-count result are retained in \code{results/algebra_certificate.json}.
+
+\section{An integer-interval root certificate}\label{sec:interval}
+Let $h(g,z)=(F(g,z),F_z(g,z))$. The proposed centers are the finite decimal rational numbers in \code{data/root_centers.json}, beginning
+\begin{align*}
+ g_0&=4.132517078632472854223346853277371269952791537799\ldots,\\
+ z_0&=0.453224909846837467183709959977529473640881626821\ldots.
+\end{align*}
+Their complete finite strings, not the truncated display above, are the inputs to the verifier. Put
+\[
+ B=[g_0-2^{-220},g_0+2^{-220}]
+       \times[z_0-2^{-220},z_0+2^{-220}].
+\]
+The interval kernel stores every endpoint as an integer divided by $2^{512}$. Addition, multiplication, division, and decimal formatting round outward using integer operations. No floating-point sign decision enters the certificate. Division by an interval containing zero is rejected.
+
+Let $R_0$ be the exact rational inverse of the midpoint matrix of the interval enclosure of $Dh(g_0,z_0)$. With $b_0=(g_0,z_0)$, the verifier encloses
+\[
+ E=I-R_0Dh(B),\qquad
+ K=b_0-R_0h(b_0)+E(B-b_0).
+\]
+It establishes
+\[
+              K\subset\operatorname{int}B,
+       \qquad \sup_{M\in E}\lVert M\rVert_\infty<10^{-50}.
+\]
+Therefore $T(b)=b-R_0h(b)$ maps $B$ into itself and is a contraction there. The contraction theorem gives a unique fixed point, and invertibility of $R_0$ makes it a unique zero of $h$ in $B$.
+
+The box is contained in $(4,5)\times\R$, and the leading coefficient of $F$ as a polynomial in $z$ is certified nonzero there. Hence $F=F_z=0$ makes the discriminant vanish. None of the other factors in \eqref{eq:disc} vanishes for $4<g<5$, so the isolated $g$ equals the previously identified root $\alpha$ of $P_5$.
+
+\subsection{Feasibility and numerical enclosures}
+At the isolated point, Proposition~\ref{prop:family} proves the 23 active equalities exactly. Interval substitution proves that the other 77 slacks are strictly positive; the certified common lower bound is
+\[
+              0.002673778648464137383551320197.
+\]
+All five pivots are positive. Their values, shown here only to aid reading, are
+\begin{center}
+\begin{tabular}{@{}cr@{}}\toprule
+Pivot & Approximate value\\\midrule
+$ p_1 $ & $1$\\
+$ p_2 $ & $1.453224909846837467$\\
+$ p_3 $ & $2.074468372901568347$\\
+$ p_4 $ & $2.066258539316236427$\\
+$ p_5 $ & $4.132517078632472854$\\\bottomrule
+\end{tabular}
+\end{center}
+The interval verifier checks $p_5>\max_{k<5}p_k$, so the growth along this path equals $\alpha$. A rounded display of the candidate is
+\input{candidate_matrix.tex}
+\textbf{This displayed decimal matrix is not the exact witness.} Rounding tied matrices may change their admissible pivot paths. Use the algebraic construction or the separately checked rational matrix in Section~\ref{sec:rational}.
+
+\section{Strict local optimality in all 24 free entries}\label{sec:local}
+Let $\mathcal M$ be the normalized diagonal-path feasible set defined by $A_{11}=1$, positive pivots, and the 100 inequalities \eqref{eq:slack}. Let $f(A)=p_5(A)$, and let $C(A)\in\R^{23}$ collect the active slacks of Appendix~\ref{app:active}. The ambient coordinates are the 24 entries other than $A_{11}$.
+
+\begin{theorem}\label{thm:local}
+The certified matrix $A_* = A(\alpha,z_*)$ is a strict local maximum of $f$ on $\mathcal M$. This statement allows all 24 free entries to vary and allows the active inequalities to become strict. It is not a claim of global maximality over $\mathcal M$ or over other normalized pivot configurations.
+\end{theorem}
+
+\subsection{Verified differential data}
+Differentiate \eqref{eq:schur} using exact arithmetic rules. The program computes the gradient of $f$ and the $23\times24$ active Jacobian $J=DC$. The $23\times23$ minor obtained by omitting the $A_{51}$ column is certified nonsingular by interval Gaussian elimination: each chosen interval pivot excludes zero. Thus $\operatorname{rank}J=23$.
+
+Write $z=A_{51}$, and use $\widehat J$ and $\widehat{\nabla f}$ for the matrices with that coordinate omitted. Solving
+\[
+                 \widehat J^{\,T}\lambda=-\widehat{\nabla f}
+\]
+by interval elimination encloses all 23 multipliers in strictly positive intervals. In particular,
+\[
+              \min_i\lambda_i>
+                  0.014327868209525157113318626698.
+\]
+The complete outward enclosures are supplied in \code{results/local_certificate.json}; Appendix~\ref{app:active} gives shorter rigorous lower bounds.
+
+Since $F_g$ excludes zero, $F(g,z)=0$ gives a local function $g=g(z)$. At $(\alpha,z_*)$, $F_z=0$, so
+\[
+ g'(z_*)=0,\qquad g''(z_*)=-\frac{F_{zz}}{F_g},
+\]
+\[
+ -1.012828670701372<g''(z_*)<-1.012828670701371.
+\]
+The last display can be read as a negative enclosure; its complete endpoints are in the JSON certificate.
+
+\subsection{Proof of Theorem~\ref{thm:local}}
+The active curve $A(g(z),z)$ satisfies $C=0$ and has tangent $v$ with $v_z=1$. It also satisfies $Jv=0$ and $\nabla f\cdot v=g'(z_*)=0$. All but the $z$ component of $\nabla f+J^T\lambda$ have already been shown to vanish. Taking its inner product with $v$ proves that its $z$ component vanishes as well. Therefore
+\[
+                    \nabla f+J^T\lambda=0
+\]
+is the full stationarity equation, not a truncated numerical approximation.
+
+The map
+\[
+                    A\longmapsto (C(A),A_{51})
+\]
+has invertible $24\times24$ derivative at $A_*$. The inverse function theorem makes $s=C(A)$ and $z=A_{51}$ local coordinates. Define $\phi(s,z)=f(A(s,z))$. At the candidate,
+\[
+                  \frac{\partial\phi}{\partial s_i}=-\lambda_i<0.
+\]
+Continuity makes these partial derivatives negative throughout a sufficiently small coordinate box. For a nearby feasible point, $s_i\ge0$, and coordinatewise integration gives
+\[
+                     \phi(s,z)\le\phi(0,z),
+\]
+with strict inequality when $s\ne0$. The active manifold in this neighborhood is exactly the one-dimensional curve already parameterized by $A(g(z),z)$, by the Jacobian rank calculation. Consequently $\phi(0,z)=g(z)$. Its first derivative vanishes and its second derivative is negative at $z_*$, so it has a strict local maximum there. Combining the two inequalities proves the theorem. The 77 inactive slacks and all pivots remain positive in a sufficiently small neighborhood by their certified positive margins.\hfill$\square$
+
+\textbf{Scope of this theorem.} The neighborhood is in the fixed diagonal-path feasible set. It does not exclude a different admissible path after a tie, another active pattern, or a remote completely pivoted matrix with larger growth. None of those global exclusions follows from positive multipliers or from negative local curvature.
+
+\section{A separate exact rational witness}\label{sec:rational}
+\begin{lemma}\label{lem:strict}
+Suppose $A$ has a positive diagonal complete-pivoting path. For $0<t<1$, put $D(t)=\operatorname{diag}(1,t,t^2,t^3,t^4)$. Then $D(t)AD(t)$ has a strictly preferred diagonal pivot at every nontrivial step, and its fifth pivot is $t^8p_5(A)$.
+\end{lemma}
+\begin{proof}
+The Schur recurrence gives
+\[
+ S_k(DAD)=D_{k:5}S_k(A)D_{k:5}.
+\]
+The transformed pivot is $t^{2(k-1)}p_k$. Every other active entry $(i,j)$ is multiplied by $t^{i+j-2}$ with $i+j>2k$, which is strictly smaller than $t^{2(k-1)}$. Its magnitude is therefore strictly less than the transformed positive pivot. The fifth-pivot formula is immediate.
+\end{proof}
+This proves that matrices without any pivot ties approach the same lower bound. The executable package also supplies an entirely rational example, so checking its validity does not depend on accepting an algebraic root computation.
+
+For its generation, set $t=1-10^{-50}$, evaluate \eqref{eq:candidate} at the finite rational centers, form $D(t)A(g_0,z_0)D(t)$, and round each entry to a rational with denominator $10^{100}$. Generation is separate from verification. The file \code{data/rational_witness.json} contains all 25 integer numerators and the common denominator.
+
+The independent checker uses \code{fractions.Fraction} to recompute every Schur complement. It establishes initial maximum entry $1$, five positive pivots, positive determinant, all 100 nontrivial CP inequalities strictly positive, and a final pivot larger than the other four. In particular, its exact result is
+\begin{equation}\label{eq:ratlower}
+ p_5>
+ 4.13251707863247285422334685327737126995279153779.
+\end{equation}
+No rounding tolerance is used in any of these comparisons. This witness is \emph{below} $\alpha$ and is not a counterexample to IE-11. Its purpose is a small, independently reproducible certificate of the lower-bound behavior without tie-breaking ambiguity.
+
+\section{A global formulation without the candidate's pattern}\label{sec:global}
+Let $L$ be unit lower triangular and $U$ upper triangular, with $u_{11}=1$ and $u_{kk}=p_k>0$. There are ten strict-lower-triangular entries of $L$ and fourteen free entries of $U$. The factorization $A=LU$ implies
+\begin{equation}\label{eq:LU}
+        (S_k)_{ij}=\sum_{t=k}^{\min(i,j)}l_{it}u_{tj},
+             \qquad i,j\ge k.
+\end{equation}
+Indeed, the first $k-1$ terms of $LU$ are exactly the rank-one updates removed by the first $k-1$ elimination steps.
+
+\begin{proposition}\label{prop:global}
+Normalized positive-pivot diagonal-path CP matrices correspond exactly to pairs $(L,U)$ satisfying
+\begin{equation}\label{eq:globalconstraints}
+ -p_k\le\sum_{t=k}^{\min(i,j)}l_{it}u_{tj}\le p_k
+ \quad\text{for } k\le4,\ i,j\ge k,\ (i,j)\ne(k,k),
+\end{equation}
+with unit diagonal in $L$, upper-triangular $U$, $u_{11}=1$, and $p_k>0$.
+\end{proposition}
+\begin{proof}
+A normalized CP matrix has the stated LU factorization because all its leading pivots are nonzero; substituting \eqref{eq:LU} gives the inequalities. Conversely, triangular elimination of $LU$ gives precisely \eqref{eq:LU}. The inequalities state that the positive diagonal entry is a largest entry in absolute value at every stage. The initial matrix has maximum entry exactly $1$, and the product of positive pivots is nonzero.
+\end{proof}
+This description is bilinear in 24 variables. It imposes none of the 23 candidate equalities. For fixed $L$, the remaining constraints and the objective $p_5$ are linear in $U$. Also, the pivot-column comparisons imply $|l_{ik}|\le1$. Thus the nonlinear outer search can be described using ten bounded entries of $L$ and a linear subproblem in $U$. This dimensional reduction is not an optimization certificate.
+
+\subsection{A compact high-growth domain and the exact missing statement}
+Applying the known size-$2$, size-$3$, and size-$4$ bounds to consecutive pivot blocks gives
+\[
+ p_5\le4p_2,\qquad p_5\le\tfrac94p_3,\qquad p_5\le2p_4.
+\]
+Therefore, on the part of the feasible set with $p_5\ge\alpha$,
+\[
+ p_2\ge\alpha/4,\qquad p_3\ge4\alpha/9,\qquad p_4\ge\alpha/2.
+\]
+The initial entries lie in the compact cube $[-1,1]^{24}$, and these positive lower bounds keep every denominator in the elimination recurrence away from zero. Limits of normalized feasible matrices with $p_5\ge\alpha$ remain feasible and nonsingular. Hence the high-growth part is compact; no singular limiting escape is needed to formulate the global maximum.
+
+The remaining task is to establish
+\begin{equation}\label{eq:missing}
+ \text{For every $(L,U)$ satisfying \eqref{eq:globalconstraints},}
+                   \qquad u_{55}\le\alpha.
+\end{equation}
+The supplied file \code{data/global_counterexample.smt2} is the existential negation: it declares the 24 factor entries and a variable $\alpha$, enforces $P_5(\alpha)=0$, $4<\alpha<5$, all 100 CP inequalities, positive pivots, and $u_{55}>\alpha$. Its polynomial coefficients are exact integers. \textbf{No UNSAT certificate is supplied.} A model file and a correct reduction are not a proof of \eqref{eq:missing}.
+
+The program \code{global_model.py} additionally verifies \eqref{eq:LU} entry by entry, using the exact rational witness: it checks $LU=A$ and all 55 entries across the five active Schur complements. This tests the implementation of the formulation but does not test all values of its variables.
+
+A useful threshold reduction is also exact: when $p_5\ge\beta>0$, scaling the last row of $A$ by $\beta/p_5$ preserves all earlier pivots and weakens every comparison involving that row. The new fifth pivot equals $\beta$. Thus a search at a fixed threshold need not miss a matrix with a larger fifth pivot. Again, no exhaustive threshold search was completed here.
+
+
+\subsection{An exact limitation of the recovered convex-hull approach}
+The earlier work also explored a layerwise convexification. This relaxation was reconstructed and its optimum is now certified exactly, providing a concrete reason it does not settle \eqref{eq:missing}.
+
+A genuine elimination layer has the form
+\[
+ M_k=p_k\begin{pmatrix}1\\l\end{pmatrix}
+             \begin{pmatrix}1&r^T\end{pmatrix},
+       \qquad l,r\in[-1,1]^{5-k},
+\]
+embedded in the bottom-right active block. Replace it by a nonnegative combination of its sign-corner matrices, with total weight $p_k$. This is an outer relaxation: the bilinear map is multi-affine, so every genuine box point is a convex combination of corner images. The five layers have $256+64+16+4+1=341$ corners altogether. Keeping the 100 linear Schur-entry comparisons and the nine known consecutive-pivot growth bounds gives the relaxation checked by \code{verify_layer_hull.py}.
+
+\begin{proposition}
+The optimum of this particular layerwise convex-hull relaxation is exactly
+\[
+                         81/16=5.0625.
+\]
+This is \emph{not} a value of $g_5$ proved attainable by a matrix.
+\end{proposition}
+\begin{proof}
+The retained inequalities imply $p_5\le(9/4)p_3\le(9/4)^2p_1=81/16$. An exact nonnegative rational combination of 20 corner matrices, provided in \code{data/layer_hull_witness.json}, satisfies every one of the 109 inequalities and has relaxed pivots
+\[
+                     (1,81/64,9/4,81/32,81/16).
+\]
+The checker verifies all comparisons with rational arithmetic, proving attainment of the relaxation's upper bound. Its first layer has a $2\times2$ minor, on rows $1,3$ and columns $1,2$, equal to $-5593/9216\ne0$. That layer is not rank one and therefore is not a genuine elimination layer. This relaxed point cannot be used as a CP counterexample.\end{proof}
+The value $81/16$ is weaker than the published upper bound $4.84$. The result above diagnoses a limitation of this relaxation; it is not an improvement of the known global bound.
+
+\section{Reproduction, provenance, and limitations}\label{sec:reproduce}
+From the extracted package root, run
+\begin{verbatim}
+python -m pip install -r requirements.txt
+python src/run_all.py
+\end{verbatim}
+The aggregate script stops on the first failed check. Do not use Python's \code{-O} option: these verifiers intentionally use assertions for exact checks. The symbolic reconstruction needs SymPy. The interval, rational, and LU checks need only Python's standard library and the supplied data files. In particular, a minimal independent check is
+\begin{verbatim}
+python src/rational_witness.py
+\end{verbatim}
+The scripts write human-readable JSON certificates in \code{results/}. The algebraic-root centers are proposed data, not trusted proof; the contraction check validates them. The interval implementation itself is small enough to inspect, and 8,499 deterministic rational containment tests are included as additional software tests. Those tests do not replace the arithmetic reasoning behind outward rounding.
+
+The transcript of earlier work survived, but its working directories and some exploratory logs did not. The present files were reconstructed and rerun. The layerwise relaxation was rebuilt and checked as described in Section~\ref{sec:global}. Numerical multistart results and incomplete global solver attempts in the earlier transcript are not treated as proof and are not represented as newly rerun experiments in this package. No claim is made that those searches covered all feasible matrices.
+
+The candidate matrix, its proposed algebraic value, and the published upper bound are credited to \cite{ceu}. The full paper is not redistributed. This report's exact derivations, local-coordinate proof, verification scripts, and global formulation are provided with their stated scope; they do not establish priority over other work.
+
+\statusbox{\textbf{Final logical boundary.} The package proves a lower-bound construction and a strict local maximum. It does not prove $g_5=\alpha$, and it does not disprove that equality. A completed global exclusion, such as a checkable certificate for \eqref{eq:missing}, remains necessary.}
+
+\appendix
+\section{Active constraints and positive multipliers}\label{app:active}
+The index $(k,i,j,\sigma)$ denotes the slack in \eqref{eq:slack}. The values below are shortened \emph{lower bounds}, rounded downward from the outward interval enclosures, not values used as floating-point proof inputs. The full 30-place interval endpoints are retained in the certificate.
+\input{multiplier_table.tex}
+
+\begingroup\small
+\begin{thebibliography}{9}
+\bibitem{ceu}
+James Chen, Alan Edelman, and John Urschel.
+\emph{The largest 5th pivot may be the root of a 61st degree polynomial}.
+\href{https://arxiv.org/abs/2602.20390v1}{arXiv:2602.20390v1}, 23 February 2026.
+\href{https://arxiv.org/html/2602.20390v1}{HTML version consulted}; license stated as CC BY 4.0.
+Candidate pattern: Eq.~(2.1); target polynomial: Eq.~(2.15); published upper bound: Theorem~3.5.
+
+\bibitem{ie11}
+\emph{IE-11 --- The exact fifth complete-pivoting growth factor}.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/linear-systems-and-elimination/IE-11}{OpenProblemsInNLA repository, linear-systems-and-elimination/IE-11}.
+Statement consulted for this package on 13 September 2026.
+\end{thebibliography}
+\endgroup
+\end{document}

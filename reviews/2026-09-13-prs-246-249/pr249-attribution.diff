@@ -1,0 +1,82 @@
+--- IE11_recovery/report/IE11_report.tex
++++ IE-11/report.tex
+@@ -3,7 +3,7 @@
+ \usepackage[T1]{fontenc}
+ \usepackage{lmodern,microtype,amsmath,amssymb,amsthm,booktabs,array,longtable}
+ \usepackage{xcolor,hyperref,fancyhdr}
+-\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black,pdftitle={IE-11: Recovered analysis and exact certificates},pdfauthor={ChatGPT}}
++\hypersetup{colorlinks=true,linkcolor=black,urlcolor=blue,citecolor=black,pdftitle={IE-11: Recovered analysis and exact certificates},pdfauthor={Sidney Holden}}
+ \pagestyle{fancy}\fancyhf{}
+ \fancyhead[L]{IE-11: recovered analysis}\fancyhead[R]{Exact certificates}
+ \fancyfoot[C]{\thepage}
+@@ -17,7 +17,7 @@
+ \newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+ \newcommand{\statusbox}[1]{\begin{center}\fbox{\begin{minipage}{0.92\linewidth}#1\end{minipage}}\end{center}}
+ \title{\vspace{-1.1em}\textbf{IE-11: Recovered analysis\newline and exact certificates}\\[0.35em]\large A certified lower-bound construction, a strict local maximum,\\and the remaining global-optimality requirement}
+-\author{Reconstructed computational and mathematical write-up}
++\author{Sidney Holden\\[3pt]\small Center for Computational Biology, Flatiron Institute\\\small Simons Foundation\\[3pt]\small Prepared with substantial AI assistance}
+ \date{13 September 2026}
+ \begin{document}
+ \maketitle
+--- IE20_extended/IE20_extended_results.tex
++++ IE-20/report.tex
+@@ -32,7 +32,7 @@
+ \setlength{\parskip}{4pt}
+ \setlist{itemsep=2pt,topsep=3pt}
+ \allowdisplaybreaks[2]
+-\hypersetup{pdftitle={IE-20: Exact Scalar Threshold and Extended Precision Bounds},pdfauthor={ChatGPT},pdfsubject={Extended partial resolution; the uniform matching-bound problem remains unresolved}}
++\hypersetup{pdftitle={IE-20: Exact Scalar Threshold and Extended Precision Bounds},pdfauthor={Sidney Holden},pdfsubject={Extended partial resolution; the uniform matching-bound problem remains unresolved}}
+ \begin{document}
+ \hypersetup{pageanchor=false}
+ \begin{titlepage}
+@@ -43,7 +43,8 @@
+ \vspace{7mm}
+ {\large Proofs, exact checks, and the remaining matching problem\par}
+ \vspace{10mm}
+-Prepared by ChatGPT\hfill September 13, 2026
++\textbf{Sidney Holden}\hfill September 13, 2026\par
++{\small Center for Computational Biology, Flatiron Institute, Simons Foundation\par Prepared with substantial AI assistance\par}
+ \vspace{10mm}
+ 
+ \fbox{\begin{minipage}{0.93\textwidth}
+--- IE-27_research_update/report.tex
++++ IE-27/report.tex
+@@ -8,7 +8,7 @@
+ \definecolor{ink}{HTML}{17354C}
+ \definecolor{pale}{HTML}{F2F5F7}
+ \hypersetup{colorlinks=true,linkcolor=ink,citecolor=ink,urlcolor=ink,
+- pdftitle={IE-27: Continued analysis and verified extensions},pdfauthor={OpenAI ChatGPT}}
++ pdftitle={IE-27: Continued analysis and verified extensions},pdfauthor={Sidney Holden}}
+ \pagestyle{fancy}\fancyhf{}
+ \lhead{\small\textcolor{ink}{IE-27 / Continued investigation}}
+ \rhead{\small 12 September 2026}
+@@ -28,7 +28,8 @@
+ 
+ {\large The spectral disk for a Radau stage preconditioner}
+ 
+-\vspace{5pt}
++\par\textbf{Sidney Holden}\par
++{\small Center for Computational Biology, Flatiron Institute, Simons Foundation\par Prepared with substantial AI assistance}\par\vspace{5pt}
+ \fcolorbox{ink}{pale}{\parbox{0.948\linewidth}{
+ \textbf{Status: this archive is not a complete solution of IE-27.}
+ The unrestricted stage-number inequality is not proved here, and no
+--- IE28_extended_results/writeup.tex
++++ IE-28/report.tex
+@@ -5,7 +5,7 @@
+ \usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+ \usepackage{microtype,fancyhdr,enumitem}
+ \usepackage[hidelinks]{hyperref}
+-\hypersetup{pdftitle={IE-28: Rigorous Extensions and Exact Certificates},pdfauthor={ChatGPT},pdfsubject={Partial resolution; the arbitrary-node all-stage statement is not proved}}
++\hypersetup{pdftitle={IE-28: Rigorous Extensions and Exact Certificates},pdfauthor={Sidney Holden},pdfsubject={Partial resolution; the arbitrary-node all-stage statement is not proved}}
+ \setlength{\headheight}{14pt}
+ \pagestyle{fancy}\fancyhf{}
+ \lhead{\small IE-28: rigorous extensions}\rhead{\small Scope-limited results}\cfoot{\thepage}
+@@ -22,7 +22,7 @@
+ \newcommand{\coef}[2]{[#1^{#2}]}
+ \title{\textbf{IE-28: Rigorous Extensions\\and Exact Certificates}\\[6pt]
+ \large All-stage local existence, an explicit node family,\\and a limitation of the eigenpolynomial construction}
+-\author{Prepared by ChatGPT}
++\author{Sidney Holden\\[3pt]\small Center for Computational Biology, Flatiron Institute\\\small Simons Foundation\\[3pt]\small Prepared with substantial AI assistance}
+ \date{12 September 2026}
+ \begin{document}
+ \maketitle\thispagestyle{empty}

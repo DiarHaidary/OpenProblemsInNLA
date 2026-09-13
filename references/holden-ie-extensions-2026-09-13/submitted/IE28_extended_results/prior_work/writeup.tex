@@ -1,0 +1,528 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{microtype,booktabs,array,enumitem}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={IE-28: Recovered Analysis and a Three-Stage Existence Proof},
+ pdfauthor={ChatGPT},pdfsubject={Partial resolution: two and three stages; general case not proved},
+ pdfkeywords={collocation, diagonal preconditioning, nilpotence, IE-28}}
+\usepackage{fancyhdr}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small IE-28: recovered analysis}
+\rhead{\small Two- and three-stage existence}
+\cfoot{\thepage}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlist{nosep,leftmargin=*}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\spec}{spec}
+\newcommand{\R}{\mathbb R}
+\newcommand{\one}{\mathbf 1}
+\title{\textbf{IE-28: Recovered Analysis and a\\Three-Stage Existence Proof}\\[6pt]
+\large Positive diagonal preconditioning with a nilpotent stiff limit}
+\author{Prepared by ChatGPT}
+\date{12 September 2026}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\begin{abstract}
+For the collocation integration matrix on arbitrary distinct positive nodes, we
+reconstruct the inverse-matrix and eigenpolynomial reductions from an interrupted
+attempt. We give complete, self-contained existence proofs for two and three
+stages. In the three-stage case a determinant-normalized family of cubic
+polynomials forces an eigenvalue at one, and two exact trace identities yield a
+sign change. The resulting diagonal is positive, increasingly ordered, and obeys
+$c_i/3<d_i<c_i$. The general existence statement for arbitrary stage count is
+\emph{not proved in this document}. Higher-stage calculations are reported only
+as numerical candidates. The archive contains executable symbolic checks,
+high-precision numerical code, and rerun results; it is not an all-stage solution
+or a peer-reviewed claim of priority.
+\end{abstract}
+
+\section*{Scope and recovery status}
+The original hyperlink points to entry \textbf{IE-28} in
+\emph{OpenProblemsInNLA}~\cite{entry}. This document follows that destination,
+not the inconsistent visible link label in the request. The earlier working
+files were absent when recovery began. Code and mathematical developments were
+reconstructed from the surviving conversation record; all result files in this
+archive were generated again. The three-stage sign-change argument is completed
+here rather than represented as an already-finished recovered proof.
+
+\begin{center}
+\begin{tabular}{@{}p{0.19\textwidth}p{0.72\textwidth}@{}}
+\toprule
+Scope & What this archive establishes \\
+\midrule
+$s=2$ & An explicit positive diagonal for every allowed node pair. \\
+$s=3$ & A proof for every allowed node triple, with a bracketed scalar construction. \\
+General $s$ & Exact algebraic reductions and a positive eigenpolynomial ansatz. \\
+$s\geq4$ & Selected high-precision candidates; no universal existence proof or counterexample. \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{The missing part of the original request is precise:} a proof of existence
+for every stage count $s\geq4$ and every admissible node set is not supplied.
+The proofs below do not depend on the numerical experiments.
+
+\newpage
+\tableofcontents
+\medskip
+
+\section{Target and algebraic equivalences}
+Let $s\geq2$ and $0<c_1<\cdots<c_s\leq1$. Define
+\begin{equation}\label{eq:problem}
+ \ell_j(t)=\prod_{k\ne j}\frac{t-c_k}{c_j-c_k},\qquad
+ A_{ij}=\int_0^{c_i}\ell_j(t)\,dt.
+\end{equation}
+The target is a real diagonal matrix $D=\diag(d_1,\ldots,d_s)$, with each $d_i>0$,
+such that
+\begin{equation}\label{eq:target}
+ N:=I-D^{-1}A,\qquad N^s=0.
+\end{equation}
+The positive-diagonal zero-spectral-radius conjecture appears in van der Houwen
+and de Swart~\cite[\S3.2.1, p.~46]{houwen}. The 2025 MIN-SR-S treatment explicitly
+leaves existence at arbitrary stage count unguaranteed~\cite[\S2.2.3, p.~A439]{sdc}.
+These are context references, not substitutes for the arguments below.
+
+Put
+\[
+ C=\diag(c_1,\ldots,c_s),\quad V_{ik}=c_i^{k-1},\quad
+ R=\diag(1,1/2,\ldots,1/s).
+\]
+Integrating each monomial of degree at most $s-1$ gives
+\begin{equation}\label{eq:vandermonde}
+ A=CVRV^{-1},\qquad \det A=\frac{\prod_{i=1}^s c_i}{s!}>0.
+\end{equation}
+In particular $A$ is nonsingular. Scaling every node by $\gamma>0$ scales $A$
+and a corresponding $D$ by $\gamma$, leaving $D^{-1}A$ unchanged. The upper
+bound $c_s\leq1$ therefore only fixes a scale.
+
+Let $B=A^{-1}D=(D^{-1}A)^{-1}$. Then \eqref{eq:target} is equivalent to
+\begin{equation}\label{eq:char}
+ \det(zI-B)=(z-1)^s.
+\end{equation}
+Indeed, if $B=I+J$ with $J^s=0$, then
+$N=I-B^{-1}=B^{-1}J$, and the factors commute; thus $N^s=0$.
+Conversely, $N^s=0$ gives
+$B=(I-N)^{-1}=I+N+\cdots+N^{s-1}$, so $B-I$ is nilpotent.
+Cayley--Hamilton converts between this statement and \eqref{eq:char}.
+Every solution necessarily satisfies
+\begin{equation}\label{eq:prod}
+ \prod_{i=1}^s d_i=\det A=\frac{\prod_{i=1}^s c_i}{s!}.
+\end{equation}
+The target is also equivalent to $\det((1-t)D+tA)=\det D$ for all real $t$: after factoring
+$D$, the left side becomes $\det D\det(I-tN)$.
+
+\section{An inverse formula and an eigenpolynomial construction}
+\subsection{A diagonal similarity with simple off-diagonal entries}
+Let
+\[
+ w_i=\frac{1}{\prod_{k\ne i}(c_i-c_k)},\qquad
+ S=\diag(c_1/w_1,\ldots,c_s/w_s).
+\]
+The entries of $S$ need not all have the same sign, but none vanishes.
+Define
+\begin{equation}\label{eq:M}
+ M_{ij}=\begin{cases}
+ \displaystyle\frac{1}{c_i-c_j},&i\ne j,\\[6pt]
+ \displaystyle h_i:=\frac1{c_i}+\sum_{k\ne i}\frac1{c_i-c_k},&i=j.
+ \end{cases}
+\end{equation}
+\begin{lemma}\label{lem:inverse}
+$A^{-1}=SMS^{-1}$. Consequently $L:=MD$ is similar to $B=A^{-1}D$,
+and $\det M=s!/\prod_i c_i$.
+\end{lemma}
+\begin{proof}
+The polynomials $g_j(t)=t\ell_j(t)/c_j$ have degree at most $s$, vanish at zero,
+and satisfy $g_j(c_i)=\delta_{ij}$. Differentiation of the unique interpolant in
+$\{p:\deg p\leq s,\ p(0)=0\}$ is the inverse of the integration map $A$.
+Thus $(A^{-1})_{ij}=g_j'(c_i)$. At $i\ne j$ this equals
+\[
+ \frac{c_i}{c_j}\frac{w_j}{w_i}\frac1{c_i-c_j}
+ =\frac{S_{ii}}{S_{jj}}M_{ij}.
+\]
+At $i=j$ it equals $1/c_i+\ell_i'(c_i)=h_i$. Since $S$ and $D$ commute,
+$A^{-1}D=S(MD)S^{-1}$. The determinant assertion follows from
+\eqref{eq:vandermonde}.
+\end{proof}
+The trace has the useful symmetric form
+\begin{equation}\label{eq:tracepair}
+ \tr(MD)=\sum_i\frac{d_i}{c_i}
+       +\sum_{i<j}\frac{d_i-d_j}{c_i-c_j}.
+\end{equation}
+This follows by grouping the two terms for each pair of nodes in
+$\sum_i h_i d_i$; no sign assumption on the individual $h_i$ is needed.
+
+\subsection{Forcing one eigenvalue exactly}
+\begin{lemma}[Eigenpolynomial]\label{lem:poly}
+Suppose $p$ is a nonconstant polynomial of degree at most $s$, $p(0)=0$, and
+$p'(c_i)\ne0$ for every $i$. Set $d_i=p(c_i)/p'(c_i)$. Then $A^{-1}D$, and
+therefore $MD$, has eigenvalue one.
+\end{lemma}
+\begin{proof}
+Write $q_i=p'(c_i)$. Interpolation is exact for $p'$, since its degree is at
+most $s-1$. Therefore $(Aq)_i=\int_0^{c_i}p'(t)\,dt=p(c_i)=d_iq_i$.
+The vector $q$ is nonzero, and $A^{-1}Dq=q$.
+\end{proof}
+A particularly useful positive family is
+\begin{equation}\label{eq:ansatz}
+ p(t)=t\prod_{j=1}^{s-1}(t+\alpha_j),\quad \alpha_j>0,\qquad
+ d_i=\left(\frac1{c_i}+\sum_{j=1}^{s-1}\frac1{c_i+\alpha_j}\right)^{-1}.
+\end{equation}
+For this family
+\begin{equation}\label{eq:bounds}
+ \frac{c_i}{s}<d_i<c_i,\qquad d_1<d_2<\cdots<d_s.
+\end{equation}
+For the first assertion, $0<1/(c_i+\alpha_j)<1/c_i$ for every $j$. For the second, the positive function
+$d(t)=(1/t+\sum_j1/(t+\alpha_j))^{-1}$ has derivative
+\[
+ d'(t)=d(t)^2\left(\frac1{t^2}+\sum_j\frac1{(t+\alpha_j)^2}\right)>0.
+\]
+These are properties of the ansatz, not necessary conditions imposed on every
+possible solution of IE-28.
+
+\section{Complete two-stage construction}
+\begin{theorem}\label{thm:two}
+For any $0<a<b$, let $r=\sqrt{2ab}$ and
+\begin{equation}\label{eq:two}
+ d_1=\frac{a(a+r)}{2a+r},\qquad d_2=\frac{b(b+r)}{2b+r}.
+\end{equation}
+For the two-node collocation matrix, $(I-D^{-1}A)^2=0$. Moreover,
+$a/2<d_1<a$, $b/2<d_2<b$, and $d_1<d_2$.
+\end{theorem}
+\begin{proof}
+Use $p(t)=t(t+r)$ in Lemma~\ref{lem:poly}. Thus one eigenvalue of $MD$ is one.
+Also
+\[
+ \det(MD)=\frac{2(a+r)(b+r)}{(2a+r)(2b+r)}=1,
+\]
+because the difference between numerator and denominator is $r^2-2ab=0$.
+The other eigenvalue is therefore one as well. Equation~\eqref{eq:char} proves
+the conclusion. The inequalities follow from \eqref{eq:bounds}.
+\end{proof}
+The first entry in \eqref{eq:two} is algebraically equivalent to the elementary
+formula displayed in the repository entry; the present derivation fits the
+same eigenpolynomial framework as the next section.
+
+\section{Complete three-stage existence proof}
+\begin{theorem}\label{thm:three}
+For every $0<c_1<c_2<c_3$, there exist $r>0$ and $0<\theta<1$ such that
+\begin{equation}\label{eq:threeD}
+ d_i=\left(\frac1{c_i}+\frac1{c_i+r}
+                  +\frac{\theta}{\theta c_i+r}\right)^{-1}
+\end{equation}
+satisfies $(I-D^{-1}A)^3=0$. In addition,
+\[
+ 0<d_1<d_2<d_3,\qquad c_i/3<d_i<c_i\quad(i=1,2,3).
+\]
+\end{theorem}
+We prove the theorem by a determinant-normalized deformation with a scalar
+trace sign change. Every step works for arbitrary positive distinct real nodes.
+
+\subsection{A compact shape parameter and determinant normalization}
+For $r>0$ and $0\leq\theta\leq1$, set
+\begin{equation}\label{eq:p3}
+ p_{r,\theta}(t)=t(t+r)(\theta t+r).
+\end{equation}
+This polynomial has degree three for $\theta>0$ and degree two at $\theta=0$.
+In both cases its logarithmic derivative gives \eqref{eq:threeD}, and
+Lemma~\ref{lem:poly} forces one eigenvalue of $L(r,\theta)=M D(r,\theta)$ to
+be one. Define
+\begin{equation}\label{eq:G}
+ G(r,\theta)=\det L(r,\theta)
+ =6\prod_{i=1}^3\left(1+\frac{c_i}{c_i+r}
+                 +\frac{\theta c_i}{\theta c_i+r}\right)^{-1}.
+\end{equation}
+For fixed $\theta$, this is continuous and strictly increasing in $r>0$.
+The parenthesized denominators strictly decrease with $r$. Its endpoint
+values are
+\[
+ \lim_{r\downarrow0}G(r,0)=\frac68<1,\qquad
+ \lim_{r\downarrow0}G(r,\theta)=\frac6{27}<1\ (\theta>0),\qquad
+ \lim_{r\to\infty}G(r,\theta)=6>1.
+\]
+Hence there is a unique positive $r=r(\theta)$ with $G(r(\theta),\theta)=1$.
+
+This root depends continuously on $\theta\in[0,1]$. One elementary justification
+is as follows. For fixed $r>0$, the quantity
+$\theta c_i/(\theta c_i+r)$ strictly increases with $\theta$, so $G$ decreases
+and $r(\theta)$ increases. Thus all the roots lie in the compact positive
+interval $[r(0),r(1)]$. If $\theta_n\to\theta$, every convergent subsequence of
+$r(\theta_n)$ must, by continuity of $G$, converge to its unique root at
+$\theta$. This proves continuity of the whole root function.
+
+There is also a convenient computational upper bound. At $r=4c_3$ each factor
+inside parentheses in \eqref{eq:G} is at most $7/5$, since
+$\theta c/(\theta c+r)\leq c/(c+r)\leq1/5$.
+Thus $G(4c_3,\theta)\geq6(5/7)^3>1$, providing a uniform finite bracket.
+
+\subsection{Two exact endpoint trace identities}
+Let
+\[
+ \sigma_1=c_1+c_2+c_3,\quad
+ \sigma_2=c_1c_2+c_1c_3+c_2c_3,\quad \sigma_3=c_1c_2c_3.
+\]
+The following identities are valid for every $r>0$. They can be obtained by
+substitution into \eqref{eq:tracepair} and taking a common denominator; the
+archive also verifies them with exact symbolic arithmetic.
+
+At $\theta=0$ the entries are $d_i=c_i(c_i+r)/(2c_i+r)$, and
+\begin{equation}\label{eq:positive}
+ \sum_{i=1}^3 h_i\frac{c_i(c_i+r)}{2c_i+r}-3
+ =\frac{r(3r^2+3\sigma_1r+2\sigma_2)}{\prod_i(2c_i+r)}>0.
+\end{equation}
+At $\theta=1$ the entries are $d_i=c_i(c_i+r)/(3c_i+r)$. Put
+\begin{align}
+ P_3(r)&=\prod_i(3c_i+r),\notag\\
+ F_3(r)&=6\prod_i(c_i+r)-P_3(r)\notag\\
+       &=5r^3+3\sigma_1r^2-3\sigma_2r-21\sigma_3.
+\end{align}
+Then
+\begin{equation}\label{eq:negative}
+ P_3(r)\left(\sum_{i=1}^3 h_i\frac{c_i(c_i+r)}{3c_i+r}-3\right)
+       =F_3(r)-2(r^3+3\sigma_3).
+\end{equation}
+The determinant normalization at $r=r(1)$ is exactly $F_3(r(1))=0$.
+The right-hand side of \eqref{eq:negative} is therefore strictly negative there.
+
+\subsection{A sign change completes the spectrum}
+The continuous real-valued function
+\[
+ T(\theta)=\tr L(r(\theta),\theta)-3
+\]
+has $T(0)>0$ by \eqref{eq:positive} and $T(1)<0$ by
+\eqref{eq:negative}. The intermediate value theorem supplies a
+$\theta_*\in(0,1)$ with $T(\theta_*)=0$. No monotonicity or uniqueness of the
+trace zero is needed. Set $r_*=r(\theta_*)$ and use \eqref{eq:threeD}.
+The resulting $3\times3$ matrix $L$ has
+\[
+ 1\in\spec(L),\qquad \tr L=3,\qquad \det L=1.
+\]
+Writing its characteristic polynomial as $z^3-3z^2+e_2z-1$, evaluation at $z=1$
+gives $e_2=3$. Thus it is exactly $(z-1)^3$. Lemma~\ref{lem:inverse} and
+\eqref{eq:char} imply $(I-D^{-1}A)^3=0$.
+Finally, $p_{r_*,\theta_*}$ is a positive scalar multiple of
+$t(t+r_*)(t+r_*/\theta_*)$, with two positive, distinct negative-root magnitudes.
+The inequalities and ordering follow from \eqref{eq:bounds}.
+This proves Theorem~\ref{thm:three}. \hfill$\square$
+
+\section{A reproducible construction and its numerical checks}
+\subsection{Nested one-dimensional root finding}
+The proof gives a direct algorithm. For each $\theta\in[0,1]$, solve the
+strictly monotone equation $G(r,\theta)=1$ on $(0,4c_3)$; then bisect a sign
+change of $T(\theta)$ on $[0,1]$. Only the inner root is asserted to be unique.
+The implementation normalizes $c_3$ to one, uses safeguarded Newton steps for
+the inner root, and uses bisection for the outer root. It raises an exception
+rather than silently accepting a failed residual or lost endpoint sign.
+
+For the inner Newton iteration let
+$u_i=1+c_i/(c_i+r)+\theta c_i/(\theta c_i+r)$. The derivative used is
+\[
+ \frac{\partial}{\partial r}\log G(r,\theta)
+ =\sum_i\frac{c_i/(c_i+r)^2+\theta c_i/(\theta c_i+r)^2}{u_i}>0.
+\]
+This confirms that the numerical step corresponds to the monotone equation
+proved above, rather than an unrelated optimization objective.
+
+\subsection{A trace evaluation without small node differences}
+Formula \eqref{eq:tracepair} removes many cancelling terms, but a direct
+subtraction $d_i-d_j$ can still lose digits. Write
+\[
+ f(t)=\frac{t(at^2+bt+g)}{3at^2+2bt+g},\qquad
+ (a,b,g)=(\theta,(1+\theta)r,r^2).
+\]
+For $x\ne y$,
+\begin{equation}\label{eq:divdiff}
+ \frac{f(x)-f(y)}{x-y}
+  =\frac{H(x,y)}{(3ax^2+2bx+g)(3ay^2+2by+g)},
+\end{equation}
+where
+\begin{align*}
+ H(x,y)={}&3a^2x^2y^2+2abxy(x+y)+ag(x^2+y^2)\\
+          &+2(b^2-ag)xy+bg(x+y)+g^2.
+\end{align*}
+Here $a\geq0$, $b,g>0$, and
+$b^2-ag=(1+\theta+\theta^2)r^2>0$. Hence the trace calculation can use a sum
+of positive terms, with no division by $c_i-c_j$. This exact identity is
+independently checked in \texttt{scripts/check\_symbolic.py}.
+
+\subsection{Representative values and diagnostics}
+For $(c_1,c_2,c_3)=(0.1,0.5,1)$, the constructed root is approximately
+\begin{align*}
+ \theta_*&=0.0575684366179453038651271952868,\\
+ r_*&=0.147747942077272910567405294582,
+\end{align*}
+and
+\[
+ (d_1,d_2,d_3)\approx
+ (0.0693895714943835768,\ 0.2584034251022362534,\ 0.4647573668722332063).
+\]
+The determinant-normalized endpoint trace differences are approximately
+$0.1664848539500202$ and $-0.1003963765322660$. These displayed decimals are
+rounded approximations, not the exact diagonal asserted by the theorem.
+
+The checked high-precision run used 200-digit arithmetic for diagnostics. Define
+$e_k(L)$ by $\det(I+tL)=\sum_{k=0}^s e_k(L)t^k$, and let
+\begin{equation}\label{eq:err}
+ E_{\rm char}=\max_{1\leq k\leq s}
+       \left|\frac{e_k(L)}{\binom sk}-1\right|,\qquad
+ E_N=\frac{\|N^s\|_\infty}{\max(1,\|N\|_\infty^s)}.
+\end{equation}
+The JSON results retain additional digits, the diagonal entries, and absolute
+power norms. Selected measured characteristic-coefficient residuals are:
+\begin{center}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Stages & Nodes / case & $E_{\rm char}$ \\
+\midrule
+3 & $(0.1,0.5,1)$ & $1.89\times10^{-116}$ (upper rounded) \\
+3 & $(1-2\cdot10^{-12},1-10^{-12},1)$ & $2.55\times10^{-117}$ (upper rounded) \\
+4 & $(0.1,0.3,0.6,1)$, numerical candidate & $4.94\times10^{-131}$ (upper rounded) \\
+5 & $c_i=i/5$, numerical candidate & $1.74\times10^{-119}$ (upper rounded) \\
+6 & $c_i=i/6$, numerical candidate & $2.58\times10^{-114}$ (upper rounded) \\
+7 & $c_i=i/7$, numerical candidate & $1.41\times10^{-119}$ (upper rounded) \\
+\bottomrule
+\end{tabular}
+\end{center}
+A separate regression grid of all 66 triples $(a/13,b/13,1)$ with
+$1\leq a<b\leq12$ passed, with maximum measured $E_{\rm char}<3.31\times10^{-51}$.
+The seven individually recorded triple tests include extreme clusters and mixed
+scales. These finite tests check the implementation; they are not the reason
+the theorem holds for every real node triple.
+
+Small computed residuals alone do not certify the existence of an exact nearby
+root for higher stages. No interval arithmetic, interval Newton test, or other
+root-existence certificate is supplied for those candidates. Their numerical
+success is not promoted to an all-node theorem.
+
+Direct spectral-radius estimates are especially easy to misinterpret here.
+For example, a nilpotent Jordan block with an $\varepsilon$ entry added in its
+lower-left corner has characteristic polynomial $z^s-\varepsilon$ and spectral
+radius $|\varepsilon|^{1/s}$. Thus tiny coefficient perturbations can yield
+visibly nonzero eigenvalues near a multiple nilpotent eigenvalue. The code uses
+coefficient and power residuals and labels them as diagnostics, not proofs.
+
+\section{The exact remaining higher-stage gap}
+\subsection{Reduced equations for the negative-root ansatz}
+For $p$ in \eqref{eq:ansatz}, one eigenvalue is already one. The remaining
+conditions can be imposed as
+\begin{equation}\label{eq:general}
+ e_k(MD)=\binom sk\quad(1\leq k\leq s-2),\qquad
+ s!\prod_i\frac{d_i}{c_i}=1.
+\end{equation}
+These are $s-1$ equations for the $s-1$ positive numbers $\alpha_j$.
+They suffice: evaluating the characteristic polynomial at one determines the
+only missing coefficient, $e_{s-1}=s$. In particular no coefficient constraint
+has merely been omitted from the three-stage proof.
+
+The reconstructed high-precision search writes $\alpha_j=\exp(x_j)$ and applies
+a damped Newton method to \eqref{eq:general}. Its last residual is the logarithm
+of the determinant condition. A positive numerical solution of these reduced
+equations is a useful candidate; the following uniform assertion is \emph{not}
+established here:
+\[
+ \text{For every admissible node set, \eqref{eq:general} has a solution in }
+ (0,\infty)^{s-1}.
+\]
+Even proving this stronger negative-root-ansatz assertion would require an
+argument absent from the recovered work. It has not been shown that every
+positive nilpotent scaling must lie in this ansatz, either. A failure of this
+particular search or ansatz would therefore not itself refute IE-28.
+
+\subsection{Why the three-stage endpoint argument is not an all-stage proof}
+The three scalar invariants used above do not suffice in general higher dimension.
+For example, the real matrix
+\[
+ B_4=\diag\!\left(1,2,
+  \begin{bmatrix}1/2&-1/2\\1/2&1/2\end{bmatrix}\right)
+\]
+has trace four, determinant one, and eigenvalue one, but
+\[
+ \det(zI-B_4)=(z-1)(z-2)(z^2-z+1/2)\ne(z-1)^4.
+\]
+This is an illustration of insufficient invariants, \textbf{not} a counterexample
+to the collocation conjecture: no claim is made that $B_4$ is of the required
+form $A^{-1}D$. At $s\geq4$, simultaneous control of further coefficients is
+essential. Dimension counting, parameter positivity, and successful numerical
+continuation do not by themselves provide it.
+
+\subsection{Different limits must not be conflated}
+For the diagonal-preconditioned iteration, the stiff limit is
+$I-D^{-1}A$, whereas the leading nonstiff matrix is $A-D$. The nilpotence theorem
+for the latter and a product formula involving different diagonals on successive
+sweeps in the 2025 paper do not establish nilpotence for one fixed stiff-limit
+diagonal~\cite[\S\S2.2.2--2.2.4]{sdc}. Likewise, a triangular factorization does
+not meet the diagonal restriction. No such substitution is used in this note.
+
+\section{Reproduction, provenance, and review boundary}
+The recommended entry point is \texttt{README.md}. In a Python environment with
+the supplied dependencies, run from the archive's root directory:
+\begin{verbatim}
+python scripts/check_symbolic.py
+python scripts/run_examples.py
+\end{verbatim}
+The first script verifies the universal rational endpoint identities, the
+cancellation-free divided difference, the two-stage reduction, and the cubic
+completion identity. It additionally checks inverse similarity, determinant,
+and eigenpolynomial formulas on exact rational examples at stages two through
+six, with direct integration checks through stage four. The universal proofs of
+the structural formulas are in Section~2; the finite rational tests are not
+being presented as universal proofs of those formulas.
+
+The second script reruns two explicit two-stage examples, seven three-stage
+examples, six higher-stage numerical candidates, the 66-triple regression grid,
+and input validation. It compares the three-stage answer with an independent
+Newton refinement of the ansatz equations. It writes JSON and text reports in
+\texttt{results/}. Original binary result files from the interrupted session
+were not recovered and are not claimed to have been recovered.
+
+The \texttt{experiments/} folder retains selected reconstructed exploratory
+scripts. Their tolerances, unvalidated path tracking, and incomplete real-root
+counting must not be read as certificates. They are separated from the proved
+construction and its verification scripts. The proof is intended to be
+self-contained and checkable; no claim of independent peer review or literature
+priority is made.
+
+\medskip
+\textbf{Conclusion.} The recovery yields a complete constructive proof for two
+and three stages, exact reductions for all stages, and reproducible computational
+work. It does not finish the originally requested all-stage IE-28 assertion.
+
+\begin{thebibliography}{9}
+\bibitem{entry}
+\emph{OpenProblemsInNLA}, IE-28, ``Positive diagonal preconditioning with a
+nilpotent stiff limit,'' repository entry, accessed 12 September 2026.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/linear-systems-and-elimination/IE-28/README.md}{GitHub problem statement}.
+
+\bibitem{houwen}
+P.~J. van der Houwen and J.~J.~B. de Swart,
+``Triangularly implicit iteration methods for ODE-IVP solvers,''
+\emph{SIAM Journal on Scientific Computing} \textbf{18}(1) (1997), 41--55.
+\href{https://doi.org/10.1137/S1064827595287456}{doi:10.1137/S1064827595287456}.
+See \S3.2.1, p.~46, and \S3.2.2.
+\href{https://ir.cwi.nl/pub/2191/2191D.pdf}{CWI full text}.
+
+\bibitem{sdc}
+G.~\v{C}aklovi\'{c}, T.~Lunet, S.~G\"otschel, and D.~Ruprecht,
+``Improving efficiency of parallel across the method spectral deferred
+corrections,'' \emph{SIAM Journal on Scientific Computing}
+\textbf{47}(1) (2025), A430--A453.
+\href{https://doi.org/10.1137/24M1649800}{doi:10.1137/24M1649800}.
+See \S2.2.3, especially p.~A439.
+\href{https://d-nb.info/1363153935/34}{Open full text}.
+\end{thebibliography}
+\end{document}

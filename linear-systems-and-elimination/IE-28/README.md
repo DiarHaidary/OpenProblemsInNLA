@@ -8,7 +8,7 @@
 **Difficulty:** challenging  
 **Importance:** interesting to specialist  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-11
+**Last checked:** 2026-09-13
 
 **Rating rationale:** The problem is a uniform existence assertion for a positive diagonal solution of nonlinear spectral equations. It underlies parallel iteration for implicit Runge–Kutta and spectral deferred-correction methods.
 
@@ -72,3 +72,15 @@ The 2025 MIN-SR-S construction searches for this nilpotence through determinant 
 - G. Čaklović, T. Lunet, S. Götschel and D. Ruprecht, *Improving efficiency of parallel across the method spectral deferred corrections*, SIAM Journal on Scientific Computing 47(1) (2025), A430–A453. [DOI and full text](https://doi.org/10.1137/24M1649800); [open PDF](https://d-nb.info/1363153935/34). §2.2, equations (2.11)–(2.13), distinguishes the two limits; §2.2.3, p.A439, Definition 2.10 and equation (2.38), explicitly discusses unproved existence for arbitrary stage counts.
 
 On 2026-09-11, checked both full papers, searched the original title and positive diagonal/nilpotent collocation conjecture, and searched MIN-SR-S existence, proofs and 2026 follow-ups. No theorem or counterexample settling this fixed-diagonal existence target was located. The 2025 paper gives current explicit evidence that the issue remains unresolved; its numerical optimization is not an all-node, all-stage existence proof. This is a bounded check. The target is distinct from the [LU-based spectral disk question](../IE-27/README.md) and from existing incomplete-factorization entries.
+
+## Reviewed partial results — 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation.
+
+The [submitted report](../../references/holden-ie-extensions-2026-09-13/manuscripts/IE-28/report.pdf) proves existence for all two- and three-node sets (Section 2), scaled Laguerre node sets at every stage count (Theorem 3.2), and sufficiently clustered positive nodes at each fixed stage count (Theorem 5.3). Section 7 supplies six exact point certificates and six node-neighborhood certificates in dimensions four through seven. The neighborhood sizes depend on the stage count; these results do not cover arbitrary prescribed nodes in every dimension.
+
+The eleven-stage obstruction in Theorem 6.2 excludes a stronger nonnegative-coefficient eigenpolynomial ansatz, not positive diagonals in general. The [structural supplement](../../references/holden-ie-extensions-2026-09-13/submitted/IE-28_verified_extensions/STRUCTURAL_REDUCTION.md), Sections 2–4, gives a diagonal-similarity reduction and Vandermonde principal-minor identity, plus a non-collocation auxiliary counterexample. The two overlapping bundles are recorded as one submission.
+
+These restricted results passed an [independent informal AI-agent review](../../references/holden-ie-extensions-2026-09-13/verification/review-ie28.md). **Partially resolved:** existence for arbitrary prescribed positive distinct nodes at every stage count $`s\ge4`$ remains open outside the established families.
+
+[Submission record and verified affiliation](../../references/holden-ie-extensions-2026-09-13/README.md). Substantial AI assistance is disclosed. The review is informal automated review, not external human peer review or formal verification. No Lean verification was performed.

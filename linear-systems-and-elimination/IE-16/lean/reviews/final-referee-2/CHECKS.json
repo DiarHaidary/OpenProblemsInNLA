@@ -1,0 +1,391 @@
+{
+  "phase": "Final independent source and canonical CI addendum",
+  "reviewer": "/root/nr03_independent_referee; OpenAI Codex AI agent",
+  "mathematical_proof_author": false,
+  "metadata_author_disclosure": "Prepared earlier package YAML/README drafts only; independent approval of that metadata is excluded.",
+  "repository_commit": "697a2a1d88337a6747aa5c82fb6e554d3ff1b356",
+  "project": "linear-systems-and-elimination/IE-16/lean",
+  "run_id": 34774629327,
+  "job_id": 103770408910,
+  "run_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34774629327",
+  "job_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34774629327/job/103770408910",
+  "run_conclusion": "success",
+  "job_conclusion": "success",
+  "job_step_conclusions": {
+    "Set up job": "success",
+    "Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262": "success",
+    "Validate formalization manifest": "success",
+    "Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16": "success",
+    "Run leanprover/lean-action@96e06131c0e9943c780388fd166f55d1e2fa0433": "success",
+    "Prepare unprivileged Linux isolation": "success",
+    "Fresh sandboxed statement, axiom and kernel verification": "success",
+    "Retain verification logs": "success",
+    "Post Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16": "success",
+    "Post Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262": "success",
+    "Complete job": "success"
+  },
+  "artifact_id": 10322764134,
+  "artifact_sha256": "1e1662ad25d3ea724277a840f9c4579c034cae08c9f6fce76bc08cd48795eefd",
+  "artifact_bytes": 22598,
+  "artifact_extraction_matches": 13,
+  "input_count": 281,
+  "complete_git_inventory_match": true,
+  "all_git_and_current_hashes_match": true,
+  "prior_canonical_transition_matches": {
+    "NLA/IE16/Minimax.lean": "d933b2609842519f9af59b21699af15414a2768376fa9a7deb9decb84fd9842c",
+    "NLA/IE16/WeightedDraft.lean": "d87c2fe573fbdd31a85ca7170ee9f9700fd406243f44e4631f0feb243694a9e1",
+    "NLA/IE16/WeightedBridgeDraft.lean": "e68654e1a1f21c1f29b2391edf69374365438c583ff4181323be29a39f6fd008",
+    "NLA/IE16/FullMinimumDraft.lean": "78f9c847d1438c5ce1b53c49bf0178ccde7a8cb542ad07a0b99172542c7c95e6",
+    "NLA/IE16/SubsetBoundsDraft.lean": "6a3bef42b0356e36db434099e87a4aa4d01682c2de09092497035fe796a33709",
+    "NLA/IE16/SubsetGeometryDraft.lean": "e0f73f3268d289371906e3df7388249b51e7ae93c0b1b7c0b5c8fe04449d48ab",
+    "NLA/IE16/FinalContractsDraft.lean": "a0aa3d1e08cf699c06a397540987f166f76693c87c8ed427f8d30836a9b01752",
+    "Solution.lean": "9ec27288b7d4824b91a8c0006c7be1fd7e6493b2444ce45941bdb9104b17a419",
+    "lakefile.toml": "b8b951591b3ddb41acf570c3055b8e02aa53e1e6f648be6a966ec8d85a00a716",
+    "NLA/IE16/Definitions.lean": "e4681f2083d71d8980adcd70e7cf26367e0e84dbc1773f4d2f082bf2417c9507",
+    "Challenge.lean": "85cbe24c7657d9ddc37728db5bb1740a80ddab60e3eb4676e329df40a7b1737c",
+    "NLA/IE16/Numeric.lean": "1acf85379ec7c69a632726920ef6be780fa059ccb1e3e6c9f8273b2f7625164f",
+    "comparator.json": "963e1d217de9369cd5b4a3c282e983cb01986512d5221e18e1ea44d087fe7f09",
+    "NUMERICAL_TARGETS.md": "0bea606a903e7956cac9765048db9881f07f29819f405269545f1da12ec6d682",
+    "lake-manifest.json": "7b20caa01b18a890bbbc64b5c9b507ae2a7484fb2289670b5485f67c0c7b6bb2",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "approved_statement_boundary_unchanged": [
+    "NLA/IE16/Definitions.lean",
+    "Challenge.lean",
+    "comparator.json"
+  ],
+  "public_theorems": [
+    "NLA.IE16.explicitL_card",
+    "NLA.IE16.explicitL_admissible",
+    "NLA.IE16.witness_feasible",
+    "NLA.IE16.witness_objective",
+    "NLA.IE16.full_minimum_exact",
+    "NLA.IE16.full_minimum_isLeast",
+    "NLA.IE16.full_lower_bound",
+    "NLA.IE16.every_five_point_subset_upper",
+    "NLA.IE16.every_five_point_subset_minimum_isLeast",
+    "NLA.IE16.subset_max_upper",
+    "NLA.IE16.subset_max_positive",
+    "NLA.IE16.ratio_lower_bound",
+    "NLA.IE16.ratio_exceeds_candidate",
+    "NLA.IE16.counterexample",
+    "NLA.IE16.not_IE16Conjecture"
+  ],
+  "actual_axiom_sets": {
+    "NLA.IE16.explicitL_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.explicitL_admissible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.witness_feasible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.witness_objective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.full_minimum_exact": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.full_minimum_isLeast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.full_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.every_five_point_subset_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.every_five_point_subset_minimum_isLeast": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.subset_max_upper": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.subset_max_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.ratio_lower_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.ratio_exceeds_candidate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.IE16.not_IE16Conjecture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "kernel_assertions": [
+    "NLA.IE16.explicitL_card",
+    "NLA.IE16.explicitL_admissible",
+    "NLA.IE16.witness_feasible",
+    "NLA.IE16.witness_objective",
+    "NLA.IE16.full_minimum_exact",
+    "NLA.IE16.full_minimum_isLeast",
+    "NLA.IE16.full_lower_bound",
+    "NLA.IE16.every_five_point_subset_upper",
+    "NLA.IE16.every_five_point_subset_minimum_isLeast",
+    "NLA.IE16.subset_max_upper",
+    "NLA.IE16.subset_max_positive",
+    "NLA.IE16.ratio_lower_bound",
+    "NLA.IE16.ratio_exceeds_candidate",
+    "NLA.IE16.counterexample",
+    "NLA.IE16.not_IE16Conjecture"
+  ],
+  "trust_assertions_note": "Silent on success; exact commands present in freshly compiled Solution, no elaboration error, all measured closures standard.",
+  "public_export_lists": {
+    "Challenge": [
+      "NLA.IE16.explicitL_card",
+      "NLA.IE16.explicitL_admissible",
+      "NLA.IE16.witness_feasible",
+      "NLA.IE16.witness_objective",
+      "NLA.IE16.full_minimum_exact",
+      "NLA.IE16.full_minimum_isLeast",
+      "NLA.IE16.full_lower_bound",
+      "NLA.IE16.every_five_point_subset_upper",
+      "NLA.IE16.every_five_point_subset_minimum_isLeast",
+      "NLA.IE16.subset_max_upper",
+      "NLA.IE16.subset_max_positive",
+      "NLA.IE16.ratio_lower_bound",
+      "NLA.IE16.ratio_exceeds_candidate",
+      "NLA.IE16.counterexample",
+      "NLA.IE16.not_IE16Conjecture"
+    ],
+    "Solution": [
+      "NLA.IE16.explicitL_card",
+      "NLA.IE16.explicitL_admissible",
+      "NLA.IE16.witness_feasible",
+      "NLA.IE16.witness_objective",
+      "NLA.IE16.full_minimum_exact",
+      "NLA.IE16.full_minimum_isLeast",
+      "NLA.IE16.full_lower_bound",
+      "NLA.IE16.every_five_point_subset_upper",
+      "NLA.IE16.every_five_point_subset_minimum_isLeast",
+      "NLA.IE16.subset_max_upper",
+      "NLA.IE16.subset_max_positive",
+      "NLA.IE16.ratio_lower_bound",
+      "NLA.IE16.ratio_exceeds_candidate",
+      "NLA.IE16.counterexample",
+      "NLA.IE16.not_IE16Conjecture"
+    ]
+  },
+  "solution_import_graph": {
+    "Solution": [
+      "NLA.IE16.Numeric",
+      "NLA.IE16.SubsetGeometryDraft",
+      "NLA.IE16.FullMinimumDraft",
+      "NLA.IE16.FinalContractsDraft",
+      "LeanCert.Tactic.Verification"
+    ],
+    "NLA.IE16.Definitions": [
+      "Mathlib.Analysis.Complex.Basic",
+      "Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic",
+      "Mathlib.Algebra.Polynomial.Basic",
+      "Mathlib.Algebra.Polynomial.Eval.Defs",
+      "Mathlib.Algebra.Polynomial.Degree.Defs",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Basic",
+      "Mathlib.Data.Finset.Powerset"
+    ],
+    "NLA.IE16.FinalContractsDraft": [
+      "NLA.IE16.FullMinimumDraft",
+      "NLA.IE16.SubsetGeometryDraft",
+      "Mathlib.Analysis.Real.Pi.Bounds",
+      "Mathlib.Tactic"
+    ],
+    "NLA.IE16.FullMinimumDraft": [
+      "NLA.IE16.WeightedBridgeDraft",
+      "Mathlib.Order.ConditionallyCompleteLattice.Basic",
+      "Mathlib.Tactic"
+    ],
+    "NLA.IE16.Minimax": [
+      "NLA.IE16.Definitions",
+      "Mathlib.Tactic",
+      "LeanCert.Tactic.Verification",
+      "Mathlib.Algebra.Polynomial.Eval.Coeff",
+      "Mathlib.Algebra.Polynomial.Degree.Defs",
+      "Mathlib.LinearAlgebra.Lagrange"
+    ],
+    "NLA.IE16.Numeric": [
+      "NLA.IE16.Definitions",
+      "Mathlib.Analysis.Complex.Norm",
+      "Mathlib.Data.Fin.Tuple.Basic",
+      "Mathlib.Tactic",
+      "LeanCert.Tactic.Verification"
+    ],
+    "NLA.IE16.SubsetBoundsDraft": [
+      "NLA.IE16.Minimax",
+      "Mathlib.Algebra.Order.BigOperators.GroupWithZero.Finset",
+      "Mathlib.Data.Fintype.Powerset"
+    ],
+    "NLA.IE16.SubsetGeometryDraft": [
+      "NLA.IE16.Numeric",
+      "NLA.IE16.SubsetBoundsDraft"
+    ],
+    "NLA.IE16.WeightedBridgeDraft": [
+      "NLA.IE16.WeightedDraft",
+      "NLA.IE16.Numeric",
+      "Mathlib.Algebra.BigOperators.Group.Finset.Sigma",
+      "Mathlib.Algebra.Polynomial.Eval.Degree",
+      "Mathlib.Data.Complex.BigOperators",
+      "Mathlib.Tactic"
+    ],
+    "NLA.IE16.WeightedDraft": [
+      "NLA.IE16.Minimax",
+      "Mathlib.Analysis.Complex.Norm"
+    ]
+  },
+  "all_project_modules_built": [
+    "NLA.IE16.Definitions",
+    "NLA.IE16.FinalContractsDraft",
+    "NLA.IE16.FullMinimumDraft",
+    "NLA.IE16.Minimax",
+    "NLA.IE16.Numeric",
+    "NLA.IE16.SubsetBoundsDraft",
+    "NLA.IE16.SubsetGeometryDraft",
+    "NLA.IE16.WeightedBridgeDraft",
+    "NLA.IE16.WeightedDraft",
+    "Solution"
+  ],
+  "log_expected_exit_status": {
+    "mathlib-cache.log": 0,
+    "dependencies.log": 0,
+    "comparator-controls.log": 0,
+    "negative-native.log": 1,
+    "sandbox.log": 0,
+    "comparator.log": 0,
+    "negative-sorry.log": 1,
+    "kernel-controls.log": 0,
+    "user-service.log": 0
+  },
+  "standalone_replay": "Actual Comparator.runBuiltinKernel invokes Lean.Environment.replay into Lean.mkEmptyEnvironment, then checks regenerated quotient constants; no external alternative kernel claimed.",
+  "kernel_controls": {
+    "honest": "RETURN honest_with_inductives_and_quotients: accepted",
+    "invalid_raw_proof": "RETURN invalid_raw_proof: rejected: while replaying declaration 'PinnedReplayProbe.invalid':",
+    "quotient_postcheck": "RETURN quotient_postcheck_mismatch: rejected: Quotient constant mismatch on: Quot.lift",
+    "summary": "PASS: all three actual Comparator.runBuiltinKernel cases behaved as required"
+  },
+  "comparator_controls": {
+    "honest": "PASS simple_match: exit 0, expected 0; required phase: Your solution is okay!",
+    "kind": "PASS simple_mismatch: exit 1, expected 1; required phase: Challenge and solution constant kind don't match: 'comm'",
+    "axiom": "PASS simple_axiom_issue: exit 1, expected 1; required phase: Illegal axiom detected: 'helper'",
+    "fifth_fixture": "PASS simple_kind_mismatch: exit 1, expected 1; required phase: Illegal axiom detected: 'helper'",
+    "type": "PASS type_mismatch: exit 1, expected 1; required phase: Challenge and solution theorem statement do not match: 'checked'",
+    "summary": "PASS: all five Comparator regressions"
+  },
+  "regression_fixture_scope": "simple_kind_mismatch is rejected for helper axiom, as its actual log specifies; simple_mismatch supplies the distinct constant-kind rejection.",
+  "sandbox_markers_checked": [
+    "MODE build: exit=0",
+    "MODE export: exit=0",
+    "PASS outside .lake write-open: denied errno=30",
+    "PASS outside .lake truncate: denied errno=30",
+    "PASS outside .lake read-only truncate-open: denied errno=30",
+    "PASS symlink from .lake to outside write: denied errno=30",
+    "PASS outside .lake creation: denied errno=30",
+    "PASS build .lake write: allowed",
+    "PASS export .lake write-open: denied errno=30",
+    "PASS export .lake truncate: denied errno=30",
+    "PASS user namespace: private",
+    "PASS pid namespace: private",
+    "PASS mnt namespace: private",
+    "PASS net namespace: private",
+    "PASS ipc namespace: private",
+    "PASS uts namespace: private",
+    "PASS host parent: absent from private /proc",
+    "PASS host parent signal lookup: denied errno=3",
+    "PASS host loopback listener: unreachable errno=13",
+    "PASS AF_UNIX socket creation: denied errno=97",
+    "PASS effective capabilities: none",
+    "PASS no_new_privs: set",
+    "PASS nested namespace write attempt: rejected exit=1",
+    "NEGATIVE unknown option: exit=2",
+    "NEGATIVE unexpected --rw: exit=2",
+    "NEGATIVE unexpected --rwx: exit=2",
+    "NEGATIVE relative --rwx: exit=2",
+    "Outer and export fixture contents unchanged; only designated build fixture written."
+  ],
+  "source_lock_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+  "verifier_source_files_matched": 58,
+  "derived_ci_probe_source_matches": true,
+  "tool_receipt": {
+    "source_lock_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+    "forsythe_commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+    "ci_sandbox_probe_sha256": "31057195baf238807cacbb4126c5b07f02cec55a4e4437de5f3a755b3fada803",
+    "lean_toolchain": "leanprover/lean4:v4.33.1",
+    "lean_prefix": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1",
+    "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "go_version": "go version go1.27.1 linux/amd64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "executables": {
+      ".tools/comparator/.lake/build/bin/comparator": "189e88f1a3cb68130b581905f7a5d3bde47eb0578904c0ca6fb235a53d0e8bdc",
+      ".tools/lean4export/.lake/build/bin/lean4export": "46f6a14f0f4a364d7698229130d103b67855be42f96cc5ef93929288072f1fa1",
+      ".tools/bin/landrun": "6531f6c9bc99313170e29c4c65bf09a414741093c587389315eb81a0a31e45d7"
+    },
+    "env_sha256": "7554076d35dcb2dc98bdc8f9adfd3a6a65b08b89c05695efe9e194df542e149a"
+  },
+  "dependency_revisions": {
+    "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+    "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+  },
+  "leancert_verification_source": {
+    "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/LeanCert/Tactic/Verification.lean",
+    "sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+    "revision": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "lines_read": [
+      593,
+      663
+    ]
+  },
+  "earlier_compiler_repairs_closed": true,
+  "canonical_mechanical_gates_closed": true,
+  "local_compiler_or_cache_or_download_executed": false,
+  "promotion_or_publication_performed": false,
+  "limitations": [
+    "AI-agent referee, not independent human peer review or official Tau Ceti review.",
+    "Read-only audit of retained remote CI evidence; no local Lean/Lake build.",
+    "Dependency cache and released toolchain are recorded build inputs; not a from-source rebuild of every dependency.",
+    "Finite sandbox regression probes support recorded isolation properties, not host filesystem confidentiality or a formal sandbox security proof.",
+    "Metadata drafting is outside independent approval; final repository acceptance and publication remain with the root/maintainer."
+  ],
+  "failures": []
+}

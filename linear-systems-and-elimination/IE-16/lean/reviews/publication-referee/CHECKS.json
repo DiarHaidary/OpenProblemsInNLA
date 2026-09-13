@@ -1,0 +1,50 @@
+{
+  "reviewer": {
+    "identity": "/root/lean_iv01_next",
+    "kind": "AI-agent publication audit",
+    "date": "2026-09-13",
+    "independence_scope": "Publication metadata, source identity, links, receipts and rendered problem document; not an additional mathematical proof referee.",
+    "proof_source_edits": false,
+    "local_lean_or_lake_run": false
+  },
+  "candidate": {
+    "worktree": "/tmp/nla-ie16-development-worktree",
+    "canonical_verified_commit": "697a2a1d88337a6747aa5c82fb6e554d3ff1b356",
+    "raw_run": 34774629327,
+    "raw_job": 103770408910,
+    "raw_artifact": 10322764134
+  },
+  "verdict": "CONDITIONAL_PASS",
+  "checks": {
+    "canonical_status_and_indexes": "PASS",
+    "author_affiliation_and_no_email": "PASS",
+    "source_attribution_and_scope": "PASS",
+    "formalization_yaml_structure": "PASS: Ruby Psych parse with aliases; 15 main_results; whole_problem_verified=true",
+    "proof_boundary_hashes": "PASS: all 14 mathematical/configuration files in FINAL-ACCEPTANCE boundary match current canonical tree; approved metadata boundary is retained separately",
+    "raw_281_input_map": "PASS: canonical result.json maps README.md and formalization.yaml to exact archived candidate metadata; all 281 hashes checked",
+    "canonical_receipts_and_axioms": "PASS: result, run/job/artifact, comparator log and 15 standard closures match recorded hashes",
+    "negative_controls": "PASS: sorryAx and native_decide fixtures terminate with the expected illegal-axiom failures",
+    "relative_links": "PASS: 39 links resolve against current files or tracked Git HEAD; sparse checkout omitted three reference payloads locally but HEAD tracks them",
+    "pdf_text_and_render": "PASS: two-page PDF; key status/author/target text present; final render log reports IE-16 OK and visual pages are readable with original target intact"
+  },
+  "hashes": {
+    "current_problem_readme": "203371c8dcf675a94ab5bd5d59f0f566725e6a7611f2ba525651222bb5875c59",
+    "current_lean_readme": "639a56c4994e667923c871439c901972dd565977ab7c4238d25d2cb907f1b09a",
+    "current_formalization_yaml": "729eb6681f6e7a6b9b35a53cbd8fd90a25e4aaaef4591f155b9c7bb7dd6fd0ea",
+    "current_final_acceptance": "2eeff0e54ee9a1f8fd9e690c4bb2aaf446c9d0433e0fd719dc65684899510703",
+    "candidate_metadata_map": "3ec9ca09f7f62577f03b8000a514a1cb7c0692084f5632d977b48e7f5eb4db10",
+    "archived_candidate_formalization": "1b88c99711031a42d4c7c4bff3a5e7dd064f42d1b6c215ade9d64d96d25c3335",
+    "approved_statement_formalization": "3a7003dbd9010ee1ed0f8be032e7265815405ebf706a66effbe801a884c2a2f4",
+    "raw_result": "3fa4b80021abb07a0df3921d33e1bd3c16d07df732578453bf312250f06fc9dd",
+    "raw_comparator_log": "f226bbdaf0c47e4dff3127d1711b00819ccf0e7d275b320521191e2fc0087d9f",
+    "artifact_zip": "1e1662ad25d3ea724277a840f9c4579c034cae08c9f6fce76bc08cd48795eefd",
+    "render_log": "d000b89b8ee67c62b9be561d063eae39e99113898ad616c45095bd23f631ef71"
+  },
+  "required_before_final_commit": {
+    "issue": "The current offline verifier compares FINAL-ACCEPTANCE.boundary_files against the current project path unconditionally.",
+    "location": "linear-systems-and-elimination/IE-16/lean/verification/verify_publication.py:94-95",
+    "failure": "The acceptance formalization.yaml hash is 3a7003..., while the current publication metadata is 729eb6.... The canonical raw result expects the archived candidate metadata hash 1b88c9....",
+    "retained_approved_bytes": "verification/candidate-presentation-transition/before/formalization.yaml (also retained in reviews/statement-referee-1/reviewed-source/formalization.yaml), SHA-256 3a7003...",
+    "required_fix": "Make the verifier resolve the approved statement boundary through its retained historical path (or an explicit boundary-path map), while checking the current README/formalization through candidate-metadata-map and the 281 raw inputs separately. Then generate package-inputs.json and rerun the offline verifier in the pinned metadata environment."
+  }
+}

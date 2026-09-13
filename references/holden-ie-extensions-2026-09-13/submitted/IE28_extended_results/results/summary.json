@@ -1,0 +1,29 @@
+{
+  "full_solution_obtained": false,
+  "arbitrary_node_all_stage_proof": false,
+  "counterexample_to_IE28_obtained": false,
+  "main_pdf_pages": 13,
+  "analytic_results": [
+    "all admissible nodes at n=2 and n=3",
+    "all stages for sufficiently clustered nodes",
+    "all stages for scaled Laguerre-node family"
+  ],
+  "exact_certificates": {
+    "count": 12,
+    "all_passed": true,
+    "stage_counts": [
+      4,
+      5,
+      6,
+      7
+    ]
+  },
+  "seed11_nonnegative_coefficient_ansatz_obstruction": true,
+  "numeric_only_stage_counts": [
+    8,
+    11,
+    15
+  ],
+  "independent_checks": "See results/exact_checks.txt and results/numerical_implementation_checks.txt",
+  "scope_warning": "All-stage local existence does not establish existence for arbitrary prescribed positive nodes."
+}

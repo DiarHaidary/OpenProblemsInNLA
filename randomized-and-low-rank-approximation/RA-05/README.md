@@ -7,6 +7,24 @@
 
 **Status:** Partially resolved
 
+## Further partial resolution — even-power high accuracy, 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](../../references/holden-ra05-even-power-2026-09-13/README.md).
+
+For each fixed integer $`s\ge2`$, [Theorems 1.1–1.2 and Corollary 1.3](../../references/holden-ra05-even-power-2026-09-13/manuscript.pdf) establish
+
+```math
+c_s\frac{k^{s-1}}{\varepsilon^2}\le S_{2s}(k,\varepsilon)
+\le C_s\left(\frac{k^{(3s-1)/2}}{\varepsilon}+\frac{k^{s-1}}{\varepsilon^2}\right)
+\log^5\!\left(\frac{2k}{\varepsilon}\right).
+```
+
+Thus $`S_{2s}(k,\varepsilon)=\widetilde\Theta_s(k^{s-1}/\varepsilon^2)`$ whenever $`0<\varepsilon<1/2`$ and $`\varepsilon\le k^{-(s+1)/2}`$. The bounds hold for every $`k\ge1`$, with arbitrary input rank and ambient dimension, nonnegative original-row weights, and simultaneous preservation of every subspace of dimension at most $`k`$. Constants depend only on $`s`$; no efficient construction is claimed.
+
+The stated partial results passed an [independent Codex AI-agent informal audit](../../references/holden-ra05-even-power-2026-09-13/verification/independent-review.md), including primary-source dependency checks and 8,453 finite assertions. Finite checks are supporting diagnostics, not proofs of the asymptotic theorem. ChatGPT assistance is disclosed; no external human peer review or formal verification is asserted. No Lean verification was performed.
+
+**RA-05 remains Partially resolved.** Non-even exponents and intermediate accuracies for even $`p\ge6`$ remain unclassified. The earlier quartic classification and all-exponent lower bounds below are retained as separate prior contributions. [New proof source](../../references/holden-ra05-even-power-2026-09-13/manuscript.tex).
+
 ## Partial resolution — unrestricted quartic case, 13 September 2026
 
 **Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](../../references/holden-ra05-quartic-2026-09-13/README.md).

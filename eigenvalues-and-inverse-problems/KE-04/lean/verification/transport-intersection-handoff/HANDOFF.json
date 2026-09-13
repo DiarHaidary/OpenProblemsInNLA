@@ -1,0 +1,86 @@
+{
+  "utc": "2026-09-13T09:34:45.627176+00:00",
+  "status": "COMPLETE_SCOPED_AUTHOR_VALIDATION",
+  "results": [
+    {
+      "module": "Transport",
+      "source_sha256": "f8bbd7a8095c333efe899bc71aae896dd6731002f89cefa2296f09aba7ecddbb",
+      "final_attempt": "verification/transport-development/attempt-1zv5sy8b",
+      "result_sha256": "546925f7b7db6a4d1adf29cdd133006486b2e5c2cb3241389aa7a9d04e5cd06a",
+      "fresh_source_commands": 6,
+      "exact_types": 4,
+      "actual_project_closure": 63,
+      "required_dependencies": 14,
+      "own_kernel_assertions": 11,
+      "additional_inspector_assertions": 4,
+      "all_fresh_compile_axiom_reports_including_imports": 42,
+      "own_mathematical_source_warnings": 0,
+      "all_retained_warnings": [
+        "NLA/KE04/Krylov.lean:107:25: warning: This simp argument is unused:",
+        "Inspect.lean:7:61: warning: Variable name `hA` is not explicitly referenced.",
+        "Inspect.lean:8:30: warning: Variable name `hk` is not explicitly referenced.",
+        "Inspect.lean:8:43: warning: Variable name `hkj` is not explicitly referenced.",
+        "Inspect.lean:10:5: warning: Variable name `hQk` is not explicitly referenced.",
+        "Inspect.lean:10:36: warning: Variable name `hQj` is not explicitly referenced.",
+        "Inspect.lean:11:17: warning: Variable name `hx` is not explicitly referenced.",
+        "Inspect.lean:16:15: warning: Variable name `hk` is not explicitly referenced.",
+        "Inspect.lean:16:28: warning: Variable name `hkj` is not explicitly referenced.",
+        "Inspect.lean:17:5: warning: Variable name `hQj` is not explicitly referenced.",
+        "Inspect.lean:18:5: warning: Variable name `hx` is not explicitly referenced.",
+        "Inspect.lean:21:53: warning: Variable name `hk` is not explicitly referenced.",
+        "Inspect.lean:22:5: warning: Variable name `hi` is not explicitly referenced.",
+        "Inspect.lean:22:18: warning: Variable name `hu` is not explicitly referenced."
+      ],
+      "historical_attempts": [
+        {
+          "path": "verification/transport-development/attempt-1zv5sy8b",
+          "success": true,
+          "result_sha256": "546925f7b7db6a4d1adf29cdd133006486b2e5c2cb3241389aa7a9d04e5cd06a"
+        },
+        {
+          "path": "verification/transport-development/attempt-yaf8fdd4",
+          "success": true,
+          "result_sha256": "cda2f8d2b7cff289dd270d748cc0b6b050fcf5e7a2fe08b274d68e6edf9732e4"
+        }
+      ]
+    },
+    {
+      "module": "Intersection",
+      "source_sha256": "85acdc5925c94da8c48f5840bfce5055b6660ed11529a5554953f8acd598cb95",
+      "final_attempt": "verification/intersection-development/attempt-thbyznuc",
+      "result_sha256": "4ee7c0536c7f2e4bf6c5359cf51c4a3dee996fbe3664a7bba7f4f04c1a249c07",
+      "fresh_source_commands": 4,
+      "exact_types": 1,
+      "actual_project_closure": 11,
+      "required_dependencies": 6,
+      "own_kernel_assertions": 1,
+      "additional_inspector_assertions": 1,
+      "all_fresh_compile_axiom_reports_including_imports": 16,
+      "own_mathematical_source_warnings": 0,
+      "all_retained_warnings": [
+        "NLA/KE04/Krylov.lean:107:25: warning: This simp argument is unused:",
+        "Inspect.lean:8:13: warning: Variable name `hk` is not explicitly referenced.",
+        "Inspect.lean:8:26: warning: Variable name `hfull` is not explicitly referenced.",
+        "Inspect.lean:9:5: warning: Variable name `hprev` is not explicitly referenced.",
+        "Inspect.lean:10:5: warning: Variable name `hE` is not explicitly referenced.",
+        "Inspect.lean:10:29: warning: Variable name `hdim` is not explicitly referenced."
+      ],
+      "historical_attempts": [
+        {
+          "path": "verification/intersection-development/attempt-_xq5zj8i",
+          "success": false,
+          "result_sha256": "1642a8fdd44b95bb7a74d97525328a313d13334cb8ff38d68406a1b89029307f"
+        },
+        {
+          "path": "verification/intersection-development/attempt-thbyznuc",
+          "success": true,
+          "result_sha256": "4ee7c0536c7f2e4bf6c5359cf51c4a3dee996fbe3664a7bba7f4f04c1a249c07"
+        }
+      ]
+    }
+  ],
+  "preserved_statement_inputs": 1598,
+  "independent_final_review": false,
+  "actual_linux_comparator": false,
+  "whole_problem_verified": false
+}

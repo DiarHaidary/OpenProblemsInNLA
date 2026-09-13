@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/independent_elaboration.py", line 205, in <module>
+    data = command([LEAN, '-o', target, module + '.lean'], 'compile-' + module.replace('/', '-'), cwd=SOURCE, env=lean_env)
+  File "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/independent_elaboration.py", line 68, in command
+    raise RuntimeError(f'{stem} exited {rec["exit_code"]}')
+RuntimeError: command-057-compile-InspectDefinitions exited 1

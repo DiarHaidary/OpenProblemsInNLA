@@ -1,0 +1,37 @@
+{
+  "finding": "Ambiguous/collapsed secondary source map in immutable proof freeze. Full files map still correctly binds all17 distinct source snapshots; the exact original-source-inventory is independently verified by this reviewer.",
+  "proof_freeze_sha256": "d45703f80e35612826060bc53d7a46da7c341234f2edd8cd6269e1ed72c53c16",
+  "secondary_source_map_count": 15,
+  "exact_original_record_count": 17,
+  "duplicate_upstream_path_examples": [
+    {
+      "snapshot_path": "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/README.md",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/README.md",
+      "snapshot_sha256": "20ff79f2a4c9fbbd456a5167f6e634df7473a6415141fcfc01d85b49fea8a057",
+      "freeze_source_files_sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669"
+    },
+    {
+      "snapshot_path": "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.md",
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/solution.md",
+      "snapshot_sha256": "dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6",
+      "freeze_source_files_sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d"
+    },
+    {
+      "snapshot_path": "verification/original-submission/solution.md",
+      "commit": "fe025e14d2639cbae59f98cacf4023d83addcb89",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/solution.md",
+      "snapshot_sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d",
+      "freeze_source_files_sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d"
+    },
+    {
+      "snapshot_path": "verification/original-target/README.md",
+      "commit": "b4123194697bdf6f8f82518c1dd7d6c40a30c2e0",
+      "upstream_path": "eigenvalues-and-inverse-problems/KE-04/README.md",
+      "snapshot_sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669",
+      "freeze_source_files_sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669"
+    }
+  ],
+  "reported_to_coordinator": true
+}

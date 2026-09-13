@@ -1,0 +1,83 @@
+45-  Euclidean space from a `Basis` which is `Orthonormal`.
+46-
+47:- `Orthonormal.exists_orthonormalBasis_extension`: provides an existential result of an
+48-  `OrthonormalBasis` extending a given orthonormal set
+49-
+50:- `exists_orthonormalBasis`: provides an orthonormal basis on a finite-dimensional vector space
+51-
+52-- `stdOrthonormalBasis`: provides an arbitrarily-chosen `OrthonormalBasis` of a given
+53-  finite-dimensional inner product space
+54-
+--
+768-
+769-/-- `b.reindex (e : ι ≃ ι')` is an `OrthonormalBasis` indexed by `ι'` -/
+770:def reindex (b : OrthonormalBasis ι 𝕜 E) (e : ι ≃ ι') : OrthonormalBasis ι' 𝕜 E :=
+771-  OrthonormalBasis.ofRepr (b.repr.trans (LinearIsometryEquiv.piLpCongrLeft 2 𝕜 𝕜 e))
+772-
+773:protected theorem reindex_apply (b : OrthonormalBasis ι 𝕜 E) (e : ι ≃ ι') (i' : ι') :
+774-    (b.reindex e) i' = b (e.symm i') := by
+775-  classical
+776-    dsimp [reindex]
+777-    rw [coe_ofRepr]
+--
+787-protected theorem coe_reindex (b : OrthonormalBasis ι 𝕜 E) (e : ι ≃ ι') :
+788-    ⇑(b.reindex e) = b ∘ e.symm :=
+789:  funext (b.reindex_apply e)
+790-
+791-@[simp]
+792-protected theorem repr_reindex (b : OrthonormalBasis ι 𝕜 E) (e : ι ≃ ι') (x : E) (i' : ι') :
+793-    (b.reindex e).repr x i' = b.repr x (e.symm i') := by
+--
+1032-/-- In a finite-dimensional `InnerProductSpace`, any orthonormal subset can be extended to an
+1033-orthonormal basis. -/
+1034:theorem Orthonormal.exists_orthonormalBasis_extension (hv : Orthonormal 𝕜 ((↑) : v → E)) :
+1035-    ∃ (u : Finset E) (b : OrthonormalBasis u 𝕜 E), v ⊆ u ∧ ⇑b = ((↑) : u → E) := by
+1036-  obtain ⟨u₀, hu₀s, hu₀, hu₀_max⟩ := exists_maximal_orthonormal hv
+1037-  rw [maximal_orthonormal_iff_orthogonalComplement_eq_bot hu₀] at hu₀_max
+1038-  have hu₀_finite : u₀.Finite := hu₀.linearIndependent.setFinite
+--
+1045-  · simp
+1046-
+1047:theorem Orthonormal.exists_orthonormalBasis_extension_of_card_eq {ι : Type*} [Fintype ι]
+1048-    (card_ι : finrank 𝕜 E = Fintype.card ι) {v : ι → E} {s : Set ι}
+1049-    (hv : Orthonormal 𝕜 (s.domRestrict v)) :
+1050-    ∃ b : OrthonormalBasis ι 𝕜 E, ∀ i ∈ s, b i = v i := by
+1051-  have hsv : Injective (s.domRestrict v) := hv.linearIndependent.injective
+1052-  have hX : Orthonormal 𝕜 ((↑) : Set.range (s.domRestrict v) → E) := by
+1053-    rwa [orthonormal_subtype_range hsv]
+1054:  obtain ⟨Y, b₀, hX, hb₀⟩ := hX.exists_orthonormalBasis_extension
+1055-  have hιY : Fintype.card ι = Y.card := by
+1056-    refine card_ι.symm.trans ?_
+1057-    exact Module.finrank_eq_card_finset_basis b₀.toBasis
+1058-  have hvsY : s.MapsTo v Y := (s.mapsTo_image v).mono_right (by rwa [← range_domRestrict])
+--
+1068-
+1069-/-- A finite-dimensional inner product space admits an orthonormal basis. -/
+1070:theorem _root_.exists_orthonormalBasis :
+1071-    ∃ (w : Finset E) (b : OrthonormalBasis w 𝕜 E), ⇑b = ((↑) : w → E) :=
+1072:  let ⟨w, hw, _, hw''⟩ := (orthonormal_empty 𝕜 E).exists_orthonormalBasis_extension
+1073-  ⟨w, hw, hw''⟩
+1074-
+1075-/-- A finite-dimensional `InnerProductSpace` has an orthonormal basis. -/
+1076-irreducible_def stdOrthonormalBasis : OrthonormalBasis (Fin (finrank 𝕜 E)) 𝕜 E := by
+1077:  let b := Classical.choose (Classical.choose_spec <| exists_orthonormalBasis 𝕜 E)
+1078-  rw [finrank_eq_card_basis b.toBasis]
+1079-  exact b.reindex (Fintype.equivFinOfCardEq rfl)
+1080-
+1081-/-- An orthonormal basis of `ℝ` is made either of the vector `1`, or of the vector `-1`. -/
+--
+1253-  rfl
+1254-
+1255:@[deprecated toLpLin_apply (since := "2026-01-22")]
+1256-theorem toEuclideanLin_apply (M : Matrix m n 𝕜) (v : EuclideanSpace 𝕜 n) :
+1257-    toEuclideanLin M v = toLp _ (M *ᵥ ofLp v) := rfl
+1258-
+1259-@[deprecated ofLp_toLpLin (since := "2026-01-22")]
+--
+1331-/-- In an inner product space with dimension 1, a set `{v}` is an orthonormal basis for
+1332-`‖v‖ = 1`. -/
+1333:def orthonormalBasisSingleton : OrthonormalBasis ι 𝕜 E :=
+1334-  (basisSingleton ι h v (by aesop)).toOrthonormalBasis (by simpa)
+1335-
+1336-@[simp]
+1337-theorem orthonormalBasisSingleton_apply (i : ι) :

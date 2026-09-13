@@ -1,0 +1,332 @@
+import LeanCert.Tactic
+
+/-!
+# Checked multivariate rational enclosures
+
+`LeanCert`'s optimizer intentionally requires automatic-differentiation
+support, so it excludes variable denominators.  The small checker below uses
+the general checked interval evaluator instead.  A successful Boolean result
+is converted back to a theorem by `evalIntervalTightChecked_correct`; hence a
+retained `(trust := kernel)` invocation is checked entirely by Lean's kernel.
+-/
+
+namespace ProofProject
+
+open LeanCert.Core
+open LeanCert.Engine
+open LeanCert.Engine.Optimization
+
+def checkedBoxUpper (e : Expr) (B : Box) (c : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (I.hi ≤ c)
+  | .error _ => false
+
+def checkedBoxLower (e : Expr) (B : Box) (c : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (c ≤ I.lo)
+  | .error _ => false
+
+def checkedBoxMem (e : Expr) (B : Box) (lo hi : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (lo ≤ I.lo ∧ I.hi ≤ hi)
+  | .error _ => false
+
+theorem checkedBoxUpper_sound (e : Expr) (B : Box) (c : ℚ)
+    (hcheck : checkedBoxUpper e B c = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) → Expr.eval ρ e ≤ (c : ℝ) := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxUpper, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hIc : I.hi ≤ c := by
+        simpa [checkedBoxUpper, heval] using hcheck
+      exact hmem.2.trans (by exact_mod_cast hIc)
+
+theorem checkedBoxLower_sound (e : Expr) (B : Box) (c : ℚ)
+    (hcheck : checkedBoxLower e B c = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) → (c : ℝ) ≤ Expr.eval ρ e := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxLower, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hcI : c ≤ I.lo := by
+        simpa [checkedBoxLower, heval] using hcheck
+      have hcI' : (c : ℝ) ≤ (I.lo : ℝ) := by exact_mod_cast hcI
+      exact hcI'.trans hmem.1
+
+theorem checkedBoxMem_sound (e : Expr) (B : Box) (lo hi : ℚ)
+    (hcheck : checkedBoxMem e B lo hi = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) →
+      Expr.eval ρ e ∈ Set.Icc (lo : ℝ) (hi : ℝ) := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxMem, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hbounds : lo ≤ I.lo ∧ I.hi ≤ hi := by
+        simpa [checkedBoxMem, heval] using hcheck
+      constructor
+      · exact (by exact_mod_cast hbounds.1 : (lo : ℝ) ≤ (I.lo : ℝ)).trans
+          hmem.1
+      · exact hmem.2.trans
+          (by exact_mod_cast hbounds.2 : (I.hi : ℝ) ≤ (hi : ℝ))
+
+end ProofProject
+
+open Lean Meta Elab Tactic Term
+
+namespace ProofProject.CheckedMultivariate
+
+open LeanCert.Meta
+open LeanCert.Core
+open LeanCert.Engine
+open LeanCert.Engine.Optimization
+open LeanCert.Tactic
+open LeanCert.Tactic.Auto
+
+private def ratScaledMillion (q : ℚ) : ℤ :=
+  (q.num * 1000000) / (q.den : ℤ)
+
+private def extractRatBound (bound : Lean.Expr) : TacticM Lean.Expr := do
+  let fn := bound.getAppFn
+  let args := bound.getAppArgs
+  if fn.isConstOf ``Rat.cast || fn.isConstOf ``RatCast.ratCast then
+    if args.size > 0 then return args.back!
+    else throwError "unexpected rational cast"
+  else
+    let boundTy ← inferType bound
+    if boundTy.isConstOf ``Rat then return bound
+    if let some q ← extractRatFromReal bound then return toExpr q
+    let boundReduced ← whnf bound
+    let fnReduced := boundReduced.getAppFn
+    if fnReduced.isConstOf ``Rat.cast || fnReduced.isConstOf ``RatCast.ratCast then
+      let argsReduced := boundReduced.getAppArgs
+      if argsReduced.size > 0 then return argsReduced.back!
+    throwError m!"cannot extract rational bound from {bound}"
+
+private def getVarExprs (vars : Array VarIntervalInfo) : TacticM (Array Lean.Expr) := do
+  let lctx ← getLCtx
+  let mut out : Array Lean.Expr := #[]
+  let mut used : Array Lean.FVarId := #[]
+  for info in vars do
+    match lctx.findFromUserName? info.varName with
+    | some decl =>
+        out := out.push (Lean.mkFVar decl.fvarId)
+        used := used.push decl.fvarId
+    | none =>
+        let mut fallback : Option Lean.LocalDecl := none
+        for decl in lctx do
+          if !(used.any (fun id => id == decl.fvarId)) then
+            if (← isDefEq decl.type info.varType) then
+              fallback := some decl
+              break
+        match fallback with
+        | some decl =>
+            out := out.push (Lean.mkFVar decl.fvarId)
+            used := used.push decl.fvarId
+        | none =>
+            let mut names : Array Name := #[]
+            for decl in lctx do names := names.push decl.userName
+            let target ← (← getMainGoal).getType
+            throwError m!"missing local variable {info.varName}; context names: {names}; target: {target}"
+  return out
+
+private def mkEnvExpr (varsListExpr : Lean.Expr) : TacticM Lean.Expr := do
+  withLocalDeclD `i (Lean.mkConst ``Nat) fun i => do
+    let zeroRat := toExpr (0 : ℚ)
+    let zeroReal ← mkAppOptM ``Rat.cast #[mkConst ``Real, none, zeroRat]
+    let body ← mkAppM ``List.getD #[varsListExpr, i, zeroReal]
+    mkLambdaFVars #[i] body
+
+private unsafe def closeCheckedBound
+    (vars : Array VarIntervalInfo) (func bound : Lean.Expr)
+    (upper : Bool) : TacticM Unit := do
+  let saved ← saveState
+  let originalGoal ← getMainGoal
+  let boxExpr ← mkBoxExpr vars
+  let ast := (← reifyWithReport func).expr
+  let boundRat ← extractRatBound bound
+  let checkName := if upper then ``ProofProject.checkedBoxUpper
+    else ``ProofProject.checkedBoxLower
+  let soundName := if upper then ``ProofProject.checkedBoxUpper_sound
+    else ``ProofProject.checkedBoxLower_sound
+  let (_, mainGoalAfterIntro) ← originalGoal.intros
+  setGoals [mainGoalAfterIntro]
+  let (rhoSyntax, varsListSyntax, boxSyntax) ← withMainContext do
+    let varExprs ← getVarExprs vars
+    let varsListExpr ← mkListLit (Lean.mkConst ``Real) varExprs.toList
+    let rhoExpr ← mkEnvExpr varsListExpr
+    let rhoSyntax ← Lean.Elab.Term.exprToSyntax rhoExpr
+    let varsListSyntax ← Lean.Elab.Term.exprToSyntax varsListExpr
+    let boxSyntax ← Lean.Elab.Term.exprToSyntax boxExpr
+    pure (rhoSyntax, varsListSyntax, boxSyntax)
+  let checkExpr ← mkAppM checkName #[ast, boxExpr, boundRat]
+  let certTy ← mkAppM ``Eq #[checkExpr, Lean.mkConst ``Bool.true]
+  let certGoal ← mkFreshExprMVar certTy
+  let certGoalId := certGoal.mvarId!
+  setGoals [certGoalId]
+  match ← LeanCert.Tactic.closeCertificateGoalTyped
+      (← LeanCert.Tactic.VerificationConfig.current) (← getMainGoal)
+      (tacticName := "checked_multivariate_bound") with
+  | .rejected =>
+      saved.restore
+      throwError "checked multivariate enclosure does not imply the requested bound"
+  | .failed failure =>
+      saved.restore
+      throwError m!"checked multivariate certificate failed: {failure.message "checked_multivariate_bound"}"
+  | .accepted _ => pure ()
+  let conclusionProof ← mkAppM' (← mkAppM soundName #[ast, boxExpr, boundRat]) #[certGoal]
+  let conclusionTerm ← Lean.Elab.Term.exprToSyntax conclusionProof
+  setGoals [mainGoalAfterIntro]
+  evalTactic (← `(tactic| exact (by
+    have hmem : Box.envMem $rhoSyntax $boxSyntax := by
+      intro i
+      fin_cases i <;>
+        simp [Box.envMem, IntervalRat.mem_iff_mem_Icc, Set.mem_Icc] at * <;>
+        norm_num [Rat.divInt_eq_div] at * <;>
+        first | assumption | constructor <;> assumption
+    have hzero : ∀ i, i ≥ ($boxSyntax).length → $rhoSyntax i = 0 := by
+      intro i hi
+      have hnot : ¬ i < ($boxSyntax).length := by exact not_lt.mpr hi
+      have hnot' : ¬ i < ($varsListSyntax).length := by simpa using hnot
+      have hge' : ($varsListSyntax).length ≤ i := not_lt.mp hnot'
+      simp [List.getD, List.getElem?_eq_none hge', Option.getD]
+    have hresult := $conclusionTerm $rhoSyntax hmem hzero
+    convert hresult using 1 <;>
+      simp [List.getD, LeanCert.Core.Expr.eval, Rat.divInt_eq_div,
+        sq, pow_two, sub_eq_add_neg, div_eq_mul_inv] <;>
+      ring <;>
+      simp)))
+
+private unsafe def closeCheckedMem
+    (vars : Array VarIntervalInfo) (func lo hi : Lean.Expr) : TacticM Unit := do
+  let saved ← saveState
+  let originalGoal ← getMainGoal
+  let boxExpr ← mkBoxExpr vars
+  let ast := (← reifyWithReport func).expr
+  let loRat ← extractRatBound lo
+  let hiRat ← extractRatBound hi
+  let (_, mainGoalAfterIntro) ← originalGoal.intros
+  setGoals [mainGoalAfterIntro]
+  let (rhoSyntax, varsListSyntax, boxSyntax) ← withMainContext do
+    let varExprs ← getVarExprs vars
+    let varsListExpr ← mkListLit (Lean.mkConst ``Real) varExprs.toList
+    let rhoExpr ← mkEnvExpr varsListExpr
+    let rhoSyntax ← Lean.Elab.Term.exprToSyntax rhoExpr
+    let varsListSyntax ← Lean.Elab.Term.exprToSyntax varsListExpr
+    let boxSyntax ← Lean.Elab.Term.exprToSyntax boxExpr
+    pure (rhoSyntax, varsListSyntax, boxSyntax)
+  let checkExpr ← mkAppM ``ProofProject.checkedBoxMem
+    #[ast, boxExpr, loRat, hiRat]
+  let certTy ← mkAppM ``Eq #[checkExpr, Lean.mkConst ``Bool.true]
+  let certGoal ← mkFreshExprMVar certTy
+  let certGoalId := certGoal.mvarId!
+  setGoals [certGoalId]
+  match ← LeanCert.Tactic.closeCertificateGoalTyped
+      (← LeanCert.Tactic.VerificationConfig.current) (← getMainGoal)
+      (tacticName := "checked_multivariate_mem") with
+  | .rejected =>
+      let astVal ← unsafe evalExpr LeanCert.Core.Expr
+        (mkConst ``LeanCert.Core.Expr) ast
+      let boxVal ← unsafe evalExpr Box (mkConst ``Box) boxExpr
+      let enclosure := evalIntervalTightChecked astVal boxVal.toEnv {}
+      saved.restore
+      match enclosure with
+      | .ok I =>
+          throwError m!"checked multivariate enclosure does not imply the requested interval; evaluator endpoints times 10^6 truncate to [{ratScaledMillion I.lo}, {ratScaledMillion I.hi}]"
+      | .error err =>
+          throwError m!"checked multivariate enclosure evaluation failed: {repr err}"
+  | .failed failure =>
+      saved.restore
+      throwError m!"checked multivariate certificate failed: {failure.message "checked_multivariate_mem"}"
+  | .accepted _ => pure ()
+  let conclusionProof ← mkAppM'
+    (← mkAppM ``ProofProject.checkedBoxMem_sound
+      #[ast, boxExpr, loRat, hiRat]) #[certGoal]
+  let conclusionTerm ← Lean.Elab.Term.exprToSyntax conclusionProof
+  setGoals [mainGoalAfterIntro]
+  evalTactic (← `(tactic| exact (by
+    have hmem : Box.envMem $rhoSyntax $boxSyntax := by
+      intro i
+      fin_cases i <;>
+        simp [Box.envMem, IntervalRat.mem_iff_mem_Icc, Set.mem_Icc] at * <;>
+        norm_num [Rat.divInt_eq_div] at * <;>
+        first | assumption | constructor <;> assumption
+    have hzero : ∀ i, i ≥ ($boxSyntax).length → $rhoSyntax i = 0 := by
+      intro i hi
+      have hnot : ¬ i < ($boxSyntax).length := by exact not_lt.mpr hi
+      have hnot' : ¬ i < ($varsListSyntax).length := by simpa using hnot
+      have hge' : ($varsListSyntax).length ≤ i := not_lt.mp hnot'
+      simp [List.getD, List.getElem?_eq_none hge', Option.getD]
+    have hresult := $conclusionTerm $rhoSyntax hmem hzero
+    convert hresult using 1 <;>
+      simp [List.getD, LeanCert.Core.Expr.eval, Rat.divInt_eq_div,
+        sq, pow_two, sub_eq_add_neg, div_eq_mul_inv] <;>
+      ring <;>
+      simp)))
+
+private partial def selectInnermostIntervalBound
+    (e : Lean.Expr) (lower : Bool) : MetaM Lean.Expr := do
+  if e.isForall then
+    let .forallE name ty body bi := e | unreachable!
+    return .forallE name ty
+      (← selectInnermostIntervalBound body lower) bi
+  let reduced ← withTransparency TransparencyMode.all <| whnf e
+  match_expr reduced with
+  | And lhs rhs => return if lower then lhs else rhs
+  | _ => throwError m!"expected an interval-membership conclusion, got {reduced}"
+
+syntax (name := checkedMultivariateBoundTac)
+  "checked_multivariate_bound" (leancertTrustItem)? : tactic
+
+@[tactic checkedMultivariateBoundTac]
+unsafe def elabCheckedMultivariateBound : Tactic := fun stx => do
+  let trustSyntax := stx[1].getOptional?.map (⟨·⟩)
+  let trust? ← LeanCert.Tactic.elabTrustItem? trustSyntax
+  LeanCert.Tactic.withTrustMode trust? do
+    intervalNormCore
+    let goalType ← (← getMainGoal).getType
+    let some parsed ← parseMultivariateBoundGoal goalType
+      | throwError "expected a quantified multivariate upper or lower bound"
+    match parsed with
+    | .forallLe vars func bound => closeCheckedBound vars func bound true
+    | .forallGe vars func bound => closeCheckedBound vars func bound false
+
+syntax (name := checkedMultivariateMemTac)
+  "checked_multivariate_mem" (leancertTrustItem)? : tactic
+
+@[tactic checkedMultivariateMemTac]
+unsafe def elabCheckedMultivariateMem : Tactic := fun stx => do
+  let trustSyntax := stx[1].getOptional?.map (⟨·⟩)
+  let trust? ← LeanCert.Tactic.elabTrustItem? trustSyntax
+  LeanCert.Tactic.withTrustMode trust? do
+    intervalNormCore
+    let goalType ← (← getMainGoal).getType
+    let lowerGoal ← selectInnermostIntervalBound goalType true
+    let upperGoal ← selectInnermostIntervalBound goalType false
+    let some lowerParsed ← parseMultivariateBoundGoal lowerGoal
+      | throwError "expected a quantified multivariate interval membership"
+    let some upperParsed ← parseMultivariateBoundGoal upperGoal
+      | throwError "expected a quantified multivariate interval membership"
+    match lowerParsed, upperParsed with
+    | .forallGe vars func lo, .forallLe vars' func' hi =>
+        unless vars.size == vars'.size do
+          throwError "lower and upper interval variables do not agree"
+        unless ← isDefEq func func' do
+          throwError "lower and upper interval functions do not agree"
+        closeCheckedMem vars func lo hi
+    | _, _ =>
+        throwError "expected lower and upper bounds for one multivariate function"
+
+end ProofProject.CheckedMultivariate

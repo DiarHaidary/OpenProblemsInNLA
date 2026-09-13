@@ -1,0 +1,28 @@
+21:| `.kernel` | cached kernel proof | kernel only (foundational axioms)                |
+242:  mode : VerificationMode := .native
+593:/-! ## `#assert_trust`: CI trust manifests
+595:`#assert_trust kernel thm` / `#assert_trust native thm` pin a theorem's trust
+599:`sorryAx` and unrecognized axioms always fail. -/
+604:  | foundational
+607:  | nativeCompiler
+608:  /-- `sorryAx`. -/
+609:  | sorryAx
+617:    .foundational
+620:    .nativeCompiler
+621:  else if n == ``sorryAx then
+622:    .sorryAx
+625:    | .str (.str _ "native_decide") _ => .nativeCompiler
+629:/-- `#assert_trust kernel thm`: `thm` depends on foundational axioms only.
+630:`#assert_trust native thm`: `thm` additionally depends on native-compiler
+631:trust (and nothing worse). Any `sorryAx` or unrecognized axiom fails both. -/
+632:elab "#assert_trust " cls:ident thm:ident : command => do
+635:    let axs ← collectAxioms declName
+637:    let foundational := part .foundational
+638:    let native := part .nativeCompiler
+639:    let sorries := part .sorryAx
+642:      ([(`foundational, foundational), (`nativeCompiler, native),
+643:        (`sorryAx, sorries), (`custom, custom)].filterMap fun (label, group) =>
+648:      throwErrorAt thm "#assert_trust: '{declName}' depends on sorry or \
+653:        throwErrorAt thm "#assert_trust kernel: '{declName}' is not \
+657:        throwErrorAt thm "#assert_trust native: '{declName}' has no \
+660:      throwErrorAt cls "#assert_trust: unknown trust class '{other}'; \

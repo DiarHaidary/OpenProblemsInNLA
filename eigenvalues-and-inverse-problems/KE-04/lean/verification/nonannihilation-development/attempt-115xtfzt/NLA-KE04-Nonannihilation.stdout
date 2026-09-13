@@ -1,0 +1,26 @@
+NLA/KE04/Nonannihilation.lean:76:10: error: Type mismatch: After simplification, term
+  ht
+ has type
+  c (r.castSucc, j) = a * 0 (r.succ, j)
+but is expected to have type
+  c (r.castSucc, j) = 0 (r.castSucc, j)
+'NLA.KE04._proved.blockExtend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.blockShift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.krylovCombination_extend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.krylovCombination_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/KE04/Nonannihilation.lean:130:21: error: #assert_trust: 'NLA.KE04._proved.blockShift_eq_smul_extend' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.blockShift_eq_smul_extend' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/KE04/Nonannihilation.lean:132:21: error: #assert_trust: 'NLA.KE04._proved.fullRank_krylov_eigenvector_zero' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.fullRank_krylov_eigenvector_zero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.act_sub_smul_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/KE04/Nonannihilation.lean:136:21: error: #assert_trust: 'NLA.KE04._proved.fullRank_quadratic_nonannihilation' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.fullRank_quadratic_nonannihilation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,58 @@
+{
+  "utc": "2026-09-13T09:34:45.471136+00:00",
+  "status": "COMPLETE_SCOPED_AUTHOR_VALIDATION",
+  "agent": "/root/mf16_final_referee",
+  "contract21": "NLA.KE04._proved.fullRank_quadratic_nonannihilation",
+  "source": {
+    "path": "NLA/KE04/Nonannihilation.lean",
+    "sha256": "fec6e511329419a04ba4de0bd5c69b1366e851b3ade713a78ab90cd058a866e2",
+    "bytes": 6266
+  },
+  "final_attempt": "verification/nonannihilation-development/attempt-96bth7us",
+  "final_result_sha256": "24fe699fa9ba50a80ef607efd2b2204f743872eb64dbd71cea1f6ceff9f53b15",
+  "audit_result_sha256": "57e2467a70ee78cea80f5b4ae1b603e1dc3af25be39f36dab06370c9207b5ed2",
+  "frozen_contracts": 1,
+  "fresh_source_commands": 5,
+  "module_kernel_and_axiom_pairs": 8,
+  "all_fresh_kernel_and_axiom_pairs": 31,
+  "actual_project_type_body_closure": 32,
+  "required_material_dependencies": 17,
+  "preserved_statement_inputs": 1598,
+  "imported_manifest_memberships": [
+    85,
+    75
+  ],
+  "attempts": 3,
+  "actual_failures_retained": 2,
+  "source_warnings": [],
+  "inherited_Krylov_warning": [
+    "NLA/KE04/Krylov.lean:107:25: warning: This simp argument is unused:"
+  ],
+  "expected_type_binder_warnings": [
+    "Inspect.lean:8:13: warning: Variable name `hk` is not explicitly referenced.",
+    "Inspect.lean:8:26: warning: Variable name `hfull` is not explicitly referenced.",
+    "Inspect.lean:9:17: warning: Variable name `hx` is not explicitly referenced.",
+    "Inspect.lean:9:47: warning: Variable name `hne` is not explicitly referenced."
+  ],
+  "mathematical_route": "Actual finite coefficient map is injective under full rank. Zero extension and one-block shift force every coefficient of a Krylov eigenvector to vanish by reverse finite induction. Apply successively to the two real affine factors of the monic quadratic; repeated roots and zero endpoints included.",
+  "imports": [
+    "NLA.KE04.Krylov",
+    "NLA.KE04.Frames",
+    "Mathlib.Algebra.BigOperators.Fin"
+  ],
+  "new_supporting_API": [
+    "blockExtend",
+    "blockShift",
+    "krylovCombination_extend",
+    "krylovCombination_shift",
+    "blockShift_eq_smul_extend",
+    "fullRank_krylov_eigenvector_zero",
+    "act_sub_smul_one"
+  ],
+  "formalization_credit": "George Stepaniants, Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA",
+  "original_mathematical_credit": "Matthew J. Colbrook, University of Cambridge",
+  "independent_review": false,
+  "actual_Linux_Comparator": false,
+  "complete_problem_verified": false,
+  "IE05_untouched": true
+}

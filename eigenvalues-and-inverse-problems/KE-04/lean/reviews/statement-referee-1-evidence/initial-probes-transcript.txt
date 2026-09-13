@@ -1,0 +1,64 @@
+Probe 1 output, read-only, before any reviewer file existed:
+{
+  "canonical_base": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+  "canonical_id": "KE-04",
+  "canonical_path": "eigenvalues-and-inverse-problems/KE-04/README.md",
+  "excluded_paths": [
+    "DRAFT-INVENTORY.json"
+  ],
+  "input_count": 167,
+  "phase": "statement-only draft awaiting independent review",
+  "proof_authorized": false,
+  "schema_version": 1,
+  "statement_frozen": false
+}
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+KeyError: slice(None, 3, None)
+
+Probe 2 output, read-only, before any reviewer file existed:
+dict
+[
+  [
+    "Challenge.lean",
+    {
+      "bytes": 9302,
+      "sha256": "a27de227d483072e395b6658a97cbf31296503c7fab36e5f9dbf248b2efa299e"
+    }
+  ],
+  [
+    "LICENSE",
+    {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    }
+  ],
+  [
+    "NLA/KE04/Definitions.lean",
+    {
+      "bytes": 6450,
+      "sha256": "ae1baccc0cb622f83103eff8bb4a5efe4cd9a3bae4822ccca38da29554ae9ca4"
+    }
+  ]
+]
+Actual files 168
+Free bytes 715927552
+
+Probe 3 output, read-only. Tool merged stderr before buffered stdout:
+Traceback (most recent call last):
+  File "<stdin>", line 6, in <module>
+verification/api-evidence-final/manifest.json {
+  "error": "Traceback (most recent call last):\n  File \"/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/verification/capture_api_evidence.py\", line 83, in main\n    assert digest == expected, (directory, digest, expected)\n           ^^^^^^^^^^^^^^^^^^\nAssertionError: ('.github', '4b825dc642cb6eb9a060e54bf8d69288fbee4904', '53855d83705de31b4d7a9289dd2160a8e190897b')\n",
+  "files": "0 entries",
+  "phase": "statement API/reuse inspection",
+  "scope": "Selected text snapshots and actual read-only searches; no package/build copy.",
+  "searches": "0 entries",
+  "success": false,
+  "tauceti_archive_bindings": "3 entries",
+  "utc": "2026-09-13T07:23:59.050938+00:00"
+}
+StopIteration
+
+The later corrected probe read api-evidence-complete/manifest.json, which has
+33 files and five searches. The failed historical final-named manifest was
+not counted as successful evidence and was not modified or discarded.

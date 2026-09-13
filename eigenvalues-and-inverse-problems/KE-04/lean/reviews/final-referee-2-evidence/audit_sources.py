@@ -1,0 +1,69 @@
+"""Independent read-only source/API and exact nonvacuity checks for KE04."""
+from pathlib import Path
+from fractions import Fraction as F
+import hashlib,json,subprocess,datetime
+E=Path(__file__).resolve().parent;P=E.parents[1]
+sha=lambda b:hashlib.sha256(b).hexdigest()
+def save(p,x):p.parent.mkdir(parents=True,exist_ok=True);p.write_text(json.dumps(x,indent=2,sort_keys=True)+'\n')
+commands=[]
+def run(argv,cwd,label,allowed=(0,)):
+    cp=subprocess.run(argv,cwd=cwd,capture_output=True)
+    q=E/'source-audit'/label;q.parent.mkdir(parents=True,exist_ok=True)
+    q.with_suffix('.stdout').write_bytes(cp.stdout);q.with_suffix('.stderr').write_bytes(cp.stderr)
+    r={'argv':argv,'cwd':str(cwd),'exit_code':cp.returncode,'stdout':str(q.with_suffix('.stdout').relative_to(E)),'stderr':str(q.with_suffix('.stderr').relative_to(E)),'stdout_sha256':sha(cp.stdout),'stderr_sha256':sha(cp.stderr)};commands.append(r);save(E/'source-audit/commands.json',commands)
+    assert cp.returncode in allowed,r
+    return cp.stdout
+manifest=json.loads((P/'verification/api-evidence-complete/manifest.json').read_text())
+records={};tau=[]
+for i,(rel,r) in enumerate(manifest['files'].items()):
+    b=(P/rel).read_bytes();assert sha(b)==r['sha256'] and len(b)==r['bytes'],rel
+    if '/tauceti/' not in rel:
+        spec=r['commit']+':'+r['upstream_path']
+        blob=run(['git','rev-parse',spec],r['repo'],f'api-{i:02d}-blob').decode().strip()
+        actual=run(['git','show',spec],r['repo'],f'api-{i:02d}-bytes')
+        assert actual==b and blob==r['git_blob'],rel
+    else:
+        blob=hashlib.sha1(b'blob '+str(len(b)).encode()+b'\0'+b).hexdigest();assert blob==r['git_blob'];tau.append((rel,r))
+    q=E/'consulted-api'/rel.split('api-evidence-complete/',1)[1];q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(b)
+    records[rel]={'sha256':sha(b),'git_blob':blob,'commit':r['commit'],'source_path':r['upstream_path'],'bytes':len(b)}
+assert len(records)==33 and len(tau)==13
+archive=P/'verification/api-evidence-complete/tauceti-archive'
+tree=json.loads((archive/'TauCetiProject_TauCetiReview-tree.json').read_text());commit=json.loads((archive/'TauCetiProject_TauCetiReview-commit.json').read_text());assert not tree['truncated']
+entries={r['path']:r for r in tree['tree']};trees={r['path']:r['sha'] for r in tree['tree'] if r['type']=='tree'};trees['']=commit['commit']['tree']['sha']
+tree_results={}
+for directory,expected in trees.items():
+    children=[(name,r) for name,r in entries.items() if str(Path(name).parent)==(directory or '.')]
+    children.sort(key=lambda x:Path(x[0]).name+('/' if x[1]['type']=='tree' else ''))
+    payload=b''.join((('40000' if r['type']=='tree' else r['mode'])+' '+Path(name).name).encode()+b'\0'+bytes.fromhex(r['sha']) for name,r in children)
+    actual=hashlib.sha1(b'tree '+str(len(payload)).encode()+b'\0'+payload).hexdigest();assert actual==expected,(directory,actual,expected)
+    tree_results[directory]={'sha1':actual,'children':len(children)}
+for rel,r in tau:assert entries[r['upstream_path']]['sha']==r['git_blob']
+assert commit['sha']=='afb424eda89e8ac96d9eb69f6a88972055a4cd1b'
+save(E/'source-audit/tauceti-tree-reconstruction.json',{'root':commit['commit']['tree']['sha'],'commit':commit['sha'],'all_trees':tree_results,'scope':'Full retained recursive Git tree reconstructed; pinned archived commit identity. No new network or independent cryptographic signature verification claimed.'})
+ml=Path('/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib')
+searches=[('spectra','eigenvalues_antitone|roots_charpoly_eq_eigenvalues|eigenvalues_eq_eigenvalues_iff|def eigenvectorBasis|def eigenvalues',['Mathlib/Analysis/InnerProductSpace/Spectrum.lean']),('matrix-positive','dotProduct_mulVec_zero_iff|isPositive_toEuclideanLin_iff|posSemidef_toMatrix_iff',['Mathlib/Analysis/Matrix/Order.lean','Mathlib/Analysis/Matrix/PosDef.lean','Mathlib/Analysis/InnerProductSpace/Positive.lean']),('rank-span','finrank_sup_add_finrank_inf_eq|linearIndependent_iff_injective_fintypeLinearCombination|finrank_span_eq_card|range_fintypeLinearCombination',['Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean','Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean','Mathlib/LinearAlgebra/Dimension/Constructions.lean','Mathlib/LinearAlgebra/LinearIndependent/Defs.lean']),('krylov-reuse',r'\b[Kk]rylov\b|\b[Ll]anczos\b',['Mathlib'])]
+for label,pat,paths in searches:run(['rg','-n',pat]+paths,ml,'search-'+label,allowed=(0,1))
+root=Path('/tmp/nla-lean-ra20-worktree')
+policies={}
+for rel in ['AGENTS.md','CONTRIBUTING.md','docs/lean/README.md','docs/lean/REVIEW.md']:
+    b=(root/rel).read_bytes();q=E/'current-policies'/rel;q.parent.mkdir(parents=True,exist_ok=True);q.write_bytes(b)
+    policies[rel]={'sha256':sha(b),'bytes':len(b),'same_as_reviewed_original':b==(P/'verification/original-sources'/rel).read_bytes()}
+save(E/'source-audit/current-policy-identities.json',policies)
+
+def det(a):
+    if not a:return F(1)
+    return sum(((-1)**j)*a[0][j]*det([row[:j]+row[j+1:] for row in a[1:]]) for j in range(len(a)))
+A=[F(-2),F(1),F(4)];K=[[F(1),a,a*a] for a in A]
+assert det(K)==54
+v=[F(1)]*3;w=[a-F(1) for a in A]
+dot=lambda x,y:sum(a*b for a,b in zip(x,y))
+assert dot(v,v)==3 and dot(w,w)==18 and dot(v,w)==0
+assert dot(v,[a*x for a,x in zip(A,v)])==3
+assert dot(w,[a*x for a,x in zip(A,w)])==18
+assert dot(v,[a*x for a,x in zip(A,w)])==18
+# In the normalized basis v/sqrt3,w/sqrt18 the actual 2x2 compression is
+# [[1,sqrt6],[sqrt6,1]]. Squared off-diagonal is 18^2/(3*18)=6.
+assert F(18)**2/(3*18)==6 and F(6)>0
+save(E/'source-audit/nonvacuity.json',{'matrix':'diag(-2,1,4)','starting_column':[1,1,1],'actual_K3_determinant':str(det(K)),'orthogonal_K2_basis_numerators':[[str(x) for x in v],[str(x) for x in w]],'basis_squared_norms':[3,18],'compression_diagonal':[1,1],'compression_offdiagonal_squared':6,'exact_earlier_spectrum':'1-sqrt6,1+sqrt6','exact_later_spectrum':[-2,1,4],'strict_later_value':1,'block_extension':'Two disjoint identical blocks and their supported starting columns give p=2,n=6,s=3 with repeated earlier and later eigenvalues, and both admissible intervals contain 1. Arbitrary p copies give all positive block widths.','scope':'Exact rational sanity reconstruction with elementary spectral analysis; not a Lean certificate or a sample substituted for the universal proof.'})
+save(E/'source-audit/result.json',{'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'api_inputs':records,'count':len(records),'tauceti_tree_count':len(tree_results),'all_pass':True,'nonvacuity_exact_rational_pass':True})
+print(json.dumps({'api_snapshots':len(records),'tauceti_trees':len(tree_results),'policy_files':len(policies),'exact_sanity':'PASS'}))

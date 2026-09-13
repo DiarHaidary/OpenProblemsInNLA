@@ -1,0 +1,79 @@
+NLA/KE04/Krylov.lean:33:2: warning: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/KE04/Krylov.lean:39:2: error: Type mismatch: After simplification, term
+  finrank_range_le_card (krylovColumns A V ell)
+ has type
+  @LE.le ℕ instLENat (Module.finrank ℝ ↥(Submodule.span ℝ (Set.range (krylovColumns A V ell)))) (ell * p)
+but is expected to have type
+  @LE.le ℕ instLENat (Module.finrank ℝ ↥(Submodule.span ℝ (Set.range (krylovColumns A V ell)))) (ell * p)
+NLA/KE04/Krylov.lean:95:2: error: Type mismatch: After simplification, term
+  Iff.symm linearIndependent_iff_card_eq_finrank_span
+ has type
+  Iff (ell * p = Module.finrank ℝ ↥(Submodule.span ℝ (Set.range (krylovColumns A V ell))))
+    (LinearIndependent ℝ (krylovColumns A V ell))
+but is expected to have type
+  Iff (ell * p = Module.finrank ℝ ↥(Submodule.span ℝ (Set.range (krylovColumns A V ell))))
+    (LinearIndependent ℝ (krylovColumns A V ell))
+NLA/KE04/Krylov.lean:108:4: error: Type mismatch: After simplification, term
+  LinearIndependent.comp hV Prod.snd hsnd
+ has type
+  LinearIndependent ℝ fun x => column V x.2
+but is expected to have type
+  LinearIndependent ℝ (krylovColumns A V 1)
+NLA/KE04/Krylov.lean:136:30: error: Application type mismatch: The argument
+  hxy
+has type
+  embed x = embed y
+but is expected to have type
+  x = y
+in the application
+  congrArg Prod.snd hxy
+NLA/KE04/Krylov.lean:138:4: error: Type mismatch: After simplification, term
+  LinearIndependent.comp ((fullBlockDimension_iff_columns A V s).mp hs) embed hinj
+ has type
+  @LinearIndependent (Fin ell × Fin p) ℝ (Vec n) (fun x => column (A ^ ↑x.1 * V) x.2) Real.semiring
+    (WithLp.instAddCommGroup 2 ((i : Fin n) → (fun x => ℝ) i)).toAddCommMonoid
+    (WithLp.instModule 2 ℝ ((i : Fin n) → (fun x => ℝ) i))
+but is expected to have type
+  @LinearIndependent (Fin ell × Fin p) ℝ (Vec n) (krylovColumns A V ell) Real.semiring
+    (WithLp.instAddCommGroup 2 ((i : Fin n) → (fun x => ℝ) i)).toAddCommMonoid
+    (WithLp.instModule 2 ℝ ((i : Fin n) → (fun x => ℝ) i))
+'NLA.KE04._proved.act_column_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.krylov_eq_range' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/KE04/Krylov.lean:177:21: error: #assert_trust: 'NLA.KE04._proved.krylov_finrank_le' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.krylov_finrank_le' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/KE04/Krylov.lean:179:21: error: #assert_trust: 'NLA.KE04._proved.krylov_range_semantics' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.krylov_range_semantics' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.krylov_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.act_mem_krylov_succ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.krylov_nesting_and_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/KE04/Krylov.lean:187:21: error: #assert_trust: 'NLA.KE04._proved.fullBlockDimension_iff_columns' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.fullBlockDimension_iff_columns' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/KE04/Krylov.lean:189:21: error: #assert_trust: 'NLA.KE04._proved.fullColumnRank_iff_first' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.fullColumnRank_iff_first' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/KE04/Krylov.lean:191:21: error: #assert_trust: 'NLA.KE04._proved.fullBlockDimension_iff_independent' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.fullBlockDimension_iff_independent' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+NLA/KE04/Krylov.lean:193:21: error: #assert_trust: 'NLA.KE04._proved.fullBlockDimension_prefix' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.fullBlockDimension_prefix' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.fullBlockDimension_mul_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.fullBlockDimension_index_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/KE04/Krylov.lean:199:21: error: #assert_trust: 'NLA.KE04._proved.lastFullBlockIteration_exists' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.lastFullBlockIteration_exists' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

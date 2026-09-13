@@ -1,0 +1,29 @@
+Mathlib/Analysis/InnerProductSpace/Positive.lean:204:@[simp] theorem _root_.Matrix.isPositive_toEuclideanLin_iff {n : Type*} [Fintype n] [DecidableEq n]
+Mathlib/Analysis/InnerProductSpace/Positive.lean:217:  rw [← Matrix.isPositive_toEuclideanLin_iff]
+Mathlib/Analysis/InnerProductSpace/Positive.lean:561:  rw [← isPositive_toEuclideanLin_iff, ← isPositive_toContinuousLinearMap_iff,
+Mathlib/LinearAlgebra/Matrix/Hermitian.lean:292:theorem isHermitian_conjTranspose_mul_mul [Fintype m] {A : Matrix m m α} (B : Matrix m n α)
+Mathlib/LinearAlgebra/Matrix/Hermitian.lean:394:  have hBAB : (Bᴴ * A⁻¹ * B).IsHermitian := isHermitian_conjTranspose_mul_mul _ hA.inv
+Mathlib/Analysis/Matrix/PosDef.lean:34:lemma IsHermitian.posSemidef_iff_eigenvalues_nonneg [DecidableEq n] (hA : IsHermitian A) :
+Mathlib/Analysis/Matrix/PosDef.lean:43:  hA.isHermitian.posSemidef_iff_eigenvalues_nonneg.mp hA _
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:313:lemma conjTranspose_mul_mul_same {A : Matrix n n R} (hA : PosSemidef A) (B : Matrix n m R) :
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:316:  refine of_dotProduct_mulVec_nonneg (isHermitian_conjTranspose_mul_mul B hA.1) fun x ↦ ?_
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:321:lemma mul_mul_conjTranspose_same {A : Matrix n n R} (hA : PosSemidef A) (B : Matrix m n R) :
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:323:  simpa only [conjTranspose_conjTranspose] using hA.conjTranspose_mul_mul_same Bᴴ
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:333:    simpa only [hM.isHermitian.eq] using (hM.pow k).mul_mul_conjTranspose_same M
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:337:  · have := (conjTranspose_mul_mul_same hM M⁻¹).conjTranspose
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:394:  refine ⟨fun h ↦ ?_, fun h ↦ h.conjTranspose_mul_mul_same _⟩
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:396:  have := h.conjTranspose_mul_mul_same ((U⁻¹ : (Matrix n n R)ˣ) : Matrix n n R)
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:445:lemma conjTranspose_mul_mul_same {A : Matrix n n R} {B : Matrix n m R} (hA : A.PosDef)
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:448:  refine of_dotProduct_mulVec_pos (isHermitian_conjTranspose_mul_mul _ hA.1) fun x hx => ?_
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:452:lemma mul_mul_conjTranspose_same {A : Matrix n n R} {B : Matrix m n R} (hA : A.PosDef)
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:457:  simpa using hA.conjTranspose_mul_mul_same (B := Bᴴ) hB
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:463:  simpa using conjTranspose_mul_mul_same .one hA
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:469:  simpa using mul_mul_conjTranspose_same .one hA
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:515:  have := hM.mul_mul_conjTranspose_same (B := M⁻¹) ?_
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:540:  refine ⟨fun h ↦ ?_, fun h ↦ h.conjTranspose_mul_mul_same <| mulVec_injective_of_isUnit hU⟩
+Mathlib/LinearAlgebra/Matrix/PosDef.lean:542:  have := h.conjTranspose_mul_mul_same (mulVec_injective_of_isUnit (Units.isUnit U⁻¹))
+Mathlib/Analysis/Matrix/Order.lean:26:* `Matrix.PosSemidef.dotProduct_mulVec_zero_iff`: for a positive semi-definite matrix `A`,
+Mathlib/Analysis/Matrix/Order.lean:138:theorem dotProduct_mulVec_zero_iff {A : Matrix n n 𝕜} (hA : PosSemidef A) (x : n → 𝕜) :
+Mathlib/Analysis/Matrix/Order.lean:151:  simpa only [toLinearMap₂'_apply'] using hA.dotProduct_mulVec_zero_iff x
+Mathlib/Analysis/Matrix/Order.lean:175:  · rw [h1.posSemidef_iff_eigenvalues_nonneg]
+Mathlib/Analysis/Matrix/Order.lean:300:  re_inner_nonneg x := RCLike.nonneg_iff.mp (hM.mul_mul_conjTranspose_same x).trace_nonneg |>.1

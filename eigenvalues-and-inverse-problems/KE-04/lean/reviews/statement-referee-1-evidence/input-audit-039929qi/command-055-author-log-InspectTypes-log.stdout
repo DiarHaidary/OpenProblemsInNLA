@@ -1,0 +1,96 @@
+NLA.KE04.real_matrix_semantics {n m : ℕ} (A : NLA.KE04.Mat n) (M : NLA.KE04.Rect n m) :
+  (Matrix.IsHermitian A ↔ Matrix.transpose A = A) ∧
+    (∀ (x : NLA.KE04.Vec m) (i : Fin n), ((NLA.KE04.act M) x).ofLp i = ∑ j, M i j * x.ofLp j) ∧
+      (Matrix.transpose M * M = 1 ↔ Orthonormal ℝ (NLA.KE04.column M))
+NLA.KE04.krylov_range_semantics {n p : ℕ} (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p) (ell : ℕ) :
+  NLA.KE04.krylov A V ell = (NLA.KE04.krylovCombination A V ell).range ∧
+    (∀ (x : NLA.KE04.Vec n), x ∈ NLA.KE04.krylov A V ell ↔ ∃ c, x = ∑ rc, c rc • NLA.KE04.column (A ^ ↑rc.1 * V) rc.2) ∧
+      Module.finrank ℝ ↥(NLA.KE04.krylov A V ell) ≤ ell * p
+NLA.KE04.krylov_nesting_and_shift {n p : ℕ} (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p) :
+  NLA.KE04.krylov A V 0 = ⊥ ∧
+    Monotone (NLA.KE04.krylov A V) ∧
+      ∀ (ell : ℕ), ∀ x ∈ NLA.KE04.krylov A V ell, (NLA.KE04.act A) x ∈ NLA.KE04.krylov A V (ell + 1)
+NLA.KE04.fullBlockDimension_iff_independent {n p : ℕ} (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p) (ell : ℕ) :
+  (NLA.KE04.FullBlockDimension A V ell ↔ LinearIndependent ℝ (NLA.KE04.krylovColumns A V ell)) ∧
+    (NLA.KE04.FullColumnRank V ↔ NLA.KE04.FullBlockDimension A V 1)
+NLA.KE04.fullBlockDimension_prefix {n p : ℕ} (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p) (s : ℕ)
+  (hs : NLA.KE04.FullBlockDimension A V s) (ell : ℕ) :
+  ell ≤ s → NLA.KE04.FullBlockDimension A V ell ∧ Function.Injective ⇑(NLA.KE04.krylovCombination A V ell)
+NLA.KE04.lastFullBlockIteration_exists {n p : ℕ} (hp : 0 < p) (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p)
+  (hV : NLA.KE04.FullColumnRank V) : ∃ s, 1 ≤ s ∧ NLA.KE04.LastFullBlockIteration A V s
+NLA.KE04.krylovBasis_exists {n p : ℕ} (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p) (ell : ℕ)
+  (hfull : NLA.KE04.FullBlockDimension A V ell) : ∃ Q, NLA.KE04.IsKrylovBasis A V ell Q
+NLA.KE04.frameProjection_semantics {n m : ℕ} (Q : NLA.KE04.Rect n m) (hQ : Matrix.transpose Q * Q = 1) :
+  Matrix.IsHermitian (NLA.KE04.frameProjection Q) ∧
+    NLA.KE04.frameProjection Q * NLA.KE04.frameProjection Q = NLA.KE04.frameProjection Q ∧
+      (∀ (x : NLA.KE04.Vec n), x ∈ NLA.KE04.columnSpace Q ↔ (NLA.KE04.act (NLA.KE04.frameProjection Q)) x = x) ∧
+        ∀ (x y : NLA.KE04.Vec n),
+          y ∈ NLA.KE04.columnSpace Q → inner ℝ y (x - (NLA.KE04.act (NLA.KE04.frameProjection Q)) x) = 0
+NLA.KE04.compression_semantics {n m : ℕ} (A : NLA.KE04.Mat n) (hA : Matrix.IsHermitian A) (Q : NLA.KE04.Rect n m)
+  (hQ : Matrix.transpose Q * Q = 1) :
+  NLA.KE04.compression A Q = Matrix.transpose Q * A * Q ∧
+    Matrix.IsHermitian (NLA.KE04.compression A Q) ∧
+      ∀ x ∈ NLA.KE04.columnSpace Q,
+        (NLA.KE04.act Q) ((NLA.KE04.act (NLA.KE04.compression A Q)) ((NLA.KE04.act (Matrix.transpose Q)) x)) =
+          (NLA.KE04.act (NLA.KE04.frameProjection Q)) ((NLA.KE04.act A) x)
+NLA.KE04.orderedSpectrum_semantics {m : ℕ} (M : NLA.KE04.Mat m) (hM : Matrix.IsHermitian M) :
+  Monotone (NLA.KE04.orderedEigenvalues M hM) ∧
+    (∀ (r : Fin m),
+        (NLA.KE04.act M) ((NLA.KE04.orderedEigenbasis M hM) r) =
+          NLA.KE04.orderedEigenvalues M hM r • (NLA.KE04.orderedEigenbasis M hM) r) ∧
+      (Matrix.charpoly M).roots = Multiset.map (NLA.KE04.orderedEigenvalues M hM) Finset.univ.val ∧
+        ∀ (i : ℕ) (hi : i < m), NLA.KE04.eigenvalueAt M hM i = NLA.KE04.orderedEigenvalues M hM ⟨i, hi⟩
+NLA.KE04.compression_basis_independent {n m : ℕ} (A : NLA.KE04.Mat n) (hA : Matrix.IsHermitian A)
+  (Q R : NLA.KE04.Rect n m) (hQ : Matrix.transpose Q * Q = 1) (hR : Matrix.transpose R * R = 1)
+  (hspan : NLA.KE04.columnSpace Q = NLA.KE04.columnSpace R) :
+  (∃ O,
+      Matrix.transpose O * O = 1 ∧
+        R = Q * O ∧ NLA.KE04.compression A R = Matrix.transpose O * NLA.KE04.compression A Q * O) ∧
+    Matrix.charpoly (NLA.KE04.compression A Q) = Matrix.charpoly (NLA.KE04.compression A R) ∧
+      NLA.KE04.ritzValues A hA Q = NLA.KE04.ritzValues A hA R
+NLA.KE04.interval_index_validity (k p i : ℕ) (hk : 1 ≤ k) (hi : 1 ≤ i) (hu : i ≤ (k - 1) * p) :
+  2 ≤ k ∧ 0 < p ∧ i - 1 < k * p ∧ i + p - 1 < k * p
+NLA.KE04.quadratic_semantics {m : ℕ} (M : NLA.KE04.Mat m) (a b : ℝ) :
+  (NLA.KE04.monicQuadratic a b).Monic ∧
+    (NLA.KE04.monicQuadratic a b).natDegree = 2 ∧
+      NLA.KE04.quadraticMatrix M a b = (Polynomial.aeval M) (NLA.KE04.monicQuadratic a b) ∧
+        NLA.KE04.quadraticMatrix M a b = M ^ 2 - (a + b) • M + (a * b) • 1
+NLA.KE04.spectral_gap_quadratic_psd {m : ℕ} (M : NLA.KE04.Mat m) (hM : Matrix.IsHermitian M) (a b : ℝ) (hab : a ≤ b)
+  (hgap : ∀ (r : Fin m), ¬(a < NLA.KE04.orderedEigenvalues M hM r ∧ NLA.KE04.orderedEigenvalues M hM r < b)) :
+  Matrix.PosSemidef (NLA.KE04.quadraticMatrix M a b)
+NLA.KE04.spectral_window_subspace {n m : ℕ} (A : NLA.KE04.Mat n) (hA : Matrix.IsHermitian A) (Q : NLA.KE04.Rect n m)
+  (hQ : Matrix.transpose Q * Q = 1) (i p : ℕ) (hi : i + p < m) :
+  ∃ E ≤ NLA.KE04.columnSpace Q,
+    Module.finrank ℝ ↥E = p + 1 ∧
+      ∀ x ∈ E,
+        NLA.KE04.form
+            (NLA.KE04.compressedQuadratic A Q (NLA.KE04.ritzValueAt A hA Q i) (NLA.KE04.ritzValueAt A hA Q (i + p))) x ≤
+          0
+NLA.KE04.krylov_intersection_nonzero {n p : ℕ} (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p) (k : ℕ) (hk : 1 ≤ k)
+  (hfull : NLA.KE04.FullBlockDimension A V k) (hprev : NLA.KE04.FullBlockDimension A V (k - 1))
+  (E : Submodule ℝ (NLA.KE04.Vec n)) (hE : E ≤ NLA.KE04.krylov A V k) (hdim : Module.finrank ℝ ↥E = p + 1) :
+  ∃ x, x ≠ 0 ∧ x ∈ E ∧ x ∈ NLA.KE04.krylov A V (k - 1)
+NLA.KE04.psd_zero_form_iff_kernel {m : ℕ} (M : NLA.KE04.Mat m) (hM : Matrix.PosSemidef M) (x : NLA.KE04.Vec m) :
+  NLA.KE04.form M x = 0 ↔ (NLA.KE04.act M) x = 0
+NLA.KE04.compressedQuadratic_semantics {n m : ℕ} (A : NLA.KE04.Mat n) (Q : NLA.KE04.Rect n m) (a b : ℝ) :
+  (∀ (x : NLA.KE04.Vec n),
+      NLA.KE04.form (NLA.KE04.compressedQuadratic A Q a b) x =
+        NLA.KE04.form (NLA.KE04.quadraticMatrix (NLA.KE04.compression A Q) a b)
+          ((NLA.KE04.act (Matrix.transpose Q)) x)) ∧
+    (Matrix.PosSemidef (NLA.KE04.quadraticMatrix (NLA.KE04.compression A Q) a b) →
+      Matrix.PosSemidef (NLA.KE04.compressedQuadratic A Q a b))
+NLA.KE04.quadratic_forms_agree {n p : ℕ} (A : NLA.KE04.Mat n) (hA : Matrix.IsHermitian A) (V : NLA.KE04.Rect n p)
+  (k j : ℕ) (hk : 1 ≤ k) (hkj : k < j) (Qk : NLA.KE04.Rect n (k * p)) (Qj : NLA.KE04.Rect n (j * p))
+  (hQk : NLA.KE04.IsKrylovBasis A V k Qk) (hQj : NLA.KE04.IsKrylovBasis A V j Qj) (x : NLA.KE04.Vec n)
+  (hx : x ∈ NLA.KE04.krylov A V (k - 1)) (a b : ℝ) :
+  NLA.KE04.form (NLA.KE04.compressedQuadratic A Qk a b) x = NLA.KE04.form (NLA.KE04.compressedQuadratic A Qj a b) x
+NLA.KE04.later_quadratic_identity {n p : ℕ} (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p) (k j : ℕ) (hk : 1 ≤ k)
+  (hkj : k < j) (Qj : NLA.KE04.Rect n (j * p)) (hQj : NLA.KE04.IsKrylovBasis A V j Qj) (x : NLA.KE04.Vec n)
+  (hx : x ∈ NLA.KE04.krylov A V (k - 1)) (a b : ℝ) :
+  (NLA.KE04.act (NLA.KE04.compressedQuadratic A Qj a b)) x = (NLA.KE04.act (NLA.KE04.quadraticMatrix A a b)) x
+NLA.KE04.fullRank_quadratic_nonannihilation {n p : ℕ} (A : NLA.KE04.Mat n) (V : NLA.KE04.Rect n p) (k : ℕ) (hk : 2 ≤ k)
+  (hfull : NLA.KE04.FullBlockDimension A V (k + 1)) (x : NLA.KE04.Vec n) (hx : x ∈ NLA.KE04.krylov A V (k - 1))
+  (hne : x ≠ 0) (a b : ℝ) : (NLA.KE04.act (NLA.KE04.quadraticMatrix A a b)) x ≠ 0
+NLA.KE04.strictIntervalOccupancy : NLA.KE04.FullPrefixBlockLanczosClaim
+NLA.KE04.fullPrefix_implies_canonical : NLA.KE04.FullPrefixBlockLanczosClaim → NLA.KE04.BlockLanczosConjecture
+NLA.KE04.blockLanczosConjecture : NLA.KE04.BlockLanczosConjecture

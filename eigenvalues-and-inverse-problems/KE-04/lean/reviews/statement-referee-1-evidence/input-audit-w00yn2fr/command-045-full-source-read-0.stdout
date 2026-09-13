@@ -1,0 +1,659 @@
+# KE-04 statement boundary
+
+This is a statement-only draft of the complete affirmative KE-04 resolution. It
+contains no numerical experiment, interval certificate, proof implementation, or
+claim of formal verification. All constants below are exact structural integers.
+
+The permanent target is
+`eigenvalues-and-inverse-problems/KE-04/README.md` at upstream commit
+`5830ed4fb06da0659414a3deb2a40ad327aca052`. The complete source proof is Matthew J.
+Colbrook's `solution.md` and its `solution.tex`, at that same commit. Exact bytes,
+original submission, original target and prior informal review are retained under
+`verification/`; `original-source-inventory.json` binds their Git blobs and SHA-256.
+The coordinator's source note and the prior informal review are not statement
+approvals for this draft.
+
+## Complete target and domains
+
+For every pair of natural dimensions `n,p`, every real `n × n` symmetric matrix
+`A`, and every real `n × p` matrix `V` with linearly independent columns, define
+
+\[
+K_\ell=\operatorname{span}\{A^r V e_c:0\le r<\ell,\ 0\le c<p\}.
+\]
+
+For any `s` satisfying `dim K_s = s*p`, and for every `1 ≤ k < j ≤ s`, independently
+choose any orthonormal column bases `Qk` and `Qj` of `K_k` and `K_j`. Let the ordered
+eigenvalues of `Qellᵀ A Qell` be
+`θ₁^(ell) ≤ … ≤ θ_(ell*p)^(ell)`, with their algebraic multiplicities. For every
+`1 ≤ i ≤ (k-1)*p`, the conclusion is
+
+\[
+\exists r\in\{1,\ldots,jp\},\qquad
+\theta_i^{(k)}<\theta_r^{(j)}<\theta_{i+p}^{(k)}.
+\]
+
+`strictIntervalOccupancy : FullPrefixBlockLanczosClaim` states this full-prefix
+version, exactly as the source proof's theorem. `blockLanczosConjecture :
+BlockLanczosConjecture` states the canonical original convention in which `s` is
+the largest index with full block dimension. `fullPrefix_implies_canonical`
+explicitly requires proving that the stronger version implies that original
+target. The final target does not take either occupancy or polynomial
+nonannihilation as an additional hypothesis.
+
+The dimensions are not capped, the matrices are not rational-only, and no bound on
+their entries, norm, spectrum, or conditioning is imposed. No positivity,
+invertibility of `A`, simple spectrum, distinct endpoints, or compatibility of
+bases between iterations is assumed. There is no probability law or
+floating-point model; this is the source's exact real arithmetic statement.
+
+## Exact objects and indexing
+
+`Vec n` is Mathlib's `EuclideanSpace ℝ (Fin n)`, with its actual L2 inner product.
+`act` is `Matrix.toEuclideanLin`, not an uninterpreted action. `FullColumnRank`
+is actual `LinearIndependent` for the starting columns. `krylovColumns` has index
+`Fin ell × Fin p`; `krylov` is the actual span of those columns, and
+`krylovCombination` is Mathlib's finite linear-combination map. Range, coefficient
+uniqueness, nesting, one-power propagation, and dimension/independence equivalence
+are separate obligations.
+
+`FullBlockDimension A V ell` means only `Module.finrank ℝ (krylov A V ell) = ell*p`.
+`fullBlockDimension_prefix` must derive all previous full dimensions from the
+single condition at `s`. `IsKrylovBasis` contains exactly `QᵀQ=I` and equality of
+column space with `K_ell`; `krylovBasis_exists` must prove an appropriate basis
+exists, so the universal basis quantification is not supported merely by a
+possibly empty custom type. `frameProjection_semantics` and
+`compression_semantics` relate `Q Qᵀ` and `Qᵀ A Q` to the actual orthogonal
+projection and the compressed operator on the subspace.
+
+The spectrum uses Mathlib's genuine self-adjoint spectral theorem, not a proposed
+list of eigenvalues accompanied by desired properties. Its decreasing ordered
+`LinearMap.IsSymmetric.eigenvalues` is reversed using `Fin.rev`, and its matching
+orthonormal eigenbasis is reindexed by the same involution. The explicit
+`orderedSpectrum_semantics` obligation includes monotonicity, the eigenvector
+equations, and equality with the characteristic-root **multiset**, not merely
+equality of sets of distinct values. `compression_basis_independent` requires
+orthogonal similarity, equal characteristic polynomials, and equality of the
+whole ordered eigenvalue functions for arbitrary equal-span orthonormal frames.
+
+Natural `i` in the target is one-based. Lean's endpoints are `i-1` and `i+p-1`,
+and the later witness is `r : Fin (j*p)`. The total helper `eigenvalueAt` has an
+out-of-range value of zero; `interval_index_validity` proves that neither endpoint
+can use that branch in any admissible target case. It also derives `k ≥ 2` and
+`p > 0` from the admissible index bounds. Both inequalities in the target are
+strict; there is no endpoint inclusion or non-strict substitute.
+
+For `p=0`, every block Krylov space has dimension zero and there is no largest
+full-dimension index. Accordingly `lastFullBlockIteration_exists` has the necessary
+hypothesis `0 < p`. It also uses the source full rank of `V` to obtain `s ≥ 1`.
+The full-prefix target still quantifies over `p=0`, where there is no admissible
+`i`. The same empty index range handles `k=1`; `n=0` admits no positive-width
+full-column-rank `V`. No false maximality-existence assertion is made in these
+degenerate cases.
+
+## Exact degree-two argument and every bridge
+
+Put `a=θ_i^(k)`, `b=θ_(i+p)^(k)`, and `q(t)=(t-a)(t-b)`. The structural constants
+are the monic leading coefficient `1`, degree `2`, window dimension `p+1`,
+codimension `p`, and the powers through `A^k V` (full rank at `k+1`). There is no
+approximate gap, tolerance, rational box, mesh, or certificate precision.
+
+1. `quadratic_semantics` identifies this actual monic polynomial with the matrix
+   evaluation `M²-(a+b)M+abI`. `spectral_gap_quadratic_psd` must derive PSD of the
+   later quadratic from absence of a later eigenvalue in the open interval and
+   the already derivable weak endpoint order `a ≤ b`. It includes `a=b`.
+2. `spectral_window_subspace` must construct a subspace of dimension `p+1` from
+   the `p+1` consecutive indexed earlier eigenvectors, including repetitions of
+   their eigenvalues, and establish its nonpositive quadratic form.
+3. `krylov_intersection_nonzero` must derive a nonzero vector in that subspace
+   and `K_(k-1)` using the actual dimensions, nesting, and intersection formula.
+   Its hypotheses do not include the conclusion or an unexplained vector.
+4. `compressedQuadratic A Q a b` is exactly `Q q(Qᵀ A Q) Qᵀ`, the subspace
+   quadratic extended by zero. It is not `q(Q Qᵀ A Q Qᵀ)` on the ambient space:
+   the latter would add an unwanted `ab` term on the orthogonal complement.
+   `compressedQuadratic_semantics` proves the quadratic-form transport and PSD
+   transport needed to reason in one common ambient Euclidean space.
+5. `quadratic_forms_agree` must prove equality of the earlier and later quadratic
+   forms on `K_(k-1)`, using symmetry and `H_k x = H_j x = A x`. It does not
+   assert `H_k²x = A²x`. `psd_zero_form_iff_kernel` must convert the zero later
+   PSD quadratic form to an actual kernel equation.
+6. `later_quadratic_identity` must use `k+1 ≤ j`, the true Krylov shift, and
+   `A²x ∈ K_(k+1) ⊆ K_j` to identify the later quadratic action with `q(A)x`.
+7. `fullRank_quadratic_nonannihilation` must prove, from full rank at `k+1`, that
+   no nonzero `x ∈ K_(k-1)` is annihilated by this monic quadratic. The original
+   proof uses the highest nonzero block coefficient of `x`; multiplying by
+   a monic quadratic leaves that coefficient nonzero at degree two higher,
+   still among the independent columns through degree `k`. The bridge is an
+   exported proof obligation, never part of the input data or final hypotheses.
+8. `strictIntervalOccupancy` must assemble the contradiction for every original
+   matrix, dimension, iteration pair, basis pair and index; the last two exports
+   then reach the canonical largest-`s` target.
+
+Coincident proposed endpoints lead to the same contradiction with `(t-a)²`;
+strict endpoint separation is an outcome in the admissible range, not a premise.
+No lemma here requires a strict ordering of all Ritz values or spectral simplicity.
+
+## Trust and remaining work
+
+LeanCert is pinned to `621a43d7cf21f87872392a01e874f2f1dbddc926` with Lean 4.33.1.
+This finite-dimensional argument needs no artificial numerical interval work.
+Its current concrete role is the definition-only `#assert_trust kernel` audit,
+together with actual `#print axioms` output. A future proof inspector must audit
+every exported theorem, with only `propext`, `Classical.choice`, and `Quot.sound`
+permitted. The placeholder-bearing Challenge is excluded from the definition
+audit and must never be imported by a future Solution.
+
+All 24 Challenge statements are unproved. Fresh source elaboration only checks
+their types. Two new independent statement approvals on exact bytes and the
+coordinator's acceptance are required before any proof implementation. Any
+mathematical change after those reviews reopens that gate.
+# KE-04 source correspondence and scope
+
+This author-written correspondence describes a proposed statement boundary; it is
+not an independent review or a proof. The complete source statement and proof,
+not the assertions in this document, govern statement review.
+
+## Immutable original sources
+
+The registered canonical path is
+`eigenvalues-and-inverse-problems/KE-04/README.md`. The upstream base used here is
+`5830ed4fb06da0659414a3deb2a40ad327aca052`, independently observed as current
+upstream main during the bounded eligibility query. `problem_ids.json` binds the
+unchanged KE-04 ID and path. At that base the canonical status is **Solved** and
+there is no KE-04 `lean/` project.
+
+| Original source | SHA-256 |
+| --- | --- |
+| Canonical README at the base | `20ff79f2a4c9fbbd456a5167f6e634df7473a6415141fcfc01d85b49fea8a057` |
+| Complete Colbrook `solution.md` at the base | `dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6` |
+| Complete Colbrook `solution.tex` at the base | `06ef0d4fa338bfc981892856c175c2c9bc828fd48edbdec32b048c752d659c8f` |
+| Original submitted `solution.md`, commit `fe025e14d2639cbae59f98cacf4023d83addcb89` | `cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d` |
+| Original target README, commit `b4123194697bdf6f8f82518c1dd7d6c40a30c2e0` | `7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669` |
+| Retained original detailed KE-04 informal review at the base | `299abf4d5f6b5ae14245d812c91f87a3ee8696f111d38be7306e486e18f867b6` |
+
+The current and original submitted theorem/proof blocks are byte-identical after
+selecting the text from `## Theorem ` to the next `## Scope and review notes` and
+stripping the outer whitespace: 2622 UTF-8 bytes, SHA-256
+`3ba1bd9a62a00aaf787758af6312e4787ca8d6db02b4487e8b956ce0553977a7`.
+This narrower equality does not claim that the surrounding editorial metadata is
+unchanged. The full source files, their Git blob IDs, exact retrieval commands,
+and the 17-file source inventory are retained independently of this prose.
+
+The canonical conjecture comes from D. Šimonová and P. Tichý, *On finite precision
+block Lanczos computations*, [version 1, §2.1](https://arxiv.org/html/2507.16484v1),
+22 July 2025. Its full §2.1 was inspected as the primary locator; the target is
+the exact-arithmetic unnumbered conjecture in that section, not a finite-precision
+claim from the rest of the manuscript. The proof followed here is the complete
+three-part Colbrook proof retained in the repository. No new novelty or exhaustive
+literature-search claim is made.
+
+Original mathematical proof credit remains Matthew J. Colbrook, Department of
+Applied Mathematics and Theoretical Physics, University of Cambridge, Cambridge,
+United Kingdom. His manuscript discloses that its draft originated in a ChatGPT
+conversation and received independent Codex-agent informal review. That review is
+not external human peer review or a formal certificate. Prospective formalization
+credit is George Stepaniants, Department of Computing and Mathematical Sciences,
+California Institute of Technology, Pasadena, California, USA, with substantial
+AI assistance. No contact email is added for George Stepaniants. Original source
+bytes and bylines are retained, including the original author's metadata.
+
+## Target preservation
+
+`BlockLanczosConjecture` contains the complete canonical largest-full-iteration
+assertion, including universal `n,p,A,V,s,k,j,i`, actual real symmetry, full column
+rank of `V`, every allowed iteration pair, and arbitrary independently chosen
+orthonormal bases. `FullPrefixBlockLanczosClaim` contains the source proof's
+slightly stronger theorem: any full-dimensional prefix endpoint `s` suffices.
+The separate reduction to the canonical version is also a Challenge export.
+
+The pairwise basis quantification exactly covers the claimed spectral property:
+it only uses `Qk,Qj`; arbitrary choices at other iterations do not enter it.
+Existence of every required basis is an explicit obligation, as is independence
+of all ordered spectral values from that choice. No algorithmic compatibility or
+block-tridiagonal recurrence is needed to state the original invariant spectral
+claim. The Krylov spaces themselves remain the actual spaces generated by `A,V`.
+
+In the canonical largest-index convention positive block width is implicit in
+the existence of such an index. `lastFullBlockIteration_exists` makes the
+necessary `0 < p` premise explicit. It does not assert a largest index for `p=0`.
+The stronger full-prefix version includes all natural dimensions, including zero,
+and its original `i` bounds handle empty cases without imposing a new nonempty
+interval assumption.
+
+The source eigenvalues are increasingly ordered with multiplicity. The formal
+definition reverses the pinned self-adjoint library's decreasing order and uses
+the matching reversed orthonormal eigenbasis. Equality with characteristic roots
+is multiset equality, retaining every algebraic multiplicity. No simple-spectrum
+or distinct-endpoint premise is introduced. The target's `i-1,i+p-1` conversion
+is separately proved to be in bounds; it cannot access the total helper's
+out-of-range default.
+
+## All 24 Challenge obligations
+
+Names in this table have namespace prefix `NLA.KE04.`. Every body is an intentional
+`sorry` placeholder at this stage; the table describes what still must be proved.
+
+| Export | Informal source / mathematical responsibility |
+| --- | --- |
+| `real_matrix_semantics` | Source real symmetry, usual matrix action and orthonormal-column equations. |
+| `krylov_range_semantics` | Exact block Krylov range, coefficient expansion and dimension upper bound. |
+| `krylov_nesting_and_shift` | `K_0={0}`, nesting, and `A K_ell ⊆ K_(ell+1)` from the actual powers. |
+| `fullBlockDimension_iff_independent` | Full block dimension is equivalent to independence of the actual columns; `V` full rank is full dimension at one. |
+| `fullBlockDimension_prefix` | The theorem's full dimension at `s` supplies every earlier full dimension and coefficient uniqueness. |
+| `lastFullBlockIteration_exists` | Well-defined canonical largest `s ≥ 1` when `p>0` and `V` has full column rank; finite ambient dimension bounds the possible indices. |
+| `krylovBasis_exists` | Actual orthonormal basis matrices of the source's required size exist. |
+| `frameProjection_semantics` | `Q Qᵀ` is the actual orthogonal projector onto the chosen column space. |
+| `compression_semantics` | `Qᵀ A Q` is symmetric and represents `P A` restricted to the space. |
+| `orderedSpectrum_semantics` | Genuine increasing eigenvalues, matching eigenvector equations and characteristic-root multiplicities; valid natural indexing. |
+| `compression_basis_independent` | Source basis independence, through orthogonal similarity and exact ordered spectrum equality. |
+| `interval_index_validity` | Source bounds `1 ≤ i ≤ (k-1)p`; derived `k≥2,p>0` and in-range endpoint indices. |
+| `quadratic_semantics` | Part 1 polynomial `q(t)=(t-a)(t-b)` and its monic degree-two matrix evaluation. |
+| `spectral_gap_quadratic_psd` | Part 1 absence of later open-interval eigenvalues implies PSD of `q(H_j)`, including `a=b`. |
+| `spectral_window_subspace` | Part 1 `p+1` consecutive eigenvectors produce dimension `p+1` and nonpositive earlier quadratic form, even with repeated values. |
+| `krylov_intersection_nonzero` | Part 1 the actual codimension-`p` intersection gives nonzero `x ∈ E ∩ K_(k-1)`. |
+| `psd_zero_form_iff_kernel` | Part 2 a zero quadratic form of a PSD matrix implies its actual kernel equation. |
+| `compressedQuadratic_semantics` | Parts 1–2 honest lifting of subspace quadratic forms and PSD to the common ambient space. |
+| `quadratic_forms_agree` | Part 2 equality of the earlier and later forms on `K_(k-1)`, using symmetry and the equality of first actions. |
+| `later_quadratic_identity` | Part 2 `A²x ∈ K_(k+1) ⊆ K_j` gives the later quadratic action `q(A)x`. |
+| `fullRank_quadratic_nonannihilation` | Part 3 highest nonzero block coefficient and full rank through degree `k` exclude `q(A)x=0`. |
+| `strictIntervalOccupancy` | Complete source-proof theorem, assembling all steps for every admissible input. |
+| `fullPrefix_implies_canonical` | The source-proof theorem implies the canonical largest-`s` formulation. |
+| `blockLanczosConjecture` | Complete affirmative canonical KE-04 resolution. |
+
+`FullBlockDimension`, `FullColumnRank`, and `IsKrylovBasis` do not contain the
+spectral conclusion, a gap-contradiction hypothesis, or quadratic nonannihilation.
+The only `hgap` premise occurs in the auxiliary spectral sign lemma used under
+contradiction. The complete target has no such premise. The main propositions
+are explicitly named target predicates, not fields in a purported input model.
+
+The ambient representative for `q(H_ell)` is
+`Qell * q(Qellᵀ A Qell) * Qellᵀ`. It is the genuine subspace operator extended by
+zero. Taking the polynomial of the ambient zero-extended first compression
+instead would introduce `ab(I-Pell)` on the orthogonal complement. The present
+definition avoids that mismatch. The earlier **quadratic form** is compared with
+the later one; only the later squared action is identified with `A²x`.
+
+## Pinned API and structural references actually inspected
+
+`verification/api-evidence-complete/manifest.json` binds 33 selected complete text
+snapshots and five actual read-only searches. Mathlib, LeanCert, Schiffer and
+Forsythe snapshots are bound to their exact Git blobs and were equal to the
+working files inspected. Tau Ceti came from an existing pinned source archive;
+its retained recursive Git-tree response, commit response and SHA-256 manifest
+are included. The capture independently recomputes every directory tree hash and
+every selected Tau Ceti blob hash, binding its text to the recorded commit tree.
+These are text evidence snapshots, not copied package/build caches.
+
+Mathlib is pinned to `0df444a360eaa60ab8c11dca51a86af692955474`. Relevant existing
+APIs and their uses are:
+
+| Actual pinned API | Planned use / choice |
+| --- | --- |
+| `Matrix.toEuclideanLin`, `toLpLin_apply` in `Analysis/InnerProductSpace/PiL2.lean` | Genuine Euclidean matrix action. The deprecated compatibility aliases in that file need not be used. |
+| `Fintype.linearCombination`, `Fintype.range_linearCombination` in `LinearAlgebra/Finsupp/LinearCombination.lean` | Direct coefficient map and exact range/span bridge; no new linear-map implementation. |
+| `linearIndependent_iff_injective_fintypeLinearCombination` in `LinearAlgebra/LinearIndependent/Defs.lean` | Coefficient uniqueness from linear independence. |
+| `Submodule.finrank_span_eq_card` in `LinearAlgebra/Dimension/Constructions.lean` | Full-column dimension bridge, with standard finite-dimensional converses. |
+| `Submodule.finrank_sup_add_finrank_inf_eq` in `LinearAlgebra/FiniteDimensional/Lemmas.lean` | Nontrivial intersection from the exact dimensions. |
+| `exists_orthonormalBasis`, `stdOrthonormalBasis`, `OrthonormalBasis.reindex` in `Analysis/InnerProductSpace/PiL2.lean` | Basis existence and indexing transport on the actual finite-dimensional submodule. |
+| `LinearMap.IsSymmetric.eigenvalues`, `eigenvectorBasis`, `eigenvalues_antitone`, `apply_eigenvectorBasis` in `Analysis/InnerProductSpace/Spectrum.lean` | The spectrum and matching basis used directly by Definitions. Reversal by `Fin.revPerm` provides increasing order. |
+| `roots_charpoly_eq_eigenvalues`, `eigenvalues_eq_eigenvalues_iff` in the same spectral file | Multiplicities and basis-independent ordered spectral functions. |
+| `Matrix.IsHermitian.eigenvalues₀`, `eigenvalues`, `roots_charpoly_eq_eigenvalues₀` in `Analysis/Matrix/Spectrum.lean` | Inspected alternative. The matrix-indexed `eigenvalues` uses a cardinality equivalence and should not be assumed sorted on arbitrary matrix indices. Direct `Fin m` self-adjoint indexing avoids that issue. |
+| `Matrix.isHermitian_conjTranspose_mul_mul` in `LinearAlgebra/Matrix/Hermitian.lean` | The actual imported congruence theorem used in Definitions to provide compression symmetry. It proves no KE-04 occupancy assertion. |
+| `Matrix.isPositive_toEuclideanLin_iff` in `Analysis/InnerProductSpace/Positive.lean` | Actual PSD/positive-operator semantics. |
+| `Matrix.PosSemidef.mul_mul_conjTranspose_same` in `LinearAlgebra/Matrix/PosDef.lean` | Existing PSD lifting under congruence. |
+| `Matrix.PosSemidef.dotProduct_mulVec_zero_iff` in `Analysis/Matrix/Order.lean` | Direct existing PSD-zero/kernel result, to be transported to the actual Euclidean action; no need to reproduce a square-root argument. |
+| `Matrix.IsHermitian.posSemidef_iff_eigenvalues_nonneg` in `Analysis/Matrix/PosDef.lean` | Available spectral PSD bridge. A future implementation may instead use the already chosen eigenbasis and quadratic diagonalization. |
+
+The actual `rg` search for `Krylov|Lanczos|krylov|lanczos` under this pinned Mathlib
+returned no matches (exit 1, empty retained log). That is a bounded source-name
+search, not a claim that no equivalent abstract theorem exists. The elementary
+API above must be reused where applicable. Challenge semantic obligations are a
+fixed review boundary for this problem; they are not a proposal to duplicate
+these generic theorems in Mathlib.
+
+The direct spectral API was compared with a custom sorted-characteristic-root
+construction. The existing ordered eigenvalues and matching orthonormal basis
+already supply existence and multiplicities; using them avoids a larger bespoke
+root-list model. Characteristic polynomials remain only in explicit semantic and
+basis-independence obligations.
+
+Schiffer at `2938e277969c329caf154e48a3d8823f3635c7f1` was inspected for its
+Definitions/Challenge separation only. It has no explicit license established in
+this task, and none of its implementation is reused. Forsythe at
+`8d1b0c0545a77b40245e84705aa7d273e6c81e62` was inspected for the same separation,
+complete numerical-target documentation, the configured theorem list and
+foundational-axiom allowance, and the kernel soundness route in
+`CheckedMultivariateBound.lean`. Its Apache-2.0 license is retained. No Forsythe
+mathematical proof or interval checker is imported or adapted to KE-04.
+
+LeanCert at `621a43d7cf21f87872392a01e874f2f1dbddc926` is actually used by the
+definition-only inspection module. `#assert_trust kernel` calls `collectAxioms`,
+allows only foundational axioms, rejects `sorryAx`, custom axioms and native
+compiler axioms, and succeeds silently. Its numerical default is native, so the
+inspector explicitly sets `leancert.trust` to `"kernel"`. No interval theorem is
+invented for this algebraic proof. Current trust results cover Definitions only,
+not the placeholder-bearing Challenge or any future theorem proof.
+
+The NLA `docs/lean/REVIEW.md` adapter at the canonical base governs the process. Its
+Tau Ceti source is pinned to `afb424eda89e8ac96d9eb69f6a88972055a4cd1b`; the common
+protocol and all ten rubric angles were read. Their semantic, scope, reuse,
+generality, API, placement, naming, documentation, proof-quality and attribution
+checks inform this package. Tau Ceti's roadmap admission, namespace conventions,
+service workflow, compatibility policy and assumption that a prior CI run is
+green are not imported into the NLA workflow. No Tau Ceti service run or
+endorsement is claimed.
+
+## Eligibility, validation and gate limits
+
+`verification/eligibility.json` classifies the observed canonical status and the
+all-state upstream PR title/body searches for `KE-04`, `KE04`, and `block Lanczos`.
+Those searches returned the historical Colbrook mathematical submission #6 and
+an unrelated KE-05 mathematical submission #143. No competing formalization was
+found in that scope. Private, deleted or unidentifiably named work is not covered;
+neither the coordinator source note nor the current campaign entry constitutes
+an eligibility or statement approval.
+
+The successful author-development attempt is
+`verification/statement-development/attempt-r5fn2nl_/result.json`. Its immutable
+input copies, exact commands, log hashes, dependency pins before and after,
+actual types, definition axiom output and hashes of the removed private objects
+are retained. All four modules exited zero: Definitions, Challenge, definition
+inspector and type inspector. There are 24 intentional Challenge holes and 27
+definition trust assertions. The first attempt's reporting failure is retained;
+it expected a success message from a command that succeeds silently, although
+its four Lean commands also exited zero. Source-capture failures are also retained.
+An initial integrity runner later overwrote the preceding successful attempt's
+final JSON through a reused output-path variable. Its immutable source inputs and
+Lean logs remain; the lost JSON is not claimed as retained. The misdirected report
+and exact diagnosis are in `verification/EVIDENCE-RECOVERY.md` and the referenced
+paths. The final attempt named above is a new identical-source run with intact
+result, dependency and object-hash records.
+
+This is macOS development elaboration using existing read-only pinned dependency
+objects. It is not a full dependency rebuild, proof build, Comparator execution,
+raw-kernel export replay or non-root Linux sandbox run. `comparator.json` reserves
+all 24 targets, has no replaceable definitions, and allows only the three
+foundational axioms; no Solution exists to compare yet.
+
+The package has no independent KE-04 statement approvals and is not frozen.
+The statement author and coordinator design feedback do not count as independent
+approvals. Two fresh independent statement approvals and coordinator acceptance
+are required before any proof implementation. All later problem-specific proof,
+axiom, Comparator, Linux, review and publication gates remain outstanding.
+# KE-04: statement-only Lean draft
+
+This isolated draft proposes the complete strict open-interval occupancy theorem
+across block Lanczos iterations. The permanent canonical problem remains
+`eigenvalues-and-inverse-problems/KE-04/README.md`, mathematically **Solved** at the
+pinned upstream base `5830ed4fb06da0659414a3deb2a40ad327aca052`.
+
+The draft contains actual real block Krylov spaces, arbitrary orthonormal bases,
+genuine ordered compression eigenvalues with multiplicities, and all original
+dimension and index quantifiers. The full-prefix theorem follows the original
+proof's stronger hypothesis and is accompanied by the complete canonical
+largest-iteration target. Positive block width is required for the separate
+maximal-index existence obligation. No endpoint separation, spectral simplicity,
+interval occupancy, or quadratic nonannihilation is assumed in the input model.
+
+Read [NUMERICAL_TARGETS.md](NUMERICAL_TARGETS.md), the complete retained originals,
+[Definitions](NLA/KE04/Definitions.lean), all 24
+[Challenge contracts](Challenge.lean), and
+[SourceCorrespondence.md](SourceCorrespondence.md) before reviewing. The
+[statement handoff](STATEMENT-HANDOFF.md) and `DRAFT-INVENTORY.json` identify the
+exact review input; the inventory excludes only itself.
+
+No proof is implemented. Challenge has 24 intentional `sorry` bodies. Neither
+`Solution.lean` nor a proof module exists. Two fresh independent statement
+approvals and the coordinator's acceptance are required before proofs; this
+authoring package is not frozen and supplies no independent approval.
+
+Original mathematical proof: Matthew J. Colbrook, Department of Applied
+Mathematics and Theoretical Physics, University of Cambridge, Cambridge, United
+Kingdom. The retained source discloses its ChatGPT draft origin and independent
+Codex-agent informal review. Prospective formalization: George Stepaniants,
+Department of Computing and Mathematical Sciences, California Institute of
+Technology, Pasadena, California, USA, with substantial AI assistance. No external
+human peer review, formal proof certificate, or Tau Ceti endorsement is claimed.
+
+## Development validation
+
+Lean is pinned to 4.33.1, LeanCert to
+`621a43d7cf21f87872392a01e874f2f1dbddc926`, and Mathlib to
+`0df444a360eaa60ab8c11dca51a86af692955474`. The complete ten-package manifest is
+included as draft configuration; it has no floating dependency identities.
+`Solution` in the project and Comparator configuration is a reserved future
+module, not an existing proof. Comparator's 24 targets match Challenge exactly,
+`definition_names` is empty, and only `propext`, `Classical.choice`, and
+`Quot.sound` are permitted.
+
+The author runner is:
+
+```sh
+python3 verification/statement-development/check_statements.py
+```
+
+It makes a new immutable input snapshot and a new private output prefix on each
+invocation, calls the pinned Lean binary directly, and uses the existing nine
+read-only dependency build directories. The tenth manifest dependency, Cli, is
+tooling-only and unbuilt here; it is not added to `LEAN_PATH`. It checks all ten
+source pins and clean statuses before and after, hashes and removes only its own
+objects, and retains failures. It neither calls Lake nor copies, downloads,
+rebuilds, deletes or modifies dependency caches.
+
+The successful attempt `attempt-r5fn2nl_` elaborated Definitions, Challenge and
+two inspectors, all with exit code zero. The definition-only inspector did not
+import Challenge; all 27 custom definitions passed actual LeanCert
+`#assert_trust kernel` commands and transitive `#print axioms` checks. The separate
+type inspector printed every target signature. The first run's reporting failure,
+subsequent capture diagnostics and an integrity-runner write-path error are
+documented in the evidence. The latter required this new identical-source run;
+see `verification/EVIDENCE-RECOVERY.md`. These checks
+establish source elaboration and definition trust only, on macOS with preexisting
+dependency objects. They establish no KE-04 theorem, full proof build, Comparator
+pass, raw-kernel replay or authoritative Linux sandbox result.
+
+The later proof must import shared Definitions independently, never Challenge.
+It must prove all advertised declarations, audit their transitive axioms, and
+pass the repository's actual independent and mechanical gates. This argument is
+pure finite-dimensional algebra; the pinned LeanCert trust audit has a concrete
+role, and no artificial interval computation is required.
+
+## Provenance and license
+
+Original Git-bound sources and prior review are preserved in `verification/`.
+Selected pinned Mathlib, LeanCert, Schiffer, Forsythe and Tau Ceti text files are
+archival inspection evidence, with their own copyright/license terms preserved.
+They are not project proof implementations or replaceable dependencies.
+
+The root Apache-2.0 license applies to newly authored draft code. It does not
+relicense retained third-party source snapshots. Schiffer is a structural
+reference only; no implementation is reused. The source correspondence names
+the formal APIs and structural patterns actually inspected.
+
+No canonical file, ID registry, status, publication YAML, Git state, PR or commit
+is modified by this isolated draft. Eligibility is a bounded dated observation,
+not a priority or exhaustive duplication claim.
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "NLA.KE04.real_matrix_semantics",
+    "NLA.KE04.krylov_range_semantics",
+    "NLA.KE04.krylov_nesting_and_shift",
+    "NLA.KE04.fullBlockDimension_iff_independent",
+    "NLA.KE04.fullBlockDimension_prefix",
+    "NLA.KE04.lastFullBlockIteration_exists",
+    "NLA.KE04.krylovBasis_exists",
+    "NLA.KE04.frameProjection_semantics",
+    "NLA.KE04.compression_semantics",
+    "NLA.KE04.orderedSpectrum_semantics",
+    "NLA.KE04.compression_basis_independent",
+    "NLA.KE04.interval_index_validity",
+    "NLA.KE04.quadratic_semantics",
+    "NLA.KE04.spectral_gap_quadratic_psd",
+    "NLA.KE04.spectral_window_subspace",
+    "NLA.KE04.krylov_intersection_nonzero",
+    "NLA.KE04.psd_zero_form_iff_kernel",
+    "NLA.KE04.compressedQuadratic_semantics",
+    "NLA.KE04.quadratic_forms_agree",
+    "NLA.KE04.later_quadratic_identity",
+    "NLA.KE04.fullRank_quadratic_nonannihilation",
+    "NLA.KE04.strictIntervalOccupancy",
+    "NLA.KE04.fullPrefix_implies_canonical",
+    "NLA.KE04.blockLanczosConjecture"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}
+name = "NLAKE04"
+version = "0.1.0"
+defaultTargets = ["Challenge"]
+
+[[require]]
+name = "leancert"
+git = "https://github.com/alerad/leancert"
+rev = "621a43d7cf21f87872392a01e874f2f1dbddc926"
+
+[[lean_lib]]
+name = "NLA"
+
+[[lean_lib]]
+name = "Challenge"
+
+# Reserved for the post-approval proof phase; no Solution source exists yet.
+[[lean_lib]]
+name = "Solution"
+{
+  "version": "1.2.0",
+  "packagesDir": ".lake/packages",
+  "packages": [
+    {
+      "url": "https://github.com/alerad/leancert",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "name": "leancert",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "inherited": false,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "name": "mathlib",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.33.1",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/plausible",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "name": "plausible",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "name": "LeanSearchClient",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.33.0",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    }
+  ],
+  "name": "NLAKE04",
+  "lakeDir": ".lake",
+  "fixedToolchain": false
+}
+leanprover/lean4:v4.33.1

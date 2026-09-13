@@ -1,0 +1,257 @@
+# yaml-language-server: $schema=../../../docs/lean/schema/v0.4.schema.json
+version: v0.4
+project:
+  name: 'KE-04: strict interval occupancy in block Lanczos compression spectra'
+  description: Complete formalization of the original block-Lanczos interval-occupancy conjecture,
+    via the stronger full-prefix theorem and exact finite-dimensional real linear algebra.
+  authors:
+  - George Stepaniants
+  affiliations:
+    George Stepaniants: Department of Computing and Mathematical Sciences, California Institute of Technology,
+      Pasadena, California, USA
+  responsible_maintainers:
+  - George Stepaniants
+  license: Apache-2.0
+repository:
+  role: substantive-development
+  note: Complete proof candidate with two independent final mathematical approvals. Authoritative Linux,
+    Comparator, default-kernel and operational gates remain pending.
+sources:
+- title: KE-04 — Block Lanczos strict interval occupancy
+  contributors:
+  - name: D. Šimonová
+    role: Original conjecture coauthor
+  - name: P. Tichý
+    role: Original conjecture coauthor
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/50838e37dd793830e2cecd1055cfc7e0349490f1/eigenvalues-and-inverse-problems/KE-04/README.md
+  type: web-post
+  location: Complete retained problem statement
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: Permanent KE-04 target and all original quantifiers are retained.
+- title: Complete proof of KE-04
+  authors:
+  - Matthew J. Colbrook
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/50838e37dd793830e2cecd1055cfc7e0349490f1/eigenvalues-and-inverse-problems/KE-04/solution.md
+  type: manuscript
+  location: Theorem and retained proof sections, as frozen in the proof inventory
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: Original mathematical proof attribution is retained; the formalization is substantially AI-assisted.
+related_formalizations:
+- id: https://github.com/sgstepaniants/Forsythe/tree/8d1b0c0545a77b40245e84705aa7d273e6c81e62/lean-proof
+  relationship: other
+  note: Structural and kernel-trust reference only; no Forsythe mathematics is imported.
+- id: https://github.com/jaumededios/Schiffer/tree/2938e277969c329caf154e48a3d8823f3635c7f1
+  relationship: other
+  note: Structural Challenge/reference only; no Schiffer mathematics is imported.
+automation:
+  methods:
+  - method: agent
+    framework: OpenAI Codex
+    tool_setup: Two independent statement reviews and two independent final mathematical reviews preceded
+      implementation. LeanCert kernel-trust assertions, exact target contracts and Comparator configuration are retained.
+    prompting_notes: Preserve the full canonical target and all quantifiers; minimize numerical computation by
+      using exact finite-dimensional identities and the pinned spectral API, without assuming basis compatibility,
+      interval separation, PSD implications or nonannihilation.
+  notes: Substantial ChatGPT/Codex assistance at George Stepaniants's request. Agent reviews are not external
+    human peer review or official Tau Ceti endorsement. Original mathematical authorship remains attributed.
+status:
+  scope: Complete 24-export proof of the original KE-04 target through the stronger FullPrefixBlockLanczosClaim.
+    Two independent final mathematical approvals and coordinator acceptance are recorded; Linux and publication
+    gates remain pending.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: &id001
+  - propext
+  - Classical.choice
+  - Quot.sound
+  main_results:
+  - declaration: NLA.KE04.real_matrix_semantics
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.krylov_range_semantics
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.krylov_nesting_and_shift
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.fullBlockDimension_iff_independent
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.fullBlockDimension_prefix
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.lastFullBlockIteration_exists
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.krylovBasis_exists
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.frameProjection_semantics
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.compression_semantics
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.orderedSpectrum_semantics
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.compression_basis_independent
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.interval_index_validity
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.quadratic_semantics
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.spectral_gap_quadratic_psd
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.spectral_window_subspace
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.krylov_intersection_nonzero
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.psd_zero_form_iff_kernel
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.compressedQuadratic_semantics
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.quadratic_forms_agree
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.later_quadratic_identity
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.fullRank_quadratic_nonannihilation
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.strictIntervalOccupancy
+    file: NLA/KE04/Proof.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.fullPrefix_implies_canonical
+    file: NLA/KE04/Completion.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.KE04.blockLanczosConjecture
+    file: NLA/KE04/Completion.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  canonical_status: Solved
+  whole_problem_verified: false
+  actual_linux_comparator: pending
+  independent_packaging_approval: accepted
+review:
+  status: agent-reviewed; final-mathematical-approvals-coordinator-accepted; Linux-verification-pending
+  reviewers:
+  - 'OpenAI Codex /root/ra09_final_referee1: independent final mathematical referee 1'
+  - 'OpenAI Codex /root/leancert_examples: independent final mathematical referee 2'
+  notes: Referee 1 and referee 2 independently re-elaborated the complete proof and all 24 exports from
+    the corrected proof freeze. Their reports are retained in reviews/. Source identity correction preserved
+    17 distinct Git snapshots; packaging is complete, but actual Linux Comparator and kernel evidence is pending.
+  proof_freeze:
+    file: reviews/proof-freeze.json
+    sha256: 394db25967661b12b107062fb00976dc847817c03942dca44c4725492d4003c4
+reproduction:
+  local_development:
+    cwd: eigenvalues-and-inverse-problems/KE-04/lean
+    command: lake build Solution
+    note: Solution is the default target and imports Proof plus Completion; Challenge is never imported.
+  authoritative_Linux:
+    status: pending
+    cwd: repository root
+    host: Non-root Ubuntu with the actual pinned harness prerequisites
+    commands:
+    - tools/lean/bootstrap.sh /tmp/nla-ke04-check
+    - tools/lean/selftest.sh /tmp/nla-ke04-check
+    - tools/lean/verify.sh eigenvalues-and-inverse-problems/KE-04/lean /tmp/nla-ke04-check
+    prerequisites_document: ../../../tools/lean/HARNESS.md
+    note: Linux Comparator/default-kernel and real control suites are required before promotion to Lean verified.
+toolchain:
+  lean: leanprover/lean4:v4.33.1
+  dependency_manifest: lake-manifest.json
+  dependencies:
+    leancert: 621a43d7cf21f87872392a01e874f2f1dbddc926
+    mathlib: 0df444a360eaa60ab8c11dca51a86af692955474
+    plausible: b7eb3304aeae834b12dda98993a37f6a41f6f0bb
+    LeanSearchClient: 5f4d51b81cbd3f6b32b156bfad9056621a040404
+    importGraph: 16f02aa7642864af59a3a58e5e4b3b7e2b7c37b6
+fidelity:
+  divergences: All original dimensions, real symmetric matrices, full-column-rank blocks, largest full
+    iteration, arbitrary independent Krylov bases and strict interval indices are retained. The stronger
+    full-prefix theorem is proved and reduced to the canonical target; no spectral simplicity or basis
+    compatibility premise is added. The formalization does not claim a separate finite-precision result.

@@ -1,0 +1,33 @@
+NLA/KE04/Nonannihilation.lean:74:10: error: Type mismatch: After simplification, term
+  ht
+ has type
+  c (r.castSucc, j) = a * Fin.lastCases 0 (fun r => c (r, j)) r.castSucc.succ
+but is expected to have type
+  c (r.castSucc, j) = 0
+NLA/KE04/Nonannihilation.lean:96:28: warning: This simp argument is unused:
+  mul_assoc
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [act_apply, Matrix.sub_apply, Matrix.one_apply, sub_mul, Finset.sum_sub_distrib]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'NLA.KE04._proved.blockExtend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.blockShift' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.krylovCombination_extend' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.krylovCombination_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/KE04/Nonannihilation.lean:128:21: error: #assert_trust: 'NLA.KE04._proved.blockShift_eq_smul_extend' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.blockShift_eq_smul_extend' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/KE04/Nonannihilation.lean:130:21: error: #assert_trust: 'NLA.KE04._proved.fullRank_krylov_eigenvector_zero' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.fullRank_krylov_eigenvector_zero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.act_sub_smul_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/KE04/Nonannihilation.lean:134:21: error: #assert_trust: 'NLA.KE04._proved.fullRank_quadratic_nonannihilation' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.fullRank_quadratic_nonannihilation' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]

@@ -1,0 +1,1698 @@
+{
+  "runner_pid": 27526,
+  "private_output": "/private/tmp/nla-lean-formalization/independent-prefixes/ke04-statement-referee1-78uv7mz4",
+  "commands": [
+    {
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "--version"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.132262+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-000-lean-version.stdout",
+      "stderr": "command-000-lean-version.stderr",
+      "pid": 27535,
+      "exit_code": 0,
+      "elapsed_seconds": 0.027619749947916716,
+      "utc_finished": "2026-09-13T07:49:26.160051+00:00",
+      "stdout_identity": {
+        "bytes": 106,
+        "sha256": "4762d596346ad354e28668de62b7eeae7de5d531b9a7b1c182ca59cfacd81bdd"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.160556+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-001-before-leancert-head.stdout",
+      "stderr": "command-001-before-leancert-head.stderr",
+      "pid": 27536,
+      "exit_code": 0,
+      "elapsed_seconds": 0.011876792006660253,
+      "utc_finished": "2026-09-13T07:49:26.172519+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "e4b931505459ba81cd3601ad76fad49813b618773699f3eed9a65e92975422bb"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.172848+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-002-before-leancert-clean.stdout",
+      "stderr": "command-002-before-leancert-clean.stderr",
+      "pid": 27537,
+      "exit_code": 0,
+      "elapsed_seconds": 0.016812042042147368,
+      "utc_finished": "2026-09-13T07:49:26.189744+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.190159+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-003-before-mathlib-head.stdout",
+      "stderr": "command-003-before-mathlib-head.stderr",
+      "pid": 27538,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01079349999781698,
+      "utc_finished": "2026-09-13T07:49:26.201045+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "7cf32a824e26133738b30903ed97bc24def8e93db8039483d6bdf7fce7a0efee"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.201431+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-004-before-mathlib-clean.stdout",
+      "stderr": "command-004-before-mathlib-clean.stderr",
+      "pid": 27539,
+      "exit_code": 0,
+      "elapsed_seconds": 0.14147016603965312,
+      "utc_finished": "2026-09-13T07:49:26.343003+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.343506+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-005-before-plausible-head.stdout",
+      "stderr": "command-005-before-plausible-head.stderr",
+      "pid": 27540,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010957291000522673,
+      "utc_finished": "2026-09-13T07:49:26.354568+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "805ea619fc405904b6e9ac21504fad9d1b144b97838b0ea93a6c5bacf0f9d917"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.354913+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-006-before-plausible-clean.stdout",
+      "stderr": "command-006-before-plausible-clean.stderr",
+      "pid": 27541,
+      "exit_code": 0,
+      "elapsed_seconds": 0.012582583003677428,
+      "utc_finished": "2026-09-13T07:49:26.367603+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.368001+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-007-before-LeanSearchClient-head.stdout",
+      "stderr": "command-007-before-LeanSearchClient-head.stderr",
+      "pid": 27542,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01005345897283405,
+      "utc_finished": "2026-09-13T07:49:26.378164+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "4d0336c7ba0fcd5eb2f72acfcbc62d27a785c823fdd5e7e21a77ed3f529ba9b8"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.378522+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-008-before-LeanSearchClient-clean.stdout",
+      "stderr": "command-008-before-LeanSearchClient-clean.stderr",
+      "pid": 27543,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01205895800376311,
+      "utc_finished": "2026-09-13T07:49:26.390696+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.391086+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-009-before-importGraph-head.stdout",
+      "stderr": "command-009-before-importGraph-head.stderr",
+      "pid": 27544,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010077124985400587,
+      "utc_finished": "2026-09-13T07:49:26.401284+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "1c21dc61032d91e32449c4295a2a30bf8c68c4b8d984bf0f46a73d53d180ce2e"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.401654+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-010-before-importGraph-clean.stdout",
+      "stderr": "command-010-before-importGraph-clean.stderr",
+      "pid": 27545,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01300458301557228,
+      "utc_finished": "2026-09-13T07:49:26.414781+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.415279+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-011-before-proofwidgets-head.stdout",
+      "stderr": "command-011-before-proofwidgets-head.stderr",
+      "pid": 27546,
+      "exit_code": 0,
+      "elapsed_seconds": 0.00997854198794812,
+      "utc_finished": "2026-09-13T07:49:26.425385+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "d9c675d1d0b71316cbd8bced943dd9983f09a32dc9a229039acc3afdfe2375b6"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.425746+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-012-before-proofwidgets-clean.stdout",
+      "stderr": "command-012-before-proofwidgets-clean.stderr",
+      "pid": 27547,
+      "exit_code": 0,
+      "elapsed_seconds": 0.013482042006216943,
+      "utc_finished": "2026-09-13T07:49:26.439350+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.439762+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-013-before-aesop-head.stdout",
+      "stderr": "command-013-before-aesop-head.stderr",
+      "pid": 27548,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010040666966233402,
+      "utc_finished": "2026-09-13T07:49:26.449924+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "4c072408d27377ff5b35ed2858b23f6f83466a241898fe2c4c4a215ba2128652"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.450308+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-014-before-aesop-clean.stdout",
+      "stderr": "command-014-before-aesop-clean.stderr",
+      "pid": 27549,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01482199999736622,
+      "utc_finished": "2026-09-13T07:49:26.465260+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.465664+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-015-before-Qq-head.stdout",
+      "stderr": "command-015-before-Qq-head.stderr",
+      "pid": 27550,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010020916990470141,
+      "utc_finished": "2026-09-13T07:49:26.475817+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "2d7411c117d0e100d30993222f71939f4200b1982179b5c8651c332382e48655"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.476248+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-016-before-Qq-clean.stdout",
+      "stderr": "command-016-before-Qq-clean.stderr",
+      "pid": 27551,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01261483400594443,
+      "utc_finished": "2026-09-13T07:49:26.489023+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.489465+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-017-before-batteries-head.stdout",
+      "stderr": "command-017-before-batteries-head.stderr",
+      "pid": 27552,
+      "exit_code": 0,
+      "elapsed_seconds": 0.011013042007107288,
+      "utc_finished": "2026-09-13T07:49:26.500632+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "f11675294ae9a5b8bd697f96d60b337c9aa0ffa5ed7cc89b8acfd5103044b82d"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.501071+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-018-before-batteries-clean.stdout",
+      "stderr": "command-018-before-batteries-clean.stderr",
+      "pid": 27553,
+      "exit_code": 0,
+      "elapsed_seconds": 0.016791958012618124,
+      "utc_finished": "2026-09-13T07:49:26.518021+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.518478+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-019-before-Cli-head.stdout",
+      "stderr": "command-019-before-Cli-head.stderr",
+      "pid": 27554,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010043832997325808,
+      "utc_finished": "2026-09-13T07:49:26.528700+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "300616b42565e3af8371bcac27ec8e33232d8bd511b3abc74ce438ace7a7ed4b"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+        "status",
+        "--porcelain",
+        "--untracked-files=all"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.529118+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-020-before-Cli-clean.stdout",
+      "stderr": "command-020-before-Cli-clean.stderr",
+      "pid": 27555,
+      "exit_code": 0,
+      "elapsed_seconds": 0.011605916952248663,
+      "utc_finished": "2026-09-13T07:49:26.540911+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:AGENTS.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.541471+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-021-original-00-blob.stdout",
+      "stderr": "command-021-original-00-blob.stderr",
+      "pid": 27556,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010425708023831248,
+      "utc_finished": "2026-09-13T07:49:26.552085+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "f5b346bfcdb8ebbf85792308ef71126dd97369cb5b35cb0d359955721b2c8166"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:AGENTS.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.552539+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-022-original-00-bytes.stdout",
+      "stderr": "command-022-original-00-bytes.stderr",
+      "pid": 27557,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010956333950161934,
+      "utc_finished": "2026-09-13T07:49:26.563682+00:00",
+      "stdout_identity": {
+        "bytes": 1272,
+        "sha256": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:CONTRIBUTING.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.564179+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-023-original-01-blob.stdout",
+      "stderr": "command-023-original-01-blob.stderr",
+      "pid": 27558,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010106499947141856,
+      "utc_finished": "2026-09-13T07:49:26.574476+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "c7d291ef9e130c61b6296c8b52f5dba4b67cdd035d82e328adb423a289a93d60"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:CONTRIBUTING.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.574953+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-024-original-01-bytes.stdout",
+      "stderr": "command-024-original-01-bytes.stderr",
+      "pid": 27559,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010661792010068893,
+      "utc_finished": "2026-09-13T07:49:26.585814+00:00",
+      "stdout_identity": {
+        "bytes": 10507,
+        "sha256": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.586330+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-025-original-02-blob.stdout",
+      "stderr": "command-025-original-02-blob.stderr",
+      "pid": 27560,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010483499965630472,
+      "utc_finished": "2026-09-13T07:49:26.597006+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "3125f50d726c785b7bad727d611e1790adb20ac03eefb3fdffaec19f0f138fa4"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.597482+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-026-original-02-bytes.stdout",
+      "stderr": "command-026-original-02-bytes.stderr",
+      "pid": 27561,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010200749966315925,
+      "utc_finished": "2026-09-13T07:49:26.607884+00:00",
+      "stdout_identity": {
+        "bytes": 7278,
+        "sha256": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/REVIEW.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.608417+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-027-original-03-blob.stdout",
+      "stderr": "command-027-original-03-blob.stderr",
+      "pid": 27562,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010134082986041903,
+      "utc_finished": "2026-09-13T07:49:26.618760+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "c7ab4316dcdae0ce64420fe0511418df535255c41ba58a551d0b5ae4dd67f6f1"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/REVIEW.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.619216+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-028-original-03-bytes.stdout",
+      "stderr": "command-028-original-03-bytes.stderr",
+      "pid": 27563,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010505417012609541,
+      "utc_finished": "2026-09-13T07:49:26.629931+00:00",
+      "stdout_identity": {
+        "bytes": 3110,
+        "sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.630436+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-029-original-04-blob.stdout",
+      "stderr": "command-029-original-04-blob.stderr",
+      "pid": 27564,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010336833947803825,
+      "utc_finished": "2026-09-13T07:49:26.640982+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "7d903b9d237c672b31c7f282f0da12c48c4ca383c4a0c5dcbdde6180e3b08da7"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.641464+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-030-original-04-bytes.stdout",
+      "stderr": "command-030-original-04-bytes.stderr",
+      "pid": 27565,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010162042046431452,
+      "utc_finished": "2026-09-13T07:49:26.651852+00:00",
+      "stdout_identity": {
+        "bytes": 525,
+        "sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/v0.4.schema.json"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.652396+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-031-original-05-blob.stdout",
+      "stderr": "command-031-original-05-blob.stderr",
+      "pid": 27566,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010178000025916845,
+      "utc_finished": "2026-09-13T07:49:26.662792+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "a001827625202a79444f7d0432eb4f2a39da2e4a7dfcf8cd4ceadeacbd4d014c"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/v0.4.schema.json"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.663315+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-032-original-05-bytes.stdout",
+      "stderr": "command-032-original-05-bytes.stderr",
+      "pid": 27567,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010386499983724207,
+      "utc_finished": "2026-09-13T07:49:26.673924+00:00",
+      "stdout_identity": {
+        "bytes": 12694,
+        "sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.674506+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-033-original-06-blob.stdout",
+      "stderr": "command-033-original-06-blob.stderr",
+      "pid": 27568,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010398792044725269,
+      "utc_finished": "2026-09-13T07:49:26.685122+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "4f8841f43de82a6e594591b8e7614f091d003d777bc9a191641afa51d4d5da5d"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.685599+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-034-original-06-bytes.stdout",
+      "stderr": "command-034-original-06-bytes.stderr",
+      "pid": 27569,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01020787499146536,
+      "utc_finished": "2026-09-13T07:49:26.696041+00:00",
+      "stdout_identity": {
+        "bytes": 4072,
+        "sha256": "20ff79f2a4c9fbbd456a5167f6e634df7473a6415141fcfc01d85b49fea8a057"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.696633+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-035-original-07-blob.stdout",
+      "stderr": "command-035-original-07-blob.stderr",
+      "pid": 27570,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010072416975162923,
+      "utc_finished": "2026-09-13T07:49:26.706940+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "e70c9b87d7402a61657456cd5581db374c34040643d327dabc54fb481f15a79b"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.707436+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-036-original-07-bytes.stdout",
+      "stderr": "command-036-original-07-bytes.stderr",
+      "pid": 27571,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010901250003371388,
+      "utc_finished": "2026-09-13T07:49:26.718581+00:00",
+      "stdout_identity": {
+        "bytes": 5279,
+        "sha256": "dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.tex"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.719134+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-037-original-08-blob.stdout",
+      "stderr": "command-037-original-08-blob.stderr",
+      "pid": 27572,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01010391698218882,
+      "utc_finished": "2026-09-13T07:49:26.729882+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "f1d7db7099bb322fbff103a021d721947f7e1ece3f78b5a027daa59ee7094910"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.tex"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.730355+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-038-original-08-bytes.stdout",
+      "stderr": "command-038-original-08-bytes.stderr",
+      "pid": 27573,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010630584030877799,
+      "utc_finished": "2026-09-13T07:49:26.741592+00:00",
+      "stdout_identity": {
+        "bytes": 7259,
+        "sha256": "06ef0d4fa338bfc981892856c175c2c9bc828fd48edbdec32b048c752d659c8f"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:problem_ids.json"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.742166+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-039-original-09-blob.stdout",
+      "stderr": "command-039-original-09-blob.stderr",
+      "pid": 27574,
+      "exit_code": 0,
+      "elapsed_seconds": 0.009977375040762126,
+      "utc_finished": "2026-09-13T07:49:26.752762+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "07370c8f204363eefc4e40f17fdb5e6ca01c98c17471e25eeb4dd6317f21f6e8"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:problem_ids.json"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.753263+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-040-original-09-bytes.stdout",
+      "stderr": "command-040-original-09-bytes.stderr",
+      "pid": 27575,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01145295798778534,
+      "utc_finished": "2026-09-13T07:49:26.764956+00:00",
+      "stdout_identity": {
+        "bytes": 13264,
+        "sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.766034+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-041-original-10-blob.stdout",
+      "stderr": "command-041-original-10-blob.stderr",
+      "pid": 27576,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010494999994989485,
+      "utc_finished": "2026-09-13T07:49:26.776797+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "a439436c16e9269a5612cd261c699e6c4d439ca1fe343a014e9ed270aae6fcf5"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.777691+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-042-original-10-bytes.stdout",
+      "stderr": "command-042-original-10-bytes.stderr",
+      "pid": 27577,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010377249971497804,
+      "utc_finished": "2026-09-13T07:49:26.788312+00:00",
+      "stdout_identity": {
+        "bytes": 6825,
+        "sha256": "d8d9bcbe3ead5700ece3a26c355e6e6a0b949d33d2f0fd6bf0923d3d6914c5e2"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.789318+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-043-original-11-blob.stdout",
+      "stderr": "command-043-original-11-blob.stderr",
+      "pid": 27578,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010043832997325808,
+      "utc_finished": "2026-09-13T07:49:26.799611+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "d0bf72faf0bb4cb0959de4afe18e17496a8944baea7be4a4b478c4f47a167d1e"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.800194+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-044-original-11-bytes.stdout",
+      "stderr": "command-044-original-11-bytes.stderr",
+      "pid": 27579,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010342166002374142,
+      "utc_finished": "2026-09-13T07:49:26.810963+00:00",
+      "stdout_identity": {
+        "bytes": 1026,
+        "sha256": "659832e5fbd443013bc5d176016b41444fd19c447cc4b03fa1bb021f6759d646"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/reviews/KE-04-review.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.811575+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-045-original-12-blob.stdout",
+      "stderr": "command-045-original-12-blob.stderr",
+      "pid": 27580,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010424125008285046,
+      "utc_finished": "2026-09-13T07:49:26.822290+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "e5a0b955cc2b9cc8f24579cd898765d1bd53a3ac63b4de092a18a0dc0cc001a6"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/reviews/KE-04-review.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.822842+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-046-original-12-bytes.stdout",
+      "stderr": "command-046-original-12-bytes.stderr",
+      "pid": 27581,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010365833004470915,
+      "utc_finished": "2026-09-13T07:49:26.833478+00:00",
+      "stdout_identity": {
+        "bytes": 8450,
+        "sha256": "299abf4d5f6b5ae14245d812c91f87a3ee8696f111d38be7306e486e18f867b6"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/HARNESS.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.834401+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-047-original-13-blob.stdout",
+      "stderr": "command-047-original-13-blob.stderr",
+      "pid": 27582,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010513207991607487,
+      "utc_finished": "2026-09-13T07:49:26.845679+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "42888b474591e90c2930752e41a46959d7ead7c4053722e945332a7937f5f272"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/HARNESS.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.846219+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-048-original-13-bytes.stdout",
+      "stderr": "command-048-original-13-bytes.stderr",
+      "pid": 27583,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010163249971810728,
+      "utc_finished": "2026-09-13T07:49:26.856672+00:00",
+      "stdout_identity": {
+        "bytes": 5538,
+        "sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/source-lock.json"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.857348+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-049-original-14-blob.stdout",
+      "stderr": "command-049-original-14-blob.stderr",
+      "pid": 27584,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010318582993932068,
+      "utc_finished": "2026-09-13T07:49:26.868210+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "638a86ad853a8db19aeade7faebad11ff502ae231bdb3a1772747a4d3312c0ea"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/source-lock.json"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.869133+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-050-original-14-bytes.stdout",
+      "stderr": "command-050-original-14-bytes.stderr",
+      "pid": 27585,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010384833032730967,
+      "utc_finished": "2026-09-13T07:49:26.879797+00:00",
+      "stdout_identity": {
+        "bytes": 15982,
+        "sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "fe025e14d2639cbae59f98cacf4023d83addcb89:eigenvalues-and-inverse-problems/KE-04/solution.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.880415+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-051-original-15-blob.stdout",
+      "stderr": "command-051-original-15-blob.stderr",
+      "pid": 27586,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01183520903578028,
+      "utc_finished": "2026-09-13T07:49:26.892530+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "deff6103db12aa094fede17727f4b35dc4b5cf8f427d7524d8d03ed20ffea206"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "fe025e14d2639cbae59f98cacf4023d83addcb89:eigenvalues-and-inverse-problems/KE-04/solution.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.893147+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-052-original-15-bytes.stdout",
+      "stderr": "command-052-original-15-bytes.stderr",
+      "pid": 27587,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010261584015097469,
+      "utc_finished": "2026-09-13T07:49:26.903705+00:00",
+      "stdout_identity": {
+        "bytes": 4791,
+        "sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "rev-parse",
+        "b4123194697bdf6f8f82518c1dd7d6c40a30c2e0:eigenvalues-and-inverse-problems/KE-04/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.904891+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-053-original-16-blob.stdout",
+      "stderr": "command-053-original-16-blob.stderr",
+      "pid": 27588,
+      "exit_code": 0,
+      "elapsed_seconds": 0.01033987500704825,
+      "utc_finished": "2026-09-13T07:49:26.915984+00:00",
+      "stdout_identity": {
+        "bytes": 41,
+        "sha256": "c2caa7ed702ba61011f703af56d5c54699749ae74648b6af2811dd5a23dcff7c"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/private/tmp/nla-lean-ra20-worktree",
+        "show",
+        "b4123194697bdf6f8f82518c1dd7d6c40a30c2e0:eigenvalues-and-inverse-problems/KE-04/README.md"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "utc_started": "2026-09-13T07:49:26.916991+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "stdout": "command-054-original-16-bytes.stdout",
+      "stderr": "command-054-original-16-bytes.stderr",
+      "pid": 27589,
+      "exit_code": 0,
+      "elapsed_seconds": 0.010806666978169233,
+      "utc_finished": "2026-09-13T07:49:26.928137+00:00",
+      "stdout_identity": {
+        "bytes": 2711,
+        "sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/private/tmp/nla-lean-formalization/independent-prefixes/ke04-statement-referee1-78uv7mz4/NLA/KE04/Definitions.olean",
+        "NLA/KE04/Definitions.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/attempt-7tjmj3b0/source",
+      "utc_started": "2026-09-13T07:49:26.931211+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "LEAN_PATH": "/private/tmp/nla-lean-formalization/independent-prefixes/ke04-statement-referee1-78uv7mz4:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+        "LEAN_SRC_PATH": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/attempt-7tjmj3b0/source"
+      },
+      "stdout": "command-055-compile-NLA-KE04-Definitions.stdout",
+      "stderr": "command-055-compile-NLA-KE04-Definitions.stderr",
+      "pid": 27590,
+      "exit_code": 0,
+      "elapsed_seconds": 5.296275582979433,
+      "utc_finished": "2026-09-13T07:49:32.227786+00:00",
+      "stdout_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/private/tmp/nla-lean-formalization/independent-prefixes/ke04-statement-referee1-78uv7mz4/Challenge.olean",
+        "Challenge.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/attempt-7tjmj3b0/source",
+      "utc_started": "2026-09-13T07:49:32.228754+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "LEAN_PATH": "/private/tmp/nla-lean-formalization/independent-prefixes/ke04-statement-referee1-78uv7mz4:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+        "LEAN_SRC_PATH": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/attempt-7tjmj3b0/source"
+      },
+      "stdout": "command-056-compile-Challenge.stdout",
+      "stderr": "command-056-compile-Challenge.stderr",
+      "pid": 27602,
+      "exit_code": 0,
+      "elapsed_seconds": 3.4913998750271276,
+      "utc_finished": "2026-09-13T07:49:35.720464+00:00",
+      "stdout_identity": {
+        "bytes": 1331,
+        "sha256": "c371ea49a9e65203a2a759cfa85e8ee7b34ab2e9e441c52b3247ae84ea9c4d83"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    {
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/private/tmp/nla-lean-formalization/independent-prefixes/ke04-statement-referee1-78uv7mz4/InspectDefinitions.olean",
+        "InspectDefinitions.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/attempt-7tjmj3b0/source",
+      "utc_started": "2026-09-13T07:49:35.721337+00:00",
+      "environment_overrides": {
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "LEAN_PATH": "/private/tmp/nla-lean-formalization/independent-prefixes/ke04-statement-referee1-78uv7mz4:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/private/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+        "LEAN_SRC_PATH": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/attempt-7tjmj3b0/source"
+      },
+      "stdout": "command-057-compile-InspectDefinitions.stdout",
+      "stderr": "command-057-compile-InspectDefinitions.stderr",
+      "pid": 27605,
+      "exit_code": 1,
+      "elapsed_seconds": 1.903649291023612,
+      "utc_finished": "2026-09-13T07:49:37.625317+00:00",
+      "stdout_identity": {
+        "bytes": 221,
+        "sha256": "1bfc9f18c6a2612e9fd05578152a8f9dde3a0152d240440650625a39def4ecdf"
+      },
+      "stderr_identity": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    }
+  ]
+}

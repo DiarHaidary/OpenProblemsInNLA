@@ -1,0 +1,74 @@
+def NLA.KE04.Vec : ℕ → Type :=
+fun n => EuclideanSpace ℝ (Fin n)
+@[reducible] def NLA.KE04.Rect : ℕ → ℕ → Type :=
+fun n m => Matrix (Fin n) (Fin m) ℝ
+@[reducible] def NLA.KE04.Mat : ℕ → Type :=
+fun n => NLA.KE04.Rect n n
+def NLA.KE04.column : {n m : ℕ} → NLA.KE04.Rect n m → Fin m → NLA.KE04.Vec n :=
+fun {n m} M j => WithLp.toLp 2 fun i => M i j
+def NLA.KE04.act : {n m : ℕ} → NLA.KE04.Rect n m → NLA.KE04.Vec m →ₗ[ℝ] NLA.KE04.Vec n :=
+fun {n m} M => Matrix.toEuclideanLin M
+def NLA.KE04.columnSpace : {n m : ℕ} → NLA.KE04.Rect n m → Submodule ℝ (NLA.KE04.Vec n) :=
+fun {n m} M => Submodule.span ℝ (Set.range (NLA.KE04.column M))
+def NLA.KE04.FullColumnRank : {n p : ℕ} → NLA.KE04.Rect n p → Prop :=
+fun {n p} V => LinearIndependent ℝ (NLA.KE04.column V)
+def NLA.KE04.krylovColumns : {n p : ℕ} →
+  NLA.KE04.Mat n → NLA.KE04.Rect n p → (ell : ℕ) → Fin ell × Fin p → NLA.KE04.Vec n :=
+fun {n p} A V ell rc => NLA.KE04.column (A ^ ↑rc.1 * V) rc.2
+def NLA.KE04.krylov : {n p : ℕ} → NLA.KE04.Mat n → NLA.KE04.Rect n p → ℕ → Submodule ℝ (NLA.KE04.Vec n) :=
+fun {n p} A V ell => Submodule.span ℝ (Set.range (NLA.KE04.krylovColumns A V ell))
+def NLA.KE04.krylovCombination : {n p : ℕ} →
+  NLA.KE04.Mat n → NLA.KE04.Rect n p → (ell : ℕ) → (Fin ell × Fin p → ℝ) →ₗ[ℝ] NLA.KE04.Vec n :=
+fun {n p} A V ell => Fintype.linearCombination ℝ (NLA.KE04.krylovColumns A V ell)
+def NLA.KE04.FullBlockDimension : {n p : ℕ} → NLA.KE04.Mat n → NLA.KE04.Rect n p → ℕ → Prop :=
+fun {n p} A V ell => Module.finrank ℝ ↥(NLA.KE04.krylov A V ell) = ell * p
+def NLA.KE04.LastFullBlockIteration : {n p : ℕ} → NLA.KE04.Mat n → NLA.KE04.Rect n p → ℕ → Prop :=
+fun {n p} A V s => NLA.KE04.FullBlockDimension A V s ∧ ∀ (t : ℕ), NLA.KE04.FullBlockDimension A V t → t ≤ s
+def NLA.KE04.IsKrylovBasis : {n p : ℕ} →
+  NLA.KE04.Mat n → NLA.KE04.Rect n p → (ell : ℕ) → NLA.KE04.Rect n (ell * p) → Prop :=
+fun {n p} A V ell Q => Matrix.transpose Q * Q = 1 ∧ NLA.KE04.columnSpace Q = NLA.KE04.krylov A V ell
+def NLA.KE04.frameProjection : {n m : ℕ} → NLA.KE04.Rect n m → NLA.KE04.Mat n :=
+fun {n m} Q => Q * Matrix.conjTranspose Q
+def NLA.KE04.compression : {n m : ℕ} → NLA.KE04.Mat n → NLA.KE04.Rect n m → NLA.KE04.Mat m :=
+fun {n m} A Q => Matrix.conjTranspose Q * A * Q
+def NLA.KE04.orderedEigenvalues : {m : ℕ} → (M : NLA.KE04.Mat m) → Matrix.IsHermitian M → Fin m → ℝ :=
+fun {m} M hM r => ⋯.eigenvalues ⋯ r.rev
+def NLA.KE04.orderedEigenbasis : {m : ℕ} →
+  (M : NLA.KE04.Mat m) → Matrix.IsHermitian M → OrthonormalBasis (Fin m) ℝ (NLA.KE04.Vec m) :=
+fun {m} M hM => (⋯.eigenvectorBasis ⋯).reindex Fin.revPerm
+def NLA.KE04.eigenvalueAt : {m : ℕ} → (M : NLA.KE04.Mat m) → Matrix.IsHermitian M → ℕ → ℝ :=
+fun {m} M hM i => if h : i < m then NLA.KE04.orderedEigenvalues M hM ⟨i, h⟩ else 0
+def NLA.KE04.ritzValues : {n m : ℕ} → (A : NLA.KE04.Mat n) → Matrix.IsHermitian A → NLA.KE04.Rect n m → Fin m → ℝ :=
+fun {n m} A hA Q => NLA.KE04.orderedEigenvalues (NLA.KE04.compression A Q) ⋯
+def NLA.KE04.ritzValueAt : {n m : ℕ} → (A : NLA.KE04.Mat n) → Matrix.IsHermitian A → NLA.KE04.Rect n m → ℕ → ℝ :=
+fun {n m} A hA Q i => NLA.KE04.eigenvalueAt (NLA.KE04.compression A Q) ⋯ i
+def NLA.KE04.monicQuadratic : ℝ → ℝ → Polynomial ℝ :=
+fun a b => (Polynomial.X - Polynomial.C a) * (Polynomial.X - Polynomial.C b)
+def NLA.KE04.quadraticMatrix : {m : ℕ} → NLA.KE04.Mat m → ℝ → ℝ → NLA.KE04.Mat m :=
+fun {m} M a b => (M - a • 1) * (M - b • 1)
+def NLA.KE04.compressedQuadratic : {n m : ℕ} → NLA.KE04.Mat n → NLA.KE04.Rect n m → ℝ → ℝ → NLA.KE04.Mat n :=
+fun {n m} A Q a b => Q * NLA.KE04.quadraticMatrix (NLA.KE04.compression A Q) a b * Matrix.conjTranspose Q
+def NLA.KE04.form : {m : ℕ} → NLA.KE04.Mat m → NLA.KE04.Vec m → ℝ :=
+fun {m} M x => inner ℝ x ((NLA.KE04.act M) x)
+def NLA.KE04.IterationOccupancy : {n p : ℕ} →
+  (A : NLA.KE04.Mat n) → Matrix.IsHermitian A → NLA.KE04.Rect n p → ℕ → Prop :=
+fun {n p} A hA V s =>
+  ∀ (k j : ℕ),
+    1 ≤ k →
+      k < j →
+        j ≤ s →
+          ∀ (Qk : NLA.KE04.Rect n (k * p)) (Qj : NLA.KE04.Rect n (j * p)),
+            NLA.KE04.IsKrylovBasis A V k Qk →
+              NLA.KE04.IsKrylovBasis A V j Qj →
+                ∀ (i : ℕ),
+                  1 ≤ i →
+                    i ≤ (k - 1) * p →
+                      ∃ r,
+                        NLA.KE04.ritzValueAt A hA Qk (i - 1) < NLA.KE04.ritzValues A hA Qj r ∧
+                          NLA.KE04.ritzValues A hA Qj r < NLA.KE04.ritzValueAt A hA Qk (i + p - 1)
+def NLA.KE04.FullPrefixBlockLanczosClaim : Prop :=
+∀ (n p : ℕ) (A : NLA.KE04.Mat n) (hA : Matrix.IsHermitian A) (V : NLA.KE04.Rect n p),
+  NLA.KE04.FullColumnRank V → ∀ (s : ℕ), NLA.KE04.FullBlockDimension A V s → NLA.KE04.IterationOccupancy A hA V s
+def NLA.KE04.BlockLanczosConjecture : Prop :=
+∀ (n p : ℕ) (A : NLA.KE04.Mat n) (hA : Matrix.IsHermitian A) (V : NLA.KE04.Rect n p),
+  NLA.KE04.FullColumnRank V → ∀ (s : ℕ), NLA.KE04.LastFullBlockIteration A V s → NLA.KE04.IterationOccupancy A hA V s

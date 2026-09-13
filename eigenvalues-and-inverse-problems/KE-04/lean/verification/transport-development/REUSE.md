@@ -1,0 +1,1 @@
+The author driver is adapted from the already sealed coordinator Krylov driver; it compiles the four unchanged prerequisites and the new Transport module from immutable snapshots into a fresh private prefix. Frozen contracts 12, 19, 20 and 23 are unchanged. No sealed helper or existing evidence is modified.

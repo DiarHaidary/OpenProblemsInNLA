@@ -1,0 +1,35 @@
+Mathlib/LinearAlgebra/FiniteDimensional/Basic.lean:541:  · exact finrank_span_le_card ({v} : Set V)
+Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean:264:  rw [← finrank_span_eq_card lin_ind] at card_eq
+Mathlib/Data/Finset/Max.lean:528:theorem exists_max_image (s : Finset β) (f : β → α) (h : s.Nonempty) :
+Mathlib/Data/Finset/Max.lean:536:  @exists_max_image αᵒᵈ β _ s f h
+Mathlib/Data/Finset/Max.lean:564:theorem Multiset.exists_max_image {α R : Type*} [LinearOrder R] (f : α → R) {s : Multiset α}
+Mathlib/Data/Finset/Max.lean:567:  obtain ⟨y, hys, hy⟩ := Finset.exists_max_image s.toFinset f (toFinset_nonempty.mpr hs)
+Mathlib/Data/Finset/Max.lean:572:  @exists_max_image α Rᵒᵈ _ f s hs
+Mathlib/LinearAlgebra/Transvection/Generation.lean:200:    exact le_trans (finrank_span_le_card {v}) (by simp)
+Mathlib/LinearAlgebra/Dimension/OrzechProperty.lean:42:theorem linearIndependent_iff_card_eq_finrank_span [Nontrivial R] {ι} [Fintype ι] {b : ι → M} :
+Mathlib/LinearAlgebra/Dimension/OrzechProperty.lean:44:  mp h := (finrank_span_eq_card h).symm
+Mathlib/LinearAlgebra/Dimension/OrzechProperty.lean:51:theorem linearIndependent_iff_card_le_finrank_span [Nontrivial R] {ι} [Fintype ι] {b : ι → M} :
+Mathlib/LinearAlgebra/Dimension/OrzechProperty.lean:53:  rw [linearIndependent_iff_card_eq_finrank_span, (finrank_range_le_card _).ge_iff_eq']
+Mathlib/Order/PartialSups.lean:303:    Finset.exists_max_image _ _ ⟨i, Finset.mem_Iic.mpr le_rfl⟩
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:446:theorem finrank_span_le_card (s : Set M) [Fintype s] : finrank R (span R s) ≤ s.toFinset.card :=
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:449:theorem finrank_span_finset_le_card (s : Finset M) : (s : Set M).finrank R ≤ s.card :=
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:451:    (s : Set M).finrank R ≤ (s : Set M).toFinset.card := finrank_span_le_card (M := M) s
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:457:  refine (finrank_span_le_card _).trans ?_
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:461:theorem finrank_span_eq_card [Nontrivial R] {ι : Type*} [Fintype ι] {b : ι → M}
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:470:theorem finrank_span_set_eq_card {s : Set M} [Fintype s] (hs : LinearIndepOn R id s) :
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:477:theorem finrank_span_finset_eq_card {s : Finset M} (hs : LinearIndepOn R id (s : Set M)) :
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:479:  convert! finrank_span_set_eq_card (s := (s : Set M)) hs
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:486:    (lt_of_le_of_lt (finrank_span_le_card _) card_lt)
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:490:  lt_top_of_finrank_lt_finrank (lt_of_le_of_lt (finrank_span_le_card _) card_lt)
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:496:  exact (finrank_span_le_card _).trans (by convert! Fintype.card_range_le v; rw [Set.toFinset_card])
+Mathlib/LinearAlgebra/Dimension/Constructions.lean:503:  rw [Pi.spanSubset, finrank_span_set_eq_card <| (Pi.basisFun R ι).linearIndepOn _ |>.id_image,
+Mathlib/LinearAlgebra/Projectivization/Collinear.lean:93:    simp [finrank_span_eq_card h]
+Mathlib/LinearAlgebra/Projectivization/Collinear.lean:111:  simp [finrank_span_eq_card huv]
+Mathlib/Order/Filter/AtTopBot/Finite.lean:60:    exists_max_image _ u (finite_le_nat N) ⟨N, le_refl N⟩
+Mathlib/LinearAlgebra/RootSystem/BaseExists.lean:149:  rw [linearIndependent_iff_card_eq_finrank_span, Set.finrank, h_span, finrank_top, ← h_card,
+Mathlib/LinearAlgebra/Matrix/Rank.lean:576:  rw [M.rank_eq_finrank_span_row, linearIndependent_iff_card_eq_finrank_span.mp h, Set.finrank]
+Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Card.lean:55:            simp only [SetLike.coe_sort_coe, finrank_span_eq_card s.2, card_fin]
+Mathlib/LinearAlgebra/Matrix/GeneralLinearGroup/Card.lean:77:    apply linearIndependent_iff_card_eq_finrank_span.2
+Mathlib/LinearAlgebra/AffineSpace/FiniteDimensional.lean:145:  rwa [vectorSpan_eq_span_vsub_finset_right_ne k hp₁, finrank_span_finset_eq_card, hc]
+Mathlib/LinearAlgebra/AffineSpace/FiniteDimensional.lean:183:  refine le_trans (finrank_span_finset_le_card (((s.image p).erase p₁).image fun p => p -ᵥ p₁)) ?_
+Mathlib/LinearAlgebra/AffineSpace/FiniteDimensional.lean:212:    linearIndependent_iff_card_eq_finrank_span, eq_comm,

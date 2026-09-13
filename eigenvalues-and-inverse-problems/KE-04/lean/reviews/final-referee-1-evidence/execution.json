@@ -1,0 +1,2752 @@
+{
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "commands": [
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "--version"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "lean-version",
+      "seconds": 0.244,
+      "stderr": "command-000-lean-version.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-000-lean-version.stdout",
+      "stdout_sha256": "4762d596346ad354e28668de62b7eeae7de5d531b9a7b1c182ca59cfacd81bdd",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "label": "before-leancert-head",
+      "seconds": 0.021,
+      "stderr": "command-001-before-leancert-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-001-before-leancert-head.stdout",
+      "stdout_sha256": "e4b931505459ba81cd3601ad76fad49813b618773699f3eed9a65e92975422bb",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "label": "before-leancert-clean",
+      "seconds": 0.022,
+      "stderr": "command-002-before-leancert-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-002-before-leancert-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "before-mathlib-head",
+      "seconds": 0.011,
+      "stderr": "command-003-before-mathlib-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-003-before-mathlib-head.stdout",
+      "stdout_sha256": "7cf32a824e26133738b30903ed97bc24def8e93db8039483d6bdf7fce7a0efee",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "before-mathlib-clean",
+      "seconds": 0.139,
+      "stderr": "command-004-before-mathlib-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-004-before-mathlib-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "exit_code": 0,
+      "label": "before-plausible-head",
+      "seconds": 0.013,
+      "stderr": "command-005-before-plausible-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-005-before-plausible-head.stdout",
+      "stdout_sha256": "805ea619fc405904b6e9ac21504fad9d1b144b97838b0ea93a6c5bacf0f9d917",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "exit_code": 0,
+      "label": "before-plausible-clean",
+      "seconds": 0.013,
+      "stderr": "command-006-before-plausible-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-006-before-plausible-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "exit_code": 0,
+      "label": "before-LeanSearchClient-head",
+      "seconds": 0.011,
+      "stderr": "command-007-before-LeanSearchClient-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-007-before-LeanSearchClient-head.stdout",
+      "stdout_sha256": "4d0336c7ba0fcd5eb2f72acfcbc62d27a785c823fdd5e7e21a77ed3f529ba9b8",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "exit_code": 0,
+      "label": "before-LeanSearchClient-clean",
+      "seconds": 0.013,
+      "stderr": "command-008-before-LeanSearchClient-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-008-before-LeanSearchClient-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "exit_code": 0,
+      "label": "before-importGraph-head",
+      "seconds": 0.011,
+      "stderr": "command-009-before-importGraph-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-009-before-importGraph-head.stdout",
+      "stdout_sha256": "1c21dc61032d91e32449c4295a2a30bf8c68c4b8d984bf0f46a73d53d180ce2e",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "exit_code": 0,
+      "label": "before-importGraph-clean",
+      "seconds": 0.013,
+      "stderr": "command-010-before-importGraph-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-010-before-importGraph-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "exit_code": 0,
+      "label": "before-proofwidgets-head",
+      "seconds": 0.011,
+      "stderr": "command-011-before-proofwidgets-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-011-before-proofwidgets-head.stdout",
+      "stdout_sha256": "d9c675d1d0b71316cbd8bced943dd9983f09a32dc9a229039acc3afdfe2375b6",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "exit_code": 0,
+      "label": "before-proofwidgets-clean",
+      "seconds": 0.014,
+      "stderr": "command-012-before-proofwidgets-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-012-before-proofwidgets-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "exit_code": 0,
+      "label": "before-aesop-head",
+      "seconds": 0.011,
+      "stderr": "command-013-before-aesop-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-013-before-aesop-head.stdout",
+      "stdout_sha256": "4c072408d27377ff5b35ed2858b23f6f83466a241898fe2c4c4a215ba2128652",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "exit_code": 0,
+      "label": "before-aesop-clean",
+      "seconds": 0.017,
+      "stderr": "command-014-before-aesop-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-014-before-aesop-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "exit_code": 0,
+      "label": "before-Qq-head",
+      "seconds": 0.011,
+      "stderr": "command-015-before-Qq-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-015-before-Qq-head.stdout",
+      "stdout_sha256": "2d7411c117d0e100d30993222f71939f4200b1982179b5c8651c332382e48655",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "exit_code": 0,
+      "label": "before-Qq-clean",
+      "seconds": 0.014,
+      "stderr": "command-016-before-Qq-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-016-before-Qq-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "exit_code": 0,
+      "label": "before-batteries-head",
+      "seconds": 0.012,
+      "stderr": "command-017-before-batteries-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-017-before-batteries-head.stdout",
+      "stdout_sha256": "f11675294ae9a5b8bd697f96d60b337c9aa0ffa5ed7cc89b8acfd5103044b82d",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "exit_code": 0,
+      "label": "before-batteries-clean",
+      "seconds": 0.019,
+      "stderr": "command-018-before-batteries-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-018-before-batteries-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "exit_code": 0,
+      "label": "before-Cli-head",
+      "seconds": 0.011,
+      "stderr": "command-019-before-Cli-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-019-before-Cli-head.stdout",
+      "stdout_sha256": "300616b42565e3af8371bcac27ec8e33232d8bd511b3abc74ce438ace7a7ed4b",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "exit_code": 0,
+      "label": "before-Cli-clean",
+      "seconds": 0.013,
+      "stderr": "command-020-before-Cli-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-020-before-Cli-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:AGENTS.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-00",
+      "seconds": 0.015,
+      "stderr": "command-021-original-00.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-021-original-00.stdout",
+      "stdout_sha256": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:CONTRIBUTING.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-01",
+      "seconds": 0.011,
+      "stderr": "command-022-original-01.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-022-original-01.stdout",
+      "stdout_sha256": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-02",
+      "seconds": 0.011,
+      "stderr": "command-023-original-02.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-023-original-02.stdout",
+      "stdout_sha256": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/REVIEW.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-03",
+      "seconds": 0.011,
+      "stderr": "command-024-original-03.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-024-original-03.stdout",
+      "stdout_sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-04",
+      "seconds": 0.011,
+      "stderr": "command-025-original-04.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-025-original-04.stdout",
+      "stdout_sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/v0.4.schema.json"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-05",
+      "seconds": 0.01,
+      "stderr": "command-026-original-05.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-026-original-05.stdout",
+      "stdout_sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-06",
+      "seconds": 0.011,
+      "stderr": "command-027-original-06.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-027-original-06.stdout",
+      "stdout_sha256": "20ff79f2a4c9fbbd456a5167f6e634df7473a6415141fcfc01d85b49fea8a057",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-07",
+      "seconds": 0.011,
+      "stderr": "command-028-original-07.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-028-original-07.stdout",
+      "stdout_sha256": "dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.tex"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-08",
+      "seconds": 0.011,
+      "stderr": "command-029-original-08.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-029-original-08.stdout",
+      "stdout_sha256": "06ef0d4fa338bfc981892856c175c2c9bc828fd48edbdec32b048c752d659c8f",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:problem_ids.json"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-09",
+      "seconds": 0.011,
+      "stderr": "command-030-original-09.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-030-original-09.stdout",
+      "stdout_sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-10",
+      "seconds": 0.012,
+      "stderr": "command-031-original-10.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-031-original-10.stdout",
+      "stdout_sha256": "d8d9bcbe3ead5700ece3a26c355e6e6a0b949d33d2f0fd6bf0923d3d6914c5e2",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-11",
+      "seconds": 0.011,
+      "stderr": "command-032-original-11.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-032-original-11.stdout",
+      "stdout_sha256": "659832e5fbd443013bc5d176016b41444fd19c447cc4b03fa1bb021f6759d646",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/reviews/KE-04-review.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-12",
+      "seconds": 0.043,
+      "stderr": "command-033-original-12.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-033-original-12.stdout",
+      "stdout_sha256": "299abf4d5f6b5ae14245d812c91f87a3ee8696f111d38be7306e486e18f867b6",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/HARNESS.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-13",
+      "seconds": 0.022,
+      "stderr": "command-034-original-13.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-034-original-13.stdout",
+      "stdout_sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/source-lock.json"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-14",
+      "seconds": 0.014,
+      "stderr": "command-035-original-14.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-035-original-14.stdout",
+      "stdout_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "fe025e14d2639cbae59f98cacf4023d83addcb89:eigenvalues-and-inverse-problems/KE-04/solution.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-15",
+      "seconds": 0.012,
+      "stderr": "command-036-original-15.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-036-original-15.stdout",
+      "stdout_sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "b4123194697bdf6f8f82518c1dd7d6c40a30c2e0:eigenvalues-and-inverse-problems/KE-04/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ra20-worktree",
+      "exit_code": 0,
+      "label": "original-16",
+      "seconds": 0.011,
+      "stderr": "command-037-original-16.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-037-original-16.stdout",
+      "stdout_sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/Challenge.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "label": "api-00",
+      "seconds": 0.013,
+      "stderr": "command-038-api-00.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-038-api-00.stdout",
+      "stdout_sha256": "bcbc89b32f46f6d9c33bbc919d4b08b0e3e797e8b87745485e1decd059c07a8d",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/LICENSE"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "label": "api-01",
+      "seconds": 0.012,
+      "stderr": "command-039-api-01.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-039-api-01.stdout",
+      "stdout_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/NUMERICAL_TARGETS.md"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "label": "api-02",
+      "seconds": 0.011,
+      "stderr": "command-040-api-02.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-040-api-02.stdout",
+      "stdout_sha256": "2e25ed916080e6405f7b0a39e45641ef6f88389f26a6a142bc3036528dfc4119",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/ProofProject/CheckedMultivariateBound.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "label": "api-03",
+      "seconds": 0.012,
+      "stderr": "command-041-api-03.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-041-api-03.stdout",
+      "stdout_sha256": "cddab7954e4e6616f9bf65bcb967e2ac166b5e8fecab686a04cd218a4e22aa18",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/comparator.json"
+      ],
+      "cwd": "/Users/georgestepaniants/Research/Forsythe",
+      "exit_code": 0,
+      "label": "api-04",
+      "seconds": 0.011,
+      "stderr": "command-042-api-04.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-042-api-04.stdout",
+      "stdout_sha256": "b18070414f3dd6a2626878dd19cd5aff5dc22a0feb51a469bb6c57d862a48bf7",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "621a43d7cf21f87872392a01e874f2f1dbddc926:LeanCert/Tactic/Verification.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "label": "api-05",
+      "seconds": 0.011,
+      "stderr": "command-043-api-05.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-043-api-05.stdout",
+      "stdout_sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/PiL2.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-06",
+      "seconds": 0.013,
+      "stderr": "command-044-api-06.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-044-api-06.stdout",
+      "stdout_sha256": "1f9827b2db67213c725a2dcc3fec52a87772966d1fbd3fc6857a019dbd7a6053",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/Positive.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-07",
+      "seconds": 0.011,
+      "stderr": "command-045-api-07.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-045-api-07.stdout",
+      "stdout_sha256": "e96b2c28a53ab1a17abcccec25f17682a914be43273346afbddfde8503e7b24d",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/Spectrum.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-08",
+      "seconds": 0.011,
+      "stderr": "command-046-api-08.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-046-api-08.stdout",
+      "stdout_sha256": "f12ef613416053c759ef30179147744c64eeec90f7467644cb30e64d532d7aa6",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/Order.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-09",
+      "seconds": 0.011,
+      "stderr": "command-047-api-09.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-047-api-09.stdout",
+      "stdout_sha256": "eb786ba4435f1955c504da52de2beae76647d814922266c8aac8f082bbc3e2da",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/PosDef.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-10",
+      "seconds": 0.011,
+      "stderr": "command-048-api-10.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-048-api-10.stdout",
+      "stdout_sha256": "d019fb2cae81293d8505e2a2543a6f5fe7c1819e4860454d00e15ef74528a43d",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/Spectrum.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-11",
+      "seconds": 0.011,
+      "stderr": "command-049-api-11.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-049-api-11.stdout",
+      "stdout_sha256": "1ad47effa0a5fbc373ebb6cf52a6b85a66b25d3c5a86394f3dd5932ffbfc3afe",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Data/Fin/Rev.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-12",
+      "seconds": 0.013,
+      "stderr": "command-050-api-12.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-050-api-12.stdout",
+      "stdout_sha256": "cd616713110393338bd880146a89ac3dce464df31d107d96fa652164727f4888",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Dimension/Constructions.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-13",
+      "seconds": 0.013,
+      "stderr": "command-051-api-13.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-051-api-13.stdout",
+      "stdout_sha256": "039f43b60c6dc3dec90e085beb9ee9dfe46da0d2a4d83f730ee274f337f29548",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-14",
+      "seconds": 0.011,
+      "stderr": "command-052-api-14.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-052-api-14.stdout",
+      "stdout_sha256": "2b383a91a6e4566f630b2c682506d4305a0098d9d085387e9e3bdb1d3126f129",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-15",
+      "seconds": 0.012,
+      "stderr": "command-053-api-15.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-053-api-15.stdout",
+      "stdout_sha256": "f8e79ad4a35781c09b7de25fcf491f1d17306cb50a7446d985cabedfc09f20da",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/LinearIndependent/Defs.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-16",
+      "seconds": 0.012,
+      "stderr": "command-054-api-16.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-054-api-16.stdout",
+      "stdout_sha256": "a52ccf21d86a16e690674f4a978da5a2a531f602c659d661c7d21586bb9994d1",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Matrix/Hermitian.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-17",
+      "seconds": 0.011,
+      "stderr": "command-055-api-17.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-055-api-17.stdout",
+      "stdout_sha256": "9f4e84cafd93f05935d8accc2846a4d624c1fe994c53ab348b8338464bf5cb21",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Matrix/PosDef.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "api-18",
+      "seconds": 0.011,
+      "stderr": "command-056-api-18.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-056-api-18.stdout",
+      "stdout_sha256": "09290b5923e167fcf959df64d00b039c7b99c4b236755728219bf5b5feaac24a",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "show",
+        "2938e277969c329caf154e48a3d8823f3635c7f1:Schiffer/Challenge.lean"
+      ],
+      "cwd": "/tmp/nla-lean-formalization/leancert-examples/Schiffer",
+      "exit_code": 0,
+      "label": "api-19",
+      "seconds": 0.012,
+      "stderr": "command-057-api-19.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-057-api-19.stdout",
+      "stdout_sha256": "bc31fcc14f816c2e3b756bdea74c6c791aae2d34fa055ae2a8c6a218b209f267",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "rg",
+        "-n",
+        "eigenvalues_antitone|roots_charpoly_eq_eigenvalues|apply_eigenvectorBasis|eigenvalues_eq_eigenvalues_iff",
+        "Mathlib/Analysis/InnerProductSpace/Spectrum.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "reuse-spectral",
+      "seconds": 0.005,
+      "stderr": "command-058-reuse-spectral.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-058-reuse-spectral.stdout",
+      "stdout_sha256": "8c443356cb5951e6cc5848574ed8e3096b176dd5a6d90d539c1b847fd480f5c1",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "rg",
+        "-n",
+        "finrank_sup_add_finrank_inf_eq|dotProduct_mulVec_zero_iff|linearIndependent_iff_injective_fintypeLinearCombination",
+        "Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean",
+        "Mathlib/Analysis/Matrix/Order.lean",
+        "Mathlib/LinearAlgebra/LinearIndependent/Defs.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "reuse-dimension-kernel",
+      "seconds": 0.006,
+      "stderr": "command-059-reuse-dimension-kernel.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-059-reuse-dimension-kernel.stdout",
+      "stdout_sha256": "c525723747c73989098fb029abbce54bb708cdcb769bf1dc28dac5e474180d83",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0,
+        1
+      ],
+      "argv": [
+        "rg",
+        "-n",
+        "Krylov|Lanczos|krylov|lanczos",
+        "Mathlib"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 1,
+      "label": "reuse-Krylov-Lanczos",
+      "seconds": 0.203,
+      "stderr": "command-060-reuse-Krylov-Lanczos.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-060-reuse-Krylov-Lanczos.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Definitions.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Definitions.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Definitions.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Definitions",
+      "seconds": 17.177,
+      "stderr": "command-061-compile-NLA-KE04-Definitions.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-061-compile-NLA-KE04-Definitions.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Krylov.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Krylov.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Krylov.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Krylov",
+      "seconds": 7.277,
+      "stderr": "command-062-compile-NLA-KE04-Krylov.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-062-compile-NLA-KE04-Krylov.stdout",
+      "stdout_sha256": "ab1d80cc7326386c15d7732eb1ab0daacc86bd54c0fb21ac2dce00955b1920f9",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Frames.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Frames.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Frames.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Frames",
+      "seconds": 4.32,
+      "stderr": "command-063-compile-NLA-KE04-Frames.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-063-compile-NLA-KE04-Frames.stdout",
+      "stdout_sha256": "c410813d93d9d8d80e23ba95de717dbc87ffe4218ca26d8d89cbf95106aa2d67",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Spectral.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Spectral.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Spectral.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Spectral",
+      "seconds": 4.607,
+      "stderr": "command-064-compile-NLA-KE04-Spectral.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-064-compile-NLA-KE04-Spectral.stdout",
+      "stdout_sha256": "ce8a5721505c2b38dd4eeeed30a1903f5928964fbd5445dd716e31c4741dd7d7",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/SpectralWindow.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/SpectralWindow.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/SpectralWindow.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-SpectralWindow",
+      "seconds": 4.144,
+      "stderr": "command-065-compile-NLA-KE04-SpectralWindow.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-065-compile-NLA-KE04-SpectralWindow.stdout",
+      "stdout_sha256": "6388fafcbde4a763e0f6c180f12cdbde20da038f5aac5fe45bf34537f94144d7",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Transport.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Transport.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Transport.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Transport",
+      "seconds": 4.232,
+      "stderr": "command-066-compile-NLA-KE04-Transport.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-066-compile-NLA-KE04-Transport.stdout",
+      "stdout_sha256": "9f11aab377c43cef0f258e2e37817f1ee52156f583595843676c1ed3f60fb206",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Intersection.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Intersection.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Intersection.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Intersection",
+      "seconds": 4.035,
+      "stderr": "command-067-compile-NLA-KE04-Intersection.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-067-compile-NLA-KE04-Intersection.stdout",
+      "stdout_sha256": "06c05d89aa2b3fdf4d8772446067e816993ad0ff6d658c711d3e6409bf05c8c2",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Nonannihilation.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Nonannihilation.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Nonannihilation.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Nonannihilation",
+      "seconds": 4.143,
+      "stderr": "command-068-compile-NLA-KE04-Nonannihilation.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-068-compile-NLA-KE04-Nonannihilation.stdout",
+      "stdout_sha256": "2f9e96c3dd08feadb5b58f7c24cca027c1705535f95460c9ca0c940bdc3d397e",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Completion.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Completion.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Completion.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Completion",
+      "seconds": 4.024,
+      "stderr": "command-069-compile-NLA-KE04-Completion.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-069-compile-NLA-KE04-Completion.stdout",
+      "stdout_sha256": "8c639f332cbb30895d688e4540148f0604217d2f835efc821b1747cd068e23ca",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Proof.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/NLA/KE04/Proof.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/NLA/KE04/Proof.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-NLA-KE04-Proof",
+      "seconds": 4.18,
+      "stderr": "command-070-compile-NLA-KE04-Proof.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-070-compile-NLA-KE04-Proof.stdout",
+      "stdout_sha256": "5cf37658d0b0edaae147ff2e735cb702e3e29c6480f1bdb086c35c106fd98da7",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/Solution.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/Solution.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/Solution.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-Solution",
+      "seconds": 3.815,
+      "stderr": "command-071-compile-Solution.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-071-compile-Solution.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/reviews/final-referee-1-evidence/Reference.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/reviews/final-referee-1-evidence/Reference.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/final-referee-1-evidence/Reference.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-reviews-final-referee-1-evidence-Reference",
+      "seconds": 3.385,
+      "stderr": "command-072-compile-reviews-final-referee-1-evidence-Reference.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-072-compile-reviews-final-referee-1-evidence-Reference.stdout",
+      "stdout_sha256": "9c1fa85793862faed78f397fe2812d9ec11f072ad1d8de5d69b7031e1a913ff6",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/reviews/final-referee-1-evidence/Inspect.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d/reviews/final-referee-1-evidence/Inspect.ilean",
+        "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/final-referee-1-evidence/Inspect.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+      "exit_code": 0,
+      "label": "compile-reviews-final-referee-1-evidence-Inspect",
+      "seconds": 5.017,
+      "stderr": "command-073-compile-reviews-final-referee-1-evidence-Inspect.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-073-compile-reviews-final-referee-1-evidence-Inspect.stdout",
+      "stdout_sha256": "c4979c91d329af5a44fa302ae3405c278cf39ea4e007eb6c8218a362fb1671a4",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "label": "after-leancert-head",
+      "seconds": 0.019,
+      "stderr": "command-074-after-leancert-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-074-after-leancert-head.stdout",
+      "stdout_sha256": "e4b931505459ba81cd3601ad76fad49813b618773699f3eed9a65e92975422bb",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "label": "after-leancert-clean",
+      "seconds": 0.02,
+      "stderr": "command-075-after-leancert-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-075-after-leancert-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "after-mathlib-head",
+      "seconds": 0.011,
+      "stderr": "command-076-after-mathlib-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-076-after-mathlib-head.stdout",
+      "stdout_sha256": "7cf32a824e26133738b30903ed97bc24def8e93db8039483d6bdf7fce7a0efee",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "label": "after-mathlib-clean",
+      "seconds": 0.055,
+      "stderr": "command-077-after-mathlib-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-077-after-mathlib-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "exit_code": 0,
+      "label": "after-plausible-head",
+      "seconds": 0.011,
+      "stderr": "command-078-after-plausible-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-078-after-plausible-head.stdout",
+      "stdout_sha256": "805ea619fc405904b6e9ac21504fad9d1b144b97838b0ea93a6c5bacf0f9d917",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "exit_code": 0,
+      "label": "after-plausible-clean",
+      "seconds": 0.013,
+      "stderr": "command-079-after-plausible-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-079-after-plausible-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "exit_code": 0,
+      "label": "after-LeanSearchClient-head",
+      "seconds": 0.01,
+      "stderr": "command-080-after-LeanSearchClient-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-080-after-LeanSearchClient-head.stdout",
+      "stdout_sha256": "4d0336c7ba0fcd5eb2f72acfcbc62d27a785c823fdd5e7e21a77ed3f529ba9b8",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "exit_code": 0,
+      "label": "after-LeanSearchClient-clean",
+      "seconds": 0.012,
+      "stderr": "command-081-after-LeanSearchClient-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-081-after-LeanSearchClient-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "exit_code": 0,
+      "label": "after-importGraph-head",
+      "seconds": 0.01,
+      "stderr": "command-082-after-importGraph-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-082-after-importGraph-head.stdout",
+      "stdout_sha256": "1c21dc61032d91e32449c4295a2a30bf8c68c4b8d984bf0f46a73d53d180ce2e",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "exit_code": 0,
+      "label": "after-importGraph-clean",
+      "seconds": 0.012,
+      "stderr": "command-083-after-importGraph-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-083-after-importGraph-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "exit_code": 0,
+      "label": "after-proofwidgets-head",
+      "seconds": 0.01,
+      "stderr": "command-084-after-proofwidgets-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-084-after-proofwidgets-head.stdout",
+      "stdout_sha256": "d9c675d1d0b71316cbd8bced943dd9983f09a32dc9a229039acc3afdfe2375b6",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "exit_code": 0,
+      "label": "after-proofwidgets-clean",
+      "seconds": 0.012,
+      "stderr": "command-085-after-proofwidgets-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-085-after-proofwidgets-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "exit_code": 0,
+      "label": "after-aesop-head",
+      "seconds": 0.01,
+      "stderr": "command-086-after-aesop-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-086-after-aesop-head.stdout",
+      "stdout_sha256": "4c072408d27377ff5b35ed2858b23f6f83466a241898fe2c4c4a215ba2128652",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "exit_code": 0,
+      "label": "after-aesop-clean",
+      "seconds": 0.014,
+      "stderr": "command-087-after-aesop-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-087-after-aesop-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "exit_code": 0,
+      "label": "after-Qq-head",
+      "seconds": 0.01,
+      "stderr": "command-088-after-Qq-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-088-after-Qq-head.stdout",
+      "stdout_sha256": "2d7411c117d0e100d30993222f71939f4200b1982179b5c8651c332382e48655",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "exit_code": 0,
+      "label": "after-Qq-clean",
+      "seconds": 0.012,
+      "stderr": "command-089-after-Qq-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-089-after-Qq-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "exit_code": 0,
+      "label": "after-batteries-head",
+      "seconds": 0.011,
+      "stderr": "command-090-after-batteries-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-090-after-batteries-head.stdout",
+      "stdout_sha256": "f11675294ae9a5b8bd697f96d60b337c9aa0ffa5ed7cc89b8acfd5103044b82d",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "exit_code": 0,
+      "label": "after-batteries-clean",
+      "seconds": 0.014,
+      "stderr": "command-091-after-batteries-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-091-after-batteries-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "exit_code": 0,
+      "label": "after-Cli-head",
+      "seconds": 0.01,
+      "stderr": "command-092-after-Cli-head.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-092-after-Cli-head.stdout",
+      "stdout_sha256": "300616b42565e3af8371bcac27ec8e33232d8bd511b3abc74ce438ace7a7ed4b",
+      "timed_out": false
+    },
+    {
+      "allowed_exit_codes": [
+        0
+      ],
+      "argv": [
+        "git",
+        "status",
+        "--porcelain=v1"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "exit_code": 0,
+      "label": "after-Cli-clean",
+      "seconds": 0.012,
+      "stderr": "command-093-after-Cli-clean.stderr",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout": "command-093-after-Cli-clean.stdout",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "timed_out": false
+    }
+  ],
+  "frozen_after": [
+    {
+      "files": 3493,
+      "path": "reviews/proof-freeze.json",
+      "sha256": "d45703f80e35612826060bc53d7a46da7c341234f2edd8cd6269e1ed72c53c16"
+    },
+    {
+      "files": 1598,
+      "path": "reviews/statement-freeze.json",
+      "sha256": "85d583c12fbbf1361cd128f7e98c359dd8990d3886ecfb9e8aed7c79793c305e"
+    }
+  ],
+  "frozen_before": [
+    {
+      "files": 3493,
+      "path": "reviews/proof-freeze.json",
+      "sha256": "d45703f80e35612826060bc53d7a46da7c341234f2edd8cd6269e1ed72c53c16"
+    },
+    {
+      "files": 1598,
+      "path": "reviews/statement-freeze.json",
+      "sha256": "85d583c12fbbf1361cd128f7e98c359dd8990d3886ecfb9e8aed7c79793c305e"
+    }
+  ],
+  "independence": "No KE-04 statement, design, proof or mathematical-fix contribution",
+  "key_objects_after": [
+    {
+      "bytes": 49968,
+      "path": "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+      "sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554"
+    },
+    {
+      "bytes": 1854432,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean/LeanCert/Tactic/Verification.olean",
+      "sha256": "dddbaecdbdfad90b602bbbbf308610a3a0c1ecfcfadf78eca297a6cfb734d4dc"
+    },
+    {
+      "bytes": 320232,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/Spectrum.olean",
+      "sha256": "f57cbc29693bb2c1279132ba69bdcc3febfc4268bd6ffbeb311793ec2d3ea54e"
+    },
+    {
+      "bytes": 250312,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Matrix/Order.olean",
+      "sha256": "266fb157167926b001330379c8f37d69fb7609e7e244bd54ee535864bcc828b9"
+    },
+    {
+      "bytes": 423856,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent/Defs.olean",
+      "sha256": "1be891aed1802b88043b497d64a6d9324d8e0d5adca1fb64aec6c0a75e944c3d"
+    },
+    {
+      "bytes": 1744520,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/PiL2.olean",
+      "sha256": "b91d760b8301aecd3c50e3427e182fb2abadac4c009acc9374284e5962df04c8"
+    }
+  ],
+  "key_objects_before": [
+    {
+      "bytes": 49968,
+      "path": "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+      "sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554"
+    },
+    {
+      "bytes": 1854432,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean/LeanCert/Tactic/Verification.olean",
+      "sha256": "dddbaecdbdfad90b602bbbbf308610a3a0c1ecfcfadf78eca297a6cfb734d4dc"
+    },
+    {
+      "bytes": 320232,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/Spectrum.olean",
+      "sha256": "f57cbc29693bb2c1279132ba69bdcc3febfc4268bd6ffbeb311793ec2d3ea54e"
+    },
+    {
+      "bytes": 250312,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/Matrix/Order.olean",
+      "sha256": "266fb157167926b001330379c8f37d69fb7609e7e244bd54ee535864bcc828b9"
+    },
+    {
+      "bytes": 423856,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/LinearAlgebra/LinearIndependent/Defs.olean",
+      "sha256": "1be891aed1802b88043b497d64a6d9324d8e0d5adca1fb64aec6c0a75e944c3d"
+    },
+    {
+      "bytes": 1744520,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Analysis/InnerProductSpace/PiL2.olean",
+      "sha256": "b91d760b8301aecd3c50e3427e182fb2abadac4c009acc9374284e5962df04c8"
+    }
+  ],
+  "last_utc": "2026-09-13T10:07:45.048324+00:00",
+  "lean_modules": [
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Definitions.lean",
+      "stdout": "command-061-compile-NLA-KE04-Definitions.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Krylov.lean",
+      "stdout": "command-062-compile-NLA-KE04-Krylov.stdout",
+      "warning_count": 1
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Frames.lean",
+      "stdout": "command-063-compile-NLA-KE04-Frames.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Spectral.lean",
+      "stdout": "command-064-compile-NLA-KE04-Spectral.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/SpectralWindow.lean",
+      "stdout": "command-065-compile-NLA-KE04-SpectralWindow.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Transport.lean",
+      "stdout": "command-066-compile-NLA-KE04-Transport.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Intersection.lean",
+      "stdout": "command-067-compile-NLA-KE04-Intersection.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Nonannihilation.lean",
+      "stdout": "command-068-compile-NLA-KE04-Nonannihilation.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Completion.lean",
+      "stdout": "command-069-compile-NLA-KE04-Completion.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "NLA/KE04/Proof.lean",
+      "stdout": "command-070-compile-NLA-KE04-Proof.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "Solution.lean",
+      "stdout": "command-071-compile-Solution.stdout",
+      "warning_count": 0
+    },
+    {
+      "exit_code": 0,
+      "path": "reviews/final-referee-1-evidence/Reference.lean",
+      "stdout": "command-072-compile-reviews-final-referee-1-evidence-Reference.stdout",
+      "warning_count": 24
+    },
+    {
+      "exit_code": 0,
+      "path": "reviews/final-referee-1-evidence/Inspect.lean",
+      "stdout": "command-073-compile-reviews-final-referee-1-evidence-Inspect.stdout",
+      "warning_count": 0
+    }
+  ],
+  "lean_version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "only_recorded_owned_generated_objects_removed": true,
+  "owned_generated_before_cleanup": [
+    {
+      "bytes": 8293,
+      "path": "NLA/KE04/Completion.ilean",
+      "sha256": "91c94d3a3815df11c51c196dbc39b429ce1a63b4b14bc8930a83763f497290a7"
+    },
+    {
+      "bytes": 264616,
+      "path": "NLA/KE04/Completion.olean",
+      "sha256": "4dfe1b0bbc42371e42cfcbfbab4b29bd07363fe80ed1e39720430c365b0167bf"
+    },
+    {
+      "bytes": 16777,
+      "path": "NLA/KE04/Definitions.ilean",
+      "sha256": "84b2de27eeb352714e204606aa725d8cd80c5c2bf49f98a2a12effe300f5c5c5"
+    },
+    {
+      "bytes": 287168,
+      "path": "NLA/KE04/Definitions.olean",
+      "sha256": "e606d8079100749d84476d6a8697e53a590aaa33d336a4ea81646f17d24281ad"
+    },
+    {
+      "bytes": 29984,
+      "path": "NLA/KE04/Frames.ilean",
+      "sha256": "bc4ed412baf1c1dd350ccb70da961ed6a4c4a58a40ed4357e9657bcea79b0c96"
+    },
+    {
+      "bytes": 318616,
+      "path": "NLA/KE04/Frames.olean",
+      "sha256": "624c3e54716f086896fbeb2f3f2314e068a28e1a9a646151cdc2b2cdb782ce90"
+    },
+    {
+      "bytes": 5466,
+      "path": "NLA/KE04/Intersection.ilean",
+      "sha256": "30d5f069327cf5f9bd1fe6a8ae220c897dcc1f9d8af4f1eebace549b4fad52e7"
+    },
+    {
+      "bytes": 140568,
+      "path": "NLA/KE04/Intersection.olean",
+      "sha256": "aaf5c924db1e84bdf44d7dc22c4ce511e3dd8bdd57863fd247a8f5be11f9ad50"
+    },
+    {
+      "bytes": 23943,
+      "path": "NLA/KE04/Krylov.ilean",
+      "sha256": "0ceee86844ec047826164bfca4c74e5bb0286649c38809a846e7d452da9c5c56"
+    },
+    {
+      "bytes": 215040,
+      "path": "NLA/KE04/Krylov.olean",
+      "sha256": "8cb2d0ddf35c190c34426662814a47c6b36b76d9c375f3f9ab29f7345e67613c"
+    },
+    {
+      "bytes": 17918,
+      "path": "NLA/KE04/Nonannihilation.ilean",
+      "sha256": "ea4698607fed59d3406c25fc09fcbfb2b98599524b6a4e9cd9c8d8586d09d6f6"
+    },
+    {
+      "bytes": 282816,
+      "path": "NLA/KE04/Nonannihilation.olean",
+      "sha256": "07573a45f535f14bb4b5fde28889d3358f2b3051a18cde2bfdad04fbcf6efdfe"
+    },
+    {
+      "bytes": 28337,
+      "path": "NLA/KE04/Proof.ilean",
+      "sha256": "417f7736fe05b93f90190e47e6af27e1a52bd5348ce4310e52105f3272c674ff"
+    },
+    {
+      "bytes": 149048,
+      "path": "NLA/KE04/Proof.olean",
+      "sha256": "d6ec2028eb65120ce8f9da89619ac0381b34eef0b0e01130b9affe3f12f70525"
+    },
+    {
+      "bytes": 21541,
+      "path": "NLA/KE04/Spectral.ilean",
+      "sha256": "3eca60d57f0fcbd8fc518cbb945c172954c340812949014b830d65d0ca8287d0"
+    },
+    {
+      "bytes": 433440,
+      "path": "NLA/KE04/Spectral.olean",
+      "sha256": "93df2b33c32c3c9a6827b2b1e056bb07a4e9de2c29ffc45f40dc4d310da2580a"
+    },
+    {
+      "bytes": 21936,
+      "path": "NLA/KE04/SpectralWindow.ilean",
+      "sha256": "cefea45ec3c3035c6836e6fb412387c315fa4168684e674db377d97669445d33"
+    },
+    {
+      "bytes": 363664,
+      "path": "NLA/KE04/SpectralWindow.olean",
+      "sha256": "863fee5880443432ebb3570de2abd717ef6e1bcc1938b625e89df088ced1c508"
+    },
+    {
+      "bytes": 23752,
+      "path": "NLA/KE04/Transport.ilean",
+      "sha256": "3ad50236a7ca1c2d5bf5c02ce2e836861c1fd1b2afdef616954d713f91dd3e71"
+    },
+    {
+      "bytes": 340072,
+      "path": "NLA/KE04/Transport.olean",
+      "sha256": "e05014afabada3cfed1b0d429003961df6dafa3dc2ae72b8fdb27672612bedc5"
+    },
+    {
+      "bytes": 115,
+      "path": "Solution.ilean",
+      "sha256": "0ece58459e9c9ad765c23194643dddc30d4067cb2f08993d799f84a7056c144b"
+    },
+    {
+      "bytes": 1536,
+      "path": "Solution.olean",
+      "sha256": "bf125a0209ae8aa16732638d23f819660f9a006c2668a5b65fd9d0370439b8f7"
+    },
+    {
+      "bytes": 50850,
+      "path": "reviews/final-referee-1-evidence/Inspect.ilean",
+      "sha256": "0ccede4499645d74f938632b1ef9b99486c52f37594ed4518840d48345a80eac"
+    },
+    {
+      "bytes": 3376,
+      "path": "reviews/final-referee-1-evidence/Inspect.olean",
+      "sha256": "cc24b9c1de27d89a428aa7b79cbe673073f62a93b5b1ffba1c73bbc047f52984"
+    },
+    {
+      "bytes": 30861,
+      "path": "reviews/final-referee-1-evidence/Reference.ilean",
+      "sha256": "32ffe74314ce340b0dbcc3efd85a5344b2056182b7afdda31a816e08a7f6245d"
+    },
+    {
+      "bytes": 224664,
+      "path": "reviews/final-referee-1-evidence/Reference.olean",
+      "sha256": "4ea4459407322e1b952ba0d7e3577ff53d64c9bd87ac424c4a341bf5efa62fdb"
+    }
+  ],
+  "pins_after": [
+    {
+      "clean": true,
+      "name": "leancert",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "mathlib",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "plausible",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "LeanSearchClient",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "importGraph",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "proofwidgets",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "aesop",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "Qq",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "batteries",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "Cli",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "object_directory_exists": false,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "used_in_lean_path": false
+    }
+  ],
+  "pins_before": [
+    {
+      "clean": true,
+      "name": "leancert",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "mathlib",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "plausible",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "LeanSearchClient",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "importGraph",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "proofwidgets",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "aesop",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "Qq",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "batteries",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean",
+      "object_directory_exists": true,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "used_in_lean_path": true
+    },
+    {
+      "clean": true,
+      "name": "Cli",
+      "object_directory": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean",
+      "object_directory_exists": false,
+      "path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "used_in_lean_path": false
+    }
+  ],
+  "platform": "macOS-14.6.1-arm64-arm-64bit-Mach-O",
+  "prefix": "/tmp/nla-lean-formalization/independent-prefixes/ke04-final-referee1-1l7fdn3d",
+  "prefix_initially_empty": true,
+  "proof_freeze_sha256": "d45703f80e35612826060bc53d7a46da7c341234f2edd8cd6269e1ed72c53c16",
+  "provenance": [
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "7eb638704c183dc5a4ad1f2e3d9103416fedd92b",
+      "kind": "original",
+      "path": "verification/original-sources/AGENTS.md",
+      "sha256": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "ade2131e55f0372fd3a8de1634864e84c37def61",
+      "kind": "original",
+      "path": "verification/original-sources/CONTRIBUTING.md",
+      "sha256": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "24bfdfd61a643984c9607081a922e89313c47c83",
+      "kind": "original",
+      "path": "verification/original-sources/docs/lean/README.md",
+      "sha256": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "5d1d8c908923a687f4779fd1a539237bd29a1a1a",
+      "kind": "original",
+      "path": "verification/original-sources/docs/lean/REVIEW.md",
+      "sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "e61bade6af2c59233db4bd1ccc906eafe8d10e5a",
+      "kind": "original",
+      "path": "verification/original-sources/docs/lean/schema/README.md",
+      "sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "19f4a46a1bc0e4798dca7bcb7ed57281b1c8c996",
+      "kind": "original",
+      "path": "verification/original-sources/docs/lean/schema/v0.4.schema.json",
+      "sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "c1279c5ad212b584b4c2da77b57070e025745b58",
+      "kind": "original",
+      "path": "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/README.md",
+      "sha256": "20ff79f2a4c9fbbd456a5167f6e634df7473a6415141fcfc01d85b49fea8a057"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "b3d6a9d06c30e10bea00af027c418a9bf5ae1386",
+      "kind": "original",
+      "path": "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.md",
+      "sha256": "dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "471bb42cb27beb0b360466c1bc4642520258f021",
+      "kind": "original",
+      "path": "verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.tex",
+      "sha256": "06ef0d4fa338bfc981892856c175c2c9bc828fd48edbdec32b048c752d659c8f"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "b1810237bc80efe04b4bb08f74d1e974b1bf80f7",
+      "kind": "original",
+      "path": "verification/original-sources/problem_ids.json",
+      "sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "1979a2b6a14e4950cd719e8d02cac9ce74527862",
+      "kind": "original",
+      "path": "verification/original-sources/references/colbrook-2026-09-11/README.md",
+      "sha256": "d8d9bcbe3ead5700ece3a26c355e6e6a0b949d33d2f0fd6bf0923d3d6914c5e2"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "18fcfecef5b973e81d51cc8f62a58a5000dd9cc7",
+      "kind": "original",
+      "path": "verification/original-sources/references/colbrook-2026-09-11/verification/README.md",
+      "sha256": "659832e5fbd443013bc5d176016b41444fd19c447cc4b03fa1bb021f6759d646"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "6bb63b66f42608017bfc9ae4b637d391e841699e",
+      "kind": "original",
+      "path": "verification/original-sources/references/colbrook-2026-09-11/verification/reviews/KE-04-review.md",
+      "sha256": "299abf4d5f6b5ae14245d812c91f87a3ee8696f111d38be7306e486e18f867b6"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "8f338f8f163e04d4fb7b6af5cdf969af92177c4b",
+      "kind": "original",
+      "path": "verification/original-sources/tools/lean/HARNESS.md",
+      "sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4"
+    },
+    {
+      "commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+      "git_blob": "27916ca1e378b13ba1a08f1eb3ecb285fde12408",
+      "kind": "original",
+      "path": "verification/original-sources/tools/lean/source-lock.json",
+      "sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b"
+    },
+    {
+      "commit": "fe025e14d2639cbae59f98cacf4023d83addcb89",
+      "git_blob": "5e9eb9eb9529e41cc3d4d4e6a5b87b0166c3d68c",
+      "kind": "original",
+      "path": "verification/original-submission/solution.md",
+      "sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d"
+    },
+    {
+      "commit": "b4123194697bdf6f8f82518c1dd7d6c40a30c2e0",
+      "git_blob": "0b52d4dda8485714c7a4f44aa0baa9542d90d6f4",
+      "kind": "original",
+      "path": "verification/original-target/README.md",
+      "sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669"
+    },
+    {
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "git_blob": "2cabb9fd34b1f8de999a3d53efc8503494e2ba8b",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/forsythe/lean-proof/Challenge.lean",
+      "sha256": "bcbc89b32f46f6d9c33bbc919d4b08b0e3e797e8b87745485e1decd059c07a8d"
+    },
+    {
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "git_blob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/forsythe/lean-proof/LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "git_blob": "a7739eccde1bbdb9717dd255a3de0f298a2b5bb8",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/forsythe/lean-proof/NUMERICAL_TARGETS.md",
+      "sha256": "2e25ed916080e6405f7b0a39e45641ef6f88389f26a6a142bc3036528dfc4119"
+    },
+    {
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "git_blob": "f7d9788eeb70f7d82d44094fbfc891f31c0bd19a",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/forsythe/lean-proof/ProofProject/CheckedMultivariateBound.lean",
+      "sha256": "cddab7954e4e6616f9bf65bcb967e2ac166b5e8fecab686a04cd218a4e22aa18"
+    },
+    {
+      "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "git_blob": "296c735f1da161a23017733f6cf21a0fe09b9769",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/forsythe/lean-proof/comparator.json",
+      "sha256": "b18070414f3dd6a2626878dd19cd5aff5dc22a0feb51a469bb6c57d862a48bf7"
+    },
+    {
+      "commit": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "git_blob": "367d4660480a1bfa93e43cedba07e60a65686a40",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/leancert/LeanCert/Tactic/Verification.lean",
+      "sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "a938a909f274d3e80ab0fdb44aa490022fd40d2d",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+      "sha256": "1f9827b2db67213c725a2dcc3fec52a87772966d1fbd3fc6857a019dbd7a6053"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "578903d597077486a26060d23ebd1937e89d1fa9",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean",
+      "sha256": "e96b2c28a53ab1a17abcccec25f17682a914be43273346afbddfde8503e7b24d"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "b6eaae80d2bd5e753624f407c7ce74ab8576f3f9",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/Spectrum.lean",
+      "sha256": "f12ef613416053c759ef30179147744c64eeec90f7467644cb30e64d532d7aa6"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "b6fbcb31433461f6e2ae1b9131933eaccd2bd9e4",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/Order.lean",
+      "sha256": "eb786ba4435f1955c504da52de2beae76647d814922266c8aac8f082bbc3e2da"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "a9e7fd020b3fd7c24ed488dc93a0109cc2dd39ea",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/PosDef.lean",
+      "sha256": "d019fb2cae81293d8505e2a2543a6f5fe7c1819e4860454d00e15ef74528a43d"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "9d66310769306016a2de31122a7af5af7b2050b2",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/Spectrum.lean",
+      "sha256": "1ad47effa0a5fbc373ebb6cf52a6b85a66b25d3c5a86394f3dd5932ffbfc3afe"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "d67ae035753e494465327ad51c8873265d5d3922",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/Data/Fin/Rev.lean",
+      "sha256": "cd616713110393338bd880146a89ac3dce464df31d107d96fa652164727f4888"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "b3f30440e9fa016ac167564f92d2ea54ec34fe5f",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Dimension/Constructions.lean",
+      "sha256": "039f43b60c6dc3dec90e085beb9ee9dfe46da0d2a4d83f730ee274f337f29548"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "6c25b2c94354e59763d4c687223144db9a5f66c2",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean",
+      "sha256": "2b383a91a6e4566f630b2c682506d4305a0098d9d085387e9e3bdb1d3126f129"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "0b39c121234c53105bdbe4d92604d9afb2e3ee3e",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean",
+      "sha256": "f8e79ad4a35781c09b7de25fcf491f1d17306cb50a7446d985cabedfc09f20da"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "7aa2a50b4add8f54e839dd5b18624e7512ba7339",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/LinearIndependent/Defs.lean",
+      "sha256": "a52ccf21d86a16e690674f4a978da5a2a531f602c659d661c7d21586bb9994d1"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "f47d0fc51adc7c376ea734c00b0ab1997aee3c0c",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Matrix/Hermitian.lean",
+      "sha256": "9f4e84cafd93f05935d8accc2846a4d624c1fe994c53ab348b8338464bf5cb21"
+    },
+    {
+      "commit": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "git_blob": "4599e2ec208e7f4d063176cb1cf3da34fa727b71",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Matrix/PosDef.lean",
+      "sha256": "09290b5923e167fcf959df64d00b039c7b99c4b236755728219bf5b5feaac24a"
+    },
+    {
+      "commit": "2938e277969c329caf154e48a3d8823f3635c7f1",
+      "git_blob": "b6bf7b83c80180f408e11515bd6b970f230c7dab",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/schiffer/Schiffer/Challenge.lean",
+      "sha256": "bc31fcc14f816c2e3b756bdea74c6c791aae2d34fa055ae2a8c6a218b209f267"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "4e1e7fecde59b54aeba5317120e45260fe0209ba",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/README.md",
+      "sha256": "67960eaa4f2d7f623273efd06b31bde3b28915546aca5d0942352c0156cbecf4"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "62575c64850fe6baaaf3dfbe8344b59c5e4e9237",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/README.md",
+      "sha256": "a4f1ee85d2a772510e76dc8b5ec9166fff3980aabb9dacac81faccc83e0fd3e2"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "506416058bdc19591c2fd8429a8a5d555ae83d0c",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/_common.md",
+      "sha256": "00fc21b79826edd959e12a552d061a7297bb6e3c2e1cde1ddc15e265131d981a"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "69238f8e64a77d6fb780c1b252ad1fa14691cce1",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/api-design.md",
+      "sha256": "bd8605a58f46f0023e15eaa9374e1cfccdb2d4369ca07e6700657bcd41087387"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "5bad5b89cf6776c7e10984f89a2370a28bc468ea",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/attribution.md",
+      "sha256": "04e2956b91409b5abce91f934db00218fddb0fc5ba7e6776bf748690554c71db"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "a0a8db82a04fac15c397d3ab89a4ccee58616842",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/correctness.md",
+      "sha256": "24eb3f6504809e7e938b02daeb75179fd7d99338bda63f125f7229a2e4b1ca06"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "82e83064fbe2a14833e9fc9b13626f1b613f85f9",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/documentation.md",
+      "sha256": "cd2c5855e21c6f6b62ca22733438e6264b6e5943f417fce9c7db368531858623"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "c8a098a35ca6b4fb593ae716a2d8bf6a48160c18",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/generality.md",
+      "sha256": "b793f946b84a7b079626271cb8c81f219b8e21dfebf0263620dc4b091c9a84c7"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "9e69d160218ccff102f4eb6b202883bf6d7e7f21",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/naming.md",
+      "sha256": "0983aba631ccc181eace2deb213ade3dcd467769e90a8fa1db3ff710348f24b8"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "94f92ad56a4185cde74c714cfd088ec0fb8a7e89",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/placement.md",
+      "sha256": "c480cd252d2d0d24cddbe03e714babe5b6b966dd8be1fcba753dfd9da74fa024"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "9ca7d4b380674a7d38c14e0d8d06cab31d667c43",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/proof-quality.md",
+      "sha256": "346768b1a3445343e5fad4d0f78dcb601f5f633cbc7abd81ba189ac4d15ecb83"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "1911ba70cbb44577a21da7df07f1c1adfc243208",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/reuse.md",
+      "sha256": "43325e91f32f5f2e5819012caae8c42b72326dfff86599c1feb1ba498ca14a3b"
+    },
+    {
+      "commit": "afb424eda89e8ac96d9eb69f6a88972055a4cd1b",
+      "git_blob": "b30869b0eac32d1d34d6265cede5cbf42869e24c",
+      "kind": "api",
+      "path": "verification/api-evidence-complete/tauceti/rubrics/scope.md",
+      "sha256": "e29b9221af3b89ffbbfd8c540457d54f0589f8375150581b689f264655da9d43"
+    }
+  ],
+  "reviewer": "/root/ra09_final_referee1",
+  "role": "Independent KE-04 final mathematical referee 1",
+  "runner_sha256": "dbfacd439fa3afb9fd523d523201aaad485238733205711b21819224f760f946",
+  "scope": "Fresh target-only direct-source macOS check; 10 pinned Git sources and 9 dependency object directories read-only; not Linux, Comparator or external default-kernel replay.",
+  "source_inputs": [
+    {
+      "path": "NLA/KE04/Definitions.lean",
+      "sha256": "ae1baccc0cb622f83103eff8bb4a5efe4cd9a3bae4822ccca38da29554ae9ca4",
+      "snapshot": "NLA-KE04-Definitions.source.txt"
+    },
+    {
+      "path": "NLA/KE04/Krylov.lean",
+      "sha256": "4912fc18fe64afafdb77a3dd19647ad623b05ee87d63ce56c4fbdad933d99ef3",
+      "snapshot": "NLA-KE04-Krylov.source.txt"
+    },
+    {
+      "path": "NLA/KE04/Frames.lean",
+      "sha256": "bfea6b02091db4e999c2c870b4b1f238cb546ad84df010c7d5431fe82904db0b",
+      "snapshot": "NLA-KE04-Frames.source.txt"
+    },
+    {
+      "path": "NLA/KE04/Spectral.lean",
+      "sha256": "64e8255697387e32e65cf591a0cb7dbf7986f471c82b4f1715c9a88a7650e20e",
+      "snapshot": "NLA-KE04-Spectral.source.txt"
+    },
+    {
+      "path": "NLA/KE04/SpectralWindow.lean",
+      "sha256": "c59a80ed6a6dff4e879fb6b8ca602a1d0946ef29b61ff400ffba0122bc86760f",
+      "snapshot": "NLA-KE04-SpectralWindow.source.txt"
+    },
+    {
+      "path": "NLA/KE04/Transport.lean",
+      "sha256": "f8bbd7a8095c333efe899bc71aae896dd6731002f89cefa2296f09aba7ecddbb",
+      "snapshot": "NLA-KE04-Transport.source.txt"
+    },
+    {
+      "path": "NLA/KE04/Intersection.lean",
+      "sha256": "85acdc5925c94da8c48f5840bfce5055b6660ed11529a5554953f8acd598cb95",
+      "snapshot": "NLA-KE04-Intersection.source.txt"
+    },
+    {
+      "path": "NLA/KE04/Nonannihilation.lean",
+      "sha256": "fec6e511329419a04ba4de0bd5c69b1366e851b3ade713a78ab90cd058a866e2",
+      "snapshot": "NLA-KE04-Nonannihilation.source.txt"
+    },
+    {
+      "path": "NLA/KE04/Completion.lean",
+      "sha256": "4014011a7c6435c362ce4cf304aed8d7a8ad2e32ffb03448fbf43223c59a3f97",
+      "snapshot": "NLA-KE04-Completion.source.txt"
+    },
+    {
+      "path": "NLA/KE04/Proof.lean",
+      "sha256": "f3920f297fdd8de840e88cad46322ce69ddcfd106b6dec51dd92fc386ccc76da",
+      "snapshot": "NLA-KE04-Proof.source.txt"
+    },
+    {
+      "path": "Solution.lean",
+      "sha256": "4bd85171d2284ab4ef1bcb914d1eae2763d3e5f6a279b120aec2709b0628bf13",
+      "snapshot": "Solution.source.txt"
+    },
+    {
+      "path": "reviews/final-referee-1-evidence/Reference.lean",
+      "sha256": "c1415b8c017c61eb099849be6af7a268234176caf5345f298956b8a1c33d5194",
+      "snapshot": "reviews-final-referee-1-evidence-Reference.source.txt"
+    },
+    {
+      "path": "reviews/final-referee-1-evidence/Inspect.lean",
+      "sha256": "1baabfd4d440887ffaea8de344177e9d8fe2b339bf4adba90d63a4ae8d16302a",
+      "snapshot": "reviews-final-referee-1-evidence-Inspect.source.txt"
+    }
+  ],
+  "started_utc": "2026-09-13T10:05:38.482861+00:00",
+  "status": "PASS_LOCAL_SOURCE_AND_INSPECTION"
+}

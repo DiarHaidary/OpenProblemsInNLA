@@ -1,0 +1,34 @@
+{
+  "Linux_Comparator_execution": false,
+  "accepted_gate_sha256": "5e7cfd64709f436c684698fdb0c4adb5cc3f3e50f8945aa5fffdf70ec22fe624",
+  "additional_API": "quadratic_apply_eigenvector",
+  "audit_result_sha256": "3f418b73bcd1596a5d6d6468f7d1c6488fe847d70fad077f7895d3c227b383c1",
+  "contributor": "AI agent /root/ie05_statement_referee2",
+  "contributor_ineligible_as_independent_final_referee": true,
+  "exact_frozen_contracts": {
+    "10": "orderedSpectrum_semantics",
+    "13": "quadratic_semantics",
+    "14": "spectral_gap_quadratic_psd",
+    "17": "psd_zero_form_iff_kernel"
+  },
+  "exact_outer_path": "verification/spectral-development/EVIDENCE-MANIFEST.json",
+  "final_fresh_attempt": "verification/spectral-development/attempt-k2z1xc0b",
+  "independent_final_mathematical_approval": false,
+  "namespace": "NLA.KE04._proved",
+  "phase": "complete assigned KE04 spectral helper implementation",
+  "project_imports": {
+    "NLA/KE04/Definitions.lean": "ae1baccc0cb622f83103eff8bb4a5efe4cd9a3bae4822ccca38da29554ae9ca4"
+  },
+  "read_only_verifier": {
+    "path": "verification/spectral-development/verify_seal.py",
+    "sha256": "6836832835c8439040e3fd809dba99578ff1d5ddcf5eeb466ef0713a81c416ee"
+  },
+  "report_sha256": "5392f3c530a70a9b43e2b0dc68fb838b60ff390bbeaa1e84843719b3cf25dba4",
+  "scope_rule": "Own complete module/report/evidence plus all1598 frozen inputs, freeze and gate; concurrent modules and unrelated projects are outside scope.",
+  "source": {
+    "path": "NLA/KE04/Spectral.lean",
+    "sha256": "64e8255697387e32e65cf591a0cb7dbf7986f471c82b4f1715c9a88a7650e20e"
+  },
+  "statement_freeze_sha256": "85d583c12fbbf1361cd128f7e98c359dd8990d3886ecfb9e8aed7c79793c305e",
+  "whole_KE04_proof_complete": false
+}

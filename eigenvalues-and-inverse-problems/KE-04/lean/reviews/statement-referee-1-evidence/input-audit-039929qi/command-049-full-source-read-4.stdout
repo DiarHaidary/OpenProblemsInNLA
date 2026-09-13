@@ -1,0 +1,597 @@
+import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+import Mathlib.Analysis.Calculus.ContDiff.Basic
+import Mathlib.Analysis.Calculus.Gradient.Basic
+import Mathlib.Analysis.Convex.Contractible
+import Mathlib.Analysis.InnerProductSpace.Laplacian
+import Mathlib.Analysis.Normed.Affine.Isometry
+import Mathlib.LinearAlgebra.Complex.FiniteDimensional
+import Mathlib.MeasureTheory.Integral.Bochner.Basic
+import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+import Mathlib.Topology.Bornology.Basic
+
+/-!
+# Challenge: Schiffer to Pompeiu
+
+This is the single trusted statement module presented to Lean's comparator.
+It imports only Mathlib.  Its two proof holes are the star-shaped Schiffer
+statement and the fixed-domain Schiffer-to-Pompeiu bridge.  The usual simply
+connected Schiffer statement follows because a nonempty star-shaped set is
+contractible, hence path connected and simply connected.  The two Pompeiu
+existence theorems then follow immediately inside this file.
+
+We identify the Euclidean plane with `ℂ`.  The theorem says that there is a
+bounded, simply connected domain with `C²` boundary, not a disk, and a nonzero
+continuous real function whose integral vanishes over every rigid copy of the
+domain.  Here a rigid motion `ℂ ≃ᵃⁱ[ℝ] ℂ` is a bijective real-affine isometry,
+that is, a map `x ↦ A x + b` with `A` orthogonal; this includes translations,
+rotations, and reflections.
+-/
+
+noncomputable section
+
+open Set Bornology MeasureTheory
+open scoped Gradient Laplacian
+
+namespace Schiffer.Comparator
+
+/- Here `ℂ` is the real Euclidean plane.  Accordingly, Mathlib's Laplacian is
+the real Laplacian
+`Δu = D²u(1, 1) + D²u(Complex.I, Complex.I) = ∂²u/∂x² + ∂²u/∂y²`,
+as confirmed by the Mathlib declaration
+`InnerProductSpace.laplacian_eq_iteratedFDeriv_complexPlane`. -/
+
+/-- `Ω` is an ordinary open Euclidean disk, with arbitrary center and radius. -/
+def IsEuclideanDisk (Ω : Set ℂ) : Prop :=
+  ∃ c : ℂ, ∃ r : ℝ, Ω = Metric.ball c r
+
+/-- `Ω` is a regular `C²` super-level set.  In particular, `Ω` is open,
+because a `C²` defining function is continuous. -/
+def HasC2Boundary (Ω : Set ℂ) : Prop :=
+  ∃ F : ℂ → ℝ,
+    ContDiff ℝ 2 F ∧
+    Ω = {x | 0 < F x} ∧
+    ∀ x, F x = 0 → ∇ F x ≠ 0
+
+/-- Schiffer 1: the star-shaped counterexample, and the first proof hole. -/
+theorem Schiffer_Star_Shaped :
+  ∃ (Ω : Set ℂ) (u : ℂ → ℝ),
+    IsBounded Ω ∧
+    Nonempty Ω ∧
+    -- Every line segment from the origin to a point of `Ω` stays in `Ω`.
+    StarConvex ℝ 0 Ω ∧
+    HasC2Boundary Ω ∧
+    ¬ IsEuclideanDisk Ω ∧
+    ContDiff ℝ 2 u ∧
+    (∀ x ∈ Ω, -(Δ u) x = u x) ∧
+    (∀ x ∈ frontier Ω, u x = 1) ∧
+    (∀ x ∈ frontier Ω, ∇ u x = 0) := by
+  sorry
+
+/-- Schiffer 2: the usual simply connected counterexample, derived from
+Schiffer 1 via contractibility. -/
+theorem Schiffer_SimplyConnected :
+  ∃ (Ω : Set ℂ) (u : ℂ → ℝ),
+    IsBounded Ω ∧
+    Nonempty Ω ∧
+    IsPathConnected Ω ∧
+    IsSimplyConnected Ω ∧
+    HasC2Boundary Ω ∧
+    ¬ IsEuclideanDisk Ω ∧
+    ContDiff ℝ 2 u ∧
+    (∀ x ∈ Ω, -(Δ u) x = u x) ∧
+    (∀ x ∈ frontier Ω, u x = 1) ∧
+    (∀ x ∈ frontier Ω, ∇ u x = 0) := by
+  obtain ⟨Ω, u, hb, hn, hs, hC2, hD, hu, hEq, hVal, hDiff⟩ :=
+    Schiffer_Star_Shaped
+  letI : ContractibleSpace Ω :=
+    hs.contractibleSpace (Set.nonempty_coe_sort.mp hn)
+  exact ⟨Ω, u, hb, hn, isPathConnected_iff_pathConnectedSpace.mpr inferInstance,
+    SimplyConnectedSpace.ofContractible Ω, hC2, hD, hu, hEq, hVal, hDiff⟩
+
+/--
+Pompeiu 3, and the second proof hole: the classical implication "Pompeiu
+implies Schiffer", written in the contrapositive direction useful here.  If
+one fixed domain carries Schiffer data, then that same domain fails the
+Pompeiu property.
+-/
+theorem SchifferToPompeiu
+    {Ω : Set ℂ} {u : ℂ → ℝ}
+    (hbounded : IsBounded Ω)
+    (hC2 : HasC2Boundary Ω)
+    (huC2 : ContDiff ℝ 2 u)
+    (hequation : ∀ x ∈ Ω, -(Δ u) x = u x)
+    (hboundaryValue : ∀ x ∈ frontier Ω, u x = 1)
+    (hboundaryGradient : ∀ x ∈ frontier Ω, ∇ u x = 0) :
+    ∃ f : ℂ → ℝ,
+      Continuous f ∧
+      f ≠ 0 ∧
+      ∀ rigidMotion : ℂ ≃ᵃⁱ[ℝ] ℂ,
+        ∫ x in rigidMotion '' Ω, f x = 0 := by
+  sorry
+
+/-- Pompeiu 1: a star-shaped counterexample to the Pompeiu conjecture. -/
+theorem Pompeiu_Star_Shaped :
+  ∃ Ω : Set ℂ,
+    IsBounded Ω ∧
+    Nonempty Ω ∧
+    StarConvex ℝ 0 Ω ∧
+    HasC2Boundary Ω ∧
+    ¬ IsEuclideanDisk Ω ∧
+    ∃ f : ℂ → ℝ,
+      Continuous f ∧
+      f ≠ 0 ∧
+      ∀ rigidMotion : ℂ ≃ᵃⁱ[ℝ] ℂ,
+        ∫ x in rigidMotion '' Ω, f x = 0 := by
+  rcases Schiffer_Star_Shaped with ⟨Ω, u, h⟩
+  refine ⟨Ω, ?_⟩
+  aesop (add unsafe apply SchifferToPompeiu)
+
+/-- Pompeiu 2: the usual simply connected counterexample. -/
+theorem Pompeiu_SimplyConnected :
+  ∃ Ω : Set ℂ,
+    IsBounded Ω ∧
+    Nonempty Ω ∧
+    IsPathConnected Ω ∧
+    IsSimplyConnected Ω ∧
+    HasC2Boundary Ω ∧
+    ¬ IsEuclideanDisk Ω ∧
+    ∃ f : ℂ → ℝ,
+      Continuous f ∧
+      f ≠ 0 ∧
+      ∀ rigidMotion : ℂ ≃ᵃⁱ[ℝ] ℂ,
+        ∫ x in rigidMotion '' Ω, f x = 0 := by
+  rcases Schiffer_SimplyConnected with ⟨Ω, u, h⟩
+  refine ⟨Ω, ?_⟩
+  aesop (add unsafe apply SchifferToPompeiu)
+
+end Schiffer.Comparator
+import ProofProject.Definitions
+
+/-!
+# Theorem statements for Comparator
+
+The signatures below correspond to the manuscript's statements. Comparator
+compares them with the proofs in `Solution.lean` in separate environments.
+The `sorry` bodies serve as statement placeholders. The proof module imports
+the shared definitions independently.
+-/
+
+namespace ProofProject
+
+/-- Part A / Theorem A.1.1: Forsythe's conjecture at restart length two. -/
+theorem forsytheConjecture_restartLengthTwo : ForsytheConvergenceAt 2 := by
+  sorry
+
+/-- Part B / Theorem B.1.1: Forsythe's conjecture at restart length three. -/
+theorem forsytheConjecture_restartLengthThree : ForsytheConvergenceAt 3 := by
+  sorry
+
+/-- Lemma C.3.1 after exact characteristic reduction: the minimized
+theorem-bearing restart-four algebraic Hopf certificate. -/
+theorem restartFourAlgebraicHopfCertificate : RestartFourAlgebraicHopfCertificate := by
+  sorry
+
+/-- Theorem C.1.1 exactly as printed: SPD counterexamples in dimension `s+4`. -/
+theorem counterexamples_restartLengthAtLeastFour :
+    ∀ s : ℕ, 4 ≤ s → HasForsytheCounterexample s := by
+  sorry
+
+/-- Theorem 1.1: restart length four is the sharp threshold. -/
+theorem forsytheSharpClassification :
+    ∀ s : ℕ, 2 ≤ s →
+      ((s = 2 ∨ s = 3) → ForsytheConvergenceAt s) ∧
+      (4 ≤ s → HasDiagonalForsytheCounterexample s) := by
+  sorry
+
+end ProofProject
+# Algebraic Hopf certificate
+
+The numerical export in [Solution.lean](Solution.lean) proves the certificate
+from Section C.3 of the [manuscript](https://arxiv.org/abs/2609.04659):
+
+```lean
+ProofProject.restartFourAlgebraicHopfCertificate :
+  ProofProject.RestartFourAlgebraicHopfCertificate
+```
+
+Its data and propositions are defined in
+[ProofProject/Definitions.lean](ProofProject/Definitions.lean). The proof is
+assembled in
+[RestartFourAlgebraicHopfCertificateCertified.lean](ProofProject/RestartFourAlgebraicHopfCertificateCertified.lean).
+
+## Exact input data
+
+Every decimal in C.3 is interpreted as the corresponding exact rational. The Lean declarations expand to the following values:
+
+- `restartFourC = 31355365301369736 / 100000000000000000`.
+- `restartFourPRoot`, in its fixed order, is
+  `(-3812196375334383/10^15, -3408184613601878/10^16, 15054785540322202/10^16, 2190808973956946/10^15)`.
+- The three fixed roots in `restartFourQFixedRoot` are
+  `(-23304189906225/10^13, 6733921795528344/10^16, 4323444838404325/10^15)`; the fourth root of `Q_q` is the parameter `q`.
+- `restartFourP = ∏(X-r)` and `restartFourQ q = (X-q)∏(X-r)` are monic quartics over `ℝ`; `restartFourFminus q = P Q_q - C` and `restartFourFplus q = P Q_q + C`.
+- The closed parameter domain is
+  `restartFourQInterval = [-1851888497035/10^12, -1851888497033/10^12]`.
+- The closed recovery-root domain is
+  `restartFourAlphaInterval = [2952193/10^7, 29521955/10^8]`.
+- In one-based source notation the six core roots of `F_-` have indices `(1,2,4,5,7,8)`, the removed roots have indices `(3,6)`, and the two selected external roots of `F_+` have indices `(2,7)`. The Lean `Fin` arrays record exactly the corresponding zero-based indices `(0,1,3,4,6,7)`, `(2,5)`, and `(1,6)`.
+
+The predicate characterizes the eight roots by strict order and exact polynomial factorization. Rational isolating collars are used within the proof.
+
+## Certificate statement
+
+`RestartFourAlgebraicHopfCertificate` asserts the existence of data `d` satisfying `IsRestartFourAlgebraicHopfCertificate d`. The latter contains the following assertions:
+
+| Component | Exact domain | Exact assertion |
+|---|---|---|
+| Root and critical branches | `q ∈ restartFourQInterval`, including both endpoints | The eight minus roots and eight plus roots are strictly ordered exact factorizations of `F_-(·,q)` and `F_+(·,q)`. Both root maps, the critical recovery root `α(q)`, and the two amplitudes are analytic on a neighbourhood of the closed `q` interval. The factorization `F_- = H Δ` uses exactly the six core and two removed labels above. |
+| Critical solution | `q` on the same closed interval; uniqueness over `a ∈ restartFourAlphaInterval` and all `c : Fin 2 → ℝ` with `c_g > 0` | `α(q)` lies in the closed alpha interval, `c(q)` solves the exact normal-balance and two tangent-rate equations `RestartFourCriticalEquations`, and every positive solution on that domain equals `(α(q),c(q))`. |
+| Tangent construction | `(q,a) ∈ restartFourQInterval × restartFourAlphaInterval`; each selected external root | The tangent map is analytic on a neighbourhood of the closed product. `IsRestartFourTangentConstruction` states the exact quotient/remainder, divided-kernel, and coefficient polynomial identities (C.3.7)--(C.3.10), including degree bounds and all denominator nonvanishing required on this domain. |
+| Phase weights and nodes | Every `q` on the closed interval, evaluated at `a=α(q)` | The six `P`-sheet and six `Q`-sheet weights defined by (C.3.5) each sum exactly to `1` and each exceed `2^-19`. Every selected centered core and external node lies strictly between `-4` and `5`. The two amplitudes satisfy `c_- > 2^-15` and `c_+ > 1/4`. |
+| Linearization | Every `q` on the closed interval | The exact `7 × 7` scalar Jacobian has characteristic polynomial `(λ+1)(λ-1)(λ-2)[θ²-τ(q)θ+K_θ(q)]`, with `θ=λ(λ-1)`, using the exact formulas (C.3.17a)--(C.3.21). Its theta-discriminant is strictly less than `-277/5 = -55.40`. The derivative of the Hopf functional lies strictly between `10989/100 = 109.89` and `5541/50 = 110.82`. |
+| Unique Hopf point | `q_* ∈ restartFourQInterval` | The Hopf functional vanishes exactly when `q=q_*`; `q_*` is farther than `2^-41` from each interval endpoint. The exact theta identities define `ω_*`, with `93/25 = 3.72 < ω_* < 931/250 = 3.724`. The crossing magnitude `abs(-H'(q_*)/(1+4ω_*²))` is strictly greater than `97/50 = 1.94`. |
+| Visibility | The real and imaginary parts of every nonzero `±iω_*` eigenvector of the exact Jacobian | At least one recovery-root component is nonzero. This is the precise real-coordinate version of the source's visible Hopf mode. |
+
+## Use in the classification
+
+The restart-two and restart-three proofs are analytic. For restart lengths
+at least four, the proof combines this finite algebraic certificate with
+analytic degree elevation, local rescaling, periodic-orbit construction,
+shadowing, positivity, and reconstruction as exact CG trajectories.
+
+The spectral calculation reduces to a quadratic in `θ = λ(λ−1)` after
+factoring out `(λ+1)(λ−1)(λ−2)`. The critical branch is expressed through one
+recovery root and two amplitudes. Polynomial identities, root bounds, and
+interval inequalities are established by Lean proofs.
+
+Proposition C.1.2's particular `ε₀`, `M`, and `N` construction is outside the
+configured theorem set. The main counterexample theorem uses the qualitative
+existence results of C.14–C.18. The Lean proofs use no external data files or
+Python computations as premises.
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "ProofProject.forsytheConjecture_restartLengthTwo",
+    "ProofProject.forsytheConjecture_restartLengthThree",
+    "ProofProject.restartFourAlgebraicHopfCertificate",
+    "ProofProject.counterexamples_restartLengthAtLeastFour",
+    "ProofProject.forsytheSharpClassification"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Quot.sound",
+    "Classical.choice"
+  ]
+}
+import LeanCert.Tactic
+
+/-!
+# Checked multivariate rational enclosures
+
+`LeanCert`'s optimizer intentionally requires automatic-differentiation
+support, so it excludes variable denominators.  The small checker below uses
+the general checked interval evaluator instead.  A successful Boolean result
+is converted back to a theorem by `evalIntervalTightChecked_correct`; hence a
+retained `(trust := kernel)` invocation is checked entirely by Lean's kernel.
+-/
+
+namespace ProofProject
+
+open LeanCert.Core
+open LeanCert.Engine
+open LeanCert.Engine.Optimization
+
+def checkedBoxUpper (e : Expr) (B : Box) (c : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (I.hi ≤ c)
+  | .error _ => false
+
+def checkedBoxLower (e : Expr) (B : Box) (c : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (c ≤ I.lo)
+  | .error _ => false
+
+def checkedBoxMem (e : Expr) (B : Box) (lo hi : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (lo ≤ I.lo ∧ I.hi ≤ hi)
+  | .error _ => false
+
+theorem checkedBoxUpper_sound (e : Expr) (B : Box) (c : ℚ)
+    (hcheck : checkedBoxUpper e B c = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) → Expr.eval ρ e ≤ (c : ℝ) := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxUpper, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hIc : I.hi ≤ c := by
+        simpa [checkedBoxUpper, heval] using hcheck
+      exact hmem.2.trans (by exact_mod_cast hIc)
+
+theorem checkedBoxLower_sound (e : Expr) (B : Box) (c : ℚ)
+    (hcheck : checkedBoxLower e B c = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) → (c : ℝ) ≤ Expr.eval ρ e := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxLower, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hcI : c ≤ I.lo := by
+        simpa [checkedBoxLower, heval] using hcheck
+      have hcI' : (c : ℝ) ≤ (I.lo : ℝ) := by exact_mod_cast hcI
+      exact hcI'.trans hmem.1
+
+theorem checkedBoxMem_sound (e : Expr) (B : Box) (lo hi : ℚ)
+    (hcheck : checkedBoxMem e B lo hi = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) →
+      Expr.eval ρ e ∈ Set.Icc (lo : ℝ) (hi : ℝ) := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxMem, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hbounds : lo ≤ I.lo ∧ I.hi ≤ hi := by
+        simpa [checkedBoxMem, heval] using hcheck
+      constructor
+      · exact (by exact_mod_cast hbounds.1 : (lo : ℝ) ≤ (I.lo : ℝ)).trans
+          hmem.1
+      · exact hmem.2.trans
+          (by exact_mod_cast hbounds.2 : (I.hi : ℝ) ≤ (hi : ℝ))
+
+end ProofProject
+
+open Lean Meta Elab Tactic Term
+
+namespace ProofProject.CheckedMultivariate
+
+open LeanCert.Meta
+open LeanCert.Core
+open LeanCert.Engine
+open LeanCert.Engine.Optimization
+open LeanCert.Tactic
+open LeanCert.Tactic.Auto
+
+private def ratScaledMillion (q : ℚ) : ℤ :=
+  (q.num * 1000000) / (q.den : ℤ)
+
+private def extractRatBound (bound : Lean.Expr) : TacticM Lean.Expr := do
+  let fn := bound.getAppFn
+  let args := bound.getAppArgs
+  if fn.isConstOf ``Rat.cast || fn.isConstOf ``RatCast.ratCast then
+    if args.size > 0 then return args.back!
+    else throwError "unexpected rational cast"
+  else
+    let boundTy ← inferType bound
+    if boundTy.isConstOf ``Rat then return bound
+    if let some q ← extractRatFromReal bound then return toExpr q
+    let boundReduced ← whnf bound
+    let fnReduced := boundReduced.getAppFn
+    if fnReduced.isConstOf ``Rat.cast || fnReduced.isConstOf ``RatCast.ratCast then
+      let argsReduced := boundReduced.getAppArgs
+      if argsReduced.size > 0 then return argsReduced.back!
+    throwError m!"cannot extract rational bound from {bound}"
+
+private def getVarExprs (vars : Array VarIntervalInfo) : TacticM (Array Lean.Expr) := do
+  let lctx ← getLCtx
+  let mut out : Array Lean.Expr := #[]
+  let mut used : Array Lean.FVarId := #[]
+  for info in vars do
+    match lctx.findFromUserName? info.varName with
+    | some decl =>
+        out := out.push (Lean.mkFVar decl.fvarId)
+        used := used.push decl.fvarId
+    | none =>
+        let mut fallback : Option Lean.LocalDecl := none
+        for decl in lctx do
+          if !(used.any (fun id => id == decl.fvarId)) then
+            if (← isDefEq decl.type info.varType) then
+              fallback := some decl
+              break
+        match fallback with
+        | some decl =>
+            out := out.push (Lean.mkFVar decl.fvarId)
+            used := used.push decl.fvarId
+        | none =>
+            let mut names : Array Name := #[]
+            for decl in lctx do names := names.push decl.userName
+            let target ← (← getMainGoal).getType
+            throwError m!"missing local variable {info.varName}; context names: {names}; target: {target}"
+  return out
+
+private def mkEnvExpr (varsListExpr : Lean.Expr) : TacticM Lean.Expr := do
+  withLocalDeclD `i (Lean.mkConst ``Nat) fun i => do
+    let zeroRat := toExpr (0 : ℚ)
+    let zeroReal ← mkAppOptM ``Rat.cast #[mkConst ``Real, none, zeroRat]
+    let body ← mkAppM ``List.getD #[varsListExpr, i, zeroReal]
+    mkLambdaFVars #[i] body
+
+private unsafe def closeCheckedBound
+    (vars : Array VarIntervalInfo) (func bound : Lean.Expr)
+    (upper : Bool) : TacticM Unit := do
+  let saved ← saveState
+  let originalGoal ← getMainGoal
+  let boxExpr ← mkBoxExpr vars
+  let ast := (← reifyWithReport func).expr
+  let boundRat ← extractRatBound bound
+  let checkName := if upper then ``ProofProject.checkedBoxUpper
+    else ``ProofProject.checkedBoxLower
+  let soundName := if upper then ``ProofProject.checkedBoxUpper_sound
+    else ``ProofProject.checkedBoxLower_sound
+  let (_, mainGoalAfterIntro) ← originalGoal.intros
+  setGoals [mainGoalAfterIntro]
+  let (rhoSyntax, varsListSyntax, boxSyntax) ← withMainContext do
+    let varExprs ← getVarExprs vars
+    let varsListExpr ← mkListLit (Lean.mkConst ``Real) varExprs.toList
+    let rhoExpr ← mkEnvExpr varsListExpr
+    let rhoSyntax ← Lean.Elab.Term.exprToSyntax rhoExpr
+    let varsListSyntax ← Lean.Elab.Term.exprToSyntax varsListExpr
+    let boxSyntax ← Lean.Elab.Term.exprToSyntax boxExpr
+    pure (rhoSyntax, varsListSyntax, boxSyntax)
+  let checkExpr ← mkAppM checkName #[ast, boxExpr, boundRat]
+  let certTy ← mkAppM ``Eq #[checkExpr, Lean.mkConst ``Bool.true]
+  let certGoal ← mkFreshExprMVar certTy
+  let certGoalId := certGoal.mvarId!
+  setGoals [certGoalId]
+  match ← LeanCert.Tactic.closeCertificateGoalTyped
+      (← LeanCert.Tactic.VerificationConfig.current) (← getMainGoal)
+      (tacticName := "checked_multivariate_bound") with
+  | .rejected =>
+      saved.restore
+      throwError "checked multivariate enclosure does not imply the requested bound"
+  | .failed failure =>
+      saved.restore
+      throwError m!"checked multivariate certificate failed: {failure.message "checked_multivariate_bound"}"
+  | .accepted _ => pure ()
+  let conclusionProof ← mkAppM' (← mkAppM soundName #[ast, boxExpr, boundRat]) #[certGoal]
+  let conclusionTerm ← Lean.Elab.Term.exprToSyntax conclusionProof
+  setGoals [mainGoalAfterIntro]
+  evalTactic (← `(tactic| exact (by
+    have hmem : Box.envMem $rhoSyntax $boxSyntax := by
+      intro i
+      fin_cases i <;>
+        simp [Box.envMem, IntervalRat.mem_iff_mem_Icc, Set.mem_Icc] at * <;>
+        norm_num [Rat.divInt_eq_div] at * <;>
+        first | assumption | constructor <;> assumption
+    have hzero : ∀ i, i ≥ ($boxSyntax).length → $rhoSyntax i = 0 := by
+      intro i hi
+      have hnot : ¬ i < ($boxSyntax).length := by exact not_lt.mpr hi
+      have hnot' : ¬ i < ($varsListSyntax).length := by simpa using hnot
+      have hge' : ($varsListSyntax).length ≤ i := not_lt.mp hnot'
+      simp [List.getD, List.getElem?_eq_none hge', Option.getD]
+    have hresult := $conclusionTerm $rhoSyntax hmem hzero
+    convert hresult using 1 <;>
+      simp [List.getD, LeanCert.Core.Expr.eval, Rat.divInt_eq_div,
+        sq, pow_two, sub_eq_add_neg, div_eq_mul_inv] <;>
+      ring <;>
+      simp)))
+
+private unsafe def closeCheckedMem
+    (vars : Array VarIntervalInfo) (func lo hi : Lean.Expr) : TacticM Unit := do
+  let saved ← saveState
+  let originalGoal ← getMainGoal
+  let boxExpr ← mkBoxExpr vars
+  let ast := (← reifyWithReport func).expr
+  let loRat ← extractRatBound lo
+  let hiRat ← extractRatBound hi
+  let (_, mainGoalAfterIntro) ← originalGoal.intros
+  setGoals [mainGoalAfterIntro]
+  let (rhoSyntax, varsListSyntax, boxSyntax) ← withMainContext do
+    let varExprs ← getVarExprs vars
+    let varsListExpr ← mkListLit (Lean.mkConst ``Real) varExprs.toList
+    let rhoExpr ← mkEnvExpr varsListExpr
+    let rhoSyntax ← Lean.Elab.Term.exprToSyntax rhoExpr
+    let varsListSyntax ← Lean.Elab.Term.exprToSyntax varsListExpr
+    let boxSyntax ← Lean.Elab.Term.exprToSyntax boxExpr
+    pure (rhoSyntax, varsListSyntax, boxSyntax)
+  let checkExpr ← mkAppM ``ProofProject.checkedBoxMem
+    #[ast, boxExpr, loRat, hiRat]
+  let certTy ← mkAppM ``Eq #[checkExpr, Lean.mkConst ``Bool.true]
+  let certGoal ← mkFreshExprMVar certTy
+  let certGoalId := certGoal.mvarId!
+  setGoals [certGoalId]
+  match ← LeanCert.Tactic.closeCertificateGoalTyped
+      (← LeanCert.Tactic.VerificationConfig.current) (← getMainGoal)
+      (tacticName := "checked_multivariate_mem") with
+  | .rejected =>
+      let astVal ← unsafe evalExpr LeanCert.Core.Expr
+        (mkConst ``LeanCert.Core.Expr) ast
+      let boxVal ← unsafe evalExpr Box (mkConst ``Box) boxExpr
+      let enclosure := evalIntervalTightChecked astVal boxVal.toEnv {}
+      saved.restore
+      match enclosure with
+      | .ok I =>
+          throwError m!"checked multivariate enclosure does not imply the requested interval; evaluator endpoints times 10^6 truncate to [{ratScaledMillion I.lo}, {ratScaledMillion I.hi}]"
+      | .error err =>
+          throwError m!"checked multivariate enclosure evaluation failed: {repr err}"
+  | .failed failure =>
+      saved.restore
+      throwError m!"checked multivariate certificate failed: {failure.message "checked_multivariate_mem"}"
+  | .accepted _ => pure ()
+  let conclusionProof ← mkAppM'
+    (← mkAppM ``ProofProject.checkedBoxMem_sound
+      #[ast, boxExpr, loRat, hiRat]) #[certGoal]
+  let conclusionTerm ← Lean.Elab.Term.exprToSyntax conclusionProof
+  setGoals [mainGoalAfterIntro]
+  evalTactic (← `(tactic| exact (by
+    have hmem : Box.envMem $rhoSyntax $boxSyntax := by
+      intro i
+      fin_cases i <;>
+        simp [Box.envMem, IntervalRat.mem_iff_mem_Icc, Set.mem_Icc] at * <;>
+        norm_num [Rat.divInt_eq_div] at * <;>
+        first | assumption | constructor <;> assumption
+    have hzero : ∀ i, i ≥ ($boxSyntax).length → $rhoSyntax i = 0 := by
+      intro i hi
+      have hnot : ¬ i < ($boxSyntax).length := by exact not_lt.mpr hi
+      have hnot' : ¬ i < ($varsListSyntax).length := by simpa using hnot
+      have hge' : ($varsListSyntax).length ≤ i := not_lt.mp hnot'
+      simp [List.getD, List.getElem?_eq_none hge', Option.getD]
+    have hresult := $conclusionTerm $rhoSyntax hmem hzero
+    convert hresult using 1 <;>
+      simp [List.getD, LeanCert.Core.Expr.eval, Rat.divInt_eq_div,
+        sq, pow_two, sub_eq_add_neg, div_eq_mul_inv] <;>
+      ring <;>
+      simp)))
+
+private partial def selectInnermostIntervalBound
+    (e : Lean.Expr) (lower : Bool) : MetaM Lean.Expr := do
+  if e.isForall then
+    let .forallE name ty body bi := e | unreachable!
+    return .forallE name ty
+      (← selectInnermostIntervalBound body lower) bi
+  let reduced ← withTransparency TransparencyMode.all <| whnf e
+  match_expr reduced with
+  | And lhs rhs => return if lower then lhs else rhs
+  | _ => throwError m!"expected an interval-membership conclusion, got {reduced}"
+
+syntax (name := checkedMultivariateBoundTac)
+  "checked_multivariate_bound" (leancertTrustItem)? : tactic
+
+@[tactic checkedMultivariateBoundTac]
+unsafe def elabCheckedMultivariateBound : Tactic := fun stx => do
+  let trustSyntax := stx[1].getOptional?.map (⟨·⟩)
+  let trust? ← LeanCert.Tactic.elabTrustItem? trustSyntax
+  LeanCert.Tactic.withTrustMode trust? do
+    intervalNormCore
+    let goalType ← (← getMainGoal).getType
+    let some parsed ← parseMultivariateBoundGoal goalType
+      | throwError "expected a quantified multivariate upper or lower bound"
+    match parsed with
+    | .forallLe vars func bound => closeCheckedBound vars func bound true
+    | .forallGe vars func bound => closeCheckedBound vars func bound false
+
+syntax (name := checkedMultivariateMemTac)
+  "checked_multivariate_mem" (leancertTrustItem)? : tactic
+
+@[tactic checkedMultivariateMemTac]
+unsafe def elabCheckedMultivariateMem : Tactic := fun stx => do
+  let trustSyntax := stx[1].getOptional?.map (⟨·⟩)
+  let trust? ← LeanCert.Tactic.elabTrustItem? trustSyntax
+  LeanCert.Tactic.withTrustMode trust? do
+    intervalNormCore
+    let goalType ← (← getMainGoal).getType
+    let lowerGoal ← selectInnermostIntervalBound goalType true
+    let upperGoal ← selectInnermostIntervalBound goalType false
+    let some lowerParsed ← parseMultivariateBoundGoal lowerGoal
+      | throwError "expected a quantified multivariate interval membership"
+    let some upperParsed ← parseMultivariateBoundGoal upperGoal
+      | throwError "expected a quantified multivariate interval membership"
+    match lowerParsed, upperParsed with
+    | .forallGe vars func lo, .forallLe vars' func' hi =>
+        unless vars.size == vars'.size do
+          throwError "lower and upper interval variables do not agree"
+        unless ← isDefEq func func' do
+          throwError "lower and upper interval functions do not agree"
+        closeCheckedMem vars func lo hi
+    | _, _ =>
+        throwError "expected lower and upper bounds for one multivariate function"
+
+end ProofProject.CheckedMultivariate

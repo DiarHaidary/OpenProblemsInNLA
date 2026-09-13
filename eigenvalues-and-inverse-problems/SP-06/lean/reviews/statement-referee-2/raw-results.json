@@ -1,0 +1,158 @@
+{
+  "ai_review": true,
+  "canonical_base": "50838e37dd793830e2cecd1055cfc7e0349490f1",
+  "contracts": {
+    "comparator_match": true,
+    "count": 20,
+    "intentional_sorry_count": 20,
+    "names": [
+      "NLA.SP06.witness_admissible",
+      "NLA.SP06.witness_composition",
+      "NLA.SP06.radial_lower_endpoint",
+      "NLA.SP06.radial_upper_endpoint",
+      "NLA.SP06.radial_uniform_slope",
+      "NLA.SP06.radial_root_exists_unique",
+      "NLA.SP06.radial_roots_lipschitz",
+      "NLA.SP06.continuous_radius_exists",
+      "NLA.SP06.radial_curve_continuous",
+      "NLA.SP06.radial_curve_injective",
+      "NLA.SP06.radial_curve_nonzero",
+      "NLA.SP06.auxiliary_radial_im",
+      "NLA.SP06.radial_curve_symbol_real",
+      "NLA.SP06.witness_real_jordan_curve",
+      "NLA.SP06.witness_toeplitz_two",
+      "NLA.SP06.witness_eigenvalue_mem",
+      "NLA.SP06.witness_eigenvalue_im",
+      "NLA.SP06.witness_nonreal_finite_spectrum",
+      "NLA.SP06.witness_counterexample",
+      "NLA.SP06.not_targetImplication"
+    ],
+    "solution_file_present": false,
+    "yaml_match": true
+  },
+  "date": "2026-09-13",
+  "direct_lean": {
+    "actual_types_axioms": "20 declarations checked; each has exactly standard axioms plus intentional sorryAx",
+    "dependencies_clean_and_pinned": true,
+    "evidence": "typecheck-EVIDENCE.json and actual-types-axioms.log",
+    "lean_version": "4.33.1",
+    "typecheck": "PASS"
+  },
+  "finding": {
+    "detail": "The field contains an author-machine absolute /var/folders/... temporary path. Replace it with a repository-relative evidence path or a portable statement that the command creates a fresh temporary prefix.",
+    "does_not_change_mathematical_statements": true,
+    "field": "reproduction.statement_boundary.evidence_prefix",
+    "file": "formalization.yaml",
+    "severity": "minor documentation/portability"
+  },
+  "mathematical_obligations": {
+    "coefficient_expansion": {
+      "a": {
+        "-1": 8,
+        "1": 8,
+        "2": 1
+      },
+      "a_minus_a_squared": {
+        "-2": -64,
+        "-1": 8,
+        "0": -128,
+        "1": -8,
+        "2": -63,
+        "3": -16,
+        "4": -1
+      },
+      "a_squared": {
+        "-2": 64,
+        "0": 128,
+        "1": 16,
+        "2": 64,
+        "3": 16,
+        "4": 1
+      },
+      "matches_source": true
+    },
+    "curve": "continuous radius on actual Mathlib Circle; positive radial scaling gives continuity, injectivity and nonzero image.",
+    "radial_endpoints": {
+      "F(1/2,-1)": "-25/32",
+      "F(1/2,1)": "-23/32",
+      "F(2,-1)": "1",
+      "F(2,1)": "5",
+      "bounds_match_contracts": true
+    },
+    "root_existence_uniqueness": "Endpoint signs plus strict uniform slope on the open interval.",
+    "root_lipschitz_bridge": "|r-s| <= 8|c-d| from the slope bound and s^3/4 <= 2 (or the symmetric r^3 bound).",
+    "symbol_reality": "auxiliary_radial_im plus witness_composition makes the actual Laurent evaluation real on the entire curve.",
+    "target_negation": "witness_counterexample combines admissible band, genuine curve and a nonreal point of the actual n=2 spectrum; not_targetImplication negates the universal target.",
+    "toeplitz_spectrum": {
+      "characteristic_polynomial": "(lambda + 128)^2 + 64",
+      "eigenvalues": [
+        "-128 + 8*I",
+        "-128 - 8*I"
+      ],
+      "matrix": [
+        [
+          -128,
+          8
+        ],
+        [
+          -8,
+          -128
+        ]
+      ],
+      "nonreal_imaginary_part": 8
+    },
+    "uniform_slope": "The declared bound follows from factoring F(r,c)-F(s,c) and the exact box r,s in [1/2,2], c in [-1,1]; no derivative or sampling premise is hidden."
+  },
+  "package_hashes": {
+    "Challenge.lean": {
+      "bytes": 3030,
+      "sha256": "cd75a8f37a174d7dfb68927f7e6aeb23cf0982eb3161d7d9e5a63a7583d73bef"
+    },
+    "NLA/SP06/Definitions.lean": {
+      "bytes": 2374,
+      "sha256": "5f3e071b9aabbbda27a794f9396022e54585f5d2d254827e50ea90baf80e72b1"
+    },
+    "NUMERICAL_TARGETS.md": {
+      "bytes": 4073,
+      "sha256": "bfd2a0bcc5c5328ac9f3fd85d56ac7d3b8a5d551236cee68e227cb9acbea1959"
+    },
+    "README.md": {
+      "bytes": 2204,
+      "sha256": "834a2176794e9eaddec99b63dabc399019ef89e71a4fc9f89721cbcf6ad911a8"
+    },
+    "SOURCE_MAP.md": {
+      "bytes": 2284,
+      "sha256": "b81a8cc5f9e5c1dda318c65c80ed840825a3216d95d53bcfc43cd8bbf7c594f2"
+    },
+    "comparator.json": {
+      "bytes": 987,
+      "sha256": "5d19e5fe9d3ac4a69d07a1b14d40e31784a295e7fe8c6925964bfffe97203bb9"
+    },
+    "formalization.yaml": {
+      "bytes": 8484,
+      "sha256": "6ff843982c3cdef97424ef86e48f2dd82f02876212730b0580f1c72f00c41b39"
+    },
+    "lake-manifest.json": {
+      "bytes": 3884,
+      "sha256": "fc670db46b75e916e357afa39caba663fade917249f6b4c14b10260b8f9e4c4d"
+    },
+    "lakefile.toml": {
+      "bytes": 249,
+      "sha256": "1725a2e94f2705e7cb2386f81664dcb3b79fcbc79d5a8faa74b9e8479f25b3e3"
+    },
+    "lean-toolchain": {
+      "bytes": 25,
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    }
+  },
+  "phase": "independent statement review 2; no proof implementation",
+  "reviewer": "/root/lean_iv01_next",
+  "semantic_statement_verdict": "APPROVE",
+  "source_hashes": {
+    "eigenvalues-and-inverse-problems/SP-06/README.md": "e2eb891930c96d6a3bdd25c75bfe6bd2798cc8c540ce00ec851f7bf1f0ceb25c",
+    "eigenvalues-and-inverse-problems/SP-06/problem.tex": "183127180596a36c108ed8575420e3845ca890f3048a32ec1252d61cf60d5311",
+    "eigenvalues-and-inverse-problems/SP-06/solution.md": "c7adb8f97238049b20e82044d8527b70301779ba041169f74fe603a88ea1ae7a",
+    "eigenvalues-and-inverse-problems/SP-06/solution.tex": "b7340bf85e0b776ed49a4303af64820b72708eb249fbdc885b9179945e60ffc9"
+  },
+  "verdict": "REQUESTED CHANGES"
+}

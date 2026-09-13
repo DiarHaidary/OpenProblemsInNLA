@@ -1,0 +1,148 @@
+{
+  "phase": "Local macOS proof build and LeanCert kernel trust assertions; genuine Linux/Comparator and final independent reviews still pending",
+  "commands": [
+    {
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-sp06-development-a2fojial/Inspect.lean"
+      ],
+      "cwd": "/tmp/nla-lean-sp06-project/eigenvalues-and-inverse-problems/SP-06/lean",
+      "exit_code": 0,
+      "stdout": "types-axioms.log"
+    }
+  ],
+  "compiled_sources": {
+    "NLA/SP06/Definitions.lean": "5f3e071b9aabbbda27a794f9396022e54585f5d2d254827e50ea90baf80e72b1",
+    "NLA/SP06/Numeric.lean": "16052a754e8680c587163e1a57d150094ae96a36464a56cc499ec09e9aa5b111",
+    "NLA/SP06/Curve.lean": "151ff3586667091b16eab3acf03aed32fa5c7db8422a4077095bf914c4392677",
+    "NLA/SP06/Proof.lean": "d22146a65804efd8ff5c7f7b81ddcd55af8dc1bab7a2518f4961d7699abc9b48",
+    "Solution.lean": "4aa92168bf3dccc0a03180795c60b404a7e6b531b188eb4ab1d93cf109c3eb42"
+  },
+  "unchanged_approved_boundary": {
+    "NLA/SP06/Definitions.lean": "5f3e071b9aabbbda27a794f9396022e54585f5d2d254827e50ea90baf80e72b1",
+    "Challenge.lean": "cd75a8f37a174d7dfb68927f7e6aeb23cf0982eb3161d7d9e5a63a7583d73bef",
+    "NUMERICAL_TARGETS.md": "bfd2a0bcc5c5328ac9f3fd85d56ac7d3b8a5d551236cee68e227cb9acbea1959",
+    "SOURCE_MAP.md": "b81a8cc5f9e5c1dda318c65c80ed840825a3216d95d53bcfc43cd8bbf7c594f2",
+    "comparator.json": "5d19e5fe9d3ac4a69d07a1b14d40e31784a295e7fe8c6925964bfffe97203bb9"
+  },
+  "export_axioms": {
+    "NLA.SP06.witness_admissible": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.witness_composition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_lower_endpoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_upper_endpoint": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_uniform_slope": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_root_exists_unique": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_roots_lipschitz": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.continuous_radius_exists": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_curve_continuous": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_curve_injective": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_curve_nonzero": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.auxiliary_radial_im": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.radial_curve_symbol_real": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.witness_real_jordan_curve": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.witness_toeplitz_two": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.witness_eigenvalue_mem": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.witness_eigenvalue_im": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.witness_nonreal_finite_spectrum": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.witness_counterexample": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.SP06.not_targetImplication": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "definitions_inspected": [
+    "LaurentCoefficients",
+    "laurentEval",
+    "hasAdmissibleBand",
+    "toeplitz",
+    "hasRealJordanCurve",
+    "allFiniteSpectraReal",
+    "targetImplication",
+    "witness",
+    "auxiliary",
+    "radialEquation",
+    "radiusProfile",
+    "radialCurve",
+    "nonrealEigenvalue",
+    "counterexampleClaim"
+  ],
+  "export_count": 20,
+  "raw_log_sha256": "cbc2454ba02b3968fcd2caddae901415f1db203e91cb5bfed575759884fb8233"
+}

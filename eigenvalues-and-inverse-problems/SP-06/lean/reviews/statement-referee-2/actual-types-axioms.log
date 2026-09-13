@@ -1,0 +1,47 @@
+NLA.SP06.witness_admissible : hasAdmissibleBand witness
+'NLA.SP06.witness_admissible' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.witness_composition (z : ℂ) (hz : z ≠ 0) : laurentEval witness z = auxiliary z - auxiliary z ^ 2
+'NLA.SP06.witness_composition' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_lower_endpoint (c : ℝ) (hc : c ∈ Set.Icc (-1) 1) :
+  radialEquation (1 / 2) c ≤ -(23 / 32) ∧ radialEquation (1 / 2) c < 0
+'NLA.SP06.radial_lower_endpoint' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_upper_endpoint (c : ℝ) (hc : c ∈ Set.Icc (-1) 1) : 1 ≤ radialEquation 2 c
+'NLA.SP06.radial_upper_endpoint' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_uniform_slope (c s r : ℝ) (hc : c ∈ Set.Icc (-1) 1) (hs : 1 / 2 ≤ s) (hsr : s ≤ r) (hr : r ≤ 2) :
+  (r - s) / 4 ≤ radialEquation r c - radialEquation s c
+'NLA.SP06.radial_uniform_slope' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_root_exists_unique (c : ℝ) (hc : c ∈ Set.Icc (-1) 1) :
+  ∃! r, r ∈ Set.Ioo (1 / 2) 2 ∧ radialEquation r c = 0
+'NLA.SP06.radial_root_exists_unique' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_roots_lipschitz (c d r s : ℝ) (hc : c ∈ Set.Icc (-1) 1) (hd : d ∈ Set.Icc (-1) 1)
+  (hr : r ∈ Set.Ioo (1 / 2) 2) (hs : s ∈ Set.Ioo (1 / 2) 2) (hcr : radialEquation r c = 0)
+  (hds : radialEquation s d = 0) : |r - s| ≤ 8 * |c - d|
+'NLA.SP06.radial_roots_lipschitz' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.continuous_radius_exists : ∃ ρ, radiusProfile ρ
+'NLA.SP06.continuous_radius_exists' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_curve_continuous (ρ : Circle → ℝ) (hρ : Continuous ρ) : Continuous (radialCurve ρ)
+'NLA.SP06.radial_curve_continuous' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_curve_injective (ρ : Circle → ℝ) (hρ : ∀ (u : Circle), 0 < ρ u) : Function.Injective (radialCurve ρ)
+'NLA.SP06.radial_curve_injective' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_curve_nonzero (ρ : Circle → ℝ) (hρ : ∀ (u : Circle), 0 < ρ u) (u : Circle) : radialCurve ρ u ≠ 0
+'NLA.SP06.radial_curve_nonzero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.auxiliary_radial_im (r : ℝ) (hr : 0 < r) (u : Circle) :
+  (auxiliary (↑r * ↑u)).im = 8 * (↑u).im / r * radialEquation r (↑u).re
+'NLA.SP06.auxiliary_radial_im' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.radial_curve_symbol_real (ρ : Circle → ℝ) (hρ : radiusProfile ρ) (u : Circle) :
+  (laurentEval witness (radialCurve ρ u)).im = 0
+'NLA.SP06.radial_curve_symbol_real' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.witness_real_jordan_curve : hasRealJordanCurve witness
+'NLA.SP06.witness_real_jordan_curve' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.witness_toeplitz_two : toeplitz witness 2 = !![-128, 8; -8, -128]
+'NLA.SP06.witness_toeplitz_two' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.witness_eigenvalue_mem : nonrealEigenvalue ∈ spectrum ℂ (toeplitz witness 2)
+'NLA.SP06.witness_eigenvalue_mem' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.witness_eigenvalue_im : nonrealEigenvalue.im = 8
+'NLA.SP06.witness_eigenvalue_im' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.witness_nonreal_finite_spectrum : ¬allFiniteSpectraReal witness
+'NLA.SP06.witness_nonreal_finite_spectrum' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.witness_counterexample : counterexampleClaim
+'NLA.SP06.witness_counterexample' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA.SP06.not_targetImplication : ¬targetImplication
+'NLA.SP06.not_targetImplication' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,0 +1,362 @@
+Mathlib/Algebra/BigOperators/Fin.lean-17-Some results about products and sums over the type `Fin`.
+Mathlib/Algebra/BigOperators/Fin.lean-18-
+Mathlib/Algebra/BigOperators/Fin.lean:19:The most important results are the induction formulas `Fin.prod_univ_castSucc`
+Mathlib/Algebra/BigOperators/Fin.lean:20:and `Fin.prod_univ_succ`, and the formula `Fin.prod_const` for the product of a
+Mathlib/Algebra/BigOperators/Fin.lean-21-constant function. These results have variants for sums instead of products.
+Mathlib/Algebra/BigOperators/Fin.lean-22-
+Mathlib/Algebra/BigOperators/Fin.lean-23-## Main declarations
+Mathlib/Algebra/BigOperators/Fin.lean-24-
+Mathlib/Algebra/BigOperators/Fin.lean-25-* `finFunctionFinEquiv`: An explicit equivalence between `Fin n → Fin m` and `Fin (m ^ n)`.
+Mathlib/Algebra/BigOperators/Fin.lean-26--/
+--
+Mathlib/Algebra/BigOperators/Fin.lean-66-@[to_additive /-- A sum of a function `f : Fin (n + 1) → M` over all `Fin (n + 1)` is the sum of
+Mathlib/Algebra/BigOperators/Fin.lean-67-`f x`, for some `x : Fin (n + 1)` plus the remaining sum -/]
+Mathlib/Algebra/BigOperators/Fin.lean:68:theorem prod_univ_succAbove (f : Fin (n + 1) → M) (x : Fin (n + 1)) :
+Mathlib/Algebra/BigOperators/Fin.lean-69-    ∏ i, f i = f x * ∏ i : Fin n, f (x.succAbove i) := by
+Mathlib/Algebra/BigOperators/Fin.lean-70-  rw [univ_succAbove n x, prod_cons, Finset.prod_map, coe_succAboveEmb]
+Mathlib/Algebra/BigOperators/Fin.lean-71-
+Mathlib/Algebra/BigOperators/Fin.lean-72-/-- A product of a function `f : Fin (n + 1) → M` over all `Fin (n + 1)`
+Mathlib/Algebra/BigOperators/Fin.lean-73-is the product of `f 0` times the remaining product -/
+Mathlib/Algebra/BigOperators/Fin.lean-74-@[to_additive /-- A sum of a function `f : Fin (n + 1) → M` over all `Fin (n + 1)` is the sum of
+Mathlib/Algebra/BigOperators/Fin.lean-75-`f 0` plus the remaining sum -/]
+Mathlib/Algebra/BigOperators/Fin.lean:76:theorem prod_univ_succ (f : Fin (n + 1) → M) :
+Mathlib/Algebra/BigOperators/Fin.lean-77-    ∏ i, f i = f 0 * ∏ i : Fin n, f i.succ :=
+Mathlib/Algebra/BigOperators/Fin.lean:78:  prod_univ_succAbove f 0
+Mathlib/Algebra/BigOperators/Fin.lean-79-
+Mathlib/Algebra/BigOperators/Fin.lean-80-/-- A product of a function `f : Fin (n + 1) → M` over all `Fin (n + 1)`
+Mathlib/Algebra/BigOperators/Fin.lean-81-is the product of `f (Fin.last n)` times the remaining product -/
+Mathlib/Algebra/BigOperators/Fin.lean-82-@[to_additive /-- A sum of a function `f : Fin (n + 1) → M` over all `Fin (n + 1)` is the sum of
+Mathlib/Algebra/BigOperators/Fin.lean-83-`f (Fin.last n)` plus the remaining sum -/]
+Mathlib/Algebra/BigOperators/Fin.lean:84:theorem prod_univ_castSucc (f : Fin (n + 1) → M) :
+Mathlib/Algebra/BigOperators/Fin.lean-85-    ∏ i, f i = (∏ i : Fin n, f (Fin.castSucc i)) * f (last n) := by
+Mathlib/Algebra/BigOperators/Fin.lean:86:  simpa [mul_comm] using prod_univ_succAbove f (last n)
+Mathlib/Algebra/BigOperators/Fin.lean-87-
+Mathlib/Algebra/BigOperators/Fin.lean-88-@[to_additive (attr := simp)]
+Mathlib/Algebra/BigOperators/Fin.lean-89-theorem prod_univ_getElem (l : List M) : ∏ i : Fin l.length, l[i.1] = l.prod := by
+Mathlib/Algebra/BigOperators/Fin.lean-90-  simp [Finset.prod_eq_multiset_prod]
+Mathlib/Algebra/BigOperators/Fin.lean-91-
+Mathlib/Algebra/BigOperators/Fin.lean-92-@[to_additive (attr := simp)]
+--
+Mathlib/Algebra/BigOperators/Fin.lean-98-theorem prod_cons (x : M) (f : Fin n → M) :
+Mathlib/Algebra/BigOperators/Fin.lean-99-    (∏ i : Fin n.succ, (cons x f : Fin n.succ → M) i) = x * ∏ i : Fin n, f i := by
+Mathlib/Algebra/BigOperators/Fin.lean:100:  simp_rw [prod_univ_succ, cons_zero, cons_succ]
+Mathlib/Algebra/BigOperators/Fin.lean-101-
+Mathlib/Algebra/BigOperators/Fin.lean-102-@[to_additive (attr := simp)]
+Mathlib/Algebra/BigOperators/Fin.lean-103-theorem prod_snoc (x : M) (f : Fin n → M) :
+Mathlib/Algebra/BigOperators/Fin.lean-104-    (∏ i : Fin n.succ, (snoc f x : Fin n.succ → M) i) = (∏ i : Fin n, f i) * x := by
+Mathlib/Algebra/BigOperators/Fin.lean:105:  simp [prod_univ_castSucc]
+Mathlib/Algebra/BigOperators/Fin.lean-106-
+Mathlib/Algebra/BigOperators/Fin.lean-107-@[to_additive sum_univ_one]
+Mathlib/Algebra/BigOperators/Fin.lean-108-theorem prod_univ_one (f : Fin 1 → M) : ∏ i, f i = f 0 := by simp
+Mathlib/Algebra/BigOperators/Fin.lean-109-
+Mathlib/Algebra/BigOperators/Fin.lean-110-@[to_additive (attr := simp)]
+Mathlib/Algebra/BigOperators/Fin.lean-111-theorem prod_univ_two (f : Fin 2 → M) : ∏ i, f i = f 0 * f 1 := by
+Mathlib/Algebra/BigOperators/Fin.lean:112:  simp [prod_univ_succ]
+Mathlib/Algebra/BigOperators/Fin.lean-113-
+Mathlib/Algebra/BigOperators/Fin.lean-114-@[to_additive]
+Mathlib/Algebra/BigOperators/Fin.lean-115-theorem prod_univ_two' (f : ι → M) (a b : ι) : ∏ i, f (![a, b] i) = f a * f b :=
+Mathlib/Algebra/BigOperators/Fin.lean-116-  prod_univ_two _
+Mathlib/Algebra/BigOperators/Fin.lean-117-
+Mathlib/Algebra/BigOperators/Fin.lean-118-@[to_additive]
+Mathlib/Algebra/BigOperators/Fin.lean-119-theorem prod_univ_three (f : Fin 3 → M) : ∏ i, f i = f 0 * f 1 * f 2 := by
+Mathlib/Algebra/BigOperators/Fin.lean:120:  rw [prod_univ_castSucc, prod_univ_two]
+Mathlib/Algebra/BigOperators/Fin.lean-121-  rfl
+Mathlib/Algebra/BigOperators/Fin.lean-122-
+Mathlib/Algebra/BigOperators/Fin.lean-123-@[to_additive]
+Mathlib/Algebra/BigOperators/Fin.lean-124-theorem prod_univ_four (f : Fin 4 → M) : ∏ i, f i = f 0 * f 1 * f 2 * f 3 := by
+Mathlib/Algebra/BigOperators/Fin.lean:125:  rw [prod_univ_castSucc, prod_univ_three]
+Mathlib/Algebra/BigOperators/Fin.lean-126-  rfl
+Mathlib/Algebra/BigOperators/Fin.lean-127-
+Mathlib/Algebra/BigOperators/Fin.lean-128-@[to_additive]
+Mathlib/Algebra/BigOperators/Fin.lean-129-theorem prod_univ_five (f : Fin 5 → M) : ∏ i, f i = f 0 * f 1 * f 2 * f 3 * f 4 := by
+Mathlib/Algebra/BigOperators/Fin.lean:130:  rw [prod_univ_castSucc, prod_univ_four]
+Mathlib/Algebra/BigOperators/Fin.lean-131-  rfl
+Mathlib/Algebra/BigOperators/Fin.lean-132-
+Mathlib/Algebra/BigOperators/Fin.lean-133-@[to_additive]
+Mathlib/Algebra/BigOperators/Fin.lean-134-theorem prod_univ_six (f : Fin 6 → M) : ∏ i, f i = f 0 * f 1 * f 2 * f 3 * f 4 * f 5 := by
+Mathlib/Algebra/BigOperators/Fin.lean:135:  rw [prod_univ_castSucc, prod_univ_five]
+Mathlib/Algebra/BigOperators/Fin.lean-136-  rfl
+Mathlib/Algebra/BigOperators/Fin.lean-137-
+Mathlib/Algebra/BigOperators/Fin.lean-138-@[to_additive]
+Mathlib/Algebra/BigOperators/Fin.lean-139-theorem prod_univ_seven (f : Fin 7 → M) : ∏ i, f i = f 0 * f 1 * f 2 * f 3 * f 4 * f 5 * f 6 := by
+Mathlib/Algebra/BigOperators/Fin.lean:140:  rw [prod_univ_castSucc, prod_univ_six]
+Mathlib/Algebra/BigOperators/Fin.lean-141-  rfl
+Mathlib/Algebra/BigOperators/Fin.lean-142-
+Mathlib/Algebra/BigOperators/Fin.lean-143-@[to_additive]
+Mathlib/Algebra/BigOperators/Fin.lean-144-theorem prod_univ_eight (f : Fin 8 → M) :
+Mathlib/Algebra/BigOperators/Fin.lean-145-    ∏ i, f i = f 0 * f 1 * f 2 * f 3 * f 4 * f 5 * f 6 * f 7 := by
+Mathlib/Algebra/BigOperators/Fin.lean:146:  rw [prod_univ_castSucc, prod_univ_seven]
+Mathlib/Algebra/BigOperators/Fin.lean-147-  rfl
+Mathlib/Algebra/BigOperators/Fin.lean-148-
+Mathlib/Algebra/BigOperators/Fin.lean-149-@[to_additive]
+Mathlib/Algebra/BigOperators/Fin.lean-150-theorem prod_const (n : ℕ) (x : M) : ∏ _i : Fin n, x = x ^ n := by simp
+Mathlib/Algebra/BigOperators/Fin.lean-151-
+Mathlib/Algebra/BigOperators/Fin.lean-152-@[to_additive]
+--
+Mathlib/Algebra/BigOperators/Fin.lean-449-    simp only [← Finset.prod_mul_distrib, ← not_le, Finset.prod_filter_mul_prod_filter_not]
+Mathlib/Algebra/BigOperators/Fin.lean-450-  _ = (∏ i, ∏ j ≥ i, f i.castSucc j) * ∏ i, ∏ j ≤ i, f i.succ j := by
+Mathlib/Algebra/BigOperators/Fin.lean:451:    rw [Fin.prod_univ_castSucc, Fin.prod_univ_succ]
+Mathlib/Algebra/BigOperators/Fin.lean-452-    simp [Finset.filter_le_eq_Ici, Finset.filter_ge_eq_Iic]
+Mathlib/Algebra/BigOperators/Fin.lean-453-  _ = (∏ i, ∏ j ≥ i, f i.castSucc j) * ∏ i, ∏ j ≥ i, f j.succ i := by
+Mathlib/Algebra/BigOperators/Fin.lean-454-    congr 1
+Mathlib/Algebra/BigOperators/Fin.lean-455-    apply Finset.prod_comm'
+Mathlib/Algebra/BigOperators/Fin.lean-456-    simp
+Mathlib/Algebra/BigOperators/Fin.lean-457-  _ = ∏ i : Fin n, ∏ j ≥ i, (f i.castSucc j * f j.succ i) := by
+--
+Mathlib/Algebra/BigOperators/Fin.lean-626-      | zero => simp
+Mathlib/Algebra/BigOperators/Fin.lean-627-      | succ m ih =>
+Mathlib/Algebra/BigOperators/Fin.lean:628:      rw [Fin.prod_univ_castSucc, Fin.sum_univ_castSucc]
+Mathlib/Algebra/BigOperators/Fin.lean-629-      suffices
+Mathlib/Algebra/BigOperators/Fin.lean-630-        ∀ (n : Fin m → ℕ) (nn : ℕ) (f : ∀ i : Fin m, Fin (n i)) (fn : Fin nn),
+Mathlib/Algebra/BigOperators/Fin.lean-631-          ((∑ i : Fin m, ↑(f i) * ∏ j : Fin i, n (Fin.castLE i.prop.le j)) + ↑fn * ∏ j, n j) <
+Mathlib/Algebra/BigOperators/Fin.lean-632-            (∏ i : Fin m, n i) * nn by
+Mathlib/Algebra/BigOperators/Fin.lean-633-        solve_by_elim
+Mathlib/Algebra/BigOperators/Fin.lean-634-      intro n nn f fn
+--
+Mathlib/Algebra/BigOperators/Fin.lean-663-        clear this
+Mathlib/Algebra/BigOperators/Fin.lean-664-        simp_rw [Fin.val_zero, Fintype.prod_empty, Nat.div_one, mul_one, Fin.cons_zero,
+Mathlib/Algebra/BigOperators/Fin.lean:665:          Fin.prod_univ_succ, Fin.castLE_zero, Fin.cons_zero, ← Nat.div_div_eq_div_mul,
+Mathlib/Algebra/BigOperators/Fin.lean-666-          mul_left_comm (_ % _ : ℕ), ← mul_sum]
+Mathlib/Algebra/BigOperators/Fin.lean-667-        convert! Nat.mod_add_div _ _
+Mathlib/Algebra/BigOperators/Fin.lean:668:        exact ih (a / x) (Nat.div_lt_of_lt_mul <| a.is_lt.trans_eq (Fin.prod_univ_succ _)))
+Mathlib/Algebra/BigOperators/Fin.lean-669-
+Mathlib/Algebra/BigOperators/Fin.lean-670-theorem finPiFinEquiv_apply {m : ℕ} {n : Fin m → ℕ} (f : ∀ i : Fin m, Fin (n i)) :
+Mathlib/Algebra/BigOperators/Fin.lean-671-    (finPiFinEquiv f : ℕ) = ∑ i, f i * ∏ j, n (Fin.castLE i.is_lt.le j) := rfl
+Mathlib/Algebra/BigOperators/Fin.lean-672-
+Mathlib/Algebra/BigOperators/Fin.lean-673-theorem finPiFinEquiv_single {m : ℕ} {n : Fin m → ℕ} [∀ i, NeZero (n i)] (i : Fin m)
+Mathlib/Algebra/BigOperators/Fin.lean-674-    (j : Fin (n i)) :
+--
+Mathlib/Algebra/BigOperators/Fin.lean-762-  | g::[] => by
+Mathlib/Algebra/BigOperators/Fin.lean-763-    change g = ∏ i : Fin 1, [g][i] ^ (-1 : ℤ) ^ (i : ℕ)
+Mathlib/Algebra/BigOperators/Fin.lean:764:    rw [Fin.prod_univ_succ]; simp
+Mathlib/Algebra/BigOperators/Fin.lean-765-  | g::h::L =>
+Mathlib/Algebra/BigOperators/Fin.lean-766-    calc g * h⁻¹ * L.alternatingProd
+Mathlib/Algebra/BigOperators/Fin.lean-767-      = g * h⁻¹ * ∏ i : Fin L.length, L[i] ^ (-1 : ℤ) ^ (i : ℕ) :=
+Mathlib/Algebra/BigOperators/Fin.lean-768-        congr_arg _ (alternatingProd_eq_finsetProd _)
+Mathlib/Algebra/BigOperators/Fin.lean-769-    _ = ∏ i : Fin (L.length + 2), (g::h::L)[i] ^ (-1 : ℤ) ^ (i : ℕ) := by
+Mathlib/Algebra/BigOperators/Fin.lean:770:        { rw [Fin.prod_univ_succ, Fin.prod_univ_succ, mul_assoc]
+Mathlib/Algebra/BigOperators/Fin.lean-771-          simp [pow_add]}
+Mathlib/Algebra/BigOperators/Fin.lean-772-
+Mathlib/Algebra/BigOperators/Fin.lean-773-@[deprecated (since := "2026-04-08")]
+Mathlib/Algebra/BigOperators/Fin.lean-774-alias alternatingSum_eq_finset_sum := alternatingSum_eq_finsetSum
+Mathlib/Algebra/BigOperators/Fin.lean-775-
+Mathlib/Algebra/BigOperators/Fin.lean-776-@[to_additive existing, deprecated (since := "2026-04-08")]
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-57-variable {v}
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-58-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:59:theorem linearCombination_apply (l : α →₀ R) : linearCombination R v l = l.sum fun i a => a • v i :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-60-  rfl
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-61-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:62:theorem linearCombination_apply_of_mem_supported {l : α →₀ R} {s : Finset α}
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-63-    (hs : l ∈ supported R R (↑s : Set α)) : linearCombination R v l = s.sum fun i => l i • v i :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-64-  Finset.sum_subset hs fun x _ hxg =>
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-65-    show l x • v x = 0 by rw [notMem_support_iff.1 hxg, zero_smul]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-66-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-67-@[simp]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-68-theorem linearCombination_single (c : R) (a : α) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-69-    linearCombination R v (single a c) = c • v a := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:70:  simp [linearCombination_apply, sum_single_index]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-71-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-72-theorem linearCombination_zero_apply (x : α →₀ R) : (linearCombination R (0 : α → M)) x = 0 := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:73:  simp [linearCombination_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-74-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-75-variable (α M)
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-76-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-77-@[simp]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-78-theorem linearCombination_zero : linearCombination R (0 : α → M) = 0 :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-79-  LinearMap.ext (linearCombination_zero_apply R)
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-82-theorem linearCombination_single_index (c : M) (a : α) (f : α →₀ R) [DecidableEq α] :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-83-    linearCombination R (Pi.single a c) f = f a • c := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:84:  rw [linearCombination_apply, sum_eq_single a, Pi.single_eq_same]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-85-  · exact fun i _ hi ↦ by rw [Pi.single_eq_of_ne hi, smul_zero]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-86-  · exact fun _ ↦ by simp only [zero_smul]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-87-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-88-variable {α M}
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-89-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-90-theorem linearCombination_linear_comp (f : M →ₗ[R] M') :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-91-    linearCombination R (f ∘ v) = f ∘ₗ linearCombination R v := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-92-  ext
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:93:  simp [linearCombination_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-94-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-95-theorem apply_linearCombination (f : M →ₗ[R] M') (v) (l : α →₀ R) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-96-    f (linearCombination R v l) = linearCombination R (f ∘ v) l :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-97-  congr($(linearCombination_linear_comp R f) l).symm
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-98-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-99-theorem apply_linearCombination_id (f : M →ₗ[R] M') (l : M →₀ R) :
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-121-  linearCombination_surjective R Function.surjective_id
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-122-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:123:theorem range_linearCombination : LinearMap.range (linearCombination R v) = span R (range v) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-124-  ext x
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-125-  constructor
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-126-  · intro hx
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-127-    rw [LinearMap.mem_range] at hx
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-128-    rcases hx with ⟨l, hl⟩
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-129-    rw [← hl]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:130:    rw [linearCombination_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-131-    exact sum_mem fun i _ => Submodule.smul_mem _ _ (subset_span (mem_range_self i))
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-132-  · apply span_le.2
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-133-    intro x hx
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-134-    rcases hx with ⟨i, hi⟩
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-135-    rw [SetLike.mem_coe, LinearMap.mem_range]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-136-    use single i 1
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-140-    Submodule.span R (Set.range v) = ⊤ ↔
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-141-      Function.Surjective (Finsupp.linearCombination R v) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:142:  rw [← LinearMap.range_eq_top, range_linearCombination]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-143-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-144-theorem lmapDomain_linearCombination (f : α → α') (g : M →ₗ[R] M') (h : ∀ i, g (v i) = v' (f i)) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-145-    (linearCombination R v').comp (lmapDomain R R f) = g.comp (linearCombination R v) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-146-  ext l
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:147:  simp [linearCombination_apply, h]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-148-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-149-theorem linearCombination_comp_lmapDomain (f : α → α') :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-150-    (linearCombination R v').comp (Finsupp.lmapDomain R R f) = linearCombination R (v' ∘ f) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-151-  ext
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-152-  simp
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-153-
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-155-theorem linearCombination_embDomain (f : α ↪ α') (l : α →₀ R) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-156-    (linearCombination R v') (embDomain f l) = (linearCombination R (v' ∘ f)) l := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:157:  simp [linearCombination_apply, Finsupp.sum, support_embDomain, embDomain_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-158-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-159-@[simp]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-160-theorem linearCombination_mapDomain (f : α → α') (l : α →₀ R) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-161-    (linearCombination R v') (mapDomain f l) = (linearCombination R (v' ∘ f)) l :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-162-  LinearMap.congr_fun (linearCombination_comp_lmapDomain _ _) l
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-163-
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-167-  rw [equivMapDomain_eq_mapDomain, linearCombination_mapDomain]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-168-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:169:/-- A version of `Finsupp.range_linearCombination` which is useful for going in the other
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-170-direction -/
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:171:theorem span_eq_range_linearCombination (s : Set M) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-172-    span R s = LinearMap.range (linearCombination R ((↑) : s → M)) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:173:  rw [range_linearCombination, Subtype.range_coe_subtype, Set.ofPred_mem_eq]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-174-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-175-theorem mem_span_iff_linearCombination (s : Set M) (x : M) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-176-    x ∈ span R s ↔ ∃ l : s →₀ R, linearCombination R (↑) l = x :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:177:  (SetLike.ext_iff.1 <| span_eq_range_linearCombination _ _) x
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-178-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-179-variable {R} in
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-180-theorem mem_span_range_iff_exists_finsupp {v : α → M} {x : M} :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-181-    x ∈ span R (range v) ↔ ∃ c : α →₀ R, (c.sum fun i a => a • v i) = x := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:182:  simp only [← Finsupp.range_linearCombination, LinearMap.mem_range, linearCombination_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-183-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-184-theorem span_image_eq_map_linearCombination (s : Set α) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-185-    span R (v '' s) = Submodule.map (linearCombination R v) (supported R R s) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-186-  apply span_eq_of_le
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-187-  · intro x hx
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-188-    rw [Set.mem_image] at hx
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-197-      · exact smul_mem _ _ (subset_span (Set.mem_image_of_mem _ h))
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-198-      · simp [(Finsupp.mem_supported' R _).1 hz _ h]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:199:    rw [mem_comap, linearCombination_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-200-    refine sum_mem ?_
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-201-    simp [this]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-202-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-203-theorem mem_span_image_iff_linearCombination {s : Set α} {x : M} :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-204-    x ∈ span R (v '' s) ↔ ∃ l ∈ supported R R s, linearCombination R v l = x := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-205-  rw [span_image_eq_map_linearCombination]
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-209-    linearCombination R v f =
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-210-      f none • v none + linearCombination R (v ∘ Option.some) f.some := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:211:  rw [linearCombination_apply, sum_option_index_smul, linearCombination_apply]; simp
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-212-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-213-theorem linearCombination_linearCombination {α β : Type*} (A : α → M) (B : β → α →₀ R)
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-214-    (f : β →₀ R) : linearCombination R A (linearCombination R B f) =
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-215-      linearCombination R (fun b => linearCombination R A (B b)) f := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-216-  classical
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:217:  simp only [linearCombination_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-218-  induction f using induction_linear with
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-219-  | zero => simp only [sum_zero_index]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-220-  | add f₁ f₂ h₁ h₂ => simp [sum_add_index, h₁, h₂, add_smul]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-221-  | single => simp [sum_single_index, sum_smul_index, smul_sum, mul_smul]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-222-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-223-theorem linearCombination_smul [Module R S] [Module S M] [IsScalarTower R S M] {w : α' → S} :
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-260-    linearCombination R (v ∘ f) = (linearCombination R v).comp (lmapDomain R R f) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-261-  ext
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:262:  simp [linearCombination_apply]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-263-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-264-theorem linearCombination_comapDomain (f : α → α') (l : α' →₀ R)
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-265-    (hf : Set.InjOn f (f ⁻¹' ↑l.support)) : linearCombination R v (Finsupp.comapDomain f l hf) =
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-266-      (l.support.preimage f hf).sum fun i => l (f i) • v i := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:267:  rw [linearCombination_apply]; rfl
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-268-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-269-theorem linearCombination_onFinset {s : Finset α} {f : α → R} (g : α → M)
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-270-    (hf : ∀ a, f a ≠ 0 → a ∈ s) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-271-    linearCombination R g (Finsupp.onFinset s f hf) = Finset.sum s fun x : α => f x • g x := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-272-  classical
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:273:  simp only [linearCombination_apply, Finsupp.sum, Finsupp.onFinset_apply, Finsupp.support_onFinset]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-274-  rw [Finset.sum_filter_of_ne]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-275-  intro x _ h
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-276-  contrapose h
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-277-  simp [h]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-278-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-279-variable [Module S M] [SMulCommClass R S M]
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-292-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-293-@[simp]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:294:theorem bilinearCombination_apply :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-295-    bilinearCombination R S v = linearCombination R v :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-296-  rfl
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-297-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-298-end LinearCombination
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-299-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-300-end Finsupp
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-317-  map_smul' r f := by simp_rw [Finset.smul_sum, smul_smul]; rfl
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-318-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:319:theorem Fintype.linearCombination_apply (f) : Fintype.linearCombination R v f = ∑ i, f i • v i :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-320-  rfl
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-321-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-322-@[simp]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:323:theorem Fintype.linearCombination_apply_single [DecidableEq α] (i : α) (r : R) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-324-    Fintype.linearCombination R v (Pi.single i r) = r • v i := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:325:  simp_rw [Fintype.linearCombination_apply, Pi.single_apply, ite_smul, zero_smul]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-326-  rw [Finset.sum_ite_eq', if_pos (Finset.mem_univ _)]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-327-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:328:theorem Finsupp.linearCombination_eq_fintype_linearCombination_apply (x : α → R) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-329-    linearCombination R v ((Finsupp.linearEquivFunOnFinite R R α).symm x) =
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-330-      Fintype.linearCombination R v x := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-331-  apply Finset.sum_subset
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-332-  · exact Finset.subset_univ _
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-333-  · intro x _ hx
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-334-    rw [Finsupp.notMem_support_iff.mp hx]
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-338-    (linearCombination R v).comp (Finsupp.linearEquivFunOnFinite R R α).symm.toLinearMap =
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-339-      Fintype.linearCombination R v :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:340:  LinearMap.ext <| linearCombination_eq_fintype_linearCombination_apply R v
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-341-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-342-@[simp]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:343:theorem Fintype.range_linearCombination :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-344-    LinearMap.range (Fintype.linearCombination R v) = Submodule.span R (Set.range v) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-345-  rw [← Finsupp.linearCombination_eq_fintype_linearCombination, LinearMap.range_comp,
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:346:      LinearEquiv.range, Submodule.map_top, Finsupp.range_linearCombination]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-347-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-348-theorem span_range_eq_top_iff_surjective_fintypeLinearCombination :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-349-    Submodule.span R (Set.range v) = ⊤ ↔
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-350-      Function.Surjective (Fintype.linearCombination R v) := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:351:  rw [← LinearMap.range_eq_top, Fintype.range_linearCombination]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-352-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-353-/-- `Fintype.bilinearCombination R S v f` is the linear combination of vectors in `v` with weights
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-354-in `f`. This variant of `Finsupp.linearCombination` is defined on fintype indexed vectors.
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-355-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-356-This map is linear in `v` if `R` is commutative, and always linear in `f`.
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-357-See note [bundled maps over different rings] for why separate `R` and `S` semirings are used.
+--
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-366-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-367-@[simp]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:368:theorem Fintype.bilinearCombination_apply :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-369-    Fintype.bilinearCombination R S v = Fintype.linearCombination R v :=
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-370-  rfl
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-371-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean:372:theorem Fintype.bilinearCombination_apply_single [DecidableEq α] (i : α) (r : R) :
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-373-    Fintype.bilinearCombination R S v (Pi.single i r) = r • v i := by
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-374-  simp [Fintype.bilinearCombination]
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-375-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-376-section SpanRange
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-377-
+Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean-378-variable {v} {x : M}

@@ -1,0 +1,26 @@
+import Challenge
+
+#check NLA.KE04.real_matrix_semantics
+#check NLA.KE04.krylov_range_semantics
+#check NLA.KE04.krylov_nesting_and_shift
+#check NLA.KE04.fullBlockDimension_iff_independent
+#check NLA.KE04.fullBlockDimension_prefix
+#check NLA.KE04.lastFullBlockIteration_exists
+#check NLA.KE04.krylovBasis_exists
+#check NLA.KE04.frameProjection_semantics
+#check NLA.KE04.compression_semantics
+#check NLA.KE04.orderedSpectrum_semantics
+#check NLA.KE04.compression_basis_independent
+#check NLA.KE04.interval_index_validity
+#check NLA.KE04.quadratic_semantics
+#check NLA.KE04.spectral_gap_quadratic_psd
+#check NLA.KE04.spectral_window_subspace
+#check NLA.KE04.krylov_intersection_nonzero
+#check NLA.KE04.psd_zero_form_iff_kernel
+#check NLA.KE04.compressedQuadratic_semantics
+#check NLA.KE04.quadratic_forms_agree
+#check NLA.KE04.later_quadratic_identity
+#check NLA.KE04.fullRank_quadratic_nonannihilation
+#check NLA.KE04.strictIntervalOccupancy
+#check NLA.KE04.fullPrefix_implies_canonical
+#check NLA.KE04.blockLanczosConjecture

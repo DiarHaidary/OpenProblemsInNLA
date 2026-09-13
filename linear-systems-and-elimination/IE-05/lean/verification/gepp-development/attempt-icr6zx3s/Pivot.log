@@ -1,0 +1,85 @@
+NLA/IE05/Pivot.lean:56:8: error: Tactic `rewrite` failed: motive is not type correct:
+  fun _a =>
+    List.foldl (List.argAux fun i r => pivotScore S k r < pivotScore S k i) (if _a then some i else some p) l =
+      some (List.foldl (pivotUpdate S k) (pivotUpdate S k p i) l)
+Error: Application type mismatch: The argument
+  (fun a b => (pivotScore S k b).decidableLT (pivotScore S k a)) i p
+has type
+  Decidable (pivotScore S k p < pivotScore S k i)
+but is expected to have type
+  Decidable _a
+in the application
+  @ite (Option (Fin n)) _a ((fun a b => (pivotScore S k b).decidableLT (pivotScore S k a)) i p)
+
+Explanation: The rewrite tactic rewrites an expression 'e' using an equality 'a = b' by the following process. First, it looks for all 'a' in 'e'. Second, it tries to abstract these occurrences of 'a' to create a function 'm := fun _a => ...', called the *motive*, with the property that 'm a' is definitionally equal to 'e'. Third, we observe that 'congrArg' implies that 'm a = m b', which can be used with lemmas such as 'Eq.mpr' to change the goal. However, if 'e' depends on specific properties of 'a', then the motive 'm' might not typecheck.
+
+Possible solutions: use rewrite's 'occs' configuration option to limit which occurrences are rewritten, or use 'simp' or 'conv' mode, which have strategies for certain kinds of dependencies (these tactics can handle proofs and 'Decidable' instances whose types depend on the rewritten term, and 'simp' can apply user-defined '@[congr]' theorems as well).
+
+case cons
+n : ℕ
+S : Mat n
+k i : Fin n
+l : List (Fin n)
+ih :
+  ∀ (p : Fin n),
+    k ≤ p →
+      List.foldl (List.argAux fun i r => pivotScore S k r < pivotScore S k i) (some p) l =
+        some (List.foldl (pivotUpdate S k) p l)
+p : Fin n
+hp : k ≤ p
+⊢ List.foldl (List.argAux fun i r => pivotScore S k r < pivotScore S k i)
+      (if pivotScore S k p < pivotScore S k i then some i else some p) l =
+    some (List.foldl (pivotUpdate S k) (pivotUpdate S k p i) l)
+NLA/IE05/Pivot.lean:84:6: error: Type mismatch: After simplification, term
+  hi
+ has type
+  k ≤ i
+but is expected to have type
+  firstPivotIndex S k ≤ i
+NLA/IE05/Pivot.lean:86:6: error: unsolved goals
+case pos
+n : ℕ
+S : Mat n
+k : Fin n
+r : Fin n := firstPivotIndex S k
+hr : k ≤ r
+hm : r ∈ List.argmax (pivotScore S k) (k :: List.finRange n)
+i : Fin n
+hi : k ≤ i
+heq : |S i k| = |S (firstPivotIndex S k) k|
+hscore : pivotScore S k r ≤ pivotScore S k i
+hrk : ¬r = k
+hik : i = k
+hind : (bif k == r then 0 else ↑r + 1) = 0
+⊢ firstPivotIndex S k ≤ i
+NLA/IE05/Pivot.lean:87:8: error: Tactic `simp` failed with a nested error:
+maximum recursion depth has been reached
+use `set_option maxRecDepth <num>` to increase limit
+use `set_option diagnostics true` to get diagnostic information
+NLA/IE05/Pivot.lean:86:31: warning: This simp argument is unused:
+  hrk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [List.idxOf_cons, hik] at hind
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/IE05/Pivot.lean:138:21: error: #assert_trust: 'NLA.IE05.firstPivotIndex_spec_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPivotIndex_spec_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/Pivot.lean:140:21: error: #assert_trust: 'NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+NLA/IE05/Pivot.lean:142:21: error: #assert_trust: 'NLA.IE05.firstPivotIndex_firstAvailable_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPivotIndex_firstAvailable_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.IE05.trajectory_firstPath_eq_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/IE05/Pivot.lean:146:21: error: #assert_trust: 'NLA.IE05.firstPath_eq_of_firstAvailable_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPath_eq_of_firstAvailable_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

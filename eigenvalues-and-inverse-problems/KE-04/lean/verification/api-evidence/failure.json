@@ -1,0 +1,20 @@
+{
+  "actual_runner_command": [
+    "python3",
+    "verification/capture_api_evidence.py"
+  ],
+  "cwd": "/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+  "exit_code": 1,
+  "completed_text_snapshots": 19,
+  "failed_command": {
+    "argv": [
+      "git",
+      "show",
+      "afb424eda89e8ac96d9eb69f6a88972055a4cd1b:README.md"
+    ],
+    "cwd": "/tmp/nla-lean-formalization/standards/sources/TauCetiProject/TauCetiReview",
+    "exit_code": 128,
+    "stderr": "fatal: not a git repository (or any of the parent directories): .git\n"
+  },
+  "explanation": "The Tau Ceti material is a pinned API/tree download, not a Git checkout. The first capture retained 19 completed text snapshots and its partial manifest. A separate corrected capture will verify the downloaded Tau Ceti text against its retained Git-tree blob IDs and SHA-256 manifest; it will not overwrite this failed attempt."
+}

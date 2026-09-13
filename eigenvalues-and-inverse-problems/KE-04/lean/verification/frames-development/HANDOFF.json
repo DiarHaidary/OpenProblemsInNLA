@@ -1,0 +1,76 @@
+{
+  "utc": "2026-09-13T08:58:21.092248+00:00",
+  "status": "COMPLETE_SCOPED_AUTHOR_VALIDATION",
+  "scope": "Exact Frames contracts1/7/8/9/18; excludes concurrent Krylov/Spectral and complete KE04 proof status",
+  "source": {
+    "path": "NLA/KE04/Frames.lean",
+    "sha256": "bfea6b02091db4e999c2c870b4b1f238cb546ad84df010c7d5431fe82904db0b",
+    "bytes": 8253
+  },
+  "completion": {
+    "path": "reviews/frames-development.md",
+    "sha256": "2d2d024739c1e99b2c0984508725adcfdb54b31dd9ddab0fc7b9ca9dd8e75ffd",
+    "bytes": 8879
+  },
+  "audit": {
+    "path": "verification/frames-development/audit-result.json",
+    "sha256": "4579315965ae09db52a673ec3ae5d414f5ea1b68dae63f8905f22015e3dd4ac9",
+    "bytes": 17945
+  },
+  "inspector": {
+    "path": "verification/frames-development/Inspect.lean",
+    "sha256": "8338db2f35c71bc8ef057894886d0da402bf2a1dc5f736fc2ce1e79cfbdb04a1",
+    "bytes": 9864
+  },
+  "exact_contracts": [
+    "NLA.KE04._proved.real_matrix_semantics",
+    "NLA.KE04._proved.krylovBasis_exists",
+    "NLA.KE04._proved.frameProjection_semantics",
+    "NLA.KE04._proved.compression_semantics",
+    "NLA.KE04._proved.compressedQuadratic_semantics"
+  ],
+  "actual_roots": [
+    "NLA.KE04._proved.act_apply",
+    "NLA.KE04._proved.act_mul",
+    "NLA.KE04._proved.act_one",
+    "NLA.KE04._proved.inner_eq_sum",
+    "NLA.KE04._proved.inner_act_transpose",
+    "NLA.KE04._proved.inner_act_left",
+    "NLA.KE04._proved.inner_columns",
+    "NLA.KE04._proved.frame_iff_orthonormal",
+    "NLA.KE04._proved.real_matrix_semantics",
+    "NLA.KE04._proved.act_eq_column_sum",
+    "NLA.KE04._proved.columnSpace_eq_range_act",
+    "NLA.KE04._proved.act_transpose_act",
+    "NLA.KE04._proved.frameProjection_act",
+    "NLA.KE04._proved.frameProjection_fixed_iff",
+    "NLA.KE04._proved.frameProjection_semantics",
+    "NLA.KE04._proved.submodule_frame_exists",
+    "NLA.KE04._proved.krylovBasis_exists",
+    "NLA.KE04._proved.compression_semantics",
+    "NLA.KE04._proved.compressedQuadratic_semantics"
+  ],
+  "final_fresh_attempt": "attempt-_2m2tvtu",
+  "final_result": {
+    "sha256": "285163aff817ba3c0000bd8944fb5619c0935e033736cdc263240c20231d9e7d",
+    "bytes": 9250
+  },
+  "fresh_commands": 3,
+  "total_seconds": 21.364057333092205,
+  "explicit_kernel_and_standard_three_reports": 27,
+  "actual_project_declarations": 38,
+  "retained_dependencies": 34,
+  "mathematical_warnings": 0,
+  "expected_Prop_unused_binder_warnings": 4,
+  "preserved_frozen_inputs": 1598,
+  "original_git_sources": 17,
+  "clean_pins": 10,
+  "readonly_dependency_object_directories": 9,
+  "primary_API_snapshots": 11,
+  "actual_attempts": 3,
+  "all_own_object_prefixes_hashed_and_removed": true,
+  "role": "formal_review_standards AI proof contributor; not an independent final referee",
+  "independent_review": false,
+  "actual_linux_comparator": false,
+  "source_status_metadata_git_changes": false
+}

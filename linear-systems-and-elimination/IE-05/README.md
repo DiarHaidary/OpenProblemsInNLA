@@ -6,10 +6,39 @@
 
 **Difficulty:** challenging  
 **Importance:** interesting to specialist  
-**Status:** Solved  
-**Last checked:** 2026-09-11  
+**Status:** Lean verified  
+**Last checked:** 2026-09-13  
 
 **Rating rationale (historical):** Challenging reflects a global extremal problem with pivot-path constraints in every dimension; specialist impact concerns sharp constants on the orthogonal subclass.
+
+## Lean verification — 2026-09-13
+
+The complete negative resolution is now **Lean verified**. The formalization at
+[`lean/`](lean/) exports 17 reviewed declarations, including
+`NLA.IE05.orthogonalExtremizerConjecture`, which negates the full original
+universal equality by the exact order-eight witness. It preserves the real
+orthogonal supremum, positive-diagonal QR convention, all admissible partial
+pivoting tie paths and the first-available-row rule; the true supremum and the
+separate asymptotic leading-constant question remain outside scope.
+
+The proof was independently reviewed twice mathematically and independently
+audited for packaging and remote execution. The authoritative Ubuntu run is
+[workflow 34751393873, attempt 1](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34751393873/attempts/1),
+with the IE-05 target job [103708463461](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34751393873/job/103708463461)
+at immutable candidate revision
+[`71cf72f`](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/71cf72f9db2af0f01b5cfa7f18a69e28310eb52f/linear-systems-and-elimination/IE-05/lean).
+It accepted all 17 exports through Comparator and Lean's default kernel,
+permitted only `propext`, `Classical.choice` and `Quot.sound`, and passed the
+recorded rejection and sandbox controls. The [permanent verification archive](lean/verification/linux-2026-09-13/)
+contains the uploaded artifacts and the independent operational seal.
+
+The [source correspondence](lean/SourceCorrespondence.md) is preserved from the earlier candidate phase; its “Solved” status and pending-Linux wording are historical and superseded by this verification record.
+
+**Mathematical proof and Lean formalization:** George Stepaniants, Department
+of Computing and Mathematical Sciences, California Institute of Technology,
+Pasadena, California, USA, with AI-agent assistance. John Peca-Medlin retains
+credit for the conjecture and cited element-growth analysis. This is an agent
+review and kernel-verification record, not external human peer review.
 
 ## Negative resolution - 2026-09-11
 

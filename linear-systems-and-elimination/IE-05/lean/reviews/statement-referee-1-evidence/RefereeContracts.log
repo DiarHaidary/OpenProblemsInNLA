@@ -1,0 +1,106 @@
+NLA.IE05.entryMax_semantics {n : ℕ} (hn : LE.le.{0} 1 n) (A : NLA.IE05.Mat n) :
+  LE.le.{0} 0 (NLA.IE05.entryMax A) ∧
+    (∀ (i j : Fin n), LE.le.{0} (abs.{0} (A i j)) (NLA.IE05.entryMax A)) ∧
+      ∃ i j, Eq.{1} (NLA.IE05.entryMax A) (abs.{0} (A i j))
+'NLA.IE05.entryMax_semantics' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.schurStep_bound {n : ℕ} (S : NLA.IE05.Mat n) (k p : Fin n) (hp : NLA.IE05.AdmissiblePivot S k p) :
+  LE.le.{0} (NLA.IE05.activeMax (NLA.IE05.schurStep S k p) (HAdd.hAdd.{0, 0, 0} (↑k) 1))
+    (HMul.hMul.{0, 0, 0} 2 (NLA.IE05.activeMax S ↑k))
+'NLA.IE05.schurStep_bound' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.gepp_growth_bound {n : ℕ} (hn : LE.le.{0} 1 n) (A : NLA.IE05.Mat n) (path : NLA.IE05.PivotPath n)
+  (hp : NLA.IE05.AdmissiblePath A path) :
+  LT.lt.{0} 0 (NLA.IE05.entryMax A) ∧
+    LE.le.{0} 1 (NLA.IE05.growth A path) ∧
+      LE.le.{0} (NLA.IE05.growth A path) (HPow.hPow.{0, 0, 0} 2 (HSub.hSub.{0, 0, 0} n 1))
+'NLA.IE05.gepp_growth_bound' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.firstPath_semantics {n : ℕ} (A : NLA.IE05.Mat n) (hA : Ne.{1} (Matrix.det.{0, 0} A) 0) :
+  NLA.IE05.FirstAvailablePath A (NLA.IE05.firstPath A) ∧
+    (∀ (k : ℕ), Eq.{1} (NLA.IE05.trajectory A (NLA.IE05.firstPath A) k) (NLA.IE05.firstTrajectory A k)) ∧
+      ∀ (path : NLA.IE05.PivotPath n), NLA.IE05.FirstAvailablePath A path → Eq.{1} path (NLA.IE05.firstPath A)
+'NLA.IE05.firstPath_semantics' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.orthogonalGrowthSet_bounded (n : ℕ) (hn : LE.le.{0} 2 n) :
+  Set.Nonempty.{0} (NLA.IE05.orthogonalGrowthSet n) ∧
+    BddAbove.{0} (NLA.IE05.orthogonalGrowthSet n) ∧
+      ∀ (r : ℝ),
+        Membership.mem.{0, 0} (NLA.IE05.orthogonalGrowthSet n) r →
+          LE.le.{0} 1 r ∧ LE.le.{0} r (HPow.hPow.{0, 0, 0} 2 (HSub.hSub.{0, 0, 0} n 1))
+'NLA.IE05.orthogonalGrowthSet_bounded' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.candidate_positiveQR (n : ℕ) (hn : LE.le.{0} 2 n) :
+  NLA.IE05.PositiveQR (NLA.IE05.prescribedLower n) (NLA.IE05.candidateQ n) (NLA.IE05.candidateR n) ∧
+    ∀ (Q R : NLA.IE05.Mat n),
+      NLA.IE05.PositiveQR (NLA.IE05.prescribedLower n) Q R →
+        Eq.{1} Q (NLA.IE05.candidateQ n) ∧ Eq.{1} R (NLA.IE05.candidateR n)
+'NLA.IE05.candidate_positiveQR' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.scaledColumns_orthogonal {n : ℕ} (H : NLA.IE05.Mat n) (d : Fin n → ℝ) (hd : ∀ (j : Fin n), LT.lt.{0} 0 (d j))
+  (hH : Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} H) H) (Matrix.diagonal.{0, 0} d)) :
+  NLA.IE05.Orthogonal (NLA.IE05.scaledColumns H d)
+'NLA.IE05.scaledColumns_orthogonal' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.scaledLU_trajectory {n : ℕ} (L T : NLA.IE05.Mat n) (d : Fin n → ℝ) (hL : NLA.IE05.UnitLower.{0} L)
+  (hLb : ∀ (i j : Fin n), LT.lt.{0} j i → LE.le.{0} (abs.{0} (L i j)) 1) (hT : NLA.IE05.UpperTriangular.{0} T)
+  (hTp : ∀ (i : Fin n), LT.lt.{0} 0 (T i i)) (hd : ∀ (j : Fin n), LT.lt.{0} 0 (d j)) :
+  NLA.IE05.FirstAvailablePath (NLA.IE05.scaledColumns (HMul.hMul.{0, 0, 0} L T) d) (NLA.IE05.noSwapPath n) ∧
+    Eq.{1} (NLA.IE05.firstPath (NLA.IE05.scaledColumns (HMul.hMul.{0, 0, 0} L T) d)) (NLA.IE05.noSwapPath n) ∧
+      ∀ (k : ℕ),
+        LE.le.{0} k n →
+          Eq.{1} (NLA.IE05.trajectory (NLA.IE05.scaledColumns (HMul.hMul.{0, 0, 0} L T) d) (NLA.IE05.noSwapPath n) k)
+            (NLA.IE05.scaledColumns (NLA.IE05.tailProduct.{0} L T k) d)
+'NLA.IE05.scaledLU_trajectory' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.integer_factor_certificates (b : Bool) :
+  Eq.{1} (HMul.hMul.{0, 0, 0} (Matrix.transpose.{0, 0, 0} (NLA.IE05.integerH b)) (NLA.IE05.integerH b))
+      (Matrix.diagonal.{0, 0} (NLA.IE05.integerD b)) ∧
+    Eq.{1} (NLA.IE05.integerH b) (HMul.hMul.{0, 0, 0} (NLA.IE05.integerLower b) (NLA.IE05.integerT b)) ∧
+      NLA.IE05.UnitLower.{0} (NLA.IE05.integerLower b) ∧
+        NLA.IE05.UpperTriangular.{0} (NLA.IE05.integerT b) ∧
+          (∀ (i j : Fin 8), LT.lt.{0} j i → LE.le.{0} (abs.{0} (NLA.IE05.integerLower b i j)) 1) ∧
+            (∀ (i : Fin 8), LT.lt.{0} 0 (NLA.IE05.integerT b i i)) ∧ ∀ (j : Fin 8), LT.lt.{0} 0 (NLA.IE05.integerD b j)
+'NLA.IE05.integer_factor_certificates' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.integer_entry_certificates :
+  (∀ (i j : Fin 8),
+      LE.le.{0} (HMul.hMul.{0, 0, 0} 5272 (HPow.hPow.{0, 0, 0} (NLA.IE05.integerH true i j) 2))
+        (HMul.hMul.{0, 0, 0} 3969 (NLA.IE05.integerD true j))) ∧
+    Eq.{1} (NLA.IE05.integerD true 7) 5272 ∧
+      Eq.{1} (NLA.IE05.integerH false 2 2) 51 ∧
+        Eq.{1} (NLA.IE05.integerD false 2) 3286 ∧
+          (∀ (k i j : Fin 8),
+              LE.le.{0} k i →
+                LE.le.{0} k j →
+                  LE.le.{0}
+                    (HPow.hPow.{0, 0, 0}
+                      (NLA.IE05.tailProduct.{0} (NLA.IE05.integerLower false) (NLA.IE05.integerT false) (↑k) i j) 2)
+                    (HMul.hMul.{0, 0, 0} 5462 (NLA.IE05.integerD false j))) ∧
+            Eq.{1} (NLA.IE05.tailProduct.{0} (NLA.IE05.integerLower true) (NLA.IE05.integerT true) 7 7 7) 5272
+'NLA.IE05.integer_entry_certificates' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.canonical_integer_identification :
+  Eq.{1} (NLA.IE05.candidateQ 8) (NLA.IE05.normalizedInteger false) ∧
+    Eq.{1} (NLA.IE05.firstPath (NLA.IE05.candidateQ 8)) (NLA.IE05.noSwapPath 8)
+'NLA.IE05.canonical_integer_identification' depends on axioms: [propext,
+ sorryAx.{u},
+ Classical.choice.{u},
+ Quot.sound.{u}]
+NLA.IE05.witness_orthogonal_path :
+  NLA.IE05.Orthogonal NLA.IE05.witnessQ ∧
+    Eq.{1} (NLA.IE05.firstPath NLA.IE05.witnessQ) (NLA.IE05.noSwapPath 8) ∧
+      NLA.IE05.FirstAvailablePath NLA.IE05.witnessQ (NLA.IE05.noSwapPath 8) ∧
+        NLA.IE05.AdmissiblePath NLA.IE05.witnessQ (NLA.IE05.noSwapPath 8)
+'NLA.IE05.witness_orthogonal_path' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.bounded_growth_data :
+  LE.le.{0} (NLA.IE05.entryMax NLA.IE05.witnessQ) (HDiv.hDiv.{0, 0, 0} 63 √5272) ∧
+    LE.le.{0} (5272 / 63) (NLA.IE05.firstGrowth NLA.IE05.witnessQ) ∧
+      LE.le.{0} (HDiv.hDiv.{0, 0, 0} 51 √3286) (NLA.IE05.entryMax (NLA.IE05.candidateQ 8)) ∧
+        LE.le.{0} 0 (NLA.IE05.firstGrowth (NLA.IE05.candidateQ 8)) ∧
+          LE.le.{0} (HPow.hPow.{0, 0, 0} (NLA.IE05.firstGrowth (NLA.IE05.candidateQ 8)) 2) (17948132 / 2601)
+'NLA.IE05.bounded_growth_data' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.numerical_gap_positive :
+  Eq.{1} (HSub.hSub.{0, 0, 0} (HPow.hPow.{0, 0, 0} (5272 / 63) 2) (17948132 / 2601)) (117335164 / 1147041) ∧
+    LT.lt.{0} 0 (117335164 / 1147041)
+'NLA.IE05.numerical_gap_positive' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.witness_strict_growth :
+  LT.lt.{0} (NLA.IE05.firstGrowth (NLA.IE05.candidateQ 8)) (NLA.IE05.firstGrowth NLA.IE05.witnessQ)
+'NLA.IE05.witness_strict_growth' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.supremum_strict_gap : LT.lt.{0} (NLA.IE05.firstGrowth (NLA.IE05.candidateQ 8)) (NLA.IE05.orthogonalGrowthSup 8)
+'NLA.IE05.supremum_strict_gap' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+NLA.IE05.orthogonalExtremizerConjecture : ¬NLA.IE05.OrthogonalExtremizerConjecture
+'NLA.IE05.orthogonalExtremizerConjecture' depends on axioms: [propext,
+ sorryAx.{u},
+ Classical.choice.{u},
+ Quot.sound.{u}]

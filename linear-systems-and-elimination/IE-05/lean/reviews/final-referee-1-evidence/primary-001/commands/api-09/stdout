@@ -1,0 +1,57 @@
+47-  OrderIso.symm <| powOrderIso 2 two_ne_zero
+48-
+49:@[simp] lemma sq_sqrt (x : ℝ≥0) : sqrt x ^ 2 = x := sqrt.symm_apply_apply _
+50-
+51-@[simp] lemma sqrt_sq (x : ℝ≥0) : sqrt (x ^ 2) = x := sqrt.apply_symm_apply _
+52-
+53-@[simp] lemma mul_self_sqrt (x : ℝ≥0) : sqrt x * sqrt x = x := by rw [← sq, sq_sqrt]
+54-
+55-@[simp] lemma sqrt_mul_self (x : ℝ≥0) : sqrt (x * x) = x := by rw [← sq, sqrt_sq]
+56-
+57-lemma sqrt_le_sqrt : sqrt x ≤ sqrt y ↔ x ≤ y := sqrt.le_iff_le
+--
+95-theorem continuous_sqrt : Continuous sqrt := sqrt.continuous
+96-
+97:@[simp] theorem sqrt_pos : 0 < sqrt x ↔ 0 < x := by simp [pos_iff_ne_zero]
+98-
+99-alias ⟨_, sqrt_pos_of_pos⟩ := sqrt_pos
+100-
+101-attribute [bound] sqrt_pos_of_pos
+102-
+103-@[simp] theorem isSquare (x : ℝ≥0) : IsSquare x := ⟨_, mul_self_sqrt _ |>.symm⟩
+104-
+105-end NNReal
+--
+176-
+177-@[simp]
+178:theorem sq_sqrt (h : 0 ≤ x) : √x ^ 2 = x := by rw [sq, mul_self_sqrt h]
+179-
+180-@[simp]
+181-theorem sqrt_sq (h : 0 ≤ x) : √(x ^ 2) = x := by rw [sq, sqrt_mul_self h]
+182-
+183-theorem sqrt_eq_iff_eq_sq (hx : 0 ≤ x) (hy : 0 ≤ y) : √x = y ↔ x = y ^ 2 := by
+184-  rw [sq, sqrt_eq_iff_mul_self_eq hx hy]
+185-
+186-theorem sqrt_mul_self_eq_abs (x : ℝ) : √(x * x) = |x| := by
+--
+274-
+275-/-- Variant of `sq_sqrt` without a non-negativity assumption on `x`. -/
+276:theorem sq_sqrt' : √x ^ 2 = max x 0 := by
+277-  rcases lt_trichotomy x 0 with _ | _ | _ <;> grind [sqrt_eq_zero', sq_sqrt]
+278-
+279--- Add the rule for `√x ^ 2` to the grind whiteboard whenever we see a real square root.
+280-grind_pattern sq_sqrt' => √x
+281-
+282--- Check that `grind` can discharge non-zero goals for square roots of positive numerals.
+283-example : √7 ≠ 0 := by grind
+284-
+285-@[simp]
+286:theorem sqrt_pos : 0 < √x ↔ 0 < x :=
+287-  lt_iff_lt_of_le_iff_le (Iff.trans (by simp [le_antisymm_iff, sqrt_nonneg]) sqrt_eq_zero')
+288-
+289-alias ⟨_, sqrt_pos_of_pos⟩ := sqrt_pos
+290-
+291-lemma sqrt_le_sqrt_iff' (hx : 0 < x) : √x ≤ √y ↔ x ≤ y := by
+292-  obtain hy | hy := le_total y 0
+293-  · exact iff_of_false ((sqrt_eq_zero_of_nonpos hy).trans_lt <| sqrt_pos.2 hx).not_ge
+294-      (hy.trans_lt hx).not_ge

@@ -1,0 +1,579 @@
+2cabb9fd34b1f8de999a3d53efc8503494e2ba8b blob 1399
+import ProofProject.Definitions
+
+/-!
+# Theorem statements for Comparator
+
+The signatures below correspond to the manuscript's statements. Comparator
+compares them with the proofs in `Solution.lean` in separate environments.
+The `sorry` bodies serve as statement placeholders. The proof module imports
+the shared definitions independently.
+-/
+
+namespace ProofProject
+
+/-- Part A / Theorem A.1.1: Forsythe's conjecture at restart length two. -/
+theorem forsytheConjecture_restartLengthTwo : ForsytheConvergenceAt 2 := by
+  sorry
+
+/-- Part B / Theorem B.1.1: Forsythe's conjecture at restart length three. -/
+theorem forsytheConjecture_restartLengthThree : ForsytheConvergenceAt 3 := by
+  sorry
+
+/-- Lemma C.3.1 after exact characteristic reduction: the minimized
+theorem-bearing restart-four algebraic Hopf certificate. -/
+theorem restartFourAlgebraicHopfCertificate : RestartFourAlgebraicHopfCertificate := by
+  sorry
+
+/-- Theorem C.1.1 exactly as printed: SPD counterexamples in dimension `s+4`. -/
+theorem counterexamples_restartLengthAtLeastFour :
+    ∀ s : ℕ, 4 ≤ s → HasForsytheCounterexample s := by
+  sorry
+
+/-- Theorem 1.1: restart length four is the sharp threshold. -/
+theorem forsytheSharpClassification :
+    ∀ s : ℕ, 2 ≤ s →
+      ((s = 2 ∨ s = 3) → ForsytheConvergenceAt s) ∧
+      (4 ≤ s → HasDiagonalForsytheCounterexample s) := by
+  sorry
+
+end ProofProject
+
+f7d9788eeb70f7d82d44094fbfc891f31c0bd19a blob 14537
+import LeanCert.Tactic
+
+/-!
+# Checked multivariate rational enclosures
+
+`LeanCert`'s optimizer intentionally requires automatic-differentiation
+support, so it excludes variable denominators.  The small checker below uses
+the general checked interval evaluator instead.  A successful Boolean result
+is converted back to a theorem by `evalIntervalTightChecked_correct`; hence a
+retained `(trust := kernel)` invocation is checked entirely by Lean's kernel.
+-/
+
+namespace ProofProject
+
+open LeanCert.Core
+open LeanCert.Engine
+open LeanCert.Engine.Optimization
+
+def checkedBoxUpper (e : Expr) (B : Box) (c : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (I.hi ≤ c)
+  | .error _ => false
+
+def checkedBoxLower (e : Expr) (B : Box) (c : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (c ≤ I.lo)
+  | .error _ => false
+
+def checkedBoxMem (e : Expr) (B : Box) (lo hi : ℚ) : Bool :=
+  match evalIntervalTightChecked e B.toEnv {} with
+  | .ok I => decide (lo ≤ I.lo ∧ I.hi ≤ hi)
+  | .error _ => false
+
+theorem checkedBoxUpper_sound (e : Expr) (B : Box) (c : ℚ)
+    (hcheck : checkedBoxUpper e B c = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) → Expr.eval ρ e ≤ (c : ℝ) := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxUpper, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hIc : I.hi ≤ c := by
+        simpa [checkedBoxUpper, heval] using hcheck
+      exact hmem.2.trans (by exact_mod_cast hIc)
+
+theorem checkedBoxLower_sound (e : Expr) (B : Box) (c : ℚ)
+    (hcheck : checkedBoxLower e B c = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) → (c : ℝ) ≤ Expr.eval ρ e := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxLower, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hcI : c ≤ I.lo := by
+        simpa [checkedBoxLower, heval] using hcheck
+      have hcI' : (c : ℝ) ≤ (I.lo : ℝ) := by exact_mod_cast hcI
+      exact hcI'.trans hmem.1
+
+theorem checkedBoxMem_sound (e : Expr) (B : Box) (lo hi : ℚ)
+    (hcheck : checkedBoxMem e B lo hi = true) :
+    ∀ ρ : Nat → ℝ, B.envMem ρ →
+      (∀ i, i ≥ B.length → ρ i = 0) →
+      Expr.eval ρ e ∈ Set.Icc (lo : ℝ) (hi : ℝ) := by
+  intro ρ hρ hzero
+  cases heval : evalIntervalTightChecked e B.toEnv {} with
+  | error err =>
+      simp [checkedBoxMem, heval] at hcheck
+  | ok I =>
+      have hmem := evalIntervalTightChecked_correct e B.toEnv {} I heval ρ
+        (B.envMem_toEnv ρ hρ hzero)
+      have hbounds : lo ≤ I.lo ∧ I.hi ≤ hi := by
+        simpa [checkedBoxMem, heval] using hcheck
+      constructor
+      · exact (by exact_mod_cast hbounds.1 : (lo : ℝ) ≤ (I.lo : ℝ)).trans
+          hmem.1
+      · exact hmem.2.trans
+          (by exact_mod_cast hbounds.2 : (I.hi : ℝ) ≤ (hi : ℝ))
+
+end ProofProject
+
+open Lean Meta Elab Tactic Term
+
+namespace ProofProject.CheckedMultivariate
+
+open LeanCert.Meta
+open LeanCert.Core
+open LeanCert.Engine
+open LeanCert.Engine.Optimization
+open LeanCert.Tactic
+open LeanCert.Tactic.Auto
+
+private def ratScaledMillion (q : ℚ) : ℤ :=
+  (q.num * 1000000) / (q.den : ℤ)
+
+private def extractRatBound (bound : Lean.Expr) : TacticM Lean.Expr := do
+  let fn := bound.getAppFn
+  let args := bound.getAppArgs
+  if fn.isConstOf ``Rat.cast || fn.isConstOf ``RatCast.ratCast then
+    if args.size > 0 then return args.back!
+    else throwError "unexpected rational cast"
+  else
+    let boundTy ← inferType bound
+    if boundTy.isConstOf ``Rat then return bound
+    if let some q ← extractRatFromReal bound then return toExpr q
+    let boundReduced ← whnf bound
+    let fnReduced := boundReduced.getAppFn
+    if fnReduced.isConstOf ``Rat.cast || fnReduced.isConstOf ``RatCast.ratCast then
+      let argsReduced := boundReduced.getAppArgs
+      if argsReduced.size > 0 then return argsReduced.back!
+    throwError m!"cannot extract rational bound from {bound}"
+
+private def getVarExprs (vars : Array VarIntervalInfo) : TacticM (Array Lean.Expr) := do
+  let lctx ← getLCtx
+  let mut out : Array Lean.Expr := #[]
+  let mut used : Array Lean.FVarId := #[]
+  for info in vars do
+    match lctx.findFromUserName? info.varName with
+    | some decl =>
+        out := out.push (Lean.mkFVar decl.fvarId)
+        used := used.push decl.fvarId
+    | none =>
+        let mut fallback : Option Lean.LocalDecl := none
+        for decl in lctx do
+          if !(used.any (fun id => id == decl.fvarId)) then
+            if (← isDefEq decl.type info.varType) then
+              fallback := some decl
+              break
+        match fallback with
+        | some decl =>
+            out := out.push (Lean.mkFVar decl.fvarId)
+            used := used.push decl.fvarId
+        | none =>
+            let mut names : Array Name := #[]
+            for decl in lctx do names := names.push decl.userName
+            let target ← (← getMainGoal).getType
+            throwError m!"missing local variable {info.varName}; context names: {names}; target: {target}"
+  return out
+
+private def mkEnvExpr (varsListExpr : Lean.Expr) : TacticM Lean.Expr := do
+  withLocalDeclD `i (Lean.mkConst ``Nat) fun i => do
+    let zeroRat := toExpr (0 : ℚ)
+    let zeroReal ← mkAppOptM ``Rat.cast #[mkConst ``Real, none, zeroRat]
+    let body ← mkAppM ``List.getD #[varsListExpr, i, zeroReal]
+    mkLambdaFVars #[i] body
+
+private unsafe def closeCheckedBound
+    (vars : Array VarIntervalInfo) (func bound : Lean.Expr)
+    (upper : Bool) : TacticM Unit := do
+  let saved ← saveState
+  let originalGoal ← getMainGoal
+  let boxExpr ← mkBoxExpr vars
+  let ast := (← reifyWithReport func).expr
+  let boundRat ← extractRatBound bound
+  let checkName := if upper then ``ProofProject.checkedBoxUpper
+    else ``ProofProject.checkedBoxLower
+  let soundName := if upper then ``ProofProject.checkedBoxUpper_sound
+    else ``ProofProject.checkedBoxLower_sound
+  let (_, mainGoalAfterIntro) ← originalGoal.intros
+  setGoals [mainGoalAfterIntro]
+  let (rhoSyntax, varsListSyntax, boxSyntax) ← withMainContext do
+    let varExprs ← getVarExprs vars
+    let varsListExpr ← mkListLit (Lean.mkConst ``Real) varExprs.toList
+    let rhoExpr ← mkEnvExpr varsListExpr
+    let rhoSyntax ← Lean.Elab.Term.exprToSyntax rhoExpr
+    let varsListSyntax ← Lean.Elab.Term.exprToSyntax varsListExpr
+    let boxSyntax ← Lean.Elab.Term.exprToSyntax boxExpr
+    pure (rhoSyntax, varsListSyntax, boxSyntax)
+  let checkExpr ← mkAppM checkName #[ast, boxExpr, boundRat]
+  let certTy ← mkAppM ``Eq #[checkExpr, Lean.mkConst ``Bool.true]
+  let certGoal ← mkFreshExprMVar certTy
+  let certGoalId := certGoal.mvarId!
+  setGoals [certGoalId]
+  match ← LeanCert.Tactic.closeCertificateGoalTyped
+      (← LeanCert.Tactic.VerificationConfig.current) (← getMainGoal)
+      (tacticName := "checked_multivariate_bound") with
+  | .rejected =>
+      saved.restore
+      throwError "checked multivariate enclosure does not imply the requested bound"
+  | .failed failure =>
+      saved.restore
+      throwError m!"checked multivariate certificate failed: {failure.message "checked_multivariate_bound"}"
+  | .accepted _ => pure ()
+  let conclusionProof ← mkAppM' (← mkAppM soundName #[ast, boxExpr, boundRat]) #[certGoal]
+  let conclusionTerm ← Lean.Elab.Term.exprToSyntax conclusionProof
+  setGoals [mainGoalAfterIntro]
+  evalTactic (← `(tactic| exact (by
+    have hmem : Box.envMem $rhoSyntax $boxSyntax := by
+      intro i
+      fin_cases i <;>
+        simp [Box.envMem, IntervalRat.mem_iff_mem_Icc, Set.mem_Icc] at * <;>
+        norm_num [Rat.divInt_eq_div] at * <;>
+        first | assumption | constructor <;> assumption
+    have hzero : ∀ i, i ≥ ($boxSyntax).length → $rhoSyntax i = 0 := by
+      intro i hi
+      have hnot : ¬ i < ($boxSyntax).length := by exact not_lt.mpr hi
+      have hnot' : ¬ i < ($varsListSyntax).length := by simpa using hnot
+      have hge' : ($varsListSyntax).length ≤ i := not_lt.mp hnot'
+      simp [List.getD, List.getElem?_eq_none hge', Option.getD]
+    have hresult := $conclusionTerm $rhoSyntax hmem hzero
+    convert hresult using 1 <;>
+      simp [List.getD, LeanCert.Core.Expr.eval, Rat.divInt_eq_div,
+        sq, pow_two, sub_eq_add_neg, div_eq_mul_inv] <;>
+      ring <;>
+      simp)))
+
+private unsafe def closeCheckedMem
+    (vars : Array VarIntervalInfo) (func lo hi : Lean.Expr) : TacticM Unit := do
+  let saved ← saveState
+  let originalGoal ← getMainGoal
+  let boxExpr ← mkBoxExpr vars
+  let ast := (← reifyWithReport func).expr
+  let loRat ← extractRatBound lo
+  let hiRat ← extractRatBound hi
+  let (_, mainGoalAfterIntro) ← originalGoal.intros
+  setGoals [mainGoalAfterIntro]
+  let (rhoSyntax, varsListSyntax, boxSyntax) ← withMainContext do
+    let varExprs ← getVarExprs vars
+    let varsListExpr ← mkListLit (Lean.mkConst ``Real) varExprs.toList
+    let rhoExpr ← mkEnvExpr varsListExpr
+    let rhoSyntax ← Lean.Elab.Term.exprToSyntax rhoExpr
+    let varsListSyntax ← Lean.Elab.Term.exprToSyntax varsListExpr
+    let boxSyntax ← Lean.Elab.Term.exprToSyntax boxExpr
+    pure (rhoSyntax, varsListSyntax, boxSyntax)
+  let checkExpr ← mkAppM ``ProofProject.checkedBoxMem
+    #[ast, boxExpr, loRat, hiRat]
+  let certTy ← mkAppM ``Eq #[checkExpr, Lean.mkConst ``Bool.true]
+  let certGoal ← mkFreshExprMVar certTy
+  let certGoalId := certGoal.mvarId!
+  setGoals [certGoalId]
+  match ← LeanCert.Tactic.closeCertificateGoalTyped
+      (← LeanCert.Tactic.VerificationConfig.current) (← getMainGoal)
+      (tacticName := "checked_multivariate_mem") with
+  | .rejected =>
+      let astVal ← unsafe evalExpr LeanCert.Core.Expr
+        (mkConst ``LeanCert.Core.Expr) ast
+      let boxVal ← unsafe evalExpr Box (mkConst ``Box) boxExpr
+      let enclosure := evalIntervalTightChecked astVal boxVal.toEnv {}
+      saved.restore
+      match enclosure with
+      | .ok I =>
+          throwError m!"checked multivariate enclosure does not imply the requested interval; evaluator endpoints times 10^6 truncate to [{ratScaledMillion I.lo}, {ratScaledMillion I.hi}]"
+      | .error err =>
+          throwError m!"checked multivariate enclosure evaluation failed: {repr err}"
+  | .failed failure =>
+      saved.restore
+      throwError m!"checked multivariate certificate failed: {failure.message "checked_multivariate_mem"}"
+  | .accepted _ => pure ()
+  let conclusionProof ← mkAppM'
+    (← mkAppM ``ProofProject.checkedBoxMem_sound
+      #[ast, boxExpr, loRat, hiRat]) #[certGoal]
+  let conclusionTerm ← Lean.Elab.Term.exprToSyntax conclusionProof
+  setGoals [mainGoalAfterIntro]
+  evalTactic (← `(tactic| exact (by
+    have hmem : Box.envMem $rhoSyntax $boxSyntax := by
+      intro i
+      fin_cases i <;>
+        simp [Box.envMem, IntervalRat.mem_iff_mem_Icc, Set.mem_Icc] at * <;>
+        norm_num [Rat.divInt_eq_div] at * <;>
+        first | assumption | constructor <;> assumption
+    have hzero : ∀ i, i ≥ ($boxSyntax).length → $rhoSyntax i = 0 := by
+      intro i hi
+      have hnot : ¬ i < ($boxSyntax).length := by exact not_lt.mpr hi
+      have hnot' : ¬ i < ($varsListSyntax).length := by simpa using hnot
+      have hge' : ($varsListSyntax).length ≤ i := not_lt.mp hnot'
+      simp [List.getD, List.getElem?_eq_none hge', Option.getD]
+    have hresult := $conclusionTerm $rhoSyntax hmem hzero
+    convert hresult using 1 <;>
+      simp [List.getD, LeanCert.Core.Expr.eval, Rat.divInt_eq_div,
+        sq, pow_two, sub_eq_add_neg, div_eq_mul_inv] <;>
+      ring <;>
+      simp)))
+
+private partial def selectInnermostIntervalBound
+    (e : Lean.Expr) (lower : Bool) : MetaM Lean.Expr := do
+  if e.isForall then
+    let .forallE name ty body bi := e | unreachable!
+    return .forallE name ty
+      (← selectInnermostIntervalBound body lower) bi
+  let reduced ← withTransparency TransparencyMode.all <| whnf e
+  match_expr reduced with
+  | And lhs rhs => return if lower then lhs else rhs
+  | _ => throwError m!"expected an interval-membership conclusion, got {reduced}"
+
+syntax (name := checkedMultivariateBoundTac)
+  "checked_multivariate_bound" (leancertTrustItem)? : tactic
+
+@[tactic checkedMultivariateBoundTac]
+unsafe def elabCheckedMultivariateBound : Tactic := fun stx => do
+  let trustSyntax := stx[1].getOptional?.map (⟨·⟩)
+  let trust? ← LeanCert.Tactic.elabTrustItem? trustSyntax
+  LeanCert.Tactic.withTrustMode trust? do
+    intervalNormCore
+    let goalType ← (← getMainGoal).getType
+    let some parsed ← parseMultivariateBoundGoal goalType
+      | throwError "expected a quantified multivariate upper or lower bound"
+    match parsed with
+    | .forallLe vars func bound => closeCheckedBound vars func bound true
+    | .forallGe vars func bound => closeCheckedBound vars func bound false
+
+syntax (name := checkedMultivariateMemTac)
+  "checked_multivariate_mem" (leancertTrustItem)? : tactic
+
+@[tactic checkedMultivariateMemTac]
+unsafe def elabCheckedMultivariateMem : Tactic := fun stx => do
+  let trustSyntax := stx[1].getOptional?.map (⟨·⟩)
+  let trust? ← LeanCert.Tactic.elabTrustItem? trustSyntax
+  LeanCert.Tactic.withTrustMode trust? do
+    intervalNormCore
+    let goalType ← (← getMainGoal).getType
+    let lowerGoal ← selectInnermostIntervalBound goalType true
+    let upperGoal ← selectInnermostIntervalBound goalType false
+    let some lowerParsed ← parseMultivariateBoundGoal lowerGoal
+      | throwError "expected a quantified multivariate interval membership"
+    let some upperParsed ← parseMultivariateBoundGoal upperGoal
+      | throwError "expected a quantified multivariate interval membership"
+    match lowerParsed, upperParsed with
+    | .forallGe vars func lo, .forallLe vars' func' hi =>
+        unless vars.size == vars'.size do
+          throwError "lower and upper interval variables do not agree"
+        unless ← isDefEq func func' do
+          throwError "lower and upper interval functions do not agree"
+        closeCheckedMem vars func lo hi
+    | _, _ =>
+        throwError "expected lower and upper bounds for one multivariate function"
+
+end ProofProject.CheckedMultivariate
+
+d645695673349e3947e8e5ae42332d0ac3164cd7 blob 11358
+
+                                 Apache License
+                           Version 2.0, January 2004
+                        http://www.apache.org/licenses/
+
+   TERMS AND CONDITIONS FOR USE, REPRODUCTION, AND DISTRIBUTION
+
+   1. Definitions.
+
+      "License" shall mean the terms and conditions for use, reproduction,
+      and distribution as defined by Sections 1 through 9 of this document.
+
+      "Licensor" shall mean the copyright owner or entity authorized by
+      the copyright owner that is granting the License.
+
+      "Legal Entity" shall mean the union of the acting entity and all
+      other entities that control, are controlled by, or are under common
+      control with that entity. For the purposes of this definition,
+      "control" means (i) the power, direct or indirect, to cause the
+      direction or management of such entity, whether by contract or
+      otherwise, or (ii) ownership of fifty percent (50%) or more of the
+      outstanding shares, or (iii) beneficial ownership of such entity.
+
+      "You" (or "Your") shall mean an individual or Legal Entity
+      exercising permissions granted by this License.
+
+      "Source" form shall mean the preferred form for making modifications,
+      including but not limited to software source code, documentation
+      source, and configuration files.
+
+      "Object" form shall mean any form resulting from mechanical
+      transformation or translation of a Source form, including but
+      not limited to compiled object code, generated documentation,
+      and conversions to other media types.
+
+      "Work" shall mean the work of authorship, whether in Source or
+      Object form, made available under the License, as indicated by a
+      copyright notice that is included in or attached to the work
+      (an example is provided in the Appendix below).
+
+      "Derivative Works" shall mean any work, whether in Source or Object
+      form, that is based on (or derived from) the Work and for which the
+      editorial revisions, annotations, elaborations, or other modifications
+      represent, as a whole, an original work of authorship. For the purposes
+      of this License, Derivative Works shall not include works that remain
+      separable from, or merely link (or bind by name) to the interfaces of,
+      the Work and Derivative Works thereof.
+
+      "Contribution" shall mean any work of authorship, including
+      the original version of the Work and any modifications or additions
+      to that Work or Derivative Works thereof, that is intentionally
+      submitted to Licensor for inclusion in the Work by the copyright owner
+      or by an individual or Legal Entity authorized to submit on behalf of
+      the copyright owner. For the purposes of this definition, "submitted"
+      means any form of electronic, verbal, or written communication sent
+      to the Licensor or its representatives, including but not limited to
+      communication on electronic mailing lists, source code control systems,
+      and issue tracking systems that are managed by, or on behalf of, the
+      Licensor for the purpose of discussing and improving the Work, but
+      excluding communication that is conspicuously marked or otherwise
+      designated in writing by the copyright owner as "Not a Contribution."
+
+      "Contributor" shall mean Licensor and any individual or Legal Entity
+      on behalf of whom a Contribution has been received by Licensor and
+      subsequently incorporated within the Work.
+
+   2. Grant of Copyright License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      copyright license to reproduce, prepare Derivative Works of,
+      publicly display, publicly perform, sublicense, and distribute the
+      Work and such Derivative Works in Source or Object form.
+
+   3. Grant of Patent License. Subject to the terms and conditions of
+      this License, each Contributor hereby grants to You a perpetual,
+      worldwide, non-exclusive, no-charge, royalty-free, irrevocable
+      (except as stated in this section) patent license to make, have made,
+      use, offer to sell, sell, import, and otherwise transfer the Work,
+      where such license applies only to those patent claims licensable
+      by such Contributor that are necessarily infringed by their
+      Contribution(s) alone or by combination of their Contribution(s)
+      with the Work to which such Contribution(s) was submitted. If You
+      institute patent litigation against any entity (including a
+      cross-claim or counterclaim in a lawsuit) alleging that the Work
+      or a Contribution incorporated within the Work constitutes direct
+      or contributory patent infringement, then any patent licenses
+      granted to You under this License for that Work shall terminate
+      as of the date such litigation is filed.
+
+   4. Redistribution. You may reproduce and distribute copies of the
+      Work or Derivative Works thereof in any medium, with or without
+      modifications, and in Source or Object form, provided that You
+      meet the following conditions:
+
+      (a) You must give any other recipients of the Work or
+          Derivative Works a copy of this License; and
+
+      (b) You must cause any modified files to carry prominent notices
+          stating that You changed the files; and
+
+      (c) You must retain, in the Source form of any Derivative Works
+          that You distribute, all copyright, patent, trademark, and
+          attribution notices from the Source form of the Work,
+          excluding those notices that do not pertain to any part of
+          the Derivative Works; and
+
+      (d) If the Work includes a "NOTICE" text file as part of its
+          distribution, then any Derivative Works that You distribute must
+          include a readable copy of the attribution notices contained
+          within such NOTICE file, excluding those notices that do not
+          pertain to any part of the Derivative Works, in at least one
+          of the following places: within a NOTICE text file distributed
+          as part of the Derivative Works; within the Source form or
+          documentation, if provided along with the Derivative Works; or,
+          within a display generated by the Derivative Works, if and
+          wherever such third-party notices normally appear. The contents
+          of the NOTICE file are for informational purposes only and
+          do not modify the License. You may add Your own attribution
+          notices within Derivative Works that You distribute, alongside
+          or as an addendum to the NOTICE text from the Work, provided
+          that such additional attribution notices cannot be construed
+          as modifying the License.
+
+      You may add Your own copyright statement to Your modifications and
+      may provide additional or different license terms and conditions
+      for use, reproduction, or distribution of Your modifications, or
+      for any such Derivative Works as a whole, provided Your use,
+      reproduction, and distribution of the Work otherwise complies with
+      the conditions stated in this License.
+
+   5. Submission of Contributions. Unless You explicitly state otherwise,
+      any Contribution intentionally submitted for inclusion in the Work
+      by You to the Licensor shall be under the terms and conditions of
+      this License, without any additional terms or conditions.
+      Notwithstanding the above, nothing herein shall supersede or modify
+      the terms of any separate license agreement you may have executed
+      with Licensor regarding such Contributions.
+
+   6. Trademarks. This License does not grant permission to use the trade
+      names, trademarks, service marks, or product names of the Licensor,
+      except as required for reasonable and customary use in describing the
+      origin of the Work and reproducing the content of the NOTICE file.
+
+   7. Disclaimer of Warranty. Unless required by applicable law or
+      agreed to in writing, Licensor provides the Work (and each
+      Contributor provides its Contributions) on an "AS IS" BASIS,
+      WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or
+      implied, including, without limitation, any warranties or conditions
+      of TITLE, NON-INFRINGEMENT, MERCHANTABILITY, or FITNESS FOR A
+      PARTICULAR PURPOSE. You are solely responsible for determining the
+      appropriateness of using or redistributing the Work and assume any
+      risks associated with Your exercise of permissions under this License.
+
+   8. Limitation of Liability. In no event and under no legal theory,
+      whether in tort (including negligence), contract, or otherwise,
+      unless required by applicable law (such as deliberate and grossly
+      negligent acts) or agreed to in writing, shall any Contributor be
+      liable to You for damages, including any direct, indirect, special,
+      incidental, or consequential damages of any character arising as a
+      result of this License or out of the use or inability to use the
+      Work (including but not limited to damages for loss of goodwill,
+      work stoppage, computer failure or malfunction, or any and all
+      other commercial damages or losses), even if such Contributor
+      has been advised of the possibility of such damages.
+
+   9. Accepting Warranty or Additional Liability. While redistributing
+      the Work or Derivative Works thereof, You may choose to offer,
+      and charge a fee for, acceptance of support, warranty, indemnity,
+      or other liability obligations and/or rights consistent with this
+      License. However, in accepting such obligations, You may act only
+      on Your own behalf and on Your sole responsibility, not on behalf
+      of any other Contributor, and only if You agree to indemnify,
+      defend, and hold each Contributor harmless for any liability
+      incurred by, or claims asserted against, such Contributor by reason
+      of your accepting any such warranty or additional liability.
+
+   END OF TERMS AND CONDITIONS
+
+   APPENDIX: How to apply the Apache License to your work.
+
+      To apply the Apache License to your work, attach the following
+      boilerplate notice, with the fields enclosed by brackets "[]"
+      replaced with your own identifying information. (Don't include
+      the brackets!)  The text should be enclosed in the appropriate
+      comment syntax for the file format. We also recommend that a
+      file or class name and description of purpose be included on the
+      same "printed page" as the copyright notice for easier
+      identification within third-party archives.
+
+   Copyright [yyyy] [name of copyright owner]
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+

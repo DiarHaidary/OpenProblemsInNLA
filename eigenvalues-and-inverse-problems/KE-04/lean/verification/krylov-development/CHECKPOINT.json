@@ -1,0 +1,31 @@
+{
+  "utc": "2026-09-13T08:48:06.145450+00:00",
+  "phase": "temporarily checkpointed at coordinator request to free a final-review slot; not completed or sealed proof",
+  "agent": "/root/mf16_final_referee",
+  "ownership": [
+    "NLA/KE04/Krylov.lean",
+    "verification/krylov-development/**",
+    "reviews/krylov-development.md"
+  ],
+  "module_sha256": "5a60b3b7bab8ca51710e9b0d3aaf8e36581be46383882f40d7bdae9df41376fc",
+  "runner_sha256": "63a0e66db1641ed0c4fd076da63e71f9246d6286da7ee6a2f5d06239b2925ec6",
+  "attempt": "verification/krylov-development/attempt-z68t67pr",
+  "attempt_result_sha256": "aedc5af428b711ffc55b8488946545d73744430e2536dadcfa7741a5b4d8316d",
+  "attempt_source_module_sha256": "5a60b3b7bab8ca51710e9b0d3aaf8e36581be46383882f40d7bdae9df41376fc",
+  "raw_Lean_log_sha256": "1388364d50c718b4f8350b375c31e2adb861f7cbc00be0187392792d8f43ea03",
+  "active_process": null,
+  "all_own_private_output_objects_removed": true,
+  "own_disposable_objects_hashed": 1,
+  "frozen_statement_files_still_unchanged": 1598,
+  "status": "First fresh Definitions build passed; Krylov module failed on five elaboration errors plus consequent kernel-assertion failures. No successful whole-module or final verification claimed.",
+  "next_actions": [
+    "Preserve attempt-z68t67pr unchanged. Do not poll session 97501 again; it finished with exit 1.",
+    "krylov_finrank_le: explicitly change the target to Set.finrank of the actual range, then use finrank_range_le_card with only Fintype.card_prod/card_fin simplification. Existing simpa produced a same-pretty-type transparency mismatch.",
+    "fullBlockDimension_iff_columns: unfold FullBlockDimension/krylov in the goal, rewrite linearIndependent_iff_card_eq_finrank_span in place, then simplify only cardinalities, Set.finrank and eq_comm.",
+    "fullColumnRank_iff_first: prove explicit function equality krylovColumns A V 1 = (fun rc => column V rc.2) by funext and Fin-1 simplification, rewrite it before the two composition arguments.",
+    "fullBlockDimension_prefix: annotate the codomain of the second projection in hinj as Fin s \u00d7 Fin p. Prove explicit function equality (krylovColumns A V s) \u2218 embed = krylovColumns A V ell by funext/rfl and rewrite instead of the failed simpa.",
+    "Remove the harmless unnecessarySimpa warning from krylov_eq_range by using simp [krylov,krylovCombination].",
+    "Run check.py once after those justified edits; retain each new immutable attempt. When the module passes, run check.py --final for all five frozen contract types and actual dependency closure.",
+    "Seal only owned helper/evidence plus frozen/imported boundaries after final success. No Proof/Solution/YAML/Git/statement changes."
+  ]
+}

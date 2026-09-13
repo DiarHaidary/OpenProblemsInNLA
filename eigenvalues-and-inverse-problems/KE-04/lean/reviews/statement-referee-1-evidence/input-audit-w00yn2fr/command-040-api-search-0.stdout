@@ -1,0 +1,25 @@
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:312:theorem eigenvalues_antitone (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:325:theorem apply_eigenvectorBasis (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) (i : Fin n) :
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:344:  simp_rw [← OrthonormalBasis.sum_repr_symm, map_sum, map_smul, apply_eigenvectorBasis]
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:362:theorem roots_charpoly_eq_eigenvalues (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:369:theorem sort_roots_charpoly_eq_eigenvalues (hT : T.IsSymmetric) (hn : Module.finrank 𝕜 E = n) :
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:371:  simp_rw [hT.roots_charpoly_eq_eigenvalues, Fin.univ_val_map, Multiset.map_coe, List.map_ofFn,
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:376:  convert! (hT.eigenvalues_antitone hn).sortedGE_ofFn
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:378:theorem eigenvalues_eq_eigenvalues_iff {E' : Type*} [NormedAddCommGroup E'] [InnerProductSpace 𝕜 E']
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:384:    rw [← List.ofFn_inj, ← sort_roots_charpoly_eq_eigenvalues, ← sort_roots_charpoly_eq_eigenvalues,
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:389:  simp [hT.roots_charpoly_eq_eigenvalues rfl, LinearMap.charpoly_natDegree]
+Mathlib/Analysis/InnerProductSpace/Spectrum.lean:394:    hT.roots_charpoly_eq_eigenvalues hn, List.prod_ofFn]
+Mathlib/Analysis/Matrix/Spectrum.lean:59:  (isSymmetric_toEuclideanLin_iff.mpr hA).eigenvalues finrank_euclideanSpace
+Mathlib/Analysis/Matrix/Spectrum.lean:62:  LinearMap.IsSymmetric.eigenvalues_antitone ..
+Mathlib/Analysis/Matrix/Spectrum.lean:70:  ((isSymmetric_toEuclideanLin_iff.mpr hA).eigenvectorBasis finrank_euclideanSpace).reindex
+Mathlib/Analysis/Matrix/Spectrum.lean:77:      congr(⇑$((isSymmetric_toEuclideanLin_iff.mpr hA).apply_eigenvectorBasis
+Mathlib/Analysis/Matrix/Spectrum.lean:159:lemma roots_charpoly_eq_eigenvalues :
+Mathlib/Analysis/Matrix/Spectrum.lean:166:lemma roots_charpoly_eq_eigenvalues₀ :
+Mathlib/Analysis/Matrix/Spectrum.lean:168:  rw [hA.roots_charpoly_eq_eigenvalues]
+Mathlib/Analysis/Matrix/Spectrum.lean:172:lemma sort_roots_charpoly_eq_eigenvalues₀ :
+Mathlib/Analysis/Matrix/Spectrum.lean:174:  simp_rw [hA.roots_charpoly_eq_eigenvalues₀, Fin.univ_val_map, Multiset.map_coe, List.map_ofFn,
+Mathlib/Analysis/Matrix/Spectrum.lean:180:lemma eigenvalues_eq_eigenvalues_iff :
+Mathlib/Analysis/Matrix/Spectrum.lean:185:    simp_rw [← List.ofFn_inj, ← sort_roots_charpoly_eq_eigenvalues₀, h]
+Mathlib/Analysis/Matrix/Spectrum.lean:188:  Polynomial.splits_iff_card_roots.mpr (by simp [hA.roots_charpoly_eq_eigenvalues])
+Mathlib/Analysis/Matrix/Spectrum.lean:192:  simp [det_eq_prod_roots_charpoly_of_splits hA.splits_charpoly, hA.roots_charpoly_eq_eigenvalues]
+Mathlib/Analysis/Matrix/Spectrum.lean:240:  simp [trace_eq_sum_roots_charpoly_of_splits hA.splits_charpoly, hA.roots_charpoly_eq_eigenvalues]

@@ -1,0 +1,29 @@
+    let p : Term ← withNaryArg 0 <| delab
+    -- to be conservative, only allow subscripts which are numerals
+    guard <| p matches `($_:num)
+    let `(![$elems,*]) ← withNaryArg 2 delab | failure
+    `(!$p[$elems,*])
+
+end Notation
+
+theorem EuclideanSpace.nnnorm_eq {𝕜 : Type*} [RCLike 𝕜] {n : Type*} [Fintype n]
+    (x : EuclideanSpace 𝕜 n) : ‖x‖₊ = NNReal.sqrt (∑ i, ‖x i‖₊ ^ 2) :=
+  PiLp.nnnorm_eq_of_L2 x
+
+theorem EuclideanSpace.norm_eq {𝕜 : Type*} [RCLike 𝕜] {n : Type*} [Fintype n]
+    (x : EuclideanSpace 𝕜 n) : ‖x‖ = √(∑ i, ‖x i‖ ^ 2) := by
+  simpa only [Real.coe_sqrt, NNReal.coe_sum] using! congr_arg ((↑) : ℝ≥0 → ℝ) x.nnnorm_eq
+
+theorem EuclideanSpace.norm_sq_eq {𝕜 : Type*} [RCLike 𝕜] {n : Type*} [Fintype n]
+    (x : EuclideanSpace 𝕜 n) : ‖x‖ ^ 2 = ∑ i, ‖x i‖ ^ 2 :=
+  PiLp.norm_sq_eq_of_L2 _ x
+
+theorem EuclideanSpace.real_norm_sq_eq {n : Type*} [Fintype n] (x : EuclideanSpace ℝ n) :
+    ‖x‖ ^ 2 = ∑ i, (x i) ^ 2 := by
+  simp [EuclideanSpace.norm_sq_eq]
+
+@[wikidata Q847073]
+theorem EuclideanSpace.dist_eq {𝕜 : Type*} [RCLike 𝕜] {n : Type*} [Fintype n]
+    (x y : EuclideanSpace 𝕜 n) : dist x y = √(∑ i, dist (x i) (y i) ^ 2) :=
+  PiLp.dist_eq_of_L2 x y
+

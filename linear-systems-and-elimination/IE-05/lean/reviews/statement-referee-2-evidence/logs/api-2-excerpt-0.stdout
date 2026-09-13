@@ -1,0 +1,71 @@
+effect, `NNReal.sqrt` is a bundled `OrderIso`, so for `NNReal` numbers we get continuity as well as
+theorems like `NNReal.sqrt x ≤ y ↔ x ≤ y * y` for free.
+
+Then we define `Real.sqrt x` to be `NNReal.sqrt (Real.toNNReal x)`.
+
+## Tags
+
+square root
+-/
+
+@[expose] public section
+
+open Set Filter
+open scoped Filter NNReal Topology
+
+namespace NNReal
+
+variable {x y : ℝ≥0}
+
+/-- Square root of a nonnegative real number. -/
+@[pp_nodot]
+noncomputable def sqrt : ℝ≥0 ≃o ℝ≥0 :=
+  OrderIso.symm <| powOrderIso 2 two_ne_zero
+
+@[simp] lemma sq_sqrt (x : ℝ≥0) : sqrt x ^ 2 = x := sqrt.symm_apply_apply _
+
+@[simp] lemma sqrt_sq (x : ℝ≥0) : sqrt (x ^ 2) = x := sqrt.apply_symm_apply _
+
+@[simp] lemma mul_self_sqrt (x : ℝ≥0) : sqrt x * sqrt x = x := by rw [← sq, sq_sqrt]
+
+@[simp] lemma sqrt_mul_self (x : ℝ≥0) : sqrt (x * x) = x := by rw [← sq, sqrt_sq]
+
+lemma sqrt_le_sqrt : sqrt x ≤ sqrt y ↔ x ≤ y := sqrt.le_iff_le
+
+lemma sqrt_lt_sqrt : sqrt x < sqrt y ↔ x < y := sqrt.lt_iff_lt
+
+lemma sqrt_eq_iff_eq_sq : sqrt x = y ↔ x = y ^ 2 := sqrt.toEquiv.eq_symm_apply.symm
+
+lemma sqrt_le_iff_le_sq : sqrt x ≤ y ↔ x ≤ y ^ 2 := sqrt.to_galoisConnection _ _
+
+lemma le_sqrt_iff_sq_le : x ≤ sqrt y ↔ x ^ 2 ≤ y := (sqrt.symm.to_galoisConnection _ _).symm
+
+@[simp] lemma sqrt_eq_zero : sqrt x = 0 ↔ x = 0 := by simp [sqrt_eq_iff_eq_sq]
+
+@[simp] lemma sqrt_eq_one : sqrt x = 1 ↔ x = 1 := by simp [sqrt_eq_iff_eq_sq]
+
+@[simp] lemma sqrt_zero : sqrt 0 = 0 := by simp
+
+@[simp] lemma sqrt_one : sqrt 1 = 1 := by simp
+
+@[simp] lemma sqrt_le_one : sqrt x ≤ 1 ↔ x ≤ 1 := by rw [← sqrt_one, sqrt_le_sqrt, sqrt_one]
+@[simp] lemma one_le_sqrt : 1 ≤ sqrt x ↔ 1 ≤ x := by rw [← sqrt_one, sqrt_le_sqrt, sqrt_one]
+
+lemma sqrt_mul_le_max : sqrt (x * y) ≤ max x y := by
+  rw [sqrt_le_iff_le_sq, sq]; gcongr <;> simp
+
+theorem sqrt_mul (x y : ℝ≥0) : sqrt (x * y) = sqrt x * sqrt y := by
+  rw [sqrt_eq_iff_eq_sq, mul_pow, sq_sqrt, sq_sqrt]
+
+/-- `NNReal.sqrt` as a `MonoidWithZeroHom`. -/
+noncomputable def sqrtHom : ℝ≥0 →*₀ ℝ≥0 :=
+  ⟨⟨sqrt, sqrt_zero⟩, sqrt_one, sqrt_mul⟩
+
+theorem sqrt_inv (x : ℝ≥0) : sqrt x⁻¹ = (sqrt x)⁻¹ :=
+  map_inv₀ sqrtHom x
+
+theorem sqrt_div (x y : ℝ≥0) : sqrt (x / y) = sqrt x / sqrt y :=
+  map_div₀ sqrtHom x y
+
+@[continuity, fun_prop]
+theorem continuous_sqrt : Continuous sqrt := sqrt.continuous

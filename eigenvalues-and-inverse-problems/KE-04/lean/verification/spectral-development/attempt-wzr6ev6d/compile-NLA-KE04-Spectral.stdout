@@ -1,0 +1,22 @@
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-wzr6ev6d/src/NLA/KE04/Spectral.lean:68:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?f (?a - ?b)
+in the target expression
+  ((Matrix.toLpLin 2 2) M) (mu • v) - a • mu • v - b • (mu • v - a • v) = ((mu - a) * (mu - b)) • v
+
+m : ℕ
+M : Mat m
+a b mu : ℝ
+v : Vec m
+hv : ((Matrix.toLpLin 2 2) M) v = mu • v
+⊢ ((Matrix.toLpLin 2 2) M) (mu • v) - a • mu • v - b • (mu • v - a • v) = ((mu - a) * (mu - b)) • v
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-wzr6ev6d/src/NLA/KE04/Spectral.lean:107:21: error: #assert_trust: 'NLA.KE04._proved.quadratic_apply_eigenvector' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-wzr6ev6d/src/NLA/KE04/Spectral.lean:108:21: error: #assert_trust: 'NLA.KE04._proved.spectral_gap_quadratic_psd' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.orderedSpectrum_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.quadratic_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.KE04._proved.quadratic_apply_eigenvector' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.spectral_gap_quadratic_psd' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.psd_zero_form_iff_kernel' depends on axioms: [propext, Classical.choice, Quot.sound]

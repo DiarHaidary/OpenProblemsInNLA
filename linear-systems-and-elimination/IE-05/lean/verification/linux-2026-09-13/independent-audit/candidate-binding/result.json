@@ -1,0 +1,114 @@
+{
+  "candidate_commit": "71cf72f9db2af0f01b5cfa7f18a69e28310eb52f",
+  "project": "linear-systems-and-elimination/IE-05/lean",
+  "success": true,
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stdout": {
+        "sha256": "f96df5dc42253f8edbd48c9871ec85a3166975525b2d0acbc521e64adfb9856d",
+        "bytes": 41
+      },
+      "stderr": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "raw_stdout_retained": true,
+      "note": null
+    },
+    {
+      "argv": [
+        "git",
+        "diff",
+        "--exit-code",
+        "HEAD",
+        "--",
+        "linear-systems-and-elimination/IE-05/lean"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stdout": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "raw_stdout_retained": true,
+      "note": null
+    },
+    {
+      "argv": [
+        "git",
+        "ls-tree",
+        "-r",
+        "-z",
+        "71cf72f9db2af0f01b5cfa7f18a69e28310eb52f",
+        "--",
+        "linear-systems-and-elimination/IE-05/lean",
+        "AGENTS.md",
+        "docs/lean/REVIEW.md",
+        "docs/lean/schema/README.md",
+        "docs/lean/schema/v0.4.schema.json",
+        "tools/lean/HARNESS.md",
+        "tools/lean/harness.py",
+        "tools/lean/source-lock.json",
+        "tools/lean/validate_manifest.py",
+        "tools/lean/projects.py",
+        "tools/lean/requirements.txt",
+        "tools/lean/bootstrap.sh",
+        "tools/lean/verify.sh",
+        "tools/lean/selftest.sh",
+        ".github/workflows/lean-verification.yml",
+        "problem_ids.json",
+        "linear-systems-and-elimination/IE-05/README.md"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stdout": {
+        "sha256": "80cc4528ddfe1b4598e85ff9e3a0eacfecde2f66c81ee00d8a853bae660dbe6c",
+        "bytes": 436645
+      },
+      "stderr": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "raw_stdout_retained": true,
+      "note": null
+    },
+    {
+      "argv": [
+        "git",
+        "cat-file",
+        "--batch"
+      ],
+      "cwd": "/tmp/nla-lean-ie05-worktree",
+      "exit_code": 0,
+      "stdout": {
+        "sha256": "41f10affcde1f735b101e94abc8e5b689074729a6af69e2062dedb5773ffff67",
+        "bytes": 58935960
+      },
+      "stderr": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "raw_stdout_retained": false,
+      "note": "Bulk blob stream hashed while inspected, not duplicated on disk; every immutable Git blob identity and current byte hash retained below."
+    }
+  ],
+  "candidate_inputs": 2543,
+  "governing_inputs": 16,
+  "unique_blobs": 890,
+  "project_worktree_equals_committed_bytes": true,
+  "frozen_2405_candidate_selection_unchanged": true,
+  "original_target_and_Solved_status_unchanged": true,
+  "material_source_copies": 21,
+  "no_dependency_or_bulk_project_copy": true
+}

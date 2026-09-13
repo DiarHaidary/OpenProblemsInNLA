@@ -1,0 +1,102 @@
+48-
+49-open Lean Meta Elab Tactic
+50-
+51:register_option leancert.trust : String := {
+52-  defValue := "native"
+53-  descr := "LeanCert certificate verification route: \"native\" (native_decide; \
+54-    trusts the compiler/runtime), \"kernel\" (decide +kernel; kernel-only \
+55-    trusted base, never falls back), or \"auto\" (try kernel first within \
+56-    leancert.trust.kernelHeartbeats, fall back to native_decide and report)"
+57-}
+58-
+59:register_option leancert.trust.kernelHeartbeats : Nat := {
+60-  defValue := 400000
+61-  descr := "heartbeat budget for the kernel verification attempt in \
+62-    leancert.trust = \"auto\" mode (same units as maxHeartbeats)"
+63-}
+64-
+65:register_option leancert.trust.autoGate : Bool := {
+66-  defValue := true
+67-  descr := "in leancert.trust = \"auto\" mode, skip the kernel attempt for \
+68-    certificates whose size predictably exceeds the calibrated kernel/native \
+69-    crossover (finite-sum term count, integration partition count, \
+70-    optimization iterations) and go straight to native_decide; see \
+71-    scripts/bench-trust/README.md for the calibration data"
+72-}
+73-
+74:register_option leancert.trust.autoMaxSumTerms : Nat := {
+75-  defValue := 2000
+76-  descr := "auto-mode gate: maximum finite-sum term count for which the \
+77-    kernel attempt is made (crossover ≈ 10^4 terms at ~35s/+1.5 GiB; \
+78-    ≤2×10^3 costs under a second)"
+79-}
+80-
+81:register_option leancert.trust.autoMaxPartitions : Nat := {
+82-  defValue := 500
+83-  descr := "auto-mode gate: maximum integration partition count for which \
+84-    the kernel attempt is made (500 partitions ≈ +2.5s)"
+85-}
+86-
+87:register_option leancert.trust.autoMaxOptIterations : Nat := {
+88-  defValue := 100
+89-  descr := "auto-mode gate: maximum branch-and-bound iteration limit for \
+90-    which the kernel attempt is made (a conservative policy threshold; the \
+91-    v4.32.2 calibration matrix measures comparable routes through 50 iterations)"
+92-}
+93-
+94-namespace LeanCert.Tactic
+95-
+--
+590-  | none => act
+591-  | some m => withOptions (fun o => o.set `leancert.trust m.asString) act
+592-
+593:/-! ## `#assert_trust`: CI trust manifests
+594-
+595:`#assert_trust kernel thm` / `#assert_trust native thm` pin a theorem's trust
+596-class. Drift in *either* direction fails: a kernel-clean theorem acquiring
+597-native-compiler trust is a regression, and a native-pinned theorem losing its
+598-native dependency means the manifest should be tightened to `kernel`.
+599-`sorryAx` and unrecognized axioms always fail. -/
+600-
+601-/-- Trust classification of a single axiom. -/
+602-inductive TrustClass where
+603-  /-- `propext`, `Classical.choice`, `Quot.sound`. -/
+--
+626-    | _ => .custom
+627-
+628-open Elab Command in
+629:/-- `#assert_trust kernel thm`: `thm` depends on foundational axioms only.
+630:`#assert_trust native thm`: `thm` additionally depends on native-compiler
+631-trust (and nothing worse). Any `sorryAx` or unrecognized axiom fails both. -/
+632:elab "#assert_trust " cls:ident thm:ident : command => do
+633-  let declName ← liftCoreM <| realizeGlobalConstNoOverloadWithInfo thm
+634-  liftCoreM do
+635:    let axs ← collectAxioms declName
+636-    let part (c : TrustClass) : Array Name := axs.filter (classifyAxiom · == c)
+637-    let foundational := part .foundational
+638-    let native := part .nativeCompiler
+639-    let sorries := part .sorryAx
+640-    let custom := part .custom
+641-    let breakdown : MessageData := MessageData.joinSep
+642-      ([(`foundational, foundational), (`nativeCompiler, native),
+643-        (`sorryAx, sorries), (`custom, custom)].filterMap fun (label, group) =>
+--
+645-        else some m!"  {label}: {MessageData.joinSep (group.toList.map toMessageData) ", "}")
+646-      "\n"
+647-    unless sorries.isEmpty && custom.isEmpty do
+648:      throwErrorAt thm "#assert_trust: '{declName}' depends on sorry or \
+649-        unrecognized axioms\n{breakdown}"
+650-    match cls.getId with
+651-    | `kernel =>
+652-      unless native.isEmpty do
+653:        throwErrorAt thm "#assert_trust kernel: '{declName}' is not \
+654-          kernel-clean\n{breakdown}"
+655-    | `native =>
+656-      if native.isEmpty then
+657:        throwErrorAt thm "#assert_trust native: '{declName}' has no \
+658-          native-compiler dependency; tighten the manifest to `kernel`"
+659-    | other =>
+660:      throwErrorAt cls "#assert_trust: unknown trust class '{other}'; \
+661-        expected 'kernel' or 'native'"
+662-
+663-end LeanCert.Tactic

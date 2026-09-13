@@ -1,0 +1,1052 @@
+{
+  "phase": "second independent KE04 statement review",
+  "reviewer": "/root/mf16_final_referee",
+  "platform": "macOS-14.6.1-arm64-arm-64bit",
+  "utc_start": "2026-09-13T08:18:01.449923+00:00",
+  "private_prefix": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-referee2-objects-s4qbkk57",
+  "no_prior_private_objects": true,
+  "runner_sha256": "f8e50b2f608eca6ec46fb616dea2cef9252581abf6d591e8f081c97d2552e660",
+  "commands": [
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "seconds": 0.011229041963815689,
+      "stdout": "before-leancert-head.stdout",
+      "stderr": "before-leancert-head.stderr",
+      "stdout_sha256": "e4b931505459ba81cd3601ad76fad49813b618773699f3eed9a65e92975422bb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "seconds": 0.020706666982732713,
+      "stdout": "before-leancert-status.stdout",
+      "stderr": "before-leancert-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "seconds": 0.011248916038312018,
+      "stdout": "before-mathlib-head.stdout",
+      "stderr": "before-mathlib-head.stderr",
+      "stdout_sha256": "7cf32a824e26133738b30903ed97bc24def8e93db8039483d6bdf7fce7a0efee",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "seconds": 0.14094150002347305,
+      "stdout": "before-mathlib-status.stdout",
+      "stderr": "before-mathlib-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "exit_code": 0,
+      "seconds": 0.011501583037897944,
+      "stdout": "before-plausible-head.stdout",
+      "stderr": "before-plausible-head.stderr",
+      "stdout_sha256": "805ea619fc405904b6e9ac21504fad9d1b144b97838b0ea93a6c5bacf0f9d917",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "exit_code": 0,
+      "seconds": 0.01271354197524488,
+      "stdout": "before-plausible-status.stdout",
+      "stderr": "before-plausible-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "exit_code": 0,
+      "seconds": 0.010363333043642342,
+      "stdout": "before-LeanSearchClient-head.stdout",
+      "stderr": "before-LeanSearchClient-head.stderr",
+      "stdout_sha256": "4d0336c7ba0fcd5eb2f72acfcbc62d27a785c823fdd5e7e21a77ed3f529ba9b8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "exit_code": 0,
+      "seconds": 0.012173332972452044,
+      "stdout": "before-LeanSearchClient-status.stdout",
+      "stderr": "before-LeanSearchClient-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "exit_code": 0,
+      "seconds": 0.010096000041812658,
+      "stdout": "before-importGraph-head.stdout",
+      "stderr": "before-importGraph-head.stderr",
+      "stdout_sha256": "1c21dc61032d91e32449c4295a2a30bf8c68c4b8d984bf0f46a73d53d180ce2e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "exit_code": 0,
+      "seconds": 0.013149957987479866,
+      "stdout": "before-importGraph-status.stdout",
+      "stderr": "before-importGraph-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "exit_code": 0,
+      "seconds": 0.010265125019941479,
+      "stdout": "before-proofwidgets-head.stdout",
+      "stderr": "before-proofwidgets-head.stderr",
+      "stdout_sha256": "d9c675d1d0b71316cbd8bced943dd9983f09a32dc9a229039acc3afdfe2375b6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "exit_code": 0,
+      "seconds": 0.013712208019569516,
+      "stdout": "before-proofwidgets-status.stdout",
+      "stderr": "before-proofwidgets-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "exit_code": 0,
+      "seconds": 0.010337207990232855,
+      "stdout": "before-aesop-head.stdout",
+      "stderr": "before-aesop-head.stderr",
+      "stdout_sha256": "4c072408d27377ff5b35ed2858b23f6f83466a241898fe2c4c4a215ba2128652",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "exit_code": 0,
+      "seconds": 0.01491175004048273,
+      "stdout": "before-aesop-status.stdout",
+      "stderr": "before-aesop-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "exit_code": 0,
+      "seconds": 0.010394959012046456,
+      "stdout": "before-Qq-head.stdout",
+      "stderr": "before-Qq-head.stderr",
+      "stdout_sha256": "2d7411c117d0e100d30993222f71939f4200b1982179b5c8651c332382e48655",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "exit_code": 0,
+      "seconds": 0.012849707971327007,
+      "stdout": "before-Qq-status.stdout",
+      "stderr": "before-Qq-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "exit_code": 0,
+      "seconds": 0.010884832998272032,
+      "stdout": "before-batteries-head.stdout",
+      "stderr": "before-batteries-head.stderr",
+      "stdout_sha256": "f11675294ae9a5b8bd697f96d60b337c9aa0ffa5ed7cc89b8acfd5103044b82d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "exit_code": 0,
+      "seconds": 0.016674500016961247,
+      "stdout": "before-batteries-status.stdout",
+      "stderr": "before-batteries-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "exit_code": 0,
+      "seconds": 0.010283458046615124,
+      "stdout": "before-Cli-head.stdout",
+      "stderr": "before-Cli-head.stderr",
+      "stdout_sha256": "300616b42565e3af8371bcac27ec8e33232d8bd511b3abc74ce438ace7a7ed4b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "exit_code": 0,
+      "seconds": 0.011809041956439614,
+      "stdout": "before-Cli-status.stdout",
+      "stderr": "before-Cli-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "--version"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-2-evidence/attempt-o6p9csbt/source",
+      "exit_code": 0,
+      "seconds": 0.2570509579963982,
+      "stdout": "Lean-version.stdout",
+      "stderr": "Lean-version.stderr",
+      "stdout_sha256": "4762d596346ad354e28668de62b7eeae7de5d531b9a7b1c182ca59cfacd81bdd",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-referee2-objects-s4qbkk57/NLA/KE04/Definitions.olean",
+        "NLA/KE04/Definitions.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-2-evidence/attempt-o6p9csbt/source",
+      "exit_code": 0,
+      "seconds": 6.287584000034258,
+      "stdout": "NLA-KE04-Definitions.stdout",
+      "stderr": "NLA-KE04-Definitions.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-referee2-objects-s4qbkk57/InspectDefinitions.olean",
+        "InspectDefinitions.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-2-evidence/attempt-o6p9csbt/source",
+      "exit_code": 0,
+      "seconds": 6.309280042012688,
+      "stdout": "InspectDefinitions.stdout",
+      "stderr": "InspectDefinitions.stderr",
+      "stdout_sha256": "c188b2db540423c5850f5a130d68f13472aef855e63f8388f4bef7db7658e49b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-referee2-objects-s4qbkk57/Challenge.olean",
+        "Challenge.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-2-evidence/attempt-o6p9csbt/source",
+      "exit_code": 0,
+      "seconds": 4.730454667005688,
+      "stdout": "Challenge.stdout",
+      "stderr": "Challenge.stderr",
+      "stdout_sha256": "c371ea49a9e65203a2a759cfa85e8ee7b34ab2e9e441c52b3247ae84ea9c4d83",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-referee2-objects-s4qbkk57/InspectTypes.olean",
+        "InspectTypes.lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-2-evidence/attempt-o6p9csbt/source",
+      "exit_code": 0,
+      "seconds": 3.86211083404487,
+      "stdout": "InspectTypes.stdout",
+      "stderr": "InspectTypes.stderr",
+      "stdout_sha256": "acbfc496e84468cf60a4e721a10e27aa0191dfc48baab887dae2ca4978a13ba8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "seconds": 0.015556125028524548,
+      "stdout": "after-leancert-head.stdout",
+      "stderr": "after-leancert-head.stderr",
+      "stdout_sha256": "e4b931505459ba81cd3601ad76fad49813b618773699f3eed9a65e92975422bb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "exit_code": 0,
+      "seconds": 0.016443500004243106,
+      "stdout": "after-leancert-status.stdout",
+      "stderr": "after-leancert-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "seconds": 0.010674874996766448,
+      "stdout": "after-mathlib-head.stdout",
+      "stderr": "after-mathlib-head.stderr",
+      "stdout_sha256": "7cf32a824e26133738b30903ed97bc24def8e93db8039483d6bdf7fce7a0efee",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "seconds": 0.05413079197751358,
+      "stdout": "after-mathlib-status.stdout",
+      "stderr": "after-mathlib-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "exit_code": 0,
+      "seconds": 0.011168874974828213,
+      "stdout": "after-plausible-head.stdout",
+      "stderr": "after-plausible-head.stderr",
+      "stdout_sha256": "805ea619fc405904b6e9ac21504fad9d1b144b97838b0ea93a6c5bacf0f9d917",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "exit_code": 0,
+      "seconds": 0.012152916984632611,
+      "stdout": "after-plausible-status.stdout",
+      "stderr": "after-plausible-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "exit_code": 0,
+      "seconds": 0.010159249999560416,
+      "stdout": "after-LeanSearchClient-head.stdout",
+      "stderr": "after-LeanSearchClient-head.stderr",
+      "stdout_sha256": "4d0336c7ba0fcd5eb2f72acfcbc62d27a785c823fdd5e7e21a77ed3f529ba9b8",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "exit_code": 0,
+      "seconds": 0.011738125002011657,
+      "stdout": "after-LeanSearchClient-status.stdout",
+      "stderr": "after-LeanSearchClient-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "exit_code": 0,
+      "seconds": 0.010405750013887882,
+      "stdout": "after-importGraph-head.stdout",
+      "stderr": "after-importGraph-head.stderr",
+      "stdout_sha256": "1c21dc61032d91e32449c4295a2a30bf8c68c4b8d984bf0f46a73d53d180ce2e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "exit_code": 0,
+      "seconds": 0.012045625015161932,
+      "stdout": "after-importGraph-status.stdout",
+      "stderr": "after-importGraph-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "exit_code": 0,
+      "seconds": 0.010292833030689508,
+      "stdout": "after-proofwidgets-head.stdout",
+      "stderr": "after-proofwidgets-head.stderr",
+      "stdout_sha256": "d9c675d1d0b71316cbd8bced943dd9983f09a32dc9a229039acc3afdfe2375b6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "exit_code": 0,
+      "seconds": 0.01310287497472018,
+      "stdout": "after-proofwidgets-status.stdout",
+      "stderr": "after-proofwidgets-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "exit_code": 0,
+      "seconds": 0.01307091600028798,
+      "stdout": "after-aesop-head.stdout",
+      "stderr": "after-aesop-head.stderr",
+      "stdout_sha256": "4c072408d27377ff5b35ed2858b23f6f83466a241898fe2c4c4a215ba2128652",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "exit_code": 0,
+      "seconds": 0.014601958042476326,
+      "stdout": "after-aesop-status.stdout",
+      "stderr": "after-aesop-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "exit_code": 0,
+      "seconds": 0.011812124983407557,
+      "stdout": "after-Qq-head.stdout",
+      "stderr": "after-Qq-head.stderr",
+      "stdout_sha256": "2d7411c117d0e100d30993222f71939f4200b1982179b5c8651c332382e48655",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "exit_code": 0,
+      "seconds": 0.013454458035994321,
+      "stdout": "after-Qq-status.stdout",
+      "stderr": "after-Qq-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "exit_code": 0,
+      "seconds": 0.012659959029406309,
+      "stdout": "after-batteries-head.stdout",
+      "stderr": "after-batteries-head.stderr",
+      "stdout_sha256": "f11675294ae9a5b8bd697f96d60b337c9aa0ffa5ed7cc89b8acfd5103044b82d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "exit_code": 0,
+      "seconds": 0.016049167024903,
+      "stdout": "after-batteries-status.stdout",
+      "stderr": "after-batteries-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "rev-parse",
+        "HEAD"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "exit_code": 0,
+      "seconds": 0.011825499997939914,
+      "stdout": "after-Cli-head.stdout",
+      "stderr": "after-Cli-head.stderr",
+      "stdout_sha256": "300616b42565e3af8371bcac27ec8e33232d8bd511b3abc74ce438ace7a7ed4b",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "git",
+        "status",
+        "--porcelain=v1",
+        "--untracked-files=all"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "exit_code": 0,
+      "seconds": 0.012069000047631562,
+      "stdout": "after-Cli-status.stdout",
+      "stderr": "after-Cli-status.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "inputs": {
+    "NLA/KE04/Definitions.lean": {
+      "sha256": "ae1baccc0cb622f83103eff8bb4a5efe4cd9a3bae4822ccca38da29554ae9ca4",
+      "bytes": 6450
+    },
+    "Challenge.lean": {
+      "sha256": "a27de227d483072e395b6658a97cbf31296503c7fab36e5f9dbf248b2efa299e",
+      "bytes": 9302
+    },
+    "lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "lakefile.toml": {
+      "sha256": "1e860d6ff5d2754de834dcb8d458f3d95e4da3ad43a7b5ecbd48e91ed2f18363",
+      "bytes": 358
+    },
+    "lake-manifest.json": {
+      "sha256": "6590a604a552411f07cd4806d378bf6c8ed3f2cf3b957b2b41b0e7669dcf29c6",
+      "bytes": 3884
+    },
+    "comparator.json": {
+      "sha256": "c0c7086cb81abe8f422762d0db2cc55419828f08ba80d33f9157cb3f396a8b8e",
+      "bytes": 1212
+    },
+    "InspectDefinitions.lean": {
+      "sha256": "63d04cf9e3ec6efff714a39b84f7427ac0ed3c0dd55f2665cdc1487b3fcd2c8d",
+      "bytes": 5351,
+      "role": "reviewer-generated exact definition/type inspector"
+    },
+    "InspectTypes.lean": {
+      "sha256": "3ec22f384e9aa1f8863e0e16f1010108d47ce01cce6d2a0070f8fbb80d955939",
+      "bytes": 10077,
+      "role": "reviewer-generated exact definition/type inspector"
+    }
+  },
+  "objects": [
+    {
+      "path": "Challenge.olean",
+      "sha256": "c7d41f2f6841d0c5403e79e5f4cb4ad099ee4652b87c1959aed44d687d0a3173",
+      "bytes": 221184
+    },
+    {
+      "path": "InspectDefinitions.olean",
+      "sha256": "d57e167c5f54d99ccca4495c6edfefd0e8284457f05f4832a1e8aa3a746fadcc",
+      "bytes": 3272
+    },
+    {
+      "path": "InspectTypes.olean",
+      "sha256": "fcc4c3b0692715da82e00575f8b9b673e5b5d57db1a8d8fd0e3166b42fb16b94",
+      "bytes": 142480
+    },
+    {
+      "path": "NLA/KE04/Definitions.olean",
+      "sha256": "e606d8079100749d84476d6a8697e53a590aaa33d336a4ea81646f17d24281ad",
+      "bytes": 287168
+    }
+  ],
+  "errors": [],
+  "proof_build": false,
+  "Comparator_run": false,
+  "Linux_gate": false,
+  "definition_names": [
+    "NLA.KE04.Vec",
+    "NLA.KE04.Rect",
+    "NLA.KE04.Mat",
+    "NLA.KE04.column",
+    "NLA.KE04.act",
+    "NLA.KE04.columnSpace",
+    "NLA.KE04.FullColumnRank",
+    "NLA.KE04.krylovColumns",
+    "NLA.KE04.krylov",
+    "NLA.KE04.krylovCombination",
+    "NLA.KE04.FullBlockDimension",
+    "NLA.KE04.LastFullBlockIteration",
+    "NLA.KE04.IsKrylovBasis",
+    "NLA.KE04.frameProjection",
+    "NLA.KE04.compression",
+    "NLA.KE04.orderedEigenvalues",
+    "NLA.KE04.orderedEigenbasis",
+    "NLA.KE04.eigenvalueAt",
+    "NLA.KE04.ritzValues",
+    "NLA.KE04.ritzValueAt",
+    "NLA.KE04.monicQuadratic",
+    "NLA.KE04.quadraticMatrix",
+    "NLA.KE04.compressedQuadratic",
+    "NLA.KE04.form",
+    "NLA.KE04.IterationOccupancy",
+    "NLA.KE04.FullPrefixBlockLanczosClaim",
+    "NLA.KE04.BlockLanczosConjecture"
+  ],
+  "target_names": [
+    "NLA.KE04.real_matrix_semantics",
+    "NLA.KE04.krylov_range_semantics",
+    "NLA.KE04.krylov_nesting_and_shift",
+    "NLA.KE04.fullBlockDimension_iff_independent",
+    "NLA.KE04.fullBlockDimension_prefix",
+    "NLA.KE04.lastFullBlockIteration_exists",
+    "NLA.KE04.krylovBasis_exists",
+    "NLA.KE04.frameProjection_semantics",
+    "NLA.KE04.compression_semantics",
+    "NLA.KE04.orderedSpectrum_semantics",
+    "NLA.KE04.compression_basis_independent",
+    "NLA.KE04.interval_index_validity",
+    "NLA.KE04.quadratic_semantics",
+    "NLA.KE04.spectral_gap_quadratic_psd",
+    "NLA.KE04.spectral_window_subspace",
+    "NLA.KE04.krylov_intersection_nonzero",
+    "NLA.KE04.psd_zero_form_iff_kernel",
+    "NLA.KE04.compressedQuadratic_semantics",
+    "NLA.KE04.quadratic_forms_agree",
+    "NLA.KE04.later_quadratic_identity",
+    "NLA.KE04.fullRank_quadratic_nonannihilation",
+    "NLA.KE04.strictIntervalOccupancy",
+    "NLA.KE04.fullPrefix_implies_canonical",
+    "NLA.KE04.blockLanczosConjecture"
+  ],
+  "before_dependencies": [
+    {
+      "name": "leancert",
+      "revision": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean"
+    },
+    {
+      "name": "mathlib",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean"
+    },
+    {
+      "name": "plausible",
+      "revision": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean"
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean"
+    },
+    {
+      "name": "importGraph",
+      "revision": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean"
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean"
+    },
+    {
+      "name": "aesop",
+      "revision": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean"
+    },
+    {
+      "name": "Qq",
+      "revision": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean"
+    },
+    {
+      "name": "batteries",
+      "revision": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean"
+    },
+    {
+      "name": "Cli",
+      "revision": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "clean": true,
+      "compiled_path_used": null
+    }
+  ],
+  "LEAN_PATH": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-referee2-objects-s4qbkk57:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean",
+  "LEAN_SRC_PATH": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-2-evidence/attempt-o6p9csbt/source",
+  "lean_binary_sha256": "1b370cfcbf44e80d1b004ab1b1ab9a4c73951f9f7c242140bcff9bc577576554",
+  "actual_successful_Lean_commands": 4,
+  "kernel_assertions": 27,
+  "definition_closure": 33,
+  "exact_types": 24,
+  "definition_axioms": {
+    "NLA.KE04.Vec": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.Rect": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.Mat": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.column": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.act": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.columnSpace": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.FullColumnRank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.krylovColumns": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.krylov": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.krylovCombination": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.FullBlockDimension": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.LastFullBlockIteration": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.IsKrylovBasis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.frameProjection": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.compression": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.orderedEigenvalues": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.orderedEigenbasis": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.eigenvalueAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.ritzValues": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.ritzValueAt": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.monicQuadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.quadraticMatrix": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.compressedQuadratic": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.form": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.IterationOccupancy": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.FullPrefixBlockLanczosClaim": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.KE04.BlockLanczosConjecture": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "after_dependencies": [
+    {
+      "name": "leancert",
+      "revision": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean"
+    },
+    {
+      "name": "mathlib",
+      "revision": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean"
+    },
+    {
+      "name": "plausible",
+      "revision": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean"
+    },
+    {
+      "name": "LeanSearchClient",
+      "revision": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean"
+    },
+    {
+      "name": "importGraph",
+      "revision": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean"
+    },
+    {
+      "name": "proofwidgets",
+      "revision": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean"
+    },
+    {
+      "name": "aesop",
+      "revision": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean"
+    },
+    {
+      "name": "Qq",
+      "revision": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean"
+    },
+    {
+      "name": "batteries",
+      "revision": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "clean": true,
+      "compiled_path_used": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean"
+    },
+    {
+      "name": "Cli",
+      "revision": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "clean": true,
+      "compiled_path_used": null
+    }
+  ],
+  "own_private_prefix_removed": true,
+  "success": true,
+  "utc_end": "2026-09-13T08:18:23.606642+00:00"
+}

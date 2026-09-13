@@ -313,6 +313,19 @@ The complete analytic proof passed a separate [independent Codex-agent review](r
 
 **Author:** George Stepaniants, Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA.
 
+**Lean verified, 2026-09-13.** The complete negative resolution is formalized
+in [17 checked exports](linear-systems-and-elimination/IE-05/lean/README.md),
+including `NLA.IE05.orthogonalExtremizerConjecture`, while preserving the full
+real orthogonal supremum and all admissible partial-pivoting paths. The exact
+order-eight witness refutes the universal equality. The proof passed
+[Ubuntu Comparator/default-kernel verification](linear-systems-and-elimination/IE-05/lean/verification/linux-2026-09-13/)
+and an independent operational evidence audit. **Lean formalization and
+mathematical proof:** George Stepaniants, Department of Computing and
+Mathematical Sciences, California Institute of Technology, Pasadena,
+California, USA, with AI-agent assistance. Peca-Medlin retains credit for the
+conjecture and cited element-growth analysis. The true supremum and separate
+asymptotic leading-constant question remain outside scope.
+
 **Negative resolution recorded 2026-09-11.** The [Theorem and Sections 1-4](linear-systems-and-elimination/IE-05/solution.md) give an exact real orthogonal counterexample at order eight. The positive-diagonal QR factor of $L_8+e_8e_2^T$ has partial-pivoting growth $5272/63$, strictly above the prescribed candidate's $\sqrt{17948132/2601}$. Both use the first available row in ties, so the counterexample also belongs to the supremum over all admissible paths. [Proof PDF](linear-systems-and-elimination/IE-05/solution.pdf) · [Canonical target](linear-systems-and-elimination/IE-05/README.md).
 
 The proof passed a separate [Codex-agent full-target review](references/stepaniants-ie05-2026-09-11/independent-review.md), including independently reconstructed exact orthogonality, QR signs, all pivots and all active maxima. Substantial AI assistance and the limits of automated review are explicit. This settles the finite-order extremizer equality and leaves the true supremum and the distinct asymptotic leading constant undetermined. Peca-Medlin's conjecture and prior element-growth analysis retain their attribution. [Submission record and public-source check](references/stepaniants-ie05-2026-09-11/README.md).
@@ -564,6 +577,8 @@ historical and the entry no longer contributes to the open count.
 [Original statement and resolution](eigenvalues-and-inverse-problems/SP-05/README.md) · [Complete manuscript](eigenvalues-and-inverse-problems/SP-05/solution.md) · [Manuscript PDF](eigenvalues-and-inverse-problems/SP-05/solution.pdf) · [Independent review](references/colbrook-2026-09-11/verification/reviews/SP-05-review.md). **Theorem SP-05, sections 1–3.** For arbitrary real symmetric positive definite $A,B$, a nonzero real positive-semidefinite eigenmatrix attains the smallest eigenvalue of $X\mapsto AXB+BXA$. Section 3 derives the exact symmetric/skew-symmetric Rayleigh-quotient inequality in the original target, without commutativity, rank restrictions or a simple-eigenvalue assumption.
 
 #### KE-04 — affirmative resolution
+
+**Lean verified — 2026-09-13. Formalization: George Stepaniants**, Department of Computing and Mathematical Sciences, California Institute of Technology. The [complete Lean project](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/40b0bf52e73e776e7769f0f12dbbda7cd9fff183/eigenvalues-and-inverse-problems/KE-04/lean) proves the original strict interval-occupancy target with all dimensions, multiplicities and arbitrary Krylov bases. Its 24 exports passed real Ubuntu Comparator, default-kernel and permitted-axiom checks; [verification evidence and independent operational review](eigenvalues-and-inverse-problems/KE-04/lean/verification/linux-2026-09-13/README.md). Original mathematical proof credit remains Matthew J. Colbrook, Department of Applied Mathematics and Theoretical Physics, University of Cambridge. AI assistance and independent agent review are disclosed; no external human peer review is claimed.
 
 [Original statement and resolution](eigenvalues-and-inverse-problems/KE-04/README.md) · [Complete manuscript](eigenvalues-and-inverse-problems/KE-04/solution.md) · [Manuscript PDF](eigenvalues-and-inverse-problems/KE-04/solution.pdf) · [Independent review](references/colbrook-2026-09-11/verification/reviews/KE-04-review.md). **Theorem KE-04, sections 1–3.** Strict interval occupancy holds for every allowed pair of block Lanczos iterations and every indicated index, in exact arithmetic before the first loss of full block dimension. The quadratic-polynomial argument includes multiplicities and excludes coincident interval endpoints in the stated range.
 

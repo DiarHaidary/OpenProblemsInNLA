@@ -1,0 +1,7 @@
+{
+  "exit_code": 1,
+  "phase": "Python runner parse, before any Lean command or output prefix",
+  "error": "SyntaxError: expected else after if expression",
+  "line": "raise SystemExit(0 if result.get(pass)else1)",
+  "fix": "Insert the missing whitespace before integer literal 1; no mathematical source changed."
+}

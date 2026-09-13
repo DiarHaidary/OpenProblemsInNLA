@@ -1,0 +1,228 @@
+{
+  "utc": "2026-09-13T08:49:44.438251+00:00",
+  "phase": "KE04 Frames scoped author source validation",
+  "platform": "Darwin 23.6.0 arm64",
+  "toolchain": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "fresh": true,
+  "inspect": false,
+  "prefix": "/tmp/nla-ke04-frames-ggspykd4",
+  "inputs": {
+    "NLA/KE04/Definitions.lean": {
+      "sha256": "ae1baccc0cb622f83103eff8bb4a5efe4cd9a3bae4822ccca38da29554ae9ca4",
+      "bytes": 6450
+    },
+    "NLA/KE04/Frames.lean": {
+      "sha256": "bfea6b02091db4e999c2c870b4b1f238cb546ad84df010c7d5431fe82904db0b",
+      "bytes": 8253
+    },
+    "lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "lakefile.toml": {
+      "sha256": "1e860d6ff5d2754de834dcb8d458f3d95e4da3ad43a7b5ecbd48e91ed2f18363",
+      "bytes": 358
+    },
+    "lake-manifest.json": {
+      "sha256": "6590a604a552411f07cd4806d378bf6c8ed3f2cf3b957b2b41b0e7669dcf29c6",
+      "bytes": 3884
+    },
+    "comparator.json": {
+      "sha256": "c0c7086cb81abe8f422762d0db2cc55419828f08ba80d33f9157cb3f396a8b8e",
+      "bytes": 1212
+    },
+    "verification/proof-start.json": {
+      "sha256": "5e7cfd64709f436c684698fdb0c4adb5cc3f3e50f8945aa5fffdf70ec22fe624",
+      "bytes": 2741
+    },
+    "verification/frames-development/compile.py": {
+      "sha256": "2b6697ee49638cf4b0a0042ddf82ccde5dc18a47bc45172c89f407b36d8f9e3b",
+      "bytes": 5664
+    }
+  },
+  "commands": [
+    {
+      "source": "NLA/KE04/Definitions.lean",
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-ke04-frames-ggspykd4/NLA/KE04/Definitions.olean",
+        "-i",
+        "/tmp/nla-ke04-frames-ggspykd4/NLA/KE04/Definitions.ilean",
+        "NLA/KE04/Definitions.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.3786517919506878,
+      "log": "Definitions.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "NLA/KE04/Frames.lean",
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-ke04-frames-ggspykd4/NLA/KE04/Frames.olean",
+        "-i",
+        "/tmp/nla-ke04-frames-ggspykd4/NLA/KE04/Frames.ilean",
+        "NLA/KE04/Frames.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 5.056527041015215,
+      "log": "Frames.log",
+      "log_sha256": "c410813d93d9d8d80e23ba95de717dbc87ffe4218ca26d8d89cbf95106aa2d67"
+    }
+  ],
+  "lean_path": "/tmp/nla-ke04-frames-ggspykd4:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "frozen_inputs_before": 1598,
+  "pins_before": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "tracked_clean": true,
+      "object_directory_present": false
+    }
+  ],
+  "independent_review": false,
+  "actual_linux_comparator": false,
+  "pins_after": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "tracked_clean": true,
+      "object_directory_present": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "tracked_clean": true,
+      "object_directory_present": false
+    }
+  ],
+  "frozen_inputs_after": 1598,
+  "source_unchanged": true,
+  "pass": true,
+  "own_object_cleanup": {
+    "prefix": "/tmp/nla-ke04-frames-ggspykd4",
+    "objects": {
+      "NLA/KE04/Frames.ilean": {
+        "sha256": "bc4ed412baf1c1dd350ccb70da961ed6a4c4a58a40ed4357e9657bcea79b0c96",
+        "bytes": 29984
+      },
+      "NLA/KE04/Frames.olean": {
+        "sha256": "624c3e54716f086896fbeb2f3f2314e068a28e1a9a646151cdc2b2cdb782ce90",
+        "bytes": 318616
+      },
+      "NLA/KE04/Definitions.ilean": {
+        "sha256": "84b2de27eeb352714e204606aa725d8cd80c5c2bf49f98a2a12effe300f5c5c5",
+        "bytes": 16777
+      },
+      "NLA/KE04/Definitions.olean": {
+        "sha256": "e606d8079100749d84476d6a8697e53a590aaa33d336a4ea81646f17d24281ad",
+        "bytes": 287168
+      }
+    },
+    "removed": true
+  }
+}

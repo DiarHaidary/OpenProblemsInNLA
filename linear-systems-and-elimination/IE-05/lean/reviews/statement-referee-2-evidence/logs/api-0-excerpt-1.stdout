@@ -1,0 +1,38 @@
+
+theorem coe_gramSchmidtBasis (b : Basis ι 𝕜 E) : (gramSchmidtBasis b : ι → E) = gramSchmidt 𝕜 b :=
+  Basis.coe_mk _ _
+
+variable (𝕜) in
+/-- the normalized `gramSchmidt` (i.e each vector in `gramSchmidtNormed` has unit length.) -/
+noncomputable def gramSchmidtNormed (f : ι → E) (n : ι) : E :=
+  (‖gramSchmidt 𝕜 f n‖ : 𝕜)⁻¹ • gramSchmidt 𝕜 f n
+
+theorem gramSchmidtNormed_unit_length_coe {f : ι → E} (n : ι)
+    (h₀ : LinearIndependent 𝕜 (f ∘ ((↑) : Set.Iic n → ι))) : ‖gramSchmidtNormed 𝕜 f n‖ = 1 := by
+  simp only [gramSchmidt_ne_zero_coe n h₀, gramSchmidtNormed, norm_smul_inv_norm, Ne,
+    not_false_iff]
+
+theorem gramSchmidtNormed_unit_length {f : ι → E} (n : ι) (h₀ : LinearIndependent 𝕜 f) :
+    ‖gramSchmidtNormed 𝕜 f n‖ = 1 :=
+  gramSchmidtNormed_unit_length_coe _ (LinearIndependent.comp h₀ _ Subtype.coe_injective)
+
+theorem gramSchmidtNormed_unit_length' {f : ι → E} {n : ι} (hn : gramSchmidtNormed 𝕜 f n ≠ 0) :
+    ‖gramSchmidtNormed 𝕜 f n‖ = 1 := by
+  rw [gramSchmidtNormed] at *
+  rw [norm_smul_inv_norm]
+  simpa using hn
+
+/-- **Gram-Schmidt Orthonormalization**:
+`gramSchmidtNormed` applied to a linearly independent set of vectors produces an orthonormal
+system of vectors. -/
+theorem gramSchmidtNormed_orthonormal {f : ι → E} (h₀ : LinearIndependent 𝕜 f) :
+    Orthonormal 𝕜 (gramSchmidtNormed 𝕜 f) := by
+  unfold Orthonormal
+  constructor
+  · simp only [gramSchmidtNormed_unit_length, h₀, imp_true_iff]
+  · intro i j hij
+    simp only [gramSchmidtNormed, inner_smul_left, inner_smul_right, RCLike.conj_inv,
+      RCLike.conj_ofReal, mul_eq_zero, inv_eq_zero, RCLike.ofReal_eq_zero, norm_eq_zero]
+    repeat' right
+    exact gramSchmidt_orthogonal 𝕜 f hij
+

@@ -1,0 +1,15 @@
+{
+  "destination": "Reference.lean",
+  "only_changes": [
+    [
+      "namespace NLA.KE04",
+      "namespace NLA.KE04.Reference"
+    ],
+    [
+      "end NLA.KE04",
+      "end NLA.KE04.Reference"
+    ]
+  ],
+  "purpose": "Compile frozen signatures alone before Solution, then compare actual types without using the reference proof bodies.",
+  "source": "Challenge.lean"
+}

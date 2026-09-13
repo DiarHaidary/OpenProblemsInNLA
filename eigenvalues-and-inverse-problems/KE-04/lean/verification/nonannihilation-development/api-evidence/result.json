@@ -1,0 +1,49 @@
+{
+  "utc": "2026-09-13T09:30:49.761235+00:00",
+  "commands": [
+    {
+      "command": [
+        "rg",
+        "-n",
+        "-A",
+        "8",
+        "-B",
+        "2",
+        "def reverseInduction|def lastCases|theorem lastCases_castSucc|theorem lastCases_last|def cases|theorem cases_succ",
+        "Init/Data/Fin/Lemmas.lean"
+      ],
+      "cwd": "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/src/lean",
+      "exit_code": 0,
+      "stdout": "finite-index.stdout",
+      "stderr": "finite-index.stderr",
+      "stdout_sha256": "1369f45ebd86cb729f9e2eb2b7cad9af60f3b8501b0611d39e01c5cd81639c2c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "rg",
+        "-n",
+        "-A",
+        "6",
+        "-B",
+        "2",
+        "prod_univ_castSucc|prod_univ_succ|linearCombination_apply|range_linearCombination",
+        "Mathlib/Algebra/BigOperators/Fin.lean",
+        "Mathlib/Data/Fintype/BigOperators.lean",
+        "Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean"
+      ],
+      "cwd": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "exit_code": 0,
+      "stdout": "finite-combination.stdout",
+      "stderr": "finite-combination.stderr",
+      "stdout_sha256": "f33558dfaf9e566691dc08e4fad016ea4dc081ad07355a59e86a3d410a2f3a6e",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "selected_source_hashes": {
+    "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/src/lean/Init/Data/Fin/Lemmas.lean": "4b77e061431db2682c388e5df160c1f280c36f09f6c7b51b6a73d88457e98e51",
+    "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean": "f8e79ad4a35781c09b7de25fcf491f1d17306cb50a7446d985cabedfc09f20da",
+    "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/Mathlib/Algebra/BigOperators/Fin.lean": "4fe78cba9cdeac4eb8badbdd6359b055031900906fb94f3e51aba6d81451dbd5"
+  },
+  "scope": "Read-only actual finite-index and linear-combination APIs; exact kernel proof, no numerical intervals or copied dependency cache."
+}

@@ -1,0 +1,11 @@
+/private/tmp/nla-lean-formalization/next-ie05-statements-draft/lean/reviews/final-referee-1-evidence/inspection-001/RefereeInspect.lean:114:4: error: Type mismatch
+  Lean.Elab.Command.liftIO
+    (IO.FS.writeFile
+      {
+        toString :=
+          "/private/tmp/nla-lean-formalization/next-ie05-statements-draft/lean/reviews/final-referee-1-evidence/inspection-001/actual-environment.json" }
+      out.pretty)
+has type
+  Lean.Elab.Command.CommandElabM Unit
+but is expected to have type
+  Lean.Elab.Term.TermElabM Unit

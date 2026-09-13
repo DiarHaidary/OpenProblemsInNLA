@@ -1,0 +1,9 @@
+Command: PYTHONDONTWRITEBYTECODE=1 python3 reviews/statement-referee-1-evidence/audit_outputs.py
+
+Traceback (most recent call last):
+  File "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean/reviews/statement-referee-1-evidence/audit_outputs.py", line 33, in <module>
+    assert ct.count('warning:')==24 and ct.count("declaration uses 'sorry'")==24
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+
+The actual Lean warning uses backticks around sorry, not single quotes. All 24 exact raw warning lines remain in the accepted compile log. This parser failure changed no source or compiler result.

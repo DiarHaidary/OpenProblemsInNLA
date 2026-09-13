@@ -1,0 +1,14 @@
+{
+  "utc": "2026-09-13T10:09:28.042539+00:00",
+  "reported_by": "Independent final mathematical referee /root/ra09_final_referee1",
+  "defect": "The initial complete proof freeze keyed source convenience maps only by upstream path, collapsing two historical/current version pairs into 15 entries. Its complete 3493-file inventory, the accepted statement freeze and all actual 17-record Git checks were correct.",
+  "correction": "All 17 source maps are now keyed by their distinct project-relative snapshot paths, exactly as in the immutable statement freeze. Explicit per-snapshot source commit/path/blob/size/hash records are included.",
+  "original_freeze_sha256": "d45703f80e35612826060bc53d7a46da7c341234f2edd8cd6269e1ed72c53c16",
+  "original_archive": "verification/proof-freeze-source-correction/original-proof-freeze.json",
+  "source_files_changed": false,
+  "numerical_statements_changed": false,
+  "new_Lean_compilation": false,
+  "reviewer_checks": "Referee 1 completed source and postflight checks on the original hash before replacement. Referee 2 preserved its original preflight and has not compiled yet. Both must independently rebind the corrected freeze before final approval.",
+  "fully_verified": false,
+  "actual_Linux_Comparator": false
+}

@@ -1,0 +1,7 @@
+{
+  "phase": "Author handoff metadata assembly, after all actual Lean commands exited zero",
+  "exit_code": 1,
+  "failure": "Seal incorrectly expected no source warnings; raw Krylov log has one unused simp argument hr warning. No Lean failure and no final seal or handoff written.",
+  "runner_sha256": "91ce0b531f960c83032b8e862a4138317a150b5291bd15a5e3f662521de98359",
+  "corrective_action": "Report the actual harmless source warning; preserve all successful raw builds and source unchanged, do not repeat Lean."
+}

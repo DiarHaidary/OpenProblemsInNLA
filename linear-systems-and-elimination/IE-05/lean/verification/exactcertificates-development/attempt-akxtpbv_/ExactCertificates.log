@@ -1,0 +1,46 @@
+NLA/IE05/ExactCertificates.lean:36:6: error: failed to synthesize
+  Decidable
+    (∀ (i j : Fin 8), (Matrix.transpose (integerH false) * integerH false) i j = Matrix.diagonal (integerD false) i j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:36:6: error: failed to synthesize
+  Decidable (∀ (i j : Fin 8), integerH false i j = (integerLower false * integerT false) i j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:36:6: error: failed to synthesize
+  Decidable ((∀ (i : Fin 8), integerLower false i i = 1) ∧ ∀ (i j : Fin 8), i < j → integerLower false i j = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:36:6: error: failed to synthesize
+  Decidable (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:35:6: error: `simp` made no progress
+NLA/IE05/ExactCertificates.lean:35:6: error: `simp` made no progress
+NLA/IE05/ExactCertificates.lean:35:6: error: `simp` made no progress
+NLA/IE05/ExactCertificates.lean:36:6: error: failed to synthesize
+  Decidable
+    (∀ (i j : Fin 8), (Matrix.transpose (integerH true) * integerH true) i j = Matrix.diagonal (integerD true) i j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:36:6: error: failed to synthesize
+  Decidable (∀ (i j : Fin 8), integerH true i j = (integerLower true * integerT true) i j)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:36:6: error: failed to synthesize
+  Decidable ((∀ (i : Fin 8), integerLower true i i = 1) ∧ ∀ (i j : Fin 8), i < j → integerLower true i j = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:36:6: error: failed to synthesize
+  Decidable (∀ (i j : Fin 8), j < i → integerT true i j = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/ExactCertificates.lean:35:6: error: `simp` made no progress
+NLA/IE05/ExactCertificates.lean:35:6: error: `simp` made no progress
+NLA/IE05/ExactCertificates.lean:35:6: error: `simp` made no progress
+'NLA.IE05._proved.integer_factor_certificates' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/ExactCertificates.lean:55:21: error: #assert_trust: 'NLA.IE05._proved.integer_factor_certificates' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]

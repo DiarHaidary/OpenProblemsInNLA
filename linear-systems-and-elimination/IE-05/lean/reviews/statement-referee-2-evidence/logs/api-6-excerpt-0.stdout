@@ -1,0 +1,29 @@
+    let axs ← collectAxioms declName
+    let part (c : TrustClass) : Array Name := axs.filter (classifyAxiom · == c)
+    let foundational := part .foundational
+    let native := part .nativeCompiler
+    let sorries := part .sorryAx
+    let custom := part .custom
+    let breakdown : MessageData := MessageData.joinSep
+      ([(`foundational, foundational), (`nativeCompiler, native),
+        (`sorryAx, sorries), (`custom, custom)].filterMap fun (label, group) =>
+        if group.isEmpty then none
+        else some m!"  {label}: {MessageData.joinSep (group.toList.map toMessageData) ", "}")
+      "\n"
+    unless sorries.isEmpty && custom.isEmpty do
+      throwErrorAt thm "#assert_trust: '{declName}' depends on sorry or \
+        unrecognized axioms\n{breakdown}"
+    match cls.getId with
+    | `kernel =>
+      unless native.isEmpty do
+        throwErrorAt thm "#assert_trust kernel: '{declName}' is not \
+          kernel-clean\n{breakdown}"
+    | `native =>
+      if native.isEmpty then
+        throwErrorAt thm "#assert_trust native: '{declName}' has no \
+          native-compiler dependency; tighten the manifest to `kernel`"
+    | other =>
+      throwErrorAt cls "#assert_trust: unknown trust class '{other}'; \
+        expected 'kernel' or 'native'"
+
+end LeanCert.Tactic

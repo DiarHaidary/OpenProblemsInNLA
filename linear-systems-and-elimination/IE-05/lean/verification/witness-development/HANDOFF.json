@@ -1,0 +1,102 @@
+{
+  "utc": "2026-09-13T08:41:44.602025+00:00",
+  "status": "COMPLETE_SCOPED_AUTHOR_VALIDATION",
+  "scope": "Witness.lean: two exact frozen IE05 contracts and reusable real-cast/actual-trajectory helpers; excludes concurrent Growth/GrowthBounds and complete-project status",
+  "source": {
+    "path": "NLA/IE05/Witness.lean",
+    "sha256": "4fa2cfeef00d80f28475bf221082a786f2b035f1e77e47b1bfd70bc13f2e57b6",
+    "bytes": 7828
+  },
+  "completion_report": {
+    "path": "verification/witness-development/COMPLETION.md",
+    "sha256": "99eb03daceeb3df0cf7df87a032cd0b9d27efec50208b6b0a309f8e50bd3fb37",
+    "bytes": 8771
+  },
+  "audit": {
+    "path": "verification/witness-development/audit-result.json",
+    "sha256": "ec419a376709421131692acb51f5e29e9f31c8ac9cf6c0d78347360418dd94b3",
+    "bytes": 17749
+  },
+  "inspector": {
+    "path": "verification/witness-development/Inspect.lean",
+    "sha256": "c66177e40be5d8815e3822894ed26f4db281806498b0faf74dec2654383249c4",
+    "bytes": 9093
+  },
+  "exact_contracts": [
+    "NLA.IE05._proved.canonical_integer_identification",
+    "NLA.IE05._proved.witness_orthogonal_path"
+  ],
+  "actual_roots": [
+    "NLA.IE05._proved.castIntegerMatrix_transpose",
+    "NLA.IE05._proved.castIntegerMatrix_mul",
+    "NLA.IE05._proved.castIntegerMatrix_diagonal",
+    "NLA.IE05._proved.castIntegerMatrix_tailProduct",
+    "NLA.IE05._proved.castIntegerMatrix_unitLower",
+    "NLA.IE05._proved.castIntegerMatrix_upper",
+    "NLA.IE05._proved.castIntegerMatrix_lower_bound",
+    "NLA.IE05._proved.real_factor_certificates",
+    "NLA.IE05._proved.normalizedInteger_orthogonal",
+    "NLA.IE05._proved.normalizedInteger_path_trajectory",
+    "NLA.IE05._proved.normalizedInteger_trajectory_entry",
+    "NLA.IE05._proved.normalizedInteger_firstGrowth",
+    "NLA.IE05._proved.integerLower_false_prescribed",
+    "NLA.IE05._proved.canonical_integer_identification",
+    "NLA.IE05._proved.witness_orthogonal_path"
+  ],
+  "fresh_attempt": "attempt-wo2xjo06",
+  "fresh_result": {
+    "sha256": "e3cd33e82f3fa937d2afadc347f117a3668d8681c0fb842a85ff947a32178241",
+    "bytes": 21199
+  },
+  "fresh_source_commands": 9,
+  "total_seconds": 43.111243207065854,
+  "standard_three_kernel_reports": 60,
+  "witness_and_inspector_reports": 26,
+  "actual_project_declarations": 93,
+  "retained_dependencies": 56,
+  "warnings": 0,
+  "preserved_frozen_inputs": 733,
+  "original_sources": 27,
+  "clean_dependency_pins": 10,
+  "readonly_dependency_object_directories": 9,
+  "immutable_imports": {
+    "NLA/IE05/ExactCertificates.lean": "5ee8f9bc7bc79b4e0e80b85c81952ae32689661dac405edd1559f92d6eb643af",
+    "NLA/IE05/IntegerQR.lean": "fc87524d6aceddf208722daa33c855384e772425d54fd654f5f531250c67cc44",
+    "NLA/IE05/Pivot.lean": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+    "NLA/IE05/LUTrajectory.lean": "96d71b7a46ec692f9e84e6450adacfa71b9c79ef69ff17222e44173f3e6abcbb",
+    "NLA/IE05/QR.lean": "cb9e1d6d91f5e194cd2c50e2f0ae9efc3ebcb55f005078038b6c1d20747fe127",
+    "NLA/IE05/Scaling.lean": "0422f5ca2ac3cccf1f18a90e64aba5f9ead6f650d830e8813aa07e1541eeb3f5"
+  },
+  "prior_complete_handoffs": [
+    {
+      "manifest": "verification/gepp-development/EVIDENCE-MANIFEST.json",
+      "sha256": "f3854e99028561510756f6c58d024841d2e8cab4ce8d9315d45ac4b25eebd0d1",
+      "bytes": 28143,
+      "verified_bound_files": 150
+    },
+    {
+      "manifest": "verification/lu-development/EVIDENCE-MANIFEST.json",
+      "sha256": "9333e7615283fa9067b571a60f22488c884c435444d0f7a9221d8090ec5412a2",
+      "bytes": 12473,
+      "verified_bound_files": 68
+    },
+    {
+      "manifest": "verification/qr-scaling-handoff/EVIDENCE-MANIFEST.json",
+      "sha256": "b328744f06c3af7d3ae119ba28dc6d5a078ed79675d3e89fe888b6000c2f58c6",
+      "bytes": 169436,
+      "verified_bound_files": 847
+    },
+    {
+      "manifest": "verification/exactcert-diagnostic-referee/EVIDENCE-MANIFEST.json",
+      "sha256": "74d46f48c5d0a3b70da7925065b3a7c34fd7306d7a46120aee8a750bc8442420",
+      "bytes": 11188,
+      "verified_bound_files": 54
+    }
+  ],
+  "independent_review": false,
+  "actual_linux_comparator": false,
+  "proof_status_promotion": false,
+  "metadata_git_or_canonical_changes": false,
+  "author_role": "formal_review_standards AI agent; original statement and proof contributor, not an independent final referee",
+  "approved_human_credit": "George Stepaniants, Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA"
+}

@@ -1,0 +1,59 @@
+26-* `Matrix.det_of_blockTriangular`: the determinant of a block triangular matrix
+27-  is equal to the product of the determinants of all the blocks
+28:* `Matrix.det_of_isUpperTriangular` and `Matrix.det_of_isLowerTriangular`: the determinant of
+29-  a triangular matrix is the product of the entries along the diagonal
+30-
+31-## Tags
+32-
+33-matrix, diagonal, det, block triangular
+34-
+35--/
+36-
+--
+335-  exact det_isEmpty
+336-
+337:theorem det_of_isUpperTriangular [LinearOrder m] (h : M.IsUpperTriangular) :
+338-    M.det = ∏ i : m, M i i := by
+339-  have : DecidableEq R := Classical.decEq _
+340-  simp_rw [h.det, image_id, det_toSquareBlock_id]
+341-
+342:@[deprecated (since := "2026-07-30")] alias det_of_upperTriangular := det_of_isUpperTriangular
+343-
+344:theorem det_of_isLowerTriangular [LinearOrder m] (M : Matrix m m R) (h : M.IsLowerTriangular) :
+345-    M.det = ∏ i : m, M i i := by
+346-  rw [← det_transpose]
+347:  exact det_of_isUpperTriangular h.transpose
+348-
+349:@[deprecated (since := "2026-07-30")] alias det_of_lowerTriangular := det_of_isLowerTriangular
+350-
+351-open Polynomial
+352-
+353-theorem matrixOfPolynomials_blockTriangular {R} [Semiring R] {n : ℕ} (p : Fin n → R[X])
+354-    (h_deg : ∀ i, (p i).natDegree ≤ i) :
+355-    Matrix.BlockTriangular (Matrix.of (fun (i j : Fin n) => (p j).coeff i)) id :=
+356-  fun _ j h => by
+357-    exact coeff_eq_zero_of_natDegree_lt <| Nat.lt_of_le_of_lt (h_deg j) h
+--
+360-    (h_deg : ∀ i, (p i).natDegree = i) (h_monic : ∀ i, Monic <| p i) :
+361-    (Matrix.of (fun (i j : Fin n) => (p j).coeff i)).det = 1 := by
+362:  rw [Matrix.det_of_isUpperTriangular (Matrix.matrixOfPolynomials_blockTriangular p (fun i ↦
+363-      Nat.le_of_eq (h_deg i)))]
+364-  convert! prod_const_one with x _
+365-  rw [Matrix.of_apply, ← h_deg, coeff_natDegree, (h_monic x).leadingCoeff]
+366-
+367-/-! ### Invertible -/
+368-
+369-
+370-theorem BlockTriangular.toBlock_inverse_mul_toBlock_eq_one [LinearOrder α] [Invertible M]
+--
+421-
+422-/-- The inverse of a block-triangular matrix is block-triangular. -/
+423:theorem blockTriangular_inv_of_blockTriangular [LinearOrder α] [Invertible M]
+424-    (hM : BlockTriangular M b) : BlockTriangular M⁻¹ b := by
+425-  suffices ∀ hs : Finset α, univ.image b = hs → BlockTriangular M⁻¹ b by exact this _ rfl
+426-  intro s hs
+427-  induction s using Finset.strongInduction generalizing m with | H s ih =>
+428-  subst hs
+429-  intro i j hij
+430-  have : Inhabited m := ⟨i⟩
+431-  let k := (univ.image b).max' (univ_nonempty.image _)

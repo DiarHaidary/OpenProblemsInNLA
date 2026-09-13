@@ -1,0 +1,685 @@
+{
+  "approval": false,
+  "argv": [
+    "verification/validate_draft.py"
+  ],
+  "checks": [
+    "canonical base and exactly 17 original Git-bound sources",
+    "original Git bytes verification/original-sources/AGENTS.md",
+    "original Git bytes verification/original-sources/CONTRIBUTING.md",
+    "original Git bytes verification/original-sources/docs/lean/README.md",
+    "original Git bytes verification/original-sources/docs/lean/REVIEW.md",
+    "original Git bytes verification/original-sources/docs/lean/schema/README.md",
+    "original Git bytes verification/original-sources/docs/lean/schema/v0.4.schema.json",
+    "original Git bytes verification/original-sources/eigenvalues-and-inverse-problems/KE-04/README.md",
+    "original Git bytes verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.md",
+    "original Git bytes verification/original-sources/eigenvalues-and-inverse-problems/KE-04/solution.tex",
+    "original Git bytes verification/original-sources/problem_ids.json",
+    "original Git bytes verification/original-sources/references/colbrook-2026-09-11/README.md",
+    "original Git bytes verification/original-sources/references/colbrook-2026-09-11/verification/README.md",
+    "original Git bytes verification/original-sources/references/colbrook-2026-09-11/verification/reviews/KE-04-review.md",
+    "original Git bytes verification/original-sources/tools/lean/HARNESS.md",
+    "original Git bytes verification/original-sources/tools/lean/source-lock.json",
+    "original Git bytes verification/original-submission/solution.md",
+    "original Git bytes verification/original-target/README.md",
+    "permanent canonical ID/path",
+    "bounded eligibility evidence hash",
+    "Solved and no existing canonical Lean project at observed current base",
+    "three complete all-state bounded searches",
+    "only classified PRs 6 and 143 returned",
+    "original submitted and current complete theorem/proof block identical",
+    "Definitions has no placeholder, axiom, unsafe or native decision declaration",
+    "27 concrete definitions and 24 exact reference targets",
+    "all and only Challenge theorem bodies are intentional placeholders",
+    "Comparator configuration has no definition holes and only standard axioms",
+    "no proof/Solution/publication manifest or private cache in project root",
+    "no binary build objects or symlinks retained anywhere in project",
+    "successful fresh statement-only attempt",
+    "immutable input snapshot NLA/KE04/Definitions.lean",
+    "current source still equals elaborated bytes NLA/KE04/Definitions.lean",
+    "immutable input snapshot Challenge.lean",
+    "current source still equals elaborated bytes Challenge.lean",
+    "immutable input snapshot lean-toolchain",
+    "current source still equals elaborated bytes lean-toolchain",
+    "immutable input snapshot lakefile.toml",
+    "current source still equals elaborated bytes lakefile.toml",
+    "immutable input snapshot lake-manifest.json",
+    "current source still equals elaborated bytes lake-manifest.json",
+    "immutable input snapshot comparator.json",
+    "current source still equals elaborated bytes comparator.json",
+    "immutable input snapshot verification/statement-development/check_statements.py",
+    "current source still equals elaborated bytes verification/statement-development/check_statements.py",
+    "immutable input snapshot InspectDefinitions.lean",
+    "immutable input snapshot InspectTypes.lean",
+    "actual Lean command exit 0: /Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean --version",
+    "actual Lean command exit 0: /Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean -o /var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-statement-objects-sv2b7h4z/NLA/KE04/Definitions.olean NLA/KE04/Definitions.lean",
+    "actual log hash Definitions.log",
+    "actual Lean command exit 0: /Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean -o /var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-statement-objects-sv2b7h4z/Challenge.olean Challenge.lean",
+    "actual log hash Challenge.log",
+    "actual Lean command exit 0: /Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean -o /var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-statement-objects-sv2b7h4z/InspectDefinitions.olean InspectDefinitions.lean",
+    "actual log hash InspectDefinitions.log",
+    "actual Lean command exit 0: /Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean -o /var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-ke04-statement-objects-sv2b7h4z/InspectTypes.olean InspectTypes.lean",
+    "actual log hash InspectTypes.log",
+    "four actual Lean modules elaborated",
+    "dependency_preflight has ten unchanged clean pinned sources",
+    "dependency_postflight has ten unchanged clean pinned sources",
+    "both actual dependency snapshots equal all ten manifest pins",
+    "Cli is tooling-only and no imported build directory exists",
+    "all 27 actual transitive definition axiom sets permitted",
+    "27 explicit kernel trust checks excluding Challenge",
+    "24 actual placeholder warnings retained",
+    "only own private objects hashed and removed attempt-2n_e6pes",
+    "only own private objects hashed and removed attempt-xrn2jug1",
+    "successful exact selected API/reference source capture",
+    "selected source content and Git blob verification/api-evidence-complete/forsythe/lean-proof/Challenge.lean",
+    "fresh external Git binding verification/api-evidence-complete/forsythe/lean-proof/Challenge.lean",
+    "selected source content and Git blob verification/api-evidence-complete/forsythe/lean-proof/LICENSE",
+    "fresh external Git binding verification/api-evidence-complete/forsythe/lean-proof/LICENSE",
+    "selected source content and Git blob verification/api-evidence-complete/forsythe/lean-proof/NUMERICAL_TARGETS.md",
+    "fresh external Git binding verification/api-evidence-complete/forsythe/lean-proof/NUMERICAL_TARGETS.md",
+    "selected source content and Git blob verification/api-evidence-complete/forsythe/lean-proof/ProofProject/CheckedMultivariateBound.lean",
+    "fresh external Git binding verification/api-evidence-complete/forsythe/lean-proof/ProofProject/CheckedMultivariateBound.lean",
+    "selected source content and Git blob verification/api-evidence-complete/forsythe/lean-proof/comparator.json",
+    "fresh external Git binding verification/api-evidence-complete/forsythe/lean-proof/comparator.json",
+    "selected source content and Git blob verification/api-evidence-complete/leancert/LeanCert/Tactic/Verification.lean",
+    "fresh external Git binding verification/api-evidence-complete/leancert/LeanCert/Tactic/Verification.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/PiL2.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/Positive.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/Spectrum.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/Analysis/InnerProductSpace/Spectrum.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/Order.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/Order.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/PosDef.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/PosDef.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/Spectrum.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/Analysis/Matrix/Spectrum.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/Data/Fin/Rev.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/Data/Fin/Rev.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Dimension/Constructions.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Dimension/Constructions.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/LinearIndependent/Defs.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/LinearIndependent/Defs.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Matrix/Hermitian.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Matrix/Hermitian.lean",
+    "selected source content and Git blob verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Matrix/PosDef.lean",
+    "fresh external Git binding verification/api-evidence-complete/mathlib/Mathlib/LinearAlgebra/Matrix/PosDef.lean",
+    "selected source content and Git blob verification/api-evidence-complete/schiffer/Schiffer/Challenge.lean",
+    "fresh external Git binding verification/api-evidence-complete/schiffer/Schiffer/Challenge.lean",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/README.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/README.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/_common.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/api-design.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/attribution.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/correctness.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/documentation.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/generality.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/naming.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/placement.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/proof-quality.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/reuse.md",
+    "selected source content and Git blob verification/api-evidence-complete/tauceti/rubrics/scope.md",
+    "actual search log hash verification/api-evidence-complete/spectral.log",
+    "actual search log hash verification/api-evidence-complete/subspace.log",
+    "actual search log hash verification/api-evidence-complete/positive.log",
+    "actual search log hash verification/api-evidence-complete/krylov_reuse.log",
+    "actual search log hash verification/api-evidence-complete/trust.log",
+    "retained initial reporting and both API capture failures"
+  ],
+  "commands": [
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:AGENTS.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 1272,
+      "output_sha256": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:CONTRIBUTING.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 10507,
+      "output_sha256": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/README.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 7278,
+      "output_sha256": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/REVIEW.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 3110,
+      "output_sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/README.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 525,
+      "output_sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:docs/lean/schema/v0.4.schema.json"
+      ],
+      "exit_code": 0,
+      "output_bytes": 12694,
+      "output_sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/README.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 4072,
+      "output_sha256": "20ff79f2a4c9fbbd456a5167f6e634df7473a6415141fcfc01d85b49fea8a057",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 5279,
+      "output_sha256": "dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:eigenvalues-and-inverse-problems/KE-04/solution.tex"
+      ],
+      "exit_code": 0,
+      "output_bytes": 7259,
+      "output_sha256": "06ef0d4fa338bfc981892856c175c2c9bc828fd48edbdec32b048c752d659c8f",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:problem_ids.json"
+      ],
+      "exit_code": 0,
+      "output_bytes": 13264,
+      "output_sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/README.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 6825,
+      "output_sha256": "d8d9bcbe3ead5700ece3a26c355e6e6a0b949d33d2f0fd6bf0923d3d6914c5e2",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/README.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 1026,
+      "output_sha256": "659832e5fbd443013bc5d176016b41444fd19c447cc4b03fa1bb021f6759d646",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:references/colbrook-2026-09-11/verification/reviews/KE-04-review.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 8450,
+      "output_sha256": "299abf4d5f6b5ae14245d812c91f87a3ee8696f111d38be7306e486e18f867b6",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/HARNESS.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 5538,
+      "output_sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "5830ed4fb06da0659414a3deb2a40ad327aca052:tools/lean/source-lock.json"
+      ],
+      "exit_code": 0,
+      "output_bytes": 15982,
+      "output_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "fe025e14d2639cbae59f98cacf4023d83addcb89:eigenvalues-and-inverse-problems/KE-04/solution.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 4791,
+      "output_sha256": "cce35a0b596e6e65bba010156cd32867afb3ee15b294cab30b76b612ab67256d",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-ra20-worktree",
+        "show",
+        "b4123194697bdf6f8f82518c1dd7d6c40a30c2e0:eigenvalues-and-inverse-problems/KE-04/README.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 2711,
+      "output_sha256": "7ec36508b8a5d21f8746a54801aadf60b46dfbbe2f1fb005585fff04aece3669",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/georgestepaniants/Research/Forsythe",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/Challenge.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 1399,
+      "output_sha256": "bcbc89b32f46f6d9c33bbc919d4b08b0e3e797e8b87745485e1decd059c07a8d",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/georgestepaniants/Research/Forsythe",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/LICENSE"
+      ],
+      "exit_code": 0,
+      "output_bytes": 11358,
+      "output_sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/georgestepaniants/Research/Forsythe",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/NUMERICAL_TARGETS.md"
+      ],
+      "exit_code": 0,
+      "output_bytes": 5589,
+      "output_sha256": "2e25ed916080e6405f7b0a39e45641ef6f88389f26a6a142bc3036528dfc4119",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/georgestepaniants/Research/Forsythe",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/ProofProject/CheckedMultivariateBound.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 14537,
+      "output_sha256": "cddab7954e4e6616f9bf65bcb967e2ac166b5e8fecab686a04cd218a4e22aa18",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/Users/georgestepaniants/Research/Forsythe",
+        "show",
+        "8d1b0c0545a77b40245e84705aa7d273e6c81e62:lean-proof/comparator.json"
+      ],
+      "exit_code": 0,
+      "output_bytes": 460,
+      "output_sha256": "b18070414f3dd6a2626878dd19cd5aff5dc22a0feb51a469bb6c57d862a48bf7",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+        "show",
+        "621a43d7cf21f87872392a01e874f2f1dbddc926:LeanCert/Tactic/Verification.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 29145,
+      "output_sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/PiL2.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 61065,
+      "output_sha256": "1f9827b2db67213c725a2dcc3fec52a87772966d1fbd3fc6857a019dbd7a6053",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/Positive.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 26516,
+      "output_sha256": "e96b2c28a53ab1a17abcccec25f17682a914be43273346afbddfde8503e7b24d",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/InnerProductSpace/Spectrum.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 24198,
+      "output_sha256": "f12ef613416053c759ef30179147744c64eeec90f7467644cb30e64d532d7aa6",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/Order.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 16271,
+      "output_sha256": "eb786ba4435f1955c504da52de2beae76647d814922266c8aac8f082bbc3e2da",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/PosDef.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 5724,
+      "output_sha256": "d019fb2cae81293d8505e2a2543a6f5fe7c1819e4860454d00e15ef74528a43d",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Analysis/Matrix/Spectrum.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 11285,
+      "output_sha256": "1ad47effa0a5fbc373ebb6cf52a6b85a66b25d3c5a86394f3dd5932ffbfc3afe",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/Data/Fin/Rev.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 4156,
+      "output_sha256": "cd616713110393338bd880146a89ac3dce464df31d107d96fa652164727f4888",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Dimension/Constructions.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 25316,
+      "output_sha256": "039f43b60c6dc3dec90e085beb9ee9dfe46da0d2a4d83f730ee274f337f29548",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/FiniteDimensional/Lemmas.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 19548,
+      "output_sha256": "2b383a91a6e4566f630b2c682506d4305a0098d9d085387e9e3bdb1d3126f129",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Finsupp/LinearCombination.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 23450,
+      "output_sha256": "f8e79ad4a35781c09b7de25fcf491f1d17306cb50a7446d985cabedfc09f20da",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/LinearIndependent/Defs.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 43235,
+      "output_sha256": "a52ccf21d86a16e690674f4a978da5a2a531f602c659d661c7d21586bb9994d1",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Matrix/Hermitian.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 15986,
+      "output_sha256": "9f4e84cafd93f05935d8accc2846a4d624c1fe994c53ab348b8338464bf5cb21",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+        "show",
+        "0df444a360eaa60ab8c11dca51a86af692955474:Mathlib/LinearAlgebra/Matrix/PosDef.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 27238,
+      "output_sha256": "09290b5923e167fcf959df64d00b039c7b99c4b236755728219bf5b5feaac24a",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "git",
+        "-C",
+        "/tmp/nla-lean-formalization/leancert-examples/Schiffer",
+        "show",
+        "2938e277969c329caf154e48a3d8823f3635c7f1:Schiffer/Challenge.lean"
+      ],
+      "exit_code": 0,
+      "output_bytes": 5473,
+      "output_sha256": "bc31fcc14f816c2e3b756bdea74c6c791aae2d34fa055ae2a8c6a218b209f267",
+      "stderr": ""
+    }
+  ],
+  "cwd": "/private/tmp/nla-lean-formalization/next-ke04-statements-draft/lean",
+  "inputs": {
+    "Challenge.lean": {
+      "bytes": 9302,
+      "sha256": "a27de227d483072e395b6658a97cbf31296503c7fab36e5f9dbf248b2efa299e"
+    },
+    "LICENSE": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "NLA/KE04/Definitions.lean": {
+      "bytes": 6450,
+      "sha256": "ae1baccc0cb622f83103eff8bb4a5efe4cd9a3bae4822ccca38da29554ae9ca4"
+    },
+    "NUMERICAL_TARGETS.md": {
+      "bytes": 8974,
+      "sha256": "ad963526a371cdfee8eaaf179674d5cabd2a1d5a9ae5b123c96ac2f2b4271c47"
+    },
+    "README.md": {
+      "bytes": 5196,
+      "sha256": "109bb18f8d0197a215066544923ccb6acf01da1c2a7498a410049d4ed09a8e75"
+    },
+    "SourceCorrespondence.md": {
+      "bytes": 17439,
+      "sha256": "1a4c2c6fcdaac365b2a8a89e45cba57cd86c09aedfd149a1a7fda5bd9d1de41d"
+    },
+    "comparator.json": {
+      "bytes": 1212,
+      "sha256": "c0c7086cb81abe8f422762d0db2cc55419828f08ba80d33f9157cb3f396a8b8e"
+    },
+    "lake-manifest.json": {
+      "bytes": 3884,
+      "sha256": "6590a604a552411f07cd4806d378bf6c8ed3f2cf3b957b2b41b0e7669dcf29c6"
+    },
+    "lakefile.toml": {
+      "bytes": 358,
+      "sha256": "1e860d6ff5d2754de834dcb8d458f3d95e4da3ad43a7b5ecbd48e91ed2f18363"
+    },
+    "lean-toolchain": {
+      "bytes": 25,
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+    },
+    "verification/README.md": {
+      "bytes": 5916,
+      "sha256": "fbbb0db7084a2575834bb8c71b176daf8aa781007dc3e84a675f3f3ef37c23a6"
+    },
+    "verification/api-evidence-complete/manifest.json": {
+      "bytes": 34866,
+      "sha256": "ed70b651127277936ceb2f80c521a81cd55b4bbe4d9be66fdad73d984aa1aaf2"
+    },
+    "verification/eligibility.json": {
+      "bytes": 3116,
+      "sha256": "18c1b8a8f9cd6ce82bf8316e7821f7a72b123a5b10e93360605f58dc71ac0bdb"
+    },
+    "verification/original-source-inventory.json": {
+      "bytes": 11225,
+      "sha256": "abd69d833529a547b2418f2d16f3110142b80bce6bb38e2dde371e3dff3c24d5"
+    },
+    "verification/statement-development/check_statements.py": {
+      "bytes": 10072,
+      "sha256": "0067eeb8b567791d16e51fdaeb1d1111461b4f053d6533eb812f22e636bcbcfc"
+    }
+  },
+  "phase": "author statement integrity only",
+  "platform_scope": "macOS source development",
+  "proof_authorized": false,
+  "success": true,
+  "utc": "2026-09-13T07:32:02.987407+00:00"
+}

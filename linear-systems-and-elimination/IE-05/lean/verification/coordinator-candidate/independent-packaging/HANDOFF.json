@@ -1,0 +1,45 @@
+{
+  "actual_Linux_Comparator": "pending",
+  "actual_harness_static_validate_project": "PASS",
+  "actual_independent_audit": {
+    "attempt": "attempt-_70cr1as",
+    "result_sha256": "832555a0cd3bcc1a572d4314dca8e7a5ca033e276048b6b68eb9dbca88e06ebd",
+    "success": true
+  },
+  "actual_schema": "PASS 17 declarations",
+  "candidate": "/private/tmp/nla-lean-formalization/ie05-candidate-package/lean",
+  "candidate_files": 2405,
+  "candidate_handoff": {
+    "bytes": 5931,
+    "path": "verification/candidate-package/HANDOFF.md",
+    "sha256": "c0f1b96cabf0b00d065272260d94e143464ec4d6422f4677e308783397025f58"
+  },
+  "candidate_manifest": {
+    "bytes": 468845,
+    "path": "verification/candidate-inputs.json",
+    "sha256": "b1259a165e924357b5474dcb9620ab316dec218e31a95665138cde4359f285e7"
+  },
+  "canonical_status": "Solved unchanged",
+  "commit_push_PR_or_publication": false,
+  "current_governance_commit": "1c467f88fbf6f6853afe5562e17b81ab421b95a6",
+  "fresh_audit_commands": 5,
+  "historical_inventories": 29,
+  "historical_member_checks": 14280,
+  "independent_scope": "Read-only concrete package/provenance/metadata integrity review; no candidate authorship or proof changes",
+  "new_Lean_build": false,
+  "new_mathematical_approval": false,
+  "original_Git_snapshots": 27,
+  "original_draft_files": 2338,
+  "original_mathematical_commit": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+  "own_outer": "EVIDENCE-MANIFEST.json",
+  "report": {
+    "bytes": 7652,
+    "path": "REPORT.md",
+    "sha256": "c14f6635b8e702fde6217b92bd49cfe25d2b693c191570fcadd0e4bb4dd681a3"
+  },
+  "reviewer": "OpenAI Codex /root/mf16_final_referee",
+  "role": "Independent candidate-packaging review, separate from prior sealed final mathematical review2",
+  "verdict": "APPROVE exact candidate for coordinator installation and subsequent Linux gate",
+  "verification_command": "python3 seal.py --verify",
+  "whole_problem_verified_claim": false
+}

@@ -1,0 +1,133 @@
+$ systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-ha4bcvn6/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+Building Challenge
+✔ [2378/2380] Built NLA.IE05.Definitions (1.9s)
+⚠ [2379/2380] Built Challenge (1.6s)
+warning: Challenge.lean:14:8: declaration uses `sorry`
+warning: Challenge.lean:19:8: declaration uses `sorry`
+warning: Challenge.lean:24:8: declaration uses `sorry`
+warning: Challenge.lean:30:8: declaration uses `sorry`
+warning: Challenge.lean:36:8: declaration uses `sorry`
+warning: Challenge.lean:42:8: declaration uses `sorry`
+warning: Challenge.lean:48:8: declaration uses `sorry`
+warning: Challenge.lean:54:8: declaration uses `sorry`
+warning: Challenge.lean:63:8: declaration uses `sorry`
+warning: Challenge.lean:73:8: declaration uses `sorry`
+warning: Challenge.lean:83:8: declaration uses `sorry`
+warning: Challenge.lean:88:8: declaration uses `sorry`
+warning: Challenge.lean:96:8: declaration uses `sorry`
+warning: Challenge.lean:105:8: declaration uses `sorry`
+warning: Challenge.lean:111:8: declaration uses `sorry`
+warning: Challenge.lean:115:8: declaration uses `sorry`
+warning: Challenge.lean:119:8: declaration uses `sorry`
+Build completed successfully (2380 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.IE05.entryMax_semantics, NLA.IE05.schurStep_bound, NLA.IE05.gepp_growth_bound, NLA.IE05.firstPath_semantics, NLA.IE05.orthogonalGrowthSet_bounded, NLA.IE05.candidate_positiveQR, NLA.IE05.scaledColumns_orthogonal, NLA.IE05.scaledLU_trajectory, NLA.IE05.integer_factor_certificates, NLA.IE05.integer_entry_certificates, NLA.IE05.canonical_integer_identification, NLA.IE05.witness_orthogonal_path, NLA.IE05.bounded_growth_data, NLA.IE05.numerical_gap_positive, NLA.IE05.witness_strict_growth, NLA.IE05.supremum_strict_gap, NLA.IE05.orthogonalExtremizerConjecture, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+✔ [3076/3089] Built LeanCert.Tactic.Verification (1.9s)
+ℹ [3077/3089] Built NLA.IE05.Pivot (2.9s)
+info: NLA/IE05/Pivot.lean:146:0: 'NLA.IE05.firstPivotIndex_spec_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Pivot.lean:148:0: 'NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Pivot.lean:150:0: 'NLA.IE05.firstPivotIndex_firstAvailable_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Pivot.lean:152:0: 'NLA.IE05.trajectory_firstPath_eq_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Pivot.lean:154:0: 'NLA.IE05.firstPath_eq_of_firstAvailable_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3078/3089] Built NLA.IE05.Scaling (3.1s)
+info: NLA/IE05/Scaling.lean:45:0: 'NLA.IE05._proved.scaledColumns_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3079/3089] Built NLA.IE05.ExactCertificates (4.0s)
+info: NLA/IE05/ExactCertificates.lean:59:0: 'NLA.IE05._proved.integer_factor_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/ExactCertificates.lean:61:0: 'NLA.IE05._proved.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/ExactCertificates.lean:63:0: 'NLA.IE05._proved.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3080/3089] Built NLA.IE05.GEPP (4.5s)
+info: NLA/IE05/GEPP.lean:293:0: 'NLA.IE05.entryMax_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:295:0: 'NLA.IE05.schurStep_bound_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:297:0: 'NLA.IE05.gepp_growth_bound_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:299:0: 'NLA.IE05.activeInjective_initial_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:301:0: 'NLA.IE05.activeInjective_nonzero_column_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:303:0: 'NLA.IE05.activeInjective_rowSwap_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:305:0: 'NLA.IE05.schurStep_mulVec_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:307:0: 'NLA.IE05.activeInjective_schur_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:309:0: 'NLA.IE05.firstTrajectory_activeInjective_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:311:0: 'NLA.IE05.firstPath_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GEPP.lean:313:0: 'NLA.IE05.orthogonalGrowthSet_bounded_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3081/3089] Built NLA.IE05.LUTrajectory (4.8s)
+info: NLA/IE05/LUTrajectory.lean:159:0: 'NLA.IE05._proved.tailProduct_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/LUTrajectory.lean:161:0: 'NLA.IE05._proved.tailProduct_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/LUTrajectory.lean:163:0: 'NLA.IE05._proved.tailProduct_pivot_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/LUTrajectory.lean:165:0: 'NLA.IE05._proved.tailProduct_pivot_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/LUTrajectory.lean:167:0: 'NLA.IE05._proved.tailProduct_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/LUTrajectory.lean:169:0: 'NLA.IE05._proved.scaled_tail_schur' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/LUTrajectory.lean:171:0: 'NLA.IE05._proved.scaled_tail_firstAvailable' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/LUTrajectory.lean:173:0: 'NLA.IE05._proved.scaled_noSwap_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/LUTrajectory.lean:175:0: 'NLA.IE05._proved.scaledLU_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3082/3089] Built NLA.IE05.QR (4.8s)
+info: NLA/IE05/QR.lean:175:0: 'NLA.IE05._proved.euclideanColumns_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:177:0: 'NLA.IE05._proved.orthogonal_iff_orthonormal_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:179:0: 'NLA.IE05._proved.euclideanColumns_linearIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:181:0: 'NLA.IE05._proved.euclideanColumns_normalizedQRQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:183:0: 'NLA.IE05._proved.normalizedQRQ_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:185:0: 'NLA.IE05._proved.gramSchmidt_inner_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:187:0: 'NLA.IE05._proved.normalizedQRQ_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:189:0: 'NLA.IE05._proved.normalizedQRQ_diagonal_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:191:0: 'NLA.IE05._proved.normalizedQRQ_positiveQR' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:193:0: 'NLA.IE05._proved.prescribedLower_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:195:0: 'NLA.IE05._proved.positiveQR_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:197:0: 'NLA.IE05._proved.positiveQR_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:199:0: 'NLA.IE05._proved.gramSchmidt_eq_of_positiveQR' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:201:0: 'NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/QR.lean:203:0: 'NLA.IE05._proved.candidate_positiveQR' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3083/3089] Built NLA.IE05.GrowthBounds (2.3s)
+info: NLA/IE05/GrowthBounds.lean:41:0: 'NLA.IE05._proved.abs_div_sqrt_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GrowthBounds.lean:43:0: 'NLA.IE05._proved.abs_div_sqrt_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GrowthBounds.lean:45:0: 'NLA.IE05._proved.entryMax_le_from_entries' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/GrowthBounds.lean:47:0: 'NLA.IE05._proved.growth_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3084/3089] Built NLA.IE05.IntegerQR (1.0s)
+info: NLA/IE05/IntegerQR.lean:67:0: 'NLA.IE05._proved.normalizedQRQ_of_gram_lu' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3085/3089] Built NLA.IE05.Witness (2.2s)
+info: NLA/IE05/Witness.lean:149:0: 'NLA.IE05._proved.castIntegerMatrix_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:151:0: 'NLA.IE05._proved.castIntegerMatrix_tailProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:153:0: 'NLA.IE05._proved.castIntegerMatrix_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:155:0: 'NLA.IE05._proved.real_factor_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:157:0: 'NLA.IE05._proved.normalizedInteger_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:159:0: 'NLA.IE05._proved.normalizedInteger_path_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:161:0: 'NLA.IE05._proved.normalizedInteger_trajectory_entry' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:163:0: 'NLA.IE05._proved.normalizedInteger_firstGrowth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:165:0: 'NLA.IE05._proved.integerLower_false_prescribed' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:167:0: 'NLA.IE05._proved.canonical_integer_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Witness.lean:169:0: 'NLA.IE05._proved.witness_orthogonal_path' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3086/3089] Built NLA.IE05.Growth (2.4s)
+info: NLA/IE05/Growth.lean:143:0: 'NLA.IE05._proved.witness_entryMax_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:145:0: 'NLA.IE05._proved.witness_final_pivot' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:147:0: 'NLA.IE05._proved.witness_peak_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:149:0: 'NLA.IE05._proved.witness_growth_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:151:0: 'NLA.IE05._proved.candidate_entryMax_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:153:0: 'NLA.IE05._proved.candidate_peak_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:155:0: 'NLA.IE05._proved.candidate_growth_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:157:0: 'NLA.IE05._proved.candidate_growth_sq_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:159:0: 'NLA.IE05._proved.bounded_growth_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:161:0: 'NLA.IE05._proved.witness_strict_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:163:0: 'NLA.IE05._proved.supremum_strict_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Growth.lean:165:0: 'NLA.IE05._proved.orthogonalExtremizerConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3087/3089] Built NLA.IE05.Proof (2.2s)
+info: NLA/IE05/Proof.lean:142:0: 'NLA.IE05.entryMax_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:144:0: 'NLA.IE05.schurStep_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:146:0: 'NLA.IE05.gepp_growth_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:148:0: 'NLA.IE05.firstPath_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:150:0: 'NLA.IE05.orthogonalGrowthSet_bounded' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:152:0: 'NLA.IE05.candidate_positiveQR' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:154:0: 'NLA.IE05.scaledColumns_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:156:0: 'NLA.IE05.scaledLU_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:158:0: 'NLA.IE05.integer_factor_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:160:0: 'NLA.IE05.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:162:0: 'NLA.IE05.canonical_integer_identification' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:164:0: 'NLA.IE05.witness_orthogonal_path' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:166:0: 'NLA.IE05.bounded_growth_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:168:0: 'NLA.IE05.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:170:0: 'NLA.IE05.witness_strict_growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:172:0: 'NLA.IE05.supremum_strict_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/IE05/Proof.lean:174:0: 'NLA.IE05.orthogonalExtremizerConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+✔ [3088/3089] Built Solution (1.9s)
+Build completed successfully (3089 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.IE05.entryMax_semantics, NLA.IE05.schurStep_bound, NLA.IE05.gepp_growth_bound, NLA.IE05.firstPath_semantics, NLA.IE05.orthogonalGrowthSet_bounded, NLA.IE05.candidate_positiveQR, NLA.IE05.scaledColumns_orthogonal, NLA.IE05.scaledLU_trajectory, NLA.IE05.integer_factor_certificates, NLA.IE05.integer_entry_certificates, NLA.IE05.canonical_integer_identification, NLA.IE05.witness_orthogonal_path, NLA.IE05.bounded_growth_data, NLA.IE05.numerical_gap_positive, NLA.IE05.witness_strict_growth, NLA.IE05.supremum_strict_gap, NLA.IE05.orthogonalExtremizerConjecture, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+
+EXIT_STATUS=0

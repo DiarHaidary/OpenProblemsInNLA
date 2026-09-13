@@ -1,0 +1,22 @@
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-window-k3h_4ob1/src/NLA/KE04/SpectralWindow.lean:42:36: error(lean.unknownIdentifier): Unknown constant `Matrix.mul_eq_one_comm.mp`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-window-k3h_4ob1/src/NLA/KE04/SpectralWindow.lean:56:6: error: Type mismatch: After simplification, term
+  hchar
+ has type
+  @Eq (Polynomial ℝ) (Matrix.charpoly (compression A Q)) (Matrix.charpoly (compression A R))
+but is expected to have type
+  @Eq (Polynomial ℝ) (Matrix.conjTranspose Q * A * Q).charpoly (Matrix.conjTranspose R * A * R).charpoly
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-window-k3h_4ob1/src/NLA/KE04/SpectralWindow.lean:65:21: error(lean.unknownIdentifier): Unknown constant `Submodule.mem_span_range_iff_exists_fun.mp`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-window-k3h_4ob1/src/NLA/KE04/SpectralWindow.lean:65:9: error: Tactic `rcases` failed: `x✝ : ?m.37` is not an inductive datatype
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-window-k3h_4ob1/src/NLA/KE04/SpectralWindow.lean:129:16: error(lean.unknownIdentifier): Unknown constant `Submodule.finrank_span_eq_card`
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-window-k3h_4ob1/src/NLA/KE04/SpectralWindow.lean:132:21: error: #assert_trust: 'NLA.KE04._proved.compression_basis_independent' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-window-k3h_4ob1/src/NLA/KE04/SpectralWindow.lean:133:21: error: #assert_trust: 'NLA.KE04._proved.orthonormal_span_form_nonpos' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/ke04-spectral-window-k3h_4ob1/src/NLA/KE04/SpectralWindow.lean:134:21: error: #assert_trust: 'NLA.KE04._proved.spectral_window_subspace' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.compression_basis_independent' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.orthonormal_span_form_nonpos' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.KE04._proved.spectral_window_subspace' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,0 +1,105 @@
+NLA/KE04/Intersection.lean:30:36: error(lean.synthInstanceFailed): failed to synthesize instance of type class
+  Min Type
+
+Hint: Type class instance resolution failures can be inspected with the `set_option trace.Meta.synthInstance true` command.
+NLA/KE04/Intersection.lean:32:10: error(lean.invalidField): Invalid field notation: Type of
+  x
+is not known; cannot resolve field `val`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `AddUnits.val`
+  • `Char.val`
+  • `DerivedWanted.val`
+  • `Fin.val`
+  • `Finset.val`
+  • `IntermediateField.val`
+  • `NonScalar.val`
+  • `PNat.val`
+  • `PreQuasiregular.val`
+  • `Subalgebra.val`
+  • `SubalgebraClass.val`
+  • `Subtype.val`
+  • `Units.val`
+  • `ZMod.val`
+  • `Array.Mem.val`
+  • `Lean.ExprStructEq.val`
+  • `OrderHom.Subtype.val`
+  • `ST.Out.val`
+  • `Vector.Mem.val`
+  • `Lean.Doc.Parser.val`
+  • `Lean.Doc.WithSyntax.val`
+  • `Lean.Elab.FieldInfo.val`
+  • `Lean.LLVM.AttributeIndex.val`
+  • `Lean.LLVM.CodegenFileType.val`
+  • `Lean.LLVM.DLLStorageClass.val`
+  • `Lean.LLVM.IntPredicate.val`
+  • `Lean.LLVM.Linkage.val`
+  • `Lean.LLVM.Visibility.val`
+  • `Lean.Language.DynamicSnapshot.val`
+  • `Lean.Language.SyntaxGuarded.val`
+  • `Lean.Meta.InstanceEntry.val`
+  • `Lean.Meta.UnificationHintEntry.val`
+  • `Lean.Server.WithRpcRef.val`
+  • `Module.End.Eigenvalues.val`
+  • `Module.End.UnifEigenvalues.val`
+  • `Std.Time.Timestamp.val`
+  • `Std.Time.WallTime.val`
+  • `Batteries.BinomialHeap.Imp.FindMin.val`
+  • `Lean.Elab.ComputedFields.Context.val`
+  • `Lean.Elab.Term.LetRecToLift.val`
+  • `Lean.Elab.Term.NamedArg.val`
+  • `Lean.Meta.Match.Example.val`
+  • `Lean.Meta.Match.Pattern.val`
+  • `Lean.Meta.Sym.BitVecValue.val`
+  • `Lean.Meta.Sym.FinValue.val`
+  • `Lean.Meta.SynthInstance.Instance.val`
+  • `Std.Sat.AIG.Fanin.val`
+  • `Std.Time.Internal.UnitVal.val`
+  • `Lean.Compiler.LCNF.FixedParams.AbsValue.val`
+  • `Lean.Elab.Term.StructInst.FieldView.val`
+  • `Lean.Meta.Try.Collector.InductionCandidate.val`
+  • `Mathlib.Tactic.Ring.Common.Result.val`
+  • `Std.Tactic.BVDecide.BVExpr.WithCache.val`
+  • `Lean.Meta.Grind.Arith.Cutsat.SymbolicBound.val`
+NLA/KE04/Intersection.lean:32:21: error(lean.invalidField): Invalid field notation: Type of
+  x
+is not known; cannot resolve field `property`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `Subtype.property`
+  • `List.Cursor.property`
+  • `Lean.Lsp.CompletionItemKind.property`
+  • `Lean.Lsp.SemanticTokenType.property`
+  • `Lean.Lsp.SymbolKind.property`
+  • `Std.DTreeMap.Internal.Cell.property`
+  • `Std.Sat.AIG.RelabelNat.State.Inv1.property`
+  • `Std.Sat.AIG.RelabelNat.State.Inv2.property`
+NLA/KE04/Intersection.lean:32:35: error(lean.invalidField): Invalid field notation: Type of
+  x
+is not known; cannot resolve field `property`
+
+Hint: Consider replacing the field projection with a call to one of the following:
+  • `Subtype.property`
+  • `List.Cursor.property`
+  • `Lean.Lsp.CompletionItemKind.property`
+  • `Lean.Lsp.SemanticTokenType.property`
+  • `Lean.Lsp.SymbolKind.property`
+  • `Std.DTreeMap.Internal.Cell.property`
+  • `Std.Sat.AIG.RelabelNat.State.Inv1.property`
+  • `Std.Sat.AIG.RelabelNat.State.Inv2.property`
+NLA/KE04/Intersection.lean:35:8: error: stuck at solving universe constraint
+  ?u.151 + 1 =?= max 1 ?u.154
+while trying to unify
+  Eq.{?u.151 + 1} x (OfNat.ofNat.{?u.151} 0) : Prop
+with
+  Eq.{max 1 ?u.154} x (OfNat.ofNat.{?u.151} 0) : Prop
+NLA/KE04/Intersection.lean:19:56: error: stuck at solving universe constraint
+  ?u.151 + 1 =?= max 1 ?u.154
+while trying to unify
+  Eq.{?u.151 + 1} x (OfNat.ofNat.{?u.151} 0) : Prop
+with
+  Eq.{max 1 ?u.154} x (OfNat.ofNat.{?u.151} 0) : Prop
+NLA/KE04/Intersection.lean:37:21: error: #assert_trust: 'NLA.KE04._proved.krylov_intersection_nonzero' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.KE04._proved.krylov_intersection_nonzero' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

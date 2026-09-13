@@ -1,0 +1,46 @@
+{
+  "utc": "2026-09-13T07:11:35.296459+00:00",
+  "problem": "IE-05",
+  "proof_authorized": true,
+  "statement_freeze_sha256": "bd329885eb323bd4f3fd40879649b56c201918d8c2bd6f63fbd0e86f48ca770c",
+  "coordinator_acceptance_sha256": "8699a4d78b4e4d43a668c68369bd333edc368b44fb69a7b21d9dd9a2c95e02f8",
+  "coordinator_evidence_sha256": "56dfb3263d2aa9f0c411addfdb1cfb1b821347571e5a153a94008e0bf4f0fb8c",
+  "independent_statement_approvals": 2,
+  "complete_original_target": "Negation of the full all-dimensional orthogonal GEPP extremizer equality, with actual QR, all admissible tie paths and real supremum",
+  "contracts": [
+    "NLA.IE05.entryMax_semantics",
+    "NLA.IE05.schurStep_bound",
+    "NLA.IE05.gepp_growth_bound",
+    "NLA.IE05.firstPath_semantics",
+    "NLA.IE05.orthogonalGrowthSet_bounded",
+    "NLA.IE05.candidate_positiveQR",
+    "NLA.IE05.scaledColumns_orthogonal",
+    "NLA.IE05.scaledLU_trajectory",
+    "NLA.IE05.integer_factor_certificates",
+    "NLA.IE05.integer_entry_certificates",
+    "NLA.IE05.canonical_integer_identification",
+    "NLA.IE05.witness_orthogonal_path",
+    "NLA.IE05.bounded_growth_data",
+    "NLA.IE05.numerical_gap_positive",
+    "NLA.IE05.witness_strict_growth",
+    "NLA.IE05.supremum_strict_gap",
+    "NLA.IE05.orthogonalExtremizerConjecture"
+  ],
+  "boundary_rule": "Do not alter the frozen Definitions, Challenge, data, quantifiers or contract types without reopening independent statement review.",
+  "numerical_strategy": "Prove the reduced integer and rational facts by exact kernel-checked arithmetic, then transfer via actual square-root bounds and GEPP semantics. Use LeanCert explicit kernel trust audits on material lemmas and exports. No artificial interval or singleton certificate is needed or planned.",
+  "retained_computations": {
+    "witness_input_bounds": 64,
+    "candidate_active_bounds": 204,
+    "positive_squared_gap": "117335164/1147041"
+  },
+  "forbidden_shortcuts": [
+    "No admitted proof or extra axiom",
+    "No native execution axiom",
+    "No imported Challenge or reference environment in Solution",
+    "No assumed QR, nonsingular-elimination, trajectory or supremum bridge"
+  ],
+  "independent_final_mathematical_reviews": "Required after complete frozen proof; proof contributors cannot count",
+  "actual_Linux_Comparator_default_kernel_controls": "Required later and not run",
+  "canonical_status": "Solved, unchanged",
+  "fully_verified": false
+}

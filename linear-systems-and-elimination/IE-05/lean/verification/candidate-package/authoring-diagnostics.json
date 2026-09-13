@@ -1,0 +1,59 @@
+{
+  "actual_linux_comparator": "pending",
+  "independent_packaging_approval": "pending",
+  "new_lean_compilation": false,
+  "patch_diagnostic": {
+    "operation": "First live-wrapper apply_patch combined delete/add on the same paths",
+    "outcome": "Rejected as multiple operations target README.md, before any edit. The next patch wrote the intended files directly; exact original wrapper archives already existed."
+  },
+  "preparation_read_diagnostics": [
+    {
+      "operation": "Read RA20 verification/candidate-inputs.json at proposed path",
+      "outcome": "File absent in the existing RA20 project; exact RA20 packaging verifier and current harness patterns were located with rg and read. Root confirmed complete project-relative hash/bytes selection with exact self-exclusion is sufficient."
+    },
+    {
+      "operation": "Read NLA/IE05/Challenge.lean at proposed path",
+      "outcome": "File absent; actual root Challenge.lean was subsequently read in full."
+    },
+    {
+      "operation": "Overbroad full-path rg filter containing formalization",
+      "outcome": "Noisy read-only path output was truncated; repeated with bounded relative-path searches."
+    },
+    {
+      "operation": "Locate tools/lean/verify_project.py",
+      "outcome": "Proposed file absent; actual current harness.py and HARNESS.md locations were identified."
+    },
+    {
+      "operation": "Import yaml/jsonschema with default python3",
+      "outcome": "yaml absent; existing campaign venv was located from preserved successful RA20 commands and reused without installation."
+    },
+    {
+      "operation": "List candidate venv glob locations",
+      "outcome": "zsh reported an unmatched /tmp/*venv* glob; bounded source searches located /tmp/nla-lean-formalization/venv/bin/python."
+    }
+  ],
+  "recorded_audit_attempts": [
+    {
+      "attempt": "author-checks/attempt-001",
+      "cause": "Python 3.10 has no tomllib; failed before audit work. Exact Lake-byte preservation check replaced that unnecessary parser import.",
+      "inventory_exit": 0,
+      "metadata_exit": 1
+    },
+    {
+      "attempt": "author-checks/attempt-002",
+      "cause": "Author regex expected kernel after the declaration, but the actual source syntax is #assert_trust kernel declaration. Source was unchanged; counter corrected.",
+      "metadata_exit": 1
+    },
+    {
+      "attempt": "author-checks/attempt-003",
+      "cause": "Successful complete audit with corrected tooling.",
+      "metadata_exit": 0
+    },
+    {
+      "attempt": "author-checks/attempt-004",
+      "cause": "Actual current validate_manifest.py separately passed all 17 results.",
+      "current_repository_validator_exit": 0
+    }
+  ],
+  "scope": "Interactive packaging-author preparation diagnostics; no mathematical or historical file edits resulted"
+}

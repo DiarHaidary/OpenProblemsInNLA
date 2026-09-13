@@ -1,0 +1,12 @@
+{
+  "command": [
+    "python3",
+    "-B",
+    "/tmp/nla-lean-formalization/freeze_ke04_complete_proof.py"
+  ],
+  "exit_code": 1,
+  "failure": "AssertionError at original line 121: assumed warning count 14; broad substring also counted Lean hint lines. Actual raw logs have 38 warning headers: 1 inherited Krylov unused simp argument and 37 expected proposition unused binders. All Lean source commands remain successful.",
+  "math_source_changes": false,
+  "project_writes": false,
+  "complete_freeze_created": false
+}

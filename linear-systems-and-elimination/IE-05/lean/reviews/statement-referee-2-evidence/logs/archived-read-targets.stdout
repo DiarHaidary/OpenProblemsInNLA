@@ -1,0 +1,518 @@
+# IE-05 mathematical and numerical statements — draft for review
+
+This is the proposed boundary **before proof implementation**. Every assertion
+below is an obligation, not an established Lean result. The 17 declarations in
+`Challenge.lean` intentionally have reference placeholders. Definitions and
+statements may still change in response to coordinator and independent reviews.
+
+## Complete original target
+
+For every natural dimension `n ≥ 2`, let `L_n` be the real unit lower triangular
+matrix with all strict-lower entries `−1`. Let `Q_n` be the unique orthogonal
+factor of `L_n = Q_n R_n` with upper triangular `R_n` and positive diagonal.
+The original assertion is
+
+\[
+ \sup\{\rho(A,p):A\in O(n),\ p\text{ an admissible partial-pivoting path}\}
+   =\rho(Q_n,\operatorname{firstPath}(Q_n)).
+\]
+
+The exported negative result is `¬ OrthogonalExtremizerConjecture`. Its positive
+definition retains **all** `n ≥ 2`, all real orthogonal inputs, and all allowable
+tie choices on the supremum side. The right side uses increasing current row
+positions, retaining the first row when magnitudes tie. An order-eight strict
+counterexample negates this full assertion.
+
+`Orthogonal` means the actual matrix identity `A.transpose * A = 1` over `ℝ`.
+`candidateQ` is Mathlib's normalized Gram–Schmidt applied to the actual **L2
+Euclidean** columns of `L_n`. A separate universal contract must prove that this
+definition has the specified positive-diagonal QR property and its uniqueness;
+the property is not an argument, field, or assumed fact in the definition.
+
+## Actual elimination and maximum semantics
+
+Indices are zero based. At stage `k`, the active rows and columns are those
+`i,j ≥ k`. Choosing current row `p ≥ k` first swaps rows `k,p`, producing `B`;
+the next active entries are exactly
+
+\[
+ S_{k+1}(i,j)=B(i,j)-\frac{B(i,k)}{B(k,k)}B(k,j),\qquad i,j>k.
+\]
+
+The representation pads inactive positions by zero. It does not store the
+elimination multipliers there, or count them in growth. Stage zero is the full
+input; the maximum uses the `n` stages `0,…,n−1`, including the final pivot.
+The post-elimination zero matrix at stage `n` is excluded. An admissible pivot
+must be nonzero and of maximal absolute value in its active first column.
+
+`firstPivotIndex` is an actual fold over the increasing list `List.finRange n`,
+initialized at `k`, replacing its current index only for a **strictly** larger
+active magnitude. It assumes neither successful elimination nor candidate
+behavior. `firstPath_semantics` must prove that nonsingularity makes every pivot
+valid, that both recursive trajectory definitions agree, and that this is the
+unique first-available path. The nonsingularity premise is appropriate to the
+general semantics lemma; it is absent from the full conjecture because real
+square orthogonality implies nonsingularity.
+
+Entry maxima are `Finset.sup` of actual real nonnegative norms, in `ℝ≥0`, then
+coerced to `ℝ`. These are absolute **entries**, not matrix operator, row-sum or
+Frobenius norms. Growth is the finite active-stage maximum divided by the input
+maximum. Empty dimension has total definitions with zero maxima, but the
+original assertion only uses `n ≥ 2`.
+
+The supremum is real `sSup`, with no default-value assumption in a predicate.
+The proposed generic bound is
+
+\[
+ 1\le\rho(A,p)\le 2^{n-1}\quad(n\ge1)
+\]
+
+for each actual admissible path. Its first conclusion also proves the input
+maximum is positive. The proof obligation starts with the actual one-step
+bound `activeMax(next,k+1) ≤ 2*activeMax(current,k)`. The orthogonal growth set
+must then be proved nonempty (the identity gives a path) and bounded above.
+`le_csSup` may only be applied after that genuine boundedness proof.
+
+## Exact order-eight data
+
+`integerH`, `integerD`, `integerT`, `integerLower` are literal integer data.
+Boolean `false` denotes the candidate and `true` the witness. The witness changes
+one-based entry **(8,2)** of `L_8` from `−1` to `0`. The later recovered (7,2)
+variant is distinct and is not transcribed into these definitions.
+
+For each case, the following finite facts must be proved:
+
+\[
+ H^T H=\operatorname{diag}(D),\qquad H=L T,\qquad D_j>0,
+\]
+
+with `L` unit lower triangular, `|L_ij| ≤ 1` below its diagonal, and `T` upper
+triangular with positive diagonal. Define `Q_ij=H_ij/√D_j`. The genuine diagonal
+Gram lemma must establish `Q^T Q=I`.
+
+The scaling vectors are exactly
+
+```
+candidate: 8,248,3286,36146,349184,2796544,2,5462
+witness:   8,16,240,47640,472430,3644970,16148136,5272
+```
+
+The full printed `H,T` arrays remain in `Definitions.lean`. The candidate's `T`
+is explicitly supplied, while the manuscript defines it as `L_8⁻¹ H_0`.
+Independent integer forward substitution checks that the supplied array has
+exactly that value; this arithmetic diagnostic is not an imported theorem.
+
+The universal `scaledLU_trajectory` obligation derives, rather than assumes,
+
+\[
+ S_k(i,j)=\frac{\sum_{r=k}^{n-1}L_{ir}T_{rj}}{\sqrt{D_j}}
+ \quad(i,j\ge k),
+\]
+
+and the no-exchange first-available path. Its hypotheses are only the displayed
+factor structure, lower multiplier bound, and positive scalings/diagonals.
+It must hold up to `k=n`, where the tail is the empty sum. Positive QR uniqueness
+then identifies `normalizedInteger false` with the actual `candidateQ 8`.
+
+## Minimized sufficient certificate
+
+The formalization does not need the manuscript's two exact growth tables.
+The following **one-sided** claims suffice and are the reviewed-to-be contract:
+
+1. For all 64 witness entries, prove the integer inequality
+   `5272 * H_ij^2 ≤ 3969 * D_j`. Consequently its actual input maximum is
+   at most `63/√5272`. Its actual final-pivot numerator is `5272` and its
+   last scaling is `5272`, so its final pivot is `√5272`. These give
+   `firstGrowth(witnessQ) ≥ 5272/63` without any witness intermediate bound.
+2. The single candidate input entry with zero-based index `(2,2)` is
+   `51/√3286`, hence its actual input maximum is at least that number.
+   No upper bound for the candidate's input maximum is requested.
+3. For every candidate active triple `0≤k≤i,j<8`, prove
+   `(Σ_{r≥k} L_ir T_rj)^2 ≤ 5462*D_j`. There are 204 such triples; the
+   off-active padded zeros do not create extra numerical obligations.
+   Thus every actual candidate active entry is at most `√5462`, giving
+   `firstGrowth(candidateQ 8)^2 ≤ 17948132/2601`.
+4. Prove the exact rational identity and its positive right side:
+   `((5272:ℝ)/63)^2 - 17948132/2601 = 117335164/1147041 > 0`.
+   Combine these bounds to obtain the strict comparison and then the strict
+   real-supremum gap. This uses actual membership of the witness/path in the
+   genuinely bounded growth set.
+
+Integer and rational algebra comes before square-root manipulation. The only
+potential LeanCert numerical invocation is the **material** final rational
+positivity check, explicitly using kernel trust and retaining its consumption
+in the full negation. A singleton point check has no subdivision or uncertain
+interval width. If ordinary exact arithmetic is simpler, LeanCert's explicit
+kernel dependency auditor is sufficient; no artificial interval computation is
+required or claimed. This choice remains to be finalized before implementation.
+
+## Scope and outstanding work
+
+The 17 contracts include all universal semantic bridges, not just the finite
+order-eight arithmetic. The difficult implementation work is expected in
+nonsingular recursive Schur complements, positive-diagonal QR identification
+and finite maximum coercions; a numerical pass alone cannot discharge them.
+No library theorem asserting the conjecture or the candidate growth is used.
+
+The full original equality will be negated if these contracts are proved. The
+formal scope intentionally does not claim the witness's exact growth equality,
+the true orthogonal supremum, all active-stage maxima, the recovered variant's
+equivalence, the witness's own QR identification, or any asymptotic constant.
+# IE-05 source correspondence and implementation feasibility
+
+This draft is based on immutable upstream commit
+`5830ed4fb06da0659414a3deb2a40ad327aca052`. Source snapshots and Git-blob/SHA-256
+identities are retained in `verification/original-source-inventory.json`.
+No canonical page, problem number or existing solution is modified.
+
+## Attribution and eligibility
+
+The mathematical counterexample is by **George Stepaniants**, Department of
+Computing and Mathematical Sciences, California Institute of Technology,
+Pasadena, California, USA, with substantial ChatGPT/Codex assistance as disclosed
+in the source. The original extremizer conjecture and cited element-growth
+analysis are attributed to **John Peca-Medlin**. No claim is made that the older
+orthogonal matrix family originated in that paper. No contact email is included.
+
+The bounded current-upstream check found status **Solved**, no canonical IE-05
+Lean project and no active campaign track. All-state upstream PR search returned
+the historical mathematical submission #127 and grouped resolution #6; neither
+is an IE-05 formalization. This is not an exhaustive search of private or
+unidentifiably named forks. The exact query scope and result are in
+`verification/eligibility.json`.
+
+## Complete primary mathematical sources
+
+- [Canonical target at the base](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/linear-systems-and-elimination/IE-05/README.md),
+  **Context and notation**, **Problem statement**: exact active Schur growth,
+  every admissible tie path, positive-diagonal QR and the universal real supremum.
+- [Complete solution at the base](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/linear-systems-and-elimination/IE-05/solution.md),
+  Theorem and §§1–4; the full generated `solution.tex` was also read.
+- [Frozen informal proof](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/references/stepaniants-ie05-2026-09-11/full-proof.md)
+  and [independent informal review](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/references/stepaniants-ie05-2026-09-11/independent-review.md).
+  Their prior automated review is mathematical background, not an independent
+  review of the new Lean statements.
+- The three exact certificate programs (`integer_counterexample.py`,
+  `verify_ie05.py`, `exact_matrix_review.py`) and both recovered-proof checkers,
+  plus `verify_recovery_relation.py`, were inspected. Their values motivate
+  finite obligations but are not imported as trusted Lean facts.
+
+The full manuscript computes more than needed for the negation. Its integer
+Gram/LU certificates and one-sided consequences are sufficient; this reduction
+does not narrow the **original target**, only the auxiliary facts promised.
+
+## Exact statement map
+
+Every entry below is prefixed `NLA.IE05.` in `comparator.json`.
+
+| Contract | Source and required semantic bridge |
+|---|---|
+| `entryMax_semantics` | Canonical max-entry norm; finite NNReal maximum must dominate every absolute real entry and be attained for nonempty dimensions. |
+| `schurStep_bound` | Exact partial-pivot update; prove the elementary factor-two bound from the actual pivot inequality. |
+| `gepp_growth_bound` | Repeated actual Schur bound, positive denominator and inclusion of stage zero; all admissible paths, all `n≥1`. |
+| `firstPath_semantics` | Canonical first-available tie rule; derive nonzero pivots from actual determinant nonzero, trajectory agreement and uniqueness. |
+| `orthogonalGrowthSet_bounded` | Genuine real-supremum preconditions from the identity and the universal GEPP bound. These are conclusions, never premises in the conjecture. |
+| `candidate_positiveQR` | Canonical `L_n`; true normalized L2 Gram–Schmidt, its factorization and positive diagonal, and uniqueness for every `n≥2`. |
+| `scaledColumns_orthogonal` | Solution §1; actual diagonal Gram identity plus positive scales yields actual matrix orthogonality. |
+| `scaledLU_trajectory` | Solution §2; generic finite tail-sum algebra gives the exact Schur stages and first-available no-exchange path. |
+| `integer_factor_certificates` | Solution §§1,4; complete literal integer Gram, LU, triangular, multiplier and positivity facts for both matrices. |
+| `integer_entry_certificates` | Reduced finite inequalities from §§3,4: 64 witness input bounds, 204 candidate active bounds, one candidate input entry and the witness final pivot. |
+| `canonical_integer_identification` | Solution §4; connect the integer candidate to the exact positive-diagonal QR object. |
+| `witness_orthogonal_path` | Solution §§1,2; actual real orthogonality and exact stipulated, admissible pivot path. |
+| `bounded_growth_data` | One-sided consequences sufficient for the full theorem; stronger manuscript equalities are not exported. |
+| `numerical_gap_positive` | Solution §4's exact positive rational squared gap. |
+| `witness_strict_growth` | Theorem's strict comparison, with actual implemented growth/path objects. |
+| `supremum_strict_gap` | Genuine `sSup` comparison using established boundedness and witness membership. |
+| `orthogonalExtremizerConjecture` | Negates the complete canonical universal equality, by dimension eight. |
+
+## Actual pinned APIs and proof plan
+
+The project pins Lean `v4.33.1`, Mathlib
+`0df444a360eaa60ab8c11dca51a86af692955474` and LeanCert
+`621a43d7cf21f87872392a01e874f2f1dbddc926`. All ten transitive packages are pinned
+in `lake-manifest.json`; no fresh dependency download or Lake build is performed.
+
+- `Mathlib/Analysis/InnerProductSpace/GramSchmidtOrtho.lean` defines
+  `InnerProductSpace.gramSchmidtNormed` as inverse actual norm times the
+  orthogonalized vector. `gramSchmidtNormed_orthonormal`, `gramSchmidt_ne_zero`,
+  `gramSchmidt_inv_triangular` and the finite-span lemmas supply the genuine QR
+  route. `euclideanColumns` explicitly uses `EuclideanSpace ℝ (Fin n)`.
+  The candidate's independent columns follow from the unit triangular input's
+  determinant; positive diagonal follows from the norm of each nonzero residual.
+  Uniqueness requires proving an upper triangular orthogonal change of basis
+  with positive diagonal is identity. It is an explicit obligation, not a cited
+  unsupported QR routine.
+- `Matrix.linearIndependent_cols_of_det_ne_zero`, `det_mul`, `det_transpose`,
+  triangular determinant lemmas and row-addition determinant invariance are
+  available in actual determinant/triangular modules. The Schur complement
+  file supplies `det_fromBlocks₁₁` and genuine block factorization identities.
+  These support a shrinking active-index or block-matrix proof that nonsingular
+  inputs retain a nonzero active pivot. The padded full matrix has zero rows
+  after elimination and is **not** itself nonsingular; any such induction must
+  restrict to the active block. No GEPP theorem was found that bypasses this.
+- `Finset.le_sup`, `Finset.sup_le`, real/NNReal norm coercions and finite maxima
+  give exact entrywise semantics. The factor-two induction is scalar triangle
+  inequality and `|multiplier|≤1`, not an operator norm theorem.
+- `Real.sqrt_pos`, `Real.sq_sqrt` and exact field/ring arithmetic handle the
+  positive column scalings. The integer tail sums should be collected before
+  introducing roots; they need not be evaluated as hundreds of real radicals.
+- `le_csSup` requires `BddAbove`; `csSup_le` requires nonemptiness. The draft
+  visibly includes both prerequisites as results about the actual set.
+- `LeanCert.Tactic.Verification` is used for definition-only trust inspection.
+  The eventual proof may use `LeanCert.Tactic.IntervalAuto.PointIneq` for the
+  one retained final rational positivity certificate with explicit kernel trust.
+  The source checker, if used, must occur in the actual final dependency chain.
+
+These are inspected APIs and a proposed route, **not a claim that the required
+universal bridges are already implemented**. They are expected to be more work
+than the finite arithmetic. If a bridge proves obstructed, the target may not
+be weakened to avoid it.
+
+## Reuse and review protocol
+
+The inspected [Schiffer Challenge at its campaign pin](https://github.com/jaumededios/Schiffer/blob/2938e277969c329caf154e48a3d8823f3635c7f1/Schiffer/Challenge.lean)
+illustrates a separately auditable mathematical boundary. The inspected
+[Forsythe Challenge](https://github.com/sgstepaniants/Forsythe/blob/8d1b0c0545a77b40245e84705aa7d273e6c81e62/lean-proof/Challenge.lean)
+and `CheckedMultivariateBound.lean` illustrate independent specification/proof
+environments and explicit retained checker soundness. Forsythe's Lean project
+and LeanCert are Apache 2.0. The inspected Schiffer metadata says `UNLICENSED`,
+so it is used only as a structural reference. This draft copies no mathematical
+implementation from them, and does not claim their numerical methods or prior checks as IE-05
+evidence. Its project skeleton and standard-three comparator configuration use
+the existing NLA campaign pattern.
+
+The repository's `docs/lean/REVIEW.md` adapts Tau Ceti at
+`afb424eda89e8ac96d9eb69f6a88972055a4cd1b`. Required independent reviews must
+scrutinize all target quantifiers, arbitrary tie paths, real norm instances,
+zero/empty cases, QR sign convention, genuine supremum preconditions, and
+proof obligations hidden in definitions. Correctness, scope, proof quality,
+reuse, generality, API, naming, placement, documentation and attribution all
+apply within this scope. No Tau Ceti service endorsement is claimed.
+
+Comparator will compare the exact theorem types and statement definitions in
+separate environments, then replay the actual proofs with only `propext`,
+`Classical.choice`, `Quot.sound`. It does not establish English-to-Lean fidelity.
+`definition_names` is empty: there are no definition exceptions. At this stage
+there is no `Solution.lean`, so no Comparator run or complete theorem can pass.
+Actual v0.4 `formalization.yaml` will be added at the appropriate reviewed
+candidate stage; no verification manifest is fabricated now.
+
+The coordinating root suggested the optional further one-sided numerical
+reduction. That contribution is recorded transparently. No statement approval,
+proof gate, independent final review, or Linux verification has occurred for
+this draft.
+{
+  "challenge_module": "Challenge",
+  "solution_module": "Solution",
+  "theorem_names": [
+    "NLA.IE05.entryMax_semantics",
+    "NLA.IE05.schurStep_bound",
+    "NLA.IE05.gepp_growth_bound",
+    "NLA.IE05.firstPath_semantics",
+    "NLA.IE05.orthogonalGrowthSet_bounded",
+    "NLA.IE05.candidate_positiveQR",
+    "NLA.IE05.scaledColumns_orthogonal",
+    "NLA.IE05.scaledLU_trajectory",
+    "NLA.IE05.integer_factor_certificates",
+    "NLA.IE05.integer_entry_certificates",
+    "NLA.IE05.canonical_integer_identification",
+    "NLA.IE05.witness_orthogonal_path",
+    "NLA.IE05.bounded_growth_data",
+    "NLA.IE05.numerical_gap_positive",
+    "NLA.IE05.witness_strict_growth",
+    "NLA.IE05.supremum_strict_gap",
+    "NLA.IE05.orthogonalExtremizerConjecture"
+  ],
+  "definition_names": [],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ]
+}
+# IE-05 Lean statement draft
+
+**Draft only: no proofs, independent approvals or Lean verification claim.**
+The canonical problem remains Solved by its existing informal counterexample.
+This separate directory prepares the complete original statement for review.
+
+George Stepaniants, Department of Computing and Mathematical Sciences,
+California Institute of Technology, Pasadena, California, USA.
+The mathematical counterexample and substantial AI assistance are attributed
+as in the source; John Peca-Medlin retains the conjecture attribution.
+
+Read [NUMERICAL_TARGETS.md](NUMERICAL_TARGETS.md),
+[SourceCorrespondence.md](SourceCorrespondence.md),
+[Definitions.lean](NLA/IE05/Definitions.lean) and
+[Challenge.lean](Challenge.lean) together. The 17 intentional Challenge holes
+specify complete generic pivot/QR/supremum bridges and the minimized exact
+order-eight certificate. They prove nothing.
+
+The source-only macOS check uses the campaign's ten pinned read-only package
+sources, with existing objects for the imported dependencies, and a fresh own
+prefix. `Cli` is a tooling dependency with no generated object directory in
+this cache and is not imported by these statements. No Lake, download, cache
+copy or shared-cache mutation is used. Run in the existing campaign environment:
+
+```
+python3 verification/statement-development/check_statements.py
+python3 verification/statement-development/reconstruct.py
+```
+
+The first checks only elaboration and definition dependency trust; the second
+is an exact Python arithmetic diagnostic. Neither proves the Challenge or
+runs Linux Comparator. The checker retains each source snapshot, raw failure
+and successful output, exact dependency identities and generated-object cleanup
+hashes. No `Solution.lean` or mathematical implementation exists.
+
+The draft is not frozen. A coordinator review followed by two independent
+statement approvals and an explicit proof gate is required before implementation.
+Canonical pages, original source files, permanent IDs and Git history are
+untouched. No `formalization.yaml`, publication commit or PR is created here.
+name = "NLAIE05"
+version = "0.1.0"
+defaultTargets = ["Challenge"]
+
+[[require]]
+name = "leancert"
+git = "https://github.com/alerad/leancert"
+rev = "621a43d7cf21f87872392a01e874f2f1dbddc926"
+
+[[lean_lib]]
+name = "NLA"
+
+[[lean_lib]]
+name = "Challenge"
+
+[[lean_lib]]
+name = "Solution"
+{
+  "version": "1.2.0",
+  "packagesDir": ".lake/packages",
+  "packages": [
+    {
+      "url": "https://github.com/alerad/leancert",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "name": "leancert",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "inherited": false,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "name": "mathlib",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.33.1",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/plausible",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "name": "plausible",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "name": "LeanSearchClient",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.33.0",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    }
+  ],
+  "name": "NLAIE05",
+  "lakeDir": ".lake",
+  "fixedToolchain": false
+}
+leanprover/lean4:v4.33.1

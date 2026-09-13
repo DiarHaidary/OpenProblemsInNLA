@@ -1,0 +1,2620 @@
+{
+  "exact_types": [
+    "NLA.IE05.entryMax_semantics",
+    "NLA.IE05.schurStep_bound",
+    "NLA.IE05.gepp_growth_bound",
+    "NLA.IE05.firstPath_semantics",
+    "NLA.IE05.orthogonalGrowthSet_bounded",
+    "NLA.IE05.candidate_positiveQR",
+    "NLA.IE05.scaledColumns_orthogonal",
+    "NLA.IE05.scaledLU_trajectory",
+    "NLA.IE05.integer_factor_certificates",
+    "NLA.IE05.integer_entry_certificates",
+    "NLA.IE05.canonical_integer_identification",
+    "NLA.IE05.witness_orthogonal_path",
+    "NLA.IE05.bounded_growth_data",
+    "NLA.IE05.numerical_gap_positive",
+    "NLA.IE05.witness_strict_growth",
+    "NLA.IE05.supremum_strict_gap",
+    "NLA.IE05.orthogonalExtremizerConjecture"
+  ],
+  "closure": {
+    "FINAL": {
+      "roots": 1,
+      "actual_declarations": [
+        {
+          "name": "NLA.IE05.orthogonalExtremizerConjecture",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.OrthogonalExtremizerConjecture",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSup",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSet",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.Mat",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.Orthogonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.PivotPath",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.AdmissiblePath",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.AdmissiblePivot",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory._f",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory.match_1",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.schurStep",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.rowSwap",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.growth",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMaxNN",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMaxNN",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstGrowth",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPath",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstTrajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstTrajectory._f",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.candidateQ",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.normalizedQRQ",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.normalizedQRQ._proof_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.euclideanColumns",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.euclideanColumns._proof_1",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.prescribedLower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.orthogonalExtremizerConjecture",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.supremum_strict_gap",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.witnessQ",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.normalizedInteger",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.scaledColumns",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.castIntegerMatrix",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.IntMat",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.integerH",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integerH.match_1",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.integerD",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.noSwapPath",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.FirstAvailablePath",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.FirstAvailablePivot",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_orthogonal_path",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.tailProduct",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integerLower",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integerLower._proof_1",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integerT",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedInteger_path_trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.UnitLower",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.UpperTriangular",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05._proved.real_factor_certificates",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_factor_certificates",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_factor_certificates._proof_1_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integerLowerZeroDecidable",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integerTZeroDecidable",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_factor_certificates._proof_1_2",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_mul",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_diagonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_unitLower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_lower_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaledLU_trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_noSwap_trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_zero",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory.eq_2",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_tail_schur",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_pivot_column",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_pivot_row",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_split",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_split._proof_1_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_tail_firstAvailable",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPath_eq_of_firstAvailable_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex_spec_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex_spec_proved._proof_1_2",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_tailProduct",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedInteger_orthogonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaledColumns_orthogonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSet_bounded_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_growth_bound_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_growth_bound_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.abs_le_entryMax_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.peakMax",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.peakMax_le_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_stage_bound_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax_zero_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_stage_bound_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.schurStep_bound_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax_nonneg_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.abs_le_activeMax_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.GEPP.0.NLA.IE05.swap_active",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.rowSwap.eq_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax_le_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_growth_bound_proved._proof_1_2",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax_le_peakMax_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax_le_peakMax_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax_le_peakMax_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPath_semantics_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex_firstAvailable_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_nonzero_column_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.ActiveInjective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstTrajectory_activeInjective_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_initial_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_schur_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_rowSwap_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_schur_proved._proof_1_2",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_schur_proved._proof_1_3",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.schurStep_mulVec_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.schurStep_mulVec_proved._simp_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory_firstPath_eq_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_strict_growth",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_growth_sq_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_growth_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.growth_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax_nonneg_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_growth_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_entryMax_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.canonical_integer_identification",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integerLower_false_prescribed",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedQRQ_of_gram_lu",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.PositiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.orthogonal_iff_orthonormal_columns",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.euclideanColumns_inner",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.positiveQR_inner",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.positiveQR_column",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_entry_certificates",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_entry_certificates._proof_1_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_peak_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedInteger_trajectory_entry",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.abs_div_sqrt_le_sqrt",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integerD_real_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.numerical_gap_positive",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_growth_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_entryMax_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.entryMax_le_from_entries",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.abs_div_sqrt_le",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_peak_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_final_pivot",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "required_material_dependencies": [
+        "NLA.IE05._proved.normalizedQRQ_of_gram_lu",
+        "NLA.IE05._proved.integer_factor_certificates",
+        "NLA.IE05._proved.integer_entry_certificates",
+        "NLA.IE05._proved.normalizedInteger_path_trajectory",
+        "NLA.IE05._proved.normalizedInteger_trajectory_entry",
+        "NLA.IE05._proved.scaledLU_trajectory",
+        "NLA.IE05._proved.witness_growth_lower",
+        "NLA.IE05._proved.candidate_growth_sq_upper",
+        "NLA.IE05._proved.numerical_gap_positive",
+        "NLA.IE05.orthogonalGrowthSet_bounded_proved",
+        "NLA.IE05.trajectory",
+        "NLA.IE05.schurStep",
+        "NLA.IE05.AdmissiblePath",
+        "NLA.IE05.Orthogonal",
+        "NLA.IE05.PositiveQR",
+        "NLA.IE05.normalizedQRQ",
+        "NLA.IE05.firstGrowth",
+        "NLA.IE05.growth",
+        "NLA.IE05.entryMax",
+        "NLA.IE05.peakMax",
+        "NLA.IE05.orthogonalGrowthSet",
+        "NLA.IE05.orthogonalGrowthSup",
+        "NLA.IE05.OrthogonalExtremizerConjecture",
+        "Real.sq_sqrt",
+        "le_csSup",
+        "InnerProductSpace.gramSchmidtNormed",
+        "of_decide_eq_true"
+      ],
+      "Lean_inspector_enforced_safe_nonpartial_and_actual_type_body_recursion": true
+    },
+    "ALL": {
+      "roots": 17,
+      "actual_declarations": [
+        {
+          "name": "NLA.IE05.entryMax_semantics",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.Mat",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMaxNN",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax_semantics_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax_nonneg_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.abs_le_entryMax_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax_semantics_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.schurStep_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.AdmissiblePivot",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMaxNN",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.schurStep",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.rowSwap",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.schurStep_bound_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax_nonneg_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.abs_le_activeMax_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.GEPP.0.NLA.IE05.swap_active",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.rowSwap.eq_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax_le_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_growth_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.PivotPath",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.AdmissiblePath",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory._f",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory.match_1",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.growth",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_growth_bound_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_growth_bound_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.peakMax",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.peakMax_le_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_stage_bound_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax_zero_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_stage_bound_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.gepp_growth_bound_proved._proof_1_2",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax_le_peakMax_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.entryMax_le_peakMax_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeMax_le_peakMax_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPath_semantics",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.FirstAvailablePath",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.FirstAvailablePivot",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPath",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstTrajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstTrajectory._f",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPath_semantics_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex_firstAvailable_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex_spec_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex_spec_proved._proof_1_2",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_nonzero_column_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.ActiveInjective",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstTrajectory_activeInjective_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_initial_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_schur_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_rowSwap_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_schur_proved._proof_1_2",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.activeInjective_schur_proved._proof_1_3",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.schurStep_mulVec_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.schurStep_mulVec_proved._simp_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory_firstPath_eq_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPath_eq_of_firstAvailable_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSet_bounded",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSet",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.Orthogonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSet_bounded_proved",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.candidate_positiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.PositiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.UpperTriangular",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.prescribedLower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.candidateQ",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.normalizedQRQ",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.normalizedQRQ._proof_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.euclideanColumns",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.euclideanColumns._proof_1",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.candidateR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_positiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.prescribedLower_det",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedQRQ_positiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedQRQ_orthogonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.orthogonal_iff_orthonormal_columns",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.euclideanColumns_inner",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.euclideanColumns_normalizedQRQ",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.euclideanColumns_linearIndependent",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedQRQ_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedQRQ_diagonal_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.gramSchmidt_inner_original",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.positiveQR_inner",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.positiveQR_column",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.scaledColumns_orthogonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.scaledColumns",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaledColumns_orthogonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.scaledLU_trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.UnitLower",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.noSwapPath",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.tailProduct",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaledLU_trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_noSwap_trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_zero",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.trajectory.eq_2",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2",
+          "axioms": [
+            "propext",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_tail_schur",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_pivot_column",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_pivot_row",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_split",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.tailProduct_split._proof_1_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.scaled_tail_firstAvailable",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integer_factor_certificates",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.IntMat",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.integerH",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integerH.match_1",
+          "axioms": []
+        },
+        {
+          "name": "NLA.IE05.integerD",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integerLower",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integerLower._proof_1",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integerT",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_factor_certificates",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_factor_certificates._proof_1_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integerLowerZeroDecidable",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integerTZeroDecidable",
+          "axioms": [
+            "propext"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_factor_certificates._proof_1_2",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.integer_entry_certificates",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_entry_certificates",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integer_entry_certificates._proof_1_1",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.canonical_integer_identification",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.normalizedInteger",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.castIntegerMatrix",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.canonical_integer_identification",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.real_factor_certificates",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_mul",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_diagonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_unitLower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_lower_bound",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integerLower_false_prescribed",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedQRQ_of_gram_lu",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedInteger_path_trajectory",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.castIntegerMatrix_tailProduct",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.witness_orthogonal_path",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.witnessQ",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_orthogonal_path",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedInteger_orthogonal",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.bounded_growth_data",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.firstGrowth",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.bounded_growth_data",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_entryMax_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.entryMax_le_from_entries",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.abs_div_sqrt_le",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.integerD_real_pos",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_growth_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_peak_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_final_pivot",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.normalizedInteger_trajectory_entry",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_entryMax_lower",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_growth_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.growth_nonneg",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_growth_sq_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_growth_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.candidate_peak_upper",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.abs_div_sqrt_le_sqrt",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.numerical_gap_positive",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.numerical_gap_positive",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.witness_strict_growth",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.witness_strict_growth",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.supremum_strict_gap",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalGrowthSup",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.supremum_strict_gap",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.orthogonalExtremizerConjecture",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05.OrthogonalExtremizerConjecture",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        },
+        {
+          "name": "NLA.IE05._proved.orthogonalExtremizerConjecture",
+          "axioms": [
+            "propext",
+            "Classical.choice",
+            "Quot.sound"
+          ]
+        }
+      ],
+      "required_material_dependencies": [
+        "NLA.IE05.firstPath_semantics_proved",
+        "NLA.IE05.gepp_growth_bound_proved",
+        "NLA.IE05._proved.candidate_positiveQR"
+      ],
+      "Lean_inspector_enforced_safe_nonpartial_and_actual_type_body_recursion": true
+    }
+  }
+}

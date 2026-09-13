@@ -1,0 +1,88 @@
+38-
+39-/-- Auxiliary definition for `argmax` and `argmin`. -/
+40:def argAux (a : Option α) (b : α) : Option α :=
+41-  Option.casesOn a (some b) fun c => if r b c then some b else some c
+42-
+43-@[simp]
+44-theorem foldl_argAux_eq_none : l.foldl (argAux r) o = none ↔ l = [] ∧ o = none :=
+45-  List.reverseRecOn l (by simp) fun tl hd => by
+46-    simp only [foldl_append, foldl_cons, argAux, foldl_nil, append_eq_nil_iff]
+47-    cases foldl (argAux r) o tl
+48-    · simp
+--
+87-that there is no `b ∈ l` with `f b < f a`. If `a`, `b` are such that `f a = f b`, it returns
+88-whichever of `a` or `b` comes first in the list. `argmin f [] = none`. -/]
+89:def argmax (f : α → β) (l : List α) : Option α :=
+90-  l.foldl (argAux fun b c => f c < f b) none
+91-
+92-@[to_dual (attr := simp)]
+93-theorem argmax_nil (f : α → β) : argmax f [] = none :=
+94-  rfl
+95-
+96-@[to_dual (attr := simp)]
+97-theorem argmax_singleton {f : α → β} {a : α} : argmax f [a] = a :=
+--
+124-
+125-@[to_dual]
+126:theorem le_of_mem_argmax : a ∈ l → m ∈ argmax f l → f a ≤ f m := fun ha hm =>
+127-  le_of_not_gt <| not_lt_of_mem_argmax ha hm
+128-
+129-@[to_dual]
+130-theorem argmax_cons (f : α → β) (a : α) (l : List α) :
+131-    argmax f (a :: l) =
+132-      Option.casesOn (argmax f l) (some a) fun c => if f a < f c then some c else some a :=
+133-  List.reverseRecOn l rfl fun hd tl ih => by
+134-    rw [← cons_append, argmax_concat, ih, argmax_concat]
+--
+142-
+143-@[to_dual]
+144:theorem index_of_argmax :
+145-    ∀ {l : List α} {m : α}, m ∈ argmax f l → ∀ {a}, a ∈ l → f m ≤ f a → l.idxOf m ≤ l.idxOf a
+146-  | [], m, _, _, _, _ => by simp
+147-  | hd :: tl, m, hm, a, ha, ham => by
+148-    simp only [idxOf_cons, argmax_cons, Option.mem_def] at hm ⊢
+149-    cases h : argmax f tl
+150-    · rw [h] at hm
+151-      simp_all
+152-    rw [h] at hm
+--
+157-    · rw [if_pos rfl]
+158-    · rw [if_neg, if_neg]
+159:      · exact Nat.succ_le_succ (index_of_argmax h (by assumption) ham)
+160-      · exact ne_of_apply_ne f (lt_of_lt_of_le ‹_› ‹_›).ne
+161-      · exact ne_of_apply_ne _ ‹f hd < f _›.ne
+162-    · rw [if_pos rfl]
+163-      exact Nat.zero_le _
+164-
+165-@[to_dual]
+166-theorem mem_argmax_iff :
+167-    m ∈ argmax f l ↔
+168-      m ∈ l ∧ (∀ a ∈ l, f a ≤ f m) ∧ ∀ a ∈ l, f m ≤ f a → l.idxOf m ≤ l.idxOf a :=
+169:  ⟨fun hm => ⟨argmax_mem hm, fun _ ha => le_of_mem_argmax ha hm, fun _ => index_of_argmax hm⟩,
+170-    by
+171-      rintro ⟨hml, ham, hma⟩
+172-      rcases harg : argmax f l with - | n
+173-      · simp_all
+174-      · have :=
+175:          Nat.le_antisymm (hma n (argmax_mem harg) (le_of_mem_argmax hml harg))
+176:            (index_of_argmax harg hml (ham _ (argmax_mem harg)))
+177-        rw [(idxOf_inj hml).1 this, Option.mem_def]⟩
+178-
+179-@[to_dual]
+180-theorem argmax_eq_some_iff :
+181-    argmax f l = some m ↔
+182-      m ∈ l ∧ (∀ a ∈ l, f a ≤ f m) ∧ ∀ a ∈ l, f m ≤ f a → l.idxOf m ≤ l.idxOf a :=
+183-  mem_argmax_iff
+184-
+--
+239-@[to_dual minimum_le_of_mem]
+240-theorem le_maximum_of_mem : a ∈ l → (maximum l : WithBot α) = m → a ≤ m :=
+241:  le_of_mem_argmax
+242-
+243-@[to_dual minimum_le_of_mem']
+244-theorem le_maximum_of_mem' (ha : a ∈ l) : (a : WithBot α) ≤ maximum l :=
+245-  le_of_not_gt <| not_maximum_lt_of_mem' ha
+246-
+247-@[to_dual]
+248-theorem maximum_cons (a : α) (l : List α) : maximum (a :: l) = max ↑a (maximum l) :=
+249-  List.reverseRecOn l (by simp) fun tl hd ih => by

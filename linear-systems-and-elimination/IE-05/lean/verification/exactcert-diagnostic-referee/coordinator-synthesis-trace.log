@@ -1,0 +1,183 @@
+NLA/IE05/CertDiagnostic.lean:7:0: error: failed to synthesize
+  Decidable (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/CertDiagnostic.lean:11:2: error: failed to synthesize
+  Decidable (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+[Meta.synthInstance] 💥️ Zero ?m.2
+  [Meta.synthInstance] ✅️ new goal Zero ?m.2
+    [Meta.synthInstance.instances] #[@Lean.Grind.AddCommMonoid.toZero, @Zero.ofOfNat0, @AddZero.toZero, @NegZeroClass.toZero, @MulZeroClass.toZero, @AlternatingMap.instZero, @Part.instZero, @Submodule.pointwiseZero, Real.instZero, @NormedAddGroupHom.zero, @WithBot.zero, @Colex.instZero, @Vector.instZero, Cardinal.instZero, @DistriMulActionHom.instZero, @instZeroAddHom, @Matrix.zero, @instZeroAdditiveOfOne, @Lex.instZero, ContinuousAddMonoidHom.instZero, @OreLocalization.instZero, @MulOpposite.instZero, @CauSeq.Completion.instZeroCauchy, @ULift.zero, instZeroEReal, @NonarchAddGroupSeminorm.instZero, @AddChar.instZero, @ContinuousMultilinearMap.instZero, @NonUnitalStarRingHom.instZero, @AddOpposite.instZero, @Multiset.instZero, @ZeroMemClass.zero, @Submodule.zero, @TwoSidedIdeal.instZeroSubtypeMem, @AddSubmonoid.zero, @AddSubgroup.zero, @SubMulAction.instZeroSubtypeMemOfNonempty, @Set.Ico.instZero, @Set.Icc.instZero, @Nonneg.zero, @IsIdempotentElem.instZeroSubtype, @Seminorm.instZero, @ContinuousAffineMap.instZero, NNReal.instZero, @RingCon.instZeroQuotient, @DomAddAct.instZeroOfAddOpposite, @GroupSeminorm.instZeroGroupSeminorm, @AddConjClasses.instZero, @AffineMap.instZero, @NonUnitalAlgHom.instZero, @SetSemiring.instZero, @instZeroZeroHom, @LinearMap.instZero, @AddOreLocalization.instZero, @MultilinearMap.instZero, @Polynomial.instZero, FreeAlgebra.instZero, @ContinuousLinearMap.zero, @Submodule.Quotient.instZeroQuotient, @LinearPMap.instZero, @AddGroupSeminorm.instZeroAddGroupSeminorm, @SMulCon.instZeroQuotient, @Associates.instZero, PUnit.instZero_mathlib, @instZeroUniformFun, @WithZero.instZero, @SeparationQuotient.instZero, @LinearEquiv.instZero, ENNReal.instZero, @Sym.instZeroSym, @CauSeq.instZero, SignType.instZero, instZeroTensorProduct, @DFinsupp.instZero, @instZeroUniformOnFun, @NonUnitalStarAlgHom.instZero, @Shrink.instZero, @MulActionHom.instZero, @NonUnitalRingHom.instZero, @OrderDual.instZero, Complex.instZero, @instZeroAddMonoidHom, @Prod.instZero, @OrderAddMonoidHom.instZero, @FreeAddGroup.instZero, @AddCon.zero, @Finsupp.instZero, @AddUnits.instZero, Ordinal.zero, @ModuleCon.instZeroQuotient, @WithTop.zero, @Pi.instZero]
+  [Meta.synthInstance.apply] 💥️ apply @Pi.instZero to Zero ?m.2
+    [Meta.synthInstance.tryResolve] 💥️ Zero ?m.2 ≟ Zero ((i : ?m.5) → ?m.6 i)
+[Meta.synthInstance] ✅️ Zero ℤ
+  [Meta.synthInstance] ✅️ new goal Zero ℤ
+    [Meta.synthInstance.instances] #[@Lean.Grind.AddCommMonoid.toZero, @Zero.ofOfNat0, @AddZero.toZero, @NegZeroClass.toZero, @MulZeroClass.toZero]
+  [Meta.synthInstance.apply] ✅️ apply @MulZeroClass.toZero to Zero ℤ
+    [Meta.synthInstance.tryResolve] ✅️ Zero ℤ ≟ Zero ℤ
+    [Meta.synthInstance] ✅️ new goal MulZeroClass ℤ
+      [Meta.synthInstance.instances] #[@SemigroupWithZero.toMulZeroClass, @MulZeroOneClass.toMulZeroClass, @NonUnitalNonAssocSemiring.toMulZeroClass, @instMulZeroClassOfSemiring]
+  [Meta.synthInstance.apply] ✅️ apply @instMulZeroClassOfSemiring to MulZeroClass ℤ
+    [Meta.synthInstance.tryResolve] ✅️ MulZeroClass ℤ ≟ MulZeroClass ℤ
+    [Meta.synthInstance] ✅️ new goal Semiring ℤ
+      [Meta.synthInstance.instances] #[@Ring.toSemiring, @CommSemiring.toSemiring, @DivisionSemiring.toSemiring, @IdemSemiring.toSemiring, Int.instSemiring]
+  [Meta.synthInstance.apply] ✅️ apply Int.instSemiring to Semiring ℤ
+    [Meta.synthInstance.tryResolve] ✅️ Semiring ℤ ≟ Semiring ℤ
+    [Meta.synthInstance.answer] ✅️ Semiring ℤ
+  [Meta.synthInstance.resume] ✅️ propagating Semiring ℤ to subgoal Semiring ℤ of MulZeroClass ℤ
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance.answer] ✅️ MulZeroClass ℤ
+  [Meta.synthInstance.resume] ✅️ propagating MulZeroClass ℤ to subgoal MulZeroClass ℤ of Zero ℤ
+    [Meta.synthInstance.resume] size: 2
+    [Meta.synthInstance.answer] ✅️ Zero ℤ
+  [Meta.synthInstance] result instMulZeroClassOfSemiring.toZero
+[Meta.synthInstance] ❌️ Decidable (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+  [Meta.synthInstance] ✅️ new goal Decidable (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.instances] #[@instDecidableForall, @List.decidableBAll, @forall_prop_decidable, @Option.decidableForallMem, @Array.instDecidableForallForallMemOfDecidablePred, @Vector.instDecidableForallForallMemOfDecidablePred, @Multiset.decidableDforallMultiset, @Finset.decidableDforallFinset, @Fintype.decidableForallFintype, @Nat.decidableForallFin]
+  [Meta.synthInstance.apply] ✅️ apply @Nat.decidableForallFin to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ✅️ Decidable
+          (∀ (i j : Fin 8),
+            j < i → integerT false i j = 0) ≟ Decidable (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance] ✅️ new goal DecidablePred fun i => ∀ j < i, integerT false i j = 0
+      [Meta.synthInstance.instances] #[@instDecidableForall, @List.decidableBAll, @forall_prop_decidable, @Option.decidableForallMem, @Array.instDecidableForallForallMemOfDecidablePred, @Vector.instDecidableForallForallMemOfDecidablePred, @Multiset.decidableDforallMultiset, @Finset.decidableDforallFinset, @Fintype.decidableForallFintype, @Nat.decidableForallFin]
+  [Meta.synthInstance.apply] ✅️ apply @Nat.decidableForallFin to DecidablePred fun i => ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ✅️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ i < a, integerT false a i = 0)
+    [Meta.synthInstance] ✅️ new goal (a : Fin 8) → DecidablePred fun j => j < a → integerT false a j = 0
+      [Meta.synthInstance.instances] #[@instDecidableForall, @List.decidableBAll, @forall_prop_decidable, @Option.decidableForallMem, @Array.instDecidableForallForallMemOfDecidablePred, @Vector.instDecidableForallForallMemOfDecidablePred, @Multiset.decidableDforallMultiset, @Finset.decidableDforallFinset, @Fintype.decidableForallFintype]
+  [Meta.synthInstance.apply] ❌️ apply @Fintype.decidableForallFintype to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (∀ (a_1 : ?m.14 a✝ a), ?m.15 a✝ a a_1)
+  [Meta.synthInstance.apply] ❌️ apply @Finset.decidableDforallFinset to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (∀ (a_1 : ?m.14 a✝ a) (h : a_1 ∈ ?m.15 a✝ a), ?m.16 a✝ a a_1 h)
+  [Meta.synthInstance.apply] ❌️ apply @Multiset.decidableDforallMultiset to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (∀ (a_1 : ?m.14 a✝ a) (h : a_1 ∈ ?m.15 a✝ a), ?m.16 a✝ a a_1 h)
+  [Meta.synthInstance.apply] ❌️ apply @Vector.instDecidableForallForallMemOfDecidablePred to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (∀ x ∈ ?m.16 a✝ a, ?m.17 a✝ a x)
+  [Meta.synthInstance.apply] ❌️ apply @Array.instDecidableForallForallMemOfDecidablePred to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (∀ x ∈ ?m.15 a✝ a, ?m.16 a✝ a x)
+  [Meta.synthInstance.apply] ❌️ apply @Option.decidableForallMem to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (∀ a_1 ∈ ?m.17 a✝ a, ?m.15 a✝ a a_1)
+  [Meta.synthInstance.apply] ✅️ apply @forall_prop_decidable to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ✅️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (a < a✝ → integerT false a✝ a = 0)
+    [Meta.synthInstance] ✅️ new goal (a a_1 : Fin 8) → Decidable (a_1 < a)
+      [Meta.synthInstance.instances] #[@LinearOrder.toDecidableLT, @instDecidableRelLt, @Std.instDecidableLT, @Fin.decLt]
+  [Meta.synthInstance.apply] ✅️ apply @Fin.decLt to (a a_1 : Fin 8) → Decidable (a_1 < a)
+    [Meta.synthInstance.tryResolve] ✅️ Decidable (a < a✝) ≟ Decidable (a < a✝)
+    [Meta.synthInstance.answer] ✅️ (a a_1 : Fin 8) → Decidable (a_1 < a)
+  [Meta.synthInstance.resume] ✅️ propagating (a a_1 : Fin 8) →
+        Decidable
+          (a_1 <
+            a) to subgoal (a a_1 : Fin 8) →
+        Decidable (a_1 < a) of (a : Fin 8) → DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.resume] size: 1
+    [Meta.synthInstance] ✅️ new goal (a a_1 : Fin 8) → Decidable (integerT false a a_1 = 0)
+      [Meta.synthInstance.instances] #[@decidableEq_of_subsingleton, @RCLike.toDecidableEq, @LinearOrder.toDecidableEq, Int.instDecidableEq]
+  [Meta.synthInstance.apply] ❌️ apply Int.instDecidableEq to (a a_1 : Fin 8) → Decidable (integerT false a a_1 = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable (integerT false a✝ a = 0) ≟ Decidable (?m.19 a✝ a = ?m.20 a✝ a)
+  [Meta.synthInstance.apply] ❌️ apply @LinearOrder.toDecidableEq to (a a_1 : Fin 8) →
+        Decidable (integerT false a a_1 = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable (integerT false a✝ a = 0) ≟ Decidable (?m.21 a✝ a = ?m.22 a✝ a)
+  [Meta.synthInstance.apply] ❌️ apply @RCLike.toDecidableEq to (a a_1 : Fin 8) → Decidable (integerT false a a_1 = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable (integerT false a✝ a = 0) ≟ Decidable (?m.21 a✝ a = ?m.22 a✝ a)
+  [Meta.synthInstance.apply] ❌️ apply @decidableEq_of_subsingleton to (a a_1 : Fin 8) →
+        Decidable (integerT false a a_1 = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable (integerT false a✝ a = 0) ≟ Decidable (?m.21 a✝ a = ?m.22 a✝ a)
+  [Meta.synthInstance.apply] ❌️ apply @List.decidableBAll to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (∀ x ∈ ?m.17 a✝ a, ?m.15 a✝ a x)
+  [Meta.synthInstance.apply] ✅️ apply @instDecidableForall to (a : Fin 8) →
+        DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.tryResolve] ✅️ Decidable
+          (a < a✝ → integerT false a✝ a = 0) ≟ Decidable (a < a✝ → integerT false a✝ a = 0)
+  [Meta.synthInstance.resume] ✅️ propagating (a a_1 : Fin 8) →
+        Decidable
+          (a_1 <
+            a) to subgoal (a a_1 : Fin 8) →
+        Decidable (a_1 < a) of (a : Fin 8) → DecidablePred fun j => j < a → integerT false a j = 0
+    [Meta.synthInstance.resume] size: 1
+  [Meta.synthInstance.apply] ✅️ apply @Fintype.decidableForallFintype to DecidablePred fun i =>
+        ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ✅️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ a_1 < a, integerT false a a_1 = 0)
+  [Meta.synthInstance.apply] ❌️ apply @Finset.decidableDforallFinset to DecidablePred fun i =>
+        ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ (a_1 : ?m.11 a) (h : a_1 ∈ ?m.12 a), ?m.13 a a_1 h)
+  [Meta.synthInstance.apply] ❌️ apply @Multiset.decidableDforallMultiset to DecidablePred fun i =>
+        ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ (a_1 : ?m.11 a) (h : a_1 ∈ ?m.12 a), ?m.13 a a_1 h)
+  [Meta.synthInstance.apply] ❌️ apply @Vector.instDecidableForallForallMemOfDecidablePred to DecidablePred fun i =>
+        ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ x ∈ ?m.13 a, ?m.14 a x)
+  [Meta.synthInstance.apply] ❌️ apply @Array.instDecidableForallForallMemOfDecidablePred to DecidablePred fun i =>
+        ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ x ∈ ?m.12 a, ?m.13 a x)
+  [Meta.synthInstance.apply] ❌️ apply @Option.decidableForallMem to DecidablePred fun i =>
+        ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ a_1 ∈ ?m.14 a, ?m.12 a a_1)
+  [Meta.synthInstance.apply] ❌️ apply @forall_prop_decidable to DecidablePred fun i => ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ (h : ?m.11 a), ?m.12 a h)
+  [Meta.synthInstance.apply] ❌️ apply @List.decidableBAll to DecidablePred fun i => ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ j < a, integerT false a j = 0) ≟ Decidable (∀ x ∈ ?m.14 a, ?m.12 a x)
+  [Meta.synthInstance.apply] ❌️ apply @instDecidableForall to DecidablePred fun i => ∀ j < i, integerT false i j = 0
+    [Meta.synthInstance.tryResolve] ❌️ Decidable (∀ j < a, integerT false a j = 0) ≟ Decidable (?m.11 a → ?m.12 a)
+  [Meta.synthInstance.apply] ✅️ apply @Fintype.decidableForallFintype to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ✅️ Decidable
+          (∀ (i j : Fin 8),
+            j < i → integerT false i j = 0) ≟ Decidable (∀ (a j : Fin 8), j < a → integerT false a j = 0)
+  [Meta.synthInstance.apply] ❌️ apply @Finset.decidableDforallFinset to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ≟ Decidable (∀ (a : ?m.8) (h : a ∈ ?m.9), ?m.10 a h)
+  [Meta.synthInstance.apply] ❌️ apply @Multiset.decidableDforallMultiset to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ≟ Decidable (∀ (a : ?m.8) (h : a ∈ ?m.9), ?m.10 a h)
+  [Meta.synthInstance.apply] ❌️ apply @Vector.instDecidableForallForallMemOfDecidablePred to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ≟ Decidable (∀ x ∈ ?m.10, ?m.11 x)
+  [Meta.synthInstance.apply] ❌️ apply @Array.instDecidableForallForallMemOfDecidablePred to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ≟ Decidable (∀ x ∈ ?m.9, ?m.10 x)
+  [Meta.synthInstance.apply] ❌️ apply @Option.decidableForallMem to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ≟ Decidable (∀ a ∈ ?m.11, ?m.9 a)
+  [Meta.synthInstance.apply] ❌️ apply @forall_prop_decidable to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ≟ Decidable (∀ (h : ?m.8), ?m.9 h)
+  [Meta.synthInstance.apply] ❌️ apply @List.decidableBAll to Decidable (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ≟ Decidable (∀ x ∈ ?m.11, ?m.9 x)
+  [Meta.synthInstance.apply] ❌️ apply @instDecidableForall to Decidable
+        (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+    [Meta.synthInstance.tryResolve] ❌️ Decidable
+          (∀ (i j : Fin 8), j < i → integerT false i j = 0) ≟ Decidable (?m.8 → ?m.9)
+  [Meta.synthInstance] result <not-available>

@@ -21,6 +21,13 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### RA-01 - tail-envelope pivot-count guarantees - Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorems 4.1, 5.1 and 6.1](references/holden-ra01-2026-09-13/report.pdf) prove the original RPCholesky relative trace-error guarantee with $`C=3`$ for half-geometric tails, $`C=4`$ for inverse-square tails, and a finite exponent-dependent $`C_p`$ for fixed summable power tails. Envelopes are normalized at the first eigenvalue after the target rank; the head spread and complex eigenvectors are unrestricted. **General RA-01 remains open.** The auxiliary clock obstruction and determinant-comparison saturation do not refute its target.
+
+The partial results passed a separate [independent informal Codex AI-agent audit](references/holden-ra01-2026-09-13/independent-review.md). Exact and floating checks passed. No Lean verification, external human peer review or historical novelty claim is asserted. [Retained original target](randomized-and-low-rank-approximation/RA-01/README.md) · [Source, authorship, affiliation and provenance](references/holden-ra01-2026-09-13/README.md). Permanent IDs and the open count are unchanged.
+
+
 ### RA-14 — query-complexity partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** [Sidney Holden, verified affiliation and submission record](references/holden-ra14-2026-09-12/README.md). The [research note](references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, establishes the universal rank lower bound, the large-rank regime and a spectral-to-PCA reduction giving matching bounds under a retained polynomial dimension hypothesis. [Independent informal AI-agent review](references/holden-ra14-2026-09-12/independent-review.md). The [original RA-14 target](randomized-and-low-rank-approximation/RA-14/README.md) remains open in the other simultaneous finite-parameter regimes. No full resolution, external human peer review or Lean verification is asserted.

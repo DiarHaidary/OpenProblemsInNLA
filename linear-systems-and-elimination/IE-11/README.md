@@ -7,7 +7,7 @@
 **Difficulty:** challenging  
 **Importance:** interesting to specialist  
 **Status:** Open  
-**Last checked:** 2026-09-10  
+**Last checked:** 2026-09-13  
 
 **Rating rationale:** Challenging reflects a nonconvex global optimization problem with a high-degree algebraic candidate; specialist impact is an exact low-order pivoting constant.
 
@@ -48,3 +48,13 @@ Searches for the paper title and `complete pivoting maximum five 2026` found no 
 ## Audit update — 2026-09-10
 
 The [February 2026 primary preprint](https://arxiv.org/abs/2602.20390) still presents the degree-61 candidate as conjecturally optimal, rather than proving the matching upper bound. Title-based and fifth-pivot resolution searches found no later exact determination. The broader complete-pivoting bounds do not certify this finite-order optimum.
+
+## Reviewed supporting results — 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation.
+
+The [submitted report](../../references/holden-ie-extensions-2026-09-13/manuscripts/IE-11/report.pdf), Section 5 (Theorem 5.1), certifies strict local maximality of the algebraic candidate in all 24 free entries with the normalization and diagonal complete-pivoting path fixed. Sections 3–4 reconstruct the candidate and degree-61 polynomial; Section 6 provides a strictly feasible rational witness. The candidate and established lower bound remain attributed to Chen, Edelman and Urschel. Section 7 certifies an auxiliary relaxation optimum of 81/16, which is not a feasible complete-pivoting growth example.
+
+The [independent informal AI-agent review](../../references/holden-ie-extensions-2026-09-13/verification/review-ie11-ie20.md) supports the explicitly limited claims. **Status remains Open:** the work supplies supporting local and certificate results, but no matching global upper bound and no counterexample. All original matrices and admissible pivot paths remain part of the target.
+
+[Submission record and verified affiliation](../../references/holden-ie-extensions-2026-09-13/README.md). Substantial AI assistance is disclosed. The review is informal automated review, not external human peer review or formal verification. No Lean verification was performed.

@@ -8,7 +8,7 @@
 **Difficulty:** challenging  
 **Importance:** interesting to specialist  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-11
+**Last checked:** 2026-09-13
 
 **Rating rationale:** The conjecture requires a sharp enclosure for a nonnormal matrix family at every Runge–Kutta order and positive shift. It would explain mesh- and time-step-independent spectral clustering of a practical preconditioner.
 
@@ -54,3 +54,13 @@ In particular, proving $`\rho(X_{q,\mu}-I_q)\le\|\widehat U_q\|_2`$ for every $`
 - M. Outrata, *On recent advances of spectral analysis for systems arising from fully-implicit RK methods*, Proceedings in Applied Mathematics and Mechanics (2026), e70082. [DOI](https://doi.org/10.1002/pamm.70082); [author preprint arXiv:2510.21241v1](https://arxiv.org/html/2510.21241v1). §2.1, after equation (7), recalls the open general-stage conjecture; §2.3, equation (23), gives the small-matrix equivalence. The preprint says “diameter” at that point, whereas the original conjecture unambiguously specifies **radius**; the display follows the original.
 
 On 2026-09-11, checked the original published conjecture and its two-stage theorem, Outrata's 2025 preprint and 2026 publication record, and searches for the title, Radau spectral-disk conjecture, stage-parallel preconditioner proofs and counterexamples. No proof or counterexample for arbitrary stage count was located. Later symbolic spectral reductions are not a general proof of this particular disk radius. The check is bounded. This is distinct from the [diagonal nilpotent-preconditioner existence question](../IE-28/README.md) and from the repository's Krylov convergence and elimination-growth targets.
+
+## Reviewed partial results — 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation.
+
+The [submitted continuation](../../references/holden-ie-extensions-2026-09-13/manuscripts/IE-27/report.pdf) and [retained certificate proof](../../references/holden-ie-extensions-2026-09-13/submitted/IE-27_research_update/prior_results/report.pdf) establish the disk enclosure for every real positive shift at the 66 specified stage counts $`q=2,\ldots,64,80,96,128`$. This is not every stage through 128. The continuation also proves, for every admissible stage, the small- and large-shift regimes $`0<\mu\le1/(q\|L_q^{-1}\|_2)`$ and $`\mu\ge2\|L_q\|_2`$, and gives a sufficient square-root criterion that is not proved for all stages.
+
+The [independent informal AI-agent review](../../references/holden-ie-extensions-2026-09-13/verification/review-ie27.md) audits these proofs and exact certificates. **Partially resolved:** intermediate positive shifts at stage counts outside the certified set remain unsettled. The generic non-Radau and complex-shift obstructions in the continuation do not refute the original real-positive-shift Radau target.
+
+[Submission record and verified affiliation](../../references/holden-ie-extensions-2026-09-13/README.md). Substantial AI assistance is disclosed. The review is informal automated review, not external human peer review or formal verification. No Lean verification was performed.

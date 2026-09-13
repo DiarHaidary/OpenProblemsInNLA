@@ -34,7 +34,7 @@ factor},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}IE-11}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-10}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -66,9 +66,7 @@ All elimination in this problem is in exact arithmetic. Write
 active Schur complements \(S_1=A,S_2,\ldots,S_n\), with row/column
 permutations as appropriate. Its element-growth factor is
 
-\[
-\rho(A)=\frac{\max_{1\leq j\leq n}\|S_j\|_{\max}}{\|A\|_{\max}}.
-\]
+\[\rho(A)=\frac{\max_{1\leq j\leq n}\|S_j\|_{\max}}{\|A\|_{\max}}.\]
 
 Partial pivoting chooses a largest-magnitude entry in the active first
 column; complete pivoting chooses one anywhere in the active matrix. If
@@ -81,18 +79,14 @@ otherwise stated.
 
 Let
 
-\[
-g_5=\sup\{\rho_{\mathrm{CP}}(A):A\in\mathbb R^{5\times5}\text{ nonsingular}\}.
-\]
+\[g_5=\sup\{\rho_{\mathrm{CP}}(A):A\in\mathbb R^{5\times5}\text{ nonsingular}\}.\]
 
 Let \(\alpha\) be the unique real root in \((4,5)\) of the integer
 polynomial \(P_5\) displayed in Equation (2.15) of the primary reference
 below. This definition specifies an exact algebraic number; numerically
 \(\alpha\approx4.1325170786324728542\). Prove or disprove
 
-\[
-g_5=\alpha.
-\]
+\[g_5=\alpha.\]
 
 All complete-pivoting paths are included in the supremum. The lower
 bound \(g_5\geq\alpha\) is already established in the cited paper. The
@@ -127,4 +121,34 @@ optimal, rather than proving the matching upper bound. Title-based and
 fifth-pivot resolution searches found no later exact determination. The
 broader complete-pivoting bounds do not certify this finite-order
 optimum.
+
+\subsection{Reviewed supporting results --- 13 September
+2026}\label{reviewed-supporting-results-13-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/manuscripts/IE-11/report.pdf}{submitted
+report}, Section 5 (Theorem 5.1), certifies strict local maximality of
+the algebraic candidate in all 24 free entries with the normalization
+and diagonal complete-pivoting path fixed. Sections 3--4 reconstruct the
+candidate and degree-61 polynomial; Section 6 provides a strictly
+feasible rational witness. The candidate and established lower bound
+remain attributed to Chen, Edelman and Urschel. Section 7 certifies an
+auxiliary relaxation optimum of 81/16, which is not a feasible
+complete-pivoting growth example.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/verification/review-ie11-ie20.md}{independent
+informal AI-agent review} supports the explicitly limited claims.
+\textbf{Status remains Open:} the work supplies supporting local and
+certificate results, but no matching global upper bound and no
+counterexample. All original matrices and admissible pivot paths remain
+part of the target.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/README.md}{Submission
+record and verified affiliation}. Substantial AI assistance is
+disclosed. The review is informal automated review, not external human
+peer review or formal verification. No Lean verification was performed.
 \end{document}

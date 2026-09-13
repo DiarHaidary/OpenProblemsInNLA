@@ -1,0 +1,1748 @@
+{
+  "arithmetic": "Python Fraction, exact rational operations",
+  "model": "IE-20 adversarial relative-error envelope, not IEEE round-to-nearest",
+  "scope": "Finite exact certificates only; analytic arguments are in the recovered manuscript",
+  "hash_encoding": "ASCII signed hexadecimal numerator / positive hexadecimal denominator",
+  "all_checks_passed": true,
+  "number_of_witnesses": 15,
+  "checks": [
+    {
+      "family": "identity",
+      "n": 32,
+      "precision": 6,
+      "epsilon": "1/10",
+      "eta_exact": "4032156362788153354954976618257094506724471127954178377729/16586359833561514882626555464672427338929182016882247403521",
+      "status": "zero_recursive_residual",
+      "operation_count": 2305,
+      "nonzero_error_count": 32,
+      "all_assertions_passed": true
+    },
+    {
+      "family": "breakdown",
+      "n": 4,
+      "precision": 8,
+      "condition_number_exact": "511",
+      "eta_at_only_iterate": "1",
+      "status": "zero_denominator_before_alpha",
+      "operation_count": 48,
+      "faults": [
+        {
+          "index": 9,
+          "label": "q[0,0].mul[0]",
+          "operation": "*",
+          "delta": "-1/256"
+        },
+        {
+          "index": 19,
+          "label": "q[0,1].mul[1]",
+          "operation": "*",
+          "delta": "-1/256"
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 2,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 12,
+      "K_upper_bound": "4096",
+      "epsilon": "1/262144",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 55,
+      "faults": [
+        {
+          "index": 4,
+          "label": "rho[0].add[1]",
+          "operation": "+",
+          "delta": "1/4096"
+        }
+      ],
+      "last_high_residual_display_only": 0.49966437185196766,
+      "twice_signed_last_high_display_only": 0.9993287437039353,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 35,
+            "denominator_bits": 35,
+            "sha256": "c9493fc5252ba3c8c7f14c2efb84bd791ec355b559693adef1115f0e52a4669b"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 35,
+            "denominator_bits": 35,
+            "sha256": "c387a717f916e408be28d87e03bf76a44285049f6446efcec226b3fa707ebee9"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 23,
+            "denominator_bits": 23,
+            "sha256": "ec4b906eda46f503caccec8e68173db4a475a85445455dd5bb371759aa619339"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 103,
+            "denominator_bits": 105,
+            "sha256": "301479f56e07524c63a812626d3cc00c122b00679162b282c056df4b57e246ba"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 70,
+            "denominator_bits": 72,
+            "sha256": "142e5994d50666e46f0c48bc1d084c5473f7024f80fe402e341783bdcb74156e"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 3,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 24,
+      "K_upper_bound": "16384",
+      "epsilon": "1/1048576",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 143,
+      "faults": [
+        {
+          "index": 6,
+          "label": "rho[0].add[2]",
+          "operation": "+",
+          "delta": "1/16777216"
+        }
+      ],
+      "last_high_residual_display_only": -0.4996032659049675,
+      "twice_signed_last_high_display_only": 0.999206531809935,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 39,
+            "denominator_bits": 39,
+            "sha256": "2466da33967926dfef3e837da32e9daebdfee433f28d552b792b522fde787ad6"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 85,
+            "denominator_bits": 85,
+            "sha256": "4f8d683387c0cb08ef62a728d1fc8757d02fb5916853ec8449a86aa1338de120"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 70,
+            "denominator_bits": 70,
+            "sha256": "9f3e7959da1eba4ea440e8ff09f7678fec4432e3a4e1a50b49f32700e4b10840"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 324,
+            "denominator_bits": 324,
+            "sha256": "b78ad60ac5e3428e06fd4972ec66cfac8bbc5b459d87601356a1439292f84aee"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 309,
+            "denominator_bits": 309,
+            "sha256": "56937019bde8d082fd1fc6bc9d062bac67b865fcb9422c7c6fd32409f01e6017"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 755,
+            "denominator_bits": 757,
+            "sha256": "eec738641c817a859cce790a5759c590bdfdc2a3e8168e372895dcb179d4cf2a"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 716,
+            "denominator_bits": 718,
+            "sha256": "133337874ae9046aa16a7a39e06563f61a5516719d59e05ed4a67b24c768abe0"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 4,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 36,
+      "K_upper_bound": "36864",
+      "epsilon": "1/2359296",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 287,
+      "faults": [
+        {
+          "index": 8,
+          "label": "rho[0].add[3]",
+          "operation": "+",
+          "delta": "1/68719476736"
+        }
+      ],
+      "last_high_residual_display_only": 0.49935939335544915,
+      "twice_signed_last_high_display_only": 0.9987187867108983,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 42,
+            "denominator_bits": 41,
+            "sha256": "bbf8a49fd76cc78ca3561d0a4b468c192b619100b22e1d0bd1770b7308e81503"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 88,
+            "denominator_bits": 87,
+            "sha256": "3a1b517e46a8d36727b9581d2734ee8fcb1ce0b0aa2274c39edc8b6e4e71a63b"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 70,
+            "denominator_bits": 70,
+            "sha256": "5a7a9f30de80e851697e09d3cd1b71430135595d4e09da911e5121824c3d9ed9"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 351,
+            "denominator_bits": 351,
+            "sha256": "9ee15173db747fd559803a7646f586ff81747552e6a742e0899f63bbb77ed8dd"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 333,
+            "denominator_bits": 333,
+            "sha256": "3c47702ba1bc82fe23a269fe0e976d8216922b851dbfd37e4cc9acd4fbd9880c"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 853,
+            "denominator_bits": 853,
+            "sha256": "b22312039694a40223e5515b5e15ef674784cae2e2ba7ed6086abb2a4a4a6039"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 837,
+            "denominator_bits": 837,
+            "sha256": "7c84751738ae424947dcbbc630f58921fc35b71cd21057b3ddf3cc2e8581a1b4"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1593,
+            "denominator_bits": 1595,
+            "sha256": "34382a44eab147970cf22bbc6e4f6820f530c97a333c87ae973e341f55795d64"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1553,
+            "denominator_bits": 1555,
+            "sha256": "0f2fe235a438f381836a0d6be0477a1d6c55050ba5fd541fce0df3eda25406ef"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 5,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 48,
+      "K_upper_bound": "65536",
+      "epsilon": "1/4194304",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 499,
+      "faults": [
+        {
+          "index": 10,
+          "label": "rho[0].add[4]",
+          "operation": "+",
+          "delta": "1/281474976710656"
+        }
+      ],
+      "last_high_residual_display_only": -0.4991155654740229,
+      "twice_signed_last_high_display_only": 0.9982311309480458,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 43,
+            "denominator_bits": 43,
+            "sha256": "812041daa21897be73d9d10ada5bb0f0ebb1c53635d08b0aea104538342290f1"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 137,
+            "denominator_bits": 137,
+            "sha256": "5cac68e0b758412a9bbe4c19dab3655827aca3e9db068c7e03105e91e4878f4d"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 118,
+            "denominator_bits": 118,
+            "sha256": "62dc11db675a7fe0e1665ee049807fa7bd9df4d922158b0b664a7c4d77b5270b"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 568,
+            "denominator_bits": 568,
+            "sha256": "53607822310c38bb7bc7cbabf336b76ff65ca88782c64d1144bf48cb80c118a2"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 549,
+            "denominator_bits": 549,
+            "sha256": "4b2c82000eb212b0aac0b45eeb0989240881992e16c4d649b447ef1e69989cd0"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1383,
+            "denominator_bits": 1383,
+            "sha256": "b6912167c79d19aac41c45325e0b4f2c899ab40ef0fc9523daa08c15ca53d54d"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1362,
+            "denominator_bits": 1362,
+            "sha256": "b182afe35ccbf81de4e871898486190bab126936eb03055ea7b8e6b651628ec2"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 2584,
+            "denominator_bits": 2584,
+            "sha256": "7dad3bdcccf14d4ca19b6b92be3c36ec8e3616245e80d23bd1d1bcd8bf648f35"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2562,
+            "denominator_bits": 2562,
+            "sha256": "8df35e7b75bfbb1e3c4df511723fb2fff724822c99376840d7397ef189467d7c"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 4164,
+            "denominator_bits": 4166,
+            "sha256": "2ec909dd54dbf519aa462feb001158c8aae8e7615db7f9cc4d318fbb1720d77a"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 4124,
+            "denominator_bits": 4126,
+            "sha256": "6eb11704b57a7ba56ae4a229ea5eade6dd7d9d134b7f6446967fd4f3e19520fc"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 6,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 60,
+      "K_upper_bound": "102400",
+      "epsilon": "1/6553600",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 791,
+      "faults": [
+        {
+          "index": 12,
+          "label": "rho[0].add[5]",
+          "operation": "+",
+          "delta": "1/1152921504606846976"
+        }
+      ],
+      "last_high_residual_display_only": 0.4988718565948197,
+      "twice_signed_last_high_display_only": 0.9977437131896394,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 45,
+            "denominator_bits": 44,
+            "sha256": "4cbbf922598db7d0d1d2f64878da287016294ded6f52db584a17498d37ac1c9f"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 136,
+            "denominator_bits": 135,
+            "sha256": "ab66de5981d4a2dcc67eea3bcd9405bfc3d7cb24660dc1fd0367d4c2a06ea5e9"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 118,
+            "denominator_bits": 118,
+            "sha256": "b38aee62e16584bd5fe5ed038d0446a81888330dfa4c743a10e9e5d1cba8e8b2"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 590,
+            "denominator_bits": 590,
+            "sha256": "66acc0a891cd04fb37925dd9a7fe7e7f74395249b9a2b0bbba4537caa7aa8e57"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 573,
+            "denominator_bits": 573,
+            "sha256": "bbc2335a69d65fd160022c09108aa77c5d1e40945b65ef06b121fa997dedd6a5"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1480,
+            "denominator_bits": 1480,
+            "sha256": "e8cf448d7ac18dc55ce214a1e8524355e229225ab82a07ded99d21b9a3c6812b"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1458,
+            "denominator_bits": 1458,
+            "sha256": "38cc47d4fb4bc4b160878d53915500cd3bdd33cbb82af3e3f7b75f322f3ebc61"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 2802,
+            "denominator_bits": 2802,
+            "sha256": "d6346361b54523353c1008b923987b7b47291e3679b9e7fb48126a84abeb6c72"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2778,
+            "denominator_bits": 2778,
+            "sha256": "060dbab42407a9691ee71b61c0e7bc4563365aa19757179eed11c06ba1280b7e"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 4551,
+            "denominator_bits": 4551,
+            "sha256": "80241c907edfcd85fb87a58b2f9cf555f049feac3189c68c67d4e6e2483f7fa6"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 4534,
+            "denominator_bits": 4534,
+            "sha256": "07ea5a33dfa58e31822831c0c4dafcfa22161baf544a0b5eb507915ebea75744"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 6737,
+            "denominator_bits": 6739,
+            "sha256": "332d1396fbf032dbcf8def31bf0e436cc261458ec33538bf80c088a23dfffecd"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 6690,
+            "denominator_bits": 6692,
+            "sha256": "e73b09cdc2147a0b7dc3bd5b0dee363404d24fe1cf360b2e04874c030d67ccdd"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 7,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 72,
+      "K_upper_bound": "147456",
+      "epsilon": "1/9437184",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 1175,
+      "faults": [
+        {
+          "index": 14,
+          "label": "rho[0].add[6]",
+          "operation": "+",
+          "delta": "1/4722366482869645213696"
+        }
+      ],
+      "last_high_residual_display_only": -0.49862826668519433,
+      "twice_signed_last_high_display_only": 0.9972565333703887,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 46,
+            "denominator_bits": 45,
+            "sha256": "225ea4f928f2cc9cdea15bb66d0a4a2ba40f57d445d1dc289760345e43da9b54"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 188,
+            "denominator_bits": 187,
+            "sha256": "95d255c625ad9a0d0b59aca7ee10ae45b4223de5faf5115aea7c571d92db133e"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 166,
+            "denominator_bits": 166,
+            "sha256": "74283347899c91224c1243c886d5aeb83fff17b92b95222aa21fd5300d1488d9"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 811,
+            "denominator_bits": 811,
+            "sha256": "9057bb49d5572b72ee4dfa0381865839cf3a77257b8a14d346f67fc27397270d"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 789,
+            "denominator_bits": 789,
+            "sha256": "0c1d6db47764e2894d06b75b07c88c1db0d694feb2c9bcbd5bb72601807b2262"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 2011,
+            "denominator_bits": 2011,
+            "sha256": "3bfb53da81bd5743d4f4cd619ebc5d05034994c0febd11a352f1f51b7a0bf4d8"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1986,
+            "denominator_bits": 1986,
+            "sha256": "ee49c985870cac0aaf18c5f02c0567b0508bccba6119d690c4306cb06db18460"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 3787,
+            "denominator_bits": 3787,
+            "sha256": "9fbdbf77e5b63dd1ffd79b167558e63d019cec1e562a8c85ca1bf91d369e3e2b"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 3762,
+            "denominator_bits": 3762,
+            "sha256": "a5f535205eaf7f188088616bafeb78a3e37117975ef92fb0e24b43a043c10926"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 6136,
+            "denominator_bits": 6136,
+            "sha256": "cb7389295dc4fb85837597a63e014802ad6182c3802df3eadae3d2a6fb4f9192"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 6117,
+            "denominator_bits": 6117,
+            "sha256": "5e54be70de0d20a2f9ecc9a9122835f154a4ad95018c643dd812a35251b1fe59"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 9066,
+            "denominator_bits": 9066,
+            "sha256": "5016e7debfa79e87f91c71370858e42a40c52664e92ef17f47aa95c968c33754"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 9045,
+            "denominator_bits": 9045,
+            "sha256": "77d100503a25388f5c3b6dc52452957aaa3c16018b1342d58ac19d89bdb7daa4"
+          }
+        },
+        {
+          "step": 7,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 12570,
+            "denominator_bits": 12572,
+            "sha256": "4269c1742e8d09817f1397ebb71143f866e677f80d3c460f84600f2776a73bd2"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 12524,
+            "denominator_bits": 12526,
+            "sha256": "2157739f5f79c856cd4b8922a1763bc53e1830fb0c5a8ecb808f6a1453ad2896"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 8,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 84,
+      "K_upper_bound": "200704",
+      "epsilon": "1/12845056",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 1663,
+      "faults": [
+        {
+          "index": 16,
+          "label": "rho[0].add[7]",
+          "operation": "+",
+          "delta": "1/19342813113834066795298816"
+        }
+      ],
+      "last_high_residual_display_only": 0.4983847956871206,
+      "twice_signed_last_high_display_only": 0.9967695913742411,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 47,
+            "denominator_bits": 46,
+            "sha256": "f9a055156b58a2f1ec82af335fd8e30b428ddc3db4d8c7f6a5eb3e121051ae77"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 189,
+            "denominator_bits": 188,
+            "sha256": "a5fffc2c6be6439c0a2917fe56f264f4449dada7d37be50d1ba3404fb4027e09"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 166,
+            "denominator_bits": 166,
+            "sha256": "d7acecdbd04602b8ad2a1a88650bebf0a41e0612a0782d4e7a68d7d1853e205f"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 836,
+            "denominator_bits": 836,
+            "sha256": "e862232137eb8ce4174f2098b34e0012465cb428ad214862df114c4971e10b11"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 813,
+            "denominator_bits": 813,
+            "sha256": "f7f900e682333ab3c320cdd47592862db2713ea4abfb9f79e2a1f5cd77bb9f3b"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 2106,
+            "denominator_bits": 2106,
+            "sha256": "4d609a60e382b1f1110b996f0e93d46bb53f82c7d00c393d7f349008608dbec4"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2082,
+            "denominator_bits": 2082,
+            "sha256": "142d1a54415134a554eb0d7a2f7d890b65a395794775608571f39342786fd6ac"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 4004,
+            "denominator_bits": 4004,
+            "sha256": "b845e885d5e0c08a780867d8ff3ea5954c7f7224254624fbbad24eb3043f4fab"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 3978,
+            "denominator_bits": 3978,
+            "sha256": "210b7b1703231f59a0c8c76fafa64f0e03e94fbb33ff13c8cac7e82d2ed860fb"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 6518,
+            "denominator_bits": 6518,
+            "sha256": "28ca5bca1916527f69bb25114775e5562504c8b05faf71bdd6fad502b638a52b"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 6501,
+            "denominator_bits": 6501,
+            "sha256": "d20959a6ba183d65a7cd112b56564e8ea7453a19eff55206ba7bc386bd2abc9e"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 9667,
+            "denominator_bits": 9667,
+            "sha256": "c242d8e0896d1e4aaf0e5001fcaccfb3db9082e2ffdaa12294890d6aa8ae6bb2"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 9645,
+            "denominator_bits": 9645,
+            "sha256": "fbac5b07cc2529c4ca5ac760c8269b1ada1c0ef245dd17c9bc8381badae7a2d9"
+          }
+        },
+        {
+          "step": 7,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 13435,
+            "denominator_bits": 13435,
+            "sha256": "710cd0aeab351adef79cada5d1446225b0f5848e6a8e6b7c8d5822e5618f6454"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 13410,
+            "denominator_bits": 13410,
+            "sha256": "7ea4368200a67ada1e7f87ac96edea9480591262c777b1cbbc9ff5678bb9daa6"
+          }
+        },
+        {
+          "step": 8,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 17822,
+            "denominator_bits": 17824,
+            "sha256": "28d8b4c8f335f2436f699c11b6527260421439daa0e5bdf27348364e13b84e2b"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 17773,
+            "denominator_bits": 17775,
+            "sha256": "e8ef2973adaf167f25f6fa258cad8c63f5d8551f06b2753cc1559e3dafacfdd8"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 9,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 96,
+      "K_upper_bound": "262144",
+      "epsilon": "1/16777216",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 2267,
+      "faults": [
+        {
+          "index": 18,
+          "label": "rho[0].add[8]",
+          "operation": "+",
+          "delta": "1/79228162514264337593543950336"
+        }
+      ],
+      "last_high_residual_display_only": -0.49814144354259265,
+      "twice_signed_last_high_display_only": 0.9962828870851853,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 47,
+            "denominator_bits": 47,
+            "sha256": "9d50af0f12f5a7294071ebe80d9b3d0a18b7fb735b749ebe89fbcdf84dba5494"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 237,
+            "denominator_bits": 237,
+            "sha256": "63d1ae65031b37e1f32314830d3ce582ca6ce1f28950e70293e8b30812763d10"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 214,
+            "denominator_bits": 214,
+            "sha256": "23677b2459e9567e83b1b8ecb3dd0efd56f69e2446828d2a781fca2e7531218b"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1049,
+            "denominator_bits": 1049,
+            "sha256": "4dce8660743126cd23612f3d7436fb579d8a78cecc1bf3fac17b4a55f6a5c8b5"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1029,
+            "denominator_bits": 1029,
+            "sha256": "3409f2f5e4b8b3880359141ccc494402a869e50a55f9fc2ef5819bdb069e820c"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 2633,
+            "denominator_bits": 2633,
+            "sha256": "2603194e866c0147e8bdaccd17bff01f79e76468f8f07391724087f5c6e602c1"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2610,
+            "denominator_bits": 2610,
+            "sha256": "465f024d92e2e19dd5b5fdd648973ac81dee19ff625b747280319218587e880d"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 4988,
+            "denominator_bits": 4988,
+            "sha256": "d790a7a8cc050ca22639de8fba8d04afacea21eb836d6c92c5d1ffd20ff66624"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 4962,
+            "denominator_bits": 4962,
+            "sha256": "13fe188cfe7bce0dc15b2b10617cbd52634f8f1a660126076a90f179f4b1492c"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 8099,
+            "denominator_bits": 8099,
+            "sha256": "d5390e04e4353188da4520b863ea439a67601ceae8ad1cde17abac966d6ea8f0"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 8079,
+            "denominator_bits": 8079,
+            "sha256": "a6e343cb19025f5fe6d52b4e92ebff7bf8890a3d30a8d0e70516d20d0f316098"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 11995,
+            "denominator_bits": 11995,
+            "sha256": "b793ccf892b9162e67b71caec766f055aded4ec2c5ee768f14596af90ec41129"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 11973,
+            "denominator_bits": 11973,
+            "sha256": "3b2629c601ead0e8be2e0d9074cee5dde6e0ea721bbb63a969bf0d43ce3fb467"
+          }
+        },
+        {
+          "step": 7,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 16647,
+            "denominator_bits": 16647,
+            "sha256": "548798478a04c35ddb97cfb29c8b7402255d2d3d7c618b8ec06ab450150dce03"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 16627,
+            "denominator_bits": 16627,
+            "sha256": "8af494fc466a16763bb1934067b14fedaa20936abe33a693f92c2e69a4834c31"
+          }
+        },
+        {
+          "step": 8,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 22075,
+            "denominator_bits": 22075,
+            "sha256": "c056a252d30e1f821e87f19bfa9a9c44a54a01e8c94a4138af9e960858a5dcd1"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 22051,
+            "denominator_bits": 22051,
+            "sha256": "08c1e754d1224111006ad448b5dfc5f53bbd97f0fa77f1c6f910bcc6bfd36829"
+          }
+        },
+        {
+          "step": 9,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 28264,
+            "denominator_bits": 28266,
+            "sha256": "3fe487876dec0af727fe9767973b24c811d7aa6f31bd5984898a9d492942e54f"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 28216,
+            "denominator_bits": 28218,
+            "sha256": "b1154c137e4e2965bc77acdfdfb13100b48e8927dc53333a73a7a1b42112d114"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 10,
+      "exponent": 12,
+      "T": "4096",
+      "precision": 108,
+      "K_upper_bound": "331776",
+      "epsilon": "1/21233664",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 2999,
+      "faults": [
+        {
+          "index": 20,
+          "label": "rho[0].add[9]",
+          "operation": "+",
+          "delta": "1/324518553658426726783156020576256"
+        }
+      ],
+      "last_high_residual_display_only": 0.4978982101936329,
+      "twice_signed_last_high_display_only": 0.9957964203872658,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 48,
+            "denominator_bits": 47,
+            "sha256": "b1db4881ba53bea8e2f6eae252384ab7185b5660164f2302f0062e3f889efa0a"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 238,
+            "denominator_bits": 237,
+            "sha256": "c852ddd813e68b16147cc651f255717d079202d5ed49cab6c0d1af5d0262f6ca"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 214,
+            "denominator_bits": 214,
+            "sha256": "80c35d80342f23b3aa88b3b5e1898fbc953410eac839fe79e0ff8af2107cc6f5"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1077,
+            "denominator_bits": 1077,
+            "sha256": "2b9c881ec634cf73026e2c25b221c220bcdf8756f0bdb09fbd6cafc77e06f39d"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1053,
+            "denominator_bits": 1053,
+            "sha256": "89a5c1c04985e2720a7b7a256064d989dcccb501d150784903ed76bbd3aab3aa"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 2733,
+            "denominator_bits": 2733,
+            "sha256": "9ec4dd2e06fde40d3e79a8c13effec6ca18e7c73499cf3542953e668415efe48"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2706,
+            "denominator_bits": 2706,
+            "sha256": "2c68a50f5a0374d1a98d047f15a1d05b5f1210c10063c5023fb1cc294ec60b5e"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 5193,
+            "denominator_bits": 5193,
+            "sha256": "2028b97c93aa0fbb135a959441ce6371e95585ceb19220000e3c5e07db04386f"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 5166,
+            "denominator_bits": 5166,
+            "sha256": "3da7c38fa984b03e5ff1ef5611f4ae98bcf10b2f2e0cd11466361468a258b5a7"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 8490,
+            "denominator_bits": 8490,
+            "sha256": "b39cca39757f08b99270ede0cc59a7a0529f78290db079f07d5c217592d25631"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 8469,
+            "denominator_bits": 8469,
+            "sha256": "6a7fba7ff0f74ccc8bb1c6e4ea774c194754beae1ea27c873191461f79ae2056"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 12596,
+            "denominator_bits": 12596,
+            "sha256": "6fa2ace3e807389abe4052c7bc1bb0c1ffd3e4c86e70b735217b2f8318726f7b"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 12573,
+            "denominator_bits": 12573,
+            "sha256": "61927a16fb374bf0f3e6d69d61019f26bf57ff554e966708e8f7e0d585203290"
+          }
+        },
+        {
+          "step": 7,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 17516,
+            "denominator_bits": 17516,
+            "sha256": "77b88be4942d18329f1029ac75270426cb069ae9aeab285980e2418da6c638c9"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 17491,
+            "denominator_bits": 17491,
+            "sha256": "ccf60c95336ad266d42325b77447319dd0803c86b4928ca9630a0024a2271163"
+          }
+        },
+        {
+          "step": 8,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 23252,
+            "denominator_bits": 23252,
+            "sha256": "c038d583b214bc77784da277c8694b29f18356e3bd957361f3714d2093e514a8"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 23227,
+            "denominator_bits": 23227,
+            "sha256": "684963477596d3347b83ae53a917bb9b1f06204936ad1bca61740d1e2c83b72a"
+          }
+        },
+        {
+          "step": 9,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 29795,
+            "denominator_bits": 29795,
+            "sha256": "9fd9bdc964426f6406100e616733fb331f986391454020d4f6823c74dca95741"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 29772,
+            "denominator_bits": 29772,
+            "sha256": "6c63b9d744d38ae1280ddcca721848ce362c106bdd335f3bead4621cf91c9a4f"
+          }
+        },
+        {
+          "step": 10,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 37172,
+            "denominator_bits": 37174,
+            "sha256": "3365fadbd4a6fceeffc935a3a460cc2e29e06caf0fa43ba212d659257cb8de3a"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 37124,
+            "denominator_bits": 37126,
+            "sha256": "823fb7981f0c6cf27527a7d49270401f76b01185f1aedfbfc1aa8838e7373416"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 6,
+      "exponent": 4,
+      "T": "16",
+      "precision": 20,
+      "K_upper_bound": "400",
+      "epsilon": "1/25600",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 791,
+      "faults": [
+        {
+          "index": 12,
+          "label": "rho[0].add[5]",
+          "operation": "+",
+          "delta": "1/1048576"
+        }
+      ],
+      "last_high_residual_display_only": 0.2676240543211496,
+      "twice_signed_last_high_display_only": 0.5352481086422992,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 29,
+            "denominator_bits": 28,
+            "sha256": "49194d73ee60d10d2a9b84a94a99cdcfc06b3df52489b71430ee59b769e7f57f"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 56,
+            "denominator_bits": 55,
+            "sha256": "63c82ea43e471e74d3a8a7ce01a5c04b94243bb135a5ce854c7d9dc4446ef205"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 38,
+            "denominator_bits": 38,
+            "sha256": "bcc526020513d291f71f020595b397664aa9d30f33e248c2537e43b076694e74"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 208,
+            "denominator_bits": 208,
+            "sha256": "35e4567fb02742432e504bc966d92796ef0b3b774efc43b0f746abfec9c5dff5"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 188,
+            "denominator_bits": 188,
+            "sha256": "aeb4b5f79ee2bf8bf3ec682eee72e637d8e3779453fbe8fc1b0834401b4d3e3f"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 501,
+            "denominator_bits": 501,
+            "sha256": "a5e5d63dc45dbae361e4d54bfb89d21fb65caf19f7105761d2526b8e35942c11"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 479,
+            "denominator_bits": 479,
+            "sha256": "83f04e6f99680e8f6aaf095f0495226214305c7032934f788f876f3c98265cac"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 941,
+            "denominator_bits": 941,
+            "sha256": "4cceabae72619f947390d7deef2262a14dc8d17a9d5bb07e9ceefd2e810dd358"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 912,
+            "denominator_bits": 912,
+            "sha256": "e95e895f1c346912345b0d29cec9b80bc7b5fc83a95bb44001b53aae07aa9da3"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1519,
+            "denominator_bits": 1519,
+            "sha256": "6aff5d7be173f2120deadf77b970149c464cf31b9d85838ca485a17330b6a62f"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1498,
+            "denominator_bits": 1498,
+            "sha256": "506a2030df4a164d793f88814f8b42ab43c0258bd3c233cc6db7d2909972ce1d"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 2245,
+            "denominator_bits": 2249,
+            "sha256": "fc44edfcadeaf12bb2bd682dbe650dccacade72757702e04fadbd81b91b1c8ba"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2212,
+            "denominator_bits": 2216,
+            "sha256": "fd9054f9fbc354eef08558a4a98a56fc840c3ac20312f02164d5088fc0d49073"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 6,
+      "exponent": 8,
+      "T": "256",
+      "precision": 40,
+      "K_upper_bound": "6400",
+      "epsilon": "1/409600",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 791,
+      "faults": [
+        {
+          "index": 12,
+          "label": "rho[0].add[5]",
+          "operation": "+",
+          "delta": "1/1099511627776"
+        }
+      ],
+      "last_high_residual_display_only": 0.4821887181691482,
+      "twice_signed_last_high_display_only": 0.9643774363382964,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 37,
+            "denominator_bits": 36,
+            "sha256": "e7632239e26c19bc5b76c35be0f3850b2c4d4e20430535bccb601b2753e48c8f"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 94,
+            "denominator_bits": 93,
+            "sha256": "11a4e6637879f556b868121d094afe67652eeb78fc83621ce4d7d928c69fd418"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 78,
+            "denominator_bits": 78,
+            "sha256": "7537dc7209414aaf96791cc72f3da49167c6cfba4a633478bc5b0a3a03744132"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 402,
+            "denominator_bits": 402,
+            "sha256": "fd73c350e8b632064d7e21d7b174a7f06d7e1ddafc1ec0a2299187414cf940f7"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 381,
+            "denominator_bits": 381,
+            "sha256": "51b012746229501b4611fef66e02cb197281ef456e279a142fa2c20704a6dc81"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 992,
+            "denominator_bits": 992,
+            "sha256": "31bf10aec285f89e68ff474c07ba0d0b617622914f11688ade55c1ee1a88d5ef"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 970,
+            "denominator_bits": 970,
+            "sha256": "1009f83b6fda2a0002f1d852793d68bc7db6ff89c98e3b324afc5ece851eef4f"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1873,
+            "denominator_bits": 1873,
+            "sha256": "03110f8e73c6682c69fb3ceb3811068eb8cad5a6cad8663ff5a3ffa1f74f18ac"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1850,
+            "denominator_bits": 1850,
+            "sha256": "523fab667f9145ccd556be94c9d519a8fd02001bf030b0d025ab904a7f8aab93"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 3038,
+            "denominator_bits": 3038,
+            "sha256": "4de6d517deb6183d73696fbf8912025e89570d7d5ae3bbdb5c3c57ce5258c3e5"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 3022,
+            "denominator_bits": 3022,
+            "sha256": "ba63cd4211b045d62d2a74d54d858c24e43f73f5a82467ea95ef839080189105"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 4496,
+            "denominator_bits": 4498,
+            "sha256": "37722f5e07e97ec0ae4185bbec9ab2d920f4a11ae6d3e5834c4c5b1f26cf8a07"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 4452,
+            "denominator_bits": 4454,
+            "sha256": "e30e633fb68da35286dd0cdebc65522b9f8d825bc20bd88a142c6a3a3d481573"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 6,
+      "exponent": 16,
+      "T": "65536",
+      "precision": 80,
+      "K_upper_bound": "1638400",
+      "epsilon": "1/104857600",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 791,
+      "faults": [
+        {
+          "index": 12,
+          "label": "rho[0].add[5]",
+          "operation": "+",
+          "delta": "1/1208925819614629174706176"
+        }
+      ],
+      "last_high_residual_display_only": 0.4999294320367066,
+      "twice_signed_last_high_display_only": 0.9998588640734132,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 53,
+            "denominator_bits": 52,
+            "sha256": "999a385abcf1e8ff958bea3c85fecf04db6ff95feb5e5d475c00e6d27f0a3cb1"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 176,
+            "denominator_bits": 175,
+            "sha256": "333567fea34b30595e730e806f952d80f944b0ddf90fb8b57e6a9cff59beed18"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 158,
+            "denominator_bits": 158,
+            "sha256": "117d76f1f4ecc1456b0cca5150676d37241c0d30b1c2b8ba5b572e9185a29d14"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 786,
+            "denominator_bits": 786,
+            "sha256": "f8bb1af998ee22d26b0f73ea4df1e00528abd5f47aa7c78f461c582851f5e2ea"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 765,
+            "denominator_bits": 765,
+            "sha256": "dc557f1539970539f7ae0c44a66897072617d67e7135aa41b5782fc6667cf77c"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1968,
+            "denominator_bits": 1968,
+            "sha256": "5e831f7583bbd60a951efff9d40dd0250a97609d23bcd017dfc7a86d587769b3"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1946,
+            "denominator_bits": 1946,
+            "sha256": "1d1b84c2c90b4fbb0fcd7b1a307cde0d1c43d9ada501953f464244e7a5a00fe0"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 3730,
+            "denominator_bits": 3730,
+            "sha256": "c4ad7e3f39a58c0ba3db68ef8f5ba54b8519ed08d64b9d8d942cd92fdfa6d05f"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 3706,
+            "denominator_bits": 3706,
+            "sha256": "f7328a7c20e0e78eb158f58600625b0b39b8eb03b825cb8c32d24037a6b904a3"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 6063,
+            "denominator_bits": 6063,
+            "sha256": "7ead0001f91576c3bd39f82497a9d251620ee83cc7284bd6b22319e58f6c3334"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 6046,
+            "denominator_bits": 6046,
+            "sha256": "40bac1ca7e5a1f2bd3af864323b3e89b0be897c594fd3414ea17e8a25ca1c421"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 8977,
+            "denominator_bits": 8979,
+            "sha256": "b0d9d5198cdc4618626fe8eaa2860bfdc6c4ef85caf2b735320379d65a3a247b"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 8922,
+            "denominator_bits": 8924,
+            "sha256": "261987b859d147a6e23b15168df13bbd7816cbab56722f5fe52d0ed00c170640"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    },
+    {
+      "family": "path_outlier",
+      "n": 6,
+      "exponent": 24,
+      "T": "16777216",
+      "precision": 120,
+      "K_upper_bound": "419430400",
+      "epsilon": "1/26843545600",
+      "stored_matrix_max_significand_bits": 1,
+      "condition_bound_proof": "kappa(A) <= (n-1)^2*T via inverse bidiagonal factor",
+      "status": "step_limit",
+      "operation_count": 791,
+      "faults": [
+        {
+          "index": 12,
+          "label": "rho[0].add[5]",
+          "operation": "+",
+          "delta": "1/1329227995784915872903807060280344576"
+        }
+      ],
+      "last_high_residual_display_only": 0.499999724328578,
+      "twice_signed_last_high_display_only": 0.999999448657156,
+      "certificates": [
+        {
+          "step": 0,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 69,
+            "denominator_bits": 68,
+            "sha256": "618a7ee90242837484f3e09a8c08748860c52027669b7e9d4d34a5b91b5a4f1a"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2,
+            "denominator_bits": 1,
+            "sha256": "1d800ad9f4e99e1c61aa45473623da4013509f1ab2e23718f713de921b0eee90"
+          }
+        },
+        {
+          "step": 1,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 256,
+            "denominator_bits": 255,
+            "sha256": "11194e7b2749d4314fcc3e9e88c63afbc01bf3226f01736f89230efc3a5d391f"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 238,
+            "denominator_bits": 238,
+            "sha256": "7a3ee12df512f7d47fac260768a6eb9851f0a6efc6f4b488f70eab3bb7a7d051"
+          }
+        },
+        {
+          "step": 2,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 1166,
+            "denominator_bits": 1166,
+            "sha256": "2671eeafd7d2b205f7049e27668cfba713b3ff93dbf0d42cd74162207200fcd6"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 1149,
+            "denominator_bits": 1149,
+            "sha256": "fc0a482c5cab44fd47902d6f686112934444d9f88855b635764a3c5bfcb2686d"
+          }
+        },
+        {
+          "step": 3,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 2944,
+            "denominator_bits": 2944,
+            "sha256": "340d210f73f36bb5d1bc920c4806d6b39d97110d22f9837e832e47d6cc14e794"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 2922,
+            "denominator_bits": 2922,
+            "sha256": "134e0109d35508900d7b78e7ca0ea75870bc620bf0169e46a4fa0e4a4ca19c4e"
+          }
+        },
+        {
+          "step": 4,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 5586,
+            "denominator_bits": 5586,
+            "sha256": "5f1b8527ea43b18ea5212ece7dc325876db7857a4d52fa105cd42c8892dcbf03"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 5562,
+            "denominator_bits": 5562,
+            "sha256": "c0642e66a4fb39409b1fc77dcd3d11699b9419f7ed76c94171ae3351be107081"
+          }
+        },
+        {
+          "step": 5,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 9087,
+            "denominator_bits": 9087,
+            "sha256": "a9371cf03055baf3551b8a8975e67588c935d875de938755bf73600909a88da1"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 9070,
+            "denominator_bits": 9070,
+            "sha256": "5255998dab46a6e2a013c059bb78dea283153307c70fd82a82d282675d742529"
+          }
+        },
+        {
+          "step": 6,
+          "failure_margin": {
+            "sign": 1,
+            "numerator_bits": 13457,
+            "denominator_bits": 13459,
+            "sha256": "d89a42645ed2c968827033172df2d788e3f325a1b43cfb4c474b0a2cc72336fb"
+          },
+          "residual_squared": {
+            "sign": 1,
+            "numerator_bits": 13384,
+            "denominator_bits": 13386,
+            "sha256": "27ec7c91fdee926d68128d65b74adb19dbb65b2b805b623b5e96d50d1babd1dd"
+          }
+        }
+      ],
+      "all_assertions_passed": true
+    }
+  ]
+}

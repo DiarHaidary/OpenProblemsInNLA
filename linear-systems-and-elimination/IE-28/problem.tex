@@ -34,7 +34,7 @@ limit},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}IE-28}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-11}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -64,7 +64,7 @@ deferred-correction methods.
 
 \subsection{Statement}\label{statement}
 
-Let \(s\ge2\) be an integer and \(0<c_1<\cdots<c_s\le1\) be real
+Let \(s\ge2\) be an integer and \(0< c_1<\cdots< c_s\le1\) be real
 collocation nodes. Let
 
 \[\ell_j(t)=\prod_{k\ne j}\frac{t-c_k}{c_j-c_k},
@@ -73,7 +73,7 @@ collocation nodes. Let
 
 \textbf{Conjecture (van der Houwen--de Swart).} For every such node set,
 does there exist a real positive diagonal matrix
-\(D=\operatorname{diag}(d_1,\ldots,d_s)\) such that
+\(D=\mathop{\mathrm{diag}}\nolimits(d_1,\ldots,d_s)\) such that
 
 \[\rho(I_s-D^{-1}A)=0?\]
 
@@ -94,7 +94,6 @@ gives \(A\) a zero row and forces \(I_s-D^{-1}A\) to have eigenvalue
 one. Rescaling positive nodes to \(c_s\le1\) does not change the
 existence question.
 
-\newpage
 \subsection{Numerical significance and known
 distinctions}\label{numerical-significance-and-known-distinctions}
 
@@ -109,13 +108,13 @@ steps using a positive diagonal preconditioner, which permits
 independent stage solves. It does not assert uniform contraction for
 finite \(z\) or absence of transient nonnormal growth.
 
-The case \(s=2\) has an elementary verification. Write \(a=c_1<b=c_2\)
+The case \(s=2\) has an elementary verification. Write \(a=c_1< b=c_2\)
 and choose
 
 \[d_1=\frac{a(2b-a)}{2(b-a)+\sqrt{2ab}},\qquad d_2=\frac{ab}{2d_1}.\]
 
 Both entries are positive, and direct substitution gives
-\(\operatorname{tr}(D^{-1}A)=2\) and \(\det(D^{-1}A)=1\).
+\(\mathop{\mathrm{tr}}\nolimits(D^{-1}A)=2\) and \(\det(D^{-1}A)=1\).
 Cayley--Hamilton therefore gives \((I_2-D^{-1}A)^2=0\). This
 verification is included here explicitly; it is not a claim of an
 all-stage result in the cited papers.
@@ -164,4 +163,40 @@ distinct from the
 \href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/linear-systems-and-elimination/IE-27/README.md}{LU-based
 spectral disk question} and from existing incomplete-factorization
 entries.
+
+\subsection{Reviewed partial results --- 13 September
+2026}\label{reviewed-partial-results-13-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/manuscripts/IE-28/report.pdf}{submitted
+report} proves existence for all two- and three-node sets (Section 2),
+scaled Laguerre node sets at every stage count (Theorem 3.2), and
+sufficiently clustered positive nodes at each fixed stage count (Theorem
+5.3). Section 7 supplies six exact point certificates and six
+node-neighborhood certificates in dimensions four through seven. The
+neighborhood sizes depend on the stage count; these results do not cover
+arbitrary prescribed nodes in every dimension.
+
+The eleven-stage obstruction in Theorem 6.2 excludes a stronger
+nonnegative-coefficient eigenpolynomial ansatz, not positive diagonals
+in general. The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/submitted/IE-28_verified_extensions/STRUCTURAL_REDUCTION.md}{structural
+supplement}, Sections 2--4, gives a diagonal-similarity reduction and
+Vandermonde principal-minor identity, plus a non-collocation auxiliary
+counterexample. The two overlapping bundles are recorded as one
+submission.
+
+These restricted results passed an
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/verification/review-ie28.md}{independent
+informal AI-agent review}. \textbf{Partially resolved:} existence for
+arbitrary prescribed positive distinct nodes at every stage count
+\(s\ge4\) remains open outside the established families.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/README.md}{Submission
+record and verified affiliation}. Substantial AI assistance is
+disclosed. The review is informal automated review, not external human
+peer review or formal verification. No Lean verification was performed.
 \end{document}

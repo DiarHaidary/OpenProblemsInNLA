@@ -1,0 +1,17 @@
+{
+  "n": 16,
+  "K": "256",
+  "epsilon": "1/256",
+  "lower_bits": 11,
+  "general_upper_bits": 5551,
+  "first_step_upper_bits": null,
+  "best_upper_bits": 5551,
+  "scalar_exact_bits": null,
+  "H": "256",
+  "D": "67108864",
+  "chebyshev_horizon_capped_at_n": 16,
+  "backward_horizon_capped_at_n": 16,
+  "proof_horizon": 16,
+  "general_upper_rounding": "ceil(log2(prefactor)) + exponent*ceil(log2(D)); a conservative integer upper, not the exact ceiling of their sum",
+  "completion_status": "general bounds may not match; not a full solution"
+}

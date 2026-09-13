@@ -34,7 +34,7 @@ preconditioner},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}IE-27}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-11}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -66,7 +66,7 @@ clustering of a practical preconditioner.
 
 Let \(q\ge2\), and let \(A_q\in\mathbb R^{q\times q}\) be the Butcher
 matrix of the \(q\)-stage Radau IIA method. Explicitly, if
-\(0<c_1<\cdots<c_q=1\) are the roots in \([0,1]\) of
+\(0< c_1<\cdots< c_q=1\) are the roots in \([0,1]\) of
 \(P_q(2t-1)-P_{q-1}(2t-1)\), where \(P_j\) is the degree-\(j\) Legendre
 polynomial normalized by \(P_j(1)=1\), and \(\ell_j\) are their Lagrange
 cardinal polynomials, then
@@ -151,4 +151,34 @@ radius. The check is bounded. This is distinct from the
 \href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/linear-systems-and-elimination/IE-28/README.md}{diagonal
 nilpotent-preconditioner existence question} and from the repository's
 Krylov convergence and elimination-growth targets.
+
+\subsection{Reviewed partial results --- 13 September
+2026}\label{reviewed-partial-results-13-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/manuscripts/IE-27/report.pdf}{submitted
+continuation} and
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/submitted/IE-27_research_update/prior_results/report.pdf}{retained
+certificate proof} establish the disk enclosure for every real positive
+shift at the 66 specified stage counts \(q=2,\ldots,64,80,96,128\). This
+is not every stage through 128. The continuation also proves, for every
+admissible stage, the small- and large-shift regimes
+\(0<\mu\le1/(q\|L_q^{-1}\|_2)\) and \(\mu\ge2\|L_q\|_2\), and gives a
+sufficient square-root criterion that is not proved for all stages.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/verification/review-ie27.md}{independent
+informal AI-agent review} audits these proofs and exact certificates.
+\textbf{Partially resolved:} intermediate positive shifts at stage
+counts outside the certified set remain unsettled. The generic non-Radau
+and complex-shift obstructions in the continuation do not refute the
+original real-positive-shift Radau target.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ie-extensions-2026-09-13/README.md}{Submission
+record and verified affiliation}. Substantial AI assistance is
+disclosed. The review is informal automated review, not external human
+peer review or formal verification. No Lean verification was performed.
 \end{document}

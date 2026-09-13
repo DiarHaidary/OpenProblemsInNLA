@@ -1,0 +1,471 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.9in,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{xcolor,microtype,fancyhdr,hyperref}
+\definecolor{ink}{HTML}{17354C}
+\definecolor{pale}{HTML}{F2F5F7}
+\hypersetup{colorlinks=true,linkcolor=ink,citecolor=ink,urlcolor=ink,
+ pdftitle={IE-27: Continued analysis and verified extensions},pdfauthor={Sidney Holden}}
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small\textcolor{ink}{IE-27 / Continued investigation}}
+\rhead{\small 12 September 2026}
+\cfoot{\small\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}\clubpenalty=10000\widowpenalty=10000
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newcommand{\R}{\mathbb R}\newcommand{\C}{\mathbb C}
+\newcommand{\norm}[1]{\left\|#1\right\|_2}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\begin{document}
+{\small\sffamily\bfseries\textcolor{ink}{MATHEMATICAL RESEARCH UPDATE}}
+
+{\LARGE\bfseries\textcolor{ink}{IE-27: Continued analysis\\[3pt]and verified extensions}}
+
+{\large The spectral disk for a Radau stage preconditioner}
+
+\par\textbf{Sidney Holden}\par
+{\small Center for Computational Biology, Flatiron Institute, Simons Foundation\par Prepared with substantial AI assistance}\par\vspace{5pt}
+\fcolorbox{ink}{pale}{\parbox{0.948\linewidth}{
+\textbf{Status: this archive is not a complete solution of IE-27.}
+The unrestricted stage-number inequality is not proved here, and no
+counterexample to the stated real-positive-shift conjecture is supplied.
+The new results below do not remove that gap.}}
+
+\section{Target and scope}
+For the increasing Radau IIA nodes and their collocation matrix $A_q$, take
+\[
+ A_q^{-1}=L_qU_q,\qquad \operatorname{diag}(U_q)=\boldsymbol1,
+ \qquad B_q=L_q^{-1},\quad N_q=U_q-I_q,\quad r_q=\norm{N_q}<1.
+\]
+The precise remaining target is
+\begin{equation}\label{eq:target}
+ \boxed{\rho\bigl((I_q+\mu B_q)^{-1}N_q\bigr)\le r_q}\qquad
+ (q\ge2,\; r_q<1,\; \mu\in\mathbb R_{>0}).
+\end{equation}
+This is the small-matrix formulation of the requested disk enclosure for the
+symmetric positive-definite spatial pencil. It is given on the problem page
+and in the cited spectral reduction; the disk uses a \emph{radius}, not a
+diameter \cite{problem,outrata}.
+
+The prior nine-page report and its files are retained in
+\code{prior_results/}. That report gives the spatial reduction, exact
+Radau inverse formula, all-stage positive-pivot theorem, and exact two- and
+three-stage arguments. Its 64 certificates cover $q=2,\ldots,64$ and $q=80$.
+
+This continuation adds an all-stage small/large-shift theorem, a rank-two
+weighted identity, a single-matrix sufficient condition for a stronger norm
+bound, and rigorous certificates for $q=96$ and $q=128$. It also gives exact
+counterexamples to two \emph{broader} assertions that must not be substituted
+for the Radau conjecture.
+
+\begin{center}
+\begin{tabular}{@{}p{0.67\linewidth}p{0.25\linewidth}@{}}
+\toprule
+Claim & Status in this archive\\\midrule
+Equation \eqref{eq:target} for every admissible stage number & Not established\\
+All positive shifts for $q=2,\ldots,64,80,96,128$ & 66 exact certificates\\
+Small and large positive shifts, every $q$ & Proved in Section 3\\
+Complex right-half-plane shifts in place of real shifts & False; exact example\\
+Generic matrices in place of Radau matrices & False; exact example\\\bottomrule
+\end{tabular}
+\end{center}
+
+\newpage
+\section{All-stage structure and a rank-two identity}
+Let $0<c_1<\cdots<c_q=1$ be the specified nodes, and set
+\[
+ R(t)=\prod_{j=1}^q(t-c_j),\quad v_i=c_iR'(c_i),\quad
+ V=\operatorname{diag}(v_i),\quad X=\operatorname{diag}(c_i).
+\]
+The inverse differentiation formula, proved in the retained report, is
+\begin{equation}\label{eq:D}
+ D_{ij}=\frac{v_i}{v_j(c_i-c_j)}\quad(i\ne j),\qquad
+ D_{ii}=\frac1{2c_i}\ (i<q),\qquad D_{qq}=\frac{q^2+1}{2}.
+\end{equation}
+For completeness, this formula comes from the cardinal basis
+$t\ell_j(t)/c_j$ of polynomials of degree at most $q$ vanishing at zero.
+Its derivative evaluations give $A_q^{-1}$. The diagonal simplification
+uses the equation
+\[
+ t(1-t)J''(t)+(1-3t)J'(t)+(q^2-1)J(t)=0,
+ \qquad J(t)=P_{q-1}^{(1,0)}(2t-1),
+\]
+whose roots are the interior nodes. The retained report supplies the
+coefficient-level derivation, so the certificate checker does not trust a
+rounded Butcher matrix.
+
+\begin{proposition}\label{prop:ranktwo}
+For $C=V^{-1}DV$, $e=(1,\ldots,1)^T$, and the last coordinate vector $e_q$,
+\begin{align}
+ C+C^T&=\operatorname{diag}(1/c_1,\ldots,1/c_{q-1},q^2+1)\succ0,\label{eq:diag}\\
+ XC+C^TX&=ee^T+q^2e_qe_q^T.\label{eq:ranktwo}
+\end{align}
+Every pivot of the exact no-pivot Crout factorization $D=LU$ is positive.
+\end{proposition}
+\begin{proof}
+Off the diagonal, $C_{ij}=1/(c_i-c_j)$, so \eqref{eq:diag} follows by
+cancellation. The off-diagonal entries of \eqref{eq:ranktwo} are
+$(c_i-c_j)/(c_i-c_j)=1$. Its first $q-1$ diagonal entries are one, and
+its last is $q^2+1$.
+
+Every leading principal submatrix of $C$ has positive-definite symmetric
+part. For each of its complex eigenpairs, the real part of the eigenvalue
+is positive, as follows by taking the Hermitian inner product with its
+eigenvector. Real eigenvalues are therefore positive, and conjugate pairs
+have positive product. Every leading determinant is positive. The same
+holds for $D$ by diagonal similarity. Successive ratios of these leading
+determinants are exactly the pivots of the specified factorization.
+\end{proof}
+
+Consequently $B=L^{-1}$ exists, has positive diagonal entries, and
+$I+\mu B$ is nonsingular for every real $\mu\ge0$. These facts hold
+without first proving $r_q<1$.
+
+Identity \eqref{eq:ranktwo} is useful additional structure, but it concerns
+$D$, not the Euclidean symmetric part of $B$. Replacing that distinction
+by an unproved accretivity assertion would invalidate a disk proof.
+
+\newpage
+\section{Two rigorously covered shift regimes at every stage}
+This result uses only the triangular structure and the positive pivots;
+it does not rely on a finite-stage computation.
+
+\begin{theorem}\label{thm:shifts}
+For every $q\ge2$, the requested enclosure holds whenever
+\begin{equation}\label{eq:regimes}
+ 0<\mu\le\frac{1}{q\norm{B_q}}
+ \qquad\text{or}\qquad
+ \mu\ge2\norm{L_q}.
+\end{equation}
+The second regime in fact gives the stronger inequality
+$\norm{(I+\mu B_q)^{-1}N_q}\le r_q$.
+\end{theorem}
+\begin{proof}
+Suppress the subscript $q$ and write $r=\norm{N}$. Here $r>0$: for example,
+$U_{12}=D_{12}/L_{11}\ne0$ by \eqref{eq:D}. Since $N$ is strictly upper
+triangular, $N^q=0$.
+
+Suppose $\lambda$ is an eigenvalue of $(I+\mu B)^{-1}N$ with
+$|\lambda|>r$, and choose a nonzero eigenvector $x$. Then
+\[
+ (\lambda I-N)x=-\lambda\mu Bx,
+ \qquad
+ (\lambda I-N)^{-1}=\sum_{k=0}^{q-1}\frac{N^k}{\lambda^{k+1}}.
+\]
+Taking norms gives
+\[
+ 1\le\mu\norm{B}\sum_{k=0}^{q-1}\left(\frac r{|\lambda|}\right)^k
+ <q\mu\norm{B}.
+\]
+This is impossible in the first regime, including its endpoint.
+
+For the second regime, use
+\[
+ (I+\mu B)^{-1}N=(L+\mu I)^{-1}LN.
+\]
+The Neumann-series estimate, valid for $\mu>\norm{L}$, yields
+\[
+ \norm{(I+\mu B)^{-1}N}
+ \le \frac{\norm{L}r}{\mu-\norm{L}}\le r
+ \quad\text{when }\mu\ge2\norm{L}.
+\]
+\end{proof}
+
+A sharper small-shift version replaces $q$ by
+\[
+ \eta_q=\sum_{k=0}^{q-1}\frac{\norm{N_q^k}}{r_q^k}\le q.
+\]
+The same argument works because the corresponding resolvent sum is
+strictly smaller than $\eta_q$ when $|\lambda|>r_q$.
+
+\textbf{What this does not prove.} For an uncertified stage, a possible
+violation is now confined to the finite interval
+\[
+ \frac{1}{q\norm{B_q}}<\mu<2\norm{L_q}.
+\]
+The theorem does not cover that interval. Both its endpoints still depend
+on the stage, and their existence alone is not a uniform-stage solution.
+
+\newpage
+\section{A stronger norm criterion and the certificate criterion}
+\begin{proposition}\label{prop:sqrt}
+Fix $q$, write $B=L^{-1}$, $N=U-I$, $r=\norm{N}>0$, and define
+\[
+ K=L\left(I-\frac{NN^T}{r^2}\right)L^T\succeq0.
+\]
+A sufficient condition for $\norm{(I+\mu B)^{-1}N}\le r$ for every real
+$\mu\ge0$ is the single inequality
+\begin{equation}\label{eq:sqrtcriterion}
+ L+L^T+2K^{1/2}\succeq0,
+\end{equation}
+where $K^{1/2}$ is the symmetric positive-semidefinite square root.
+\end{proposition}
+\begin{proof}
+Put $P=I+\mu B$. The desired norm inequality is equivalent, by congruence,
+to $r^2PP^T-NN^T\succeq0$. Congruence by $L$ and division by $r^2$
+turn this into
+\[
+ Q(\mu)=K+\mu(L+L^T)+\mu^2 I\succeq0.
+\]
+The exact identity
+\[
+ Q(\mu)=(\mu I-K^{1/2})^2+
+             \mu\bigl(L+L^T+2K^{1/2}\bigr)
+\]
+proves the assertion. The first term is the square of a symmetric matrix;
+the second is positive semidefinite under \eqref{eq:sqrtcriterion}.
+\end{proof}
+This is a \emph{sufficient} test. It has not been proved for all Radau
+stage counts. Failure of this stronger test would not by itself refute
+IE-27. In particular, the orientation $PP^T$ and $NN^T$ in this argument
+must not be interchanged with $P^TP$ and $N^TN$.
+
+\begin{proposition}[Common energy criterion]\label{prop:energy}
+Suppose $H=H^T\succ0$ and $t>0$ satisfy
+\[
+ HB+B^TH\succeq0,\qquad tH-N^THN\succeq0.
+\]
+Then $\rho((I+\mu B)^{-1}N)\le\sqrt t$ for every real $\mu\ge0$.
+\end{proposition}
+\begin{proof}
+For $\|x\|_H=(x^*Hx)^{1/2}$,
+\[
+ (I+\mu B)^TH(I+\mu B)
+ =H+\mu(HB+B^TH)+\mu^2B^THB\succeq H.
+\]
+Thus the inverse is nonexpansive in this norm, while
+$\|Nx\|_H\le\sqrt t\,\|x\|_H$. The product has induced
+$H$-norm at most $\sqrt t$, which also bounds its spectral radius.
+\end{proof}
+The exact certificates use Proposition \ref{prop:energy}; the numerical
+square-root experiment is \emph{not} their proof mechanism.
+
+\newpage
+\section{Two additional exact certificates}
+The new files \code{new_certificates/q096.json} and
+\code{new_certificates/q128.json} pass the retained integer-interval
+verifier. They contain rational $H,t,v$ and rational isolating intervals
+for every interior Radau node. The added squared radii are
+\[
+ t_{96}=\frac{7801459205}{10^{10}},\qquad
+ t_{128}=\frac{8069729082}{10^{10}}.
+\]
+For each of these stages, the verifier establishes
+\[
+ H\succ0,\quad HB+B^TH\succ0,\quad tH-N^THN\succ0,
+ \quad I-N^TN\succ0,
+\]
+\[
+ v\ne0,\qquad \norm{Nv}^{\,2}-t\norm{v}^{\,2}>0.
+\]
+The last two checks prove $\sqrt t<r<1$. Combining them with
+Proposition \ref{prop:energy} gives the \emph{continuum} statement
+\[
+ \rho((I+\mu B_q)^{-1}N_q)\le\sqrt{t_q}<r_q<1
+ \qquad\text{for every real }\mu>0,
+ \quad q\in\{96,128\}.
+\]
+
+\begin{center}\small
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Verified positive lower bound & $q=96$ & $q=128$\\\midrule
+Smallest $L$ pivot & $70.629700811196$ & $94.174566164618$\\
+Smallest LDL pivot of $H$ & $1.001307579999$ & $1.002030669999$\\
+Smallest LDL pivot of $HB+B^TH$ & $0.000156834663$ & $0.000110365601$\\
+Smallest LDL pivot of $tH-N^THN$ & $0.376277528400$ & $0.436040730349$\\
+Smallest LDL pivot of $I-N^TN$ & $0.716423169363$ & $0.716128872382$\\
+Rayleigh gap for supplied $v$ & $0.001562635417$ & $0.001616369979$\\\bottomrule
+\end{tabular}
+\end{center}
+These are downward-rounded displays of certified rational lower bounds,
+not numerical eigenvalue estimates. LDL pivots are not eigenvalues.
+
+\subsection*{Trust boundary and finite scope}
+Node brackets use 256 bits; all interval operations use integer endpoints
+with denominator $2^{1024}$ and outward rounding. Polynomial signs isolate
+the nodes; exact matrix formulas and triangular elimination enclose the
+factors; interval LDL elimination proves positivity. No floating-point
+optimizer or eigensolver is trusted by the verifier.
+
+The complete supplied stage set is
+\[
+ \mathcal S=\{2,3,\ldots,64\}\cup\{80,96,128\},\qquad |\mathcal S|=66.
+\]
+This does \emph{not} mean all stages through 128. In particular, stages
+65--79, 81--95, 97--127, and stages above 128 are not covered by these
+certificates. Existence of a certificate for every stage has not been proved.
+
+From the extracted archive, \code{python code/run_all.py} runs the
+standard-library proof checks. Optional numerical generation is separate.
+
+\newpage
+\section{Why two tempting generic arguments are invalid}
+\subsection*{6.1 Positive pivots and weighted accretivity are insufficient}
+Consider the exact rational matrices
+\[
+ B=\begin{pmatrix}1&0\\5&1\end{pmatrix},\quad
+ L=B^{-1}=\begin{pmatrix}1&0\\-5&1\end{pmatrix},\quad
+ N=\begin{pmatrix}0&1/10\\0&0\end{pmatrix}.
+\]
+They have the stated triangular forms, positive pivots, and $\norm{N}=1/10<1$.
+Moreover,
+\[
+ D=L(I+N)=\begin{pmatrix}1&1/10\\-5&1/2\end{pmatrix},\qquad
+ H_0=\operatorname{diag}(50,1),
+\]
+\[
+ H_0D+D^TH_0=\operatorname{diag}(100,1)\succ0.
+\]
+Nevertheless, at the positive real shift $\mu=1$,
+\[
+ (I+B)^{-1}N=\begin{pmatrix}0&1/20\\0&-1/8\end{pmatrix},
+ \qquad \rho((I+B)^{-1}N)=\frac18>\frac1{10}=\norm{N}.
+\]
+The script \code{code/exact_obstructions.py} checks these identities
+and inequalities using rational arithmetic.
+
+\textbf{This is not a Radau matrix and is not a counterexample to IE-27.}
+It proves that positive pivots, triangularity, and diagonal weighted
+accretivity of $D$ do not suffice for a general argument. Any proof that
+uses only those properties has discarded essential structure.
+
+\subsection*{6.2 The Euclidean inverse factor is not always nonexpansive}
+The recovered exact three-stage matrix is
+\[
+ B_3=\begin{pmatrix}
+ \frac45-\frac{\sqrt6}{5}&0&0\\
+ \frac9{50}+\frac{29\sqrt6}{200}&\frac3{10}+\frac{3\sqrt6}{40}&0\\
+ \frac49-\frac{\sqrt6}{36}&\frac49+\frac{\sqrt6}{36}&\frac19
+ \end{pmatrix}.
+\]
+For $w=(0,1,-2)^T$,
+\[
+ w^TB_3w=\frac{-52+7\sqrt6}{360}<0.
+\]
+Hence
+\[
+ \norm{(I+\mu B_3)w}^{\,2}-\norm{w}^{\,2}
+ =2\mu w^TB_3w+\mu^2\norm{B_3w}^{\,2}<0
+\]
+for sufficiently small real $\mu>0$. The inverse factor then has
+Euclidean norm greater than one. This invalidates the shortcut
+$\norm{(I+\mu B)^{-1}}\le1$, but does not invalidate the spectral bound
+for the product with $N$.
+
+\newpage
+\section{An exact failure for complex right-half-plane shifts}
+There is also a genuine Radau example outside the stated shift domain.
+For $q=3$, take
+\[
+ \mu=\frac1{100}+3i,\qquad R_0=\frac{41}{100}.
+\]
+Exact arithmetic in $\mathbb Q(\sqrt6,i)$ establishes
+\begin{equation}\label{eq:complex}
+ \rho((I+\mu B_3)^{-1}N_3)>R_0>\norm{N_3}.
+\end{equation}
+Here $\Re\mu>0$, but $\mu$ is \emph{not real}. Thus
+\eqref{eq:complex} does not refute IE-27; it prevents an unjustified
+extension of the target to the entire right half-plane.
+
+\subsection*{Exact proof certificate}
+Let $s=\sqrt6$. Together with the $B_3$ on the previous page, use
+\[
+ N_3=\begin{pmatrix}
+ 0&-\frac{53}{25}+\frac{76s}{75}&\frac{16}{25}-\frac{22s}{75}\\
+ 0&0&\frac2{25}+\frac{3s}{25}\\
+ 0&0&0
+ \end{pmatrix}.
+\]
+The checker first proves $R_0^2I-N_3^TN_3\succ0$ by exact leading
+principal minors, establishing the second strict inequality in
+\eqref{eq:complex}.
+
+Set $Y=(I+\mu B_3)^{-1}N_3$. Its first column is zero. Its two nontrivial
+eigenvalues are the roots of $z^2+az+b$, with
+\[
+ a=-Y_{22}-Y_{33},\qquad b=Y_{22}Y_{33}-Y_{23}Y_{32}.
+\]
+Put $A=a/R_0$ and $E=b/R_0^2$. If both roots had modulus at most $R_0$,
+then necessarily
+\begin{equation}\label{eq:schur}
+ |A-\overline A E|\le1-|E|^2.
+\end{equation}
+Indeed, writing the scaled roots as $z_1,z_2$, with moduli $u,v\le1$,
+\[
+ A-\overline A E=-z_1(1-|z_2|^2)-z_2(1-|z_1|^2),
+\]
+whose modulus is at most $(u+v)(1-uv)\le(1+uv)(1-uv)=1-|E|^2$.
+
+The supplied checker obtains the two strict inequalities
+\[
+ 1-|E|^2>0,\qquad
+ |A-\overline A E|^2-(1-|E|^2)^2>\frac{27}{100}.
+\]
+They contradict \eqref{eq:schur}. Every field operation is exact; signs
+are bounded using the checked rational bracket
+$2449489/10^6<\sqrt6<2449490/10^6$. Full rational components and bounds
+are in \code{results/exact_obstructions.json}; no numerical root-finding
+is part of this proof.
+
+\newpage
+\section{Numerical observations, reproducibility, and the gap}
+The optional script \code{code/diagnostics.py} evaluates the sufficient
+matrix inequality \eqref{eq:sqrtcriterion} and samples the shift family.
+Its output is explicitly marked \code{NUMERICAL_ONLY}. Selected estimates
+of the smallest eigenvalue of $L+L^T+2K^{1/2}$ are
+\begin{center}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+$q$&2&3&16&64&128\\\midrule
+Numerical minimum&1.5943&0.7016&2.0536&2.1049&2.1238\\\bottomrule
+\end{tabular}
+\end{center}
+The exact $K$ is singular positive semidefinite; the numerical script
+clips negative roundoff before taking its square root. These numbers are
+neither exact positivity certificates nor an argument for untested stages.
+Likewise, maxima over the recorded 101-point shift grid are not maxima
+over all positive shifts. No conclusion depends on extrapolation from them.
+
+\subsection*{Remaining mathematical obligation}
+The unrestricted statement \eqref{eq:target} remains to be proved for
+$q\notin\mathcal S$ in the intermediate shift regime of Section 3, or
+refuted by a counterexample satisfying \emph{all} of its hypotheses.
+One sufficient route would be a proof of \eqref{eq:sqrtcriterion} for
+all stages. Another would be a construction of the common-energy
+certificates for every stage with $t\le r_q^2$. Neither existence result
+is established here. The finite certificate generator is not known to
+succeed for every stage and is not presented as such a proof.
+
+\subsection*{Files and independent checks}
+The top-level report is this continuation; \code{prior_results/report.pdf}
+is the recovered earlier manuscript. The new exact checks are in
+\code{code/}, the added certificates in \code{new_certificates/}, and
+machine-readable outcomes in \code{results/}. Run
+\begin{quote}
+\code{python code/run_all.py}
+\end{quote}
+for all 66 supplied certificates, the exact low-stage checks, and the
+regression tests. Run \code{python code/exact_obstructions.py} to check
+only the two rejected extensions. Verification requires only the Python
+standard library. Optional candidate generation and numerical diagnostics
+require NumPy and SciPy. The SHA-256 manifest checks file integrity, not
+mathematical truth.
+
+\vspace{2pt}
+\begin{thebibliography}{9}\footnotesize
+\bibitem{problem} \emph{OpenProblemsInNLA} repository, IE-27, ``Spectral disk for a Radau stage preconditioner.''
+Problem statement checked 12 September 2026; page status dated
+11 September 2026.\newline
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/linear-systems-and-elimination/IE-27}
+\bibitem{outrata} M. Outrata, \emph{On the recent advances of spectral
+analysis for systems arising from fully-implicit RK methods},
+arXiv:2510.21241v1 (2025), Sections 2.1--2.3.\newline
+\url{https://arxiv.org/html/2510.21241v1}
+\end{thebibliography}
+\end{document}

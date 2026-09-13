@@ -1,0 +1,24 @@
+{
+  "scope": "Proof/helper draft repairs only; reviewed Definitions and Challenge unchanged",
+  "compiled": false,
+  "changes": {
+    "Numeric.lean": {
+      "old_sha256": "59e27a61632419ab9e219ed2a165a7dc828ffdbc39b8859183108eafb8e61257",
+      "new_sha256": "750d8b122ce740ec15a3a5e4e5b146db4a735fa193d186c1057d721dd7addbfc"
+    },
+    "Minimax.lean": {
+      "old_sha256": "f7937af6f6333d3c18427517184ea982a364ded4a25fa34734787a62d17ed7a1",
+      "new_sha256": "2da43a7f59a13a4ff6408f222489b3d705376047cc2cf031c57fc1ad51e758f8"
+    }
+  },
+  "repairs": [
+    "Pair-domain injectivity matches explicitL",
+    "Cardinality via card_image_of_injective",
+    "Use membership witness for nonempty subset",
+    "Commutative reassociation before inverse cancellation",
+    "Simplify zero subtraction in nonzero basis factor",
+    "Use pinned Lagrange namespace and explicit value-function argument",
+    "Unfold finite sum in final scalar-factor identity"
+  ],
+  "preserved_initial_snapshot": "history/initial-before-api-fixes"
+}

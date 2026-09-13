@@ -1,0 +1,20 @@
+== Lemma 2 + rank Cat_(1,q), T = x^p y u^q v ==
+Lemma 2 and rank Cat = 4 for 1<=p,q<=5: True
+== explicit decomposition (exact, cyclotomic) + h_Z + Gram rank ==
+p=1 q=1: n=4 distinct=4 support=[(1, 1, 1, 1)] target=(1, 1, 1, 1) h(1,q)=4/4 h(p,1)=4/4 rankGram=4 bound=4
+Traceback (most recent call last):
+  File "/tmp/claude-1001/-home-max-pik-GITHUB-OpenTorus/c7031ba2-7cd2-4646-90cd-57c0b0ec7a6d/scratchpad/tr29k2/referee/ref_check.py", line 95, in <module>
+    h1=nrank(V1); h2=nrank(V2); g=nrank(V1.T*W*V2)
+  File "/tmp/claude-1001/-home-max-pik-GITHUB-OpenTorus/c7031ba2-7cd2-4646-90cd-57c0b0ec7a6d/scratchpad/tr29k2/referee/ref_check.py", line 90, in nrank
+    Mm=mpmath.matrix(M.tolist()); s=mpmath.svd_r(Mm*0+Mm, compute_uv=False) if False else None
+  File "/tmp/claude-1001/-home-max-pik-GITHUB-OpenTorus/c7031ba2-7cd2-4646-90cd-57c0b0ec7a6d/scratchpad/tr29/venv/lib/python3.14/site-packages/mpmath/matrices/matrices.py", line 302, in __init__
+    self[i, j] = a
+    ~~~~^^^^^^
+  File "/tmp/claude-1001/-home-max-pik-GITHUB-OpenTorus/c7031ba2-7cd2-4646-90cd-57c0b0ec7a6d/scratchpad/tr29/venv/lib/python3.14/site-packages/mpmath/matrices/matrices.py", line 560, in __setitem__
+    value = self.ctx.convert(value)
+  File "/tmp/claude-1001/-home-max-pik-GITHUB-OpenTorus/c7031ba2-7cd2-4646-90cd-57c0b0ec7a6d/scratchpad/tr29/venv/lib/python3.14/site-packages/mpmath/ctx_mp_python.py", line 671, in convert
+    return ctx._convert_fallback(x, strings)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "/tmp/claude-1001/-home-max-pik-GITHUB-OpenTorus/c7031ba2-7cd2-4646-90cd-57c0b0ec7a6d/scratchpad/tr29/venv/lib/python3.14/site-packages/mpmath/ctx_mp.py", line 634, in _convert_fallback
+    raise TypeError("cannot create mpf from " + repr(x))
+TypeError: cannot create mpf from (-1/2 + sqrt(3)*I/2)**3

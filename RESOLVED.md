@@ -21,6 +21,12 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### 🟡 TR-29 — the two-factor W-state rank — Maximilian Behr
+
+**Partially resolved, 13 September 2026.** Maximilian Behr. [Theorem 1.1](references/behr-tr29-2026-09-13/manuscript/TR29_two_factor_rank.pdf) proves $`R(W_{d_1}\otimes W_{d_2})=2(d_1+d_2-2)`$ for all $`d_1,d_2\ge2`$, settling the case $`k=2`$ of [TR-29](tensor-computations/TR-29/README.md); Corollary 5.4 gives the partially symmetric rank of every bihomogeneous binary monomial with positive exponents. The case $`k\ge3`$ remains open.
+
+Two separate [independent AI-agent informal audits](references/behr-tr29-2026-09-13/verification/independent-review.md) passed this partial scope. AI assistance is disclosed; no external human peer review or formal verification is asserted. No Lean verification was performed. [Submission record, checks and reproduction](references/behr-tr29-2026-09-13/README.md).
+
 ### RA-14 — Restricted Krylov and shifted-posterior continuation
 
 **Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 2.2](references/holden-ra14-v6-2026-09-13/report.pdf) gives matching finite-parameter bounds only for the deterministic-width fully charged block span-query class; Theorems 10.1 and 11.2 concern a conditional posterior and an ensemble-average rank-one algorithm. These new scopes passed an [independent informal Codex AI-agent review](references/holden-ra14-v6-2026-09-13/independent-review.md). The unrestricted finite-accuracy gap and [original target](randomized-and-low-rank-approximation/RA-14/README.md) remain unchanged. [Submission, authorship and verified affiliation](references/holden-ra14-v6-2026-09-13/README.md). No Lean verification or external human peer review is claimed.
@@ -48,7 +54,6 @@ The partial results passed a separate [independent informal Codex AI-agent audit
 **Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 1.1 and its supporting proofs](references/holden-ra11-2026-09-13/manuscript/ra11_partial_results.pdf) give general bounds, a matched tensor-product subclass characterization, and a matched very-small-error regime. The general unrestricted adaptive target remains open; the source projection-conjecture counterexample is not a resolution of RA-11. [Retained original target](randomized-and-low-rank-approximation/RA-11/README.md) · [Proof source and attribution](references/holden-ra11-2026-09-13/README.md).
 
 A separate [independent Codex AI-agent informal audit](references/holden-ra11-2026-09-13/independent-review.md) passed the partial claims, with exact and numerical checks rerun. No Lean verification, external human peer review, or full-resolution or novelty claim is asserted. RA-11 remains in the open count with its permanent ID, path, original target and prior-source credit intact.
-
 
 ### RA-14 — query-complexity partial results — Sidney Holden
 

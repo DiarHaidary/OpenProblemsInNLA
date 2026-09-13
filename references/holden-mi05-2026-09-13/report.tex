@@ -1,0 +1,482 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array,microtype,xurl}
+\usepackage[hidelinks]{hyperref}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Rea}{\operatorname{Re}}
+\newcommand{\dist}{\operatorname{dist}}
+\newcommand{\sgn}{\operatorname{sgn}}
+\newcommand{\eps}{\varepsilon}
+\title{MI-05: A fourteen-term identity and a sharp orthogonal obstruction bound}
+\author{Sidney Holden\\{\small Center for Computational Biology}\\{\small Flatiron Institute, Simons Foundation}}\date{13 September 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+The unrestricted Marcus--de Oliveira determinantal conjecture is not proved or refuted here. A direct fourteen-term identity is established for every complex unitary matrix of order four and arbitrary complex spectra. On each of 48 explicitly defined obstructed regions, it has exactly one negative coefficient and attains the least possible negative mass among all spectrum-independent real representations. A short argument shows that no two of these regions can occur simultaneously. The identity also yields a sufficient condition for common convex weights, including an operator-norm ball of radius $1/100$ around a specified Hadamard matrix, uniformly over both complex spectra. A separate analytic maximization gives the sharp bound on the 48 obstructions over all real orthogonal matrices of order four, extending the quaternion-family bound. The last step from signed weights to the conjectured convex hull is stated explicitly and remains unproved. The analytic results do not require the larger polytope enumeration investigated in the companion working files.
+\end{abstract}
+
+\section*{Scope and relation to earlier rounds}
+The target is the inclusion
+\begin{equation}\label{eq:target}
+\det(A+B)\in\conv\left\{\prod_{i=1}^n(a_i+b_{\sigma(i)}):\sigma\in S_n\right\}
+\end{equation}
+for every dimension and every pair of normal matrices, where the eigenvalues are counted with multiplicity. This is MI-05 in the linked repository.\footnote{OpenProblemsInNLA, canonical MI-05 problem entry; source [1]. The archived website snapshot, when available, has its own retrieval record.}
+
+The preceding report classified spectrum-independent weights for real quaternion rotations and obtained the sharp constant for that family.\footnote{\emph{MI-05: Quaternion weights and exact support certificates}, the supplied round-four report, Sections 3--4; source [2]. It is prior working material, not an independently refereed source.} The present report supplies direct proofs for a larger order-four setting. In particular, the fourteen-term formula, its optimality on the obstructed regions, the one-obstruction property, the open-ball theorem, and the real orthogonal maximization below have analytic proofs. They do not use a claim that a numerical optimizer found the global answer.
+
+The common-weight property is stronger than \eqref{eq:target}. A negative common weight is not a counterexample to MI-05. No claim of literature priority, independent peer review, or proof-assistant verification is made. The previous archive is retained when its mounted file is available; the package records whether that copy was found and its hash.
+
+\tableofcontents
+\newpage
+\section{Notation and the common-weight problem}
+Let $U\in U(4)$ and $a,b\in\C^4$. Write
+\[
+d_U(a,b)=\det(D_a+UD_bU^*),\quad D_a=\diag(a_1,\ldots,a_4),\quad
+z_\sigma(a,b)=\prod_{i=1}^4(a_i+b_{\sigma(i)}).
+\]
+For equal-sized subsets $I,J\subseteq\{1,2,3,4\}$ set
+\[
+Q_U(I,J)=|\det U[I,J]|^2,\qquad
+P_{I,J}(\sigma)=\mathbf1_{\sigma(I)=J}.
+\]
+The empty minor is one. In subscripts, $12$ denotes $\{1,2\}$, and similarly for the other subsets. A permutation string is one-based one-line notation.
+
+Expansion in principal minors and Cauchy--Binet give
+\begin{equation}\label{eq:minor}
+d_U(a,b)=\sum_{|I|=|J|}a_{I^c}b_JQ_U(I,J).
+\end{equation}
+Consequently, real weights $w_\sigma$ give an identity
+\begin{equation}\label{eq:common}
+d_U(a,b)=\sum_\sigma w_\sigma z_\sigma(a,b)\quad\hbox{for every }a,b\in\C^4
+\end{equation}
+if and only if
+\begin{equation}\label{eq:features}
+Q_U(I,J)=\sum_\sigma w_\sigma P_{I,J}(\sigma)\quad\hbox{for all }I,J.
+\end{equation}
+The empty-subset equation enforces $\sum w_\sigma=1$.
+
+There always exists a real signed representation. Indeed, with $S_{ij}=a_i+b_j$,
+\[
+(D_a+UD_bU^*)U=S\circ U,
+\]
+so Leibniz expansion gives complex coefficients
+\[
+\widetilde w_\sigma=\frac{\sgn(\sigma)\prod_i u_{i,\sigma(i)}}{\det U}.
+\]
+Coefficient comparison in \eqref{eq:minor} shows that their real parts satisfy \eqref{eq:features}, because all $Q_U(I,J)$ are real. This does not assert nonnegativity.
+
+Let $\nu(U)$ denote the infimum of the total negative mass
+\[
+\mathcal N(w)=\sum_\sigma\max(0,-w_\sigma)
+\]
+over real common representations. The definition is nonempty by the preceding argument. The conjecture permits the weights to depend on $a,b$, whereas $\nu(U)$ concerns only weights independent of both spectra.
+
+\section{An exact fourteen-term identity}
+Put
+\begin{align}
+t(U)&=\sum_{i=1}^4|u_{ii}|^2,\label{eq:t}\\
+c(U)&=Q_U(12,13)+Q_U(12,24)-Q_U(13,12)-Q_U(13,34),\label{eq:c}\\
+h(U)&=-\frac{t(U)+c(U)}4.\label{eq:h}
+\end{align}
+Unlike a negative-mass minimum, $h$ is allowed to be negative.
+
+\begin{theorem}[Fourteen-term identity]\label{thm:14}
+For every complex unitary $U$ of order four, the following weights satisfy \eqref{eq:common}. All ten omitted weights are zero.
+\begin{center}
+\begin{tabular}{ll@{\qquad}ll}
+\toprule
+$\sigma$ & $w_\sigma$ & $\sigma$ & $w_\sigma$\\
+\midrule
+1234 & $-h$ & 1423 & $|u_{11}|^2+h$\\
+2143 & $Q_U(12,12)+h$ & 3241 & $|u_{22}|^2+h$\\
+3412 & $Q_U(13,13)+h$ & 4132 & $|u_{33}|^2+h$\\
+4321 & $Q_U(14,14)+h$ & 2314 & $|u_{44}|^2+h$\\
+3142 & $Q_U(12,13)$ & 2413 & $Q_U(12,24)$\\
+4312 & $Q_U(13,14)$ & 3421 & $Q_U(13,23)$\\
+2341 & $Q_U(14,12)$ & 4123 & $Q_U(14,34)$\\
+\bottomrule
+\end{tabular}
+\end{center}
+No assumption on the spectra, invertibility of the sum, or eigenvalue multiplicity is needed.
+\end{theorem}
+
+\begin{proof}
+Let $T$ be the $70\times24$ matrix with entries $P_{I,J}(\sigma)$. The number of rows is $\sum_{k=0}^4\binom4k^2=70$. We first show $\operatorname{rank}T=14$ and identify coordinates on its span.
+
+The rank-two matrix $(a_i+b_j)$ has zero determinant and zero three-by-three minors. Hence the following ten vectors belong to $\ker T$:
+\[
+(\sgn\sigma)_\sigma,\qquad
+(\sgn\sigma\,\mathbf1_{\sigma(i)=j})_\sigma\quad(1\le i,j\le3).
+\]
+They are independent. To see this, suppose an assignment cost on the upper-left $3\times3$ block, extended by zero in the fourth row and column, has constant sum on all permutations. Comparing assignments $i\mapsto j,4\mapsto4$ and $i\mapsto4,4\mapsto j$, with the other two rows completed identically, forces each block entry to vanish. The constant then vanishes. Therefore $\operatorname{rank}T\le14$.
+
+Use the normalization coordinate, four diagonal-entry coordinates, three coordinates $Q(12,12),\allowbreak Q(13,13),\allowbreak Q(14,14)$, and the six coordinates in the last three rows of the displayed weight table. On the thirteen displayed permutations other than 1234, the last thirteen coordinates form the identity matrix, with the corresponding ordering. On 1234 they are seven ones followed by six zeros. The normalization coordinate is one on every permutation. Subtracting those seven columns from the identity-permutation column leaves $-6$ in the normalization row and zero elsewhere. The resulting fourteen-by-fourteen determinant has absolute value six. Thus these fourteen permutations are a basis of the feature span and $\operatorname{rank}T=14$.
+
+By the signed representation established in Section 1, the feature vector of every unitary belongs to this span. Write its coefficient at 1234 as $-h_0$. Matching the other thirteen coordinates forces every coefficient in the table, with $h_0$ in place of $h$.
+
+For a permutation $\sigma$, define
+\[
+\chi(\sigma)=P_{12,13}(\sigma)+P_{12,24}(\sigma)-P_{13,12}(\sigma)-P_{13,34}(\sigma).
+\]
+On the fourteen basis permutations, $\chi$ is $-1$ on the four displayed three-cycles and zero on the other ten. Matching this coordinate gives
+\[
+c(U)=-\sum_{i=1}^4\bigl(|u_{ii}|^2+h_0\bigr)=-t(U)-4h_0.
+\]
+Therefore $h_0=h(U)$. Matching a basis of the feature span proves all seventy equations \eqref{eq:features}, and \eqref{eq:minor} proves the determinant identity.
+\end{proof}
+
+This proof uses only the explicitly described fourteen-column basis and ten kernel relations. The verifier checks all seventy equations on each of the 24 permutation feature vectors, giving 1,680 exact linear checks. These finite checks corroborate a linear identity on an entire span, not merely sampled spectra.
+
+\section{The 48 obstructions and exact optimality when one is positive}
+The function
+\[
+f_+(\sigma)=\frac12\left(\#\{i:\sigma(i)=i\}+\chi(\sigma)\right)
+\]
+takes the value two at 1234, the value one at the six transpositions and at
+\[
+C_- =\{1342,2431,3124,4213\},
+\]
+and zero at the remaining thirteen permutations. Reversing the sign of $\chi$ interchanges $C_-$ with
+\[
+C_+ =\{1423,2314,3241,4132\}.
+\]
+Thus $0\le f_\pm\le2$, with the unique value two at the identity.
+
+For $\pi\in S_4$, reorder columns by $V_\pi[:,j]=U[:,\pi(j)]$ and set
+\[
+t_\pi=t(V_\pi),\quad c_\pi=c(V_\pi),\qquad
+h_{\pi,\eps}=-\frac{t_\pi+\eps c_\pi}{4}\quad(\eps\in\{-1,1\}).
+\]
+The corresponding function on permutations is
+\[
+f_{\pi,\eps}(\sigma)=\frac12\left(\#\{i:\sigma(i)=\pi(i)\}
++\eps\chi(\pi^{-1}\circ\sigma)\right).
+\]
+It has one value two, ten values one, and thirteen zeros. Its expectation in every common signed representation equals $-2h_{\pi,\eps}$.
+
+Column relabeling transfers Theorem \ref{thm:14} to a general center $\pi$. Transposition changes the sign of $c$ while preserving $t$: complementary-minor identities give $c(V^T)=-c(V)$. It also inverts the permutation labels after exchanging the two spectra. Thus the theorem supplies the corresponding formula for both signs.
+
+\begin{theorem}[Optimality on every obstructed region]\label{thm:optimal}
+If $h_{\pi,\eps}(U)>0$, then
+\[
+\nu(U)=h_{\pi,\eps}(U).
+\]
+An attaining common signed representation has exactly one negative weight, $-h_{\pi,\eps}$ at $\pi$. Its positive weights are supported on the thirteen zeros of $f_{\pi,\eps}$.
+\end{theorem}
+\begin{proof}
+After relabeling, Theorem \ref{thm:14} has one negative weight $-h$ and all its other displayed coefficients are nonnegative squared minors or squared entries plus $h$. This proves $\nu(U)\le h$. Conversely, $0\le f\le2$ gives $\sum w_\sigma f(\sigma)\ge-2\mathcal N(w)$. Its fixed expectation is $-2h$, so $\mathcal N(w)\ge h$ for every common signed representation.
+\end{proof}
+
+\begin{theorem}[At most one positive obstruction]\label{thm:unique}
+Among the 48 numbers $h_{\pi,\eps}(U)$, at most one is positive.
+\end{theorem}
+\begin{proof}
+The two signs at a single center sum to $-t_\pi/2\le0$, so they cannot both be positive. Suppose distinct centers have positive values $h$ and $k$, with functions $f,g$. Use the optimal representation centered at the first. Since $g$ is nonnegative and has value at most one at the other center,
+\[
+-2k=\sum w_\sigma g(\sigma)\ge-h.
+\]
+Interchanging the centers gives $2h\le k$. Together these imply $4h\le h$, a contradiction to $h>0$.
+\end{proof}
+
+Define
+\begin{equation}\label{eq:rho}
+\rho(U)=\max_{\pi,\eps}\max(0,h_{\pi,\eps})
+=\frac14\max_\pi\bigl(|c_\pi|-t_\pi\bigr)_+.
+\end{equation}
+Every common representation has negative mass at least $\rho(U)$, and Theorem \ref{thm:optimal} proves equality whenever $\rho(U)>0$.
+
+\begin{remark}[The zero-obstruction case is a separate claim]\label{rem:zero}
+The preceding analytic argument does not, by itself, prove $\nu(U)=0$ for every unitary with $\rho(U)=0$. A larger finite polytope classification was investigated in companion files, but it is not a premise of this report. The sufficient condition in the next section proves a substantial zero-obstruction class directly. Even a complete common-weight classification would not settle MI-05 on the positive-obstruction regions, because spectra-dependent weights remain allowed.
+\end{remark}
+
+\section{An all-spectra affirmative class and an explicit open neighborhood}
+\begin{corollary}[A direct sufficient condition]\label{cor:suff}
+Put $a_0=(t(U)+c(U))/4$. If
+\begin{equation}\label{eq:suff}
+0\le a_0\le\min\left\{|u_{11}|^2,\ldots,|u_{44}|^2,
+Q_U(12,12),Q_U(13,13),Q_U(14,14)\right\},
+\end{equation}
+then $U$ satisfies MI-05 for every pair of complex spectra, with the common convex weights in Theorem \ref{thm:14}. Column relabeling and transposition give additional such tests.
+\end{corollary}
+\begin{proof}
+Here $h=-a_0$. Every displayed weight is nonnegative by \eqref{eq:suff}; their sum and determinant identity were already proved.
+\end{proof}
+In particular, $t+c=0$ is sufficient without any extra assumption, since then all displayed weights are squared entries or squared minors.
+
+Define
+\[
+H=\frac12\begin{pmatrix}
+1&1&1&1\\-1&1&-1&1\\-1&1&1&-1\\-1&-1&1&1
+\end{pmatrix}.
+\]
+For this real orthogonal matrix, $t(H)=1$, $c(H)=-1/2$, and $a_0=1/8$. The four diagonal entry probabilities and the three displayed principal-minor probabilities are all $1/4$. Its eight nonzero weights are $1/8$ at the identity, three double transpositions, and four permutations in $C_+$.
+
+\begin{theorem}[Uniform operator-norm radius $1/100$]\label{thm:ball}
+If $V\in U(4)$ and $\|V-H\|_2\le1/100$, then
+\[
+\det(D_a+VD_bV^*)\in\conv\{z_\sigma(a,b):\sigma\in S_4\}
+\quad\hbox{for every }a,b\in\C^4.
+\]
+The fourteen weights in Theorem \ref{thm:14} are nonnegative. The eight weights that are nonzero at $H$ remain at least $3/100$.
+\end{theorem}
+\begin{proof}
+Write $\epsilon=\|V-H\|_2$. Each entry changes by at most $\epsilon$, and diagonal entries of $H$ have modulus $1/2$. Since entries of a unitary have modulus at most one, each diagonal entry probability changes by at most $3\epsilon/2$. Thus $|t(V)-t(H)|\le6\epsilon$.
+
+A two-by-two submatrix of a unitary is a contraction. Replacing its two columns one at a time bounds a determinant change by $2\epsilon$. Both determinant moduli are at most one, so a squared-minor probability changes by at most $4\epsilon$. The four terms of $c$ therefore give $|c(V)-c(H)|\le16\epsilon$, and
+\[
+|a_0(V)-1/8|\le\frac{11}{2}\epsilon.
+\]
+The identity weight is at least $1/8-11\epsilon/2$. Each of the four three-cycle weights is at least $1/8-7\epsilon$, and each of the three double-transposition weights is at least $1/8-19\epsilon/2$. At $\epsilon\le1/100$, all eight are at least $3/100$. The remaining six displayed weights are squared minors and hence nonnegative. The determinant identity finishes the proof, with no bound on either spectrum.
+\end{proof}
+
+\begin{corollary}[Structured families in arbitrary dimension]
+Block direct sums of relative unitaries satisfying Corollary \ref{cor:suff}, together with arbitrary monomial blocks, satisfy MI-05 for all complex spectra of the combined dimension.
+\end{corollary}
+\begin{proof}
+The two matrices are simultaneously block diagonal in this relative-eigenbasis description. Multiply their blockwise convex determinant identities. Products of the nonnegative weights sum to one, and the resulting products of permutation vertices correspond to block-preserving permutations of the combined spectra.
+\end{proof}
+This is a structured family, not a reduction of arbitrary normal pairs to such blocks.
+
+\section{The remaining spectral inequality and settled support directions}
+Fix the spectra and a real support functional $z\mapsto\Rea(\eta z)$. Set
+\[
+M=\max_\sigma\Rea(\eta z_\sigma),\qquad
+\delta_\sigma=M-\Rea(\eta z_\sigma)\ge0.
+\]
+Assume $\rho(U)=\tau>0$, and let $(\pi,\eps)$ be its unique positive branch. The optimal identity gives exactly
+\begin{equation}\label{eq:remaining}
+M-\Rea(\eta d_U)=
+\sum_{\sigma:f_{\pi,\eps}(\sigma)=0}w_\sigma\delta_\sigma-\tau\delta_\pi.
+\end{equation}
+This is not asserted nonnegative in general.
+
+\begin{theorem}[A maximizing-permutation criterion]\label{thm:safe}
+The support inequality $\Rea(\eta d_U)\le M$ holds whenever at least one maximizing permutation $\kappa$ satisfies $f_{\pi,\eps}(\kappa)>0$.
+\end{theorem}
+\begin{proof}
+Let $a=2\tau/f_{\pi,\eps}(\kappa)>0$. Add $a$ times the permutation feature vector at $\kappa$ to the unitary feature vector. All its entry and squared-minor coordinates remain nonnegative; its total mass is $1+a$. Its expectation of $f_{\pi,\eps}$ is zero.
+
+Theorem \ref{thm:14} is a linear identity on the feature span, so it applies to this unnormalized feature vector. Its parameter $h$ is zero, and the resulting coefficients are all nonnegative, supported on the thirteen zeros of $f$, with sum $1+a$. Subtracting $a$ times the vertex at $\kappa$ therefore gives a representation of $d_U$ whose positive coefficients sum to $1+a$ and whose sole negative coefficient is $-a$ at $\kappa$. Applying the support functional yields
+\[
+\Rea(\eta d_U)\le(1+a)M-a\Rea(\eta z_\kappa)=M.
+\]
+\end{proof}
+Thus only directions for which every maximizing permutation lies among the thirteen zeros remain in this branch. This is a reduction, not an assertion that those directions cannot occur.
+
+The original optimal identity also gives
+\begin{equation}\label{eq:enlarged}
+d_U\in(1+\tau)H(a,b)-\tau z_\pi,\qquad
+\dist(d_U,H(a,b))\le\tau\,\operatorname{diam}H(a,b).
+\end{equation}
+Indeed, divide the positive part of the identity by $1+\tau$ to obtain a point $y\in H$; then $d_U-y=\tau(y-z_\pi)$. A positive right side in \eqref{eq:enlarged} is not an exhibited positive distance.
+
+\section{A general complex bound on the obstruction}
+\begin{theorem}\label{thm:complexbound}
+For every $U\in U(4)$, $\rho(U)\le1/6$.
+\end{theorem}
+\begin{proof}
+It suffices to bound $c(U)$ for a fixed column ordering. Let $I_1=12,I_2=13,I_3=14$ and form
+\[
+E_{rs}=Q_U(I_r,I_s)+Q_U(I_r,I_s^c).
+\]
+The second compound matrix is unitary, and complementary minors have equal moduli. Hence $E$ is a nonnegative three-by-three doubly stochastic matrix. Its circulation satisfies
+\[
+c=E_{12}-E_{21}=E_{23}-E_{32}=E_{31}-E_{13}.
+\]
+Nonnegativity implies $3|c|\le3-\tr E$.
+
+There is a linear feature identity
+\begin{equation}\label{eq:traceidentity}
+t+\tr E-1=\sum_{|I|=2}Q_U(I,I)\ge0.
+\end{equation}
+For completeness, check it first on permutations. The quantities on the left are the number of fixed points plus the number of fixed pair-partitions minus one. On the five cycle types $1^4$, $2\,1^2$, $2^2$, $3\,1$, and $4$, they equal $6,2,2,0,0$, respectively, which are exactly the numbers of invariant two-subsets. The signed feature representation then extends the identity to every unitary.
+
+It follows that $|c|\le(2+t)/3$. Whenever $|c|-t$ is positive,
+\[
+\frac{|c|-t}{4}\le\frac{1-t}{6}\le\frac16.
+\]
+The same argument applies after every column permutation.
+\end{proof}
+For $\rho>0$, Theorem \ref{thm:optimal} and \eqref{eq:enlarged} consequently give an enlargement coefficient at most $1/6$. This is not claimed sharp for complex unitaries or for actual hull distances. The zero-obstruction case remains subject to Remark \ref{rem:zero} unless a separate convex certificate is supplied.
+
+\section{A sharp analytic bound over all real orthogonal matrices}
+Define the two commuting quaternion factors
+\[
+L(q)=\begin{pmatrix}
+q_0&q_1&q_2&q_3\\-q_1&q_0&-q_3&q_2\\-q_2&q_3&q_0&-q_1\\-q_3&-q_2&q_1&q_0
+\end{pmatrix},\qquad
+R(r)=\begin{pmatrix}
+r_0&r_1&r_2&r_3\\-r_1&r_0&r_3&-r_2\\-r_2&-r_3&r_0&r_1\\-r_3&r_2&-r_1&r_0
+\end{pmatrix}.
+\]
+Every matrix in $SO(4)$ has the form $L(q)R(r)$ for real unit quaternions $q,r$. One way to establish surjectivity is to identify the two factors with left and right multiplication on the quaternions. Their differential has zero kernel: a purely imaginary quaternion commuting with every quaternion must vanish. The differential therefore has rank six. The image is an open subgroup of $SO(4)$, is closed by compactness, and equals $SO(4)$ by connectedness. Connectedness itself follows by decomposition into plane rotations.
+
+Direct multiplication gives
+\begin{equation}\label{eq:orthidentity}
+t(L(q)R(r))=4\sum_iq_i^2r_i^2,\qquad
+c(L(q)R(r))=8\left(\prod_i r_i-\prod_i q_i\right).
+\end{equation}
+For a homogeneous polynomial audit, the second right side before normalization is
+\[
+8\left[\left(\sum_iq_i^2\right)^2\prod_i r_i-
+\left(\sum_i r_i^2\right)^2\prod_i q_i\right].
+\]
+Changing one row sign turns an orthogonal matrix of determinant $-1$ into one of determinant $1$ without changing any $Q,t,c$. Thus this parameterization suffices for all of $O(4)$ and every column ordering.
+
+\subsection{The two-simplex maximization}
+Let $\Delta_3=\{p\in\R^4:p_i\ge0,\ \sum_i p_i=1\}$.
+\begin{lemma}\label{lem:max}
+For $p,s\in\Delta_3$, put
+\[
+\Phi(p,s)=2\sqrt{p_0p_1p_2p_3}+2\sqrt{s_0s_1s_2s_3}-p\cdot s.
+\]
+Then
+\[
+\max_{p,s\in\Delta_3}\Phi(p,s)
+=\max_{s\in\Delta_3}\left(2\sqrt{s_0s_1s_2s_3}-\min_i s_i\right).
+\]
+A maximizer can be chosen with $p$ a vertex of the simplex.
+\end{lemma}
+\begin{proof}
+On the boundary, say $p$ has a zero coordinate, its product term vanishes and
+\[
+\Phi(p,s)\le2\sqrt{\prod_i s_i}-\min_i s_i.
+\]
+For each $s$, equality is attained by a vertex $p$ at a minimizing coordinate. It remains to rule out a positive interior maximum. Such a maximum would be stationary.
+
+Write $\alpha=\sqrt{\prod_i p_i}>0$ and $\beta=\sqrt{\prod_i s_i}>0$. The constrained stationary equations are
+\[
+s_i=\alpha/p_i-\lambda,\qquad p_i=\beta/s_i-\mu.
+\]
+Multiplying and summing gives
+\[
+\lambda=4\alpha-p\cdot s,\quad\mu=4\beta-p\cdot s,
+\quad\Phi=(\lambda+\mu)/2,
+\]
+and
+\[
+\lambda(p_i-1/4)=\mu(s_i-1/4).
+\]
+If one multiplier is zero, these equations and the stationary equations force both vectors to be uniform, or both multipliers to be zero. In either event $\Phi=0$. If both multipliers are nonpositive, again $\Phi\le0$. If both are positive, the centered vectors are positively proportional, so $p\cdot s\ge1/4$. Since $4\alpha\le1/4$, this contradicts $\lambda>0$.
+
+The only possible positive stationary case has $k=\lambda/\mu<0$. Then
+\[
+s_i=kp_i+(1-k)/4,
+\]
+and every $p_i$ is a root of
+\[
+kX^2+\bigl((1-k)/4+\lambda\bigr)X-\alpha=0.
+\]
+Unless the vectors are uniform, there are two distinct values $a,b>0$ of $p$, with multiplicities $m,4-m$, and corresponding values $c,d>0$ of $s$. Vieta's formulas and the symmetric equation for $s$ give
+\[
+k=-(a/b)^{(m-2)/2},\qquad 1/k=-(c/d)^{(m-2)/2}.
+\]
+If $m=2$, then $k=-1$, so $\lambda+\mu=0$ and $\Phi=0$. If $m=1$ or $3$, multiplication gives $ac=bd$. With $v=a/b\ne1$, normalization yields
+\[
+k=-\frac{mv+4-m}{m+(4-m)v}=-v^{(m-2)/2}.
+\]
+Putting $u=\sqrt v$, either value of $m$ reduces this equation to $(u-1)^3=0$, contradicting $v\ne1$. There is no positive interior stationary value.
+
+The maximum is positive: take $p$ a vertex and $s=(1,16,16,16)/49$, with the minimizing coordinate matched to that vertex. This gives $79/2401>0$. Compactness therefore places a maximizer on the boundary, where the first paragraph proves the assertion.
+\end{proof}
+
+\begin{theorem}[Sharp orthogonal obstruction constant]\label{thm:sharp}
+The maximum of $\rho(U)$ over $U\in O(4)$ is the unique positive root $\tau_*$ of
+\begin{equation}\label{eq:cubic}
+32\tau_*^3+48\tau_*^2+28\tau_*-1=0.
+\end{equation}
+It satisfies
+\[
+0.033721124434<\tau_*<0.033721124435.
+\]
+In particular, on every positive-obstruction orthogonal region, the optimal common negative mass equals $\rho(U)\le\tau_*$, and equality is attained by a quaternion rotation.
+\end{theorem}
+\begin{proof}
+With $p_i=q_i^2$ and $s_i=r_i^2$, \eqref{eq:orthidentity} gives
+\[
+\frac{|c|-t}{4}
+=2\left|\prod_i r_i-\prod_iq_i\right|-p\cdot s
+\le\Phi(p,s).
+\]
+Lemma \ref{lem:max} reduces its maximum to the one-simplex problem. If $x=\min_i s_i$, then $0\le x\le1/4$ and the other three coordinates have product at most $((1-x)/3)^3$. Equality is attainable. We therefore maximize
+\[
+h_0(x)=2\sqrt{\frac{x(1-x)^3}{27}}-x\quad(0\le x\le1/4).
+\]
+Its interior derivative is
+\[
+h_0'(x)=(1-4x)\sqrt{\frac{1-x}{27x}}-1.
+\]
+The critical equation is equivalent to
+\[
+g(x)=16x^3-24x^2+36x-1=0.
+\]
+Since $g'(x)=48(x-1/2)^2+24>0$, there is a unique critical point $x_*$ in $(0,1/4)$, and the derivative of $h_0$ changes from positive to negative there. At that point
+\[
+\tau_*=h_0(x_*)=\frac{x_*(1+2x_*)}{1-4x_*}.
+\]
+Eliminating $x_*$ gives \eqref{eq:cubic}; explicitly,
+\[
+\operatorname{Res}_x\bigl(g(x),\,z(1-4x)-x-2x^2\bigr)
+=216(32z^3+48z^2+28z-1).
+\]
+The cubic in $z$ is strictly increasing on $z\ge0$, and exact rational substitution gives the stated bracket.
+
+To attain equality, take $r=(1,0,0,0)$ and all $q_i$ positive, with squared coordinates $x_*,(1-x_*)/3,(1-x_*)/3,(1-x_*)/3$. Then the triangle bound is equality and $h(U)=\tau_*>0$. Column reorderings and row sign changes do not increase the bound, so it applies to the maximum over all branches and all $O(4)$.
+\end{proof}
+The sharpness is a sharp obstruction and signed-weight statement on the positive-obstruction regions. It is not a sharp positive distance of an actual determinant from its conjectured hull; no such positive distance is exhibited.
+
+\section{An exact genuinely complex example}
+Let
+\[
+U_0=\frac17\begin{pmatrix}
+1&4&4&4\\-4&1&-4&4\\-4&4&1&-4\\-4&-4&4&1
+\end{pmatrix},\qquad
+G=\begin{pmatrix}
+c&is&0&0\\is&c&0&0\\0&0&1&0\\0&0&0&1
+\end{pmatrix},
+\]
+where $c=9999/10001$ and $s=200/10001$, so $c^2+s^2=1$. Put $V=GU_0$. Direct calculation gives
+\[
+t(V)=\frac{4+30s^2}{49},\qquad c(V)=-\frac{512c^2}{2401},
+\]
+where the $c(V)$ on the left denotes the invariant \eqref{eq:c}, not the scalar in $G$. Hence
+\[
+h(V)=\frac{158-991s^2}{4802}
+=\frac{7881760079}{240148022401}>0.
+\]
+Theorem \ref{thm:optimal} therefore computes the exact minimum common negative mass for this complex unitary. Its fourteen weights are obtained directly from the table, without optimization.
+
+The phase-invariant quantity
+\[
+\operatorname{Im}\bigl(v_{11}v_{32}\overline{v_{12}}\overline{v_{31}}\bigr)
+=\frac{543945600}{240148022401}>0
+\]
+shows that $V$ cannot be made real by multiplying rows and columns by phases. The example is not simply a real matrix with removable phases. It is also not a counterexample to MI-05: it proves only the failure of common nonnegative weights for all spectra at once.
+
+\section{Exact checks, audit status, and the unresolved target}
+The independent script \texttt{code/verify\_analytic.py} uses exact SymPy arithmetic and does not import a numerical optimizer. It verifies the 1,680 spanning-set coefficient identities, the ranks and feature-basis determinant, all 48 functions and their values, 210 minor identities for three rational examples, the orthogonal polynomial identities, the stationary algebra, the resultant, the root bracket, and the rational open-ball bounds. The ten regression tests include deliberate corruptions that must be rejected. Explicit conditional failures are used rather than Python \texttt{assert}, so optimized Python does not disable the checks.
+
+These are the specified checks, not a substitute for their recorded execution outcome. The submitted archive did not include the advertised audit records and its delivery status reported no completed audit. For this repository edition, \texttt{verification/audit.json} records fresh command return codes and whether ordinary and optimized verifier outputs agree. A separate informal Codex AI-agent audit is recorded in \texttt{independent-review.md}. The report does not silently turn a missing or unsuccessful run into a pass. The repository edition was compiled and its rendered pages inspected by the submitting Codex agent. This is automated visual inspection, not external human peer review. Codex assistance was used for submission preparation and review; no Lean verification was performed.
+
+The companion order-four polytope work, if present, is kept under \texttt{extensions/}, with its original audit status. It is not needed for the analytic proofs in this report. In particular, the claim that all zero-obstruction cases admit common convex weights is not smuggled into Theorems \ref{thm:14}--\ref{thm:sharp}.
+
+The remaining task on a positive-obstruction branch is to prove the right side of \eqref{eq:remaining} nonnegative for every complex spectral pair and every unresolved supporting direction, or to give exact data making it negative. This report does neither. Settling every order-four branch would still not prove the all-dimension target \eqref{eq:target}. The explicit affirmative open ball, optimal signed representations, and sharp orthogonal obstruction bound therefore constitute partial results, not a full solution.
+
+\section*{Sources}
+\addcontentsline{toc}{section}{Sources}
+\begin{enumerate}
+\item OpenProblemsInNLA contributors. \emph{MI-05: Marcus--de Oliveira determinantal conjecture}. Canonical target and repository status.\newline
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/matrix-inequalities-and-norms/MI-05/README.md}
+\item \emph{MI-05: Quaternion weights and exact support certificates}. Supplied round-four working report, Sections 3--4 and 6--8. The prior archive, when available in the working environment, is preserved as \texttt{previous/MI-05\_round4.zip}. This is prior working material rather than an independently refereed publication.
+\end{enumerate}
+\end{document}

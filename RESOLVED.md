@@ -21,6 +21,12 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### MI-05 — order-four determinant identities and partial classes — Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 2.1 and Sections 3–7](references/holden-mi05-2026-09-13/report.pdf) give a fourteen-term signed identity, optimal positive-obstruction representations, an all-complex-spectra unitary ball of radius $`1/100`$, a support-direction criterion and a sharp real-orthogonal obstruction bound. [Submission and verified affiliation](references/holden-mi05-2026-09-13/README.md) · [Proof source](references/holden-mi05-2026-09-13/report.tex).
+
+A separate [independent informal Codex AI-agent audit](references/holden-mi05-2026-09-13/independent-review.md) passed the stated partial scope. The [retained original MI-05 target](matrix-inequalities-and-norms/MI-05/README.md) remains open for arbitrary normal pairs: negative common weights do not refute its spectrum-dependent convex-hull inclusion. No Lean verification, external human peer review or historical novelty claim is asserted. The status remains Partially resolved and the open count is unchanged.
+
 ### RA-18 — complex extension refuted; structured real cases — Sidney Holden
 
 **Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation ([verified affiliation](references/holden-ra18-2026-09-13/SUBMISSION.md)). [Theorem 2.1 and Section 3](references/holden-ra18-2026-09-13/manuscript/ra18.pdf) refute the separate proposed dimension-independent complex bound in [RA-18](randomized-and-low-rank-approximation/RA-18/README.md), by an explicit recursive family whose best square-submatrix inverse norm divided by the square root of the row dimension diverges. Sections 5–6 give exact spectral information and dimension-dependent lower bounds. Theorem 7.2 proves the real bound for frames with at most r+2 nonzero row directions, using the cited real two-column theorem.

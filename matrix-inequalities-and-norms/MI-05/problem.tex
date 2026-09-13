@@ -34,7 +34,7 @@ conjecture},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}MI-05}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-10}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -66,10 +66,48 @@ normal matrices, meaning \(AA^*=A^*A\) and \(BB^*=B^*B\). List their
 eigenvalues with algebraic multiplicity as \(a_1,\ldots,a_n\) and
 \(b_1,\ldots,b_n\). Is
 
-\[\det(A+B)\in\operatorname{conv}\left\{\prod_{i=1}^n(a_i+b_{\sigma(i)}):\sigma\in S_n\right\}?\]
+\[\det(A+B)\in\mathop{\mathrm{conv}}\nolimits\left\{\prod_{i=1}^n(a_i+b_{\sigma(i)}):\sigma\in S_n\right\}?\]
 
 Here \(S_n\) is the permutation group and the convex hull is taken in
 \(\mathbb C\cong\mathbb R^2\).
+
+\subsection{Partial result --- 13 September
+2026}\label{partial-result-13-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi05-2026-09-13/README.md}{Submission
+and verified affiliation}.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi05-2026-09-13/report.pdf}{Theorem
+2.1} gives a fourteen-term signed determinant identity for every
+order-four complex unitary and every pair of complex spectra. Theorems
+3.1--3.2 establish optimal common negative mass on the
+positive-obstruction regions and show that at most one such obstruction
+is positive. Corollary 4.1 and Theorem 4.2 prove the original inclusion
+for a specified class of relative unitaries, including an operator-norm
+ball of radius \(1/100\) around the displayed Hadamard matrix; Corollary
+4.3 extends these classes by block sums. Theorem 5.1 reduces the
+remaining support directions, and Theorem 7.2 gives a sharp
+real-orthogonal obstruction bound.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi05-2026-09-13/report.tex}{Proof
+source}.
+
+\textbf{The unrestricted target remains open.} The manuscript does not
+establish the determinant inclusion for arbitrary order-four unitaries,
+much less all dimensions. Negative spectrum-independent weights are not
+counterexamples to the spectrum-dependent convex-hull assertion. The
+zero-obstruction classification is also left open. These are partial
+results under the retained original assumptions and quantifiers, not a
+full resolution.
+
+The stated partial results passed a separate
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi05-2026-09-13/independent-review.md}{independent
+informal Codex AI-agent audit}, with fresh
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi05-2026-09-13/verification/audit.json}{exact
+and regression checks}. No Lean verification, external human peer review
+or novelty claim is asserted. The original ID, path, statement and
+source credit are retained.
 
 \subsection{Why it matters}\label{why-it-matters}
 

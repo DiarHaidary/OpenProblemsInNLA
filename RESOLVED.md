@@ -565,6 +565,8 @@ historical and the entry no longer contributes to the open count.
 
 #### KE-04 — affirmative resolution
 
+**Lean verified — 2026-09-13. Formalization: George Stepaniants**, Department of Computing and Mathematical Sciences, California Institute of Technology. The [complete Lean project](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/40b0bf52e73e776e7769f0f12dbbda7cd9fff183/eigenvalues-and-inverse-problems/KE-04/lean) proves the original strict interval-occupancy target with all dimensions, multiplicities and arbitrary Krylov bases. Its 24 exports passed real Ubuntu Comparator, default-kernel and permitted-axiom checks; [verification evidence and independent operational review](eigenvalues-and-inverse-problems/KE-04/lean/verification/linux-2026-09-13/README.md). Original mathematical proof credit remains Matthew J. Colbrook, Department of Applied Mathematics and Theoretical Physics, University of Cambridge. AI assistance and independent agent review are disclosed; no external human peer review is claimed.
+
 [Original statement and resolution](eigenvalues-and-inverse-problems/KE-04/README.md) · [Complete manuscript](eigenvalues-and-inverse-problems/KE-04/solution.md) · [Manuscript PDF](eigenvalues-and-inverse-problems/KE-04/solution.pdf) · [Independent review](references/colbrook-2026-09-11/verification/reviews/KE-04-review.md). **Theorem KE-04, sections 1–3.** Strict interval occupancy holds for every allowed pair of block Lanczos iterations and every indicated index, in exact arithmetic before the first loss of full block dimension. The quadratic-polynomial argument includes multiplicities and excludes coincident interval endpoints in the stated range.
 
 #### KE-03 — affirmative resolution

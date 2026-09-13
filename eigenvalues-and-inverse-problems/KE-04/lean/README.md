@@ -1,9 +1,11 @@
-# KE-04: Lean proof candidate for strict block Lanczos interlacing
+# KE-04: Lean verification of strict block Lanczos interlacing
 
 **Current phase, 13 September 2026:** all 24 reviewed theorem contracts are
-implemented, and two independent final mathematical referees have approved the
-complete original target. Authoritative Linux verification and independent
-operational review remain pending. The canonical problem status remains **Solved**.
+implemented. Two independent final mathematical referees approved the complete
+original target; actual Ubuntu Comparator, default-kernel verification and an
+independent operational audit have passed. The canonical problem status is
+**Lean verified**. [Run receipts and reviewed logs](verification/linux-2026-09-13/README.md)
+identify the immutable verified source revision.
 
 Formalization: **George Stepaniants**, Department of Computing and Mathematical
 Sciences, California Institute of Technology, Pasadena, California, USA, with
@@ -37,8 +39,8 @@ tools/lean/verify.sh eigenvalues-and-inverse-problems/KE-04/lean /tmp/nla-ke04-c
 
 Run those commands from the repository root on non-root Ubuntu after committing
 the candidate. They include real sandbox and rejection controls, Comparator
-statement equality, permitted-axiom checks and default-kernel replay. Linux and
-operational approval are required before status promotion. See
+statement equality, permitted-axiom checks and default-kernel replay. The actual
+accepted run is `34759746409`, target job `103730400358`. See
 [formalization.yaml](formalization.yaml) for the current phase and all ten
 dependency pins.
 

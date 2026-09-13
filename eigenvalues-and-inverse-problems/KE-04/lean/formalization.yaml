@@ -14,8 +14,9 @@ project:
   license: Apache-2.0
 repository:
   role: substantive-development
-  note: Complete proof candidate with two independent final mathematical approvals. Authoritative Linux,
-    Comparator, default-kernel and operational gates remain pending.
+  note: Complete proof with two independent final mathematical approvals and an independently reviewed
+    authoritative Ubuntu Comparator, default-kernel and operational verification at revision
+    40b0bf52e73e776e7769f0f12dbbda7cd9fff183.
 sources:
 - title: KE-04 — Block Lanczos strict interval occupancy
   contributors:
@@ -59,8 +60,8 @@ automation:
     human peer review or official Tau Ceti endorsement. Original mathematical authorship remains attributed.
 status:
   scope: Complete 24-export proof of the original KE-04 target through the stronger FullPrefixBlockLanczosClaim.
-    Two independent final mathematical approvals and coordinator acceptance are recorded; Linux and publication
-    gates remain pending.
+    Two independent final mathematical approvals, actual Ubuntu verification and independent operational
+    acceptance are recorded. The complete original target is verified.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: &id001
@@ -212,19 +213,20 @@ status:
     axioms: *id001
     comparator_config: comparator.json
     literature_dependencies: []
-  canonical_status: Solved
-  whole_problem_verified: false
-  actual_linux_comparator: pending
-  independent_packaging_approval: pending
+  canonical_status: Lean verified
+  whole_problem_verified: true
+  actual_linux_comparator: accepted
+  independent_packaging_approval: accepted
 review:
-  status: agent-reviewed; final-mathematical-approvals-coordinator-accepted; Linux-verification-pending
+  status: agent-reviewed; final-mathematical-approvals-accepted; Linux-and-operational-verification-accepted
   reviewers:
   - 'OpenAI Codex /root/ra09_final_referee1: independent final mathematical referee 1'
   - 'OpenAI Codex /root/leancert_examples: independent final mathematical referee 2'
+  - 'OpenAI Codex /root/lean_iv01_next: independent actual Linux operational reviewer'
   notes: Referee 1 and referee 2 independently re-elaborated the complete proof and all 24 exports from
     the corrected proof freeze. Their reports are retained in reviews/. Source identity correction preserved
-    17 distinct Git snapshots. Updated packaging still requires independent operational review after the
-    actual Linux Comparator and kernel verification.
+    17 distinct Git snapshots. The independent operational audit binds all 4250 candidate inputs to the
+    actual Ubuntu run and inspects all 24 exports, permitted axioms, kernel replay and sandbox controls.
   proof_freeze:
     file: reviews/proof-freeze.json
     sha256: 394db25967661b12b107062fb00976dc847817c03942dca44c4725492d4003c4
@@ -234,7 +236,11 @@ reproduction:
     command: lake build Solution
     note: Solution is the default target and imports Proof, which imports Completion; Challenge is never imported.
   authoritative_Linux:
-    status: pending
+    status: accepted
+    verified_revision: 40b0bf52e73e776e7769f0f12dbbda7cd9fff183
+    run: https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34759746409
+    target_job: 103730400358
+    evidence: verification/linux-2026-09-13/README.md
     cwd: repository root
     host: Non-root Ubuntu with the actual pinned harness prerequisites
     commands:
@@ -242,7 +248,8 @@ reproduction:
     - tools/lean/selftest.sh /tmp/nla-ke04-check
     - tools/lean/verify.sh eigenvalues-and-inverse-problems/KE-04/lean /tmp/nla-ke04-check
     prerequisites_document: ../../../tools/lean/HARNESS.md
-    note: Linux Comparator/default-kernel and real control suites are required before promotion to Lean verified.
+    note: All 24 configured declarations passed actual Linux Comparator/default-kernel verification and
+      the real control suites. The independent audit and raw logs are retained with the project.
 toolchain:
   lean: leanprover/lean4:v4.33.1
   dependency_manifest: lake-manifest.json

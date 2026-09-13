@@ -6,18 +6,26 @@
 
 **Difficulty:** challenging  
 **Importance:** broadly interesting  
-**Status:** Open  
+**Status:** Solved
 **Last checked:** 2026-09-12
 
-**Rating rationale:** Improving the known universal coefficient to its proposed sharp value is challenging; connections between matrix logarithms, entropy and quantum dynamics make the question broadly interesting.
+**Historical rating rationale:** Improving the known universal coefficient to its proposed sharp value is challenging; connections between matrix logarithms, entropy and quantum dynamics make the question broadly interesting.
 
-## Projection equivalence and coefficient sharpness — 12 September 2026
+## Resolution: affirmative, 12 September 2026
 
-**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](../../references/holden-matrix-2026-09-12/README.md).
+**Sidney Holden**, Center for Computational Biology, Flatiron Institute, Simons Foundation,
+proves the exact inequality for every dimension and every complex positive definite
+pair in the original statement, with optimality already in order two.
+See **Theorem 1.1, Sections 2–5**, of the [complete manuscript](../../references/holden-mi27-2026-09-12/solution.pdf)
+([Markdown](../../references/holden-mi27-2026-09-12/solution.md), [LaTeX](../../references/holden-mi27-2026-09-12/solution.tex)).
 
-[Theorems 1 and 2](../../references/holden-matrix-2026-09-12/MI-27/result.md) prove equivalence with the arbitrary-rank projection case and give a strictly positive order-two family showing that any universal coefficient is at least one. The proof allows component traces to vary and uses entropy concavity to recombine them. The universal coefficient-one upper bound remains Open.
-
-A separate [independent Codex AI-agent audit](../../references/holden-matrix-2026-09-12/verification/MI-20-MI-27-review.md) passed this limited scope. This is informal automated review; no complete resolution, historical novelty, external human peer review or formal verification is claimed. No Lean verification was performed.
+A [separate Codex AI-agent audit](../../references/holden-mi27-2026-09-12/verification/independent-review.md)
+passed the full proof and checked its published relative-entropy input.
+This is informal review; no external human peer review, Lean verification or priority claim is asserted.
+[Provenance and verified affiliation](../../references/holden-mi27-2026-09-12/provenance.md)
+disclose AI assistance and credit [PR #186](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/186),
+whose partial results left the universal upper bound open.
+The original target below is retained; ratings above are historical.
 
 ## Problem statement
 
@@ -42,4 +50,4 @@ This is a sharp matrix-function estimate for the rate at which noncommuting posi
 
 4. Q. Ning, F.-Z. Guo, J. Zhang and Q.-Y. Wen, *On Bounding Entangling Rates and Mixing Rates in Some Special Cases*, Int. J. Theor. Phys. 55 (2016), 1686–1694. [Published abstract](https://doi.org/10.1007/s10773-015-2806-9), which reports coefficient one under additional restrictions; the subscription body was not independently inspected in this audit.
 
-Status check (2026-09-10): Audenaert's theorem settles the existence claim with $`2`$. Vershynina’s 2021 revision distinguishes the proved coefficient from the proposed coefficient $`1`$. Searches for “small incremental mixing sharp constant”, “logarithmic commutator Audenaert constant one”, and 2025/2026 found later special-case estimates but no announced universal coefficient-one proof or counterexample. This limited search does not certify that the conjecture remains open.
+Historical status check (2026-09-10; superseded by the resolution above): Audenaert's theorem settles the existence claim with $`2`$. Vershynina’s 2021 revision distinguishes the proved coefficient from the proposed coefficient $`1`$. Searches for “small incremental mixing sharp constant”, “logarithmic commutator Audenaert constant one”, and 2025/2026 found later special-case estimates but no announced universal coefficient-one proof or counterexample. This limited search does not certify that the conjecture remains open.

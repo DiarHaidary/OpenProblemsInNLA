@@ -21,6 +21,13 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### RA-11 — partial Kronecker trace-estimation bounds — Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 1.1 and its supporting proofs](references/holden-ra11-2026-09-13/manuscript/ra11_partial_results.pdf) give general bounds, a matched tensor-product subclass characterization, and a matched very-small-error regime. The general unrestricted adaptive target remains open; the source projection-conjecture counterexample is not a resolution of RA-11. [Retained original target](randomized-and-low-rank-approximation/RA-11/README.md) · [Proof source and attribution](references/holden-ra11-2026-09-13/README.md).
+
+A separate [independent Codex AI-agent informal audit](references/holden-ra11-2026-09-13/independent-review.md) passed the partial claims, with exact and numerical checks rerun. No Lean verification, external human peer review, or full-resolution or novelty claim is asserted. RA-11 remains in the open count with its permanent ID, path, original target and prior-source credit intact.
+
+
 ### RA-14 — query-complexity partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** [Sidney Holden, verified affiliation and submission record](references/holden-ra14-2026-09-12/README.md). The [research note](references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, establishes the universal rank lower bound, the large-rank regime and a spectral-to-PCA reduction giving matching bounds under a retained polynomial dimension hypothesis. [Independent informal AI-agent review](references/holden-ra14-2026-09-12/independent-review.md). The [original RA-14 target](randomized-and-low-rank-approximation/RA-14/README.md) remains open in the other simultaneous finite-parameter regimes. No full resolution, external human peer review or Lean verification is asserted.

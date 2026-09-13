@@ -132,13 +132,12 @@ theorem weighted_minimum_lower {S : Finset ℂ} {pstar : Poly} {m : ℝ}
     unfold maxModulus
     simp only [dif_pos hS]
     obtain ⟨z, hz⟩ := hS
-    exact (norm_nonneg (p.eval z)).trans
-      (Finset.le_sup' (fun w : ℂ => ‖p.eval w‖) hz)
+    exact (norm_nonneg _).trans (Finset.le_sup' _ hz)
   have hmax : ∀ z ∈ S, ‖p.eval z‖ ≤ maxModulus S p := by
     intro z hz
     unfold maxModulus
     simp only [dif_pos hS]
-    exact Finset.le_sup' (fun w : ℂ => ‖p.eval w‖) hz
+    exact Finset.le_sup' _ hz
   have henergy_nonneg : 0 ≤
       ∑ z ∈ S, w z * ‖p.eval z - pstar.eval z‖ ^ 2 := by
     apply Finset.sum_nonneg

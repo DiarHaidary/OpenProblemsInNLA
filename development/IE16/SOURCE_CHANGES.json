@@ -1,36 +1,37 @@
 {
-  "scope": "Numeric/Minimax helper repairs and mechanical Lean 4.33 syntax compatibility; reviewed boundary and canonical status unchanged",
+  "scope": "Pinned-API elaboration repairs and theorem-local heartbeat allowance after numeric degree reduction; mathematical statements and reviewed boundary unchanged",
   "new_snapshot_compiled": false,
-  "prior_run_id": 34771972369,
-  "prior_run_result": "LeanCert Verification and Definitions passed; Numeric and Minimax failed; dependent modules skipped",
-  "preserved_prior_snapshot": "history/run-34771972369",
-  "changed_or_new_source": {
+  "prior_run_id": 34772589024,
+  "prior_run_result": "Numeric only remaining error was weighted_moment at 200000 heartbeats; Minimax had three API errors; dependent modules skipped",
+  "preserved_prior_snapshot": "history/run-34772589024",
+  "changed_source": {
     "NLA/IE16/Minimax.lean": {
-      "old_sha256": "4d2a8c38b3413e716a53ff81b9718089b4dbb48c4f0f1ab2e1ea0a92e87465c5",
-      "new_sha256": "e8ae5136546606b8a9867e31ca9efc96cef5bd492c5cdc4e4248e5eeca99c653"
+      "old_sha256": "e8ae5136546606b8a9867e31ca9efc96cef5bd492c5cdc4e4248e5eeca99c653",
+      "new_sha256": "0ae5e4902f5493f2902c823f10f154192e54b7ad74190a9bbc26f409899ad782"
     },
     "NLA/IE16/Numeric.lean": {
-      "old_sha256": "c90b9378f26691bba31056c333fb92ea8406f21a64a82d4c72ef4f40c79887fa",
-      "new_sha256": "b82b3aed9d4d454f4bce467151c77ba34a35a1b59ab1b67b966df4483816a501"
+      "old_sha256": "b82b3aed9d4d454f4bce467151c77ba34a35a1b59ab1b67b966df4483816a501",
+      "new_sha256": "1acf85379ec7c69a632726920ef6be780fa059ccb1e3e6c9f8273b2f7625164f"
     },
     "NLA/IE16/WeightedDraft.lean": {
-      "old_sha256": "1163f0f71fb5ce4f39374f09a1ea452a9580c853f8d1e17aad1b4a7482a21c36",
-      "new_sha256": "1375e2bdc3f645fab03a0895c4ed43571d1e0b8d9fb19da6d4dfcb225a460f02"
+      "old_sha256": "1375e2bdc3f645fab03a0895c4ed43571d1e0b8d9fb19da6d4dfcb225a460f02",
+      "new_sha256": "e3ab062bd4c33676b3e3a4a856a3292bcc9c5030e02fdff66e9e4bedf78d2704"
     },
-    "NUMERIC_OPTIMIZATION.md": {
-      "old_sha256": null,
-      "new_sha256": "91e60f63b801078264a1a370a7f4b0fc835745539982d51d9e3e888db274d047"
+    "NLA/IE16/WeightedBridgeDraft.lean": {
+      "old_sha256": "b082910816dd73ea012d77e2c3c63797b7c7cfee9eaec82fed619a458113c5c5",
+      "new_sha256": "f4a85c7662a77def42b9804921b510a7ea8a922332458f756e472407bdb76599"
+    },
+    "NLA/IE16/FinalContractsDraft.lean": {
+      "old_sha256": "5b4bf1715e97677e1cf532990646aa3dea54c6dee58f50b3af7be55815ddbc7a",
+      "new_sha256": "fde3c36171d26b93b7236974944e0d6275a7b884aa507ed5270a9475800c85ae"
     }
   },
   "repairs": [
-    "Replace removed sum ... in syntax by sum ... membership syntax in Minimax and WeightedDraft",
-    "Use Real.norm_eq_abs before abs_of_pos",
-    "Make scalar Lagrange sum and interpolation rewrites explicit",
-    "Prove root real/imaginary components once and use complex coordinate pairs linear in sqrt(3)",
-    "Reduce injectivity to rational coordinate comparisons after cancellation of sqrt(3)",
-    "Limit exact algebraic powers to degrees 2 through 7 and specialize literal rewrite exponents",
-    "Expand finite sums by Fin.sum_univ_three",
-    "Normalize finite equalities in a simp-only phase to avoid inverse simplification recursion"
+    "Fold the named Lagrange basis at zero before rewriting the finite sum",
+    "Supply explicit real-valued functions to Finset.le_sup' in Minimax, both weighted modules, and final contracts",
+    "Supply the explicit nonempty argument to Finset.sup'_lt_iff",
+    "Use mul_le_mul_iff_left\u2080 for cancellation of a positive right factor according to the pinned API",
+    "Grant weighted_moment 800000 heartbeats locally after all coordinate/norm/weight lemmas elaborated and the degree was reduced to seven"
   ],
-  "resources": "No increase to Lean memory, threads, wall-clock bounds, or local compilation; existing remote-only driver unchanged"
+  "resources": "Remote Lean remains -M4096 -j1 under GNU timeout120s per module; no local compiler, global heartbeat, memory, thread, or wall-clock change"
 }

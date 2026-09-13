@@ -147,14 +147,12 @@ theorem weighted_minimum_lower_indexed {ι : Type*} [Fintype ι]
     unfold maxModulus
     simp only [dif_pos hS]
     obtain ⟨z, hz⟩ := hS
-    exact (norm_nonneg (p.eval z)).trans
-      (Finset.le_sup' (fun w : ℂ => ‖p.eval w‖) hz)
+    exact (norm_nonneg _).trans (Finset.le_sup' _ hz)
   have hmax : ∀ i, ‖p.eval (f i)‖ ≤ maxModulus (Finset.univ.image f) p := by
     intro i
     unfold maxModulus
     simp only [dif_pos hS]
-    exact Finset.le_sup' (fun z : ℂ => ‖p.eval z‖)
-      (Finset.mem_image.mpr ⟨i, Finset.mem_univ _, rfl⟩)
+    exact Finset.le_sup' _ (Finset.mem_image.mpr ⟨i, Finset.mem_univ _, rfl⟩)
   have henergy_nonneg : 0 ≤
       ∑ i, w i * ‖p.eval (f i) - pstar.eval (f i)‖ ^ 2 := by
     apply Finset.sum_nonneg

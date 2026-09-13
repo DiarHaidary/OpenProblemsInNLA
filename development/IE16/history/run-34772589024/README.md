@@ -63,13 +63,3 @@ and their descendants were skipped. The retained raw compiler errors motivated
 the next exact coordinate and syntax repairs in `NUMERIC_OPTIMIZATION.md` and
 `SOURCE_CHANGES.json`. None of these development runs establishes final proof
 acceptance. The previous source bytes are under `history/run-34771972369`.
-
-Run `34772589024` at commit `5d9212c7f52448872e01852926be448c38d882a4`
-retained all 46 input copies with matching hashes. Numeric's sole remaining
-compiler error was the four-moment theorem reaching its default heartbeat
-limit; the current draft grants that theorem 800,000 heartbeats after reducing
-the algebraic degree to seven. Memory, one-thread execution and the 120-second
-module wall-clock bound are unchanged. Minimax's three concrete API errors
-are repaired in this snapshot; analogous explicit arguments are supplied in
-the downstream drafts. These changes await new remote feedback. The prior
-source snapshot remains under `history/run-34772589024`.

@@ -51,7 +51,7 @@ lemma subset_max_upper_draft :
     subsetMax explicitL 4 < subsetUpperBound := by
   unfold subsetMax
   rw [dif_pos subsetFamily_nonempty_draft]
-  apply (Finset.sup'_lt_iff subsetFamily_nonempty_draft).mpr
+  apply Finset.sup'_lt_iff.mpr
   intro S hS
   exact every_five_point_subset_upper S hS
 
@@ -59,8 +59,7 @@ lemma subset_max_positive_draft : 0 < subsetMax explicitL 4 := by
   unfold subsetMax
   rw [dif_pos subsetFamily_nonempty_draft]
   obtain ⟨S, hS⟩ := subsetFamily_nonempty_draft
-  exact (five_point_minimum_pos_draft hS).trans_le
-    (Finset.le_sup' (fun T : Finset ℂ => M T 4) hS)
+  exact (five_point_minimum_pos_draft hS).trans_le (Finset.le_sup' _ hS)
 
 lemma ratio_lower_bound_draft :
     ratioLowerBound < M explicitL 4 / subsetMax explicitL 4 := by

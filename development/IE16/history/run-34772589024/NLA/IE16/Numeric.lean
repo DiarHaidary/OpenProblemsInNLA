@@ -223,10 +223,6 @@ lemma witnessWeight_sum :
    are the only moments needed for an arbitrary degree-four polynomial whose
    constant term vanishes; no floating-point or interval approximation enters
    this identity. -/
-/- The algebraic degree has already been reduced to seven. This finite
-   four-moment certificate receives a theorem-local heartbeat allowance;
-   the remote process wall-clock, memory, and thread limits remain fixed. -/
-set_option maxHeartbeats 800000 in
 lemma weighted_moment (ell : Fin 4) :
     ∑ a : Fin 3, ∑ b : Fin 3,
       (witnessWeight a b : ℂ) *

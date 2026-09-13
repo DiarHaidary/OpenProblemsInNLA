@@ -1,0 +1,25 @@
+{
+  "phase": "Two independent final local proof reviews accepted; Linux and Comparator pending",
+  "accepted_utc": "2026-09-13T15:20:45.756469+00:00",
+  "boundary_files": {
+    "NLA/SP06/Definitions.lean": "5f3e071b9aabbbda27a794f9396022e54585f5d2d254827e50ea90baf80e72b1",
+    "NLA/SP06/Numeric.lean": "16052a754e8680c587163e1a57d150094ae96a36464a56cc499ec09e9aa5b111",
+    "NLA/SP06/Curve.lean": "151ff3586667091b16eab3acf03aed32fa5c7db8422a4077095bf914c4392677",
+    "NLA/SP06/Proof.lean": "d22146a65804efd8ff5c7f7b81ddcd55af8dc1bab7a2518f4961d7699abc9b48",
+    "Challenge.lean": "cd75a8f37a174d7dfb68927f7e6aeb23cf0982eb3161d7d9e5a63a7583d73bef",
+    "Solution.lean": "4aa92168bf3dccc0a03180795c60b404a7e6b531b188eb4ab1d93cf109c3eb42",
+    "NUMERICAL_TARGETS.md": "bfd2a0bcc5c5328ac9f3fd85d56ac7d3b8a5d551236cee68e227cb9acbea1959",
+    "SOURCE_MAP.md": "b81a8cc5f9e5c1dda318c65c80ed840825a3216d95d53bcfc43cd8bbf7c594f2",
+    "comparator.json": "5d19e5fe9d3ac4a69d07a1b14d40e31784a295e7fe8c6925964bfffe97203bb9",
+    "lakefile.toml": "bd9766f1845b61c296dfda0f5d90ebea58162823e6b4255b8248386485cb383c",
+    "lake-manifest.json": "fc670db46b75e916e357afa39caba663fade917249f6b4c14b10260b8f9e4c4d",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+  },
+  "reports": {
+    "1": "348e3cc0a36d64262197407055dc7ed7a6537da3749c2deb90a5f54f114df245",
+    "2": "502c5f90aa6699d342fcc654b448c69fee8663b9908dd2a0c135831d960d5f4e"
+  },
+  "coordinator_notes": "All mathematical source and contract bytes match both independent reviews. The sole late Lake configuration change registers the independent Solution library and default target; final referee2 inspected this exact correction and it matches the verified KE04 configuration. No local Lake build or Linux result is claimed.",
+  "remaining": "Actual non-root Linux sandbox, Comparator identity, standard axioms, default-kernel replay, controls and evidence audit; canonical promotion/PR follows only on success."
+}

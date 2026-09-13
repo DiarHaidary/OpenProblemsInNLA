@@ -1,0 +1,78 @@
+NLA.SP06.LaurentCoefficients : Type
+'NLA.SP06.LaurentCoefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.laurentEval (b : NLA.SP06.LaurentCoefficients) (z : ℂ) : ℂ
+'NLA.SP06.laurentEval' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.hasAdmissibleBand (b : NLA.SP06.LaurentCoefficients) : Prop
+'NLA.SP06.hasAdmissibleBand' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.toeplitz (b : NLA.SP06.LaurentCoefficients) (n : ℕ) : Matrix (Fin n) (Fin n) ℂ
+'NLA.SP06.toeplitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.hasRealJordanCurve (b : NLA.SP06.LaurentCoefficients) : Prop
+'NLA.SP06.hasRealJordanCurve' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.allFiniteSpectraReal (b : NLA.SP06.LaurentCoefficients) : Prop
+'NLA.SP06.allFiniteSpectraReal' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.targetImplication : Prop
+'NLA.SP06.targetImplication' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness : NLA.SP06.LaurentCoefficients
+'NLA.SP06.witness' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.auxiliary (z : ℂ) : ℂ
+'NLA.SP06.auxiliary' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radialEquation (r c : ℝ) : ℝ
+'NLA.SP06.radialEquation' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radiusProfile (ρ : Circle → ℝ) : Prop
+'NLA.SP06.radiusProfile' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radialCurve (ρ : Circle → ℝ) (u : Circle) : ℂ
+'NLA.SP06.radialCurve' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.nonrealEigenvalue : ℂ
+'NLA.SP06.nonrealEigenvalue' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.counterexampleClaim : Prop
+'NLA.SP06.counterexampleClaim' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness_admissible : NLA.SP06.hasAdmissibleBand NLA.SP06.witness
+'NLA.SP06.witness_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness_composition (z : ℂ) (hz : z ≠ 0) :
+  NLA.SP06.laurentEval NLA.SP06.witness z = NLA.SP06.auxiliary z - NLA.SP06.auxiliary z ^ 2
+'NLA.SP06.witness_composition' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_lower_endpoint (c : ℝ) (hc : c ∈ Set.Icc (-1) 1) :
+  NLA.SP06.radialEquation (1 / 2) c ≤ -(23 / 32) ∧ NLA.SP06.radialEquation (1 / 2) c < 0
+'NLA.SP06.radial_lower_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_upper_endpoint (c : ℝ) (hc : c ∈ Set.Icc (-1) 1) : 1 ≤ NLA.SP06.radialEquation 2 c
+'NLA.SP06.radial_upper_endpoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_uniform_slope (c s r : ℝ) (hc : c ∈ Set.Icc (-1) 1) (hs : 1 / 2 ≤ s) (hsr : s ≤ r) (hr : r ≤ 2) :
+  (r - s) / 4 ≤ NLA.SP06.radialEquation r c - NLA.SP06.radialEquation s c
+'NLA.SP06.radial_uniform_slope' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_root_exists_unique (c : ℝ) (hc : c ∈ Set.Icc (-1) 1) :
+  ∃! r, r ∈ Set.Ioo (1 / 2) 2 ∧ NLA.SP06.radialEquation r c = 0
+'NLA.SP06.radial_root_exists_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_roots_lipschitz (c d r s : ℝ) (hc : c ∈ Set.Icc (-1) 1) (hd : d ∈ Set.Icc (-1) 1)
+  (hr : r ∈ Set.Ioo (1 / 2) 2) (hs : s ∈ Set.Ioo (1 / 2) 2) (hcr : NLA.SP06.radialEquation r c = 0)
+  (hds : NLA.SP06.radialEquation s d = 0) : |r - s| ≤ 8 * |c - d|
+'NLA.SP06.radial_roots_lipschitz' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.continuous_radius_exists : ∃ ρ, NLA.SP06.radiusProfile ρ
+'NLA.SP06.continuous_radius_exists' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_curve_continuous (ρ : Circle → ℝ) (hρ : Continuous ρ) : Continuous (NLA.SP06.radialCurve ρ)
+'NLA.SP06.radial_curve_continuous' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_curve_injective (ρ : Circle → ℝ) (hρ : ∀ (u : Circle), 0 < ρ u) :
+  Function.Injective (NLA.SP06.radialCurve ρ)
+'NLA.SP06.radial_curve_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_curve_nonzero (ρ : Circle → ℝ) (hρ : ∀ (u : Circle), 0 < ρ u) (u : Circle) :
+  NLA.SP06.radialCurve ρ u ≠ 0
+'NLA.SP06.radial_curve_nonzero' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.auxiliary_radial_im (r : ℝ) (hr : 0 < r) (u : Circle) :
+  (NLA.SP06.auxiliary (↑r * ↑u)).im = 8 * (↑u).im / r * NLA.SP06.radialEquation r (↑u).re
+'NLA.SP06.auxiliary_radial_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.radial_curve_symbol_real (ρ : Circle → ℝ) (hρ : NLA.SP06.radiusProfile ρ) (u : Circle) :
+  (NLA.SP06.laurentEval NLA.SP06.witness (NLA.SP06.radialCurve ρ u)).im = 0
+'NLA.SP06.radial_curve_symbol_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness_real_jordan_curve : NLA.SP06.hasRealJordanCurve NLA.SP06.witness
+'NLA.SP06.witness_real_jordan_curve' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness_toeplitz_two : NLA.SP06.toeplitz NLA.SP06.witness 2 = !![-128, 8; -8, -128]
+'NLA.SP06.witness_toeplitz_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness_eigenvalue_mem : NLA.SP06.nonrealEigenvalue ∈ spectrum ℂ (NLA.SP06.toeplitz NLA.SP06.witness 2)
+'NLA.SP06.witness_eigenvalue_mem' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness_eigenvalue_im : NLA.SP06.nonrealEigenvalue.im = 8
+'NLA.SP06.witness_eigenvalue_im' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness_nonreal_finite_spectrum : ¬NLA.SP06.allFiniteSpectraReal NLA.SP06.witness
+'NLA.SP06.witness_nonreal_finite_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.witness_counterexample : NLA.SP06.counterexampleClaim
+'NLA.SP06.witness_counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.SP06.not_targetImplication : ¬NLA.SP06.targetImplication
+'NLA.SP06.not_targetImplication' depends on axioms: [propext, Classical.choice, Quot.sound]

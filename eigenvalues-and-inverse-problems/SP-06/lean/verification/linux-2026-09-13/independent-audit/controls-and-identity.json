@@ -1,0 +1,183 @@
+{
+  "artifact": {
+    "api_digest": "sha256:fac2ebe5f81ec421a7b478fcbd1a11768887b8678ad5d166adac3a1402aece6c",
+    "digest_matches": true,
+    "expired": false,
+    "id": 10320127872,
+    "local_sha256": "fac2ebe5f81ec421a7b478fcbd1a11768887b8678ad5d166adac3a1402aece6c",
+    "name": "lean-SP-06",
+    "safe_entry_count": 13,
+    "size_in_bytes": 14504,
+    "unsafe_entries": []
+  },
+  "axiom_evidence_note": "Linux receipt exposes the permitted set and rejection controls; local final referee reports contain per-export direct axiom checks.",
+  "candidate_git_observation": {
+    "branch": "codex/lean-sp06-jordan-curve",
+    "clean": true,
+    "head": "3122d69460b0ed6dda3ea00dfaa899f93411ce2f",
+    "status_porcelain": ""
+  },
+  "canonical_source_recheck": {
+    "commit": "50838e37dd793830e2cecd1055cfc7e0349490f1",
+    "files": {
+      "README.md": {
+        "bytes": 4668,
+        "sha256": "e2eb891930c96d6a3bdd25c75bfe6bd2798cc8c540ce00ec851f7bf1f0ceb25c"
+      },
+      "problem.tex": {
+        "bytes": 8118,
+        "sha256": "183127180596a36c108ed8575420e3845ca890f3048a32ec1252d61cf60d5311"
+      },
+      "solution.md": {
+        "bytes": 6251,
+        "sha256": "c7adb8f97238049b20e82044d8527b70301779ba041169f74fe603a88ea1ae7a"
+      },
+      "solution.tex": {
+        "bytes": 8269,
+        "sha256": "b7340bf85e0b776ed49a4303af64820b72708eb249fbdc885b9179945e60ffc9"
+      }
+    }
+  },
+  "checker_controls_matrix_job": {
+    "reason": "Workflow condition runs this separate job only when checker/tooling files change; verify job still ran project-side kernel and Comparator controls.",
+    "status": "SKIPPED"
+  },
+  "controls": {
+    "comparator_regressions": {
+      "cases": 5,
+      "log": "extracted/verify-20260913T152822Z-3952/comparator-controls.log",
+      "status": "PASS"
+    },
+    "default_kernel_replay": {
+      "cases": 3,
+      "log": "extracted/verify-20260913T152822Z-3952/kernel-controls.log",
+      "status": "PASS"
+    },
+    "dependency_pin_check": {
+      "log": "extracted/verify-20260913T152822Z-3952/dependencies.log",
+      "status": "PASS"
+    },
+    "fresh_project_comparator": {
+      "log": "extracted/verify-20260913T152822Z-3952/comparator.log",
+      "status": "PASS"
+    },
+    "negative_native_decide_rejection": {
+      "log": "extracted/verify-20260913T152822Z-3952/negative-native.log",
+      "status": "PASS"
+    },
+    "negative_sorryAx_rejection": {
+      "log": "extracted/verify-20260913T152822Z-3952/negative-sorry.log",
+      "status": "PASS"
+    },
+    "sandbox_probe": {
+      "log": "extracted/verify-20260913T152822Z-3952/sandbox.log",
+      "status": "PASS"
+    },
+    "user_service_probe": {
+      "log": "extracted/verify-20260913T152822Z-3952/user-service.log",
+      "status": "PASS"
+    }
+  },
+  "declaration_coverage": {
+    "all_result_names_in_comparator_export_log": true,
+    "comparator_config_count": 20,
+    "formalization_main_result_count": 20,
+    "result_count": 20,
+    "result_equals_comparator_config": true,
+    "result_equals_formalization_main_results": true,
+    "solution_comparator_accepts": true,
+    "solution_default_kernel_accepts": true
+  },
+  "dependency_pins": {
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f",
+    "Forsythe_harness_source": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+    "LeanCert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "Mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "Plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "ProofWidgets4": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118"
+  },
+  "input_hashes": {
+    "all_match": true,
+    "file_count": 61
+  },
+  "result": {
+    "matches_subject_commit": true,
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "repository_commit": "3122d69460b0ed6dda3ea00dfaa899f93411ce2f",
+    "result": "comparator-accepted",
+    "semantic_review": "not-performed-by-this-command",
+    "tool_receipt": {
+      "ci_sandbox_probe_sha256": "31057195baf238807cacbb4126c5b07f02cec55a4e4437de5f3a755b3fada803",
+      "env_sha256": "7554076d35dcb2dc98bdc8f9adfd3a6a65b08b89c05695efe9e194df542e149a",
+      "executables": {
+        ".tools/bin/landrun": "6531f6c9bc99313170e29c4c65bf09a414741093c587389315eb81a0a31e45d7",
+        ".tools/comparator/.lake/build/bin/comparator": "189e88f1a3cb68130b581905f7a5d3bde47eb0578904c0ca6fb235a53d0e8bdc",
+        ".tools/lean4export/.lake/build/bin/lean4export": "46f6a14f0f4a364d7698229130d103b67855be42f96cc5ef93929288072f1fa1"
+      },
+      "forsythe_commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+      "go_version": "go version go1.27.1 linux/amd64",
+      "lean_prefix": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1",
+      "lean_toolchain": "leanprover/lean4:v4.33.1",
+      "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+      "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+      "source_lock_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b"
+    }
+  },
+  "reviewed_proof_unchanged": {
+    "files": {
+      "Challenge.lean": {
+        "final_referee_1_mentions": true,
+        "final_referee_2_mentions": true,
+        "sha256": "cd75a8f37a174d7dfb68927f7e6aeb23cf0982eb3161d7d9e5a63a7583d73bef"
+      },
+      "NLA/SP06/Curve.lean": {
+        "final_referee_1_mentions": true,
+        "final_referee_2_mentions": true,
+        "sha256": "151ff3586667091b16eab3acf03aed32fa5c7db8422a4077095bf914c4392677"
+      },
+      "NLA/SP06/Definitions.lean": {
+        "final_referee_1_mentions": true,
+        "final_referee_2_mentions": true,
+        "sha256": "5f3e071b9aabbbda27a794f9396022e54585f5d2d254827e50ea90baf80e72b1"
+      },
+      "NLA/SP06/Numeric.lean": {
+        "final_referee_1_mentions": true,
+        "final_referee_2_mentions": true,
+        "sha256": "16052a754e8680c587163e1a57d150094ae96a36464a56cc499ec09e9aa5b111"
+      },
+      "NLA/SP06/Proof.lean": {
+        "final_referee_1_mentions": true,
+        "final_referee_2_mentions": true,
+        "sha256": "d22146a65804efd8ff5c7f7b81ddcd55af8dc1bab7a2518f4961d7699abc9b48"
+      },
+      "Solution.lean": {
+        "final_referee_1_mentions": true,
+        "final_referee_2_mentions": true,
+        "sha256": "4aa92168bf3dccc0a03180795c60b404a7e6b531b188eb4ab1d93cf109c3eb42"
+      }
+    },
+    "status": "PASS"
+  },
+  "run_terminal": {
+    "conclusion": "success",
+    "head_sha": "3122d69460b0ed6dda3ea00dfaa899f93411ce2f",
+    "matches_subject_commit": true,
+    "status": "completed"
+  },
+  "verify_job_terminal": {
+    "conclusion": "success",
+    "head_sha": "3122d69460b0ed6dda3ea00dfaa899f93411ce2f",
+    "job_id": 103745998196,
+    "matches_subject_commit": true,
+    "status": "completed"
+  }
+}

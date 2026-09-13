@@ -1,0 +1,65 @@
+{
+  "phase": "independent final proof review",
+  "reviewer": "/root/lean_ie15_next",
+  "date": "2026-09-13",
+  "candidate": "/tmp/nla-lean-sp06-project/eigenvalues-and-inverse-problems/SP-06/lean",
+  "verdict": "PASS: complete local proof candidate; Linux/Comparator and second final referee remain pending",
+  "compile": {
+    "command": "SP06_DEP_ROOT=/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages python3 verification/compile_development.py Solution",
+    "exit_code": 0,
+    "modules": [
+      "NLA.SP06.Definitions",
+      "NLA.SP06.Numeric",
+      "NLA.SP06.Curve",
+      "NLA.SP06.Proof",
+      "Solution"
+    ],
+    "fresh_evidence": "local-compile-EVIDENCE.json",
+    "shared_dependency_writes": false,
+    "lake_or_download": false
+  },
+  "axiom_inspection": {
+    "command": "lean /tmp/sp06-final-referee1-inspect.lean",
+    "exit_code": 0,
+    "export_count": 20,
+    "axioms_per_export": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "unexpected_axioms": [],
+    "raw_log": "axioms.log"
+  },
+  "statement_boundary": {
+    "definitions_sha256": "5f3e071b9aabbbda27a794f9396022e54585f5d2d254827e50ea90baf80e72b1",
+    "challenge_sha256": "cd75a8f37a174d7dfb68927f7e6aeb23cf0982eb3161d7d9e5a63a7583d73bef",
+    "unchanged_from_approved_boundary": true
+  },
+  "source_hashes_match_source_map": true,
+  "comparator": {
+    "configuration_inspected": true,
+    "run": false,
+    "reason": "authoritative Linux Comparator is a separate remaining gate"
+  },
+  "mathematical_findings": {
+    "target_fidelity": "PASS",
+    "curve_bridge": "PASS",
+    "spectrum_bridge": "PASS",
+    "exact_arithmetic": "PASS",
+    "hidden_assumption_found": false
+  },
+  "artifacts": {
+    "review": "REVIEW.md",
+    "input_hashes": "INPUT-HASHES.sha256",
+    "manifest": "MANIFEST.sha256",
+    "arithmetic": "independent-arithmetic.txt",
+    "compile_evidence": "local-compile-EVIDENCE.json",
+    "axioms": "axioms.log"
+  },
+  "metadata_snapshot": {
+    "README.md": "484c547056d30799c805092abd2b23c7094011037f8573ee040047a3b4088dfe",
+    "formalization.yaml": "ab4ff6aaf2bb1beee1f7379359f67dd40dd88be8747e36f59374fcbbe24357c6",
+    "README_status": "twenty local exports; final reviews and Linux Comparator pending",
+    "YAML_status": "sorry_count 0; whole_problem_verified false; final reviews and Linux Comparator pending"
+  }
+}

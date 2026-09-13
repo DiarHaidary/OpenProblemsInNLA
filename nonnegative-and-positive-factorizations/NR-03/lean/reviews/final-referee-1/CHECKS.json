@@ -1,0 +1,173 @@
+{
+  "phase": "Immutable full canonical mathematical/mechanical acceptance addendum",
+  "reviewer": {
+    "identity": "/root/nr03_independent_referee",
+    "kind": "Independent AI agent",
+    "NR03_proof_author": false,
+    "metadata_or_source_edited_in_this_audit": false
+  },
+  "verdict": "APPROVE_FULL_ORIGINAL_CANONICAL_NEGATIVE_RESOLUTION_AND_ALL_TEN_EXPORTS",
+  "canonical_commit": "f664d07e82aaa60bc9c78dd1946e763168c5c530",
+  "project": "nonnegative-and-positive-factorizations/NR-03/lean",
+  "run_id": 34785341662,
+  "job_id": 103799711659,
+  "run_status": "completed",
+  "run_conclusion": "success",
+  "job_conclusion": "success",
+  "job_started_at": "2026-09-13T21:57:54Z",
+  "job_completed_at": "2026-09-13T22:26:48Z",
+  "artifact": {
+    "id": 10326896988,
+    "bytes": 21628,
+    "sha256": "91f80abcbbb0f10fbf614ab259fbf5121a8dabd5c600969a260e3b8b2c8e267c",
+    "API_digest_matches": true,
+    "all_13_raw_entries_match_ZIP": true
+  },
+  "exact_bindings": {
+    "runtime_project_inputs": 113,
+    "all_runtime_hashes_equal_complete_Git_project_tree": true,
+    "active_Lean_modules": 58,
+    "all_58_modules_built_in_same_canonical_run": true,
+    "sole_Lean_delta_from_full_source_review_is_approved_one_line_Rank_repair": true,
+    "frozen_Defs_Challenge_comparator_and_pins_preserved": true,
+    "source_lock_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+    "verifier_infrastructure_paths": 14
+  },
+  "actual_export_axioms": {
+    "NLA.NR03.cMatrix_nonnegative": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.boolVec_seven_card": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.nonnegative_rank_attained_minimal": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.rank_le_of_factorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.scaled_certificate_gives_factorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.witness_scaled_certificate": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.witness_factorization": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.witness_rank_upper_bound": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.witness_not_full_rank": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.not_targetStatement": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "actual_total_printed_axiom_diagnostics": 403,
+  "actual_row_diagnostics": 384,
+  "all_printed_axioms_exactly": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "LeanCert": {
+    "pinned_commit": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "verification_source_sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+    "verification_module_built": true,
+    "all_ten_assert_trust_kernel_commands_executed_in_successful_Solution": true,
+    "command_semantics_independently_inspected": true
+  },
+  "canonical_acceptance": {
+    "recorded_result": "comparator-accepted",
+    "comparator_configuration_exactly_matches_reviewed_ten_export_boundary": true,
+    "candidate_default_kernel_replay_acceptance_marker": true,
+    "candidate_Comparator_success_marker": true,
+    "comparator_exit_status": 0,
+    "semantic_review_not_claimed_by_machine_command": "not-performed-by-this-command"
+  },
+  "actual_tool_receipt": {
+    "source_lock_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+    "forsythe_commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+    "ci_sandbox_probe_sha256": "31057195baf238807cacbb4126c5b07f02cec55a4e4437de5f3a755b3fada803",
+    "lean_toolchain": "leanprover/lean4:v4.33.1",
+    "lean_prefix": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1",
+    "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "go_version": "go version go1.27.1 linux/amd64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "executables": {
+      ".tools/comparator/.lake/build/bin/comparator": "189e88f1a3cb68130b581905f7a5d3bde47eb0578904c0ca6fb235a53d0e8bdc",
+      ".tools/lean4export/.lake/build/bin/lean4export": "46f6a14f0f4a364d7698229130d103b67855be42f96cc5ef93929288072f1fa1",
+      ".tools/bin/landrun": "6531f6c9bc99313170e29c4c65bf09a414741093c587389315eb81a0a31e45d7"
+    },
+    "env_sha256": "7554076d35dcb2dc98bdc8f9adfd3a6a65b08b89c05695efe9e194df542e149a"
+  },
+  "all_ten_dependency_checkout_revisions_match_frozen_manifest": true,
+  "actual_controls": {
+    "build_and_export_isolation": "Both modes exit 0; outside writes, escaping symlinks, host process/network access, capabilities, and namespace escalation denied as logged; only designated build .lake writes allowed",
+    "four_invalid_sandbox_options": "All rejected with exit 2",
+    "kernel_fixture_honest": "accepted",
+    "kernel_fixture_invalid_raw_proof": "rejected by default kernel",
+    "kernel_fixture_quotient_mismatch": "rejected by quotient post-check",
+    "Comparator_simple_match": "accepted",
+    "Comparator_simple_mismatch": "constant-kind mismatch rejected",
+    "Comparator_simple_axiom_issue": "illegal helper axiom rejected",
+    "Comparator_simple_kind_mismatch": "illegal helper axiom rejected (actual recorded fixture outcome)",
+    "Comparator_type_mismatch": "theorem-statement mismatch rejected",
+    "native_decide_negative": "native auxiliary axiom rejected; exit 1",
+    "sorry_negative": "sorryAx rejected; exit 1",
+    "user_service": "exit 0"
+  },
+  "separate_checker_controls_job": "skipped; integrated controls in the NR03 verification job actually executed and passed",
+  "prior_reviews_preserved_and_reused": {
+    "full_math_source": {
+      "path": "/tmp/nla-nr03-canonical-final-referee/REVIEW.md",
+      "sha256": "7ed2951165c48e0eb92e8215aee9371d321257d3bee6888250b877c879a18edd"
+    },
+    "Rank_delta": {
+      "path": "/tmp/nla-nr03-rank-cast-referee/REVIEW.md",
+      "sha256": "a52e0d091be59339a14db2793a89e046237e59d04cae74f624073b8e15ccd070"
+    },
+    "repaired_packaging": {
+      "path": "/tmp/nla-nr03-repaired-package-referee/REVIEW.md",
+      "sha256": "6fd631cd88437c7874cbe3c79e4c9f60b4d2fd6b6998d729b290802d9f866ed5"
+    },
+    "prior_canonical_failure": {
+      "path": "/tmp/nla-nr03-canonical-final-referee-run-34783909558/REVIEW.md",
+      "sha256": "deea7e46cbc86ca73cca3a495cc1fdc58b096041d2acee4bca426de1baee1513"
+    }
+  },
+  "prior_failure_resolution": "Rank built in 2.1 seconds and Solution in 2.2 seconds in this exact run; the previously reported cast elaboration failure is resolved.",
+  "scope": "Complete original universal target is negated at n=7 using every 128-by-128 Boolean entry, a genuine real nonnegative width-127 factorization and actual attained-minimum semantics; all ten approved exports accepted.",
+  "publication_scope": "This reviewer accepts the exact f664 formalization and evidence. Public packaging/status/count changes are separate coordinator work and were not performed here.",
+  "limits": [
+    "Independent AI-agent review, not external human peer review or official Tau Ceti service endorsement",
+    "No local compiler/build/cache/dependency download or new workflow/network query",
+    "No claim of exact rank 127 or minimal counterexample dimension",
+    "Future source or publication metadata deltas require their own recorded correspondence"
+  ],
+  "full_formalization_accepted_by_this_referee": true,
+  "source_or_status_mutated": false,
+  "campaign_counter_mutated": false
+}

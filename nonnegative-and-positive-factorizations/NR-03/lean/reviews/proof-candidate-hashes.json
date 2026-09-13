@@ -1,5 +1,5 @@
 {
-  "status": "58-module candidate with reviewed one-line Rank repair; actual complete canonical acceptance pending",
+  "status": "58-module proof package accepted by canonical Linux verification run 34785341662",
   "base_commit": "50838e37dd793830e2cecd1055cfc7e0349490f1",
   "implementation_source_commit": "3b3eb8f3fa384e4b3bf640d48bca87cf40db9565",
   "solution_exports": [
@@ -27,10 +27,10 @@
     "result": "clean",
     "note": "This lexical scan is source hygiene only and is not a proof result."
   },
-  "proof_status": "Prior canonical run compiled every row, full families and unconditional Certificate, then failed Rank cast elaboration. The one-line repair has two source approvals; no complete acceptance or status claim.",
+  "proof_status": "Complete canonical LeanCert, Comparator, default-kernel and control gates passed in run 34785341662 at f664d07e82aaa60bc9c78dd1946e763168c5c530.",
   "self_exclusion": "This manifest is intentionally excluded from its own hash inventory.",
   "files_excluding_this_manifest": {
-    "ACTIVE-MODULE-MANIFEST.json": "3d02090c6c90fb0d244a6763d0c1c67c663c03e39a21e041c9c1eb3512b58a5d",
+    "ACTIVE-MODULE-MANIFEST.json": "bbeba867a2662f07bb1aa5813baf4ea62ff01e879c0121e38f9115a061478e5e",
     "Challenge.lean": "4f1764cf9c604f33ed6f285e83ca32ebd1ae1fb1fd8f763a1c4a719ef068c335",
     "FULL-ROW-COVERAGE.md": "b22d7d39e3978afe625dc8ff567e2558f6ea0ac0c6f93dc40f97bea9ae147336",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
@@ -93,8 +93,8 @@
     "NLA/NR03/RowCertificate/Singleton/Block14.lean": "8f1a93acca83c5a2a9f9ecff3b1697ba80288a969ea34eb7136f2f9ece93013e",
     "NLA/NR03/RowCertificate/Singleton/Block15.lean": "bb417e14367b068e28174b3a2869a47a0945f4833b439c1215b74604adfa6944",
     "NUMERICAL_TARGETS.md": "817a0978869dcaf2bb918d846e4143df480665e5db3bc841cf4070bd3f683c42",
-    "README.md": "aa2a54fb419765037f567e716e5b4021c5bd671773c01277f7c705ab1c2a3003",
-    "SOURCE_MAP.md": "97c78f5e6b404577060e3239b7733e7d6ce0dd32dc45b84e7e4b6650dd71c2b4",
+    "README.md": "13472c39a9e0a6590f8d75f12f28bfc197c8553381fb9f1703134d17b1bfb4b0",
+    "SOURCE_MAP.md": "dfe83df7ba152763f23ec7f6170663feefefca5b66b3845036ee9241578029b3",
     "Solution.lean": "4a0ae10fcd53d4a894a7e72b9d39c4fad8da1e814428b9df16648d85abb9ddb1",
     "certificate-bridge/DISCHARGE-GRAPH.json": "bd37bf43c3cf2aa87697bc4004f21cdd208a2e93144cf6c5474e80d7570feadc",
     "certificate-bridge/INTEGRATION-PATHS.json": "300c2c34207f9d3706adbe45f27b310cfacda211222e3a67348bc633a3a24756",
@@ -102,7 +102,7 @@
     "certificate-bridge/PROVENANCE.md": "c7997979c68819588167d9d74e8444dcbde5174d896f03d156bab5c67827ea56",
     "certificate-bridge/README.md": "7e3bdeb760ca31ada1ee5f357285e942af0b7bf6e891aba8b4697db196049d26",
     "comparator.json": "ea1cea90b8e25535a31dca7fc620494ded851587609bb1473c651d07757f40bd",
-    "formalization.yaml": "a991278847927d3492542a9f5981bcc3add0da474853b01641f4851c6149f223",
+    "formalization.yaml": "1ca07539879c80103c75bc05b452357e7c524cc26448e8da40c5360855eab265",
     "lake-manifest.json": "71e8401646a361d36b841337a9e08cbe0633fbbbce8e5ce9b5db0e10dfefbb5c",
     "lakefile.toml": "48067e84ad4450090a93dc620da10e670360a459ead81c97b71557ff24c704e4",
     "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
@@ -111,6 +111,28 @@
     "reviews/bridge-diagnostic/CHECKS.json": "21113c86116a0245f66892bebf32a30db26faed562fc92ae5cbebbfcd1de4aed",
     "reviews/bridge-diagnostic/RECEIPT.json": "253055eb37919147d63c7627979902c0458333c27281dc4d9bc3af5d5e68f751",
     "reviews/bridge-diagnostic/RUN-REVIEW.md": "1c0a4f4ec3d114b8a020eaa82f20879dfe648dc3d4bd4e379acd1597e8366417",
+    "reviews/final-referee-1/BINDINGS.json": "1c9cd43e757ea81f0ac964667e21681246ee107116a2a02f0e8940ffe68b7500",
+    "reviews/final-referee-1/CHECKS.json": "eaf6b870d37313d43a4c5b3e0345cf6fe99459404789425090973ce316bc804e",
+    "reviews/final-referee-1/MANIFEST.json": "9f24a4568fdb56c1034775a72f7f021b2bd4a73c6a963981ec6c9569ed30dda9",
+    "reviews/final-referee-1/REVIEW.md": "4df157bf147079c3bec23ea0cd696afe4ca050ed20114e0b4febcc4edf228715",
+    "reviews/final-referee-1/repaired-package-review/CHECKS.json": "ff390c8c6e30de6256bdc16f5d3c82b62ca7f87c05e52a3047fb9f0c33642b58",
+    "reviews/final-referee-1/repaired-package-review/MANIFEST.json": "3b012b6d229ac594a83e7512cc04bd0755e00a6c43342de404fe3848771dd0ca",
+    "reviews/final-referee-1/repaired-package-review/REVIEW.md": "6fd631cd88437c7874cbe3c79e4c9f60b4d2fd6b6998d729b290802d9f866ed5",
+    "reviews/final-referee-1/source-review/CHECKS.json": "e319eaa0810418b5db30f92e6a817aff174b243a155ba9ebf344ecd7e35183a5",
+    "reviews/final-referee-1/source-review/INPUTS.json": "64c95751f9accba557aae12605e8ba6338f64c83610e4132cb9ed2b9534a233e",
+    "reviews/final-referee-1/source-review/MANIFEST.json": "705152e3a5f326825fcdbbbfd7412ff20768855ce3ba7c092141f1d9bfcae264",
+    "reviews/final-referee-1/source-review/REVIEW.md": "7ed2951165c48e0eb92e8215aee9371d321257d3bee6888250b877c879a18edd",
+    "reviews/final-referee-2/BINDINGS.json": "66235c5821f6c99d03f1d63d59fcc4c8f9394022347bb44fe96d13c1ed27c109",
+    "reviews/final-referee-2/CHECKS.json": "320c6e07ff70f130979f9a2dc80eee7a2f37ac2699fd32ac9d3f42ff31810ba5",
+    "reviews/final-referee-2/MANIFEST.json": "376a37c14f632bdf16c29bc599d07f2a59fa8e18911df499d280171fc94dd7ef",
+    "reviews/final-referee-2/REVIEW.md": "a5036ca179eb43ea4499e17cef5bb918655b2a0f05d328a1d57744b5716d992c",
+    "reviews/final-referee-2/check_raw.py": "d5a857fc3d359aee312711b8eece2fadb87ff78edadefa41d7ac10ca459fc991",
+    "reviews/final-referee-2/source-review/CHECKS.json": "e99d05e5704e77187986e708445d0300ad0ae74fd9760ced9e091daf2a1703e6",
+    "reviews/final-referee-2/source-review/INPUT-HASHES.json": "23fee50c09cc3c38b1ce94fd0e4e3da6012ffee3ae1b6a26fed7e2dfb2ecd937",
+    "reviews/final-referee-2/source-review/MANIFEST.json": "2806da7f83008e747b5e19ff52c393325807cb556d40c9e9a5657df9020fb90e",
+    "reviews/final-referee-2/source-review/PREVIOUS-REVIEW-BINDINGS.json": "e4b9f2211ddc544acb8848a9d3a9ec9998947bc748ecd8561363cd6888e3a6f7",
+    "reviews/final-referee-2/source-review/REVIEW.md": "c55ea0a61a23519df2389b6aa5735fa9a8830b9f69e2aae27b18c0f4857cc58b",
+    "reviews/final-referee-2/source-review/source_audit.py": "91da6601f48a84e56e048713739670f05daf0737db31ac7509029f817878ee29",
     "reviews/implementation-progress.md": "cc6108500cbfb81232b4ae0383a7f8ec7cfcf42d169036437150c3d9516ed0e5",
     "reviews/rank-cast-repair/HASHES.json": "45f3fb055edfb4b392126c79e411a35b1d10b1d2a31db6e3216382a17bf74241",
     "reviews/rank-cast-repair/REPAIR.diff": "5945e57ff5f49802b5dad6cf4ae9d92188b02611fd9a86b7d780c9dfc7547bc1",
@@ -141,6 +163,42 @@
     "reviews/statement-referee-2/mathlib-api-inspection.json": "3e5c4c25a6236d1d35558d171253511b9a51f4633f022617f42a4d47f55779bb",
     "reviews/statement-referee-2/typecheck-EVIDENCE.json": "7cac7d8ab04ebc9bc6f7ab099d38785b79ad12513ff69f27c4bf6bb735592984",
     "reviews/statement-referee-2/types-axioms.log": "45c84771425907df3bdd97db1a7a1091355c22eb4899408d93ec852413da3fa4",
+    "verification/linux-2026-09-13/BUILD-DETAILS.json": "c79f52cb05d89f0bb42ff774b992063d5167c4686ddc9523598b18909b2ac9a9",
+    "verification/linux-2026-09-13/EVIDENCE-MANIFEST.json": "71ca1ef94aa1f6a3f5b9f28737e1f8c37425188c34dc98c92d307e4cb9bd5979",
+    "verification/linux-2026-09-13/FETCH-CHECKS.json": "ef2b70355feba5e58e582e37e5b9e374a476673c9480540924cf2efb4042fa26",
+    "verification/linux-2026-09-13/GIT-SOURCE-BINDINGS.json": "717adeea5343fc04c310b0672625fbe6e17df285ea0f211d825916735d88610e",
+    "verification/linux-2026-09-13/OPERATIONAL-CHECKS.json": "d41e0ddfa9ef850c515958779be795bf3639245e1423af79f0a709939e6c60db",
+    "verification/linux-2026-09-13/OPERATIONAL-REVIEW.md": "8e3084da54d178edd1db435d0ae7bb7b901d9f387248ea8afff171ae965f47a2",
+    "verification/linux-2026-09-13/artifact.zip": "91f80abcbbb0f10fbf614ab259fbf5121a8dabd5c600969a260e3b8b2c8e267c",
+    "verification/linux-2026-09-13/artifacts-final.json": "8649b9253b5a273064f92b8d2cd35f18ce043f302666e504a197ce7d86f6a170",
+    "verification/linux-2026-09-13/audit_terminal.py": "c1c66feb61723a9392ad67c667d5dd8ea017b585b416bea195212989c190543b",
+    "verification/linux-2026-09-13/check_evidence.py": "1f5acb18b7b670a20a03d76a0edc6b1cf40eda5722d6cc5279d76b9291d947c3",
+    "verification/linux-2026-09-13/extracted/bootstrap/comparator-build.log": "bf18b6a86ecd9dd8e19edc547e946f5a0614c304bb797429ad02b819deb22947",
+    "verification/linux-2026-09-13/extracted/bootstrap/elan.log": "b9711b498167d8e7f8fd98d6ec303edfe75693784469d39bb7ec47d487c1420f",
+    "verification/linux-2026-09-13/extracted/bootstrap/landrun-build.log": "baf6c06b231f4e2c2af81c514a62c8194bacce0677b2adb9d8948da24f91c302",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/comparator-controls.log": "0623d71c5591fdad91729f2ce35c019c0c5810b84e55f5c0806af8ede72cf049",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/comparator.log": "aa87f0c27e89f687804f1e655f700946aa31d1a28b40e6e71ed4b92486170ca1",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/dependencies.log": "740fcb700c777ae28e11ddf7c40e50a87ba79bbe97b1a1e1d21a314fea802b4d",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/kernel-controls.log": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/mathlib-cache.log": "5e8ad3a765fa01a78bd157542c3c4a3b25736659d59ddc9544064312822a6b74",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/negative-native.log": "d2c0fcfad2b842e464fdf8d2ed58a6f01205a33e303dcae97720ff3efa6741b1",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/negative-sorry.log": "9fa9e8159bc7e8090a29fb74abad4a926bbf0b1f2ab3101a26b75756c0acd214",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/result.json": "e7bd039fb9e4dcc7f46a4930b9f4dc2eb79a9977a80c0cbb4299d8edcb4eb0ed",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/sandbox.log": "ed01a61e457e06ed1ebf84fdc600c7775faa3cfcb2d48c9670802b7ec1c35ef8",
+    "verification/linux-2026-09-13/extracted/verify-20260913T215907Z-4140/user-service.log": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a",
+    "verification/linux-2026-09-13/fetch_final.py": "20e3afe7a800c5d1d058daa776f0131e45f78c701d1a446b96813e2908c5c5f8",
+    "verification/linux-2026-09-13/jobs-final.json": "00596887da0e9bc0e1e43e6aedd374c5401f14174622ed3f75ab69eda5a95e3a",
+    "verification/linux-2026-09-13/jobs-initial.json": "8627fbe3e7e3122a17ee44272a570fca5fb20d61528c6d3a7fc59eab80a9099e",
+    "verification/linux-2026-09-13/offline-check-command.json": "3179afe3de58568b039c99ab90d2161e5b16ae65de4bc57437cc0530d1265b76",
+    "verification/linux-2026-09-13/offline-check.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "verification/linux-2026-09-13/offline-check.stdout": "b38e3cd119cd6b0338896f882a88351a8011ace7ca9fcc33f61d1da0a3e8fad9",
+    "verification/linux-2026-09-13/run-final.json": "abe1a84496c413d86fa6086ad961b6b7963df9ea8e8f07331513d2293daec634",
+    "verification/linux-2026-09-13/run-initial.json": "0d772dd672ba4f04fb8215ceb2fe59b1b0a441bc1f9a608a2e277a43a418fa55",
+    "verification/publication/DOCUMENT-CHECKS.json": "fcf03d7337c38136bd0f045fed4b98bddb16bb1081a7ad0458bfe8f8a5c1dd17",
+    "verification/publication/PUBLICATION.md": "0cfeb867b0d0cbad162740045e71666c07ddd27e8dd47c3cfc1ce85d86c52b25",
+    "verification/publication/catalog.log": "e187c47eca4d06ba47afbef8061e6d32d73d75ab3d06c1987fb8f1bdb08bf0fa",
+    "verification/publication/id-tests.log": "084e9fa194bee5838fb02df963dabfc0bb5a253e0377f6492aa16ee01c8eb79f",
+    "verification/publication/render.log": "335bba8fe64d0990292291fc9b13767e155194861e58e93beddad584f80611da",
     "verification/statement-typecheck.py": "13df584c8599c2b078f3e22614935bc874a61b1188928939484badfe2371b8de"
   },
   "bridge_overlay": {
@@ -157,14 +215,15 @@
       "development/NR03/certificate-bridge/INTERFACES.md": "ee9cb2c0e6d7c71fa10b70ce8879e78a4cfcfd8dae975c9389ede70355b1ae2d",
       "development/NR03/certificate-bridge/PROVENANCE.md": "c7997979c68819588167d9d74e8444dcbde5174d896f03d156bab5c67827ea56",
       "development/NR03/ci_compile.py": "1d8747a8c91038865cecd4e4e2a6bc167e609c15fbebcbcebaff3437b50c5e1e"
-    }
+    },
+    "status": "reviewed source overlay; conditional bridge diagnostic preserved; canonical verification accepted separately"
   },
   "conditional_diagnostic_receipt": "reviews/bridge-diagnostic/RECEIPT.json",
   "packaging_transition": {
-    "scope": "Previous metadata transition through canonical523; subsequent one-line Rank repair is separately recorded in canonical_rank_repair.",
+    "scope": "Preserves the historical bridge metadata and the active-manifest hash at accepted proof commit f664d07e82aaa60bc9c78dd1946e763168c5c530; current_active_manifest_sha256 binds the later accepted publication metadata. The one-line Rank repair remains separately recorded.",
     "historical_bridge_receipt": "reviews/bridge-diagnostic/RECEIPT.json",
     "historical_active_manifest_sha256": "51d66231ff8f2672120d2fa29f62dfcce1be30ab97d625966b53ce3c778c2d73",
-    "current_active_manifest_sha256": "3d02090c6c90fb0d244a6763d0c1c67c663c03e39a21e041c9c1eb3512b58a5d",
+    "current_active_manifest_sha256": "bbeba867a2662f07bb1aa5813baf4ea62ff01e879c0121e38f9115a061478e5e",
     "historical_receipt_is_preserved": true,
     "corrected_metadata_paths": [
       "README.md",
@@ -172,7 +231,8 @@
       "ACTIVE-MODULE-MANIFEST.json",
       "certificate-bridge/README.md"
     ],
-    "current_inventory_scope": "All current package files except this self-excluded manifest"
+    "current_inventory_scope": "All current package files except this self-excluded manifest",
+    "verified_proof_commit_active_manifest_sha256": "3d02090c6c90fb0d244a6763d0c1c67c663c03e39a21e041c9c1eb3512b58a5d"
   },
   "canonical_rank_repair": {
     "base_commit": "523c5aeaddd8bf7c2dc01afb053bb0dea8811335",
@@ -186,8 +246,90 @@
       "reviews/rank-cast-repair/referee-2/REVIEW.md"
     ],
     "actual_prior_run": 34783909558,
-    "status": "Two source-delta approvals; actual complete canonical rerun pending",
+    "status": "Accepted by canonical verification run 34785341662",
     "frozen_statements_unchanged": true,
-    "all_other_active_modules_unchanged": true
+    "all_other_active_modules_unchanged": true,
+    "accepted_run": "34785341662"
+  },
+  "canonical_verification": {
+    "candidate_commit": "f664d07e82aaa60bc9c78dd1946e763168c5c530",
+    "run_id": 34785341662,
+    "job_id": 103799711659,
+    "run_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662",
+    "job_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662/job/103799711659",
+    "artifact_id": 10326896988,
+    "artifact_sha256": "91f80abcbbb0f10fbf614ab259fbf5121a8dabd5c600969a260e3b8b2c8e267c",
+    "raw_evidence_sha256": "e7bd039fb9e4dcc7f46a4930b9f4dc2eb79a9977a80c0cbb4299d8edcb4eb0ed",
+    "export_count": 10,
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "per_export_axioms": {
+      "NLA.NR03.cMatrix_nonnegative": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.boolVec_seven_card": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.nonnegative_rank_attained_minimal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.rank_le_of_factorization": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.scaled_certificate_gives_factorization": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.witness_scaled_certificate": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.witness_factorization": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.witness_rank_upper_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.witness_not_full_rank": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.not_targetStatement": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "evidence_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/blob/codex/lean-nr03-verification/nonnegative-and-positive-factorizations/NR-03/lean/verification/linux-2026-09-13/OPERATIONAL-REVIEW.md",
+    "review_reports": [
+      {
+        "reviewer": "/root/nr03_independent_referee",
+        "path": "reviews/final-referee-1/REVIEW.md",
+        "sha256": "4df157bf147079c3bec23ea0cd696afe4ca050ed20114e0b4febcc4edf228715"
+      },
+      {
+        "reviewer": "/root",
+        "path": "reviews/final-referee-2/REVIEW.md",
+        "sha256": "a5036ca179eb43ea4499e17cef5bb918655b2a0f05d328a1d57744b5716d992c"
+      }
+    ]
   }
 }

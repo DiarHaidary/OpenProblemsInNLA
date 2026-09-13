@@ -2,7 +2,7 @@
 
 **116 problems with open targets:** 44 open and 72 partially resolved. **101 other retained entries**, excluded from the open count.
 
-**Resolution evidence:** 73 solved (published or independently audited); 28 solved with Lean verification.
+**Resolution evidence:** 72 solved (published or independently audited); 29 solved with Lean verification.
 
 Each entry records its own literature-check date. Literature checks are bounded; ratings are editorial. “Impact” uses the canonical `Importance` field.
 
@@ -211,7 +211,7 @@ Retained entries outside the open count:
 | --- | --- | --- | --- | --- | --- |
 | [NM-03](nonnegative-and-positive-factorizations/NM-03/README.md) | Complexity of globally optimal nonnegative rank-two approximation | **✅ SOLVED** | challenging | interesting to the community | [PDF](nonnegative-and-positive-factorizations/NM-03/problem.pdf) · [TeX](nonnegative-and-positive-factorizations/NM-03/problem.tex) |
 | [NM-04](nonnegative-and-positive-factorizations/NM-04/README.md) | The Rowland–Wu polynomial identity for Sinkhorn limits | **✅ SOLVED** | challenging | interesting to the community | [PDF](nonnegative-and-positive-factorizations/NM-04/problem.pdf) · [TeX](nonnegative-and-positive-factorizations/NM-04/problem.tex) |
-| [NR-03](nonnegative-and-positive-factorizations/NR-03/README.md) | Full nonnegative rank of the quadratic correlation matrix | **✅ SOLVED** | extreme | broadly interesting | [PDF](nonnegative-and-positive-factorizations/NR-03/problem.pdf) · [TeX](nonnegative-and-positive-factorizations/NR-03/problem.tex) |
+| [NR-03](nonnegative-and-positive-factorizations/NR-03/README.md) | Full nonnegative rank of the quadratic correlation matrix | **🏆 LEAN VERIFIED** | extreme | broadly interesting | [PDF](nonnegative-and-positive-factorizations/NR-03/problem.pdf) · [TeX](nonnegative-and-positive-factorizations/NR-03/problem.tex) |
 | [NR-04](nonnegative-and-positive-factorizations/NR-04/README.md) | The nonnegative rank of the nine-point distance matrix | **✅ SOLVED** | hard | interesting to specialist | [PDF](nonnegative-and-positive-factorizations/NR-04/problem.pdf) · [TeX](nonnegative-and-positive-factorizations/NR-04/problem.tex) |
 | [PF-02](nonnegative-and-positive-factorizations/PF-02/README.md) | Connectedness of minimal positive semidefinite factorization orbits | **✅ SOLVED** | challenging | interesting to the community | [PDF](nonnegative-and-positive-factorizations/PF-02/problem.pdf) · [TeX](nonnegative-and-positive-factorizations/PF-02/problem.tex) |
 | [PF-03](nonnegative-and-positive-factorizations/PF-03/README.md) | Rational factors for rational completely positive boundary matrices | **✅ SOLVED** | extreme | interesting to the community | [PDF](nonnegative-and-positive-factorizations/PF-03/problem.pdf) · [TeX](nonnegative-and-positive-factorizations/PF-03/problem.tex) |

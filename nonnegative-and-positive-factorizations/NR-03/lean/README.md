@@ -1,10 +1,9 @@
-# NR-03 Lean proof candidate
+# NR-03 Lean verification
 
-This package contains the statement boundary and a **source-only modular
-proof candidate** for NR-03, “Full nonnegative rank of the quadratic
-correlation matrix.” The certificate bridge has passed a bounded Linux
-conditional diagnostic; the complete 58-module graph remains pending its
-canonical verification gates. It is authored by **George Stepaniants**, Department of
+This package contains the statement boundary and the complete 58-module
+Lean proof for NR-03, “Full nonnegative rank of the quadratic correlation
+matrix.” The canonical Linux LeanCert, Comparator, default-kernel and sandbox
+gates passed at the immutable revision f664d07e82aaa60bc9c78dd1946e763168c5c530. It is authored by **George Stepaniants**, Department of
 Computing and Mathematical Sciences, California Institute of Technology,
 Pasadena, California, USA. ChatGPT assistance is disclosed.
 The complete mathematical negative result is by **Sidney Holden**, Center for
@@ -32,7 +31,7 @@ the attained-minimum and minimality semantics under the explicit existence
 hypothesis. This is the original rank definition, with no restricted support,
 rational-only, or ordinary-rank replacement.
 
-## Statement contracts and candidate proof
+## Statement contracts and complete proof
 
 The package retains the ten deliberate contracts in `Challenge.lean`:
 
@@ -47,10 +46,9 @@ The package retains the ten deliberate contracts in `Challenge.lean`:
 9. strict failure of the claimed value `2^7 = 128`;
 10. negation of the complete universal target at `n = 7`.
 
-The active implementation is the 58-module graph at reviewed development
-commit `3b3eb8f3fa384e4b3bf640d48bca87cf40db9565`, with the one-line
-canonical Rank cast repair recorded in [`reviews/rank-cast-repair/`](reviews/rank-cast-repair/). It includes the exact
-seven-path certificate-bridge overlay on `fe4140cced3fc4b4efdd4ef4e202d27156a1cd4f`, recorded in
+The accepted implementation is the 58-module graph at immutable proof
+commit `f664d07e82aaa60bc9c78dd1946e763168c5c530`. It includes the exact seven-path certificate-bridge
+overlay on `fe4140cced3fc4b4efdd4ef4e202d27156a1cd4f`, recorded in
 [`certificate-bridge/INTEGRATION-PATHS.json`](certificate-bridge/INTEGRATION-PATHS.json).
 It has five foundational modules, one certificate-bridge support module, 48
 sequential literal-row blocks, and four assembly/export modules. The row coverage is complete; see
@@ -70,20 +68,23 @@ active proof does not import it or treat it as a correctness premise.
 `Challenge.lean` intentionally retains the ten statement contracts as the
 Comparator boundary, so its bodies contain `sorry`. The active `Solution.lean`
 root supplies all ten corresponding theorem exports and contains no `sorry`,
-`native_decide`, or custom axiom token. This is a source-only candidate: it has
-not yet passed the authoritative Linux LeanCert/default-kernel/Comparator
-harness or independent final proof reviews. A separate bridge-only Linux
-diagnostic passed for the six lightweight modules; its receipt is retained in
-`reviews/bridge-diagnostic/`. That conditional result does not establish the
-complete graph, the ten public exports, or a Comparator/default-kernel pass.
-It does not add to the Lean-verified count or change the existing Solved status.
+`native_decide`, or custom axiom token. The canonical Linux run
+[canonical Ubuntu job 103799711659](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662/job/103799711659) passed the complete graph, all ten
+Comparator identities, LeanCert kernel assertions, the default kernel and the
+sandbox/negative controls. Every public export reports only `propext`,
+`Classical.choice` and `Quot.sound`. Raw receipts and the two final reviews are
+retained in [canonical raw evidence](https://github.com/sgstepaniants/OpenProblemsInNLA/blob/codex/lean-nr03-verification/nonnegative-and-positive-factorizations/NR-03/lean/verification/linux-2026-09-13/OPERATIONAL-REVIEW.md),
+[final referee 1](https://github.com/sgstepaniants/OpenProblemsInNLA/blob/codex/lean-nr03-verification/nonnegative-and-positive-factorizations/NR-03/lean/reviews/final-referee-1/REVIEW.md) and
+[final referee 2](https://github.com/sgstepaniants/OpenProblemsInNLA/blob/codex/lean-nr03-verification/nonnegative-and-positive-factorizations/NR-03/lean/reviews/final-referee-2/REVIEW.md).
 
 ## Checks and reproduction boundary
 
-The bridge-only diagnostic receipt is retained in
-`reviews/bridge-diagnostic/RECEIPT.json`; its raw artifact and full logs remain
-separately hash-bound in the recorded Linux run. It is not a substitute for the
-canonical verifier described in the [shared guide](../../../docs/lean/README.md).
+The complete canonical evidence is retained in
+[canonical raw evidence](https://github.com/sgstepaniants/OpenProblemsInNLA/blob/codex/lean-nr03-verification/nonnegative-and-positive-factorizations/NR-03/lean/verification/linux-2026-09-13/OPERATIONAL-REVIEW.md), including the raw run, artifact digest,
+Comparator/default-kernel output and sandbox controls. The bridge-only
+conditional diagnostic remains historical provenance and is not used as the
+acceptance result. Reproduction instructions and pinned prerequisites are in
+the [shared guide](../../../docs/lean/README.md) and the project files below.
 
 The existing statement-only check may be run with pre-existing pinned objects:
 
@@ -97,17 +98,16 @@ package. It is not a proof or a Linux Comparator run. No local Lean/Lake build
 was run to prepare this draft, and no build artifacts or dependency caches are
 included.
 
-The unchanged foundations, all 48 row modules, `FamilyIdentities.lean`,
-`Solution.lean`, the frozen boundary, and all pinned project files
-remain byte-identical to the recorded source commit. `Rank.lean` has the
-one-line, statement-preserving cast repair recorded below. The bridge overlay replaces only
-`NLA/NR03/Certificate.lean` and adds `NLA/NR03/CertificateBridge.lean` in the
-active graph; the exact seven development paths and their hashes are retained
-in `ACTIVE-MODULE-MANIFEST.json` and the `certificate-bridge/` provenance
-records. The development generator and compilation driver are provenance
-inputs only; they are deliberately not advertised as runnable from this
-canonical draft because their relative paths and remote-only controls are
-development-specific. The [GitHub workflow](../../../.github/workflows/lean-verification.yml)
+The active-module manifest records current hashes for every source file and
+the exact bridge overlay. The frozen Definitions/Challenge/config/toolchain
+boundary and all 48 row-certificate modules are preserved; any later proof
+repair is listed as an exact source delta rather than silently treated as part
+of the historical bridge receipt. The exact seven development paths and their
+hashes are retained in `ACTIVE-MODULE-MANIFEST.json` and the
+`certificate-bridge/` provenance records. The development generator and
+compilation driver are provenance inputs only; they are deliberately not
+advertised as runnable from this canonical draft because their relative paths
+and remote-only controls are development-specific. The [GitHub workflow](../../../.github/workflows/lean-verification.yml)
 configures Linux isolation and runs the shared verifier from the repository root:
 
 ```bash
@@ -115,9 +115,10 @@ tools/lean/verify.sh nonnegative-and-positive-factorizations/NR-03/lean \
   "$RUNNER_TEMP/nla-lean-tools"
 ```
 
-That verifier must compile the full active graph and check the pinned LeanCert
-dependencies, default kernel, Comparator declarations, permitted axioms, and
-sandbox controls before this candidate can be accepted.
+The canonical run compiled the full active graph and checked the pinned
+LeanCert dependencies, default kernel, Comparator declarations, permitted
+axioms and sandbox controls. The exact run and artifact identifiers are recorded
+in `formalization.yaml` and the linked evidence.
 
 ## Source identity and status
 
@@ -127,27 +128,13 @@ authorship are recorded in `SOURCE_MAP.md`, `NUMERICAL_TARGETS.md`, and the
 retained two statement-referee records.
 
 The active-module manifest records every source hash, the exact bridge
-overlay, the excluded historical development material, the conditional bridge
-diagnostic, and the fact that full canonical verification is still pending.
-The candidate remains `whole_problem_verified: false` in `formalization.yaml`.
+overlay and the excluded historical development material. The accepted
+verification record binds the complete graph to the canonical run
+`34785341662`, job `103799711659` and artifact
+`10326896988`; `whole_problem_verified: true` is recorded in
+`formalization.yaml`.
 
 Current package hashes are recorded in `reviews/proof-candidate-hashes.json`.
 The bridge diagnostic receipt retains its historical package metadata binding;
 the inventory records the later documentation transition. Its checked Lean
 sources are unchanged.
-
-
-## Canonical cast repair awaiting verification
-
-[Canonical run 34783909558](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34783909558)
-compiled all 384 row certificates, the complete family assembly, and the full
-unconditional matrix identity. It then failed at Rank.lean's left-factor
-nonnegativity cast. The [retained failure report](reviews/rank-cast-repair/prior-canonical-failure/FAILURE-REVIEW.md)
-records this partial outcome and explicitly withholds complete acceptance.
-
-The sole Lean edit exposes the definitionally identical real cast goal before
-the existing tactic. Both [first](reviews/rank-cast-repair/referee-1/REVIEW.md)
-and [second](reviews/rank-cast-repair/referee-2/REVIEW.md) independent source-delta
-reviews approve it. All ten frozen contracts and every other active source
-byte remain unchanged. The repaired full graph still requires the actual
-LeanCert, Comparator, default-kernel and sandbox/rejection checks.

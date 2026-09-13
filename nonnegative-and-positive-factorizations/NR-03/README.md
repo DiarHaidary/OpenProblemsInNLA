@@ -7,7 +7,7 @@
 **Difficulty:** extreme  
 **Importance:** broadly interesting  
 **Rating rationale:** Historical ratings for the original conjecture. Extreme because full nonnegative rank is much sharper than available exponential lower bounds for this family; broad importance concerns communication complexity and limitations of linear programming formulations.  
-**Status:** Solved  
+**Status:** Lean verified  
 **Area:** exact NMF and lower bounds for optimization formulations  
 **Last checked:** 2026-09-13  
 
@@ -25,7 +25,7 @@ In particular, $`\mathop{\mathrm{rank}}\nolimits_+(C_7)\le127<128`$, so the orig
 
 [Standalone proof source](../../references/holden-nr03-2026-09-13/NR03_counterexample.tex) · [Independent review](../../references/holden-nr03-2026-09-13/independent-review.md) · [Exact certificate](../../references/holden-nr03-2026-09-13/data/factors_n7.json) · [Submission, verified affiliation and reproduction](../../references/holden-nr03-2026-09-13/README.md).
 
-The complete argument passed independent informal AI-agent review, with fresh exact checks. ChatGPT assistance is disclosed; neither external human peer review nor formal verification is claimed. No Lean verification was performed. The original statement and prior partial-result credit are retained below.
+The complete argument passed independent informal AI-agent review, with fresh exact checks. ChatGPT assistance is disclosed; neither external human peer review nor formal verification is claimed. That informal audit did not assert formal verification; the separate Lean verification below covers the n=7 counterexample contracts. The original statement and prior partial-result credit are retained below.
 
 <!-- colbrook-factorization -->
 ## Historical partial result — 2026-09-11
@@ -39,6 +39,42 @@ The fixed three-bit quadratic correlation matrix has nonnegative rank exactly ei
 **Primary reference:** [complete authored PDF](../../references/colbrook-factorization-2026-09-11/manuscripts/NR-03_n3_exact_rank.pdf), [standalone TeX](../../references/colbrook-factorization-2026-09-11/manuscripts/NR-03_n3_exact_rank.tex), **Theorem 1 and Lemma 2**. [Independent proof review](../../references/colbrook-factorization-2026-09-11/verification/reviews/NR-03-review.md) · [Authorship and submission record](../../references/colbrook-factorization-2026-09-11/README.md). Verification is independent agent review, not external human peer review or formal certification.
 
 <!-- /colbrook-factorization -->
+
+<!-- lean-verification -->
+## Lean proof and verification evidence — 2026-09-13
+
+**Formalization: George Stepaniants**, Department of Computing and Mathematical
+Sciences, California Institute of Technology, Pasadena, California, USA. The
+complete mathematical counterexample and exact factorization are by **Sidney Holden**, Center for Computational Biology,
+Flatiron Institute, Simons Foundation. Matthew J. Colbrook's earlier partial
+result remains separately credited.
+
+The [immutable complete Lean proof](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/f664d07e82aaa60bc9c78dd1946e763168c5c530/nonnegative-and-positive-factorizations/NR-03/lean) uses Lean 4.33.1,
+[LeanCert 621a43d7cf21](https://github.com/alerad/leancert/tree/621a43d7cf21f87872392a01e874f2f1dbddc926) and
+[Mathlib 0df444a360ea](https://github.com/leanprover-community/mathlib4/tree/0df444a360eaa60ab8c11dca51a86af692955474), with all dependency pins in the
+[manifest](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/f664d07e82aaa60bc9c78dd1946e763168c5c530/nonnegative-and-positive-factorizations/NR-03/lean/lake-manifest.json). The [project guide](https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/docs/lean/README.md),
+[numerical targets](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/f664d07e82aaa60bc9c78dd1946e763168c5c530/nonnegative-and-positive-factorizations/NR-03/lean/NUMERICAL_TARGETS.md), [definitions](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/f664d07e82aaa60bc9c78dd1946e763168c5c530/nonnegative-and-positive-factorizations/NR-03/lean/NLA/NR03/Definitions.lean)
+and [ten-contract boundary](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/f664d07e82aaa60bc9c78dd1946e763168c5c530/nonnegative-and-positive-factorizations/NR-03/lean/Challenge.lean) record the exact
+statement correspondence.
+
+The export NLA.NR03.not_targetStatement negates the complete displayed
+universal equality at the prescribed n = 7 matrix. The public definition
+continues to quantify all n >= 3, every Boolean row and column, and the real
+square (1 - boolDot a b)^2; the formal proof supplies the complete
+width-127 counterexample and the bridges from its integer certificate to
+genuine real nonnegative factors. It does not claim exact ranks at n = 5, 6, 7,
+that 7 is the smallest counterexample, or a statement about the full
+correlation-polytope slack matrix.
+
+The [complete canonical Linux run](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662/job/103799711659) verified all ten exported statements, LeanCert kernel trust, Comparator statement correspondence and Lean’s default-kernel replay. The same job passed sandbox and rejection controls. Every public theorem reports exactly the standard axioms `propext`, `Classical.choice` and `Quot.sound`; the retained raw evidence binds all 113 input files to proof revision `f664d07e82aaa60bc9c78dd1946e763168c5c530`.
+
+Two independent final AI-agent reviews are retained at
+[final referee 1](https://github.com/sgstepaniants/OpenProblemsInNLA/blob/codex/lean-nr03-verification/nonnegative-and-positive-factorizations/NR-03/lean/reviews/final-referee-1/REVIEW.md) and
+[final referee 2](https://github.com/sgstepaniants/OpenProblemsInNLA/blob/codex/lean-nr03-verification/nonnegative-and-positive-factorizations/NR-03/lean/reviews/final-referee-2/REVIEW.md). They inspect the final
+proof source and exact target; they are not external human peer review and do
+not claim official Tau Ceti endorsement. The formalization author, source
+authors and historical partial credit remain exactly as identified above.
+<!-- /lean-verification -->
 
 ## Context and notation
 

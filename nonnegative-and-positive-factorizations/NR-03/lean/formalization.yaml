@@ -2,7 +2,7 @@
 version: v0.4
 project:
   name: 'NR-03: quadratic correlation matrix nonnegative rank'
-  description: Statement-first Lean boundary plus a 58-module source proof candidate for the complete prescribed real Boolean matrix and the n = 7 width-127 counterexample obligation; the certificate wrapper uses a reviewed seven-path bridge overlay and its lightweight bridge module has a conditional Linux diagnostic receipt.
+  description: Complete Lean formalization of the negative n = 7 counterexample to the prescribed real Boolean matrix nonnegative-rank equality, with ten Comparator-boundary exports and the full source correspondence retained.
   authors:
   - George Stepaniants
   affiliations:
@@ -51,86 +51,123 @@ automation:
     framework: OpenAI Codex
     tool_setup: Direct Lean 4.33.1 elaboration with pinned Mathlib/LeanCert objects, then independent Tau Ceti-adapted statement reviews and later Comparator/kernel checks.
     prompting_notes: Preserve all Boolean vectors and real subtraction; prove the integer certificate entrywise or prove the generic atom-family identity; never trust Python data as a correctness premise; formalize any mask bridge before consuming masks. The bridge overlay only isolates unconditional algebra from the complete row-family premises.
-  notes: AI-assisted formalization requested by George Stepaniants. Two independent statement reviews are retained. The modular proof graph has no placeholder or native evaluator tokens in its active source bodies. The reviewed certificate bridge has a conditional Linux diagnostic receipt, but the complete graph has not yet passed authoritative LeanCert/Comparator elaboration or independent final reviews.
+  notes: AI-assisted formalization requested by George Stepaniants. Two independent statement reviews and two independent final mathematical reviews are retained. The canonical Linux evidence, Comparator/default-kernel result and sandbox controls are recorded below; no external human peer review or official Tau Ceti endorsement is claimed.
 status:
-  scope: Full canonical target plus complete n = 7 counterexample and rank-minimum bridges, with a zero-placeholder 58-module candidate and reviewed certificate bridge awaiting complete authoritative compilation
+  scope: Complete negative answer to the original universal target via the prescribed n = 7 width-127 counterexample, including all rank-minimum and integer-to-real factorization bridges; exact ranks at individual dimensions and stronger informal claims remain outside scope
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: &id001
   - propext
   - Classical.choice
   - Quot.sound
-  notes: The active modular proof graph has zero literal proof placeholders. The bridge-only diagnostic observed the three listed standard axioms; the same axiom boundary and all full-graph claims remain pending the actual complete LeanCert and Comparator run. The ten intentional Challenge.lean placeholders are excluded by the formalization.yaml schema and comparator boundary.
+  notes: The active proof graph has zero literal proof placeholders. The canonical run checked all ten public exports with LeanCert kernel assertions, Comparator, the default kernel and sandbox/rejection controls; the ten intentional Challenge.lean placeholders remain isolated from the solution by the Comparator boundary.
   main_results:
   - declaration: NLA.NR03.cMatrix_nonnegative
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.boolVec_seven_card
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.nonnegative_rank_attained_minimal
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.rank_le_of_factorization
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.scaled_certificate_gives_factorization
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.witness_scaled_certificate
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.witness_factorization
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.witness_rank_upper_bound
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.witness_not_full_rank
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.NR03.not_targetStatement
     file: NLA/NR03/Rank.lean
     sorry_count: 0
-    axioms: *id001
+    axioms:
+    - Classical.choice
+    - Quot.sound
+    - propext
     comparator_config: comparator.json
     literature_dependencies: []
-  whole_problem_verified: false
+  whole_problem_verified: true
 fidelity:
-  divergences: The public statement uses all Boolean vectors directly rather than masks. The proof candidate introduces a seven-bit mask representation only after defining and proving its Boolean-vector correspondence. The formalization retains the full real square `(1 - boolDot a b)^2`, all `n ≥ 3`, the exact 128-by-127 n = 7 dimensions, integer W/V/denominator certificate obligation, and genuine real minimum semantics. No entry is omitted. The target subtraction is real. The implementation uses guarded or positive-part natural subtraction in its integer helpers; natSquareOneMinus_cast proves that the guarded square agrees with the full real square.
+  divergences: The public statement uses all Boolean vectors directly rather than masks. The proof introduces a seven-bit mask representation only after defining and proving its Boolean-vector correspondence. The formalization retains the full real square `(1 - boolDot a b)^2`, all `n ≥ 3`, the exact 128-by-127 n = 7 dimensions, integer W/V/denominator certificate obligation, and genuine real minimum semantics. No entry is omitted. The target subtraction is real. The implementation uses guarded or positive-part natural subtraction in its integer helpers; natSquareOneMinus_cast proves that the guarded square agrees with the full real square.
 review:
-  status: statement-approved; proof-candidate-review-pending
+  status: two statement approvals; two independent final mathematical reviews and canonical Linux evidence accepted
   reviewers:
   - statement-referee-1
   - statement-referee-2
-  notes: The statement boundary has two independent approvals. The modular proof candidate still requires authoritative Linux LeanCert/default-kernel/Comparator checks and two independent final reviews before Lean-verified status. Its finite family scope is the complete 128-by-128-by-3 row graph described in FULL-ROW-COVERAGE.md; the certificate bridge adds no row restriction or new public hypothesis.
+  - '/root/nr03_independent_referee'
+  - '/root'
+  notes: Both final reviewers inspected the accepted source revision and the complete 128-by-128-by-3 row graph. The canonical Linux run and raw evidence below establish the mechanical gates; the certificate bridge adds no row restriction or new public hypothesis.
+  proof_reports:
+  - file: 'reviews/final-referee-1/REVIEW.md'
+    sha256: '4df157bf147079c3bec23ea0cd696afe4ca050ed20114e0b4febcc4edf228715'
+  - file: 'reviews/final-referee-2/REVIEW.md'
+    sha256: 'a5036ca179eb43ea4499e17cef5bb918655b2a0f05d328a1d57744b5716d992c'
 toolchain:
   lean: leanprover/lean4:v4.33.1
   dependency_manifest: lake-manifest.json
@@ -151,3 +188,36 @@ reproduction:
     command: NR03_DEP_ROOT=/path/to/existing/.lake/packages python3 verification/statement-typecheck.py
     evidence_prefix: The command creates and prints a fresh temporary directory containing the raw command results and elaboration logs.
     note: All ten dependency revisions and clean tracked sources checked; direct Lean elaboration succeeded with ten intentional Challenge warnings. This is not a dependency object rebuild, mathematical proof, Linux run, or Comparator result.
+
+  actual_verification:
+    status: accepted
+    proof_commit: 'f664d07e82aaa60bc9c78dd1946e763168c5c530'
+    run_id: '34785341662'
+    job_id: '103799711659'
+    run_url: 'https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662'
+    job_url: 'https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662/job/103799711659'
+    artifact_id: '10326896988'
+    artifact_sha256: '91f80abcbbb0f10fbf614ab259fbf5121a8dabd5c600969a260e3b8b2c8e267c'
+    raw_evidence_sha256: 'e7bd039fb9e4dcc7f46a4930b9f4dc2eb79a9977a80c0cbb4299d8edcb4eb0ed'
+    export_count: 10
+    comparator: passed
+    default_kernel: passed
+    leancert_kernel_assertions: passed
+    sandbox: passed
+    negative_controls: passed
+    permitted_axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    review_reports:
+    - 'reviews/final-referee-1/REVIEW.md'
+    - 'reviews/final-referee-2/REVIEW.md'
+  canonical_rank_repair:
+    base_commit: '523c5aeaddd8bf7c2dc01afb053bb0dea8811335'
+    proof_commit: 'f664d07e82aaa60bc9c78dd1946e763168c5c530'
+    file: NLA/NR03/Rank.lean
+    old_sha256: '3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876'
+    new_sha256: '1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e'
+    diff_sha256: '5945e57ff5f49802b5dad6cf4ae9d92188b02611fd9a86b7d780c9dfc7547bc1'
+    statement_boundary_unchanged: true
+    all_other_active_modules_unchanged: true

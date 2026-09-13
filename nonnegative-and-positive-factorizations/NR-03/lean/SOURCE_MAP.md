@@ -46,10 +46,12 @@ individual source hashes are in `ACTIVE-MODULE-MANIFEST.json`.
 The bridge-only Linux diagnostic passed for its six lightweight modules,
 including LeanCert support. Its receipt is in `reviews/bridge-diagnostic/`.
 The full 58-module graph, ten public exports, Comparator/default-kernel replay,
-and canonical sandbox controls remain pending. The development driver, row
-generator, historical probes, optional drafts, and diagnostic records are
-provenance material and are not imported by the canonical Lean proof. This
-packaging record makes no complete verification or status claim.
+and canonical sandbox/rejection controls passed in canonical run 34785341662
+at candidate commit `f664d07e82aaa60bc9c78dd1946e763168c5c530`. The development driver, row generator, historical
+probes, optional drafts, and diagnostic records remain provenance material and are
+not imported by the canonical Lean proof. The earlier bridge-only result and failed
+Rank run are retained as historical receipts; the terminal acceptance evidence is
+bound by the raw-evidence hash `e7bd039fb9e4dcc7f46a4930b9f4dc2eb79a9977a80c0cbb4299d8edcb4eb0ed`.
 
 
 ## Statement-preserving canonical Rank cast repair
@@ -59,5 +61,19 @@ Rank.lean inserts only `change (0 : ℝ) ≤ (W i k : ℝ)` before the existing
 left-factor nonnegativity tactic. The target is definitionally unchanged.
 `reviews/rank-cast-repair/` retains the exact old/new hashes, diff, and two
 independent source-delta approvals. All other 57 active modules, every frozen
-statement and all pins remain unchanged from the preceding package. Full
-canonical acceptance remains pending a successful actual rerun.
+statement and all pins remain unchanged from the preceding package. Full canonical acceptance is recorded below in run 34785341662 at the
+candidate commit `f664d07e82aaa60bc9c78dd1946e763168c5c530`.
+
+## Canonical verification acceptance
+
+The repaired 58-module package passed the complete canonical Linux verification in
+run 34785341662 (job 103799711659) at commit `f664d07e82aaa60bc9c78dd1946e763168c5c530`.
+The run covered the full row graph, all ten public exports, LeanCert kernel trust
+assertions, the default kernel, Comparator identity and the recorded sandbox and
+negative controls. The public run is [the canonical evidence](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662);
+the artifact digest is `91f80abcbbb0f10fbf614ab259fbf5121a8dabd5c600969a260e3b8b2c8e267c` and the retained raw
+evidence digest is `e7bd039fb9e4dcc7f46a4930b9f4dc2eb79a9977a80c0cbb4299d8edcb4eb0ed`.
+
+Per-export axiom lists and final review identities are recorded in the accepted
+formalization metadata. This section does not replace the historical bridge or
+failed-run receipts above.

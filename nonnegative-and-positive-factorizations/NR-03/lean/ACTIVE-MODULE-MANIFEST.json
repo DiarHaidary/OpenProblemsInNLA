@@ -1,6 +1,6 @@
 {
-  "purpose": "NR-03 canonical source package; modular proof candidate pending authoritative verification",
-  "status": "58-module candidate: actual full row and Certificate build passed in prior canonical run; one-line Rank cast repair awaits complete verifier rerun",
+  "purpose": "NR-03 canonical source package; complete Lean verification accepted",
+  "status": "58-module complete proof accepted by canonical Linux verification run 34785341662",
   "author": "George Stepaniants",
   "affiliation": "Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA",
   "email_published": false,
@@ -432,14 +432,14 @@
     ".github/workflows/lean-nr03-development.yml"
   ],
   "claims": {
-    "lean_compiled": false,
-    "leancert_verified": false,
-    "comparator_executed": false,
-    "default_kernel_checked": false,
-    "whole_problem_verified": false,
-    "solved_status": false,
+    "lean_compiled": true,
+    "leancert_verified": true,
+    "comparator_executed": true,
+    "default_kernel_checked": true,
+    "whole_problem_verified": true,
+    "solved_status": true,
     "conditional_bridge_diagnostic": true,
-    "full_graph_compiled": false,
+    "full_graph_compiled": true,
     "diagnostic_run_id": 34782819568
   },
   "self_exclusion": "This manifest is intentionally excluded from its own hash inventory.",
@@ -460,7 +460,7 @@
   },
   "bridge_overlay": {
     "base_commit": "fe4140cced3fc4b4efdd4ef4e202d27156a1cd4f",
-    "status": "reviewed source overlay; conditional bridge diagnostic passed; full canonical verification pending",
+    "status": "reviewed source overlay; conditional bridge diagnostic preserved; full canonical verification accepted separately",
     "exact_path_count": 7,
     "paths": [
       {
@@ -547,8 +547,90 @@
       "reviews/rank-cast-repair/referee-2/REVIEW.md"
     ],
     "actual_prior_run": 34783909558,
-    "status": "Two source-delta approvals; actual complete canonical rerun pending",
+    "status": "Accepted by canonical verification run 34785341662",
     "frozen_statements_unchanged": true,
-    "all_other_active_modules_unchanged": true
+    "all_other_active_modules_unchanged": true,
+    "accepted_run": "34785341662"
+  },
+  "canonical_verification": {
+    "candidate_commit": "f664d07e82aaa60bc9c78dd1946e763168c5c530",
+    "run_id": 34785341662,
+    "job_id": 103799711659,
+    "run_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662",
+    "job_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34785341662/job/103799711659",
+    "artifact_id": 10326896988,
+    "artifact_sha256": "91f80abcbbb0f10fbf614ab259fbf5121a8dabd5c600969a260e3b8b2c8e267c",
+    "raw_evidence_sha256": "e7bd039fb9e4dcc7f46a4930b9f4dc2eb79a9977a80c0cbb4299d8edcb4eb0ed",
+    "export_count": 10,
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "per_export_axioms": {
+      "NLA.NR03.cMatrix_nonnegative": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.boolVec_seven_card": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.nonnegative_rank_attained_minimal": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.rank_le_of_factorization": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.scaled_certificate_gives_factorization": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.witness_scaled_certificate": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.witness_factorization": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.witness_rank_upper_bound": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.witness_not_full_rank": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ],
+      "NLA.NR03.not_targetStatement": [
+        "Classical.choice",
+        "Quot.sound",
+        "propext"
+      ]
+    },
+    "evidence_url": "https://github.com/sgstepaniants/OpenProblemsInNLA/blob/codex/lean-nr03-verification/nonnegative-and-positive-factorizations/NR-03/lean/verification/linux-2026-09-13/OPERATIONAL-REVIEW.md",
+    "review_reports": [
+      {
+        "reviewer": "/root/nr03_independent_referee",
+        "path": "reviews/final-referee-1/REVIEW.md",
+        "sha256": "4df157bf147079c3bec23ea0cd696afe4ca050ed20114e0b4febcc4edf228715"
+      },
+      {
+        "reviewer": "/root",
+        "path": "reviews/final-referee-2/REVIEW.md",
+        "sha256": "a5036ca179eb43ea4499e17cef5bb918655b2a0f05d328a1d57744b5716d992c"
+      }
+    ]
   }
 }

@@ -1,0 +1,54 @@
+{
+  "base_commit": "fe4140cced3fc4b4efdd4ef4e202d27156a1cd4f",
+  "fast_imports": [
+    "NLA.NR03.Definitions",
+    "NLA.NR03.Encoding",
+    "NLA.NR03.FamilyDefs",
+    "NLA.NR03.Index",
+    "NLA.NR03.CertificateBridge"
+  ],
+  "heavy_modules_in_fast_graph": [],
+  "moved_unchanged": [
+    "NLA.NR03.genericW",
+    "NLA.NR03.genericV",
+    "NLA.NR03.genericD",
+    "NLA.NR03.genericD_positive"
+  ],
+  "helpers": {
+    "NLA.NR03.CertificateBridge.full_sum_decomposition": {
+      "premises": []
+    },
+    "NLA.NR03.CertificateBridge.full_identity_of_components": {
+      "premises": [
+        "hcore",
+        "hsingleton",
+        "hpair",
+        "hfour",
+        "hclosed"
+      ],
+      "discharged_by": [
+        "core_identity",
+        "singleton_identity",
+        "pair_identity",
+        "four_identity",
+        "closed_family_identity"
+      ]
+    },
+    "NLA.NR03.CertificateBridge.scaled_identity_of_full": {
+      "premises": [
+        "hfull"
+      ],
+      "discharged_by": [
+        "full_identity"
+      ]
+    }
+  },
+  "unchanged_final_theorems": [
+    "NLA.NR03.full_identity",
+    "NLA.NR03.generic_scaled_identity"
+  ],
+  "new_public_hypotheses": [],
+  "frozen_ten_export_boundary_changed": false,
+  "proof_bodies_implemented": false,
+  "live_edit_or_job": false
+}

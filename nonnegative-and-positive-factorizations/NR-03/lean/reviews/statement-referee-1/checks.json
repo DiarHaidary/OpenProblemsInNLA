@@ -1,0 +1,55 @@
+{
+  "reviewer": "/root independent statement referee 1, not author",
+  "utc": "2026-09-13T14:51:18.718770+00:00",
+  "canonical_revision": "50838e37dd793830e2cecd1055cfc7e0349490f1",
+  "source_hashes": {
+    "nonnegative-and-positive-factorizations/NR-03/README.md": "a699bd54bda485d843739a5448f3e1ff4d77feb8761ea8944e767000d2b3955e",
+    "nonnegative-and-positive-factorizations/NR-03/problem.tex": "0d0daf158679430a6f46bf2867ee63ad321cb89f64c65807dbd4a0750a084628",
+    "references/holden-nr03-2026-09-13/NR03_counterexample.tex": "26cac3ed5aa30226530bbf8562a626b6582444abcc8ef8e8e69ebde6160565a3",
+    "references/holden-nr03-2026-09-13/data/factors_n7.json": "fa515775f9c77e5dfe85109125d3f730c4b36684894730096247cd67fcc60bb9",
+    "references/holden-nr03-2026-09-13/README.md": "d622b1dc313b62db9b17ae840b240b4d8f78196f72094e2ee644d914b64fae97",
+    "references/holden-nr03-2026-09-13/PROOF.md": "5221b0064fc97486f2a1cf438bfc7278f7747bf3e3505ddbea26351e5818b067"
+  },
+  "candidate_hashes": {
+    "NLA/NR03/Definitions.lean": "5157fd499d2f63d218012f96bee43f30e5f57e5a2353fde13878af46d30fda04",
+    "Challenge.lean": "4f1764cf9c604f33ed6f285e83ca32ebd1ae1fb1fd8f763a1c4a719ef068c335",
+    "NUMERICAL_TARGETS.md": "817a0978869dcaf2bb918d846e4143df480665e5db3bc841cf4070bd3f683c42",
+    "SOURCE_MAP.md": "68eb2be2121b176ad13d036b50e03146539a9c7fe1e9ece9b55fdae761d34ebf",
+    "formalization.yaml": "314067c75958a46c14c31f091f04f1a4e537f5bdeb3d6d3983363fc046bd54f7",
+    "comparator.json": "ea1cea90b8e25535a31dca7fc620494ded851587609bb1473c651d07757f40bd",
+    "README.md": "ad00a9613f67eaa5f597af26ecfa75b5b8d652ea6cfabb1b48d1f230867c3cb8",
+    "lake-manifest.json": "71e8401646a361d36b841337a9e08cbe0633fbbbce8e5ce9b5db0e10dfefbb5c",
+    "lakefile.toml": "552a8d1aefbf599f249fd0c1a83fd64d8fbf2258f14218821962f44e8e068329",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+    "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "verification/statement-typecheck.py": "13df584c8599c2b078f3e22614935bc874a61b1188928939484badfe2371b8de"
+  },
+  "exact_certificate_entries_checked": 16384,
+  "definitions_inspected": [
+    "BoolVec",
+    "boolToReal",
+    "boolDot",
+    "cMatrix",
+    "EntrywiseNonnegative",
+    "FactorizationData",
+    "HasNonnegativeFactorization",
+    "nonnegativeRank",
+    "targetStatement",
+    "castNatMatrix",
+    "scaledRightFactor",
+    "HasScaledIntegerCertificate"
+  ],
+  "contracts_inspected": [
+    "cMatrix_nonnegative",
+    "boolVec_seven_card",
+    "nonnegative_rank_attained_minimal",
+    "rank_le_of_factorization",
+    "scaled_certificate_gives_factorization",
+    "witness_scaled_certificate",
+    "witness_factorization",
+    "witness_rank_upper_bound",
+    "witness_not_full_rank",
+    "not_targetStatement"
+  ],
+  "stage": "Statements only; no proof or Linux or Comparator result."
+}

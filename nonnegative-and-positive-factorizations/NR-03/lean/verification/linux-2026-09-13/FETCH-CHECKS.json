@@ -1,0 +1,43 @@
+{
+  "run": 34785341662,
+  "job": 103799711659,
+  "commit": "f664d07e82aaa60bc9c78dd1946e763168c5c530",
+  "run_conclusion": "success",
+  "job_conclusion": "success",
+  "artifact_id": 10326896988,
+  "artifact_size_bytes": 21628,
+  "artifact_sha256": "91f80abcbbb0f10fbf614ab259fbf5121a8dabd5c600969a260e3b8b2c8e267c",
+  "extracted_sha256": {
+    "bootstrap/comparator-build.log": "bf18b6a86ecd9dd8e19edc547e946f5a0614c304bb797429ad02b819deb22947",
+    "bootstrap/landrun-build.log": "baf6c06b231f4e2c2af81c514a62c8194bacce0677b2adb9d8948da24f91c302",
+    "bootstrap/elan.log": "b9711b498167d8e7f8fd98d6ec303edfe75693784469d39bb7ec47d487c1420f",
+    "verify-20260913T215907Z-4140/comparator-controls.log": "0623d71c5591fdad91729f2ce35c019c0c5810b84e55f5c0806af8ede72cf049",
+    "verify-20260913T215907Z-4140/comparator.log": "aa87f0c27e89f687804f1e655f700946aa31d1a28b40e6e71ed4b92486170ca1",
+    "verify-20260913T215907Z-4140/kernel-controls.log": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+    "verify-20260913T215907Z-4140/dependencies.log": "740fcb700c777ae28e11ddf7c40e50a87ba79bbe97b1a1e1d21a314fea802b4d",
+    "verify-20260913T215907Z-4140/mathlib-cache.log": "5e8ad3a765fa01a78bd157542c3c4a3b25736659d59ddc9544064312822a6b74",
+    "verify-20260913T215907Z-4140/negative-native.log": "d2c0fcfad2b842e464fdf8d2ed58a6f01205a33e303dcae97720ff3efa6741b1",
+    "verify-20260913T215907Z-4140/negative-sorry.log": "9fa9e8159bc7e8090a29fb74abad4a926bbf0b1f2ab3101a26b75756c0acd214",
+    "verify-20260913T215907Z-4140/result.json": "e7bd039fb9e4dcc7f46a4930b9f4dc2eb79a9977a80c0cbb4299d8edcb4eb0ed",
+    "verify-20260913T215907Z-4140/sandbox.log": "ed01a61e457e06ed1ebf84fdc600c7775faa3cfcb2d48c9670802b7ec1c35ef8",
+    "verify-20260913T215907Z-4140/user-service.log": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a"
+  },
+  "local_compiler_executed": false,
+  "workflow_launched_by_fetcher": false,
+  "independent_mathematical_acceptance": "not performed by this fetcher",
+  "comparator_result": "extracted/verify-20260913T215907Z-4140/result.json",
+  "inputs_matched_to_commit": 113,
+  "all_configured_contracts": [
+    "NLA.NR03.cMatrix_nonnegative",
+    "NLA.NR03.boolVec_seven_card",
+    "NLA.NR03.nonnegative_rank_attained_minimal",
+    "NLA.NR03.rank_le_of_factorization",
+    "NLA.NR03.scaled_certificate_gives_factorization",
+    "NLA.NR03.witness_scaled_certificate",
+    "NLA.NR03.witness_factorization",
+    "NLA.NR03.witness_rank_upper_bound",
+    "NLA.NR03.witness_not_full_rank",
+    "NLA.NR03.not_targetStatement"
+  ],
+  "result": "comparator-accepted; operational and semantic review still separate"
+}

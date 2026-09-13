@@ -1,0 +1,69 @@
+{
+  "phase": "independent statement review, not mathematical verification",
+  "result": "CHANGES REQUESTED: metadata schema",
+  "source_commit": "50838e37dd793830e2cecd1055cfc7e0349490f1",
+  "certificate_dimensions": [
+    128,
+    127,
+    128
+  ],
+  "entries_checked_exactly": 16384,
+  "zero_target_entries": 5103,
+  "positive_target_entries": 11281,
+  "boolean_mask_bijection_checked": 128,
+  "boolean_dot_vs_mask_intersection_pairs_checked": 16384,
+  "atom_family_formula_entries_checked": 32512,
+  "denominators": [
+    1,
+    4,
+    9,
+    16,
+    25,
+    36
+  ],
+  "W_nonzeros": 2648,
+  "W_max": 2,
+  "V_max": 36,
+  "metadata_schema": "FAIL v0.4",
+  "metadata_schema_errors": [
+    {
+      "path": [
+        "sources",
+        2,
+        "relationship"
+      ],
+      "message": "'related' is not one of ['', 'formalizes', 'adapts', 'independently-proves', 'background', 'other']"
+    }
+  ],
+  "declaration_coverage": [
+    "NLA.NR03.cMatrix_nonnegative",
+    "NLA.NR03.boolVec_seven_card",
+    "NLA.NR03.nonnegative_rank_attained_minimal",
+    "NLA.NR03.rank_le_of_factorization",
+    "NLA.NR03.scaled_certificate_gives_factorization",
+    "NLA.NR03.witness_scaled_certificate",
+    "NLA.NR03.witness_factorization",
+    "NLA.NR03.witness_rank_upper_bound",
+    "NLA.NR03.witness_not_full_rank",
+    "NLA.NR03.not_targetStatement"
+  ],
+  "source_map_hashes_and_git_blob_ids": "PASS",
+  "toolchain_dependency_pins": {
+    "leancert": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+    "mathlib": "0df444a360eaa60ab8c11dca51a86af692955474",
+    "plausible": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+    "LeanSearchClient": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+    "importGraph": "16f02aa7642864af59f1ff0e384a015994db9118",
+    "proofwidgets": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+    "aesop": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+    "Qq": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+    "batteries": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+    "Cli": "6130a47896ce867c6a4a55373441e59e565bad0f"
+  },
+  "limitations": [
+    "Python checks are not a Lean proof or trusted oracle.",
+    "Challenge contains ten intentional placeholders.",
+    "No Linux Comparator or full proof audit was performed.",
+    "Pre-existing dependency objects were reused, not rebuilt or independently authenticated by a kernel replay."
+  ]
+}

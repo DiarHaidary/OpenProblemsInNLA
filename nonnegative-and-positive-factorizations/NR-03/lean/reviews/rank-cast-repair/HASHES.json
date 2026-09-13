@@ -1,0 +1,31 @@
+{
+  "scope": "Private one-line implementation repair; source-only checks, no compilation",
+  "base_commit": "523c5aeaddd8bf7c2dc01afb053bb0dea8811335",
+  "canonical_path": "nonnegative-and-positive-factorizations/NR-03/lean/NLA/NR03/Rank.lean",
+  "old_rank_sha256": "3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876",
+  "new_rank_sha256": "1eafa31999df79f099079c00df9fb794321e6af97e98048dfb36171e4c7fda4e",
+  "repair_diff_sha256": "5945e57ff5f49802b5dad6cf4ae9d92188b02611fd9a86b7d780c9dfc7547bc1",
+  "repair_report_sha256": "9c62e02a9157748c2da67c1903746a4eff274b0bc64185c93d36eb5e1a4e7452",
+  "exact_delta": "Insert change (0 : \u211d) \u2264 (W i k : \u211d) immediately before existing first exact_mod_cast",
+  "all_ten_theorem_signatures_unchanged": {
+    "scaled_certificate_gives_factorization": "{\u03b9 \u03ba : Type} [Fintype \u03b9] [Fintype \u03ba] (X : Matrix \u03b9 \u03ba \u211d) (r : \u2115) (h : HasScaledIntegerCertificate X r) : \u2203 W : Matrix \u03b9 (Fin r) \u2115, \u2203 V : Matrix (Fin r) \u03ba \u2115, \u2203 d : \u03ba \u2192 \u2115, (\u2200 j, 0 < d j) \u2227 (\u2200 i j, (castNatMatrix W * castNatMatrix V) i j = (d j : \u211d) * X i j) \u2227 FactorizationData X r (castNatMatrix W) (scaledRightFactor V d)",
+    "witness_scaled_certificate": ": HasScaledIntegerCertificate (cMatrix 7) 127",
+    "witness_factorization": ": HasNonnegativeFactorization (cMatrix 7) 127",
+    "cMatrix_nonnegative": "(n : \u2115) : EntrywiseNonnegative (cMatrix n)",
+    "boolVec_seven_card": ": Fintype.card (BoolVec 7) = 128",
+    "nonnegative_rank_attained_minimal": "{\u03b9 \u03ba : Type} [Fintype \u03b9] [Fintype \u03ba] (X : Matrix \u03b9 \u03ba \u211d) (hX : \u2203 r : \u2115, HasNonnegativeFactorization X r) : HasNonnegativeFactorization X (nonnegativeRank X) \u2227 \u2200 r : \u2115, HasNonnegativeFactorization X r \u2192 nonnegativeRank X \u2264 r",
+    "rank_le_of_factorization": "{\u03b9 \u03ba : Type} [Fintype \u03b9] [Fintype \u03ba] (X : Matrix \u03b9 \u03ba \u211d) (r : \u2115) (h : HasNonnegativeFactorization X r) : nonnegativeRank X \u2264 r",
+    "witness_rank_upper_bound": ": nonnegativeRank (cMatrix 7) \u2264 127",
+    "witness_not_full_rank": ": nonnegativeRank (cMatrix 7) < 2 ^ 7",
+    "not_targetStatement": ": \u00ac targetStatement"
+  },
+  "removing_inserted_line_recovers_exact_original": true,
+  "no_other_source_changes": true,
+  "pinned_API_file_sha256": {
+    "Mathlib/Data/Nat/Cast/Order/Ring.lean": "005f95e3c0d18bc11034eff9c7f726e719d61cac7d8fafa1e739096d6d4da255",
+    "Mathlib/Algebra/Order/GroupWithZero/Basic.lean": "5ae904bb6c2caab184fbeb514e648544f96ad657860f307d43bbc2217ce535cb",
+    "Mathlib/Algebra/BigOperators/Ring/Finset.lean": "472cd5000412d8ec35c8b9ee919b2aeedbf0a830033a55009aad436595923809"
+  },
+  "local_Lean_Lake_executed": false,
+  "live_worktree_changed": false
+}

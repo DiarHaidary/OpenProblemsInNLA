@@ -51,40 +51,74 @@ maximum permanent on a positive-semidefinite unitary orbit\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} extreme\quad\textbf{Importance:} interesting
 to the community\par}
-{\sffamily\small\bfseries\color{accent}Status: Partially resolved\par}
+{\sffamily\small\bfseries\color{accent}Status: Solved\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
 \textbf{Provenance:} explicit exact extremal problem; no conjectured
 optimizer is supplied
 
-\textbf{Rating rationale:} An exact formula for arbitrary spectra would
-resolve a longstanding permanent optimization barrier and inform
-prescribed-spectrum matrix optimization.
+\textbf{Historical rating rationale:} An exact formula for arbitrary
+spectra would resolve a longstanding permanent optimization barrier and
+inform prescribed-spectrum matrix optimization.
 
-\subsection{Exact formula for one-exceptional-eigenvalue spectra --- 12
-September
-2026}\label{exact-formula-for-one-exceptional-eigenvalue-spectra-12-september-2026}
+\subsection{Resolution --- exact algebraic determination, 12 September
+2026}\label{resolution-exact-algebraic-determination-12-september-2026}
 
-\textbf{Author:} Sidney Holden, Center for Computational Biology,
+\textbf{Solved by Sidney Holden}, Center for Computational Biology,
 Flatiron Institute, Simons Foundation.
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-matrix-2026-09-12/README.md}{Submission
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi16-2026-09-12/README.md}{Submission
 and verified affiliation}.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/matrix-inequalities-and-norms/MI-16/solution.pdf}{Proof
+PDF} ·
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/matrix-inequalities-and-norms/MI-16/solution.tex}{LaTeX
+source} ·
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi16-2026-09-12/independent-review.md}{Independent
+AI-agent audit: PASS}.
 
-The
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-matrix-2026-09-12/MI-16/result.md}{Theorem
-and its proof} determine the maximum for every spectrum
-\((\alpha,\beta,\ldots,\beta)\) with \(\alpha,\beta\ge0\) in every
-order, including \(\alpha<\beta\). It compares finitely many explicit
-support-size polynomials and supplies maximizers. The formula for
-arbitrary spectra remains open.
+Theorem 2.1 and Sections 3--5 give an exact finite algebraic
+prescription for every nonnegative real spectrum in every order. A
+specialized critical-value elimination polynomial gives finitely many
+candidates. Explicit Schur-character sums compute a spectral moment at a
+proved finite order, which selects the maximum even when some real
+critical values are not Hermitian-feasible. The prescription has no
+remaining matrix optimization or unevaluated limit, and meets the
+original exact-value criterion below. For arbitrary real inputs it uses
+exact ordered-field arithmetic and comparisons; the reference programs
+accept rational inputs.
 
-A separate
+\textbf{Form of the answer:} this is not a compact general structural
+formula, an efficient arbitrary-order solver, or a classification of all
+general-spectrum optimizers. Those stronger goals are not claimed.
+Theorem 8.1 separately gives a two-candidate structural formula for one
+exceptional eigenvalue; Sections 9--10 prove the transition threshold
+and every equality case. The earlier rank-one expansion and
+equal-support reduction from
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/186}{Holden's
+partial submission, PR \#186}, are retained and credited in the dossier.
+This submission adds the all-spectrum determination and sharper
+exceptional-spectrum results.
+
+A separate Codex agent independently audited the complete argument and
+its correspondence with this unchanged target. This is informal AI-agent
+review, not external human peer review or formal verification. No Lean
+verification or historical-priority claim is made. Whether a structural
+formula is preferred for the historical problem is exposed for
+maintainer review; it is not silently added to this entry's completion
+criterion.
+
+\subsection{Earlier partial contribution --- 12 September
+2026}\label{earlier-partial-contribution-12-september-2026}
+
+Holden's
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-matrix-2026-09-12/MI-16/result.md}{earlier
+theorem} determined the maximum for every one-exceptional-eigenvalue
+spectrum by comparing explicit support-size polynomials. Its
 \href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-matrix-2026-09-12/verification/MI-16-review.md}{independent
-Codex AI-agent audit} passed this limited scope. This is informal
-automated review; no complete resolution, historical novelty, external
-human peer review or formal verification is claimed. No Lean
-verification was performed.
+review} and
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-matrix-2026-09-12/README.md}{submission
+record} remain available. That partial result preceded the all-spectrum
+determination above.
 
 \subsection{Problem statement}\label{problem-statement}
 

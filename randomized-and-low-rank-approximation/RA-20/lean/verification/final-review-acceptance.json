@@ -1,0 +1,1666 @@
+{
+  "utc": "2026-09-13T06:06:03.215297+00:00",
+  "gate": "ACCEPT both independent final mathematical approvals; candidate packaging and actual Linux may proceed",
+  "coordinator": "/root",
+  "coordinator_role": "Disclosed Generic proof contributor and proof coordinator; not an independent final mathematical referee",
+  "reviewed_proof_freeze_sha256": "f66dfe47527df937de8ed399606206bdaef55717cef8d68808f60834aece0c6f",
+  "statement_freeze_sha256": "6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8",
+  "project_inputs_preserved": 521,
+  "statement_inputs_preserved": 68,
+  "original_source_Git_blobs_preserved": 16,
+  "reports": [
+    {
+      "reviewer": "/root/ra20_final_referee1",
+      "report": "reviews/final-referee-1.md",
+      "sha256": "2a313084cdc1c06be789181bf05d9874bde020483d501151bc224b5af896e345",
+      "evidence": {
+        "file": "reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json",
+        "sha256": "360b0d841ebd8cb7219b39997e0b0a2617be32abfef461866d0f022ca134f70d",
+        "bound_files": 699
+      },
+      "validation_sha256": "2a73677b8f9daf002858dc0a9e4fcc0af7a4d1709c21fa7e44f2b0d05aeb79a6",
+      "successful_fresh_source_commands": 13,
+      "failed_Lean_commands": 0,
+      "exact_export_type_matches": [
+        "NLA.RA20.hollow_variety_semantics",
+        "NLA.RA20.reduced_coordinate_ring",
+        "NLA.RA20.algebraic_smooth_locus",
+        "NLA.RA20.algebraic_tangent_space",
+        "NLA.RA20.full_frobenius_differential",
+        "NLA.RA20.hollow_distance_semantics",
+        "NLA.RA20.generic_critical_locus",
+        "NLA.RA20.component_hessians",
+        "NLA.RA20.generic_data_intersection",
+        "NLA.RA20.generic_count_three",
+        "NLA.RA20.generic_count_not_four",
+        "NLA.RA20.not_criticalCountConjecture"
+      ],
+      "actual_project_closure": 214,
+      "required_material_dependencies": 39,
+      "source_kernel_assertions": 61,
+      "additional_kernel_assertions": 12,
+      "actual_standard_three_reports": 69,
+      "commands": [
+        {
+          "source": "NLA/RA20/Definitions.lean",
+          "source_sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-01/lean.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "source": "NLA/RA20/Algebra.lean",
+          "source_sha256": "67adf1643bd62089a62d857c404bdb5ee1bbbd192984ed5f1169b8c5ec71f5f1",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-02/lean.log",
+          "log_sha256": "fad6aa4a907afdee5f962c1c747ddfaf73e48417f2a9f45ced8294b155bbebac"
+        },
+        {
+          "source": "NLA/RA20/SmoothTransport.lean",
+          "source_sha256": "0e7717ac9e55597ed69a816f44194af569ac7b092ceb4f9231ea86e4c7ad894f",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-03/lean.log",
+          "log_sha256": "12b2b00b13f6c349f659dde4b5aee386df3ef4909463ead240a80b578f1435de"
+        },
+        {
+          "source": "NLA/RA20/Smooth.lean",
+          "source_sha256": "99ab24934f75382e9bad4a8e84945d0f1e14123804d5172a66b0da17a9eceb88",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "source": "NLA/RA20/Tangent.lean",
+          "source_sha256": "b03b6a1112737372072832d89b17ff0e19e00f631a925252269b75af3c44e178",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-05/lean.log",
+          "log_sha256": "3aeb7c509fc1b1cf91111d7c4ad3c67dde74ffcc71fdcd85c5bc60ab73e28d2f"
+        },
+        {
+          "source": "NLA/RA20/Differential.lean",
+          "source_sha256": "8e24af9b30b668fd1c6bfc3799fe6d8771e4a6e96124087752a02f7b4d913ec7",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-06/lean.log",
+          "log_sha256": "3204984acbb389dce15d3d04fbaf4f78168139ab1e97c0128f35d7a037312ae8"
+        },
+        {
+          "source": "NLA/RA20/Generic.lean",
+          "source_sha256": "47676372aa8e028a2c12bf6c23951b0edf5b7404a18abd24487d36399b7fb007",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-07/lean.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "source": "NLA/RA20/Critical.lean",
+          "source_sha256": "e8b2e3646d4b1f5e41e35ae4e23ba55d758cb6e48d125643d02eb1d51cab2040",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "source": "NLA/RA20/Count.lean",
+          "source_sha256": "99e44e2ec0d376cb346822c8f5a7edcc72c78448083361e5b4f2ea3aceb92c96",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-09/lean.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "source": "NLA/RA20/Proof.lean",
+          "source_sha256": "d3cb0dab572eb54795e6568c717e9e6f8200eb20f299e319fc3be36bbe8aaea1",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "source": "Solution.lean",
+          "source_sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "source": "reviews/final-referee-1-evidence/ReferenceChallenge.lean",
+          "source_sha256": "c473ba9bc7af0727fbd7c3e28070a173b48c9f10c1f1dc54beaf075400782f2a",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-12/lean.log",
+          "log_sha256": "43debac9019542f8e7eb68553d02b04e1800c7c2dd566f61ec2dbcaafeb0e702"
+        },
+        {
+          "source": "reviews/final-referee-1-evidence/Inspect.lean",
+          "source_sha256": "4a4f6093abbf7ae86ed08c7ee3dc6a8104f48dbeb10b1d8cfda4341b39a1565a",
+          "exit_code": 0,
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        }
+      ],
+      "axiom_reports": [
+        {
+          "name": "NLA.RA20.hollow_variety_semantics_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-02/lean.log",
+          "log_sha256": "fad6aa4a907afdee5f962c1c747ddfaf73e48417f2a9f45ced8294b155bbebac"
+        },
+        {
+          "name": "NLA.RA20.reduced_coordinate_ring_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-02/lean.log",
+          "log_sha256": "fad6aa4a907afdee5f962c1c747ddfaf73e48417f2a9f45ced8294b155bbebac"
+        },
+        {
+          "name": "NLA.RA20.smoothLocus_comap_algEquiv",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-03/lean.log",
+          "log_sha256": "12b2b00b13f6c349f659dde4b5aee386df3ef4909463ead240a80b578f1435de"
+        },
+        {
+          "name": "NLA.RA20.triple_product_not_formallySmooth",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.formallySmooth_of_retraction",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.abc_local_not_smooth",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.abc_local_smooth",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.abc_smooth_locus_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.abcPoint_comap",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.reducedPoint_comap",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.algebraic_smooth_locus_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-04/lean.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.polyDirectional_hollowPullback",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-05/lean.log",
+          "log_sha256": "3aeb7c509fc1b1cf91111d7c4ad3c67dde74ffcc71fdcd85c5bc60ab73e28d2f"
+        },
+        {
+          "name": "NLA.RA20.algebraic_tangent_space_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-05/lean.log",
+          "log_sha256": "3aeb7c509fc1b1cf91111d7c4ad3c67dde74ffcc71fdcd85c5bc60ab73e28d2f"
+        },
+        {
+          "name": "NLA.RA20.full_frobenius_differential_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-06/lean.log",
+          "log_sha256": "3204984acbb389dce15d3d04fbaf4f78168139ab1e97c0128f35d7a037312ae8"
+        },
+        {
+          "name": "NLA.RA20.hollow_distance_semantics_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-06/lean.log",
+          "log_sha256": "3204984acbb389dce15d3d04fbaf4f78168139ab1e97c0128f35d7a037312ae8"
+        },
+        {
+          "name": "NLA.RA20.component_hessians_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-06/lean.log",
+          "log_sha256": "3204984acbb389dce15d3d04fbaf4f78168139ab1e97c0128f35d7a037312ae8"
+        },
+        {
+          "name": "NLA.RA20.symmetricParameter_isSymm",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-07/lean.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "name": "NLA.RA20.symmetricParameter_reconstruct",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-07/lean.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "name": "NLA.RA20.eval_rename_symmetricParameter",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-07/lean.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "name": "NLA.RA20.generic_data_intersection_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-07/lean.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "name": "NLA.RA20.hollow_frobenius_differential",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.generic_candidate_injective",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.smoothCritical_hollow_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.critical_first_plane",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.critical_second_plane",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.critical_third_plane",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.generic_candidate_critical",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_exhaustion",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_locus_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-08/lean.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.critical_count_three",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-09/lean.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "name": "NLA.RA20.generic_count_three_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-09/lean.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "name": "NLA.RA20.generic_count_not_four_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-09/lean.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "name": "NLA.RA20.not_criticalCountConjecture_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-09/lean.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "name": "NLA.RA20.hollow_variety_semantics_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.reduced_coordinate_ring_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.algebraic_smooth_locus_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.algebraic_tangent_space_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.full_frobenius_differential_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.hollow_distance_semantics_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_locus_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.component_hessians_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.generic_data_intersection_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.generic_count_three_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.generic_count_not_four_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.not_criticalCountConjecture_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-10/lean.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.hollow_variety_semantics",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.reduced_coordinate_ring",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.algebraic_smooth_locus",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.algebraic_tangent_space",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.full_frobenius_differential",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.hollow_distance_semantics",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_locus",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.component_hessians",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.generic_data_intersection",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.generic_count_three",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.generic_count_not_four",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.not_criticalCountConjecture",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-11/lean.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.hollow_variety_semantics",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.reduced_coordinate_ring",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.algebraic_smooth_locus",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.algebraic_tangent_space",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.full_frobenius_differential",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.hollow_distance_semantics",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_locus",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.component_hessians",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.generic_data_intersection",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.generic_count_three",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.generic_count_not_four",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        },
+        {
+          "name": "NLA.RA20.not_criticalCountConjecture",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-1-evidence/attempt-13/lean.log",
+          "log_sha256": "62821ac9e525834a25536b15e19b0a0b8930386861cbcc5ca6bbc9c43970415d"
+        }
+      ],
+      "mathematical_revision_requested": false
+    },
+    {
+      "reviewer": "/root/ra20_final_referee2",
+      "report": "reviews/final-referee-2.md",
+      "sha256": "d7cfa1404c147ae19cec776e2047c85b6bdfd1484192a1cbbb171ed9afa7dbcf",
+      "evidence": {
+        "file": "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json",
+        "sha256": "7fc642361790960be2d3a584d2842dc688d13511d93220907abc0d7ab951318c",
+        "bound_files": 793
+      },
+      "validation_sha256": "5118411b069f1efbc9dc499a88adf768daae58331a14b7546354c030fed7eb3b",
+      "successful_fresh_source_commands": 13,
+      "failed_Lean_commands": 0,
+      "exact_export_type_matches": [
+        "NLA.RA20.hollow_variety_semantics",
+        "NLA.RA20.reduced_coordinate_ring",
+        "NLA.RA20.algebraic_smooth_locus",
+        "NLA.RA20.algebraic_tangent_space",
+        "NLA.RA20.full_frobenius_differential",
+        "NLA.RA20.hollow_distance_semantics",
+        "NLA.RA20.generic_critical_locus",
+        "NLA.RA20.component_hessians",
+        "NLA.RA20.generic_data_intersection",
+        "NLA.RA20.generic_count_three",
+        "NLA.RA20.generic_count_not_four",
+        "NLA.RA20.not_criticalCountConjecture"
+      ],
+      "actual_project_closure": 214,
+      "required_material_dependencies": 28,
+      "source_kernel_assertions": 61,
+      "additional_kernel_assertions": 12,
+      "actual_standard_three_reports": 69,
+      "commands": [
+        {
+          "source": "NLA/RA20/Definitions.lean",
+          "source_sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-038/raw.log",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "source": "NLA/RA20/Algebra.lean",
+          "source_sha256": "67adf1643bd62089a62d857c404bdb5ee1bbbd192984ed5f1169b8c5ec71f5f1",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-039/raw.log",
+          "log_sha256": "fad6aa4a907afdee5f962c1c747ddfaf73e48417f2a9f45ced8294b155bbebac"
+        },
+        {
+          "source": "NLA/RA20/SmoothTransport.lean",
+          "source_sha256": "0e7717ac9e55597ed69a816f44194af569ac7b092ceb4f9231ea86e4c7ad894f",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-040/raw.log",
+          "log_sha256": "12b2b00b13f6c349f659dde4b5aee386df3ef4909463ead240a80b578f1435de"
+        },
+        {
+          "source": "NLA/RA20/Smooth.lean",
+          "source_sha256": "99ab24934f75382e9bad4a8e84945d0f1e14123804d5172a66b0da17a9eceb88",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "source": "NLA/RA20/Tangent.lean",
+          "source_sha256": "b03b6a1112737372072832d89b17ff0e19e00f631a925252269b75af3c44e178",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-042/raw.log",
+          "log_sha256": "3aeb7c509fc1b1cf91111d7c4ad3c67dde74ffcc71fdcd85c5bc60ab73e28d2f"
+        },
+        {
+          "source": "NLA/RA20/Differential.lean",
+          "source_sha256": "8e24af9b30b668fd1c6bfc3799fe6d8771e4a6e96124087752a02f7b4d913ec7",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-043/raw.log",
+          "log_sha256": "3204984acbb389dce15d3d04fbaf4f78168139ab1e97c0128f35d7a037312ae8"
+        },
+        {
+          "source": "NLA/RA20/Generic.lean",
+          "source_sha256": "47676372aa8e028a2c12bf6c23951b0edf5b7404a18abd24487d36399b7fb007",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-044/raw.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "source": "NLA/RA20/Critical.lean",
+          "source_sha256": "e8b2e3646d4b1f5e41e35ae4e23ba55d758cb6e48d125643d02eb1d51cab2040",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "source": "NLA/RA20/Count.lean",
+          "source_sha256": "99e44e2ec0d376cb346822c8f5a7edcc72c78448083361e5b4f2ea3aceb92c96",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-046/raw.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "source": "NLA/RA20/Proof.lean",
+          "source_sha256": "d3cb0dab572eb54795e6568c717e9e6f8200eb20f299e319fc3be36bbe8aaea1",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "source": "Solution.lean",
+          "source_sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "source": "reviews/final-referee-2-evidence/Reference.lean",
+          "source_sha256": "d01836593de3d8fde2a4879b03df400bfba90f89993c2d3b8a9c8205362a3f97",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-049/raw.log",
+          "log_sha256": "c7a058ebf50bc3bc270711a4be5b55e5037610857f9ac779f313b7d9b8f866c7"
+        },
+        {
+          "source": "reviews/final-referee-2-evidence/Inspect.lean",
+          "source_sha256": "800b534bcd2fb3d8aa96aba77a8171dd72180010ddd7c11d1b06b6062233ee25",
+          "exit_code": 0,
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        }
+      ],
+      "axiom_reports": [
+        {
+          "name": "NLA.RA20.hollow_variety_semantics_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-039/raw.log",
+          "log_sha256": "fad6aa4a907afdee5f962c1c747ddfaf73e48417f2a9f45ced8294b155bbebac"
+        },
+        {
+          "name": "NLA.RA20.reduced_coordinate_ring_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-039/raw.log",
+          "log_sha256": "fad6aa4a907afdee5f962c1c747ddfaf73e48417f2a9f45ced8294b155bbebac"
+        },
+        {
+          "name": "NLA.RA20.smoothLocus_comap_algEquiv",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-040/raw.log",
+          "log_sha256": "12b2b00b13f6c349f659dde4b5aee386df3ef4909463ead240a80b578f1435de"
+        },
+        {
+          "name": "NLA.RA20.triple_product_not_formallySmooth",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.formallySmooth_of_retraction",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.abc_local_not_smooth",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.abc_local_smooth",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.abc_smooth_locus_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.abcPoint_comap",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.reducedPoint_comap",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.algebraic_smooth_locus_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-041/raw.log",
+          "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+        },
+        {
+          "name": "NLA.RA20.polyDirectional_hollowPullback",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-042/raw.log",
+          "log_sha256": "3aeb7c509fc1b1cf91111d7c4ad3c67dde74ffcc71fdcd85c5bc60ab73e28d2f"
+        },
+        {
+          "name": "NLA.RA20.algebraic_tangent_space_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-042/raw.log",
+          "log_sha256": "3aeb7c509fc1b1cf91111d7c4ad3c67dde74ffcc71fdcd85c5bc60ab73e28d2f"
+        },
+        {
+          "name": "NLA.RA20.full_frobenius_differential_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-043/raw.log",
+          "log_sha256": "3204984acbb389dce15d3d04fbaf4f78168139ab1e97c0128f35d7a037312ae8"
+        },
+        {
+          "name": "NLA.RA20.hollow_distance_semantics_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-043/raw.log",
+          "log_sha256": "3204984acbb389dce15d3d04fbaf4f78168139ab1e97c0128f35d7a037312ae8"
+        },
+        {
+          "name": "NLA.RA20.component_hessians_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-043/raw.log",
+          "log_sha256": "3204984acbb389dce15d3d04fbaf4f78168139ab1e97c0128f35d7a037312ae8"
+        },
+        {
+          "name": "NLA.RA20.symmetricParameter_isSymm",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-044/raw.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "name": "NLA.RA20.symmetricParameter_reconstruct",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-044/raw.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "name": "NLA.RA20.eval_rename_symmetricParameter",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-044/raw.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "name": "NLA.RA20.generic_data_intersection_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-044/raw.log",
+          "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+        },
+        {
+          "name": "NLA.RA20.hollow_frobenius_differential",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.generic_candidate_injective",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.smoothCritical_hollow_iff",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.critical_first_plane",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.critical_second_plane",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.critical_third_plane",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.generic_candidate_critical",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_exhaustion",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_locus_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-045/raw.log",
+          "log_sha256": "9c9e3e4398d238b4a26251d1ad85ee7fef5edb3ce0cbfc2393b56844a0598a49"
+        },
+        {
+          "name": "NLA.RA20.critical_count_three",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-046/raw.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "name": "NLA.RA20.generic_count_three_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-046/raw.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "name": "NLA.RA20.generic_count_not_four_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-046/raw.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "name": "NLA.RA20.not_criticalCountConjecture_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-046/raw.log",
+          "log_sha256": "f1bac14b3d1826c56bee87367ba40c5eed1208496bf88cd068babcd95d6f00b3"
+        },
+        {
+          "name": "NLA.RA20.hollow_variety_semantics_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.reduced_coordinate_ring_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.algebraic_smooth_locus_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.algebraic_tangent_space_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.full_frobenius_differential_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.hollow_distance_semantics_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_locus_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.component_hessians_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.generic_data_intersection_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.generic_count_three_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.generic_count_not_four_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.not_criticalCountConjecture_proved",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-047/raw.log",
+          "log_sha256": "f623275299f72916250d7e51d79c12c81d1609cbd13b34f914ab032aa94cd307"
+        },
+        {
+          "name": "NLA.RA20.hollow_variety_semantics",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.reduced_coordinate_ring",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.algebraic_smooth_locus",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.algebraic_tangent_space",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.full_frobenius_differential",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.hollow_distance_semantics",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_locus",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.component_hessians",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.generic_data_intersection",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.generic_count_three",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.generic_count_not_four",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.not_criticalCountConjecture",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-048/raw.log",
+          "log_sha256": "15c549e6c4c8c33716494a6ac0defb7e3988c93176af36c31134bfc31bcabcc3"
+        },
+        {
+          "name": "NLA.RA20.hollow_variety_semantics",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.reduced_coordinate_ring",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.algebraic_smooth_locus",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.algebraic_tangent_space",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.full_frobenius_differential",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.hollow_distance_semantics",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.generic_critical_locus",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.component_hessians",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.generic_data_intersection",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.generic_count_three",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.generic_count_not_four",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        },
+        {
+          "name": "NLA.RA20.not_criticalCountConjecture",
+          "axioms": [
+            "Classical.choice",
+            "Quot.sound",
+            "propext"
+          ],
+          "log": "reviews/final-referee-2-evidence/command-050/raw.log",
+          "log_sha256": "d53ef7ad7dcd4c281c694b4550b75d4983798c6221f32d690da9863039691ce2"
+        }
+      ],
+      "mathematical_revision_requested": false
+    }
+  ],
+  "root_review": "Both full final mathematical reports, actual public contracts and definitions, complete proof map, Count and Generic proofs, Proof and Solution assemblies, and both exact-type/dependency inspectors read. Complete frozen files, original Git identities and both full referee inventories rehashed. All actual successful source/log/snapshot identities, twelve namespace-only reference matches and both sets of69 printed axiom reports independently checked. No new source compilation claimed by this acceptance.",
+  "scope": "Full original complex symmetric rank-at-most-two four-formula generic smooth critical-count conjecture negated at n=s=3. Actual reduced coordinate ring, algebraic smooth locus and entire vanishing ideal tangent, complex bilinear full-entry Frobenius derivatives, arbitrary nonempty generic-open intersection and actual cardinality are proved; no real-only or chosen-generic-set restriction.",
+  "numerical_scope": "Exact algebra/calculus/cardinality with LeanCert kernel-trust assertions; no interval certificate or native oracle",
+  "nonblocking_findings": [
+    "The abcLocalChart comment says complete local ring; its actual type is ordinary localization, not adic completion. Disclose in candidate prose and preserve frozen source.",
+    "Hessian nondegeneracy is exported; a separate scheme-theoretic multiplicity theorem is not claimed.",
+    "Historical statement README, correspondence, proof map and source phase notices retain their earlier wording. Archive exact README before replacement, label historical notices, and explicitly build/check Solution because the Lake default remains Challenge."
+  ],
+  "required_next_steps": [
+    "Truthful reviewed candidate README and v0.4 formalization.yaml, with exact historical wrapper archive",
+    "Independent concrete packaging audit; blank-email commit and fork push",
+    "Actual non-root Ubuntu Comparator, default-kernel replay and full control suite",
+    "Independent operational audit, reviewed canonical publication/index/PDF updates and individual upstream main PR"
+  ],
+  "canonical_status": "Solved, unchanged",
+  "actual_Linux_Comparator": "pending",
+  "publication": "pending"
+}

@@ -1,0 +1,13 @@
+NLA/RA20/Tangent.lean:96:2: error: Type mismatch: After simplification, term
+  hm
+ has type
+  @Membership.mem ABCPoly (Ideal ABCPoly) SetLike.instMembership abcIdeal
+    (MvPolynomial.X 0 * MvPolynomial.X 1 * MvPolynomial.X 2)
+but is expected to have type
+  @Membership.mem ABCPoly (Ideal ABCPoly) SetLike.instMembership abcIdeal
+    (polynomialHollow 0 1 * polynomialHollow 0 2 * polynomialHollow 1 2)
+NLA/RA20/Tangent.lean:141:21: error: #assert_trust: 'NLA.RA20.algebraic_tangent_space_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.polyDirectional_hollowPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.algebraic_tangent_space_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

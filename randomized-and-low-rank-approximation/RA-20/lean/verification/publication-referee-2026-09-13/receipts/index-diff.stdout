@@ -1,0 +1,64 @@
+diff --git a/CATALOG.md b/CATALOG.md
+index 515724b..349922b 100644
+--- a/CATALOG.md
++++ b/CATALOG.md
+@@ -2,7 +2,7 @@
+ 
+ **125 problems with open targets:** 53 open and 72 partially resolved. **92 other retained entries**, excluded from the open count.
+ 
+-**Resolution evidence:** 76 solved (published or independently audited); 16 Lean verified.
++**Resolution evidence:** 75 solved (published or independently audited); 17 Lean verified.
+ 
+ Each entry records its own literature-check date. Literature checks are bounded; ratings are editorial. “Impact” uses the canonical `Importance` field.
+ 
+@@ -153,7 +153,7 @@ Retained entries outside the open count:
+ | [RA-12](randomized-and-low-rank-approximation/RA-12/README.md) | Relative-error threshold for extremal Gaussian trace bounds | **✅ SOLVED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/RA-12/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-12/problem.tex) |
+ | [RA-13](randomized-and-low-rank-approximation/RA-13/README.md) | Absolute-error threshold for extremal Gaussian trace bounds | **✅ SOLVED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/RA-13/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-13/problem.tex) |
+ | [RA-19](randomized-and-low-rank-approximation/RA-19/README.md) | Critical-point count for corank-one approximation with a fixed zero | **✅ SOLVED** | challenging | interesting to specialist | [PDF](randomized-and-low-rank-approximation/RA-19/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-19/problem.tex) |
+-| [RA-20](randomized-and-low-rank-approximation/RA-20/README.md) | Critical-point counts for symmetric rank-two approximation with diagonal zeros | **✅ SOLVED** | challenging | interesting to specialist | [PDF](randomized-and-low-rank-approximation/RA-20/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-20/problem.tex) |
++| [RA-20](randomized-and-low-rank-approximation/RA-20/README.md) | Critical-point counts for symmetric rank-two approximation with diagonal zeros | **🏆 LEAN VERIFIED** | challenging | interesting to specialist | [PDF](randomized-and-low-rank-approximation/RA-20/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-20/problem.tex) |
+ | [RE-05](randomized-and-low-rank-approximation/RE-05/README.md) | Pure relative error for approximation by a linear matrix family | **✅ SOLVED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/RE-05/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RE-05/problem.tex) |
+ | [TR-01](randomized-and-low-rank-approximation/TR-01/README.md) | Optimal dimension for a rerandomized Hadamard embedding | **🏆 LEAN VERIFIED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/TR-01/problem.pdf) · [TeX](randomized-and-low-rank-approximation/TR-01/problem.tex) |
+ | [TR-07](randomized-and-low-rank-approximation/TR-07/README.md) | Random column subsets of arbitrary fixed-sparsity matrices | **✅ SOLVED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/TR-07/problem.pdf) · [TeX](randomized-and-low-rank-approximation/TR-07/problem.tex) |
+diff --git a/README.md b/README.md
+index 4c3ca47..e88a606 100644
+--- a/README.md
++++ b/README.md
+@@ -6,7 +6,7 @@ publications, with references and dated checks for subsequent solutions.
+ <!-- catalog-summary -->
+ **125 problems with open targets:** 53 open and 72 partially resolved. **92 other retained entries**, excluded from the open count.
+ 
+-**Resolution evidence:** 76 solved (published or independently audited); 16 Lean verified.
++**Resolution evidence:** 75 solved (published or independently audited); 17 Lean verified.
+ 
+ Each entry records its own literature-check date. Literature checks are bounded; ratings are editorial. “Impact” uses the canonical `Importance` field.
+ 
+diff --git a/RESOLVED.md b/RESOLVED.md
+index 6fce118..11fa059 100644
+--- a/RESOLVED.md
++++ b/RESOLVED.md
+@@ -230,7 +230,10 @@ The complete analytic proof passed a separate [independent Codex-agent review](r
+ 
+ ### RA-20 - symmetric rank-two critical-point formula refuted
+ 
+-**Negative resolution recorded 2026-09-11 during the Codex maintainer audit.** For the retained [original target](randomized-and-low-rank-approximation/RA-20/README.md), the admissible case n=s=3 has exactly three generic smooth-locus critical points, whereas the displayed formula predicts four. The hollow symmetric determinant is 2abc; the three coordinate planes each contribute one simple critical point. [Complete proof](randomized-and-low-rank-approximation/RA-20/solution.md) · [Independent reconstruction and exact checks](references/research-expansion-2026-09-11/ra20-resolution/README.md). This refutes the joint universal conjecture without narrowing it. The other formulas and parameter ranges remain unclaimed. The ID and canonical path are retained; verification is by automated agents, not external human peer review or formal certification.
++**Negative resolution recorded 2026-09-11 during the Codex maintainer audit.** For the retained [original target](randomized-and-low-rank-approximation/RA-20/README.md), the admissible case n=s=3 has exactly three generic smooth-locus critical points, whereas the displayed formula predicts four. The hollow symmetric determinant is 2abc; the three coordinate planes each contribute one simple critical point. [Complete proof](randomized-and-low-rank-approximation/RA-20/solution.md) · [Independent reconstruction and exact checks](references/research-expansion-2026-09-11/ra20-resolution/README.md). This refutes the joint universal conjecture without narrowing it. The other formulas and parameter ranges remain unclaimed. The ID and canonical path are retained; that original audit was by automated agents. The separate full-target Lean verification below supersedes its informal-only status; external human peer review is not claimed.
++
++
++**Lean verified - 2026-09-13. Lean formalization:** George Stepaniants, Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA, with AI-agent assistance. Original negative-resolution credit remains with the Codex automated maintainer audit, and original conjecture credit with Kubjas, Sodomaco and Tsigaridas. The [twelve exported theorems](https://github.com/sgstepaniants/OpenProblemsInNLA/blob/43603b173beb294c2588d83f936a8a96246fd5f0/randomized-and-low-rank-approximation/RA-20/lean/Solution.lean) prove the actual reduced-ring, smooth-locus, tangent, derivative and generic-cardinality bridges and negate the complete original four-formula conjecture at its allowed case n=s=3. [Ubuntu run 34743832047](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34743832047) matched every frozen export and replayed the solution through Lean's default kernel, with 61 LeanCert kernel assertions and 57 source reports allowing only the standard three axioms. The [canonical proof and verification evidence](randomized-and-low-rank-approximation/RA-20/README.md#lean-proof-and-verification-evidence---2026-09-13) gives immutable sources, pins, commands, two independent mathematical reviews and the accepted operational audit. The other individual formulas and a separate scheme-multiplicity theorem remain outside the claims.
+ 
+ ### ✅ MF-22 — cubic C1 spline Schrödinger Toeplitz conditioning — George Stepaniants
+ 
+diff --git a/randomized-and-low-rank-approximation/README.md b/randomized-and-low-rank-approximation/README.md
+index 2061d95..38e081e 100644
+--- a/randomized-and-low-rank-approximation/README.md
++++ b/randomized-and-low-rank-approximation/README.md
+@@ -37,7 +37,7 @@
+ | [RA-12](RA-12/README.md) | Relative-error threshold for extremal Gaussian trace bounds | **✅ SOLVED** | challenging | interesting to the community | [PDF](RA-12/problem.pdf) · [TeX](RA-12/problem.tex) |
+ | [RA-13](RA-13/README.md) | Absolute-error threshold for extremal Gaussian trace bounds | **✅ SOLVED** | challenging | interesting to the community | [PDF](RA-13/problem.pdf) · [TeX](RA-13/problem.tex) |
+ | [RA-19](RA-19/README.md) | Critical-point count for corank-one approximation with a fixed zero | **✅ SOLVED** | challenging | interesting to specialist | [PDF](RA-19/problem.pdf) · [TeX](RA-19/problem.tex) |
+-| [RA-20](RA-20/README.md) | Critical-point counts for symmetric rank-two approximation with diagonal zeros | **✅ SOLVED** | challenging | interesting to specialist | [PDF](RA-20/problem.pdf) · [TeX](RA-20/problem.tex) |
++| [RA-20](RA-20/README.md) | Critical-point counts for symmetric rank-two approximation with diagonal zeros | **🏆 LEAN VERIFIED** | challenging | interesting to specialist | [PDF](RA-20/problem.pdf) · [TeX](RA-20/problem.tex) |
+ | [RE-05](RE-05/README.md) | Pure relative error for approximation by a linear matrix family | **✅ SOLVED** | challenging | interesting to the community | [PDF](RE-05/problem.pdf) · [TeX](RE-05/problem.tex) |
+ | [TR-01](TR-01/README.md) | Optimal dimension for a rerandomized Hadamard embedding | **🏆 LEAN VERIFIED** | challenging | interesting to the community | [PDF](TR-01/problem.pdf) · [TeX](TR-01/problem.tex) |
+ | [TR-07](TR-07/README.md) | Random column subsets of arbitrary fixed-sparsity matrices | **✅ SOLVED** | challenging | interesting to the community | [PDF](TR-07/problem.pdf) · [TeX](TR-07/problem.tex) |

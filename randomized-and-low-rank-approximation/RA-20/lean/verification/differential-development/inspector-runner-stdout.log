@@ -1,0 +1,1753 @@
+{"utc": "2026-09-13T04:51:47.957462+00:00", "source": "verification/differential-development/Inspect.lean", "source_sha256": "ca58f825940044c7e63e22d33ed6b09af17e72eec3c275b58f6799fbd699419a", "command": ["/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean", "-o", "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/verification/differential-development/Inspect.olean", "-i", "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/verification/differential-development/Inspect.ilean", "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/differential-development/Inspect.lean"], "exit_code": 0, "seconds": 4.807101666985545, "evidence": "attempt-008", "log_sha256": "9bced330543b98d4adba5ee08ecf608c6e1a888bb331753b32571ffd71268e3b"}
+EXACT_FROZEN_TYPE NLA.RA20.full_frobenius_differential_proved: ∀ (n : ℕ) (U X Z : NLA.RA20.Mat n),
+  (fderiv ℂ (NLA.RA20.fullFrobeniusDistance U) X) Z = 2 * ∑ i, ∑ j, (X i j - U i j) * Z i j
+EXACT_FROZEN_TYPE NLA.RA20.hollow_distance_semantics_proved: ∀ (U : NLA.RA20.Mat 3),
+  Matrix.IsSymm U →
+    ∀ (a b c : ℂ),
+      NLA.RA20.fullFrobeniusDistance U (NLA.RA20.hollow a b c) =
+        ∑ i, U i i ^ 2 + 2 * ((a - U 0 1) ^ 2 + (b - U 0 2) ^ 2 + (c - U 1 2) ^ 2)
+EXACT_FROZEN_TYPE NLA.RA20.component_hessians_proved: ∀ (U : NLA.RA20.Mat 3) (i : Fin 3) (z h v : Fin 2 → ℂ),
+  ((fderiv ℂ (fun w => fderiv ℂ (fun y => NLA.RA20.fullFrobeniusDistance U (NLA.RA20.planeCoordinates i y)) w) z) h) v =
+      4 * ∑ j, h j * v j ∧
+    ((∀ (v : Fin 2 → ℂ), 4 * ∑ j, h j * v j = 0) → h = 0)
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.Variables,
+ NLA.RA20.matrixEntry,
+ NLA.RA20.coordinates,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_1,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_5,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_6,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_7,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_10,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_16,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_20,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_21,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_22,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_23,
+ NLA.RA20.sum_squares_fderiv]
+ACTUAL_AXIOMS NLA.RA20.Mat: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Mat: []
+ACTUAL_AXIOMS NLA.RA20.fullFrobeniusDistance: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.fullFrobeniusDistance: [NLA.RA20.Mat, NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.Variables: []
+PROJECT_EDGE NLA.RA20.Variables: []
+ACTUAL_AXIOMS NLA.RA20.matrixEntry: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrixEntry: [NLA.RA20.Variables,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.Mat,
+ NLA.RA20.matrixEntry._proof_1]
+ACTUAL_AXIOMS NLA.RA20.matrixEntry._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrixEntry._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.coordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.coordinates: [NLA.RA20.Mat, NLA.RA20.Variables, NLA.RA20.Mat, NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_1: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_3: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_5: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_5: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_6: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_6: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_7: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_7: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_8: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_8: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_10: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_10: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_11: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_11: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_13: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_13: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_14: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_14: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_15: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_15: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_16: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_16: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_17: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_17: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_19: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_19: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_20: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_20: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_21: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_21: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_5,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_6,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_7,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_10,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_16,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_20]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_22: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_22: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_5,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_6,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_7,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_10,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_16,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_20,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_21,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_1]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_23: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_23: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_1,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_5,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_6,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_7,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_10,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_16,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_20,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_21,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_22]
+ACTUAL_AXIOMS NLA.RA20.sum_squares_fderiv: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.sum_squares_fderiv: [NLA.RA20.quadraticGradient,
+ NLA.RA20.hasFDerivAt_sum_squares,
+ NLA.RA20.quadraticGradient._proof_4,
+ NLA.RA20.quadraticGradient._proof_1,
+ NLA.RA20.quadraticGradient._proof_2,
+ NLA.RA20.quadraticGradient._proof_3]
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.quadraticGradient: [NLA.RA20.quadraticGradient._proof_1,
+ NLA.RA20.quadraticGradient._proof_2,
+ NLA.RA20.quadraticGradient._proof_3,
+ NLA.RA20.quadraticGradient._proof_4]
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.quadraticGradient._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.quadraticGradient._proof_2: []
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient._proof_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.quadraticGradient._proof_3: []
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient._proof_4: [propext]
+PROJECT_EDGE NLA.RA20.quadraticGradient._proof_4: []
+ACTUAL_AXIOMS NLA.RA20.hasFDerivAt_sum_squares: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hasFDerivAt_sum_squares: [NLA.RA20.quadraticGradient,
+ NLA.RA20.quadraticGradient._proof_2,
+ NLA.RA20.quadraticGradient._proof_3,
+ NLA.RA20.quadraticGradient._proof_4,
+ NLA.RA20.hasFDerivAt_affine_square]
+ACTUAL_AXIOMS NLA.RA20.hasFDerivAt_affine_square: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hasFDerivAt_affine_square: []
+ACTUAL_AXIOMS NLA.RA20.hollow_distance_semantics_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_distance_semantics_proved: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.hollow: [propext, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow: []
+ACTUAL_AXIOMS NLA.RA20.component_hessians_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.component_hessians_proved: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.Variables,
+ NLA.RA20.planeEntry,
+ NLA.RA20.coordinates,
+ NLA.RA20.planeEntry_apply,
+ NLA.RA20.sum_squares_hessian,
+ NLA.RA20.planeCoordinates._proof_1,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.planeCoordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.planeCoordinates: [NLA.RA20.Mat,
+ NLA.RA20.Mat,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.hollow,
+ NLA.RA20.planeCoordinates._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.abcPolynomial._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.planeCoordinates._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.planeCoordinates._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.planeEntry: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.planeEntry: [NLA.RA20.planeEntry._proof_1, NLA.RA20.hollow, NLA.RA20.planeEntry._proof_2]
+ACTUAL_AXIOMS NLA.RA20.planeEntry._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.planeEntry._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.planeEntry._proof_2: [propext]
+PROJECT_EDGE NLA.RA20.planeEntry._proof_2: []
+ACTUAL_AXIOMS NLA.RA20.planeEntry_apply: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.planeEntry_apply: [NLA.RA20.planeEntry,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.planeEntry,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.planeEntry._proof_1,
+ NLA.RA20.hollow,
+ NLA.RA20.planeEntry._proof_2,
+ NLA.RA20.Mat,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.planeCoordinates._proof_1]
+ACTUAL_AXIOMS NLA.RA20.sum_squares_hessian: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.sum_squares_hessian: [NLA.RA20.quadraticGradient,
+ NLA.RA20.hasFDerivAt_sum_squares,
+ NLA.RA20.hasFDerivAt_quadraticGradient]
+ACTUAL_AXIOMS NLA.RA20.hasFDerivAt_quadraticGradient: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hasFDerivAt_quadraticGradient: [NLA.RA20.quadraticGradient,
+ NLA.RA20.quadraticGradient._proof_2,
+ NLA.RA20.quadraticGradient._proof_3,
+ NLA.RA20.quadraticGradient._proof_4]
+RETAINED_DEPENDENCY NLA.RA20.hasFDerivAt_affine_square
+RETAINED_DEPENDENCY NLA.RA20.quadraticGradient
+RETAINED_DEPENDENCY NLA.RA20.hasFDerivAt_sum_squares
+RETAINED_DEPENDENCY NLA.RA20.sum_squares_fderiv
+RETAINED_DEPENDENCY NLA.RA20.hasFDerivAt_quadraticGradient
+RETAINED_DEPENDENCY NLA.RA20.sum_squares_hessian
+RETAINED_DEPENDENCY NLA.RA20.matrixEntry
+RETAINED_DEPENDENCY ContinuousLinearMap.proj
+RETAINED_DEPENDENCY NLA.RA20.planeEntry
+RETAINED_DEPENDENCY NLA.RA20.planeEntry_apply
+RETAINED_DEPENDENCY NLA.RA20.fullFrobeniusDistance
+RETAINED_DEPENDENCY NLA.RA20.hollow
+RETAINED_DEPENDENCY NLA.RA20.planeCoordinates
+RETAINED_DEPENDENCY HasFDerivAt.fderiv
+RETAINED_DEPENDENCY HasFDerivAt.mul
+RETAINED_DEPENDENCY HasFDerivAt.smul_const
+PROJECT_COUNTS declarations=45, required=16
+'NLA.RA20.full_frobenius_differential_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.hollow_distance_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.component_hessians_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.hasFDerivAt_affine_square' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.hasFDerivAt_sum_squares' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.hasFDerivAt_quadraticGradient' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.fullFrobeniusDistance : {n : Nat} → (U X : NLA.RA20.Mat n) → Complex :=
+fun {n : Nat} (U X : NLA.RA20.Mat n) =>
+  @Finset.sum.{0, 0} (Fin n) Complex Complex.instAddCommMonoid (@Finset.univ.{0} (Fin n) (Fin.fintype n))
+    fun (i : Fin n) =>
+    @Finset.sum.{0, 0} (Fin n) Complex Complex.instAddCommMonoid (@Finset.univ.{0} (Fin n) (Fin.fintype n))
+      fun (j : Fin n) =>
+      @HPow.hPow.{0, 0, 0} Complex Nat Complex
+        (@instHPow.{0, 0} Complex Nat
+          (@NPow.toPow.{0} Complex (@Monoid.toNPow.{0} Complex (@Semiring.toMonoid.{0} Complex Complex.instSemiring))))
+        (@HSub.hSub.{0, 0, 0} Complex Complex Complex (@instHSub.{0} Complex Complex.instSub) (X i j) (U i j))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+def NLA.RA20.planeCoordinates : (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) →
+  (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) → Complex) →
+    NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) :=
+fun (i : Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    (z : Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))) → Complex) =>
+  @ite.{1} (NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) i
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) NLA.RA20.abcPolynomial._proof_1
+          (nat_lit 0))))
+    (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) i
+      (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+        (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) NLA.RA20.abcPolynomial._proof_1
+          (nat_lit 0))))
+    (@NLA.RA20.hollow.{0} Complex Complex.instZero
+      (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero))
+      (z
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 0)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            NLA.RA20.planeCoordinates._proof_1 (nat_lit 0))))
+      (z
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 1)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+            NLA.RA20.planeCoordinates._proof_1 (nat_lit 1)))))
+    (@ite.{1} (NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@Eq.{1} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) i
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) NLA.RA20.abcPolynomial._proof_1
+            (nat_lit 1))))
+      (instDecidableEqFin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) i
+        (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+          (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) NLA.RA20.abcPolynomial._proof_1
+            (nat_lit 1))))
+      (@NLA.RA20.hollow.{0} Complex Complex.instZero
+        (z
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 0)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              NLA.RA20.planeCoordinates._proof_1 (nat_lit 0))))
+        (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero))
+        (z
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 1)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              NLA.RA20.planeCoordinates._proof_1 (nat_lit 1)))))
+      (@NLA.RA20.hollow.{0} Complex Complex.instZero
+        (z
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 0)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              NLA.RA20.planeCoordinates._proof_1 (nat_lit 0))))
+        (z
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 1)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))
+              NLA.RA20.planeCoordinates._proof_1 (nat_lit 1))))
+        (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero))))
+theorem NLA.RA20.hasFDerivAt_affine_square.{u_1} : ∀ {E : Type u_1} [inst : NormedAddCommGroup E]
+  [inst_1 : NormedSpace ℂ E] (L : E →L[ℂ] ℂ) (a : ℂ) (x : E),
+  HasFDerivAt (fun y => (L y - a) ^ 2) ((2 * (L x - a)) • L) x :=
+fun {E} [inst : NormedAddCommGroup E] [inst_1 : NormedSpace ℂ E] L a x =>
+  have h := HasFDerivAt.sub_const a (ContinuousLinearMap.hasFDerivAt L);
+  have hs := HasFDerivAt.mul h h;
+  Eq.mpr
+    (eq_of_heq
+      ((fun 𝕜 inst E inst_2 inst_3 inst_4 F inst_5 inst' e'_8 inst_6 inst'_1 e'_9 inst_7 f f' e'_11 f'_1 f'' e'_12 x =>
+          Eq.casesOn (motive := fun a x_1 => inst' = a → e'_8 ≍ x_1 → HasFDerivAt f f'_1 x ≍ HasFDerivAt f' f'' x) e'_8
+            (fun h =>
+              Eq.ndrec (motive := fun inst' =>
+                ∀ (e_8 : inst_5 = inst') (inst'_2 : Module 𝕜 F),
+                  inst_6 ≍ inst'_2 →
+                    ∀ (f'' : E →L[𝕜] F),
+                      f'_1 ≍ f'' → e_8 ≍ Eq.refl inst_5 → HasFDerivAt f f'_1 x ≍ HasFDerivAt f' f'' x)
+                (fun e_8 inst' e_9 f'' e_12 h =>
+                  Eq.casesOn (motive := fun a x_1 => f' = a → e'_11 ≍ x_1 → HasFDerivAt f f'_1 x ≍ HasFDerivAt f' f'' x)
+                    e'_11
+                    (fun h =>
+                      Eq.ndrec (motive := fun f' =>
+                        ∀ (e_11 : f = f'), e_11 ≍ Eq.refl f → HasFDerivAt f f'_1 x ≍ HasFDerivAt f' f'' x)
+                        (fun e_11 h =>
+                          HEq.casesOn (motive := fun {β} a x_1 =>
+                            Module 𝕜 F = β → inst' ≍ a → e_9 ≍ x_1 → HasFDerivAt f f'_1 x ≍ HasFDerivAt f f'' x) e_9
+                            (fun h h_1 =>
+                              Eq.ndrec (motive := fun inst' =>
+                                ∀ (e_9 : inst_6 ≍ inst') (f'' : E →L[𝕜] F),
+                                  f'_1 ≍ f'' → e_9 ≍ HEq.refl inst_6 → HasFDerivAt f f'_1 x ≍ HasFDerivAt f f'' x)
+                                (fun e_9 f'' e_12 h =>
+                                  HEq.casesOn (motive := fun {β} a x_1 =>
+                                    (E →L[𝕜] F) = β → f'' ≍ a → e_12 ≍ x_1 → HasFDerivAt f f'_1 x ≍ HasFDerivAt f f'' x)
+                                    e_12
+                                    (fun h h_2 =>
+                                      Eq.ndrec (motive := fun f'' =>
+                                        ∀ (e_12 : f'_1 ≍ f''),
+                                          e_12 ≍ HEq.refl f'_1 → HasFDerivAt f f'_1 x ≍ HasFDerivAt f f'' x)
+                                        (fun e_12 h => HEq.refl (HasFDerivAt f f'_1 x)) (Eq.symm (eq_of_heq h_2)) e_12)
+                                    (Eq.refl (E →L[𝕜] F)) (HEq.refl f'') (HEq.refl e_12))
+                                (Eq.symm (eq_of_heq h_1)) e_9 f'' e_12)
+                            (Eq.refl (Module 𝕜 F)) (HEq.refl inst') (HEq.refl e_9))
+                        (Eq.symm h) e'_11)
+                    (Eq.refl f') (HEq.refl e'_11))
+                (Eq.symm h) e'_8 inst'_1 (e'_9 e'_8) f'' (e'_12 e'_8 (e'_9 e'_8)))
+            (Eq.refl inst') (HEq.refl e'_8))
+        ℂ DenselyNormedField.toNontriviallyNormedField E inst.toAddCommGroup inst_1.toModule
+        PseudoMetricSpace.toUniformSpace.toTopologicalSpace ℂ Complex.addCommGroup
+        NormedField.toNormedCommRing.toCommRing.toAddCommGroup (Eq.refl Complex.addCommGroup) Semiring.toModule
+        (NormedAlgebra.toNormedSpace ℂ).toModule (fun e_8 => heq_of_eq (Eq.refl Semiring.toModule))
+        PseudoMetricSpace.toUniformSpace.toTopologicalSpace (fun y => (L y - a) ^ 2)
+        ((fun x => L x - a) * fun x => L x - a) (funext fun y => pow_two (L y - a)) ((2 * (L x - a)) • L)
+        ((L x - a) • L + (L x - a) • L)
+        (fun e_8 =>
+          heq_imp_of_eq_imp✝ fun he =>
+            heq_of_eq
+              (ContinuousLinearMap.ext fun z =>
+                id
+                  (Mathlib.Tactic.Ring.of_eq
+                    (Mathlib.Tactic.Ring.Common.mul_congr
+                      (Mathlib.Tactic.Ring.Common.mul_congr
+                        (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℂ (Eq.refl 2)))
+                        (Mathlib.Tactic.Ring.Common.sub_congr
+                          (Mathlib.Tactic.Ring.Common.atom_pf (L x) rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => L x ^ Nat.rawCast 1 * Nat.rawCast 1 = L x ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (L x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.atom_pf a rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => a ^ Nat.rawCast 1 * Nat.rawCast 1 = a ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.sub_pf
+                            (Mathlib.Tactic.Ring.Common.neg_add
+                              (Mathlib.Tactic.Ring.Common.neg_mul a (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                    (Eq.refl (Int.negOfNat 1)))))
+                              Mathlib.Tactic.Ring.Common.neg_zero)
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt (L x ^ Nat.rawCast 1 * Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                (a ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast + 0)))))
+                        (Mathlib.Tactic.Ring.Common.add_mul
+                          (Mathlib.Tactic.Ring.Common.mul_add
+                            (Mathlib.Tactic.Ring.Common.mul_pf_right (L x) (Nat.rawCast 1)
+                              (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                  (Eq.refl 2))))
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right a (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2))
+                                    (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 1)) (Eq.refl (Int.negOfNat 2)))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero (Nat.rawCast 2))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (a ^ Nat.rawCast 1 * (Int.negOfNat 2).rawCast + 0)))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt (L x ^ Nat.rawCast 1 * Nat.rawCast 2)
+                              (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                (a ^ Nat.rawCast 1 * (Int.negOfNat 2).rawCast + 0))))
+                          (Mathlib.Tactic.Ring.Common.zero_mul
+                            (L x ^ Nat.rawCast 1 * Nat.rawCast 1 + (a ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast + 0)))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (L x ^ Nat.rawCast 1 * Nat.rawCast 2 +
+                              (a ^ Nat.rawCast 1 * (Int.negOfNat 2).rawCast + 0)))))
+                      (Mathlib.Tactic.Ring.Common.atom_pf (L z) rfl
+                        (Eq.mpr
+                          (id
+                            (congrArg (fun _a => L z ^ Nat.rawCast 1 * Nat.rawCast 1 = L z ^ Nat.rawCast 1 * _a)
+                              (Eq.symm rfl)))
+                          (Eq.refl (L z ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                      (Mathlib.Tactic.Ring.Common.add_mul
+                        (Mathlib.Tactic.Ring.Common.mul_add
+                          (Mathlib.Tactic.Ring.Common.mul_pf_left (L x) (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.mul_pf_right (L z) (Nat.rawCast 1)
+                              (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                  (Eq.refl 2)))))
+                          (Mathlib.Tactic.Ring.Common.mul_zero (L x ^ Nat.rawCast 1 * Nat.rawCast 2))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (L x ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * Nat.rawCast 2) + 0)))
+                        (Mathlib.Tactic.Ring.Common.add_mul
+                          (Mathlib.Tactic.Ring.Common.mul_add
+                            (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right (L z) (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                    (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 2))
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                    (Eq.refl (Int.negOfNat 2))))))
+                            (Mathlib.Tactic.Ring.Common.mul_zero (a ^ Nat.rawCast 1 * (Int.negOfNat 2).rawCast))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 2).rawCast) + 0)))
+                          (Mathlib.Tactic.Ring.Common.zero_mul (L z ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 2).rawCast) + 0)))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                          (L x ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * Nat.rawCast 2))
+                          (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                            (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 2).rawCast) + 0)))))
+                    (Mathlib.Tactic.Ring.Common.add_congr
+                      (Mathlib.Tactic.Ring.Common.mul_congr
+                        (Mathlib.Tactic.Ring.Common.sub_congr
+                          (Mathlib.Tactic.Ring.Common.atom_pf (L x) rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => L x ^ Nat.rawCast 1 * Nat.rawCast 1 = L x ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (L x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.atom_pf a rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => a ^ Nat.rawCast 1 * Nat.rawCast 1 = a ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.sub_pf
+                            (Mathlib.Tactic.Ring.Common.neg_add
+                              (Mathlib.Tactic.Ring.Common.neg_mul a (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                    (Eq.refl (Int.negOfNat 1)))))
+                              Mathlib.Tactic.Ring.Common.neg_zero)
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt (L x ^ Nat.rawCast 1 * Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                (a ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast + 0)))))
+                        (Mathlib.Tactic.Ring.Common.atom_pf (L z) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => L z ^ Nat.rawCast 1 * Nat.rawCast 1 = L z ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (L z ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.add_mul
+                          (Mathlib.Tactic.Ring.Common.mul_add
+                            (Mathlib.Tactic.Ring.Common.mul_pf_left (L x) (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right (L z) (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                    (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                    (Eq.refl 1)))))
+                            (Mathlib.Tactic.Ring.Common.mul_zero (L x ^ Nat.rawCast 1 * Nat.rawCast 1))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (L x ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right (L z) (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 1))
+                                      (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                      (Eq.refl (Int.negOfNat 1))))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero (a ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) + 0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul (L z ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) + 0)))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                            (L x ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * Nat.rawCast 1))
+                            (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                              (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) + 0)))))
+                      (Mathlib.Tactic.Ring.Common.mul_congr
+                        (Mathlib.Tactic.Ring.Common.sub_congr
+                          (Mathlib.Tactic.Ring.Common.atom_pf (L x) rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => L x ^ Nat.rawCast 1 * Nat.rawCast 1 = L x ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (L x ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.atom_pf a rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => a ^ Nat.rawCast 1 * Nat.rawCast 1 = a ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.sub_pf
+                            (Mathlib.Tactic.Ring.Common.neg_add
+                              (Mathlib.Tactic.Ring.Common.neg_mul a (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                    (Eq.refl (Int.negOfNat 1)))))
+                              Mathlib.Tactic.Ring.Common.neg_zero)
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt (L x ^ Nat.rawCast 1 * Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                (a ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast + 0)))))
+                        (Mathlib.Tactic.Ring.Common.atom_pf (L z) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => L z ^ Nat.rawCast 1 * Nat.rawCast 1 = L z ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (L z ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.add_mul
+                          (Mathlib.Tactic.Ring.Common.mul_add
+                            (Mathlib.Tactic.Ring.Common.mul_pf_left (L x) (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right (L z) (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                    (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                    (Eq.refl 1)))))
+                            (Mathlib.Tactic.Ring.Common.mul_zero (L x ^ Nat.rawCast 1 * Nat.rawCast 1))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (L x ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right (L z) (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 1))
+                                      (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                      (Eq.refl (Int.negOfNat 1))))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero (a ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) + 0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul (L z ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) + 0)))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                            (L x ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * Nat.rawCast 1))
+                            (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                              (a ^ Nat.rawCast 1 * (L z ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) + 0)))))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_overlap
+                        (Mathlib.Tactic.Ring.Common.add_overlap_pf (L x) (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.add_overlap_pf (L z) (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                              (Mathlib.Meta.NormNum.isNat_add (Eq.refl HAdd.hAdd)
+                                (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                (Eq.refl 2)))))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_overlap
+                          (Mathlib.Tactic.Ring.Common.add_overlap_pf a (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.add_overlap_pf (L z) (Nat.rawCast 1)
+                              (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                  (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 1))
+                                  (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 1)) (Eq.refl (Int.negOfNat 2))))))
+                          (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0)))))))
+        x))
+    hs
+theorem NLA.RA20.sum_squares_hessian.{u_1, u_2} : ∀ {E : Type u_1} [inst : NormedAddCommGroup E]
+  [inst_1 : NormedSpace ℂ E] {ι : Type u_2} [inst_2 : Fintype ι] (L : ι → E →L[ℂ] ℂ) (a : ι → ℂ) (x h v : E),
+  ((fderiv ℂ (fun w => fderiv ℂ (fun y => ∑ j, ((L j) y - a j) ^ 2) w) x) h) v = 2 * ∑ j, (L j) h * (L j) v :=
+fun {E} [NormedAddCommGroup E] [NormedSpace ℂ E] {ι} [Fintype ι] L a x h v =>
+  have he := funext fun w => HasFDerivAt.fderiv (NLA.RA20.hasFDerivAt_sum_squares L a w);
+  Eq.mpr (id (congrArg (fun _a => ((fderiv ℂ _a x) h) v = 2 * ∑ j, (L j) h * (L j) v) he))
+    (Eq.mpr
+      (id
+        (congrArg (fun _a => (_a h) v = 2 * ∑ j, (L j) h * (L j) v)
+          (HasFDerivAt.fderiv (NLA.RA20.hasFDerivAt_quadraticGradient L a x))))
+      (Eq.mpr
+        (id
+          (congr
+            (congrArg Eq
+              (Eq.trans
+                (Eq.trans
+                  (congrFun'
+                    (congrArg DFunLike.coe
+                      (Eq.trans (sum_apply Finset.univ (fun i => (2 • L i).smulRight (L i)) h)
+                        (congrArg Finset.univ.sum
+                          (funext fun i => congrFun' (congrArg HSMul.hSMul (smul_apply (L i) 2 h)) (L i)))))
+                    v)
+                  (sum_apply Finset.univ (fun i => (2 * (L i) h) • L i) v))
+                (Finset.sum_congr (Eq.refl Finset.univ) fun x a => smul_apply (L x) (2 * (L x) h) v)))
+            (Finset.mul_sum Finset.univ (fun i => (L i) h * (L i) v) 2)))
+        (Finset.sum_congr rfl fun j a =>
+          Mathlib.Tactic.Ring.of_eq
+            (Mathlib.Tactic.Ring.Common.mul_congr
+              (Mathlib.Tactic.Ring.Common.mul_congr
+                (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℂ (Eq.refl 2)))
+                (Mathlib.Tactic.Ring.Common.atom_pf ((L j) h) rfl
+                  (Eq.mpr
+                    (id
+                      (congrArg (fun _a => (L j) h ^ Nat.rawCast 1 * Nat.rawCast 1 = (L j) h ^ Nat.rawCast 1 * _a)
+                        (Eq.symm rfl)))
+                    (Eq.refl ((L j) h ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                (Mathlib.Tactic.Ring.Common.add_mul
+                  (Mathlib.Tactic.Ring.Common.mul_add
+                    (Mathlib.Tactic.Ring.Common.mul_pf_right ((L j) h) (Nat.rawCast 1)
+                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2)
+                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 2))))
+                    (Mathlib.Tactic.Ring.Common.mul_zero (Nat.rawCast 2))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero ((L j) h ^ Nat.rawCast 1 * Nat.rawCast 2 + 0)))
+                  (Mathlib.Tactic.Ring.Common.zero_mul ((L j) h ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero ((L j) h ^ Nat.rawCast 1 * Nat.rawCast 2 + 0))))
+              (Mathlib.Tactic.Ring.Common.atom_pf ((L j) v) rfl
+                (Eq.mpr
+                  (id
+                    (congrArg (fun _a => (L j) v ^ Nat.rawCast 1 * Nat.rawCast 1 = (L j) v ^ Nat.rawCast 1 * _a)
+                      (Eq.symm rfl)))
+                  (Eq.refl ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 1))))
+              (Mathlib.Tactic.Ring.Common.add_mul
+                (Mathlib.Tactic.Ring.Common.mul_add
+                  (Mathlib.Tactic.Ring.Common.mul_pf_left ((L j) h) (Nat.rawCast 1)
+                    (Mathlib.Tactic.Ring.Common.mul_pf_right ((L j) v) (Nat.rawCast 1)
+                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2)
+                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 2)))))
+                  (Mathlib.Tactic.Ring.Common.mul_zero ((L j) h ^ Nat.rawCast 1 * Nat.rawCast 2))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                    ((L j) h ^ Nat.rawCast 1 * ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 2) + 0)))
+                (Mathlib.Tactic.Ring.Common.zero_mul ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                  ((L j) h ^ Nat.rawCast 1 * ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 2) + 0))))
+            (Mathlib.Tactic.Ring.Common.mul_congr
+              (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℂ (Eq.refl 2)))
+              (Mathlib.Tactic.Ring.Common.mul_congr
+                (Mathlib.Tactic.Ring.Common.atom_pf ((L j) h) rfl
+                  (Eq.mpr
+                    (id
+                      (congrArg (fun _a => (L j) h ^ Nat.rawCast 1 * Nat.rawCast 1 = (L j) h ^ Nat.rawCast 1 * _a)
+                        (Eq.symm rfl)))
+                    (Eq.refl ((L j) h ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                (Mathlib.Tactic.Ring.Common.atom_pf ((L j) v) rfl
+                  (Eq.mpr
+                    (id
+                      (congrArg (fun _a => (L j) v ^ Nat.rawCast 1 * Nat.rawCast 1 = (L j) v ^ Nat.rawCast 1 * _a)
+                        (Eq.symm rfl)))
+                    (Eq.refl ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                (Mathlib.Tactic.Ring.Common.add_mul
+                  (Mathlib.Tactic.Ring.Common.mul_add
+                    (Mathlib.Tactic.Ring.Common.mul_pf_left ((L j) h) (Nat.rawCast 1)
+                      (Mathlib.Tactic.Ring.Common.mul_pf_right ((L j) v) (Nat.rawCast 1)
+                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                          (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                            (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 1)))))
+                    (Mathlib.Tactic.Ring.Common.mul_zero ((L j) h ^ Nat.rawCast 1 * Nat.rawCast 1))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                      ((L j) h ^ Nat.rawCast 1 * ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                  (Mathlib.Tactic.Ring.Common.zero_mul ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                    ((L j) h ^ Nat.rawCast 1 * ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+              (Mathlib.Tactic.Ring.Common.add_mul
+                (Mathlib.Tactic.Ring.Common.mul_add
+                  (Mathlib.Tactic.Ring.Common.mul_pf_right ((L j) h) (Nat.rawCast 1)
+                    (Mathlib.Tactic.Ring.Common.mul_pf_right ((L j) v) (Nat.rawCast 1)
+                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2)
+                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 2)))))
+                  (Mathlib.Tactic.Ring.Common.mul_zero (Nat.rawCast 2))
+                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                    ((L j) h ^ Nat.rawCast 1 * ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 2) + 0)))
+                (Mathlib.Tactic.Ring.Common.zero_mul
+                  ((L j) h ^ Nat.rawCast 1 * ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))
+                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                  ((L j) h ^ Nat.rawCast 1 * ((L j) v ^ Nat.rawCast 1 * Nat.rawCast 2) + 0)))))))
+theorem NLA.RA20.full_frobenius_differential_proved : ∀ (n : ℕ) (U X Z : NLA.RA20.Mat n),
+  (fderiv ℂ (NLA.RA20.fullFrobeniusDistance U) X) Z = 2 * ∑ i, ∑ j, (X i j - U i j) * Z i j :=
+fun n U X Z =>
+  have he :=
+    funext fun Y =>
+      of_eq_true
+        (Eq.trans
+          (congrArg (Eq (∑ i, ∑ j, (Y i j - U i j) ^ 2))
+            (Eq.trans (Fintype.sum_prod_type fun x => (Y x.1 x.2 - U x.1 x.2) ^ 2)
+              (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a => Eq.refl ((Y x x_1 - U x x_1) ^ 2))))
+          (eq_self (∑ i, ∑ j, (Y i j - U i j) ^ 2)));
+  Eq.mpr (id (congrArg (fun _a => (fderiv ℂ _a X) Z = 2 * ∑ i, ∑ j, (X i j - U i j) * Z i j) he))
+    (have ht := NLA.RA20.sum_squares_fderiv (NLA.RA20.matrixEntry n) (NLA.RA20.coordinates U) X Z;
+    Eq.mpr
+      (id
+        (congrFun'
+          (congrArg Eq
+            (congrFun'
+              (congrArg DFunLike.coe
+                (congrFun'
+                  (congrArg (fderiv ℂ)
+                    (funext fun Y =>
+                      Eq.trans (Fintype.sum_prod_type fun x => (Y x.1 x.2 - U x.1 x.2) ^ 2)
+                        (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                          Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a => Eq.refl ((Y x x_1 - U x x_1) ^ 2))))
+                  X))
+              Z))
+          (2 * ∑ i, ∑ j, (X i j - U i j) * Z i j)))
+      (Eq.mp
+        (congr
+          (congrArg Eq
+            (congrFun'
+              (congrArg DFunLike.coe
+                (congrFun'
+                  (congrArg (fderiv ℂ)
+                    (funext fun y =>
+                      Eq.trans (Fintype.sum_prod_type fun x => (y x.1 x.2 - U x.1 x.2) ^ 2)
+                        (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                          Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a => Eq.refl ((y x x_1 - U x x_1) ^ 2))))
+                  X))
+              Z))
+          (congrArg (HMul.hMul 2)
+            (Eq.trans (Fintype.sum_prod_type fun x => (X x.1 x.2 - U x.1 x.2) * Z x.1 x.2)
+              (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a => Eq.refl ((X x x_1 - U x x_1) * Z x x_1)))))
+        ht))
+theorem NLA.RA20.component_hessians_proved : ∀ (U : NLA.RA20.Mat 3) (i : Fin 3) (z h v : Fin 2 → ℂ),
+  ((fderiv ℂ (fun w => fderiv ℂ (fun y => NLA.RA20.fullFrobeniusDistance U (NLA.RA20.planeCoordinates i y)) w) z) h) v =
+      4 * ∑ j, h j * v j ∧
+    ((∀ (v : Fin 2 → ℂ), 4 * ∑ j, h j * v j = 0) → h = 0) :=
+fun U i z h v =>
+  ⟨have he :=
+      funext fun y =>
+        of_eq_true
+          (Eq.trans
+            (congrArg (Eq (∑ i_1, ∑ j, (NLA.RA20.planeCoordinates i y i_1 j - U i_1 j) ^ 2))
+              (Eq.trans
+                (Eq.trans
+                  (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                    congrFun'
+                      (congrArg HPow.hPow
+                        (congrFun' (congrArg HSub.hSub (NLA.RA20.planeEntry_apply i x.1 x.2 y)) (U x.1 x.2)))
+                      2)
+                  (Fintype.sum_prod_type fun x => (NLA.RA20.planeCoordinates i y x.1 x.2 - U x.1 x.2) ^ 2))
+                (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                  Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a =>
+                    Eq.refl ((NLA.RA20.planeCoordinates i y x x_1 - U x x_1) ^ 2))))
+            (eq_self (∑ i_1, ∑ j, (NLA.RA20.planeCoordinates i y i_1 j - U i_1 j) ^ 2)));
+    Eq.mpr (id (congrArg (fun _a => ((fderiv ℂ (fun w => fderiv ℂ _a w) z) h) v = 4 * ∑ j, h j * v j) he))
+      (Eq.mpr
+        (id
+          (congrArg (fun _a => _a = 4 * ∑ j, h j * v j)
+            (NLA.RA20.sum_squares_hessian (fun rc => NLA.RA20.planeEntry i rc.1 rc.2) (NLA.RA20.coordinates U) z h v)))
+        (Eq.mpr
+          (id
+            (congrFun'
+              (congrArg Eq
+                (congrArg (HMul.hMul 2)
+                  (Eq.trans
+                    (Eq.trans
+                      (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                        congr (congrArg HMul.hMul (NLA.RA20.planeEntry_apply i x.1 x.2 h))
+                          (NLA.RA20.planeEntry_apply i x.1 x.2 v))
+                      (Fintype.sum_prod_type fun x =>
+                        NLA.RA20.planeCoordinates i h x.1 x.2 * NLA.RA20.planeCoordinates i v x.1 x.2))
+                    (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                      Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a =>
+                        Eq.refl (NLA.RA20.planeCoordinates i h x x_1 * NLA.RA20.planeCoordinates i v x x_1)))))
+              (4 * ∑ j, h j * v j)))
+          (List.Mem.casesOn (motive := fun a x =>
+            List.finRange 3 = a →
+              Fintype.complete i ≍ x →
+                2 * ∑ x, ∑ x_1, NLA.RA20.planeCoordinates i h x x_1 * NLA.RA20.planeCoordinates i v x x_1 =
+                  4 * ∑ j, h j * v j)
+            (Fintype.complete i)
+            (fun as h_1 =>
+              List.cons.noConfusion h_1 fun head_eq =>
+                Eq.ndrec (motive := fun i =>
+                  ((fun y => NLA.RA20.fullFrobeniusDistance U (NLA.RA20.planeCoordinates i y)) = fun y =>
+                      ∑ rc, ((NLA.RA20.planeEntry i rc.1 rc.2) y - NLA.RA20.coordinates U rc) ^ 2) →
+                    ∀ (this : i ∈ Fintype.elems),
+                      (fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ []) ≍
+                          as →
+                        this ≍ List.Mem.head as →
+                          2 * ∑ x, ∑ x_1, NLA.RA20.planeCoordinates i h x x_1 * NLA.RA20.planeCoordinates i v x x_1 =
+                            4 * ∑ j, h j * v j)
+                  (fun he this tail_eq =>
+                    Eq.ndrec (motive := fun as =>
+                      this ≍ List.Mem.head as →
+                        2 *
+                            ∑ x,
+                              ∑ x_1,
+                                NLA.RA20.planeCoordinates
+                                    ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩) h x x_1 *
+                                  NLA.RA20.planeCoordinates
+                                    ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩) v x x_1 =
+                          4 * ∑ j, h j * v j)
+                      (fun h_2 =>
+                        Eq.mpr
+                          (id
+                            (congr
+                              (congrArg Eq
+                                (congrArg (HMul.hMul 2)
+                                  (Eq.trans
+                                    (Eq.trans
+                                      (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                                        Eq.trans
+                                          (Eq.trans
+                                            (Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a =>
+                                              congr
+                                                (congrArg HMul.hMul
+                                                  (Eq.trans
+                                                    (congrArg (fun x_2 => x_2 x x_1)
+                                                      (ite_cond_eq_true (NLA.RA20.hollow 0 (h 0) (h 1))
+                                                        (if
+                                                            (fun i => i)
+                                                                ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩ =
+                                                              1 then
+                                                          NLA.RA20.hollow (h 0) 0 (h 1)
+                                                        else NLA.RA20.hollow (h 0) (h 1) 0)
+                                                        (eq_self 0)))
+                                                    (Eq.trans
+                                                      (Matrix.cons_val' ![0, 0, h 0] ![![0, 0, h 1], ![h 0, h 1, 0]] x
+                                                        x_1)
+                                                      (congrFun'
+                                                        (congrArg (Matrix.vecCons (![0, 0, h 0] x_1))
+                                                          (funext fun i =>
+                                                            Eq.trans
+                                                              (Matrix.cons_val' ![0, 0, h 1] ![![h 0, h 1, 0]] i x_1)
+                                                              (congrFun'
+                                                                (congrArg (Matrix.vecCons (![0, 0, h 1] x_1))
+                                                                  (funext fun i =>
+                                                                    Eq.trans (Matrix.cons_val' ![h 0, h 1, 0] ![] i x_1)
+                                                                      (Matrix.cons_val_fin_one (![h 0, h 1, 0] x_1)
+                                                                        (fun i => ![] i x_1) i)))
+                                                                i)))
+                                                        x))))
+                                                (Eq.trans
+                                                  (congrArg (fun x_2 => x_2 x x_1)
+                                                    (ite_cond_eq_true (NLA.RA20.hollow 0 (v 0) (v 1))
+                                                      (if
+                                                          (fun i => i)
+                                                              ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩ =
+                                                            1 then
+                                                        NLA.RA20.hollow (v 0) 0 (v 1)
+                                                      else NLA.RA20.hollow (v 0) (v 1) 0)
+                                                      (eq_self 0)))
+                                                  (Eq.trans
+                                                    (Matrix.cons_val' ![0, 0, v 0] ![![0, 0, v 1], ![v 0, v 1, 0]] x
+                                                      x_1)
+                                                    (congrFun'
+                                                      (congrArg (Matrix.vecCons (![0, 0, v 0] x_1))
+                                                        (funext fun i =>
+                                                          Eq.trans
+                                                            (Matrix.cons_val' ![0, 0, v 1] ![![v 0, v 1, 0]] i x_1)
+                                                            (congrFun'
+                                                              (congrArg (Matrix.vecCons (![0, 0, v 1] x_1))
+                                                                (funext fun i =>
+                                                                  Eq.trans (Matrix.cons_val' ![v 0, v 1, 0] ![] i x_1)
+                                                                    (Matrix.cons_val_fin_one (![v 0, v 1, 0] x_1)
+                                                                      (fun i => ![] i x_1) i)))
+                                                              i)))
+                                                      x))))
+                                            (Fin.sum_univ_succ fun i =>
+                                              Matrix.vecCons (![0, 0, h 0] i)
+                                                  (fun i_1 =>
+                                                    Matrix.vecCons (![0, 0, h 1] i) (fun i_2 => ![h 0, h 1, 0] i) i_1)
+                                                  x *
+                                                Matrix.vecCons (![0, 0, v 0] i)
+                                                  (fun i_1 =>
+                                                    Matrix.vecCons (![0, 0, v 1] i) (fun i_2 => ![v 0, v 1, 0] i) i_1)
+                                                  x))
+                                          (congrArg
+                                            (HAdd.hAdd
+                                              (Matrix.vecCons 0 (fun i => Matrix.vecCons 0 (fun i => h 0) i) x *
+                                                Matrix.vecCons 0 (fun i => Matrix.vecCons 0 (fun i => v 0) i) x))
+                                            (Eq.trans
+                                              (Eq.trans
+                                                (Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a =>
+                                                  congr
+                                                    (congrArg HMul.hMul
+                                                      (congrFun'
+                                                        (congr
+                                                          (congrArg Matrix.vecCons
+                                                            (Matrix.cons_val_succ 0 ![0, h 0] x_1))
+                                                          (funext fun i =>
+                                                            congrFun'
+                                                              (congr
+                                                                (congrArg Matrix.vecCons
+                                                                  (Matrix.cons_val_succ 0 ![0, h 1] x_1))
+                                                                (funext fun i =>
+                                                                  Matrix.cons_val_succ (h 0) ![h 1, 0] x_1))
+                                                              i))
+                                                        x))
+                                                    (congrFun'
+                                                      (congr
+                                                        (congrArg Matrix.vecCons (Matrix.cons_val_succ 0 ![0, v 0] x_1))
+                                                        (funext fun i =>
+                                                          congrFun'
+                                                            (congr
+                                                              (congrArg Matrix.vecCons
+                                                                (Matrix.cons_val_succ 0 ![0, v 1] x_1))
+                                                              (funext fun i =>
+                                                                Matrix.cons_val_succ (v 0) ![v 1, 0] x_1))
+                                                            i))
+                                                      x))
+                                                (Fin.sum_univ_succ fun i =>
+                                                  Matrix.vecCons (![0, h 0] i)
+                                                      (fun i_1 =>
+                                                        Matrix.vecCons (![0, h 1] i) (fun i_2 => ![h 1, 0] i) i_1)
+                                                      x *
+                                                    Matrix.vecCons (![0, v 0] i)
+                                                      (fun i_1 =>
+                                                        Matrix.vecCons (![0, v 1] i) (fun i_2 => ![v 1, 0] i) i_1)
+                                                      x))
+                                              (congrArg
+                                                (HAdd.hAdd
+                                                  (Matrix.vecCons 0 (fun i => Matrix.vecCons 0 (fun i => h 1) i) x *
+                                                    Matrix.vecCons 0 (fun i => Matrix.vecCons 0 (fun i => v 1) i) x))
+                                                (Eq.trans
+                                                  (Eq.trans
+                                                    (Finset.sum_congr Finset.univ_unique fun x_1 a =>
+                                                      congr
+                                                        (congrArg HMul.hMul
+                                                          (congrFun'
+                                                            (congr
+                                                              (congrArg Matrix.vecCons
+                                                                (Eq.trans (Matrix.cons_val_succ 0 ![h 0] x_1)
+                                                                  (Matrix.cons_val_fin_one (h 0) ![] x_1)))
+                                                              (funext fun i =>
+                                                                congrFun'
+                                                                  (congr
+                                                                    (congrArg Matrix.vecCons
+                                                                      (Eq.trans (Matrix.cons_val_succ 0 ![h 1] x_1)
+                                                                        (Matrix.cons_val_fin_one (h 1) ![] x_1)))
+                                                                    (funext fun i =>
+                                                                      Eq.trans (Matrix.cons_val_succ (h 1) ![0] x_1)
+                                                                        (Matrix.cons_val_fin_one 0 ![] x_1)))
+                                                                  i))
+                                                            x))
+                                                        (congrFun'
+                                                          (congr
+                                                            (congrArg Matrix.vecCons
+                                                              (Eq.trans (Matrix.cons_val_succ 0 ![v 0] x_1)
+                                                                (Matrix.cons_val_fin_one (v 0) ![] x_1)))
+                                                            (funext fun i =>
+                                                              congrFun'
+                                                                (congr
+                                                                  (congrArg Matrix.vecCons
+                                                                    (Eq.trans (Matrix.cons_val_succ 0 ![v 1] x_1)
+                                                                      (Matrix.cons_val_fin_one (v 1) ![] x_1)))
+                                                                  (funext fun i =>
+                                                                    Eq.trans (Matrix.cons_val_succ (v 1) ![0] x_1)
+                                                                      (Matrix.cons_val_fin_one 0 ![] x_1)))
+                                                                i))
+                                                          x))
+                                                    (Finset.sum_const
+                                                      (Matrix.vecCons (h 0)
+                                                          (fun i => Matrix.vecCons (h 1) (fun i => 0) i) x *
+                                                        Matrix.vecCons (v 0)
+                                                          (fun i => Matrix.vecCons (v 1) (fun i => 0) i) x)))
+                                                  (Eq.trans
+                                                    (congrFun' (congrArg HSMul.hSMul (Finset.card_singleton 0))
+                                                      (Matrix.vecCons (h 0)
+                                                          (fun i => Matrix.vecCons (h 1) (fun i => 0) i) x *
+                                                        Matrix.vecCons (v 0)
+                                                          (fun i => Matrix.vecCons (v 1) (fun i => 0) i) x))
+                                                    (one_smul ℕ
+                                                      (Matrix.vecCons (h 0)
+                                                          (fun i => Matrix.vecCons (h 1) (fun i => 0) i) x *
+                                                        Matrix.vecCons (v 0)
+                                                          (fun i => Matrix.vecCons (v 1) (fun i => 0) i) x))))))))
+                                      (Fin.sum_univ_succ fun i =>
+                                        Matrix.vecCons 0 (fun i => Matrix.vecCons 0 (fun i => h 0) i) i *
+                                            Matrix.vecCons 0 (fun i => Matrix.vecCons 0 (fun i => v 0) i) i +
+                                          (Matrix.vecCons 0 (fun i => Matrix.vecCons 0 (fun i => h 1) i) i *
+                                              Matrix.vecCons 0 (fun i => Matrix.vecCons 0 (fun i => v 1) i) i +
+                                            Matrix.vecCons (h 0) (fun i => Matrix.vecCons (h 1) (fun i => 0) i) i *
+                                              Matrix.vecCons (v 0) (fun i => Matrix.vecCons (v 1) (fun i => 0) i) i)))
+                                    (congr
+                                      (congrArg HAdd.hAdd
+                                        (Eq.trans
+                                          (congr (congrArg HAdd.hAdd (mul_zero 0))
+                                            (Eq.trans (congrFun' (congrArg HAdd.hAdd (mul_zero 0)) (h 0 * v 0))
+                                              (zero_add (h 0 * v 0))))
+                                          (zero_add (h 0 * v 0))))
+                                      (Eq.trans
+                                        (Eq.trans
+                                          (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                                            congr
+                                              (congrArg HAdd.hAdd
+                                                (congr
+                                                  (congrArg HMul.hMul
+                                                    (Matrix.cons_val_succ 0 (fun i => Matrix.vecCons 0 (fun i => h 0) i)
+                                                      x))
+                                                  (Matrix.cons_val_succ 0 (fun i => Matrix.vecCons 0 (fun i => v 0) i)
+                                                    x)))
+                                              (congr
+                                                (congrArg HAdd.hAdd
+                                                  (congr
+                                                    (congrArg HMul.hMul
+                                                      (Matrix.cons_val_succ 0
+                                                        (fun i => Matrix.vecCons 0 (fun i => h 1) i) x))
+                                                    (Matrix.cons_val_succ 0 (fun i => Matrix.vecCons 0 (fun i => v 1) i)
+                                                      x)))
+                                                (congr
+                                                  (congrArg HMul.hMul
+                                                    (Matrix.cons_val_succ (h 0)
+                                                      (fun i => Matrix.vecCons (h 1) (fun i => 0) i) x))
+                                                  (Matrix.cons_val_succ (v 0)
+                                                    (fun i => Matrix.vecCons (v 1) (fun i => 0) i) x))))
+                                          (Fin.sum_univ_succ fun i =>
+                                            Matrix.vecCons 0 (fun i => h 0) i * Matrix.vecCons 0 (fun i => v 0) i +
+                                              (Matrix.vecCons 0 (fun i => h 1) i * Matrix.vecCons 0 (fun i => v 1) i +
+                                                Matrix.vecCons (h 1) (fun i => 0) i *
+                                                  Matrix.vecCons (v 1) (fun i => 0) i)))
+                                        (congr
+                                          (congrArg HAdd.hAdd
+                                            (Eq.trans
+                                              (congr (congrArg HAdd.hAdd (mul_zero 0))
+                                                (Eq.trans (congrFun' (congrArg HAdd.hAdd (mul_zero 0)) (h 1 * v 1))
+                                                  (zero_add (h 1 * v 1))))
+                                              (zero_add (h 1 * v 1))))
+                                          (Eq.trans
+                                            (Eq.trans
+                                              (Finset.sum_congr Finset.univ_unique fun x a =>
+                                                congr
+                                                  (congrArg HAdd.hAdd
+                                                    (congr
+                                                      (congrArg HMul.hMul (Matrix.cons_val_succ 0 (fun i => h 0) x))
+                                                      (Matrix.cons_val_succ 0 (fun i => v 0) x)))
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HAdd.hAdd
+                                                        (congr
+                                                          (congrArg HMul.hMul (Matrix.cons_val_succ 0 (fun i => h 1) x))
+                                                          (Matrix.cons_val_succ 0 (fun i => v 1) x)))
+                                                      (Eq.trans
+                                                        (congr
+                                                          (congrArg HMul.hMul
+                                                            (Matrix.cons_val_succ (h 1) (fun i => 0) x))
+                                                          (Matrix.cons_val_succ (v 1) (fun i => 0) x))
+                                                        (mul_zero 0)))
+                                                    (add_zero (h 1 * v 1))))
+                                              (Finset.sum_const (h 0 * v 0 + h 1 * v 1)))
+                                            (Eq.trans
+                                              (Eq.trans
+                                                (congrFun' (congrArg HSMul.hSMul (Finset.card_singleton 0))
+                                                  (h 0 * v 0 + h 1 * v 1))
+                                                (smul_add 1 (h 0 * v 0) (h 1 * v 1)))
+                                              (congr (congrArg HAdd.hAdd (one_smul ℕ (h 0 * v 0)))
+                                                (one_smul ℕ (h 1 * v 1)))))))))))
+                              (congrArg (HMul.hMul 4)
+                                (Eq.trans (Fin.sum_univ_succ fun i => h i * v i)
+                                  (congrArg (HAdd.hAdd (h 0 * v 0))
+                                    (Eq.trans
+                                      (Finset.sum_congr Finset.univ_unique fun x a => Eq.refl (h x.succ * v x.succ))
+                                      (Finset.sum_singleton (fun x => h x.succ * v x.succ) 0)))))))
+                          (Mathlib.Tactic.Ring.of_eq
+                            (Mathlib.Tactic.Ring.Common.mul_congr
+                              (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℂ (Eq.refl 2)))
+                              (Mathlib.Tactic.Ring.Common.add_congr
+                                (Mathlib.Tactic.Ring.Common.mul_congr
+                                  (Mathlib.Tactic.Ring.Common.atom_pf (h 0) rfl
+                                    (Eq.mpr
+                                      (id
+                                        (congrArg
+                                          (fun _a => h 0 ^ Nat.rawCast 1 * Nat.rawCast 1 = h 0 ^ Nat.rawCast 1 * _a)
+                                          (Eq.symm rfl)))
+                                      (Eq.refl (h 0 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                  (Mathlib.Tactic.Ring.Common.atom_pf (v 0) rfl
+                                    (Eq.mpr
+                                      (id
+                                        (congrArg
+                                          (fun _a => v 0 ^ Nat.rawCast 1 * Nat.rawCast 1 = v 0 ^ Nat.rawCast 1 * _a)
+                                          (Eq.symm rfl)))
+                                      (Eq.refl (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                  (Mathlib.Tactic.Ring.Common.add_mul
+                                    (Mathlib.Tactic.Ring.Common.mul_add
+                                      (Mathlib.Tactic.Ring.Common.mul_pf_left (h 0) (Nat.rawCast 1)
+                                        (Mathlib.Tactic.Ring.Common.mul_pf_right (v 0) (Nat.rawCast 1)
+                                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                            (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 1)))))
+                                      (Mathlib.Tactic.Ring.Common.mul_zero (h 0 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                        (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                    (Mathlib.Tactic.Ring.Common.zero_mul (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                      (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                                (Mathlib.Tactic.Ring.Common.add_congr
+                                  (Mathlib.Tactic.Ring.Common.mul_congr
+                                    (Mathlib.Tactic.Ring.Common.atom_pf (h 1) rfl
+                                      (Eq.mpr
+                                        (id
+                                          (congrArg
+                                            (fun _a => h 1 ^ Nat.rawCast 1 * Nat.rawCast 1 = h 1 ^ Nat.rawCast 1 * _a)
+                                            (Eq.symm rfl)))
+                                        (Eq.refl (h 1 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                    (Mathlib.Tactic.Ring.Common.atom_pf (v 1) rfl
+                                      (Eq.mpr
+                                        (id
+                                          (congrArg
+                                            (fun _a => v 1 ^ Nat.rawCast 1 * Nat.rawCast 1 = v 1 ^ Nat.rawCast 1 * _a)
+                                            (Eq.symm rfl)))
+                                        (Eq.refl (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                    (Mathlib.Tactic.Ring.Common.add_mul
+                                      (Mathlib.Tactic.Ring.Common.mul_add
+                                        (Mathlib.Tactic.Ring.Common.mul_pf_left (h 1) (Nat.rawCast 1)
+                                          (Mathlib.Tactic.Ring.Common.mul_pf_right (v 1) (Nat.rawCast 1)
+                                            (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                                (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                                (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 1)))))
+                                        (Mathlib.Tactic.Ring.Common.mul_zero (h 1 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                          (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                      (Mathlib.Tactic.Ring.Common.zero_mul (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                        (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                                  (Mathlib.Tactic.Ring.Common.add_congr
+                                    (Mathlib.Tactic.Ring.Common.mul_congr
+                                      (Mathlib.Tactic.Ring.Common.atom_pf (h 0) rfl
+                                        (Eq.mpr
+                                          (id
+                                            (congrArg
+                                              (fun _a => h 0 ^ Nat.rawCast 1 * Nat.rawCast 1 = h 0 ^ Nat.rawCast 1 * _a)
+                                              (Eq.symm rfl)))
+                                          (Eq.refl (h 0 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                      (Mathlib.Tactic.Ring.Common.atom_pf (v 0) rfl
+                                        (Eq.mpr
+                                          (id
+                                            (congrArg
+                                              (fun _a => v 0 ^ Nat.rawCast 1 * Nat.rawCast 1 = v 0 ^ Nat.rawCast 1 * _a)
+                                              (Eq.symm rfl)))
+                                          (Eq.refl (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                      (Mathlib.Tactic.Ring.Common.add_mul
+                                        (Mathlib.Tactic.Ring.Common.mul_add
+                                          (Mathlib.Tactic.Ring.Common.mul_pf_left (h 0) (Nat.rawCast 1)
+                                            (Mathlib.Tactic.Ring.Common.mul_pf_right (v 0) (Nat.rawCast 1)
+                                              (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 1)))))
+                                          (Mathlib.Tactic.Ring.Common.mul_zero (h 0 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                            (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                        (Mathlib.Tactic.Ring.Common.zero_mul (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                          (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                                    (Mathlib.Tactic.Ring.Common.mul_congr
+                                      (Mathlib.Tactic.Ring.Common.atom_pf (h 1) rfl
+                                        (Eq.mpr
+                                          (id
+                                            (congrArg
+                                              (fun _a => h 1 ^ Nat.rawCast 1 * Nat.rawCast 1 = h 1 ^ Nat.rawCast 1 * _a)
+                                              (Eq.symm rfl)))
+                                          (Eq.refl (h 1 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                      (Mathlib.Tactic.Ring.Common.atom_pf (v 1) rfl
+                                        (Eq.mpr
+                                          (id
+                                            (congrArg
+                                              (fun _a => v 1 ^ Nat.rawCast 1 * Nat.rawCast 1 = v 1 ^ Nat.rawCast 1 * _a)
+                                              (Eq.symm rfl)))
+                                          (Eq.refl (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                      (Mathlib.Tactic.Ring.Common.add_mul
+                                        (Mathlib.Tactic.Ring.Common.mul_add
+                                          (Mathlib.Tactic.Ring.Common.mul_pf_left (h 1) (Nat.rawCast 1)
+                                            (Mathlib.Tactic.Ring.Common.mul_pf_right (v 1) (Nat.rawCast 1)
+                                              (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                                (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                                  (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 1)))))
+                                          (Mathlib.Tactic.Ring.Common.mul_zero (h 1 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                            (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                        (Mathlib.Tactic.Ring.Common.zero_mul (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                          (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                      (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                      (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                        (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                                    (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_overlap
+                                      (Mathlib.Tactic.Ring.Common.add_overlap_pf (h 1) (Nat.rawCast 1)
+                                        (Mathlib.Tactic.Ring.Common.add_overlap_pf (v 1) (Nat.rawCast 1)
+                                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                            (Mathlib.Meta.NormNum.isNat_add (Eq.refl HAdd.hAdd)
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 2)))))
+                                      (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0))))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_overlap
+                                  (Mathlib.Tactic.Ring.Common.add_overlap_pf (h 0) (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.add_overlap_pf (v 0) (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isNat_add (Eq.refl HAdd.hAdd)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 2)))))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                    (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 2) + 0))))
+                              (Mathlib.Tactic.Ring.Common.add_mul
+                                (Mathlib.Tactic.Ring.Common.mul_add
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_right (h 0) (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.mul_pf_right (v 0) (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2) (Eq.refl 4)))))
+                                  (Mathlib.Tactic.Ring.Common.mul_add
+                                    (Mathlib.Tactic.Ring.Common.mul_pf_right (h 1) (Nat.rawCast 1)
+                                      (Mathlib.Tactic.Ring.Common.mul_pf_right (v 1) (Nat.rawCast 1)
+                                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                          (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2)
+                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 2) (Eq.refl 4)))))
+                                    (Mathlib.Tactic.Ring.Common.mul_zero (Nat.rawCast 2))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                      (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 4) + 0)))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                    (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 4))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                      (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 4) + 0))))
+                                (Mathlib.Tactic.Ring.Common.zero_mul
+                                  (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 2) +
+                                    (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 2) + 0)))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 4) +
+                                    (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 4) + 0)))))
+                            (Mathlib.Tactic.Ring.Common.mul_congr
+                              (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℂ (Eq.refl 4)))
+                              (Mathlib.Tactic.Ring.Common.add_congr
+                                (Mathlib.Tactic.Ring.Common.mul_congr
+                                  (Mathlib.Tactic.Ring.Common.atom_pf (h 0) rfl
+                                    (Eq.mpr
+                                      (id
+                                        (congrArg
+                                          (fun _a => h 0 ^ Nat.rawCast 1 * Nat.rawCast 1 = h 0 ^ Nat.rawCast 1 * _a)
+                                          (Eq.symm rfl)))
+                                      (Eq.refl (h 0 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                  (Mathlib.Tactic.Ring.Common.atom_pf (v 0) rfl
+                                    (Eq.mpr
+                                      (id
+                                        (congrArg
+                                          (fun _a => v 0 ^ Nat.rawCast 1 * Nat.rawCast 1 = v 0 ^ Nat.rawCast 1 * _a)
+                                          (Eq.symm rfl)))
+                                      (Eq.refl (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                  (Mathlib.Tactic.Ring.Common.add_mul
+                                    (Mathlib.Tactic.Ring.Common.mul_add
+                                      (Mathlib.Tactic.Ring.Common.mul_pf_left (h 0) (Nat.rawCast 1)
+                                        (Mathlib.Tactic.Ring.Common.mul_pf_right (v 0) (Nat.rawCast 1)
+                                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                            (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 1)))))
+                                      (Mathlib.Tactic.Ring.Common.mul_zero (h 0 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                        (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                    (Mathlib.Tactic.Ring.Common.zero_mul (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                      (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                                (Mathlib.Tactic.Ring.Common.mul_congr
+                                  (Mathlib.Tactic.Ring.Common.atom_pf (h 1) rfl
+                                    (Eq.mpr
+                                      (id
+                                        (congrArg
+                                          (fun _a => h 1 ^ Nat.rawCast 1 * Nat.rawCast 1 = h 1 ^ Nat.rawCast 1 * _a)
+                                          (Eq.symm rfl)))
+                                      (Eq.refl (h 1 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                  (Mathlib.Tactic.Ring.Common.atom_pf (v 1) rfl
+                                    (Eq.mpr
+                                      (id
+                                        (congrArg
+                                          (fun _a => v 1 ^ Nat.rawCast 1 * Nat.rawCast 1 = v 1 ^ Nat.rawCast 1 * _a)
+                                          (Eq.symm rfl)))
+                                      (Eq.refl (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                                  (Mathlib.Tactic.Ring.Common.add_mul
+                                    (Mathlib.Tactic.Ring.Common.mul_add
+                                      (Mathlib.Tactic.Ring.Common.mul_pf_left (h 1) (Nat.rawCast 1)
+                                        (Mathlib.Tactic.Ring.Common.mul_pf_right (v 1) (Nat.rawCast 1)
+                                          (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                            (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                              (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 1)))))
+                                      (Mathlib.Tactic.Ring.Common.mul_zero (h 1 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                      (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                        (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                    (Mathlib.Tactic.Ring.Common.zero_mul (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                      (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                  (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                    (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                              (Mathlib.Tactic.Ring.Common.add_mul
+                                (Mathlib.Tactic.Ring.Common.mul_add
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_right (h 0) (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.mul_pf_right (v 0) (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 4)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 4)))))
+                                  (Mathlib.Tactic.Ring.Common.mul_add
+                                    (Mathlib.Tactic.Ring.Common.mul_pf_right (h 1) (Nat.rawCast 1)
+                                      (Mathlib.Tactic.Ring.Common.mul_pf_right (v 1) (Nat.rawCast 1)
+                                        (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                          (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 4)
+                                            (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Eq.refl 4)))))
+                                    (Mathlib.Tactic.Ring.Common.mul_zero (Nat.rawCast 4))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                      (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 4) + 0)))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                    (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 4))
+                                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                      (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 4) + 0))))
+                                (Mathlib.Tactic.Ring.Common.zero_mul
+                                  (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                    (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (h 0 ^ Nat.rawCast 1 * (v 0 ^ Nat.rawCast 1 * Nat.rawCast 4) +
+                                    (h 1 ^ Nat.rawCast 1 * (v 1 ^ Nat.rawCast 1 * Nat.rawCast 4) + 0)))))))
+                      (eq_of_heq tail_eq))
+                  (eq_of_heq head_eq) he (Fintype.complete i))
+            (fun b {as} a h_1 =>
+              List.cons.noConfusion h_1 fun head_eq =>
+                Eq.ndrec (motive := fun b =>
+                  (fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                        ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ []) ≍
+                      as →
+                    Fintype.complete i ≍ List.Mem.tail b a →
+                      2 * ∑ x, ∑ x_1, NLA.RA20.planeCoordinates i h x x_1 * NLA.RA20.planeCoordinates i v x x_1 =
+                        4 * ∑ j, h j * v j)
+                  (fun tail_eq =>
+                    Eq.ndrec (motive := fun {as} =>
+                      ∀ (a : List.Mem i as),
+                        Fintype.complete i ≍
+                            List.Mem.tail ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩) a →
+                          2 * ∑ x, ∑ x_1, NLA.RA20.planeCoordinates i h x x_1 * NLA.RA20.planeCoordinates i v x x_1 =
+                            4 * ∑ j, h j * v j)
+                      (fun a h_2 =>
+                        List.Mem.casesOn (motive := fun a_1 x =>
+                          (fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                                ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ []) =
+                              a_1 →
+                            a ≍ x →
+                              2 *
+                                  ∑ x,
+                                    ∑ x_1, NLA.RA20.planeCoordinates i h x x_1 * NLA.RA20.planeCoordinates i v x x_1 =
+                                4 * ∑ j, h j * v j)
+                          a
+                          (fun as h_3 =>
+                            List.cons.noConfusion h_3 fun head_eq =>
+                              Eq.ndrec (motive := fun i =>
+                                ((fun y => NLA.RA20.fullFrobeniusDistance U (NLA.RA20.planeCoordinates i y)) = fun y =>
+                                    ∑ rc, ((NLA.RA20.planeEntry i rc.1 rc.2) y - NLA.RA20.coordinates U rc) ^ 2) →
+                                  ∀
+                                    (a :
+                                      List.Mem i
+                                        ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                                          ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ []))),
+                                    (fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ [] ≍ as →
+                                      a ≍ List.Mem.head as →
+                                        2 *
+                                            ∑ x,
+                                              ∑ x_1,
+                                                NLA.RA20.planeCoordinates i h x x_1 *
+                                                  NLA.RA20.planeCoordinates i v x x_1 =
+                                          4 * ∑ j, h j * v j)
+                                (fun he a tail_eq =>
+                                  Eq.ndrec (motive := fun as =>
+                                    a ≍ List.Mem.head as →
+                                      2 *
+                                          ∑ x,
+                                            ∑ x_1,
+                                              NLA.RA20.planeCoordinates ((fun i => i) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩)
+                                                  h x x_1 *
+                                                NLA.RA20.planeCoordinates
+                                                  ((fun i => i) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩) v x x_1 =
+                                        4 * ∑ j, h j * v j)
+                                    (fun h_4 =>
+                                      Eq.mpr
+                                        (id
+                                          (congr
+                                            (congrArg Eq
+                                              (congrArg (HMul.hMul 2)
+                                                (Eq.trans
+                                                  (Eq.trans
+                                                    (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                                                      Eq.trans
+                                                        (Eq.trans
+                                                          (Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a =>
+                                                            congr
+                                                              (congrArg HMul.hMul
+                                                                (Eq.trans
+                                                                  (congrArg (fun x_2 => x_2 x x_1)
+                                                                    (ite_cond_eq_false (NLA.RA20.hollow 0 (h 0) (h 1))
+                                                                      (if
+                                                                          (fun i => i)
+                                                                              ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩ =
+                                                                            1 then
+                                                                        NLA.RA20.hollow (h 0) 0 (h 1)
+                                                                      else NLA.RA20.hollow (h 0) (h 1) 0)
+                                                                      one_ne_zero._simp_1))
+                                                                  (Eq.trans
+                                                                    (congrArg (fun x_2 => x_2 x x_1)
+                                                                      (ite_cond_eq_true (NLA.RA20.hollow (h 0) 0 (h 1))
+                                                                        (NLA.RA20.hollow (h 0) (h 1) 0) (eq_self 1)))
+                                                                    (Eq.trans
+                                                                      (Matrix.cons_val' ![0, h 0, 0]
+                                                                        ![![h 0, 0, h 1], ![0, h 1, 0]] x x_1)
+                                                                      (congrFun'
+                                                                        (congrArg (Matrix.vecCons (![0, h 0, 0] x_1))
+                                                                          (funext fun i =>
+                                                                            Eq.trans
+                                                                              (Matrix.cons_val' ![h 0, 0, h 1]
+                                                                                ![![0, h 1, 0]] i x_1)
+                                                                              (congrFun'
+                                                                                (congrArg
+                                                                                  (Matrix.vecCons (![h 0, 0, h 1] x_1))
+                                                                                  (funext fun i =>
+                                                                                    Eq.trans
+                                                                                      (Matrix.cons_val' ![0, h 1, 0] ![]
+                                                                                        i x_1)
+                                                                                      (Matrix.cons_val_fin_one ⋯
+                                                                                        (fun i => ![] i x_1) i)))
+                                                                                i)))
+                                                                        x)))))
+                                                              (Eq.trans
+                                                                (congrArg (fun x_2 => x_2 x x_1)
+                                                                  (ite_cond_eq_false (NLA.RA20.hollow 0 (v 0) (v 1))
+                                                                    (if
+                                                                        (fun i => i) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩ =
+                                                                          1 then
+                                                                      NLA.RA20.hollow (v 0) 0 (v 1)
+                                                                    else NLA.RA20.hollow (v 0) (v 1) 0)
+                                                                    one_ne_zero._simp_1))
+                                                                (Eq.trans
+                                                                  (congrArg (fun x_2 => x_2 x x_1)
+                                                                    (ite_cond_eq_true (NLA.RA20.hollow (v 0) 0 (v 1))
+                                                                      (NLA.RA20.hollow (v 0) (v 1) 0) (eq_self 1)))
+                                                                  (Eq.trans
+                                                                    (Matrix.cons_val' ![0, v 0, 0]
+                                                                      ![![v 0, 0, v 1], ![0, v 1, 0]] x x_1)
+                                                                    (congrFun'
+                                                                      (congrArg (Matrix.vecCons (![0, v 0, 0] x_1))
+                                                                        (funext fun i =>
+                                                                          Eq.trans
+                                                                            (Matrix.cons_val' ![v 0, 0, v 1]
+                                                                              ![![0, v 1, 0]] i x_1)
+                                                                            (congrFun'
+                                                                              (congrArg
+                                                                                (Matrix.vecCons (![v 0, 0, v 1] x_1))
+                                                                                (funext fun i =>
+                                                                                  Eq.trans
+                                                                                    (Matrix.cons_val' ![0, v 1, 0] ![] i
+                                                                                      x_1)
+                                                                                    (Matrix.cons_val_fin_one
+                                                                                      (![0, v 1, 0] x_1)
+                                                                                      (fun i => ![] i x_1) i)))
+                                                                              i)))
+                                                                      x)))))
+                                                          (Fin.sum_univ_succ fun i =>
+                                                            Matrix.vecCons (![0, h 0, 0] i)
+                                                                (fun i_1 =>
+                                                                  Matrix.vecCons (![h 0, 0, h 1] i)
+                                                                    (fun i_2 => ![0, h 1, 0] i) i_1)
+                                                                x *
+                                                              Matrix.vecCons (![0, v 0, 0] i)
+                                                                (fun i_1 =>
+                                                                  Matrix.vecCons (![v 0, 0, v 1] i)
+                                                                    (fun i_2 => ![0, v 1, 0] i) i_1)
+                                                                x))
+                                                        (congrArg
+                                                          (HAdd.hAdd
+                                                            (Matrix.vecCons 0
+                                                                (fun i => Matrix.vecCons (h 0) (fun i => 0) i) x *
+                                                              Matrix.vecCons 0
+                                                                (fun i => Matrix.vecCons (v 0) (fun i => 0) i) x))
+                                                          (Eq.trans
+                                                            (Eq.trans
+                                                              (Finset.sum_congr (Eq.refl Finset.univ) fun x_1 a =>
+                                                                congr
+                                                                  (congrArg HMul.hMul
+                                                                    (congrFun'
+                                                                      (congr
+                                                                        (congrArg Matrix.vecCons
+                                                                          (Matrix.cons_val_succ 0 ![h 0, 0] x_1))
+                                                                        (funext fun i =>
+                                                                          congrFun'
+                                                                            (congr
+                                                                              (congrArg Matrix.vecCons
+                                                                                (Matrix.cons_val_succ (h 0) ![0, h 1]
+                                                                                  x_1))
+                                                                              (funext fun i =>
+                                                                                Matrix.cons_val_succ 0 ![h 1, 0] x_1))
+                                                                            i))
+                                                                      x))
+                                                                  (congrFun'
+                                                                    (congr
+                                                                      (congrArg Matrix.vecCons
+                                                                        (Matrix.cons_val_succ 0 ![v 0, 0] x_1))
+                                                                      (funext fun i =>
+                                                                        congrFun'
+                                                                          (congr
+                                                                            (congrArg Matrix.vecCons
+                                                                              (Matrix.cons_val_succ (v 0) ![0, v 1]
+                                                                                x_1))
+                                                                            (funext fun i =>
+                                                                              Matrix.cons_val_succ 0 ![v 1, 0] x_1))
+                                                                          i))
+                                                                    x))
+                                                              (Fin.sum_univ_succ fun i =>
+                                                                Matrix.vecCons (![h 0, 0] i)
+                                                                    (fun i_1 =>
+                                                                      Matrix.vecCons (![0, h 1] i)
+                                                                        (fun i_2 => ![h 1, 0] i) i_1)
+                                                                    x *
+                                                                  Matrix.vecCons (![v 0, 0] i)
+                                                                    (fun i_1 =>
+                                                                      Matrix.vecCons (![0, v 1] i)
+                                                                        (fun i_2 => ![v 1, 0] i) i_1)
+                                                                    x))
+                                                            (congrArg
+                                                              (HAdd.hAdd
+                                                                (Matrix.vecCons (h 0)
+                                                                    (fun i => Matrix.vecCons 0 (fun i => h 1) i) x *
+                                                                  Matrix.vecCons (v 0)
+                                                                    (fun i => Matrix.vecCons 0 (fun i => v 1) i) x))
+                                                              (Eq.trans
+                                                                (Eq.trans
+                                                                  (Finset.sum_congr Finset.univ_unique fun x_1 a =>
+                                                                    congr
+                                                                      (congrArg HMul.hMul
+                                                                        (congrFun'
+                                                                          (congr
+                                                                            (congrArg Matrix.vecCons
+                                                                              (Eq.trans
+                                                                                (Matrix.cons_val_succ (h 0) ![0] x_1)
+                                                                                (Matrix.cons_val_fin_one 0 ![] x_1)))
+                                                                            (funext fun i =>
+                                                                              congrFun'
+                                                                                (congr
+                                                                                  (congrArg Matrix.vecCons
+                                                                                    (Eq.trans
+                                                                                      (Matrix.cons_val_succ 0 ![h 1]
+                                                                                        x_1)
+                                                                                      (Matrix.cons_val_fin_one (h 1) ![]
+                                                                                        x_1)))
+                                                                                  (funext fun i =>
+                                                                                    Eq.trans
+                                                                                      (Matrix.cons_val_succ (h 1) ![0]
+                                                                                        x_1)
+                                                                                      (Matrix.cons_val_fin_one 0 ![]
+                                                                                        x_1)))
+                                                                                i))
+                                                                          x))
+                                                                      (congrFun'
+                                                                        (congr
+                                                                          (congrArg Matrix.vecCons
+                                                                            (Eq.trans
+                                                                              (Matrix.cons_val_succ (v 0) ![0] x_1)
+                                                                              (Matrix.cons_val_fin_one 0 ![] x_1)))
+                                                                          (funext fun i =>
+                                                                            congrFun'
+                                                                              (congr
+                                                                                (congrArg Matrix.vecCons
+                                                                                  (Eq.trans
+                                                                                    (Matrix.cons_val_succ 0 ![v 1] x_1)
+                                                                                    (Matrix.cons_val_fin_one (v 1) ![]
+                                                                                      x_1)))
+                                                                                (funext fun i =>
+                                                                                  Eq.trans
+                                                                                    (Matrix.cons_val_succ (v 1) ![0]
+                                                                                      x_1)
+                                                                                    (Matrix.cons_val_fin_one 0 ![]
+                                                                                      x_1)))
+                                                                              i))
+                                                                        x))
+                                                                  (Finset.sum_const
+                                                                    (Matrix.vecCons 0
+                                                                        (fun i => Matrix.vecCons (h 1) (fun i => 0) i)
+                                                                        x *
+                                                                      Matrix.vecCons 0
+                                                                        (fun i => Matrix.vecCons (v 1) (fun i => 0) i)
+                                                                        x)))
+                                                                (Eq.trans
+                                                                  (congrFun'
+                                                                    (congrArg HSMul.hSMul (Finset.card_singleton 0))
+                                                                    (Matrix.vecCons 0
+                                                                        (fun i => Matrix.vecCons (h 1) (fun i => 0) i)
+                                                                        x *
+                                                                      Matrix.vecCons 0
+                                                                        (fun i => Matrix.vecCons (v 1) (fun i => 0) i)
+                                                                        x))
+                                                                  (one_smul ℕ
+                                                                    (Matrix.vecCons 0
+                                                                        (fun i => Matrix.vecCons (h 1) (fun i => 0) i)
+                                                                        x *
+                                                                      Matrix.vecCons 0
+                                                                        (fun i => Matrix.vecCons (v 1) (fun i => 0) i)
+                                                                        x))))))))
+                                                    (Fin.sum_univ_succ fun i =>
+                                                      Matrix.vecCons 0 (fun i => Matrix.vecCons (h 0) (fun i => 0) i)
+                                                            i *
+                                                          Matrix.vecCons 0
+                                                            (fun i => Matrix.vecCons (v 0) (fun i => 0) i) i +
+                                                        (Matrix.vecCons (h 0)
+                                                              (fun i => Matrix.vecCons 0 (fun i => h 1) i) i *
+                                                            Matrix.vecCons (v 0)
+                                                              (fun i => Matrix.vecCons 0 (fun i => v 1) i) i +
+                                                          Matrix.vecCons 0
+                                                              (fun i => Matrix.vecCons (h 1) (fun i => 0) i) i *
+                                                            Matrix.vecCons 0
+                                                              (fun i => Matrix.vecCons (v 1) (fun i => 0) i) i)))
+                                                  (congr
+                                                    (congrArg HAdd.hAdd
+                                                      (Eq.trans
+                                                        (congr (congrArg HAdd.hAdd (mul_zero 0))
+                                                          (Eq.trans (congrArg (HAdd.hAdd (h 0 * v 0)) (mul_zero 0))
+                                                            (add_zero (h 0 * v 0))))
+                                                        (zero_add (h 0 * v 0))))
+                                                    (Eq.trans
+                                                      (Eq.trans
+                                                        (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                                                          congr
+                                                            (congrArg HAdd.hAdd
+                                                              (congr
+                                                                (congrArg HMul.hMul
+                                                                  (Matrix.cons_val_succ 0
+                                                                    (fun i => Matrix.vecCons (h 0) (fun i => 0) i) x))
+                                                                (Matrix.cons_val_succ 0
+                                                                  (fun i => Matrix.vecCons (v 0) (fun i => 0) i) x)))
+                                                            (congr
+                                                              (congrArg HAdd.hAdd
+                                                                (congr
+                                                                  (congrArg HMul.hMul
+                                                                    (Matrix.cons_val_succ (h 0)
+                                                                      (fun i => Matrix.vecCons 0 (fun i => h 1) i) x))
+                                                                  (Matrix.cons_val_succ (v 0)
+                                                                    (fun i => Matrix.vecCons 0 (fun i => v 1) i) x)))
+                                                              (congr
+                                                                (congrArg HMul.hMul
+                                                                  (Matrix.cons_val_succ 0
+                                                                    (fun i => Matrix.vecCons (h 1) (fun i => 0) i) x))
+                                                                (Matrix.cons_val_succ 0
+                                                                  (fun i => Matrix.vecCons (v 1) (fun i => 0) i) x))))
+                                                        (Fin.sum_univ_succ fun i =>
+                                                          Matrix.vecCons (h 0) (fun i => 0) i *
+                                                              Matrix.vecCons (v 0) (fun i => 0) i +
+                                                            (Matrix.vecCons 0 (fun i => h 1) i *
+                                                                Matrix.vecCons 0 (fun i => v 1) i +
+                                                              Matrix.vecCons (h 1) (fun i => 0) i *
+                                                                Matrix.vecCons (v 1) (fun i => 0) i)))
+                                                      (congr
+                                                        (congrArg HAdd.hAdd
+                                                          (congrArg (HAdd.hAdd (h 0 * v 0))
+                                                            (Eq.trans
+                                                              (congrFun' (congrArg HAdd.hAdd (mul_zero 0)) (h 1 * v 1))
+                                                              (zero_add (h 1 * v 1)))))
+                                                        (Eq.trans
+                                                          (Eq.trans
+                                                            (Finset.sum_congr Finset.univ_unique fun x a =>
+                                                              Eq.trans
+                                                                (congr
+                                                                  (congrArg HAdd.hAdd
+                                                                    (Eq.trans
+                                                                      (congr
+                                                                        (congrArg HMul.hMul
+                                                                          (Matrix.cons_val_succ (h 0) (fun i => 0) x))
+                                                                        (Matrix.cons_val_succ (v 0) (fun i => 0) x))
+                                                                      (mul_zero 0)))
+                                                                  (Eq.trans
+                                                                    (congr
+                                                                      (congrArg HAdd.hAdd
+                                                                        (congr
+                                                                          (congrArg HMul.hMul
+                                                                            (Matrix.cons_val_succ 0 (fun i => h 1) x))
+                                                                          (Matrix.cons_val_succ 0 (fun i => v 1) x)))
+                                                                      (Eq.trans
+                                                                        (congr
+                                                                          (congrArg HMul.hMul
+                                                                            (Matrix.cons_val_succ (h 1) (fun i => 0) x))
+                                                                          (Matrix.cons_val_succ (v 1) (fun i => 0) x))
+                                                                        (mul_zero 0)))
+                                                                    (add_zero (h 1 * v 1))))
+                                                                (zero_add (h 1 * v 1)))
+                                                            (Finset.sum_const (h 1 * v 1)))
+                                                          (Eq.trans
+                                                            (congrFun' (congrArg HSMul.hSMul (Finset.card_singleton 0))
+                                                              (h 1 * v 1))
+                                                            (one_smul ℕ (h 1 * v 1))))))))))
+                                            (congrArg (HMul.hMul 4)
+                                              (Eq.trans (Fin.sum_univ_succ fun i => h i * v i)
+                                                (congrArg (HAdd.hAdd (h 0 * v 0))
+                                                  (Eq.trans
+                                                    (Finset.sum_congr Finset.univ_unique fun x a => Eq.refl (⋯ ⋯ * ⋯))
+                                                    ⋯))))))
+                                        ⋯)
+                                    ⋯)
+                                ⋯ ⋯ ⋯)
+                          ⋯ ⋯ ⋯)
+                      ⋯ ⋯)
+                  ⋯)
+            ⋯ ⋯))),
+    ⋯⟩
+

@@ -1,0 +1,110 @@
+$ systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-3sqo8g83/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+Building Challenge
+✔ [3200/3202] Built NLA.RA20.Definitions (2.6s)
+⚠ [3201/3202] Built Challenge (2.3s)
+warning: Challenge.lean:17:8: declaration uses `sorry`
+warning: Challenge.lean:25:8: declaration uses `sorry`
+warning: Challenge.lean:32:8: declaration uses `sorry`
+warning: Challenge.lean:39:8: declaration uses `sorry`
+warning: Challenge.lean:45:8: declaration uses `sorry`
+warning: Challenge.lean:50:8: declaration uses `sorry`
+warning: Challenge.lean:57:8: declaration uses `sorry`
+warning: Challenge.lean:63:8: declaration uses `sorry`
+warning: Challenge.lean:72:8: declaration uses `sorry`
+warning: Challenge.lean:77:8: declaration uses `sorry`
+warning: Challenge.lean:80:8: declaration uses `sorry`
+warning: Challenge.lean:83:8: declaration uses `sorry`
+Build completed successfully (3202 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.RA20.hollow_variety_semantics, NLA.RA20.reduced_coordinate_ring, NLA.RA20.algebraic_smooth_locus, NLA.RA20.algebraic_tangent_space, NLA.RA20.full_frobenius_differential, NLA.RA20.hollow_distance_semantics, NLA.RA20.generic_critical_locus, NLA.RA20.component_hessians, NLA.RA20.generic_data_intersection, NLA.RA20.generic_count_three, NLA.RA20.generic_count_not_four, NLA.RA20.not_criticalCountConjecture, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+✔ [3483/3494] Built LeanCert.Tactic.Verification (2.1s)
+ℹ [3484/3494] Built NLA.RA20.SmoothTransport (3.8s)
+info: NLA/RA20/SmoothTransport.lean:44:0: 'NLA.RA20.smoothLocus_comap_algEquiv' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3485/3494] Built NLA.RA20.Generic (4.7s)
+info: NLA/RA20/Generic.lean:97:0: 'NLA.RA20.symmetricParameter_isSymm' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Generic.lean:99:0: 'NLA.RA20.symmetricParameter_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Generic.lean:101:0: 'NLA.RA20.eval_rename_symmetricParameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Generic.lean:103:0: 'NLA.RA20.generic_data_intersection_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+⚠ [3486/3494] Built NLA.RA20.Differential (6.6s)
+warning: NLA/RA20/Differential.lean:103:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+warning: NLA/RA20/Differential.lean:105:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+info: NLA/RA20/Differential.lean:160:0: 'NLA.RA20.full_frobenius_differential_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Differential.lean:161:0: 'NLA.RA20.hollow_distance_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Differential.lean:162:0: 'NLA.RA20.component_hessians_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3487/3494] Built NLA.RA20.Algebra (7.1s)
+info: NLA/RA20/Algebra.lean:111:0: 'NLA.RA20.hollow_variety_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Algebra.lean:226:0: 'NLA.RA20.reduced_coordinate_ring_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3488/3494] Built NLA.RA20.Tangent (6.0s)
+info: NLA/RA20/Tangent.lean:141:0: 'NLA.RA20.polyDirectional_hollowPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Tangent.lean:142:0: 'NLA.RA20.algebraic_tangent_space_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3489/3494] Built NLA.RA20.Smooth (8.7s)
+info: NLA/RA20/Smooth.lean:81:0: 'NLA.RA20.triple_product_not_formallySmooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Smooth.lean:152:0: 'NLA.RA20.formallySmooth_of_retraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Smooth.lean:217:0: 'NLA.RA20.abc_local_not_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Smooth.lean:358:0: 'NLA.RA20.abc_local_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Smooth.lean:409:0: 'NLA.RA20.abc_smooth_locus_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Smooth.lean:411:0: 'NLA.RA20.abcPoint_comap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Smooth.lean:472:0: 'NLA.RA20.reducedPoint_comap' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Smooth.lean:474:0: 'NLA.RA20.algebraic_smooth_locus_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3490/3494] Built NLA.RA20.Critical (3.3s)
+info: NLA/RA20/Critical.lean:50:0: 'NLA.RA20.hollow_frobenius_differential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Critical.lean:52:0: 'NLA.RA20.generic_candidate_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Critical.lean:144:0: 'NLA.RA20.smoothCritical_hollow_iff' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Critical.lean:146:0: 'NLA.RA20.critical_first_plane' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Critical.lean:148:0: 'NLA.RA20.critical_second_plane' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Critical.lean:150:0: 'NLA.RA20.critical_third_plane' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Critical.lean:198:0: 'NLA.RA20.generic_candidate_critical' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Critical.lean:200:0: 'NLA.RA20.generic_critical_exhaustion' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Critical.lean:202:0: 'NLA.RA20.generic_critical_locus_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3491/3494] Built NLA.RA20.Count (2.7s)
+info: NLA/RA20/Count.lean:57:0: 'NLA.RA20.critical_count_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Count.lean:58:0: 'NLA.RA20.generic_count_three_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Count.lean:59:0: 'NLA.RA20.generic_count_not_four_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Count.lean:60:0: 'NLA.RA20.not_criticalCountConjecture_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3492/3494] Built NLA.RA20.Proof (2.6s)
+info: NLA/RA20/Proof.lean:24:0: 'NLA.RA20.hollow_variety_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:26:0: 'NLA.RA20.reduced_coordinate_ring_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:28:0: 'NLA.RA20.algebraic_smooth_locus_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:30:0: 'NLA.RA20.algebraic_tangent_space_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:32:0: 'NLA.RA20.full_frobenius_differential_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:34:0: 'NLA.RA20.hollow_distance_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:36:0: 'NLA.RA20.generic_critical_locus_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:38:0: 'NLA.RA20.component_hessians_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:40:0: 'NLA.RA20.generic_data_intersection_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:42:0: 'NLA.RA20.generic_count_three_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:44:0: 'NLA.RA20.generic_count_not_four_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: NLA/RA20/Proof.lean:46:0: 'NLA.RA20.not_criticalCountConjecture_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+ℹ [3493/3494] Built Solution (2.8s)
+info: Solution.lean:94:0: 'NLA.RA20.hollow_variety_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:96:0: 'NLA.RA20.reduced_coordinate_ring' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:98:0: 'NLA.RA20.algebraic_smooth_locus' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:100:0: 'NLA.RA20.algebraic_tangent_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:102:0: 'NLA.RA20.full_frobenius_differential' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:104:0: 'NLA.RA20.hollow_distance_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:106:0: 'NLA.RA20.generic_critical_locus' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:108:0: 'NLA.RA20.component_hessians' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:110:0: 'NLA.RA20.generic_data_intersection' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:112:0: 'NLA.RA20.generic_count_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:114:0: 'NLA.RA20.generic_count_not_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:116:0: 'NLA.RA20.not_criticalCountConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (3494 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.RA20.hollow_variety_semantics, NLA.RA20.reduced_coordinate_ring, NLA.RA20.algebraic_smooth_locus, NLA.RA20.algebraic_tangent_space, NLA.RA20.full_frobenius_differential, NLA.RA20.hollow_distance_semantics, NLA.RA20.generic_critical_locus, NLA.RA20.component_hessians, NLA.RA20.generic_data_intersection, NLA.RA20.generic_count_three, NLA.RA20.generic_count_not_four, NLA.RA20.not_criticalCountConjecture, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+
+EXIT_STATUS=0

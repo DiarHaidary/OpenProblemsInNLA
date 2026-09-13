@@ -1,0 +1,38 @@
+{
+  "utc": "2026-09-13T04:54:35.995106+00:00",
+  "role": "Scoped differential helper author; not independent final referee for RA20",
+  "status": "PASS: contracts 5,6,8 only; no full-project or Linux acceptance",
+  "helper_sha256": "8e24af9b30b668fd1c6bfc3799fe6d8771e4a6e96124087752a02f7b4d913ec7",
+  "frozen_project_inputs": 68,
+  "original_sources": 16,
+  "all_source_Git_blob_identities_preserved": true,
+  "locks": {
+    "verification/proof-start.json": "9fe55d622e50390cb3ed439989b9393455fa48eb50d42d84fb33c20fd8c883f3",
+    "verification/implementation-roles.json": "a81af5049b95b824f36043bf78619a68ee14579923a11a1f4a97dad8004a09cf",
+    "reviews/statement-freeze.json": "6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8"
+  },
+  "nested_inventories": {
+    "reviews/statement-package-manifest.json": {
+      "sha256": "f703189ce7532af272df37e521ce9d703d01aaa9733cd7aa7d1f45813b0e5fa6",
+      "bound_files": 70
+    },
+    "reviews/statement-referee-1-evidence/EVIDENCE-MANIFEST.json": {
+      "sha256": "5a0ca5bdd0db73e72739a581cd878eb554d01df0e77b252f13215214a7c97f0d",
+      "bound_files": 12
+    },
+    "reviews/statement-referee-2-evidence/EVIDENCE-MANIFEST.json": {
+      "sha256": "838f724a397105f7ae0c53b5156bc53cbb8c6362e705ba4feaf085c315ba736b",
+      "bound_files": 98
+    }
+  },
+  "exact_elaborated_contracts": 3,
+  "safe_type_and_body_reached_project_declarations": 45,
+  "retained_required_dependencies": 16,
+  "successful_source_commands": 4,
+  "retained_failed_attempts": 4,
+  "successful_explicit_LeanCert_kernel_and_standard_three_reports": 9,
+  "implementation_errors_corrected": 3,
+  "inspector_error_corrected": "Attempt 007 expected reflexive matrixEntry_apply to survive elaboration. Definitional reduction erased it; replaced that expectation with the actual ContinuousLinearMap.proj dependency. No implementation change for this inspector correction.",
+  "warnings": "The final helper has two nonblocking style suggestions to use let in place of letI. Reference warnings are intentional diagnostic admissions, forbidden from actual helper dependencies.",
+  "scope_limits": "Local macOS direct-source helper build, read-only pinned MI22 packages. Not an independent final mathematical approval, Linux run, Comparator result, full RA20 proof or publication."
+}

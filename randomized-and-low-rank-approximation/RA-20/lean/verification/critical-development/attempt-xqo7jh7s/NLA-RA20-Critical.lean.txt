@@ -1,0 +1,67 @@
+/-
+RA-20: exhaustion of the actual smooth critical set on the full generic open set.
+Formalization: George Stepaniants, Department of Computing and Mathematical Sciences,
+California Institute of Technology, Pasadena, California, USA, with AI assistance.
+Original resolution: Codex automated maintainer audit; conjecture of Kubjas,
+Sodomaco and Tsigaridas. The actual smooth, tangent and differential helpers
+retain their separately recorded implementation and Mathlib attribution.
+-/
+import NLA.RA20.Smooth
+import NLA.RA20.Differential
+
+set_option autoImplicit false
+set_option leancert.trust "kernel"
+noncomputable section
+open scoped BigOperators
+namespace NLA.RA20
+
+/-- All hollow symmetric directions, without any rank constraint. -/
+theorem symmetric_zero_diagonal_eq_hollow (Z : Mat 3) (hZ : Z.IsSymm)
+    (hd : ∀ i : Fin 3, Z i i = 0) : Z = hollow (Z 0 1) (Z 0 2) (Z 1 2) := by
+  ext i j
+  fin_cases i <;> fin_cases j <;> simp [hollow, hd, hZ.apply]
+
+theorem hollow_eq_hollow_iff (a b c d e f : ℂ) :
+    hollow a b c = hollow d e f ↔ a = d ∧ b = e ∧ c = f := by
+  constructor
+  · intro h
+    exact ⟨congrArg (fun Z : Mat 3 ↦ Z 0 1) h,
+      congrArg (fun Z : Mat 3 ↦ Z 0 2) h, congrArg (fun Z : Mat 3 ↦ Z 1 2) h⟩
+  · rintro ⟨rfl, rfl, rfl⟩; rfl
+
+theorem smoothPoint_hollow_iff (a b c : ℂ) :
+    SmoothPoint 3 3 (hollow a b c) ↔ ExactlyOneZero a b c := by
+  simpa [hollow] using algebraic_smooth_locus_proved (hollow a b c)
+
+/-- The actual full-entry derivative on arbitrary hollow directions. -/
+theorem hollow_frobenius_differential (U : Mat 3) (hU : U.IsSymm)
+    (a b c u v w : ℂ) :
+    fderiv ℂ (fullFrobeniusDistance U) (hollow a b c) (hollow u v w) =
+      4 * ((a - U 0 1) * u + (b - U 0 2) * v + (c - U 1 2) * w) := by
+  rw [full_frobenius_differential_proved]
+  have h10 : U 1 0 = U 0 1 := hU.apply 0 1
+  have h20 : U 2 0 = U 0 2 := hU.apply 0 2
+  have h21 : U 2 1 = U 1 2 := hU.apply 1 2
+  simp [hollow, Fin.sum_univ_succ, h10, h20, h21]
+  ring
+
+theorem generic_coordinates_ne_zero (U : Mat 3) (hU : GenericData U) :
+    U 0 1 ≠ 0 ∧ U 0 2 ≠ 0 ∧ U 1 2 ≠ 0 := by
+  have h := mul_ne_zero_iff.mp hU.2
+  exact ⟨(mul_ne_zero_iff.mp h.1).1, (mul_ne_zero_iff.mp h.1).2, h.2⟩
+
+theorem generic_candidate_injective (U : Mat 3) (hU : GenericData U) :
+    Function.Injective (candidate U) := by
+  have hn := generic_coordinates_ne_zero U hU
+  intro i j h
+  have h01 := congrArg (fun Z : Mat 3 ↦ Z 0 1) h
+  have h02 := congrArg (fun Z : Mat 3 ↦ Z 0 2) h
+  have h12 := congrArg (fun Z : Mat 3 ↦ Z 1 2) h
+  fin_cases i <;> fin_cases j <;> simp_all [candidate, hollow]
+
+#assert_trust kernel hollow_frobenius_differential
+#print axioms hollow_frobenius_differential
+#assert_trust kernel generic_candidate_injective
+#print axioms generic_candidate_injective
+
+end NLA.RA20

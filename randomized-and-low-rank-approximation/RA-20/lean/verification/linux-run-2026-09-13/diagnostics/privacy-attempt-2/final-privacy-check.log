@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/privacy_and_supplemental.py", line 54, in <module>
+    r=checks();print(json.dumps({k:v for k,v in r.items() if k!='recognized_path_occurrences'},indent=2))
+  File "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/privacy_and_supplemental.py", line 45, in checks
+    else:inspect(path.read_bytes(),name)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/privacy_and_supplemental.py", line 36, in inspect
+    assert token in allowed,('unrecognized address-shaped token; values not displayed',name)
+           ^^^^^^^^^^^^^^^^
+AssertionError: ('unrecognized address-shaped token; values not displayed', 'verification/linux-run-2026-09-13/privacy_and_supplemental.py')

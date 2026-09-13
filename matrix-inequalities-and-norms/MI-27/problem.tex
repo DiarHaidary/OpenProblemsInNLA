@@ -51,37 +51,49 @@ one in the logarithmic commutator inequality\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} challenging\quad\textbf{Importance:} broadly
 interesting\par}
-{\sffamily\small\bfseries\color{accent}Status: Open\par}
+{\sffamily\small\bfseries\color{accent}Status: Solved\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
-\textbf{Rating rationale:} Improving the known universal coefficient to
-its proposed sharp value is challenging; connections between matrix
-logarithms, entropy and quantum dynamics make the question broadly
-interesting.
+\textbf{Historical rating rationale:} Improving the known universal
+coefficient to its proposed sharp value is challenging; connections
+between matrix logarithms, entropy and quantum dynamics make the
+question broadly interesting.
 
-\subsection{Projection equivalence and coefficient sharpness --- 12
-September
-2026}\label{projection-equivalence-and-coefficient-sharpness-12-september-2026}
+\subsection{Resolution: affirmative, 12 September
+2026}\label{resolution-affirmative-12-september-2026}
 
-\textbf{Author:} Sidney Holden, Center for Computational Biology,
-Flatiron Institute, Simons Foundation.
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-matrix-2026-09-12/README.md}{Submission
-and verified affiliation}.
+\textbf{Sidney Holden}, Center for Computational Biology, Flatiron
+Institute, Simons Foundation, proves the exact inequality for every
+dimension and every complex positive definite pair in the original
+statement, with optimality already in order two. See \textbf{Theorem
+1.1, Sections 2--5}, of the
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi27-2026-09-12/solution.pdf}{complete
+manuscript}
+(\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi27-2026-09-12/solution.md}{Markdown},
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi27-2026-09-12/solution.tex}{LaTeX}).
 
+A
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi27-2026-09-12/verification/independent-review.md}{separate
+Codex AI-agent audit} passed the full proof and checked its published
+relative-entropy input. This is informal review; no external human peer
+review, Lean verification or priority claim is asserted.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-mi27-2026-09-12/provenance.md}{Provenance
+and verified affiliation} disclose AI assistance and credit
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/186}{PR
+\#186}, whose partial results left the universal upper bound open. The
+original target below is retained; ratings above are historical.
+
+\subsection{Earlier supporting results --- 12 September
+2026}\label{earlier-supporting-results-12-september-2026}
+
+Holden's
 \href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-matrix-2026-09-12/MI-27/result.md}{Theorems
-1 and 2} prove equivalence with the arbitrary-rank projection case and
-give a strictly positive order-two family showing that any universal
-coefficient is at least one. The proof allows component traces to vary
-and uses entropy concavity to recombine them. The universal
-coefficient-one upper bound remains Open.
-
-A separate
+1 and 2} established projection equivalence and a strictly positive
+order-two sharpness family. The
 \href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-matrix-2026-09-12/verification/MI-20-MI-27-review.md}{independent
-Codex AI-agent audit} passed this limited scope. This is informal
-automated review; no complete resolution, historical novelty, external
-human peer review or formal verification is claimed. No Lean
-verification was performed.
+review} remains available. Those results left the universal upper bound
+open; the full proof above supplies it.
 
 \subsection{Problem statement}\label{problem-statement}
 
@@ -109,6 +121,7 @@ noncommuting positive matrices mix. It connects perturbation estimates
 for the matrix logarithm with entropy production and quantum
 information.
 
+\newpage
 \subsection{References}\label{references}
 
 \begin{enumerate}
@@ -137,11 +150,12 @@ information.
   subscription body was not independently inspected in this audit.
 \end{enumerate}
 
-Status check (2026-09-10): Audenaert's theorem settles the existence
-claim with \(2\). Vershynina's 2021 revision distinguishes the proved
-coefficient from the proposed coefficient \(1\). Searches for ``small
-incremental mixing sharp constant'', ``logarithmic commutator Audenaert
-constant one'', and 2025/2026 found later special-case estimates but no
-announced universal coefficient-one proof or counterexample. This
-limited search does not certify that the conjecture remains open.
+Historical status check (2026-09-10; superseded by the resolution
+above): Audenaert's theorem settles the existence claim with \(2\).
+Vershynina's 2021 revision distinguishes the proved coefficient from the
+proposed coefficient \(1\). Searches for ``small incremental mixing
+sharp constant'', ``logarithmic commutator Audenaert constant one'', and
+2025/2026 found later special-case estimates but no announced universal
+coefficient-one proof or counterexample. This limited search does not
+certify that the conjecture remains open.
 \end{document}

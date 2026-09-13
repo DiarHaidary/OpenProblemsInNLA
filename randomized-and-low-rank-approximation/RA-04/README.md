@@ -3,27 +3,22 @@
 **Difficulty:** hard  
 **Importance:** interesting to specialist  
 **Rating rationale:** Hard because this is a focused spectral-gap refinement of an established Krylov bound; specialist impact reflects the source's assessment that its practical gain is limited.  
-**Last checked:** 2026-09-12
+**Last checked:** 2026-09-13
 
-**Status:** Partially resolved
+**Status:** Solved
 
-## Partial results — 2026-09-12
 
-**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation ([verified affiliation](https://www.simonsfoundation.org/people/sidney-holden/)). The [complete report](../../references/holden-ra04-2026-09-12/RA04_partial_results.pdf) and [editable source](../../references/holden-ra04-2026-09-12/src/report.tex) establish the following partial results, with $`m=k'=bt`$ and $`\Delta=\Delta_{k'}^{(b)}`$.
+## Resolution — affirmative, 13 September 2026
 
-Theorem 5.3 proves all three requested guarantees for every admissible input with
+**Sidney Holden**, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 1.1, Theorem 6.4 and Section 7](../../references/holden-ra04-full-proof-2026-09-13/report.pdf) settle the exact target below, including both norm guarantees, right singular-vector energies and boundary cases, without additional spectral assumptions.
 
-```math
-q=O\!\left(\frac{t\log(2m/\Delta)+\log(n/(\delta\varepsilon))}{\sqrt\varepsilon}\right).
-```
+The [independent Codex AI-agent informal audit](../../references/holden-ra04-full-proof-2026-09-13/verification/independent-review.md) passed, supporting `Solved` under repository policy. No external human peer review or formal verification is asserted; no Lean was performed. [Source, reproduction and review](../../references/holden-ra04-full-proof-2026-09-13/README.md) · [Affiliation, provenance and earlier partial submissions](../../references/holden-ra04-full-proof-2026-09-13/SUBMISSION.md). Ratings are historical; the original target is retained.
 
-This has an extra $`t\log m`$ term. The requested iteration order holds when $`\Delta\leq1/m`$ (Corollary 5.4), when the leading spectrum consists of exactly $`t`$ levels each repeated $`b`$ times (Theorem 6.1), when $`t=2`$ with arbitrary admissible leading spectra (Theorem 7.1), and at the endpoints $`b=1`$ and $`b=k`$ (Theorem 6.1 and Corollary 6.2). Proposition 8.1 gives almost-sure exact optimal approximation when $`\mathop{\mathrm{rank}}\nolimits(A)=m`$ after $`t+1`$ blocks. Theorem 4.1 supplies an alternative all-input bound with leading term $`(m-b+1)\log(3/\Delta)`$.
+## Earlier partial contributions — 12–13 September 2026
 
-**Remaining target:** the displayed original bound for arbitrary growing $`b,t`$, nonzero-width leading clusters and $`\Delta>1/m`$ is neither proved nor disproved. The report's sufficient interpolation estimate (IE) remains unproved. Its raw-monomial conditioning counterexample (Proposition 9.1) does not refute RA-04, whose algorithm depends on the Krylov subspace.
+Holden's [first report](../../references/holden-ra04-2026-09-12/RA04_partial_results.pdf) proved an all-input bound with an extra logarithmic term and the requested order in several restricted regimes. Its [independent review](../../references/holden-ra04-2026-09-12/verification/independent-review.md) is retained. The [continuation, Sections 3–8](../../references/holden-ra04-continuation-2026-09-13/report.md), added narrow-band convergence and exact recovery with few distinct lower eigenvalues; its [independent review](../../references/holden-ra04-continuation-2026-09-13/verification/independent-review.md) is also retained. These partial scopes preceded the unrestricted resolution above.
 
-A [separate independent Codex agent review](../../references/holden-ra04-2026-09-12/verification/independent-review.md) passed the partial arguments and checked the imported convergence theorem against the primary source. This is informal AI-agent review, not external human peer review or formal verification. It does not meet the complete-resolution requirement for **Solved**. [Submission and reproduction record](../../references/holden-ra04-2026-09-12/README.md).
-
-## Original problem (retained)
+## Original target (retained)
 
 Let $`A\in\mathbb R^{n\times d}`$ have singular values $`\sigma_1\geq\sigma_2\geq\cdots`$. Fix integers $`1\leq b\leq k`$, set $`t=\lceil k/b\rceil`$, and set $`k'=bt\leq\mathop{\mathrm{rank}}\nolimits(A)`$. Define
 

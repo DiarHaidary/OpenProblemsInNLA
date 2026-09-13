@@ -1,0 +1,11 @@
+# Independent review of PR #204 — RE-06
+
+Reviewed 2026-09-13 at `e898eb61eccaa1cd8a9a7e0b25d64f176fd71a53`. Result: PASS for the full nonadaptive finite-family approximation target; Solved is appropriate. This is an independent Codex mathematical audit, not Lean verification or external human peer review.
+
+Read the complete 617-line proof and supplied implementation/tests. All queries, including both repair blocks, are chosen before responses. Selecting the candidate and processing the repair afterward does not introduce an adaptive oracle query. The small-dimension branch precommits basis queries. The query model permits the stated unrestricted postprocessing and finite-family search.
+
+Verified the trimmed Gaussian lower-tail Chernoff calculation, the fixed-optimum upper tail and the one-sided finite-family union bound. The selected candidate's rank-r tail is controlled on the common event. Conditional on the first sketch, the repair sketches remain independent. The inverse Gaussian Gram expectation follows from a row-distance chi-square calculation with the correct degrees of freedom. Deterministic range approximation and left regression yield nonnegative error variables, so the Markov argument does not mistakenly bound a signed excess. Rank deficiency, zero tail and OPT=0 are covered without dividing by a zero singular value. The total failure bound is below 0.01, and the surrogate-to-nearest-family comparison gives 3+epsilon. Checked ceilings and the advertised O(sqrt(log M)/epsilon^2) query bound with zero additive term.
+
+Checked the historical problem source https://arxiv.org/html/2507.19290v2 ; the new proof is self-contained for its repair estimates. Reran all 11 tests and the complete verifier: 846 flat-spectrum checks, 3,000 Chernoff checks, four 5,000-sample pseudoinverse experiments and 640 end-to-end trials passed, with fixed query transcripts and no final trial failures. Smaller experimental sketch widths are clearly labeled as diagnostics, not proof of the universal theorem. Evidence: `re06-verification-summary.json` in this audit directory.
+
+Visually inspected all 12 manuscript and two canonical PDF pages. No blocker found; original ID, canonical path and mathematical target are retained.

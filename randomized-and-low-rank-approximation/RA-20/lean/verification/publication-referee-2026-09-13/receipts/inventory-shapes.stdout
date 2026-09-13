@@ -1,0 +1,379 @@
+EVIDENCE-MANIFEST.json
+{
+  "utc": "2026-09-13T07:55:13.238376+00:00",
+  "status": "PUBLICATION_AUTHOR_SEALED; independent publication review pending",
+  "author": "/root/ra20_final_referee1",
+  "role": "Candidate-document and publication author; no independent review of own publication",
+  "candidate": "43603b173beb294c2588d83f936a8a96246fd5f0",
+  "actual_accepted_Ubuntu_run": 34743832047,
+  "root_gate_sha256": "a2c3a74eb858edb859d34d8bd2985dc54710e31816412d285c32a547e080e57e",
+  "file_count": 1791,
+  "own_evidence_files_excluding_outer": 164,
+  "project_files_excluding_outer": 1744,
+  "other_repository_files": 47,
+  "project_baseline_count": 1580,
+  "other_prepublication_inputs": 17,
+  "changed_existing_paths": [
+    "CATALOG.md",
+    "README.md",
+    "RESOLVED.md",
+    "randomized-and-low-rank-approximation/RA-20/README.md",
+    "randomized-and-low-rank-approximation/RA-20/lean/README.md",
+    "randomized-and-low-rank-approximation/RA-20/lean/formalization.yaml",
+    "randomized-and-low-rank-approximation/RA-20/problem.pdf",
+    "randomized-and-low-rank-approximation/RA-20/problem.tex",
+    "randomized-and-low-rank-approximation/README.md"
+  ],
+  "accepted_prior_inventories": [
+    {
+      "file": "reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "360b0d841ebd8cb7219b39997e0b0a2617be32abfef461866d0f022ca134f70d",
+      "entries": 699
+    },
+    {
+      "file": "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "7fc642361790960be2d3a584d2842dc688d13511d93220907abc0d7ab951318c",
+      "entries": 793
+    },
+    {
+      "file": "reviews/statement-package-manifest.json",
+      "sha256": "f703189ce7532af272df37e521ce9d703d01aaa9733cd7aa7d1f45813b0e5fa6",
+      "entries": 70
+    },
+    {
+      "file": "reviews/statement-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "5a0ca5bdd0db73e72739a581cd878eb554d01df0e77b252f13215214a7c97f0d",
+      "entries": 12
+    },
+    {
+      "file": "reviews/statement-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "838f724a397105f7ae0c53b5156bc53cbb8c6362e705ba4feaf085c315ba736b",
+      "entries": 98
+    },
+    {
+      "file": "verification/algebra-development/EVIDENCE-MANIFEST.json",
+      "sha256": "c17f5f2bc0dc187ab4f024d0ccc2027023dd058f165dff827050b39cdc616f6f",
+      "entries": 148
+    },
+    {
+      "file": "verification/candidate-packaging-referee-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "7cbac7459fca07b95fc8b511b6c21daa03e631178ea07da8f7d872f35c3f9605",
+      "entries": 1102
+    },
+    {
+      "file": "verification/conclusion-development/EVIDENCE-MANIFEST.json",
+      "sha256": "08a46ab6aac719684b7376b1e92717e25a3bc8fa5aa2a54429a0c6d4b86466ab",
+      "entries": 513
+    },
+    {
+      "file": "verification/critical-development/EVIDENCE-MANIFEST.json",
+      "sha256": "447880d6364257b0b3a6446bf23f7af8431cc6b793089722dc8a964e042aba0e",
+      "entries": 77
+    },
+    {
+      "file": "verification/differential-development/EVIDENCE-MANIFEST.json",
+      "sha256": "92bfee1c031660ffe542ace9f04c602009b35dbb95a95b513affca5913ca9a7f",
+      "entries": 159
+    },
+    {
+      "file": "verification/generic-development/EVIDENCE-MANIFEST.json",
+      "sha256": "6478ce518b17eb81293c87262c3566b731d42e1e3a4e9986b39806628d466404",
+      "entries": 165
+    },
+    {
+      "file": "verification/linux-candidate-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "60f056cd293d2b093786a34e55b670975dd6b27e7e927acdbf8513438c28b381",
+      "entries": 1010
+    },
+    {
+      "file": "verification/linux-run-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "89b3cd2aa8c47835be4531cca85561a70aee7f20be6e9f3bcdaaa48d23812dcd",
+      "entries": 1589
+    },
+    {
+      "file": "verification/root-candidate-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "19a363307931a42bc7ae27e2d1ce039f6a1829e888415edbb18ae00498e0c6ba",
+      "entries": 10
+    },
+    {
+      "file": "verification/root-linux-acceptance-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "40d68224c966fc5114995418bf47ee2fc38f3ebbacc50536cae3b1c9d98ca0b8",
+      "entries": 1604
+    },
+    {
+      "file": "verification/root-proof-acceptance-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "821cdca57cc846c5a9d76d90f8396942d4efa73eef616f358b8cbca56bd529ff",
+      "entries": 3
+    },
+    {
+      "file": "verification/smooth-development/EVIDENCE-MANIFEST.json",
+      "sha256": "50387281334c42d07d268d96ae43d26b029588c7fa75d77d0de8d4dbff7f9187",
+      "entries": 89
+    },
+    {
+      "file": "verification/smooth-transport-development/EVIDENCE-MANIFEST.json",
+      "sha256": "33e3483ef20efc2bc3a6b4846922a2d5e08efd2177bba3f580ec52fb10c1c0a4",
+      "entries": 13
+    },
+    {
+      "file": "verification/tangent-development/EVIDENCE-MANIFEST.json",
+      "sha256": "30de2c667e003d8576716d2e9df2a6ef0b7f93fa1d5cb37f951f186df6c0f3f5",
+      "entries": 180
+    }
+  ],
+  "rejected_diagnostic_manifest_retained": "verification/root-linux-acceptance-2026-09-13/initial-scope-diagnostic/EVIDENCE-MANIFEST.json",
+  "inventory_rule": "Complete prior project baseline, accepted root operational scope including every nested manifest and rejected diagnostic bytes, all new publication outputs/archives/evidence, all canonical/index inputs and actual renderer/check sources. Only this exact outer self path excluded. Later independent reviewer additions outside this directory are separate evidence.",
+  "historical_mapping_rule": "Only exact original repository path plus exact expected old SHA256 in ARCHIVES.json, together with the earlier exact project-README/7eb951... mapping. All other expectations unchanged; no historical seal edited.",
+  "exact_self_exclusion": "EVIDENCE-MANIFEST.json"
+}
+sample [('../../../../../.github/workflows/lean-verification.yml', {'sha256': '2c3963089483ec5e7e35e6355fa60988778e0b439ce099d7cd7050a8c3b6467c', 'bytes': 5940}), ('../../../../../.github/workflows/problem-ids.yml', {'sha256': '384fb2da65e683ec650bf0f47fa5e63ae2fbc451101e168df70ae872a6f4c524', 'bytes': 1511})]
+PREFLIGHT.json
+{
+  "utc": "2026-09-13T07:36:04.187048+00:00",
+  "status": "PUBLICATION_PREAUTHOR_GATE_PASS",
+  "author": "/root/ra20_final_referee1",
+  "role": "Candidate-document and publication author; no independent approval of own publication",
+  "candidate": "43603b173beb294c2588d83f936a8a96246fd5f0",
+  "actual_Linux_run": 34743832047,
+  "anchors": {
+    "verification/root-linux-acceptance-2026-09-13/ROOT-ACCEPTANCE.json": "a2c3a74eb858edb859d34d8bd2985dc54710e31816412d285c32a547e080e57e",
+    "verification/root-linux-acceptance-2026-09-13/EVIDENCE-MANIFEST.json": "40d68224c966fc5114995418bf47ee2fc38f3ebbacc50536cae3b1c9d98ca0b8",
+    "reviews/linux-operational-referee-2026-09-13.md": "7f7532bbc01533d0c35fe0ac3aece0ff66cb43c1444e41275db0784cee6b8ae7",
+    "verification/linux-run-2026-09-13/EVIDENCE-MANIFEST.json": "89b3cd2aa8c47835be4531cca85561a70aee7f20be6e9f3bcdaaa48d23812dcd",
+    "README.md": "83e19faf1bf25a9748de40da3193cfd68690100923a50379553e288c45b5e8bc",
+    "formalization.yaml": "bec9d851e204464fa2d3e29033d5958034665d51c3554d2043f1470bfafd4197"
+  },
+  "root_outer_entries": 1604,
+  "operational_recheck": {
+    "status": "INDEPENDENT_RA20_OPERATIONAL_SEAL_PASS",
+    "verdict": "APPROVE actual RA20 Ubuntu operational verification",
+    "candidate": "43603b173beb294c2588d83f936a8a96246fd5f0",
+    "workflow_run": 34743832047,
+    "file_count": 1589,
+    "own_evidence_files_excluding_outer": 471,
+    "candidate_Git_inputs": 1092,
+    "all_nested_prior_inventories": 17,
+    "proof_inputs": 521,
+    "statement_inputs": 68,
+    "original_sources": 16,
+    "all_workflow_jobs": 17,
+    "all_original_artifact_ZIPs": 16,
+    "whole_workflow_log_members": 217,
+    "exports": 12,
+    "source_kernel_assertions": 61,
+    "printed_axiom_occurrences": 57,
+    "distinct_printed_names": 45,
+    "all_command_receipts": 85,
+    "successful_command_receipts": 82,
+    "retained_failed_command_receipts": 3,
+    "read_only_runtime_recheck": "PASS",
+    "private_email_addresses_added": 0,
+    "non_address_path_forms": 4,
+    "new_mathematical_approval": false,
+    "canonical_status": "Solved, unchanged",
+    "root_operational_acceptance_and_publication": "pending"
+  },
+  "project_baseline_count": 1580,
+  "other_publication_inputs": {
+    "README.md": {
+      "sha256": "f4b160409ee1c02a9140db11c208b33faabb1c8b02ffae8f555515b847443d7c",
+      "bytes": 8524
+    },
+    "CATALOG.md": {
+      "sha256": "4594afc6ff9c65c4f33b91fc92d6485df5560380b616574e9aef4d301cac607e",
+      "bytes": 69234
+    },
+    "RESOLVED.md": {
+      "sha256": "a857d38ef7c150e789d8166e1cc48eb645904246613717e3dae33de085458f5c",
+      "bytes": 133357
+    },
+    "arithmetic-and-complexity/README.md": {
+      "sha256": "fea138f3d18bba55e2a83762fa2263ec4a21089d535baf6c94bfbdc9b36fc9aa",
+      "bytes": 3347
+    },
+    "eigenvalues-and-inverse-problems/README.md": {
+      "sha256": "4dc5a5a61d84dd7417d4fdd027d046f8f82191980848a44c6897f67e3eb317c1",
+      "bytes": 6055
+    },
+    "frames-and-matrix-designs/README.md": {
+      "sha256": "da983d603a0732ed50ed84256146ac3374c59a17770b39bd49339d95314f8200",
+      "bytes": 3106
+    },
+    "intervals-and-absolute-value-equations/README.md": {
+      "sha256": "b92cfae0719bebe5366a3837ab5ef42d14b16ea4f3d1f1248ea9cddb57ab871d",
+      "bytes": 2433
+    },
+    "linear-systems-and-elimination/README.md": {
+      "sha256": "31035c9d0e189e8f4d3618a76e6a016900aba9b5247ffbb3d79cb69ad5e67da9",
+      "bytes": 5728
+    },
+    "matrix-discrepancy-and-optimization/README.md": {
+      "sha256": "58ce8d9014d5210cf120dea51ea5737b437b5b8d959b03f9cdcf1e11178ca0ed",
+      "bytes": 1769
+    },
+    "matrix-functions-and-stability/README.md": {
+      "sha256": "7bc2da6a728fc9c7d7db27e004908ab7a827a6320619bd71fc4917126cf29470",
+      "bytes": 5767
+    },
+    "matrix-inequalities-and-norms/README.md": {
+      "sha256": "a64153263f706211fc243b850daa3a08e4ee9a997e9dc2ac7dc11682ccba64ed",
+      "bytes": 7216
+    },
+    "nonnegative-and-positive-factorizations/README.md": {
+      "sha256": "3ad4ff00cfe6b133d00300c7ae07743fc7034925d9b7983f7c51dc1d99c9883e",
+      "bytes": 3111
+    },
+    "randomized-and-low-rank-approximation/README.md": {
+      "sha256": "7f4fc791d87041fa4ea965df0a9d5d1af0999bcdfc8e7ce977d339b36227ad64",
+      "bytes": 7029
+    },
+    "tensor-computations/README.md": {
+      "sha256": "e27feef6019bd9898cb3cabf7973b4f7cb44006732897c176f66cf3ee50c2b75",
+      "bytes": 6155
+    },
+    "randomized-and-low-rank-approximation/RA-20/README.md": {
+      "sha256": "c3f4e740305ff07c2bb58e9136dd6fee1c60e2c2d4a92d2f2647adac976912e7",
+      "bytes": 4380
+    },
+    "randomized-and-low-rank-approximation/RA-20/problem.tex": {
+      "sha256": "4d9553597d2a38534fa091a1a1b8f8322282d1d3ad5b33fbec48820111eca9c3",
+      "bytes": 7812
+    },
+    "randomized-and-low-rank-approximation/RA-20/problem.pdf": {
+      "sha256": "7fdfd0e9874863eabead0a38d2245afedf4b81c64d56c9eddd30e7a02a805c47",
+      "bytes": 38667
+    }
+  },
+  "registry_sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763",
+  "permanent_ID_count": 217,
+  "original_source_base": "5830ed4fb06da0659414a3deb2a40ad327aca052",
+  "new_scope": "Current project wrappers, their exact candidate archives, canonical RA20 README/TeX/PDF, generated indexes and RESOLVED, and own publication evidence only"
+}
+DOCUMENT-CHECKS.json
+{
+  "utc": "2026-09-13T07:54:02.362418+00:00",
+  "status": "FINAL_AUTHOR_DOCUMENT_CHECKS_PASS",
+  "role": "Publication author check; independent publication approval pending",
+  "changed_existing_paths": [
+    "CATALOG.md",
+    "README.md",
+    "RESOLVED.md",
+    "randomized-and-low-rank-approximation/RA-20/README.md",
+    "randomized-and-low-rank-approximation/RA-20/lean/README.md",
+    "randomized-and-low-rank-approximation/RA-20/lean/formalization.yaml",
+    "randomized-and-low-rank-approximation/RA-20/problem.pdf",
+    "randomized-and-low-rank-approximation/RA-20/problem.tex",
+    "randomized-and-low-rank-approximation/README.md"
+  ],
+  "external_URLs_syntax_only": [
+    "https://arxiv.org/abs/2010.15636v2",
+    "https://doi.org/10.1016/j.laa.2022.01.021",
+    "https://github.com/TauCetiProject/TauCetiReview/tree/afb424eda89e8ac96d9eb69f6a88972055a4cd1b/rubrics",
+    "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/randomized-and-low-rank-approximation/RA-20/README.md",
+    "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/randomized-and-low-rank-approximation/RA-20/solution.md",
+    "https://github.com/jaumededios/Schiffer/tree/2938e277969c329caf154e48a3d8823f3635c7f1",
+    "https://github.com/leanprover/comparator",
+    "https://github.com/mathlib-initiative/formalization.yaml/blob/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json",
+    "https://github.com/sgstepaniants/Forsythe/tree/8d1b0c0545a77b40245e84705aa7d273e6c81e62/lean-proof",
+    "https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34743832047",
+    "https://github.com/sgstepaniants/OpenProblemsInNLA/blob/43603b173beb294c2588d83f936a8a96246fd5f0/randomized-and-low-rank-approximation/RA-20/lean/Solution.lean",
+    "https://github.com/sgstepaniants/OpenProblemsInNLA/tree/43603b173beb294c2588d83f936a8a96246fd5f0/randomized-and-low-rank-approximation/RA-20/lean"
+  ],
+  "immutable_Git_source_links": [
+    {
+      "url": "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/randomized-and-low-rank-approximation/RA-20/README.md",
+      "sha256": "c3f4e740305ff07c2bb58e9136dd6fee1c60e2c2d4a92d2f2647adac976912e7",
+      "Git_blob_checked": true
+    },
+    {
+      "url": "https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/randomized-and-low-rank-approximation/RA-20/solution.md",
+      "sha256": "a91a56513b3181fc6b9a5bd5d1cb43565bcd58c0e4c16831c663030d645d877b",
+      "Git_blob_checked": true
+    },
+    {
+      "url": "https://github.com/sgstepaniants/OpenProblemsInNLA/blob/43603b173beb294c2588d83f936a8a96246fd5f0/randomized-and-low-rank-approximation/RA-20/lean/Solution.lean",
+      "sha256": "755a58cc081172804c644ea83518581235763a6ecefcbff6c92f131ca44c32b5",
+      "Git_blob_checked": true
+    }
+  ],
+  "canonical_original_statement_and_following_source_record": "exactly preserved",
+  "all_217_ID_mappings": "unchanged",
+  "export_count": 12,
+  "PDF_pages_visually_inspected": 3,
+  "email_like_matches": 0,
+  "new_checks": [
+    {
+      "utc": "2026-09-13T07:54:02.181598+00:00",
+      "command": [
+        "/tmp/nla-lean-formalization/venv/bin/python",
+        "tools/lean/validate_manifest.py",
+        "randomized-and-low-rank-approximation/RA-20/lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "exit_code": 0,
+      "stdout_sha256": "8e3ebeaa9508f037f41d1c133bf7da1341066bdebe2807f56f8284476a81e36d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:54:02.309775+00:00",
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:54:02.339911+00:00",
+      "command": [
+        "git",
+        "diff",
+        "--name-only"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "exit_code": 0,
+      "stdout_sha256": "d349ad37b50282aa4703c57df6a4b5c4886fecc4dcf8eb354ff3adfbba906256",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "external_live_HTTP_probe": "not performed or claimed during publication preparation"
+}
+CHECKS.json
+{
+  "status": "AUTHOR_SCHEMA_ID_MATH_RENDER_CHECKS_PASS; visual inspection and independent publication review pending"
+}
+reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T06:02:45.473602+00:00", "reviewer": "/root/ra20_final_referee1", "scope": "Complete independent final mathematical review evidence, exact frozen proof closure and all nested manifests", "file_count": 699, "own_evidence_files": 176, "frozen_files_including_freeze": 522, "adjacent_report_files": 1, "original_source_files": {"randomized-and-low-rank-approximation/RA-20/README.md": "c3f4e740305ff07c2bb58e9136dd6fee1c60e2c2d4a92d2f2647adac976912e7", "randomized-and-low-rank-approximation/RA-20/solution.md": "a91a56513b3181fc6b9a5bd5d1cb43565bcd58c0e4c16831c663030d645d877b", "randomized-and-low-rank-approximation/RA-20/solution.tex": "428383fd4b33a1c4e64e4c847cf2ccbb438a9a2f03c5c74ff4a0b01a7e66d530", "references/research-expansion-2026-09-11/ra20-resolution/README.md": "2edc69fed55780b1c8c49cf68e46937b829d4c22dfc664002ed312bd6cce4c72", "references/research-expansion-2026-09-11/ra20-resolution/independent-review.md": "70154a64965e0552e0981235ff26eb9f6849dc65c5eadf9d5d57920205cc9047", "references/research-expansion-2026-09-11/ra20-resolution/verify_counterexample.py": "d652d34a3e52987e8604ce13c6a44c79b07e6a2f14d883287c0f7b4b3085f8b7", "references/research-expansion-2026-09-11/ra20-resolution/exact-results.json": "36c949bfde9815384c04577ef49059080ef0b8576f2dd9d0011b5c6a8fae60f8", "AGENTS.md": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162", "CONTRIBUTING.md": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3", "problem_ids.json": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763", "docs/lean/README.md": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6", "docs/lean/REVIEW.md": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553", "docs/lean/schema/README.md": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb", "docs/lean/schema/v0.4.schema.json": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce", "tools/lean/HARNESS.md": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4", "tools/lean/source-lock.json": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b"}, "original_source_git_blobs": {"randomized-and-low-rank-approximation/RA-20/README.md": "f7ca68e612d728f233a1a2b857824ea6c67c0d3c", "randomized-and-low-rank-approximation/RA-20/solution.md": "f313b853f47c66ac00ff353316c96e0b16cb5006", "randomized-and-low-rank-approximation/RA-20/solution.tex": "93ebc33594d9122fd63e56b2a58f87bf0f32a10d", "references/research-expansion-2026-09-11/ra20-resolution/README.md": "119bd1600d1a8ba5e49167097c03f16b76771ed0", "references/research-expansion-2026-09-11/ra20-resolution/independent-review.md": "3b626f9affbd564fe535107c0d8edbff7591add3", "references/research-expansion-2026-09-11/ra20-resolution/verify_counterexample.py": "4a7a55adcda97634f89bd96fe755799b7f456b64", "references/research-expansion-2026-09-11/ra20-resolution/exact-results.json": "58630510d20a053e41850ce6b2432668de6dcbbf", "AGENTS.md": "7eb638704c183dc5a4ad1f2e3d9103416fedd92b", "CONTRIBUTING.md": "ade2131e55f0372fd3a8de1634864e84c37def61", "problem_ids.json": "b1810237bc80efe04b4bb08f74d1e974b1bf80f7", "docs/lean/README.md": "24bfdfd61a643984c9607081a922e89313c47c83", "docs/lean/REVIEW.md": "5d1d8c908923a687f4779fd1a539237bd29a1a1a", "docs/lean/schema/README.md": "e61bade6af2c59233db4bd1ccc906eafe8d10e5a", "docs/lean/schema/v0.4.schema.json": "19f4a46a1bc0e4798dca7bcb7ed57281b1c8c996", "tools/lean/HARNESS.md": "8f338f8f163e04d4fb7b6af5cdf969af92177c4b", "tools/lean/source-lock.json": "27916ca1e378b13ba1a08f1eb3ecb285fde12408"}, "inventory_rule": "Every own file, the complete 521-file frozen project plus its freeze, and adjacent report. All nested manifests included. Original source bytes are bound through their retained snapshots.", "exact_self_exclusion": "EVIDENCE-MANIFEST.json"} first_files [('../../.gitignore', {'sha256': '72baa8f178202398b3b7c88a08fb84c33ca276332e891ebbcad8dfda691171c2', 'bytes': 63}), ('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441})]
+reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json {"reviewer": "/root/ra20_final_referee2", "verdict": "APPROVE", "phase": "Independent final mathematical review, local macOS source rebuild only", "proof_freeze_sha256": "f66dfe47527df937de8ed399606206bdaef55717cef8d68808f60834aece0c6f", "report_sha256": "d7cfa1404c147ae19cec776e2047c85b6bdfd1484192a1cbbb171ed9afa7dbcf", "frozen_project_files_including_outer": 522, "original_sources": 16, "inventory_rule": "All referee-2 files, its report, the entire 521-file frozen proof boundary plus the proof freeze itself, and all 16 original source files. Every nested manifest is included. Exclude only this exact new outer manifest path. Other agents\u2019 separately owned additive work is outside this review scope.", "exact_self_exclusion": "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json", "file_count": 793} first_files [('../../../../../AGENTS.md', {'sha256': 'd7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162', 'bytes': 1272}), ('../../../../../CONTRIBUTING.md', {'sha256': 'df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3', 'bytes': 10507})]
+reviews/statement-referee-1-evidence/EVIDENCE-MANIFEST.json {"reviewer": "/root", "file_count": 12, "inventory_rule": "All actual evidence recursively plus adjacent report; exact outer self-exclusion only"} first_files [('Challenge.lean.log', {'sha256': '327a035038340b62e079e8f80a37d41d8bfef7173dc2092e985f87f1a7c15574', 'bytes': 1428}), ('Challenge.lean.txt', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441})]
+reviews/statement-referee-2-evidence/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T04:20:25.544418+00:00", "verdict": "APPROVE exact RA20 frozen statements only", "reviewer": "/root/leancert_examples, independent AI statement referee2", "report_sha256": "542cfa5fb183aa7bfa4b79ad9ab1c16bb32b77e713e10414d4c8bae50c0873a2", "inventory_rule": "Every own evidence file, report, and every file in the original author package plus its manifest. Exact outer self exclusion only; all nested manifests and all original and referee attempts are ordinary bound inputs.", "file_count": 98, "own_internal_files": 26, "original_author_package_files_including_outer": 71} first_files [('../../.gitignore', {'sha256': '72baa8f178202398b3b7c88a08fb84c33ca276332e891ebbcad8dfda691171c2', 'bytes': 63}), ('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441})]
+verification/algebra-development/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T05:02:46.297359+00:00", "scope": "RA20 algebra helper author completion, contracts 1,2 only; local macOS", "owner": "/root/formal_review_standards", "inventory_rule": "Every file under this evidence directory plus the helper and complete frozen statement/prior-review input closure. Only this exact EVIDENCE-MANIFEST.json is excluded from its own inventory. No wildcard exclusions.", "file_count": 148, "own_evidence_files": 33, "bound_input_files": 115} first_files [('../../.gitignore', {'sha256': '72baa8f178202398b3b7c88a08fb84c33ca276332e891ebbcad8dfda691171c2', 'bytes': 63}), ('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441})]
+verification/candidate-packaging-referee-2026-09-13/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T06:45:44.620690+00:00", "reviewer": "/root/ra20_final_referee2", "verdict": "APPROVE: candidate packaging only", "base": "5830ed4fb06da0659414a3deb2a40ad327aca052", "file_count": 1102, "own_evidence_files_excluding_outer": 86, "installer_bound_inputs": 1010, "installer_outer_manifest_itself_bound": true, "complete_current_project_membership_at_seal": true, "exact_self_exclusion": "EVIDENCE-MANIFEST.json", "inventory_rule": "All installer-bound files, its exact outer manifest, all additional actual tool inputs recorded by snapshots.json, this independent report and every own evidence file. Later separate acceptance/publication artifacts outside this evidence directory are outside this fixed seal. No nested manifest is excluded.", "historical_mapping": {"exact_original_project_path": "README.md", "only_expected_sha256": "7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50", "exact_archive_project_path": "verification/pre-candidate-README.md"}} first_files [('../../../../../AGENTS.md', {'sha256': 'd7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162', 'bytes': 1272}), ('../../../../../CONTRIBUTING.md', {'sha256': 'df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3', 'bytes': 10507})]
+verification/conclusion-development/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T05:29:05.265621+00:00", "scope": "RA20 scoped complete author assembly, Count/Proof/Solution; not the whole-project proof freeze", "owner": "/root/formal_review_standards", "inventory_rule": "Every own evidence file, three newly owned sources, and all seven complete helper seals/input closures, including nested manifests. Exclude only this exact outer manifest from its own inventory.", "file_count": 513, "own_evidence_files": 71, "bound_input_files": 442, "prior_manifests": [{"manifest": "verification/algebra-development/EVIDENCE-MANIFEST.json", "sha256": "c17f5f2bc0dc187ab4f024d0ccc2027023dd058f165dff827050b39cdc616f6f", "bound_files": 148}, {"manifest": "verification/tangent-development/EVIDENCE-MANIFEST.json", "sha256": "30de2c667e003d8576716d2e9df2a6ef0b7f93fa1d5cb37f951f186df6c0f3f5", "bound_files": 180}, {"manifest": "verification/differential-development/EVIDENCE-MANIFEST.json", "sha256": "92bfee1c031660ffe542ace9f04c602009b35dbb95a95b513affca5913ca9a7f", "bound_files": 159}, {"manifest": "verification/smooth-transport-development/EVIDENCE-MANIFEST.json", "sha256": "33e3483ef20efc2bc3a6b4846922a2d5e08efd2177bba3f580ec52fb10c1c0a4", "bound_files": 13}, {"manifest": "verification/smooth-development/EVIDENCE-MANIFEST.json", "sha256": "50387281334c42d07d268d96ae43d26b029588c7fa75d77d0de8d4dbff7f9187", "bound_files": 89}, {"manifest": "verification/generic-development/EVIDENCE-MANIFEST.json", "sha256": "6478ce518b17eb81293c87262c3566b731d42e1e3a4e9986b39806628d466404", "bound_files": 165}, {"manifest": "verification/critical-development/EVIDENCE-MANIFEST.json", "sha256": "447880d6364257b0b3a6446bf23f7af8431cc6b793089722dc8a964e042aba0e", "bound_files": 77}]} first_files [('../../.gitignore', {'sha256': '72baa8f178202398b3b7c88a08fb84c33ca276332e891ebbcad8dfda691171c2', 'bytes': 63}), ('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441})]
+verification/critical-development/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T05:27:10.363680+00:00", "format": "sha256-size-manifest-v1", "root": ".", "excludes_only": "EVIDENCE-MANIFEST.json", "scope": "All Critical author raw attempts, final checks and handoff; actual source, sealed imports, original frozen boundary and gate. Nested manifests are included."} first_files [('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441}), ('../../NLA/RA20/Algebra.lean', {'sha256': '67adf1643bd62089a62d857c404bdb5ee1bbbd192984ed5f1169b8c5ec71f5f1', 'bytes': 9151})]
+verification/differential-development/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T04:56:51.237405+00:00", "scope": "RA20 differential helper author completion, contracts 5,6,8 only; local macOS", "owner": "/root/mf16_final_referee", "inventory_rule": "Every file under this evidence directory plus the helper and complete frozen statement/prior-review input closure. Only this exact EVIDENCE-MANIFEST.json is excluded from its own inventory. No wildcard exclusions.", "file_count": 159, "own_evidence_files": 44, "bound_input_files": 115} first_files [('../../.gitignore', {'sha256': '72baa8f178202398b3b7c88a08fb84c33ca276332e891ebbcad8dfda691171c2', 'bytes': 63}), ('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441})]
+verification/generic-development/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T05:20:53.161661+00:00", "scope": "RA20 Generic root-authored helper packaging/inspection, contract 9 only; local macOS", "owner": "/root/mf16_final_referee", "inventory_rule": "Every file under this evidence directory plus the helper and complete frozen statement/prior-review input closure. Only this exact EVIDENCE-MANIFEST.json is excluded from its own inventory. No wildcard exclusions.", "file_count": 165, "own_evidence_files": 50, "bound_input_files": 115} first_files [('../../.gitignore', {'sha256': '72baa8f178202398b3b7c88a08fb84c33ca276332e891ebbcad8dfda691171c2', 'bytes': 63}), ('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441})]
+verification/linux-candidate-2026-09-13/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T06:26:49.901545+00:00", "status": "AUTHOR_INSTALLATION_SEALED; independent packaging review pending", "author": "/root/ra20_final_referee1", "role": "Prior independent final mathematical referee; now candidate-document author, adding no review approval", "base": "5830ed4fb06da0659414a3deb2a40ad327aca052", "baseline_count": 958, "README_sha256": "83e19faf1bf25a9748de40da3193cfd68690100923a50379553e288c45b5e8bc", "YAML_sha256": "bec9d851e204464fa2d3e29033d5958034665d51c3554d2043f1470bfafd4197", "historical_mapping": {"exact_original_project_path": "README.md", "only_expected_sha256": "7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50", "exact_archive_project_path": "verification/pre-candidate-README.md", "all_other_paths": "Unchanged and checked at their original exact paths and hashes"}, "file_count": 1010, "own_evidence_files_excluding_outer": 32, "project_files_excluding_outer": 992, "live_original_and_check_tool_files": 18, "original_sources": {"randomized-and-low-rank-approximation/RA-20/README.md": "c3f4e740305ff07c2bb58e9136dd6fee1c60e2c2d4a92d2f2647adac976912e7", "randomized-and-low-rank-approximation/RA-20/solution.md": "a91a56513b3181fc6b9a5bd5d1cb43565bcd58c0e4c16831c663030d645d877b", "randomized-and-low-rank-approximation/RA-20/solution.tex": "428383fd4b33a1c4e64e4c847cf2ccbb438a9a2f03c5c74ff4a0b01a7e66d530", "references/research-expansion-2026-09-11/ra20-resolution/README.md": "2edc69fed55780b1c8c49cf68e46937b829d4c22dfc664002ed312bd6cce4c72", "references/research-expansion-2026-09-11/ra20-resolution/independent-review.md": "70154a64965e0552e0981235ff26eb9f6849dc65c5eadf9d5d57920205cc9047", "references/research-expansion-2026-09-11/ra20-resolution/verify_counterexample.py": "d652d34a3e52987e8604ce13c6a44c79b07e6a2f14d883287c0f7b4b3085f8b7", "references/research-expansion-2026-09-11/ra20-resolution/exact-results.json": "36c949bfde9815384c04577ef49059080ef0b8576f2dd9d0011b5c6a8fae60f8", "AGENTS.md": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162", "CONTRIBUTING.md": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3", "problem_ids.json": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763", "docs/lean/README.md": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6", "docs/lean/REVIEW.md": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553", "docs/lean/schema/README.md": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb", "docs/lean/schema/v0.4.schema.json": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce", "tools/lean/HARNESS.md": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4", "tools/lean/source-lock.json": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b"}, "original_source_git_blobs": {"randomized-and-low-rank-approximation/RA-20/README.md": "f7ca68e612d728f233a1a2b857824ea6c67c0d3c", "randomized-and-low-rank-approximation/RA-20/solution.md": "f313b853f47c66ac00ff353316c96e0b16cb5006", "randomized-and-low-rank-approximation/RA-20/solution.tex": "93ebc33594d9122fd63e56b2a58f87bf0f32a10d", "references/research-expansion-2026-09-11/ra20-resolution/README.md": "119bd1600d1a8ba5e49167097c03f16b76771ed0", "references/research-expansion-2026-09-11/ra20-resolution/independent-review.md": "3b626f9affbd564fe535107c0d8edbff7591add3", "references/research-expansion-2026-09-11/ra20-resolution/verify_counterexample.py": "4a7a55adcda97634f89bd96fe755799b7f456b64", "references/research-expansion-2026-09-11/ra20-resolution/exact-results.json": "58630510d20a053e41850ce6b2432668de6dcbbf", "AGENTS.md": "7eb638704c183dc5a4ad1f2e3d9103416fedd92b", "CONTRIBUTING.md": "ade2131e55f0372fd3a8de1634864e84c37def61", "problem_ids.json": "b1810237bc80efe04b4bb08f74d1e974b1bf80f7", "docs/lean/README.md": "24bfdfd61a643984c9607081a922e89313c47c83", "docs/lean/REVIEW.md": "5d1d8c908923a687f4779fd1a539237bd29a1a1a", "docs/lean/schema/README.md": "e61bade6af2c59233db4bd1ccc906eafe8d10e5a", "docs/lean/schema/v0.4.schema.json": "19f4a46a1bc0e4798dca7bcb7ed57281b1c8c996", "tools/lean/HARNESS.md": "8f338f8f163e04d4fb7b6af5cdf969af92177c4b", "tools/lean/source-lock.json": "27916ca1e378b13ba1a08f1eb3ecb285fde12408"}, "nested_historical_inventories": [{"file": "reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json", "sha256": "360b0d841ebd8cb7219b39997e0b0a2617be32abfef461866d0f022ca134f70d", "entries": 699}, {"file": "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json", "sha256": "7fc642361790960be2d3a584d2842dc688d13511d93220907abc0d7ab951318c", "entries": 793}, {"file": "reviews/statement-package-manifest.json", "sha256": "f703189ce7532af272df37e521ce9d703d01aaa9733cd7aa7d1f45813b0e5fa6", "entries": 70}, {"file": "reviews/statement-referee-1-evidence/EVIDENCE-MANIFEST.json", "sha256": "5a0ca5bdd0db73e72739a581cd878eb554d01df0e77b252f13215214a7c97f0d", "entries": 12}, {"file": "reviews/statement-referee-2-evidence/EVIDENCE-MANIFEST.json", "sha256": "838f724a397105f7ae0c53b5156bc53cbb8c6362e705ba4feaf085c315ba736b", "entries": 98}, {"file": "verification/algebra-development/EVIDENCE-MANIFEST.json", "sha256": "c17f5f2bc0dc187ab4f024d0ccc2027023dd058f165dff827050b39cdc616f6f", "entries": 148}, {"file": "verification/conclusion-development/EVIDENCE-MANIFEST.json", "sha256": "08a46ab6aac719684b7376b1e92717e25a3bc8fa5aa2a54429a0c6d4b86466ab", "entries": 513}, {"file": "verification/critical-development/EVIDENCE-MANIFEST.json", "sha256": "447880d6364257b0b3a6446bf23f7af8431cc6b793089722dc8a964e042aba0e", "entries": 77}, {"file": "verification/differential-development/EVIDENCE-MANIFEST.json", "sha256": "92bfee1c031660ffe542ace9f04c602009b35dbb95a95b513affca5913ca9a7f", "entries": 159}, {"file": "verification/generic-development/EVIDENCE-MANIFEST.json", "sha256": "6478ce518b17eb81293c87262c3566b731d42e1e3a4e9986b39806628d466404", "entries": 165}, {"file": "verification/root-proof-acceptance-2026-09-13/EVIDENCE-MANIFEST.json", "sha256": "821cdca57cc846c5a9d76d90f8396942d4efa73eef616f358b8cbca56bd529ff", "entries": 3}, {"file": "verification/smooth-development/EVIDENCE-MANIFEST.json", "sha256": "50387281334c42d07d268d96ae43d26b029588c7fa75d77d0de8d4dbff7f9187", "entries": 89}, {"file": "verification/smooth-transport-development/EVIDENCE-MANIFEST.json", "sha256": "33e3483ef20efc2bc3a6b4846922a2d5e08efd2177bba3f580ec52fb10c1c0a4", "entries": 13}, {"file": "verification/tangent-development/EVIDENCE-MANIFEST.json", "sha256": "30de2c667e003d8576716d2e9df2a6ef0b7f93fa1d5cb37f951f186df6c0f3f5", "entries": 180}], "inventory_rule": "Every preinstallation project file, exact old README archive, current wrappers, all own evidence and nested manifests; all sixteen live original source inputs and actual schema/ID validator scripts. Paths relative to this manifest directory. Later files from a separate reviewer outside this directory are not part of this author seal.", "exact_self_exclusion": "EVIDENCE-MANIFEST.json"} first_files [('../../../../../AGENTS.md', {'sha256': 'd7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162', 'bytes': 1272}), ('../../../../../CONTRIBUTING.md', {'sha256': 'df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3', 'bytes': 10507})]
+verification/linux-run-2026-09-13/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T07:27:56.058232+00:00", "verdict": "APPROVE actual RA20 Ubuntu operational verification", "candidate": "43603b173beb294c2588d83f936a8a96246fd5f0", "reviewer": "/root/ra20_final_referee2", "file_count": 1589, "own_evidence_files_excluding_outer": 471, "exact_self_exclusion": "EVIDENCE-MANIFEST.json", "scope": "All 1092 committed candidate inputs, every prior nested-manifest input including live originals/check scripts, additional actual repository infrastructure, this report, every own raw command/API/archive/member snapshot/checker source/diagnostic/result. Only this exact outer self path is excluded. Later root acceptance/publication files outside this directory are outside this phase seal.", "historical_mapping": {"exact_original_project_path": "README.md", "only_expected_sha256": "7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50", "exact_archive_project_path": "verification/pre-candidate-README.md"}} first_files [('../../../../../.github/workflows/lean-verification.yml', {'sha256': '2c3963089483ec5e7e35e6355fa60988778e0b439ce099d7cd7050a8c3b6467c', 'bytes': 5940}), ('../../../../../.github/workflows/problem-ids.yml', {'sha256': '384fb2da65e683ec650bf0f47fa5e63ae2fbc451101e168df70ae872a6f4c524', 'bytes': 1511})]
+verification/root-candidate-2026-09-13/EVIDENCE-MANIFEST.json {"scope": "Every file in this directory; exact outer self exclusion only"} first_files [('ROOT-CHECKS.json', {'sha256': 'f66c8d37518cf1d21c8d21963fe72faf5b0b4ef03423ce653888145611f75b7f', 'bytes': 156319}), ('commit_candidate.py', {'sha256': '0770f7c34e823c2b9a10d009444e6acae1539542f04cef3c2dbe3e93892450c4', 'bytes': 11603})]
+verification/root-linux-acceptance-2026-09-13/EVIDENCE-MANIFEST.json {"candidate": "43603b173beb294c2588d83f936a8a96246fd5f0", "exact_self_exclusion": "EVIDENCE-MANIFEST.json", "file_count": 1604, "problem": "RA-20", "scope": "Complete independently sealed operational scope plus its outer manifest and every coordinator acceptance file"} first_files [('../../../../../.github/workflows/lean-verification.yml', {'bytes': 5940, 'sha256': '2c3963089483ec5e7e35e6355fa60988778e0b439ce099d7cd7050a8c3b6467c'}), ('../../../../../.github/workflows/problem-ids.yml', {'bytes': 1511, 'sha256': '384fb2da65e683ec650bf0f47fa5e63ae2fbc451101e168df70ae872a6f4c524'})]
+verification/root-linux-acceptance-2026-09-13/initial-scope-diagnostic/EVIDENCE-MANIFEST.json {"candidate": "43603b173beb294c2588d83f936a8a96246fd5f0", "exact_self_exclusion": "EVIDENCE-MANIFEST.json", "file_count": 1596, "problem": "RA-20", "scope": "Complete independently sealed operational scope plus its outer manifest and every coordinator acceptance file"} first_files [('../../../../../../../private/tmp/nla-lean-ra20-worktree/.github/workflows/lean-verification.yml', {'bytes': 5940, 'sha256': '2c3963089483ec5e7e35e6355fa60988778e0b439ce099d7cd7050a8c3b6467c'}), ('../../../../../../../private/tmp/nla-lean-ra20-worktree/.github/workflows/problem-ids.yml', {'bytes': 1511, 'sha256': '384fb2da65e683ec650bf0f47fa5e63ae2fbc451101e168df70ae872a6f4c524'})]
+verification/root-proof-acceptance-2026-09-13/EVIDENCE-MANIFEST.json {"file_count": 3, "exact_self_exclusion": "EVIDENCE-MANIFEST.json", "inventory_rule": "All own files; only the exact outer self path is excluded"} first_files [('author-seal-check.json', {'sha256': '8b6f5e979a8a926d9297a17ef4bfb18e386e5de9eb3fbb146729ceb5387630eb', 'bytes': 360}), ('copy-and-acceptance.json', {'sha256': '399a8da928bca1f079d322f96f50a9a629e1ed4c6a2cdb485a1a2e2cc40856b3', 'bytes': 78408})]
+verification/smooth-development/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T05:10:04.740979+00:00", "format": "sha256-size-manifest-v1", "root": ".", "excludes_only": "EVIDENCE-MANIFEST.json", "scope": "All Smooth development/final evidence, raw attempts and handoff; actual source/imported helpers, frozen boundary and gate. Nested manifest basenames are not excluded."} first_files [('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441}), ('../../NLA/RA20/Algebra.lean', {'sha256': '67adf1643bd62089a62d857c404bdb5ee1bbbd192984ed5f1169b8c5ec71f5f1', 'bytes': 9151})]
+verification/smooth-transport-development/EVIDENCE-MANIFEST.json {"scope": "All evidence files and the actual helper, excluding only this exact outer manifest; every failed/successful snapshot and nested file included"} first_files [('FINAL.json', {'sha256': '47bd212daeaa945ce57b48bbc9784f97a101160af258e3f3de4c989c17eed7d3', 'bytes': 614}), ('HANDOFF.md', {'sha256': '8575273dabed56183fc3ee637db3770d5402d319937aa1ef28af6a91d45fc44c', 'bytes': 2286})]
+verification/tangent-development/EVIDENCE-MANIFEST.json {"utc": "2026-09-13T05:09:18.131721+00:00", "scope": "RA20 author tangent helper contract4, local macOS only", "owner": "/root/formal_review_standards", "inventory_rule": "All own evidence, helper and complete sealed Algebra input closure, retaining nested manifests. Exclude only this exact outer manifest from its own inventory.", "file_count": 180, "own_evidence_files": 30, "bound_input_files": 150} first_files [('../../.gitignore', {'sha256': '72baa8f178202398b3b7c88a08fb84c33ca276332e891ebbcad8dfda691171c2', 'bytes': 63}), ('../../Challenge.lean', {'sha256': 'eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9', 'bytes': 3441})]
+render tools [('pdftoppm', '/opt/homebrew/bin/pdftoppm'), ('pdfinfo', '/opt/homebrew/bin/pdfinfo'), ('pdftotext', '/opt/homebrew/bin/pdftotext')]

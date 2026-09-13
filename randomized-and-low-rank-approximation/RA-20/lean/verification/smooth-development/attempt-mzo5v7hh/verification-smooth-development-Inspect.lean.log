@@ -1,0 +1,72 @@
+'NLA.RA20.SmoothAudit.exact_frozen_contract' depends on axioms: [propext, Classical.choice, Quot.sound]
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/smooth-development/Inspect.lean:38:21: error(lean.unknownIdentifier): Unknown identifier `liftCoreM`
+NLA.RA20.algebraic_smooth_locus_proved
+  (X : NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) :
+  Iff
+    (NLA.RA20.SmoothPoint (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) X)
+    (And
+      (@Eq.{1} (NLA.RA20.Mat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) X
+        (@NLA.RA20.hollow.{0} Complex Complex.instZero
+          (X
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 0)))
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 1))))
+          (X
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 0)))
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 2))))
+          (X
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 1)))
+            (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+              (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+                (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 2))))))
+      (NLA.RA20.ExactlyOneZero
+        (X
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 0)))
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 1))))
+        (X
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 0)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 0)))
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 2))))
+        (X
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 1)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 1)))
+          (@OfNat.ofNat.{0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) (nat_lit 2)
+            (@Fin.instOfNat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+              (@Nat.instNeZeroSucc (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))) (nat_lit 2))))))
+Algebra.FormallySmooth.iff_split_surjection.{u, v, u_2} {R : Type u} {A : Type v} [CommRing R] [CommRing A]
+  [Algebra R A] {P : Type u_2} [CommRing P] [Algebra R P] [Algebra.FormallySmooth R P] (f : P →ₐ[R] A)
+  (hf : Function.Surjective ⇑f) : Algebra.FormallySmooth R A ↔ ∃ g, f.kerSquareLift.comp g = AlgHom.id R A
+IsLocalization.ker_map.{u_1, u_2, u_3, u_4} {R : Type u_1} {S : Type u_2} {P : Type u_3} (Q : Type u_4) [CommSemiring R]
+  [CommSemiring S] [CommSemiring P] [CommSemiring Q] {M : Submonoid R} {T : Submonoid P} [Algebra R S] [Algebra P Q]
+  [IsLocalization M S] [IsLocalization T Q] (g : R →+* P) (hT : Submonoid.map g M = T) :
+  RingHom.ker (IsLocalization.map Q g ⋯) = Ideal.map (algebraMap R S) (RingHom.ker g)
+IsLocalization.map_surjective_of_surjective.{u_1, u_2, u_3, u_4} {R : Type u_1} [CommSemiring R] (M : Submonoid R)
+  (S : Type u_2) [CommSemiring S] [Algebra R S] {P : Type u_3} [CommSemiring P] [IsLocalization M S] {g : R →+* P}
+  (Q : Type u_4) [CommSemiring Q] [Algebra P Q] (h : Function.Surjective ⇑g) [IsLocalization (Submonoid.map g M) Q] :
+  Function.Surjective ⇑(IsLocalization.map Q g ⋯)
+IsLocalization.algEquivOfAlgEquiv.{u_4, u_5, u_6, u_7, u_8} {A : Type u_4} [CommSemiring A] {R : Type u_5}
+  [CommSemiring R] [Algebra A R] {M : Submonoid R} (S : Type u_6) [CommSemiring S] [Algebra A S] [Algebra R S]
+  [IsScalarTower A R S] [IsLocalization M S] {P : Type u_7} [CommSemiring P] [Algebra A P] {T : Submonoid P}
+  (Q : Type u_8) [CommSemiring Q] [Algebra A Q] [Algebra P Q] [IsScalarTower A P Q] [IsLocalization T Q] (h : R ≃ₐ[A] P)
+  (H : Submonoid.map h M = T) : S ≃ₐ[A] Q
+NLA.RA20.smoothLocus_comap_algEquiv.{u_1, u_2, u_3} {R : Type u_1} {A : Type u_2} {B : Type u_3} [CommRing R]
+  [CommRing A] [CommRing B] [Algebra R A] [Algebra R B] (e : A ≃ₐ[R] B) (p : PrimeSpectrum B) :
+  PrimeSpectrum.comap e.toRingEquiv.toRingHom p ∈ Algebra.smoothLocus R A ↔ p ∈ Algebra.smoothLocus R B

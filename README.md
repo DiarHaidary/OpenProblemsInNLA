@@ -4,13 +4,13 @@ A collection of precise open problems drawn from books and research
 publications, with references and dated checks for subsequent solutions.
 
 <!-- catalog-summary -->
-**124 problems with open targets:** 51 open and 73 partially resolved. **93 other retained entries**, excluded from the open count.
+**116 problems with open targets:** 46 open and 70 partially resolved. **101 other retained entries**, excluded from the open count.
 
-**Resolution evidence:** 74 solved (published or independently audited); 19 solved with Lean verification.
+**Resolution evidence:** 77 solved (published or independently audited); 24 solved with Lean verification.
 
 Each entry records its own literature-check date. Literature checks are bounded; ratings are editorial. “Impact” uses the canonical `Importance` field.
 
-**[Browse all 124 open targets →](CATALOG.md)** · **[Solved and claimed solutions →](RESOLVED.md)**
+**[Browse all 116 open targets →](CATALOG.md)** · **[Solved and claimed solutions →](RESOLVED.md)**
 <!-- /catalog-summary -->
 
 ## Browse by category
@@ -20,10 +20,10 @@ Each entry records its own literature-check date. Literature checks are bounded;
 | [Linear systems and elimination](linear-systems-and-elimination/README.md) | 9 |
 | [Eigenvalues and inverse problems](eigenvalues-and-inverse-problems/README.md) | 13 |
 | [Matrix functions and stability](matrix-functions-and-stability/README.md) | 14 |
-| [Randomized and low-rank approximation](randomized-and-low-rank-approximation/README.md) | 16 |
+| [Randomized and low-rank approximation](randomized-and-low-rank-approximation/README.md) | 13 |
 | [Tensor computations](tensor-computations/README.md) | 17 |
-| [Nonnegative and positive factorizations](nonnegative-and-positive-factorizations/README.md) | 7 |
-| [Matrix inequalities and norms](matrix-inequalities-and-norms/README.md) | 19 |
+| [Nonnegative and positive factorizations](nonnegative-and-positive-factorizations/README.md) | 4 |
+| [Matrix inequalities and norms](matrix-inequalities-and-norms/README.md) | 17 |
 | [Frames and matrix designs](frames-and-matrix-designs/README.md) | 11 |
 | [Matrix discrepancy and optimization](matrix-discrepancy-and-optimization/README.md) | 3 |
 | [Arithmetic and complexity](arithmetic-and-complexity/README.md) | 13 |

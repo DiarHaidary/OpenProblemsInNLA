@@ -1,0 +1,159 @@
+/-
+Copyright (c) 2026 George Stepaniants. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: George Stepaniants
+
+Department of Computing and Mathematical Sciences, California Institute of
+Technology, Pasadena, California, USA. AI-assisted formalization.
+Original negative-resolution mathematics: the Codex automated maintainer audit
+retained by OpenProblemsInNLA. Original conjecture: Kubjas, Sodomaco and Tsigaridas.
+-/
+import NLA.RA20.Definitions
+import Mathlib.Analysis.Calculus.FDeriv.Add
+import Mathlib.Analysis.Calculus.FDeriv.Mul
+import Mathlib.Analysis.Calculus.FDeriv.Prod
+import Mathlib.Tactic.FinCases
+import Mathlib.Tactic.Ring
+import LeanCert.Tactic.Verification
+
+/-!
+# Genuine complex differentials of the full Frobenius objective
+
+The scalar objective is complex bilinear, with each actual matrix entry counted.
+The derivative of a finite sum of squared affine linear coordinates is proved
+first; differentiating its continuous-linear-map-valued gradient proves the
+second derivative. The three component charts only specialize this result.
+No definition of the smooth locus, tangent space or derivative is replaced.
+-/
+set_option autoImplicit false
+set_option leancert.trust "kernel"
+noncomputable section
+open scoped BigOperators Classical
+namespace NLA.RA20
+
+section Quadratic
+variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
+variable {ι : Type*} [Fintype ι]
+
+/-- Actual derivative of the square of an affine complex linear functional. -/
+theorem hasFDerivAt_affine_square (L : E →L[ℂ] ℂ) (a : ℂ) (x : E) :
+    HasFDerivAt (fun y => (L y - a)^2) ((2 * (L x-a)) • L) x := by
+  have h := (L.hasFDerivAt (x := x)).sub_const a
+  have hs := h.mul h
+  convert hs using 1 <;> try rfl
+  · funext y
+    exact pow_two (L y-a)
+  · ext z
+    change (2 * (L x-a)) * L z = (L x-a) * L z + (L x-a) * L z
+    ring
+
+/-- Gradient as an actual continuous linear map. -/
+def quadraticGradient (L : ι → E →L[ℂ] ℂ) (a : ι → ℂ) (x : E) : E →L[ℂ] ℂ :=
+  ∑ j, (2 * (L j x - a j)) • L j
+
+theorem hasFDerivAt_sum_squares (L : ι → E →L[ℂ] ℂ) (a : ι → ℂ) (x : E) :
+    HasFDerivAt (fun y => ∑ j, (L j y-a j)^2) (quadraticGradient L a x) x := by
+  exact HasFDerivAt.fun_sum fun j _ => hasFDerivAt_affine_square (L j) (a j) x
+
+theorem sum_squares_fderiv (L : ι → E →L[ℂ] ℂ) (a : ι → ℂ) (x z : E) :
+    fderiv ℂ (fun y => ∑ j, (L j y-a j)^2) x z =
+      2 * ∑ j, (L j x-a j) * L j z := by
+  rw [(hasFDerivAt_sum_squares L a x).fderiv]
+  simp only [quadraticGradient, ContinuousLinearMap.sum_apply, ContinuousLinearMap.smul_apply,
+    smul_eq_mul, Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro j _
+  ring
+
+/-- This differentiates the actual gradient map, not just its scalar evaluations. -/
+theorem hasFDerivAt_quadraticGradient (L : ι → E →L[ℂ] ℂ) (a : ι → ℂ) (x : E) :
+    HasFDerivAt (quadraticGradient L a)
+      (∑ j, ((2 : ℂ) • L j).smulRight (L j)) x := by
+  apply HasFDerivAt.fun_sum
+  intro j _
+  exact (((L j).hasFDerivAt (x := x)).sub_const (a j)).const_smul (2 : ℂ) |>.smul_const (L j)
+
+theorem sum_squares_hessian (L : ι → E →L[ℂ] ℂ) (a : ι → ℂ) (x h v : E) :
+    (fderiv ℂ (fun w => fderiv ℂ (fun y => ∑ j, (L j y-a j)^2) w) x) h v =
+      2 * ∑ j, L j h * L j v := by
+  have he : (fun w => fderiv ℂ (fun y => ∑ j, (L j y-a j)^2) w) =
+      quadraticGradient L a := by
+    funext w
+    exact (hasFDerivAt_sum_squares L a w).fderiv
+  rw [he, (hasFDerivAt_quadraticGradient L a x).fderiv]
+  simp only [ContinuousLinearMap.sum_apply, ContinuousLinearMap.smulRight_apply,
+    ContinuousLinearMap.smul_apply, smul_eq_mul, Finset.mul_sum]
+  apply Finset.sum_congr rfl
+  intro j _
+  ring
+
+end Quadratic
+
+/-- Both matrix coordinate projections are actual continuous linear maps. -/
+def matrixEntry (n : ℕ) (ij : Variables n) : Mat n →L[ℂ] ℂ :=
+  ((ContinuousLinearMap.proj ij.2) : (Fin n → ℂ) →L[ℂ] ℂ).comp
+    ((ContinuousLinearMap.proj ij.1) : Mat n →L[ℂ] (Fin n → ℂ))
+
+@[simp] theorem matrixEntry_apply (n : ℕ) (ij : Variables n) (X : Mat n) :
+    matrixEntry n ij X = X ij.1 ij.2 := rfl
+
+theorem full_frobenius_differential_proved (n : ℕ) (U X Z : Mat n) :
+    fderiv ℂ (fullFrobeniusDistance U) X Z =
+      2 * ∑ i, ∑ j, (X i j-U i j) * Z i j := by
+  have he : fullFrobeniusDistance U =
+      (fun Y => ∑ ij : Variables n, (matrixEntry n ij Y-coordinates U ij)^2) := by
+    funext Y
+    simp only [matrixEntry_apply, coordinates, fullFrobeniusDistance, Fintype.sum_prod_type]
+  rw [he]
+  have ht := sum_squares_fderiv (matrixEntry n) (coordinates U) X Z
+  simpa only [matrixEntry_apply, coordinates, Fintype.sum_prod_type] using ht
+
+theorem hollow_distance_semantics_proved (U : Mat 3) (hU : U.IsSymm) (a b c : ℂ) :
+    fullFrobeniusDistance U (hollow a b c) =
+      (∑ i, U i i ^ 2) +
+        2 * ((a-U 0 1)^2 + (b-U 0 2)^2 + (c-U 1 2)^2) := by
+  have h10 : U 1 0 = U 0 1 := hU.apply 0 1
+  have h20 : U 2 0 = U 0 2 := hU.apply 0 2
+  have h21 : U 2 1 = U 1 2 := hU.apply 1 2
+  simp [fullFrobeniusDistance, hollow, Fin.sum_univ_succ, h10,h20,h21]
+  ring
+
+/-- Entrywise continuous linear coordinates of each actual component chart. -/
+def planeEntry (i : Fin 3) : Matrix (Fin 3) (Fin 3) ((Fin 2 → ℂ) →L[ℂ] ℂ) :=
+  if i = 0 then hollow 0 (ContinuousLinearMap.proj 0) (ContinuousLinearMap.proj 1)
+  else if i = 1 then hollow (ContinuousLinearMap.proj 0) 0 (ContinuousLinearMap.proj 1)
+  else hollow (ContinuousLinearMap.proj 0) (ContinuousLinearMap.proj 1) 0
+
+@[simp] theorem planeEntry_apply (i r c : Fin 3) (z : Fin 2 → ℂ) :
+    planeEntry i r c z = planeCoordinates i z r c := by
+  fin_cases i <;> fin_cases r <;> fin_cases c <;>
+    simp [planeEntry, planeCoordinates, hollow]
+
+theorem component_hessians_proved (U : Mat 3) (i : Fin 3) (z h v : Fin 2 → ℂ) :
+    ((fderiv ℂ (fun w => fderiv ℂ
+      (fun y => fullFrobeniusDistance U (planeCoordinates i y)) w) z) h) v =
+        4 * ∑ j, h j * v j ∧
+    ((∀ v : Fin 2 → ℂ, (4 : ℂ) * ∑ j, h j * v j = 0) → h = 0) := by
+  constructor
+  · have he : (fun y => fullFrobeniusDistance U (planeCoordinates i y)) =
+        (fun y => ∑ rc : Variables 3, (planeEntry i rc.1 rc.2 y - coordinates U rc)^2) := by
+      funext y
+      simp only [planeEntry_apply, coordinates, fullFrobeniusDistance, Fintype.sum_prod_type]
+    rw [he, sum_squares_hessian]
+    simp only [planeEntry_apply, Fintype.sum_prod_type]
+    fin_cases i <;>
+      simp [planeCoordinates, hollow, Fin.sum_univ_succ] <;> ring
+  · intro hh
+    funext j
+    have ht := hh (Pi.single j 1)
+    have hz : 4 * h j = 0 := by
+      fin_cases j <;> simpa [Fin.sum_univ_succ] using ht
+    exact (mul_eq_zero.mp hz).resolve_left (by norm_num)
+
+#assert_trust kernel full_frobenius_differential_proved
+#assert_trust kernel hollow_distance_semantics_proved
+#assert_trust kernel component_hessians_proved
+#print axioms full_frobenius_differential_proved
+#print axioms hollow_distance_semantics_proved
+#print axioms component_hessians_proved
+end NLA.RA20

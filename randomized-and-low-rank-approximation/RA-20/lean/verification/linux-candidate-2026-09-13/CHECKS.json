@@ -1,0 +1,159 @@
+{
+  "utc": "2026-09-13T06:17:11.916123+00:00",
+  "status": "AUTHOR_CHECKS_PASS; independent packaging review pending",
+  "baseline_count": 958,
+  "exact_existing_changes": [
+    "README.md"
+  ],
+  "all_other_prior_files_preserved": 957,
+  "old_README_preserved_in_archive": true,
+  "proof_inputs_rehashed": 521,
+  "statement_inputs_rehashed": 68,
+  "original_sources_and_snapshots_rehashed": 16,
+  "all_prior_nested_manifests": [
+    {
+      "file": "reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "360b0d841ebd8cb7219b39997e0b0a2617be32abfef461866d0f022ca134f70d",
+      "entries": 699
+    },
+    {
+      "file": "reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "7fc642361790960be2d3a584d2842dc688d13511d93220907abc0d7ab951318c",
+      "entries": 793
+    },
+    {
+      "file": "reviews/statement-package-manifest.json",
+      "sha256": "f703189ce7532af272df37e521ce9d703d01aaa9733cd7aa7d1f45813b0e5fa6",
+      "entries": 70
+    },
+    {
+      "file": "reviews/statement-referee-1-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "5a0ca5bdd0db73e72739a581cd878eb554d01df0e77b252f13215214a7c97f0d",
+      "entries": 12
+    },
+    {
+      "file": "reviews/statement-referee-2-evidence/EVIDENCE-MANIFEST.json",
+      "sha256": "838f724a397105f7ae0c53b5156bc53cbb8c6362e705ba4feaf085c315ba736b",
+      "entries": 98
+    },
+    {
+      "file": "verification/algebra-development/EVIDENCE-MANIFEST.json",
+      "sha256": "c17f5f2bc0dc187ab4f024d0ccc2027023dd058f165dff827050b39cdc616f6f",
+      "entries": 148
+    },
+    {
+      "file": "verification/conclusion-development/EVIDENCE-MANIFEST.json",
+      "sha256": "08a46ab6aac719684b7376b1e92717e25a3bc8fa5aa2a54429a0c6d4b86466ab",
+      "entries": 513
+    },
+    {
+      "file": "verification/critical-development/EVIDENCE-MANIFEST.json",
+      "sha256": "447880d6364257b0b3a6446bf23f7af8431cc6b793089722dc8a964e042aba0e",
+      "entries": 77
+    },
+    {
+      "file": "verification/differential-development/EVIDENCE-MANIFEST.json",
+      "sha256": "92bfee1c031660ffe542ace9f04c602009b35dbb95a95b513affca5913ca9a7f",
+      "entries": 159
+    },
+    {
+      "file": "verification/generic-development/EVIDENCE-MANIFEST.json",
+      "sha256": "6478ce518b17eb81293c87262c3566b731d42e1e3a4e9986b39806628d466404",
+      "entries": 165
+    },
+    {
+      "file": "verification/root-proof-acceptance-2026-09-13/EVIDENCE-MANIFEST.json",
+      "sha256": "821cdca57cc846c5a9d76d90f8396942d4efa73eef616f358b8cbca56bd529ff",
+      "entries": 3
+    },
+    {
+      "file": "verification/smooth-development/EVIDENCE-MANIFEST.json",
+      "sha256": "50387281334c42d07d268d96ae43d26b029588c7fa75d77d0de8d4dbff7f9187",
+      "entries": 89
+    },
+    {
+      "file": "verification/smooth-transport-development/EVIDENCE-MANIFEST.json",
+      "sha256": "33e3483ef20efc2bc3a6b4846922a2d5e08efd2177bba3f580ec52fb10c1c0a4",
+      "entries": 13
+    },
+    {
+      "file": "verification/tangent-development/EVIDENCE-MANIFEST.json",
+      "sha256": "30de2c667e003d8576716d2e9df2a6ef0b7f93fa1d5cb37f951f186df6c0f3f5",
+      "entries": 180
+    }
+  ],
+  "archive_mapping": {
+    "only_original_path": "README.md",
+    "only_expected_sha256": "7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50",
+    "archive": "verification/pre-candidate-README.md"
+  },
+  "commands": [
+    {
+      "utc": "2026-09-13T06:17:07.083897+00:00",
+      "command": [
+        "/tmp/nla-lean-formalization/venv/bin/python",
+        "tools/lean/validate_manifest.py",
+        "randomized-and-low-rank-approximation/RA-20/lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "exit_code": 0,
+      "seconds": 0.1255443340050988
+    },
+    {
+      "utc": "2026-09-13T06:17:07.209883+00:00",
+      "command": [
+        "python3",
+        "tools/validate_problem_ids.py",
+        "--base-ref",
+        "origin/main"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "exit_code": 0,
+      "seconds": 2.2791827500332147
+    },
+    {
+      "utc": "2026-09-13T06:17:09.489361+00:00",
+      "command": [
+        "python3",
+        "tools/validate_problem_ids.py",
+        "--base-ref",
+        "nla-upstream/main"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0"
+      },
+      "exit_code": 0,
+      "seconds": 2.3858383749611676
+    }
+  ],
+  "actual_main_results": [
+    "NLA.RA20.hollow_variety_semantics",
+    "NLA.RA20.reduced_coordinate_ring",
+    "NLA.RA20.algebraic_smooth_locus",
+    "NLA.RA20.algebraic_tangent_space",
+    "NLA.RA20.full_frobenius_differential",
+    "NLA.RA20.hollow_distance_semantics",
+    "NLA.RA20.generic_critical_locus",
+    "NLA.RA20.component_hessians",
+    "NLA.RA20.generic_data_intersection",
+    "NLA.RA20.generic_count_three",
+    "NLA.RA20.generic_count_not_four",
+    "NLA.RA20.not_criticalCountConjecture"
+  ],
+  "README_sha256": "83e19faf1bf25a9748de40da3193cfd68690100923a50379553e288c45b5e8bc",
+  "YAML_sha256": "bec9d851e204464fa2d3e29033d5958034665d51c3554d2043f1470bfafd4197",
+  "no_mathematical_pin_Git_or_canonical_edit": true,
+  "actual_Linux_Comparator_default_kernel_controls": "pending",
+  "operational_acceptance": "pending",
+  "publication": "pending"
+}

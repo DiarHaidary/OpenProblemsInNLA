@@ -1,0 +1,145 @@
+{
+  "owner": "/root/mf16_final_referee",
+  "platform": "Darwin Georges-MacBook-Pro-5.local 23.6.0 Darwin Kernel Version 23.6.0: Mon Jul 29 21:14:30 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6000 arm64",
+  "prefix": "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo",
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "scope": "Direct source compilation of own helper and frozen Definitions; shared exact MI22 artifacts read-only; no Lake, copy, download or Linux claim.",
+  "attempts": [
+    {
+      "utc": "2026-09-13T04:43:13.296935+00:00",
+      "source": "NLA/RA20/Definitions.lean",
+      "source_sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Definitions.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Definitions.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Definitions.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 19.057894875004422,
+      "evidence": "attempt-001",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T04:43:20.720678+00:00",
+      "source": "NLA/RA20/Differential.lean",
+      "source_sha256": "96a1393cf0458b9bae7c303dc95b1ad04b093942acfc36ba2a4aefb444b2fb5e",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Differential.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Differential.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean"
+      ],
+      "exit_code": 1,
+      "seconds": 7.422524125024211,
+      "evidence": "attempt-002",
+      "log_sha256": "6427953be09d68db50cada20dd39748994e0c328bf713a895caa90e5145e61f9"
+    },
+    {
+      "utc": "2026-09-13T04:47:18.370516+00:00",
+      "source": "NLA/RA20/Differential.lean",
+      "source_sha256": "d2a822aa40b99cffebcdc2741dc22d651bfde294ebc81f6bc22b7390ffd3c63b",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Differential.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Differential.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean"
+      ],
+      "exit_code": 1,
+      "seconds": 22.351258916954976,
+      "evidence": "attempt-003",
+      "log_sha256": "c872b12558366a17a57d0fa3541dad7c5daa740e7ced6d99f48bc12812d2a4e7"
+    },
+    {
+      "utc": "2026-09-13T04:48:07.869702+00:00",
+      "source": "NLA/RA20/Differential.lean",
+      "source_sha256": "d7b3a5a3cc626692302576fb6792fda6e23ab2bf21fb6d28c8ddbd8dc0a3e158",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Differential.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Differential.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean"
+      ],
+      "exit_code": 1,
+      "seconds": 8.770030959043652,
+      "evidence": "attempt-004",
+      "log_sha256": "91fa57eab8362247edde0486a558870d66f123eed2d94a540a6e723639db37d8"
+    },
+    {
+      "utc": "2026-09-13T04:49:29.507029+00:00",
+      "source": "NLA/RA20/Differential.lean",
+      "source_sha256": "8e24af9b30b668fd1c6bfc3799fe6d8771e4a6e96124087752a02f7b4d913ec7",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Differential.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/NLA/RA20/Differential.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 5.778951457992662,
+      "evidence": "attempt-005",
+      "log_sha256": "902491bcd9c09ad9f2b669d84ff46840494b9c93e10fb6f2dc94d25adae7a0dd"
+    },
+    {
+      "utc": "2026-09-13T04:50:55.572415+00:00",
+      "source": "verification/differential-development/Reference.lean",
+      "source_sha256": "f49b03e23e6290c1ad93164741d300468e4c6d793c0fed4e9efb553ca5cd14e0",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/verification/differential-development/Reference.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/verification/differential-development/Reference.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/differential-development/Reference.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.8950487499823794,
+      "evidence": "attempt-006",
+      "log_sha256": "065e296ec87fd3d92ac5a65f18cb26afcfb6e9197c0b3270f2ac6b4711cb0beb"
+    },
+    {
+      "utc": "2026-09-13T04:51:02.136261+00:00",
+      "source": "verification/differential-development/Inspect.lean",
+      "source_sha256": "44f34398fdda7d30671c460f7b35a9b752edef23b469263c0d2250ebd0099892",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/verification/differential-development/Inspect.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/verification/differential-development/Inspect.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/differential-development/Inspect.lean"
+      ],
+      "exit_code": 1,
+      "seconds": 6.562814000004437,
+      "evidence": "attempt-007",
+      "log_sha256": "491f94052e275df59542a353d1e5a7438d6d24e1edd32d2629a1cc6d5a6a7c72"
+    },
+    {
+      "utc": "2026-09-13T04:51:47.957462+00:00",
+      "source": "verification/differential-development/Inspect.lean",
+      "source_sha256": "ca58f825940044c7e63e22d33ed6b09af17e72eec3c275b58f6799fbd699419a",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/verification/differential-development/Inspect.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-differential-clt1capo/verification/differential-development/Inspect.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/differential-development/Inspect.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.807101666985545,
+      "evidence": "attempt-008",
+      "log_sha256": "9bced330543b98d4adba5ee08ecf608c6e1a888bb331753b32571ffd71268e3b"
+    }
+  ]
+}

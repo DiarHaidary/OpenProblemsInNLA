@@ -1,0 +1,26 @@
+'NLA.RA20.triple_product_not_formallySmooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.formallySmooth_of_retraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.abc_local_not_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:240:6: error: Tactic `apply` failed: could not unify the conclusion of `Ideal.span_le.mpr`
+  Ideal.span ?m.39 ≤ ?m.40
+with the goal
+  ∀ a ∈ abcIdeal, ((IsScalarTower.toAlgHom ℂ ABCPoly (ABCPolynomialLocal p)).comp (abcErase j)) a = 0
+
+Note: The full type of `Ideal.span_le.mpr` is
+  ?m.39 ⊆ ↑?m.40 → Ideal.span ?m.39 ≤ ?m.40
+
+p : PrimeSpectrum ABCCoordinateRing
+j : Fin 3
+⊢ ∀ a ∈ abcIdeal, ((IsScalarTower.toAlgHom ℂ ABCPoly (ABCPolynomialLocal p)).comp (abcErase j)) a = 0
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:284:8: error: typeclass instance problem is stuck
+  IsLocalization ?m.39 (ABCLocal p)
+
+Note: Lean will not try to resolve this typeclass instance problem because the third type argument to `IsLocalization` is a metavariable. This argument must be fully determined before Lean will try to resolve the typeclass.
+
+Hint: Adding type annotations and supplying implicit arguments to functions can give Lean more information for typeclass resolution. For example, if you have a variable `x` that you intend to be a `Nat`, but Lean reports it as having an unresolved type like `?m`, replacing `x` with `(x : Nat)` can get typeclass resolution un-stuck.
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:315:4: error: Tactic `simp` failed with a nested error:
+(deterministic) timeout at `«Lean.Meta.acLt»`, maximum number of heartbeats (200000) has been reached
+
+Note: Use `set_option maxHeartbeats <num>` to set the limit.
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

@@ -1,0 +1,77 @@
+{
+  "owner": "/root/mf16_final_referee",
+  "platform": "Darwin Georges-MacBook-Pro-5.local 23.6.0 Darwin Kernel Version 23.6.0: Mon Jul 29 21:14:30 PDT 2024; root:xnu-10063.141.2~1/RELEASE_ARM64_T6000 arm64",
+  "prefix": "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4",
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "scope": "Direct source inspection of root-owned Generic helper and frozen Definitions; shared exact MI22 artifacts read-only; no Lake, copy, download or Linux claim.",
+  "attempts": [
+    {
+      "utc": "2026-09-13T05:16:34.325713+00:00",
+      "source": "NLA/RA20/Definitions.lean",
+      "source_sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/NLA/RA20/Definitions.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/NLA/RA20/Definitions.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Definitions.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.7787640409660526,
+      "evidence": "inspection-attempt-001",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T05:16:39.047486+00:00",
+      "source": "NLA/RA20/Generic.lean",
+      "source_sha256": "47676372aa8e028a2c12bf6c23951b0edf5b7404a18abd24487d36399b7fb007",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/NLA/RA20/Generic.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/NLA/RA20/Generic.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Generic.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.720997083000839,
+      "evidence": "inspection-attempt-002",
+      "log_sha256": "9b281fcf8554e9d48bbfe96d8cce9d649d7b4372259a0779f5ce47e5c9d4fa4f"
+    },
+    {
+      "utc": "2026-09-13T05:16:42.958689+00:00",
+      "source": "verification/generic-development/Reference.lean",
+      "source_sha256": "07d9bf767bb1233270d2ed20f989cd4b5dd46511edb82d4910f2f1590d3d6028",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/verification/generic-development/Reference.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/verification/generic-development/Reference.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Reference.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 3.9104925840510987,
+      "evidence": "inspection-attempt-003",
+      "log_sha256": "e34d3df533520caf7b1a4845e9309f6191b8fc0523422c6a4c6dbb825dcff789"
+    },
+    {
+      "utc": "2026-09-13T05:16:47.811404+00:00",
+      "source": "verification/generic-development/Inspect.lean",
+      "source_sha256": "041d4eaa37cee44d6cbe77bba6405fe7801689bb6c782261e312ab6653e2205f",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/verification/generic-development/Inspect.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-generic-inspection-8z5henu4/verification/generic-development/Inspect.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/generic-development/Inspect.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 4.849522167001851,
+      "evidence": "inspection-attempt-004",
+      "log_sha256": "b5274bd0f860ebde81ec8729167d6b3838e91bcfde439cffdb8083ab64dd82f3"
+    }
+  ]
+}

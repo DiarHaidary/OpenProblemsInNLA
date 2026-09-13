@@ -1,0 +1,17 @@
+{
+  "utc": "2026-09-13T07:42:00.381262+00:00",
+  "command": [
+    "/tmp/nla-submission-tools/pandoc-3.11-arm64/bin/pandoc",
+    "--from=markdown+tex_math_dollars+raw_tex",
+    "--lua-filter=/private/tmp/nla-lean-ra20-worktree/tools/github_math.lua",
+    "--to=latex",
+    "--standalone",
+    "--top-level-division=section",
+    "--template=/private/tmp/nla-lean-ra20-worktree/tools/problem-template.tex",
+    "--metadata-file=/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-RA-20-788q5o1m/metadata.json"
+  ],
+  "cwd": "/private/tmp/nla-lean-ra20-worktree",
+  "transparent_stdout_and_stderr_forwarding": true,
+  "exit_code": 0,
+  "seconds": 0.6210389999905601
+}

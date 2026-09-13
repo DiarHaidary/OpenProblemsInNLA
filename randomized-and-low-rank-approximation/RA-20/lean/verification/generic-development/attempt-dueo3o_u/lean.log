@@ -1,0 +1,23 @@
+/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Generic.lean:79:4: warning: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Generic.lean:89:4: error: Type mismatch: After simplification, term
+  hcoords
+ has type
+  @Ne ℂ (z 3 * z 4 * z 5) 0
+but is expected to have type
+  @Ne ℂ
+    (z (!![0, 3, 4; 3, 1, 5; 4, 5, 2] 0 1) * z (!![0, 3, 4; 3, 1, 5; 4, 5, 2] 0 2) *
+      z (!![0, 3, 4; 3, 1, 5; 4, 5, 2] 1 2))
+    0
+'NLA.RA20.symmetricParameter_isSymm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.symmetricParameter_reconstruct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.eval_rename_symmetricParameter' depends on axioms: [propext, Classical.choice, Quot.sound]
+/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Generic.lean:102:21: error: #assert_trust: 'NLA.RA20.generic_data_intersection_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.generic_data_intersection_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

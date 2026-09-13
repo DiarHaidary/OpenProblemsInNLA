@@ -141,6 +141,15 @@ The complete proof passed a separate [independent Codex AI-agent informal audit]
 The proof passed a separate [independent Codex AI-agent informal audit](references/holden-ra05-quartic-2026-09-13/verification/independent-review.md). All 7,621 finite assertions and both exact certificate checkers passed. No Lean verification, external human peer review or novelty certification is asserted. [Proof source](references/holden-ra05-quartic-2026-09-13/manuscript/RA05_unrestricted_quartic.tex) · [Submission, verified affiliation and provenance](references/holden-ra05-quartic-2026-09-13/README.md). This new quartic submission is separate from the earlier all-exponent partial lower bounds in [PR #199](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/199).
 
 
+### RA-17 — exact cases and certified bounds — Sidney Holden
+
+**Partially resolved, 12 September 2026.** Author: Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](references/holden-ra17-2026-09-12/SUBMISSION.md).
+
+[Theorem 1.1 and Sections 5–6](references/holden-ra17-2026-09-12/writeup/RA17_exact_cases_and_bounds.pdf) establish the exact real uniform-recovery count $`\mu_{\mathbb R}(4,1)=11`$, with a topological lower bound and rational certificates for Xu's constructions. The manuscript supplies further bounds and exact families. [Independent informal Codex AI-agent review](references/holden-ra17-2026-09-12/independent-review.md) · [Proof source](references/holden-ra17-2026-09-12/writeup/RA17_exact_cases_and_bounds.tex) · [Retained original target](randomized-and-low-rank-approximation/RA-17/README.md).
+
+The all-dimension classification remains open; Section 9 gives explicit unresolved intervals. No full solution, priority, external human peer review or formal verification is claimed. No Lean verification was performed. The original ID, path, target, ratings and open-count contribution are preserved.
+
+
 ### KE-02, SP-08 and SP-09 — spectral partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** Author: Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](references/holden-spectral-2026-09-12/README.md).

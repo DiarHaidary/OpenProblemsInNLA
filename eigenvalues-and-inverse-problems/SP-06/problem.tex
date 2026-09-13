@@ -34,7 +34,7 @@ spectra},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}SP-06}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-11}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -51,7 +51,7 @@ real-valued symbol on a Jordan curve and real Toeplitz spectra\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} challenging\quad\textbf{Importance:} interesting
 to the community\par}
-{\sffamily\small\bfseries\color{accent}Status: Solved\par}
+{\sffamily\small\bfseries\color{accent}Status: Lean verified\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
@@ -84,22 +84,69 @@ on 11 September 2026. The
 \href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/colbrook-additional-2026-09-11/verification/reviews/SP-06-review.md}{review
 report} records the exact scope and a hash of the original reviewed
 manuscript. The mathematical sections remain unchanged in the authored
-version. Original ChatGPT generation is disclosed; no external human
-peer review or formal proof certificate is asserted.
+version. Original ChatGPT generation is disclosed. That dated informal
+review did not establish a formal proof certificate; the separate Lean
+verification is recorded below. No external human peer review is
+claimed.
 \href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/colbrook-additional-2026-09-11/README.md}{Submission
 and verification record}.
 
 The original statement, source references and prior audit notes are
 retained; the former difficulty rating is historical.
 
+\subsection{Lean proof and verification evidence ---
+2026-09-13}\label{lean-proof-and-verification-evidence-2026-09-13}
+
+\textbf{Formalization: George Stepaniants}, Department of Computing and
+Mathematical Sciences, California Institute of Technology, Pasadena,
+California, USA. Original mathematical proof credit remains Matthew J.
+Colbrook, Department of Applied Mathematics and Theoretical Physics,
+University of Cambridge.
+
+The
+\href{https://github.com/sgstepaniants/OpenProblemsInNLA/tree/3122d69460b0ed6dda3ea00dfaa899f93411ce2f/eigenvalues-and-inverse-problems/SP-06/lean}{immutable
+complete proof} uses Lean 4.33.1, LeanCert
+\textit{621a43d7cf21f87872392a01e874f2f1dbddc926}, and Mathlib
+\textit{0df444a360eaa60ab8c11dca51a86af692955474}. The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/SP-06/lean/README.md}{project
+guide},
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/SP-06/lean/NUMERICAL_TARGETS.md}{exact
+targets}, and
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/SP-06/lean/SOURCE_MAP.md}{source
+correspondence} identify all twenty exports and dependency pins.
+
+\textit{NLA.SP06.witness\_counterexample} constructs the actual finite
+Laurent polynomial, proves a continuous injective map of the entire
+complex unit circle avoiding zero, proves the symbol real at every point
+of its image, and exhibits a nonreal point of the actual complex
+spectrum of its order-two Toeplitz section.
+\textit{NLA.SP06.not\_targetImplication} negates the complete original
+universal implication. The real Jordan curve is proved without assuming
+an existence or continuity bridge. No restricted numerical sample
+replaces the curve.
+
+The repository ran
+\href{https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34765629739/job/103745998196}{successful
+Ubuntu verification} on the pinned proof revision. All twenty Comparator
+statements, the permitted axiom closure and Lean's default kernel
+passed, together with sandbox and rejection controls. Only
+\textit{propext}, \textit{Classical.choice} and \textit{Quot.sound} are
+permitted; the
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/SP-06/lean/verification/local-2026-09-13/types-axioms.log}{per-export
+axiom report} and
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/SP-06/lean/verification/linux-2026-09-13/README.md}{raw
+Linux evidence, independent audit and reproduction commands} are
+retained. Two statement reviews preceded proof implementation, and two
+independent final mathematical reviews passed. AI assistance and agent
+review are disclosed; no human peer review or Tau Ceti endorsement is
+claimed.
+
 \subsection{Problem statement}\label{problem-statement}
 
 Let \(r,s\ge1\) be integers and
 
-\[
-b(z)=\sum_{k=-r}^{s}b_kz^k,
-\qquad b_k\in\mathbb C,\qquad b_{-r}b_s\ne0.
-\]
+\[b(z)=\sum_{k=-r}^{s}b_kz^k,
+\qquad b_k\in\mathbb C,\qquad b_{-r}b_s\ne0.\]
 
 For every \(n\ge1\), define \(T_n(b)=(b_{i-j})_{i,j=1}^n\), with
 \(b_k=0\) outside \([-r,s]\). Suppose there is a Jordan curve
@@ -109,10 +156,8 @@ injective map from the unit circle.
 
 Must
 
-\[
-\operatorname{spec}(T_n(b))\subset\mathbb R
-\qquad\text{for every integer }n\ge1?
-\]
+\[\mathop{\mathrm{spec}}\nolimits(T_n(b))\subset\mathbb R
+\qquad\text{for every integer }n\ge1?\]
 
 \subsection{Why it matters}\label{why-it-matters}
 

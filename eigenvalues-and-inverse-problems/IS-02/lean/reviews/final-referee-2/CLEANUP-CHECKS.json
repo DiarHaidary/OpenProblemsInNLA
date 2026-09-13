@@ -1,0 +1,22 @@
+{
+  "result": "PASS",
+  "scope": "Narrow independent root cleanup audit; no Linux claim",
+  "source_checks": {
+    "NLA/IS02/Proof.lean": {
+      "token_equivalence_after_documented_cleanup": true,
+      "sha256": "47914104e1e75239443766778bf779c2c9b5e7490f0adeccfa90e0e0b1f69809"
+    },
+    "Solution.lean": {
+      "token_equivalence_after_documented_cleanup": true,
+      "sha256": "cbfb26b747bebf0991afe2caf7adf629f1c10d63b8d1a841545291e5108f95cf"
+    }
+  },
+  "redundant_open_Polynomial_lines_removed": 2,
+  "helper_rename_count": 35,
+  "fresh_run": "an46Oh",
+  "pinned_clean_dependencies": 10,
+  "commands_with_zero_exit": 6,
+  "public_exports_standard3": 9,
+  "lakefile_sha256": "dc108f6082935cf35320362e14d82f8543cc3d75471972c874df86e88bdd28f6",
+  "command_results_format": "TSV despite historical .ndjson filename"
+}

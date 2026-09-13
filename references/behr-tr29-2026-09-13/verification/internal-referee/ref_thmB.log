@@ -1,0 +1,24 @@
+F=x^4y+y^5 (r=3,s=4,phi=a0*a1**2,H_F=True) G=u^3v+v^4 (r'=3,s'=3,phi'=b0*b1**2,H_G=True): (i) ok=True; (iii) rankCat=9 vs r*r'=9; ThmB bound=12; R(F)R(G)=12
+F=x^4y+y^5 (r=3,s=4,phi=a0*a1**2,H_F=True) G=u^2v (r'=2,s'=3,phi'=b1**2,H_G=True): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=11; R(F)R(G)=12
+F=x^4y+y^5 (r=3,s=4,phi=a0*a1**2,H_F=True) G=u^2v^2+u^4 (r'=3,s'=3,phi'=-b0*(b0**2 - 6*b1**2)/6,H_G=True): (i) ok=True; (iii) rankCat=9 vs r*r'=9; ThmB bound=12; R(F)R(G)=12
+F=x^4y+y^5 (r=3,s=4,phi=a0*a1**2,H_F=True) G=u^4+v^4 (r'=2,s'=4,phi'=b0*b1,H_G=False): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=14; R(F)R(G)=8  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^3y^2+y^5 (r=3,s=4,phi=-10*a0**3 + a1**3,H_F=False) G=u^3v+v^4 (r'=3,s'=3,phi'=b0*b1**2,H_G=True): (i) ok=True; (iii) rankCat=9 vs r*r'=9; ThmB bound=12; R(F)R(G)=9  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^3y^2+y^5 (r=3,s=4,phi=-10*a0**3 + a1**3,H_F=False) G=u^2v (r'=2,s'=3,phi'=b1**2,H_G=True): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=11; R(F)R(G)=9  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^3y^2+y^5 (r=3,s=4,phi=-10*a0**3 + a1**3,H_F=False) G=u^2v^2+u^4 (r'=3,s'=3,phi'=-b0*(b0**2 - 6*b1**2)/6,H_G=True): (i) ok=True; (iii) rankCat=9 vs r*r'=9; ThmB bound=12; R(F)R(G)=9  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^3y^2+y^5 (r=3,s=4,phi=-10*a0**3 + a1**3,H_F=False) G=u^4+v^4 (r'=2,s'=4,phi'=b0*b1,H_G=False): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=14; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^5+y^5 (r=2,s=5,phi=a0*a1,H_F=False) G=u^3v+v^4 (r'=3,s'=3,phi'=b0*b1**2,H_G=True): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=15; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^5+y^5 (r=2,s=5,phi=a0*a1,H_F=False) G=u^2v (r'=2,s'=3,phi'=b1**2,H_G=True): (i) ok=True; (iii) rankCat=4 vs r*r'=4; ThmB bound=12; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^5+y^5 (r=2,s=5,phi=a0*a1,H_F=False) G=u^2v^2+u^4 (r'=3,s'=3,phi'=-b0*(b0**2 - 6*b1**2)/6,H_G=True): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=15; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^5+y^5 (r=2,s=5,phi=a0*a1,H_F=False) G=u^4+v^4 (r'=2,s'=4,phi'=b0*b1,H_G=False): (i) ok=True; (iii) rankCat=4 vs r*r'=4; ThmB bound=14; R(F)R(G)=4  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^2y^2 (r=3,s=3,phi=a0**3,H_F=True) G=u^3v+v^4 (r'=3,s'=3,phi'=b0*b1**2,H_G=True): (i) ok=True; (iii) rankCat=9 vs r*r'=9; ThmB bound=9; R(F)R(G)=9
+F=x^2y^2 (r=3,s=3,phi=a0**3,H_F=True) G=u^2v (r'=2,s'=3,phi'=b1**2,H_G=True): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=9; R(F)R(G)=9
+F=x^2y^2 (r=3,s=3,phi=a0**3,H_F=True) G=u^2v^2+u^4 (r'=3,s'=3,phi'=-b0*(b0**2 - 6*b1**2)/6,H_G=True): (i) ok=True; (iii) rankCat=9 vs r*r'=9; ThmB bound=9; R(F)R(G)=9
+F=x^2y^2 (r=3,s=3,phi=a0**3,H_F=True) G=u^4+v^4 (r'=2,s'=4,phi'=b0*b1,H_G=False): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=12; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^3y+x y^3 (r=2,s=4,phi=-(a0 - a1)*(a0 + a1),H_F=False) G=u^3v+v^4 (r'=3,s'=3,phi'=b0*b1**2,H_G=True): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=12; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^3y+x y^3 (r=2,s=4,phi=-(a0 - a1)*(a0 + a1),H_F=False) G=u^2v (r'=2,s'=3,phi'=b1**2,H_G=True): (i) ok=True; (iii) rankCat=4 vs r*r'=4; ThmB bound=10; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^3y+x y^3 (r=2,s=4,phi=-(a0 - a1)*(a0 + a1),H_F=False) G=u^2v^2+u^4 (r'=3,s'=3,phi'=-b0*(b0**2 - 6*b1**2)/6,H_G=True): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=12; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=x^3y+x y^3 (r=2,s=4,phi=-(a0 - a1)*(a0 + a1),H_F=False) G=u^4+v^4 (r'=2,s'=4,phi'=b0*b1,H_G=False): (i) ok=True; (iii) rankCat=4 vs r*r'=4; ThmB bound=12; R(F)R(G)=4  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=(x+y)^3 y^2 + x^5 (r=3,s=4,phi=-(a0**3 - 63*a0**2*a1 + 83*a0*a1**2 - 31*a1**3)/31,H_F=False) G=u^3v+v^4 (r'=3,s'=3,phi'=b0*b1**2,H_G=True): (i) ok=True; (iii) rankCat=9 vs r*r'=9; ThmB bound=12; R(F)R(G)=9  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=(x+y)^3 y^2 + x^5 (r=3,s=4,phi=-(a0**3 - 63*a0**2*a1 + 83*a0*a1**2 - 31*a1**3)/31,H_F=False) G=u^2v (r'=2,s'=3,phi'=b1**2,H_G=True): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=11; R(F)R(G)=9  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=(x+y)^3 y^2 + x^5 (r=3,s=4,phi=-(a0**3 - 63*a0**2*a1 + 83*a0*a1**2 - 31*a1**3)/31,H_F=False) G=u^2v^2+u^4 (r'=3,s'=3,phi'=-b0*(b0**2 - 6*b1**2)/6,H_G=True): (i) ok=True; (iii) rankCat=9 vs r*r'=9; ThmB bound=12; R(F)R(G)=9  [hyp fails; naive bound > R(F)R(G) FALSE]
+F=(x+y)^3 y^2 + x^5 (r=3,s=4,phi=-(a0**3 - 63*a0**2*a1 + 83*a0*a1**2 - 31*a1**3)/31,H_F=False) G=u^4+v^4 (r'=2,s'=4,phi'=b0*b1,H_G=False): (i) ok=True; (iii) rankCat=6 vs r*r'=6; ThmB bound=14; R(F)R(G)=6  [hyp fails; naive bound > R(F)R(G) FALSE]

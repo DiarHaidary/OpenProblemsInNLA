@@ -7,9 +7,25 @@
 **Difficulty:** challenging  
 **Importance:** interesting to specialist  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-10
+**Last checked:** 2026-09-13
 
 **Rating rationale:** Matching constructive upper bounds by sharp lower bounds for arbitrary products requires substantial new decomposition arguments. The exact partially symmetric rank of this particular family chiefly interests specialists in tensor rank and multipartite entanglement.
+
+## Partial resolution — the two-factor case k = 2, 13 September 2026
+
+**Author:** Maximilian Behr. [Submission record](../../references/behr-tr29-2026-09-13/README.md).
+
+[Theorem 1.1, proved in Sections 3–4](../../references/behr-tr29-2026-09-13/manuscript/TR29_two_factor_rank.pdf) settles every tuple with $`k=2`$:
+
+```math
+R(W_{d_1}\otimes W_{d_2})=2(d_1+d_2-2)\qquad\text{for all }d_1,d_2\ge2 .
+```
+
+The lower bound combines a peeling lemma — a point set supporting $`x^py\otimes u^qv`$ lies on no curve of bidegree $`(1,q)`$ or $`(p,1)`$, so its Hilbert function is maximal there — with the catalecticant–Sylvester inequality of Wang–Seigal applied to this unbalanced pair of bidegrees, where the catalecticant has rank four. The matching upper bound is Gałązka's decomposition (also Canino–Casarotti–Santarsiero, Theorem 1.1). Previously equality was known for $`d_1=2`$ or $`d_2=2`$, for $`(3,3)`$, and for $`(4,4)`$ in an unpublished 2021 note of Gałązka. Corollary 5.4 of the same manuscript also determines $`R(x^ay^b\otimes u^cv^d)=(a+1)(c+1)-(a-b)(c-d)`$ for all $`a\ge b\ge1`$, $`c\ge d\ge1`$.
+
+**The case $`k\ge3`$ remains open** (for example $`R(W_3\otimes W_3\otimes W_3)`$, with upper bound 20), so the entry stays Partially resolved.
+
+The argument passed two separate [independent AI-agent informal audits](../../references/behr-tr29-2026-09-13/verification/independent-review.md), with exact rational checks and exhaustive finite-field black-box searches that were rerun. AI assistance is disclosed; no external human peer review or formal verification is claimed. No Lean verification was performed.
 
 ## Problem statement
 

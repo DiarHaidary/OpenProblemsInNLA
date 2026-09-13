@@ -7,7 +7,7 @@
 **Difficulty:** challenging
 **Importance:** interesting to the community
 **Status:** Partially resolved
-**Last checked:** 2026-09-11
+**Last checked:** 2026-09-13
 
 **Rating rationale:** Improving the classical bound is challenging and would sharpen stability guarantees for skeleton/CUR approximation.
 
@@ -51,7 +51,7 @@ Nesterenko [6] proved the real case $`n=4`$, $`r=2`$; Sengupta–Pautov [7] subs
 Orthogonal completion gives $`t(r,n)=t(n-r,n)`$, leaving $`3\le r\le n-3`$ as the general open range.
 These inverse norms control pseudoskeleton approximation errors [1, Thms. 3.1–3.2].
 
-## Proposed complex extension
+## Proposed complex extension (retained statement; refuted below)
 
 Define $`t_{\mathbb C}(r,n)`$ analogously using $`U\in\mathbb C^{n\times r}`$ with $`U^*U=I_r`$, where $`*`$ denotes conjugate transpose.
 The minimization again runs only over nonsingular $`U_I`$.
@@ -64,7 +64,7 @@ t_{\mathbb C}(r,n)\le\alpha\sqrt n,
 \qquad 1\le r< n.
 ```
 
-The dependence on $`r,n`$ and the best possible $`\alpha`$ remain to be determined.
+The proposed dimension-independent bound is refuted by the submission below. The optimal dimension-dependent growth remains undetermined.
 The constant $`\alpha=1`$ fails: $`t_{\mathbb C}(2,4)=\sqrt{3+\sqrt3}>2`$ [8, 9].
 For two columns, Nesterenko [9, Prop. 1] proves
 
@@ -73,7 +73,48 @@ t_{\mathbb C}(2,n)\le c_2\sqrt n,
 \qquad c_2=\left(2-\frac2{\sqrt3}\right)^{-1/2}\approx1.08766,
 ```
 
-with equality whenever $`4\mid n`$, so any universal $`\alpha`$ must satisfy $`\alpha\ge c_2`$.
+with equality whenever $`4\mid n`$, which already ruled out $`\alpha< c_2`$; the new result rules out every finite universal $`\alpha`$.
+
+## Partial resolution — 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation ([verified affiliation and provenance](../../references/holden-ra18-2026-09-13/SUBMISSION.md)).
+
+**The separate complex extension is resolved negatively; the original real conjecture remains open.** [Theorem 2.1 and Section 3 of the manuscript](../../references/holden-ra18-2026-09-13/manuscript/ra18.pdf) give an explicit recursive family. Set
+
+```math
+\omega=e^{2\pi i/3},\qquad
+ a=\frac{(1,1,1)^T}{\sqrt3},\qquad
+ c=\frac{(1,\omega,\omega^2)^T}{\sqrt3},\qquad
+ U_0=\frac{(1,1)^T}{\sqrt2},
+```
+
+and define
+
+```math
+U_{k+1}=[\,U_k\otimes a\quad I_{2\cdot3^k}\otimes c\,].
+```
+
+Then $`U_k\in\mathbb C^{(2\cdot3^k)\times3^k}`$ has orthonormal columns and every row has squared norm $`1/2`$. Every nonsingular square row submatrix obeys
+
+```math
+\|U_{k,I}^{-1}\|_2^2\ge\frac{3\cdot4^k+1}{2},
+\qquad
+\frac{t_{\mathbb C}(3^k,2\cdot3^k)}{\sqrt{2\cdot3^k}}
+\ge\sqrt{\frac{3\cdot4^k+1}{4\cdot3^k}}\longrightarrow\infty.
+```
+
+The proof classifies every nonsingular lifted selection and proves the squared-inverse-norm recurrence $`b(U_{k+1})\ge4b(U_k)-3/2`$; it does not infer a universal claim from sampled matrices. Sections 5–6 additionally give exact spectra and basis counts and the all-dimensions lower bound
+
+```math
+t_{\mathbb C}(r,n)\ge\sqrt{\frac3{32}}\,\sqrt n\,
+\min(r,n-r)^{\log_3 2-1/2}.
+```
+
+For real matrices, Theorem 7.2 proves the original $`\sqrt n`$ bound when the nonzero rows occupy at most $`r+2`$ one-dimensional subspaces, with arbitrary lengths and multiplicities. Its weighted-complement argument uses the real two-column theorem [7]. Section 8 supplies sharp real examples for every $`1\le r< n`$; this is a lower bound, not a proof of the conjectured upper bound for arbitrary real frames.
+
+The [independent Codex AI-agent audit](../../references/holden-ra18-2026-09-13/independent-review.md) passed these stated scopes and records the reproducibility checks and their limits. This is informal automated review, not external human peer review or formal verification. No Lean verification was performed, and no priority claim is asserted. [Manuscript source](../../references/holden-ra18-2026-09-13/manuscript/ra18.tex) · [Code, results and submission record](../../references/holden-ra18-2026-09-13/README.md).
+
+**Remaining target:** the unrestricted real conjecture, in particular general frames with $`3\le r\le n-3`$ outside the proved structured class. Realifying the complex construction does not settle it. RA-18 retains **Partially resolved**, its original ID and statement, and its place in the open count. The optimal complex growth rate also remains undetermined.
 
 ## References
 
@@ -96,7 +137,7 @@ with equality whenever $`4\mid n`$, so any universal $`\alpha`$ must satisfy $`\
 9. Y. Nesterenko, *Submatrices with the best-bounded inverses: an asymptotically tight upper bound for* $`\mathbb C^{n\times2}`$, arXiv: 2604.24087v1 (2026).
    [Preprint](https://arxiv.org/html/2604.24087v1).
 
-## Status check — 2026-09-11
+## Earlier literature status check — 2026-09-11
 
-Checked [1]–[9] and searched for later resolutions; no general real-case resolution or resolution of the proposed complex extension was found.
+The earlier check of [1]–[9] and later-resolution searches found no general real-case resolution or resolution of the proposed complex extension. The latter finding is superseded by the independently audited submission above.
 The real two-column result is a preprint and supports the partially resolved status.

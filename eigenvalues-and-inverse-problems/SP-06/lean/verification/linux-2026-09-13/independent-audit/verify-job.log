@@ -1,0 +1,857 @@
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	﻿2026-09-13T15:27:18.8101557Z Current runner version: '2.337.0'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8117658Z ##[group]Runner Image Provisioner
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8118320Z Hosted Compute Agent
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8118724Z Version: 20260828.587
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8119141Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8119714Z Build Date: 2026-08-28T16:44:25Z
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8120195Z Worker ID: {ed2b9b0b-e8e4-4f2c-ac80-f2ceded4e92f}
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8121001Z Azure Region: centralus
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8121479Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8122451Z ##[group]Operating System
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8122901Z Ubuntu
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8123274Z 24.04.5
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8123905Z LTS
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8124293Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8124664Z ##[group]Runner Image
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8125083Z Image: ubuntu-24.04
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8125475Z Version: 20260907.300.1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8126353Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8127389Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8128025Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8128866Z ##[group]GITHUB_TOKEN Permissions
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8130619Z Contents: read
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8131189Z Metadata: read
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8131583Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8133031Z Secret source: Actions
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8133628Z Cache mode: write
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8134151Z Prepare workflow directory
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8353343Z Prepare all required actions
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:18.8387574Z Getting action download info
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:19.0857306Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:19.2400189Z Download action repository 'actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16' (SHA:924ae3a1cded613372ab5595356fb5720e22ba16)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:19.7718008Z Download action repository 'leanprover/lean-action@96e06131c0e9943c780388fd166f55d1e2fa0433' (SHA:96e06131c0e9943c780388fd166f55d1e2fa0433)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:19.9515038Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.3561275Z Getting action download info
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.4384413Z Download action repository 'actions/cache@v5' (SHA:caa296126883cff596d87d8935842f9db880ef25)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.6866174Z Complete job name: verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7478598Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7486705Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7487911Z with:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7488608Z   persist-credentials: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7489457Z   repository: sgstepaniants/OpenProblemsInNLA
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7495265Z   token: ***
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7495948Z   ssh-strict: true
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7496661Z   ssh-user: git
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7497326Z   clean: true
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7498035Z   sparse-checkout-cone-mode: true
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7498803Z   fetch-depth: 1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7499476Z   fetch-tags: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7500149Z   show-progress: true
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7501075Z   lfs: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7501726Z   submodules: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7502402Z   set-safe-directory: true
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7503180Z   allow-unsafe-pr-checkout: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.7504126Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8283731Z Syncing repository: sgstepaniants/OpenProblemsInNLA
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8286912Z ##[group]Getting Git version info
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8288608Z Working directory is '/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8291537Z [command]/usr/bin/git version
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8583550Z git version 2.55.0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8605967Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8637164Z Temporarily overriding HOME='/home/runner/work/_temp/1c683070-7adc-4e53-a86d-6e3f6250e475' before making global git config changes
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8641098Z Adding repository directory to the temporary git global config as a safe directory
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8664898Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8718898Z Deleting the contents of '/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8721640Z ##[group]Initializing the repository
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8730226Z [command]/usr/bin/git init /home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8871162Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8873157Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8874774Z hint: to use in all of your new repositories, which will suppress this warning,
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8876034Z hint: call:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8876745Z hint:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8877526Z hint: 	git config --global init.defaultBranch <name>
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8878397Z hint:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8879331Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8880874Z hint: 'development'. The just-created branch can be renamed via this command:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8882176Z hint:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8882986Z hint: 	git branch -m <name>
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8883920Z hint:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8885111Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8887256Z Initialized empty Git repository in /home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/.git/
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8890071Z [command]/usr/bin/git remote add origin https://github.com/sgstepaniants/OpenProblemsInNLA
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8926578Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8928433Z ##[group]Disabling automatic garbage collection
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8929487Z [command]/usr/bin/git config --local gc.auto 0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8954664Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8956142Z ##[group]Setting up auth
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8959773Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:20.8982282Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:21.0020556Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:21.0045276Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:21.0199192Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:21.0222309Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:21.0370853Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:21.0397737Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:21.0399001Z ##[group]Fetching the repository
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:21.0406315Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3122d69460b0ed6dda3ea00dfaa899f93411ce2f:refs/remotes/origin/codex/lean-sp06-jordan-curve
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.1980346Z From https://github.com/sgstepaniants/OpenProblemsInNLA
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.1981395Z  * [new ref]         3122d69460b0ed6dda3ea00dfaa899f93411ce2f -> origin/codex/lean-sp06-jordan-curve
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.1985276Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.1986523Z ##[group]Determining the checkout info
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.1987328Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.1991857Z [command]/usr/bin/git sparse-checkout disable
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.2047999Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.2068880Z ##[group]Checking out the ref
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:25.2072768Z [command]/usr/bin/git checkout --progress --force -B codex/lean-sp06-jordan-curve refs/remotes/origin/codex/lean-sp06-jordan-curve
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.2375249Z Updating files:  87% (20670/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.2511637Z Updating files:  88% (20797/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.2782085Z Updating files:  89% (21033/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.3317826Z Updating files:  90% (21269/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.3652872Z Updating files:  91% (21506/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.3890552Z Updating files:  92% (21742/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4020264Z Updating files:  93% (21978/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4126896Z Updating files:  94% (22215/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4316448Z Updating files:  95% (22451/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4429239Z Updating files:  96% (22687/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4559284Z Updating files:  97% (22924/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4614382Z Updating files:  98% (23160/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4695090Z Updating files:  99% (23396/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4695720Z Updating files: 100% (23632/23632)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.4697709Z Updating files: 100% (23632/23632), done.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5142646Z Switched to a new branch 'codex/lean-sp06-jordan-curve'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5190410Z branch 'codex/lean-sp06-jordan-curve' set up to track 'origin/codex/lean-sp06-jordan-curve'.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5222569Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5258227Z [command]/usr/bin/git log -1 --format=%H
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5277511Z 3122d69460b0ed6dda3ea00dfaa899f93411ce2f
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5298188Z ##[group]Removing auth
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5298686Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5312673Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5492929Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5512109Z http.https://github.com/.extraheader
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5517023Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5539138Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5706396Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5733272Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.5894357Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.6039542Z ##[group]Run python3 -m pip install -r tools/lean/requirements.txt
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.6040018Z ^[[36;1mpython3 -m pip install -r tools/lean/requirements.txt^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.6040368Z ^[[36;1mpython3 tools/lean/validate_manifest.py "$LEAN_PROJECT"^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.6063833Z shell: /usr/bin/bash -e {0}
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.6064102Z env:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.6064412Z   LEAN_PROJECT: eigenvalues-and-inverse-problems/SP-06/lean
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:26.6064734Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:28.1022698Z Defaulting to user installation because normal site-packages is not writeable
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:28.9024021Z Collecting PyYAML==6.0.3 (from -r tools/lean/requirements.txt (line 1))
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:28.9701895Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.0085710Z Collecting jsonschema==4.26.0 (from -r tools/lean/requirements.txt (line 2))
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.0236671Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.0361790Z Requirement already satisfied: attrs>=22.2.0 in /usr/lib/python3/dist-packages (from jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2)) (23.2.0)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.0607049Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2))
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.0757542Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.1145952Z Collecting referencing>=0.28.4 (from jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2))
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.1297725Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.3948135Z Collecting rpds-py>=0.25.0 (from jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2))
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.4101958Z   Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.4314873Z Requirement already satisfied: typing-extensions>=4.4.0 in /usr/lib/python3/dist-packages (from referencing>=0.28.4->jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2)) (4.10.0)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.4483024Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.5278593Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 10.7 MB/s eta 0:00:00
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.5428421Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.5771504Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB 2.4 MB/s eta 0:00:00
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.5921385Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.6113337Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.6312781Z Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (366 kB)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.6392466Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 366.2/366.2 kB 53.7 MB/s eta 0:00:00
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.8205677Z Installing collected packages: rpds-py, PyYAML, referencing, jsonschema-specifications, jsonschema
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:29.9374769Z Successfully installed PyYAML-6.0.3 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 referencing-0.37.0 rpds-py-2026.6.3
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.2696052Z Manifest schema and comparator coverage: PASS (20 declarations)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.2898760Z ##[group]Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.2899148Z with:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.2899388Z   go-version: 1.27.1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.2899618Z   cache: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.2899858Z   check-latest: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.2901925Z   token: ***
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.2902139Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.3833505Z Setup go version spec 1.27.1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:30.3841672Z Attempting to download 1.27.1...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:31.0212867Z matching 1.27.1...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:31.0231771Z Acquiring 1.27.1 from https://github.com/actions/go-versions/releases/download/1.27.1-33583469715/go-1.27.1-linux-x64.tar.gz
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:31.5267386Z Extracting Go...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:31.5358093Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/f344c92e-45ac-4181-b416-dcaa6f433e06 -f /home/runner/work/_temp/bc8724d0-3ca6-49a2-bae2-d02e8f0d1ad9
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:32.7962309Z Successfully extracted go to /home/runner/work/_temp/f344c92e-45ac-4181-b416-dcaa6f433e06
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:32.7962740Z Adding to the cache ...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.6448235Z Successfully cached go to /opt/hostedtoolcache/go/1.27.1/x64
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.6449040Z Added go to the path
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.6451146Z Successfully set up Go version 1.27.1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.6626869Z go version go1.27.1 linux/amd64
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.6627113Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.6627572Z ##[group]go env
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7912181Z AR='ar'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7912581Z CC='gcc'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7912987Z CGO_CFLAGS='-O2 -g'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7913261Z CGO_CPPFLAGS=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7914144Z CGO_CXXFLAGS='-O2 -g'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7914489Z CGO_ENABLED='1'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7914773Z CGO_FFLAGS='-O2 -g'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7915032Z CGO_LDFLAGS='-O2 -g'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7915292Z CXX='g++'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7915545Z GCCGO='gccgo'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7915802Z GO111MODULE=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7916044Z GOAMD64='v1'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7916307Z GOARCH='amd64'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7916537Z GOAUTH='netrc'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7916778Z GOBIN='/home/runner/go/bin'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7917091Z GOCACHE='/home/runner/.cache/go-build'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7917359Z GOCACHEPROG=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7917602Z GODEBUG=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7917823Z GOENV='/home/runner/.config/go/env'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7918065Z GOEXE=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7918303Z GOEXPERIMENT=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7918560Z GOFIPS140='off'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7918814Z GOFLAGS=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7919378Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build619359411=/tmp/go-build -gno-record-gcc-switches'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7919886Z GOHOSTARCH='amd64'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7920131Z GOHOSTOS='linux'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7920348Z GOINSECURE=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7920607Z GOMOD='/dev/null'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7920993Z GOMODCACHE='/home/runner/go/pkg/mod'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7921233Z GONOPROXY=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7921482Z GONOSUMDB=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7921726Z GOOS='linux'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7921955Z GOPACKAGESDRIVER=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7922181Z GOPATH='/home/runner/go'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7922420Z GOPRIVATE=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7922722Z GOPROXY='https://proxy.golang.org,direct'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7923019Z GOROOT='/opt/hostedtoolcache/go/1.27.1/x64'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7923296Z GOSUMDB='sum.golang.org'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7923542Z GOTELEMETRY='local'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7923798Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7924135Z GOTMPDIR=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7924342Z GOTOOLCHAIN='local'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7924632Z GOTOOLDIR='/opt/hostedtoolcache/go/1.27.1/x64/pkg/tool/linux_amd64'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7924951Z GOVCS=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7925162Z GOVERSION='go1.27.1'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7925403Z GOWORK=''
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7925616Z PKG_CONFIG='pkg-config'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7925774Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.7926225Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8181129Z ##[group]Run leanprover/lean-action@96e06131c0e9943c780388fd166f55d1e2fa0433
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8181556Z with:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8181897Z   lake-package-directory: eigenvalues-and-inverse-problems/SP-06/lean
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8182254Z   auto-config: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8182578Z   build: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8182835Z   test: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8183068Z   lint: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8183293Z   use-mathlib-cache: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8183555Z   use-github-cache: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8183814Z   mk_all-check: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8184103Z   check-reservoir-eligibility: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8184371Z   leanchecker: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8184599Z   lean4checker: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8184854Z   nanoda: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8185107Z   nanoda-allow-sorry: true
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8185370Z   axiom-audit: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8185651Z   axiom-audit-allow: propext,Classical.choice,Quot.sound
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8186077Z   reinstall-transient-toolchain: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8186357Z env:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8186559Z   GOTOOLCHAIN: local
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8186806Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8243644Z ##[start-action display=install elan;id=__leanprover_lean-action.__run]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8262371Z ##[group]Run : Install Elan
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8262647Z ^[[36;1m: Install Elan^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8262965Z ^[[36;1m${GITHUB_ACTION_PATH}/scripts/install_elan.sh^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8283914Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8284227Z env:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8284432Z   GOTOOLCHAIN: local
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8284708Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:38.8338491Z ##[group]Elan Installation Output
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:39.2182917Z info: downloading installer
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:40.7428140Z info: downloading https://releases.lean-lang.org/lean4/v4.33.1/lean-4.33.1-linux.tar.zst
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:45.5093991Z info: installing /home/runner/.elan/toolchains/leanprover--lean4---v4.33.1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8276632Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8590095Z Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8605463Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8605886Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8622104Z ##[end-action id=__leanprover_lean-action.__run;outcome=success;conclusion=success;duration_ms=16037]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8628978Z ##[start-action display=configure `lean-action`;id=__leanprover_lean-action.config]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8647134Z ##[group]Run : Configure Lean Action
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8647467Z ^[[36;1m: Configure Lean Action^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8647739Z ^[[36;1m${GITHUB_ACTION_PATH}/scripts/config.sh^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8668162Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8668465Z env:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8668714Z   GOTOOLCHAIN: local
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8668946Z   AUTO_CONFIG: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8669215Z   BUILD: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8669453Z   TEST: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8669656Z   LINT: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.8669871Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9177837Z ##[group]Configure lean-action
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9218370Z ##[end-action id=__leanprover_lean-action.config;outcome=success;conclusion=success;duration_ms=58]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9222560Z ##[start-action display=reinstall transient toolchain;id=__leanprover_lean-action.__run_2]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9227545Z ##[end-action id=__leanprover_lean-action.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9229976Z ##[start-action display=ensure all files are imported;id=__leanprover_lean-action.mk_all]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9233943Z ##[end-action id=__leanprover_lean-action.mk_all;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9235874Z ##[start-action display=Run actions/cache/restore@v5;id=__leanprover_lean-action.__actions_cache]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9239203Z ##[end-action id=__leanprover_lean-action.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9240907Z ##[start-action display=detect mathlib;id=__leanprover_lean-action.detect-mathlib]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9244657Z ##[end-action id=__leanprover_lean-action.detect-mathlib;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9246364Z ##[start-action display=get mathlib cache;id=__leanprover_lean-action.__run_3]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9261557Z ##[end-action id=__leanprover_lean-action.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9281940Z ##[start-action display=build sgstepaniants/OpenProblemsInNLA;id=__leanprover_lean-action.build]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9286609Z ##[end-action id=__leanprover_lean-action.build;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9288321Z ##[start-action display=Run actions/cache/save@v5;id=__leanprover_lean-action.__actions_cache_2]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9291763Z ##[end-action id=__leanprover_lean-action.__actions_cache_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9294491Z ##[start-action display=test sgstepaniants/OpenProblemsInNLA;id=__leanprover_lean-action.test]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9298456Z ##[end-action id=__leanprover_lean-action.test;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9300471Z ##[start-action display=lint sgstepaniants/OpenProblemsInNLA;id=__leanprover_lean-action.lint]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9304908Z ##[end-action id=__leanprover_lean-action.lint;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9307855Z ##[start-action display=check reservoir eligibility;id=__leanprover_lean-action.__run_4]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9311239Z ##[end-action id=__leanprover_lean-action.__run_4;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9313728Z ##[start-action display=check environment with leanchecker;id=__leanprover_lean-action.__run_5]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9318047Z ##[end-action id=__leanprover_lean-action.__run_5;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9319882Z ##[start-action display=check environment with nanoda;id=__leanprover_lean-action.nanoda]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9323066Z ##[end-action id=__leanprover_lean-action.nanoda;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9325049Z ##[start-action display=audit axioms with axiom-audit;id=__leanprover_lean-action.axiom-audit]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9328388Z ##[end-action id=__leanprover_lean-action.axiom-audit;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9370401Z ##[group]Run sudo apt-get update
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9370924Z ^[[36;1msudo apt-get update^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9371316Z ^[[36;1msudo apt-get install -y bubblewrap dbus-user-session^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9371703Z ^[[36;1msudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9372096Z ^[[36;1msudo loginctl enable-linger "$(id -un)"^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9372422Z ^[[36;1msudo systemctl start "user@$(id -u).service"^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9372745Z ^[[36;1mecho "XDG_RUNTIME_DIR=/run/user/$(id -u)" >> "$GITHUB_ENV"^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9373140Z ^[[36;1mecho "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus" >> "$GITHUB_ENV"^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9390950Z shell: /usr/bin/bash -e {0}
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9391267Z env:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9391485Z   GOTOOLCHAIN: local
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:54.9391744Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.0884129Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.0991280Z Get:3 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.2013071Z Get:7 https://dl.google.com/linux/chrome-stable/deb stable InRelease [2548 B]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.2184373Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.2200007Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.2572830Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [414 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.3513225Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.3652504Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.3756363Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [463 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.4004889Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1263 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.4696562Z Get:20 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1408 B]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.4742929Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [292 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.5042048Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.6836604Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1690 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.7121167Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.7219191Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1544 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.7423893Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [354 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.7506872Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.7519382Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5772 B]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.7527597Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.8050139Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1006 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.8125214Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [213 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.8221228Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.4 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.8319930Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1206 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.8422518Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.8523396Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1445 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:27:55.8628648Z Get:27 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [336 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:01.5187822Z Fetched 11.3 MB in 1s (8381 kB/s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.1474235Z Reading package lists...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.1863779Z Reading package lists...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.3212220Z Building dependency tree...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.3218980Z Reading state information...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.4674849Z dbus-user-session is already the newest version (1.14.10-4ubuntu4.1).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.4675788Z dbus-user-session set to manually installed.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.4676262Z The following NEW packages will be installed:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.4680978Z   bubblewrap
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.4872432Z 0 upgraded, 1 newly installed, 0 to remove and 50 not upgraded.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.4872840Z Need to get 50.2 kB of archives.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.4873162Z After this operation, 133 kB of additional disk space will be used.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.4873559Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.5360534Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 bubblewrap amd64 0.9.0-1ubuntu0.1 [50.2 kB]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:02.8127984Z Fetched 50.2 kB in 0s (681 kB/s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.0633902Z Selecting previously unselected package bubblewrap.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1573794Z (Reading database ... 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1574333Z (Reading database ... 5%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1574665Z (Reading database ... 10%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1575016Z (Reading database ... 15%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1575466Z (Reading database ... 20%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1575949Z (Reading database ... 25%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1576333Z (Reading database ... 30%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1576764Z (Reading database ... 35%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1577890Z (Reading database ... 40%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1578318Z (Reading database ... 45%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1578645Z (Reading database ... 50%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.1621457Z (Reading database ... 55%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.6056813Z (Reading database ... 60%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:03.8926908Z (Reading database ... 65%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:04.1742656Z (Reading database ... 70%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:04.2874097Z (Reading database ... 75%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:04.4661322Z (Reading database ... 80%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:04.6724978Z (Reading database ... 85%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:04.8803593Z (Reading database ... 90%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:05.1143171Z (Reading database ... 95%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:05.1143707Z (Reading database ... 100%
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:05.1144356Z (Reading database ... 201818 files and directories currently installed.)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:05.1187601Z Preparing to unpack .../bubblewrap_0.9.0-1ubuntu0.1_amd64.deb ...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:05.2148527Z Unpacking bubblewrap (0.9.0-1ubuntu0.1) ...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:06.3152514Z Setting up bubblewrap (0.9.0-1ubuntu0.1) ...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:06.5823356Z Processing triggers for man-db (2.12.0-4build2) ...
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:06.6594168Z Not building database; man-db/auto-update is not 'true'.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4511244Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4512036Z Running kernel seems to be up-to-date.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4512314Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4512460Z No services need to be restarted.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4512777Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4512962Z No containers need to be restarted.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4513141Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4513261Z No user sessions are running outdated binaries.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4513481Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:07.4513660Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.1917905Z kernel.apparmor_restrict_unprivileged_userns = 0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2138566Z ##[group]Run ulimit -n 65536
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2139040Z ^[[36;1mulimit -n 65536^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2139424Z ^[[36;1mtools/lean/bootstrap.sh "$RUNNER_TEMP/nla-lean-tools"^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2139944Z ^[[36;1mtools/lean/verify.sh "$LEAN_PROJECT" "$RUNNER_TEMP/nla-lean-tools"^[[0m
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2168007Z shell: /usr/bin/bash -e {0}
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2168491Z env:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2168781Z   GOTOOLCHAIN: local
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2169124Z   XDG_RUNTIME_DIR: /run/user/1001
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2169545Z   DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1001/bus
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2170043Z   LEAN_PROJECT: eigenvalues-and-inverse-problems/SP-06/lean
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:08.2170476Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.2194029Z Running elan toolchain install leanprover/lean4:v4.33.1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.2194553Z Log: /home/runner/work/_temp/nla-lean-tools/logs/bootstrap/elan.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.2209733Z info: toolchain 'leanprover/lean4:v4.33.1' is already installed
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.2861019Z Running go build -mod=readonly -buildvcs=false -o /home/runner/work/_temp/nla-lean-tools/.tools/bin/landrun ./cmd/landrun
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.2861632Z Log: /home/runner/work/_temp/nla-lean-tools/logs/bootstrap/landrun-build.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.2896371Z go: downloading github.com/urfave/cli/v3 v3.6.2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.2959856Z go: downloading github.com/landlock-lsm/go-landlock v0.9.0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.4528548Z go: downloading golang.org/x/sys v0.40.0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:09.4529560Z go: downloading kernel.org/pub/linux/libs/security/libcap/psx v1.2.77
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:15.9537622Z Running lake build lean4export comparator
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:15.9538147Z Log: /home/runner/work/_temp/nla-lean-tools/logs/bootstrap/comparator-build.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:16.2862413Z ✔ [3/20] Built Comparator.Util (286ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:16.4864575Z ✔ [4/20] Built Comparator.Util:c.o (113ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:17.2871594Z ✔ [5/20] Built Export.Parse (1.2s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:17.6912352Z ✔ [6/20] Built Comparator.Axioms (460ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:17.9922579Z ✔ [7/20] Built Export (1.0s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:18.0922528Z ✔ [8/20] Built Comparator.Axioms:c.o (316ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:18.3921814Z ✔ [9/20] Built Comparator.Compare (609ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:18.7942710Z ✔ [10/20] Built Comparator.Compare:c.o (411ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:19.0942577Z ✔ [11/20] Built Main (1.0s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:19.0972508Z ✔ [12/20] Built Comparator (311ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:19.1001951Z ✔ [13/20] Built Comparator:c.o (52ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:19.2931348Z ✔ [14/20] Built Main:c.o (206ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:20.2954434Z ✔ [15/20] Built Export.Parse:c.o (2.0s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:20.3957594Z ✔ [16/20] Built Export:c.o (2.4s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:20.5012606Z ✔ [17/20] Built Main (1.4s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:21.2037123Z ✔ [18/20] Built Main:c.o (716ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:21.3038195Z ✔ [19/20] Built lean4export:exe (844ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:21.8047488Z ✔ [20/20] Built comparator:exe (594ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:21.8051309Z Build completed successfully (20 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.0869337Z Tools built; isolation and checker controls run during verify. Receipt: /home/runner/work/_temp/nla-lean-tools/bootstrap.json
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.4593081Z Running /usr/bin/timeout --kill-after=5s 45s systemd-run -p RuntimeMaxSec=40 --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp /usr/bin/true
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.4596975Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/user-service.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.5173643Z Running python3 /home/runner/work/_temp/nla-lean-tools/reproduction/checks/sandbox_probe_ci.py
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.5174242Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/sandbox.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.5408552Z START sandbox mode: build
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.5985822Z START sandbox mode: export
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.6547914Z START sandbox negative case: unknown option
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.6805673Z START sandbox negative case: unexpected --rw
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7081664Z START sandbox negative case: unexpected --rwx
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7380232Z START sandbox negative case: relative --rwx
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7659134Z MODE build: exit=0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7660130Z Running as unit: run-u2.service; invocation ID: 7f7656d437694f258f75284bb43b8931
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7661117Z PASS outside .lake write-open: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7661522Z PASS outside .lake truncate: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7661950Z PASS outside .lake read-only truncate-open: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7662409Z PASS symlink from .lake to outside write: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7662845Z PASS outside .lake creation: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7663193Z PASS build .lake write: allowed
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7663501Z PASS user namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7663838Z PASS pid namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7664130Z PASS mnt namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7664459Z PASS net namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7664709Z PASS ipc namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7664938Z PASS uts namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7665215Z PASS host parent: absent from private /proc
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7665514Z PASS host parent signal lookup: denied errno=3
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7665832Z PASS host loopback listener: unreachable errno=13
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7666132Z PASS AF_UNIX socket creation: denied errno=97
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7666411Z PASS effective capabilities: none
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7666675Z PASS no_new_privs: set
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7666975Z Sandbox UID: 1001
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7667244Z PASS nested namespace write attempt: rejected exit=1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7667558Z bwrap: setting up uid map: Permission denied
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7667842Z Finished with result: success
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7668124Z Main processes terminated with: code=exited/status=0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7668407Z Service runtime: 50ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7668636Z CPU time consumed: 51ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7668893Z Memory peak: 256.0K
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7669125Z Memory swap peak: 0B
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7669258Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7669394Z MODE export: exit=0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7669710Z Running as unit: run-u3.service; invocation ID: bea919d8233b451c95f4f7278418d778
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7670077Z PASS outside .lake write-open: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7670385Z PASS outside .lake truncate: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7670832Z PASS outside .lake read-only truncate-open: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7671195Z PASS symlink from .lake to outside write: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7671508Z PASS outside .lake creation: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7671812Z PASS export .lake write-open: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7672132Z PASS export .lake truncate: denied errno=30
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7672402Z PASS user namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7672654Z PASS pid namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7672905Z PASS mnt namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7673368Z PASS net namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7673714Z PASS ipc namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7673953Z PASS uts namespace: private
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7674189Z PASS host parent: absent from private /proc
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7674494Z PASS host parent signal lookup: denied errno=3
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7674842Z PASS host loopback listener: unreachable errno=13
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7675146Z PASS AF_UNIX socket creation: denied errno=97
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7675417Z PASS effective capabilities: none
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7675657Z PASS no_new_privs: set
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7675916Z Sandbox UID: 1001
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7676169Z PASS nested namespace write attempt: rejected exit=1
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7676468Z bwrap: setting up uid map: Permission denied
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7676748Z Finished with result: success
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7677022Z Main processes terminated with: code=exited/status=0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7677501Z Service runtime: 47ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7677757Z CPU time consumed: 48ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7677990Z Memory peak: 256.0K
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7678221Z Memory swap peak: 0B
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7678361Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7678461Z NEGATIVE unknown option: exit=2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7678816Z Running as unit: run-u4.service; invocation ID: c3c695a472924e40862e431924fbbbe6
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7679299Z strict Comparator sandbox: unsupported Comparator Landrun option: --unrestricted-filesystem
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7679674Z Finished with result: exit-code
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7679961Z Main processes terminated with: code=exited/status=2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7680260Z Service runtime: 18ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7680525Z CPU time consumed: 18ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7680917Z Memory peak: 256.0K
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7681148Z Memory swap peak: 0B
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7681313Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7681442Z NEGATIVE unexpected --rw: exit=2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7681775Z Running as unit: run-u5.service; invocation ID: 7b6ac40959f74fd7b4a7146366fe9bc4
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7682316Z strict Comparator sandbox: only private /dev may be passed with --rw
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7682655Z Finished with result: exit-code
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7682921Z Main processes terminated with: code=exited/status=2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7683215Z Service runtime: 18ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7683445Z CPU time consumed: 18ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7683685Z Memory peak: 256.0K
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7683914Z Memory swap peak: 0B
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7684054Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7684171Z NEGATIVE unexpected --rwx: exit=2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7684533Z Running as unit: run-u6.service; invocation ID: bde40193faa14decb4ec9daacf988916
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7684956Z strict Comparator sandbox: only this project's existing .lake may be writable
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7685313Z Finished with result: exit-code
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7685598Z Main processes terminated with: code=exited/status=2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7685873Z Service runtime: 19ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7686104Z CPU time consumed: 19ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7686325Z Memory peak: 256.0K
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7686586Z Memory swap peak: 0B
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7686705Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7686832Z NEGATIVE relative --rwx: exit=2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7687157Z Running as unit: run-u7.service; invocation ID: a6efa65af7b24f6599031e6204c57a3b
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7687578Z strict Comparator sandbox: only this project's existing .lake may be writable
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7687910Z Finished with result: exit-code
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7688185Z Main processes terminated with: code=exited/status=2
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7688483Z Service runtime: 17ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7688706Z CPU time consumed: 17ms
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7688971Z Memory peak: 256.0K
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7689188Z Memory swap peak: 0B
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7689297Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7689510Z Outer and export fixture contents unchanged; only designated build fixture written.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7712656Z Running bash /home/runner/work/_temp/nla-lean-tools/reproduction/checks/run_replay.sh
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.7713194Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/kernel-controls.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.8255882Z Replay probe: RestrictAddressFamilies=~AF_UNIX (deny AF_UNIX sockets).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.8648547Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, Release)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.9013495Z /home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Init.olean
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.9014155Z /home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Init.olean
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:22.9014624Z /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/lib/lean/Main.olean
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8792890Z Trusted base fixture: 11 constants
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8793280Z BEGIN honest_with_inductives_and_quotients
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8793564Z Running Lean default kernel on solution.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8793918Z Lean default kernel accepts the solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8794228Z RETURN honest_with_inductives_and_quotients: accepted
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8794569Z BEGIN invalid_raw_proof
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8794813Z Running Lean default kernel on solution.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8795142Z Lean default kernel rejects the solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8795578Z RETURN invalid_raw_proof: rejected: while replaying declaration 'PinnedReplayProbe.invalid':
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8796033Z (kernel) declaration type mismatch, 'PinnedReplayProbe.invalid' has type
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8796360Z   True
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8796588Z but it is expected to have type
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8796830Z   False
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8797084Z BEGIN quotient_postcheck_mismatch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8797370Z Running Lean default kernel on solution.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8797632Z Lean default kernel accepts the solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8797909Z Quotient post-check rejects the solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8798290Z RETURN quotient_postcheck_mismatch: rejected: Quotient constant mismatch on: Quot.lift
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.8798755Z PASS: all three actual Comparator.runBuiltinKernel cases behaved as required
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.9332068Z Running python3 /home/runner/work/_temp/nla-lean-tools/reproduction/checks/comparator_regressions.py
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.9332814Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/comparator-controls.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.9591041Z Comparator regressions: RestrictAddressFamilies=~AF_UNIX; .tools/env.sh selects the real strict sandbox.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.9595884Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:23.9596127Z CASE simple_match
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6454058Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6454734Z info: toolchain not updated; already up-to-date
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6455176Z Building Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6456014Z ⚠ [2/3] Built Challenge (172ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6456461Z warning: Challenge.lean:1:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6456954Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6458543Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6459969Z Building Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6460437Z ✔ [2/3] Built Solution (171ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6461125Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6462214Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6463495Z Running Lean default kernel on solution.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6463819Z Lean default kernel accepts the solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6464161Z Your solution is okay!
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6464531Z PASS simple_match: exit 0, expected 0; required phase: Your solution is okay!
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6465082Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:25.6465452Z CASE simple_mismatch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1896338Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1896944Z info: toolchain not updated; already up-to-date
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1897351Z Building Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1898010Z ⚠ [2/3] Built Challenge (171ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1898441Z warning: Challenge.lean:1:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1898830Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1900240Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1901797Z Building Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1902226Z ✔ [2/3] Built Solution (157ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1902511Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1903414Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1904564Z uncaught exception: Challenge and solution constant kind don't match: 'comm'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1905145Z PASS simple_mismatch: exit 1, expected 1; required phase: Challenge and solution constant kind don't match: 'comm'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1905442Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:27.1905589Z CASE simple_axiom_issue
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.6996722Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.6997322Z info: toolchain not updated; already up-to-date
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.6997644Z Building Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.6998168Z ⚠ [2/3] Built Challenge (169ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.6998488Z warning: Challenge.lean:1:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.6998785Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.6999788Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.7001145Z Building Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.7001478Z ✔ [2/3] Built Solution (165ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.7001757Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.7002654Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.7003554Z uncaught exception: Illegal axiom detected: 'helper'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.7003955Z PASS simple_axiom_issue: exit 1, expected 1; required phase: Illegal axiom detected: 'helper'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.7004233Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:28.7004379Z CASE simple_kind_mismatch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2323809Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2324523Z info: toolchain not updated; already up-to-date
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2324934Z Building Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2325607Z ⚠ [2/3] Built Challenge (165ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2325999Z warning: Challenge.lean:1:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2326425Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2327992Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2329055Z Building Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2329385Z ✔ [2/3] Built Solution (168ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2329754Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2331361Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2332398Z uncaught exception: Illegal axiom detected: 'helper'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2332832Z PASS simple_kind_mismatch: exit 1, expected 1; required phase: Illegal axiom detected: 'helper'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2333125Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:30.2333278Z CASE type_mismatch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7593336Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7594085Z info: toolchain not updated; already up-to-date
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7594458Z Building Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7595076Z ✔ [2/3] Built Challenge (168ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7595487Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7596842Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7598191Z Building Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7598533Z ✔ [2/3] Built Solution (167ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7598908Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7600285Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7601882Z uncaught exception: Challenge and solution theorem statement do not match: 'checked'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7602672Z PASS type_mismatch: exit 1, expected 1; required phase: Challenge and solution theorem statement do not match: 'checked'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7609801Z PASS: all five Comparator regressions
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7669309Z Running systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-axiom-_r6adc35 /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.7673188Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/negative-sorry.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.8081604Z info: NlaAxiomFixture: no previous manifest, creating one from scratch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.8082113Z info: toolchain not updated; already up-to-date
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:31.8660350Z Building Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:32.6561243Z ✔ [2/3] Built Challenge (602ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:32.6562165Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:33.4017079Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, Classical.choice, Quot.sound, propext, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:33.4018243Z Building Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.0944918Z ⚠ [2/3] Built Solution (586ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.0945369Z warning: Solution.lean:2:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.0947833Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.8910004Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, Classical.choice, Quot.sound, propext, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.8912052Z uncaught exception: Illegal axiom detected: 'sorryAx'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.8975513Z Running systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-axiom-eku3_9ry /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.8979068Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/negative-native.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.9358787Z info: NlaAxiomFixture: no previous manifest, creating one from scratch
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.9359411Z info: toolchain not updated; already up-to-date
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:34.9920225Z Building Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:35.6774140Z ✔ [2/3] Built Challenge (593ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:35.6775246Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:36.4269749Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, Classical.choice, Quot.sound, propext, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:36.4271219Z Building Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:37.1084624Z ✔ [2/3] Built Solution (574ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:37.1085872Z Build completed successfully (3 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:37.9140832Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, Classical.choice, Quot.sound, propext, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:37.9142177Z uncaught exception: Illegal axiom detected: 'checked._native.native_decide.ax_1_1'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:37.9862484Z Running lake env true
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:37.9863159Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/dependencies.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:38.0165974Z info: leancert: cloning https://github.com/alerad/leancert
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:39.4692793Z info: leancert: checking out revision '621a43d7cf21f87872392a01e874f2f1dbddc926'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:28:39.5312635Z info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:07.2021548Z info: mathlib: checking out revision '0df444a360eaa60ab8c11dca51a86af692955474'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:08.4634062Z info: plausible: cloning https://github.com/leanprover-community/plausible
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:08.9184442Z info: plausible: checking out revision 'b7eb3304aeae834b12dda98993a37f6a41f6f0bb'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:08.9276680Z info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:09.3104172Z info: LeanSearchClient: checking out revision '5f4d51b81cbd3f6b32b156bfad9056621a040404'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:09.3196903Z info: importGraph: cloning https://github.com/leanprover-community/import-graph
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:09.9766482Z info: importGraph: checking out revision '16f02aa7642864af59f1ff0e384a015994db9118'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:09.9877740Z info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:10.9463278Z info: proofwidgets: checking out revision '4be2e3d5087eeb272cf5a8853b8f9dd025ef5957'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:11.3654373Z info: aesop: cloning https://github.com/leanprover-community/aesop
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:12.3937500Z info: aesop: checking out revision '3448c0bcc5ce01b2d1546e483ec3620e32df3d0e'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:12.4062624Z info: Qq: cloning https://github.com/leanprover-community/quote4
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:12.9776585Z info: Qq: checking out revision '92c15be17b7caf78c2ad767ec40f89052d908d81'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:12.9865485Z info: batteries: cloning https://github.com/leanprover-community/batteries
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:15.5256594Z info: batteries: checking out revision '4488d40d070b9700d4d5a6aa342f0d40c31b2a2d'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:15.5432383Z info: Cli: cloning https://github.com/leanprover/lean4-cli
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:16.0706172Z info: Cli: checking out revision '6130a47896ce867c6a4a55373441e59e565bad0f'
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:16.1237191Z Running lake exe cache get
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:16.1237798Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/mathlib-cache.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:17.0176115Z ✔ [1/5] Built Cache.Cli (248ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:17.0176632Z ✔ [2/5] Built Cache.Lean (257ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:17.3196336Z ✔ [6/26] Built Cache.Cli:c.o (149ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:17.3197599Z ✔ [7/26] Built Cache.Lean:c.o (149ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:17.5199621Z ✔ [8/26] Built Cache.Infra (334ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:17.6199107Z ✔ [9/26] Built Cache.Infra:c.o (134ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:17.8202609Z ✔ [10/26] Built Batteries.Tactic.OpenPrivate (637ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:18.6206003Z ✔ [11/26] Built Batteries.Tactic.OpenPrivate:c.o (843ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:18.7207470Z ✔ [12/26] Built Cache.IO (924ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:19.2213406Z ✔ [13/26] Built Cache.Hashing (510ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:19.6218524Z ✔ [14/26] Built Cache.Hashing:c.o (370ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:19.8219524Z ✔ [15/26] Built Cache.IO:c.o (1.1s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:20.6217986Z ✔ [16/26] Built Cache.Requests (1.4s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:21.0224659Z ✔ [17/26] Built Cache.Marker (372ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:21.1226243Z ✔ [18/26] Built Cache.Marker:c.o (101ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:21.5229687Z ✔ [19/26] Built Cache.Query (496ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:21.7233185Z ✔ [20/26] Built Cache.Query:c.o (258ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:22.0262828Z ✔ [21/26] Built Cache.Warning (523ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:22.2244653Z ✔ [22/26] Built Cache.Warning:c.o (228ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:22.5246941Z ✔ [23/26] Built Cache.Requests:c.o (1.9s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:22.8250602Z ✔ [24/26] Built Cache.Main (821ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:23.5256872Z ✔ [25/26] Built Cache.Main:c.o (629ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:24.0262390Z ✔ [26/26] Built cache:exe (564ms)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:25.3002473Z Current branch: HEAD
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:25.3003170Z Using cache from origin: (some leanprover-community/mathlib4)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:25.3004061Z Attempting to download 8690 file(s) from leanprover-community/mathlib4 cache at https://lakecache.blob.core.windows.net/mathlib4-master
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.0307508Z 
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.1312019Z Downloaded: 1 file(s) [attempted 1/8690 = 0%, 42 KB/s], Decompressed: 0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.2336084Z Downloaded: 188 file(s) [attempted 188/8690 = 2%, 5812 KB/s], Decompressed: 25
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.3332219Z Downloaded: 536 file(s) [attempted 536/8690 = 6%, 16634 KB/s], Decompressed: 25
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.4353090Z Downloaded: 933 file(s) [attempted 933/8690 = 10%, 5873 KB/s], Decompressed: 25
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.5357814Z Downloaded: 1362 file(s) [attempted 1362/8690 = 15%, 7309 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.6732779Z Downloaded: 1755 file(s) [attempted 1755/8690 = 20%, 2306 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.7748515Z Downloaded: 1849 file(s) [attempted 1849/8690 = 21%, 341 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.8725983Z Downloaded: 1988 file(s) [attempted 1988/8690 = 22%, 4188 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:26.9724630Z Downloaded: 2333 file(s) [attempted 2333/8690 = 26%, 2203 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.0742743Z Downloaded: 2741 file(s) [attempted 2741/8690 = 31%, 7420 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.1752014Z Downloaded: 3152 file(s) [attempted 3152/8690 = 36%, 5616 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.2752529Z Downloaded: 3538 file(s) [attempted 3538/8690 = 40%, 4572 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.3724268Z Downloaded: 3984 file(s) [attempted 3984/8690 = 45%, 3788 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.4812545Z Downloaded: 4390 file(s) [attempted 4390/8690 = 50%, 13313 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.5801756Z Downloaded: 4775 file(s) [attempted 4775/8690 = 54%, 1913 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.6821638Z Downloaded: 5214 file(s) [attempted 5214/8690 = 60%, 44469 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.7823679Z Downloaded: 5365 file(s) [attempted 5365/8690 = 61%, 3333 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:27.9272242Z Downloaded: 5779 file(s) [attempted 5779/8690 = 66%, 1544 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.0302435Z Downloaded: 6130 file(s) [attempted 6130/8690 = 70%, 1360 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.1283910Z Downloaded: 6562 file(s) [attempted 6562/8690 = 75%, 4035 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.2698453Z Downloaded: 6967 file(s) [attempted 6967/8690 = 80%, 1677 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.3763837Z Downloaded: 7337 file(s) [attempted 7337/8690 = 84%, 6305 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.4792118Z Downloaded: 7705 file(s) [attempted 7705/8690 = 88%, 16080 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.5772477Z Downloaded: 8101 file(s) [attempted 8101/8690 = 93%, 16914 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.6976741Z Downloaded: 8460 file(s) [attempted 8460/8690 = 97%, 8228 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.7002544Z Downloaded: 8688 file(s) [attempted 8688/8690 = 99%, 9152 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:29:28.7027865Z Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 9152 KB/s], Decompressed: 126
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:03.0884245Z Decompressed 8690 file(s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:03.0885148Z Already decompressed 8690 file(s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:03.1180992Z Running systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-ju4kq3o4/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:03.1186503Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952/comparator.log
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:03.7783142Z Building Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:07.0288302Z ✔ [2330/2332] Built NLA.SP06.Definitions (1.4s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2298708Z ⚠ [2331/2332] Built Challenge (1.2s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2299207Z warning: Challenge.lean:14:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2299712Z warning: Challenge.lean:17:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2300146Z warning: Challenge.lean:21:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2300601Z warning: Challenge.lean:26:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2301128Z warning: Challenge.lean:30:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2301526Z warning: Challenge.lean:36:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2301906Z warning: Challenge.lean:40:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2302361Z warning: Challenge.lean:47:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2302758Z warning: Challenge.lean:50:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2303065Z warning: Challenge.lean:54:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2303448Z warning: Challenge.lean:58:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2303793Z warning: Challenge.lean:62:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2304195Z warning: Challenge.lean:67:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2304519Z warning: Challenge.lean:71:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2304858Z warning: Challenge.lean:74:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2305184Z warning: Challenge.lean:78:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2305558Z warning: Challenge.lean:82:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2306135Z warning: Challenge.lean:85:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2306665Z warning: Challenge.lean:88:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2307025Z warning: Challenge.lean:91:8: declaration uses `sorry`
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:08.2339375Z Build completed successfully (2332 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:11.1676385Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.SP06.witness_admissible, NLA.SP06.witness_composition, NLA.SP06.radial_lower_endpoint, NLA.SP06.radial_upper_endpoint, NLA.SP06.radial_uniform_slope, NLA.SP06.radial_root_exists_unique, NLA.SP06.radial_roots_lipschitz, NLA.SP06.continuous_radius_exists, NLA.SP06.radial_curve_continuous, NLA.SP06.radial_curve_injective, NLA.SP06.radial_curve_nonzero, NLA.SP06.auxiliary_radial_im, NLA.SP06.radial_curve_symbol_real, NLA.SP06.witness_real_jordan_curve, NLA.SP06.witness_toeplitz_two, NLA.SP06.witness_eigenvalue_mem, NLA.SP06.witness_eigenvalue_im, NLA.SP06.witness_nonreal_finite_spectrum, NLA.SP06.witness_counterexample, NLA.SP06.not_targetImplication, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:11.1680227Z Building Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:13.9342409Z ✔ [2332/2337] Built LeanCert.Tactic.Verification (1.4s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:16.9368074Z ✔ [2333/2337] Built NLA.SP06.Numeric (3.0s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:18.7376339Z ✔ [2334/2337] Built NLA.SP06.Curve (1.8s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:20.2391275Z ✔ [2335/2337] Built NLA.SP06.Proof (1.5s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:21.6407700Z ✔ [2336/2337] Built Solution (1.4s)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:21.6449429Z Build completed successfully (2337 jobs).
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:36.2642776Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.SP06.witness_admissible, NLA.SP06.witness_composition, NLA.SP06.radial_lower_endpoint, NLA.SP06.radial_upper_endpoint, NLA.SP06.radial_uniform_slope, NLA.SP06.radial_root_exists_unique, NLA.SP06.radial_roots_lipschitz, NLA.SP06.continuous_radius_exists, NLA.SP06.radial_curve_continuous, NLA.SP06.radial_curve_injective, NLA.SP06.radial_curve_nonzero, NLA.SP06.auxiliary_radial_im, NLA.SP06.radial_curve_symbol_real, NLA.SP06.witness_real_jordan_curve, NLA.SP06.witness_toeplitz_two, NLA.SP06.witness_eigenvalue_mem, NLA.SP06.witness_eigenvalue_im, NLA.SP06.witness_nonreal_finite_spectrum, NLA.SP06.witness_counterexample, NLA.SP06.not_targetImplication, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:36.2645334Z Running Lean default kernel on solution.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:36.2645617Z Lean default kernel accepts the solution
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:36.2645950Z Your solution is okay!
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0444890Z PASS: fresh Comparator run and all controls. Evidence: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T152822Z-3952
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0746043Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0747127Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0747420Z with:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0747574Z   name: lean-SP-06
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0747766Z   path: /home/runner/work/_temp/nla-lean-tools/logs/
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0748003Z   if-no-files-found: warn
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0748181Z   compression-level: 6
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0748342Z   overwrite: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0748504Z   include-hidden-files: false
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0748732Z env:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0748914Z   GOTOOLCHAIN: local
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0749106Z   XDG_RUNTIME_DIR: /run/user/1001
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0749357Z   DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1001/bus
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.0749596Z ##[endgroup]
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.9625738Z (node:5658) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:39.9626240Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.0357883Z With the provided path, there will be 13 files uploaded
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.0362163Z Artifact name is valid!
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.0362541Z Root directory input is valid!
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.3611544Z Beginning upload of artifact content to blob storage
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.4041921Z (node:5658) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.5938765Z Uploaded bytes 14504
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.6567867Z Finished uploading artifact content to blob storage!
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.6568441Z SHA256 digest of uploaded artifact zip is fac2ebe5f81ec421a7b478fcbd1a11768887b8678ad5d166adac3a1402aece6c
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.6570124Z Finalizing artifact upload
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.8985543Z Artifact lean-SP-06.zip successfully finalized. Artifact ID 10320127872
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.8986179Z Artifact lean-SP-06 has been successfully uploaded! Final size is 14504 bytes. Artifact ID is 10320127872
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.8991372Z Artifact download URL: https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34765629739/artifacts/10320127872
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:40.9137557Z Post job cleanup.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.0497177Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.0498200Z Post job cleanup.
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3158476Z [command]/usr/bin/git version
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3287012Z git version 2.55.0
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3311090Z Temporarily overriding HOME='/home/runner/work/_temp/5f9a1c85-aee2-451e-bd4c-f17c7d2650f9' before making global git config changes
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3311998Z Adding repository directory to the temporary git global config as a safe directory
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3316018Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3345438Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3369399Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3758631Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3788554Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.3980779Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.4003103Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.4291533Z Cleaning up orphan processes
+verify (SP-06, eigenvalues-and-inverse-problems/SP-06/lean)	UNKNOWN STEP	2026-09-13T15:30:41.5450545Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

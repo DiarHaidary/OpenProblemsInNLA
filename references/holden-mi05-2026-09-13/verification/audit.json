@@ -1,0 +1,65 @@
+{
+  "date": "2026-09-13",
+  "python": "3.9.6 (default, Apr 17 2026, 18:15:52) \n[Clang 21.0.0 (clang-2100.1.1.101)]",
+  "sympy": "1.14.0",
+  "checks": [
+    {
+      "check": "manifest",
+      "command": [
+        "python3",
+        "submitted/code/check_manifest.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "check": "analytic",
+      "command": [
+        "python3",
+        "code/verify_analytic.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "check": "analytic-optimized",
+      "command": [
+        "python3",
+        "-O",
+        "code/verify_analytic.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "check": "tests",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_analytic.py",
+        "-v"
+      ],
+      "returncode": 0
+    },
+    {
+      "check": "tests-optimized",
+      "command": [
+        "python3",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "code",
+        "-p",
+        "test_analytic.py",
+        "-v"
+      ],
+      "returncode": 0
+    }
+  ],
+  "verifier_outputs_agree": true,
+  "full_MI05_resolved": false
+}

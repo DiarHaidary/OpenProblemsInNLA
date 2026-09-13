@@ -1,0 +1,94 @@
+{
+  "result": "PASS",
+  "pr": 241,
+  "head": "5392d8955126657f0a9855b4434731ff38be1859",
+  "base": "b73cd1804e40e0d101294eedb156984f0d62b4a6",
+  "tree": "1a23bf46d18c815819ca4c89875d27db63d2be13",
+  "pr_checked_commit": "555dfb7ee6f1c7915da7d7ce20160a79aeb4e190",
+  "checked_commit_parents": [
+    "b73cd1804e40e0d101294eedb156984f0d62b4a6",
+    "5392d8955126657f0a9855b4434731ff38be1859"
+  ],
+  "run_id": 34768938972,
+  "run_attempt": 1,
+  "workflow_event": "pull_request",
+  "shared_checker_unchanged_from_base_and_reviewed_anchor": true,
+  "authenticator_sha256": "4d6197e41862daeeac2d5e6ecad0ba4d5010f4b5f6d5673a47dddf6c0fd607fe",
+  "artifacts": [
+    {
+      "name": "lean-IS-02",
+      "project": "eigenvalues-and-inverse-problems/IS-02/lean",
+      "repository_commit": "555dfb7ee6f1c7915da7d7ce20160a79aeb4e190",
+      "complete_git_tracked_set": true,
+      "all_input_hashes_match": true,
+      "input_hashes": 176,
+      "input_manifest_sha256": "0f92186e4157377cb47af8f8edf74b864c507c65ecd0bb5d031b5e1068bd25fd",
+      "theorem_exports": [
+        "NLA.IS02.counterexample_symmetric_nonnegative_stochastic",
+        "NLA.IS02.counterexample_trace",
+        "NLA.IS02.counterexample_positive_trace",
+        "NLA.IS02.counterexample_spectrum",
+        "NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq",
+        "NLA.IS02.counterexample_spectral_uniqueness",
+        "NLA.IS02.counterexample_outside_locus",
+        "NLA.IS02.counterexample_claim",
+        "NLA.IS02.not_targetNecessaryCondition"
+      ],
+      "standard_axiom_reports": 9,
+      "axiom_report_names": [
+        "NLA.IS02.counterexample_symmetric_nonnegative_stochastic",
+        "NLA.IS02.counterexample_trace",
+        "NLA.IS02.counterexample_positive_trace",
+        "NLA.IS02.counterexample_spectrum",
+        "NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq",
+        "NLA.IS02.counterexample_spectral_uniqueness",
+        "NLA.IS02.counterexample_outside_locus",
+        "NLA.IS02.counterexample_claim",
+        "NLA.IS02.not_targetNecessaryCondition"
+      ],
+      "default_kernel": "accepted",
+      "source_lock_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+      "tool_receipt": {
+        "source_lock_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+        "forsythe_commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+        "ci_sandbox_probe_sha256": "31057195baf238807cacbb4126c5b07f02cec55a4e4437de5f3a755b3fada803",
+        "lean_toolchain": "leanprover/lean4:v4.33.1",
+        "lean_prefix": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1",
+        "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+        "go_version": "go version go1.27.1 linux/amd64",
+        "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+        "executables": {
+          ".tools/comparator/.lake/build/bin/comparator": "189e88f1a3cb68130b581905f7a5d3bde47eb0578904c0ca6fb235a53d0e8bdc",
+          ".tools/lean4export/.lake/build/bin/lean4export": "46f6a14f0f4a364d7698229130d103b67855be42f96cc5ef93929288072f1fa1",
+          ".tools/bin/landrun": "6531f6c9bc99313170e29c4c65bf09a414741093c587389315eb81a0a31e45d7"
+        },
+        "env_sha256": "7554076d35dcb2dc98bdc8f9adfd3a6a65b08b89c05695efe9e194df542e149a"
+      },
+      "kernel_actual_cases": 3,
+      "comparator_actual_regressions": 5,
+      "admitted_proof_rejection": true,
+      "native_decision_rejection": true,
+      "sandbox_actual_modes": 2,
+      "sandbox_rejected_options": 4,
+      "archive_bytes_match": true,
+      "config_matches": true,
+      "logs_sha256": {
+        "mathlib-cache.log": "1d6736eca3a4d4b68698410695aa4ecf8ed5c661f43edd255e43c4a4f12c2639",
+        "dependencies.log": "740fcb700c777ae28e11ddf7c40e50a87ba79bbe97b1a1e1d21a314fea802b4d",
+        "comparator-controls.log": "56e0b28a81b6437e4212e50210235112c143cace472ccefeb54c67d3405b0bda",
+        "negative-native.log": "4b842bbd44cb45a7b2b8ea5de07186e5f86c7b26ca3da901e8b9f3ea7fe83407",
+        "sandbox.log": "336363bf043424935aef2f944368057e1fdf1b060cd6109e7b34659955a7a108",
+        "comparator.log": "0684066e23886662ecdae61fbc8b41dd02a3a839b686f33b6077962a015d20da",
+        "negative-sorry.log": "2a69683914bbbbcb8aaa224de3ca5f02e2727fed563ca83339722f33643647f8",
+        "kernel-controls.log": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+        "user-service.log": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a"
+      },
+      "result": "PASS",
+      "artifact_id": 10320169808,
+      "artifact_digest": "sha256:9b1c3a7c2960baf2b44c583d17fe61978c83a5df33574b88a902685754306d02",
+      "run_id": 34768938972,
+      "job_id": 103754894307,
+      "job_run_attempt": 1
+    }
+  ]
+}

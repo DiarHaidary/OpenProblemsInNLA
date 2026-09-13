@@ -1,0 +1,204 @@
+{
+  "seed": 20260913,
+  "interpolation": [
+    {
+      "n": 2,
+      "q": 2,
+      "relative_error": 1.2469464561229908e-16,
+      "real_calls": 3
+    },
+    {
+      "n": 2,
+      "q": 4,
+      "relative_error": 8.122957883620499e-16,
+      "real_calls": 5
+    },
+    {
+      "n": 2,
+      "q": 6,
+      "relative_error": 2.163077403543307e-15,
+      "real_calls": 7
+    },
+    {
+      "n": 3,
+      "q": 3,
+      "relative_error": 4.1147443993853955e-16,
+      "real_calls": 4
+    }
+  ],
+  "product_access": [
+    {
+      "n": 2,
+      "q": 4,
+      "trace_relative_error": 5.189001599861992e-16,
+      "real_calls": 2
+    },
+    {
+      "n": 3,
+      "q": 3,
+      "trace_relative_error": 2.3284462874408533e-15,
+      "real_calls": 3
+    },
+    {
+      "n": 5,
+      "q": 2,
+      "trace_relative_error": 0.0,
+      "real_calls": 5
+    },
+    {
+      "n": 20,
+      "q": 2,
+      "r": 2,
+      "branch": "parallel Hutch++ demonstration; r is not an accuracy certificate",
+      "estimate": 9.283390904384552,
+      "truth": 10.74844155689085,
+      "relative_error": 0.13630354175085507,
+      "real_calls": 15
+    }
+  ],
+  "complex_moments": [
+    {
+      "n": 2,
+      "q": 3,
+      "matrix_kind": "general PSD",
+      "samples": 60000,
+      "mean": 1.0009105797517983,
+      "theoretical_second_moment": 1.1117453422193448,
+      "empirical_second_moment": 1.1137331612570396,
+      "relative_second_moment_error": 0.0017880165197963205
+    },
+    {
+      "n": 3,
+      "q": 2,
+      "matrix_kind": "general PSD",
+      "samples": 60000,
+      "mean": 1.0000638254942078,
+      "theoretical_second_moment": 1.0915173238412237,
+      "empirical_second_moment": 1.091313835842333,
+      "relative_second_moment_error": 0.00018642672401614213
+    },
+    {
+      "n": 2,
+      "q": 4,
+      "matrix_kind": "product rank one",
+      "samples": 60000,
+      "mean": 1.008679732987867,
+      "theoretical_second_moment": 3.1604938271604928,
+      "empirical_second_moment": 3.2072634718390445,
+      "relative_second_moment_error": 0.014798207886572934
+    }
+  ],
+  "adaptive_Wishart": {
+    "d": 10,
+    "adaptive_rounds": 3,
+    "samples": 7000,
+    "predicted_chi_square_df": 49,
+    "residual_mean": 48.98584035512807,
+    "predicted_mean": 49,
+    "residual_variance": 98.48736253420634,
+    "predicted_variance": 98,
+    "empirical_correlation_with_known_trace": -0.011735945119048843,
+    "limitation": "Moment/correlation diagnostics do not establish conditional independence."
+  },
+  "edge_cases": {
+    "zero_matrix_output": 0.0,
+    "real_calls": 1,
+    "complex_input_rejected": true
+  },
+  "conditioning_spectrum": [
+    {
+      "q": 2,
+      "predicted_squared_condition_number": 2,
+      "maximum_relative_eigenvalue_error": 1.4802973661668753e-16
+    },
+    {
+      "q": 3,
+      "predicted_squared_condition_number": 3,
+      "maximum_relative_eigenvalue_error": 2.220446049250313e-16
+    },
+    {
+      "q": 4,
+      "predicted_squared_condition_number": 6,
+      "maximum_relative_eigenvalue_error": 3.552713678800501e-16
+    },
+    {
+      "q": 8,
+      "predicted_squared_condition_number": 70,
+      "maximum_relative_eigenvalue_error": 1.6184584536757837e-14
+    },
+    {
+      "q": 12,
+      "predicted_squared_condition_number": 924,
+      "maximum_relative_eigenvalue_error": 1.4798418900542086e-13
+    },
+    {
+      "q": 20,
+      "predicted_squared_condition_number": 184756,
+      "maximum_relative_eigenvalue_error": 4.2307913786100385e-11
+    }
+  ],
+  "bounds": [
+    {
+      "n": 2,
+      "q": 8,
+      "epsilon": 0.1,
+      "N": 256,
+      "lower_scale_L": 14.142135623730951,
+      "proved_lower_constant": 1.25e-05,
+      "explicit_upper": 256,
+      "real_sphere_upper": 7389,
+      "interpolated_complex_upper": 24273,
+      "simulated_hutchpp_upper": 26112
+    },
+    {
+      "n": 2,
+      "q": 20,
+      "epsilon": 0.1,
+      "N": 1048576,
+      "lower_scale_L": 20.0,
+      "proved_lower_constant": 1.25e-05,
+      "explicit_upper": 997278,
+      "real_sphere_upper": 997278,
+      "interpolated_complex_upper": 1980342,
+      "simulated_hutchpp_upper": 106954752
+    },
+    {
+      "n": 4,
+      "q": 8,
+      "epsilon": 0.01,
+      "N": 65536,
+      "lower_scale_L": 141.4213562373095,
+      "proved_lower_constant": 1.25e-05,
+      "explicit_upper": 65536,
+      "real_sphere_upper": 7650000,
+      "interpolated_complex_upper": 11326419,
+      "simulated_hutchpp_upper": 32833536
+    },
+    {
+      "n": 2,
+      "q": 6,
+      "epsilon": 0.015625,
+      "N": 64,
+      "lower_scale_L": 64,
+      "proved_lower_constant": 1.25e-05,
+      "explicit_upper": 64,
+      "real_sphere_upper": 127680,
+      "interpolated_complex_upper": 397285,
+      "simulated_hutchpp_upper": 41088
+    },
+    {
+      "n": 100,
+      "q": 4,
+      "epsilon": 0.01,
+      "N": 100000000,
+      "lower_scale_L": 141.4213562373095,
+      "proved_lower_constant": 1.25e-05,
+      "explicit_upper": 2156355,
+      "real_sphere_upper": 2214945,
+      "interpolated_complex_upper": 2156355,
+      "simulated_hutchpp_upper": 2004000000
+    }
+  ],
+  "all_diagnostic_assertions_passed": true,
+  "elapsed_seconds": 0.273
+}

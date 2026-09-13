@@ -1,0 +1,82 @@
+NLA.SP06.LaurentCoefficients : Type
+NLA.SP06.laurentEval (b : NLA.SP06.LaurentCoefficients) (z : ℂ) : ℂ
+NLA.SP06.hasAdmissibleBand (b : NLA.SP06.LaurentCoefficients) : Prop
+NLA.SP06.toeplitz (b : NLA.SP06.LaurentCoefficients) (n : ℕ) : Matrix.{0, 0, 0} (Fin n) (Fin n) ℂ
+NLA.SP06.hasRealJordanCurve (b : NLA.SP06.LaurentCoefficients) : Prop
+NLA.SP06.allFiniteSpectraReal (b : NLA.SP06.LaurentCoefficients) : Prop
+NLA.SP06.targetImplication : Prop
+NLA.SP06.witness : NLA.SP06.LaurentCoefficients
+NLA.SP06.auxiliary (z : ℂ) : ℂ
+NLA.SP06.radialEquation (r c : ℝ) : ℝ
+NLA.SP06.radiusProfile (ρ : Circle → ℝ) : Prop
+NLA.SP06.radialCurve (ρ : Circle → ℝ) (u : Circle) : ℂ
+NLA.SP06.nonrealEigenvalue : ℂ
+NLA.SP06.counterexampleClaim : Prop
+NLA.SP06.witness_admissible : NLA.SP06.hasAdmissibleBand NLA.SP06.witness
+NLA.SP06.witness_composition (z : ℂ) (hz : Ne.{1} z 0) :
+  Eq.{1} (NLA.SP06.laurentEval NLA.SP06.witness z)
+    (HSub.hSub.{0, 0, 0} (NLA.SP06.auxiliary z) (HPow.hPow.{0, 0, 0} (NLA.SP06.auxiliary z) 2))
+NLA.SP06.radial_lower_endpoint (c : ℝ) (hc : Membership.mem.{0, 0} (Set.Icc.{0} (-1) 1) c) :
+  LE.le.{0} (NLA.SP06.radialEquation (1 / 2) c) (Neg.neg.{0} (23 / 32)) ∧
+    LT.lt.{0} (NLA.SP06.radialEquation (1 / 2) c) 0
+NLA.SP06.radial_upper_endpoint (c : ℝ) (hc : Membership.mem.{0, 0} (Set.Icc.{0} (-1) 1) c) :
+  LE.le.{0} 1 (NLA.SP06.radialEquation 2 c)
+NLA.SP06.radial_uniform_slope (c s r : ℝ) (hc : Membership.mem.{0, 0} (Set.Icc.{0} (-1) 1) c) (hs : LE.le.{0} (1 / 2) s)
+  (hsr : LE.le.{0} s r) (hr : LE.le.{0} r 2) :
+  LE.le.{0} (HDiv.hDiv.{0, 0, 0} (HSub.hSub.{0, 0, 0} r s) 4)
+    (HSub.hSub.{0, 0, 0} (NLA.SP06.radialEquation r c) (NLA.SP06.radialEquation s c))
+NLA.SP06.radial_root_exists_unique (c : ℝ) (hc : Membership.mem.{0, 0} (Set.Icc.{0} (-1) 1) c) :
+  ExistsUnique.{1} fun r => Membership.mem.{0, 0} (Set.Ioo.{0} (1 / 2) 2) r ∧ Eq.{1} (NLA.SP06.radialEquation r c) 0
+NLA.SP06.radial_roots_lipschitz (c d r s : ℝ) (hc : Membership.mem.{0, 0} (Set.Icc.{0} (-1) 1) c)
+  (hd : Membership.mem.{0, 0} (Set.Icc.{0} (-1) 1) d) (hr : Membership.mem.{0, 0} (Set.Ioo.{0} (1 / 2) 2) r)
+  (hs : Membership.mem.{0, 0} (Set.Ioo.{0} (1 / 2) 2) s) (hcr : Eq.{1} (NLA.SP06.radialEquation r c) 0)
+  (hds : Eq.{1} (NLA.SP06.radialEquation s d) 0) :
+  LE.le.{0} (abs.{0} (HSub.hSub.{0, 0, 0} r s)) (HMul.hMul.{0, 0, 0} 8 (abs.{0} (HSub.hSub.{0, 0, 0} c d)))
+NLA.SP06.continuous_radius_exists : ∃ ρ, NLA.SP06.radiusProfile ρ
+NLA.SP06.radial_curve_continuous (ρ : Circle → ℝ) (hρ : Continuous.{0, 0} ρ) :
+  Continuous.{0, 0} (NLA.SP06.radialCurve ρ)
+NLA.SP06.radial_curve_injective (ρ : Circle → ℝ) (hρ : ∀ (u : Circle), LT.lt.{0} 0 (ρ u)) :
+  Function.Injective.{1, 1} (NLA.SP06.radialCurve ρ)
+NLA.SP06.radial_curve_nonzero (ρ : Circle → ℝ) (hρ : ∀ (u : Circle), LT.lt.{0} 0 (ρ u)) (u : Circle) :
+  Ne.{1} (NLA.SP06.radialCurve ρ u) 0
+NLA.SP06.auxiliary_radial_im (r : ℝ) (hr : LT.lt.{0} 0 r) (u : Circle) :
+  Eq.{1} (NLA.SP06.auxiliary (HMul.hMul.{0, 0, 0} ↑r ↑u)).im
+    (HMul.hMul.{0, 0, 0} (HDiv.hDiv.{0, 0, 0} (HMul.hMul.{0, 0, 0} 8 (↑u).im) r) (NLA.SP06.radialEquation r (↑u).re))
+NLA.SP06.radial_curve_symbol_real (ρ : Circle → ℝ) (hρ : NLA.SP06.radiusProfile ρ) (u : Circle) :
+  Eq.{1} (NLA.SP06.laurentEval NLA.SP06.witness (NLA.SP06.radialCurve ρ u)).im 0
+NLA.SP06.witness_real_jordan_curve : NLA.SP06.hasRealJordanCurve NLA.SP06.witness
+NLA.SP06.witness_toeplitz_two :
+  Eq.{1} (NLA.SP06.toeplitz NLA.SP06.witness 2)
+    (Matrix.of.{0, 0, 0}
+      (Matrix.vecCons.{0} (Matrix.vecCons.{0} (-128) (Matrix.vecCons.{0} 8 Matrix.vecEmpty.{0}))
+        (Matrix.vecCons.{0} (Matrix.vecCons.{0} (-8) (Matrix.vecCons.{0} (-128) Matrix.vecEmpty.{0}))
+          Matrix.vecEmpty.{0})))
+NLA.SP06.witness_eigenvalue_mem :
+  Membership.mem.{0, 0} (spectrum.{0, 0} ℂ (NLA.SP06.toeplitz NLA.SP06.witness 2)) NLA.SP06.nonrealEigenvalue
+NLA.SP06.witness_eigenvalue_im : Eq.{1} NLA.SP06.nonrealEigenvalue.im 8
+NLA.SP06.witness_nonreal_finite_spectrum : ¬NLA.SP06.allFiniteSpectraReal NLA.SP06.witness
+NLA.SP06.witness_counterexample : NLA.SP06.counterexampleClaim
+NLA.SP06.not_targetImplication : ¬NLA.SP06.targetImplication
+'NLA.SP06.witness_admissible' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.witness_composition' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_lower_endpoint' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_upper_endpoint' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_uniform_slope' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_root_exists_unique' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_roots_lipschitz' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.continuous_radius_exists' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_curve_continuous' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_curve_injective' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_curve_nonzero' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.auxiliary_radial_im' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.radial_curve_symbol_real' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.witness_real_jordan_curve' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.witness_toeplitz_two' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.witness_eigenvalue_mem' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.witness_eigenvalue_im' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.witness_nonreal_finite_spectrum' depends on axioms: [propext,
+ sorryAx.{u},
+ Classical.choice.{u},
+ Quot.sound.{u}]
+'NLA.SP06.witness_counterexample' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]
+'NLA.SP06.not_targetImplication' depends on axioms: [propext, sorryAx.{u}, Classical.choice.{u}, Quot.sound.{u}]

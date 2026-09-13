@@ -1,0 +1,142 @@
+{
+  "access_date": "2026-09-13",
+  "scope": "Primary-source inventory and exact dependency roles; not an exhaustive literature review",
+  "sources": [
+    {
+      "id": "repo",
+      "title": "RA-14: Optimal query complexity of spectral rank-k approximation",
+      "publisher": "Open Problems in Numerical Linear Algebra public repository",
+      "url": "https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/randomized-and-low-rank-approximation/RA-14/README.md",
+      "accessed": "2026-09-13",
+      "version": "Mutable main branch; source says last checked 2026-09-10",
+      "role": "Exact two-sided individual-vector oracle, pointwise 0.99 success, all simultaneous finite parameters.",
+      "qualifier": "No repository change made. Its public status is not independent validation of this package."
+    },
+    {
+      "id": "bn",
+      "title": "Krylov Methods are (nearly) Optimal for Low-Rank Approximation",
+      "authors": [
+        "Ainesh Bakshi",
+        "Shyam Narayanan"
+      ],
+      "url": "https://arxiv.org/abs/2304.03191v1",
+      "full_text": "https://arxiv.org/html/2304.03191v1",
+      "version": "v1",
+      "version_date": "2023-04-06",
+      "accessed": "2026-09-13",
+      "locations": [
+        "Open Question 1.10",
+        "Section 6, Lemma 6.3",
+        "Appendix A"
+      ],
+      "role": "Problem antecedent and general adaptive-to-Krylov lifting comparison.",
+      "qualifier": "The simulation grants a quadratic-sized family. No cost-preserving transfer is imported."
+    },
+    {
+      "id": "tropp",
+      "title": "Randomized block Krylov methods for approximating extreme eigenvalues",
+      "authors": [
+        "Joel A. Tropp"
+      ],
+      "url": "https://tropp.caltech.edu/papers/Tro21-Randomized-Block-preprint.pdf",
+      "version": "Author preprint revised October 1, 2021",
+      "accessed": "2026-09-13",
+      "role": "Context for full block-Krylov spaces and error metrics.",
+      "qualifier": "No lower-bound theorem imported."
+    },
+    {
+      "id": "urschel",
+      "title": "Uniform Error Estimates for the Lanczos Method",
+      "authors": [
+        "John C. Urschel"
+      ],
+      "url": "https://arxiv.org/abs/2003.09362v4",
+      "full_text": "https://arxiv.org/html/2003.09362v4",
+      "version": "v4",
+      "version_date": "2020-09-15",
+      "accessed": "2026-09-13",
+      "role": "Context for finite-dimensional polynomial error lower bounds.",
+      "qualifier": "Different eigenvalue error and probability statements; no all-adaptive RA-14 theorem imported and no priority comparison asserted."
+    },
+    {
+      "id": "bhsw",
+      "title": "The gradient complexity of linear regression",
+      "authors": [
+        "Mark Braverman",
+        "Elad Hazan",
+        "Max Simchowitz",
+        "Blake Woodworth"
+      ],
+      "url": "https://arxiv.org/abs/1911.02212v3",
+      "full_text": "https://arxiv.org/html/1911.02212v3",
+      "version": "v3",
+      "version_date": "2021-05-23",
+      "venue": "COLT 2020",
+      "accessed": "2026-09-13",
+      "role": "Antecedent Wishart Schur-complement methodology.",
+      "qualifier": "The singular shifted posterior and averaged upper bound in this package are derived explicitly, not attributed to this paper."
+    },
+    {
+      "id": "rv",
+      "title": "The smallest singular value of a random rectangular matrix",
+      "authors": [
+        "Mark Rudelson",
+        "Roman Vershynin"
+      ],
+      "url": "https://arxiv.org/abs/0802.3956v4",
+      "full_text": "https://arxiv.org/html/0802.3956v4",
+      "version": "v4",
+      "version_date": "2009-08-03",
+      "venue": "Communications on Pure and Applied Mathematics 62 (2009), 1707-1739",
+      "accessed": "2026-09-13",
+      "locations": [
+        "Theorem 1.1"
+      ],
+      "role": "Explicit external least-singular-value dependency of the inherited v5 lower bound.",
+      "qualifier": "Not a black-box dependency of the new restricted-class proof or the resolvent proof."
+    },
+    {
+      "id": "musco",
+      "title": "Randomized Block Krylov Methods for Stronger and Faster Approximate Singular Value Decomposition",
+      "authors": [
+        "Cameron Musco",
+        "Christopher Musco"
+      ],
+      "url": "https://arxiv.org/abs/1504.05477",
+      "accessed": "2026-09-13",
+      "role": "Context for randomized spectral low-rank approximation and the preceding upper-bound construction.",
+      "qualifier": "The needed scale estimation and residual certificates are reproduced in Appendix B."
+    },
+    {
+      "id": "blocksize",
+      "title": "Does block size matter in randomized block Krylov low-rank approximation?",
+      "authors": [
+        "Tyler Chen",
+        "Ethan N. Epperly",
+        "Raphael A. Meyer",
+        "Christopher Musco",
+        "Akash Rao"
+      ],
+      "url": "https://arxiv.org/abs/2508.06486v2",
+      "full_text": "https://arxiv.org/html/2508.06486v2",
+      "version": "v2",
+      "version_date": "2025-10-21",
+      "accessed": "2026-09-13",
+      "locations": [
+        "Sections 1.2, 2.1, 3.5",
+        "Section 5"
+      ],
+      "role": "Checked later small/intermediate-block results, hidden logarithmic qualifiers, and input-perturbation mechanism.",
+      "qualifier": "The v2 version history was verified after initially reading v1. Its HTML rendering displays a later body date, which is not treated as an additional arXiv revision. No universal all-adaptive RA-14 theorem is imported."
+    },
+    {
+      "id": "prior-v5",
+      "title": "RA-14: Finite-Accuracy Lower Bounds. Continuation 5",
+      "url": null,
+      "access_note": "User-visible conversation attachment, preserved as prior/RA14_finite_accuracy_v5.pdf and .zip",
+      "accessed": "2026-09-13",
+      "role": "Inherited unrestricted lower/upper bounds, warm-start reduction, and complete earlier packages.",
+      "qualifier": "Unreviewed generated research argument, not a publication or independent certification."
+    }
+  ]
+}

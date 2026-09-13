@@ -34,7 +34,7 @@ tensors},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}TR-29}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-10}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -61,20 +61,60 @@ decomposition arguments. The exact partially symmetric rank of this
 particular family chiefly interests specialists in tensor rank and
 multipartite entanglement.
 
+\subsection{Partial resolution --- the two-factor case k = 2, 13
+September
+2026}\label{partial-resolution-the-two-factor-case-k-2-13-september-2026}
+
+\textbf{Author:} Maximilian Behr.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/behr-tr29-2026-09-13/README.md}{Submission
+record}.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/behr-tr29-2026-09-13/manuscript/TR29_two_factor_rank.pdf}{Theorem
+1.1, proved in Sections 3--4} settles every tuple with \(k=2\):
+
+\[R(W_{d_1}\otimes W_{d_2})=2(d_1+d_2-2)\qquad\text{for all }d_1,d_2\ge2 .\]
+
+The lower bound combines a peeling lemma --- a point set supporting
+\(x^py\otimes u^qv\) lies on no curve of bidegree \((1,q)\) or
+\((p,1)\), so its Hilbert function is maximal there --- with the
+catalecticant--Sylvester inequality of Wang--Seigal applied to this
+unbalanced pair of bidegrees, where the catalecticant has rank four. The
+matching upper bound is Gałązka's decomposition (also
+Canino--Casarotti--Santarsiero, Theorem 1.1). Previously equality was
+known for \(d_1=2\) or \(d_2=2\), for \((3,3)\), and for \((4,4)\) in an
+unpublished 2021 note of Gałązka. Corollary 5.4 of the same manuscript
+also determines \(R(x^ay^b\otimes u^cv^d)=(a+1)(c+1)-(a-b)(c-d)\) for
+all \(a\ge b\ge1\), \(c\ge d\ge1\).
+
+\textbf{The case \(k\ge3\) remains open} (for example
+\(R(W_3\otimes W_3\otimes W_3)\), with upper bound 20), so the entry
+stays Partially resolved.
+
+The argument passed two separate
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/behr-tr29-2026-09-13/verification/independent-review.md}{independent
+AI-agent informal audits}, with exact rational checks and exhaustive
+finite-field black-box searches that were rerun. AI assistance is
+disclosed; no external human peer review or formal verification is
+claimed. No Lean verification was performed.
+
 \subsection{Problem statement}\label{problem-statement}
 
-For an integer \(d\geq3\), put \[
-W_d=\sum_{j=1}^{d}
+For an integer \(d\geq3\), put
+
+\[W_d=\sum_{j=1}^{d}
 e_1^{\otimes(j-1)}\otimes e_2\otimes
-e_1^{\otimes(d-j)}\in\operatorname{Sym}^d(\mathbb C^2).
-\] Given any \(k\geq2\) and \(d_1,\ldots,d_k\geq3\), set
+e_1^{\otimes(d-j)}\in\mathop{\mathrm{Sym}}\nolimits^d(\mathbb C^2).\]
+
+Given any \(k\geq2\) and \(d_1,\ldots,d_k\geq3\), set
 \(T_{\mathbf d}=W_{d_1}\otimes\cdots\otimes W_{d_k}\). Determine the
-exact smallest integer \(s\) such that \[
-T_{\mathbf d}=\sum_{\ell=1}^{s}
+exact smallest integer \(s\) such that
+
+\[T_{\mathbf d}=\sum_{\ell=1}^{s}
 (v_{1,\ell})^{\otimes d_1}\otimes\cdots\otimes
 (v_{k,\ell})^{\otimes d_k},
-\qquad v_{j,\ell}\in\mathbb C^2.
-\] This minimum is the partially symmetric rank with the \(k\) blocks of
+\qquad v_{j,\ell}\in\mathbb C^2.\]
+
+This minimum is the partially symmetric rank with the \(k\) blocks of
 orders \(d_1,\ldots,d_k\) fixed. It is not the border rank and not the
 rank obtained after grouping modes from different blocks. The harmless
 nonzero scalar relating the displayed \(W_d\) to the polynomial

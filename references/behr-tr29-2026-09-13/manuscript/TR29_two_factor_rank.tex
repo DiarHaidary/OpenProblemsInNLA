@@ -1,0 +1,198 @@
+\documentclass[11pt]{amsart}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amssymb,amsmath,amsthm,mathtools}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\PP}{\mathbb{P}}
+\DeclareMathOperator{\Ann}{Ann}
+\DeclareMathOperator{\Cat}{Cat}
+\DeclareMathOperator{\rank}{rank}
+\DeclareMathOperator{\br}{br}
+\DeclareMathOperator{\Sym}{Sym}
+
+\title[Partially symmetric rank of two W-states]{The partially symmetric rank of a product of two W-states\\ and of bihomogeneous binary monomials}
+\author{Maximilian Behr}
+\email{maximilian.behr@gmx.de}
+\date{13 September 2026}
+
+\begin{document}
+
+\begin{abstract}
+For $d_1,d_2\ge 2$ let $W_d=x^{d-1}y\in\Sym^d(\C^2)$ (up to scale) be the W-state. We prove that the partially symmetric rank of $W_{d_1}\otimes W_{d_2}$ equals $2(d_1+d_2-2)$, so the known upper bound of Ga{\l}\k{a}zka and of Canino--Casarotti--Santarsiero is sharp for every pair. This settles the two-factor case of Question~12 of Oneto--Ventura. The lower bound combines two elementary facts: a point set whose Veronese images span $x^py\otimes u^qv$ lies on no curve of bidegree $(1,q)$ or $(p,1)$, and a Sylvester-type catalecticant inequality, in the form used by Wang--Seigal, evaluated at this unbalanced pair of bidegrees. The same argument gives $R(x^ay^b\otimes u^cv^d)=(a+1)(c+1)-(a-b)(c-d)$ for all $a\ge b\ge1$, $c\ge d\ge1$, and a lower bound for products of binary forms whose rank exceeds their border rank. The case of three or more factors is not settled.
+\end{abstract}
+
+\maketitle
+
+\section{Introduction}
+
+Let $d_1,\dots,d_k\ge 2$. The \emph{partially symmetric rank} $R(T)$ of $T\in\Sym^{d_1}(\C^2)\otimes\cdots\otimes\Sym^{d_k}(\C^2)$ is the least $s$ such that
+\[
+T=\sum_{\ell=1}^{s} v_{1,\ell}^{\otimes d_1}\otimes\cdots\otimes v_{k,\ell}^{\otimes d_k},\qquad v_{j,\ell}\in\C^2 .
+\]
+For the W-state $W_d=\sum_{j=1}^d e_1^{\otimes(j-1)}\otimes e_2\otimes e_1^{\otimes(d-j)}$, which corresponds to the binary form $x^{d-1}y$ up to a nonzero scalar, Oneto and Ventura \cite{OV} ask for the exact value of $R(W_{d_1}\otimes\cdots\otimes W_{d_k})$ (Question~12). Canino, Casarotti and Santarsiero \cite{CCS} proved
+\[
+R(W_{d_1}\otimes\cdots\otimes W_{d_k})\le 2^{k-1}\,(d_1+\cdots+d_k-2k+2);
+\]
+for $k=2$ this bound is due to Ga{\l}\k{a}zka \cite[Thm.~1.5(i)]{Gal} (numbered Thm.~1.8(i) in the published version). Equality was known for $d_1=2$ or $d_2=2$ \cite[Prop.~4.4]{BBCG}, \cite[Thm.~1.5(ii)]{Gal}, for $(3,3)$ \cite[Prop.~4.2]{BBCG}, and for $(4,4)$ by an unpublished note of Ga{\l}\k{a}zka \cite{GalNote}. In general only $2\max(d_1,d_2)\le R\le 2(d_1+d_2-2)$ was available \cite{Gal,BBGO}.
+
+\begin{theorem}\label{thm:main}
+For all integers $d_1,d_2\ge 2$,
+\[
+R(W_{d_1}\otimes W_{d_2}) = 2(d_1+d_2-2).
+\]
+\end{theorem}
+
+Writing $p=d_1-1$ and $q=d_2-1$, Theorem~\ref{thm:main} says $R(T_{p,q})=2(p+q)$ for $T_{p,q}=x^py\otimes u^qv$. The lower bound (Section~\ref{sec:lower}) uses no induction, no case analysis of points at infinity and no computer algebra. Section~\ref{sec:upper} recalls the matching decomposition. Section~\ref{sec:binary} extends the argument to products of binary forms and determines the rank of all bihomogeneous binary monomials with positive exponents (Corollary~\ref{cor:monomial}); Ga{\l}\k{a}zka's thesis \cite[Rem.~1.8]{GalThesis} lists this problem as open, and his Remark~1.10 there anticipates the value $2(k+m)$ for $x^ky\,z^mw$ over $\mathbb R$. Section~\ref{sec:k3} explains why the argument does not extend verbatim to three factors.
+
+\section{Notation}
+
+Let $S=\C[\alpha_0,\alpha_1,\beta_0,\beta_1]$ be bigraded with $\deg\alpha_i=(1,0)$ and $\deg\beta_i=(0,1)$. It acts on $R=\C[x,y,u,v]$ by differentiation, $\alpha_0=\partial_x$, $\alpha_1=\partial_y$, $\beta_0=\partial_u$, $\beta_1=\partial_v$; we write $g\circ F$. For $(A,B)\in\mathbb Z_{\ge1}^2$ and a point $P=((a:b),(c:e))\in\PP^1\times\PP^1$ with a fixed representative put $\nu(P)=(ax+by)^A(cu+ev)^B\in R_{(A,B)}$. For $g\in S_{(i,k)}$ with $(i,k)\le(A,B)$,
+\begin{equation}\label{eq:contraction}
+g\circ\nu(P)=\frac{A!}{(A-i)!}\frac{B!}{(B-k)!}\,g(a,b,c,e)\,(ax+by)^{A-i}(cu+ev)^{B-k}.
+\end{equation}
+For a finite set $Z\subset\PP^1\times\PP^1$ let $(I_Z)_{(i,k)}\subseteq S_{(i,k)}$ be the forms vanishing on $Z$ and $h_Z(i,k)=\dim S_{(i,k)}-\dim(I_Z)_{(i,k)}$; this is the rank of the evaluation matrix $[g_r(P)]_{P\in Z,\,r}$ and does not depend on representatives. For $F\in R_{(A,B)}$, $\Ann(F)=\{g\in S: g\circ F=0\}$ and $\Cat_{(i,k)}(F)\colon S_{(i,k)}\to R_{(A-i,B-k)}$, $g\mapsto g\circ F$. A decomposition of length $n$ of $F$ is $F=\sum_{j=1}^n w_j\,\nu(P_j)$; $R(F)$ is the least such $n$. We work over $\C$; all arguments use only that the constants in \eqref{eq:contraction} are nonzero.
+
+\section{The lower bound}\label{sec:lower}
+
+Fix $p,q\ge1$, $A=p+1$, $B=q+1$ and $T=x^py\,u^qv\in R_{(A,B)}$.
+
+\begin{lemma}\label{lem:vanish}
+Let $F=\sum_j w_j\nu(P_j)$ with $Z=\{P_j\}$ \textup(zero weights allowed\textup) and $g\in(I_Z)_{(i,k)}$ with $(i,k)\le(A,B)$. Then $g\circ F=0$.
+\end{lemma}
+\begin{proof}
+Immediate from \eqref{eq:contraction}, since $g(P_j)=0$ for all $j$.
+\end{proof}
+
+\begin{lemma}\label{lem:ann}
+For $0\le i\le 1$ and $0\le k\le q$ we have $\Ann(T)_{(i,k)}=\beta_1^2\,S_{(i,k-2)}$ \textup(which is $0$ for $k\le1$\textup). Symmetrically, $\Ann(T)_{(i,k)}=\alpha_1^2\,S_{(i-2,k)}$ for $0\le k\le1$ and $0\le i\le p$. In particular $\rank\Cat_{(1,q)}(T)=4$.
+\end{lemma}
+\begin{proof}
+Let $G=\sum_{t=0}^k c_t\beta_0^{k-t}\beta_1^t$ with $k\le q$. Terms with $t\ge2$ annihilate $u^qv$, while $\beta_0^k\circ u^qv=\frac{q!}{(q-k)!}u^{q-k}v$ and, for $k\ge1$, $\beta_0^{k-1}\beta_1\circ u^qv=\frac{q!}{(q-k+1)!}u^{q-k+1}$ are nonzero and linearly independent. Hence $G\circ u^qv=0$ if and only if $\beta_1^2\mid G$. For $i=0$, $g\circ T=x^py\cdot(G\circ u^qv)$. For $i=1$ write $g=\alpha_0G_0+\alpha_1G_1$; then $g\circ T=p\,x^{p-1}y\,(G_0\circ u^qv)+x^p\,(G_1\circ u^qv)$, and since $x^{p-1}y$ and $x^p$ are linearly independent, $g\circ T=0$ if and only if $\beta_1^2$ divides $G_0$ and $G_1$. The symmetric statement is proved in the same way using $q\ge1$. Finally $\dim S_{(1,q)}=2(q+1)$ and $\dim\Ann(T)_{(1,q)}=2(q-1)$, so $\rank\Cat_{(1,q)}(T)=4$; its image is $\langle x^{p-1}y,x^p\rangle\otimes\langle u,v\rangle$.
+\end{proof}
+
+\begin{lemma}\label{lem:nocurve}
+Let $Z\subset\PP^1\times\PP^1$ be finite with $T\in\operatorname{span}\nu(Z)$. Then $(I_Z)_{(1,k)}=0$ for $0\le k\le q$ and $(I_Z)_{(i,1)}=0$ for $0\le i\le p$. In particular $h_Z(1,q)=2(q+1)$ and $h_Z(p,1)=2(p+1)$.
+\end{lemma}
+\begin{proof}
+Suppose $(I_Z)_{(1,k)}\neq0$ for some $k\le q$, take $k$ minimal and $0\ne g\in(I_Z)_{(1,k)}$. By Lemma~\ref{lem:vanish}, $g\in\Ann(T)$, so by Lemma~\ref{lem:ann} $k\ge2$ and $g=\beta_1^2g_1$ with $g_1\ne0$. The form $\beta_1g_1\in S_{(1,k-1)}$ is nonzero and vanishes on $Z$: at a point with $e\ne0$ we have $0=g(P)=e^2g_1(P)$, and at a point with $e=0$ the factor $\beta_1$ vanishes. This contradicts the minimality of $k$. The second statement is symmetric, using $\alpha_1$.
+\end{proof}
+
+\begin{lemma}[catalecticant--Sylvester inequality]\label{lem:sylvester}
+Let $F=\sum_{j=1}^n w_j\nu(P_j)\in R_{(A,B)}$ with all $w_j\ne0$, $Z=\{P_j\}$, and $(i,k)\le(A,B)$. Then
+\[
+n\ \ge\ h_Z(i,k)+h_Z(A-i,B-k)-\rank\Cat_{(i,k)}(F).
+\]
+\end{lemma}
+\begin{proof}
+Consider the bilinear form $b(g,h)=(gh)\circ F$ on $S_{(i,k)}\times S_{(A-i,B-k)}$. Since $b(g,h)=h\circ(g\circ F)$ and the apolarity pairing $S_{(A-i,B-k)}\times R_{(A-i,B-k)}\to\C$ is perfect, $\rank b=\rank\Cat_{(i,k)}(F)$. By \eqref{eq:contraction}, $b(g,h)=A!\,B!\sum_j w_j\,g(P_j)h(P_j)$, so the Gram matrix of $b$ is $A!B!\,V_1^{\mathsf T}WV_2$ with $V_1=[g_r(P_j)]$, $V_2=[h_s(P_j)]$ and $W=\operatorname{diag}(w_j)$ invertible. Here $\rank V_1=h_Z(i,k)$ and $\rank V_2=h_Z(A-i,B-k)$, and Sylvester's rank inequality $\rank(XY)\ge\rank X+\rank Y-n$ for $X=V_1^{\mathsf T}W$ \textup($n$ columns\textup) and $Y=V_2$ gives the claim.
+\end{proof}
+
+Lemma~\ref{lem:sylvester} is, up to notation, the key step in the proof of \cite[Thm.~1.8 and Thm.~3.13]{WS}; it requires nonzero weights.
+
+\begin{proof}[Proof of the lower bound in Theorem~\ref{thm:main}]
+Let $T=\sum_{j=1}^n w_j\nu(P_j)$ be a decomposition of minimal length, so all $w_j\ne0$, and put $Z=\{P_j\}$. Apply Lemma~\ref{lem:sylvester} with $(i,k)=(1,q)$, whose complement is $(A-1,B-q)=(p,1)$. By Lemma~\ref{lem:nocurve}, $h_Z(1,q)=2q+2$ and $h_Z(p,1)=2p+2$; by Lemma~\ref{lem:ann}, $\rank\Cat_{(1,q)}(T)=4$. Hence $n\ge(2q+2)+(2p+2)-4=2(p+q)$.
+\end{proof}
+
+\section{The upper bound}\label{sec:upper}
+
+For completeness we recall an explicit decomposition with $2(p+q)$ terms; it is Ga{\l}\k{a}zka's construction \cite[Thm.~1.5(i)]{Gal} and, for $d_i\ge3$, a case of \cite[Thm.~1.1]{CCS}.
+
+\begin{proposition}\label{prop:upper}
+Let $N=p+q$. Then
+\[
+\sum_{\varepsilon\in\{\pm1\}}\ \sum_{a^N=\varepsilon^{q-1}}\varepsilon\,(ax+y)^{p+1}(\varepsilon a\,u+v)^{q+1}=2N(p+1)(q+1)\,x^py\,u^qv,
+\]
+and the $2N$ points $((a:1),(\varepsilon a:1))$ are pairwise distinct. Hence $R(T_{p,q})\le 2(p+q)$.
+\end{proposition}
+\begin{proof}
+The coefficient of $x^iy^{A-i}u^kv^{B-k}$ is $\binom Ai\binom Bk\sum_\varepsilon\varepsilon^{k+1}\sum_a a^{t}$ with $t=i+k\in[0,N+2]$. For fixed $\varepsilon$ the $a$ run through a coset $\zeta_\varepsilon\mu_N$, so $\sum_aa^t=N\zeta_\varepsilon^t$ if $N\mid t$ and $0$ otherwise. If $t=0$ the coefficient is $N\sum_\varepsilon\varepsilon=0$. If $t=N$ then $\zeta_\varepsilon^N=\varepsilon^{q-1}$ and the coefficient is $\binom Ai\binom Bk N\sum_\varepsilon\varepsilon^{k+q}$, which vanishes unless $k\equiv q\pmod 2$; since $0\le i\le p+1$ forces $k\in\{q-1,q,q+1\}$, only $(i,k)=(p,q)$ survives, with coefficient $2N(p+1)(q+1)$. The value $t=2N$ occurs only for $N=2$ with $i=k=2$, where the coefficient is $N\zeta_\varepsilon^4\sum_\varepsilon\varepsilon^3=0$. For fixed $\varepsilon$ the values $a$ are distinct; for $q$ even the two cosets are disjoint, and for $q$ odd the points $((a:1),(a:1))$ and $((a:1),(-a:1))$ differ.
+\end{proof}
+
+This completes the proof of Theorem~\ref{thm:main}. \qed
+
+\section{Products of binary forms}\label{sec:binary}
+
+Let $F\in\C[x,y]_A$ and $G\in\C[u,v]_B$ be nonzero with $A,B\ge1$. By Sylvester's theorem $\Ann(F)=(\varphi,\psi)$ is a complete intersection with $\deg\varphi=r\le\deg\psi=s=A+2-r$, and $\br(F)=r$; likewise $\Ann(G)=(\varphi',\psi')$ with degrees $r'\le s'=B+2-r'$. Consider the hypothesis
+\[
+(H_F):\quad r=s,\ \text{or}\ r<s\ \text{and}\ \varphi\ \text{has a repeated linear factor}.
+\]
+By Comas--Seiguer \cite{CS}, $(H_F)$ holds if and only if $R(F)=s=A+2-\br(F)$. For the product, $S/\Ann(F\otimes G)\cong S_F\otimes S_G$ with $S_F=\C[\alpha]/\Ann(F)$, $S_G=\C[\beta]/\Ann(G)$; hence
+\begin{equation}\label{eq:prodann}
+\Ann(F\otimes G)_{(i,k)}=\Ann(F)_i\otimes\C[\beta]_k+\C[\alpha]_i\otimes\Ann(G)_k,\qquad \rank\Cat_{(i,k)}(F\otimes G)=h_F(i)\,h_G(k).
+\end{equation}
+
+\begin{lemma}\label{lem:peelgeneral}
+Assume $(H_G)$ and let $Z$ be finite with $F\otimes G\in\operatorname{span}\nu(Z)$. Then $(I_Z)_{(r-1,k)}=0$ for all $k\le s'-1$. Symmetrically, $(H_F)$ implies $(I_Z)_{(i,r'-1)}=0$ for all $i\le s-1$.
+\end{lemma}
+\begin{proof}
+For $i\le r-1$ and $k\le s'-1$ we have $\Ann(F)_i=0$ and $\Ann(G)_k=\varphi'\,\C[\beta]_{k-r'}$, so by \eqref{eq:prodann} $\Ann(F\otimes G)_{(i,k)}=\varphi'\,S_{(i,k-r')}$. Take $k\le s'-1$ minimal with $(I_Z)_{(r-1,k)}\ne0$ and $0\ne g$ in it; note $(r-1,k)\le(A,B)$. By Lemma~\ref{lem:vanish}, $g\in\Ann(F\otimes G)$, hence $k\ge r'$, $r'<s'$ and $\varphi'\mid g$. By $(H_G)$, $\varphi'=\lambda^2\mu$ with $\lambda\in\C[\beta]_1$, so $g=\lambda^2g_1$, and $\lambda g_1$ is a nonzero form of bidegree $(r-1,k-1)$ vanishing on $Z$, contradicting minimality.
+\end{proof}
+
+\begin{theorem}\label{thm:B}
+Under $(H_F)$ and $(H_G)$,
+\[
+R(F\otimes G)\ \ge\ rs'+sr'-rr'\ =\ R(F)R(G)-\bigl(R(F)-\br(F)\bigr)\bigl(R(G)-\br(G)\bigr).
+\]
+\end{theorem}
+\begin{proof}
+Let $Z$ carry a decomposition of minimal length. By Lemma~\ref{lem:peelgeneral}, $h_Z(r-1,s'-1)=rs'$ and $h_Z(s-1,r'-1)=sr'$; the bidegrees $(r-1,s'-1)$ and $(s-1,r'-1)$ are complementary in $(A,B)$. By \eqref{eq:prodann}, $\rank\Cat_{(r-1,s'-1)}(F\otimes G)=h_F(r-1)h_G(s'-1)=r\,r'$. Lemma~\ref{lem:sylvester} gives the bound.
+\end{proof}
+
+\begin{proposition}\label{prop:C}
+Under $(H_F)$ alone, $R(F\otimes G)\ge s\,r'=R(F)\,\br(G)$ for every nonzero $G$. Consequently $R(F\otimes G)=R(F)R(G)$ whenever $R(F)=\br(F)$ or $R(G)=\br(G)$.
+\end{proposition}
+\begin{proof}
+By Lemma~\ref{lem:peelgeneral}, $|Z|\ge h_Z(s-1,r'-1)=sr'$. If $R(G)=\br(G)=r'$ and $(H_F)$ holds this gives $R(F)R(G)$; if $R(F)=r$ and $R(G)=r'$ the flattening bound $rr'$ suffices; the remaining case follows by symmetry, and $R(F\otimes G)\le R(F)R(G)$ always.
+\end{proof}
+
+\begin{corollary}\label{cor:monomial}
+For all integers $a\ge b\ge1$ and $c\ge d\ge1$,
+\[
+R(x^ay^b\otimes u^cv^d)=(a+1)(c+1)-(a-b)(c-d).
+\]
+\end{corollary}
+\begin{proof}
+For $F=x^ay^b$ we have $\Ann(F)=(\alpha_1^{b+1},\alpha_0^{a+1})$, so $r=b+1$, $s=a+1$ and $(H_F)$ holds; similarly for $G=u^cv^d$. Theorem~\ref{thm:B} gives $R\ge(b+1)(c+1)+(a+1)(d+1)-(b+1)(d+1)=(a+1)(c+1)-(a-b)(c-d)$, which coincides with Ga{\l}\k{a}zka's upper bound $(k_0+1)(l_1+1)+(k_1+1)(l_0+1)-(k_1+1)(l_1+1)$ \cite[Thm.~1.5(i)]{Gal} for $(k_0,k_1,l_0,l_1)=(a,b,c,d)$.
+\end{proof}
+
+Theorem~\ref{thm:main} is the case $b=d=1$. Previously the value was known for $a=b$ or $c=d$ \cite[Thm.~1.5(ii)]{Gal}, for $(a,c)=(b+1,d+1)$ \cite[Thm.~1.5(i),(iii)]{Gal}, and for $x^3y\,u^3v$ \cite{GalNote}.
+
+\begin{remark}
+The hypotheses cannot be dropped. For $(x^2y+y^3)\otimes uv$ the form $\varphi=\alpha_1^2-3\alpha_0^2$ is squarefree, the bound of Theorem~\ref{thm:B} would be $6$, and $R=4$.
+\end{remark}
+
+\section{Three or more factors}\label{sec:k3}
+
+For $T=x^py\otimes u^qv\otimes s^rt$ with $p,q,r\ge2$, every complementary pair of multidegrees contains a member with at least two entries $\ge2$, and in such multidegrees $\Ann(T)$ contains squarefree forms such as $(\alpha_1\beta_0-\alpha_0\beta_1)(\alpha_1\beta_0+\alpha_0\beta_1)$. Lemma~\ref{lem:nocurve} then fails and the argument does not give $2^{k-1}(d_1+\cdots+d_k-2k+2)$. The case $k\ge3$ of Question~12, for instance $R(W_3\otimes W_3\otimes W_3)$ with upper bound $20$, remains open.
+
+\section{Computational checks and provenance}
+
+The proofs above are complete and do not rely on computation. As independent sanity checks we verified exactly over $\mathbb Q$ Lemma~\ref{lem:ann}, the ranks $\rank\Cat_{(1,q)}(T)=\rank\Cat_{(p,1)}(T)=4$ and Lemma~\ref{lem:sylvester} on $504$ random decompositions ($p,q\le7$); over finite fields $\mathbb F_P$ with $P$ larger than the degrees, that no curve of bidegree $(1,q)$ or $(p,1)$ supports $T$ (about $10^6$ forms), that no set of $2(p+q)-1$ rational points spans $T$ for small $(p,q)$, and that no $8$ points of $\PP^1\times\PP^1(\mathbb F_5)$ span $x^2y^2\otimes u^2v$ ($30\,260\,340$ subsets); and Proposition~\ref{prop:upper} together with equality in Lemma~\ref{lem:sylvester} for ten pairs $(p,q)$ up to $(7,4)$. Scripts and logs accompany this note.
+
+\emph{Provenance.} This work was carried out in the context of the OpenTorus project (\url{https://github.com/maximilianbehr/OpenTorus}), an open-source AI agent for open mathematical problems; an OpenTorus campaign on this catalog entry produced the first apolarity-based sketch for the case $(3,4)$, and the proof given here was developed from it.
+
+\emph{AI disclosure.} The results and this manuscript were produced with extensive assistance from AI agents (Anthropic Claude). The arguments were checked by two independent AI-agent reviews and by re-deriving every step; they have not been reviewed by a human referee, and no formal (Lean) verification was performed. The literature search for prior results was bounded.
+
+\begin{thebibliography}{99}
+\bibitem{BBCG} E.~Ballico, A.~Bernardi, M.~Christandl, F.~Gesmundo, \emph{On the partially symmetric rank of tensor products of W-states and other symmetric tensors}, Rend.\ Lincei Mat.\ Appl.\ \textbf{30} (2019), 93--124; arXiv:1803.01623.
+\bibitem{BBGO} E.~Ballico, A.~Bernardi, F.~Gesmundo, A.~Oneto, arXiv:1909.03811, Ann.\ Mat.\ Pura Appl.\ (2020), Prop.~4.3.
+\bibitem{CCS} S.~Canino, A.~Casarotti, P.~Santarsiero, \emph{A new bound on the rank of tensor product of W-states}, arXiv:2512.05828; Proc.\ Amer.\ Math.\ Soc., doi:10.1090/proc/17856.
+\bibitem{CS} G.~Comas, M.~Seiguer, \emph{On the rank of a binary form}, Found.\ Comput.\ Math.\ \textbf{11} (2011), 65--78.
+\bibitem{Gal} M.~Ga{\l}\k{a}zka, \emph{Multigraded apolarity}, Math.\ Nachr.\ \textbf{296} (2023), 286--313; arXiv:1601.06211v3.
+\bibitem{GalNote} M.~Ga{\l}\k{a}zka, \emph{On the bihomogeneous rank of $x^3yu^3v$}, unpublished note (2021), \url{https://www.mimuw.edu.pl/~mgalazka/}.
+\bibitem{GalThesis} M.~Ga{\l}\k{a}zka, \emph{Secant varieties, Waring rank and generalizations from algebraic geometry viewpoint}, PhD thesis, University of Warsaw, 2023.
+\bibitem{OV} A.~Oneto, E.~Ventura, \emph{Ranks of tensors: geometry and applications}, Boll.\ Unione Mat.\ Ital.\ (2025), doi:10.1007/s40574-025-00472-9.
+\bibitem{WS} K.~Wang, A.~Seigal, \emph{Lower bounds on the rank and symmetric rank of real tensors}, J.\ Symbolic Comput.\ (2023); arXiv:2202.11740.
+\end{thebibliography}
+
+\end{document}

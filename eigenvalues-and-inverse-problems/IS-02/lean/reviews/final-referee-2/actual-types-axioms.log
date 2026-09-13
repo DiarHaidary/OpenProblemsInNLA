@@ -1,0 +1,57 @@
+NLA.IS02.Mat (n : ℕ) : Type
+'NLA.IS02.Mat' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.symmetric {n : ℕ} (A : NLA.IS02.Mat n) : Prop
+'NLA.IS02.symmetric' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.entrywiseNonnegative {n : ℕ} (A : NLA.IS02.Mat n) : Prop
+'NLA.IS02.entrywiseNonnegative' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.stochastic {n : ℕ} (A : NLA.IS02.Mat n) : Prop
+'NLA.IS02.stochastic' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.symmetricStochastic (n : ℕ) : Set (NLA.IS02.Mat n)
+'NLA.IS02.symmetricStochastic' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.trace {n : ℕ} (A : NLA.IS02.Mat n) : ℝ
+'NLA.IS02.trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.permute {n : ℕ} (σ : Equiv.Perm (Fin n)) (A : NLA.IS02.Mat n) : NLA.IS02.Mat n
+'NLA.IS02.permute' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.permutationSimilar {n : ℕ} (A B : NLA.IS02.Mat n) : Prop
+'NLA.IS02.permutationSimilar' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.sameSpectrum {n : ℕ} (A B : NLA.IS02.Mat n) : Prop
+'NLA.IS02.sameSpectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.realEigenvalueMultiset {n : ℕ} (A : NLA.IS02.Mat n) : Multiset ℝ
+'NLA.IS02.realEigenvalueMultiset' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.spectrallyUnique {n : ℕ} (A : NLA.IS02.Mat n) : Prop
+'NLA.IS02.spectrallyUnique' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.segment {n : ℕ} (X Y : NLA.IS02.Mat n) : Set (NLA.IS02.Mat n)
+'NLA.IS02.segment' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.vertex (n : ℕ) (V : NLA.IS02.Mat n) : Prop
+'NLA.IS02.vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.flatMatrix (n : ℕ) : NLA.IS02.Mat n
+'NLA.IS02.flatMatrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.assertedLocus (n : ℕ) : Set (NLA.IS02.Mat n)
+'NLA.IS02.assertedLocus' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexample : NLA.IS02.Mat 4
+'NLA.IS02.counterexample' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.targetNecessaryCondition : Prop
+'NLA.IS02.targetNecessaryCondition' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexampleClaim : Prop
+'NLA.IS02.counterexampleClaim' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexample_symmetric_nonnegative_stochastic : NLA.IS02.counterexample ∈ NLA.IS02.symmetricStochastic 4
+'NLA.IS02.counterexample_symmetric_nonnegative_stochastic' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexample_trace : NLA.IS02.trace NLA.IS02.counterexample = 1
+'NLA.IS02.counterexample_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexample_positive_trace : 0 < NLA.IS02.trace NLA.IS02.counterexample
+'NLA.IS02.counterexample_positive_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexample_spectrum :
+  NLA.IS02.sameSpectrum NLA.IS02.counterexample !![1, 0, 0, 0; 0, 1, 0, 0; 0, 0, 0, 0; 0, 0, 0, -1]
+'NLA.IS02.counterexample_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq {n : ℕ} {A B : NLA.IS02.Mat n} (hA : NLA.IS02.symmetric A)
+  (hB : NLA.IS02.symmetric B) :
+  NLA.IS02.sameSpectrum A B ↔ NLA.IS02.realEigenvalueMultiset A = NLA.IS02.realEigenvalueMultiset B
+'NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexample_spectral_uniqueness : NLA.IS02.spectrallyUnique NLA.IS02.counterexample
+'NLA.IS02.counterexample_spectral_uniqueness' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexample_outside_locus : NLA.IS02.counterexample ∉ NLA.IS02.assertedLocus 4
+'NLA.IS02.counterexample_outside_locus' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.counterexample_claim : NLA.IS02.counterexampleClaim
+'NLA.IS02.counterexample_claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA.IS02.not_targetNecessaryCondition : ¬NLA.IS02.targetNecessaryCondition
+'NLA.IS02.not_targetNecessaryCondition' depends on axioms: [propext, Classical.choice, Quot.sound]

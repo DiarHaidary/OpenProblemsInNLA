@@ -1,0 +1,14 @@
+GH CLI: /tmp/nla-submission-tools/gh_2.100.0_macOS_arm64/bin/gh
+Repository: sgstepaniants/OpenProblemsInNLA
+Run: 34765629739
+Verify job: 103745998196
+
+Read-only retrieval commands:
+  gh run view 34765629739 --repo sgstepaniants/OpenProblemsInNLA --json databaseId,workflowName,displayTitle,event,headBranch,headSha,createdAt,updatedAt,status,conclusion,url,jobs
+  gh api repos/sgstepaniants/OpenProblemsInNLA/actions/runs/34765629739
+  gh api repos/sgstepaniants/OpenProblemsInNLA/actions/jobs/103745998196
+  gh api 'repos/sgstepaniants/OpenProblemsInNLA/actions/runs/34765629739/artifacts?per_page=100'
+  gh run view 34765629739 --repo sgstepaniants/OpenProblemsInNLA --job 103745998196 --log
+  gh api repos/sgstepaniants/OpenProblemsInNLA/actions/artifacts/10320127872/zip > lean-SP-06-artifact.zip
+
+The ZIP was extracted with Python zipfile after rejecting absolute paths, '..' path components, symlinks, special files, and destination escapes. No project files, Git refs, or dependency caches were modified by this audit.

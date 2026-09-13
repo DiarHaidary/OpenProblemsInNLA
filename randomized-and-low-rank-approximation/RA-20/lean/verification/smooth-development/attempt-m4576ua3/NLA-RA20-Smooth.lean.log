@@ -1,0 +1,15 @@
+'NLA.RA20.triple_product_not_formallySmooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.formallySmooth_of_retraction' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.abc_local_not_smooth' depends on axioms: [propext, Classical.choice, Quot.sound]
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:339:2: error: Type mismatch: After simplification, term
+  hh
+ has type
+  @Eq (ABCLocal p) ((algebraMap ABCCoordinateRing (ABCLocal p)) ((Ideal.Quotient.mk abcIdeal) ((abcErase j) f)))
+    ((algebraMap ABCCoordinateRing (ABCLocal p)) ((Ideal.Quotient.mk abcIdeal) f))
+but is expected to have type
+  @Eq (ABCLocal p) ((algebraMap ABCCoordinateRing (ABCLocal p)) ((Ideal.Quotient.mk abcIdeal) ((abcErase j) f)))
+    (((↑(AlgHom.id ℂ (ABCLocal p))).comp (algebraMap ABCCoordinateRing (ABCLocal p))) ((Ideal.Quotient.mk abcIdeal) f))
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean:350:21: error: #assert_trust: 'NLA.RA20.abc_local_smooth' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.abc_local_smooth' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

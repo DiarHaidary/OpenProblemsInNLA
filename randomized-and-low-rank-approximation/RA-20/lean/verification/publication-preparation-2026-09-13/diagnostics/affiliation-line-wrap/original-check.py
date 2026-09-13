@@ -1,0 +1,105 @@
+#!/usr/bin/env python3
+"""Final author check of current publication bytes; no independent approval."""
+from pathlib import Path
+import datetime,hashlib,json,os,re,subprocess,urllib.parse
+import yaml
+E=Path(__file__).resolve().parent;P=E.parents[1];R=P.parents[2]
+sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+b=json.loads((E/'PREFLIGHT.json').read_text())
+changed=[]
+for n,v in b['project_baseline'].items():
+ if sha(P/n)!=v['sha256']:changed.append(str((P/n).relative_to(R)))
+for n,v in b['other_publication_inputs'].items():
+ if sha(R/n)!=v['sha256']:changed.append(n)
+expected=['README.md','CATALOG.md','RESOLVED.md','randomized-and-low-rank-approximation/README.md']
+expected += ['randomized-and-low-rank-approximation/RA-20/'+s for s in ['README.md','problem.tex','problem.pdf','lean/README.md','lean/formalization.yaml']]
+assert sorted(changed)==sorted(expected),changed
+assert sha(R/'problem_ids.json')==b['registry_sha256']
+assert len(json.loads((R/'problem_ids.json').read_text()))==217
+old=(E/'archive/repository/randomized-and-low-rank-approximation/RA-20/README.md').read_text()
+canonical=(P.parent/'README.md').read_text()
+assert canonical[canonical.index('## Statement\n'):]==old[old.index('## Statement\n'):]
+assert '**Status:** Lean verified' in canonical
+config=json.loads((P/'comparator.json').read_text())
+meta=yaml.safe_load((P/'formalization.yaml').read_text())
+assert [v['declaration'] for v in meta['status']['main_results']]==config['theorem_names']
+assert [v['declaration'] for v in meta['alignment']]==config['theorem_names']
+assert len(config['theorem_names'])==12 and config['definition_names']==[]
+for n in config['theorem_names']:assert '`'+n.rsplit('.',1)[1]+'`' in canonical,n
+assert meta['toolchain']['dependencies']=={v['name']:v['rev'] for v in json.loads((P/'lake-manifest.json').read_text())['packages']}
+assert meta['review']['linux_verification']['source_kernel_assertions']==61
+assert meta['review']['linux_verification']['source_printed_axiom_occurrences']==57
+assert meta['review']['linux_verification']['source_distinct_printed_names']==45
+assert meta['review']['linux_verification']['official_matching_dependency_cache_files']==8690
+assert 'No actual RA20 Linux success is asserted' not in (P/'formalization.yaml').read_text()
+assert 'lake build Solution' in canonical and 'tools/lean/bootstrap.sh' in canonical
+for text in [canonical,(P/'README.md').read_text(),(P/'formalization.yaml').read_text()]:
+ assert 'George Stepaniants' in text and 'Department of Computing and Mathematical Sciences' in text and 'California Institute of Technology' in text
+
+def slug(t):return re.sub(r'[^\w\- ]','',t.strip().lower()).replace(' ','-')
+links=[];urls=set();late={E/'EVIDENCE-MANIFEST.json'}
+documents=[(P/'README.md',(P/'README.md').read_text()),(P.parent/'README.md',canonical),(E/'HANDOFF.md',(E/'HANDOFF.md').read_text())]
+resolved=(R/'RESOLVED.md').read_text();start=resolved.index('### RA-20 - ');end=resolved.index('\n### ',start+1)
+documents.append((R/'RESOLVED.md',resolved[start:end]))
+def check_link(base,value):
+ q=urllib.parse.urlparse(value)
+ if q.scheme:
+  assert q.scheme=='https' and q.netloc and not q.username and not q.password,value
+  urls.add(value);return
+ target=(base/urllib.parse.unquote(q.path)).resolve()
+ if target in late and not target.exists():
+  links.append({'link':value,'target':str(target.relative_to(R)),'status':'exact later outer seal required by final verifier'});return
+ assert target.is_file(),('missing local link',value)
+ if q.fragment:
+  anchors={slug(m.group(1)) for m in re.finditer(r'^#{1,6}\s+(.+)$',target.read_text(),re.M)}
+  assert urllib.parse.unquote(q.fragment) in anchors,('missing local anchor',value,sorted(anchors))
+ links.append({'link':value,'target':str(target.relative_to(R)),'sha256':sha(target)})
+for document,body in documents:
+ for match in re.finditer(r'\[[^\]]+\]\(([^\s)]+)\)',body):check_link(document.parent,match.group(1))
+keys={'file','comparator_config','dependency_manifest','frozen_readme_archive','installation_evidence','adaptation','local_schema','prerequisites_document','candidate_README_archive','candidate_YAML_archive','handoff'}
+def walk(v):
+ if isinstance(v,dict):
+  for k,item in v.items():
+   if k in keys:check_link(P,item)
+   if k.endswith('EVIDENCE-MANIFEST.json'):check_link(P,k)
+   walk(item)
+ elif isinstance(v,list):
+  for item in v:walk(item)
+ elif isinstance(v,str) and v.startswith('https://'):check_link(P,v)
+walk(meta)
+env=os.environ.copy();env.update(PYTHONDONTWRITEBYTECODE='1',GIT_OPTIONAL_LOCKS='0')
+immutable=[]
+for url in sorted(urls):
+ q=urllib.parse.urlparse(url);parts=q.path.strip('/').split('/')
+ if q.netloc=='github.com' and len(parts)>4 and parts[1]=='OpenProblemsInNLA' and parts[2]=='blob':
+  rev=parts[3];name='/'.join(parts[4:]);assert rev in {b['candidate'],b['original_source_base']},url
+  data=subprocess.check_output(['git','show',rev+':'+name],cwd=R,env=env)
+  immutable.append({'url':url,'sha256':hashlib.sha256(data).hexdigest(),'Git_blob_checked':True})
+prooftext=(E/'pdf-text.txt').read_text()
+for n in config['theorem_names']:assert n.rsplit('.',1)[1] in prooftext,n
+assert 'Lean verified' in prooftext and 'George Stepaniants' in prooftext
+assert (E/'pdf-build/xelatex-2/problem.pdf').read_bytes()==(P.parent/'problem.pdf').read_bytes()
+assert (E/'pdf-build/xelatex-2/problem.tex').read_bytes()==(P.parent/'problem.tex').read_bytes()
+qa=json.loads((E/'VISUAL-QA.json').read_text());assert qa['page_count']==3 and qa['PDF_sha256']==sha(P.parent/'problem.pdf')
+for x in qa['all_pages']:assert x['visually_inspected'] and sha(E/x['file'])==x['sha256']
+for d in sorted((E/'pdf-build').iterdir()):assert json.loads((d/'result.json').read_text())['exit_code']==0
+assert 'RA-20: OK' in (E/'commands/canonical-render/stdout').read_text()
+email=re.compile(rb'[A-Za-z0-9.!#$%&\x27*+/=?^_`{|}~-]+@[A-Za-z0-9-]+(?:\.[A-Za-z0-9-]+)+')
+material={R/n for n in changed}|{q for q in E.rglob('*') if q.is_file()}
+matches=[str(q.relative_to(R)) for q in material if email.search(q.read_bytes())]
+assert not matches,('email-like publication content',matches)
+commands=[('schema-final',['/tmp/nla-lean-formalization/venv/bin/python','tools/lean/validate_manifest.py',str(P.relative_to(R))]),('diff-check',['git','diff','--check']),('tracked-change-scope',['git','diff','--name-only'])]
+receipts=[]
+for label,cmd in commands:
+ d=E/'commands'/label;assert not d.exists();d.mkdir()
+ rec={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'command':cmd,'cwd':str(R),'environment_overrides':{'PYTHONDONTWRITEBYTECODE':'1','GIT_OPTIONAL_LOCKS':'0'}}
+ (d/'command.json').write_text(json.dumps(rec,indent=2)+'\n')
+ s=subprocess.run(cmd,cwd=R,env=env,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+ (d/'stdout').write_bytes(s.stdout);(d/'stderr').write_bytes(s.stderr)
+ rec.update(exit_code=s.returncode,stdout_sha256=sha(d/'stdout'),stderr_sha256=sha(d/'stderr'))
+ (d/'result.json').write_text(json.dumps(rec,indent=2)+'\n');receipts.append(rec)
+ assert s.returncode==0,(cmd,s.stderr.decode())
+ if label=='tracked-change-scope':assert sorted(s.stdout.decode().splitlines())==sorted(expected)
+out={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'status':'FINAL_AUTHOR_DOCUMENT_CHECKS_PASS','role':'Publication author check; independent publication approval pending','changed_existing_paths':sorted(changed),'outputs':{n:{'sha256':sha(R/n),'bytes':(R/n).stat().st_size} for n in sorted(changed)},'relative_paths_and_links':links,'external_URLs_syntax_only':sorted(urls),'immutable_Git_source_links':immutable,'canonical_original_statement_and_following_source_record':'exactly preserved','all_217_ID_mappings':'unchanged','export_count':12,'PDF_pages_visually_inspected':3,'email_like_matches':0,'new_checks':receipts,'external_live_HTTP_probe':'not performed or claimed during publication preparation'}
+(E/'DOCUMENT-CHECKS.json').write_text(json.dumps(out,indent=2)+'\n')
+print(json.dumps({'status':out['status'],'changed_paths':len(changed),'local_links_and_paths':len(links),'immutable_source_links':len(immutable),'exports':12,'PDF_pages':3,'email_like_matches':0}))

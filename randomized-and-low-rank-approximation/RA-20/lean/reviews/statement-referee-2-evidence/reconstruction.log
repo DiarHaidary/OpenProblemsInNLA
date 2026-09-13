@@ -1,0 +1,298 @@
+{
+  "verdict": "PASS independent exact reconstruction",
+  "coefficient_field": "Q; polynomial identities valid over C",
+  "variables": [
+    "a",
+    "b",
+    "c",
+    "U00",
+    "U01",
+    "U02",
+    "U10",
+    "U11",
+    "U12",
+    "U20",
+    "U21",
+    "U22"
+  ],
+  "determinant": [
+    {
+      "powers": [
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    }
+  ],
+  "symmetric_distance": [
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ],
+      "coefficient": "1"
+    },
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "1"
+    },
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "powers": [
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "1"
+    },
+    {
+      "powers": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "-4"
+    },
+    {
+      "powers": [
+        0,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "powers": [
+        0,
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "-4"
+    },
+    {
+      "powers": [
+        0,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    },
+    {
+      "powers": [
+        1,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "-4"
+    },
+    {
+      "powers": [
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "coefficient": "2"
+    }
+  ],
+  "full_unsymmetric_U_Hessian_in_abc": "4 I3; hence every plane chart has 4 I2",
+  "points": [
+    {
+      "zero_coordinate": 0,
+      "coordinates": [
+        "0",
+        "2",
+        "3"
+      ],
+      "full_Frobenius_distance": "16",
+      "determinant_gradient": [
+        "12",
+        "0",
+        "0"
+      ],
+      "generic_free_gradient_exact_zero": true,
+      "actual_unrestricted_U_Hessian_4I": true
+    },
+    {
+      "zero_coordinate": 1,
+      "coordinates": [
+        "1",
+        "0",
+        "3"
+      ],
+      "full_Frobenius_distance": "22",
+      "determinant_gradient": [
+        "0",
+        "6",
+        "0"
+      ],
+      "generic_free_gradient_exact_zero": true,
+      "actual_unrestricted_U_Hessian_4I": true
+    },
+    {
+      "zero_coordinate": 2,
+      "coordinates": [
+        "1",
+        "2",
+        "0"
+      ],
+      "full_Frobenius_distance": "32",
+      "determinant_gradient": [
+        "0",
+        "0",
+        "4"
+      ],
+      "generic_free_gradient_exact_zero": true,
+      "actual_unrestricted_U_Hessian_4I": true
+    }
+  ],
+  "plane_hessian_determinant": "16",
+  "generic_count_predicted_by_components": 3,
+  "original_formula_at_3_3": 4,
+  "limitations": "Diagnostic algebra only. No proof of smoothLocus equivalence, reduced quotient isomorphism, arbitrary-polynomial genericity intersection or Cardinal count is supplied here; those remain exact Challenge obligations."
+}

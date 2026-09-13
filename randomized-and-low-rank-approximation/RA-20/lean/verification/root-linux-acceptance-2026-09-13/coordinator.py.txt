@@ -1,0 +1,86 @@
+#!/usr/bin/env python3
+"""Coordinator acceptance of sealed actual RA20 Linux evidence; no proof rebuild."""
+from pathlib import Path
+import datetime, hashlib, json, os, shutil, subprocess
+
+G=Path('/tmp/nla-lean-ra20-worktree').resolve()
+P=G/'randomized-and-low-rank-approximation/RA-20/lean'
+E=P/'verification/linux-run-2026-09-13'
+O=P/'verification/root-linux-acceptance-2026-09-13'
+HEAD='43603b173beb294c2588d83f936a8a96246fd5f0'
+def sha(p):
+    assert p.is_file() and not p.is_symlink(),str(p)
+    return hashlib.sha256(p.read_bytes()).hexdigest()
+def write(p,v):p.write_text(json.dumps(v,indent=2,sort_keys=True)+'\n')
+def load(p):return json.loads(p.read_text())
+
+anchors={
+ 'reviews/linux-operational-referee-2026-09-13.md':'7f7532bbc01533d0c35fe0ac3aece0ff66cb43c1444e41275db0784cee6b8ae7',
+ 'verification/linux-run-2026-09-13/EVIDENCE-MANIFEST.json':'89b3cd2aa8c47835be4531cca85561a70aee7f20be6e9f3bcdaaa48d23812dcd',
+ 'verification/linux-run-2026-09-13/source-binding.json':'509a45bcf561e37a952c4882edc25b7c90e1d68e4067e356626c3d769c4923b0',
+ 'verification/linux-run-2026-09-13/runtime-verification.json':'fba3781ee918c006dd9669023ef5baef42131044cd4b406eb2970fc640ff30eb',
+ 'verification/linux-run-2026-09-13/FINAL.json':'d6ccfd0fc793b8eee4716c099c68c1e76586da1821d4ae7d86301e8acf5263e5',
+ 'verification/final-review-acceptance.json':'a1c7ffebd2c0db8159b9861adf3663051b8e03346b776393553773d97e0abbbb'
+}
+for n,h in anchors.items():assert sha(P/n)==h,n
+assert not O.exists()
+O.mkdir()
+(O/'coordinator.py.txt').write_bytes(Path(__file__).read_bytes())
+shutil.copytree('/tmp/nla-lean-formalization/ra20-root-linux-initial-diagnostic', O/'initial-scope-diagnostic')
+env=os.environ.copy();env['PYTHONDONTWRITEBYTECODE']='1'
+cmd=['python3','-B',str(E/'verify_inventory.py')]
+with (O/'independent-recheck.stdout').open('wb') as out,(O/'independent-recheck.stderr').open('wb') as err:
+    r=subprocess.run(cmd,cwd=G,env=env,stdout=out,stderr=err)
+write(O/'independent-recheck-command.json',{'command':cmd,'cwd':str(G),'exit_code':r.returncode,'stdout_sha256':sha(O/'independent-recheck.stdout'),'stderr_sha256':sha(O/'independent-recheck.stderr')})
+assert r.returncode==0
+outcome=load(O/'independent-recheck.stdout')
+assert outcome['status']=='INDEPENDENT_RA20_OPERATIONAL_SEAL_PASS'
+assert outcome['file_count']==1589 and outcome['candidate_Git_inputs']==1092
+assert outcome['read_only_runtime_recheck']=='PASS'
+assert outcome['exports']==12 and outcome['source_kernel_assertions']==61 and outcome['printed_axiom_occurrences']==57
+assert subprocess.check_output(['git','rev-parse','HEAD'],cwd=G,text=True).strip()==HEAD
+assert subprocess.check_output(['git','show','-s','--format=%ae%x00%ce',HEAD],cwd=G).rstrip(b'\n')==b'\0'
+binding=load(E/'source-binding.json')['candidate_inputs']
+rel=str(P.relative_to(G))+'/'
+names=subprocess.check_output(['git','ls-tree','-r','--name-only',HEAD,'--',rel],cwd=G,text=True).splitlines()
+assert {n[len(rel):] for n in names}==set(binding) and len(names)==1092
+stdin=''.join(HEAD+':'+n+'\n' for n in names).encode()
+batch=subprocess.check_output(['git','cat-file','--batch'],cwd=G,input=stdin)
+off=0
+for name in names:
+    end=batch.index(b'\n',off);oid,kind,size=batch[off:end].decode().split();size=int(size)
+    data=batch[end+1:end+1+size];off=end+2+size
+    v=binding[name[len(rel):]]
+    assert kind=='blob' and oid==v['git_blob'] and size==v['bytes']
+    assert hashlib.sha256(data).hexdigest()==v['sha256'] and data==(G/name).read_bytes()
+    assert batch[off-1:off]==b'\n'
+assert off==len(batch)
+write(O/'current-Git-check.json',{'head':HEAD,'candidate_files':1092,'all_current_Git_blob_bytes_match_actual_Linux_receipt':True,'batch_sha256':hashlib.sha256(batch).hexdigest(),'batch_stdin_sha256':hashlib.sha256(stdin).hexdigest(),'author_email':'','committer_email':''})
+accepted={
+ 'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),
+ 'problem':'RA-20','verdict':'ACCEPT complete-target Lean verification',
+ 'candidate':HEAD,'actual_Ubuntu_run':34743832047,'independent_operational_referee':'/root/ra20_final_referee2',
+ 'reviewed_anchors':anchors,'independent_operational_recheck':outcome,
+ 'coordinator_full_text_reads':['independent operational report','FINAL.json','runtime-verification.json','all 57 source/line axiom records','verify_inventory.py','runtime_audit.py','privacy_and_supplemental.py'],
+ 'two_independent_final_mathematical_approvals_previously_accepted':True,
+ 'actual_default_kernel_Comparator_and_both_control_suites':'PASS',
+ 'exact_current_Git_and_Linux_candidate_inputs':1092,
+ 'scope':'Complete original four-formula conjecture is false: genuine generic count three at n=s=3 contradicts the predicted four. No claim that every separate formula is false or that a separate scheme-multiplicity theorem was proved.',
+ 'trust_scope':'Lean 4.33.1, permitted standard three axioms, pinned LeanCert kernel assertions, 10 pinned dependencies with 8690 official matching Mathlib cache files; actual non-root Ubuntu verification, not macOS Comparator execution.',
+ 'canonical_status':'Solved until reviewed publication is installed',
+ 'fully_verified':True,'publication_status':'pending new individual upstream main PR',
+ 'no_new_mathematical_approval_or_Linux_execution_by_this_receipt':True
+}
+write(O/'ROOT-ACCEPTANCE.json',accepted)
+outer=O/'EVIDENCE-MANIFEST.json'
+scope={(E/n).resolve() for n in load(E/'EVIDENCE-MANIFEST.json')['files']}
+scope.add(E/'EVIDENCE-MANIFEST.json')
+scope|={p.resolve() for p in O.rglob('*') if p.is_file() and p.resolve()!=outer}
+assert outer not in scope
+files={os.path.relpath(p,O):{'sha256':sha(p),'bytes':p.stat().st_size} for p in sorted(scope)}
+write(outer,{'problem':'RA-20','candidate':HEAD,'scope':'Complete independently sealed operational scope plus its outer manifest and every coordinator acceptance file','exact_self_exclusion':'EVIDENCE-MANIFEST.json','file_count':len(files),'files':files})
+assert {p.resolve() for p in O.rglob('*') if p.is_file() and p.resolve()!=outer}=={p for p in scope if p.is_relative_to(O)}
+for n,v in files.items():assert sha(O/n)==v['sha256'] and (O/n).stat().st_size==v['bytes']
+receipt={'status':'ROOT_RA20_LINUX_ACCEPTANCE_PASS','candidate':HEAD,'fully_verified':True,'root_acceptance_sha256':sha(O/'ROOT-ACCEPTANCE.json'),'root_evidence_sha256':sha(outer),'bound_files':len(files),'publication':'pending'}
+write(Path('/tmp/nla-lean-formalization/RA-20-linux-acceptance.json'),receipt)
+print(json.dumps(receipt,indent=2))

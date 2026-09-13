@@ -1,0 +1,3760 @@
+[
+  {
+    "declaration": "NLA.RA20.hollow_variety_semantics",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.hollow_variety_semantics_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.Mat",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.variety",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow_variety_semantics_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.hollow_det",
+      "NLA.RA20.hollow_mem_variety_iff",
+      "NLA.RA20.matrix_eq_hollow_of_mem"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow_det",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.hollow",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow_mem_variety_iff",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.hollow",
+      "NLA.RA20.hollow_det",
+      "NLA.RA20.hollow_isSymm",
+      "NLA.RA20.hollow_rank_le_two"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow_isSymm",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.hollow",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow_rank_le_two",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.hollow",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.matrix_eq_hollow_of_mem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reduced_coordinate_ring",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.reduced_coordinate_ring_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.CoordinateRing",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.Poly",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Variables"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.Variables",
+    "axioms": [],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.definingIdeal",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.Variables",
+      "NLA.RA20.coordinateVariety"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.coordinateVariety",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Variables",
+      "NLA.RA20.Variables",
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.matrixOfCoordinates"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.matrixOfCoordinates",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Variables",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.ABCCoordinateRing",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.ABCPoly",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.abcIdeal",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcPolynomial"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPolynomial",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPolynomial._proof_1",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.polynomialHollow",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reduced_coordinate_ring_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.reducedCoordinateEquiv_mk_X"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedCoordinateEquiv",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv._proof_1",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.reducedCoordinateEquiv._proof_2",
+      "NLA.RA20.reducedCoordinateEquiv._proof_3",
+      "NLA.RA20.reducedCoordinateEquiv._proof_4",
+      "NLA.RA20.hollowQuotientMap_surjective"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedCoordinateEquiv._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollowQuotientMap",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowQuotientMap._proof_1",
+      "NLA.RA20.hollowPullback"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollowQuotientMap._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollowPullback",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.polynomialHollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedCoordinateEquiv._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedCoordinateEquiv._proof_3",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv._proof_1",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.hollowQuotientMap"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedCoordinateEquiv._proof_4",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv._proof_1",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.hollowQuotientMap_ker"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollowQuotientMap_ker",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.definingIdeal_eq_comap_abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.definingIdeal_eq_comap_abcIdeal",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcIdeal_vanishing",
+      "NLA.RA20.coordinateVariety",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.hollow",
+      "NLA.RA20.aeval_hollowPullback",
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.hollow_mem_variety_iff",
+      "NLA.RA20.matrixOfCoordinates",
+      "NLA.RA20.matrix_eq_hollow_of_mem",
+      "NLA.RA20.hollow_variety_semantics_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcIdeal_vanishing",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcIdeal_zeroLocus",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal_isRadical"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcIdeal_zeroLocus",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.ABCPoly"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcIdeal_isRadical",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.abcPolynomial_squarefree"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPolynomial_squarefree",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.coordinates",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.aeval_hollowPullback",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.hollow",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.hollowPullback.eq_1",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollowPullback.eq_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollowQuotientMap_surjective",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.hollowPullback_surjective"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollowPullback_surjective",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.offDiagonalPullback",
+      "NLA.RA20.hollowPullback_offDiagonalPullback"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.offDiagonalPullback",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.offDiagonalPullback._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.offDiagonalPullback._proof_1",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.hollowPullback_offDiagonalPullback",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.offDiagonalPullback",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.offDiagonalPullback",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.offDiagonalPullback._proof_1",
+      "NLA.RA20.polynomialHollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedCoordinateEquiv_mk_X",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.reducedCoordinateEquiv._proof_1",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.reducedCoordinateEquiv._proof_2",
+      "NLA.RA20.reducedCoordinateEquiv._proof_3",
+      "NLA.RA20.reducedCoordinateEquiv._proof_4",
+      "NLA.RA20.hollowQuotientMap_surjective",
+      "NLA.RA20.reducedCoordinateEquiv.eq_1",
+      "NLA.RA20.hollowQuotientMap._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedCoordinateEquiv.eq_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.reducedCoordinateEquiv._proof_1",
+      "NLA.RA20.hollowQuotientMap",
+      "NLA.RA20.reducedCoordinateEquiv._proof_2",
+      "NLA.RA20.reducedCoordinateEquiv._proof_3",
+      "NLA.RA20.reducedCoordinateEquiv._proof_4",
+      "NLA.RA20.hollowQuotientMap_surjective",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.algebraic_smooth_locus",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.Mat",
+      "NLA.RA20.algebraic_smooth_locus_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.SmoothPoint",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.variety",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.SmoothPoint._proof_1",
+      "NLA.RA20.coordinates"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.SmoothPoint._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.ExactlyOneZero",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.algebraic_smooth_locus_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.variety",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.SmoothPoint._proof_1",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.matrix_eq_hollow_of_mem",
+      "NLA.RA20.hollow_variety_semantics_proved",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.abcPoint",
+      "NLA.RA20.reducedPoint_comap",
+      "NLA.RA20.smoothLocus_comap_algEquiv",
+      "NLA.RA20.abc_smooth_locus_iff",
+      "NLA.RA20.abcPoint_comap"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPoint",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcEvaluation._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPoint._proof_1",
+      "NLA.RA20.abcEvaluation",
+      "NLA.RA20.abcPoint._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcEvaluation._proof_1",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.abcPoint._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcEvaluation",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcEvaluation._proof_1",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcEvaluation._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPreimagePrime._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcEvaluation._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.abcEvaluation._proof_1",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcEvaluation._proof_1",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPoint._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.abcEvaluation._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPoint._proof_1",
+      "NLA.RA20.abcEvaluation",
+      "NLA.RA20.abcEvaluation._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcEvaluation"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedPoint_comap",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.abcPoint",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.abcPoint",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.hollow",
+      "NLA.RA20.abcEvaluation",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.reducedCoordinateEquiv_mk",
+      "NLA.RA20.abcEvaluation_mk",
+      "NLA.RA20.aeval_hollowPullback"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.reducedCoordinateEquiv_mk",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.Poly",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.Variables",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.CoordinateRing",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.reducedCoordinateEquiv",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.reducedCoordinateEquiv_mk_X"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcEvaluation_mk",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcEvaluation",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcEvaluation"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.smoothLocus_comap_algEquiv",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.abc_smooth_locus_iff",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abc_prime_product_zero",
+      "NLA.RA20.abc_local_not_smooth",
+      "NLA.RA20.abc_local_smooth"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.ABCLocal",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.ABCLocal._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_prime_product_zero",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.abc_prime_mem_iff",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_prime_mem_iff",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPreimagePrime",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPreimagePrime._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_local_not_smooth",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.triple_product_not_formallySmooth",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.abcLocalizationMap_surjective",
+      "NLA.RA20.abc_local_product_ne_zero",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.abcLocalizationMap_ker",
+      "NLA.RA20.abcLocalEvaluation",
+      "NLA.RA20.abcLocalEvaluation_algebraMap"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.ABCPolynomialLocal",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.ABCPolynomialLocal._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.triple_product_not_formallySmooth",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap._proof_1",
+      "NLA.RA20.abcLocalizationMap._proof_2",
+      "NLA.RA20.abcLocalizationMap._proof_3",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcLocalizationMap._proof_5",
+      "NLA.RA20.abcLocalizationMap._proof_6"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcLocalizationMap._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap._proof_3",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap._proof_5",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcLocalizationMap._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcLocalizationMap._proof_4",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap._proof_4",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap._proof_6",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap._proof_1",
+      "NLA.RA20.abcLocalizationMap._proof_2",
+      "NLA.RA20.abcLocalizationMap._proof_3",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap_surjective",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abc_complement_map",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCPolynomialLocal._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_complement_map",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_local_product_ne_zero",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap_ker",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2",
+      "NLA.RA20.abc_complement_map",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.abcLocalizationMap._proof_2",
+      "NLA.RA20.abcIdeal.eq_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcIdeal.eq_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalEvaluation",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcLocalizationMap._proof_1",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalEvaluation._proof_3",
+      "NLA.RA20.abcLocalizationMap._proof_2",
+      "NLA.RA20.abcLocalEvaluation._proof_4"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalEvaluation._proof_3",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalEvaluation._proof_1",
+      "NLA.RA20.abcLocalEvaluation._proof_2",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalEvaluation._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.ABCPoly"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalEvaluation._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.ABCPoly"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalEvaluation._proof_4",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcLocalizationMap._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcPreimagePrime._proof_2",
+      "NLA.RA20.abc_prime_mem_iff"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalEvaluation_algebraMap",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalEvaluation",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcLocalizationMap._proof_1",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap._proof_2",
+      "NLA.RA20.abcLocalEvaluation._proof_4"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_local_smooth",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.formallySmooth_of_retraction",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.abcLocalChart",
+      "NLA.RA20.abcLocalChart_retraction"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.formallySmooth_of_retraction",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalChart",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.abcLocalChart._proof_3",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalChart._proof_4",
+      "NLA.RA20.abcChart",
+      "NLA.RA20.abcChart_unit"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalChart._proof_3",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalChart._proof_1",
+      "NLA.RA20.abcLocalChart._proof_2",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalChart._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalChart._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalChart._proof_4",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcChart",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcChart._proof_1",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.abcChart._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcChart._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalEvaluation._proof_1",
+      "NLA.RA20.abcLocalEvaluation._proof_2",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcErase",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.ABCPoly"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcChart._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcChart._proof_1",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.abcErase_relation"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcErase_relation",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.abcErase_X"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcErase_X",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcErase"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcChart_unit",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcChart",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcChart",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.abc_prime_mem_iff",
+      "NLA.RA20.abc_eval_erase",
+      "NLA.RA20.abcChart_mk"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_eval_erase",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.abcErase_X"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcChart_mk",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcChart",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcChart"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalChart_retraction",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.abcLocalChart",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.abcErase",
+      "NLA.RA20.abcErase_X",
+      "NLA.RA20.abc_local_coordinate_zero",
+      "NLA.RA20.abcLocalChart",
+      "NLA.RA20.abcChart",
+      "NLA.RA20.abcLocalChart_algebraMap",
+      "NLA.RA20.abcChart_mk",
+      "NLA.RA20.abcLocalizationMap_algebraMap"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_local_coordinate_zero",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.abc_local_coordinate_unit",
+      "NLA.RA20.abcLocalizationMap_algebraMap",
+      "NLA.RA20.abcPolynomial"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abc_local_coordinate_unit",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.abcLocalizationMap_algebraMap",
+      "NLA.RA20.abc_prime_mem_iff"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalizationMap_algebraMap",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcLocalizationMap",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.abcPreimagePrime._proof_1",
+      "NLA.RA20.abcPreimagePrime._proof_2",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcLocalChart_algebraMap",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalChart",
+      "NLA.RA20.abcChart",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.ABCLocal._proof_1",
+      "NLA.RA20.ABCLocal",
+      "NLA.RA20.ABCPolynomialLocal",
+      "NLA.RA20.abcPreimagePrime",
+      "NLA.RA20.ABCPolynomialLocal._proof_1",
+      "NLA.RA20.abcLocalChart._proof_4",
+      "NLA.RA20.abcChart",
+      "NLA.RA20.abcChart_unit"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.abcPoint_comap",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPoint",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.abcPoint",
+      "NLA.RA20.ABCCoordinateRing",
+      "NLA.RA20.abcEvaluation",
+      "NLA.RA20.abcEvaluation_mk"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.algebraic_tangent_space",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.TangentVector",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.algebraic_tangent_space_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.TangentVector",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.coordinates"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.algebraic_tangent_space_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.TangentVector",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.TangentVector",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.symmetryPolynomial_mem",
+      "NLA.RA20.polyDirectional_X",
+      "NLA.RA20.polyDirectional_sub",
+      "NLA.RA20.diagonalPolynomial_mem",
+      "NLA.RA20.genericPolynomial",
+      "NLA.RA20.genericPolynomial_mem",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.polyDirectional_mul",
+      "NLA.RA20.matrix_eq_hollow_of_symm_diag",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.definingIdeal_eq_comap_abcIdeal",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.polyDirectional_hollowPullback",
+      "NLA.RA20.polyDirectional_abc"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.symmetryPolynomial_mem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.definingIdeal_eq_comap_abcIdeal",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.polynomialHollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional_X",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.polyDirectional"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional_sub",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.polyDirectional"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.diagonalPolynomial_mem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Variables",
+      "NLA.RA20.Poly",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.Variables",
+      "NLA.RA20.Poly",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.definingIdeal_eq_comap_abcIdeal",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.polynomialHollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.genericPolynomial",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Poly",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.genericPolynomial_mem",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.genericPolynomial",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.definingIdeal",
+      "NLA.RA20.genericPolynomial",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.abcIdeal",
+      "NLA.RA20.definingIdeal_eq_comap_abcIdeal",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.polynomialHollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional_mul",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.polyDirectional"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.matrix_eq_hollow_of_symm_diag",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional_hollowPullback",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.ABCPoly",
+      "NLA.RA20.hollowPullback",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.hollow",
+      "NLA.RA20.polynomialHollow",
+      "NLA.RA20.polyDirectional_C",
+      "NLA.RA20.polyDirectional_add",
+      "NLA.RA20.polyDirectional_mul",
+      "NLA.RA20.aeval_hollowPullback",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.polyDirectional_zero",
+      "NLA.RA20.polyDirectional_X"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional_C",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.polyDirectional"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional_add",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.polyDirectional"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional_zero",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.polyDirectional"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.polyDirectional_abc",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.polyDirectional",
+      "NLA.RA20.abcPolynomial",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.polyDirectional_mul",
+      "NLA.RA20.polyDirectional_X"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.fullFrobeniusDistance",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.Variables",
+      "NLA.RA20.matrixEntry",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_1",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_5",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_6",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_7",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_8",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_10",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_11",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_13",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_14",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_15",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_16",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_17",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_19",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_20",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_21",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_22",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_23",
+      "NLA.RA20.sum_squares_fderiv"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.matrixEntry",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Variables",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.Mat",
+      "NLA.RA20.matrixEntry._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.matrixEntry._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._aux_1_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._aux_1_3",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_5",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_6",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_7",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._aux_1_8",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_10",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_8",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._aux_1_11",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_13",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_11"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_14",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_11"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_15",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_11"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_16",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_11",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_13",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_14",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_15",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._aux_1_17",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_19",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_17"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_20",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_17",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_19",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_21",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_5",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_6",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_7",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_8",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_10",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_11",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_13",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_14",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_15",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_16",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_17",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_19",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_20"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_22",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_5",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_6",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_7",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_8",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_10",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_11",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_13",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_14",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_15",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_16",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_17",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_19",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_20",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_21",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.full_frobenius_differential_proved._proof_1_23",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_1",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_3",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_5",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_6",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_7",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_8",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_10",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_11",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_13",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_14",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_15",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_16",
+      "NLA.RA20.full_frobenius_differential_proved._aux_1_17",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_19",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_20",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_21",
+      "NLA.RA20.full_frobenius_differential_proved._proof_1_22"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.sum_squares_fderiv",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.quadraticGradient",
+      "NLA.RA20.hasFDerivAt_sum_squares",
+      "NLA.RA20.quadraticGradient._proof_4",
+      "NLA.RA20.quadraticGradient._proof_1",
+      "NLA.RA20.quadraticGradient._proof_2",
+      "NLA.RA20.quadraticGradient._proof_3"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.quadraticGradient",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.quadraticGradient._proof_1",
+      "NLA.RA20.quadraticGradient._proof_2",
+      "NLA.RA20.quadraticGradient._proof_3",
+      "NLA.RA20.quadraticGradient._proof_4"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.quadraticGradient._proof_1",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.quadraticGradient._proof_2",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.quadraticGradient._proof_3",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.quadraticGradient._proof_4",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.hasFDerivAt_sum_squares",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.quadraticGradient",
+      "NLA.RA20.quadraticGradient._proof_2",
+      "NLA.RA20.quadraticGradient._proof_3",
+      "NLA.RA20.quadraticGradient._proof_4",
+      "NLA.RA20.hasFDerivAt_affine_square"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hasFDerivAt_affine_square",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.hollow_distance_semantics",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.hollow_distance_semantics_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow_distance_semantics_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_critical_locus",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.criticalSet",
+      "NLA.RA20.candidate",
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.generic_critical_locus_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.GenericData",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.criticalSet",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.SmoothCriticalPoint",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothPoint",
+      "NLA.RA20.TangentVector",
+      "NLA.RA20.fullFrobeniusDistance"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.candidate",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_critical_locus_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.criticalSet",
+      "NLA.RA20.candidate",
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.criticalSet",
+      "NLA.RA20.candidate",
+      "NLA.RA20.generic_critical_exhaustion",
+      "NLA.RA20.generic_candidate_critical",
+      "NLA.RA20.generic_candidate_injective"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_critical_exhaustion",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.candidate",
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.candidate",
+      "NLA.RA20.SmoothPoint",
+      "NLA.RA20.algebraic_smooth_locus_proved",
+      "NLA.RA20.TangentVector",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.critical_first_plane",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.critical_second_plane",
+      "NLA.RA20.critical_third_plane"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.critical_first_plane",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.smoothCritical_hollow_iff"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.smoothCritical_hollow_iff",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.SmoothPoint",
+      "NLA.RA20.TangentVector",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.smoothPoint_hollow_iff",
+      "NLA.RA20.exactlyOneZero_product_zero",
+      "NLA.RA20.hollow_tangent_iff",
+      "NLA.RA20.hollow_frobenius_differential",
+      "NLA.RA20.algebraic_tangent_space_proved",
+      "NLA.RA20.matrix_eq_hollow_of_symm_diag"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.smoothPoint_hollow_iff",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.SmoothPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.SmoothPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.Mat",
+      "NLA.RA20.algebraic_smooth_locus_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.exactlyOneZero_product_zero",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.ExactlyOneZero"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow_tangent_iff",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.TangentVector",
+      "NLA.RA20.hollow",
+      "NLA.RA20.TangentVector",
+      "NLA.RA20.hollow",
+      "NLA.RA20.algebraic_tangent_space_proved",
+      "NLA.RA20.hollow_isSymm"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hollow_frobenius_differential",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.hollow",
+      "NLA.RA20.full_frobenius_differential_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.critical_second_plane",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.smoothCritical_hollow_iff"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.critical_third_plane",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.Mat",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.hollow",
+      "NLA.RA20.ExactlyOneZero",
+      "NLA.RA20.smoothCritical_hollow_iff"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_candidate_critical",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.candidate",
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.SmoothCriticalPoint",
+      "NLA.RA20.candidate",
+      "NLA.RA20.generic_coordinates_ne_zero",
+      "NLA.RA20.hollow",
+      "NLA.RA20.critical_first_plane",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.critical_second_plane",
+      "NLA.RA20.critical_third_plane"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_coordinates_ne_zero",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.abcPolynomial._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_candidate_injective",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.candidate",
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.generic_coordinates_ne_zero",
+      "NLA.RA20.candidate",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.component_hessians",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.planeCoordinates",
+      "NLA.RA20.Mat",
+      "NLA.RA20.component_hessians_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.planeCoordinates",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.hollow",
+      "NLA.RA20.planeCoordinates._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.planeCoordinates._proof_1",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.component_hessians_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.planeCoordinates",
+      "NLA.RA20.Mat",
+      "NLA.RA20.fullFrobeniusDistance",
+      "NLA.RA20.planeCoordinates",
+      "NLA.RA20.Variables",
+      "NLA.RA20.planeEntry",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.planeEntry_apply",
+      "NLA.RA20.sum_squares_hessian",
+      "NLA.RA20.planeCoordinates._proof_1",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.hollow"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.planeEntry",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.planeEntry._proof_1",
+      "NLA.RA20.hollow",
+      "NLA.RA20.planeEntry._proof_2"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.planeEntry._proof_1",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.planeEntry._proof_2",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.planeEntry_apply",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.planeEntry",
+      "NLA.RA20.planeCoordinates",
+      "NLA.RA20.planeEntry",
+      "NLA.RA20.planeCoordinates",
+      "NLA.RA20.planeEntry._proof_1",
+      "NLA.RA20.hollow",
+      "NLA.RA20.planeEntry._proof_2",
+      "NLA.RA20.Mat",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.planeCoordinates._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.sum_squares_hessian",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.quadraticGradient",
+      "NLA.RA20.hasFDerivAt_sum_squares",
+      "NLA.RA20.hasFDerivAt_quadraticGradient"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.hasFDerivAt_quadraticGradient",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.quadraticGradient",
+      "NLA.RA20.quadraticGradient._proof_2",
+      "NLA.RA20.quadraticGradient._proof_3",
+      "NLA.RA20.quadraticGradient._proof_4"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_data_intersection",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.generic_data_intersection_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_data_intersection_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.symmetricParameterIndex",
+      "NLA.RA20.symmetricDataCoordinates",
+      "NLA.RA20.symmetricParameter",
+      "NLA.RA20.eval_rename_symmetricParameter",
+      "NLA.RA20.symmetricParameter_reconstruct",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.symmetricParameter_isSymm"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.symmetricParameterIndex",
+    "axioms": [
+      "propext",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Variables",
+      "NLA.RA20.Variables",
+      "NLA.RA20.symmetricParameterIndex._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.symmetricParameterIndex._proof_1",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.symmetricDataCoordinates",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.symmetricDataCoordinates._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.symmetricDataCoordinates._proof_1",
+    "axioms": [
+      "propext"
+    ],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.symmetricParameter",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.symmetricParameterIndex"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.eval_rename_symmetricParameter",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.symmetricParameterIndex",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.symmetricParameter",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Variables",
+      "NLA.RA20.symmetricParameterIndex",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.symmetricParameter"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.symmetricParameter_reconstruct",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.symmetricParameter",
+      "NLA.RA20.symmetricDataCoordinates",
+      "NLA.RA20.Mat",
+      "NLA.RA20.symmetricParameter",
+      "NLA.RA20.symmetricDataCoordinates",
+      "NLA.RA20.symmetricDataCoordinates._proof_1",
+      "NLA.RA20.symmetricParameterIndex",
+      "NLA.RA20.symmetricParameterIndex._proof_1"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.symmetricParameter_isSymm",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.symmetricParameter",
+      "NLA.RA20.symmetricParameter"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_count_three",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.HasGenericCriticalCount",
+      "NLA.RA20.generic_count_three_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.HasGenericCriticalCount",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Poly",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.HasCriticalCount"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.HasCriticalCount",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.Mat",
+      "NLA.RA20.criticalSet"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_count_three_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.HasGenericCriticalCount",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.HasCriticalCount",
+      "NLA.RA20.genericPolynomial",
+      "NLA.RA20.hollow",
+      "NLA.RA20.hollow_isSymm",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.critical_count_three"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.critical_count_three",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.HasCriticalCount",
+      "NLA.RA20.Mat",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.criticalSet",
+      "NLA.RA20.candidate",
+      "NLA.RA20.HasCriticalCount",
+      "NLA.RA20.generic_critical_locus_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_count_not_four",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.HasGenericCriticalCount",
+      "NLA.RA20.generic_count_not_four_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.generic_count_not_four_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.HasGenericCriticalCount",
+      "NLA.RA20.HasGenericCriticalCount",
+      "NLA.RA20.Poly",
+      "NLA.RA20.Mat",
+      "NLA.RA20.Variables",
+      "NLA.RA20.coordinates",
+      "NLA.RA20.HasCriticalCount",
+      "NLA.RA20.GenericData",
+      "NLA.RA20.generic_data_intersection_proved",
+      "NLA.RA20.critical_count_three",
+      "NLA.RA20.abcPolynomial._proof_1",
+      "NLA.RA20.criticalSet"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.not_criticalCountConjecture",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.criticalCountConjecture",
+      "NLA.RA20.not_criticalCountConjecture_proved"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.criticalCountConjecture",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.HasGenericCriticalCount",
+      "NLA.RA20.predictedCount"
+    ]
+  },
+  {
+    "declaration": "NLA.RA20.predictedCount",
+    "axioms": [],
+    "project_dependencies": []
+  },
+  {
+    "declaration": "NLA.RA20.not_criticalCountConjecture_proved",
+    "axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "project_dependencies": [
+      "NLA.RA20.criticalCountConjecture",
+      "NLA.RA20.criticalCountConjecture",
+      "NLA.RA20.HasGenericCriticalCount",
+      "NLA.RA20.predictedCount",
+      "NLA.RA20.generic_count_not_four_proved"
+    ]
+  }
+]

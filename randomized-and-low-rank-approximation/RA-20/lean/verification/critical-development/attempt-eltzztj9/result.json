@@ -1,0 +1,114 @@
+{
+  "utc": "2026-09-13T05:15:42.449024+00:00",
+  "owner": "/root/leancert_examples",
+  "scope": "Author development; no old target objects, dependencies read-only, no Lake/cache copy/download",
+  "prefix": "/tmp/nla-lean-formalization/independent-prefixes/ra20-critical-development-jxjoy5i7",
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-critical-development-jxjoy5i7:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "commands": [
+    {
+      "source": "NLA/RA20/Tangent.lean",
+      "source_sha256": "b03b6a1112737372072832d89b17ff0e19e00f631a925252269b75af3c44e178",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-critical-development-jxjoy5i7/NLA/RA20/Tangent.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-critical-development-jxjoy5i7/NLA/RA20/Tangent.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Tangent.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 13.150482917029876,
+      "log": "NLA-RA20-Tangent.lean.log",
+      "log_sha256": "3aeb7c509fc1b1cf91111d7c4ad3c67dde74ffcc71fdcd85c5bc60ab73e28d2f"
+    },
+    {
+      "source": "NLA/RA20/Critical.lean",
+      "source_sha256": "ea32ec600e0dc728455c4801c7de517b17f5a505874d3a50a7a4499a3e7d0c38",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-critical-development-jxjoy5i7/NLA/RA20/Critical.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-critical-development-jxjoy5i7/NLA/RA20/Critical.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Critical.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 5.460665791993961,
+      "log": "NLA-RA20-Critical.lean.log",
+      "log_sha256": "d117c9996f52d4b3599ec63a4b71c04f899aa78a834f998a1b62dadc0fb3b0b5"
+    }
+  ],
+  "verdict": "PASS",
+  "own_objects": [
+    {
+      "path": "NLA/RA20/Algebra.ilean",
+      "sha256": "47902d2f30cb80414c5cacf9cec515b09c6bae99e692b73ba784d81643a0880b",
+      "bytes": 27875
+    },
+    {
+      "path": "NLA/RA20/Algebra.olean",
+      "sha256": "2f7d03c453dbe4158ef2c23597446e9598d4f2c8a9aaff1e632bf095c47cbb3c",
+      "bytes": 1146104
+    },
+    {
+      "path": "NLA/RA20/Critical.ilean",
+      "sha256": "23157f516125baa2f928e330b9bf4c968b21b9d737bcd78c0046cc10beff3b70",
+      "bytes": 14115
+    },
+    {
+      "path": "NLA/RA20/Critical.olean",
+      "sha256": "69c5e50c596a24a181dbc2b698e05c70d8ad26fff03bec706bf253b4078562b3",
+      "bytes": 538936
+    },
+    {
+      "path": "NLA/RA20/Definitions.ilean",
+      "sha256": "81d40673638d6ce677fe0df86407536e905cd064061001e3a18e3b1387de1c93",
+      "bytes": 14134
+    },
+    {
+      "path": "NLA/RA20/Definitions.olean",
+      "sha256": "f8d082ff59f13b2081ffb02bc5960064648027ece1b126a863e4a5e2c81be402",
+      "bytes": 221216
+    },
+    {
+      "path": "NLA/RA20/Differential.ilean",
+      "sha256": "b5dbf4dfda6a83c3263ea736ff920bc80e4e5f76a3a915d87ba79ec0fa33c797",
+      "bytes": 17738
+    },
+    {
+      "path": "NLA/RA20/Differential.olean",
+      "sha256": "3d971508cf9bd61a5de1f82e41840bdc5a280ef7498471789bae963288bc6e2c",
+      "bytes": 1324424
+    },
+    {
+      "path": "NLA/RA20/Smooth.ilean",
+      "sha256": "362f4b2607a9b790d29f3ce187bb1cc79d59598194f55283332e1c4af414958b",
+      "bytes": 62530
+    },
+    {
+      "path": "NLA/RA20/Smooth.olean",
+      "sha256": "203218cf613554711fce6a5a1663f618bc62e5f5992a2801c9b1656359f4b8fb",
+      "bytes": 983280
+    },
+    {
+      "path": "NLA/RA20/SmoothTransport.ilean",
+      "sha256": "500700baf9a9479e2d3d43ec8c800b1b592190b3a39a87537a8478649dd79437",
+      "bytes": 4232
+    },
+    {
+      "path": "NLA/RA20/SmoothTransport.olean",
+      "sha256": "0e9f0a5493420f5c4c50617d07b73f5ff0205423c69407b4f6b68112f52965bc",
+      "bytes": 68544
+    },
+    {
+      "path": "NLA/RA20/Tangent.ilean",
+      "sha256": "0996a597459c6ef967a16a166f194b2c70647753da23e286c1f153134080c485",
+      "bytes": 16732
+    },
+    {
+      "path": "NLA/RA20/Tangent.olean",
+      "sha256": "783effcea87fada7fe588445f1e683d13f83505cda943fbbac9f51327477d545",
+      "bytes": 807056
+    }
+  ]
+}

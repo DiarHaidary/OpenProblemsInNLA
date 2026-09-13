@@ -1,0 +1,39 @@
+{
+  "utc": "2026-09-13T04:51:35.989182+00:00",
+  "owner": "/root/leancert_examples",
+  "scope": "Own evolving fresh RA20 target prefix; ten exact MI22 dependencies read-only; no old RA20 target objects, Lake, downloads or native execution",
+  "prefix": "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi",
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "commands": [
+    {
+      "source": "NLA/RA20/Smooth.lean",
+      "source_sha256": "0c13b25dd2371e6b6ae238b7aae02ca281f5f2d3990109ffa243c94a91369357",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi/NLA/RA20/Smooth.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi/NLA/RA20/Smooth.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean"
+      ],
+      "exit_code": 1,
+      "seconds": 10.026048499974422,
+      "log": "NLA-RA20-Smooth.lean.log",
+      "log_sha256": "63e54ace19ee1b8da2f68b52bd5a511a948d5dfa9053f3c2a7fcbea9dc3244bf"
+    }
+  ],
+  "verdict": "FAIL",
+  "failure": "RuntimeError('Lean command failed')",
+  "objects": [
+    {
+      "path": "NLA/RA20/Definitions.ilean",
+      "sha256": "81d40673638d6ce677fe0df86407536e905cd064061001e3a18e3b1387de1c93",
+      "bytes": 14134
+    },
+    {
+      "path": "NLA/RA20/Definitions.olean",
+      "sha256": "f8d082ff59f13b2081ffb02bc5960064648027ece1b126a863e4a5e2c81be402",
+      "bytes": 221216
+    }
+  ]
+}

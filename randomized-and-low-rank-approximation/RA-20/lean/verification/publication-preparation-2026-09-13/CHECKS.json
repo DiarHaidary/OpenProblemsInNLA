@@ -1,0 +1,227 @@
+{
+  "status": "AUTHOR_SCHEMA_ID_MATH_RENDER_CHECKS_PASS; visual inspection and independent publication review pending",
+  "commands": [
+    {
+      "utc": "2026-09-13T07:41:51.719117+00:00",
+      "command": [
+        "python3",
+        "tools/validate_problem_ids.py",
+        "--base-ref",
+        "origin/main"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 2.2754680829821154,
+      "stdout_sha256": "44cc74bfe8f011df4389835465a6043310e12828a092e8c74d318f50d26da3a0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:41:53.995561+00:00",
+      "command": [
+        "python3",
+        "tools/validate_problem_ids.py",
+        "--base-ref",
+        "nla-upstream/main"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 2.430320583982393,
+      "stdout_sha256": "8b360e56c890760950e6bc4515be8cd45b3998088d5dce25b68a54a72a7e85c0",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:41:56.426693+00:00",
+      "command": [
+        "/tmp/nla-lean-formalization/venv/bin/python",
+        "tools/lean/validate_manifest.py",
+        "randomized-and-low-rank-approximation/RA-20/lean"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 0.17788233299506828,
+      "stdout_sha256": "8e3ebeaa9508f037f41d1c133bf7da1341066bdebe2807f56f8284476a81e36d",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:41:56.605081+00:00",
+      "command": [
+        "python3",
+        "tools/format_math.py",
+        "--write",
+        "RA-20"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 0.03856029099551961,
+      "stdout_sha256": "a32da5fd664ba8ef7500d62d646c4b8763cd1adefdbd2afc5661b7dc1fea9bc6",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:41:56.644137+00:00",
+      "command": [
+        "python3",
+        "tools/update_catalog.py",
+        "--base-ref",
+        "origin/main"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 2.241627166979015,
+      "stdout_sha256": "0334a5241eec44fe3a238a92a387a1170fdd6356c5a4232e2ea1753a89f7edca",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:41:58.887484+00:00",
+      "command": [
+        "python3",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_problem_ids.py",
+        "-v"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 0.9031268749968149,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "05c558b565ed788a46f700815cede69494314453927fd56153e107b5b11d84ef"
+    },
+    {
+      "utc": "2026-09-13T07:41:59.791614+00:00",
+      "command": [
+        "python3",
+        "tools/format_math.py",
+        "--check"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 0.17693829099880531,
+      "stdout_sha256": "a79bf13b65bde7baa6900939f581282565799e78e47c9e2426f83b5b4ccb5a9c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:41:59.969423+00:00",
+      "command": [
+        "python3",
+        "tools/render_problems.py",
+        "RA-20"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 3.6882147089927457,
+      "stdout_sha256": "b9521d49bc63a227c1a14d6b80cdd62f742ad41eb418447089a6f1194b9b004c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:42:03.658188+00:00",
+      "command": [
+        "/opt/homebrew/bin/pdfinfo",
+        "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/problem.pdf"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 0.12623929203255102,
+      "stdout_sha256": "7041060e0b20130f9ae8556ca16d91203842b234b596f4b6282c1d54b0f91d19",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:42:03.784942+00:00",
+      "command": [
+        "/opt/homebrew/bin/pdftotext",
+        "-layout",
+        "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/problem.pdf",
+        "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-text.txt"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 0.01921141700586304,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "utc": "2026-09-13T07:42:03.804650+00:00",
+      "command": [
+        "/opt/homebrew/bin/pdftoppm",
+        "-r",
+        "105",
+        "-png",
+        "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/problem.pdf",
+        "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-pages/page"
+      ],
+      "cwd": "/private/tmp/nla-lean-ra20-worktree",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "GIT_OPTIONAL_LOCKS": "0",
+        "PANDOC": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-pandoc.py",
+        "XELATEX": "/private/tmp/nla-lean-ra20-worktree/randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-tools/record-xelatex.py"
+      },
+      "exit_code": 0,
+      "seconds": 0.5963767089997418,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

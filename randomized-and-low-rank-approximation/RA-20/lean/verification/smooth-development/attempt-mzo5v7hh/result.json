@@ -1,0 +1,85 @@
+{
+  "utc": "2026-09-13T05:04:36.852732+00:00",
+  "owner": "/root/leancert_examples",
+  "scope": "Own evolving fresh RA20 target prefix; ten exact MI22 dependencies read-only; no old RA20 target objects, Lake, downloads or native execution",
+  "prefix": "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi",
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "commands": [
+    {
+      "source": "NLA/RA20/Smooth.lean",
+      "source_sha256": "99ab24934f75382e9bad4a8e84945d0f1e14123804d5172a66b0da17a9eceb88",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi/NLA/RA20/Smooth.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi/NLA/RA20/Smooth.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Smooth.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 14.97824429202592,
+      "log": "NLA-RA20-Smooth.lean.log",
+      "log_sha256": "e43e4613e08163d3394ce6fb0c4ac3ee2e95cae2e78eecfaa3068e667942e6e9"
+    },
+    {
+      "source": "verification/smooth-development/Inspect.lean",
+      "source_sha256": "d8d7f7f739bd451db32ec0efef390e010a6a6e007904dd395150ae9d0d42d1ca",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi/verification/smooth-development/Inspect.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi/verification/smooth-development/Inspect.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/smooth-development/Inspect.lean"
+      ],
+      "exit_code": 1,
+      "seconds": 5.7282902500010096,
+      "log": "verification-smooth-development-Inspect.lean.log",
+      "log_sha256": "c90f6b4dad834a8124b25b86ebd4a6e127a1d1970b393a8bd234f4b24669b594"
+    }
+  ],
+  "verdict": "FAIL",
+  "failure": "RuntimeError('Lean command failed')",
+  "objects": [
+    {
+      "path": "NLA/RA20/Algebra.ilean",
+      "sha256": "47902d2f30cb80414c5cacf9cec515b09c6bae99e692b73ba784d81643a0880b",
+      "bytes": 27875
+    },
+    {
+      "path": "NLA/RA20/Algebra.olean",
+      "sha256": "2f7d03c453dbe4158ef2c23597446e9598d4f2c8a9aaff1e632bf095c47cbb3c",
+      "bytes": 1146104
+    },
+    {
+      "path": "NLA/RA20/Definitions.ilean",
+      "sha256": "81d40673638d6ce677fe0df86407536e905cd064061001e3a18e3b1387de1c93",
+      "bytes": 14134
+    },
+    {
+      "path": "NLA/RA20/Definitions.olean",
+      "sha256": "f8d082ff59f13b2081ffb02bc5960064648027ece1b126a863e4a5e2c81be402",
+      "bytes": 221216
+    },
+    {
+      "path": "NLA/RA20/Smooth.ilean",
+      "sha256": "362f4b2607a9b790d29f3ce187bb1cc79d59598194f55283332e1c4af414958b",
+      "bytes": 62530
+    },
+    {
+      "path": "NLA/RA20/Smooth.olean",
+      "sha256": "203218cf613554711fce6a5a1663f618bc62e5f5992a2801c9b1656359f4b8fb",
+      "bytes": 983280
+    },
+    {
+      "path": "NLA/RA20/SmoothTransport.ilean",
+      "sha256": "500700baf9a9479e2d3d43ec8c800b1b592190b3a39a87537a8478649dd79437",
+      "bytes": 4232
+    },
+    {
+      "path": "NLA/RA20/SmoothTransport.olean",
+      "sha256": "0e9f0a5493420f5c4c50617d07b73f5ff0205423c69407b4f6b68112f52965bc",
+      "bytes": 68544
+    }
+  ]
+}

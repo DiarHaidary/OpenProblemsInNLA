@@ -1,0 +1,430 @@
+# yaml-language-server: $schema=../../../docs/lean/schema/v0.4.schema.json
+version: v0.4
+project:
+  name: 'RA-20: critical-point counts for symmetric rank-two approximation with diagonal zeros'
+  description: 'Complete negative resolution of the original joint generic critical-count conjecture: the
+    actual count at n=s=3 is three, whereas its formula predicts four.'
+  authors:
+  - George Stepaniants
+  affiliations:
+    George Stepaniants: Department of Computing and Mathematical Sciences, California Institute of Technology,
+      Pasadena, California, USA
+  responsible_maintainers:
+  - George Stepaniants
+  license: Apache-2.0
+repository:
+  role: substantive-development
+  revision: 43603b173beb294c2588d83f936a8a96246fd5f0
+  note: Immutable proof and Linux-checked candidate revision; publication wrappers archive its exact metadata
+    and README. Publication commits and upstream integration are separate; this metadata does not claim an
+    upstream merge.
+sources:
+- title: RA-20 — Critical-point counts for symmetric rank-two approximation with diagonal zeros
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/randomized-and-low-rank-approximation/RA-20/README.md
+  type: web-post
+  location: Complete retained original statement, all four formulas and their common parameter range
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: All complex symmetric rank-at-most-two matrices with the prescribed diagonal zeros; generic smooth
+    critical-point counting in the complex bilinear full-Frobenius metric. The full original conjunction is
+    negated, not replaced by a weaker fixed-case target.
+- title: 'RA-20: A counterexample to the symmetric rank-two critical-point formula'
+  authors:
+  - Codex automated maintainer audit
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/5830ed4fb06da0659414a3deb2a40ad327aca052/randomized-and-low-rank-approximation/RA-20/solution.md
+  type: manuscript
+  location: Proposition and complete proof, with the retained independent reconstruction in references/research-expansion-2026-09-11/ra20-resolution/
+  relationship: formalizes
+  author_endorsement: n/a
+  note: The original negative-resolution mathematics remains attributed to the automated maintainer audit.
+    The formal proof derives the actual reduced coordinate ring, smooth locus, entire-ideal tangent, genuine
+    derivatives, generic-open intersection and actual cardinality. No external human author endorsement or
+    mathematical priority is asserted.
+- title: Exact solutions in low-rank approximation with zeros
+  authors:
+  - Kaie Kubjas
+  - Luca Sodomaco
+  - Elias Tsigaridas
+  id: https://arxiv.org/abs/2010.15636v2
+  type: preprint
+  location: Section 2.2 complex bilinear smooth critical-point convention, Section 2.3 full Frobenius distance,
+    Conjecture 5.6 and Table 7 on printed p.21
+  relationship: background
+  author_endorsement: not-contacted
+  note: Original conjecture and conventions. The source formula gives four at n=s=3. The negative resolution
+    proves three independently of that assertion; no unproved critical-count theorem from this paper is a
+    premise.
+related_formalizations:
+- id: https://github.com/sgstepaniants/Forsythe/tree/8d1b0c0545a77b40245e84705aa7d273e6c81e62/lean-proof
+  relationship: other
+  note: Pinned statement/proof, minimized computation, LeanCert kernel trust and Comparator reproduction patterns
+    used by the shared campaign infrastructure. No Forsythe mathematical theorem or proof module is imported.
+- id: https://github.com/jaumededios/Schiffer/tree/2938e277969c329caf154e48a3d8823f3635c7f1
+  relationship: other
+  note: Pinned exact mathematical statement/proof separation example. No Schiffer theorem or proof implementation
+    is assumed.
+automation:
+  methods:
+  - method: agent
+    framework: OpenAI Codex
+    tool_setup: Multiple implementation agents; two independent statement reviews accepted before proof work;
+      two fresh independent final mathematical referees with source, exact-type, actual-dependency, axiom
+      and initially empty private-prefix compilation checks, accepted by the coordinator.
+    prompting_notes: Preserve all original complex symmetric matrix, rank, full-vanishing-ideal, point-prime
+      smoothness, genuine Frechet derivative, bilinear full-Frobenius, nonempty generic-open and actual cardinality
+      semantics. Prove the substantial geometric bridges. Eliminate interval work with exact algebra, localization
+      and a fixed three-coordinate counterexample; retain all original universal formulas in the final negation.
+  notes: 'AI-assisted formalization requested by George Stepaniants. Implementers: /root/formal_review_standards
+    (statements, Algebra, Tangent, Count, Proof, Solution); /root/leancert_examples (Smooth, Critical); /root/mf16_final_referee
+    (Differential); /root (SmoothTransport, Generic), with Generic scoped inspection/sealing by /root/mf16_final_referee.
+    None counts as an independent final mathematical referee. Final referees /root/ra20_final_referee1 and
+    /root/ra20_final_referee2 are distinct from them. The first final referee subsequently authored these
+    candidate documents, adding no independent mathematical or packaging approval. No external human review,
+    official Tau Ceti endorsement, source-author endorsement or priority is claimed.'
+status:
+  scope: Complete twelve-export negative proof of the full original joint generic smooth critical-count conjecture,
+    using its allowed n=s=3 case. Two independent statement approvals preceded implementation; two final mathematical
+    approvals, independent candidate packaging, and actual Ubuntu default-kernel/Comparator/control verification
+    were accepted by the coordinator. Canonical Lean verified publication preserves that immutable proof.
+    Publication review and upstream integration are separate from accepted mathematical and runtime verification.
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms:
+  - propext
+  - Classical.choice
+  - Quot.sound
+  main_results:
+  - declaration: NLA.RA20.hollow_variety_semantics
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.reduced_coordinate_ring
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.algebraic_smooth_locus
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.algebraic_tangent_space
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.full_frobenius_differential
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.hollow_distance_semantics
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.generic_critical_locus
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.component_hessians
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.generic_data_intersection
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.generic_count_three
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.generic_count_not_four
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.RA20.not_criticalCountConjecture
+    file: Solution.lean
+    sorry_count: 0
+    axioms:
+    - propext
+    - Classical.choice
+    - Quot.sound
+    comparator_config: comparator.json
+    literature_dependencies: []
+toolchain:
+  lean: leanprover/lean4:v4.33.1
+  dependency_manifest: lake-manifest.json
+  dependencies:
+    leancert: 621a43d7cf21f87872392a01e874f2f1dbddc926
+    mathlib: 0df444a360eaa60ab8c11dca51a86af692955474
+    plausible: b7eb3304aeae834b12dda98993a37f6a41f6f0bb
+    LeanSearchClient: 5f4d51b81cbd3f6b32b156bfad9056621a040404
+    importGraph: 16f02aa7642864af59f1ff0e384a015994db9118
+    proofwidgets: 4be2e3d5087eeb272cf5a8853b8f9dd025ef5957
+    aesop: 3448c0bcc5ce01b2d1546e483ec3620e32df3d0e
+    Qq: 92c15be17b7caf78c2ad767ec40f89052d908d81
+    batteries: 4488d40d070b9700d4d5a6aa342f0d40c31b2a2d
+    Cli: 6130a47896ce867c6a4a55373441e59e565bad0f
+  trust: 'LeanCert #assert_trust kernel; standard foundational axioms only; no native execution or interval
+    certificate'
+fidelity:
+  divergences: 'The full canonical target and all original assumptions, quantifiers, complex field and bilinear
+    full-entry metric are retained. The informal Jacobian smoothness explanation is implemented through genuine
+    localized algebraic smoothness, retractions and a square-zero lifting obstruction. The whole-ideal tangent
+    and arbitrary generic-open intersection are proved. Supporting derivative/Hessian statements are generalized
+    where stated. Only the full original conjunction is refuted; the remaining individual formulas and corrected
+    values are not settled. The source abcLocalChart comment uses complete local ring for the ordinary localization:
+    no adic completion or completeness theorem is claimed. Hessian nondegeneracy is exported, but no separate
+    scheme-theoretic multiplicity theorem is formalized.'
+review:
+  status: agent-reviewed; mathematical-packaging-operational-reviews-accepted; actual-Linux-kernel-and-Comparator-pass
+  reviewers:
+  - 'OpenAI Codex agent /root: independent historical statement referee 1, subsequently a proof contributor
+    and ineligible as an independent final mathematical referee'
+  - 'OpenAI Codex agent /root/leancert_examples: independent historical statement referee 2, subsequently
+    a proof contributor and ineligible as an independent final mathematical referee'
+  - 'OpenAI Codex agent /root/ra20_final_referee1: independent final mathematical referee 1, subsequently
+    candidate-document author; no additional mathematical or packaging approval'
+  - 'OpenAI Codex agent /root/ra20_final_referee2: independent final mathematical referee 2'
+  - 'OpenAI Codex agent /root/ra20_final_referee2: independent candidate-packaging and actual Linux operational
+    reviewer; these mechanical audits add no extra mathematical approval'
+  notes: 'The accepted statement boundary binds 68 project inputs and 16 original source/policy files; the
+    complete proof freeze binds 521 and those same 16 original identities at base 5830ed4fb06da0659414a3deb2a40ad327aca052.
+    Author assembly and each final referee passed thirteen fresh source commands: eleven mathematical modules,
+    a separate namespace-only admitted reference and inspector. Each successful set has 57 source plus twelve
+    diagnostic printed standard-three axiom reports (69 total) and 61 source plus twelve diagnostic LeanCert
+    kernel assertions. Referee 1 additionally audited 236 total project declarations, with 214 in the actual
+    export closure and 39 material dependencies; referee 2 checked 214 closure declarations and 28 independently
+    selected material dependencies. All twelve exact elaborated exports match the frozen contracts. Ten exact
+    clean dependencies were reused read-only; no old target objects or copied caches supported those checks.
+    All raw author/referee attempts and historical manifests remain retained. Reference admissions are isolated
+    and excluded from the proved-development sorry count. The coordinator accepted both mathematical reviews
+    before the historical candidate-document installation. The later actual Ubuntu run 34743832047 for immutable
+    revision 43603b173beb294c2588d83f936a8a96246fd5f0 passed all 17 workflow jobs. Its source build passed
+    61 LeanCert kernel assertions and printed 57 standard-three axiom occurrences for 45 distinct names; historical
+    local diagnostic prints are separate. Both actual control suites passed. All 1092 candidate inputs match
+    the receipt. Official matching Mathlib cache decompressed 8690 files across the ten pinned dependencies;
+    no full from-source dependency rebuild is claimed. The coordinator accepted the independently audited
+    operational result before publication preparation.'
+  statement_freeze:
+    file: reviews/statement-freeze.json
+    sha256: 6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8
+  proof_freeze:
+    file: verification/proof-freeze.json
+    sha256: f66dfe47527df937de8ed399606206bdaef55717cef8d68808f60834aece0c6f
+  statement_gate:
+    file: verification/proof-start.json
+    sha256: 9fe55d622e50390cb3ed439989b9393455fa48eb50d42d84fb33c20fd8c883f3
+  statement_reports:
+  - file: reviews/statement-referee-1.md
+    sha256: bf0f1decd2e67f6230e9655f4c669be9c868001c8259b4fd2461b8cf90988904
+  - file: reviews/statement-referee-2.md
+    sha256: 542cfa5fb183aa7bfa4b79ad9ab1c16bb32b77e713e10414d4c8bae50c0873a2
+  proof_reports:
+  - file: reviews/final-referee-1.md
+    sha256: 2a313084cdc1c06be789181bf05d9874bde020483d501151bc224b5af896e345
+  - file: reviews/final-referee-2.md
+    sha256: d7cfa1404c147ae19cec776e2047c85b6bdfd1484192a1cbbb171ed9afa7dbcf
+  proof_report_evidence:
+    reviews/final-referee-1-evidence/EVIDENCE-MANIFEST.json:
+      sha256: 360b0d841ebd8cb7219b39997e0b0a2617be32abfef461866d0f022ca134f70d
+      bound_files: 699
+    reviews/final-referee-2-evidence/EVIDENCE-MANIFEST.json:
+      sha256: 7fc642361790960be2d3a584d2842dc688d13511d93220907abc0d7ab951318c
+      bound_files: 793
+  coordinator_acceptance:
+    status: accepted
+    file: verification/final-review-acceptance.json
+    sha256: a1c7ffebd2c0db8159b9861adf3663051b8e03346b776393553773d97e0abbbb
+    note: Both full independent final mathematical reports accepted by the proof-contributing coordinator;
+      this is not an additional independent review or a Linux result.
+  linux_verification:
+    status: passed; independently operationally audited and coordinator accepted
+    candidate_revision: 43603b173beb294c2588d83f936a8a96246fd5f0
+    date: '2026-09-13'
+    run: https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34743832047
+    run_attempt: 1
+    successful_jobs: 17
+    host: Non-root Ubuntu 24.04, sandbox UID 1001
+    actual_default_kernel: pass
+    actual_Comparator: pass, twelve exports, no definition exceptions
+    actual_control_suites: pass, standalone checker and RA20 preproof
+    source_kernel_assertions: 61
+    source_printed_axiom_occurrences: 57
+    source_distinct_printed_names: 45
+    candidate_inputs: 1092
+    official_matching_dependency_cache_files: 8690
+    dependency_scope: Fresh project proof compilation against ten exact dependency revisions and official
+      matching Mathlib cache; not a from-source rebuild of all Mathlib
+    operational_report:
+      file: reviews/linux-operational-referee-2026-09-13.md
+      sha256: 7f7532bbc01533d0c35fe0ac3aece0ff66cb43c1444e41275db0784cee6b8ae7
+    complete_operational_inventory:
+      file: verification/linux-run-2026-09-13/EVIDENCE-MANIFEST.json
+      sha256: 89b3cd2aa8c47835be4531cca85561a70aee7f20be6e9f3bcdaaa48d23812dcd
+      bound_files: 1589
+    root_acceptance:
+      file: verification/root-linux-acceptance-2026-09-13/ROOT-ACCEPTANCE.json
+      sha256: a2c3a74eb858edb859d34d8bd2985dc54710e31816412d285c32a547e080e57e
+    root_complete_inventory:
+      file: verification/root-linux-acceptance-2026-09-13/EVIDENCE-MANIFEST.json
+      sha256: 40d68224c966fc5114995418bf47ee2fc38f3ebbacc50536cae3b1c9d98ca0b8
+      bound_files: 1604
+    scope_note: This catalog ran the GitHub Linux workflow and reviewed its original artifacts; no local macOS
+      Comparator execution or new Linux execution during publication preparation is claimed. In the nested-namespace
+      control, bwrap ran but UID-map setup was denied before the inner write.
+  candidate_documents:
+    preparer: /root/ra20_final_referee1
+    role: Independent final mathematical referee 1, subsequently candidate-document author; no extra mathematical
+      or packaging approval
+    installation: Historical candidate wrapper installation; exact checked bytes now archived in publication-preparation-2026-09-13/archive.
+      All earlier seals remain unchanged.
+    frozen_readme_sha256: 7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50
+    frozen_readme_archive: verification/pre-candidate-README.md
+    historical_inventory_mapping: At the candidate stage, only the exact README.md path expecting SHA256 7eb951780e58ce518f0a400c90297020e7c6909ad9fd0c9c15b8036761a8bb50
+      mapped to verification/pre-candidate-README.md. That mapping remains valid. The later publication archives
+      listed below preserve the exact checked candidate README and metadata and canonical-page inputs for
+      every full historical inventory.
+    installation_evidence: verification/linux-candidate-2026-09-13/HANDOFF.md
+    independent_packaging_review: passed and coordinator accepted before candidate commit and actual Linux
+      run
+  standards:
+    tau_ceti: https://github.com/TauCetiProject/TauCetiReview/tree/afb424eda89e8ac96d9eb69f6a88972055a4cd1b/rubrics
+    adaptation: ../../../docs/lean/REVIEW.md
+    formalization_schema: https://github.com/mathlib-initiative/formalization.yaml/blob/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json
+    local_schema: ../../../docs/lean/schema/v0.4.schema.json
+    schema_sha256: 25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce
+  publication:
+    author: /root/ra20_final_referee1
+    role: Previously independent final mathematical referee 1, then candidate-document and publication author;
+      no independent approval of own publication
+    status: 'Dated preparation state on 2026-09-13, before the independent publication handoff: the concrete
+      publication was prepared, while its independent publication review, new publication commit, push and
+      pull request were pending. This is a historical preparation record, not a continuing assertion of GitHub
+      status.'
+    candidate_README_archive: verification/publication-preparation-2026-09-13/archive/candidate-README.md
+    candidate_README_sha256: 83e19faf1bf25a9748de40da3193cfd68690100923a50379553e288c45b5e8bc
+    candidate_YAML_archive: verification/publication-preparation-2026-09-13/archive/candidate-formalization.yaml
+    candidate_YAML_sha256: bec9d851e204464fa2d3e29033d5958034665d51c3554d2043f1470bfafd4197
+    preservation: Every historical inventory is checked by exact original path and expected hash. The original
+      old-README mapping remains, and exact candidate README/YAML and canonical-page archives preserve later
+      expected versions. No proof, frozen statement, pin or prior evidence is edited.
+    handoff: verification/publication-preparation-2026-09-13/HANDOFF.md
+    preparation_record_date: '2026-09-13'
+reproduction:
+  local_development:
+    cwd: randomized-and-low-rank-approximation/RA-20/lean
+    command: lake build Solution
+    note: Explicit Solution target is required because the unchanged historical defaultTargets contains Challenge.
+      Candidate-document preparation performs no new Lean build.
+  authoritative_Linux:
+    status: Actual run passed and operational acceptance recorded; commands reproduce the immutable candidate
+    cwd: repository root
+    host: Non-root Ubuntu with the actual pinned harness prerequisites
+    commands:
+    - tools/lean/bootstrap.sh /tmp/nla-ra20-check
+    - tools/lean/selftest.sh /tmp/nla-ra20-check
+    - tools/lean/verify.sh randomized-and-low-rank-approximation/RA-20/lean /tmp/nla-ra20-check
+    prerequisites_document: ../../../tools/lean/HARNESS.md
+    note: From a clean checkout of the exact candidate on non-root Ubuntu. Both real control suites, statement
+      Comparator and default-kernel replay passed in the recorded original workflow; independent publication
+      review and upstream submission remain separate.
+    candidate_revision: 43603b173beb294c2588d83f936a8a96246fd5f0
+alignment:
+- declaration: NLA.RA20.hollow_variety_semantics
+  scope: The actual complex hollow determinant is 2abc; membership in the original rank-at-most-two, three-diagonal-zero
+    variety is equivalent to abc=0, and every original matrix has that hollow form.
+- declaration: NLA.RA20.reduced_coordinate_ring
+  scope: An actual coordinate-preserving algebra equivalence takes the quotient by all polynomials vanishing
+    on the original matrix variety to C[a,b,c]/(abc), with all nine matrix-coordinate images proved.
+- declaration: NLA.RA20.algebraic_smooth_locus
+  scope: Actual point-prime membership in the algebraic smooth locus of the reduced matrix ring is equivalent
+    to hollow form and exactly one zero off-diagonal coordinate; origin and axis intersections are excluded
+    even if matrix rank is two.
+- declaration: NLA.RA20.algebraic_tangent_space
+  scope: At every abc=0 point, including singular points, annihilation of derivatives of the entire original
+    vanishing ideal is equivalent to symmetry, zero diagonal, and bc Z01 + ac Z02 + ab Z12 = 0, with no rank
+    restriction on directions.
+- declaration: NLA.RA20.full_frobenius_differential
+  scope: For every natural matrix order and every complex U,X,Z, the actual complex Frechet derivative of
+    the full-entry squared distance equals 2 sum_ij (Xij-Uij) Zij; differentiability is proved.
+- declaration: NLA.RA20.hollow_distance_semantics
+  scope: For arbitrary complex symmetric data, the full Frobenius bilinear objective restricts to the diagonal
+    constant plus twice the three off-diagonal squared differences, without conjugation.
+- declaration: NLA.RA20.generic_critical_locus
+  scope: For every symmetric complex datum with nonzero off-diagonal product, the entire genuine smooth critical
+    set equals the injective range of its three component projections.
+- declaration: NLA.RA20.component_hessians
+  scope: For every complex datum, even nonsymmetric, all three component charts have actual second complex
+    Frechet derivative 4 sum_j h_j v_j and zero radical. No separate scheme-theoretic multiplicity result
+    is exported.
+- declaration: NLA.RA20.generic_data_intersection
+  scope: Every arbitrary ambient polynomial nonzero somewhere on symmetric complex data remains nonzero at
+    some datum in the displayed generic set; the full six-dimensional symmetric data space and arbitrary diagonals
+    are retained.
+- declaration: NLA.RA20.generic_count_three
+  scope: Actual smooth critical-subtype cardinality is three on a nonempty principal Zariski-open subset of
+    symmetric complex data.
+- declaration: NLA.RA20.generic_count_not_four
+  scope: No nonempty principal Zariski-open subset of symmetric complex data can support a competing actual
+    generic count four.
+- declaration: NLA.RA20.not_criticalCountConjecture
+  scope: Unconditional negation of the complete original joint four-formula generic critical-count conjecture
+    for all n>=3 and 1<=s<=min(4,n), by its allowed n=s=3 case. The other formulas are not separately settled.
+acknowledgements: The Codex automated maintainer audit for the original negative-resolution mathematics, and
+  Kubjas, Sodomaco and Tsigaridas for the original conjecture and geometric conventions. Mathlib contributors
+  for actual matrix rank, reduced ideals and Nullstellensatz, point-prime localization and formal smoothness,
+  complex Frechet calculus and cardinality APIs; LeanCert contributors for kernel trust auditing. The Schiffer/Forsythe
+  examples and shared checker/exporter/sandbox tools retain their licenses and attribution. No unproved literature
+  count theorem is assumed.

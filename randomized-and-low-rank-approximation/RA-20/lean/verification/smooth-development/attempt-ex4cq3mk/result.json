@@ -1,0 +1,78 @@
+{
+  "utc": "2026-09-13T05:05:54.920969+00:00",
+  "owner": "/root/leancert_examples",
+  "scope": "Own evolving fresh RA20 target prefix; ten exact MI22 dependencies read-only; no old RA20 target objects, Lake, downloads or native execution",
+  "prefix": "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi",
+  "LEAN_PATH": "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "commands": [
+    {
+      "source": "verification/smooth-development/Inspect.lean",
+      "source_sha256": "7fa2684a0da633af97a11176c078aca278a8ef09025e3e56b9594d371e87dfb7",
+      "command": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi/verification/smooth-development/Inspect.olean",
+        "-i",
+        "/tmp/nla-lean-formalization/independent-prefixes/ra20-smooth-development-_gtn6joi/verification/smooth-development/Inspect.ilean",
+        "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/smooth-development/Inspect.lean"
+      ],
+      "exit_code": 0,
+      "seconds": 6.008900958986487,
+      "log": "verification-smooth-development-Inspect.lean.log",
+      "log_sha256": "17719a8e0a4b55a8145e58e741bb40326e5609e2322a790b11539b0e2ae87653"
+    }
+  ],
+  "verdict": "PASS",
+  "objects": [
+    {
+      "path": "NLA/RA20/Algebra.ilean",
+      "sha256": "47902d2f30cb80414c5cacf9cec515b09c6bae99e692b73ba784d81643a0880b",
+      "bytes": 27875
+    },
+    {
+      "path": "NLA/RA20/Algebra.olean",
+      "sha256": "2f7d03c453dbe4158ef2c23597446e9598d4f2c8a9aaff1e632bf095c47cbb3c",
+      "bytes": 1146104
+    },
+    {
+      "path": "NLA/RA20/Definitions.ilean",
+      "sha256": "81d40673638d6ce677fe0df86407536e905cd064061001e3a18e3b1387de1c93",
+      "bytes": 14134
+    },
+    {
+      "path": "NLA/RA20/Definitions.olean",
+      "sha256": "f8d082ff59f13b2081ffb02bc5960064648027ece1b126a863e4a5e2c81be402",
+      "bytes": 221216
+    },
+    {
+      "path": "NLA/RA20/Smooth.ilean",
+      "sha256": "362f4b2607a9b790d29f3ce187bb1cc79d59598194f55283332e1c4af414958b",
+      "bytes": 62530
+    },
+    {
+      "path": "NLA/RA20/Smooth.olean",
+      "sha256": "203218cf613554711fce6a5a1663f618bc62e5f5992a2801c9b1656359f4b8fb",
+      "bytes": 983280
+    },
+    {
+      "path": "NLA/RA20/SmoothTransport.ilean",
+      "sha256": "500700baf9a9479e2d3d43ec8c800b1b592190b3a39a87537a8478649dd79437",
+      "bytes": 4232
+    },
+    {
+      "path": "NLA/RA20/SmoothTransport.olean",
+      "sha256": "0e9f0a5493420f5c4c50617d07b73f5ff0205423c69407b4f6b68112f52965bc",
+      "bytes": 68544
+    },
+    {
+      "path": "verification/smooth-development/Inspect.ilean",
+      "sha256": "7a9f72e59bbcea3b4f6c9d8e1515cac5be64da92eec0038c5060412bcae39032",
+      "bytes": 13863
+    },
+    {
+      "path": "verification/smooth-development/Inspect.olean",
+      "sha256": "75962b955118b2fe48b731bf1eec7f62027be6e99598fac94433a3b05d452fd6",
+      "bytes": 9456
+    }
+  ]
+}

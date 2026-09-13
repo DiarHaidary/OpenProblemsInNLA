@@ -1,0 +1,1250 @@
+EXACT_FROZEN_TYPE NLA.RA20.hollow_variety_semantics_proved: (∀ (a b c : ℂ),
+    (NLA.RA20.hollow a b c).det = 2 * a * b * c ∧ (NLA.RA20.hollow a b c ∈ NLA.RA20.variety 3 3 ↔ a * b * c = 0)) ∧
+  ∀ (X : NLA.RA20.Mat 3),
+    X ∈ NLA.RA20.variety 3 3 ↔ X = NLA.RA20.hollow (X 0 1) (X 0 2) (X 1 2) ∧ X 0 1 * X 0 2 * X 1 2 = 0
+EXACT_FROZEN_TYPE NLA.RA20.reduced_coordinate_ring_proved: ∃ e,
+  ∀ (i j : Fin 3),
+    e ((Ideal.Quotient.mk (NLA.RA20.definingIdeal 3 3)) (MvPolynomial.X (i, j))) =
+      (Ideal.Quotient.mk NLA.RA20.abcIdeal) (NLA.RA20.polynomialHollow i j)
+ACTUAL_AXIOMS NLA.RA20.hollow_variety_semantics_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_variety_semantics_proved: [NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow_det,
+ NLA.RA20.hollow_mem_variety_iff,
+ NLA.RA20.matrix_eq_hollow_of_mem]
+ACTUAL_AXIOMS NLA.RA20.hollow: [propext, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow: []
+ACTUAL_AXIOMS NLA.RA20.Mat: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Mat: []
+ACTUAL_AXIOMS NLA.RA20.variety: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.variety: [NLA.RA20.Mat, NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.hollow_det: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_det: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.hollow_mem_variety_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_mem_variety_iff: [NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.hollow_det,
+ NLA.RA20.hollow_isSymm,
+ NLA.RA20.hollow_rank_le_two]
+ACTUAL_AXIOMS NLA.RA20.hollow_isSymm: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_isSymm: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.hollow_rank_le_two: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_rank_le_two: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.matrix_eq_hollow_of_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrix_eq_hollow_of_mem: [NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.reduced_coordinate_ring_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reduced_coordinate_ring_proved: [NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.reducedCoordinateEquiv_mk_X]
+ACTUAL_AXIOMS NLA.RA20.CoordinateRing: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.CoordinateRing: [NLA.RA20.Poly, NLA.RA20.Variables, NLA.RA20.definingIdeal]
+ACTUAL_AXIOMS NLA.RA20.Poly: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Poly: [NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.Variables: []
+PROJECT_EDGE NLA.RA20.Variables: []
+ACTUAL_AXIOMS NLA.RA20.definingIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.definingIdeal: [NLA.RA20.Poly, NLA.RA20.Variables, NLA.RA20.Variables, NLA.RA20.coordinateVariety]
+ACTUAL_AXIOMS NLA.RA20.coordinateVariety: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.coordinateVariety: [NLA.RA20.Variables,
+ NLA.RA20.Variables,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.matrixOfCoordinates]
+ACTUAL_AXIOMS NLA.RA20.matrixOfCoordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrixOfCoordinates: [NLA.RA20.Variables, NLA.RA20.Mat, NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.ABCCoordinateRing: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCCoordinateRing: [NLA.RA20.ABCPoly, NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.ABCPoly: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCPoly: []
+ACTUAL_AXIOMS NLA.RA20.abcIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly, NLA.RA20.abcPolynomial]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPolynomial: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly, NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.abcPolynomial._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.polynomialHollow: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polynomialHollow: [NLA.RA20.ABCPoly,
+ NLA.RA20.hollow,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv: [NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.reducedCoordinateEquiv._proof_2,
+ NLA.RA20.reducedCoordinateEquiv._proof_3,
+ NLA.RA20.reducedCoordinateEquiv._proof_4,
+ NLA.RA20.hollowQuotientMap_surjective]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv._proof_1: [NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.hollowQuotientMap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowQuotientMap: [NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowQuotientMap._proof_1,
+ NLA.RA20.hollowPullback]
+ACTUAL_AXIOMS NLA.RA20.hollowQuotientMap._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowQuotientMap._proof_1: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.hollowPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv._proof_2: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv._proof_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv._proof_3: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv._proof_4: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv._proof_4: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.hollowQuotientMap_ker]
+ACTUAL_AXIOMS NLA.RA20.hollowQuotientMap_ker: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowQuotientMap_ker: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.definingIdeal_eq_comap_abcIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.definingIdeal_eq_comap_abcIdeal: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal_vanishing,
+ NLA.RA20.coordinateVariety,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.aeval_hollowPullback,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow_mem_variety_iff,
+ NLA.RA20.matrixOfCoordinates,
+ NLA.RA20.matrix_eq_hollow_of_mem,
+ NLA.RA20.hollow_variety_semantics_proved]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_vanishing: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_vanishing: [NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal_zeroLocus,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal_isRadical]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_zeroLocus: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_zeroLocus: [NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.ABCPoly]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_isRadical: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_isRadical: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial_squarefree]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial_squarefree: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPolynomial_squarefree: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.coordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.coordinates: [NLA.RA20.Mat, NLA.RA20.Variables, NLA.RA20.Mat, NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.aeval_hollowPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.aeval_hollowPullback: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.hollowPullback.eq_1,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.hollowPullback.eq_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback.eq_1: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback]
+ACTUAL_AXIOMS NLA.RA20.hollowQuotientMap_surjective: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowQuotientMap_surjective: [NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.hollowPullback_surjective]
+ACTUAL_AXIOMS NLA.RA20.hollowPullback_surjective: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback_surjective: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.offDiagonalPullback,
+ NLA.RA20.hollowPullback_offDiagonalPullback]
+ACTUAL_AXIOMS NLA.RA20.offDiagonalPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.offDiagonalPullback: [NLA.RA20.ABCPoly,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.offDiagonalPullback._proof_1]
+ACTUAL_AXIOMS NLA.RA20.offDiagonalPullback._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.offDiagonalPullback._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.hollowPullback_offDiagonalPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback_offDiagonalPullback: [NLA.RA20.ABCPoly,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.offDiagonalPullback,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.offDiagonalPullback,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.offDiagonalPullback._proof_1,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv_mk_X: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv_mk_X: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.reducedCoordinateEquiv._proof_2,
+ NLA.RA20.reducedCoordinateEquiv._proof_3,
+ NLA.RA20.reducedCoordinateEquiv._proof_4,
+ NLA.RA20.hollowQuotientMap_surjective,
+ NLA.RA20.reducedCoordinateEquiv.eq_1,
+ NLA.RA20.hollowQuotientMap._proof_1]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv.eq_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv.eq_1: [NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.reducedCoordinateEquiv._proof_2,
+ NLA.RA20.reducedCoordinateEquiv._proof_3,
+ NLA.RA20.reducedCoordinateEquiv._proof_4,
+ NLA.RA20.hollowQuotientMap_surjective,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv]
+RETAINED_DEPENDENCY NLA.RA20.hollow_rank_le_two
+RETAINED_DEPENDENCY NLA.RA20.hollow_det
+RETAINED_DEPENDENCY NLA.RA20.hollow_mem_variety_iff
+RETAINED_DEPENDENCY NLA.RA20.matrix_eq_hollow_of_mem
+RETAINED_DEPENDENCY NLA.RA20.abcPolynomial_squarefree
+RETAINED_DEPENDENCY NLA.RA20.abcIdeal_isRadical
+RETAINED_DEPENDENCY NLA.RA20.abcIdeal_vanishing
+RETAINED_DEPENDENCY NLA.RA20.definingIdeal_eq_comap_abcIdeal
+RETAINED_DEPENDENCY NLA.RA20.hollowQuotientMap_ker
+RETAINED_DEPENDENCY NLA.RA20.reducedCoordinateEquiv
+RETAINED_DEPENDENCY NLA.RA20.hollowPullback
+RETAINED_DEPENDENCY NLA.RA20.offDiagonalPullback
+RETAINED_DEPENDENCY NLA.RA20.variety
+RETAINED_DEPENDENCY NLA.RA20.definingIdeal
+RETAINED_DEPENDENCY NLA.RA20.hollow
+RETAINED_DEPENDENCY Matrix.rank_mul_le_left
+RETAINED_DEPENDENCY Matrix.rank_le_width
+RETAINED_DEPENDENCY Matrix.rank_of_det_ne_zero
+RETAINED_DEPENDENCY MvPolynomial.X_prime
+RETAINED_DEPENDENCY squarefree_mul_iff
+RETAINED_DEPENDENCY Squarefree.isRadical
+RETAINED_DEPENDENCY MvPolynomial.vanishingIdeal_zeroLocus_eq_radical
+RETAINED_DEPENDENCY Ideal.quotientKerAlgEquivOfSurjective
+RETAINED_DEPENDENCY Ideal.quotientEquivAlgOfEq
+PROJECT_COUNTS declarations=46, required=24
+'NLA.RA20.hollow_variety_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.reduced_coordinate_ring_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.hollow_rank_le_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.abcPolynomial_squarefree' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.abcIdeal_vanishing' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.definingIdeal_eq_comap_abcIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.variety : (n s : Nat) → Set.{0} (NLA.RA20.Mat n) :=
+fun (n s : Nat) =>
+  @Set.ofPred.{0} (NLA.RA20.Mat n) fun (X : NLA.RA20.Mat n) =>
+    And (@Matrix.IsSymm.{0, 0} Complex (Fin n) X)
+      (And
+        (@LE.le.{0} Nat instLENat
+          (@Matrix.rank.{0, 0, 0} (Fin n) (Fin n) Complex (Fin.fintype n) Complex.instCommSemiring X)
+          (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+        (∀ (i : Fin n),
+          @LT.lt.{0} Nat instLTNat (@Fin.val n i) s →
+            @Eq.{1} Complex (X i i)
+              (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero))))
+def NLA.RA20.definingIdeal : (n s : Nat) →
+  @Ideal.{0} (NLA.RA20.Poly n)
+    (@AddMonoidAlgebra.semiring.{0, 0} Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)) :=
+fun (n s : Nat) =>
+  @MvPolynomial.vanishingIdeal.{0, 0, 0} Complex Complex Complex.instField Complex.instField
+    (@Algebra.id.{0} Complex (@Semifield.toCommSemiring.{0} Complex (@Field.toSemifield.{0} Complex Complex.instField)))
+    (NLA.RA20.Variables n) (NLA.RA20.coordinateVariety n s)
+def NLA.RA20.reducedCoordinateEquiv : @AlgEquiv.{0, 0, 0} Complex
+  (NLA.RA20.CoordinateRing (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+    (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+  NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+  (@Ideal.Quotient.semiring.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    (@AddMonoidAlgebra.commRing.{0, 0} Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.commRing
+      (@Finsupp.instAddCommMonoid.{0, 0}
+        (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddCommMonoid))
+    (NLA.RA20.definingIdeal (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))
+  (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+    (@AddMonoidAlgebra.commRing.{0, 0} Complex
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.commRing
+      (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        Nat.instAddCommMonoid))
+    NLA.RA20.abcIdeal)
+  (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring
+    (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    (@AddMonoidAlgebra.commRing.{0, 0} Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.commRing
+      (@Finsupp.instAddCommMonoid.{0, 0}
+        (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddCommMonoid))
+    (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+      (@Algebra.id.{0} Complex Complex.instCommSemiring)
+      (@AddCommMonoid.toAddMonoid.{0}
+        (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        (@Finsupp.instAddCommMonoid.{0, 0}
+          (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          Nat.instAddCommMonoid)))
+    (NLA.RA20.definingIdeal (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))
+  (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+    (@AddMonoidAlgebra.commRing.{0, 0} Complex
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.commRing
+      (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        Nat.instAddCommMonoid))
+    (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+      (@Algebra.id.{0} Complex Complex.instCommSemiring)
+      (@AddCommMonoid.toAddMonoid.{0}
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          Nat.instAddCommMonoid)))
+    NLA.RA20.abcIdeal) :=
+@AlgEquiv.trans.{0, 0, 0, 0} Complex
+  (@HasQuotient.Quotient.{0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    (@Ideal.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@Ring.toSemiring.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (@AddMonoidAlgebra.ring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instRing
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))))
+    (@Ideal.instHasQuotient.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@AddMonoidAlgebra.ring.{0, 0} Complex
+        (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        Complex.instRing
+        (@Finsupp.instAddMonoid.{0, 0}
+          (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid)))
+    (NLA.RA20.definingIdeal (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))
+  (@HasQuotient.Quotient.{0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    (@Ideal.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@Ring.toSemiring.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (@AddMonoidAlgebra.ring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instRing
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))))
+    (@Ideal.instHasQuotient.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@AddMonoidAlgebra.ring.{0, 0} Complex
+        (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        Complex.instRing
+        (@Finsupp.instAddMonoid.{0, 0}
+          (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid)))
+    (@RingHom.ker.{0, 0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      NLA.RA20.ABCCoordinateRing
+      (@AlgHom.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+        (@AddMonoidAlgebra.semiring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          NLA.RA20.abcIdeal)
+        (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Algebra.id.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@AddCommMonoid.toAddMonoid.{0}
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid)))
+          NLA.RA20.abcIdeal))
+      (@AddMonoidAlgebra.semiring.{0, 0} Complex
+        (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+        (@Finsupp.instAddMonoid.{0, 0}
+          (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+      (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+        (@AddMonoidAlgebra.commRing.{0, 0} Complex
+          (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.commRing
+          (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            Nat.instAddCommMonoid))
+        NLA.RA20.abcIdeal)
+      (@AlgHom.funLike.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+        (@AddMonoidAlgebra.semiring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          NLA.RA20.abcIdeal)
+        (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Algebra.id.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@AddCommMonoid.toAddMonoid.{0}
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid)))
+          NLA.RA20.abcIdeal))
+      NLA.RA20.reducedCoordinateEquiv._proof_1 NLA.RA20.hollowQuotientMap))
+  NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+  (@Ring.toSemiring.{0}
+    (@HasQuotient.Quotient.{0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@Ideal.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (@Ring.toSemiring.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+          (@AddMonoidAlgebra.ring.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instRing
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddMonoid))))
+      (@Ideal.instHasQuotient.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (@AddMonoidAlgebra.ring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instRing
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid)))
+      (NLA.RA20.definingIdeal (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))
+    (@Ideal.Quotient.ring.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@AddMonoidAlgebra.ring.{0, 0} Complex
+        (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        Complex.instRing
+        (@Finsupp.instAddMonoid.{0, 0}
+          (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+      (NLA.RA20.definingIdeal (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      NLA.RA20.reducedCoordinateEquiv._proof_2))
+  (@Ring.toSemiring.{0}
+    (@HasQuotient.Quotient.{0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@Ideal.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (@Ring.toSemiring.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+          (@AddMonoidAlgebra.ring.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instRing
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddMonoid))))
+      (@Ideal.instHasQuotient.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (@AddMonoidAlgebra.ring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instRing
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid)))
+      (@RingHom.ker.{0, 0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        NLA.RA20.ABCCoordinateRing
+        (@AlgHom.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+          NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+          (@AddMonoidAlgebra.semiring.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+          (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+            (@AddMonoidAlgebra.commRing.{0, 0} Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.commRing
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid))
+            NLA.RA20.abcIdeal)
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+          (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+            (@AddMonoidAlgebra.commRing.{0, 0} Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.commRing
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid))
+            (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Algebra.id.{0} Complex Complex.instCommSemiring)
+              (@AddCommMonoid.toAddMonoid.{0}
+                (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                  (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  Nat Nat.instAddCommMonoid)))
+            NLA.RA20.abcIdeal))
+        (@AddMonoidAlgebra.semiring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          NLA.RA20.abcIdeal)
+        (@AlgHom.funLike.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+          NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+          (@AddMonoidAlgebra.semiring.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+          (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+            (@AddMonoidAlgebra.commRing.{0, 0} Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.commRing
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid))
+            NLA.RA20.abcIdeal)
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+          (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+            (@AddMonoidAlgebra.commRing.{0, 0} Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.commRing
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid))
+            (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Algebra.id.{0} Complex Complex.instCommSemiring)
+              (@AddCommMonoid.toAddMonoid.{0}
+                (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                  (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  Nat Nat.instAddCommMonoid)))
+            NLA.RA20.abcIdeal))
+        NLA.RA20.reducedCoordinateEquiv._proof_1 NLA.RA20.hollowQuotientMap))
+    (@Ideal.Quotient.ring.{0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      (@AddMonoidAlgebra.ring.{0, 0} Complex
+        (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        Complex.instRing
+        (@Finsupp.instAddMonoid.{0, 0}
+          (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+      (@RingHom.ker.{0, 0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        NLA.RA20.ABCCoordinateRing
+        (@AlgHom.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+          NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+          (@AddMonoidAlgebra.semiring.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+          (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+            (@AddMonoidAlgebra.commRing.{0, 0} Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.commRing
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid))
+            NLA.RA20.abcIdeal)
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+          (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+            (@AddMonoidAlgebra.commRing.{0, 0} Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.commRing
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid))
+            (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Algebra.id.{0} Complex Complex.instCommSemiring)
+              (@AddCommMonoid.toAddMonoid.{0}
+                (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                  (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  Nat Nat.instAddCommMonoid)))
+            NLA.RA20.abcIdeal))
+        (@AddMonoidAlgebra.semiring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          NLA.RA20.abcIdeal)
+        (@AlgHom.funLike.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+          NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+          (@AddMonoidAlgebra.semiring.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+          (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+            (@AddMonoidAlgebra.commRing.{0, 0} Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.commRing
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid))
+            NLA.RA20.abcIdeal)
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0}
+              (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+          (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+            (@AddMonoidAlgebra.commRing.{0, 0} Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.commRing
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid))
+            (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Algebra.id.{0} Complex Complex.instCommSemiring)
+              (@AddCommMonoid.toAddMonoid.{0}
+                (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                  (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+                  Nat Nat.instAddCommMonoid)))
+            NLA.RA20.abcIdeal))
+        NLA.RA20.reducedCoordinateEquiv._proof_1 NLA.RA20.hollowQuotientMap)
+      NLA.RA20.reducedCoordinateEquiv._proof_3))
+  (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+    (@AddMonoidAlgebra.commRing.{0, 0} Complex
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.commRing
+      (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        Nat.instAddCommMonoid))
+    NLA.RA20.abcIdeal)
+  (@Ideal.Quotient.algebra.{0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    Complex.instCommSemiring
+    (@AddMonoidAlgebra.ring.{0, 0} Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instRing
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        Nat Nat.instAddMonoid))
+    (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+      (@Algebra.id.{0} Complex Complex.instCommSemiring)
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        Nat Nat.instAddMonoid))
+    (NLA.RA20.definingIdeal (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    NLA.RA20.reducedCoordinateEquiv._proof_2)
+  (@Ideal.Quotient.algebra.{0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    Complex.instCommSemiring
+    (@AddMonoidAlgebra.ring.{0, 0} Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instRing
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        Nat Nat.instAddMonoid))
+    (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+      (@Algebra.id.{0} Complex Complex.instCommSemiring)
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        Nat Nat.instAddMonoid))
+    (@RingHom.ker.{0, 0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      NLA.RA20.ABCCoordinateRing
+      (@AlgHom.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+        (@AddMonoidAlgebra.semiring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          NLA.RA20.abcIdeal)
+        (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Algebra.id.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@AddCommMonoid.toAddMonoid.{0}
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid)))
+          NLA.RA20.abcIdeal))
+      (@AddMonoidAlgebra.semiring.{0, 0} Complex
+        (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+        (@Finsupp.instAddMonoid.{0, 0}
+          (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+      (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+        (@AddMonoidAlgebra.commRing.{0, 0} Complex
+          (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.commRing
+          (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            Nat.instAddCommMonoid))
+        NLA.RA20.abcIdeal)
+      (@AlgHom.funLike.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+        (@AddMonoidAlgebra.semiring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          NLA.RA20.abcIdeal)
+        (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Algebra.id.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@AddCommMonoid.toAddMonoid.{0}
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid)))
+          NLA.RA20.abcIdeal))
+      NLA.RA20.reducedCoordinateEquiv._proof_1 NLA.RA20.hollowQuotientMap)
+    NLA.RA20.reducedCoordinateEquiv._proof_3)
+  (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+    (@AddMonoidAlgebra.commRing.{0, 0} Complex
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.commRing
+      (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        Nat.instAddCommMonoid))
+    (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+      (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+      (@Algebra.id.{0} Complex Complex.instCommSemiring)
+      (@AddCommMonoid.toAddMonoid.{0}
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          Nat.instAddCommMonoid)))
+    NLA.RA20.abcIdeal)
+  (@Ideal.quotientEquivAlgOfEq.{0, 0} Complex
+    (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Complex.instCommSemiring
+    (@AddMonoidAlgebra.ring.{0, 0} Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instRing
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        Nat Nat.instAddMonoid))
+    (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+      (@Algebra.id.{0} Complex Complex.instCommSemiring)
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        Nat Nat.instAddMonoid))
+    (NLA.RA20.definingIdeal (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+      (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+    (@RingHom.ker.{0, 0, 0} (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+      NLA.RA20.ABCCoordinateRing
+      (@AlgHom.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+        (@AddMonoidAlgebra.semiring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          NLA.RA20.abcIdeal)
+        (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Algebra.id.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@AddCommMonoid.toAddMonoid.{0}
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid)))
+          NLA.RA20.abcIdeal))
+      (@AddMonoidAlgebra.semiring.{0, 0} Complex
+        (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+        (@Finsupp.instAddMonoid.{0, 0}
+          (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+      (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+        (@AddMonoidAlgebra.commRing.{0, 0} Complex
+          (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.commRing
+          (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            Nat.instAddCommMonoid))
+        NLA.RA20.abcIdeal)
+      (@AlgHom.funLike.{0, 0, 0} Complex (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        NLA.RA20.ABCCoordinateRing Complex.instCommSemiring
+        (@AddMonoidAlgebra.semiring.{0, 0} Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          NLA.RA20.abcIdeal)
+        (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+          (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+          (@Algebra.id.{0} Complex Complex.instCommSemiring)
+          (@Finsupp.instAddMonoid.{0, 0}
+            (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat Nat.instAddMonoid))
+        (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing
+            (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              Nat.instAddCommMonoid))
+          (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+            (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+              (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Algebra.id.{0} Complex Complex.instCommSemiring)
+            (@AddCommMonoid.toAddMonoid.{0}
+              (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+                Nat.instAddCommMonoid)))
+          NLA.RA20.abcIdeal))
+      NLA.RA20.reducedCoordinateEquiv._proof_1 NLA.RA20.hollowQuotientMap)
+    NLA.RA20.reducedCoordinateEquiv._proof_2 NLA.RA20.reducedCoordinateEquiv._proof_3
+    NLA.RA20.reducedCoordinateEquiv._proof_4)
+  (@Ideal.quotientKerAlgEquivOfSurjective.{0, 0, 0} Complex
+    (NLA.RA20.Poly (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) NLA.RA20.ABCCoordinateRing
+    Complex.instCommSemiring
+    (@AddMonoidAlgebra.ring.{0, 0} Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instRing
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        Nat Nat.instAddMonoid))
+    (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+      (@Finsupp.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+        (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+      Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+      (@Algebra.id.{0} Complex Complex.instCommSemiring)
+      (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        Nat Nat.instAddMonoid))
+    (@Ideal.Quotient.semiring.{0} NLA.RA20.ABCPoly
+      (@AddMonoidAlgebra.commRing.{0, 0} Complex
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        Complex.commRing
+        (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          Nat.instAddCommMonoid))
+      NLA.RA20.abcIdeal)
+    (@Ideal.instAlgebraQuotient.{0, 0} Complex Complex.instCommSemiring NLA.RA20.ABCPoly
+      (@AddMonoidAlgebra.commRing.{0, 0} Complex
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        Complex.commRing
+        (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          Nat.instAddCommMonoid))
+      (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+        (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+          (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+        Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+        (@Algebra.id.{0} Complex Complex.instCommSemiring)
+        (@AddCommMonoid.toAddMonoid.{0}
+          (@Finsupp.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+          (@Finsupp.instAddCommMonoid.{0, 0} (Fin (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))) Nat
+            Nat.instAddCommMonoid)))
+      NLA.RA20.abcIdeal)
+    NLA.RA20.hollowQuotientMap NLA.RA20.hollowQuotientMap_surjective)
+theorem NLA.RA20.hollow_variety_semantics_proved : (∀ (a b c : ℂ),
+    (NLA.RA20.hollow a b c).det = 2 * a * b * c ∧ (NLA.RA20.hollow a b c ∈ NLA.RA20.variety 3 3 ↔ a * b * c = 0)) ∧
+  ∀ (X : NLA.RA20.Mat 3),
+    X ∈ NLA.RA20.variety 3 3 ↔ X = NLA.RA20.hollow (X 0 1) (X 0 2) (X 1 2) ∧ X 0 1 * X 0 2 * X 1 2 = 0 :=
+⟨fun a b c => ⟨NLA.RA20.hollow_det a b c, NLA.RA20.hollow_mem_variety_iff a b c⟩, fun X =>
+  {
+    mp := fun h =>
+      have he := NLA.RA20.matrix_eq_hollow_of_mem h;
+      ⟨he, (NLA.RA20.hollow_mem_variety_iff (X 0 1) (X 0 2) (X 1 2)).mp (he ▸ h)⟩,
+    mpr := fun a =>
+      And.casesOn a fun he hz =>
+        Eq.mpr (id (congrArg (fun _a => _a ∈ NLA.RA20.variety 3 3) he))
+          ((NLA.RA20.hollow_mem_variety_iff (X 0 1) (X 0 2) (X 1 2)).mpr hz) }⟩
+theorem NLA.RA20.abcIdeal_vanishing : MvPolynomial.vanishingIdeal ℂ {x | x 0 * x 1 * x 2 = 0} = NLA.RA20.abcIdeal :=
+Eq.mpr
+  (id (congrArg (fun _a => MvPolynomial.vanishingIdeal ℂ _a = NLA.RA20.abcIdeal) (Eq.symm NLA.RA20.abcIdeal_zeroLocus)))
+  (Eq.mpr
+    (id
+      (congrArg (fun _a => _a = NLA.RA20.abcIdeal)
+        (MvPolynomial.vanishingIdeal_zeroLocus_eq_radical NLA.RA20.abcIdeal)))
+    (Ideal.IsRadical.radical NLA.RA20.abcIdeal_isRadical))
+theorem NLA.RA20.definingIdeal_eq_comap_abcIdeal : NLA.RA20.definingIdeal 3 3 =
+  Ideal.comap NLA.RA20.hollowPullback.toRingHom NLA.RA20.abcIdeal :=
+Ideal.ext fun p =>
+  Eq.mpr (id (congrArg (fun _a => p ∈ NLA.RA20.definingIdeal 3 3 ↔ _a) (propext Ideal.mem_comap)))
+    (Eq.mpr
+      (id
+        (congrArg (fun _a => p ∈ NLA.RA20.definingIdeal 3 3 ↔ NLA.RA20.hollowPullback.toRingHom p ∈ _a)
+          (Eq.symm NLA.RA20.abcIdeal_vanishing)))
+      (id
+        {
+          mp := fun hp x hx =>
+            Eq.mpr (id (congrArg (fun _a => _a = 0) (NLA.RA20.aeval_hollowPullback x p)))
+              (hp (NLA.RA20.coordinates (NLA.RA20.hollow (x 0) (x 1) (x 2)))
+                ((NLA.RA20.hollow_mem_variety_iff (x 0) (x 1) (x 2)).mpr hx)),
+          mpr := fun hp x hx =>
+            have h := NLA.RA20.matrix_eq_hollow_of_mem hx;
+            have hz := (NLA.RA20.hollow_variety_semantics_proved.right (NLA.RA20.matrixOfCoordinates x)).mp hx;
+            have he :=
+              have he' := congrArg NLA.RA20.coordinates h;
+              Eq.symm he';
+            have hv := hp ![x (0, 1), x (0, 2), x (1, 2)] hz.right;
+            id (fun hv => Eq.mp (congrArg (fun _a => (MvPolynomial.aeval _a) p = 0) he) hv)
+              (Eq.mp (congrArg (fun _a => _a = 0) (NLA.RA20.aeval_hollowPullback ![x (0, 1), x (0, 2), x (1, 2)] p))
+                hv) }))
+theorem NLA.RA20.reduced_coordinate_ring_proved : ∃ e,
+  ∀ (i j : Fin 3),
+    e ((Ideal.Quotient.mk (NLA.RA20.definingIdeal 3 3)) (MvPolynomial.X (i, j))) =
+      (Ideal.Quotient.mk NLA.RA20.abcIdeal) (NLA.RA20.polynomialHollow i j) :=
+Exists.intro NLA.RA20.reducedCoordinateEquiv NLA.RA20.reducedCoordinateEquiv_mk_X

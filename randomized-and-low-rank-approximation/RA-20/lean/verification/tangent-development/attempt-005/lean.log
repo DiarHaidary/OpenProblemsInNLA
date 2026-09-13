@@ -1,0 +1,2281 @@
+EXACT_FROZEN_TYPE NLA.RA20.algebraic_tangent_space_proved: ∀ (a b c : ℂ),
+  a * b * c = 0 →
+    ∀ (Z : NLA.RA20.Mat 3),
+      NLA.RA20.TangentVector 3 3 (NLA.RA20.hollow a b c) Z ↔
+        Matrix.IsSymm Z ∧ (∀ (i : Fin 3), Z i i = 0) ∧ b * c * Z 0 1 + a * c * Z 0 2 + a * b * Z 1 2 = 0
+ACTUAL_AXIOMS NLA.RA20.algebraic_tangent_space_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.algebraic_tangent_space_proved: [NLA.RA20.Mat,
+ NLA.RA20.TangentVector,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.TangentVector,
+ NLA.RA20.hollow,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.polyDirectional,
+ NLA.RA20.coordinates,
+ NLA.RA20.symmetryPolynomial_mem,
+ NLA.RA20.polyDirectional_X,
+ NLA.RA20.polyDirectional_sub,
+ NLA.RA20.diagonalPolynomial_mem,
+ NLA.RA20.genericPolynomial,
+ NLA.RA20.genericPolynomial_mem,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polyDirectional_mul,
+ NLA.RA20.matrix_eq_hollow_of_symm_diag,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.polyDirectional_hollowPullback,
+ NLA.RA20.polyDirectional_abc]
+ACTUAL_AXIOMS NLA.RA20.Mat: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Mat: []
+ACTUAL_AXIOMS NLA.RA20.TangentVector: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.TangentVector: [NLA.RA20.Mat,
+ NLA.RA20.Mat,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.coordinates]
+ACTUAL_AXIOMS NLA.RA20.Poly: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Poly: [NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.Variables: []
+PROJECT_EDGE NLA.RA20.Variables: []
+ACTUAL_AXIOMS NLA.RA20.definingIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.definingIdeal: [NLA.RA20.Poly, NLA.RA20.Variables, NLA.RA20.Variables, NLA.RA20.coordinateVariety]
+ACTUAL_AXIOMS NLA.RA20.coordinateVariety: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.coordinateVariety: [NLA.RA20.Variables,
+ NLA.RA20.Variables,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.matrixOfCoordinates]
+ACTUAL_AXIOMS NLA.RA20.variety: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.variety: [NLA.RA20.Mat, NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.matrixOfCoordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrixOfCoordinates: [NLA.RA20.Variables, NLA.RA20.Mat, NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.coordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.coordinates: [NLA.RA20.Mat, NLA.RA20.Variables, NLA.RA20.Mat, NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.hollow: [propext, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow: []
+ACTUAL_AXIOMS NLA.RA20.polyDirectional: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional: []
+ACTUAL_AXIOMS NLA.RA20.symmetryPolynomial_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetryPolynomial_mem: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.ABCPoly: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCPoly: []
+ACTUAL_AXIOMS NLA.RA20.hollowPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.polynomialHollow: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polynomialHollow: [NLA.RA20.ABCPoly,
+ NLA.RA20.hollow,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.abcPolynomial._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.abcIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly, NLA.RA20.abcPolynomial]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPolynomial: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly, NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.definingIdeal_eq_comap_abcIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.definingIdeal_eq_comap_abcIdeal: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal_vanishing,
+ NLA.RA20.coordinateVariety,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.aeval_hollowPullback,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow_mem_variety_iff,
+ NLA.RA20.matrixOfCoordinates,
+ NLA.RA20.matrix_eq_hollow_of_mem,
+ NLA.RA20.hollow_variety_semantics_proved]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_vanishing: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_vanishing: [NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal_zeroLocus,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal_isRadical]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_zeroLocus: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_zeroLocus: [NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.ABCPoly]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_isRadical: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_isRadical: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial_squarefree]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial_squarefree: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPolynomial_squarefree: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.aeval_hollowPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.aeval_hollowPullback: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.hollowPullback.eq_1,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.hollowPullback.eq_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback.eq_1: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback]
+ACTUAL_AXIOMS NLA.RA20.hollow_mem_variety_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_mem_variety_iff: [NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.hollow_det,
+ NLA.RA20.hollow_isSymm,
+ NLA.RA20.hollow_rank_le_two]
+ACTUAL_AXIOMS NLA.RA20.hollow_det: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_det: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.hollow_isSymm: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_isSymm: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.hollow_rank_le_two: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_rank_le_two: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.matrix_eq_hollow_of_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrix_eq_hollow_of_mem: [NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.hollow_variety_semantics_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_variety_semantics_proved: [NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow_det,
+ NLA.RA20.hollow_mem_variety_iff,
+ NLA.RA20.matrix_eq_hollow_of_mem]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_X: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_X: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_sub: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_sub: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.diagonalPolynomial_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.diagonalPolynomial_mem: [NLA.RA20.Variables,
+ NLA.RA20.Poly,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Variables,
+ NLA.RA20.Poly,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.genericPolynomial: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.genericPolynomial: [NLA.RA20.Poly, NLA.RA20.Poly, NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.genericPolynomial_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.genericPolynomial_mem: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.genericPolynomial,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.genericPolynomial,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_mul: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_mul: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.matrix_eq_hollow_of_symm_diag: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrix_eq_hollow_of_symm_diag: [NLA.RA20.Mat, NLA.RA20.hollow, NLA.RA20.Mat, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_hollowPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_hollowPullback: [NLA.RA20.Poly,
+ NLA.RA20.polyDirectional,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.polyDirectional,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.polyDirectional_C,
+ NLA.RA20.polyDirectional_add,
+ NLA.RA20.polyDirectional_mul,
+ NLA.RA20.aeval_hollowPullback,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polyDirectional_zero,
+ NLA.RA20.polyDirectional_X]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_C: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_C: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_add: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_add: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_zero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_zero: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_abc: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_abc: [NLA.RA20.polyDirectional,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.polyDirectional,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polyDirectional_mul,
+ NLA.RA20.polyDirectional_X]
+RETAINED_DEPENDENCY NLA.RA20.TangentVector
+RETAINED_DEPENDENCY NLA.RA20.polyDirectional
+RETAINED_DEPENDENCY NLA.RA20.polyDirectional_hollowPullback
+RETAINED_DEPENDENCY NLA.RA20.polyDirectional_mul
+RETAINED_DEPENDENCY NLA.RA20.polyDirectional_sub
+RETAINED_DEPENDENCY NLA.RA20.polyDirectional_X
+RETAINED_DEPENDENCY NLA.RA20.polyDirectional_abc
+RETAINED_DEPENDENCY NLA.RA20.diagonalPolynomial_mem
+RETAINED_DEPENDENCY NLA.RA20.symmetryPolynomial_mem
+RETAINED_DEPENDENCY NLA.RA20.genericPolynomial_mem
+RETAINED_DEPENDENCY NLA.RA20.matrix_eq_hollow_of_symm_diag
+RETAINED_DEPENDENCY NLA.RA20.definingIdeal_eq_comap_abcIdeal
+RETAINED_DEPENDENCY NLA.RA20.abcIdeal_vanishing
+RETAINED_DEPENDENCY NLA.RA20.abcIdeal
+RETAINED_DEPENDENCY NLA.RA20.hollowPullback
+RETAINED_DEPENDENCY NLA.RA20.aeval_hollowPullback
+RETAINED_DEPENDENCY MvPolynomial.pderiv
+RETAINED_DEPENDENCY MvPolynomial.pderiv_mul
+RETAINED_DEPENDENCY MvPolynomial.induction_on
+RETAINED_DEPENDENCY Ideal.mem_span_singleton
+RETAINED_DEPENDENCY MvPolynomial.vanishingIdeal_zeroLocus_eq_radical
+PROJECT_COUNTS declarations=44, required=21
+'NLA.RA20.algebraic_tangent_space_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.polyDirectional_hollowPullback' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.polyDirectional_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.definingIdeal_eq_comap_abcIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.TangentVector : (n s : Nat) → (X Z : NLA.RA20.Mat n) → Prop :=
+fun (n s : Nat) (X Z : NLA.RA20.Mat n) =>
+  ∀ (p : NLA.RA20.Poly n),
+    @Membership.mem.{0, 0} (NLA.RA20.Poly n)
+        (@Ideal.{0} (NLA.RA20.Poly n)
+          (@AddMonoidAlgebra.semiring.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))
+        (@SetLike.instMembership.{0, 0}
+          (@Ideal.{0} (NLA.RA20.Poly n)
+            (@AddMonoidAlgebra.semiring.{0, 0} Complex
+              (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))
+          (NLA.RA20.Poly n)
+          (@Submodule.setLike.{0, 0} (NLA.RA20.Poly n) (NLA.RA20.Poly n)
+            (@AddMonoidAlgebra.semiring.{0, 0} Complex
+              (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid))
+            (@Semiring.toAddCommMonoid.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.semiring.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))
+            (@Semiring.toModule.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.semiring.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))))
+        (NLA.RA20.definingIdeal n s) p →
+      @Eq.{1} Complex
+        (@Finset.sum.{0, 0} (NLA.RA20.Variables n) Complex Complex.instAddCommMonoid
+          (@Finset.univ.{0} (NLA.RA20.Variables n)
+            (@instFintypeProd.{0, 0} (Fin n) (Fin n) (Fin.fintype n) (Fin.fintype n)))
+          fun (ij : NLA.RA20.Variables n) =>
+          @HMul.hMul.{0, 0, 0} Complex Complex Complex (@instHMul.{0} Complex Complex.instMul)
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) Complex
+                (@AddMonoidAlgebra.nonAssocSemiring.{0, 0} Complex
+                  (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                  (@Finsupp.instAddZeroClass.{0, 0} (NLA.RA20.Variables n) Nat
+                    (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+                (@Semiring.toNonAssocSemiring.{0} Complex
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+              (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+              (fun (x : @MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) => Complex)
+              (@RingHom.instFunLike.{0, 0}
+                (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) Complex
+                (@AddMonoidAlgebra.nonAssocSemiring.{0, 0} Complex
+                  (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                  (@Finsupp.instAddZeroClass.{0, 0} (NLA.RA20.Variables n) Nat
+                    (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+                (@Semiring.toNonAssocSemiring.{0} Complex
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+              (@MvPolynomial.eval.{0, 0} Complex (NLA.RA20.Variables n) Complex.instCommSemiring
+                (@NLA.RA20.coordinates n X))
+              (@DFunLike.coe.{1, 1, 1}
+                (@Derivation.{0, 0, 0} Complex
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                  Complex.instCommSemiring
+                  (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instCommSemiring
+                    (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+                  (@AddMonoidAlgebra.instAddCommMonoid.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))
+                  (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Algebra.id.{0} Complex Complex.instCommSemiring)
+                    (@AddCommMonoid.toAddMonoid.{0}
+                      (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                      (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid)))
+                  (@Semiring.toModule.{0} (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0}
+                      (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                      (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+                        (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                        Complex.instCommSemiring
+                        (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))))
+                  (@AddMonoidAlgebra.instModule.{0, 0, 0} Complex Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Semiring.toModule.{0} Complex (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))))
+                (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                (fun (x : @MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) =>
+                  @MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                (@Derivation.instFunLike.{0, 0, 0} Complex
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                  Complex.instCommSemiring
+                  (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instCommSemiring
+                    (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+                  (@AddMonoidAlgebra.instAddCommMonoid.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))
+                  (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Algebra.id.{0} Complex Complex.instCommSemiring)
+                    (@AddCommMonoid.toAddMonoid.{0}
+                      (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                      (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid)))
+                  (@Semiring.toModule.{0} (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0}
+                      (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                      (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+                        (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                        Complex.instCommSemiring
+                        (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))))
+                  (@AddMonoidAlgebra.instModule.{0, 0, 0} Complex Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Semiring.toModule.{0} Complex (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))))
+                (@MvPolynomial.pderiv.{0, 0} Complex (NLA.RA20.Variables n) Complex.instCommSemiring ij) p))
+            (@NLA.RA20.coordinates n Z ij))
+        (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero))
+def NLA.RA20.polyDirectional.{u_1} : {σ : Type u_1} →
+  [Fintype.{u_1} σ] → (x z : σ → Complex) → (p : @MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring) → Complex :=
+fun {σ : Type u_1} [inst : Fintype.{u_1} σ] (x z : σ → Complex)
+    (p : @MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring) =>
+  @Finset.sum.{u_1, 0} σ Complex Complex.instAddCommMonoid (@Finset.univ.{u_1} σ inst) fun (i : σ) =>
+    @HMul.hMul.{0, 0, 0} Complex Complex Complex (@instHMul.{0} Complex Complex.instMul)
+      (@DFunLike.coe.{u_1 + 1, u_1 + 1, 1}
+        (@RingHom.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring) Complex
+          (@AddMonoidAlgebra.nonAssocSemiring.{0, u_1} Complex
+            (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddZeroClass.{u_1, 0} σ Nat (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+          (@Semiring.toNonAssocSemiring.{0} Complex (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+        (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+        (fun (x : @MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring) => Complex)
+        (@RingHom.instFunLike.{u_1, 0} (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring) Complex
+          (@AddMonoidAlgebra.nonAssocSemiring.{0, u_1} Complex
+            (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddZeroClass.{u_1, 0} σ Nat (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+          (@Semiring.toNonAssocSemiring.{0} Complex (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+        (@MvPolynomial.eval.{0, u_1} Complex σ Complex.instCommSemiring x)
+        (@DFunLike.coe.{max (u_1 + 1) 1, max (u_1 + 1) 1, max (u_1 + 1) 1}
+          (@Derivation.{0, u_1, u_1} Complex (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+            (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring) Complex.instCommSemiring
+            (@AddMonoidAlgebra.commSemiring.{0, u_1} Complex
+              (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass)) Complex.instCommSemiring
+              (@Finsupp.instAddCommMonoid.{u_1, 0} σ Nat Nat.instAddCommMonoid))
+            (@AddMonoidAlgebra.instAddCommMonoid.{0, u_1} Complex
+              (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))
+            (@AddMonoidAlgebra.algebra.{0, 0, u_1} Complex Complex
+              (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass)) Complex.instCommSemiring
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Algebra.id.{0} Complex Complex.instCommSemiring)
+              (@AddCommMonoid.toAddMonoid.{u_1}
+                (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@Finsupp.instAddCommMonoid.{u_1, 0} σ Nat Nat.instAddCommMonoid)))
+            (@Semiring.toModule.{u_1} (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+              (@CommSemiring.toSemiring.{u_1} (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+                (@AddMonoidAlgebra.commSemiring.{0, u_1} Complex
+                  (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass)) Complex.instCommSemiring
+                  (@Finsupp.instAddCommMonoid.{u_1, 0} σ Nat Nat.instAddCommMonoid))))
+            (@AddMonoidAlgebra.instModule.{0, 0, u_1} Complex Complex
+              (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Semiring.toModule.{0} Complex (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))))
+          (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+          (fun (x : @MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring) =>
+            @MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+          (@Derivation.instFunLike.{0, u_1, u_1} Complex (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+            (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring) Complex.instCommSemiring
+            (@AddMonoidAlgebra.commSemiring.{0, u_1} Complex
+              (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass)) Complex.instCommSemiring
+              (@Finsupp.instAddCommMonoid.{u_1, 0} σ Nat Nat.instAddCommMonoid))
+            (@AddMonoidAlgebra.instAddCommMonoid.{0, u_1} Complex
+              (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))
+            (@AddMonoidAlgebra.algebra.{0, 0, u_1} Complex Complex
+              (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass)) Complex.instCommSemiring
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Algebra.id.{0} Complex Complex.instCommSemiring)
+              (@AddCommMonoid.toAddMonoid.{u_1}
+                (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@Finsupp.instAddCommMonoid.{u_1, 0} σ Nat Nat.instAddCommMonoid)))
+            (@Semiring.toModule.{u_1} (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+              (@CommSemiring.toSemiring.{u_1} (@MvPolynomial.{u_1, 0} σ Complex Complex.instCommSemiring)
+                (@AddMonoidAlgebra.commSemiring.{0, u_1} Complex
+                  (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass)) Complex.instCommSemiring
+                  (@Finsupp.instAddCommMonoid.{u_1, 0} σ Nat Nat.instAddCommMonoid))))
+            (@AddMonoidAlgebra.instModule.{0, 0, u_1} Complex Complex
+              (@Finsupp.{u_1, 0} σ Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Semiring.toModule.{0} Complex (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))))
+          (@MvPolynomial.pderiv.{0, u_1} Complex σ Complex.instCommSemiring i) p))
+      (z i)
+theorem NLA.RA20.polyDirectional_hollowPullback : ∀ (a b c da db dc : ℂ) (p : NLA.RA20.Poly 3),
+  NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc] (NLA.RA20.hollowPullback p) =
+    NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p :=
+fun a b c da db dc p =>
+  MvPolynomial.induction_on p
+    (fun r =>
+      of_eq_true
+        (Eq.trans
+          (congr
+            (congrArg Eq
+              (Eq.trans
+                (congrArg (NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc])
+                  (MvPolynomial.algHom_C (MvPolynomial.bind₁ fun ij => NLA.RA20.polynomialHollow ij.1 ij.2) r))
+                (NLA.RA20.polyDirectional_C ![a, b, c] ![da, db, dc] r)))
+            (NLA.RA20.polyDirectional_C (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+              (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) r))
+          (eq_self 0)))
+    (fun p q hp hq =>
+      of_eq_true
+        (Eq.trans
+          (congr
+            (congrArg Eq
+              (Eq.trans
+                (Eq.trans
+                  (congrArg (NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]) (map_add NLA.RA20.hollowPullback p q))
+                  (NLA.RA20.polyDirectional_add ![a, b, c] ![da, db, dc] (NLA.RA20.hollowPullback p)
+                    (NLA.RA20.hollowPullback q)))
+                (congr (congrArg HAdd.hAdd hp) hq)))
+            (NLA.RA20.polyDirectional_add (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+              (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p q))
+          (eq_self
+            (NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p +
+              NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) q))))
+    fun p ij hp =>
+    Eq.mpr
+      (id
+        (congrArg
+          (fun _a =>
+            NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc] _a =
+              NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) (p * MvPolynomial.X ij))
+          (map_mul NLA.RA20.hollowPullback p (MvPolynomial.X ij))))
+      (Eq.mpr
+        (id
+          (congrArg
+            (fun _a =>
+              _a =
+                NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) (p * MvPolynomial.X ij))
+            (NLA.RA20.polyDirectional_mul ![a, b, c] ![da, db, dc] (NLA.RA20.hollowPullback p)
+              (NLA.RA20.hollowPullback (MvPolynomial.X ij)))))
+        (Eq.mpr
+          (id
+            (congrArg
+              (fun _a =>
+                NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc] (NLA.RA20.hollowPullback p) *
+                      (MvPolynomial.eval ![a, b, c]) (NLA.RA20.hollowPullback (MvPolynomial.X ij)) +
+                    (MvPolynomial.eval ![a, b, c]) (NLA.RA20.hollowPullback p) *
+                      NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc] (NLA.RA20.hollowPullback (MvPolynomial.X ij)) =
+                  _a)
+              (NLA.RA20.polyDirectional_mul (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p (MvPolynomial.X ij))))
+          (Eq.mpr
+            (id
+              (congrArg
+                (fun _a =>
+                  _a * (MvPolynomial.eval ![a, b, c]) (NLA.RA20.hollowPullback (MvPolynomial.X ij)) +
+                      (MvPolynomial.eval ![a, b, c]) (NLA.RA20.hollowPullback p) *
+                        NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                          (NLA.RA20.hollowPullback (MvPolynomial.X ij)) =
+                    NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                          (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                        (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) (MvPolynomial.X ij) +
+                      (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                        NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                          (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) (MvPolynomial.X ij))
+                hp))
+            (have he := NLA.RA20.aeval_hollowPullback ![a, b, c] p;
+            Eq.mpr
+              (id
+                (congrArg
+                  (fun _a =>
+                    NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                            (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                          (MvPolynomial.eval ![a, b, c]) (NLA.RA20.hollowPullback (MvPolynomial.X ij)) +
+                        _a *
+                          NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                            (NLA.RA20.hollowPullback (MvPolynomial.X ij)) =
+                      NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                            (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                          (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) (MvPolynomial.X ij) +
+                        (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                          NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                            (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) (MvPolynomial.X ij))
+                  he))
+              (Prod.casesOn ij fun i j =>
+                List.Mem.casesOn (motive := fun a_1 x =>
+                  List.finRange 3 = a_1 →
+                    Fintype.complete i ≍ x →
+                      NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                              (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                            (MvPolynomial.eval ![a, b, c]) (NLA.RA20.hollowPullback (MvPolynomial.X (i, j))) +
+                          (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                            NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                              (NLA.RA20.hollowPullback (MvPolynomial.X (i, j))) =
+                        NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                              (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                            (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) (MvPolynomial.X (i, j)) +
+                          (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                            NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                              (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) (MvPolynomial.X (i, j)))
+                  (Fintype.complete i)
+                  (fun as h =>
+                    List.cons.noConfusion h fun head_eq =>
+                      Eq.ndrec (motive := fun i =>
+                        ∀ (this : i ∈ Fintype.elems),
+                          (fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                                ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ []) ≍
+                              as →
+                            this ≍ List.Mem.head as →
+                              NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                    (MvPolynomial.eval ![a, b, c]) (NLA.RA20.hollowPullback (MvPolynomial.X (i, j))) +
+                                  (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                    NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                      (NLA.RA20.hollowPullback (MvPolynomial.X (i, j))) =
+                                NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                    (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                      (MvPolynomial.X (i, j)) +
+                                  (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                    NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) (MvPolynomial.X (i, j)))
+                        (fun this tail_eq =>
+                          Eq.ndrec (motive := fun as =>
+                            this ≍ List.Mem.head as →
+                              NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                    (MvPolynomial.eval ![a, b, c])
+                                      (NLA.RA20.hollowPullback
+                                        (MvPolynomial.X
+                                          ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j))) +
+                                  (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                    NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                      (NLA.RA20.hollowPullback
+                                        (MvPolynomial.X
+                                          ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j))) =
+                                NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                    (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                      (MvPolynomial.X
+                                        ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j)) +
+                                  (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                    NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                      (MvPolynomial.X
+                                        ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j)))
+                            (fun h =>
+                              List.Mem.casesOn (motive := fun a_1 x =>
+                                List.finRange 3 = a_1 →
+                                  Fintype.complete j ≍ x →
+                                    NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                            (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                          (MvPolynomial.eval ![a, b, c])
+                                            (NLA.RA20.hollowPullback
+                                              (MvPolynomial.X
+                                                ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j))) +
+                                        (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                          NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                            (NLA.RA20.hollowPullback
+                                              (MvPolynomial.X
+                                                ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j))) =
+                                      NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                            (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                          (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                            (MvPolynomial.X
+                                              ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j)) +
+                                        (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                          NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                            (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                            (MvPolynomial.X
+                                              ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j)))
+                                (Fintype.complete j)
+                                (fun as h =>
+                                  List.cons.noConfusion h fun head_eq =>
+                                    Eq.ndrec (motive := fun j =>
+                                      ∀ (this : j ∈ Fintype.elems),
+                                        (fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                                              ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ []) ≍
+                                            as →
+                                          this ≍ List.Mem.head as →
+                                            NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                  (MvPolynomial.eval ![a, b, c])
+                                                    (NLA.RA20.hollowPullback
+                                                      (MvPolynomial.X
+                                                        ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                          j))) +
+                                                (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                                  NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                    (NLA.RA20.hollowPullback
+                                                      (MvPolynomial.X
+                                                        ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                          j))) =
+                                              NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                  (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                    (MvPolynomial.X
+                                                      ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                        j)) +
+                                                (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                                  NLA.RA20.polyDirectional
+                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                    (MvPolynomial.X
+                                                      ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                        j)))
+                                      (fun this tail_eq =>
+                                        Eq.ndrec (motive := fun as =>
+                                          this ≍ List.Mem.head as →
+                                            NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                  (MvPolynomial.eval ![a, b, c])
+                                                    (NLA.RA20.hollowPullback
+                                                      (MvPolynomial.X
+                                                        ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                          (fun i => i)
+                                                            ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩))) +
+                                                (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                                  NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                    (NLA.RA20.hollowPullback
+                                                      (MvPolynomial.X
+                                                        ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                          (fun i => i)
+                                                            ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩))) =
+                                              NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                  (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                    (MvPolynomial.X
+                                                      ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                        (fun i => i)
+                                                          ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩)) +
+                                                (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                                  NLA.RA20.polyDirectional
+                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                    (MvPolynomial.X
+                                                      ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                        (fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩)))
+                                          (fun h =>
+                                            of_eq_true
+                                              (Eq.trans
+                                                (congr
+                                                  (congrArg Eq
+                                                    (Eq.trans
+                                                      (congr
+                                                        (congrArg HAdd.hAdd
+                                                          (Eq.trans
+                                                            (congrArg
+                                                              (HMul.hMul
+                                                                (NLA.RA20.polyDirectional
+                                                                  (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                                                                  (NLA.RA20.coordinates
+                                                                    !![0, da, db; da, 0, dc; db, dc, 0])
+                                                                  p))
+                                                              (Eq.trans
+                                                                (congrArg (⇑(MvPolynomial.eval ![a, b, c]))
+                                                                  (Eq.trans
+                                                                    (congrFun'
+                                                                      (congrArg DFunLike.coe
+                                                                        (congrArg MvPolynomial.aeval
+                                                                          (funext fun ij =>
+                                                                            Eq.trans
+                                                                              (Matrix.cons_val'
+                                                                                ![0, MvPolynomial.X 0, MvPolynomial.X 1]
+                                                                                ![![MvPolynomial.X 0, 0,
+                                                                                    MvPolynomial.X 2],
+                                                                                  ![MvPolynomial.X 1, MvPolynomial.X 2,
+                                                                                    ⋯]]
+                                                                                ij.1 ij.2)
+                                                                              (congrFun'
+                                                                                (congrArg
+                                                                                  (Matrix.vecCons
+                                                                                    (![0, MvPolynomial.X 0,
+                                                                                        MvPolynomial.X 1]
+                                                                                      ij.2))
+                                                                                  (funext fun i =>
+                                                                                    Eq.trans
+                                                                                      (Matrix.cons_val' ⋯ ⋯ i ij.2)
+                                                                                      (congrFun' ⋯ i)))
+                                                                                ij.1))))
+                                                                      (MvPolynomial.X (0, 0)))
+                                                                    (MvPolynomial.bind₁_X_right
+                                                                      (fun ij =>
+                                                                        Matrix.vecCons
+                                                                          (![0, MvPolynomial.X 0, MvPolynomial.X 1]
+                                                                            ij.2)
+                                                                          (fun i =>
+                                                                            Matrix.vecCons
+                                                                              (![MvPolynomial.X 0, 0, MvPolynomial.X 2]
+                                                                                ij.2)
+                                                                              (fun i =>
+                                                                                ![MvPolynomial.X 1, MvPolynomial.X 2, 0]
+                                                                                  ij.2)
+                                                                              i)
+                                                                          ij.1)
+                                                                      (0, 0))))
+                                                                (map_zero (MvPolynomial.eval ![a, b, c]))))
+                                                            (mul_zero
+                                                              (NLA.RA20.polyDirectional
+                                                                (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                                                                (NLA.RA20.coordinates
+                                                                  !![0, da, db; da, 0, dc; db, dc, 0])
+                                                                p))))
+                                                        (Eq.trans
+                                                          (congrArg
+                                                            (HMul.hMul
+                                                              ((MvPolynomial.eval
+                                                                  (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0]))
+                                                                p))
+                                                            (Eq.trans
+                                                              (congrArg
+                                                                (NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc])
+                                                                (Eq.trans
+                                                                  (congrFun'
+                                                                    (congrArg DFunLike.coe
+                                                                      (congrArg MvPolynomial.aeval
+                                                                        (funext fun ij =>
+                                                                          Eq.trans
+                                                                            (Matrix.cons_val'
+                                                                              ![0, MvPolynomial.X 0, MvPolynomial.X 1]
+                                                                              ![![MvPolynomial.X 0, 0,
+                                                                                  MvPolynomial.X 2],
+                                                                                ![MvPolynomial.X 1, MvPolynomial.X 2,
+                                                                                  0]]
+                                                                              ij.1 ij.2)
+                                                                            (congrFun'
+                                                                              (congrArg
+                                                                                (Matrix.vecCons
+                                                                                  (![0, MvPolynomial.X 0,
+                                                                                      MvPolynomial.X 1]
+                                                                                    ij.2))
+                                                                                (funext fun i =>
+                                                                                  Eq.trans
+                                                                                    (Matrix.cons_val'
+                                                                                      (Matrix.vecCons (MvPolynomial.X 0)
+                                                                                        ⋯)
+                                                                                      ![⋯] i ij.2)
+                                                                                    (congrFun' (congrArg ⋯ ⋯) i)))
+                                                                              ij.1))))
+                                                                    (MvPolynomial.X (0, 0)))
+                                                                  (MvPolynomial.bind₁_X_right
+                                                                    (fun ij =>
+                                                                      Matrix.vecCons
+                                                                        (![0, MvPolynomial.X 0, MvPolynomial.X 1] ij.2)
+                                                                        (fun i =>
+                                                                          Matrix.vecCons
+                                                                            (![MvPolynomial.X 0, 0, MvPolynomial.X 2]
+                                                                              ij.2)
+                                                                            (fun i =>
+                                                                              ![MvPolynomial.X 1, MvPolynomial.X 2, 0]
+                                                                                ij.2)
+                                                                            i)
+                                                                        ij.1)
+                                                                    (0, 0))))
+                                                              (NLA.RA20.polyDirectional_zero ![a, b, c] ![da, db, dc])))
+                                                          (mul_zero
+                                                            ((MvPolynomial.eval
+                                                                (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0]))
+                                                              p))))
+                                                      (add_zero 0)))
+                                                  (Eq.trans
+                                                    (congr
+                                                      (congrArg HAdd.hAdd
+                                                        (Eq.trans
+                                                          (congrArg
+                                                            (HMul.hMul
+                                                              (NLA.RA20.polyDirectional
+                                                                (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                                                                (NLA.RA20.coordinates
+                                                                  !![0, da, db; da, 0, dc; db, dc, 0])
+                                                                p))
+                                                            (Eq.trans (MvPolynomial.eval_X (0, 0))
+                                                              (Eq.trans
+                                                                (Matrix.cons_val' ![0, a, b] ![![a, 0, c], ![b, c, 0]] 0
+                                                                  0)
+                                                                (congrFun'
+                                                                  (congrArg (Matrix.vecCons 0)
+                                                                    (funext fun i =>
+                                                                      Eq.trans
+                                                                        (Matrix.cons_val' ![a, 0, c] ![![b, c, 0]] i 0)
+                                                                        (congrFun'
+                                                                          (congrArg (Matrix.vecCons a)
+                                                                            (funext fun i =>
+                                                                              Eq.trans
+                                                                                (Matrix.cons_val' ![b, c, 0] ![] i 0)
+                                                                                (Matrix.cons_val_fin_one b
+                                                                                  (fun i => ![] i 0) i)))
+                                                                          i)))
+                                                                  0))))
+                                                          (mul_zero
+                                                            (NLA.RA20.polyDirectional
+                                                              (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                                                              (NLA.RA20.coordinates !![0, da, db; da, 0, dc; db, dc, 0])
+                                                              p))))
+                                                      (Eq.trans
+                                                        (congrArg
+                                                          (HMul.hMul
+                                                            ((MvPolynomial.eval
+                                                                (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0]))
+                                                              p))
+                                                          (Eq.trans
+                                                            (NLA.RA20.polyDirectional_X
+                                                              (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                                                              (NLA.RA20.coordinates !![0, da, db; da, 0, dc; db, dc, 0])
+                                                              (0, 0))
+                                                            (Eq.trans
+                                                              (Matrix.cons_val' ![0, da, db]
+                                                                ![![da, 0, dc], ![db, dc, 0]] 0 0)
+                                                              (congrFun'
+                                                                (congrArg (Matrix.vecCons 0)
+                                                                  (funext fun i =>
+                                                                    Eq.trans
+                                                                      (Matrix.cons_val' ![da, 0, dc] ![![db, dc, 0]] i
+                                                                        0)
+                                                                      (congrFun'
+                                                                        (congrArg (Matrix.vecCons da)
+                                                                          (funext fun i =>
+                                                                            Eq.trans
+                                                                              (Matrix.cons_val' ![db, dc, 0] ![] i 0)
+                                                                              (Matrix.cons_val_fin_one db
+                                                                                (fun i => ![] i 0) i)))
+                                                                        i)))
+                                                                0))))
+                                                        (mul_zero
+                                                          ((MvPolynomial.eval
+                                                              (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0]))
+                                                            p))))
+                                                    (add_zero 0)))
+                                                (eq_self 0)))
+                                          (eq_of_heq tail_eq))
+                                      (eq_of_heq head_eq) (Fintype.complete j))
+                                (fun b_1 {as} a_1 h =>
+                                  List.cons.noConfusion h fun head_eq =>
+                                    Eq.ndrec (motive := fun b_2 =>
+                                      (fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ []) ≍
+                                          as →
+                                        Fintype.complete j ≍ List.Mem.tail b_2 a_1 →
+                                          NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                (MvPolynomial.eval ![a, b, c])
+                                                  (NLA.RA20.hollowPullback
+                                                    (MvPolynomial.X
+                                                      ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                        j))) +
+                                              (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                                NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                  (NLA.RA20.hollowPullback
+                                                    (MvPolynomial.X
+                                                      ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                        j))) =
+                                            NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                  (MvPolynomial.X
+                                                    ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                      j)) +
+                                              (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                                NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                  (MvPolynomial.X
+                                                    ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩, j)))
+                                      (fun tail_eq =>
+                                        Eq.ndrec (motive := fun {as} =>
+                                          ∀ (a_2 : List.Mem j as),
+                                            Fintype.complete j ≍
+                                                List.Mem.tail
+                                                  ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩) a_2 →
+                                              NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                    (MvPolynomial.eval ![a, b, c])
+                                                      (NLA.RA20.hollowPullback
+                                                        (MvPolynomial.X
+                                                          ((fun i => i)
+                                                              ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                            j))) +
+                                                  (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                                    NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                      (NLA.RA20.hollowPullback
+                                                        (MvPolynomial.X
+                                                          ((fun i => i)
+                                                              ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                            j))) =
+                                                NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                    (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                      (MvPolynomial.X
+                                                        ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                          j)) +
+                                                  (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c))) p *
+                                                    NLA.RA20.polyDirectional
+                                                      (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                      (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                      (MvPolynomial.X
+                                                        ((fun i => i) ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                          j)))
+                                          (fun a_2 h =>
+                                            List.Mem.casesOn (motive := fun a_3 x =>
+                                              (fun x1 x2 => (fun i => i) x1 :: x2) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                                                    ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ []) =
+                                                  a_3 →
+                                                a_2 ≍ x →
+                                                  NLA.RA20.polyDirectional
+                                                          (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                          (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                        (MvPolynomial.eval ![a, b, c])
+                                                          (NLA.RA20.hollowPullback
+                                                            (MvPolynomial.X
+                                                              ((fun i => i)
+                                                                  ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                j))) +
+                                                      (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                          p *
+                                                        NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                          (NLA.RA20.hollowPullback
+                                                            (MvPolynomial.X
+                                                              ((fun i => i)
+                                                                  ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                j))) =
+                                                    NLA.RA20.polyDirectional
+                                                          (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                          (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                        (MvPolynomial.eval
+                                                            (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                          (MvPolynomial.X
+                                                            ((fun i => i)
+                                                                ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                              j)) +
+                                                      (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                          p *
+                                                        NLA.RA20.polyDirectional
+                                                          (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                          (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                          (MvPolynomial.X
+                                                            ((fun i => i)
+                                                                ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                              j)))
+                                              a_2
+                                              (fun as h =>
+                                                List.cons.noConfusion h fun head_eq =>
+                                                  Eq.ndrec (motive := fun j =>
+                                                    ∀
+                                                      (a_3 :
+                                                        List.Mem j
+                                                          ((fun x1 x2 => (fun i => i) x1 :: x2)
+                                                            ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩
+                                                            ((fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩
+                                                              []))),
+                                                      (fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ [] ≍ as →
+                                                        a_3 ≍ List.Mem.head as →
+                                                          NLA.RA20.polyDirectional
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                                (MvPolynomial.eval ![a, b, c])
+                                                                  (NLA.RA20.hollowPullback
+                                                                    (MvPolynomial.X
+                                                                      ((fun i => i)
+                                                                          ⟨0,
+                                                                            Nat.le_of_lt
+                                                                              (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                        j))) +
+                                                              (MvPolynomial.eval
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                  p *
+                                                                NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                                  (NLA.RA20.hollowPullback
+                                                                    (MvPolynomial.X
+                                                                      ((fun i => i)
+                                                                          ⟨0,
+                                                                            Nat.le_of_lt
+                                                                              (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                        j))) =
+                                                            NLA.RA20.polyDirectional
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                                (MvPolynomial.eval
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                  (MvPolynomial.X
+                                                                    ((fun i => i)
+                                                                        ⟨0,
+                                                                          Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                      j)) +
+                                                              (MvPolynomial.eval
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                  p *
+                                                                NLA.RA20.polyDirectional
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                                  (MvPolynomial.X
+                                                                    ((fun i => i)
+                                                                        ⟨0,
+                                                                          Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                      j)))
+                                                    (fun a_3 tail_eq =>
+                                                      Eq.ndrec (motive := fun as =>
+                                                        a_3 ≍ List.Mem.head as →
+                                                          NLA.RA20.polyDirectional
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                                (MvPolynomial.eval ![a, b, c])
+                                                                  (NLA.RA20.hollowPullback
+                                                                    (MvPolynomial.X
+                                                                      ((fun i => i)
+                                                                          ⟨0,
+                                                                            Nat.le_of_lt
+                                                                              (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                        (fun i => i)
+                                                                          ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩))) +
+                                                              (MvPolynomial.eval
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                  p *
+                                                                NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                                  (NLA.RA20.hollowPullback
+                                                                    (MvPolynomial.X
+                                                                      ((fun i => i)
+                                                                          ⟨0,
+                                                                            Nat.le_of_lt
+                                                                              (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                        (fun i => i)
+                                                                          ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩))) =
+                                                            NLA.RA20.polyDirectional
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                                (MvPolynomial.eval
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                  (MvPolynomial.X
+                                                                    ((fun i => i)
+                                                                        ⟨0,
+                                                                          Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                      (fun i => i) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩)) +
+                                                              (MvPolynomial.eval
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                  p *
+                                                                NLA.RA20.polyDirectional
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                                  (MvPolynomial.X
+                                                                    ((fun i => i)
+                                                                        ⟨0,
+                                                                          Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                      (fun i => i) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩)))
+                                                        (fun h =>
+                                                          of_eq_true
+                                                            (Eq.trans
+                                                              (congr
+                                                                (congrArg Eq
+                                                                  (congr
+                                                                    (congrArg HAdd.hAdd
+                                                                      (congrArg
+                                                                        (HMul.hMul
+                                                                          (NLA.RA20.polyDirectional
+                                                                            (NLA.RA20.coordinates
+                                                                              !![0, a, b; a, 0, c; b, c, 0])
+                                                                            (NLA.RA20.coordinates
+                                                                              !![0, da, db; da, 0, dc; db, dc, 0])
+                                                                            p))
+                                                                        (Eq.trans
+                                                                          (congrArg (⇑(MvPolynomial.eval ![a, b, c]))
+                                                                            (Eq.trans
+                                                                              (congrFun'
+                                                                                (congrArg DFunLike.coe
+                                                                                  (congrArg MvPolynomial.aeval
+                                                                                    (funext fun ij => Eq.trans ⋯ ⋯)))
+                                                                                (MvPolynomial.X (0, 1)))
+                                                                              (MvPolynomial.bind₁_X_right
+                                                                                (fun ij =>
+                                                                                  Matrix.vecCons
+                                                                                    (![0, MvPolynomial.X 0,
+                                                                                        MvPolynomial.X 1]
+                                                                                      ij.2)
+                                                                                    (fun i =>
+                                                                                      Matrix.vecCons
+                                                                                        (Matrix.vecCons
+                                                                                          (MvPolynomial.X 0) ⋯ ij.2)
+                                                                                        (fun i => ⋯) i)
+                                                                                    ij.1)
+                                                                                (0, 1))))
+                                                                          (MvPolynomial.eval_X 0))))
+                                                                    (congrArg
+                                                                      (HMul.hMul
+                                                                        ((MvPolynomial.eval
+                                                                            (NLA.RA20.coordinates
+                                                                              !![0, a, b; a, 0, c; b, c, 0]))
+                                                                          p))
+                                                                      (Eq.trans
+                                                                        (congrArg
+                                                                          (NLA.RA20.polyDirectional ![a, b, c]
+                                                                            ![da, db, dc])
+                                                                          (Eq.trans
+                                                                            (congrFun'
+                                                                              (congrArg DFunLike.coe
+                                                                                (congrArg MvPolynomial.aeval
+                                                                                  (funext fun ij =>
+                                                                                    Eq.trans
+                                                                                      (Matrix.cons_val' ⋯ ⋯ ij.1 ij.2)
+                                                                                      (congrFun' ⋯ ij.1))))
+                                                                              (MvPolynomial.X (0, 1)))
+                                                                            (MvPolynomial.bind₁_X_right
+                                                                              (fun ij =>
+                                                                                Matrix.vecCons
+                                                                                  (![0, MvPolynomial.X 0,
+                                                                                      MvPolynomial.X 1]
+                                                                                    ij.2)
+                                                                                  (fun i =>
+                                                                                    Matrix.vecCons
+                                                                                      (![MvPolynomial.X 0, ⋯,
+                                                                                          MvPolynomial.X 2]
+                                                                                        ij.2)
+                                                                                      (fun i =>
+                                                                                        Matrix.vecCons
+                                                                                          (MvPolynomial.X 1) ⋯ ij.2)
+                                                                                      i)
+                                                                                  ij.1)
+                                                                              (0, 1))))
+                                                                        (NLA.RA20.polyDirectional_X ![a, b, c]
+                                                                          ![da, db, dc] 0)))))
+                                                                (congr
+                                                                  (congrArg HAdd.hAdd
+                                                                    (congrArg
+                                                                      (HMul.hMul
+                                                                        (NLA.RA20.polyDirectional
+                                                                          (NLA.RA20.coordinates
+                                                                            !![0, a, b; a, 0, c; b, c, 0])
+                                                                          (NLA.RA20.coordinates
+                                                                            !![0, da, db; da, 0, dc; db, dc, 0])
+                                                                          p))
+                                                                      (Eq.trans (MvPolynomial.eval_X (0, 1))
+                                                                        (Eq.trans
+                                                                          (Matrix.cons_val' ![0, a, b]
+                                                                            ![![a, 0, c], ![b, c, 0]] 0 1)
+                                                                          (congrFun'
+                                                                            (congrArg (Matrix.vecCons a)
+                                                                              (funext fun i =>
+                                                                                Eq.trans
+                                                                                  (Matrix.cons_val' ![a, 0, c]
+                                                                                    ![![b, c, 0]] i 1)
+                                                                                  (congrFun'
+                                                                                    (congrArg (Matrix.vecCons 0)
+                                                                                      (funext ⋯))
+                                                                                    i)))
+                                                                            0)))))
+                                                                  (congrArg
+                                                                    (HMul.hMul
+                                                                      ((MvPolynomial.eval
+                                                                          (NLA.RA20.coordinates
+                                                                            !![0, a, b; a, 0, c; b, c, 0]))
+                                                                        p))
+                                                                    (Eq.trans
+                                                                      (NLA.RA20.polyDirectional_X
+                                                                        (NLA.RA20.coordinates
+                                                                          !![0, a, b; a, 0, c; b, c, 0])
+                                                                        (NLA.RA20.coordinates
+                                                                          !![0, da, db; da, 0, dc; db, dc, 0])
+                                                                        (0, 1))
+                                                                      (Eq.trans
+                                                                        (Matrix.cons_val' ![0, da, db]
+                                                                          ![![da, 0, dc], ![db, dc, 0]] 0 1)
+                                                                        (congrFun'
+                                                                          (congrArg (Matrix.vecCons da)
+                                                                            (funext fun i =>
+                                                                              Eq.trans
+                                                                                (Matrix.cons_val' ![da, 0, dc]
+                                                                                  ![![db, dc, 0]] i 1)
+                                                                                (congrFun'
+                                                                                  (congrArg (Matrix.vecCons 0)
+                                                                                    (funext fun i => ⋯))
+                                                                                  i)))
+                                                                          0))))))
+                                                              (eq_self
+                                                                (NLA.RA20.polyDirectional
+                                                                      (NLA.RA20.coordinates
+                                                                        !![0, a, b; a, 0, c; b, c, 0])
+                                                                      (NLA.RA20.coordinates
+                                                                        !![0, da, db; da, 0, dc; db, dc, 0])
+                                                                      p *
+                                                                    a +
+                                                                  (MvPolynomial.eval
+                                                                        (NLA.RA20.coordinates
+                                                                          !![0, a, b; a, 0, c; b, c, 0]))
+                                                                      p *
+                                                                    da))))
+                                                        (eq_of_heq tail_eq))
+                                                    (eq_of_heq head_eq) a_2)
+                                              (fun b_2 {as} a_3 h =>
+                                                List.cons.noConfusion h fun head_eq =>
+                                                  Eq.ndrec (motive := fun b_3 =>
+                                                    (fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ [] ≍ as →
+                                                      a_2 ≍ List.Mem.tail b_3 a_3 →
+                                                        NLA.RA20.polyDirectional
+                                                                (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                              (MvPolynomial.eval ![a, b, c])
+                                                                (NLA.RA20.hollowPullback
+                                                                  (MvPolynomial.X
+                                                                    ((fun i => i)
+                                                                        ⟨0,
+                                                                          Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                      j))) +
+                                                            (MvPolynomial.eval
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                p *
+                                                              NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                                (NLA.RA20.hollowPullback
+                                                                  (MvPolynomial.X
+                                                                    ((fun i => i)
+                                                                        ⟨0,
+                                                                          Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                      j))) =
+                                                          NLA.RA20.polyDirectional
+                                                                (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                (NLA.RA20.coordinates (NLA.RA20.hollow da db dc)) p *
+                                                              (MvPolynomial.eval
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                (MvPolynomial.X
+                                                                  ((fun i => i)
+                                                                      ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                    j)) +
+                                                            (MvPolynomial.eval
+                                                                  (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                p *
+                                                              NLA.RA20.polyDirectional
+                                                                (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                                (MvPolynomial.X
+                                                                  ((fun i => i)
+                                                                      ⟨0, Nat.le_of_lt (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                    j)))
+                                                    (fun tail_eq =>
+                                                      Eq.ndrec (motive := fun {as} =>
+                                                        ∀ (a_4 : List.Mem j as),
+                                                          a_2 ≍
+                                                              List.Mem.tail
+                                                                ((fun i => i) ⟨1, Nat.le_of_lt (Nat.le_refl 3)⟩) a_4 →
+                                                            NLA.RA20.polyDirectional
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                                    p *
+                                                                  (MvPolynomial.eval ![a, b, c])
+                                                                    (NLA.RA20.hollowPullback
+                                                                      (MvPolynomial.X
+                                                                        ((fun i => i)
+                                                                            ⟨0,
+                                                                              Nat.le_of_lt
+                                                                                (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                          j))) +
+                                                                (MvPolynomial.eval
+                                                                      (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                    p *
+                                                                  NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                                    (NLA.RA20.hollowPullback
+                                                                      (MvPolynomial.X
+                                                                        ((fun i => i)
+                                                                            ⟨0,
+                                                                              Nat.le_of_lt
+                                                                                (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                          j))) =
+                                                              NLA.RA20.polyDirectional
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                                    p *
+                                                                  (MvPolynomial.eval
+                                                                      (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                    (MvPolynomial.X
+                                                                      ((fun i => i)
+                                                                          ⟨0,
+                                                                            Nat.le_of_lt
+                                                                              (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                        j)) +
+                                                                (MvPolynomial.eval
+                                                                      (NLA.RA20.coordinates (NLA.RA20.hollow a b c)))
+                                                                    p *
+                                                                  NLA.RA20.polyDirectional
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                    (NLA.RA20.coordinates (NLA.RA20.hollow da db dc))
+                                                                    (MvPolynomial.X
+                                                                      ((fun i => i)
+                                                                          ⟨0,
+                                                                            Nat.le_of_lt
+                                                                              (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                        j)))
+                                                        (fun a_4 h =>
+                                                          List.Mem.casesOn (motive := fun a_5 x =>
+                                                            (fun x1 x2 => (fun i => i) x1 :: x2) ⟨2, Nat.le_refl 3⟩ [] =
+                                                                a_5 →
+                                                              a_4 ≍ x →
+                                                                NLA.RA20.polyDirectional
+                                                                        (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                        (NLA.RA20.coordinates
+                                                                          (NLA.RA20.hollow da db dc))
+                                                                        p *
+                                                                      (MvPolynomial.eval ![a, b, c])
+                                                                        (NLA.RA20.hollowPullback
+                                                                          (MvPolynomial.X
+                                                                            ((fun i => i)
+                                                                                ⟨0,
+                                                                                  Nat.le_of_lt
+                                                                                    (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                              j))) +
+                                                                    (MvPolynomial.eval
+                                                                          (NLA.RA20.coordinates
+                                                                            (NLA.RA20.hollow a b c)))
+                                                                        p *
+                                                                      NLA.RA20.polyDirectional ![a, b, c] ![da, db, dc]
+                                                                        (NLA.RA20.hollowPullback
+                                                                          (MvPolynomial.X
+                                                                            ((fun i => i)
+                                                                                ⟨0,
+                                                                                  Nat.le_of_lt
+                                                                                    (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                              j))) =
+                                                                  NLA.RA20.polyDirectional
+                                                                        (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                        (NLA.RA20.coordinates
+                                                                          (NLA.RA20.hollow da db dc))
+                                                                        p *
+                                                                      (MvPolynomial.eval
+                                                                          (NLA.RA20.coordinates
+                                                                            (NLA.RA20.hollow a b c)))
+                                                                        (MvPolynomial.X
+                                                                          ((fun i => i)
+                                                                              ⟨0,
+                                                                                Nat.le_of_lt
+                                                                                  (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                            j)) +
+                                                                    (MvPolynomial.eval
+                                                                          (NLA.RA20.coordinates
+                                                                            (NLA.RA20.hollow a b c)))
+                                                                        p *
+                                                                      NLA.RA20.polyDirectional
+                                                                        (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                                                                        (NLA.RA20.coordinates
+                                                                          (NLA.RA20.hollow da db dc))
+                                                                        (MvPolynomial.X
+                                                                          ((fun i => i)
+                                                                              ⟨0,
+                                                                                Nat.le_of_lt
+                                                                                  (Nat.le_of_lt (Nat.le_refl 3))⟩,
+                                                                            j)))
+                                                            a_4
+                                                            (fun as h =>
+                                                              List.cons.noConfusion h fun head_eq =>
+                                                                Eq.ndrec (motive := fun j =>
+                                                                  ∀
+                                                                    (a_5 :
+                                                                      List.Mem j
+                                                                        ((fun x1 x2 => (fun i => i) x1 :: x2)
+                                                                          ⟨2, Nat.le_refl 3⟩ [])),
+                                                                    [] ≍ as →
+                                                                      a_5 ≍ List.Mem.head as →
+                                                                        NLA.RA20.polyDirectional
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow a b c))
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow da db dc))
+                                                                                p *
+                                                                              (MvPolynomial.eval ![a, b, c])
+                                                                                (NLA.RA20.hollowPullback
+                                                                                  (MvPolynomial.X
+                                                                                    ((fun i => i)
+                                                                                        ⟨0,
+                                                                                          Nat.le_of_lt
+                                                                                            (Nat.le_of_lt
+                                                                                              (Nat.le_refl 3))⟩,
+                                                                                      j))) +
+                                                                            (MvPolynomial.eval
+                                                                                  (NLA.RA20.coordinates
+                                                                                    (NLA.RA20.hollow a b c)))
+                                                                                p *
+                                                                              NLA.RA20.polyDirectional ![a, b, c]
+                                                                                ![da, db, dc]
+                                                                                (NLA.RA20.hollowPullback
+                                                                                  (MvPolynomial.X
+                                                                                    ((fun i => i)
+                                                                                        ⟨0,
+                                                                                          Nat.le_of_lt
+                                                                                            (Nat.le_of_lt
+                                                                                              (Nat.le_refl 3))⟩,
+                                                                                      j))) =
+                                                                          NLA.RA20.polyDirectional
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow a b c))
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow da db dc))
+                                                                                p *
+                                                                              (MvPolynomial.eval
+                                                                                  (NLA.RA20.coordinates
+                                                                                    (NLA.RA20.hollow a b c)))
+                                                                                (MvPolynomial.X
+                                                                                  ((fun i => i)
+                                                                                      ⟨0,
+                                                                                        Nat.le_of_lt
+                                                                                          (Nat.le_of_lt
+                                                                                            (Nat.le_refl 3))⟩,
+                                                                                    j)) +
+                                                                            (MvPolynomial.eval
+                                                                                  (NLA.RA20.coordinates
+                                                                                    (NLA.RA20.hollow a b c)))
+                                                                                p *
+                                                                              NLA.RA20.polyDirectional
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow a b c))
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow da db dc))
+                                                                                (MvPolynomial.X
+                                                                                  ((fun i => i)
+                                                                                      ⟨0,
+                                                                                        Nat.le_of_lt
+                                                                                          (Nat.le_of_lt
+                                                                                            (Nat.le_refl 3))⟩,
+                                                                                    j)))
+                                                                  (fun a_5 tail_eq =>
+                                                                    Eq.ndrec (motive := fun as =>
+                                                                      a_5 ≍ List.Mem.head as →
+                                                                        NLA.RA20.polyDirectional
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow a b c))
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow da db dc))
+                                                                                p *
+                                                                              (MvPolynomial.eval ![a, b, c])
+                                                                                (NLA.RA20.hollowPullback
+                                                                                  (MvPolynomial.X
+                                                                                    ((fun i => i)
+                                                                                        ⟨0,
+                                                                                          Nat.le_of_lt
+                                                                                            (Nat.le_of_lt
+                                                                                              (Nat.le_refl 3))⟩,
+                                                                                      (fun i => i)
+                                                                                        ⟨2, Nat.le_refl 3⟩))) +
+                                                                            (MvPolynomial.eval
+                                                                                  (NLA.RA20.coordinates
+                                                                                    (NLA.RA20.hollow a b c)))
+                                                                                p *
+                                                                              NLA.RA20.polyDirectional ![a, b, c]
+                                                                                ![da, db, dc]
+                                                                                (NLA.RA20.hollowPullback
+                                                                                  (MvPolynomial.X
+                                                                                    ((fun i => i)
+                                                                                        ⟨0,
+                                                                                          Nat.le_of_lt
+                                                                                            (Nat.le_of_lt
+                                                                                              (Nat.le_refl 3))⟩,
+                                                                                      (fun i => i)
+                                                                                        ⟨2, Nat.le_refl 3⟩))) =
+                                                                          NLA.RA20.polyDirectional
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow a b c))
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow da db dc))
+                                                                                p *
+                                                                              (MvPolynomial.eval
+                                                                                  (NLA.RA20.coordinates
+                                                                                    (NLA.RA20.hollow a b c)))
+                                                                                (MvPolynomial.X
+                                                                                  ((fun i => i)
+                                                                                      ⟨0,
+                                                                                        Nat.le_of_lt
+                                                                                          (Nat.le_of_lt
+                                                                                            (Nat.le_refl 3))⟩,
+                                                                                    (fun i => i) ⟨2, Nat.le_refl 3⟩)) +
+                                                                            (MvPolynomial.eval
+                                                                                  (NLA.RA20.coordinates
+                                                                                    (NLA.RA20.hollow a b c)))
+                                                                                p *
+                                                                              NLA.RA20.polyDirectional
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow a b c))
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow da db dc))
+                                                                                (MvPolynomial.X
+                                                                                  ((fun i => i)
+                                                                                      ⟨0,
+                                                                                        Nat.le_of_lt
+                                                                                          (Nat.le_of_lt
+                                                                                            (Nat.le_refl 3))⟩,
+                                                                                    (fun i => i) ⟨2, Nat.le_refl 3⟩)))
+                                                                      (fun h =>
+                                                                        of_eq_true
+                                                                          (Eq.trans
+                                                                            (congr
+                                                                              (congrArg Eq
+                                                                                (congr
+                                                                                  (congrArg HAdd.hAdd
+                                                                                    (congrArg (HMul.hMul ⋯)
+                                                                                      (Eq.trans ⋯
+                                                                                        (MvPolynomial.eval_X 1))))
+                                                                                  (congrArg (HMul.hMul (⋯ p))
+                                                                                    (Eq.trans
+                                                                                      (congrArg
+                                                                                        (NLA.RA20.polyDirectional
+                                                                                          ![a, b, c] ![da, db, dc])
+                                                                                        ⋯)
+                                                                                      (NLA.RA20.polyDirectional_X
+                                                                                        ![a, b, c] ![da, db, dc] 1)))))
+                                                                              (congr
+                                                                                (congrArg HAdd.hAdd
+                                                                                  (congrArg
+                                                                                    (HMul.hMul
+                                                                                      (NLA.RA20.polyDirectional ⋯ ⋯ p))
+                                                                                    (Eq.trans (MvPolynomial.eval_X ⋯)
+                                                                                      (Eq.trans ⋯ ⋯))))
+                                                                                (congrArg
+                                                                                  (HMul.hMul ((MvPolynomial.eval ⋯) p))
+                                                                                  (Eq.trans
+                                                                                    (NLA.RA20.polyDirectional_X
+                                                                                      (NLA.RA20.coordinates ⋯)
+                                                                                      (NLA.RA20.coordinates ⋯) (0, 2))
+                                                                                    (Eq.trans
+                                                                                      (Matrix.cons_val' ![0, da, db]
+                                                                                        ![![da, 0, dc], ![db, dc, 0]] 0
+                                                                                        2)
+                                                                                      (congrFun' ⋯ 0))))))
+                                                                            (eq_self
+                                                                              (NLA.RA20.polyDirectional
+                                                                                    (NLA.RA20.coordinates (Matrix.of ⋯))
+                                                                                    (NLA.RA20.coordinates (Matrix.of ⋯))
+                                                                                    p *
+                                                                                  b +
+                                                                                (MvPolynomial.eval
+                                                                                      (NLA.RA20.coordinates ⋯))
+                                                                                    p *
+                                                                                  db))))
+                                                                      (eq_of_heq tail_eq))
+                                                                  (eq_of_heq head_eq) a_4)
+                                                            (fun b_3 {as} a_5 h =>
+                                                              List.cons.noConfusion h fun head_eq =>
+                                                                Eq.ndrec (motive := fun b_4 =>
+                                                                  ⋯ →
+                                                                    ⋯ →
+                                                                      NLA.RA20.polyDirectional
+                                                                              (NLA.RA20.coordinates
+                                                                                (NLA.RA20.hollow a b c))
+                                                                              (NLA.RA20.coordinates
+                                                                                (NLA.RA20.hollow da db dc))
+                                                                              p *
+                                                                            (MvPolynomial.eval ![a, b, c])
+                                                                              (NLA.RA20.hollowPullback
+                                                                                (MvPolynomial.X
+                                                                                  ((fun i => i)
+                                                                                      ⟨0,
+                                                                                        Nat.le_of_lt
+                                                                                          (Nat.le_of_lt
+                                                                                            (Nat.le_refl 3))⟩,
+                                                                                    j))) +
+                                                                          (MvPolynomial.eval
+                                                                                (NLA.RA20.coordinates
+                                                                                  (NLA.RA20.hollow a b c)))
+                                                                              p *
+                                                                            NLA.RA20.polyDirectional ![a, b, c]
+                                                                              (Matrix.vecCons da
+                                                                                (Matrix.vecCons db
+                                                                                  (Matrix.vecCons ⋯ ⋯)))
+                                                                              ⋯ =
+                                                                        ⋯)
+                                                                  ⋯ ⋯)
+                                                            ⋯ ⋯)
+                                                        ⋯ ⋯)
+                                                    ⋯)
+                                              ⋯ ⋯)
+                                          ⋯ ⋯)
+                                      ⋯)
+                                ⋯ ⋯)
+                            ⋯)
+                        ⋯ ⋯)
+                  ⋯ ⋯ ⋯)))))
+theorem NLA.RA20.algebraic_tangent_space_proved : ∀ (a b c : ℂ),
+  a * b * c = 0 →
+    ∀ (Z : NLA.RA20.Mat 3),
+      NLA.RA20.TangentVector 3 3 (NLA.RA20.hollow a b c) Z ↔
+        Matrix.IsSymm Z ∧ (∀ (i : Fin 3), Z i i = 0) ∧ b * c * Z 0 1 + a * c * Z 0 2 + a * b * Z 1 2 = 0 :=
+fun a b c h Z =>
+  {
+    mp := fun hZ =>
+      have hz := fun p hp => hZ p hp;
+      ⟨Matrix.IsSymm.ext fun i j =>
+          have ht := hz (MvPolynomial.X (j, i) - MvPolynomial.X (i, j)) (NLA.RA20.symmetryPolynomial_mem i j);
+          sub_eq_zero.mp
+            (Eq.mp
+              (congrArg (fun _a => NLA.RA20.coordinates Z (j, i) - _a = 0)
+                (NLA.RA20.polyDirectional_X (NLA.RA20.coordinates (NLA.RA20.hollow a b c)) (NLA.RA20.coordinates Z)
+                  (i, j)))
+              (Eq.mp
+                (congrArg
+                  (fun _a =>
+                    _a -
+                        NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c)) (NLA.RA20.coordinates Z)
+                          (MvPolynomial.X (i, j)) =
+                      0)
+                  (NLA.RA20.polyDirectional_X (NLA.RA20.coordinates (NLA.RA20.hollow a b c)) (NLA.RA20.coordinates Z)
+                    (j, i)))
+                (Eq.mp
+                  (congrArg (fun _a => _a = 0)
+                    (NLA.RA20.polyDirectional_sub (NLA.RA20.coordinates (NLA.RA20.hollow a b c))
+                      (NLA.RA20.coordinates Z) (MvPolynomial.X (j, i)) (MvPolynomial.X (i, j))))
+                  ht))),
+        ⟨fun i =>
+          have ht := hz (MvPolynomial.X (i, i)) (NLA.RA20.diagonalPolynomial_mem i);
+          Eq.mp
+            (congrArg (fun _a => _a = 0)
+              (NLA.RA20.polyDirectional_X (NLA.RA20.coordinates (NLA.RA20.hollow a b c)) (NLA.RA20.coordinates Z)
+                (i, i)))
+            ht,
+          have ht := hz NLA.RA20.genericPolynomial NLA.RA20.genericPolynomial_mem;
+          Mathlib.Tactic.LinearCombination.eq_of_eq
+            (Eq.mp
+              (congrFun'
+                (congrArg Eq
+                  (Eq.trans
+                    (NLA.RA20.polyDirectional_mul (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                      (NLA.RA20.coordinates Z) (MvPolynomial.X (0, 1) * MvPolynomial.X (0, 2)) (MvPolynomial.X (1, 2)))
+                    (congr
+                      (congrArg HAdd.hAdd
+                        (congr
+                          (congrArg HMul.hMul
+                            (Eq.trans
+                              (NLA.RA20.polyDirectional_mul (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                                (NLA.RA20.coordinates Z) (MvPolynomial.X (0, 1)) (MvPolynomial.X (0, 2)))
+                              (congr
+                                (congrArg HAdd.hAdd
+                                  (congr
+                                    (congrArg HMul.hMul
+                                      (NLA.RA20.polyDirectional_X (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                                        (NLA.RA20.coordinates Z) (0, 1)))
+                                    (Eq.trans (MvPolynomial.eval_X (0, 2))
+                                      (Eq.trans (Matrix.cons_val' ![0, a, b] ![![a, 0, c], ![b, c, 0]] 0 2)
+                                        (congrFun'
+                                          (congrArg (Matrix.vecCons b)
+                                            (funext fun i =>
+                                              Eq.trans (Matrix.cons_val' ![a, 0, c] ![![b, c, 0]] i 2)
+                                                (congrFun'
+                                                  (congrArg (Matrix.vecCons c)
+                                                    (funext fun i =>
+                                                      Eq.trans (Matrix.cons_val' ![b, c, 0] ![] i 2)
+                                                        (Matrix.cons_val_fin_one 0 (fun i => ![] i 2) i)))
+                                                  i)))
+                                          0)))))
+                                (congr
+                                  (congrArg HMul.hMul
+                                    (Eq.trans (MvPolynomial.eval_X (0, 1))
+                                      (Eq.trans (Matrix.cons_val' ![0, a, b] ![![a, 0, c], ![b, c, 0]] 0 1)
+                                        (congrFun'
+                                          (congrArg (Matrix.vecCons a)
+                                            (funext fun i =>
+                                              Eq.trans (Matrix.cons_val' ![a, 0, c] ![![b, c, 0]] i 1)
+                                                (congrFun'
+                                                  (congrArg (Matrix.vecCons 0)
+                                                    (funext fun i =>
+                                                      Eq.trans (Matrix.cons_val' ![b, c, 0] ![] i 1)
+                                                        (Matrix.cons_val_fin_one c (fun i => ![] i 1) i)))
+                                                  i)))
+                                          0))))
+                                  (NLA.RA20.polyDirectional_X (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                                    (NLA.RA20.coordinates Z) (0, 2))))))
+                          (Eq.trans (MvPolynomial.eval_X (1, 2))
+                            (Eq.trans (Matrix.cons_val' ![0, a, b] ![![a, 0, c], ![b, c, 0]] 1 2)
+                              (congrFun'
+                                (congrArg (Matrix.vecCons b)
+                                  (funext fun i =>
+                                    Eq.trans (Matrix.cons_val' ![a, 0, c] ![![b, c, 0]] i 2)
+                                      (congrFun'
+                                        (congrArg (Matrix.vecCons c)
+                                          (funext fun i =>
+                                            Eq.trans (Matrix.cons_val' ![b, c, 0] ![] i 2)
+                                              (Matrix.cons_val_fin_one 0 (fun i => ![] i 2) i)))
+                                        i)))
+                                1)))))
+                      (congr
+                        (congrArg HMul.hMul
+                          (Eq.trans
+                            (map_mul (MvPolynomial.eval (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0]))
+                              (MvPolynomial.X (0, 1)) (MvPolynomial.X (0, 2)))
+                            (congr
+                              (congrArg HMul.hMul
+                                (Eq.trans (MvPolynomial.eval_X (0, 1))
+                                  (Eq.trans (Matrix.cons_val' ![0, a, b] ![![a, 0, c], ![b, c, 0]] 0 1)
+                                    (congrFun'
+                                      (congrArg (Matrix.vecCons a)
+                                        (funext fun i =>
+                                          Eq.trans (Matrix.cons_val' ![a, 0, c] ![![b, c, 0]] i 1)
+                                            (congrFun'
+                                              (congrArg (Matrix.vecCons 0)
+                                                (funext fun i =>
+                                                  Eq.trans (Matrix.cons_val' ![b, c, 0] ![] i 1)
+                                                    (Matrix.cons_val_fin_one c (fun i => ![] i 1) i)))
+                                              i)))
+                                      0))))
+                              (Eq.trans (MvPolynomial.eval_X (0, 2))
+                                (Eq.trans (Matrix.cons_val' ![0, a, b] ![![a, 0, c], ![b, c, 0]] 0 2)
+                                  (congrFun'
+                                    (congrArg (Matrix.vecCons b)
+                                      (funext fun i =>
+                                        Eq.trans (Matrix.cons_val' ![a, 0, c] ![![b, c, 0]] i 2)
+                                          (congrFun'
+                                            (congrArg (Matrix.vecCons c)
+                                              (funext fun i =>
+                                                Eq.trans (Matrix.cons_val' ![b, c, 0] ![] i 2)
+                                                  (Matrix.cons_val_fin_one 0 (fun i => ![] i 2) i)))
+                                            i)))
+                                    0))))))
+                        (NLA.RA20.polyDirectional_X (NLA.RA20.coordinates !![0, a, b; a, 0, c; b, c, 0])
+                          (NLA.RA20.coordinates Z) (1, 2))))))
+                0)
+              ht)
+            (Mathlib.Tactic.LinearCombination.eq_rearrange
+              (Mathlib.Tactic.Ring.of_eq
+                (Mathlib.Tactic.Ring.Common.sub_congr
+                  (Mathlib.Tactic.Ring.Common.add_congr
+                    (Mathlib.Tactic.Ring.Common.add_congr
+                      (Mathlib.Tactic.Ring.Common.add_congr
+                        (Mathlib.Tactic.Ring.Common.mul_congr
+                          (Mathlib.Tactic.Ring.Common.mul_congr
+                            (Mathlib.Tactic.Ring.Common.atom_pf b rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg (fun _a => b ^ Nat.rawCast 1 * Nat.rawCast 1 = b ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (b ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.atom_pf c rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg (fun _a => c ^ Nat.rawCast 1 * Nat.rawCast 1 = c ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (c ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.add_mul
+                              (Mathlib.Tactic.Ring.Common.mul_add
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left b (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_right c (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                        (Eq.refl 1)))))
+                                (Mathlib.Tactic.Ring.Common.mul_zero (b ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                              (Mathlib.Tactic.Ring.Common.zero_mul (c ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                          (Mathlib.Tactic.Ring.Common.atom_pf (Z 0 1) rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1 = Z 0 1 ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left b (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left c (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_right (Z 0 1) (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                        (Eq.refl 1))))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero
+                                (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                                  0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0))))
+                        (Mathlib.Tactic.Ring.Common.mul_congr
+                          (Mathlib.Tactic.Ring.Common.mul_congr
+                            (Mathlib.Tactic.Ring.Common.atom_pf a rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg (fun _a => a ^ Nat.rawCast 1 * Nat.rawCast 1 = a ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.atom_pf c rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg (fun _a => c ^ Nat.rawCast 1 * Nat.rawCast 1 = c ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (c ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.add_mul
+                              (Mathlib.Tactic.Ring.Common.mul_add
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right c (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                        (Eq.refl 1)))))
+                                (Mathlib.Tactic.Ring.Common.mul_zero (a ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                              (Mathlib.Tactic.Ring.Common.zero_mul (c ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                          (Mathlib.Tactic.Ring.Common.atom_pf (Z 0 2) rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1 = Z 0 2 ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left c (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_right (Z 0 2) (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                        (Eq.refl 1))))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero
+                                (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                                  0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0))))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                          (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                          (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                            (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0))))
+                      (Mathlib.Tactic.Ring.Common.mul_congr
+                        (Mathlib.Tactic.Ring.Common.mul_congr
+                          (Mathlib.Tactic.Ring.Common.atom_pf a rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => a ^ Nat.rawCast 1 * Nat.rawCast 1 = a ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.atom_pf b rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => b ^ Nat.rawCast 1 * Nat.rawCast 1 = b ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (b ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right b (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                      (Eq.refl 1)))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero (a ^ Nat.rawCast 1 * Nat.rawCast 1))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul (b ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                        (Mathlib.Tactic.Ring.Common.atom_pf (Z 1 2) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1 = Z 1 2 ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.add_mul
+                          (Mathlib.Tactic.Ring.Common.mul_add
+                            (Mathlib.Tactic.Ring.Common.mul_pf_left b (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right (Z 1 2) (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                      (Eq.refl 1))))))
+                            (Mathlib.Tactic.Ring.Common.mul_zero
+                              (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))
+                          (Mathlib.Tactic.Ring.Common.zero_mul (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0))))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                        (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                          (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))))
+                    (Mathlib.Tactic.Ring.cast_zero (Mathlib.Meta.NormNum.isNat_ofNat ℂ Nat.cast_zero))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                      (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                        (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                          (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))))
+                  (Mathlib.Tactic.Ring.Common.add_congr
+                    (Mathlib.Tactic.Ring.cast_zero (Mathlib.Meta.NormNum.isNat_ofNat ℂ Nat.cast_zero))
+                    (Mathlib.Tactic.Ring.Common.add_congr
+                      (Mathlib.Tactic.Ring.Common.mul_congr
+                        (Mathlib.Tactic.Ring.Common.add_congr
+                          (Mathlib.Tactic.Ring.Common.mul_congr
+                            (Mathlib.Tactic.Ring.Common.atom_pf (Z 0 1) rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg
+                                    (fun _a => Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1 = Z 0 1 ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.atom_pf b rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg (fun _a => b ^ Nat.rawCast 1 * Nat.rawCast 1 = b ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (b ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.add_mul
+                              (Mathlib.Tactic.Ring.Common.mul_add
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right b (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_left (Z 0 1) (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                        (Eq.refl 1)))))
+                                (Mathlib.Tactic.Ring.Common.mul_zero (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (b ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                              (Mathlib.Tactic.Ring.Common.zero_mul (b ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (b ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                          (Mathlib.Tactic.Ring.Common.mul_congr
+                            (Mathlib.Tactic.Ring.Common.atom_pf a rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg (fun _a => a ^ Nat.rawCast 1 * Nat.rawCast 1 = a ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.atom_pf (Z 0 2) rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg
+                                    (fun _a => Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1 = Z 0 2 ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.add_mul
+                              (Mathlib.Tactic.Ring.Common.mul_add
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_right (Z 0 2) (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                        (Eq.refl 1)))))
+                                (Mathlib.Tactic.Ring.Common.mul_zero (a ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                              (Mathlib.Tactic.Ring.Common.zero_mul (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                            (b ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1))
+                            (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                              (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                        (Mathlib.Tactic.Ring.Common.atom_pf c rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => c ^ Nat.rawCast 1 * Nat.rawCast 1 = c ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (c ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.add_mul
+                          (Mathlib.Tactic.Ring.Common.mul_add
+                            (Mathlib.Tactic.Ring.Common.mul_pf_left b (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right c (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left (Z 0 1) (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                      (Eq.refl 1))))))
+                            (Mathlib.Tactic.Ring.Common.mul_zero
+                              (b ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right c (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_left (Z 0 2) (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                        (Eq.refl 1))))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero
+                                (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                                  0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul (c ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                            (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                            (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                              (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                                0)))))
+                      (Mathlib.Tactic.Ring.Common.mul_congr
+                        (Mathlib.Tactic.Ring.Common.mul_congr
+                          (Mathlib.Tactic.Ring.Common.atom_pf a rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => a ^ Nat.rawCast 1 * Nat.rawCast 1 = a ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (a ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.atom_pf b rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => b ^ Nat.rawCast 1 * Nat.rawCast 1 = b ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (b ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right b (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                      (Eq.refl 1)))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero (a ^ Nat.rawCast 1 * Nat.rawCast 1))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul (b ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                        (Mathlib.Tactic.Ring.Common.atom_pf (Z 1 2) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1 = Z 1 2 ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.add_mul
+                          (Mathlib.Tactic.Ring.Common.mul_add
+                            (Mathlib.Tactic.Ring.Common.mul_pf_left b (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left a (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right (Z 1 2) (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1)
+                                      (Eq.refl 1))))))
+                            (Mathlib.Tactic.Ring.Common.mul_zero
+                              (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))
+                          (Mathlib.Tactic.Ring.Common.zero_mul (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0))))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                        (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_gt
+                          (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))))
+                    (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                      (b ^ Nat.rawCast 1 * (c ^ Nat.rawCast 1 * (Z 0 1 ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                        (b ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 1 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                          (c ^ Nat.rawCast 1 * (a ^ Nat.rawCast 1 * (Z 0 2 ^ Nat.rawCast 1 * Nat.rawCast 1)) + 0)))))
+                  (Mathlib.Tactic.Ring.Common.sub_pf
+                    (Mathlib.Tactic.Ring.Common.neg_add
+                      (Mathlib.Tactic.Ring.Common.neg_mul b (Nat.rawCast 1)
+                        (Mathlib.Tactic.Ring.Common.neg_mul c (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.neg_mul (Z 0 1) (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                              (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                (Eq.refl (Int.negOfNat 1)))))))
+                      (Mathlib.Tactic.Ring.Common.neg_add
+                        (Mathlib.Tactic.Ring.Common.neg_mul b (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.neg_mul a (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.neg_mul (Z 1 2) (Nat.rawCast 1)
+                              (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                  (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                  (Eq.refl (Int.negOfNat 1)))))))
+                        (Mathlib.Tactic.Ring.Common.neg_add
+                          (Mathlib.Tactic.Ring.Common.neg_mul c (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.neg_mul a (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.neg_mul (Z 0 2) (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                    (Eq.refl (Int.negOfNat 1)))))))
+                          Mathlib.Tactic.Ring.Common.neg_zero)))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                      (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero b (Nat.rawCast 1)
+                        (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero c (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero (Z 0 1) (Nat.rawCast 1)
+                            (Mathlib.Meta.NormNum.IsInt.to_isNat
+                              (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 1)) (Eq.refl (Int.ofNat 0)))))))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                        (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero b (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero a (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero (Z 1 2) (Nat.rawCast 1)
+                              (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                  (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                  (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 1)) (Eq.refl (Int.ofNat 0)))))))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                          (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero c (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero a (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero (Z 0 2) (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                  (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℂ 1))
+                                    (Mathlib.Meta.NormNum.IsInt.of_raw ℂ (Int.negOfNat 1)) (Eq.refl (Int.ofNat 0)))))))
+                          (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0))))))
+                (Mathlib.Tactic.Ring.cast_zero (Mathlib.Meta.NormNum.isNat_ofNat ℂ Nat.cast_zero))))⟩⟩,
+    mpr := fun a_1 =>
+      And.casesOn a_1 fun hs right =>
+        And.casesOn right fun hd hg p hp =>
+          have he := NLA.RA20.matrix_eq_hollow_of_symm_diag Z hs hd;
+          have hm := Eq.mp (congrArg (fun _a => p ∈ _a) NLA.RA20.definingIdeal_eq_comap_abcIdeal) hp;
+          Exists.casesOn (Ideal.mem_span_singleton.mp hm) fun q hq =>
+            id
+              (Eq.mpr
+                (id
+                  (congrArg
+                    (fun _a =>
+                      NLA.RA20.polyDirectional (NLA.RA20.coordinates (NLA.RA20.hollow a b c)) (NLA.RA20.coordinates _a)
+                          p =
+                        0)
+                    he))
+                (Eq.mpr
+                  (id
+                    (congrArg (fun _a => _a = 0)
+                      (Eq.symm (NLA.RA20.polyDirectional_hollowPullback a b c (Z 0 1) (Z 0 2) (Z 1 2) p))))
+                  (Eq.mpr
+                    (id (congrArg (fun _a => NLA.RA20.polyDirectional ![a, b, c] ![Z 0 1, Z 0 2, Z 1 2] _a = 0) hq))
+                    (Eq.mpr
+                      (id
+                        (congrArg (fun _a => _a = 0)
+                          (NLA.RA20.polyDirectional_mul ![a, b, c] ![Z 0 1, Z 0 2, Z 1 2] NLA.RA20.abcPolynomial q)))
+                      (Eq.mpr
+                        (id
+                          (congrArg
+                            (fun _a =>
+                              _a * (MvPolynomial.eval ![a, b, c]) q +
+                                  (MvPolynomial.eval ![a, b, c]) NLA.RA20.abcPolynomial *
+                                    NLA.RA20.polyDirectional ![a, b, c] ![Z 0 1, Z 0 2, Z 1 2] q =
+                                0)
+                            (NLA.RA20.polyDirectional_abc a b c (Z 0 1) (Z 0 2) (Z 1 2))))
+                        (of_eq_true
+                          (Eq.trans
+                            (congrFun'
+                              (congrArg Eq
+                                (Eq.trans
+                                  (congr
+                                    (congrArg HAdd.hAdd
+                                      (Eq.trans (congrFun' (congrArg HMul.hMul hg) ((MvPolynomial.eval ![a, b, c]) q))
+                                        (zero_mul ((MvPolynomial.eval ![a, b, c]) q))))
+                                    (Eq.trans
+                                      (congrFun'
+                                        (congrArg HMul.hMul
+                                          (Eq.trans
+                                            (map_mul (MvPolynomial.eval ![a, b, c])
+                                              (MvPolynomial.X 0 * MvPolynomial.X 1) (MvPolynomial.X 2))
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg HMul.hMul
+                                                  (Eq.trans
+                                                    (map_mul (MvPolynomial.eval ![a, b, c]) (MvPolynomial.X 0)
+                                                      (MvPolynomial.X 1))
+                                                    (congr (congrArg HMul.hMul (MvPolynomial.eval_X 0))
+                                                      (MvPolynomial.eval_X 1))))
+                                                (MvPolynomial.eval_X 2))
+                                              h)))
+                                        (NLA.RA20.polyDirectional ![a, b, c] ![Z 0 1, Z 0 2, Z 1 2] q))
+                                      (zero_mul (NLA.RA20.polyDirectional ![a, b, c] ![Z 0 1, Z 0 2, Z 1 2] q))))
+                                  (add_zero 0)))
+                              0)
+                            (eq_self 0)))))))) }

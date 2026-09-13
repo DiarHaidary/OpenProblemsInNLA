@@ -1,0 +1,241 @@
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:44:4: error: Tactic `apply` failed: could not unify the conclusion of `@funext`
+  ?f = ?g
+with the goal
+  Complex.addCommGroup = NormedField.toNormedCommRing.toCommRing.toAddCommGroup
+
+Note: The full type of `@funext` is
+  ∀ {α : Sort ?u.64} {β : α → Sort ?u.63} {f g : (x : α) → β x}, (∀ (x : α), f x = g x) → f = g
+
+case e'_8
+E : Type u_1
+inst✝¹ : NormedAddCommGroup E
+inst✝ : NormedSpace ℂ E
+L : E →L[ℂ] ℂ
+a : ℂ
+x : E
+h : HasFDerivAt (fun x => L x - a) L x
+hs : HasFDerivAt ((fun x => L x - a) * fun x => L x - a) ((L x - a) • L + (L x - a) • L) x
+⊢ Complex.addCommGroup = NormedField.toNormedCommRing.toCommRing.toAddCommGroup
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:47:15: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:47:47: warning: `ContinuousLinearMap.add_apply` has been deprecated: Use `add_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.add_apply` to `add_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:48:4: error: No goals to be solved
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:40:64: error: unsolved goals
+case e'_11
+E : Type u_1
+inst✝¹ : NormedAddCommGroup E
+inst✝ : NormedSpace ℂ E
+L : E →L[ℂ] ℂ
+a : ℂ
+x : E
+h : HasFDerivAt (fun x => L x - a) L x
+hs : HasFDerivAt ((fun x => L x - a) * fun x => L x - a) ((L x - a) • L + (L x - a) • L) x
+⊢ (fun y => (L y - a) ^ 2) = (fun x => L x - a) * fun x => L x - a
+
+case e'_12
+E : Type u_1
+inst✝¹ : NormedAddCommGroup E
+inst✝ : NormedSpace ℂ E
+L : E →L[ℂ] ℂ
+a : ℂ
+x : E
+h : HasFDerivAt (fun x => L x - a) L x
+hs : HasFDerivAt ((fun x => L x - a) * fun x => L x - a) ((L x - a) • L + (L x - a) • L) x
+e_8✝ : Complex.addCommGroup = NormedField.toNormedCommRing.toCommRing.toAddCommGroup
+he✝ : Semiring.toModule = (NormedAlgebra.toNormedSpace ℂ).toModule
+⊢ (2 * (L x - a)) • L = (L x - a) • L + (L x - a) • L
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:47:15: warning: This simp argument is unused:
+  ContinuousLinearMap.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ContinuousLinearMap.add_apply, smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:47:47: warning: This simp argument is unused:
+  ContinuousLinearMap.add_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ContinuousLinearMap.smul_apply, smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:47:78: warning: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [ContinuousLinearMap.smul_apply, ContinuousLinearMap.add_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:62:32: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:62:63: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:84:13: warning: `ContinuousLinearMap.sum_apply` has been deprecated: Use `sum_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.sum_apply` to `sum_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:85:4: warning: `ContinuousLinearMap.smul_apply` has been deprecated: Use `smul_apply` instead
+
+Note: The updated constant is in a different namespace. Dot notation may need to be changed (e.g., from `x.smul_apply` to `smul_apply x`).
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:94:2: error: Type mismatch
+  ContinuousLinearMap.proj ij.2 ∘SL ?m.52
+has type
+  ?m.30 →SL[?m.29] ?m.15 ij.2
+but is expected to have type
+  Mat n →L[ℂ] ℂ
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:96:0: error: Not a definitional equality: the left-hand side
+  (matrixEntry n ij) X
+is not definitionally equal to the right-hand side
+  X ij.1 ij.2
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:97:40: error: Type mismatch
+  rfl
+has type
+  ?m.8 = ?m.8
+but is expected to have type
+  (matrixEntry n ij) X = X ij.1 ij.2
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:106:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  (fderiv ℂ (fun y => ∑ j, ((?L j) y - ?a j) ^ 2) ?x) ?z
+in the target expression
+  (fderiv ℂ (fun Y => ∑ ij, ((matrixEntry n ij) Y - coordinates U ij) ^ 2) X) Z = 2 * ∑ i, ∑ j, (X i j - U i j) * Z i j
+
+n : ℕ
+U X Z : Mat n
+he : fullFrobeniusDistance U = fun Y => ∑ ij, ((matrixEntry n ij) Y - coordinates U ij) ^ 2
+⊢ (fderiv ℂ (fun Y => ∑ ij, ((matrixEntry n ij) Y - coordinates U ij) ^ 2) X) Z = 2 * ∑ i, ∑ j, (X i j - U i j) * Z i j
+
+Note: The target expression is not type-correct under the `implicit` transparency level, which may have triggered the failure. This is usually caused by unfolding of semireducible definitions in prior tactic steps. Use `set_option linter.tacticCheckInstances true` to investigate the source of the issue.
+Full error:
+  function expected
+    X i
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:112:57: error: unsolved goals
+U : Mat 3
+hU : Matrix.IsSymm U
+a b c : ℂ
+h10 : U 1 0 = U 0 1
+h20 : U 2 0 = U 0 2
+h21 : U 2 1 = U 1 2
+⊢ -(!![0, a, b; a, 0, c; b, c, 0] 0 0 * U 0 0 * 2) + !![0, a, b; a, 0, c; b, c, 0] 0 0 ^ 2 + U 0 0 ^ 2 -
+                                                    !![0, a, b; a, 0, c; b, c, 0] 0 (Fin.succ 0) * U 0 (Fin.succ 0) *
+                                                      2 +
+                                                  !![0, a, b; a, 0, c; b, c, 0] 0 (Fin.succ 0) ^ 2 +
+                                                U 0 (Fin.succ 0) ^ 2 -
+                                              !![0, a, b; a, 0, c; b, c, 0] 0 (Fin.succ 0).succ *
+                                                  U 0 (Fin.succ 0).succ *
+                                                2 +
+                                            !![0, a, b; a, 0, c; b, c, 0] 0 (Fin.succ 0).succ ^ 2 +
+                                          U 0 (Fin.succ 0).succ ^ 2 -
+                                        !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0) 0 * U (Fin.succ 0) 0 * 2 +
+                                      !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0) 0 ^ 2 +
+                                    U (Fin.succ 0) 0 ^ 2 -
+                                  !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0) (Fin.succ 0) *
+                                      U (Fin.succ 0) (Fin.succ 0) *
+                                    2 +
+                                !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0) (Fin.succ 0) ^ 2 +
+                              U (Fin.succ 0) (Fin.succ 0) ^ 2 -
+                            !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0) (Fin.succ 0).succ *
+                                U (Fin.succ 0) (Fin.succ 0).succ *
+                              2 +
+                          !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0) (Fin.succ 0).succ ^ 2 +
+                        U (Fin.succ 0) (Fin.succ 0).succ ^ 2 -
+                      !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0).succ 0 * U (Fin.succ 0).succ 0 * 2 +
+                    !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0).succ 0 ^ 2 +
+                  U (Fin.succ 0).succ 0 ^ 2 -
+                !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0).succ (Fin.succ 0) * U (Fin.succ 0).succ (Fin.succ 0) * 2 +
+              !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0).succ (Fin.succ 0) ^ 2 +
+            U (Fin.succ 0).succ (Fin.succ 0) ^ 2 -
+          !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0).succ (Fin.succ 0).succ * U (Fin.succ 0).succ (Fin.succ 0).succ *
+            2 +
+        !![0, a, b; a, 0, c; b, c, 0] (Fin.succ 0).succ (Fin.succ 0).succ ^ 2 +
+      U (Fin.succ 0).succ (Fin.succ 0).succ ^ 2 =
+    U 0 0 ^ 2 + U (Fin.succ 0) (Fin.succ 0) ^ 2 + U (Fin.succ 0).succ (Fin.succ 0).succ ^ 2 - a * U 0 1 * 4 +
+                    a ^ 2 * 2 +
+                  U 0 1 ^ 2 * 2 -
+                b * U 0 2 * 4 +
+              b ^ 2 * 2 +
+            U 0 2 ^ 2 * 2 -
+          c * U 1 2 * 4 +
+        c ^ 2 * 2 +
+      U 1 2 ^ 2 * 2
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:116:63: warning: This simp argument is unused:
+  Matrix.cons_val_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fullFrobeniusDistance, hollow, Fin.sum_univ_succ, Matrix.cons_val_succ, Matrix.head_cons,
+    Matrix.cons_val_one, Fin.sum_univ_zero, add_zero, h10, h20, h21]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:117:4: warning: This simp argument is unused:
+  Matrix.cons_val_succ
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fullFrobeniusDistance, hollow, Fin.sum_univ_succ, Matrix.cons_val_zero, Matrix.head_cons,
+    Matrix.cons_val_one, Fin.sum_univ_zero, add_zero, h10, h20, h21]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:117:26: warning: This simp argument is unused:
+  Matrix.head_cons
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fullFrobeniusDistance, hollow, Fin.sum_univ_succ, Matrix.cons_val_zero, Matrix.cons_val_succ,
+    Matrix.cons_val_one, Fin.sum_univ_zero, add_zero, h10, h20, h21]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:117:44: warning: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fullFrobeniusDistance, hollow, Fin.sum_univ_succ, Matrix.cons_val_zero, Matrix.cons_val_succ,
+    Matrix.head_cons, Fin.sum_univ_zero, add_zero, h10, h20, h21]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:118:4: warning: This simp argument is unused:
+  h10
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fullFrobeniusDistance, hollow, Fin.sum_univ_succ, Matrix.cons_val_zero, Matrix.cons_val_succ,
+    Matrix.head_cons, Matrix.cons_val_one, Fin.sum_univ_zero, add_zero, h20, h21]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:118:8: warning: This simp argument is unused:
+  h20
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fullFrobeniusDistance, hollow, Fin.sum_univ_succ, Matrix.cons_val_zero, Matrix.cons_val_succ,
+    Matrix.head_cons, Matrix.cons_val_one, Fin.sum_univ_zero, add_zero, h10, h21]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:118:12: warning: This simp argument is unused:
+  h21
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [fullFrobeniusDistance, hollow, Fin.sum_univ_succ, Matrix.cons_val_zero, Matrix.cons_val_succ,
+    Matrix.head_cons, Matrix.cons_val_one, Fin.sum_univ_zero, add_zero, h10, h20]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:149:32: error: Type mismatch: After simplification, term
+  ht
+ has type
+  h 0 * Pi.single j 1 0 + h 1 * Pi.single j 1 1 = 0
+but is expected to have type
+  h j = 0
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:152:21: error: #assert_trust: 'NLA.RA20.full_frobenius_differential_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:153:21: error: #assert_trust: 'NLA.RA20.hollow_distance_semantics_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Differential.lean:154:21: error: #assert_trust: 'NLA.RA20.component_hessians_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.RA20.full_frobenius_differential_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.RA20.hollow_distance_semantics_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.RA20.component_hessians_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

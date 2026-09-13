@@ -1,0 +1,254 @@
+{
+  "status": "APPROVE independent actual Ubuntu operational verification",
+  "candidate": "43603b173beb294c2588d83f936a8a96246fd5f0",
+  "run": 34743832047,
+  "run_attempt": 1,
+  "RA20_job": 103687982518,
+  "checker_controls_job": 103687982272,
+  "all17_jobs_and_steps_successful": true,
+  "candidate_Git_and_actual_Linux_inputs_bound": 1092,
+  "actual_exports": [
+    "NLA.RA20.hollow_variety_semantics",
+    "NLA.RA20.reduced_coordinate_ring",
+    "NLA.RA20.algebraic_smooth_locus",
+    "NLA.RA20.algebraic_tangent_space",
+    "NLA.RA20.full_frobenius_differential",
+    "NLA.RA20.hollow_distance_semantics",
+    "NLA.RA20.generic_critical_locus",
+    "NLA.RA20.component_hessians",
+    "NLA.RA20.generic_data_intersection",
+    "NLA.RA20.generic_count_three",
+    "NLA.RA20.generic_count_not_four",
+    "NLA.RA20.not_criticalCountConjecture"
+  ],
+  "default_kernel_replay": "accepted",
+  "statement_Comparator": "accepted",
+  "source_kernel_assertions": 61,
+  "actual_printed_standard_three_axiom_occurrences": 57,
+  "distinct_printed_names": 45,
+  "deliberate_Challenge_admission_warnings": 12,
+  "existing_Differential_style_warnings": [
+    "NLA/RA20/Differential.lean:103:2: Try this: ",
+    "NLA/RA20/Differential.lean:105:2: Try this: "
+  ],
+  "actual_Challenge_graph_jobs": 3202,
+  "actual_Solution_graph_jobs": 3494,
+  "actual_main_command": "$ systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-3sqo8g83/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json",
+  "fresh_project": "/home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-3sqo8g83/project",
+  "actual_tool_receipt": {
+    "source_lock_sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+    "forsythe_commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+    "ci_sandbox_probe_sha256": "31057195baf238807cacbb4126c5b07f02cec55a4e4437de5f3a755b3fada803",
+    "lean_toolchain": "leanprover/lean4:v4.33.1",
+    "lean_prefix": "/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1",
+    "lean_version": "Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+    "go_version": "go version go1.27.1 linux/amd64",
+    "platform": "Linux-6.17.0-1022-azure-x86_64-with-glibc2.39",
+    "executables": {
+      ".tools/comparator/.lake/build/bin/comparator": "189e88f1a3cb68130b581905f7a5d3bde47eb0578904c0ca6fb235a53d0e8bdc",
+      ".tools/lean4export/.lake/build/bin/lean4export": "46f6a14f0f4a364d7698229130d103b67855be42f96cc5ef93929288072f1fa1",
+      ".tools/bin/landrun": "6531f6c9bc99313170e29c4c65bf09a414741093c587389315eb81a0a31e45d7"
+    },
+    "env_sha256": "7554076d35dcb2dc98bdc8f9adfd3a6a65b08b89c05695efe9e194df542e149a"
+  },
+  "all58_checker_sources_and_derived_probe_bound": true,
+  "actual_controls": {
+    "standalone-checker-controls": {
+      "sandbox_modes": 2,
+      "nonroot_UIDs": [
+        1001,
+        1001
+      ],
+      "sandbox_option_rejections": 4,
+      "actual_default_kernel_fixtures": 3,
+      "actual_comparator_fixtures": 5,
+      "forbidden_axiom_rejections": 2,
+      "nested_namespace_denial_stage": "bwrap executable ran; UID-map setup was denied before the inner write. No completed nested-write syscall is claimed."
+    },
+    "RA20-preproof-controls": {
+      "sandbox_modes": 2,
+      "nonroot_UIDs": [
+        1001,
+        1001
+      ],
+      "sandbox_option_rejections": 4,
+      "actual_default_kernel_fixtures": 3,
+      "actual_comparator_fixtures": 5,
+      "forbidden_axiom_rejections": 2,
+      "nested_namespace_denial_stage": "bwrap executable ran; UID-map setup was denied before the inner write. No completed nested-write syscall is claimed."
+    }
+  },
+  "complete_control_text_correspondence": {
+    "sandbox.log": {
+      "RA20_sha256": "563e686b20d5bcfa064039cbdc0b6317690b5fde61330f20b56db353b407a55d",
+      "standalone_sha256": "04d90fbad2d4e620b6db73b93c78189a2779478fda125912e883848ba92adc3a",
+      "normalized_complete_sha256": "757e57be12395c79f1f92d05a29e2e707a7b0bf0e8d4cf2a40528459279264ed"
+    },
+    "kernel-controls.log": {
+      "RA20_sha256": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+      "standalone_sha256": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+      "normalized_complete_sha256": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361"
+    },
+    "comparator-controls.log": {
+      "RA20_sha256": "9e6d5f00c94a9d5ea55bb8fc5e80e10e0d56b23bed73e4362fb476820fd88188",
+      "standalone_sha256": "1bfc021764929e1959898f92860c76d8416a7fabf84abe711c502702a8ecfc68",
+      "normalized_complete_sha256": "aeab893b170ae0bc676b0bb8f2b42195a4cc14dc54b7297abe7ee54ffe0ad192"
+    },
+    "negative-sorry.log": {
+      "RA20_sha256": "10a44145b6a84715d99e772d8de5485cde285e953c12f63ea68dda0c15f41acb",
+      "standalone_sha256": "7489da71e05342af07404f2a139202b324a05d898894c529f5701b7e20b8d8b3",
+      "normalized_complete_sha256": "103c7a30d0f5052e5127262e98e0b2007209425f990e89343ef4fedbca4c05b5"
+    },
+    "negative-native.log": {
+      "RA20_sha256": "66125100ca7eb61262693c2e76ed69502a8c81630a48a75e3a83d9b1561eb0ac",
+      "standalone_sha256": "b6188a680f0f4bb5616b44f8ff4ebea988ad518db8fe87961437910357dad0ac",
+      "normalized_complete_sha256": "317fd34576b257bd280b521a6b93b6193235970c434dc0c648058fe040ed4b18"
+    },
+    "user-service.log": {
+      "RA20_sha256": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a",
+      "standalone_sha256": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a",
+      "normalized_complete_sha256": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a"
+    }
+  },
+  "control_normalization_scope": "Only invocation IDs, fresh axiom directory names, elapsed times and resource measurements; commands, rejection phases and outcomes preserved.",
+  "ten_dependency_revisions": [
+    {
+      "url": "https://github.com/alerad/leancert",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "name": "leancert",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "inherited": false,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/mathlib4.git",
+      "type": "git",
+      "subDir": null,
+      "scope": "",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "name": "mathlib",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.33.1",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/plausible",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "name": "plausible",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/LeanSearchClient",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "name": "LeanSearchClient",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/import-graph",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "name": "importGraph",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/ProofWidgets4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "name": "proofwidgets",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.lean"
+    },
+    {
+      "url": "https://github.com/leanprover-community/aesop",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "name": "aesop",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/quote4",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "name": "Qq",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "master",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover-community/batteries",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover-community",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "name": "batteries",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "main",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    },
+    {
+      "url": "https://github.com/leanprover/lean4-cli",
+      "type": "git",
+      "subDir": null,
+      "scope": "leanprover",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "name": "Cli",
+      "manifestFile": "lake-manifest.json",
+      "inputRev": "v4.33.0",
+      "inherited": true,
+      "configFile": "lakefile.toml"
+    }
+  ],
+  "official_matching_Mathlib_cache_files": 8690,
+  "cache_scope": "Fresh RA20 project proof compilation used official matching dependency objects. This is not a from-source rebuild of every Mathlib dependency; no dependency object was downloaded/copied locally for this audit.",
+  "all16_original_artifact_API_upload_ZIP_identities_verified": true,
+  "whole_workflow_original_log_files": 217,
+  "permanent_ID_run": 34743832109,
+  "permanent_ID_count": 217,
+  "ID_workflow_test_groups": [
+    17,
+    3,
+    16,
+    11
+  ],
+  "operational_reviewer": "/root/ra20_final_referee2",
+  "new_mathematical_approval": false,
+  "new_local_Lean_or_Linux_execution": false,
+  "other_project_semantic_audits_claimed": false,
+  "canonical_status": "Solved, unchanged",
+  "root_operational_acceptance_and_publication": "pending"
+}

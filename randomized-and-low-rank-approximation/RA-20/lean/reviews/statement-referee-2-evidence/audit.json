@@ -1,0 +1,347 @@
+{
+  "utc": "2026-09-13T04:17:53.864111+00:00",
+  "verdict": "PASS independent statement evidence audit",
+  "reviewer": "/root/leancert_examples, AI agent; no RA20 mathematical/design contribution",
+  "frozen68_preserved": true,
+  "author_package70_plus_outer_preserved": true,
+  "original16_Git_sources_preserved": true,
+  "freeze_sha256": "6bd2bbf4a6d787fd4e0c5c8b19aad74dac73b7e79c9552e537544136a4812aa8",
+  "package_sha256": "f703189ce7532af272df37e521ce9d703d01aaa9733cd7aa7d1f45813b0e5fa6",
+  "handoff_sha256": "c1f85ebd528dcbedd72b9544f3545e2e29e56bd8d460780007a634fa4d438b0b",
+  "exact_comparator_exports": [
+    "NLA.RA20.hollow_variety_semantics",
+    "NLA.RA20.reduced_coordinate_ring",
+    "NLA.RA20.algebraic_smooth_locus",
+    "NLA.RA20.algebraic_tangent_space",
+    "NLA.RA20.full_frobenius_differential",
+    "NLA.RA20.hollow_distance_semantics",
+    "NLA.RA20.generic_critical_locus",
+    "NLA.RA20.component_hessians",
+    "NLA.RA20.generic_data_intersection",
+    "NLA.RA20.generic_count_three",
+    "NLA.RA20.generic_count_not_four",
+    "NLA.RA20.not_criticalCountConjecture"
+  ],
+  "original_author_attempts_all_retained_and_inspected": [
+    {
+      "result": "verification/statement-checks/attempt-0kvxnk1o/result.json",
+      "sha256": "2e54b49c166a94e8187deb50d72dc9f27d7e930bba76da2d0a13327888163d15",
+      "stored_state": "PASS",
+      "actual_commands": [
+        {
+          "source": "NLA/RA20/Definitions.lean",
+          "actual_exit_code": 0,
+          "source_snapshot_sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "errors": [],
+          "warning_count": 0,
+          "standard_axiom_lines": []
+        },
+        {
+          "source": "Challenge.lean",
+          "actual_exit_code": 0,
+          "source_snapshot_sha256": "eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9",
+          "log_sha256": "50f9e22e71d8e4f47e86716e698c65e6b3d62913419529ad79d54d121878a8ab",
+          "errors": [],
+          "warning_count": 12,
+          "standard_axiom_lines": []
+        },
+        {
+          "source": "verification/InspectStatements.lean",
+          "actual_exit_code": 0,
+          "source_snapshot_sha256": "752da8c6f345d23e7ef03ebdbfe74f41478bdc70a2bb850093e687bbedbdb912",
+          "log_sha256": "7e3fe7378be891162ac47a283f5e4bba1b2a6243fea1d6c7de371fdd9e148dda",
+          "errors": [],
+          "warning_count": 0,
+          "standard_axiom_lines": [
+            "'NLA.RA20.variety' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.definingIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.SmoothPoint' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.TangentVector' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.fullFrobeniusDistance' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.SmoothCriticalPoint' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.HasCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.HasGenericCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.criticalCountConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ]
+    },
+    {
+      "result": "verification/statement-checks/attempt-8b3c01mh/result.json",
+      "sha256": "72a91de1e9e3497dc7f2a2463c6f1c28af9101782b1f94fb44f8b7e43755cdd1",
+      "stored_state": "PASS",
+      "actual_commands": [
+        {
+          "source": "NLA/RA20/Definitions.lean",
+          "actual_exit_code": 0,
+          "source_snapshot_sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "errors": [],
+          "warning_count": 0,
+          "standard_axiom_lines": []
+        },
+        {
+          "source": "Challenge.lean",
+          "actual_exit_code": 0,
+          "source_snapshot_sha256": "eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9",
+          "log_sha256": "50f9e22e71d8e4f47e86716e698c65e6b3d62913419529ad79d54d121878a8ab",
+          "errors": [],
+          "warning_count": 12,
+          "standard_axiom_lines": []
+        },
+        {
+          "source": "verification/InspectStatements.lean",
+          "actual_exit_code": 0,
+          "source_snapshot_sha256": "752da8c6f345d23e7ef03ebdbfe74f41478bdc70a2bb850093e687bbedbdb912",
+          "log_sha256": "7e3fe7378be891162ac47a283f5e4bba1b2a6243fea1d6c7de371fdd9e148dda",
+          "errors": [],
+          "warning_count": 0,
+          "standard_axiom_lines": [
+            "'NLA.RA20.variety' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.definingIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.SmoothPoint' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.TangentVector' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.fullFrobeniusDistance' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.SmoothCriticalPoint' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.HasCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.HasGenericCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.criticalCountConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ]
+    },
+    {
+      "result": "verification/statement-checks/attempt-gvbqzwyh/result.json",
+      "sha256": "3ddafd7340d101c3d963dedca3a804a8314c430e6b6d9eaab458f8f9bdcee2d7",
+      "stored_state": "RUNNING",
+      "actual_commands": [
+        {
+          "source": "NLA/RA20/Definitions.lean",
+          "actual_exit_code": 0,
+          "source_snapshot_sha256": "a649164ee7f11e88d8bfae4167ee0d9b9252a8683f253ab5a69981cde0e7cf94",
+          "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "errors": [],
+          "warning_count": 0,
+          "standard_axiom_lines": []
+        },
+        {
+          "source": "Challenge.lean",
+          "actual_exit_code": 0,
+          "source_snapshot_sha256": "eb62545ea3e527c186b832a186fbaefa560409bf23be74486b9b00f04e00a2e9",
+          "log_sha256": "50f9e22e71d8e4f47e86716e698c65e6b3d62913419529ad79d54d121878a8ab",
+          "errors": [],
+          "warning_count": 12,
+          "standard_axiom_lines": []
+        },
+        {
+          "source": "verification/InspectStatements.lean",
+          "actual_exit_code": 1,
+          "source_snapshot_sha256": "f5eb51a6f0bae7bc895ada620bade8540a19bd44b5114e6cd7f6aa1991bfaaa5",
+          "log_sha256": "d6c969cca58bf9816bb263a214b3e68a0cea2fbee278eb9cc92aa9437ff3d0df",
+          "errors": [
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:24:7: error(lean.synthInstanceFailed): failed to synthesize instance of type class",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:26:30: error: unexpected token '#assert_trust'; expected identifier",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:27:36: error: unexpected token '#assert_trust'; expected identifier",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:28:34: error: unexpected token '#assert_trust'; expected identifier",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:29:36: error: unexpected token '#assert_trust'; expected identifier",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:30:44: error: unexpected token '#assert_trust'; expected identifier",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:31:42: error: unexpected token '#assert_trust'; expected identifier",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:32:39: error: unexpected token '#assert_trust'; expected identifier",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:33:46: error: unexpected token '#assert_trust'; expected identifier",
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/verification/InspectStatements.lean:34:46: error: unexpected token '#print'; expected identifier"
+          ],
+          "warning_count": 0,
+          "standard_axiom_lines": [
+            "'NLA.RA20.variety' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.definingIdeal' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.SmoothPoint' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.TangentVector' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.fullFrobeniusDistance' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.SmoothCriticalPoint' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.HasCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.HasGenericCriticalCount' depends on axioms: [propext, Classical.choice, Quot.sound]",
+            "'NLA.RA20.criticalCountConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]"
+          ]
+        }
+      ]
+    },
+    {
+      "result": "verification/statement-checks/attempt-hhjyu4mb/result.json",
+      "sha256": "e2ac3677a5259d792b152e3e4788ecc1cb90e97bb7a0be785fbb9c915379e4a7",
+      "stored_state": "RUNNING",
+      "actual_commands": [
+        {
+          "source": "NLA/RA20/Definitions.lean",
+          "actual_exit_code": 1,
+          "source_snapshot_sha256": "bfd82d3e166f9cb2c15a8995de59c7b026bc3cd1b9963677c395701e865f5d9f",
+          "log_sha256": "04c2789a23410534477f585765112fb83acb490cb1774c654ff225d664ab1a19",
+          "errors": [
+            "/private/tmp/nla-lean-formalization/next-ra-statements-draft/RA-20/lean/NLA/RA20/Definitions.lean:80:6: error(lean.synthInstanceFailed): failed to synthesize instance of type class"
+          ],
+          "warning_count": 0,
+          "standard_axiom_lines": []
+        }
+      ]
+    }
+  ],
+  "fresh_result": "reviews/statement-referee-2-evidence/attempt-89cv3f9h/result.json",
+  "fresh_result_sha256": "d1c5d60d0e892e25552b4970d271c3a622ad38ed549a08c081ad3f8ac6e3ab94",
+  "independent_commands": 3,
+  "definition_kernel_checks": 20,
+  "standard_three_reports": 19,
+  "axiom_free_reports": 1,
+  "actual_target_definition_traversal": 19,
+  "required_actual_semantic_dependencies": 14,
+  "primary_library_identity_audit": {
+    "mathlib/Mathlib/RingTheory/Nullstellensatz.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "4cff1e3d1983296280326087593b18b6a055088727c9b5e768291a0459f24ee1",
+      "git_blob": "34fd73c572fca651af77fbfdc6ff369d3870d0ad",
+      "bytes": 7932
+    },
+    "mathlib/Mathlib/RingTheory/Smooth/Locus.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "dbb70cd66b3cf35d6a819269ce370ad918d18fd3fab217c0f235a63f0449bb71",
+      "git_blob": "2b5e8e472535a34ecf46519a4d2b43349f8922cc",
+      "bytes": 7470
+    },
+    "mathlib/Mathlib/RingTheory/Smooth/StandardSmoothOfFree.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "f506fd8ab14bf158d31948cfe137d894129976ff6c1511db526bf7c9d77f4a9a",
+      "git_blob": "e452b9b463428d87c37af44351fe082d27663f15",
+      "bytes": 9536
+    },
+    "mathlib/Mathlib/RingTheory/Smooth/StandardSmooth.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "9301db1dfc9c9758b6b0ff016442b77c8a0627889e0386a899ca6dc9353a09b5",
+      "git_blob": "ad083a3e38272df0d1d143cb3b37b2c420321c30",
+      "bytes": 7769
+    },
+    "mathlib/Mathlib/RingTheory/RegularLocalRing/Defs.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "6ca40a9a028dbe37b0e6d35f519e15fb40bd243ba89a07bbe3689aea9c6deaf6",
+      "git_blob": "79a0a2c967f689baef32b5a0821a4619ea0ac96c",
+      "bytes": 5479
+    },
+    "mathlib/Mathlib/LinearAlgebra/Matrix/Rank.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "67b4fa7bee02c1806f29562718bfb34c0e1f40af5ec6a91ef91cc33610657491",
+      "git_blob": "a3385c40b955666e883272e38c8aaac5008cd6bf",
+      "bytes": 29569
+    },
+    "mathlib/Mathlib/Algebra/MvPolynomial/PDeriv.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "fc81f4d550f4b1f5b812c355d6dc15e53100ffccf1ef9bd20c395e10bf06e288",
+      "git_blob": "9f76a70548e064dc589bcc0e0b5efe01aac6d9f8",
+      "bytes": 6580
+    },
+    "mathlib/Mathlib/Analysis/Calculus/FDeriv/Basic.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "a4e41e70a5c80c4289f24e2ca5e9511ca8278b2aec9ab0b9e5100f7df9ef7929",
+      "git_blob": "538d55195de38bdc0f57b569fd484ecea2f295b9",
+      "bytes": 44747
+    },
+    "mathlib/Mathlib/Analysis/Matrix/Normed.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "f47bfccf19da0082e9b2a298457485b1c6ba5c4b19df97a69e89598180e30d2e",
+      "git_blob": "13c36e28c2c4e7678730c2b0d7b5a68237330570",
+      "bytes": 28310
+    },
+    "leancert/LeanCert/Tactic/Verification.lean": {
+      "package_rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "sha256": "2c576708b528acdde17796b0b715b83079f9cad377182dbd87c248323ff0a58c",
+      "git_blob": "367d4660480a1bfa93e43cedba07e60a65686a40",
+      "bytes": 29145
+    },
+    "mathlib/Mathlib/Analysis/Calculus/FDeriv/Defs.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "82628404673d0691bdfdfb757cce7308a628abcdff75f1909611efa44d105a9b",
+      "bytes": 10482,
+      "git_blob": "d7a84bb64d1fa74c54d65c4a5b6c92aebc1e111e"
+    },
+    "mathlib/Mathlib/RingTheory/Smooth/Basic.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "3486edb7d2d00857dd0dbb9755cf7b89a5d24f26e7efb3d7656fd89512ee147b",
+      "bytes": 26865,
+      "git_blob": "696c5eb8786599a8fda889a857de74f1b683945b"
+    },
+    "mathlib/Mathlib/Topology/Instances/Matrix.lean": {
+      "package_rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "sha256": "f1177b96ad3853e806edfa9a26ee036db98e03c1c361179b7cdf60213d157734",
+      "bytes": 21016,
+      "git_blob": "b02644070922146b8f92be6270841947440fc5b4"
+    }
+  },
+  "ten_clean_pins_before_and_after": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert",
+      "clean": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib",
+      "clean": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible",
+      "clean": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient",
+      "clean": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph",
+      "clean": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets",
+      "clean": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop",
+      "clean": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq",
+      "clean": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries",
+      "clean": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "read_only_path": "/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli",
+      "clean": true
+    }
+  ],
+  "independent_reconstruction_sha256": "77f2c2071bd188b93c154ae7dfd2ed7b363bd0c4c137f71df1ae0e2833f793a4",
+  "primary_paper_read": {
+    "url": "https://arxiv.org/pdf/2010.15636v2",
+    "version": "v2 2022-01-29",
+    "sections": "Section 2.2 complex bilinear/smooth/generic definitions; Section 5 Conjecture5.6/Table7 printed page21",
+    "access_method": "Actual web open/read during this independent review; no local PDF hash or complete-paper review claim"
+  },
+  "reviewer_diagnostic_correction": "Initial own inspector asked for unscoped matrix norm/completeness instances, which this topological-vector-space derivative does not require. Replaced only own diagnostic by actual product topology/Hausdorff/addition/scalar instances. Both independent attempts remain; source and Challenge unchanged.",
+  "scope": "Statement approval evidence only; all twelve mathematical contracts remain unproved. Pure kernel LeanCert trust auditing approved; no artificial interval certificate. No worktree, source edit, metadata, status, Git or publication action."
+}

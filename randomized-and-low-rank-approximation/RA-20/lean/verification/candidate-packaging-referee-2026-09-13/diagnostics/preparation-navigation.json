@@ -1,0 +1,15 @@
+{
+  "scope": "Read-only navigation diagnostics before the independent audit; no candidate source or evidence was modified.",
+  "wrong_working_directory_search": {
+    "command": "rg --files tools/lean docs/lean/schema",
+    "cwd": "randomized-and-low-rank-approximation/RA-20/lean",
+    "raw_output": "rg: tools/lean: No such file or directory (os error 2)\nrg: docs/lean/schema: No such file or directory (os error 2)\n",
+    "resolution": "Read the actual repository-root policy/schema/harness paths subsequently."
+  },
+  "large_gate_display": {
+    "observation": "An initial large JSON display exceeded the tool output limit. It was not treated as a complete inspection.",
+    "resolution": "Subsequent structured parsing inspected gate metadata and every retained command/axiom entry, with full manifest and source/log rehashing in audit.py."
+  },
+  "preexecution_draft_correction": "Before the first audit execution, the author-own inventory exclusion was narrowed from a manifest basename to the exact installer outer-manifest path. No failed execution used the earlier draft.",
+  "executed_audit_failure": "The complete initial executed script and raw traceback are preserved as audit-attempt-1.py and audit-attempt-1.log; audit-attempt-1.json explains the reviewer-only combined-link-count error."
+}

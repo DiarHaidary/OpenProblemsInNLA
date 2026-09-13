@@ -1,0 +1,180 @@
+{
+  "utc": "2026-09-13T08:18:58.568944+00:00",
+  "problem": "RA-20",
+  "status": "Root accepts independent review of concrete publication; normal push and new upstream main PR authorized by user",
+  "root_role": "Mathematical contributor and publication coordinator, not an additional independent mathematical referee",
+  "publication_referee": "/root/ie05_statement_referee2, independent of RA20 proof and publication",
+  "accepted_config": {
+    "independent_publication_approval_accepted_by_root": true,
+    "root_read_full_report_current_documents_and_verifiers": true,
+    "root_viewed_all_three_exact_PDF_pages": true,
+    "root_visual_PDF_sha256": "066d45b7f3557796f18cf788ee457ec303ef9a391143e8904fd5a35e1b7ecf07",
+    "reviewed_anchors": {
+      "reviews/publication-referee-2026-09-13.md": "9970365b483d9aef08c2a2e699990758b9a78661cab5eda439dc3baa9434e028",
+      "verification/publication-referee-2026-09-13/EVIDENCE-MANIFEST.json": "61a5be68406e0b3dfe510f5584b6620ad92a4fcf7b3dfb4f25d4b050a475bb65",
+      "verification/publication-referee-2026-09-13/RESULT.json": "7f50b864db8b14f9bce298950f91b01a36fe4312db5e735e03911011df8ff0d1",
+      "verification/publication-referee-2026-09-13/verify_publication.py": "83b332322910e5dac1e3d40f477c109d62e7002db17a5e3888394f68eed7bf3d"
+    },
+    "review_scope": "Publication approval following already accepted complete mathematical and actual Linux gates; no new math or Linux execution claimed."
+  },
+  "accepted_current_publication_files": {
+    "CATALOG.md": {
+      "sha256": "fa25650c61b79b00cd268d7cff87465553a74841fd8418bcf0ae6b75b21ea4fa",
+      "bytes": 69242
+    },
+    "README.md": {
+      "sha256": "788b2d56391c13021ce0247aaf50f3440d4366a053f6f833d6f9d5ee9db37a42",
+      "bytes": 8524
+    },
+    "RESOLVED.md": {
+      "sha256": "e8e1103eac222600998e477e96ae378a13a1699f92db76336b6ec991f07e0b79",
+      "bytes": 134833
+    },
+    "randomized-and-low-rank-approximation/RA-20/README.md": {
+      "sha256": "a5ee7fe9418b277cad5b8e89cb12e0b1e6eedd6d9c0af679983355b40cce4056",
+      "bytes": 8959
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/README.md": {
+      "sha256": "602bdad1d0ce5a5bd9e9ad7333f69054ed75afda52a9125b95fb74cd2dc0ed17",
+      "bytes": 14732
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/formalization.yaml": {
+      "sha256": "368d4b1e3b0b7788a096e49440c6ee77c39d6e9b4e25dca09cd85d59d49bb112",
+      "bytes": 24797
+    },
+    "randomized-and-low-rank-approximation/RA-20/problem.pdf": {
+      "sha256": "066d45b7f3557796f18cf788ee457ec303ef9a391143e8904fd5a35e1b7ecf07",
+      "bytes": 53299
+    },
+    "randomized-and-low-rank-approximation/RA-20/problem.tex": {
+      "sha256": "48b75a8a0b5ef3d47ef94a1f5e16ccc994025c44bc3121a3d2a86cef5f53e922",
+      "bytes": 13657
+    },
+    "randomized-and-low-rank-approximation/README.md": {
+      "sha256": "6a7e39af0fd1ad48179693349b725dce5b2e07fd575171eadddfeab218add808",
+      "bytes": 7037
+    }
+  },
+  "candidate": "43603b173beb294c2588d83f936a8a96246fd5f0",
+  "actual_Linux_run": 34743832047,
+  "exact_tested_candidate_inputs_preserved": 1092,
+  "prior_accepted_inventories_checked_with_exact_path_and_hash_archives": 19,
+  "rejected_initial_root_diagnostic_retained_without_acceptance": true,
+  "all_217_IDs_paths_and_original_target_preserved": true,
+  "complete_current_enclosing_inventories": {
+    "verification/publication-preparation-2026-09-13/EVIDENCE-MANIFEST.json": {
+      "sha256": "3a2dbd0aa48277f7b5d87bd3b2f1e4e5a2abec571215de85783b10063bcb629a",
+      "bound_files": 1791
+    },
+    "verification/publication-referee-2026-09-13/EVIDENCE-MANIFEST.json": {
+      "sha256": "61a5be68406e0b3dfe510f5584b6620ad92a4fcf7b3dfb4f25d4b050a475bb65",
+      "bound_files": 2092
+    }
+  },
+  "exact_hash_bound_whitespace_exceptions": {
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/artifacts/lean-RA-20/verify-20260913T065401Z-4140/comparator.log": {
+      "sha256": "bb75e588f363253ff2aa05fb7a397de6afc6b21c362f992238a8657f01de291a",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/checker-source/.tools/lean4export/format_ndjson.md": {
+      "sha256": "f82a21e17e4258a1043895d0653ea4333bef8cb07aad2e3d6c1fc4be52b138e3",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/009-controls-job-log/stdout": {
+      "sha256": "7c329f8a6bbabb6035b1d178d2e8efc3a95328c55531cd8adf250b120249702d",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/010-select-job-log/stdout": {
+      "sha256": "828e3055a3012d9c908398a43ae3982b6106206047b50afd3dcdf6081be6d40b",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/016-ra20-job-log/stdout": {
+      "sha256": "dfdd9924cd43c5dd48acbea6441c114940b8abe6c29ecdb3ef9b5a09238f696d",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/017-id-job-log/stdout": {
+      "sha256": "f4477affefb4ad9a6add5390019c275ca5adc96a677f4287c1aa35d43d3e90fa",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/source-003/stdout": {
+      "sha256": "089090696b419c573c12018501996f0b833f3a67860a225cdd94bb3c3b1ebc32",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/source-006/stdout": {
+      "sha256": "c3f4e740305ff07c2bb58e9136dd6fee1c60e2c2d4a92d2f2647adac976912e7",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/source-007/stdout": {
+      "sha256": "c3f4e740305ff07c2bb58e9136dd6fee1c60e2c2d4a92d2f2647adac976912e7",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/archive/repository/RESOLVED.md": {
+      "sha256": "a857d38ef7c150e789d8166e1cc48eb645904246613717e3dae33de085458f5c",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/archive/repository/randomized-and-low-rank-approximation/RA-20/README.md": {
+      "sha256": "c3f4e740305ff07c2bb58e9136dd6fee1c60e2c2d4a92d2f2647adac976912e7",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/pandoc-1/stdin.md": {
+      "sha256": "c8298a5282e2303d415684677c98936b8d861b075c0b93fe113cad6fa0f1f08e",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/xelatex-1/problem.log": {
+      "sha256": "15eb027882a2f49262bb6cf8599a04f45d904a33e169d384c091b86321373e2c",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/xelatex-1/stdout": {
+      "sha256": "6a66f1c8f55d3733fb8bbcc3eb68b9c88e26263ca1a6d4cee2ca7d48e11cc0b4",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/xelatex-2/problem.log": {
+      "sha256": "b574fe196d34986c06f2deea2cd5781bf63dfe6cf51a5392bce4c0af7ffff897",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/xelatex-2/stdout": {
+      "sha256": "0dc52cd359821331e5e33ad40264745b4eb1c639ca2bc52bb1e33a53844d9685",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-referee-2026-09-13/receipts/final-canonical.stdout": {
+      "sha256": "a5ee7fe9418b277cad5b8e89cb12e0b1e6eedd6d9c0af679983355b40cce4056",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/publication-referee-2026-09-13/receipts/index-diff.stdout": {
+      "sha256": "994598eb03912e39c4d7c3d2df41c6f96af67c7328ab784818c6ad4b1847b618",
+      "reason": "Exact sealed raw evidence; not normalized"
+    },
+    "randomized-and-low-rank-approximation/RA-20/lean/verification/final-publication-preflight-2026-09-13/git-diff-check-initial.log": {
+      "sha256": "df16b6d53a0cf4b8bfd6fe5388227ff067c6fbea2c4dbc9b34a7b4210c6f7c95",
+      "reason": "Original staged-check output retained verbatim"
+    }
+  },
+  "successful_whitespace_command": [
+    "git",
+    "diff",
+    "--cached",
+    "--check",
+    "--",
+    ".",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/final-publication-preflight-2026-09-13/git-diff-check-initial.log",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/artifacts/lean-RA-20/verify-20260913T065401Z-4140/comparator.log",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/checker-source/.tools/lean4export/format_ndjson.md",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/009-controls-job-log/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/010-select-job-log/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/016-ra20-job-log/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/017-id-job-log/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/source-003/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/source-006/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/linux-run-2026-09-13/commands/source-007/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/archive/repository/RESOLVED.md",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/archive/repository/randomized-and-low-rank-approximation/RA-20/README.md",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/pandoc-1/stdin.md",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/xelatex-1/problem.log",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/xelatex-1/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/xelatex-2/problem.log",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-preparation-2026-09-13/pdf-build/xelatex-2/stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-referee-2026-09-13/receipts/final-canonical.stdout",
+    ":(exclude)randomized-and-low-rank-approximation/RA-20/lean/verification/publication-referee-2026-09-13/receipts/index-diff.stdout"
+  ],
+  "no_new_proof_or_Linux_execution_claimed": true
+}

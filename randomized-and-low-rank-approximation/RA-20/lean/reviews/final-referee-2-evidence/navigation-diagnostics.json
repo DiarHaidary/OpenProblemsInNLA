@@ -1,0 +1,28 @@
+{
+  "scope": "Non-build navigation issues observed by the reviewer; all mathematical sources and successful targeted APIs were subsequently read.",
+  "issues": [
+    {
+      "operation": "Open https://arxiv.org/html/2010.15636v2 with web tool",
+      "observed_output": "Failed to fetch https://arxiv.org/html/2010.15636v2: Cache miss",
+      "resolution": "Versioned PDF opened successfully; its extracted text supplied Sections 2.2-2.3 and Conjecture 5.6/Table 7."
+    },
+    {
+      "operation": "Request screenshot of versioned PDF, zero-based page 20",
+      "observed_output": "Internal Error ()",
+      "resolution": "No screenshot viewed or relied on. PDF text contains all four formulas and the table's n=s=3 value."
+    },
+    {
+      "operation": "cat SourceCorrespondence.md from Git root during a combined read of docs/lean/README.md",
+      "observed_output": "cat: SourceCorrespondence.md: No such file or directory",
+      "resolution": "SourceCorrespondence.md then read in full from the correct per-problem lean directory. No source was edited."
+    },
+    {
+      "operation": "Targeted rg search for an existing smoothLocus algebra-equivalence/retraction helper in pinned Mathlib/RingTheory",
+      "observed_output": "No matches; rg exit status 1",
+      "resolution": "This was an ordinary negative API search, not a build failure. The actual localization/formal-smoothness APIs used by the new helpers were read."
+    }
+  ],
+  "primary_source": "https://arxiv.org/pdf/2010.15636v2",
+  "primary_scope": "Targeted independent check of complex bilinear Frobenius/smooth-point/genericity conventions and Conjecture 5.6/Table 7; no literature or priority search.",
+  "raw_build_commands": "Every subprocess build, dependency-pin and Git-blob check has an exact command.json, result.json and raw.log in command-NNN; no build attempt failed or was discarded."
+}

@@ -1,0 +1,2377 @@
+EXACT_FROZEN_TYPE NLA.RA20.hollow_variety_semantics: (∀ (a b c : ℂ),
+    (NLA.RA20.hollow a b c).det = 2 * a * b * c ∧ (NLA.RA20.hollow a b c ∈ NLA.RA20.variety 3 3 ↔ a * b * c = 0)) ∧
+  ∀ (X : NLA.RA20.Mat 3),
+    X ∈ NLA.RA20.variety 3 3 ↔ X = NLA.RA20.hollow (X 0 1) (X 0 2) (X 1 2) ∧ X 0 1 * X 0 2 * X 1 2 = 0
+EXACT_FROZEN_TYPE NLA.RA20.reduced_coordinate_ring: ∃ e,
+  ∀ (i j : Fin 3),
+    e ((Ideal.Quotient.mk (NLA.RA20.definingIdeal 3 3)) (MvPolynomial.X (i, j))) =
+      (Ideal.Quotient.mk NLA.RA20.abcIdeal) (NLA.RA20.polynomialHollow i j)
+EXACT_FROZEN_TYPE NLA.RA20.algebraic_smooth_locus: ∀ (X : NLA.RA20.Mat 3),
+  NLA.RA20.SmoothPoint 3 3 X ↔
+    X = NLA.RA20.hollow (X 0 1) (X 0 2) (X 1 2) ∧ NLA.RA20.ExactlyOneZero (X 0 1) (X 0 2) (X 1 2)
+EXACT_FROZEN_TYPE NLA.RA20.algebraic_tangent_space: ∀ (a b c : ℂ),
+  a * b * c = 0 →
+    ∀ (Z : NLA.RA20.Mat 3),
+      NLA.RA20.TangentVector 3 3 (NLA.RA20.hollow a b c) Z ↔
+        Matrix.IsSymm Z ∧ (∀ (i : Fin 3), Z i i = 0) ∧ b * c * Z 0 1 + a * c * Z 0 2 + a * b * Z 1 2 = 0
+EXACT_FROZEN_TYPE NLA.RA20.full_frobenius_differential: ∀ (n : ℕ) (U X Z : NLA.RA20.Mat n),
+  (fderiv ℂ (NLA.RA20.fullFrobeniusDistance U) X) Z = 2 * ∑ i, ∑ j, (X i j - U i j) * Z i j
+EXACT_FROZEN_TYPE NLA.RA20.hollow_distance_semantics: ∀ (U : NLA.RA20.Mat 3),
+  Matrix.IsSymm U →
+    ∀ (a b c : ℂ),
+      NLA.RA20.fullFrobeniusDistance U (NLA.RA20.hollow a b c) =
+        ∑ i, U i i ^ 2 + 2 * ((a - U 0 1) ^ 2 + (b - U 0 2) ^ 2 + (c - U 1 2) ^ 2)
+EXACT_FROZEN_TYPE NLA.RA20.generic_critical_locus: ∀ (U : NLA.RA20.Mat 3),
+  NLA.RA20.GenericData U →
+    NLA.RA20.criticalSet 3 3 U = Set.range (NLA.RA20.candidate U) ∧ Function.Injective (NLA.RA20.candidate U)
+EXACT_FROZEN_TYPE NLA.RA20.component_hessians: ∀ (U : NLA.RA20.Mat 3) (i : Fin 3) (z h v : Fin 2 → ℂ),
+  ((fderiv ℂ (fun w => fderiv ℂ (fun y => NLA.RA20.fullFrobeniusDistance U (NLA.RA20.planeCoordinates i y)) w) z) h) v =
+      4 * ∑ j, h j * v j ∧
+    ((∀ (v : Fin 2 → ℂ), 4 * ∑ j, h j * v j = 0) → h = 0)
+EXACT_FROZEN_TYPE NLA.RA20.generic_data_intersection: ∀ (q : NLA.RA20.Poly 3),
+  (∃ U, Matrix.IsSymm U ∧ (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0) →
+    ∃ U, NLA.RA20.GenericData U ∧ (MvPolynomial.eval (NLA.RA20.coordinates U)) q ≠ 0
+EXACT_FROZEN_TYPE NLA.RA20.generic_count_three: NLA.RA20.HasGenericCriticalCount 3 3 3
+EXACT_FROZEN_TYPE NLA.RA20.generic_count_not_four: ¬NLA.RA20.HasGenericCriticalCount 3 3 4
+EXACT_FROZEN_TYPE NLA.RA20.not_criticalCountConjecture: ¬NLA.RA20.criticalCountConjecture
+ACTUAL_AXIOMS NLA.RA20.hollow_variety_semantics: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_variety_semantics: [NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow_variety_semantics_proved]
+ACTUAL_AXIOMS NLA.RA20.hollow: [propext, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow: []
+ACTUAL_AXIOMS NLA.RA20.Mat: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Mat: []
+ACTUAL_AXIOMS NLA.RA20.variety: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.variety: [NLA.RA20.Mat, NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.hollow_variety_semantics_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_variety_semantics_proved: [NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow_det,
+ NLA.RA20.hollow_mem_variety_iff,
+ NLA.RA20.matrix_eq_hollow_of_mem]
+ACTUAL_AXIOMS NLA.RA20.hollow_det: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_det: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.hollow_mem_variety_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_mem_variety_iff: [NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.hollow_det,
+ NLA.RA20.hollow_isSymm,
+ NLA.RA20.hollow_rank_le_two]
+ACTUAL_AXIOMS NLA.RA20.hollow_isSymm: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_isSymm: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.hollow_rank_le_two: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_rank_le_two: [NLA.RA20.hollow, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.matrix_eq_hollow_of_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrix_eq_hollow_of_mem: [NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.reduced_coordinate_ring: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reduced_coordinate_ring: [NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.reduced_coordinate_ring_proved]
+ACTUAL_AXIOMS NLA.RA20.CoordinateRing: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.CoordinateRing: [NLA.RA20.Poly, NLA.RA20.Variables, NLA.RA20.definingIdeal]
+ACTUAL_AXIOMS NLA.RA20.Poly: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.Poly: [NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.Variables: []
+PROJECT_EDGE NLA.RA20.Variables: []
+ACTUAL_AXIOMS NLA.RA20.definingIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.definingIdeal: [NLA.RA20.Poly, NLA.RA20.Variables, NLA.RA20.Variables, NLA.RA20.coordinateVariety]
+ACTUAL_AXIOMS NLA.RA20.coordinateVariety: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.coordinateVariety: [NLA.RA20.Variables,
+ NLA.RA20.Variables,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.matrixOfCoordinates]
+ACTUAL_AXIOMS NLA.RA20.matrixOfCoordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrixOfCoordinates: [NLA.RA20.Variables, NLA.RA20.Mat, NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.ABCCoordinateRing: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCCoordinateRing: [NLA.RA20.ABCPoly, NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.ABCPoly: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCPoly: []
+ACTUAL_AXIOMS NLA.RA20.abcIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly, NLA.RA20.abcPolynomial]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPolynomial: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly, NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.abcPolynomial._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.polynomialHollow: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polynomialHollow: [NLA.RA20.ABCPoly,
+ NLA.RA20.hollow,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.reduced_coordinate_ring_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reduced_coordinate_ring_proved: [NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.reducedCoordinateEquiv_mk_X]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv: [NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.reducedCoordinateEquiv._proof_2,
+ NLA.RA20.reducedCoordinateEquiv._proof_3,
+ NLA.RA20.reducedCoordinateEquiv._proof_4,
+ NLA.RA20.hollowQuotientMap_surjective]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv._proof_1: [NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.hollowQuotientMap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowQuotientMap: [NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowQuotientMap._proof_1,
+ NLA.RA20.hollowPullback]
+ACTUAL_AXIOMS NLA.RA20.hollowQuotientMap._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowQuotientMap._proof_1: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.hollowPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv._proof_2: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv._proof_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv._proof_3: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv._proof_4: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv._proof_4: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.hollowQuotientMap_ker]
+ACTUAL_AXIOMS NLA.RA20.hollowQuotientMap_ker: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowQuotientMap_ker: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.definingIdeal_eq_comap_abcIdeal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.definingIdeal_eq_comap_abcIdeal: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal_vanishing,
+ NLA.RA20.coordinateVariety,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.aeval_hollowPullback,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.hollow_mem_variety_iff,
+ NLA.RA20.matrixOfCoordinates,
+ NLA.RA20.matrix_eq_hollow_of_mem,
+ NLA.RA20.hollow_variety_semantics_proved]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_vanishing: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_vanishing: [NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal_zeroLocus,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal_isRadical]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_zeroLocus: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_zeroLocus: [NLA.RA20.abcIdeal,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.ABCPoly]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal_isRadical: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal_isRadical: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial_squarefree]
+ACTUAL_AXIOMS NLA.RA20.abcPolynomial_squarefree: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPolynomial_squarefree: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.coordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.coordinates: [NLA.RA20.Mat, NLA.RA20.Variables, NLA.RA20.Mat, NLA.RA20.Variables]
+ACTUAL_AXIOMS NLA.RA20.aeval_hollowPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.aeval_hollowPullback: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.hollowPullback.eq_1,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.hollowPullback.eq_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback.eq_1: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback]
+ACTUAL_AXIOMS NLA.RA20.hollowQuotientMap_surjective: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowQuotientMap_surjective: [NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.hollowPullback_surjective]
+ACTUAL_AXIOMS NLA.RA20.hollowPullback_surjective: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback_surjective: [NLA.RA20.Poly,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.offDiagonalPullback,
+ NLA.RA20.hollowPullback_offDiagonalPullback]
+ACTUAL_AXIOMS NLA.RA20.offDiagonalPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.offDiagonalPullback: [NLA.RA20.ABCPoly,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.offDiagonalPullback._proof_1]
+ACTUAL_AXIOMS NLA.RA20.offDiagonalPullback._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.offDiagonalPullback._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.hollowPullback_offDiagonalPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollowPullback_offDiagonalPullback: [NLA.RA20.ABCPoly,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.offDiagonalPullback,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.offDiagonalPullback,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.offDiagonalPullback._proof_1,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv_mk_X: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv_mk_X: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.reducedCoordinateEquiv._proof_2,
+ NLA.RA20.reducedCoordinateEquiv._proof_3,
+ NLA.RA20.reducedCoordinateEquiv._proof_4,
+ NLA.RA20.hollowQuotientMap_surjective,
+ NLA.RA20.reducedCoordinateEquiv.eq_1,
+ NLA.RA20.hollowQuotientMap._proof_1]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv.eq_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv.eq_1: [NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.reducedCoordinateEquiv._proof_1,
+ NLA.RA20.hollowQuotientMap,
+ NLA.RA20.reducedCoordinateEquiv._proof_2,
+ NLA.RA20.reducedCoordinateEquiv._proof_3,
+ NLA.RA20.reducedCoordinateEquiv._proof_4,
+ NLA.RA20.hollowQuotientMap_surjective,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv]
+ACTUAL_AXIOMS NLA.RA20.algebraic_smooth_locus: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.algebraic_smooth_locus: [NLA.RA20.Mat,
+ NLA.RA20.SmoothPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.Mat,
+ NLA.RA20.algebraic_smooth_locus_proved]
+ACTUAL_AXIOMS NLA.RA20.SmoothPoint: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.SmoothPoint: [NLA.RA20.Mat,
+ NLA.RA20.Mat,
+ NLA.RA20.variety,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.SmoothPoint._proof_1,
+ NLA.RA20.coordinates]
+ACTUAL_AXIOMS NLA.RA20.SmoothPoint._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.SmoothPoint._proof_1: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal]
+ACTUAL_AXIOMS NLA.RA20.ExactlyOneZero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ExactlyOneZero: []
+ACTUAL_AXIOMS NLA.RA20.algebraic_smooth_locus_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.algebraic_smooth_locus_proved: [NLA.RA20.Mat,
+ NLA.RA20.SmoothPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.Mat,
+ NLA.RA20.SmoothPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.variety,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.SmoothPoint._proof_1,
+ NLA.RA20.coordinates,
+ NLA.RA20.matrix_eq_hollow_of_mem,
+ NLA.RA20.hollow_variety_semantics_proved,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.abcPoint,
+ NLA.RA20.reducedPoint_comap,
+ NLA.RA20.smoothLocus_comap_algEquiv,
+ NLA.RA20.abc_smooth_locus_iff,
+ NLA.RA20.abcPoint_comap]
+ACTUAL_AXIOMS NLA.RA20.abcPoint: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPoint: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcEvaluation._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPoint._proof_1,
+ NLA.RA20.abcEvaluation,
+ NLA.RA20.abcPoint._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abcEvaluation._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.abcEvaluation._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.abcPoint._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPoint._proof_1: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abcEvaluation: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcEvaluation: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcEvaluation._proof_1,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcEvaluation._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abcPreimagePrime._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPreimagePrime._proof_1: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abcEvaluation._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcEvaluation._proof_2: [NLA.RA20.abcEvaluation._proof_1,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcEvaluation._proof_1,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcPoint._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPoint._proof_2: [NLA.RA20.abcEvaluation._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPoint._proof_1,
+ NLA.RA20.abcEvaluation,
+ NLA.RA20.abcEvaluation._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcEvaluation]
+ACTUAL_AXIOMS NLA.RA20.reducedPoint_comap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedPoint_comap: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.abcPoint,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.abcPoint,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.abcEvaluation,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.reducedCoordinateEquiv_mk,
+ NLA.RA20.abcEvaluation_mk,
+ NLA.RA20.aeval_hollowPullback]
+ACTUAL_AXIOMS NLA.RA20.reducedCoordinateEquiv_mk: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.reducedCoordinateEquiv_mk: [NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.Poly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.Variables,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.CoordinateRing,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.reducedCoordinateEquiv,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.reducedCoordinateEquiv_mk_X]
+ACTUAL_AXIOMS NLA.RA20.abcEvaluation_mk: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcEvaluation_mk: [NLA.RA20.ABCPoly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcEvaluation,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcEvaluation]
+ACTUAL_AXIOMS NLA.RA20.smoothLocus_comap_algEquiv: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.smoothLocus_comap_algEquiv: []
+ACTUAL_AXIOMS NLA.RA20.abc_smooth_locus_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_smooth_locus_iff: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abc_prime_product_zero,
+ NLA.RA20.abc_local_not_smooth,
+ NLA.RA20.abc_local_smooth]
+ACTUAL_AXIOMS NLA.RA20.ABCLocal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCLocal: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal._proof_1]
+ACTUAL_AXIOMS NLA.RA20.ABCLocal._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCLocal._proof_1: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abc_prime_product_zero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_prime_product_zero: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abc_prime_mem_iff,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abc_prime_mem_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_prime_mem_iff: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime]
+ACTUAL_AXIOMS NLA.RA20.abcPreimagePrime: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPreimagePrime: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abcPreimagePrime._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPreimagePrime._proof_2: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abc_local_not_smooth: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_local_not_smooth: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.triple_product_not_formallySmooth,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.abcLocalizationMap_surjective,
+ NLA.RA20.abc_local_product_ne_zero,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.abcLocalizationMap_ker,
+ NLA.RA20.abcLocalEvaluation,
+ NLA.RA20.abcLocalEvaluation_algebraMap]
+ACTUAL_AXIOMS NLA.RA20.ABCPolynomialLocal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCPolynomialLocal: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1]
+ACTUAL_AXIOMS NLA.RA20.ABCPolynomialLocal._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.ABCPolynomialLocal._proof_1: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2]
+ACTUAL_AXIOMS NLA.RA20.triple_product_not_formallySmooth: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.triple_product_not_formallySmooth: []
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap._proof_1,
+ NLA.RA20.abcLocalizationMap._proof_2,
+ NLA.RA20.abcLocalizationMap._proof_3,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcLocalizationMap._proof_5,
+ NLA.RA20.abcLocalizationMap._proof_6]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap._proof_1: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap._proof_2: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcLocalizationMap._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap._proof_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap._proof_3: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap._proof_5: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap._proof_5: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcLocalizationMap._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcLocalizationMap._proof_4,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap._proof_4: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap._proof_4: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap._proof_6: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap._proof_6: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap._proof_1,
+ NLA.RA20.abcLocalizationMap._proof_2,
+ NLA.RA20.abcLocalizationMap._proof_3,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap_surjective: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap_surjective: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abc_complement_map,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCPolynomialLocal._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abc_complement_map: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_complement_map: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abc_local_product_ne_zero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_local_product_ne_zero: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap_ker: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap_ker: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2,
+ NLA.RA20.abc_complement_map,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcLocalizationMap._proof_2,
+ NLA.RA20.abcIdeal.eq_1]
+ACTUAL_AXIOMS NLA.RA20.abcIdeal.eq_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcIdeal.eq_1: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abcLocalEvaluation: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalEvaluation: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcLocalizationMap._proof_1,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalEvaluation._proof_3,
+ NLA.RA20.abcLocalizationMap._proof_2,
+ NLA.RA20.abcLocalEvaluation._proof_4]
+ACTUAL_AXIOMS NLA.RA20.abcLocalEvaluation._proof_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalEvaluation._proof_3: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalEvaluation._proof_1,
+ NLA.RA20.abcLocalEvaluation._proof_2,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcLocalEvaluation._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalEvaluation._proof_1: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly]
+ACTUAL_AXIOMS NLA.RA20.abcLocalEvaluation._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalEvaluation._proof_2: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly]
+ACTUAL_AXIOMS NLA.RA20.abcLocalEvaluation._proof_4: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalEvaluation._proof_4: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcLocalizationMap._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcPreimagePrime._proof_2,
+ NLA.RA20.abc_prime_mem_iff]
+ACTUAL_AXIOMS NLA.RA20.abcLocalEvaluation_algebraMap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalEvaluation_algebraMap: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalEvaluation,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcLocalizationMap._proof_1,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalizationMap._proof_2,
+ NLA.RA20.abcLocalEvaluation._proof_4]
+ACTUAL_AXIOMS NLA.RA20.abc_local_smooth: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_local_smooth: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.formallySmooth_of_retraction,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.abcLocalChart,
+ NLA.RA20.abcLocalChart_retraction]
+ACTUAL_AXIOMS NLA.RA20.formallySmooth_of_retraction: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.formallySmooth_of_retraction: []
+ACTUAL_AXIOMS NLA.RA20.abcLocalChart: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalChart: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.abcLocalChart._proof_3,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalChart._proof_4,
+ NLA.RA20.abcChart,
+ NLA.RA20.abcChart_unit]
+ACTUAL_AXIOMS NLA.RA20.abcLocalChart._proof_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalChart._proof_3: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalChart._proof_1,
+ NLA.RA20.abcLocalChart._proof_2,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcLocalChart._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalChart._proof_1: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abcLocalChart._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalChart._proof_2: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abcLocalChart._proof_4: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalChart._proof_4: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal]
+ACTUAL_AXIOMS NLA.RA20.abcChart: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcChart: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcChart._proof_1,
+ NLA.RA20.abcErase,
+ NLA.RA20.abcChart._proof_2]
+ACTUAL_AXIOMS NLA.RA20.abcChart._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcChart._proof_1: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalEvaluation._proof_1,
+ NLA.RA20.abcLocalEvaluation._proof_2,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcErase: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcErase: [NLA.RA20.ABCPoly, NLA.RA20.ABCPoly]
+ACTUAL_AXIOMS NLA.RA20.abcChart._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcChart._proof_2: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcChart._proof_1,
+ NLA.RA20.abcErase,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcErase,
+ NLA.RA20.abcErase_relation]
+ACTUAL_AXIOMS NLA.RA20.abcErase_relation: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcErase_relation: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcErase,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcErase,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.abcErase_X]
+ACTUAL_AXIOMS NLA.RA20.abcErase_X: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcErase_X: [NLA.RA20.ABCPoly, NLA.RA20.abcErase, NLA.RA20.ABCPoly, NLA.RA20.abcErase]
+ACTUAL_AXIOMS NLA.RA20.abcChart_unit: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcChart_unit: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcChart,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcChart,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2,
+ NLA.RA20.abcErase,
+ NLA.RA20.abc_prime_mem_iff,
+ NLA.RA20.abc_eval_erase,
+ NLA.RA20.abcChart_mk]
+ACTUAL_AXIOMS NLA.RA20.abc_eval_erase: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_eval_erase: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcErase,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcErase,
+ NLA.RA20.abcErase_X]
+ACTUAL_AXIOMS NLA.RA20.abcChart_mk: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcChart_mk: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcChart,
+ NLA.RA20.abcErase,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcChart]
+ACTUAL_AXIOMS NLA.RA20.abcLocalChart_retraction: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalChart_retraction: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.abcLocalChart,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.abcErase,
+ NLA.RA20.abcErase_X,
+ NLA.RA20.abc_local_coordinate_zero,
+ NLA.RA20.abcLocalChart,
+ NLA.RA20.abcChart,
+ NLA.RA20.abcLocalChart_algebraMap,
+ NLA.RA20.abcChart_mk,
+ NLA.RA20.abcLocalizationMap_algebraMap]
+ACTUAL_AXIOMS NLA.RA20.abc_local_coordinate_zero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_local_coordinate_zero: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.abc_local_coordinate_unit,
+ NLA.RA20.abcLocalizationMap_algebraMap,
+ NLA.RA20.abcPolynomial]
+ACTUAL_AXIOMS NLA.RA20.abc_local_coordinate_unit: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abc_local_coordinate_unit: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.abcLocalizationMap_algebraMap,
+ NLA.RA20.abc_prime_mem_iff]
+ACTUAL_AXIOMS NLA.RA20.abcLocalizationMap_algebraMap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalizationMap_algebraMap: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcLocalizationMap,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.abcPreimagePrime._proof_1,
+ NLA.RA20.abcPreimagePrime._proof_2,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1]
+ACTUAL_AXIOMS NLA.RA20.abcLocalChart_algebraMap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcLocalChart_algebraMap: [NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalChart,
+ NLA.RA20.abcChart,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.ABCLocal._proof_1,
+ NLA.RA20.ABCLocal,
+ NLA.RA20.ABCPolynomialLocal,
+ NLA.RA20.abcPreimagePrime,
+ NLA.RA20.ABCPolynomialLocal._proof_1,
+ NLA.RA20.abcLocalChart._proof_4,
+ NLA.RA20.abcChart,
+ NLA.RA20.abcChart_unit]
+ACTUAL_AXIOMS NLA.RA20.abcPoint_comap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.abcPoint_comap: [NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPoint,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.abcPoint,
+ NLA.RA20.ABCCoordinateRing,
+ NLA.RA20.abcEvaluation,
+ NLA.RA20.abcEvaluation_mk]
+ACTUAL_AXIOMS NLA.RA20.algebraic_tangent_space: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.algebraic_tangent_space: [NLA.RA20.Mat,
+ NLA.RA20.TangentVector,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.algebraic_tangent_space_proved]
+ACTUAL_AXIOMS NLA.RA20.TangentVector: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.TangentVector: [NLA.RA20.Mat,
+ NLA.RA20.Mat,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.coordinates]
+ACTUAL_AXIOMS NLA.RA20.algebraic_tangent_space_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.algebraic_tangent_space_proved: [NLA.RA20.Mat,
+ NLA.RA20.TangentVector,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.TangentVector,
+ NLA.RA20.hollow,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.polyDirectional,
+ NLA.RA20.coordinates,
+ NLA.RA20.symmetryPolynomial_mem,
+ NLA.RA20.polyDirectional_X,
+ NLA.RA20.polyDirectional_sub,
+ NLA.RA20.diagonalPolynomial_mem,
+ NLA.RA20.genericPolynomial,
+ NLA.RA20.genericPolynomial_mem,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polyDirectional_mul,
+ NLA.RA20.matrix_eq_hollow_of_symm_diag,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.polyDirectional_hollowPullback,
+ NLA.RA20.polyDirectional_abc]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional: []
+ACTUAL_AXIOMS NLA.RA20.symmetryPolynomial_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetryPolynomial_mem: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_X: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_X: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_sub: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_sub: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.diagonalPolynomial_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.diagonalPolynomial_mem: [NLA.RA20.Variables,
+ NLA.RA20.Poly,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.Variables,
+ NLA.RA20.Poly,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.genericPolynomial: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.genericPolynomial: [NLA.RA20.Poly, NLA.RA20.Poly, NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.genericPolynomial_mem: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.genericPolynomial_mem: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.genericPolynomial,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.definingIdeal,
+ NLA.RA20.genericPolynomial,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.abcIdeal,
+ NLA.RA20.definingIdeal_eq_comap_abcIdeal,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polynomialHollow]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_mul: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_mul: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.matrix_eq_hollow_of_symm_diag: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrix_eq_hollow_of_symm_diag: [NLA.RA20.Mat, NLA.RA20.hollow, NLA.RA20.Mat, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_hollowPullback: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_hollowPullback: [NLA.RA20.Poly,
+ NLA.RA20.polyDirectional,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.Variables,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.polyDirectional,
+ NLA.RA20.ABCPoly,
+ NLA.RA20.hollowPullback,
+ NLA.RA20.coordinates,
+ NLA.RA20.hollow,
+ NLA.RA20.polynomialHollow,
+ NLA.RA20.polyDirectional_C,
+ NLA.RA20.polyDirectional_add,
+ NLA.RA20.polyDirectional_mul,
+ NLA.RA20.aeval_hollowPullback,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polyDirectional_zero,
+ NLA.RA20.polyDirectional_X]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_C: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_C: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_add: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_add: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_zero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_zero: [NLA.RA20.polyDirectional, NLA.RA20.polyDirectional]
+ACTUAL_AXIOMS NLA.RA20.polyDirectional_abc: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.polyDirectional_abc: [NLA.RA20.polyDirectional,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.polyDirectional,
+ NLA.RA20.abcPolynomial,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.polyDirectional_mul,
+ NLA.RA20.polyDirectional_X]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved]
+ACTUAL_AXIOMS NLA.RA20.fullFrobeniusDistance: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.fullFrobeniusDistance: [NLA.RA20.Mat, NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.Variables,
+ NLA.RA20.matrixEntry,
+ NLA.RA20.coordinates,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_1,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_5,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_6,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_7,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_10,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_16,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_20,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_21,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_22,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_23,
+ NLA.RA20.sum_squares_fderiv]
+ACTUAL_AXIOMS NLA.RA20.matrixEntry: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrixEntry: [NLA.RA20.Variables,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.Mat,
+ NLA.RA20.matrixEntry._proof_1]
+ACTUAL_AXIOMS NLA.RA20.matrixEntry._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.matrixEntry._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_1: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_3: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_5: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_5: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_6: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_6: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_7: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_7: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_8: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_8: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_10: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_10: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_11: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_11: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_13: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_13: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_14: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_14: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_15: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_15: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_16: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_16: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._aux_1_17: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._aux_1_17: [NLA.RA20.Mat]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_19: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_19: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_20: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_20: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_21: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_21: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_5,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_6,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_7,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_10,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_16,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_20]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_22: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_22: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_5,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_6,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_7,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_10,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_16,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_20,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_21,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_1]
+ACTUAL_AXIOMS NLA.RA20.full_frobenius_differential_proved._proof_1_23: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.full_frobenius_differential_proved._proof_1_23: [NLA.RA20.Mat,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_1,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_3,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_5,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_6,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_7,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_8,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_10,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_11,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_13,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_14,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_15,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_16,
+ NLA.RA20.full_frobenius_differential_proved._aux_1_17,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_19,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_20,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_21,
+ NLA.RA20.full_frobenius_differential_proved._proof_1_22]
+ACTUAL_AXIOMS NLA.RA20.sum_squares_fderiv: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.sum_squares_fderiv: [NLA.RA20.quadraticGradient,
+ NLA.RA20.hasFDerivAt_sum_squares,
+ NLA.RA20.quadraticGradient._proof_4,
+ NLA.RA20.quadraticGradient._proof_1,
+ NLA.RA20.quadraticGradient._proof_2,
+ NLA.RA20.quadraticGradient._proof_3]
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.quadraticGradient: [NLA.RA20.quadraticGradient._proof_1,
+ NLA.RA20.quadraticGradient._proof_2,
+ NLA.RA20.quadraticGradient._proof_3,
+ NLA.RA20.quadraticGradient._proof_4]
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient._proof_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.quadraticGradient._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient._proof_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.quadraticGradient._proof_2: []
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient._proof_3: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.quadraticGradient._proof_3: []
+ACTUAL_AXIOMS NLA.RA20.quadraticGradient._proof_4: [propext]
+PROJECT_EDGE NLA.RA20.quadraticGradient._proof_4: []
+ACTUAL_AXIOMS NLA.RA20.hasFDerivAt_sum_squares: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hasFDerivAt_sum_squares: [NLA.RA20.quadraticGradient,
+ NLA.RA20.quadraticGradient._proof_2,
+ NLA.RA20.quadraticGradient._proof_3,
+ NLA.RA20.quadraticGradient._proof_4,
+ NLA.RA20.hasFDerivAt_affine_square]
+ACTUAL_AXIOMS NLA.RA20.hasFDerivAt_affine_square: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hasFDerivAt_affine_square: []
+ACTUAL_AXIOMS NLA.RA20.hollow_distance_semantics: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_distance_semantics: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.hollow_distance_semantics_proved]
+ACTUAL_AXIOMS NLA.RA20.hollow_distance_semantics_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_distance_semantics_proved: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.generic_critical_locus: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_critical_locus: [NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.criticalSet,
+ NLA.RA20.candidate,
+ NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.generic_critical_locus_proved]
+ACTUAL_AXIOMS NLA.RA20.GenericData: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.GenericData: [NLA.RA20.Mat, NLA.RA20.Mat, NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.criticalSet: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.criticalSet: [NLA.RA20.Mat, NLA.RA20.Mat, NLA.RA20.SmoothCriticalPoint]
+ACTUAL_AXIOMS NLA.RA20.SmoothCriticalPoint: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.SmoothCriticalPoint: [NLA.RA20.Mat,
+ NLA.RA20.Mat,
+ NLA.RA20.SmoothPoint,
+ NLA.RA20.TangentVector,
+ NLA.RA20.fullFrobeniusDistance]
+ACTUAL_AXIOMS NLA.RA20.candidate: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.candidate: [NLA.RA20.Mat, NLA.RA20.Mat, NLA.RA20.abcPolynomial._proof_1, NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.generic_critical_locus_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_critical_locus_proved: [NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.criticalSet,
+ NLA.RA20.candidate,
+ NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.criticalSet,
+ NLA.RA20.candidate,
+ NLA.RA20.generic_critical_exhaustion,
+ NLA.RA20.generic_candidate_critical,
+ NLA.RA20.generic_candidate_injective]
+ACTUAL_AXIOMS NLA.RA20.generic_critical_exhaustion: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_critical_exhaustion: [NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.candidate,
+ NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.candidate,
+ NLA.RA20.SmoothPoint,
+ NLA.RA20.algebraic_smooth_locus_proved,
+ NLA.RA20.TangentVector,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.critical_first_plane,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.critical_second_plane,
+ NLA.RA20.critical_third_plane]
+ACTUAL_AXIOMS NLA.RA20.critical_first_plane: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.critical_first_plane: [NLA.RA20.Mat,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.smoothCritical_hollow_iff]
+ACTUAL_AXIOMS NLA.RA20.smoothCritical_hollow_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.smoothCritical_hollow_iff: [NLA.RA20.Mat,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.Mat,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.SmoothPoint,
+ NLA.RA20.TangentVector,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.smoothPoint_hollow_iff,
+ NLA.RA20.exactlyOneZero_product_zero,
+ NLA.RA20.hollow_tangent_iff,
+ NLA.RA20.hollow_frobenius_differential,
+ NLA.RA20.algebraic_tangent_space_proved,
+ NLA.RA20.matrix_eq_hollow_of_symm_diag]
+ACTUAL_AXIOMS NLA.RA20.smoothPoint_hollow_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.smoothPoint_hollow_iff: [NLA.RA20.SmoothPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.SmoothPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.Mat,
+ NLA.RA20.algebraic_smooth_locus_proved]
+ACTUAL_AXIOMS NLA.RA20.exactlyOneZero_product_zero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.exactlyOneZero_product_zero: [NLA.RA20.ExactlyOneZero, NLA.RA20.ExactlyOneZero]
+ACTUAL_AXIOMS NLA.RA20.hollow_tangent_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_tangent_iff: [NLA.RA20.TangentVector,
+ NLA.RA20.hollow,
+ NLA.RA20.TangentVector,
+ NLA.RA20.hollow,
+ NLA.RA20.algebraic_tangent_space_proved,
+ NLA.RA20.hollow_isSymm]
+ACTUAL_AXIOMS NLA.RA20.hollow_frobenius_differential: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hollow_frobenius_differential: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.hollow,
+ NLA.RA20.full_frobenius_differential_proved]
+ACTUAL_AXIOMS NLA.RA20.critical_second_plane: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.critical_second_plane: [NLA.RA20.Mat,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.smoothCritical_hollow_iff]
+ACTUAL_AXIOMS NLA.RA20.critical_third_plane: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.critical_third_plane: [NLA.RA20.Mat,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.Mat,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.hollow,
+ NLA.RA20.ExactlyOneZero,
+ NLA.RA20.smoothCritical_hollow_iff]
+ACTUAL_AXIOMS NLA.RA20.generic_candidate_critical: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_candidate_critical: [NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.candidate,
+ NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.SmoothCriticalPoint,
+ NLA.RA20.candidate,
+ NLA.RA20.generic_coordinates_ne_zero,
+ NLA.RA20.hollow,
+ NLA.RA20.critical_first_plane,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.critical_second_plane,
+ NLA.RA20.critical_third_plane]
+ACTUAL_AXIOMS NLA.RA20.generic_coordinates_ne_zero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_coordinates_ne_zero: [NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.abcPolynomial._proof_1]
+ACTUAL_AXIOMS NLA.RA20.generic_candidate_injective: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_candidate_injective: [NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.candidate,
+ NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.generic_coordinates_ne_zero,
+ NLA.RA20.candidate,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.component_hessians: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.component_hessians: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.Mat,
+ NLA.RA20.component_hessians_proved]
+ACTUAL_AXIOMS NLA.RA20.planeCoordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.planeCoordinates: [NLA.RA20.Mat,
+ NLA.RA20.Mat,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.hollow,
+ NLA.RA20.planeCoordinates._proof_1]
+ACTUAL_AXIOMS NLA.RA20.planeCoordinates._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.planeCoordinates._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.component_hessians_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.component_hessians_proved: [NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.Mat,
+ NLA.RA20.fullFrobeniusDistance,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.Variables,
+ NLA.RA20.planeEntry,
+ NLA.RA20.coordinates,
+ NLA.RA20.planeEntry_apply,
+ NLA.RA20.sum_squares_hessian,
+ NLA.RA20.planeCoordinates._proof_1,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.hollow]
+ACTUAL_AXIOMS NLA.RA20.planeEntry: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.planeEntry: [NLA.RA20.planeEntry._proof_1, NLA.RA20.hollow, NLA.RA20.planeEntry._proof_2]
+ACTUAL_AXIOMS NLA.RA20.planeEntry._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.planeEntry._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.planeEntry._proof_2: [propext]
+PROJECT_EDGE NLA.RA20.planeEntry._proof_2: []
+ACTUAL_AXIOMS NLA.RA20.planeEntry_apply: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.planeEntry_apply: [NLA.RA20.planeEntry,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.planeEntry,
+ NLA.RA20.planeCoordinates,
+ NLA.RA20.planeEntry._proof_1,
+ NLA.RA20.hollow,
+ NLA.RA20.planeEntry._proof_2,
+ NLA.RA20.Mat,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.planeCoordinates._proof_1]
+ACTUAL_AXIOMS NLA.RA20.sum_squares_hessian: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.sum_squares_hessian: [NLA.RA20.quadraticGradient,
+ NLA.RA20.hasFDerivAt_sum_squares,
+ NLA.RA20.hasFDerivAt_quadraticGradient]
+ACTUAL_AXIOMS NLA.RA20.hasFDerivAt_quadraticGradient: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.hasFDerivAt_quadraticGradient: [NLA.RA20.quadraticGradient,
+ NLA.RA20.quadraticGradient._proof_2,
+ NLA.RA20.quadraticGradient._proof_3,
+ NLA.RA20.quadraticGradient._proof_4]
+ACTUAL_AXIOMS NLA.RA20.generic_data_intersection: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_data_intersection: [NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.GenericData,
+ NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.generic_data_intersection_proved]
+ACTUAL_AXIOMS NLA.RA20.generic_data_intersection_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_data_intersection_proved: [NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.GenericData,
+ NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.GenericData,
+ NLA.RA20.symmetricParameterIndex,
+ NLA.RA20.symmetricDataCoordinates,
+ NLA.RA20.symmetricParameter,
+ NLA.RA20.eval_rename_symmetricParameter,
+ NLA.RA20.symmetricParameter_reconstruct,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.symmetricParameter_isSymm]
+ACTUAL_AXIOMS NLA.RA20.symmetricParameterIndex: [propext, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricParameterIndex: [NLA.RA20.Variables,
+ NLA.RA20.Variables,
+ NLA.RA20.symmetricParameterIndex._proof_1]
+ACTUAL_AXIOMS NLA.RA20.symmetricParameterIndex._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.symmetricParameterIndex._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.symmetricDataCoordinates: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricDataCoordinates: [NLA.RA20.Mat, NLA.RA20.Mat, NLA.RA20.symmetricDataCoordinates._proof_1]
+ACTUAL_AXIOMS NLA.RA20.symmetricDataCoordinates._proof_1: [propext]
+PROJECT_EDGE NLA.RA20.symmetricDataCoordinates._proof_1: []
+ACTUAL_AXIOMS NLA.RA20.symmetricParameter: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricParameter: [NLA.RA20.Mat, NLA.RA20.symmetricParameterIndex]
+ACTUAL_AXIOMS NLA.RA20.eval_rename_symmetricParameter: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.eval_rename_symmetricParameter: [NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.symmetricParameterIndex,
+ NLA.RA20.coordinates,
+ NLA.RA20.symmetricParameter,
+ NLA.RA20.Poly,
+ NLA.RA20.Variables,
+ NLA.RA20.symmetricParameterIndex,
+ NLA.RA20.coordinates,
+ NLA.RA20.symmetricParameter]
+ACTUAL_AXIOMS NLA.RA20.symmetricParameter_reconstruct: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricParameter_reconstruct: [NLA.RA20.Mat,
+ NLA.RA20.symmetricParameter,
+ NLA.RA20.symmetricDataCoordinates,
+ NLA.RA20.Mat,
+ NLA.RA20.symmetricParameter,
+ NLA.RA20.symmetricDataCoordinates,
+ NLA.RA20.symmetricDataCoordinates._proof_1,
+ NLA.RA20.symmetricParameterIndex,
+ NLA.RA20.symmetricParameterIndex._proof_1]
+ACTUAL_AXIOMS NLA.RA20.symmetricParameter_isSymm: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.symmetricParameter_isSymm: [NLA.RA20.symmetricParameter, NLA.RA20.symmetricParameter]
+ACTUAL_AXIOMS NLA.RA20.generic_count_three: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_count_three: [NLA.RA20.HasGenericCriticalCount, NLA.RA20.generic_count_three_proved]
+ACTUAL_AXIOMS NLA.RA20.HasGenericCriticalCount: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.HasGenericCriticalCount: [NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.HasCriticalCount]
+ACTUAL_AXIOMS NLA.RA20.HasCriticalCount: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.HasCriticalCount: [NLA.RA20.Mat, NLA.RA20.Mat, NLA.RA20.criticalSet]
+ACTUAL_AXIOMS NLA.RA20.generic_count_three_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_count_three_proved: [NLA.RA20.HasGenericCriticalCount,
+ NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.HasCriticalCount,
+ NLA.RA20.genericPolynomial,
+ NLA.RA20.hollow,
+ NLA.RA20.hollow_isSymm,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.critical_count_three]
+ACTUAL_AXIOMS NLA.RA20.critical_count_three: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.critical_count_three: [NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.HasCriticalCount,
+ NLA.RA20.Mat,
+ NLA.RA20.GenericData,
+ NLA.RA20.criticalSet,
+ NLA.RA20.candidate,
+ NLA.RA20.HasCriticalCount,
+ NLA.RA20.generic_critical_locus_proved]
+ACTUAL_AXIOMS NLA.RA20.generic_count_not_four: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_count_not_four: [NLA.RA20.HasGenericCriticalCount, NLA.RA20.generic_count_not_four_proved]
+ACTUAL_AXIOMS NLA.RA20.generic_count_not_four_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.generic_count_not_four_proved: [NLA.RA20.HasGenericCriticalCount,
+ NLA.RA20.HasGenericCriticalCount,
+ NLA.RA20.Poly,
+ NLA.RA20.Mat,
+ NLA.RA20.Variables,
+ NLA.RA20.coordinates,
+ NLA.RA20.HasCriticalCount,
+ NLA.RA20.GenericData,
+ NLA.RA20.generic_data_intersection_proved,
+ NLA.RA20.critical_count_three,
+ NLA.RA20.abcPolynomial._proof_1,
+ NLA.RA20.criticalSet]
+ACTUAL_AXIOMS NLA.RA20.not_criticalCountConjecture: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.not_criticalCountConjecture: [NLA.RA20.criticalCountConjecture,
+ NLA.RA20.not_criticalCountConjecture_proved]
+ACTUAL_AXIOMS NLA.RA20.criticalCountConjecture: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.criticalCountConjecture: [NLA.RA20.HasGenericCriticalCount, NLA.RA20.predictedCount]
+ACTUAL_AXIOMS NLA.RA20.predictedCount: []
+PROJECT_EDGE NLA.RA20.predictedCount: []
+ACTUAL_AXIOMS NLA.RA20.not_criticalCountConjecture_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.RA20.not_criticalCountConjecture_proved: [NLA.RA20.criticalCountConjecture,
+ NLA.RA20.criticalCountConjecture,
+ NLA.RA20.HasGenericCriticalCount,
+ NLA.RA20.predictedCount,
+ NLA.RA20.generic_count_not_four_proved]
+RETAINED_DEPENDENCY NLA.RA20.hollow_variety_semantics_proved
+RETAINED_DEPENDENCY NLA.RA20.reduced_coordinate_ring_proved
+RETAINED_DEPENDENCY NLA.RA20.algebraic_smooth_locus_proved
+RETAINED_DEPENDENCY NLA.RA20.algebraic_tangent_space_proved
+RETAINED_DEPENDENCY NLA.RA20.full_frobenius_differential_proved
+RETAINED_DEPENDENCY NLA.RA20.hollow_distance_semantics_proved
+RETAINED_DEPENDENCY NLA.RA20.generic_critical_locus_proved
+RETAINED_DEPENDENCY NLA.RA20.component_hessians_proved
+RETAINED_DEPENDENCY NLA.RA20.generic_data_intersection_proved
+RETAINED_DEPENDENCY NLA.RA20.generic_count_three_proved
+RETAINED_DEPENDENCY NLA.RA20.generic_count_not_four_proved
+RETAINED_DEPENDENCY NLA.RA20.not_criticalCountConjecture_proved
+RETAINED_DEPENDENCY NLA.RA20.variety
+RETAINED_DEPENDENCY NLA.RA20.definingIdeal
+RETAINED_DEPENDENCY NLA.RA20.SmoothPoint
+RETAINED_DEPENDENCY NLA.RA20.TangentVector
+RETAINED_DEPENDENCY NLA.RA20.fullFrobeniusDistance
+RETAINED_DEPENDENCY NLA.RA20.criticalSet
+RETAINED_DEPENDENCY NLA.RA20.SmoothCriticalPoint
+RETAINED_DEPENDENCY NLA.RA20.HasCriticalCount
+RETAINED_DEPENDENCY NLA.RA20.HasGenericCriticalCount
+RETAINED_DEPENDENCY NLA.RA20.predictedCount
+RETAINED_DEPENDENCY NLA.RA20.criticalCountConjecture
+RETAINED_DEPENDENCY NLA.RA20.genericPolynomial
+RETAINED_DEPENDENCY NLA.RA20.candidate
+RETAINED_DEPENDENCY NLA.RA20.GenericData
+RETAINED_DEPENDENCY NLA.RA20.critical_count_three
+RETAINED_DEPENDENCY NLA.RA20.polyDirectional_hollowPullback
+RETAINED_DEPENDENCY NLA.RA20.abc_smooth_locus_iff
+RETAINED_DEPENDENCY NLA.RA20.generic_critical_exhaustion
+RETAINED_DEPENDENCY NLA.RA20.generic_candidate_injective
+RETAINED_DEPENDENCY NLA.RA20.symmetricParameter_reconstruct
+RETAINED_DEPENDENCY MvPolynomial.vanishingIdeal_zeroLocus_eq_radical
+RETAINED_DEPENDENCY MvPolynomial.funext
+RETAINED_DEPENDENCY Algebra.smoothLocus
+RETAINED_DEPENDENCY MvPolynomial.pderiv
+RETAINED_DEPENDENCY fderiv
+RETAINED_DEPENDENCY Cardinal.mk
+RETAINED_DEPENDENCY Cardinal.mk_range_eq
+PROJECT_COUNTS declarations=214, required=39
+'NLA.RA20.hollow_variety_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.reduced_coordinate_ring' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.algebraic_smooth_locus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.algebraic_tangent_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.full_frobenius_differential' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.hollow_distance_semantics' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.generic_critical_locus' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.component_hessians' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.generic_data_intersection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.generic_count_three' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.generic_count_not_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.RA20.not_criticalCountConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.RA20.SmoothPoint : (n s : Nat) → (X : NLA.RA20.Mat n) → Prop :=
+fun (n s : Nat) (X : NLA.RA20.Mat n) =>
+  And
+    (@Membership.mem.{0, 0} (NLA.RA20.Mat n) (Set.{0} (NLA.RA20.Mat n)) (@Set.instMembership.{0} (NLA.RA20.Mat n))
+      (NLA.RA20.variety n s) X)
+    (@Exists.{1}
+      (@PrimeSpectrum.{0} (NLA.RA20.CoordinateRing n s)
+        (@Ideal.Quotient.commSemiring.{0} (NLA.RA20.Poly n)
+          (@AddMonoidAlgebra.commRing.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            Complex.commRing (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+          (NLA.RA20.definingIdeal n s)))
+      fun
+        (p :
+          @PrimeSpectrum.{0} (NLA.RA20.CoordinateRing n s)
+            (@Ideal.Quotient.commSemiring.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.commRing.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                Complex.commRing (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+              (NLA.RA20.definingIdeal n s))) =>
+      And
+        (@Eq.{1}
+          (@PrimeSpectrum.{0} (NLA.RA20.Poly n)
+            (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+              (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.instCommSemiring
+              (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid)))
+          (@PrimeSpectrum.comap.{0, 0} (NLA.RA20.Poly n)
+            (@HasQuotient.Quotient.{0, 0} (NLA.RA20.Poly n)
+              (@Ideal.{0} (NLA.RA20.Poly n)
+                (@Ring.toSemiring.{0} (NLA.RA20.Poly n)
+                  (@AddMonoidAlgebra.ring.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instRing (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid))))
+              (@Ideal.instHasQuotient.{0} (NLA.RA20.Poly n)
+                (@AddMonoidAlgebra.ring.{0, 0} Complex
+                  (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                  Complex.instRing (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))
+              (NLA.RA20.definingIdeal n s))
+            (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+              (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              Complex.instCommSemiring
+              (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+            (@Ideal.Quotient.commSemiring.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.commRing.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                Complex.commRing (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+              (NLA.RA20.definingIdeal n s))
+            (@Ideal.Quotient.mk.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.ring.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                Complex.instRing (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid))
+              (NLA.RA20.definingIdeal n s) (NLA.RA20.SmoothPoint._proof_1 n s))
+            p)
+          (@MvPolynomial.pointToPoint.{0, 0, 0} Complex Complex Complex.instField Complex.instField
+            (@Algebra.id.{0} Complex
+              (@Semifield.toCommSemiring.{0} Complex (@Field.toSemifield.{0} Complex Complex.instField)))
+            (NLA.RA20.Variables n) (@NLA.RA20.coordinates n X)))
+        (@Membership.mem.{0, 0}
+          (@PrimeSpectrum.{0} (NLA.RA20.CoordinateRing n s)
+            (@Ideal.Quotient.commSemiring.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.commRing.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                Complex.commRing (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+              (NLA.RA20.definingIdeal n s)))
+          (Set.{0}
+            (@PrimeSpectrum.{0} (NLA.RA20.CoordinateRing n s)
+              (@CommRing.toCommSemiring.{0} (NLA.RA20.CoordinateRing n s)
+                (@Ideal.Quotient.commRing.{0} (NLA.RA20.Poly n)
+                  (@AddMonoidAlgebra.commRing.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.commRing
+                    (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+                  (NLA.RA20.definingIdeal n s)))))
+          (@Set.instMembership.{0}
+            (@PrimeSpectrum.{0} (NLA.RA20.CoordinateRing n s)
+              (@CommRing.toCommSemiring.{0} (NLA.RA20.CoordinateRing n s)
+                (@Ideal.Quotient.commRing.{0} (NLA.RA20.Poly n)
+                  (@AddMonoidAlgebra.commRing.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.commRing
+                    (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+                  (NLA.RA20.definingIdeal n s)))))
+          (@Algebra.smoothLocus.{0, 0} Complex (NLA.RA20.CoordinateRing n s) Complex.commRing
+            (@Ideal.Quotient.commRing.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.commRing.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                Complex.commRing (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+              (NLA.RA20.definingIdeal n s))
+            (@Ideal.instAlgebraQuotient.{0, 0} Complex (@CommRing.toCommSemiring.{0} Complex Complex.commRing)
+              (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.commRing.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                Complex.commRing (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+              (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@CommRing.toCommSemiring.{0} Complex Complex.commRing)
+                (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                (@Algebra.id.{0} Complex (@CommRing.toCommSemiring.{0} Complex Complex.commRing))
+                (@AddCommMonoid.toAddMonoid.{0}
+                  (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                  (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid)))
+              (NLA.RA20.definingIdeal n s)))
+          p))
+def NLA.RA20.TangentVector : (n s : Nat) → (X Z : NLA.RA20.Mat n) → Prop :=
+fun (n s : Nat) (X Z : NLA.RA20.Mat n) =>
+  ∀ (p : NLA.RA20.Poly n),
+    @Membership.mem.{0, 0} (NLA.RA20.Poly n)
+        (@Ideal.{0} (NLA.RA20.Poly n)
+          (@AddMonoidAlgebra.semiring.{0, 0} Complex
+            (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+            (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+            (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))
+        (@SetLike.instMembership.{0, 0}
+          (@Ideal.{0} (NLA.RA20.Poly n)
+            (@AddMonoidAlgebra.semiring.{0, 0} Complex
+              (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))
+          (NLA.RA20.Poly n)
+          (@Submodule.setLike.{0, 0} (NLA.RA20.Poly n) (NLA.RA20.Poly n)
+            (@AddMonoidAlgebra.semiring.{0, 0} Complex
+              (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+              (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+              (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid))
+            (@Semiring.toAddCommMonoid.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.semiring.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))
+            (@Semiring.toModule.{0} (NLA.RA20.Poly n)
+              (@AddMonoidAlgebra.semiring.{0, 0} Complex
+                (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                (@Finsupp.instAddMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddMonoid)))))
+        (NLA.RA20.definingIdeal n s) p →
+      @Eq.{1} Complex
+        (@Finset.sum.{0, 0} (NLA.RA20.Variables n) Complex Complex.instAddCommMonoid
+          (@Finset.univ.{0} (NLA.RA20.Variables n)
+            (@instFintypeProd.{0, 0} (Fin n) (Fin n) (Fin.fintype n) (Fin.fintype n)))
+          fun (ij : NLA.RA20.Variables n) =>
+          @HMul.hMul.{0, 0, 0} Complex Complex Complex (@instHMul.{0} Complex Complex.instMul)
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) Complex
+                (@AddMonoidAlgebra.nonAssocSemiring.{0, 0} Complex
+                  (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                  (@Finsupp.instAddZeroClass.{0, 0} (NLA.RA20.Variables n) Nat
+                    (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+                (@Semiring.toNonAssocSemiring.{0} Complex
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+              (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+              (fun (x : @MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) => Complex)
+              (@RingHom.instFunLike.{0, 0}
+                (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) Complex
+                (@AddMonoidAlgebra.nonAssocSemiring.{0, 0} Complex
+                  (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                  (@Finsupp.instAddZeroClass.{0, 0} (NLA.RA20.Variables n) Nat
+                    (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+                (@Semiring.toNonAssocSemiring.{0} Complex
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+              (@MvPolynomial.eval.{0, 0} Complex (NLA.RA20.Variables n) Complex.instCommSemiring
+                (@NLA.RA20.coordinates n X))
+              (@DFunLike.coe.{1, 1, 1}
+                (@Derivation.{0, 0, 0} Complex
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                  Complex.instCommSemiring
+                  (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instCommSemiring
+                    (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+                  (@AddMonoidAlgebra.instAddCommMonoid.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))
+                  (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Algebra.id.{0} Complex Complex.instCommSemiring)
+                    (@AddCommMonoid.toAddMonoid.{0}
+                      (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                      (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid)))
+                  (@Semiring.toModule.{0} (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0}
+                      (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                      (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+                        (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                        Complex.instCommSemiring
+                        (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))))
+                  (@AddMonoidAlgebra.instModule.{0, 0, 0} Complex Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Semiring.toModule.{0} Complex (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))))
+                (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                (fun (x : @MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) =>
+                  @MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                (@Derivation.instFunLike.{0, 0, 0} Complex
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                  Complex.instCommSemiring
+                  (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instCommSemiring
+                    (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))
+                  (@AddMonoidAlgebra.instAddCommMonoid.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))
+                  (@AddMonoidAlgebra.algebra.{0, 0, 0} Complex Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    Complex.instCommSemiring (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Algebra.id.{0} Complex Complex.instCommSemiring)
+                    (@AddCommMonoid.toAddMonoid.{0}
+                      (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                      (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid)))
+                  (@Semiring.toModule.{0} (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0}
+                      (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                      (@AddMonoidAlgebra.commSemiring.{0, 0} Complex
+                        (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                        Complex.instCommSemiring
+                        (@Finsupp.instAddCommMonoid.{0, 0} (NLA.RA20.Variables n) Nat Nat.instAddCommMonoid))))
+                  (@AddMonoidAlgebra.instModule.{0, 0, 0} Complex Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Semiring.toModule.{0} Complex (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring))))
+                (@MvPolynomial.pderiv.{0, 0} Complex (NLA.RA20.Variables n) Complex.instCommSemiring ij) p))
+            (@NLA.RA20.coordinates n Z ij))
+        (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero))
+def NLA.RA20.HasGenericCriticalCount : (n s m : Nat) → Prop :=
+fun (n s m : Nat) =>
+  @Exists.{1} (NLA.RA20.Poly n) fun (q : NLA.RA20.Poly n) =>
+    And
+      (@Exists.{1} (NLA.RA20.Mat n) fun (U : NLA.RA20.Mat n) =>
+        And (@Matrix.IsSymm.{0, 0} Complex (Fin n) U)
+          (@Ne.{1} Complex
+            (@DFunLike.coe.{1, 1, 1}
+              (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) Complex
+                (@AddMonoidAlgebra.nonAssocSemiring.{0, 0} Complex
+                  (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                  (@Finsupp.instAddZeroClass.{0, 0} (NLA.RA20.Variables n) Nat
+                    (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+                (@Semiring.toNonAssocSemiring.{0} Complex
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+              (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+              (fun (x : @MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) => Complex)
+              (@RingHom.instFunLike.{0, 0}
+                (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) Complex
+                (@AddMonoidAlgebra.nonAssocSemiring.{0, 0} Complex
+                  (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                  (@Finsupp.instAddZeroClass.{0, 0} (NLA.RA20.Variables n) Nat
+                    (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+                (@Semiring.toNonAssocSemiring.{0} Complex
+                  (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+              (@MvPolynomial.eval.{0, 0} Complex (NLA.RA20.Variables n) Complex.instCommSemiring
+                (@NLA.RA20.coordinates n U))
+              q)
+            (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero))))
+      (∀ (U : NLA.RA20.Mat n),
+        @Matrix.IsSymm.{0, 0} Complex (Fin n) U →
+          @Ne.{1} Complex
+              (@DFunLike.coe.{1, 1, 1}
+                (@RingHom.{0, 0} (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) Complex
+                  (@AddMonoidAlgebra.nonAssocSemiring.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Finsupp.instAddZeroClass.{0, 0} (NLA.RA20.Variables n) Nat
+                      (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+                  (@Semiring.toNonAssocSemiring.{0} Complex
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+                (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring)
+                (fun (x : @MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) => Complex)
+                (@RingHom.instFunLike.{0, 0}
+                  (@MvPolynomial.{0, 0} (NLA.RA20.Variables n) Complex Complex.instCommSemiring) Complex
+                  (@AddMonoidAlgebra.nonAssocSemiring.{0, 0} Complex
+                    (@Finsupp.{0, 0} (NLA.RA20.Variables n) Nat (@MulZeroClass.toZero.{0} Nat Nat.instMulZeroClass))
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)
+                    (@Finsupp.instAddZeroClass.{0, 0} (NLA.RA20.Variables n) Nat
+                      (@AddMonoid.toAddZeroClass.{0} Nat Nat.instAddMonoid)))
+                  (@Semiring.toNonAssocSemiring.{0} Complex
+                    (@CommSemiring.toSemiring.{0} Complex Complex.instCommSemiring)))
+                (@MvPolynomial.eval.{0, 0} Complex (NLA.RA20.Variables n) Complex.instCommSemiring
+                  (@NLA.RA20.coordinates n U))
+                q)
+              (@OfNat.ofNat.{0} Complex (nat_lit 0) (@Zero.toOfNat0.{0} Complex Complex.instZero)) →
+            NLA.RA20.HasCriticalCount n s U m)
+def NLA.RA20.criticalCountConjecture : Prop :=
+∀ (n s : Nat),
+  @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))) n →
+    @LE.le.{0} Nat instLENat (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))) s →
+      @LE.le.{0} Nat instLENat s (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))) →
+        @LE.le.{0} Nat instLENat s n → NLA.RA20.HasGenericCriticalCount n s (NLA.RA20.predictedCount n s)
+def NLA.RA20.predictedCount : (n s : Nat) → Nat :=
+fun (n s : Nat) =>
+  @ite.{1} Nat (@Eq.{1} Nat s (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+    (instDecidableEqNat s (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))
+    (@HSub.hSub.{0, 0, 0} Nat Nat Nat (@instHSub.{0} Nat instSubNat)
+      (@HMul.hMul.{0, 0, 0} Nat Nat Nat (@instHMul.{0} Nat instMulNat)
+        (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))
+        (@HSub.hSub.{0, 0, 0} Nat Nat Nat (@instHSub.{0} Nat instSubNat) n
+          (@OfNat.ofNat.{0} Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))
+      (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+    (@ite.{1} Nat (@Eq.{1} Nat s (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+      (instDecidableEqNat s (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+      (@HSub.hSub.{0, 0, 0} Nat Nat Nat (@instHSub.{0} Nat instSubNat)
+        (@HMul.hMul.{0, 0, 0} Nat Nat Nat (@instHMul.{0} Nat instMulNat)
+          (@OfNat.ofNat.{0} Nat (nat_lit 9) (instOfNatNat (nat_lit 9)))
+          (@HSub.hSub.{0, 0, 0} Nat Nat Nat (@instHSub.{0} Nat instSubNat) n
+            (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))
+        (@OfNat.ofNat.{0} Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))
+      (@ite.{1} Nat (@Eq.{1} Nat s (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (instDecidableEqNat s (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3))))
+        (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat)
+          (@HMul.hMul.{0, 0, 0} Nat Nat Nat (@instHMul.{0} Nat instMulNat)
+            (@OfNat.ofNat.{0} Nat (nat_lit 27) (instOfNatNat (nat_lit 27)))
+            (@HSub.hSub.{0, 0, 0} Nat Nat Nat (@instHSub.{0} Nat instSubNat) n
+              (@OfNat.ofNat.{0} Nat (nat_lit 3) (instOfNatNat (nat_lit 3)))))
+          (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+        (@ite.{1} Nat (@Eq.{1} Nat s (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+          (instDecidableEqNat s (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4))))
+          (@HAdd.hAdd.{0, 0, 0} Nat Nat Nat (@instHAdd.{0} Nat instAddNat)
+            (@HMul.hMul.{0, 0, 0} Nat Nat Nat (@instHMul.{0} Nat instMulNat)
+              (@OfNat.ofNat.{0} Nat (nat_lit 81) (instOfNatNat (nat_lit 81)))
+              (@HSub.hSub.{0, 0, 0} Nat Nat Nat (@instHSub.{0} Nat instSubNat) n
+                (@OfNat.ofNat.{0} Nat (nat_lit 4) (instOfNatNat (nat_lit 4)))))
+            (@OfNat.ofNat.{0} Nat (nat_lit 28) (instOfNatNat (nat_lit 28))))
+          (@OfNat.ofNat.{0} Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))))
+theorem NLA.RA20.critical_count_three : ∀ (U : NLA.RA20.Mat 3),
+  NLA.RA20.GenericData U → NLA.RA20.HasCriticalCount 3 3 U 3 :=
+fun U hU =>
+  And.casesOn (NLA.RA20.generic_critical_locus_proved U hU) fun he hi =>
+    id
+      (Eq.mpr (id (congrArg (fun _a => Cardinal.mk ↑_a = 3) he))
+        (Eq.mpr (id (congrArg (fun _a => _a = 3) (Cardinal.mk_range_eq (NLA.RA20.candidate U) hi)))
+          (of_eq_true
+            (Eq.trans
+              (congrFun' (congrArg Eq (Eq.trans (Cardinal.mk_fintype (Fin 3)) (congrArg Nat.cast (Fintype.card_fin 3))))
+                3)
+              (eq_self 3)))))
+theorem NLA.RA20.generic_count_three_proved : NLA.RA20.HasGenericCriticalCount 3 3 3 :=
+Exists.intro NLA.RA20.genericPolynomial
+  ⟨Exists.intro (NLA.RA20.hollow 1 1 1)
+      ⟨NLA.RA20.hollow_isSymm 1 1 1,
+        Eq.mpr
+          (id
+            (congrFun'
+              (congrArg Ne
+                (Eq.trans
+                  (map_mul (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow 1 1 1)))
+                    (MvPolynomial.X (0, 1) * MvPolynomial.X (0, 2)) (MvPolynomial.X (1, 2)))
+                  (congr
+                    (congrArg HMul.hMul
+                      (Eq.trans
+                        (map_mul (MvPolynomial.eval (NLA.RA20.coordinates (NLA.RA20.hollow 1 1 1)))
+                          (MvPolynomial.X (0, 1)) (MvPolynomial.X (0, 2)))
+                        (congr (congrArg HMul.hMul (MvPolynomial.eval_X (0, 1))) (MvPolynomial.eval_X (0, 2)))))
+                    (MvPolynomial.eval_X (1, 2)))))
+              0))
+          (id
+            (Mathlib.Meta.NormNum.isNat_eq_false
+              (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul) (Mathlib.Meta.NormNum.isNat_ofNat ℂ Nat.cast_one)
+                  (Mathlib.Meta.NormNum.isNat_ofNat ℂ Nat.cast_one) (Eq.refl 1))
+                (Mathlib.Meta.NormNum.isNat_ofNat ℂ Nat.cast_one) (Eq.refl 1))
+              (Mathlib.Meta.NormNum.isNat_ofNat ℂ Nat.cast_zero) (Eq.refl false)))⟩,
+    fun U hU hq =>
+    NLA.RA20.critical_count_three U
+      ⟨hU,
+        Eq.mpr
+          (id
+            (Eq.trans
+              (Eq.trans
+                (congrArg Not (Eq.trans mul_eq_zero._simp_1 (congrFun' (congrArg Or mul_eq_zero._simp_1) (U 1 2 = 0))))
+                not_or._simp_1)
+              (congrFun' (congrArg And not_or._simp_1) ¬U 1 2 = 0)))
+          (Eq.mp
+            (Eq.trans
+              (congrFun'
+                (congrArg Ne
+                  (Eq.trans
+                    (map_mul (MvPolynomial.eval (NLA.RA20.coordinates U))
+                      (MvPolynomial.X (0, 1) * MvPolynomial.X (0, 2)) (MvPolynomial.X (1, 2)))
+                    (congr
+                      (congrArg HMul.hMul
+                        (Eq.trans
+                          (map_mul (MvPolynomial.eval (NLA.RA20.coordinates U)) (MvPolynomial.X (0, 1))
+                            (MvPolynomial.X (0, 2)))
+                          (congr (congrArg HMul.hMul (MvPolynomial.eval_X (0, 1))) (MvPolynomial.eval_X (0, 2)))))
+                      (MvPolynomial.eval_X (1, 2)))))
+                0)
+              (Eq.trans
+                (Eq.trans
+                  (congrArg Not
+                    (Eq.trans mul_eq_zero._simp_1 (congrFun' (congrArg Or mul_eq_zero._simp_1) (U 1 2 = 0))))
+                  not_or._simp_1)
+                (congrFun' (congrArg And not_or._simp_1) ¬U 1 2 = 0)))
+            hq)⟩⟩
+theorem NLA.RA20.generic_count_not_four_proved : ¬NLA.RA20.HasGenericCriticalCount 3 3 4 :=
+fun a =>
+  Exists.casesOn a fun q h =>
+    And.casesOn h fun hq hcount =>
+      Exists.casesOn (NLA.RA20.generic_data_intersection_proved q hq) fun U h =>
+        And.casesOn h fun hU hqU =>
+          have h3 := NLA.RA20.critical_count_three U hU;
+          have h4 := hcount U hU.left hqU;
+          have hbad := Eq.trans (Eq.symm h3) h4;
+          False.elim
+            (Eq.mp
+              (eq_false
+                (Mathlib.Meta.NormNum.isNat_eq_false (Mathlib.Meta.NormNum.isNat_ofNat Cardinal.{0} (Eq.refl 3))
+                  (Mathlib.Meta.NormNum.isNat_ofNat Cardinal.{0} (Eq.refl 4)) (Eq.refl false)))
+              hbad)
+theorem NLA.RA20.not_criticalCountConjecture_proved : ¬NLA.RA20.criticalCountConjecture :=
+fun h =>
+  have h4 :=
+    h 3 3 (of_decide_eq_true (id (Eq.refl true))) (of_decide_eq_true (id (Eq.refl true)))
+      (of_decide_eq_true (id (Eq.refl true))) (of_decide_eq_true (id (Eq.refl true)));
+  NLA.RA20.generic_count_not_four_proved
+    (Eq.mp
+      (congrArg (NLA.RA20.HasGenericCriticalCount 3 3)
+        (Eq.trans
+          (ite_cond_eq_false (3 * (3 - 1) - 2)
+            (if 3 = 2 then 9 * (3 - 2) - 2
+            else if 3 = 3 then 27 * (3 - 3) + 4 else if 3 = 4 then 81 * (3 - 4) + 28 else 0)
+            (OfNat.ofNat_ne_one._simp_1 3))
+          (Eq.trans
+            (ite_cond_eq_false (9 * (3 - 2) - 2)
+              (if 3 = 3 then 27 * (3 - 3) + 4 else if 3 = 4 then 81 * (3 - 4) + 28 else 0) (Nat.succ_ne_self._simp_1 2))
+            (Eq.trans (ite_cond_eq_true (27 * (3 - 3) + 4) (if 3 = 4 then 81 * (3 - 4) + 28 else 0) (eq_self 3))
+              (Eq.trans
+                (congrFun' (congrArg HAdd.hAdd (Eq.trans (congrArg (HMul.hMul 27) (tsub_self 3)) (mul_zero 27))) 4)
+                (zero_add 4))))))
+      h4)

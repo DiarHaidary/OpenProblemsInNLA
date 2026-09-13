@@ -1,0 +1,23 @@
+{
+  "utc": "2026-09-13T06:55:41.770380+00:00",
+  "command": [
+    "/tmp/nla-submission-tools/gh_2.100.0_macOS_arm64/bin/gh",
+    "run",
+    "list",
+    "--repo",
+    "sgstepaniants/OpenProblemsInNLA",
+    "--branch",
+    "codex/lean-ra20-hollow-critical-count",
+    "--limit",
+    "20",
+    "--json",
+    "databaseId,headSha,event,status,conclusion,workflowName,createdAt,url"
+  ],
+  "cwd": "/private/tmp/nla-lean-ra20-worktree",
+  "environment_overrides": {
+    "PYTHONDONTWRITEBYTECODE": "1",
+    "GIT_OPTIONAL_LOCKS": "0",
+    "GH_PAGER": "cat",
+    "GH_PROMPT_DISABLED": "1"
+  }
+}

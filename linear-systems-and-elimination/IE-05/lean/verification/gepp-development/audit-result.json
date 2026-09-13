@@ -1,0 +1,380 @@
+{
+  "utc": "2026-09-13T07:43:40.902133+00:00",
+  "pass": true,
+  "scope": "bounded author validation of first five IE05 contracts; not a full proof, independent final review, or Linux Comparator",
+  "fresh_final_attempt": "attempt-rwc8pqg6",
+  "fresh_result_sha256": "37a7c1f34e4da9572f1a6115d1eb7d6881b263bad4d158f5be4d154fb8b313d3",
+  "fresh_elapsed_seconds": 20.74253129103454,
+  "frozen_inputs_preserved": 733,
+  "original_source_count": 27,
+  "original_sources": {
+    "linear-systems-and-elimination/IE-05/README.md": {
+      "sha256": "b5e980fa1f171ac540465212341dfc589d4f34d33c0b59d54a520dd3b0a4f1f5",
+      "git_blob": "8224c5ba49ce68198e18124245e3e736ed9ca569",
+      "bytes": 4916
+    },
+    "linear-systems-and-elimination/IE-05/solution.md": {
+      "sha256": "1b94eda6df18066f2f09b66b8b28a18ca071c0c2fb070b536dc8c798992ae434",
+      "git_blob": "bdc232929d8772208feaabc4de61f5f4e2c3e1e3",
+      "bytes": 8542
+    },
+    "linear-systems-and-elimination/IE-05/solution.tex": {
+      "sha256": "7282b644fa4f83612393c2a0d9679a77f0e30b10c2cad1aa94002b3c3fed3d3a",
+      "git_blob": "7b002a9d94c5d25a3575ddf77a80005d73213218",
+      "bytes": 10857
+    },
+    "references/stepaniants-ie05-2026-09-11/README.md": {
+      "sha256": "5405d9d3332972d814f81bdc831d63e2c4b344efc644d817b5cf3b2bcc3369ba",
+      "git_blob": "0449a45d8a55cf968673e48cdca2abf8048e66f0",
+      "bytes": 10045
+    },
+    "references/stepaniants-ie05-2026-09-11/full-proof.md": {
+      "sha256": "18d49f30a3ef26f4c88a85c8ea1fc9e5c4e1702b4be6061d39aec892e96a4af7",
+      "git_blob": "30f28d6aae3e7e45f462eea6f4af13cad3395efd",
+      "bytes": 7351
+    },
+    "references/stepaniants-ie05-2026-09-11/independent-review.md": {
+      "sha256": "65629d58b94a2b5921955d5af6c3f30b69c59388dd48c2d8606ed58674eac7e4",
+      "git_blob": "488cd05cc75cbbea991ac2e6828ca4d71b31b8ef",
+      "bytes": 8434
+    },
+    "references/stepaniants-ie05-2026-09-11/independent-review/exact_matrix_review.py": {
+      "sha256": "0438a2cf8ea2d43bea3d4f2c508338b413e05b3736807d7d59225b130d425922",
+      "git_blob": "ec0c82fbba64ca463dd6cfe2eb3497d008376538",
+      "bytes": 6337
+    },
+    "references/stepaniants-ie05-2026-09-11/independent-review/exact_matrix_review.json": {
+      "sha256": "a3b98531a7aa0ebf238211ca4404c447431853a250693d6744d9e535aa802f3b",
+      "git_blob": "0d5f296cf7cab0ae02475f7ec249335a2011d7ca",
+      "bytes": 11723
+    },
+    "references/stepaniants-ie05-2026-09-11/recovery/RECOVERY_NOTES.md": {
+      "sha256": "b08a4da019782d96572ba30702eaa33a688debb0c6bf0c95493a8b201478e77f",
+      "git_blob": "068cfaa01779067dbb2866d45c33b49dd68c9c07",
+      "bytes": 2348
+    },
+    "references/stepaniants-ie05-2026-09-11/recovery/solution.md": {
+      "sha256": "a3ba2afb7bac18bc2cb6594b194755be32203324a01bbab460507b8c9af53c2d",
+      "git_blob": "a72a0c304f2ac3520049d9bbb1159ea969a7e57c",
+      "bytes": 7118
+    },
+    "references/stepaniants-ie05-2026-09-11/recovery/certificate.json": {
+      "sha256": "763c0c84ff76f6aafea9d38d39ab47cbf58787d464209ad601ee62970bfedf8c",
+      "git_blob": "78e9fbcb34fb4a956f1b2bf10f579b0e662edb0b",
+      "bytes": 12328
+    },
+    "references/stepaniants-ie05-2026-09-11/recovery/independent_check.py": {
+      "sha256": "4891bf5daea96103fea29592690502382bf2e2687280273c3b7f921d073ba9d5",
+      "git_blob": "a26599d592ef4863181c39da63961e518be1e4de",
+      "bytes": 3446
+    },
+    "references/stepaniants-ie05-2026-09-11/recovery/verify_exact.py": {
+      "sha256": "9f6b463a586b660512101ed68372e09ae172d323804ee2019f31d1a03792fae7",
+      "git_blob": "84dd23d9b4ede0b692f486440a3835f402f6aa0d",
+      "bytes": 7889
+    },
+    "references/stepaniants-ie05-2026-09-11/verification/integer_counterexample.py": {
+      "sha256": "c00621c06229978269d52c6d44e71f806cea694ed691e4a3fb248856a2c7cfe0",
+      "git_blob": "28279316e8139ab55132ec697482af02055cbaf1",
+      "bytes": 3955
+    },
+    "references/stepaniants-ie05-2026-09-11/verification/integer_counterexample.json": {
+      "sha256": "04c56bc789674b03a23b3d574393960632a86ee62679b40e0d7a3f8ea657fb77",
+      "git_blob": "0f8637398bffefe62afc714e46ed86d8c9ca6e99",
+      "bytes": 12226
+    },
+    "references/stepaniants-ie05-2026-09-11/verification/verify_ie05.py": {
+      "sha256": "f6263a46558e50dcafb4e21cce2cf758a770e7c0c8d185b4c43f8a743d5945d4",
+      "git_blob": "779ad6cb10d7f4311cb459af2406b618ae38e599",
+      "bytes": 3808
+    },
+    "references/stepaniants-ie05-2026-09-11/verification/verify_recovery_relation.py": {
+      "sha256": "f37d5e2e0d298f15b97f50e112c2e11caea8ea2e48edfd10e21c6c04161ab999",
+      "git_blob": "277d892d86a45db62362954c9429f3e6f707e182",
+      "bytes": 4717
+    },
+    "references/stepaniants-ie05-2026-09-11/verification/source-check.md": {
+      "sha256": "c4df92a60390b3b49063808e6328681f3d14cf7285e29abc7c8c748928bae57f",
+      "git_blob": "a4ab36e0a24eabaea353f5b831b646fcae39fb40",
+      "bytes": 1249
+    },
+    "AGENTS.md": {
+      "sha256": "d7e27520acdcb0edacebf965b56f5b1e3fb0205d83da45a7fa021e0bedb80162",
+      "git_blob": "7eb638704c183dc5a4ad1f2e3d9103416fedd92b",
+      "bytes": 1272
+    },
+    "CONTRIBUTING.md": {
+      "sha256": "df81332de8240a0daa8576b5eccc8fcce7dde88204355342b3a8890b95d67db3",
+      "git_blob": "ade2131e55f0372fd3a8de1634864e84c37def61",
+      "bytes": 10507
+    },
+    "problem_ids.json": {
+      "sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763",
+      "git_blob": "b1810237bc80efe04b4bb08f74d1e974b1bf80f7",
+      "bytes": 13264
+    },
+    "docs/lean/README.md": {
+      "sha256": "27d1baf38609e50049f077e8004dabe598dc53cadab73acdb8a7a1e1e4a48be6",
+      "git_blob": "24bfdfd61a643984c9607081a922e89313c47c83",
+      "bytes": 7278
+    },
+    "docs/lean/REVIEW.md": {
+      "sha256": "d967ddce620d4e754e2f9c25548f30cb537f76f4ddcf8ecf2574945bcd332553",
+      "git_blob": "5d1d8c908923a687f4779fd1a539237bd29a1a1a",
+      "bytes": 3110
+    },
+    "docs/lean/schema/README.md": {
+      "sha256": "e61c5c99787b0c787dd197ff8713a56fa6b266070c92f7cdfb54b833755d53eb",
+      "git_blob": "e61bade6af2c59233db4bd1ccc906eafe8d10e5a",
+      "bytes": 525
+    },
+    "docs/lean/schema/v0.4.schema.json": {
+      "sha256": "25ff6b25ca4511635aff4443cf20480c15e59dddf19591c730950b442ea54fce",
+      "git_blob": "19f4a46a1bc0e4798dca7bcb7ed57281b1c8c996",
+      "bytes": 12694
+    },
+    "tools/lean/HARNESS.md": {
+      "sha256": "6e7bca698cbdce70599d59d710e5b3ad1757f796b4b05e18bcb78820e9bc0fd4",
+      "git_blob": "8f338f8f163e04d4fb7b6af5cdf969af92177c4b",
+      "bytes": 5538
+    },
+    "tools/lean/source-lock.json": {
+      "sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+      "git_blob": "27916ca1e378b13ba1a08f1eb3ecb285fde12408",
+      "bytes": 15982
+    }
+  },
+  "math_sources": {
+    "NLA/IE05/Pivot.lean": {
+      "sha256": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+      "bytes": 6769
+    },
+    "NLA/IE05/GEPP.lean": {
+      "sha256": "f9cfa58bd03aa49748bfde358147197bf73b165701cb67b58e1af2ec926c8b98",
+      "bytes": 14531
+    }
+  },
+  "exact_frozen_types": 5,
+  "safe_project_declarations": 70,
+  "retained_material_dependencies": 42,
+  "kernel_assertions_in_fresh_sources": 21,
+  "standard_three_reports": {
+    "NLA/IE05/Definitions.lean": 0,
+    "NLA/IE05/Pivot.lean": 5,
+    "NLA/IE05/GEPP.lean": 11,
+    "verification/gepp-development/Inspect.lean": 5
+  },
+  "diagnostic_expected_type_unused_binder_warnings": 6,
+  "math_source_warnings": 0,
+  "pins": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": false
+    }
+  ],
+  "platform": "macOS-14.6.1-arm64-arm-64bit",
+  "toolchain": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "attempts": {
+    "attempt-7ctya5j2": {
+      "pass": false,
+      "commands": [
+        [
+          "NLA/IE05/Definitions.lean",
+          0
+        ],
+        [
+          "NLA/IE05/Pivot.lean",
+          0
+        ],
+        [
+          "NLA/IE05/GEPP.lean",
+          1
+        ]
+      ],
+      "result_sha256": "25fb7d975f80576ed6824dbf3498bbf04059c7c0f1899c1d32d167de9fc0ed83"
+    },
+    "attempt-9j9c1y68": {
+      "pass": false,
+      "commands": [
+        [
+          "NLA/IE05/Definitions.lean",
+          0
+        ],
+        [
+          "NLA/IE05/Pivot.lean",
+          1
+        ]
+      ],
+      "result_sha256": "1db0e6df62cdf9d4e2920595e85e63b4d87bd1d8d188886e3074a195871f818e"
+    },
+    "attempt-a1619rbc": {
+      "pass": false,
+      "commands": [
+        [
+          "NLA/IE05/Definitions.lean",
+          0
+        ],
+        [
+          "NLA/IE05/Pivot.lean",
+          0
+        ],
+        [
+          "NLA/IE05/GEPP.lean",
+          1
+        ]
+      ],
+      "result_sha256": "053c2ed8a1297a9c4a699ca6f1c9a51a17ebc3dfc89c21ed470d0ad7969e2604"
+    },
+    "attempt-icr6zx3s": {
+      "pass": false,
+      "commands": [
+        [
+          "NLA/IE05/Definitions.lean",
+          0
+        ],
+        [
+          "NLA/IE05/Pivot.lean",
+          1
+        ]
+      ],
+      "result_sha256": "09cc219a6994ffc667621f8bd3dc21229a191adf0dba4f5761c78fbacb482cfb"
+    },
+    "attempt-op4ol1bg": {
+      "pass": true,
+      "commands": [
+        [
+          "NLA/IE05/Definitions.lean",
+          0
+        ],
+        [
+          "NLA/IE05/Pivot.lean",
+          0
+        ],
+        [
+          "NLA/IE05/GEPP.lean",
+          0
+        ]
+      ],
+      "result_sha256": "dc6dcc506a854e5c6cff4063cb3befa0629645a313d47323cef66ab7a989d8d5"
+    },
+    "attempt-rwc8pqg6": {
+      "pass": true,
+      "commands": [
+        [
+          "NLA/IE05/Definitions.lean",
+          0
+        ],
+        [
+          "NLA/IE05/Pivot.lean",
+          0
+        ],
+        [
+          "NLA/IE05/GEPP.lean",
+          0
+        ],
+        [
+          "verification/gepp-development/Inspect.lean",
+          0
+        ]
+      ],
+      "result_sha256": "37a7c1f34e4da9572f1a6115d1eb7d6881b263bad4d158f5be4d154fb8b313d3"
+    },
+    "attempt-v0gu6whb": {
+      "pass": false,
+      "commands": [
+        [
+          "NLA/IE05/Definitions.lean",
+          0
+        ],
+        [
+          "NLA/IE05/Pivot.lean",
+          1
+        ]
+      ],
+      "result_sha256": "992fcb6a9c835d4b1789efe55f5f7be075a06f260d411d04c6f41331b9f89143"
+    },
+    "attempt-zs36ag3u": {
+      "pass": false,
+      "commands": [
+        [
+          "NLA/IE05/Definitions.lean",
+          0
+        ],
+        [
+          "NLA/IE05/Pivot.lean",
+          0
+        ],
+        [
+          "NLA/IE05/GEPP.lean",
+          0
+        ],
+        [
+          "verification/gepp-development/Inspect.lean",
+          1
+        ]
+      ],
+      "result_sha256": "8828a3c6050b7a2b4e102ebd309d26034d9b68b451d0cf532d0c5f4f885ea101"
+    }
+  },
+  "all_own_prefixes_removed": true,
+  "no_shared_cache_mutation": true,
+  "canonical_or_git_mutation": false,
+  "independent_final_review": false,
+  "authoritative_linux_verification": false
+}

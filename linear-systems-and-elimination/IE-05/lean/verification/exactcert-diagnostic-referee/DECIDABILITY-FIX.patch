@@ -1,0 +1,25 @@
+--- a/NLA/IE05/ExactCertificates.lean
++++ b/NLA/IE05/ExactCertificates.lean
+@@ -20,6 +20,13 @@
+ 
+ namespace NLA.IE05._proved
+ 
++-- Pointwise computable equality instances avoid higher-order synthesis at nested Fin binders.
++-- They are module-level constants, so `decide +kernel` sees no free local instances.
++local instance integerLowerZeroDecidable (b : Bool) (i j : Fin 8) :
++    Decidable (integerLower b i j = 0) := Int.instDecidableEq _ _
++local instance integerTZeroDecidable (b : Bool) (i j : Fin 8) :
++    Decidable (integerT b i j = 0) := Int.instDecidableEq _ _
++
+ theorem integer_factor_certificates :
+     ∀ b : Bool,
+       (integerH b).transpose * integerH b = Matrix.diagonal (integerD b) ∧
+@@ -30,7 +37,7 @@
+   intro b
+   cases b
+   all_goals
+-    dsimp only [UnitLower, UpperTriangular, integerLower, integerH, integerD, integerT]
++    unfold UnitLower UpperTriangular
+     decide +kernel
+ 
+ theorem integer_entry_certificates :

@@ -1,0 +1,115 @@
+/-
+Copyright (c) 2018 Sébastien Gouëzel. All rights reserved.
+Released under Apache 2.0 license as described in the file LICENSE.
+Authors: Sébastien Gouëzel
+-/
+module
+
+public import Mathlib.Data.Set.Lattice
+public import Mathlib.Order.ConditionallyCompleteLattice.Defs
+public import Mathlib.Order.ConditionallyCompletePartialOrder.Basic
+
+/-!
+# Theory of conditionally complete lattices
+
+A conditionally complete lattice is a lattice in which every non-empty bounded subset `s`
+has a least upper bound and a greatest lower bound, denoted below by `sSup s` and `sInf s`.
+Typical examples are `ℝ`, `ℕ`, and `ℤ` with their usual orders.
+
+The theory is very comparable to the theory of complete lattices, except that suitable
+boundedness and nonemptiness assumptions have to be added to most statements.
+We express these using the `BddAbove` and `BddBelow` predicates, which we use to prove
+most useful properties of `sSup` and `sInf` in conditionally complete lattices.
+
+To differentiate the statements between complete lattices and conditionally complete
+lattices, we prefix `sInf` and `sSup` in the statements by `c`, giving `csInf` and `csSup`.
+For instance, `sInf_le` is a statement in complete lattices ensuring `sInf s ≤ x`,
+while `csInf_le` is the same statement in conditionally complete lattices
+with an additional assumption that `s` is bounded below.
+-/
+
+@[expose] public section
+
+-- Guard against import creep
+assert_not_exists Multiset
+
+open Function OrderDual Set
+
+variable {α β γ : Type*} {ι : Sort*}
+
+section LE
+
+namespace WithTop
+
+/-!
+Extension of `sSup` and `sInf` from a preorder `α` to `WithTop α` and `WithBot α`
+-/
+
+variable [LE α]
+
+open scoped Classical in
+@[to_dual]
+noncomputable instance [SupSet α] : SupSet (WithTop α) :=
+  ⟨fun S =>
+    if ⊤ ∈ S then ⊤ else if BddAbove ((fun (a : α) ↦ ↑a) ⁻¹' S : Set α) then
+      ↑(sSup ((fun (a : α) ↦ (a : WithTop α)) ⁻¹' S : Set α)) else ⊤⟩
+
+open scoped Classical in
+@[to_dual]
+noncomputable instance instInfSet [InfSet α] : InfSet (WithTop α) :=
+  ⟨fun S => if S ⊆ {⊤} ∨ ¬BddBelow S then ⊤ else ↑(sInf ((fun (a : α) ↦ ↑a) ⁻¹' S : Set α))⟩
+
+@[to_dual]
+theorem sSup_eq [SupSet α] {s : Set (WithTop α)} (hs : ⊤ ∉ s)
+    (hs' : BddAbove ((↑) ⁻¹' s : Set α)) : sSup s = ↑(sSup ((↑) ⁻¹' s) : α) :=
+  (if_neg hs).trans <| if_pos hs'
+
+@[to_dual]
+theorem sInf_eq [InfSet α] {s : Set (WithTop α)} (hs : ¬s ⊆ {⊤}) (h's : BddBelow s) :
+    sInf s = ↑(sInf ((↑) ⁻¹' s) : α) :=
+  if_neg <| by simp [hs, h's]
+
+@[to_dual (attr := simp)]
+theorem sInf_empty [InfSet α] : sInf (∅ : Set (WithTop α)) = ⊤ :=
+  if_pos <| by simp
+
+@[to_dual (attr := simp)]
+theorem sInf_singleton_top [InfSet α] : sInf ({⊤} : Set (WithTop α)) = ⊤ :=
+  if_pos <| .inl subset_rfl
+
+@[to_dual (attr := simp)]
+theorem sSup_of_top_mem [SupSet α] {s : Set (WithTop α)} (h : ⊤ ∈ s) : sSup s = ⊤ :=
+  if_pos h
+
+@[to_dual]
+theorem sSup_singleton_top [SupSet α] : sSup ({⊤} : Set (WithTop α)) = ⊤ := by
+  simp
+
+@[to_dual]
+theorem sSup_of_not_bddAbove [SupSet α] {s : Set (WithTop α)}
+    (h : ¬BddAbove ((↑) ⁻¹' s : Set α)) : sSup s = ⊤ := by
+  by_cases hmem : ⊤ ∈ s
+  · exact sSup_of_top_mem hmem
+  · exact if_neg hmem |>.trans <| if_neg h
+
+@[to_dual (attr := simp)]
+theorem sInf_of_not_bddBelow [InfSet α] {s : Set (WithTop α)} (h : ¬BddBelow s) :
+    sInf s = ⊤ :=
+  if_pos <| .inr h
+
+@[to_dual (attr := norm_cast)]
+theorem coe_sSup' [SupSet α] {s : Set α} (hs : BddAbove s) :
+    ↑(sSup s) = (sSup ((fun (a : α) ↦ ↑a) '' s) : WithTop α) := by
+  classical
+  change _ = ite _ _ _
+  rw [if_neg, preimage_image_eq, if_pos hs]
+  · exact Option.some_injective _
+  · rintro ⟨x, _, ⟨⟩⟩
+
+@[to_dual]
+theorem sSup_empty (α : Type*) [CompleteLattice α] : (sSup ∅ : WithTop α) = ⊥ := by
+  rw [sSup_eq (by simp) (OrderTop.bddAbove _), Set.preimage_empty, _root_.sSup_empty, coe_bot]
+
+end WithTop
+
+end LE

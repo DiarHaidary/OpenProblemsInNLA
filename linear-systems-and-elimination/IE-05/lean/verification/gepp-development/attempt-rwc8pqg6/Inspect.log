@@ -1,0 +1,1033 @@
+verification/gepp-development/Inspect.lean:11:13: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/gepp-development/Inspect.lean:17:5: warning: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/gepp-development/Inspect.lean:21:13: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/gepp-development/Inspect.lean:22:26: warning: Variable name `hp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/gepp-development/Inspect.lean:26:25: warning: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/gepp-development/Inspect.lean:32:13: warning: Variable name `hn` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hn
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+EXACT_FROZEN_TYPE NLA.IE05.entryMax_semantics_proved: ∀ {n : ℕ},
+  1 ≤ n →
+    ∀ (A : NLA.IE05.Mat n),
+      0 ≤ NLA.IE05.entryMax A ∧ (∀ (i j : Fin n), |A i j| ≤ NLA.IE05.entryMax A) ∧ ∃ i j, NLA.IE05.entryMax A = |A i j|
+EXACT_FROZEN_TYPE NLA.IE05.schurStep_bound_proved: ∀ {n : ℕ} (S : NLA.IE05.Mat n) (k p : Fin n),
+  NLA.IE05.AdmissiblePivot S k p → NLA.IE05.activeMax (NLA.IE05.schurStep S k p) (↑k + 1) ≤ 2 * NLA.IE05.activeMax S ↑k
+EXACT_FROZEN_TYPE NLA.IE05.gepp_growth_bound_proved: ∀ {n : ℕ},
+  1 ≤ n →
+    ∀ (A : NLA.IE05.Mat n) (path : NLA.IE05.PivotPath n),
+      NLA.IE05.AdmissiblePath A path →
+        0 < NLA.IE05.entryMax A ∧ 1 ≤ NLA.IE05.growth A path ∧ NLA.IE05.growth A path ≤ 2 ^ (n - 1)
+EXACT_FROZEN_TYPE NLA.IE05.firstPath_semantics_proved: ∀ {n : ℕ} (A : NLA.IE05.Mat n),
+  Matrix.det A ≠ 0 →
+    NLA.IE05.FirstAvailablePath A (NLA.IE05.firstPath A) ∧
+      (∀ (k : ℕ), NLA.IE05.trajectory A (NLA.IE05.firstPath A) k = NLA.IE05.firstTrajectory A k) ∧
+        ∀ (path : NLA.IE05.PivotPath n), NLA.IE05.FirstAvailablePath A path → path = NLA.IE05.firstPath A
+EXACT_FROZEN_TYPE NLA.IE05.orthogonalGrowthSet_bounded_proved: ∀ (n : ℕ),
+  2 ≤ n →
+    (NLA.IE05.orthogonalGrowthSet n).Nonempty ∧
+      BddAbove (NLA.IE05.orthogonalGrowthSet n) ∧ ∀ r ∈ NLA.IE05.orthogonalGrowthSet n, 1 ≤ r ∧ r ≤ 2 ^ (n - 1)
+ACTUAL_AXIOMS NLA.IE05.entryMax_semantics_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.entryMax_semantics_proved: [NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.entryMax_nonneg_proved,
+ NLA.IE05.abs_le_entryMax_proved,
+ NLA.IE05.entryMax_semantics_proved._proof_1_1,
+ NLA.IE05.entryMaxNN]
+ACTUAL_AXIOMS NLA.IE05.Mat: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.Mat: []
+ACTUAL_AXIOMS NLA.IE05.entryMax: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.entryMax: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.entryMaxNN]
+ACTUAL_AXIOMS NLA.IE05.entryMaxNN: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.entryMaxNN: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.entryMax_nonneg_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.entryMax_nonneg_proved: [NLA.IE05.Mat, NLA.IE05.entryMax, NLA.IE05.Mat, NLA.IE05.entryMaxNN]
+ACTUAL_AXIOMS NLA.IE05.abs_le_entryMax_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.abs_le_entryMax_proved: [NLA.IE05.Mat,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.entryMaxNN,
+ NLA.IE05.entryMax]
+ACTUAL_AXIOMS NLA.IE05.entryMax_semantics_proved._proof_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.entryMax_semantics_proved._proof_1_1: []
+ACTUAL_AXIOMS NLA.IE05.schurStep_bound_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.schurStep_bound_proved: [NLA.IE05.Mat,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.activeMax,
+ NLA.IE05.schurStep,
+ NLA.IE05.Mat,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.rowSwap,
+ NLA.IE05.activeMax,
+ NLA.IE05.activeMax_nonneg_proved,
+ NLA.IE05.abs_le_activeMax_proved,
+ _private.NLA.IE05.GEPP.0.NLA.IE05.swap_active,
+ NLA.IE05.rowSwap.eq_1,
+ NLA.IE05.activeMax_le_proved,
+ NLA.IE05.schurStep]
+ACTUAL_AXIOMS NLA.IE05.AdmissiblePivot: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.AdmissiblePivot: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.activeMax: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeMax: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.activeMaxNN]
+ACTUAL_AXIOMS NLA.IE05.activeMaxNN: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeMaxNN: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.schurStep: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.schurStep: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.rowSwap]
+ACTUAL_AXIOMS NLA.IE05.rowSwap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.rowSwap: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.activeMax_nonneg_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeMax_nonneg_proved: [NLA.IE05.Mat, NLA.IE05.activeMax, NLA.IE05.Mat, NLA.IE05.activeMaxNN]
+ACTUAL_AXIOMS NLA.IE05.abs_le_activeMax_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.abs_le_activeMax_proved: [NLA.IE05.Mat,
+ NLA.IE05.activeMax,
+ NLA.IE05.Mat,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.activeMax]
+ACTUAL_AXIOMS _private.NLA.IE05.GEPP.0.NLA.IE05.swap_active: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.GEPP.0.NLA.IE05.swap_active: []
+ACTUAL_AXIOMS NLA.IE05.rowSwap.eq_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.rowSwap.eq_1: [NLA.IE05.Mat, NLA.IE05.rowSwap, NLA.IE05.Mat, NLA.IE05.rowSwap]
+ACTUAL_AXIOMS NLA.IE05.activeMax_le_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeMax_le_proved: [NLA.IE05.Mat, NLA.IE05.activeMax, NLA.IE05.Mat, NLA.IE05.activeMaxNN]
+ACTUAL_AXIOMS NLA.IE05.gepp_growth_bound_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.gepp_growth_bound_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.entryMax,
+ NLA.IE05.growth,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.gepp_growth_bound_proved._proof_1_1,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax,
+ NLA.IE05.abs_le_entryMax_proved,
+ NLA.IE05.peakMax,
+ NLA.IE05.peakMax_le_proved,
+ NLA.IE05.activeMax,
+ NLA.IE05.gepp_stage_bound_proved,
+ NLA.IE05.gepp_growth_bound_proved._proof_1_2,
+ NLA.IE05.growth,
+ NLA.IE05.entryMax_le_peakMax_proved]
+ACTUAL_AXIOMS NLA.IE05.PivotPath: []
+PROJECT_EDGE NLA.IE05.PivotPath: []
+ACTUAL_AXIOMS NLA.IE05.AdmissiblePath: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.AdmissiblePath: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.trajectory]
+ACTUAL_AXIOMS NLA.IE05.trajectory: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.trajectory: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory._f]
+ACTUAL_AXIOMS NLA.IE05.trajectory._f: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.trajectory._f: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory.match_1,
+ NLA.IE05.schurStep]
+ACTUAL_AXIOMS NLA.IE05.trajectory.match_1: []
+PROJECT_EDGE NLA.IE05.trajectory.match_1: []
+ACTUAL_AXIOMS NLA.IE05.growth: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.growth: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax]
+ACTUAL_AXIOMS NLA.IE05.gepp_growth_bound_proved._proof_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.gepp_growth_bound_proved._proof_1_1: []
+ACTUAL_AXIOMS NLA.IE05.peakMax: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.peakMax: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.trajectory]
+ACTUAL_AXIOMS NLA.IE05.peakMax_le_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.peakMax_le_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.peakMax,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.activeMaxNN]
+ACTUAL_AXIOMS NLA.IE05.gepp_stage_bound_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.gepp_stage_bound_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax,
+ NLA.IE05.activeMax_zero_proved,
+ NLA.IE05.gepp_stage_bound_proved._proof_1_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.schurStep_bound_proved]
+ACTUAL_AXIOMS NLA.IE05.activeMax_zero_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeMax_zero_proved: [NLA.IE05.Mat,
+ NLA.IE05.activeMax,
+ NLA.IE05.entryMax,
+ NLA.IE05.Mat,
+ NLA.IE05.activeMax,
+ NLA.IE05.activeMaxNN]
+ACTUAL_AXIOMS NLA.IE05.gepp_stage_bound_proved._proof_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.gepp_stage_bound_proved._proof_1_1: []
+ACTUAL_AXIOMS NLA.IE05.gepp_growth_bound_proved._proof_1_2: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.gepp_growth_bound_proved._proof_1_2: []
+ACTUAL_AXIOMS NLA.IE05.entryMax_le_peakMax_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.entryMax_le_peakMax_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.entryMax,
+ NLA.IE05.peakMax,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.entryMax_le_peakMax_proved._proof_1_1,
+ NLA.IE05.peakMax,
+ NLA.IE05.activeMax_le_peakMax_proved,
+ NLA.IE05.entryMax,
+ NLA.IE05.activeMax_zero_proved]
+ACTUAL_AXIOMS NLA.IE05.entryMax_le_peakMax_proved._proof_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.entryMax_le_peakMax_proved._proof_1_1: []
+ACTUAL_AXIOMS NLA.IE05.activeMax_le_peakMax_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeMax_le_peakMax_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMax,
+ NLA.IE05.trajectory,
+ NLA.IE05.peakMax,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.activeMaxNN,
+ NLA.IE05.trajectory]
+ACTUAL_AXIOMS NLA.IE05.firstPath_semantics_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPath_semantics_proved: [NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_firstAvailable_proved,
+ NLA.IE05.activeInjective_nonzero_column_proved,
+ NLA.IE05.firstTrajectory_activeInjective_proved,
+ NLA.IE05.trajectory_firstPath_eq_proved,
+ NLA.IE05.firstPath_eq_of_firstAvailable_proved]
+ACTUAL_AXIOMS NLA.IE05.FirstAvailablePath: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.FirstAvailablePath: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.trajectory]
+ACTUAL_AXIOMS NLA.IE05.FirstAvailablePivot: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.FirstAvailablePivot: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.AdmissiblePivot]
+ACTUAL_AXIOMS NLA.IE05.firstPath: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPath: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstTrajectory]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.firstTrajectory: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstTrajectory: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.firstTrajectory._f]
+ACTUAL_AXIOMS NLA.IE05.firstTrajectory._f: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstTrajectory._f: [NLA.IE05.Mat,
+ NLA.IE05.Mat,
+ NLA.IE05.trajectory.match_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.firstPivotIndex]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex_firstAvailable_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex_firstAvailable_proved: [NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex_spec_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex_spec_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex_spec_proved: [NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux,
+ NLA.IE05.firstPivotIndex_spec_proved._proof_1_2]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex_spec_proved._proof_1_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex_spec_proved._proof_1_2: [NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex]
+ACTUAL_AXIOMS NLA.IE05.activeInjective_nonzero_column_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeInjective_nonzero_column_proved: [NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1]
+ACTUAL_AXIOMS NLA.IE05.ActiveInjective: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.ActiveInjective: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1: []
+ACTUAL_AXIOMS NLA.IE05.firstTrajectory_activeInjective_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstTrajectory_activeInjective_proved: [NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.activeInjective_initial_proved,
+ NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_firstAvailable_proved,
+ NLA.IE05.activeInjective_nonzero_column_proved,
+ NLA.IE05.schurStep,
+ NLA.IE05.activeInjective_schur_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_AXIOMS NLA.IE05.activeInjective_initial_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeInjective_initial_proved: [NLA.IE05.Mat, NLA.IE05.ActiveInjective, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1: []
+ACTUAL_AXIOMS NLA.IE05.activeInjective_schur_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeInjective_schur_proved: [NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.schurStep,
+ NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.rowSwap,
+ NLA.IE05.activeInjective_rowSwap_proved,
+ NLA.IE05.rowSwap.eq_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.activeInjective_schur_proved._proof_1_2,
+ NLA.IE05.activeInjective_schur_proved._proof_1_3,
+ NLA.IE05.schurStep_mulVec_proved]
+ACTUAL_AXIOMS NLA.IE05.activeInjective_rowSwap_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeInjective_rowSwap_proved: [NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.rowSwap,
+ NLA.IE05.Mat,
+ NLA.IE05.ActiveInjective,
+ NLA.IE05.rowSwap,
+ _private.NLA.IE05.GEPP.0.NLA.IE05.swap_active]
+ACTUAL_AXIOMS NLA.IE05.activeInjective_schur_proved._proof_1_2: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeInjective_schur_proved._proof_1_2: []
+ACTUAL_AXIOMS NLA.IE05.activeInjective_schur_proved._proof_1_3: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.activeInjective_schur_proved._proof_1_3: []
+ACTUAL_AXIOMS NLA.IE05.schurStep_mulVec_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.schurStep_mulVec_proved: [NLA.IE05.Mat,
+ NLA.IE05.schurStep,
+ NLA.IE05.rowSwap,
+ NLA.IE05.Mat,
+ NLA.IE05.schurStep,
+ NLA.IE05.rowSwap,
+ NLA.IE05.schurStep_mulVec_proved._simp_1_1]
+ACTUAL_AXIOMS NLA.IE05.schurStep_mulVec_proved._simp_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.schurStep_mulVec_proved._simp_1_1: []
+ACTUAL_AXIOMS NLA.IE05.trajectory_firstPath_eq_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.trajectory_firstPath_eq_proved: [NLA.IE05.Mat,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstPath,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.Mat,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstPath,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.schurStep,
+ NLA.IE05.firstPivotIndex]
+ACTUAL_AXIOMS NLA.IE05.firstPath_eq_of_firstAvailable_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPath_eq_of_firstAvailable_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved,
+ NLA.IE05.schurStep,
+ NLA.IE05.firstPath]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved: [NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_spec_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_AXIOMS NLA.IE05.orthogonalGrowthSet_bounded_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.orthogonalGrowthSet_bounded_proved: [NLA.IE05.orthogonalGrowthSet,
+ NLA.IE05.orthogonalGrowthSet,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.growth,
+ NLA.IE05.entryMax,
+ NLA.IE05.gepp_growth_bound_proved,
+ NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.firstPath_semantics_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_AXIOMS NLA.IE05.orthogonalGrowthSet: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.orthogonalGrowthSet: [NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.PivotPath,
+ NLA.IE05.AdmissiblePath,
+ NLA.IE05.growth]
+ACTUAL_AXIOMS NLA.IE05.Orthogonal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.Orthogonal: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1: []
+RETAINED_DEPENDENCY NLA.IE05.entryMaxNN
+RETAINED_DEPENDENCY NLA.IE05.entryMax
+RETAINED_DEPENDENCY NLA.IE05.activeMaxNN
+RETAINED_DEPENDENCY NLA.IE05.activeMax
+RETAINED_DEPENDENCY NLA.IE05.growth
+RETAINED_DEPENDENCY NLA.IE05.peakMax
+RETAINED_DEPENDENCY NLA.IE05.AdmissiblePivot
+RETAINED_DEPENDENCY NLA.IE05.AdmissiblePath
+RETAINED_DEPENDENCY NLA.IE05.FirstAvailablePivot
+RETAINED_DEPENDENCY NLA.IE05.FirstAvailablePath
+RETAINED_DEPENDENCY NLA.IE05.trajectory
+RETAINED_DEPENDENCY NLA.IE05.firstTrajectory
+RETAINED_DEPENDENCY NLA.IE05.firstPath
+RETAINED_DEPENDENCY NLA.IE05.firstPivotIndex
+RETAINED_DEPENDENCY NLA.IE05.schurStep
+RETAINED_DEPENDENCY NLA.IE05.rowSwap
+RETAINED_DEPENDENCY NLA.IE05.Orthogonal
+RETAINED_DEPENDENCY NLA.IE05.orthogonalGrowthSet
+RETAINED_DEPENDENCY NLA.IE05.ActiveInjective
+RETAINED_DEPENDENCY NLA.IE05.firstPivotIndex_spec_proved
+RETAINED_DEPENDENCY NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved
+RETAINED_DEPENDENCY NLA.IE05.firstPivotIndex_firstAvailable_proved
+RETAINED_DEPENDENCY NLA.IE05.firstPath_eq_of_firstAvailable_proved
+RETAINED_DEPENDENCY NLA.IE05.gepp_stage_bound_proved
+RETAINED_DEPENDENCY NLA.IE05.activeInjective_initial_proved
+RETAINED_DEPENDENCY NLA.IE05.activeInjective_nonzero_column_proved
+RETAINED_DEPENDENCY NLA.IE05.activeInjective_rowSwap_proved
+RETAINED_DEPENDENCY NLA.IE05.schurStep_mulVec_proved
+RETAINED_DEPENDENCY NLA.IE05.activeInjective_schur_proved
+RETAINED_DEPENDENCY NLA.IE05.firstTrajectory_activeInjective_proved
+RETAINED_DEPENDENCY List.argmax
+RETAINED_DEPENDENCY List.le_of_mem_argmax
+RETAINED_DEPENDENCY List.index_of_argmax
+RETAINED_DEPENDENCY List.idxOf_finRange
+RETAINED_DEPENDENCY Finset.sup
+RETAINED_DEPENDENCY Finset.exists_max_image
+RETAINED_DEPENDENCY Matrix.mulVec
+RETAINED_DEPENDENCY Matrix.isUnit_iff_isUnit_det
+RETAINED_DEPENDENCY Matrix.mulVec_injective_iff_isUnit
+RETAINED_DEPENDENCY Matrix.mulVec_single_one
+RETAINED_DEPENDENCY Equiv.swap
+RETAINED_DEPENDENCY Matrix.det
+PROJECT_COUNTS declarations=70, required=42
+'NLA.IE05.entryMax_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.schurStep_bound_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.gepp_growth_bound_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.firstPath_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.orthogonalGrowthSet_bounded_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.IE05.ActiveInjective : {n : Nat} → (S : NLA.IE05.Mat n) → (k : Nat) → Prop :=
+fun {n : Nat} (S : NLA.IE05.Mat n) (k : Nat) =>
+  ∀ (x : Fin n → Real),
+    (∀ (j : Fin n),
+        @LT.lt.{0} Nat instLTNat (@Fin.val n j) k →
+          @Eq.{1} Real (x j) (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))) →
+      (∀ (i : Fin n),
+          @LE.le.{0} Nat instLENat k (@Fin.val n i) →
+            @Eq.{1} Real
+              (@Matrix.mulVec.{0, 0, 0} (Fin n) (Fin n) Real
+                (@NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring.{0} Real
+                  (@NonUnitalNonAssocCommRing.toNonUnitalNonAssocRing.{0} Real
+                    (@NonUnitalCommRing.toNonUnitalNonAssocCommRing.{0} Real
+                      (@CommRing.toNonUnitalCommRing.{0} Real Real.commRing))))
+                (Fin.fintype n) S x i)
+              (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))) →
+        @Eq.{1} (Fin n → Real) x
+          (@OfNat.ofNat.{0} (Fin n → Real) (nat_lit 0)
+            (@Zero.toOfNat0.{0} (Fin n → Real)
+              (@Pi.instZero.{0, 0} (Fin n) (fun (a : Fin n) => Real) fun (i : Fin n) => Real.instZero)))
+def NLA.IE05.firstPath : {n : Nat} → (A : NLA.IE05.Mat n) → NLA.IE05.PivotPath n :=
+fun {n : Nat} (A : NLA.IE05.Mat n) (k : Fin n) =>
+  @NLA.IE05.firstPivotIndex n (@NLA.IE05.firstTrajectory n A (@Fin.val n k)) k
+def NLA.IE05.growth : {n : Nat} → (A : NLA.IE05.Mat n) → (path : NLA.IE05.PivotPath n) → Real :=
+fun {n : Nat} (A : NLA.IE05.Mat n) (path : NLA.IE05.PivotPath n) =>
+  @HDiv.hDiv.{0, 0, 0} Real Real Real (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid))
+    (NNReal.toReal
+      (@Finset.sup.{0, 0} NNReal (Fin n) NNReal.instSemilatticeSup NNReal.instOrderBot
+        (@Finset.univ.{0} (Fin n) (Fin.fintype n)) fun (k : Fin n) =>
+        @NLA.IE05.activeMaxNN n (@NLA.IE05.trajectory n A path (@Fin.val n k)) (@Fin.val n k)))
+    (@NLA.IE05.entryMax n A)
+def NLA.IE05.orthogonalGrowthSet : (n : Nat) → Set.{0} Real :=
+fun (n : Nat) =>
+  @Set.ofPred.{0} Real fun (r : Real) =>
+    @Exists.{1} (NLA.IE05.Mat n) fun (A : NLA.IE05.Mat n) =>
+      And (@NLA.IE05.Orthogonal n A)
+        (@Exists.{1} (NLA.IE05.PivotPath n) fun (path : NLA.IE05.PivotPath n) =>
+          And (@NLA.IE05.AdmissiblePath n A path) (@Eq.{1} Real r (@NLA.IE05.growth n A path)))
+theorem NLA.IE05.activeInjective_schur_proved : ∀ {n : ℕ} (S : NLA.IE05.Mat n) (k p : Fin n),
+  k ≤ p → S p k ≠ 0 → NLA.IE05.ActiveInjective S ↑k → NLA.IE05.ActiveInjective (NLA.IE05.schurStep S k p) (↑k + 1) :=
+fun {n} S k p hp hne hS =>
+  let B := NLA.IE05.rowSwap S k p;
+  have hB := NLA.IE05.activeInjective_rowSwap_proved S k p hp hS;
+  have hkk :=
+    Eq.mpr
+      (id
+        (congrFun'
+          (congrArg Ne
+            (Eq.trans (NLA.IE05.rowSwap.eq_1 S k p k k) (congrFun' (congrArg S (Equiv.swap_apply_left k p)) k)))
+          0))
+      hne;
+  fun x hx hrows =>
+  let c := -Matrix.mulVec B x k / B k k;
+  let y := x + Pi.single k c;
+  have hysupp := fun j hj =>
+    have hne := fun he =>
+      Eq.ndrec (motive := fun j => ↑j < ↑k → False) (fun hj => NLA.IE05.activeInjective_schur_proved._proof_1_2 k p hj)
+        (Eq.symm he) hj;
+    of_eq_true
+      (Eq.trans
+        (congrFun'
+          (congrArg Eq
+            (Eq.trans
+              (congr
+                (congrArg HAdd.hAdd
+                  (hx j
+                    (Decidable.byContradiction fun a => NLA.IE05.activeInjective_schur_proved._proof_1_3 k p j hj a)))
+                (Pi.single_eq_of_ne (of_eq_true (Eq.trans (congrArg Not (eq_false hne)) not_false_eq_true)) c))
+              (add_zero 0)))
+          0)
+        (eq_self 0));
+  have hmul := fun i =>
+    of_eq_true
+      (Eq.trans
+        (congr
+          (congrArg Eq
+            (Eq.trans (congrFun (Matrix.mulVec_add B x (Pi.single k c)) i)
+              (congrFun'
+                (congrArg (HAdd.hAdd (Matrix.mulVec B x))
+                  (Eq.trans (Matrix.mulVec_single B k c) (op_smul_eq_smul c (Matrix.col B k))))
+                i)))
+          (congrArg (HAdd.hAdd (Matrix.mulVec B x i)) (mul_comm (B i k) c)))
+        (eq_self (Matrix.mulVec B x i + c * B i k)));
+  have hyrows := fun i hi =>
+    Eq.mpr (id (congrArg (fun _a => _a = 0) (hmul i)))
+      (if hik : i = k then
+        Eq.ndrec (motive := fun i => ↑k ≤ ↑i → Matrix.mulVec B x i + B i k * c = 0)
+          (fun hi =>
+            id
+              (Eq.mpr
+                (id
+                  (Mathlib.Tactic.FieldSimp.eq_eq_cancel_eq
+                    (Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul rfl
+                      (Eq.trans
+                        (Mathlib.Tactic.FieldSimp.subst_add
+                          (Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul rfl
+                            (Eq.trans
+                              (Eq.trans (Eq.refl (Matrix.mulVec B x k))
+                                (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (Matrix.mulVec B x k)))
+                              (Eq.symm
+                                (Mathlib.Tactic.FieldSimp.NF.eval_cons_mul_eval 1 (Matrix.mulVec B x k)
+                                  (one_mul (Mathlib.Tactic.FieldSimp.NF.eval [])))))
+                            rfl (Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst (Eq.symm (div_one 1)) rfl))
+                          (Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul
+                            (Eq.trans
+                              (congr_arg₂ HMul.hMul rfl
+                                (Eq.trans (congr_arg₂ HDiv.hDiv (Eq.trans (congr_arg Neg.neg rfl) rfl) rfl)
+                                  (neg_div (B k k) (Matrix.mulVec B x k))))
+                              (mul_neg (B k k) (Matrix.mulVec B x k / B k k)))
+                            (congr_arg Neg.neg
+                              (Eq.trans
+                                (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval
+                                  (Eq.trans (Eq.refl (B k k)) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (B k k)))
+                                  (Mathlib.Tactic.FieldSimp.NF.div_eq_eval
+                                    (Eq.trans (Eq.refl (Matrix.mulVec B x k))
+                                      (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (Matrix.mulVec B x k)))
+                                    (Eq.trans (Eq.refl (B k k)) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (B k k)))
+                                    (Mathlib.Tactic.FieldSimp.NF.div_eq_eval₃ (1, B k k)
+                                      (div_one ((1, Matrix.mulVec B x k) ::ᵣ []).eval)))
+                                  (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₂ 1 (-1) (B k k)
+                                    (one_mul ((1, Matrix.mulVec B x k) ::ᵣ []).eval)))
+                                (Eq.symm
+                                  (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons_zero
+                                    (Mathlib.Tactic.FieldSimp.NF.eval_cons_mul_eval 1 (Matrix.mulVec B x k)
+                                      (one_mul (Mathlib.Tactic.FieldSimp.NF.eval [])))
+                                    (Mathlib.Tactic.FieldSimp.NF.eval_cons_of_pow_eq_zero
+                                      (of_decide_eq_true (id (Eq.refl true))) hkk [])))))
+                            (Eq.symm
+                              (mul_neg ((1, Matrix.mulVec B x k) ::ᵣ []).eval (Mathlib.Tactic.FieldSimp.NF.eval [])))
+                            (congr_arg Neg.neg
+                              (Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst (Eq.symm (div_one 1)) rfl)))
+                          (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (1 + -1))
+                          (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₃ (1, 1 + -1)
+                            (mul_one ((1, Matrix.mulVec B x k) ::ᵣ []).eval)))
+                        (Eq.symm
+                          (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons 1 (1 + -1)
+                            (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons 1 (Matrix.mulVec B x k)
+                              (one_mul (Mathlib.Tactic.FieldSimp.NF.eval []))))))
+                      rfl
+                      (Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst
+                        (Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div 1 (1 + -1)
+                          (Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div 1 (Matrix.mulVec B x k)
+                            (Eq.symm (div_one 1))))
+                        (Eq.trans (Mathlib.Tactic.FieldSimp.NF.eval_cons (1, 1 + -1) ((1, Matrix.mulVec B x k) ::ᵣ []))
+                          (congr_arg₂ HMul.hMul
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => _a = Matrix.mulVec B x k)
+                                  (Mathlib.Tactic.FieldSimp.NF.eval_cons (1, Matrix.mulVec B x k) [])))
+                              (Eq.trans
+                                (one_mul
+                                  (Mathlib.Tactic.FieldSimp.zpow' (1, Matrix.mulVec B x k).2
+                                    (1, Matrix.mulVec B x k).1))
+                                (Mathlib.Tactic.FieldSimp.zpow'_one (Matrix.mulVec B x k))))
+                            (Mathlib.Tactic.FieldSimp.zpow'_one (1 + -1))))))
+                    (Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul rfl
+                      (Eq.trans (Eq.trans (Eq.refl 0) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval 0))
+                        (Eq.symm
+                          (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons 1 0
+                            (one_mul (Mathlib.Tactic.FieldSimp.NF.eval [])))))
+                      rfl
+                      (Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst
+                        (Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div 1 0 (Eq.symm (div_one 1)))
+                        (Eq.mpr (id (congrArg (fun _a => _a = 0) (Mathlib.Tactic.FieldSimp.NF.eval_cons (1, 0) [])))
+                          (Eq.trans (one_mul (Mathlib.Tactic.FieldSimp.zpow' (1, 0).2 (1, 0).1))
+                            (Mathlib.Tactic.FieldSimp.zpow'_one 0)))))
+                    one_ne_zero))
+                (Mathlib.Tactic.Ring.of_eq
+                  (Mathlib.Tactic.Ring.Common.mul_congr
+                    (Mathlib.Tactic.Ring.Common.atom_pf (Matrix.mulVec B x k) rfl
+                      (Eq.mpr
+                        (id
+                          (congrArg
+                            (fun _a =>
+                              Matrix.mulVec B x k ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                Matrix.mulVec B x k ^ Nat.rawCast 1 * _a)
+                            (Eq.symm rfl)))
+                        (Eq.refl (Matrix.mulVec B x k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                    (Mathlib.Tactic.Ring.Common.add_congr
+                      (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+                      (Mathlib.Tactic.Ring.Common.neg_congr
+                        (Mathlib.Tactic.Ring.cast_pos (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one))
+                        (Mathlib.Tactic.Ring.Common.neg_add
+                          (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                            (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                              (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                              (Eq.refl (Int.negOfNat 1))))
+                          Mathlib.Tactic.Ring.Common.neg_zero))
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                        (Mathlib.Meta.NormNum.IsInt.to_isNat
+                          (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                            (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                            (Mathlib.Meta.NormNum.IsInt.of_raw ℝ (Int.negOfNat 1)) (Eq.refl (Int.ofNat 0))))
+                        (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0)))
+                    (Mathlib.Tactic.Ring.Common.add_mul
+                      (Mathlib.Tactic.Ring.Common.mul_zero (Matrix.mulVec B x k ^ Nat.rawCast 1 * Nat.rawCast 1))
+                      (Mathlib.Tactic.Ring.Common.zero_mul 0) (Mathlib.Tactic.Ring.Common.add_pf_zero_add 0)))
+                  (Mathlib.Tactic.Ring.cast_zero (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_zero)))))
+          (Eq.symm hik) hi
+      else
+        have hki := lt_of_le_of_ne hi (Ne.symm hik);
+        have hz := hrows i hki;
+        id
+          (fun hz =>
+            Trans.trans
+              (id
+                (Mathlib.Tactic.Ring.of_eq
+                  (Mathlib.Tactic.Ring.Common.add_congr
+                    (Mathlib.Tactic.Ring.Common.atom_pf (Matrix.mulVec B x i) rfl
+                      (Eq.mpr
+                        (id
+                          (congrArg
+                            (fun _a =>
+                              Matrix.mulVec B x i ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                Matrix.mulVec B x i ^ Nat.rawCast 1 * _a)
+                            (Eq.symm rfl)))
+                        (Eq.refl (Matrix.mulVec B x i ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                    (Mathlib.Tactic.Ring.Common.mul_congr
+                      (Mathlib.Tactic.Ring.Common.atom_pf (B i k) rfl
+                        (Eq.mpr
+                          (id
+                            (congrArg (fun _a => B i k ^ Nat.rawCast 1 * Nat.rawCast 1 = B i k ^ Nat.rawCast 1 * _a)
+                              (Eq.symm rfl)))
+                          (Eq.refl (B i k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                      (Mathlib.Tactic.Ring.Common.div_congr
+                        (Mathlib.Tactic.Ring.Common.neg_congr
+                          (Mathlib.Tactic.Ring.Common.atom_pf (Matrix.mulVec B x k) rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg
+                                  (fun _a =>
+                                    Matrix.mulVec B x k ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                      Matrix.mulVec B x k ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (Matrix.mulVec B x k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.neg_add
+                            (Mathlib.Tactic.Ring.Common.neg_mul (Matrix.mulVec B x k) (Nat.rawCast 1)
+                              (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                  (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                  (Eq.refl (Int.negOfNat 1)))))
+                            Mathlib.Tactic.Ring.Common.neg_zero))
+                        (Mathlib.Tactic.Ring.Common.atom_pf (B k k) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => B k k ^ Nat.rawCast 1 * Nat.rawCast 1 = B k k ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (B k k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.div_pf
+                          (Mathlib.Tactic.Ring.Common.inv_single
+                            (Mathlib.Tactic.Ring.Common.inv_mul (Eq.refl (B k k)⁻¹)
+                              (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                (Mathlib.Meta.NormNum.IsNNRat.to_isNat
+                                  (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                                    (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)))))
+                              (Eq.symm
+                                  (Eq.mpr
+                                    (id
+                                      (congrArg
+                                        (fun _a =>
+                                          (B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 = (B k k)⁻¹ ^ Nat.rawCast 1 * _a)
+                                        (Eq.symm rfl)))
+                                    (Eq.refl ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1))) ▸
+                                Mathlib.Tactic.Ring.Common.mul_pf_right (B k k)⁻¹ (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                      (Eq.refl 1))))))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left (Matrix.mulVec B x k) (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right (B k k)⁻¹ (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsInt.of_raw ℝ (Int.negOfNat 1))
+                                      (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                      (Eq.refl (Int.negOfNat 1))))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero
+                                (Matrix.mulVec B x k ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (Matrix.mulVec B x k ^ Nat.rawCast 1 *
+                                    ((B k k)⁻¹ ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) +
+                                  0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (Matrix.mulVec B x k ^ Nat.rawCast 1 *
+                                  ((B k k)⁻¹ ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) +
+                                0)))))
+                      (Mathlib.Tactic.Ring.Common.add_mul
+                        (Mathlib.Tactic.Ring.Common.mul_add
+                          (Mathlib.Tactic.Ring.Common.mul_pf_left (B i k) (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.mul_pf_right (Matrix.mulVec B x k) (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.mul_pf_right (B k k)⁻¹ (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isInt_mul (Eq.refl HMul.hMul)
+                                    (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                    (Mathlib.Meta.NormNum.IsInt.of_raw ℝ (Int.negOfNat 1))
+                                    (Eq.refl (Int.negOfNat 1)))))))
+                          (Mathlib.Tactic.Ring.Common.mul_zero (B i k ^ Nat.rawCast 1 * Nat.rawCast 1))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (B i k ^ Nat.rawCast 1 *
+                                (Matrix.mulVec B x k ^ Nat.rawCast 1 *
+                                  ((B k k)⁻¹ ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast)) +
+                              0)))
+                        (Mathlib.Tactic.Ring.Common.zero_mul
+                          (Matrix.mulVec B x k ^ Nat.rawCast 1 *
+                              ((B k k)⁻¹ ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast) +
+                            0))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                          (B i k ^ Nat.rawCast 1 *
+                              (Matrix.mulVec B x k ^ Nat.rawCast 1 *
+                                ((B k k)⁻¹ ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast)) +
+                            0))))
+                    (Mathlib.Tactic.Ring.Common.add_pf_add_lt (Matrix.mulVec B x i ^ Nat.rawCast 1 * Nat.rawCast 1)
+                      (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                        (B i k ^ Nat.rawCast 1 *
+                            (Matrix.mulVec B x k ^ Nat.rawCast 1 *
+                              ((B k k)⁻¹ ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast)) +
+                          0))))
+                  (Mathlib.Tactic.Ring.Common.sub_congr
+                    (Mathlib.Tactic.Ring.Common.atom_pf (Matrix.mulVec B x i) rfl
+                      (Eq.mpr
+                        (id
+                          (congrArg
+                            (fun _a =>
+                              Matrix.mulVec B x i ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                Matrix.mulVec B x i ^ Nat.rawCast 1 * _a)
+                            (Eq.symm rfl)))
+                        (Eq.refl (Matrix.mulVec B x i ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                    (Mathlib.Tactic.Ring.Common.mul_congr
+                      (Mathlib.Tactic.Ring.Common.div_congr
+                        (Mathlib.Tactic.Ring.Common.atom_pf (B i k) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => B i k ^ Nat.rawCast 1 * Nat.rawCast 1 = B i k ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (B i k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.atom_pf (B k k) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => B k k ^ Nat.rawCast 1 * Nat.rawCast 1 = B k k ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (B k k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.div_pf
+                          (Mathlib.Tactic.Ring.Common.inv_single
+                            (Mathlib.Tactic.Ring.Common.inv_mul (Eq.refl (B k k)⁻¹)
+                              (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                (Mathlib.Meta.NormNum.IsNNRat.to_isNat
+                                  (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                                    (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)))))
+                              (Eq.symm
+                                  (Eq.mpr
+                                    (id
+                                      (congrArg
+                                        (fun _a =>
+                                          (B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 = (B k k)⁻¹ ^ Nat.rawCast 1 * _a)
+                                        (Eq.symm rfl)))
+                                    (Eq.refl ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1))) ▸
+                                Mathlib.Tactic.Ring.Common.mul_pf_right (B k k)⁻¹ (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                      (Eq.refl 1))))))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left (B i k) (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right (B k k)⁻¹ (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                      (Eq.refl 1)))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero (B i k ^ Nat.rawCast 1 * Nat.rawCast 1))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (B i k ^ Nat.rawCast 1 * ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (B i k ^ Nat.rawCast 1 * ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))))
+                      (Mathlib.Tactic.Ring.Common.atom_pf (Matrix.mulVec B x k) rfl
+                        (Eq.mpr
+                          (id
+                            (congrArg
+                              (fun _a =>
+                                Matrix.mulVec B x k ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                  Matrix.mulVec B x k ^ Nat.rawCast 1 * _a)
+                              (Eq.symm rfl)))
+                          (Eq.refl (Matrix.mulVec B x k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                      (Mathlib.Tactic.Ring.Common.add_mul
+                        (Mathlib.Tactic.Ring.Common.mul_add
+                          (Mathlib.Tactic.Ring.Common.mul_pf_left (B i k) (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.mul_pf_right (Matrix.mulVec B x k) (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left (B k k)⁻¹ (Nat.rawCast 1)
+                                (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                  (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                    (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                    (Eq.refl 1))))))
+                          (Mathlib.Tactic.Ring.Common.mul_zero
+                            (B i k ^ Nat.rawCast 1 * ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                            (B i k ^ Nat.rawCast 1 *
+                                (Matrix.mulVec B x k ^ Nat.rawCast 1 * ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                              0)))
+                        (Mathlib.Tactic.Ring.Common.zero_mul (Matrix.mulVec B x k ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                        (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                          (B i k ^ Nat.rawCast 1 *
+                              (Matrix.mulVec B x k ^ Nat.rawCast 1 * ((B k k)⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                            0))))
+                    (Mathlib.Tactic.Ring.Common.sub_pf
+                      (Mathlib.Tactic.Ring.Common.neg_add
+                        (Mathlib.Tactic.Ring.Common.neg_mul (B i k) (Nat.rawCast 1)
+                          (Mathlib.Tactic.Ring.Common.neg_mul (Matrix.mulVec B x k) (Nat.rawCast 1)
+                            (Mathlib.Tactic.Ring.Common.neg_mul (B k k)⁻¹ (Nat.rawCast 1)
+                              (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                  (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                  (Eq.refl (Int.negOfNat 1)))))))
+                        Mathlib.Tactic.Ring.Common.neg_zero)
+                      (Mathlib.Tactic.Ring.Common.add_pf_add_lt (Matrix.mulVec B x i ^ Nat.rawCast 1 * Nat.rawCast 1)
+                        (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                          (B i k ^ Nat.rawCast 1 *
+                              (Matrix.mulVec B x k ^ Nat.rawCast 1 *
+                                ((B k k)⁻¹ ^ Nat.rawCast 1 * (Int.negOfNat 1).rawCast)) +
+                            0)))))))
+              hz)
+          (Eq.mp (congrArg (fun _a => _a = 0) (NLA.IE05.schurStep_mulVec_proved S k p i x hx hki)) hz));
+  have hy := hB y hysupp hyrows;
+  funext fun j =>
+    if hj : j = k then Eq.symm hj ▸ hx k (Nat.lt_succ_self ↑k)
+    else
+      have h := congrFun hy j;
+      id
+        (Eq.mp
+          (congrFun'
+            (congrArg Eq
+              (Eq.trans
+                (congrArg (HAdd.hAdd (x j))
+                  (Pi.single_eq_of_ne (of_eq_true (Eq.trans (congrArg Not (eq_false hj)) not_false_eq_true)) c))
+                (add_zero (x j))))
+            0)
+          h)
+theorem NLA.IE05.gepp_growth_bound_proved : ∀ {n : ℕ},
+  1 ≤ n →
+    ∀ (A : NLA.IE05.Mat n) (path : NLA.IE05.PivotPath n),
+      NLA.IE05.AdmissiblePath A path →
+        0 < NLA.IE05.entryMax A ∧ 1 ≤ NLA.IE05.growth A path ∧ NLA.IE05.growth A path ≤ 2 ^ (n - 1) :=
+fun {n} hn A path hp =>
+  let z := ⟨0, Decidable.byContradiction fun a => NLA.IE05.gepp_growth_bound_proved._proof_1_1 hn a⟩;
+  have hz := id (hp z).right.left;
+  have hE := lt_of_lt_of_le (abs_pos.mpr hz) (NLA.IE05.abs_le_entryMax_proved A (path z) z);
+  have hpeak :=
+    NLA.IE05.peakMax_le_proved A path (2 ^ (n - 1) * NLA.IE05.entryMax A)
+      (mul_nonneg
+        (le_of_lt
+          (pow_pos
+            (Mathlib.Meta.Positivity.pos_of_isNat (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2))
+              (Eq.refl (Nat.ble 1 2)))
+            (n - 1)))
+        (LT.lt.le hE))
+      fun k =>
+      LE.le.trans (NLA.IE05.gepp_stage_bound_proved A path hp (↑k) k.isLt)
+        (mul_le_mul_of_nonneg_right
+          (pow_le_pow_right₀
+            (Mathlib.Meta.NormNum.isNat_le_true (Mathlib.Meta.NormNum.isNat_ofNat ℝ Nat.cast_one)
+              (Mathlib.Meta.NormNum.isNat_ofNat ℝ (Eq.refl 2)) (Eq.refl true))
+            (Decidable.byContradiction fun a => NLA.IE05.gepp_growth_bound_proved._proof_1_2 hn k a))
+          (LT.lt.le hE));
+  ⟨hE,
+    ⟨id
+        ((le_div_iff₀ hE).mpr
+          (Eq.mpr (id (congrFun' (congrArg LE.le (one_mul (NLA.IE05.entryMax A))) (NLA.IE05.peakMax A path)))
+            (NLA.IE05.entryMax_le_peakMax_proved hn A path))),
+      id ((div_le_iff₀ hE).mpr hpeak)⟩⟩
+theorem NLA.IE05.firstPath_semantics_proved : ∀ {n : ℕ} (A : NLA.IE05.Mat n),
+  Matrix.det A ≠ 0 →
+    NLA.IE05.FirstAvailablePath A (NLA.IE05.firstPath A) ∧
+      (∀ (k : ℕ), NLA.IE05.trajectory A (NLA.IE05.firstPath A) k = NLA.IE05.firstTrajectory A k) ∧
+        ∀ (path : NLA.IE05.PivotPath n), NLA.IE05.FirstAvailablePath A path → path = NLA.IE05.firstPath A :=
+fun {n} A hA =>
+  ⟨fun k =>
+    have hp :=
+      NLA.IE05.firstPivotIndex_firstAvailable_proved (NLA.IE05.firstTrajectory A ↑k) k
+        (NLA.IE05.activeInjective_nonzero_column_proved (NLA.IE05.firstTrajectory A ↑k) k
+          (NLA.IE05.firstTrajectory_activeInjective_proved A hA (↑k) (Nat.le_of_lt k.isLt)));
+    Eq.mpr
+      (id
+        (congrFun' (congrFun' (congrArg NLA.IE05.FirstAvailablePivot (NLA.IE05.trajectory_firstPath_eq_proved A ↑k)) k)
+          (NLA.IE05.firstPivotIndex (NLA.IE05.firstTrajectory A ↑k) k)))
+      hp,
+    ⟨NLA.IE05.trajectory_firstPath_eq_proved A, NLA.IE05.firstPath_eq_of_firstAvailable_proved A⟩⟩
+theorem NLA.IE05.orthogonalGrowthSet_bounded_proved : ∀ (n : ℕ),
+  2 ≤ n →
+    (NLA.IE05.orthogonalGrowthSet n).Nonempty ∧
+      BddAbove (NLA.IE05.orthogonalGrowthSet n) ∧ ∀ r ∈ NLA.IE05.orthogonalGrowthSet n, 1 ≤ r ∧ r ≤ 2 ^ (n - 1) :=
+fun n hn =>
+  have hbounds := fun r a =>
+    Exists.casesOn a fun A h =>
+      And.casesOn h fun left right =>
+        Exists.casesOn right fun path h =>
+          And.casesOn h fun hp right =>
+            Eq.symm right ▸
+              (NLA.IE05.gepp_growth_bound_proved
+                  (Decidable.byContradiction fun a => NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1 n hn a) A
+                  path hp).right;
+  ⟨have hp :=
+      (NLA.IE05.firstPath_semantics_proved 1
+          (of_eq_true
+            (Eq.trans (congrFun' (congrArg Ne Matrix.det_one) 0)
+              (Eq.trans (congrArg Not one_ne_zero._simp_1) not_false_eq_true)))).left;
+    Exists.intro (NLA.IE05.growth 1 (NLA.IE05.firstPath 1))
+      (Exists.intro 1
+        ⟨of_eq_true
+            (Eq.trans
+              (congrFun' (congrArg Eq (Eq.trans (congrFun' (congrArg HMul.hMul Matrix.transpose_one) 1) (mul_one 1))) 1)
+              (eq_self 1)),
+          Exists.intro (NLA.IE05.firstPath 1) ⟨fun k => (hp k).left, rfl⟩⟩),
+    ⟨Exists.intro (2 ^ (n - 1)) fun r hr => (hbounds r hr).right, hbounds⟩⟩

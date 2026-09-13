@@ -1,0 +1,8 @@
+NLA/IE05/CertDiagnostic.lean:11:2: error: failed to synthesize
+  Decidable ((∀ (i : Fin 8), integerLower false i i = 1) ∧ ∀ (i j : Fin 8), i < j → integerLower false i j = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.
+NLA/IE05/CertDiagnostic.lean:14:2: error: failed to synthesize
+  Decidable (∀ (i j : Fin 8), j < i → integerT false i j = 0)
+
+Hint: Additional diagnostic information may be available using the `set_option diagnostics true` command.

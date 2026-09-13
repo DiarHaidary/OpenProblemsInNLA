@@ -1,0 +1,68 @@
+{
+  "excluded_paths": [
+    "verification/statement-gate-preflight/EVIDENCE-SEAL.json"
+  ],
+  "exclusion_rule": "Only the exact outer path is excluded; every nested receipt/result/snapshot is included.",
+  "files": {
+    "verification/statement-gate-preflight/README.md": {
+      "bytes": 6388,
+      "sha256": "96dd845007f933d19bd78fe3c288f59c6224d5d28fe9e25d5433efe08e1f4ec2"
+    },
+    "verification/statement-gate-preflight/attempt-1-command.json": {
+      "bytes": 509,
+      "sha256": "1a12d5550b22fdd1eaad936e679c28b2a615ee58738c77dc8b06ff005fd8e135"
+    },
+    "verification/statement-gate-preflight/attempt-1-verifier.py": {
+      "bytes": 31954,
+      "sha256": "ea7519b1c5dce8d44f0f48b6c6e6d6f5310c0a8c5169b0f8e7e78239d4b1ef0a"
+    },
+    "verification/statement-gate-preflight/attempt-1.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verification/statement-gate-preflight/attempt-1.stdout.json": {
+      "bytes": 521221,
+      "sha256": "e26390bf3208562e815fbbaaf5dfa9f018b8a50d9ad81f5481662e5e5aef24c9"
+    },
+    "verification/statement-gate-preflight/attempt-2-command.json": {
+      "bytes": 509,
+      "sha256": "28bb4d980a1a9c5f42dc1aca0052140825b6be75bd8a8502f3e6321f28d32795"
+    },
+    "verification/statement-gate-preflight/attempt-2-verifier.py": {
+      "bytes": 32031,
+      "sha256": "26b3081d0e59e2b99dd7c3cc2c4f22a35d81eab717442f934d802f2c34cc6e85"
+    },
+    "verification/statement-gate-preflight/attempt-2.stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "verification/statement-gate-preflight/attempt-2.stdout.json": {
+      "bytes": 520668,
+      "sha256": "bd9349956b8867f17071c3d2c97900e28178d13b4b412d4ab2fb98119ddfb045"
+    },
+    "verification/statement-gate-preflight/early-inspection-diagnostics.md": {
+      "bytes": 1389,
+      "sha256": "16999466f9ae3126ae4a827ad46d9f409acd0e55f714e9e71653b75553113e81"
+    },
+    "verification/statement-gate-preflight/preflight-result.json": {
+      "bytes": 4493,
+      "sha256": "4c9c522155833039463c16e2d46f2215753635bbc2eab158f5419cc64b8be6ae"
+    },
+    "verification/statement-gate-preflight/proposed-input-binding.json": {
+      "bytes": 144874,
+      "sha256": "ef6165de5d5129ed19871e0cb1000ece1f50040c2453e9937a71f1d58e82cfe0"
+    },
+    "verification/statement-gate-preflight/seal_evidence.py": {
+      "bytes": 3222,
+      "sha256": "a215b0c1a7363eac3aa0d1ce4a818ab9b962fa69ac829d9496aac1e1ed864de6"
+    },
+    "verification/statement-gate-preflight/verify_preflight.py": {
+      "bytes": 32031,
+      "sha256": "26b3081d0e59e2b99dd7c3cc2c4f22a35d81eab717442f934d802f2c34cc6e85"
+    }
+  },
+  "historical_referee_reports_and_seals_unchanged": true,
+  "phase": "coordinator-helper evidence seal; not statement freeze",
+  "proof_authorized": false,
+  "scope": "verification/statement-gate-preflight/**"
+}

@@ -1,0 +1,190 @@
+{
+  "phase": "statement-only author check",
+  "utc": "2026-09-13T06:14:47.558399+00:00",
+  "platform": "macOS-14.6.1-arm64-arm-64bit",
+  "project": "/private/tmp/nla-lean-formalization/next-ie05-statements-draft/lean",
+  "prefix": "/tmp/nla-ie05-statements-f4xxq17e",
+  "inputs": {
+    "NLA/IE05/Definitions.lean": {
+      "sha256": "f02d1d5fb862dbdf49c2450d07114742018c597578840b7bc7bb2345dd7da95b",
+      "bytes": 7731
+    },
+    "Challenge.lean": {
+      "sha256": "416fa94e034d729fb36c9bd658c804d52c3387b9c62cf25b62ebd294d9ee0c28",
+      "bytes": 6300
+    },
+    "verification/statement-development/Inspect.lean": {
+      "sha256": "15087a1413b04b932a88b2279c84775d01c760229486bed1fb67ed9d65c5f887",
+      "bytes": 2006
+    },
+    "lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "comparator.json": {
+      "sha256": "c6c58f2a8245888bdfd30357f32ab43d2090f483903c11b38501f404beffca4f",
+      "bytes": 883
+    },
+    "verification/statement-development/check_statements.py": {
+      "sha256": "c8f9498d8ddf01ecc353409f1853caf12a643bac31ca085b53275d05093b93da",
+      "bytes": 5283
+    }
+  },
+  "commands": [
+    {
+      "source": "NLA/IE05/Definitions.lean",
+      "argv": [
+        "/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean",
+        "-o",
+        "/tmp/nla-ie05-statements-f4xxq17e/NLA/IE05/Definitions.olean",
+        "-i",
+        "/tmp/nla-ie05-statements-f4xxq17e/NLA/IE05/Definitions.ilean",
+        "NLA/IE05/Definitions.lean"
+      ],
+      "exit_code": 1,
+      "elapsed_seconds": 5.925769833032973,
+      "log": "Definitions.log",
+      "log_sha256": "140d3c31a306a011b7595bdac006ee336ea8802858811f25101c0b6cb9ce96ee"
+    }
+  ],
+  "authoritative_linux_comparator": false,
+  "mathematics_proved": false,
+  "lean_path": "/tmp/nla-ie05-statements-f4xxq17e:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Cli/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/batteries/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/Qq/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/aesop/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/importGraph/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/plausible/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/mathlib/.lake/build/lib/lean:/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages/leancert/.lake/build/lib/lean:/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean",
+  "toolchain_version": "Lean (version 4.33.1, arm64-apple-darwin24.6.0, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)",
+  "pins_before": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": false
+    }
+  ],
+  "pins_after": [
+    {
+      "name": "leancert",
+      "rev": "621a43d7cf21f87872392a01e874f2f1dbddc926",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "mathlib",
+      "rev": "0df444a360eaa60ab8c11dca51a86af692955474",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "plausible",
+      "rev": "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "LeanSearchClient",
+      "rev": "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "importGraph",
+      "rev": "16f02aa7642864af59f1ff0e384a015994db9118",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "proofwidgets",
+      "rev": "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "aesop",
+      "rev": "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "Qq",
+      "rev": "92c15be17b7caf78c2ad767ec40f89052d908d81",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "batteries",
+      "rev": "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": true
+    },
+    {
+      "name": "Cli",
+      "rev": "6130a47896ce867c6a4a55373441e59e565bad0f",
+      "tracked_clean": true,
+      "compiled_artifact_directory_present": false
+    }
+  ],
+  "source_unchanged": true,
+  "pass": false,
+  "removed_own_objects": {},
+  "own_prefix_removed": true
+}

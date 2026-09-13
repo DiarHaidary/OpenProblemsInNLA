@@ -1,0 +1,27 @@
+Mathlib/LinearAlgebra/Matrix/Nonsingular.lean-91-
+Mathlib/LinearAlgebra/Matrix/Nonsingular.lean-92-/-- If a matrix over a commutative semiring with cancellative addition is nonsingular, then its
+Mathlib/LinearAlgebra/Matrix/Nonsingular.lean:93:columns are linearly independent. Generalizes `Matrix.linearIndependent_cols_of_det_ne_zero`. -/
+Mathlib/LinearAlgebra/Matrix/Nonsingular.lean-94-theorem Nonsingular.linearIndependent_col (hA : A.Nonsingular) : LinearIndependent R A.col :=
+Mathlib/LinearAlgebra/Matrix/Nonsingular.lean-95-  mulVec_injective_iff.mp fun x y eq ↦ funext fun k ↦ hA _ _ <| show _ = _ by
+Mathlib/LinearAlgebra/Matrix/Nonsingular.lean-96-    have h v : ((A.adjp 1 * A + A.detp (-1) • 1) *ᵥ v) k =
+--
+Mathlib/LinearAlgebra/Matrix/Block.lean-347-  exact det_of_isUpperTriangular h.transpose
+Mathlib/LinearAlgebra/Matrix/Block.lean-348-
+Mathlib/LinearAlgebra/Matrix/Block.lean:349:@[deprecated (since := "2026-07-30")] alias det_of_lowerTriangular := det_of_isLowerTriangular
+Mathlib/LinearAlgebra/Matrix/Block.lean-350-
+Mathlib/LinearAlgebra/Matrix/Block.lean-351-open Polynomial
+Mathlib/LinearAlgebra/Matrix/Block.lean-352-
+--
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-490-  exact det_eq_zero_of_not_linearIndependent_rows hA
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-491-
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean:492:theorem linearIndependent_cols_of_det_ne_zero [IsDomain R] {A : Matrix m m R} (hA : A.det ≠ 0) :
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-493-    LinearIndependent R A.col :=
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-494-  Matrix.linearIndependent_rows_of_det_ne_zero (by simpa [Matrix.col])
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-495-
+--
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-498-    det A = 0 := by
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-499-  contrapose! hA
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean:500:  exact linearIndependent_cols_of_det_ne_zero hA
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-501-
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-502-theorem det_vecMulVec [Nontrivial n] (u v : n → R) : (vecMulVec u v).det = 0 := by
+Mathlib/LinearAlgebra/Matrix/Determinant/Basic.lean-503-  obtain ⟨i, j, hij⟩ := exists_pair_ne n

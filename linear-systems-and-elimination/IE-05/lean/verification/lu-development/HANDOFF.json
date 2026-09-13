@@ -1,0 +1,65 @@
+{
+  "utc": "2026-09-13T07:58:14.448026+00:00",
+  "scope": "Complete exact generic scaledLU_trajectory helper, author validated only",
+  "source": {
+    "sha256": "96d71b7a46ec692f9e84e6450adacfa71b9c79ef69ff17222e44173f3e6abcbb",
+    "bytes": 7574
+  },
+  "export": "NLA.IE05._proved.scaledLU_trajectory",
+  "material_roots": [
+    "NLA.IE05._proved.tailProduct_zero",
+    "NLA.IE05._proved.tailProduct_terminal",
+    "NLA.IE05._proved.tailProduct_pivot_row",
+    "NLA.IE05._proved.tailProduct_pivot_column",
+    "NLA.IE05._proved.tailProduct_split",
+    "NLA.IE05._proved.scaled_tail_schur",
+    "NLA.IE05._proved.scaled_tail_firstAvailable",
+    "NLA.IE05._proved.scaled_noSwap_trajectory",
+    "NLA.IE05._proved.scaledLU_trajectory"
+  ],
+  "fresh_run": "attempt-x4p3dxwm",
+  "fresh_run_result": {
+    "sha256": "a28e093e6c5ed309aa1dc943585a02ae5e9e568beb9be02b9a4f94163e6b87f7",
+    "bytes": 10816
+  },
+  "audit": {
+    "sha256": "4932ca6c7f3f4cb79f9eaaeefcd62b569d5d0e95141b74c2f5a09a1e4372ef45",
+    "bytes": 11838
+  },
+  "inspector": {
+    "sha256": "376d5329b1721614133b70e73c364d7788ea12b0a2de2d6722afd9c7d3b3d691",
+    "bytes": 6549
+  },
+  "completion_report": {
+    "sha256": "81d1474f6ef15e6200f6849048aaebf0074b940330df20ca4efa921347b124b2",
+    "bytes": 6934
+  },
+  "handoff_markdown": {
+    "sha256": "10102ef6bf58662a7eec1f04622432f1ae9af3ec8bae412bbbece2647033ef6f",
+    "bytes": 1669
+  },
+  "frozen_inputs": 733,
+  "original_git_sources": 27,
+  "ten_clean_pins": true,
+  "safe_project_declarations": 42,
+  "retained_dependencies": 29,
+  "kernel_assertions": 23,
+  "standard_three_reports": 23,
+  "prior_seals_preserved": [
+    {
+      "manifest": "verification/gepp-development/EVIDENCE-MANIFEST.json",
+      "sha256": "f3854e99028561510756f6c58d024841d2e8cab4ce8d9315d45ac4b25eebd0d1",
+      "verified_bound_files": 150
+    },
+    {
+      "manifest": "verification/qr-scaling-handoff/EVIDENCE-MANIFEST.json",
+      "sha256": "b328744f06c3af7d3ae119ba28dc6d5a078ed79675d3e89fe888b6000c2f58c6",
+      "verified_bound_files": 847
+    }
+  ],
+  "author": "formal_review_standards AI agent for George Stepaniants",
+  "independent_final_referee": false,
+  "actual_linux_comparator": false,
+  "whole_project_frozen": false,
+  "canonical_or_git_changes": false
+}

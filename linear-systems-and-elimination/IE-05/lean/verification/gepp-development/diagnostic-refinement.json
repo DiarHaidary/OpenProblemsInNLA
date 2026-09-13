@@ -1,0 +1,10 @@
+{
+  "utc": "2026-09-13T07:38:20.337838+00:00",
+  "failed_attempt": "attempt-zs36ag3u",
+  "mathematical_sources_unchanged": true,
+  "all_five_exact_types_passed_before_refinement": true,
+  "removed_expected_direct_dependency": "Real.norm_eq_abs",
+  "reason": "The simp source names Real.norm_eq_abs but Lean reduces the real norm/absolute-value relation definitionally; its named theorem does not occur in the actual project proof closure. The inspector therefore must not claim this named theorem is retained. All 42 other actual material dependency requirements remain. This corrects only diagnostic expectations; no proof, trust whitelist, traversal rule, or reviewed type is changed.",
+  "original_generator_sha256": "059041df62c88372abca08d60f1b9d758bfa4d6a03f7e953616e6ec17373eaee",
+  "new_generator_sha256": "9fc4c28b4f4b9d0e66fc987eb45e7f5b1e9a5bafb9f82c7da12e977768d07dc6"
+}

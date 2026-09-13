@@ -1,0 +1,26 @@
+NLA/IE05/Pivot.lean:90:37: error(lean.invalidField): Invalid field `symm`: The environment does not contain `Function.symm`, so it is not possible to project the field `symm` from an expression
+  hrk
+of type `r = k → False`
+NLA/IE05/Pivot.lean:92:37: error(lean.invalidField): Invalid field `symm`: The environment does not contain `Function.symm`, so it is not possible to project the field `symm` from an expression
+  hrk
+of type `r = k → False`
+NLA/IE05/Pivot.lean:145:21: error: #assert_trust: 'NLA.IE05.firstPivotIndex_spec_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPivotIndex_spec_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/Pivot.lean:147:21: error: #assert_trust: 'NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved' depends on axioms: [propext,
+ sorryAx,
+ Classical.choice,
+ Quot.sound]
+NLA/IE05/Pivot.lean:149:21: error: #assert_trust: 'NLA.IE05.firstPivotIndex_firstAvailable_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPivotIndex_firstAvailable_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.IE05.trajectory_firstPath_eq_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/IE05/Pivot.lean:153:21: error: #assert_trust: 'NLA.IE05.firstPath_eq_of_firstAvailable_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPath_eq_of_firstAvailable_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

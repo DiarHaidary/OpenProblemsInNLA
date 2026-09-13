@@ -1,0 +1,51 @@
+NLA/IE05/GEPP.lean:194:2: warning: Try `simp at hc` instead of `simpa using hc`
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+NLA/IE05/GEPP.lean:189:10: warning: This simp argument is unused:
+  Pi.single_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hne]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/IE05/GEPP.lean:232:62: error: unsolved goals
+n : ℕ
+S : Mat n
+k p : Fin n
+hp : k ≤ p
+hne : S p k ≠ 0
+hS : ActiveInjective S ↑k
+B : Mat n := rowSwap S k p
+hB : ActiveInjective (rowSwap S k p) ↑k
+hkk : B k k ≠ 0
+x : Fin n → ℝ
+hx : ∀ (j : Fin n), ↑j < ↑k + 1 → x j = 0
+hrows : ∀ (i : Fin n), ↑k + 1 ≤ ↑i → Matrix.mulVec (schurStep S k p) x i = 0
+c : ℝ := -Matrix.mulVec B x k / B k k
+y : Fin n → ℝ := x + Pi.single k c
+hysupp : ∀ (j : Fin n), ↑j < ↑k → y j = 0
+i : Fin n
+⊢ c * B i k = B i k * c
+'NLA.IE05.entryMax_semantics_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.schurStep_bound_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.gepp_growth_bound_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.activeInjective_initial_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.activeInjective_nonzero_column_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.activeInjective_rowSwap_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.schurStep_mulVec_proved' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:306:21: error: #assert_trust: 'NLA.IE05.activeInjective_schur_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.activeInjective_schur_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:308:21: error: #assert_trust: 'NLA.IE05.firstTrajectory_activeInjective_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstTrajectory_activeInjective_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:310:21: error: #assert_trust: 'NLA.IE05.firstPath_semantics_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.firstPath_semantics_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/GEPP.lean:312:21: error: #assert_trust: 'NLA.IE05.orthogonalGrowthSet_bounded_proved' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05.orthogonalGrowthSet_bounded_proved' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

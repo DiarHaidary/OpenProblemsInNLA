@@ -1,0 +1,1043 @@
+verification/lu-development/Inspect.lean:11:5: warning: Variable name `hL` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hL
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/lu-development/Inspect.lean:11:24: warning: Variable name `hLb` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hLb
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/lu-development/Inspect.lean:12:5: warning: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/lu-development/Inspect.lean:12:30: warning: Variable name `hTp` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hTp
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+verification/lu-development/Inspect.lean:12:53: warning: Variable name `hd` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hd
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+EXACT_FROZEN_TYPE NLA.IE05._proved.scaledLU_trajectory: ∀ {n : ℕ} (L T : NLA.IE05.Mat n) (d : Fin n → ℝ),
+  NLA.IE05.UnitLower L →
+    (∀ (i j : Fin n), j < i → |L i j| ≤ 1) →
+      NLA.IE05.UpperTriangular T →
+        (∀ (i : Fin n), 0 < T i i) →
+          (∀ (j : Fin n), 0 < d j) →
+            NLA.IE05.FirstAvailablePath (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) ∧
+              NLA.IE05.firstPath (NLA.IE05.scaledColumns (L * T) d) = NLA.IE05.noSwapPath n ∧
+                ∀ k ≤ n,
+                  NLA.IE05.trajectory (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) k =
+                    NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T k) d
+ACTUAL_AXIOMS NLA.IE05._proved.tailProduct_zero: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.tailProduct_zero: [NLA.IE05.Mat, NLA.IE05.tailProduct, NLA.IE05.Mat, NLA.IE05.tailProduct]
+ACTUAL_AXIOMS NLA.IE05.Mat: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.Mat: []
+ACTUAL_AXIOMS NLA.IE05.tailProduct: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.tailProduct: []
+ACTUAL_AXIOMS NLA.IE05._proved.tailProduct_terminal: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.tailProduct_terminal: [NLA.IE05.Mat,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.tailProduct]
+ACTUAL_AXIOMS NLA.IE05._proved.tailProduct_pivot_row: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.tailProduct_pivot_row: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.tailProduct]
+ACTUAL_AXIOMS NLA.IE05.UnitLower: []
+PROJECT_EDGE NLA.IE05.UnitLower: []
+ACTUAL_AXIOMS NLA.IE05._proved.tailProduct_pivot_column: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.tailProduct_pivot_column: [NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.tailProduct]
+ACTUAL_AXIOMS NLA.IE05.UpperTriangular: []
+PROJECT_EDGE NLA.IE05.UpperTriangular: []
+ACTUAL_AXIOMS NLA.IE05._proved.tailProduct_split: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.tailProduct_split: [NLA.IE05.Mat,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.tailProduct_split._proof_1_1]
+ACTUAL_AXIOMS NLA.IE05._proved.tailProduct_split._proof_1_1: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.tailProduct_split._proof_1_1: []
+ACTUAL_AXIOMS NLA.IE05._proved.scaled_tail_schur: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.scaled_tail_schur: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.schurStep,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.schurStep,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.tailProduct_pivot_column,
+ NLA.IE05._proved.tailProduct_pivot_row,
+ NLA.IE05._proved.tailProduct_split,
+ NLA.IE05.rowSwap]
+ACTUAL_AXIOMS NLA.IE05.schurStep: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.schurStep: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.rowSwap]
+ACTUAL_AXIOMS NLA.IE05.rowSwap: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.rowSwap: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.scaledColumns: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.scaledColumns: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05._proved.scaled_tail_firstAvailable: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.scaled_tail_firstAvailable: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.tailProduct_pivot_row,
+ NLA.IE05.AdmissiblePivot,
+ NLA.IE05.scaledColumns,
+ NLA.IE05._proved.tailProduct_pivot_column]
+ACTUAL_AXIOMS NLA.IE05.FirstAvailablePivot: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.FirstAvailablePivot: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.AdmissiblePivot]
+ACTUAL_AXIOMS NLA.IE05.AdmissiblePivot: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.AdmissiblePivot: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05._proved.scaled_noSwap_trajectory: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.scaled_noSwap_trajectory: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.tailProduct_zero,
+ NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.trajectory.eq_2,
+ NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2,
+ NLA.IE05._proved.scaled_tail_schur]
+ACTUAL_AXIOMS NLA.IE05.trajectory: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.trajectory: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory._f]
+ACTUAL_AXIOMS NLA.IE05.PivotPath: []
+PROJECT_EDGE NLA.IE05.PivotPath: []
+ACTUAL_AXIOMS NLA.IE05.trajectory._f: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.trajectory._f: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory.match_1,
+ NLA.IE05.schurStep]
+ACTUAL_AXIOMS NLA.IE05.trajectory.match_1: []
+PROJECT_EDGE NLA.IE05.trajectory.match_1: []
+ACTUAL_AXIOMS NLA.IE05.noSwapPath: []
+PROJECT_EDGE NLA.IE05.noSwapPath: [NLA.IE05.PivotPath]
+ACTUAL_AXIOMS NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1: []
+ACTUAL_AXIOMS NLA.IE05.trajectory.eq_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.trajectory.eq_2: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.schurStep,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.trajectory]
+ACTUAL_AXIOMS NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2: [propext, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2: []
+ACTUAL_AXIOMS NLA.IE05._proved.scaledLU_trajectory: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05._proved.scaledLU_trajectory: [NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.trajectory,
+ NLA.IE05.tailProduct,
+ NLA.IE05.Mat,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.trajectory,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.noSwapPath,
+ NLA.IE05.tailProduct,
+ NLA.IE05._proved.scaled_noSwap_trajectory,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05._proved.scaled_tail_firstAvailable,
+ NLA.IE05.PivotPath,
+ NLA.IE05.firstPath,
+ NLA.IE05.firstPath_eq_of_firstAvailable_proved]
+ACTUAL_AXIOMS NLA.IE05.FirstAvailablePath: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.FirstAvailablePath: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.trajectory]
+ACTUAL_AXIOMS NLA.IE05.firstPath: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPath: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstTrajectory]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS NLA.IE05.firstTrajectory: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstTrajectory: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.firstTrajectory._f]
+ACTUAL_AXIOMS NLA.IE05.firstTrajectory._f: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstTrajectory._f: [NLA.IE05.Mat,
+ NLA.IE05.Mat,
+ NLA.IE05.trajectory.match_1,
+ NLA.IE05.schurStep,
+ NLA.IE05.firstPivotIndex]
+ACTUAL_AXIOMS NLA.IE05.firstPath_eq_of_firstAvailable_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPath_eq_of_firstAvailable_proved: [NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.firstPath,
+ NLA.IE05.Mat,
+ NLA.IE05.PivotPath,
+ NLA.IE05.FirstAvailablePath,
+ NLA.IE05.trajectory,
+ NLA.IE05.firstTrajectory,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved,
+ NLA.IE05.schurStep,
+ NLA.IE05.firstPath]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved: [NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.FirstAvailablePivot,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.firstPivotIndex_spec_proved,
+ NLA.IE05.AdmissiblePivot]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex_spec_proved: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex_spec_proved: [NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux,
+ NLA.IE05.firstPivotIndex_spec_proved._proof_1_2]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff]
+ACTUAL_AXIOMS _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff: [NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore,
+ NLA.IE05.Mat,
+ _private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore]
+ACTUAL_AXIOMS NLA.IE05.firstPivotIndex_spec_proved._proof_1_2: [propext, Classical.choice, Quot.sound]
+PROJECT_EDGE NLA.IE05.firstPivotIndex_spec_proved._proof_1_2: [NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex,
+ NLA.IE05.Mat,
+ NLA.IE05.firstPivotIndex]
+RETAINED_DEPENDENCY NLA.IE05._proved.tailProduct_zero
+RETAINED_DEPENDENCY NLA.IE05._proved.tailProduct_pivot_row
+RETAINED_DEPENDENCY NLA.IE05._proved.tailProduct_pivot_column
+RETAINED_DEPENDENCY NLA.IE05._proved.tailProduct_split
+RETAINED_DEPENDENCY NLA.IE05._proved.scaled_tail_schur
+RETAINED_DEPENDENCY NLA.IE05._proved.scaled_tail_firstAvailable
+RETAINED_DEPENDENCY NLA.IE05._proved.scaled_noSwap_trajectory
+RETAINED_DEPENDENCY NLA.IE05.firstPath_eq_of_firstAvailable_proved
+RETAINED_DEPENDENCY NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved
+RETAINED_DEPENDENCY NLA.IE05.firstPivotIndex_spec_proved
+RETAINED_DEPENDENCY NLA.IE05.tailProduct
+RETAINED_DEPENDENCY NLA.IE05.scaledColumns
+RETAINED_DEPENDENCY NLA.IE05.UnitLower
+RETAINED_DEPENDENCY NLA.IE05.UpperTriangular
+RETAINED_DEPENDENCY NLA.IE05.AdmissiblePivot
+RETAINED_DEPENDENCY NLA.IE05.FirstAvailablePivot
+RETAINED_DEPENDENCY NLA.IE05.FirstAvailablePath
+RETAINED_DEPENDENCY NLA.IE05.noSwapPath
+RETAINED_DEPENDENCY NLA.IE05.trajectory
+RETAINED_DEPENDENCY NLA.IE05.firstPath
+RETAINED_DEPENDENCY NLA.IE05.rowSwap
+RETAINED_DEPENDENCY NLA.IE05.schurStep
+RETAINED_DEPENDENCY Real.sqrt
+RETAINED_DEPENDENCY Real.sqrt_pos
+RETAINED_DEPENDENCY Finset.sum_eq_single
+RETAINED_DEPENDENCY Finset.sum_congr
+RETAINED_DEPENDENCY Finset.sum_add_distrib
+RETAINED_DEPENDENCY List.argmax
+RETAINED_DEPENDENCY List.index_of_argmax
+PROJECT_COUNTS declarations=42, required=29
+'NLA.IE05._proved.tailProduct_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.tailProduct_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.tailProduct_pivot_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.tailProduct_pivot_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.tailProduct_split' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.scaled_tail_schur' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.scaled_tail_firstAvailable' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.scaled_noSwap_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.scaledLU_trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+def NLA.IE05.UnitLower.{u_1} : {n : Nat} →
+  {R : Type u_1} → [Zero.{u_1} R] → [One.{u_1} R] → (A : Matrix.{0, 0, u_1} (Fin n) (Fin n) R) → Prop :=
+fun {n : Nat} {R : Type u_1} [inst : Zero.{u_1} R] [inst_1 : One.{u_1} R] (A : Matrix.{0, 0, u_1} (Fin n) (Fin n) R) =>
+  And (∀ (i : Fin n), @Eq.{u_1 + 1} R (A i i) (@OfNat.ofNat.{u_1} R (nat_lit 1) (@One.toOfNat1.{u_1} R inst_1)))
+    (∀ (i j : Fin n),
+      @LT.lt.{0} (Fin n) (@instLTFin n) i j →
+        @Eq.{u_1 + 1} R (A i j) (@OfNat.ofNat.{u_1} R (nat_lit 0) (@Zero.toOfNat0.{u_1} R inst)))
+def NLA.IE05.UpperTriangular.{u_1} : {n : Nat} →
+  {R : Type u_1} → [Zero.{u_1} R] → (A : Matrix.{0, 0, u_1} (Fin n) (Fin n) R) → Prop :=
+fun {n : Nat} {R : Type u_1} [inst : Zero.{u_1} R] (A : Matrix.{0, 0, u_1} (Fin n) (Fin n) R) =>
+  ∀ (i j : Fin n),
+    @LT.lt.{0} (Fin n) (@instLTFin n) j i →
+      @Eq.{u_1 + 1} R (A i j) (@OfNat.ofNat.{u_1} R (nat_lit 0) (@Zero.toOfNat0.{u_1} R inst))
+def NLA.IE05.tailProduct.{u_1} : {n : Nat} →
+  {R : Type u_1} →
+    [Semiring.{u_1} R] →
+      (L T : Matrix.{0, 0, u_1} (Fin n) (Fin n) R) → (k : Nat) → Matrix.{0, 0, u_1} (Fin n) (Fin n) R :=
+fun {n : Nat} {R : Type u_1} [inst : Semiring.{u_1} R] (L T : Matrix.{0, 0, u_1} (Fin n) (Fin n) R) (k : Nat)
+    (i j : Fin n) =>
+  @ite.{u_1 + 1} R (And (@LE.le.{0} Nat instLENat k (@Fin.val n i)) (@LE.le.{0} Nat instLENat k (@Fin.val n j)))
+    (@instDecidableAnd (@LE.le.{0} Nat instLENat k (@Fin.val n i)) (@LE.le.{0} Nat instLENat k (@Fin.val n j))
+      (Nat.decLe k (@Fin.val n i)) (Nat.decLe k (@Fin.val n j)))
+    (@Finset.sum.{0, u_1} (Fin n) R (@Semiring.toAddCommMonoid.{u_1} R inst) (@Finset.univ.{0} (Fin n) (Fin.fintype n))
+      fun (r : Fin n) =>
+      @ite.{u_1 + 1} R (@LE.le.{0} Nat instLENat k (@Fin.val n r)) (Nat.decLe k (@Fin.val n r))
+        (@HMul.hMul.{u_1, u_1, u_1} R R R
+          (@instHMul.{u_1} R (@Distrib.toMul.{u_1} R (@instDistribOfSemiring.{u_1} R inst))) (L i r) (T r j))
+        (@OfNat.ofNat.{u_1} R (nat_lit 0)
+          (@Zero.toOfNat0.{u_1} R (@MulZeroClass.toZero.{u_1} R (@instMulZeroClassOfSemiring.{u_1} R inst)))))
+    (@OfNat.ofNat.{u_1} R (nat_lit 0)
+      (@Zero.toOfNat0.{u_1} R (@MulZeroClass.toZero.{u_1} R (@instMulZeroClassOfSemiring.{u_1} R inst))))
+def NLA.IE05.scaledColumns : {n : Nat} → (A : NLA.IE05.Mat n) → (d : Fin n → Real) → NLA.IE05.Mat n :=
+fun {n : Nat} (A : NLA.IE05.Mat n) (d : Fin n → Real) (i j : Fin n) =>
+  @HDiv.hDiv.{0, 0, 0} Real Real Real (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid)) (A i j)
+    (Real.sqrt (d j))
+def NLA.IE05.noSwapPath : (n : Nat) → NLA.IE05.PivotPath n :=
+fun (n : Nat) (k : Fin n) => k
+def NLA.IE05.schurStep : {n : Nat} → (S : NLA.IE05.Mat n) → (k p : Fin n) → NLA.IE05.Mat n :=
+fun {n : Nat} (S : NLA.IE05.Mat n) (k p : Fin n) =>
+  have B : NLA.IE05.Mat n := @NLA.IE05.rowSwap n S k p;
+  fun (i j : Fin n) =>
+  @ite.{1} Real (And (@LT.lt.{0} (Fin n) (@instLTFin n) k i) (@LT.lt.{0} (Fin n) (@instLTFin n) k j))
+    (@instDecidableAnd (@LT.lt.{0} (Fin n) (@instLTFin n) k i) (@LT.lt.{0} (Fin n) (@instLTFin n) k j)
+      (@Fin.decLt n k i) (@Fin.decLt n k j))
+    (@HSub.hSub.{0, 0, 0} Real Real Real (@instHSub.{0} Real Real.instSub) (B i j)
+      (@HMul.hMul.{0, 0, 0} Real Real Real (@instHMul.{0} Real Real.instMul)
+        (@HDiv.hDiv.{0, 0, 0} Real Real Real (@instHDiv.{0} Real (@DivInvMonoid.toDiv.{0} Real Real.instDivInvMonoid))
+          (B i k) (B k k))
+        (B k j)))
+    (@OfNat.ofNat.{0} Real (nat_lit 0) (@Zero.toOfNat0.{0} Real Real.instZero))
+theorem NLA.IE05._proved.scaled_tail_schur : ∀ {n : ℕ} (L T : NLA.IE05.Mat n) (d : Fin n → ℝ),
+  NLA.IE05.UnitLower L →
+    NLA.IE05.UpperTriangular T →
+      (∀ (i : Fin n), 0 < T i i) →
+        (∀ (j : Fin n), 0 < d j) →
+          ∀ (k : Fin n),
+            NLA.IE05.schurStep (NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T ↑k) d) k k =
+              NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T (↑k + 1)) d :=
+fun {n} L T d hL hT hTp hd k =>
+  have hs := ne_of_gt (Real.sqrt_pos.mpr (hd k));
+  have ht := ne_of_gt (hTp k);
+  Matrix.ext fun i j =>
+    if hij : k < i ∧ k < j then
+      have hcol := NLA.IE05._proved.tailProduct_pivot_column L T hT k i (LT.lt.le hij.left);
+      have hrow := NLA.IE05._proved.tailProduct_pivot_row L T hL k j (LT.lt.le hij.right);
+      have hkk := NLA.IE05._proved.tailProduct_pivot_row L T hL k k le_rfl;
+      have hsplit := NLA.IE05._proved.tailProduct_split L T k i j hij.left hij.right;
+      have hratio :=
+        of_eq_true
+          (Eq.trans
+            (Mathlib.Tactic.FieldSimp.eq_eq_cancel_eq
+              (Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul
+                (Eq.trans
+                  (congr_arg₂ HDiv.hDiv
+                    (Eq.trans (congr_arg₂ HDiv.hDiv (Eq.trans (congr_arg₂ HMul.hMul rfl rfl) rfl) rfl) rfl)
+                    (Eq.trans (congr_arg₂ HDiv.hDiv rfl rfl) rfl))
+                  rfl)
+                (Eq.trans
+                  (Mathlib.Tactic.FieldSimp.NF.div_eq_eval
+                    (Mathlib.Tactic.FieldSimp.NF.div_eq_eval
+                      (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval
+                        (Eq.trans (Eq.refl (L i k)) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (L i k)))
+                        (Eq.trans (Eq.refl (T k k)) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (T k k)))
+                        (Mathlib.Tactic.FieldSimp.NF.mul_eq_eval₃ (1, T k k) (mul_one ((1, L i k) ::ᵣ []).eval)))
+                      (Eq.trans (Eq.refl √(d k)) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval √(d k)))
+                      (Mathlib.Tactic.FieldSimp.NF.div_eq_eval₃ (1, √(d k))
+                        (div_one ((1, T k k) ::ᵣ ((1, L i k) ::ᵣ [])).eval)))
+                    (Mathlib.Tactic.FieldSimp.NF.div_eq_eval
+                      (Eq.trans (Eq.refl (T k k)) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (T k k)))
+                      (Eq.trans (Eq.refl √(d k)) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval √(d k)))
+                      (Mathlib.Tactic.FieldSimp.NF.div_eq_eval₃ (1, √(d k)) (div_one ((1, T k k) ::ᵣ []).eval)))
+                    (Mathlib.Tactic.FieldSimp.NF.div_eq_eval₂ (-1) (-1) (√(d k))
+                      (Mathlib.Tactic.FieldSimp.NF.div_eq_eval₂ 1 1 (T k k) (div_one ((1, L i k) ::ᵣ []).eval))))
+                  (Eq.symm
+                    (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons_zero
+                      (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons_zero
+                        (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons 1 (L i k)
+                          (one_mul (Mathlib.Tactic.FieldSimp.NF.eval [])))
+                        (Mathlib.Tactic.FieldSimp.NF.eval_cons_of_pow_eq_zero (of_decide_eq_true (id (Eq.refl true))) ht
+                          ((1, L i k) ::ᵣ [])))
+                      (Mathlib.Tactic.FieldSimp.NF.eval_cons_of_pow_eq_zero (of_decide_eq_true (id (Eq.refl true))) hs
+                        ((1, L i k) ::ᵣ [])))))
+                rfl
+                (Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst
+                  (Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div 1 (L i k) (Eq.symm (div_one 1)))
+                  (Eq.mpr (id (congrArg (fun _a => _a = L i k) (Mathlib.Tactic.FieldSimp.NF.eval_cons (1, L i k) [])))
+                    (Eq.trans (one_mul (Mathlib.Tactic.FieldSimp.zpow' (1, L i k).2 (1, L i k).1))
+                      (Mathlib.Tactic.FieldSimp.zpow'_one (L i k))))))
+              (Mathlib.Tactic.FieldSimp.eq_mul_of_eq_eq_eq_mul rfl
+                (Eq.trans (Eq.trans (Eq.refl (L i k)) (Mathlib.Tactic.FieldSimp.NF.atom_eq_eval (L i k)))
+                  (Eq.symm
+                    (Mathlib.Tactic.FieldSimp.NF.eval_mul_eval_cons 1 (L i k)
+                      (one_mul (Mathlib.Tactic.FieldSimp.NF.eval [])))))
+                rfl
+                (Mathlib.Tactic.FieldSimp.eq_div_of_eq_one_of_subst
+                  (Mathlib.Tactic.FieldSimp.NF.cons_eq_div_of_eq_div 1 (L i k) (Eq.symm (div_one 1)))
+                  (Eq.mpr (id (congrArg (fun _a => _a = L i k) (Mathlib.Tactic.FieldSimp.NF.eval_cons (1, L i k) [])))
+                    (Eq.trans (one_mul (Mathlib.Tactic.FieldSimp.zpow' (1, L i k).2 (1, L i k).1))
+                      (Mathlib.Tactic.FieldSimp.zpow'_one (L i k))))))
+              one_ne_zero)
+            (eq_self (L i k)));
+      Eq.mpr
+        (id
+          (congrFun'
+            (congrArg Eq
+              (congrFun'
+                (congrFun'
+                  (funext fun i =>
+                    funext fun j =>
+                      ite_congr (Eq.refl (k < i ∧ k < j))
+                        (fun a =>
+                          congr
+                            (congrArg HSub.hSub
+                              (congrFun'
+                                (congrArg HDiv.hDiv
+                                  (congrFun'
+                                    (congrArg (NLA.IE05.tailProduct L T ↑k)
+                                      (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) i))
+                                    j))
+                                √(d j)))
+                            (congr
+                              (congrArg HMul.hMul
+                                (congr
+                                  (congrArg HDiv.hDiv
+                                    (congrFun'
+                                      (congrArg HDiv.hDiv
+                                        (congrFun'
+                                          (congrArg (NLA.IE05.tailProduct L T ↑k)
+                                            (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) i))
+                                          k))
+                                      √(d k)))
+                                  (congrFun'
+                                    (congrArg HDiv.hDiv
+                                      (congrFun'
+                                        (congrArg (NLA.IE05.tailProduct L T ↑k)
+                                          (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) k))
+                                        k))
+                                    √(d k))))
+                              (congrFun'
+                                (congrArg HDiv.hDiv
+                                  (congrFun'
+                                    (congrArg (NLA.IE05.tailProduct L T ↑k)
+                                      (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) k))
+                                    j))
+                                √(d j))))
+                        fun a => Eq.refl 0)
+                  i)
+                j))
+            (NLA.IE05.tailProduct L T (↑k + 1) i j / √(d j))))
+        (Eq.mpr (id (congrArg (fun _a => _a = NLA.IE05.tailProduct L T (↑k + 1) i j / √(d j)) (if_pos hij)))
+          (Eq.mpr
+            (id
+              (congrArg
+                (fun _a =>
+                  NLA.IE05.tailProduct L T (↑k) i j / √(d j) -
+                      _a / √(d k) / (NLA.IE05.tailProduct L T (↑k) k k / √(d k)) *
+                        (NLA.IE05.tailProduct L T (↑k) k j / √(d j)) =
+                    NLA.IE05.tailProduct L T (↑k + 1) i j / √(d j))
+                hcol))
+            (Eq.mpr
+              (id
+                (congrArg
+                  (fun _a =>
+                    NLA.IE05.tailProduct L T (↑k) i j / √(d j) -
+                        L i k * T k k / √(d k) / (NLA.IE05.tailProduct L T (↑k) k k / √(d k)) * (_a / √(d j)) =
+                      NLA.IE05.tailProduct L T (↑k + 1) i j / √(d j))
+                  hrow))
+              (Eq.mpr
+                (id
+                  (congrArg
+                    (fun _a =>
+                      NLA.IE05.tailProduct L T (↑k) i j / √(d j) -
+                          L i k * T k k / √(d k) / (_a / √(d k)) * (T k j / √(d j)) =
+                        NLA.IE05.tailProduct L T (↑k + 1) i j / √(d j))
+                    hkk))
+                (Eq.mpr
+                  (id
+                    (congrArg
+                      (fun _a =>
+                        NLA.IE05.tailProduct L T (↑k) i j / √(d j) - _a * (T k j / √(d j)) =
+                          NLA.IE05.tailProduct L T (↑k + 1) i j / √(d j))
+                      hratio))
+                  (Eq.mpr
+                    (id
+                      (congrArg
+                        (fun _a =>
+                          _a / √(d j) - L i k * (T k j / √(d j)) = NLA.IE05.tailProduct L T (↑k + 1) i j / √(d j))
+                        hsplit))
+                    (Mathlib.Tactic.Ring.of_eq
+                      (Mathlib.Tactic.Ring.Common.sub_congr
+                        (Mathlib.Tactic.Ring.Common.div_congr
+                          (Mathlib.Tactic.Ring.Common.add_congr
+                            (Mathlib.Tactic.Ring.Common.mul_congr
+                              (Mathlib.Tactic.Ring.Common.atom_pf (L i k) rfl
+                                (Eq.mpr
+                                  (id
+                                    (congrArg
+                                      (fun _a => L i k ^ Nat.rawCast 1 * Nat.rawCast 1 = L i k ^ Nat.rawCast 1 * _a)
+                                      (Eq.symm rfl)))
+                                  (Eq.refl (L i k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                              (Mathlib.Tactic.Ring.Common.atom_pf (T k j) rfl
+                                (Eq.mpr
+                                  (id
+                                    (congrArg
+                                      (fun _a => T k j ^ Nat.rawCast 1 * Nat.rawCast 1 = T k j ^ Nat.rawCast 1 * _a)
+                                      (Eq.symm rfl)))
+                                  (Eq.refl (T k j ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                              (Mathlib.Tactic.Ring.Common.add_mul
+                                (Mathlib.Tactic.Ring.Common.mul_add
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_left (L i k) (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.mul_pf_right (T k j) (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1)))))
+                                  (Mathlib.Tactic.Ring.Common.mul_zero (L i k ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                    (L i k ^ Nat.rawCast 1 * (T k j ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                (Mathlib.Tactic.Ring.Common.zero_mul (T k j ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (L i k ^ Nat.rawCast 1 * (T k j ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))))
+                            (Mathlib.Tactic.Ring.Common.atom_pf (NLA.IE05.tailProduct L T (↑k + 1) i j) rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg
+                                    (fun _a =>
+                                      NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                        NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                              (L i k ^ Nat.rawCast 1 * (T k j ^ Nat.rawCast 1 * Nat.rawCast 1))
+                              (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))))
+                          (Mathlib.Tactic.Ring.Common.atom_pf (√(d j)) rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg
+                                  (fun _a => √(d j) ^ Nat.rawCast 1 * Nat.rawCast 1 = √(d j) ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (√(d j) ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.div_pf
+                            (Mathlib.Tactic.Ring.Common.inv_single
+                              (Mathlib.Tactic.Ring.Common.inv_mul (Eq.refl (√(d j))⁻¹)
+                                (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                  (Mathlib.Meta.NormNum.IsNNRat.to_isNat
+                                    (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                                      (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)))))
+                                (Eq.symm
+                                    (Eq.mpr
+                                      (id
+                                        (congrArg
+                                          (fun _a =>
+                                            (√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                              (√(d j))⁻¹ ^ Nat.rawCast 1 * _a)
+                                          (Eq.symm rfl)))
+                                      (Eq.refl ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1))) ▸
+                                  Mathlib.Tactic.Ring.Common.mul_pf_right (√(d j))⁻¹ (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                        (Eq.refl 1))))))
+                            (Mathlib.Tactic.Ring.Common.add_mul
+                              (Mathlib.Tactic.Ring.Common.mul_add
+                                (Mathlib.Tactic.Ring.Common.mul_pf_left (L i k) (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_left (T k j) (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.mul_pf_right (√(d j))⁻¹ (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1))))))
+                                (Mathlib.Tactic.Ring.Common.mul_zero
+                                  (L i k ^ Nat.rawCast 1 * (T k j ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (L i k ^ Nat.rawCast 1 *
+                                      (T k j ^ Nat.rawCast 1 * ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                                    0)))
+                              (Mathlib.Tactic.Ring.Common.add_mul
+                                (Mathlib.Tactic.Ring.Common.mul_add
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_left (NLA.IE05.tailProduct L T (↑k + 1) i j)
+                                    (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.mul_pf_right (√(d j))⁻¹ (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1)))))
+                                  (Mathlib.Tactic.Ring.Common.mul_zero
+                                    (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                    (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 *
+                                        ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                      0)))
+                                (Mathlib.Tactic.Ring.Common.zero_mul ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 *
+                                      ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                    0)))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_lt
+                                (L i k ^ Nat.rawCast 1 *
+                                  (T k j ^ Nat.rawCast 1 * ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1)))
+                                (Mathlib.Tactic.Ring.Common.add_pf_zero_add
+                                  (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 *
+                                      ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                    0))))))
+                        (Mathlib.Tactic.Ring.Common.mul_congr
+                          (Mathlib.Tactic.Ring.Common.atom_pf (L i k) rfl
+                            (Eq.mpr
+                              (id
+                                (congrArg (fun _a => L i k ^ Nat.rawCast 1 * Nat.rawCast 1 = L i k ^ Nat.rawCast 1 * _a)
+                                  (Eq.symm rfl)))
+                              (Eq.refl (L i k ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                          (Mathlib.Tactic.Ring.Common.div_congr
+                            (Mathlib.Tactic.Ring.Common.atom_pf (T k j) rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg
+                                    (fun _a => T k j ^ Nat.rawCast 1 * Nat.rawCast 1 = T k j ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (T k j ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.atom_pf (√(d j)) rfl
+                              (Eq.mpr
+                                (id
+                                  (congrArg
+                                    (fun _a => √(d j) ^ Nat.rawCast 1 * Nat.rawCast 1 = √(d j) ^ Nat.rawCast 1 * _a)
+                                    (Eq.symm rfl)))
+                                (Eq.refl (√(d j) ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                            (Mathlib.Tactic.Ring.Common.div_pf
+                              (Mathlib.Tactic.Ring.Common.inv_single
+                                (Mathlib.Tactic.Ring.Common.inv_mul (Eq.refl (√(d j))⁻¹)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.IsNNRat.to_isNat
+                                      (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                                        (Mathlib.Meta.NormNum.IsNat.to_isNNRat
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)))))
+                                  (Eq.symm
+                                      (Eq.mpr
+                                        (id
+                                          (congrArg
+                                            (fun _a =>
+                                              (√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                                (√(d j))⁻¹ ^ Nat.rawCast 1 * _a)
+                                            (Eq.symm rfl)))
+                                        (Eq.refl ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1))) ▸
+                                    Mathlib.Tactic.Ring.Common.mul_pf_right (√(d j))⁻¹ (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1))))))
+                              (Mathlib.Tactic.Ring.Common.add_mul
+                                (Mathlib.Tactic.Ring.Common.mul_add
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_left (T k j) (Nat.rawCast 1)
+                                    (Mathlib.Tactic.Ring.Common.mul_pf_right (√(d j))⁻¹ (Nat.rawCast 1)
+                                      (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                        (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                          (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Eq.refl 1)))))
+                                  (Mathlib.Tactic.Ring.Common.mul_zero (T k j ^ Nat.rawCast 1 * Nat.rawCast 1))
+                                  (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                    (T k j ^ Nat.rawCast 1 * ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))
+                                (Mathlib.Tactic.Ring.Common.zero_mul ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                                (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                  (T k j ^ Nat.rawCast 1 * ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) + 0)))))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left (L i k) (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right (T k j) (Nat.rawCast 1)
+                                  (Mathlib.Tactic.Ring.Common.mul_pf_right (√(d j))⁻¹ (Nat.rawCast 1)
+                                    (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                      (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                        (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                        (Eq.refl 1))))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero (L i k ^ Nat.rawCast 1 * Nat.rawCast 1))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (L i k ^ Nat.rawCast 1 *
+                                    (T k j ^ Nat.rawCast 1 * ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                                  0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul
+                              (T k j ^ Nat.rawCast 1 * ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (L i k ^ Nat.rawCast 1 *
+                                  (T k j ^ Nat.rawCast 1 * ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1)) +
+                                0))))
+                        (Mathlib.Tactic.Ring.Common.sub_pf
+                          (Mathlib.Tactic.Ring.Common.neg_add
+                            (Mathlib.Tactic.Ring.Common.neg_mul (L i k) (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.neg_mul (T k j) (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.neg_mul (√(d j))⁻¹ (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsInt.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isInt_neg (Eq.refl Neg.neg)
+                                      (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                      (Eq.refl (Int.negOfNat 1)))))))
+                            Mathlib.Tactic.Ring.Common.neg_zero)
+                          (Mathlib.Tactic.Ring.Common.add_pf_add_overlap_zero
+                            (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero (L i k) (Nat.rawCast 1)
+                              (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero (T k j) (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.add_overlap_pf_zero (√(d j))⁻¹ (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsInt.to_isNat
+                                    (Mathlib.Meta.NormNum.isInt_add (Eq.refl HAdd.hAdd)
+                                      (Mathlib.Meta.NormNum.IsNat.to_isInt (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1))
+                                      (Mathlib.Meta.NormNum.IsInt.of_raw ℝ (Int.negOfNat 1))
+                                      (Eq.refl (Int.ofNat 0)))))))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 *
+                                  ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                0)))))
+                      (Mathlib.Tactic.Ring.Common.div_congr
+                        (Mathlib.Tactic.Ring.Common.atom_pf (NLA.IE05.tailProduct L T (↑k + 1) i j) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg
+                                (fun _a =>
+                                  NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * Nat.rawCast 1 =
+                                    NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.atom_pf (√(d j)) rfl
+                          (Eq.mpr
+                            (id
+                              (congrArg (fun _a => √(d j) ^ Nat.rawCast 1 * Nat.rawCast 1 = √(d j) ^ Nat.rawCast 1 * _a)
+                                (Eq.symm rfl)))
+                            (Eq.refl (√(d j) ^ Nat.rawCast 1 * Nat.rawCast 1))))
+                        (Mathlib.Tactic.Ring.Common.div_pf
+                          (Mathlib.Tactic.Ring.Common.inv_single
+                            (Mathlib.Tactic.Ring.Common.inv_mul (Eq.refl (√(d j))⁻¹)
+                              (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                (Mathlib.Meta.NormNum.IsNNRat.to_isNat
+                                  (Mathlib.Meta.NormNum.isNNRat_inv_pos
+                                    (Mathlib.Meta.NormNum.IsNat.to_isNNRat (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)))))
+                              (Eq.symm
+                                  (Eq.mpr
+                                    (id
+                                      (congrArg
+                                        (fun _a =>
+                                          (√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 = (√(d j))⁻¹ ^ Nat.rawCast 1 * _a)
+                                        (Eq.symm rfl)))
+                                    (Eq.refl ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1))) ▸
+                                Mathlib.Tactic.Ring.Common.mul_pf_right (√(d j))⁻¹ (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                      (Eq.refl 1))))))
+                          (Mathlib.Tactic.Ring.Common.add_mul
+                            (Mathlib.Tactic.Ring.Common.mul_add
+                              (Mathlib.Tactic.Ring.Common.mul_pf_left (NLA.IE05.tailProduct L T (↑k + 1) i j)
+                                (Nat.rawCast 1)
+                                (Mathlib.Tactic.Ring.Common.mul_pf_right (√(d j))⁻¹ (Nat.rawCast 1)
+                                  (Mathlib.Meta.NormNum.IsNat.to_raw_eq
+                                    (Mathlib.Meta.NormNum.isNat_mul (Eq.refl HMul.hMul)
+                                      (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1) (Mathlib.Meta.NormNum.IsNat.of_raw ℝ 1)
+                                      (Eq.refl 1)))))
+                              (Mathlib.Tactic.Ring.Common.mul_zero
+                                (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 * Nat.rawCast 1))
+                              (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                                (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 *
+                                    ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                  0)))
+                            (Mathlib.Tactic.Ring.Common.zero_mul ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1 + 0))
+                            (Mathlib.Tactic.Ring.Common.add_pf_add_zero
+                              (NLA.IE05.tailProduct L T (↑k + 1) i j ^ Nat.rawCast 1 *
+                                  ((√(d j))⁻¹ ^ Nat.rawCast 1 * Nat.rawCast 1) +
+                                0))))))))))))
+    else
+      of_eq_true
+        (Eq.trans
+          (congr
+            (congrArg Eq
+              (Eq.trans
+                (congrFun'
+                  (congrFun'
+                    (funext fun i =>
+                      funext fun j =>
+                        ite_congr (Eq.refl (k < i ∧ k < j))
+                          (fun a =>
+                            congr
+                              (congrArg HSub.hSub
+                                (congrFun'
+                                  (congrArg HDiv.hDiv
+                                    (ite_congr
+                                      (congr
+                                        (congrArg And
+                                          (Eq.trans
+                                            (congrArg (LE.le ↑k)
+                                              (congrArg Fin.val
+                                                (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) i)))
+                                            Fin.val_fin_le._simp_1))
+                                        Fin.val_fin_le._simp_1)
+                                      (fun a =>
+                                        Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                                          ite_congr Fin.val_fin_le._simp_1
+                                            (fun a =>
+                                              congrFun'
+                                                (congrArg HMul.hMul
+                                                  (congrFun'
+                                                    (congrArg L
+                                                      (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) i))
+                                                    x))
+                                                (T x j))
+                                            fun a => Eq.refl 0)
+                                      fun a => Eq.refl 0))
+                                  √(d j)))
+                              (congr
+                                (congrArg HMul.hMul
+                                  (congr
+                                    (congrArg HDiv.hDiv
+                                      (congrFun'
+                                        (congrArg HDiv.hDiv
+                                          (ite_congr
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg And
+                                                  (Eq.trans
+                                                    (congrArg (LE.le ↑k)
+                                                      (congrArg Fin.val
+                                                        (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) i)))
+                                                    Fin.val_fin_le._simp_1))
+                                                (Std.le_refl._simp_1 ↑k))
+                                              (and_true (k ≤ i)))
+                                            (fun a =>
+                                              Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                                                ite_congr Fin.val_fin_le._simp_1
+                                                  (fun a =>
+                                                    congrFun'
+                                                      (congrArg HMul.hMul
+                                                        (congrFun'
+                                                          (congrArg L
+                                                            (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) i))
+                                                          x))
+                                                      (T x k))
+                                                  fun a => Eq.refl 0)
+                                            fun a => Eq.refl 0))
+                                        √(d k)))
+                                    (congrFun'
+                                      (congrArg HDiv.hDiv
+                                        (Eq.trans
+                                          (ite_cond_eq_true
+                                            (∑ r, if ↑k ≤ ↑r then L ((Equiv.swap k k) k) r * T r k else 0) 0
+                                            (Eq.trans
+                                              (congr
+                                                (congrArg And
+                                                  (Eq.trans
+                                                    (congrArg (LE.le ↑k)
+                                                      (congrArg Fin.val
+                                                        (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) k)))
+                                                    (Std.le_refl._simp_1 ↑k)))
+                                                (Std.le_refl._simp_1 ↑k))
+                                              (and_self True)))
+                                          (Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                                            ite_congr Fin.val_fin_le._simp_1
+                                              (fun a =>
+                                                congrFun'
+                                                  (congrArg HMul.hMul
+                                                    (congrFun'
+                                                      (congrArg L
+                                                        (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) k))
+                                                      x))
+                                                  (T x k))
+                                              fun a => Eq.refl 0)))
+                                      √(d k))))
+                                (congrFun'
+                                  (congrArg HDiv.hDiv
+                                    (ite_congr
+                                      (Eq.trans
+                                        (congr
+                                          (congrArg And
+                                            (Eq.trans
+                                              (congrArg (LE.le ↑k)
+                                                (congrArg Fin.val
+                                                  (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) k)))
+                                              (Std.le_refl._simp_1 ↑k)))
+                                          Fin.val_fin_le._simp_1)
+                                        (true_and (k ≤ j)))
+                                      (fun a =>
+                                        Finset.sum_congr (Eq.refl Finset.univ) fun x a =>
+                                          ite_congr Fin.val_fin_le._simp_1
+                                            (fun a =>
+                                              congrFun'
+                                                (congrArg HMul.hMul
+                                                  (congrFun'
+                                                    (congrArg L
+                                                      (congrFun' (congrArg DFunLike.coe (Equiv.swap_self k)) k))
+                                                    x))
+                                                (T x j))
+                                            fun a => Eq.refl 0)
+                                      fun a => Eq.refl 0))
+                                  √(d j))))
+                          fun a => Eq.refl 0)
+                    i)
+                  j)
+                (ite_cond_eq_false
+                  ((if k ≤ i ∧ k ≤ j then ∑ x, if k ≤ x then L i x * T x j else 0 else 0) / √(d j) -
+                    (if k ≤ i then ∑ x, if k ≤ x then L i x * T x k else 0 else 0) / √(d k) /
+                        ((∑ x, if k ≤ x then L k x * T x k else 0) / √(d k)) *
+                      ((if k ≤ j then ∑ x, if k ≤ x then L k x * T x j else 0 else 0) / √(d j)))
+                  0 (eq_false hij))))
+            (Eq.trans
+              (congrFun'
+                (congrArg HDiv.hDiv
+                  (ite_cond_eq_false (∑ r, if ↑k + 1 ≤ ↑r then L i r * T r j else 0) 0
+                    (Eq.trans
+                      (congr (congrArg And (Eq.trans Order.add_one_le_iff._simp_1 Fin.val_fin_lt._simp_1))
+                        (Eq.trans Order.add_one_le_iff._simp_1 Fin.val_fin_lt._simp_1))
+                      (eq_false hij))))
+                √(d j))
+              (zero_div √(d j))))
+          (eq_self 0))
+theorem NLA.IE05._proved.scaled_tail_firstAvailable : ∀ {n : ℕ} (L T : NLA.IE05.Mat n) (d : Fin n → ℝ),
+  NLA.IE05.UnitLower L →
+    (∀ (i j : Fin n), j < i → |L i j| ≤ 1) →
+      NLA.IE05.UpperTriangular T →
+        (∀ (i : Fin n), 0 < T i i) →
+          (∀ (j : Fin n), 0 < d j) →
+            ∀ (k : Fin n), NLA.IE05.FirstAvailablePivot (NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T ↑k) d) k k :=
+fun {n} L T d hL hLb hT hTp hd k =>
+  have hrow := NLA.IE05._proved.tailProduct_pivot_row L T hL k k le_rfl;
+  have hpos := div_pos (hTp k) (Real.sqrt_pos.mpr (hd k));
+  ⟨⟨le_rfl,
+      ⟨id (Eq.mpr (id (congrArg (fun _a => _a / √(d k) ≠ 0) hrow)) (ne_of_gt hpos)), fun i hi =>
+        have hl :=
+          if hik : i = k then
+            Eq.ndrec (motive := fun i => k ≤ i → |L i k| ≤ 1)
+              (fun hi =>
+                of_eq_true
+                  (Eq.trans (congrFun' (congrArg LE.le (Eq.trans (congrArg abs (hL.left k)) abs_one)) 1)
+                    (Std.le_refl._simp_1 1)))
+              (Eq.symm hik) hi
+          else hLb i k (lt_of_le_of_ne hi (Ne.symm hik));
+        id
+          (Eq.mpr
+            (id
+              (congrArg (fun _a => |_a / √(d k)| ≤ |NLA.IE05.tailProduct L T (↑k) k k / √(d k)|)
+                (NLA.IE05._proved.tailProduct_pivot_column L T hT k i hi)))
+            (Eq.mpr (id (congrArg (fun _a => |L i k * T k k / √(d k)| ≤ |_a / √(d k)|) hrow))
+              (Eq.mpr (id (congrArg (fun _a => |_a| ≤ |T k k / √(d k)|) (mul_div_assoc (L i k) (T k k) √(d k))))
+                (Eq.mpr (id (congrArg (fun _a => _a ≤ |T k k / √(d k)|) (abs_mul (L i k) (T k k / √(d k)))))
+                  (Eq.mpr (id (congrArg (fun _a => |L i k| * _a ≤ _a) (abs_of_pos hpos)))
+                    (Eq.mp (congrArg (LE.le (|L i k| * (T k k / √(d k)))) (one_mul (T k k / √(d k))))
+                      (mul_le_mul_of_nonneg_right hl (LT.lt.le hpos))))))))⟩⟩,
+    fun i hi a => hi⟩
+theorem NLA.IE05._proved.scaled_noSwap_trajectory : ∀ {n : ℕ} (L T : NLA.IE05.Mat n) (d : Fin n → ℝ),
+  NLA.IE05.UnitLower L →
+    NLA.IE05.UpperTriangular T →
+      (∀ (i : Fin n), 0 < T i i) →
+        (∀ (j : Fin n), 0 < d j) →
+          ∀ k ≤ n,
+            NLA.IE05.trajectory (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) k =
+              NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T k) d :=
+fun {n} L T d hL hT hTp hd k hk =>
+  Nat.recAux (motive := fun k =>
+    k ≤ n →
+      NLA.IE05.trajectory (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) k =
+        NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T k) d)
+    (fun hk =>
+      of_eq_true
+        (Eq.trans
+          (congrArg (Eq (NLA.IE05.scaledColumns (L * T) d))
+            (congrFun' (congrArg NLA.IE05.scaledColumns (NLA.IE05._proved.tailProduct_zero L T)) d))
+          (eq_self (NLA.IE05.scaledColumns (L * T) d))))
+    (fun k ih hk =>
+      have hkn := Decidable.byContradiction fun a => NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1 k hk a;
+      Eq.mpr
+        (id
+          (congrArg (fun _a => _a = NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T (k + 1)) d)
+            (NLA.IE05.trajectory.eq_2 (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) k)))
+        (Eq.mpr
+          (id (congrArg (fun _a => _a = NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T (k + 1)) d) (dif_pos hkn)))
+          (Eq.mpr
+            (id
+              (congrArg
+                (fun _a =>
+                  NLA.IE05.schurStep _a ⟨k, hkn⟩ (NLA.IE05.noSwapPath n ⟨k, hkn⟩) =
+                    NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T (k + 1)) d)
+                (ih (Decidable.byContradiction fun a => NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2 k hk a))))
+            (NLA.IE05._proved.scaled_tail_schur L T d hL hT hTp hd ⟨k, hkn⟩))))
+    k hk
+theorem NLA.IE05._proved.scaledLU_trajectory : ∀ {n : ℕ} (L T : NLA.IE05.Mat n) (d : Fin n → ℝ),
+  NLA.IE05.UnitLower L →
+    (∀ (i j : Fin n), j < i → |L i j| ≤ 1) →
+      NLA.IE05.UpperTriangular T →
+        (∀ (i : Fin n), 0 < T i i) →
+          (∀ (j : Fin n), 0 < d j) →
+            NLA.IE05.FirstAvailablePath (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) ∧
+              NLA.IE05.firstPath (NLA.IE05.scaledColumns (L * T) d) = NLA.IE05.noSwapPath n ∧
+                ∀ k ≤ n,
+                  NLA.IE05.trajectory (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) k =
+                    NLA.IE05.scaledColumns (NLA.IE05.tailProduct L T k) d :=
+fun {n} L T d hL hLb hT hTp hd =>
+  have htraj := NLA.IE05._proved.scaled_noSwap_trajectory L T d hL hT hTp hd;
+  have hp := fun k =>
+    Eq.mpr
+      (id
+        (congrArg (fun _a => NLA.IE05.FirstAvailablePivot _a k (NLA.IE05.noSwapPath n k))
+          (htraj (↑k) (Nat.le_of_lt k.isLt))))
+      (NLA.IE05._proved.scaled_tail_firstAvailable L T d hL hLb hT hTp hd k);
+  ⟨hp,
+    ⟨Eq.symm
+        (NLA.IE05.firstPath_eq_of_firstAvailable_proved (NLA.IE05.scaledColumns (L * T) d) (NLA.IE05.noSwapPath n) hp),
+      htraj⟩⟩

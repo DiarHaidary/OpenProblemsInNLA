@@ -1,0 +1,485 @@
+b6bf7b83c80180f408e11515bd6b970f230c7dab blob 5473
+import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
+import Mathlib.Analysis.Calculus.ContDiff.Basic
+import Mathlib.Analysis.Calculus.Gradient.Basic
+import Mathlib.Analysis.Convex.Contractible
+import Mathlib.Analysis.InnerProductSpace.Laplacian
+import Mathlib.Analysis.Normed.Affine.Isometry
+import Mathlib.LinearAlgebra.Complex.FiniteDimensional
+import Mathlib.MeasureTheory.Integral.Bochner.Basic
+import Mathlib.MeasureTheory.Measure.Lebesgue.Complex
+import Mathlib.Topology.Bornology.Basic
+
+/-!
+# Challenge: Schiffer to Pompeiu
+
+This is the single trusted statement module presented to Lean's comparator.
+It imports only Mathlib.  Its two proof holes are the star-shaped Schiffer
+statement and the fixed-domain Schiffer-to-Pompeiu bridge.  The usual simply
+connected Schiffer statement follows because a nonempty star-shaped set is
+contractible, hence path connected and simply connected.  The two Pompeiu
+existence theorems then follow immediately inside this file.
+
+We identify the Euclidean plane with `ℂ`.  The theorem says that there is a
+bounded, simply connected domain with `C²` boundary, not a disk, and a nonzero
+continuous real function whose integral vanishes over every rigid copy of the
+domain.  Here a rigid motion `ℂ ≃ᵃⁱ[ℝ] ℂ` is a bijective real-affine isometry,
+that is, a map `x ↦ A x + b` with `A` orthogonal; this includes translations,
+rotations, and reflections.
+-/
+
+noncomputable section
+
+open Set Bornology MeasureTheory
+open scoped Gradient Laplacian
+
+namespace Schiffer.Comparator
+
+/- Here `ℂ` is the real Euclidean plane.  Accordingly, Mathlib's Laplacian is
+the real Laplacian
+`Δu = D²u(1, 1) + D²u(Complex.I, Complex.I) = ∂²u/∂x² + ∂²u/∂y²`,
+as confirmed by the Mathlib declaration
+`InnerProductSpace.laplacian_eq_iteratedFDeriv_complexPlane`. -/
+
+/-- `Ω` is an ordinary open Euclidean disk, with arbitrary center and radius. -/
+def IsEuclideanDisk (Ω : Set ℂ) : Prop :=
+  ∃ c : ℂ, ∃ r : ℝ, Ω = Metric.ball c r
+
+/-- `Ω` is a regular `C²` super-level set.  In particular, `Ω` is open,
+because a `C²` defining function is continuous. -/
+def HasC2Boundary (Ω : Set ℂ) : Prop :=
+  ∃ F : ℂ → ℝ,
+    ContDiff ℝ 2 F ∧
+    Ω = {x | 0 < F x} ∧
+    ∀ x, F x = 0 → ∇ F x ≠ 0
+
+/-- Schiffer 1: the star-shaped counterexample, and the first proof hole. -/
+theorem Schiffer_Star_Shaped :
+  ∃ (Ω : Set ℂ) (u : ℂ → ℝ),
+    IsBounded Ω ∧
+    Nonempty Ω ∧
+    -- Every line segment from the origin to a point of `Ω` stays in `Ω`.
+    StarConvex ℝ 0 Ω ∧
+    HasC2Boundary Ω ∧
+    ¬ IsEuclideanDisk Ω ∧
+    ContDiff ℝ 2 u ∧
+    (∀ x ∈ Ω, -(Δ u) x = u x) ∧
+    (∀ x ∈ frontier Ω, u x = 1) ∧
+    (∀ x ∈ frontier Ω, ∇ u x = 0) := by
+  sorry
+
+/-- Schiffer 2: the usual simply connected counterexample, derived from
+Schiffer 1 via contractibility. -/
+theorem Schiffer_SimplyConnected :
+  ∃ (Ω : Set ℂ) (u : ℂ → ℝ),
+    IsBounded Ω ∧
+    Nonempty Ω ∧
+    IsPathConnected Ω ∧
+    IsSimplyConnected Ω ∧
+    HasC2Boundary Ω ∧
+    ¬ IsEuclideanDisk Ω ∧
+    ContDiff ℝ 2 u ∧
+    (∀ x ∈ Ω, -(Δ u) x = u x) ∧
+    (∀ x ∈ frontier Ω, u x = 1) ∧
+    (∀ x ∈ frontier Ω, ∇ u x = 0) := by
+  obtain ⟨Ω, u, hb, hn, hs, hC2, hD, hu, hEq, hVal, hDiff⟩ :=
+    Schiffer_Star_Shaped
+  letI : ContractibleSpace Ω :=
+    hs.contractibleSpace (Set.nonempty_coe_sort.mp hn)
+  exact ⟨Ω, u, hb, hn, isPathConnected_iff_pathConnectedSpace.mpr inferInstance,
+    SimplyConnectedSpace.ofContractible Ω, hC2, hD, hu, hEq, hVal, hDiff⟩
+
+/--
+Pompeiu 3, and the second proof hole: the classical implication "Pompeiu
+implies Schiffer", written in the contrapositive direction useful here.  If
+one fixed domain carries Schiffer data, then that same domain fails the
+Pompeiu property.
+-/
+theorem SchifferToPompeiu
+    {Ω : Set ℂ} {u : ℂ → ℝ}
+    (hbounded : IsBounded Ω)
+    (hC2 : HasC2Boundary Ω)
+    (huC2 : ContDiff ℝ 2 u)
+    (hequation : ∀ x ∈ Ω, -(Δ u) x = u x)
+    (hboundaryValue : ∀ x ∈ frontier Ω, u x = 1)
+    (hboundaryGradient : ∀ x ∈ frontier Ω, ∇ u x = 0) :
+    ∃ f : ℂ → ℝ,
+      Continuous f ∧
+      f ≠ 0 ∧
+      ∀ rigidMotion : ℂ ≃ᵃⁱ[ℝ] ℂ,
+        ∫ x in rigidMotion '' Ω, f x = 0 := by
+  sorry
+
+/-- Pompeiu 1: a star-shaped counterexample to the Pompeiu conjecture. -/
+theorem Pompeiu_Star_Shaped :
+  ∃ Ω : Set ℂ,
+    IsBounded Ω ∧
+    Nonempty Ω ∧
+    StarConvex ℝ 0 Ω ∧
+    HasC2Boundary Ω ∧
+    ¬ IsEuclideanDisk Ω ∧
+    ∃ f : ℂ → ℝ,
+      Continuous f ∧
+      f ≠ 0 ∧
+      ∀ rigidMotion : ℂ ≃ᵃⁱ[ℝ] ℂ,
+        ∫ x in rigidMotion '' Ω, f x = 0 := by
+  rcases Schiffer_Star_Shaped with ⟨Ω, u, h⟩
+  refine ⟨Ω, ?_⟩
+  aesop (add unsafe apply SchifferToPompeiu)
+
+/-- Pompeiu 2: the usual simply connected counterexample. -/
+theorem Pompeiu_SimplyConnected :
+  ∃ Ω : Set ℂ,
+    IsBounded Ω ∧
+    Nonempty Ω ∧
+    IsPathConnected Ω ∧
+    IsSimplyConnected Ω ∧
+    HasC2Boundary Ω ∧
+    ¬ IsEuclideanDisk Ω ∧
+    ∃ f : ℂ → ℝ,
+      Continuous f ∧
+      f ≠ 0 ∧
+      ∀ rigidMotion : ℂ ≃ᵃⁱ[ℝ] ℂ,
+        ∫ x in rigidMotion '' Ω, f x = 0 := by
+  rcases Schiffer_SimplyConnected with ⟨Ω, u, h⟩
+  refine ⟨Ω, ?_⟩
+  aesop (add unsafe apply SchifferToPompeiu)
+
+end Schiffer.Comparator
+
+ef4e833fd9a99a5432631da53aae322215f1a26d blob 16472
+# Metadata following mathlib-initiative/formalization.yaml v0.3.
+version: "v0.3"
+
+project:
+  name: "schiffer_counterexample"
+  authors:
+    - "Jaume de Dios Pont"
+    - "OpenAI Codex"
+  license: "UNLICENSED"
+
+sources:
+  - title: "Modular proof draft for a planar Schiffer counterexample"
+    authors:
+      - "Jaume de Dios Pont"
+      - "OpenAI Codex"
+    id: >-
+      https://github.com/caolab97/Schiffer/blob/85235fb037cbfd336e3ae9801f61951c5e2d1c4f/Schiffer_GPT_V3.tex
+    type: "original proof manuscript"
+    license: "UNLICENSED"
+    author_contacted: "n/a"
+    prior_work: >-
+      The construction adapts cone bifurcation ideas and analytic techniques
+      from Fall--Minlend--Weth, The Schiffer problem on the cylinder and on the
+      2-sphere; Enciso--Fernandez--Ruiz--Sicbaldi, A Schiffer-type problem for
+      annuli; and Cao-Labora--Fernandez, A contractible Schiffer counterexample
+      on the half-sphere. The Euclidean large-N landing argument and the final
+      counterexample proof were developed in this project.
+status:
+  scope: >-
+    A complete large-N construction of a bounded, star-shaped and simply
+    connected planar Schiffer domain that is not a Euclidean disk. The project
+    formalizes the weighted Fourier and anisotropic Banach-space foundations,
+    the Bessel-function and zero-density spine, a reusable quantitative
+    Lyapunov--Schmidt/parametric-contraction reduction, uniform nonlinear cone
+    branches, the negative quadratic radius drift, near-integer crossings,
+    integer landing, direct Cartesian regularity at the cone tip, one-sided C2
+    gluing, and graph/field nontriviality. It also proves a construction-free
+    comparator statement with a global C2 defining function and global C2
+    field satisfying -Delta u = u, u = 1, and full derivative Du = 0 on the
+    boundary. Counts and claims here refer to Schiffer and Schiffer.lean on
+    this repository's `lean` branch; legacy Schiffer files and
+    the N=28 numerical experiments are outside the formalized proof scope.
+  sorry_count: 3
+  sorry_in_definitions: 0
+  axioms:
+    - "propext"
+    - "Quot.sound"
+    - "Classical.choice"
+  notes: >-
+    A full default `lake build` completed successfully (3177 jobs). The imported solution
+    proof has no sorry or admit. The three sorries counted above occur only in
+    the deliberately incomplete pedagogical files `Schiffer/Challenge.lean`
+    and `Schiffer/FormalConjecturesChallenge.lean`; neither is imported by
+    the solution entry point. Source scans found no custom axiom, unsafe
+    declaration, or heartbeat override in the proof. Lean axiom checks and
+    LSP source scans were run on the final theorem and the load-bearing branch,
+    density, landing, lift, and origin-series declarations.
+  main_results:
+    - declaration: "Schiffer.Analysis.SchifferCounterexample.PlanarSchifferCounterexample"
+      file: "Schiffer/Analysis/SchifferCounterexample.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Quot.sound"
+        - "Classical.choice"
+      literature_dependencies: []
+    - declaration: "Schiffer.exists_schifferCounterexample"
+      file: "Schiffer/Main.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Quot.sound"
+        - "Classical.choice"
+      literature_dependencies: []
+    - declaration: "Schiffer.Bifurcation.exists_uniformConeBranch"
+      file: "Schiffer/Bifurcation/UniformBranch.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Quot.sound"
+        - "Classical.choice"
+      literature_dependencies: []
+    - declaration: "Schiffer.Density.exists_nearIntegerCrossing"
+      file: "Schiffer/Density/NearInteger.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Quot.sound"
+        - "Classical.choice"
+      literature_dependencies: []
+    - declaration: "Schiffer.Landing.exists_landedConeSolution"
+      file: "Schiffer/Landing/IntegerRadius.lean"
+      sorry_count: 0
+      axioms:
+        - "propext"
+        - "Quot.sound"
+        - "Classical.choice"
+      literature_dependencies: []
+
+automation:
+  methods:
+    - method: "agent"
+      models:
+        - "GPT-5"
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Lean 4.29.0 and Mathlib manifest commit 8a178386; Lean language-server
+        diagnostics and axiom/source verification; local default-limit Lake
+        builds; git worktrees; GitHub; and parallel Codex agents for bounded
+        proof tasks, implementation, cleanup, and hostile mathematical/API
+        refereeing. The Lean architecture was developed bottom-up from a
+        reviewed blueprint in one-to-one correspondence with source modules.
+      cost:
+        wall_time: >-
+          79h 17m 24s of tracked active goal time (285444 seconds), across
+          interactive sessions from 2026-07-11 through 2026-07-15. Because
+          bounded subagents ran concurrently, this is tracked agent time and
+          should not be interpreted as serial human labor or CPU time.
+        spend_usd: "not available (subscription-hosted Codex usage)"
+        hardware: >-
+          API-hosted model inference; local 16-vCPU machine for Lean LSP and
+          default-limit Lake builds.
+        tracked_model_tokens: 35064557
+        calendar_span: "4d 19h 26m 32s"
+      prompting_notes: >-
+        The user required the uniform large-N route rather than the N=28
+        numerical sanity check; careful anisotropic spaces; a reusable
+        Lyapunov--Schmidt architecture; avoidance of unformalized general
+        elliptic regularity; direct Cartesian control at the origin; no
+        heartbeat-limit increases; file-by-file public API blueprints; bottom-up
+        implementation; periodic commits; and multiple independent agent
+        referees. The user repeatedly authorized parallel agents and supplied
+        completed specialist branches for fixed-order Bessel asymptotics,
+        abstract Lyapunov--Schmidt reduction, and cleanup work.
+    - method: "agent"
+      models:
+        - "GPT-5"
+      framework: "OpenAI Codex"
+      tool_setup: >-
+        Separate library- and proof-refereeing cleanup thread using Lean LSP
+        diagnostics, declaration references, axiom/source verification,
+        targeted default-limit Lake builds, full Schiffer builds, isolated
+        git worktrees, and parallel architecture, warning/noise, and proof
+        heatmap audits. Library-scale review and local proof golfing were kept
+        as distinct passes. Reusable modules were established before their
+        clients were migrated, and dead declarations were removed only after
+        reference checks.
+      cost:
+        wall_time: >-
+          38h 43m 39s estimated aggregate active agent time (139419 seconds)
+          over a 72h 40m 7s calendar span. This combines 37h 14m 57s of
+          reconstructed root-agent activity with 1h 28m 42s across ten direct
+          subagent runs. Subagents ran concurrently, so aggregate active time
+          is neither elapsed wall-clock time nor serial human labor.
+        spend_usd: >-
+          Not available (subscription-hosted Codex usage); the reconstructed
+          token counters are not a billing estimate.
+        hardware: >-
+          API-hosted model inference; local 16-vCPU machine for Lean LSP and
+          default-limit Lake builds.
+      telemetry:
+        source: >-
+          Reconstructed from local Codex JSONL session logs through the
+          verified cleanup milestone. Forked agent logs inherit parent
+          history, so only per-fork increments are counted.
+        interval:
+          start: "2026-07-13T20:47:17.673Z"
+          end: "2026-07-16T21:27:24.594Z"
+        calendar_span_seconds: 261607
+        root_completed_turn_seconds: 117668
+        root_interrupted_turn_estimate_seconds: 16429
+        root_active_estimate_seconds: 134097
+        direct_subagent_runs: 10
+        direct_subagent_active_seconds: 5322
+        estimated_aggregate_active_seconds: 139419
+        token_usage:
+          input_tokens: 1266442343
+          cached_input_tokens: 1246481920
+          uncached_input_tokens: 19960423
+          output_tokens: 2004190
+          reasoning_output_tokens: 686280
+          total_tokens_including_cached_input: 1268446533
+          uncached_input_plus_output_tokens: 21964613
+          interpretation: >-
+            Cached input dominates the processed-token total. These raw
+            session counters are not a billing estimate and are not directly
+            comparable with the goal-based `tracked_model_tokens` field for
+            the primary development run.
+      prompting_notes: >-
+        The user requested a bottom-up second pass over the complete proof
+        plan, with aggressive but individually justified refactors, reusable
+        components preferred over one-off golfing, continuous synchronization
+        with the moving proof branch, preservation of library-like results,
+        and elimination of warnings, noise, unsafe automation, and unnecessary
+        resource overrides. The user explicitly allowed parallel agents and
+        asked that cleanup milestones remain easy for the spearhead agent to
+        import.
+      notes: >-
+        The cleanup isolated common quadratic stationary-phase and polar-
+        Laplacian developments, canonicalized a duplicated small-argument
+        Bessel bound, migrated branch and cone-map clients to public APIs,
+        consolidated duplicate physical-model synthesis declarations, removed
+        reference-proven dead scaffolding, simplified local Bessel proofs, and
+        split a costly physical cubic bridge at a named irreducible boundary.
+        This removed the sole heartbeat override and replaced unsafe final
+        endpoint search with explicit witness construction. The final cleanup
+        milestone changed 24 files by 1399 insertions and 2126 deletions and
+        passed a full 3173-job Schiffer build, LSP diagnostics on the touched
+        modules, production trust-marker scans, and final-theorem axiom checks.
+      published_commits:
+        - commit: "1fc19b14ce94792b87ad01e31ab55482feb6734b"
+          description: >-
+            Milestone cleanup isolating reusable analysis and pruning dead
+            scaffolding.
+        - commit: "baa056785745ca59014c58717b07f1433c1b504d"
+          description: >-
+            Proof cleanup campaign milestone with reusable analysis modules,
+            API migrations, proof repair, and full verification.
+  spend_usd: "not available (subscription-hosted Codex usage)"
+  effort:
+    tracked_goal_time_seconds: 285444
+    tracked_goal_time: "79h 17m 24s"
+    tracked_model_tokens: 35064557
+    development_calendar_span: "2026-07-11T03:26:02Z to 2026-07-15T22:52:34Z"
+    tracked_proof_snapshot: "b17ca8daad6a7cbca9663b7fb514e24e34a630c7"
+    tracked_development_commits_since_main: 550
+    tracked_lean_lines: 114793
+    tracked_blueprint_lines: 13427
+    tracked_diff_since_main: "132112 additions, 1 deletion across 190 files"
+    published_lean_snapshot: "85235fb037cbfd336e3ae9801f61951c5e2d1c4f"
+    published_lean_lines: 115021
+    published_blueprint_lines: 13843
+    exclusions: >-
+      The reconstructed time and token usage of the separately run cleanup
+      chat are not included in these primary-run totals; they are reported in
+      the second `automation.methods` entry above. Dollar spend remains
+      unavailable.
+  notes: >-
+    Work proceeded through frequent source checks, cached artifact builds, and
+    coherent milestone commits. Specialist agents handled self-contained
+    Bessel, origin-series, final-assembly, comparator, cleanup-audit, and
+    referee tasks. The final branch and all local development branches were
+    copied to the private jaumededios/schiffer backup repository.
+
+fidelity:
+  divergences: >-
+    This is not a line-by-line translation of a pre-existing published proof:
+    the large-N proof manuscript, its corrected density/landing argument, and
+    the Lean formalization were co-developed. The manuscript often uses
+    anisotropic Holder spaces and states C2,alpha boundary regularity plus
+    interior smoothness; the public Lean comparator currently claims the
+    classical counterexample at C2 regularity and does not claim C2,alpha or
+    C-infinity interior regularity. The construction-native SchifferCandidate
+    separately records star-convexity and simple connectedness, while the plain
+    comparator states star-shapedness, which implies contractibility but does
+    not repeat the simple-connectedness field. The comparator normalizes the
+    positive eigenvalue to 1 by dilation and strengthens the Neumann boundary
+    condition to vanishing of the full Frechet derivative. The formal proof
+    uses weighted l1 Fourier sequences, continuous radial jets, quantitative
+    parametric contraction, and reusable Lyapunov--Schmidt splitting rather
+    than a black-box Nash--Moser theorem. It proves tip and interface regularity
+    directly from integer-order Bessel power series and one-sided Cartesian
+    jets, without invoking general elliptic regularity or a removable-
+    singularity theorem. The N=28 computations remain exploratory evidence and
+    are not used by any theorem.
+
+review:
+  status: "agent-reviewed"
+  reviewers:
+    - "OpenAI Codex mathematical referee agent"
+    - "OpenAI Codex Lean/API referee agent"
+    - "OpenAI Codex OriginSeries and interface-sign referee agents"
+  notes: >-
+    Multiple agents independently audited the full-radius closed-ball
+    regularity, modewise Bessel ODE argument, x=N-r radial sign, zero-mode
+    normalization, independent inner/outer Hessian traces, non-circular
+    one-sided gluing, nontriviality, public API/blueprint correspondence,
+    placeholders, default builds, and axiom usage. All reported PASS. The
+    result has not yet received independent human peer review, publication
+    review, or author verification in the sense of this metadata standard.
+
+alignment:
+  namespace: "Schiffer"
+  statements:
+    - source: "Planar Schiffer counterexample (Schiffer_GPT_V3.tex, Theorem 1.1)"
+      lean: "Schiffer.Analysis.SchifferCounterexample.PlanarSchifferCounterexample"
+      module: "Schiffer.Analysis.SchifferCounterexample"
+      status: "proved"
+      note: >-
+        Construction-free normalized C2 statement with bounded star-shaped
+        nondisk domain, global C2 field, -Delta u = u, u = 1, and Du = 0 on the
+        frontier.
+    - source: "Construction-native planar counterexample assembly"
+      lean: "Schiffer.exists_schifferCounterexample"
+      module: "Schiffer.Main"
+      status: "proved"
+      note: >-
+        Packages the landed cone solution, planar lift, graph and field
+        nontriviality, and nondisk certificate.
+    - source: "Uniform cone branch module"
+      lean: "Schiffer.Bifurcation.exists_uniformConeBranch"
+      module: "Schiffer.Bifurcation.UniformBranch"
+      status: "proved"
+      note: >-
+        Provides a crossing-independent amplitude interval and third-derivative
+        radius control for all sufficiently large crossings.
+    - source: "Large-radius near-integer density module"
+      lean: "Schiffer.Density.exists_nearIntegerCrossing"
+      module: "Schiffer.Density.NearInteger"
+      status: "proved"
+      note: >-
+        Produces arbitrarily high crossings just above integers in a compact
+        eigenvalue-ratio window.
+    - source: "Uniform drop and integer landing module"
+      lean: "Schiffer.Landing.exists_landedConeSolution"
+      module: "Schiffer.Landing.IntegerRadius"
+      status: "proved"
+      note: >-
+        Combines density with the uniform negative quadratic radius drift to
+        land a nonzero cone branch exactly at an integer radius.
+    - source: "Integer lifting and planar assembly module"
+      lean: "Schiffer.Lift.liftLandedConeSolution"
+      module: "Schiffer.Lift.Solution"
+      status: "proved"
+      note: >-
+        Uses direct origin-series regularity, tail-symbol DtN matching, and
+        one-sided C2 gluing to construct the planar Schiffer candidate.
+
+acknowledgements: >-
+  Built with Lean and Mathlib. The construction draws on the cited Schiffer-
+  problem literature and on extensive numerical and analytic exploration in
+  the repository. The user directed the mathematical architecture and supplied
+  specialist Codex branches; parallel Codex agents proved isolated components,
+  maintained cleanup tracks, and refereed the final proof.
+

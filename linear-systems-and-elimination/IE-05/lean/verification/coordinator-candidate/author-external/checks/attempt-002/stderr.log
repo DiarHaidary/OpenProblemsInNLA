@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/private/tmp/nla-lean-formalization/ie05-candidate-package/lean/verification/candidate-package/audit_metadata.py", line 142, in <module>
+    main()
+  File "/private/tmp/nla-lean-formalization/ie05-candidate-package/lean/verification/candidate-package/audit_metadata.py", line 98, in main
+    require(trust_count == 89, 'Final literal explicit kernel assertion count changed')
+  File "/private/tmp/nla-lean-formalization/ie05-candidate-package/lean/verification/candidate-package/audit_metadata.py", line 22, in require
+    raise ValueError(message)
+ValueError: Final literal explicit kernel assertion count changed

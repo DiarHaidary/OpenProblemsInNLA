@@ -1,0 +1,15 @@
+{
+  "missing_file_read": {
+    "command": "cat NLA/IE05/Scaling.lean NLA/IE05/QR.lean verification/qr-scaling-handoff/Inspect.lean",
+    "exit_code": 1,
+    "stdout": "The two actual mathematical modules were printed fully; their exact bytes are bound in INPUTS.json.",
+    "stderr": "cat: verification/qr-scaling-handoff/Inspect.lean: No such file or directory",
+    "interpretation": "Navigation-only missing historical inspector path; no source/compiler failure. The present fresh admission-free inspector is new."
+  },
+  "second_missing_file_read": {
+    "command": "cat verification/qr-scaling-handoff/verify_inventory.py",
+    "exit_code": 1,
+    "stderr": "cat: verification/qr-scaling-handoff/verify_inventory.py: No such file or directory",
+    "interpretation": "Navigation only. No prior mutating verifier or runner was executed. Its actual sealed files are checked through original manifest entries."
+  }
+}

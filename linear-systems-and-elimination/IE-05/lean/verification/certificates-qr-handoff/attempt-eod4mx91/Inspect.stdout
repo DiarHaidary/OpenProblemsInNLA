@@ -1,0 +1,278 @@
+EXACT_EXPECTED_TYPE NLA.IE05._proved.integer_factor_certificates: ∀ (b : Bool),
+  Matrix.transpose (NLA.IE05.integerH b) * NLA.IE05.integerH b = Matrix.diagonal (NLA.IE05.integerD b) ∧
+    NLA.IE05.integerH b = NLA.IE05.integerLower b * NLA.IE05.integerT b ∧
+      NLA.IE05.UnitLower (NLA.IE05.integerLower b) ∧
+        NLA.IE05.UpperTriangular (NLA.IE05.integerT b) ∧
+          (∀ (i j : Fin 8), j < i → |NLA.IE05.integerLower b i j| ≤ 1) ∧
+            (∀ (i : Fin 8), 0 < NLA.IE05.integerT b i i) ∧ ∀ (j : Fin 8), 0 < NLA.IE05.integerD b j
+EXACT_EXPECTED_TYPE NLA.IE05._proved.integer_entry_certificates: (∀ (i j : Fin 8),
+    5272 * NLA.IE05.integerH true i j ^ 2 ≤ 3969 * NLA.IE05.integerD true j) ∧
+  NLA.IE05.integerD true 7 = 5272 ∧
+    NLA.IE05.integerH false 2 2 = 51 ∧
+      NLA.IE05.integerD false 2 = 3286 ∧
+        (∀ (k i j : Fin 8),
+            k ≤ i →
+              k ≤ j →
+                NLA.IE05.tailProduct (NLA.IE05.integerLower false) (NLA.IE05.integerT false) (↑k) i j ^ 2 ≤
+                  5462 * NLA.IE05.integerD false j) ∧
+          NLA.IE05.tailProduct (NLA.IE05.integerLower true) (NLA.IE05.integerT true) 7 7 7 = 5272
+EXACT_EXPECTED_TYPE NLA.IE05._proved.numerical_gap_positive: (5272 / 63) ^ 2 - 17948132 / 2601 = 117335164 / 1147041 ∧
+  0 < 117335164 / 1147041
+EXACT_EXPECTED_TYPE NLA.IE05._proved.normalizedQRQ_of_gram_lu: ∀ {n : ℕ} (L H T : NLA.IE05.Mat n) (d : Fin n → ℝ),
+  (∀ (j : Fin n), 0 < d j) →
+    Matrix.transpose H * H = Matrix.diagonal d →
+      H = L * T →
+        NLA.IE05.UpperTriangular T → (∀ (i : Fin n), 0 < T i i) → NLA.IE05.normalizedQRQ L = NLA.IE05.scaledColumns H d
+ACTUAL_DECL NLA.IE05._proved.integer_factor_certificates KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_factor_certificates: [NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.UnitLower,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05._proved.integer_factor_certificates._proof_1_1,
+ NLA.IE05._proved.integer_factor_certificates._proof_1_2]
+ACTUAL_DECL NLA.IE05.IntMat KIND definition AXIOMS []
+ACTUAL_EDGE NLA.IE05.IntMat: []
+ACTUAL_DECL NLA.IE05.integerH KIND definition AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerH: [NLA.IE05.IntMat, NLA.IE05.integerH.match_1, NLA.IE05.IntMat]
+ACTUAL_DECL NLA.IE05.integerH.match_1 KIND definition AXIOMS []
+ACTUAL_EDGE NLA.IE05.integerH.match_1: []
+ACTUAL_DECL NLA.IE05.integerD KIND definition AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerD: [NLA.IE05.integerH.match_1]
+ACTUAL_DECL NLA.IE05.integerLower KIND definition AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerLower: [NLA.IE05.IntMat, NLA.IE05.integerLower._proof_1]
+ACTUAL_DECL NLA.IE05.integerLower._proof_1 KIND theorem AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerLower._proof_1: []
+ACTUAL_DECL NLA.IE05.integerT KIND definition AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.integerT: [NLA.IE05.IntMat, NLA.IE05.integerH.match_1, NLA.IE05.IntMat]
+ACTUAL_DECL NLA.IE05.UnitLower KIND definition AXIOMS []
+ACTUAL_EDGE NLA.IE05.UnitLower: []
+ACTUAL_DECL NLA.IE05.UpperTriangular KIND definition AXIOMS []
+ACTUAL_EDGE NLA.IE05.UpperTriangular: []
+ACTUAL_DECL NLA.IE05._proved.integer_factor_certificates._proof_1_1 KIND theorem AXIOMS [propext,
+ Classical.choice,
+ Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_factor_certificates._proof_1_1: [NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ Int.instDecidableEq,
+ NLA.IE05._proved.integerLowerZeroDecidable,
+ NLA.IE05._proved.integerTZeroDecidable]
+ACTUAL_DECL Int.instDecidableEq KIND definition AXIOMS []
+ACTUAL_EDGE Int.instDecidableEq: [Int.decEq]
+ACTUAL_DECL Int.decEq KIND definition AXIOMS []
+ACTUAL_EDGE Int.decEq: []
+ACTUAL_DECL NLA.IE05._proved.integerLowerZeroDecidable KIND definition AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05._proved.integerLowerZeroDecidable: [NLA.IE05.integerLower,
+ Int.instDecidableEq,
+ NLA.IE05.integerLower]
+ACTUAL_DECL NLA.IE05._proved.integerTZeroDecidable KIND definition AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05._proved.integerTZeroDecidable: [NLA.IE05.integerT, Int.instDecidableEq, NLA.IE05.integerT]
+ACTUAL_DECL NLA.IE05._proved.integer_factor_certificates._proof_1_2 KIND theorem AXIOMS [propext,
+ Classical.choice,
+ Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_factor_certificates._proof_1_2: [NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.IntMat,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ Int.instDecidableEq,
+ NLA.IE05._proved.integerLowerZeroDecidable,
+ NLA.IE05._proved.integerTZeroDecidable]
+ACTUAL_DECL NLA.IE05._proved.integer_entry_certificates KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_entry_certificates: [NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05._proved.integer_entry_certificates._proof_1_1]
+ACTUAL_DECL NLA.IE05.tailProduct KIND definition AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.tailProduct: []
+ACTUAL_DECL NLA.IE05._proved.integer_entry_certificates._proof_1_1 KIND theorem AXIOMS [propext,
+ Classical.choice,
+ Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.integer_entry_certificates._proof_1_1: [NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ NLA.IE05.integerH,
+ NLA.IE05.integerD,
+ NLA.IE05.tailProduct,
+ NLA.IE05.integerLower,
+ NLA.IE05.integerT,
+ Int.instDecidableEq]
+ACTUAL_DECL NLA.IE05._proved.numerical_gap_positive KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.numerical_gap_positive: []
+ACTUAL_DECL NLA.IE05._proved.normalizedQRQ_of_gram_lu KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedQRQ_of_gram_lu: [NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.scaledColumns,
+ NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR,
+ NLA.IE05.Orthogonal,
+ NLA.IE05._proved.scaledColumns_orthogonal]
+ACTUAL_DECL NLA.IE05.Mat KIND definition AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.Mat: []
+ACTUAL_DECL NLA.IE05.normalizedQRQ KIND definition AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.normalizedQRQ: [NLA.IE05.Mat,
+ NLA.IE05.Mat,
+ NLA.IE05.normalizedQRQ._proof_1,
+ NLA.IE05.euclideanColumns]
+ACTUAL_DECL NLA.IE05.normalizedQRQ._proof_1 KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.normalizedQRQ._proof_1: []
+ACTUAL_DECL NLA.IE05.euclideanColumns KIND definition AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.euclideanColumns: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.euclideanColumns._proof_1]
+ACTUAL_DECL NLA.IE05.euclideanColumns._proof_1 KIND theorem AXIOMS [propext]
+ACTUAL_EDGE NLA.IE05.euclideanColumns._proof_1: []
+ACTUAL_DECL NLA.IE05.scaledColumns KIND definition AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.scaledColumns: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Orthogonal,
+ NLA.IE05._proved.orthogonal_iff_orthonormal_columns,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.normalizedQRQ,
+ NLA.IE05._proved.gramSchmidt_eq_of_positiveQR]
+ACTUAL_DECL NLA.IE05.PositiveQR KIND definition AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.PositiveQR: [NLA.IE05.Mat, NLA.IE05.Mat, NLA.IE05.Orthogonal, NLA.IE05.UpperTriangular]
+ACTUAL_DECL NLA.IE05.Orthogonal KIND definition AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05.Orthogonal: [NLA.IE05.Mat, NLA.IE05.Mat]
+ACTUAL_DECL NLA.IE05._proved.orthogonal_iff_orthonormal_columns KIND theorem AXIOMS [propext,
+ Classical.choice,
+ Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.orthogonal_iff_orthonormal_columns: [NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05._proved.euclideanColumns_inner]
+ACTUAL_DECL NLA.IE05._proved.euclideanColumns_inner KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.euclideanColumns_inner: [NLA.IE05.Mat,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.euclideanColumns._proof_1]
+ACTUAL_DECL NLA.IE05._proved.gramSchmidt_eq_of_positiveQR KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.gramSchmidt_eq_of_positiveQR: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Orthogonal,
+ NLA.IE05._proved.orthogonal_iff_orthonormal_columns,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05._proved.positiveQR_inner,
+ Int.instDecidableEq,
+ NLA.IE05._proved.positiveQR_column]
+ACTUAL_DECL NLA.IE05._proved.positiveQR_inner KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.positiveQR_inner: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05._proved.euclideanColumns_inner,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.Orthogonal]
+ACTUAL_DECL NLA.IE05._proved.positiveQR_column KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.positiveQR_column: [NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.PositiveQR,
+ NLA.IE05.euclideanColumns,
+ NLA.IE05.euclideanColumns._proof_1,
+ NLA.IE05.UpperTriangular,
+ NLA.IE05.Orthogonal]
+ACTUAL_DECL NLA.IE05._proved.scaledColumns_orthogonal KIND theorem AXIOMS [propext, Classical.choice, Quot.sound]
+ACTUAL_EDGE NLA.IE05._proved.scaledColumns_orthogonal: [NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.scaledColumns,
+ NLA.IE05.Mat,
+ NLA.IE05.Orthogonal,
+ NLA.IE05.scaledColumns]
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05._proved.integerLowerZeroDecidable
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05._proved.integerTZeroDecidable
+REQUIRED_ACTUAL_DEPENDENCY Int.instDecidableEq
+REQUIRED_ACTUAL_DEPENDENCY Int.decEq
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.integerH
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.integerLower
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.integerT
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.integerD
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.tailProduct
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.UnitLower
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.UpperTriangular
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.normalizedQRQ
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05.scaledColumns
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05._proved.scaledColumns_orthogonal
+REQUIRED_ACTUAL_DEPENDENCY NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR
+REQUIRED_ACTUAL_DEPENDENCY Matrix.det_of_isUpperTriangular
+REQUIRED_ACTUAL_DEPENDENCY Matrix.blockTriangular_inv_of_blockTriangular
+REQUIRED_ACTUAL_DEPENDENCY Matrix.mul_nonsing_inv
+REQUIRED_ACTUAL_DEPENDENCY Real.sqrt_pos
+COMPLETE_HELPER_CLOSURE 36 REQUIRED 19
+'NLA.IE05._proved.integer_factor_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.integer_entry_certificates' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.numerical_gap_positive' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.normalizedQRQ_of_gram_lu' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.integerLowerZeroDecidable' depends on axioms: [propext]
+'NLA.IE05._proved.integerTZeroDecidable' depends on axioms: [propext]
+'Int.instDecidableEq' does not depend on any axioms
+'Int.decEq' does not depend on any axioms
+@[instance_reducible] def NLA.IE05._proved.integerLowerZeroDecidable : (b : Bool) →
+  (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) →
+    Decidable (@Eq.{1} Int (NLA.IE05.integerLower b i j) (@OfNat.ofNat.{0} Int (nat_lit 0) (@instOfNat (nat_lit 0)))) :=
+fun (b : Bool) (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) =>
+  Int.instDecidableEq (NLA.IE05.integerLower b i j) (@OfNat.ofNat.{0} Int (nat_lit 0) (@instOfNat (nat_lit 0)))
+@[instance_reducible] def NLA.IE05._proved.integerTZeroDecidable : (b : Bool) →
+  (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) →
+    Decidable (@Eq.{1} Int (NLA.IE05.integerT b i j) (@OfNat.ofNat.{0} Int (nat_lit 0) (@instOfNat (nat_lit 0)))) :=
+fun (b : Bool) (i j : Fin (@OfNat.ofNat.{0} Nat (nat_lit 8) (instOfNatNat (nat_lit 8)))) =>
+  Int.instDecidableEq (NLA.IE05.integerT b i j) (@OfNat.ofNat.{0} Int (nat_lit 0) (@instOfNat (nat_lit 0)))
+@[instance_reducible] def Int.instDecidableEq : DecidableEq ℤ :=
+Int.decEq
+@[implicit_reducible] protected def Int.decEq : (a b : ℤ) → Decidable (a = b) :=
+fun a b =>
+  match a, b with
+  | Int.ofNat a, Int.ofNat b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯
+  | Int.ofNat a, Int.negSucc a_1 => isFalse ⋯
+  | Int.negSucc a, Int.ofNat a_1 => isFalse ⋯
+  | Int.negSucc a, Int.negSucc b =>
+    match decEq a b with
+    | isTrue h => isTrue ⋯
+    | isFalse h => isFalse ⋯

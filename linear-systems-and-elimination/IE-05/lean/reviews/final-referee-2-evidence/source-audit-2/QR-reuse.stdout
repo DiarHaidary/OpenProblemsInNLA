@@ -1,0 +1,94 @@
+24-- `gramSchmidt_linearIndependent`: if the input vectors of `gramSchmidt` are linearly independent,
+25-  then so are the output vectors.
+26:- `gramSchmidt_ne_zero`: if the input vectors of `gramSchmidt` are linearly independent,
+27-  then the output vectors are non-zero.
+28-- `gramSchmidtBasis`: the basis produced by the Gram-Schmidt process when given a basis as input
+29-- `gramSchmidtNormed`:
+30-  the normalized `gramSchmidt` process, i.e each vector in `gramSchmidtNormed` has unit length
+--
+113-  gramSchmidt_orthogonal 𝕜 f
+114-
+115:theorem gramSchmidt_inv_triangular (v : ι → E) {i j : ι} (hij : i < j) :
+116-    ⟪gramSchmidt 𝕜 v j, v i⟫ = 0 := by
+117-  rw [gramSchmidt_def'' 𝕜 v]
+118-  simp only [inner_add_right, inner_sum, inner_smul_right]
+119-  set b : ι → E := gramSchmidt 𝕜 v
+--
+189-variable {𝕜}
+190-
+191:theorem gramSchmidt_ne_zero_coe {f : ι → E} (n : ι)
+192-    (h₀ : LinearIndependent 𝕜 (f ∘ ((↑) : Set.Iic n → ι))) : gramSchmidt 𝕜 f n ≠ 0 := by
+193-  by_contra h
+194-  have h₁ : f n ∈ span 𝕜 (f '' Set.Iio n) := by
+195-    rw [← span_gramSchmidt_Iio 𝕜 f n, gramSchmidt_def' 𝕜 f, h, zero_add]
+--
+209-/-- If the input vectors of `gramSchmidt` are linearly independent,
+210-then the output vectors are non-zero. -/
+211:theorem gramSchmidt_ne_zero {f : ι → E} (n : ι) (h₀ : LinearIndependent 𝕜 f) :
+212-    gramSchmidt 𝕜 f n ≠ 0 :=
+213:  gramSchmidt_ne_zero_coe _ (LinearIndependent.comp h₀ _ Subtype.coe_injective)
+214-
+215-/-- `gramSchmidt` produces a triangular matrix of vectors when given a basis. -/
+216-theorem gramSchmidt_triangular {i j : ι} (hij : i < j) (b : Basis ι 𝕜 E) :
+217-    b.repr (gramSchmidt 𝕜 b i) j = 0 := by
+--
+226-theorem gramSchmidt_linearIndependent {f : ι → E} (h₀ : LinearIndependent 𝕜 f) :
+227-    LinearIndependent 𝕜 (gramSchmidt 𝕜 f) :=
+228:  linearIndependent_of_ne_zero_of_inner_eq_zero (fun _ => gramSchmidt_ne_zero _ h₀) fun _ _ =>
+229-    gramSchmidt_orthogonal 𝕜 f
+230-
+231-/-- When given a basis, `gramSchmidt` produces a basis. -/
+232-noncomputable def gramSchmidtBasis (b : Basis ι 𝕜 E) : Basis ι 𝕜 E :=
+--
+244-theorem gramSchmidtNormed_unit_length_coe {f : ι → E} (n : ι)
+245-    (h₀ : LinearIndependent 𝕜 (f ∘ ((↑) : Set.Iic n → ι))) : ‖gramSchmidtNormed 𝕜 f n‖ = 1 := by
+246:  simp only [gramSchmidt_ne_zero_coe n h₀, gramSchmidtNormed, norm_smul_inv_norm, Ne,
+247-    not_false_iff]
+248-
+249-theorem gramSchmidtNormed_unit_length {f : ι → E} (n : ι) (h₀ : LinearIndependent 𝕜 f) :
+250-    ‖gramSchmidtNormed 𝕜 f n‖ = 1 :=
+--
+260-`gramSchmidtNormed` applied to a linearly independent set of vectors produces an orthonormal
+261-system of vectors. -/
+262:theorem gramSchmidtNormed_orthonormal {f : ι → E} (h₀ : LinearIndependent 𝕜 f) :
+263-    Orthonormal 𝕜 (gramSchmidtNormed 𝕜 f) := by
+264-  unfold Orthonormal
+265-  constructor
+266-  · simp only [gramSchmidtNormed_unit_length, h₀, imp_true_iff]
+--
+274-`gramSchmidtNormed` produces an orthonormal system of vectors after removing the vectors which
+275-become zero in the process. -/
+276:theorem gramSchmidtNormed_orthonormal' (f : ι → E) :
+277-    Orthonormal 𝕜 fun i : { i | gramSchmidtNormed 𝕜 f i ≠ 0 } => gramSchmidtNormed 𝕜 f i := by
+278-  refine ⟨fun i => gramSchmidtNormed_unit_length' i.prop, ?_⟩
+279-  rintro i j (hij : ¬_)
+280-  rw [Subtype.ext_iff] at hij
+--
+305-  unfold gramSchmidtNormed
+306-  have (i : ι) : IsUnit (‖gramSchmidt 𝕜 f i‖⁻¹ : 𝕜) :=
+307:    isUnit_iff_ne_zero.mpr (by simp [gramSchmidt_ne_zero i h₀])
+308-  let w : ι → 𝕜ˣ := fun i ↦ (this i).unit
+309-  apply (gramSchmidt_linearIndependent h₀).units_smul (w := fun i ↦ (this i).unit)
+310-
+311-section OrthonormalBasis
+--
+318-`ι` for which this process gives a nonzero number. -/
+319-noncomputable def gramSchmidtOrthonormalBasis : OrthonormalBasis ι 𝕜 E :=
+320:  ((gramSchmidtNormed_orthonormal' f).exists_orthonormalBasis_extension_of_card_eq
+321-    (v := gramSchmidtNormed 𝕜 f) h).choose
+322-
+323-theorem gramSchmidtOrthonormalBasis_apply {f : ι → E} {i : ι} (hi : gramSchmidtNormed 𝕜 f i ≠ 0) :
+324-    gramSchmidtOrthonormalBasis h f i = gramSchmidtNormed 𝕜 f i :=
+325:  ((gramSchmidtNormed_orthonormal' f).exists_orthonormalBasis_extension_of_card_eq
+326-    (v := gramSchmidtNormed 𝕜 f) h).choose_spec i hi
+327-
+328-theorem gramSchmidtOrthonormalBasis_apply_of_orthogonal {f : ι → E}
+329-    (hf : Pairwise fun i j => ⟪f i, f j⟫ = 0) {i : ι} (hi : f i ≠ 0) :
+--
+356-  · rw [inner_gramSchmidtOrthonormalBasis_eq_zero h hi]
+357-  · simp [gramSchmidtOrthonormalBasis_apply h hi, gramSchmidtNormed, inner_smul_left,
+358:      gramSchmidt_inv_triangular 𝕜 f hij]
+359-
+360-theorem gramSchmidtOrthonormalBasis_inv_triangular' {i j : ι} (hij : i < j) :
+361-    (gramSchmidtOrthonormalBasis h f).repr (f i) j = 0 := by
+362-  simpa [OrthonormalBasis.repr_apply_apply] using gramSchmidtOrthonormalBasis_inv_triangular h f hij

@@ -1,0 +1,77 @@
+InnerProductSpace.gramSchmidtNormed.{u_1, u_2, u_3} (𝕜 : Type u_1) {E : Type u_2} [RCLike 𝕜] [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] {ι : Type u_3} [LinearOrder ι] [LocallyFiniteOrderBot ι] [WellFoundedLT ι] (f : ι → E)
+  (n : ι) : E
+verification/statement-development/Inspect.lean:8:7: error(lean.unknownIdentifier): Unknown constant `InnerProductSpace.gramSchmidt_orthonormal`
+InnerProductSpace.gramSchmidt_inv_triangular.{u_1, u_2, u_3} (𝕜 : Type u_1) {E : Type u_2} [RCLike 𝕜]
+  [NormedAddCommGroup E] [InnerProductSpace 𝕜 E] {ι : Type u_3} [LinearOrder ι] [LocallyFiniteOrderBot ι]
+  [WellFoundedLT ι] (v : ι → E) {i j : ι} (hij : i < j) : inner 𝕜 (InnerProductSpace.gramSchmidt 𝕜 v j) (v i) = 0
+InnerProductSpace.gramSchmidt_ne_zero.{u_1, u_2, u_3} {𝕜 : Type u_1} {E : Type u_2} [RCLike 𝕜] [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] {ι : Type u_3} [LinearOrder ι] [LocallyFiniteOrderBot ι] [WellFoundedLT ι] {f : ι → E} (n : ι)
+  (h₀ : LinearIndependent 𝕜 f) : InnerProductSpace.gramSchmidt 𝕜 f n ≠ 0
+InnerProductSpace.gramSchmidt_def.{u_1, u_2, u_3} (𝕜 : Type u_1) {E : Type u_2} [RCLike 𝕜] [NormedAddCommGroup E]
+  [InnerProductSpace 𝕜 E] {ι : Type u_3} [LinearOrder ι] [LocallyFiniteOrderBot ι] [WellFoundedLT ι] (f : ι → E)
+  (n : ι) :
+  InnerProductSpace.gramSchmidt 𝕜 f n = f n - ∑ i < n, (𝕜 ∙ InnerProductSpace.gramSchmidt 𝕜 f i).starProjection (f n)
+Matrix.det_mul.{v, u_2} {n : Type u_2} [DecidableEq n] [Fintype n] {R : Type v} [CommRing R] (M N : Matrix n n R) :
+  (M * N).det = M.det * N.det
+Matrix.det_transpose.{v, u_2} {n : Type u_2} [DecidableEq n] [Fintype n] {R : Type v} [CommRing R] (M : Matrix n n R) :
+  M.transpose.det = M.det
+Matrix.det_one.{v, u_2} {n : Type u_2} [DecidableEq n] [Fintype n] {R : Type v} [CommRing R] : Matrix.det 1 = 1
+Finset.le_sup.{u_2, u_3} {α : Type u_2} {β : Type u_3} [SemilatticeSup α] [OrderBot α] {s : Finset β} {f : β → α}
+  {b : β} (hb : b ∈ s) : f b ≤ s.sup f
+Finset.sup_le.{u_2, u_3} {α : Type u_2} {β : Type u_3} [SemilatticeSup α] [OrderBot α] {s : Finset β} {f : β → α}
+  {a : α} : (∀ b ∈ s, f b ≤ a) → s.sup f ≤ a
+le_csSup.{u_1} {α : Type u_1} [ConditionallyCompleteLattice α] {s : Set α} {a : α} (h₁ : BddAbove s) (h₂ : a ∈ s) :
+  a ≤ sSup s
+csSup_le.{u_1} {α : Type u_1} [ConditionallyCompleteLattice α] {s : Set α} {a : α} (h₁ : s.Nonempty)
+  (h₂ : ∀ b ∈ s, b ≤ a) : sSup s ≤ a
+Real.sq_sqrt {x : ℝ} (h : 0 ≤ x) : √x ^ 2 = x
+Real.sqrt_pos {x : ℝ} : 0 < √x ↔ 0 < x
+def NLA.IE05.euclideanColumns : {n : ℕ} → NLA.IE05.Mat n → Fin n → EuclideanSpace ℝ (Fin n) :=
+fun {n} A j => WithLp.toLp 2 fun i => A i j
+def NLA.IE05.normalizedQRQ : {n : ℕ} → NLA.IE05.Mat n → NLA.IE05.Mat n :=
+fun {n} A i j => (InnerProductSpace.gramSchmidtNormed ℝ (NLA.IE05.euclideanColumns A) j).ofLp i
+def NLA.IE05.PositiveQR : {n : ℕ} → NLA.IE05.Mat n → NLA.IE05.Mat n → NLA.IE05.Mat n → Prop :=
+fun {n} A Q R => NLA.IE05.Orthogonal Q ∧ A = Q * R ∧ NLA.IE05.UpperTriangular R ∧ ∀ (i : Fin n), 0 < R i i
+def NLA.IE05.schurStep : {n : ℕ} → NLA.IE05.Mat n → Fin n → Fin n → NLA.IE05.Mat n :=
+fun {n} S k p =>
+  have B := NLA.IE05.rowSwap S k p;
+  fun i j => if k < i ∧ k < j then B i j - B i k / B k k * B k j else 0
+def NLA.IE05.trajectory : {n : ℕ} → NLA.IE05.Mat n → NLA.IE05.PivotPath n → ℕ → NLA.IE05.Mat n :=
+fun {n} A path x => Nat.brecOn x (NLA.IE05.trajectory._f A path)
+def NLA.IE05.AdmissiblePivot : {n : ℕ} → NLA.IE05.Mat n → Fin n → Fin n → Prop :=
+fun {n} S k p => k ≤ p ∧ S p k ≠ 0 ∧ ∀ (i : Fin n), k ≤ i → |S i k| ≤ |S p k|
+def NLA.IE05.FirstAvailablePivot : {n : ℕ} → NLA.IE05.Mat n → Fin n → Fin n → Prop :=
+fun {n} S k p => NLA.IE05.AdmissiblePivot S k p ∧ ∀ (i : Fin n), k ≤ i → |S i k| = |S p k| → p ≤ i
+def NLA.IE05.firstPivotIndex : {n : ℕ} → NLA.IE05.Mat n → Fin n → Fin n :=
+fun {n} S k => List.foldl (fun p i => if k ≤ i ∧ |S p k| < |S i k| then i else p) k (List.finRange n)
+def NLA.IE05.firstPath : {n : ℕ} → NLA.IE05.Mat n → NLA.IE05.PivotPath n :=
+fun {n} A k => NLA.IE05.firstPivotIndex (NLA.IE05.firstTrajectory A ↑k) k
+def NLA.IE05.entryMaxNN : {n : ℕ} → NLA.IE05.Mat n → NNReal :=
+fun {n} A => Finset.univ.sup fun ij => ‖A ij.1 ij.2‖₊
+def NLA.IE05.activeMaxNN : {n : ℕ} → NLA.IE05.Mat n → ℕ → NNReal :=
+fun {n} S k => Finset.univ.sup fun ij => if k ≤ ↑ij.1 ∧ k ≤ ↑ij.2 then ‖S ij.1 ij.2‖₊ else 0
+def NLA.IE05.growth : {n : ℕ} → NLA.IE05.Mat n → NLA.IE05.PivotPath n → ℝ :=
+fun {n} A path =>
+  ↑(Finset.univ.sup fun k => NLA.IE05.activeMaxNN (NLA.IE05.trajectory A path ↑k) ↑k) / NLA.IE05.entryMax A
+def NLA.IE05.orthogonalGrowthSet : ℕ → Set ℝ :=
+fun n => {r | ∃ A, NLA.IE05.Orthogonal A ∧ ∃ path, NLA.IE05.AdmissiblePath A path ∧ r = NLA.IE05.growth A path}
+def NLA.IE05.orthogonalGrowthSup : ℕ → ℝ :=
+fun n => sSup (NLA.IE05.orthogonalGrowthSet n)
+def NLA.IE05.OrthogonalExtremizerConjecture : Prop :=
+∀ (n : ℕ), 2 ≤ n → NLA.IE05.orthogonalGrowthSup n = NLA.IE05.firstGrowth (NLA.IE05.candidateQ n)
+def NLA.IE05.tailProduct.{u_1} : {n : ℕ} →
+  {R : Type u_1} → [Semiring R] → Matrix (Fin n) (Fin n) R → Matrix (Fin n) (Fin n) R → ℕ → Matrix (Fin n) (Fin n) R :=
+fun {n} {R} [Semiring R] L T k i j => if k ≤ ↑i ∧ k ≤ ↑j then ∑ r, if k ≤ ↑r then L i r * T r j else 0 else 0
+'NLA.IE05.normalizedQRQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.PositiveQR' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.schurStep' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.trajectory' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.firstPivotIndex' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.firstPath' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.growth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.orthogonalGrowthSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.orthogonalGrowthSup' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.OrthogonalExtremizerConjecture' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.normalizedInteger' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05.tailProduct' depends on axioms: [propext, Classical.choice, Quot.sound]

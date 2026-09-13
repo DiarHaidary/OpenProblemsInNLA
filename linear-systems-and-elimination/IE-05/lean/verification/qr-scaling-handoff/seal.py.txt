@@ -1,0 +1,121 @@
+#!/usr/bin/env python3
+"""Seal completed author helpers, retaining all attempts and their limitations."""
+from pathlib import Path
+import datetime, hashlib, json, os, re, subprocess
+P=Path('/tmp/nla-lean-formalization/next-ie05-statements-draft/lean').resolve()
+E=P/'verification/qr-scaling-handoff'
+C=Path('/tmp/nla-lean-mi22-worktree/matrix-inequalities-and-norms/MI-22/lean/.lake/packages').resolve()
+T=Path('/Users/georgestepaniants/.elan/toolchains/leanprover--lean4---v4.33.1')
+def sha(p):
+    assert p.is_file() and not p.is_symlink(),str(p)
+    return hashlib.sha256(p.read_bytes()).hexdigest()
+def load(p):return json.loads(p.read_text())
+def write(p,v):p.write_text(json.dumps(v,indent=2,sort_keys=True)+'\n')
+assert not E.exists();E.mkdir()
+(E/'seal.py.txt').write_bytes(Path(__file__).read_bytes())
+freeze=P/'reviews/statement-freeze.json';gate=P/'verification/proof-start.json'
+assert sha(freeze)=='bd329885eb323bd4f3fd40879649b56c201918d8c2bd6f63fbd0e86f48ca770c'
+assert sha(gate)=='2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726'
+f=load(freeze);assert len(f['files'])==733 and load(gate)['proof_authorized']
+for n,h in f['files'].items():assert sha(P/n)==h and (P/n).stat().st_size==f['file_sizes'][n]
+sources={'NLA/IE05/Scaling.lean':'0422f5ca2ac3cccf1f18a90e64aba5f9ead6f650d830e8813aa07e1541eeb3f5','NLA/IE05/QR.lean':'cb9e1d6d91f5e194cd2c50e2f0ae9efc3ebcb55f005078038b6c1d20747fe127'}
+for n,h in sources.items():
+    assert sha(P/n)==h
+    text=(P/n).read_text()
+    assert not re.search(r'\b(sorry|admit|axiom|native_decide)\b',text)
+    assert 'import Challenge' not in text and 'set_option leancert.trust "kernel"' in text
+latest=load(P/'verification/qr-development/latest.json');assert latest['success']
+A=P/latest['attempt'];results=load(A/'results.json')
+assert [r['module'] for r in results]==['Definitions','Scaling','QR']
+assert all(r['exit_code']==0 for r in results)
+for r in results:
+    log=A/(r['module']+'.log');assert sha(log)==r['log_sha256']
+    assert 'warning:' not in log.read_text() and 'error:' not in log.read_text()
+for n,h in sources.items():assert sha(A/'source'/n)==h
+records=[]
+for module,count in [('Scaling',1),('QR',15)]:
+    raw=(A/(module+'.log')).read_text()
+    names=re.findall(r"^'([^']+)' depends on axioms: \[propext, Classical.choice, Quot.sound\]$",raw,re.M)
+    assert len(names)==count and raw.count('depends on axioms:')==count
+    text=(P/('NLA/IE05/'+module+'.lean')).read_text()
+    asserted=['NLA.IE05._proved.'+n for n in re.findall(r'^#assert_trust kernel (\S+)$',text,re.M)]
+    assert names==asserted
+    records.extend(names)
+pins=[]
+for pkg in load(P/'lake-manifest.json')['packages']:
+    d=C/pkg['name'];rev=subprocess.check_output(['git','rev-parse','HEAD'],cwd=d,text=True).strip()
+    clean=subprocess.check_output(['git','status','--porcelain','--untracked-files=no'],cwd=d,text=True)
+    assert rev==pkg['rev'] and clean==''
+    pins.append({'name':pkg['name'],'rev':rev,'tracked_status':clean})
+api_names=['Analysis/InnerProductSpace/GramSchmidtOrtho.lean','Analysis/InnerProductSpace/PiL2.lean','Analysis/InnerProductSpace/Orthonormal.lean','Analysis/InnerProductSpace/Projection/Basic.lean','Analysis/InnerProductSpace/Basic.lean','Analysis/Normed/Lp/PiLp.lean','Analysis/Normed/Lp/WithLp.lean','Analysis/RCLike/Basic.lean','Analysis/Real/Sqrt.lean','LinearAlgebra/Matrix/Block.lean','LinearAlgebra/Matrix/NonsingularInverse.lean','LinearAlgebra/Matrix/Determinant/Basic.lean','LinearAlgebra/LinearIndependent/Basic.lean','Data/Matrix/Mul.lean','Algebra/Group/Defs.lean']
+api=[]
+for n in api_names:
+    src=C/'mathlib/Mathlib'/n;dest=E/'primary-api/Mathlib'/n;dest.parent.mkdir(parents=True,exist_ok=True);dest.write_bytes(src.read_bytes())
+    api.append({'path':'Mathlib/'+n,'sha256':sha(src),'bytes':src.stat().st_size})
+dest=E/'primary-api/Lean/Init/WF.lean';dest.parent.mkdir(parents=True);dest.write_bytes((T/'src/lean/Init/WF.lean').read_bytes())
+api.append({'path':'Lean/Init/WF.lean','sha256':sha(dest),'bytes':dest.stat().st_size})
+write(E/'primary-api-inputs.json',api)
+prefix_root=Path('/tmp/nla-lean-formalization/independent-prefixes').resolve()
+cleanups=[];attempts=[]
+for directory in [P/'verification/scaling-development',P/'verification/qr-development']:
+    for attempt in sorted(directory.glob('attempt-*')):
+        inp=load(attempt/'inputs.json');prefix=Path(inp['prefix']).resolve()
+        assert prefix.is_relative_to(prefix_root) and prefix.name.startswith('ie05-root-')
+        objs=load(attempt/'objects.json')
+        assert {str(p.relative_to(prefix)) for p in prefix.rglob('*') if p.is_file()}=={x['path'] for x in objs}
+        for obj in objs:
+            p=prefix/obj['path'];assert sha(p)==obj['sha256'] and p.stat().st_size==obj['bytes']
+        for obj in objs:(prefix/obj['path']).unlink()
+        for d in sorted((d for d in prefix.rglob('*') if d.is_dir()),key=lambda p:len(p.parts),reverse=True):d.rmdir()
+        prefix.rmdir()
+        rs=load(attempt/'results.json')
+        attempts.append({'attempt':str(attempt.relative_to(P)),'commands':rs,'source_inputs_sha256':sha(attempt/'inputs.json'),'objects_sha256':sha(attempt/'objects.json')})
+        cleanups.append({'prefix':str(prefix),'objects':len(objs),'bytes':sum(x['bytes'] for x in objs),'hashed_before_removal':True,'removed':True})
+write(E/'owned-prefix-cleanup.json',cleanups)
+write(E/'attempts.json',attempts)
+version=subprocess.check_output([str(T/'bin/lean'),'--version'],text=True).strip()
+handoff={'utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'problem':'IE-05','author':'/root','scope':'Completed scaling and actual all-dimensional positive-diagonal QR existence/uniqueness helpers; not the complete IE05 proof','source_sha256':sources,'statement_freeze_sha256':sha(freeze),'proof_gate_sha256':sha(gate),'all733_frozen_inputs_unchanged':True,'accepted_attempt':str(A.relative_to(P)),'accepted_results_sha256':sha(A/'results.json'),'actual_kernel_assertions_and_standard_three_reports':records,'Lean_version':version,'Lean_binary_sha256':sha(T/'bin/lean'),'ten_clean_dependency_pins':pins,'read_only_dependency_object_directories':9,'primary_API_source_count':16,'all_attempts_retained':len(attempts),'owned_objects_hashed_then_removed':sum(x['objects'] for x in cleanups),'independent_review':False,'actual_Linux_or_Comparator_run':False,'whole_problem_status':'Not yet Lean verified'}
+write(E/'HANDOFF.json',handoff)
+(E/'HANDOFF.md').write_text('''# IE-05 QR and scaling helper handoff
+
+Root authored these helpers after the accepted statement gate. The exact
+approved `scaledColumns_orthogonal` and `candidate_positiveQR` contracts compile
+under `NLA.IE05._proved`. All sixteen material helper declarations passed
+explicit LeanCert kernel assertions and print exactly the three standard axioms.
+This is author development evidence, not an independent review or a complete
+IE-05 solution; Linux and Comparator verification remain later gates.
+
+Scaling distributes the positive column denominators through the actual Gram
+matrix. QR uses Mathlib's actual Euclidean-space normalized Gram--Schmidt,
+proves orthogonality, positive diagonal and triangularity from nonsingularity,
+and proves uniqueness by increasing-index projection induction. The prescribed
+unit lower triangular matrix has determinant one. No numerical square-root
+evaluation or interval subdivision is used.
+
+All earlier immutable attempts remain, including the initial unused simp
+warning, failed QR elaborations, and the later unreachable-tactic warning.
+These are not accepted proofs. The final fresh Definitions/Scaling/QR run
+has no warnings or errors. `HANDOFF.json` names its exact result and sources.
+The complete 733-input statement freeze is unchanged. Sixteen selected primary
+API source snapshots and ten clean dependency pins are bound. Existing matching
+dependency objects were read; no cache was copied or rebuilt. Every root-owned
+helper object was hashed and removed after completion, retaining all logs.
+
+Other proof modules and referee evidence are outside this author's edit scope.
+The evidence manifest includes every file in both helper development directories,
+the frozen statement inputs and freeze, the proof gate, both current helper
+sources and this complete handoff directory. Only its exact own outer manifest
+path is excluded; nested manifests are included as ordinary evidence.
+''')
+outer=E/'EVIDENCE-MANIFEST.json'
+scope={P/n for n in f['files']}|{freeze,gate}|{P/n for n in sources}
+for d in [E,P/'verification/scaling-development',P/'verification/qr-development']:
+    scope|={p.resolve() for p in d.rglob('*') if p.is_file() and p.resolve()!=outer}
+assert outer not in scope
+files={os.path.relpath(p,E):{'sha256':sha(p),'bytes':p.stat().st_size} for p in sorted(scope)}
+write(outer,{'scope':'Complete root QR/scaling helper evidence and all frozen statement inputs','exact_self_exclusion':'EVIDENCE-MANIFEST.json','file_count':len(files),'files':files})
+for n,v in files.items():assert sha(E/n)==v['sha256'] and (E/n).stat().st_size==v['bytes']
+assert {p.resolve() for p in E.rglob('*') if p.is_file() and p!=outer}=={p for p in scope if p.is_relative_to(E)}
+result={'status':'IE05_ROOT_QR_SCALING_HELPERS_PASS','handoff_sha256':sha(E/'HANDOFF.json'),'evidence_sha256':sha(outer),'file_count':len(files),'source_sha256':sources,'actual_kernel_reports':16,'attempts_retained':len(attempts),'owned_objects_removed':sum(x['objects'] for x in cleanups),'full_IE05_verified':False}
+write(Path('/tmp/nla-lean-formalization/IE-05-QR-scaling-handoff.json'),result)
+print(json.dumps(result,indent=2))

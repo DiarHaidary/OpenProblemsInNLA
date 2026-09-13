@@ -1,0 +1,2101 @@
+{
+  "additional_inspector_kernel_assertions": [
+    "NLA.IE05.entryMax_semantics",
+    "NLA.IE05.schurStep_bound",
+    "NLA.IE05.gepp_growth_bound",
+    "NLA.IE05.firstPath_semantics",
+    "NLA.IE05.orthogonalGrowthSet_bounded",
+    "NLA.IE05.candidate_positiveQR",
+    "NLA.IE05.scaledColumns_orthogonal",
+    "NLA.IE05.scaledLU_trajectory",
+    "NLA.IE05.integer_factor_certificates",
+    "NLA.IE05.integer_entry_certificates",
+    "NLA.IE05.canonical_integer_identification",
+    "NLA.IE05.witness_orthogonal_path",
+    "NLA.IE05.bounded_growth_data",
+    "NLA.IE05.numerical_gap_positive",
+    "NLA.IE05.witness_strict_growth",
+    "NLA.IE05.supremum_strict_gap",
+    "NLA.IE05.orthogonalExtremizerConjecture"
+  ],
+  "all_project_environment_inventory": 226,
+  "allowed_axioms": [
+    "Classical.choice",
+    "Quot.sound",
+    "propext"
+  ],
+  "complete_environment_sha256": "39a0333759ecdd13f23fabd51312e98c7e2fab6c565dc14660b440c8d60248eb",
+  "exact_outside_body_closure": [
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Witness",
+      "name": "NLA.IE05.normalizedInteger.eq_1",
+      "partial": false,
+      "references": [
+        "Int.cast",
+        "Real",
+        "NLA.IE05.integerD",
+        "NLA.IE05.scaledColumns",
+        "instOfNatNat",
+        "NLA.IE05.integerH",
+        "NLA.IE05.normalizedInteger",
+        "Nat",
+        "NLA.IE05.Mat",
+        "Real.instIntCast",
+        "Bool",
+        "Eq.refl",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "NLA.IE05.castIntegerMatrix"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05.tailProduct.eq_1",
+      "partial": false,
+      "references": [
+        "HMul.hMul",
+        "Finset.univ",
+        "Matrix",
+        "LE.le",
+        "instLENat",
+        "Fin.val",
+        "Fin.fintype",
+        "instDistribOfSemiring",
+        "NLA.IE05.tailProduct",
+        "And",
+        "Distrib.toMul",
+        "Nat",
+        "Semiring",
+        "Zero.toOfNat0",
+        "Eq.refl",
+        "instDecidableAnd",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "Semiring.toAddCommMonoid",
+        "Finset.sum",
+        "Nat.decLe",
+        "MulZeroClass.toZero",
+        "instMulZeroClassOfSemiring",
+        "instHMul",
+        "ite"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "NLA.IE05.firstPath.eq_1",
+      "partial": false,
+      "references": [
+        "NLA.IE05.firstPivotIndex",
+        "NLA.IE05.firstPath",
+        "Fin.val",
+        "Nat",
+        "NLA.IE05.Mat",
+        "Eq.refl",
+        "Fin",
+        "Eq",
+        "NLA.IE05.firstTrajectory"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR._simp_1_2",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "instOfNatNat",
+        "Nat",
+        "Zero.toOfNat0",
+        "three_ne_zero",
+        "NeZero",
+        "OfNat.ofNat",
+        "Eq",
+        "OfNat",
+        "Zero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05.euclideanColumns.eq_1",
+      "partial": false,
+      "references": [
+        "Real",
+        "WithLp.toLp",
+        "AddMonoidWithOne.toNatCast",
+        "EuclideanSpace",
+        "AddCommMonoidWithOne.toAddMonoidWithOne",
+        "Nat",
+        "NLA.IE05.Mat",
+        "ENNReal",
+        "NLA.IE05.euclideanColumns._proof_1",
+        "NLA.IE05.euclideanColumns",
+        "Eq.refl",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "instOfNatAtLeastTwo",
+        "ENNReal.instAddCommMonoidWithOne"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR._simp_1_7",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "AddMonoid.toAddSemigroup",
+        "AddMonoid.toAddZeroClass",
+        "AddZeroClass.toAddZero",
+        "AddMonoidWithOne.toNatCast",
+        "Nat.cast",
+        "CharZero",
+        "Nat.cast_add_one_ne_zero",
+        "AddMonoidWithOne.toOne",
+        "AddZero.toZero",
+        "instHAdd",
+        "AddSemigroup.toAdd",
+        "HAdd.hAdd",
+        "Nat",
+        "One.toOfNat1",
+        "Zero.toOfNat0",
+        "AddMonoidWithOne.toAddMonoid",
+        "OfNat.ofNat",
+        "Eq",
+        "AddMonoidWithOne"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Witness",
+      "name": "NLA.IE05.integerLower.eq_1",
+      "partial": false,
+      "references": [
+        "NLA.IE05.integerLower._proof_1",
+        "instDecidableEqFin",
+        "Fin.instOfNat",
+        "instDecidableEqBool",
+        "Int.instNegInt",
+        "instOfNatNat",
+        "Int",
+        "NLA.IE05.integerLower",
+        "Bool.true",
+        "And",
+        "Fin.decLt",
+        "instOfNat",
+        "Nat",
+        "LT.lt",
+        "instLTFin",
+        "Bool",
+        "Eq.refl",
+        "instDecidableAnd",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "Neg.neg",
+        "ite"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05.scaledColumns.eq_1",
+      "partial": false,
+      "references": [
+        "Real",
+        "instHDiv",
+        "Real.instDivInvMonoid",
+        "NLA.IE05.scaledColumns",
+        "HDiv.hDiv",
+        "Nat",
+        "NLA.IE05.Mat",
+        "DivInvMonoid.toDiv",
+        "Real.sqrt",
+        "Eq.refl",
+        "Fin",
+        "Eq"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR._simp_1_3",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "four_ne_zero",
+        "instOfNatNat",
+        "Nat",
+        "Zero.toOfNat0",
+        "NeZero",
+        "OfNat.ofNat",
+        "Eq",
+        "OfNat",
+        "Zero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR._simp_1_4",
+      "partial": false,
+      "references": [
+        "False",
+        "HMul.hMul",
+        "eq_false",
+        "Mul",
+        "Ne",
+        "NoZeroDivisors",
+        "Zero.toOfNat0",
+        "mul_ne_zero",
+        "OfNat.ofNat",
+        "Eq",
+        "instHMul",
+        "Zero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Witness",
+      "name": "NLA.IE05.castIntegerMatrix.eq_1",
+      "partial": false,
+      "references": [
+        "Int.cast",
+        "Real",
+        "NLA.IE05.IntMat",
+        "Nat",
+        "Real.instIntCast",
+        "Eq.refl",
+        "Fin",
+        "Eq",
+        "NLA.IE05.castIntegerMatrix"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "definition",
+      "module": "NLA.IE05.Definitions",
+      "name": "NLA.IE05.trajectory._sunfold",
+      "partial": false,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "Real",
+        "Real.instZero",
+        "NLA.IE05.schurStep",
+        "Fin.mk",
+        "dite",
+        "Unit",
+        "NLA.IE05.trajectory",
+        "Nat",
+        "LT.lt",
+        "NLA.IE05.Mat",
+        "Nat.decLt",
+        "Zero.toOfNat0",
+        "instLTNat",
+        "NLA.IE05.PivotPath",
+        "OfNat.ofNat",
+        "Fin",
+        "Matrix.zero",
+        "Not"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05._proved.scaled_tail_schur._simp_1_7",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "AddMonoid.toAddSemigroup",
+        "AddMonoid.toAddZeroClass",
+        "AddZeroClass.toAddZero",
+        "AddMonoidWithOne.toNatCast",
+        "Nat.cast",
+        "CharZero",
+        "Nat.cast_add_one_ne_zero",
+        "AddMonoidWithOne.toOne",
+        "AddZero.toZero",
+        "instHAdd",
+        "AddSemigroup.toAdd",
+        "HAdd.hAdd",
+        "Nat",
+        "One.toOfNat1",
+        "Zero.toOfNat0",
+        "AddMonoidWithOne.toAddMonoid",
+        "OfNat.ofNat",
+        "Eq",
+        "AddMonoidWithOne"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05.schurStep.eq_1",
+      "partial": false,
+      "references": [
+        "Real",
+        "instHDiv",
+        "HMul.hMul",
+        "Real.instZero",
+        "Real.instDivInvMonoid",
+        "Real.instSub",
+        "HSub.hSub",
+        "NLA.IE05.schurStep",
+        "HDiv.hDiv",
+        "And",
+        "instHSub",
+        "Fin.decLt",
+        "NLA.IE05.rowSwap",
+        "Nat",
+        "Real.instMul",
+        "LT.lt",
+        "instLTFin",
+        "NLA.IE05.Mat",
+        "DivInvMonoid.toDiv",
+        "Zero.toOfNat0",
+        "Eq.refl",
+        "instDecidableAnd",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "instHMul",
+        "ite"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR._simp_1_1",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "instOfNatNat",
+        "two_ne_zero",
+        "Nat",
+        "Zero.toOfNat0",
+        "NeZero",
+        "OfNat.ofNat",
+        "Eq",
+        "OfNat",
+        "Zero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.GEPP",
+      "name": "NLA.IE05.activeMax.eq_1",
+      "partial": false,
+      "references": [
+        "Real",
+        "NLA.IE05.activeMaxNN",
+        "Nat",
+        "NLA.IE05.Mat",
+        "Eq.refl",
+        "NLA.IE05.activeMax",
+        "Eq",
+        "NNReal.toReal"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05._proved.scaled_tail_schur._simp_1_1",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "instOfNatNat",
+        "two_ne_zero",
+        "Nat",
+        "Zero.toOfNat0",
+        "NeZero",
+        "OfNat.ofNat",
+        "Eq",
+        "OfNat",
+        "Zero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR._simp_1_6",
+      "partial": false,
+      "references": [
+        "GroupWithZero.toMonoidWithZero",
+        "False",
+        "GroupWithZero.toDivInvMonoid",
+        "eq_false",
+        "GroupWithZero",
+        "DivInvMonoid.toZPow",
+        "Ne",
+        "Int",
+        "MonoidWithZero.toMulZeroOneClass",
+        "HPow.hPow",
+        "Zero.toOfNat0",
+        "zpow_ne_zero",
+        "ZPow.toPow",
+        "instHPow",
+        "MulZeroOneClass.toMulZeroClass",
+        "OfNat.ofNat",
+        "Eq",
+        "MulZeroClass.toZero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.GEPP",
+      "name": "NLA.IE05.entryMax.eq_1",
+      "partial": false,
+      "references": [
+        "NLA.IE05.entryMaxNN",
+        "Real",
+        "NLA.IE05.entryMax",
+        "Nat",
+        "NLA.IE05.Mat",
+        "Eq.refl",
+        "Eq",
+        "NNReal.toReal"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05._proved.scaled_tail_schur._simp_1_6",
+      "partial": false,
+      "references": [
+        "GroupWithZero.toMonoidWithZero",
+        "False",
+        "GroupWithZero.toDivInvMonoid",
+        "eq_false",
+        "GroupWithZero",
+        "DivInvMonoid.toZPow",
+        "Ne",
+        "Int",
+        "MonoidWithZero.toMulZeroOneClass",
+        "HPow.hPow",
+        "Zero.toOfNat0",
+        "zpow_ne_zero",
+        "ZPow.toPow",
+        "instHPow",
+        "MulZeroOneClass.toMulZeroClass",
+        "OfNat.ofNat",
+        "Eq",
+        "MulZeroClass.toZero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "NLA.IE05.trajectory.eq_1",
+      "partial": false,
+      "references": [
+        "instOfNatNat",
+        "NLA.IE05.trajectory",
+        "Nat",
+        "NLA.IE05.Mat",
+        "Eq.refl",
+        "NLA.IE05.PivotPath",
+        "OfNat.ofNat",
+        "Eq"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05._proved.scaled_tail_schur._simp_1_3",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "four_ne_zero",
+        "instOfNatNat",
+        "Nat",
+        "Zero.toOfNat0",
+        "NeZero",
+        "OfNat.ofNat",
+        "Eq",
+        "OfNat",
+        "Zero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.GEPP",
+      "name": "NLA.IE05.activeMaxNN.eq_1",
+      "partial": false,
+      "references": [
+        "NormedCommRing.toSeminormedCommRing",
+        "Real",
+        "Finset.univ",
+        "SeminormedAddGroup.toNNNorm",
+        "NNNorm.nnnorm",
+        "NNReal.instSemilatticeSup",
+        "NNReal",
+        "LE.le",
+        "instLENat",
+        "Fin.val",
+        "Prod.fst",
+        "Fin.fintype",
+        "NNReal.instZero",
+        "NLA.IE05.activeMaxNN",
+        "SeminormedAddCommGroup.toSeminormedAddGroup",
+        "And",
+        "Real.normedCommRing",
+        "NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing",
+        "Nat",
+        "NLA.IE05.Mat",
+        "NonUnitalSeminormedRing.toSeminormedAddCommGroup",
+        "Zero.toOfNat0",
+        "Finset.sup",
+        "Eq.refl",
+        "instFintypeProd",
+        "instDecidableAnd",
+        "SeminormedCommRing.toNonUnitalSeminormedCommRing",
+        "Prod",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "Prod.snd",
+        "Nat.decLe",
+        "NNReal.instOrderBot",
+        "ite"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "definition",
+      "module": "NLA.IE05.Definitions",
+      "name": "NLA.IE05.firstTrajectory._sunfold",
+      "partial": false,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "Real",
+        "Real.instZero",
+        "NLA.IE05.firstPivotIndex",
+        "NLA.IE05.schurStep",
+        "Fin.mk",
+        "dite",
+        "Unit",
+        "Nat",
+        "LT.lt",
+        "NLA.IE05.Mat",
+        "Nat.decLt",
+        "Zero.toOfNat0",
+        "instLTNat",
+        "OfNat.ofNat",
+        "Fin",
+        "Matrix.zero",
+        "Not",
+        "NLA.IE05.firstTrajectory"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "definition",
+      "module": "NLA.IE05.Pivot",
+      "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.trajectory.match_1.splitter",
+      "partial": false,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "instOfNatNat",
+        "Unit",
+        "Nat",
+        "OfNat.ofNat",
+        "Nat.succ"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "NLA.IE05.trajectory.eq_def",
+      "partial": false,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "Eq.mpr",
+        "Real",
+        "Real.instZero",
+        "congrArg",
+        "NLA.IE05.schurStep",
+        "Nat.brecOn.go",
+        "Nat.rec",
+        "Fin.mk",
+        "Nat.brecOn",
+        "Nat.brecOn.eq",
+        "id",
+        "_private.NLA.IE05.Pivot.0.NLA.IE05.trajectory.match_1.splitter",
+        "instOfNatNat",
+        "dite",
+        "Nat.below",
+        "Unit",
+        "PProd",
+        "NLA.IE05.trajectory",
+        "PUnit",
+        "Nat",
+        "LT.lt",
+        "NLA.IE05.Mat",
+        "Nat.decLt",
+        "Eq.ndrec",
+        "Zero.toOfNat0",
+        "Eq.refl",
+        "instLTNat",
+        "NLA.IE05.trajectory._f",
+        "NLA.IE05.PivotPath",
+        "OfNat.ofNat",
+        "Eq.symm",
+        "Fin",
+        "Nat.succ",
+        "Eq",
+        "Matrix.zero",
+        "Not"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05._proved.scaled_tail_schur._simp_1_5",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "pow_ne_zero",
+        "Ne",
+        "NPow.toPow",
+        "MonoidWithZero",
+        "MonoidWithZero.toMulZeroOneClass",
+        "HPow.hPow",
+        "Nat",
+        "Zero.toOfNat0",
+        "instHPow",
+        "MulZeroOneClass.toMulZeroClass",
+        "OfNat.ofNat",
+        "Eq",
+        "Monoid.toNPow",
+        "MonoidWithZero.toMonoid",
+        "MulZeroClass.toZero",
+        "IsReduced"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore.eq_1",
+      "partial": false,
+      "references": [
+        "Real",
+        "Real.lattice",
+        "abs",
+        "Real.instAddGroup",
+        "LE.le",
+        "instLEFin",
+        "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore",
+        "Real.instOne",
+        "Nat",
+        "Real.instNeg",
+        "NLA.IE05.Mat",
+        "One.toOfNat1",
+        "Eq.refl",
+        "Fin.decLe",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "Neg.neg",
+        "ite"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.trajectory.match_1.eq_1",
+      "partial": false,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "Unit.unit",
+        "instOfNatNat",
+        "Unit",
+        "Nat",
+        "Eq.refl",
+        "OfNat.ofNat",
+        "Nat.succ",
+        "Eq"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.GEPP",
+      "name": "NLA.IE05.Orthogonal.eq_1",
+      "partial": false,
+      "references": [
+        "Real",
+        "HMul.hMul",
+        "Real.instZero",
+        "Matrix",
+        "Matrix.instHMulOfFintypeOfMulOfAddCommMonoid",
+        "instDecidableEqFin",
+        "Fin.fintype",
+        "Real.instOne",
+        "Matrix.transpose",
+        "Nat",
+        "Real.instMul",
+        "NLA.IE05.Mat",
+        "Real.instAddCommMonoid",
+        "One.toOfNat1",
+        "Matrix.one",
+        "Eq.refl",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "NLA.IE05.Orthogonal"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "definition",
+      "module": "NLA.IE05.Definitions",
+      "name": "NLA.IE05.firstTrajectory._unsafe_rec",
+      "partial": true,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "Real",
+        "Real.instZero",
+        "NLA.IE05.firstTrajectory._unsafe_rec",
+        "NLA.IE05.firstPivotIndex",
+        "NLA.IE05.schurStep",
+        "Fin.mk",
+        "dite",
+        "Unit",
+        "Nat",
+        "LT.lt",
+        "NLA.IE05.Mat",
+        "Nat.decLt",
+        "Zero.toOfNat0",
+        "instLTNat",
+        "OfNat.ofNat",
+        "Fin",
+        "Matrix.zero",
+        "Not"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "NLA.IE05.firstTrajectory.eq_def",
+      "partial": false,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "Eq.mpr",
+        "Real",
+        "Real.instZero",
+        "congrArg",
+        "NLA.IE05.firstTrajectory._f",
+        "NLA.IE05.firstPivotIndex",
+        "NLA.IE05.schurStep",
+        "Nat.brecOn.go",
+        "Nat.rec",
+        "Fin.mk",
+        "Nat.brecOn",
+        "Nat.brecOn.eq",
+        "id",
+        "_private.NLA.IE05.Pivot.0.NLA.IE05.trajectory.match_1.splitter",
+        "instOfNatNat",
+        "dite",
+        "Nat.below",
+        "Unit",
+        "PProd",
+        "PUnit",
+        "Nat",
+        "LT.lt",
+        "NLA.IE05.Mat",
+        "Nat.decLt",
+        "Eq.ndrec",
+        "Zero.toOfNat0",
+        "Eq.refl",
+        "instLTNat",
+        "OfNat.ofNat",
+        "Eq.symm",
+        "Fin",
+        "Nat.succ",
+        "Eq",
+        "Matrix.zero",
+        "Not",
+        "NLA.IE05.firstTrajectory"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "NLA.IE05.firstTrajectory.eq_1",
+      "partial": false,
+      "references": [
+        "instOfNatNat",
+        "Nat",
+        "NLA.IE05.Mat",
+        "Eq.refl",
+        "OfNat.ofNat",
+        "Eq",
+        "NLA.IE05.firstTrajectory"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.trajectory.match_1.eq_2",
+      "partial": false,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "instOfNatNat",
+        "Unit",
+        "Nat",
+        "Eq.refl",
+        "OfNat.ofNat",
+        "Nat.succ",
+        "Eq"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "definition",
+      "module": "NLA.IE05.Definitions",
+      "name": "NLA.IE05.trajectory._unsafe_rec",
+      "partial": true,
+      "references": [
+        "NLA.IE05.trajectory.match_1",
+        "Real",
+        "Real.instZero",
+        "NLA.IE05.schurStep",
+        "Fin.mk",
+        "dite",
+        "Unit",
+        "Nat",
+        "LT.lt",
+        "NLA.IE05.Mat",
+        "NLA.IE05.trajectory._unsafe_rec",
+        "Nat.decLt",
+        "Zero.toOfNat0",
+        "instLTNat",
+        "NLA.IE05.PivotPath",
+        "OfNat.ofNat",
+        "Fin",
+        "Matrix.zero",
+        "Not"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05._proved.scaled_tail_schur._simp_1_2",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "instOfNatNat",
+        "Nat",
+        "Zero.toOfNat0",
+        "three_ne_zero",
+        "NeZero",
+        "OfNat.ofNat",
+        "Eq",
+        "OfNat",
+        "Zero"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate.eq_1",
+      "partial": false,
+      "references": [
+        "Real",
+        "Real.lattice",
+        "abs",
+        "Real.decidableLT",
+        "Real.instLT",
+        "Real.instAddGroup",
+        "LE.le",
+        "instLEFin",
+        "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate",
+        "And",
+        "Nat",
+        "LT.lt",
+        "NLA.IE05.Mat",
+        "Eq.refl",
+        "Fin.decLe",
+        "instDecidableAnd",
+        "Fin",
+        "Eq",
+        "ite"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR._simp_1_5",
+      "partial": false,
+      "references": [
+        "False",
+        "eq_false",
+        "pow_ne_zero",
+        "Ne",
+        "NPow.toPow",
+        "MonoidWithZero",
+        "MonoidWithZero.toMulZeroOneClass",
+        "HPow.hPow",
+        "Nat",
+        "Zero.toOfNat0",
+        "instHPow",
+        "MulZeroOneClass.toMulZeroClass",
+        "OfNat.ofNat",
+        "Eq",
+        "Monoid.toNPow",
+        "MonoidWithZero.toMonoid",
+        "MulZeroClass.toZero",
+        "IsReduced"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.QR",
+      "name": "NLA.IE05.prescribedLower.eq_1",
+      "partial": false,
+      "references": [
+        "Real",
+        "Real.instZero",
+        "instDecidableEqFin",
+        "Real.instOne",
+        "Fin.decLt",
+        "Nat",
+        "LT.lt",
+        "instLTFin",
+        "Real.instNeg",
+        "NLA.IE05.prescribedLower",
+        "One.toOfNat1",
+        "Zero.toOfNat0",
+        "Eq.refl",
+        "OfNat.ofNat",
+        "Fin",
+        "Eq",
+        "Neg.neg",
+        "ite"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.GEPP",
+      "name": "NLA.IE05.entryMaxNN.eq_1",
+      "partial": false,
+      "references": [
+        "NLA.IE05.entryMaxNN",
+        "NormedCommRing.toSeminormedCommRing",
+        "Real",
+        "Finset.univ",
+        "SeminormedAddGroup.toNNNorm",
+        "NNNorm.nnnorm",
+        "NNReal.instSemilatticeSup",
+        "NNReal",
+        "Prod.fst",
+        "Fin.fintype",
+        "SeminormedAddCommGroup.toSeminormedAddGroup",
+        "Real.normedCommRing",
+        "NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing",
+        "Nat",
+        "NLA.IE05.Mat",
+        "NonUnitalSeminormedRing.toSeminormedAddCommGroup",
+        "Finset.sup",
+        "Eq.refl",
+        "instFintypeProd",
+        "SeminormedCommRing.toNonUnitalSeminormedCommRing",
+        "Prod",
+        "Fin",
+        "Eq",
+        "Prod.snd",
+        "NNReal.instOrderBot"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.Pivot",
+      "name": "NLA.IE05.firstTrajectory.eq_2",
+      "partial": false,
+      "references": [
+        "Real",
+        "Real.instZero",
+        "NLA.IE05.firstPivotIndex",
+        "NLA.IE05.schurStep",
+        "Fin.mk",
+        "dite",
+        "Nat",
+        "LT.lt",
+        "NLA.IE05.Mat",
+        "Nat.decLt",
+        "Zero.toOfNat0",
+        "Eq.refl",
+        "instLTNat",
+        "OfNat.ofNat",
+        "Fin",
+        "Nat.succ",
+        "Eq",
+        "Matrix.zero",
+        "Not",
+        "NLA.IE05.firstTrajectory"
+      ],
+      "unsafe": false
+    },
+    {
+      "kind": "theorem",
+      "module": "NLA.IE05.LUTrajectory",
+      "name": "NLA.IE05._proved.scaled_tail_schur._simp_1_4",
+      "partial": false,
+      "references": [
+        "False",
+        "HMul.hMul",
+        "eq_false",
+        "Mul",
+        "Ne",
+        "NoZeroDivisors",
+        "Zero.toOfNat0",
+        "mul_ne_zero",
+        "OfNat.ofNat",
+        "Eq",
+        "instHMul",
+        "Zero"
+      ],
+      "unsafe": false
+    }
+  ],
+  "export_closure_project": 181,
+  "export_transitive_declarations": 29594,
+  "material_body_paths": [
+    {
+      "body_path": [
+        "NLA.IE05.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.supremum_strict_gap"
+      ],
+      "from": "NLA.IE05.orthogonalExtremizerConjecture",
+      "to": "NLA.IE05._proved.supremum_strict_gap"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.supremum_strict_gap",
+        "NLA.IE05._proved.witness_strict_growth"
+      ],
+      "from": "NLA.IE05.orthogonalExtremizerConjecture",
+      "to": "NLA.IE05._proved.witness_strict_growth"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.supremum_strict_gap",
+        "NLA.IE05._proved.witness_strict_growth",
+        "NLA.IE05._proved.numerical_gap_positive"
+      ],
+      "from": "NLA.IE05.orthogonalExtremizerConjecture",
+      "to": "NLA.IE05._proved.numerical_gap_positive"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.supremum_strict_gap",
+        "NLA.IE05._proved.witness_strict_growth",
+        "NLA.IE05._proved.witness_growth_lower",
+        "NLA.IE05._proved.witness_entryMax_upper",
+        "NLA.IE05._proved.integer_entry_certificates"
+      ],
+      "from": "NLA.IE05.orthogonalExtremizerConjecture",
+      "to": "NLA.IE05._proved.integer_entry_certificates"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.orthogonalExtremizerConjecture",
+        "NLA.IE05._proved.supremum_strict_gap",
+        "NLA.IE05._proved.witness_orthogonal_path",
+        "NLA.IE05._proved.normalizedInteger_path_trajectory",
+        "NLA.IE05._proved.real_factor_certificates",
+        "NLA.IE05._proved.integer_factor_certificates"
+      ],
+      "from": "NLA.IE05.orthogonalExtremizerConjecture",
+      "to": "NLA.IE05._proved.integer_factor_certificates"
+    },
+    {
+      "body_path": [
+        "NLA.IE05._proved.supremum_strict_gap",
+        "le_csSup"
+      ],
+      "from": "NLA.IE05._proved.supremum_strict_gap",
+      "to": "le_csSup"
+    },
+    {
+      "body_path": [
+        "NLA.IE05._proved.supremum_strict_gap",
+        "NLA.IE05.orthogonalGrowthSet_bounded_proved"
+      ],
+      "from": "NLA.IE05._proved.supremum_strict_gap",
+      "to": "NLA.IE05.orthogonalGrowthSet_bounded_proved"
+    },
+    {
+      "body_path": [
+        "NLA.IE05._proved.supremum_strict_gap",
+        "NLA.IE05._proved.witness_orthogonal_path"
+      ],
+      "from": "NLA.IE05._proved.supremum_strict_gap",
+      "to": "NLA.IE05._proved.witness_orthogonal_path"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.firstPath_semantics",
+        "NLA.IE05.firstPath_semantics_proved",
+        "NLA.IE05.firstTrajectory_activeInjective_proved",
+        "NLA.IE05.activeInjective_schur_proved"
+      ],
+      "from": "NLA.IE05.firstPath_semantics",
+      "to": "NLA.IE05.activeInjective_schur_proved"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.firstPath_semantics",
+        "NLA.IE05.firstPath_semantics_proved",
+        "NLA.IE05.activeInjective_nonzero_column_proved"
+      ],
+      "from": "NLA.IE05.firstPath_semantics",
+      "to": "NLA.IE05.activeInjective_nonzero_column_proved"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.firstPath_semantics",
+        "NLA.IE05.firstPath_semantics_proved",
+        "NLA.IE05.firstPivotIndex_firstAvailable_proved",
+        "NLA.IE05.firstPivotIndex_spec_proved"
+      ],
+      "from": "NLA.IE05.firstPath_semantics",
+      "to": "NLA.IE05.firstPivotIndex_spec_proved"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.candidate_positiveQR",
+        "NLA.IE05._proved.candidate_positiveQR",
+        "NLA.IE05._proved.normalizedQRQ_positiveQR"
+      ],
+      "from": "NLA.IE05.candidate_positiveQR",
+      "to": "NLA.IE05._proved.normalizedQRQ_positiveQR"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.candidate_positiveQR",
+        "NLA.IE05._proved.candidate_positiveQR",
+        "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR"
+      ],
+      "from": "NLA.IE05.candidate_positiveQR",
+      "to": "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.candidate_positiveQR",
+        "NLA.IE05._proved.candidate_positiveQR",
+        "NLA.IE05._proved.normalizedQRQ_positiveQR",
+        "NLA.IE05._proved.normalizedQRQ_orthogonal",
+        "InnerProductSpace.gramSchmidtNormed_orthonormal"
+      ],
+      "from": "NLA.IE05.candidate_positiveQR",
+      "to": "InnerProductSpace.gramSchmidtNormed_orthonormal"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.candidate_positiveQR",
+        "NLA.IE05._proved.candidate_positiveQR",
+        "NLA.IE05._proved.normalizedQRQ_positiveQR",
+        "NLA.IE05._proved.normalizedQRQ_diagonal_pos",
+        "InnerProductSpace.gramSchmidt_ne_zero"
+      ],
+      "from": "NLA.IE05.candidate_positiveQR",
+      "to": "InnerProductSpace.gramSchmidt_ne_zero"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.canonical_integer_identification",
+        "NLA.IE05._proved.canonical_integer_identification",
+        "NLA.IE05._proved.normalizedQRQ_of_gram_lu"
+      ],
+      "from": "NLA.IE05.canonical_integer_identification",
+      "to": "NLA.IE05._proved.normalizedQRQ_of_gram_lu"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.canonical_integer_identification",
+        "NLA.IE05._proved.canonical_integer_identification",
+        "NLA.IE05._proved.normalizedQRQ_of_gram_lu",
+        "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR"
+      ],
+      "from": "NLA.IE05.canonical_integer_identification",
+      "to": "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.canonical_integer_identification",
+        "NLA.IE05._proved.canonical_integer_identification",
+        "NLA.IE05._proved.real_factor_certificates"
+      ],
+      "from": "NLA.IE05.canonical_integer_identification",
+      "to": "NLA.IE05._proved.real_factor_certificates"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.scaledLU_trajectory",
+        "NLA.IE05._proved.scaledLU_trajectory",
+        "NLA.IE05._proved.scaled_noSwap_trajectory",
+        "NLA.IE05._proved.scaled_tail_schur"
+      ],
+      "from": "NLA.IE05.scaledLU_trajectory",
+      "to": "NLA.IE05._proved.scaled_tail_schur"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.scaledLU_trajectory",
+        "NLA.IE05._proved.scaledLU_trajectory",
+        "NLA.IE05._proved.scaled_tail_firstAvailable"
+      ],
+      "from": "NLA.IE05.scaledLU_trajectory",
+      "to": "NLA.IE05._proved.scaled_tail_firstAvailable"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.scaledLU_trajectory",
+        "NLA.IE05._proved.scaledLU_trajectory",
+        "NLA.IE05.firstPath_eq_of_firstAvailable_proved"
+      ],
+      "from": "NLA.IE05.scaledLU_trajectory",
+      "to": "NLA.IE05.firstPath_eq_of_firstAvailable_proved"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.bounded_growth_data",
+        "NLA.IE05._proved.bounded_growth_data",
+        "NLA.IE05._proved.witness_growth_lower",
+        "NLA.IE05._proved.witness_peak_lower",
+        "NLA.IE05._proved.witness_final_pivot"
+      ],
+      "from": "NLA.IE05.bounded_growth_data",
+      "to": "NLA.IE05._proved.witness_final_pivot"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.bounded_growth_data",
+        "NLA.IE05._proved.bounded_growth_data",
+        "NLA.IE05._proved.candidate_growth_sq_upper",
+        "NLA.IE05._proved.candidate_growth_upper",
+        "NLA.IE05._proved.candidate_peak_upper"
+      ],
+      "from": "NLA.IE05.bounded_growth_data",
+      "to": "NLA.IE05._proved.candidate_peak_upper"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.bounded_growth_data",
+        "NLA.IE05._proved.bounded_growth_data",
+        "NLA.IE05._proved.witness_growth_lower",
+        "NLA.IE05._proved.witness_orthogonal_path",
+        "NLA.IE05._proved.normalizedInteger_path_trajectory",
+        "NLA.IE05._proved.castIntegerMatrix_tailProduct"
+      ],
+      "from": "NLA.IE05.bounded_growth_data",
+      "to": "NLA.IE05._proved.castIntegerMatrix_tailProduct"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.bounded_growth_data",
+        "NLA.IE05._proved.bounded_growth_data",
+        "NLA.IE05._proved.witness_entryMax_upper",
+        "NLA.IE05._proved.abs_div_sqrt_le"
+      ],
+      "from": "NLA.IE05.bounded_growth_data",
+      "to": "NLA.IE05._proved.abs_div_sqrt_le"
+    },
+    {
+      "body_path": [
+        "NLA.IE05.bounded_growth_data",
+        "NLA.IE05._proved.bounded_growth_data",
+        "NLA.IE05._proved.candidate_growth_sq_upper",
+        "NLA.IE05._proved.candidate_growth_upper",
+        "NLA.IE05._proved.candidate_peak_upper",
+        "NLA.IE05._proved.abs_div_sqrt_le_sqrt"
+      ],
+      "from": "NLA.IE05.bounded_growth_data",
+      "to": "NLA.IE05._proved.abs_div_sqrt_le_sqrt"
+    }
+  ],
+  "outside_closure_explanation": "These exact 42 generated environment declarations are absent from the type/body dependency graph of every source mathematical declaration; no name/basename trust exception is applied.",
+  "project_contract_closure": [
+    "NLA.IE05.ActiveInjective",
+    "NLA.IE05.AdmissiblePath",
+    "NLA.IE05.AdmissiblePivot",
+    "NLA.IE05.FirstAvailablePath",
+    "NLA.IE05.FirstAvailablePivot",
+    "NLA.IE05.IntMat",
+    "NLA.IE05.Mat",
+    "NLA.IE05.Orthogonal",
+    "NLA.IE05.OrthogonalExtremizerConjecture",
+    "NLA.IE05.PivotPath",
+    "NLA.IE05.PositiveQR",
+    "NLA.IE05.UnitLower",
+    "NLA.IE05.UpperTriangular",
+    "NLA.IE05._proved.abs_div_sqrt_le",
+    "NLA.IE05._proved.abs_div_sqrt_le_sqrt",
+    "NLA.IE05._proved.bounded_growth_data",
+    "NLA.IE05._proved.candidate_entryMax_lower",
+    "NLA.IE05._proved.candidate_growth_nonneg",
+    "NLA.IE05._proved.candidate_growth_sq_upper",
+    "NLA.IE05._proved.candidate_growth_upper",
+    "NLA.IE05._proved.candidate_peak_upper",
+    "NLA.IE05._proved.candidate_positiveQR",
+    "NLA.IE05._proved.canonical_integer_identification",
+    "NLA.IE05._proved.castIntegerMatrix_diagonal",
+    "NLA.IE05._proved.castIntegerMatrix_lower_bound",
+    "NLA.IE05._proved.castIntegerMatrix_mul",
+    "NLA.IE05._proved.castIntegerMatrix_tailProduct",
+    "NLA.IE05._proved.castIntegerMatrix_unitLower",
+    "NLA.IE05._proved.castIntegerMatrix_upper",
+    "NLA.IE05._proved.entryMax_le_from_entries",
+    "NLA.IE05._proved.euclideanColumns_inner",
+    "NLA.IE05._proved.euclideanColumns_linearIndependent",
+    "NLA.IE05._proved.euclideanColumns_normalizedQRQ",
+    "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR",
+    "NLA.IE05._proved.gramSchmidt_inner_original",
+    "NLA.IE05._proved.growth_nonneg",
+    "NLA.IE05._proved.integerD_real_pos",
+    "NLA.IE05._proved.integerLowerZeroDecidable",
+    "NLA.IE05._proved.integerLower_false_prescribed",
+    "NLA.IE05._proved.integerTZeroDecidable",
+    "NLA.IE05._proved.integer_entry_certificates",
+    "NLA.IE05._proved.integer_entry_certificates._proof_1_1",
+    "NLA.IE05._proved.integer_factor_certificates",
+    "NLA.IE05._proved.integer_factor_certificates._proof_1_1",
+    "NLA.IE05._proved.integer_factor_certificates._proof_1_2",
+    "NLA.IE05._proved.normalizedInteger_orthogonal",
+    "NLA.IE05._proved.normalizedInteger_path_trajectory",
+    "NLA.IE05._proved.normalizedInteger_trajectory_entry",
+    "NLA.IE05._proved.normalizedQRQ_diagonal_pos",
+    "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR",
+    "NLA.IE05._proved.normalizedQRQ_of_gram_lu",
+    "NLA.IE05._proved.normalizedQRQ_orthogonal",
+    "NLA.IE05._proved.normalizedQRQ_positiveQR",
+    "NLA.IE05._proved.normalizedQRQ_upper",
+    "NLA.IE05._proved.numerical_gap_positive",
+    "NLA.IE05._proved.orthogonalExtremizerConjecture",
+    "NLA.IE05._proved.orthogonal_iff_orthonormal_columns",
+    "NLA.IE05._proved.positiveQR_column",
+    "NLA.IE05._proved.positiveQR_inner",
+    "NLA.IE05._proved.prescribedLower_det",
+    "NLA.IE05._proved.real_factor_certificates",
+    "NLA.IE05._proved.scaledColumns_orthogonal",
+    "NLA.IE05._proved.scaledLU_trajectory",
+    "NLA.IE05._proved.scaled_noSwap_trajectory",
+    "NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_1",
+    "NLA.IE05._proved.scaled_noSwap_trajectory._proof_1_2",
+    "NLA.IE05._proved.scaled_tail_firstAvailable",
+    "NLA.IE05._proved.scaled_tail_schur",
+    "NLA.IE05._proved.supremum_strict_gap",
+    "NLA.IE05._proved.tailProduct_pivot_column",
+    "NLA.IE05._proved.tailProduct_pivot_row",
+    "NLA.IE05._proved.tailProduct_split",
+    "NLA.IE05._proved.tailProduct_split._proof_1_1",
+    "NLA.IE05._proved.tailProduct_zero",
+    "NLA.IE05._proved.witness_entryMax_upper",
+    "NLA.IE05._proved.witness_final_pivot",
+    "NLA.IE05._proved.witness_growth_lower",
+    "NLA.IE05._proved.witness_orthogonal_path",
+    "NLA.IE05._proved.witness_peak_lower",
+    "NLA.IE05._proved.witness_strict_growth",
+    "NLA.IE05.abs_le_activeMax_proved",
+    "NLA.IE05.abs_le_entryMax_proved",
+    "NLA.IE05.activeInjective_initial_proved",
+    "NLA.IE05.activeInjective_nonzero_column_proved",
+    "NLA.IE05.activeInjective_nonzero_column_proved._proof_1_1",
+    "NLA.IE05.activeInjective_rowSwap_proved",
+    "NLA.IE05.activeInjective_schur_proved",
+    "NLA.IE05.activeInjective_schur_proved._proof_1_2",
+    "NLA.IE05.activeInjective_schur_proved._proof_1_3",
+    "NLA.IE05.activeMax",
+    "NLA.IE05.activeMaxNN",
+    "NLA.IE05.activeMax_le_peakMax_proved",
+    "NLA.IE05.activeMax_le_proved",
+    "NLA.IE05.activeMax_nonneg_proved",
+    "NLA.IE05.activeMax_zero_proved",
+    "NLA.IE05.bounded_growth_data",
+    "NLA.IE05.candidateQ",
+    "NLA.IE05.candidateR",
+    "NLA.IE05.candidate_positiveQR",
+    "NLA.IE05.canonical_integer_identification",
+    "NLA.IE05.castIntegerMatrix",
+    "NLA.IE05.entryMax",
+    "NLA.IE05.entryMaxNN",
+    "NLA.IE05.entryMax_le_peakMax_proved",
+    "NLA.IE05.entryMax_le_peakMax_proved._proof_1_1",
+    "NLA.IE05.entryMax_nonneg_proved",
+    "NLA.IE05.entryMax_semantics",
+    "NLA.IE05.entryMax_semantics_proved",
+    "NLA.IE05.entryMax_semantics_proved._proof_1_1",
+    "NLA.IE05.euclideanColumns",
+    "NLA.IE05.euclideanColumns._proof_1",
+    "NLA.IE05.firstGrowth",
+    "NLA.IE05.firstPath",
+    "NLA.IE05.firstPath_eq_of_firstAvailable_proved",
+    "NLA.IE05.firstPath_semantics",
+    "NLA.IE05.firstPath_semantics_proved",
+    "NLA.IE05.firstPivotIndex",
+    "NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved",
+    "NLA.IE05.firstPivotIndex_firstAvailable_proved",
+    "NLA.IE05.firstPivotIndex_spec_proved",
+    "NLA.IE05.firstPivotIndex_spec_proved._proof_1_2",
+    "NLA.IE05.firstTrajectory",
+    "NLA.IE05.firstTrajectory._f",
+    "NLA.IE05.firstTrajectory_activeInjective_proved",
+    "NLA.IE05.firstTrajectory_activeInjective_proved._proof_1_1",
+    "NLA.IE05.gepp_growth_bound",
+    "NLA.IE05.gepp_growth_bound_proved",
+    "NLA.IE05.gepp_growth_bound_proved._proof_1_1",
+    "NLA.IE05.gepp_growth_bound_proved._proof_1_2",
+    "NLA.IE05.gepp_stage_bound_proved",
+    "NLA.IE05.gepp_stage_bound_proved._proof_1_1",
+    "NLA.IE05.growth",
+    "NLA.IE05.integerD",
+    "NLA.IE05.integerH",
+    "NLA.IE05.integerH.match_1",
+    "NLA.IE05.integerLower",
+    "NLA.IE05.integerLower._proof_1",
+    "NLA.IE05.integerT",
+    "NLA.IE05.integer_entry_certificates",
+    "NLA.IE05.integer_factor_certificates",
+    "NLA.IE05.noSwapPath",
+    "NLA.IE05.normalizedInteger",
+    "NLA.IE05.normalizedQRQ",
+    "NLA.IE05.normalizedQRQ._proof_1",
+    "NLA.IE05.numerical_gap_positive",
+    "NLA.IE05.orthogonalExtremizerConjecture",
+    "NLA.IE05.orthogonalGrowthSet",
+    "NLA.IE05.orthogonalGrowthSet_bounded",
+    "NLA.IE05.orthogonalGrowthSet_bounded_proved",
+    "NLA.IE05.orthogonalGrowthSet_bounded_proved._proof_1_1",
+    "NLA.IE05.orthogonalGrowthSup",
+    "NLA.IE05.peakMax",
+    "NLA.IE05.peakMax_le_proved",
+    "NLA.IE05.prescribedLower",
+    "NLA.IE05.rowSwap",
+    "NLA.IE05.rowSwap.eq_1",
+    "NLA.IE05.scaledColumns",
+    "NLA.IE05.scaledColumns_orthogonal",
+    "NLA.IE05.scaledLU_trajectory",
+    "NLA.IE05.schurStep",
+    "NLA.IE05.schurStep_bound",
+    "NLA.IE05.schurStep_bound_proved",
+    "NLA.IE05.schurStep_mulVec_proved",
+    "NLA.IE05.schurStep_mulVec_proved._simp_1_1",
+    "NLA.IE05.supremum_strict_gap",
+    "NLA.IE05.tailProduct",
+    "NLA.IE05.trajectory",
+    "NLA.IE05.trajectory._f",
+    "NLA.IE05.trajectory.eq_2",
+    "NLA.IE05.trajectory.match_1",
+    "NLA.IE05.trajectory_firstPath_eq_proved",
+    "NLA.IE05.witnessQ",
+    "NLA.IE05.witness_orthogonal_path",
+    "NLA.IE05.witness_strict_growth",
+    "_private.NLA.IE05.GEPP.0.NLA.IE05.swap_active",
+    "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_active",
+    "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotFold_argAux",
+    "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore",
+    "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotScore_lt_iff",
+    "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate",
+    "_private.NLA.IE05.Pivot.0.NLA.IE05.pivotUpdate_active"
+  ],
+  "source_kernel_assertions": [
+    {
+      "file": "NLA/IE05/ExactCertificates.lean",
+      "kind": "kernel",
+      "line": 60,
+      "name": "NLA.IE05._proved.integer_factor_certificates"
+    },
+    {
+      "file": "NLA/IE05/ExactCertificates.lean",
+      "kind": "kernel",
+      "line": 62,
+      "name": "NLA.IE05._proved.integer_entry_certificates"
+    },
+    {
+      "file": "NLA/IE05/ExactCertificates.lean",
+      "kind": "kernel",
+      "line": 64,
+      "name": "NLA.IE05._proved.numerical_gap_positive"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 292,
+      "name": "NLA.IE05.entryMax_semantics_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 294,
+      "name": "NLA.IE05.schurStep_bound_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 296,
+      "name": "NLA.IE05.gepp_growth_bound_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 298,
+      "name": "NLA.IE05.activeInjective_initial_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 300,
+      "name": "NLA.IE05.activeInjective_nonzero_column_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 302,
+      "name": "NLA.IE05.activeInjective_rowSwap_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 304,
+      "name": "NLA.IE05.schurStep_mulVec_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 306,
+      "name": "NLA.IE05.activeInjective_schur_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 308,
+      "name": "NLA.IE05.firstTrajectory_activeInjective_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 310,
+      "name": "NLA.IE05.firstPath_semantics_proved"
+    },
+    {
+      "file": "NLA/IE05/GEPP.lean",
+      "kind": "kernel",
+      "line": 312,
+      "name": "NLA.IE05.orthogonalGrowthSet_bounded_proved"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 144,
+      "name": "NLA.IE05._proved.witness_entryMax_upper"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 146,
+      "name": "NLA.IE05._proved.witness_final_pivot"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 148,
+      "name": "NLA.IE05._proved.witness_peak_lower"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 150,
+      "name": "NLA.IE05._proved.witness_growth_lower"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 152,
+      "name": "NLA.IE05._proved.candidate_entryMax_lower"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 154,
+      "name": "NLA.IE05._proved.candidate_peak_upper"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 156,
+      "name": "NLA.IE05._proved.candidate_growth_upper"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 158,
+      "name": "NLA.IE05._proved.candidate_growth_sq_upper"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 160,
+      "name": "NLA.IE05._proved.bounded_growth_data"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 162,
+      "name": "NLA.IE05._proved.witness_strict_growth"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 164,
+      "name": "NLA.IE05._proved.supremum_strict_gap"
+    },
+    {
+      "file": "NLA/IE05/Growth.lean",
+      "kind": "kernel",
+      "line": 166,
+      "name": "NLA.IE05._proved.orthogonalExtremizerConjecture"
+    },
+    {
+      "file": "NLA/IE05/GrowthBounds.lean",
+      "kind": "kernel",
+      "line": 42,
+      "name": "NLA.IE05._proved.abs_div_sqrt_le"
+    },
+    {
+      "file": "NLA/IE05/GrowthBounds.lean",
+      "kind": "kernel",
+      "line": 44,
+      "name": "NLA.IE05._proved.abs_div_sqrt_le_sqrt"
+    },
+    {
+      "file": "NLA/IE05/GrowthBounds.lean",
+      "kind": "kernel",
+      "line": 46,
+      "name": "NLA.IE05._proved.entryMax_le_from_entries"
+    },
+    {
+      "file": "NLA/IE05/GrowthBounds.lean",
+      "kind": "kernel",
+      "line": 48,
+      "name": "NLA.IE05._proved.growth_nonneg"
+    },
+    {
+      "file": "NLA/IE05/IntegerQR.lean",
+      "kind": "kernel",
+      "line": 68,
+      "name": "NLA.IE05._proved.normalizedQRQ_of_gram_lu"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 158,
+      "name": "NLA.IE05._proved.tailProduct_zero"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 160,
+      "name": "NLA.IE05._proved.tailProduct_terminal"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 162,
+      "name": "NLA.IE05._proved.tailProduct_pivot_row"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 164,
+      "name": "NLA.IE05._proved.tailProduct_pivot_column"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 166,
+      "name": "NLA.IE05._proved.tailProduct_split"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 168,
+      "name": "NLA.IE05._proved.scaled_tail_schur"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 170,
+      "name": "NLA.IE05._proved.scaled_tail_firstAvailable"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 172,
+      "name": "NLA.IE05._proved.scaled_noSwap_trajectory"
+    },
+    {
+      "file": "NLA/IE05/LUTrajectory.lean",
+      "kind": "kernel",
+      "line": 174,
+      "name": "NLA.IE05._proved.scaledLU_trajectory"
+    },
+    {
+      "file": "NLA/IE05/Pivot.lean",
+      "kind": "kernel",
+      "line": 145,
+      "name": "NLA.IE05.firstPivotIndex_spec_proved"
+    },
+    {
+      "file": "NLA/IE05/Pivot.lean",
+      "kind": "kernel",
+      "line": 147,
+      "name": "NLA.IE05.firstPivotIndex_eq_of_firstAvailable_proved"
+    },
+    {
+      "file": "NLA/IE05/Pivot.lean",
+      "kind": "kernel",
+      "line": 149,
+      "name": "NLA.IE05.firstPivotIndex_firstAvailable_proved"
+    },
+    {
+      "file": "NLA/IE05/Pivot.lean",
+      "kind": "kernel",
+      "line": 151,
+      "name": "NLA.IE05.trajectory_firstPath_eq_proved"
+    },
+    {
+      "file": "NLA/IE05/Pivot.lean",
+      "kind": "kernel",
+      "line": 153,
+      "name": "NLA.IE05.firstPath_eq_of_firstAvailable_proved"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 143,
+      "name": "NLA.IE05.entryMax_semantics"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 145,
+      "name": "NLA.IE05.schurStep_bound"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 147,
+      "name": "NLA.IE05.gepp_growth_bound"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 149,
+      "name": "NLA.IE05.firstPath_semantics"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 151,
+      "name": "NLA.IE05.orthogonalGrowthSet_bounded"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 153,
+      "name": "NLA.IE05.candidate_positiveQR"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 155,
+      "name": "NLA.IE05.scaledColumns_orthogonal"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 157,
+      "name": "NLA.IE05.scaledLU_trajectory"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 159,
+      "name": "NLA.IE05.integer_factor_certificates"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 161,
+      "name": "NLA.IE05.integer_entry_certificates"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 163,
+      "name": "NLA.IE05.canonical_integer_identification"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 165,
+      "name": "NLA.IE05.witness_orthogonal_path"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 167,
+      "name": "NLA.IE05.bounded_growth_data"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 169,
+      "name": "NLA.IE05.numerical_gap_positive"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 171,
+      "name": "NLA.IE05.witness_strict_growth"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 173,
+      "name": "NLA.IE05.supremum_strict_gap"
+    },
+    {
+      "file": "NLA/IE05/Proof.lean",
+      "kind": "kernel",
+      "line": 175,
+      "name": "NLA.IE05.orthogonalExtremizerConjecture"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 176,
+      "name": "NLA.IE05._proved.euclideanColumns_inner"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 178,
+      "name": "NLA.IE05._proved.orthogonal_iff_orthonormal_columns"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 180,
+      "name": "NLA.IE05._proved.euclideanColumns_linearIndependent"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 182,
+      "name": "NLA.IE05._proved.euclideanColumns_normalizedQRQ"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 184,
+      "name": "NLA.IE05._proved.normalizedQRQ_orthogonal"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 186,
+      "name": "NLA.IE05._proved.gramSchmidt_inner_original"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 188,
+      "name": "NLA.IE05._proved.normalizedQRQ_upper"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 190,
+      "name": "NLA.IE05._proved.normalizedQRQ_diagonal_pos"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 192,
+      "name": "NLA.IE05._proved.normalizedQRQ_positiveQR"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 194,
+      "name": "NLA.IE05._proved.prescribedLower_det"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 196,
+      "name": "NLA.IE05._proved.positiveQR_inner"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 198,
+      "name": "NLA.IE05._proved.positiveQR_column"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 200,
+      "name": "NLA.IE05._proved.gramSchmidt_eq_of_positiveQR"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 202,
+      "name": "NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR"
+    },
+    {
+      "file": "NLA/IE05/QR.lean",
+      "kind": "kernel",
+      "line": 204,
+      "name": "NLA.IE05._proved.candidate_positiveQR"
+    },
+    {
+      "file": "NLA/IE05/Scaling.lean",
+      "kind": "kernel",
+      "line": 46,
+      "name": "NLA.IE05._proved.scaledColumns_orthogonal"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 148,
+      "name": "NLA.IE05._proved.castIntegerMatrix_mul"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 150,
+      "name": "NLA.IE05._proved.castIntegerMatrix_tailProduct"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 152,
+      "name": "NLA.IE05._proved.castIntegerMatrix_lower_bound"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 154,
+      "name": "NLA.IE05._proved.real_factor_certificates"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 156,
+      "name": "NLA.IE05._proved.normalizedInteger_orthogonal"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 158,
+      "name": "NLA.IE05._proved.normalizedInteger_path_trajectory"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 160,
+      "name": "NLA.IE05._proved.normalizedInteger_trajectory_entry"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 162,
+      "name": "NLA.IE05._proved.normalizedInteger_firstGrowth"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 164,
+      "name": "NLA.IE05._proved.integerLower_false_prescribed"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 166,
+      "name": "NLA.IE05._proved.canonical_integer_identification"
+    },
+    {
+      "file": "NLA/IE05/Witness.lean",
+      "kind": "kernel",
+      "line": 168,
+      "name": "NLA.IE05._proved.witness_orthogonal_path"
+    }
+  ],
+  "source_math_closure_project": 184,
+  "source_math_declarations": 157,
+  "source_math_transitive_declarations": 29597,
+  "status": "PASS",
+  "total_executed_kernel_assertions_final_success": 106,
+  "types": 17
+}

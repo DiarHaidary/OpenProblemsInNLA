@@ -1,0 +1,43 @@
+NLA/IE05/QR.lean:126:39: error: Type mismatch: After simplification, term
+  hi
+ has type
+  j < i
+but is expected to have type
+  ¬i = j ∧ j ≤ i
+NLA/IE05/QR.lean:144:15: error: Application type mismatch: The argument
+  Finset.mem_Iio.mp hi
+has type
+  @LT.lt (Fin n) Fin.instPartialOrder.toLT i j
+but is expected to have type
+  @LT.lt (Fin n) ?x_1 i j
+in the application
+  ih i (Finset.mem_Iio.mp hi)
+NLA/IE05/QR.lean:135:2: error: Alternative `x_1` has not been provided
+NLA/IE05/QR.lean:135:2: error: Alternative `x_2` has not been provided
+'NLA.IE05._proved.euclideanColumns_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.orthogonal_iff_orthonormal_columns' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.euclideanColumns_linearIndependent' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.euclideanColumns_normalizedQRQ' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.normalizedQRQ_orthogonal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.gramSchmidt_inner_original' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.normalizedQRQ_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.normalizedQRQ_diagonal_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.normalizedQRQ_positiveQR' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.prescribedLower_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.positiveQR_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.positiveQR_column' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/QR.lean:195:21: error: #assert_trust: 'NLA.IE05._proved.positiveQR_column' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.gramSchmidt_eq_of_positiveQR' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/QR.lean:197:21: error: #assert_trust: 'NLA.IE05._proved.gramSchmidt_eq_of_positiveQR' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/QR.lean:199:21: error: #assert_trust: 'NLA.IE05._proved.normalizedQRQ_eq_of_positiveQR' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.candidate_positiveQR' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/QR.lean:201:21: error: #assert_trust: 'NLA.IE05._proved.candidate_positiveQR' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx

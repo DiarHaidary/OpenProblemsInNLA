@@ -1,0 +1,609 @@
+{
+  "utc": "2026-09-13T07:46:29.720356+00:00",
+  "scope": "Complete bounded GEPP development evidence and exact final input/implementation bindings",
+  "files": {
+    "Challenge.lean": {
+      "sha256": "0ccd5424f990587b1bb7170c674cba4645d9427286c916e2e19387234ccf250e",
+      "bytes": 6205
+    },
+    "NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "NLA/IE05/GEPP.lean": {
+      "sha256": "f9cfa58bd03aa49748bfde358147197bf73b165701cb67b58e1af2ec926c8b98",
+      "bytes": 14531
+    },
+    "NLA/IE05/Pivot.lean": {
+      "sha256": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+      "bytes": 6769
+    },
+    "NUMERICAL_TARGETS.md": {
+      "sha256": "361c0b45ccc9e759d4ce6c910e6e75778978b49f175b6b0c043895dbabf2d956",
+      "bytes": 8018
+    },
+    "comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "reviews/gepp-completion.md": {
+      "sha256": "5d7551c4e2408a03ee813892c640661a9f97dcb96a20c31d9c13872d34109862",
+      "bytes": 8623
+    },
+    "reviews/statement-freeze.json": {
+      "sha256": "bd329885eb323bd4f3fd40879649b56c201918d8c2bd6f63fbd0e86f48ca770c",
+      "bytes": 192830
+    },
+    "verification/gepp-development/GEPP-abandoned-namespace-wrappers.lean": {
+      "sha256": "d025bca16f2dfec60b0b837a08df086b116f23b83bbcfb9d63949fe3675b0ad4",
+      "bytes": 16268
+    },
+    "verification/gepp-development/GEPP-before-namespace-wrappers.lean": {
+      "sha256": "f9cfa58bd03aa49748bfde358147197bf73b165701cb67b58e1af2ec926c8b98",
+      "bytes": 14531
+    },
+    "verification/gepp-development/HANDOFF.json": {
+      "sha256": "8cb56e02b17e01497d6a860aee24b6c4b105e5b75c6e4a86817de5f291403a15",
+      "bytes": 1877
+    },
+    "verification/gepp-development/HANDOFF.md": {
+      "sha256": "c4b1f05850968bd9c614b9e15a413703bbd97932628bb46a739cee48c2969e67",
+      "bytes": 1748
+    },
+    "verification/gepp-development/Inspect.lean": {
+      "sha256": "7ebe5d8839736904ab897c305345cebd6382587c6ee29f135addc15a7e355df3",
+      "bytes": 7034
+    },
+    "verification/gepp-development/Pivot-abandoned-namespace-wrappers.lean": {
+      "sha256": "38aebf3be75284218849d432e03e7496bd68d00527a1e70d18fb9d7bdcd1603d",
+      "bytes": 8479
+    },
+    "verification/gepp-development/Pivot-before-namespace-wrappers.lean": {
+      "sha256": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+      "bytes": 6769
+    },
+    "verification/gepp-development/abandoned-namespace-Inspect.lean": {
+      "sha256": "678dd72b9761506eca5b9f2d2b877354e459e63a906b3caf63fd69b1ffe8d3b8",
+      "bytes": 7513
+    },
+    "verification/gepp-development/abandoned-namespace-audit-result.json": {
+      "sha256": "77a4a567c99e0094deb22e8c86b006d98d714278ae032669a3fb5b5465628442",
+      "bytes": 12301
+    },
+    "verification/gepp-development/abandoned-namespace-audit_result.py": {
+      "sha256": "94f0c6e666ac9d57eda51fd58cd92e7ad301988b16b17b34386f6a22e7b2f85d",
+      "bytes": 6534
+    },
+    "verification/gepp-development/abandoned-namespace-expected-type-extraction.json": {
+      "sha256": "2f47a7990c5da43fa824f191710f616d9a0b6d7a7c0d09283f03009a074c25e2",
+      "bytes": 2796
+    },
+    "verification/gepp-development/abandoned-namespace-generate_inspector.py": {
+      "sha256": "cc451d364da8075ecb432ca91fccc06eca66dc5346a332992937cd70d336d320",
+      "bytes": 6666
+    },
+    "verification/gepp-development/attempt-7ctya5j2/Definitions.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/gepp-development/attempt-7ctya5j2/GEPP.log": {
+      "sha256": "8736f4455f0599e26d7a2501215703a6efef049701077bdc8aff6503d9af68d2",
+      "bytes": 7647
+    },
+    "verification/gepp-development/attempt-7ctya5j2/Pivot.log": {
+      "sha256": "148a7f1ea978bc041922aed7b87c44aee2ab30974be0bda5ece780a3be3ea8d6",
+      "bytes": 529
+    },
+    "verification/gepp-development/attempt-7ctya5j2/result.json": {
+      "sha256": "25fb7d975f80576ed6824dbf3498bbf04059c7c0f1899c1d32d167de9fc0ed83",
+      "bytes": 8954
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/NLA/IE05/GEPP.lean": {
+      "sha256": "24e83896140d540857bda480359ab28b41ef2361757ff282b6ebb3533c5fd13e",
+      "bytes": 14314
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/NLA/IE05/Pivot.lean": {
+      "sha256": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+      "bytes": 6769
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/attempt-7ctya5j2/source/verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    },
+    "verification/gepp-development/attempt-9j9c1y68/Definitions.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/gepp-development/attempt-9j9c1y68/Pivot.log": {
+      "sha256": "3b459f5ece6dc0e531ef42676a6af00df0673cd3a7b382817884ffe4489d0449",
+      "bytes": 1864
+    },
+    "verification/gepp-development/attempt-9j9c1y68/result.json": {
+      "sha256": "1db0e6df62cdf9d4e2920595e85e63b4d87bd1d8d188886e3074a195871f818e",
+      "bytes": 8012
+    },
+    "verification/gepp-development/attempt-9j9c1y68/source/NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "verification/gepp-development/attempt-9j9c1y68/source/NLA/IE05/Pivot.lean": {
+      "sha256": "a3f596a2241450cb3e7cc0f4528498113e661733a154e73e7007efea9496b04f",
+      "bytes": 6754
+    },
+    "verification/gepp-development/attempt-9j9c1y68/source/comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "verification/gepp-development/attempt-9j9c1y68/source/lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "verification/gepp-development/attempt-9j9c1y68/source/lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "verification/gepp-development/attempt-9j9c1y68/source/lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "verification/gepp-development/attempt-9j9c1y68/source/verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/attempt-9j9c1y68/source/verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    },
+    "verification/gepp-development/attempt-a1619rbc/Definitions.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/gepp-development/attempt-a1619rbc/GEPP.log": {
+      "sha256": "ce81813f5cf821d56fb82373cf9b6ee051a8524388cce60eaad235b3f0429243",
+      "bytes": 2894
+    },
+    "verification/gepp-development/attempt-a1619rbc/Pivot.log": {
+      "sha256": "148a7f1ea978bc041922aed7b87c44aee2ab30974be0bda5ece780a3be3ea8d6",
+      "bytes": 529
+    },
+    "verification/gepp-development/attempt-a1619rbc/result.json": {
+      "sha256": "053c2ed8a1297a9c4a699ca6f1c9a51a17ebc3dfc89c21ed470d0ad7969e2604",
+      "bytes": 8957
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/NLA/IE05/GEPP.lean": {
+      "sha256": "423920e78d06bc980218171e1dffe0b45cd3473b41c633a115fd0bcd9bd0efd6",
+      "bytes": 14542
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/NLA/IE05/Pivot.lean": {
+      "sha256": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+      "bytes": 6769
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/attempt-a1619rbc/source/verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    },
+    "verification/gepp-development/attempt-icr6zx3s/Definitions.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/gepp-development/attempt-icr6zx3s/Pivot.log": {
+      "sha256": "bc5908aeb678767ff8653dbc973807f73abe1d76f30edd8e25ec22ea60d067f6",
+      "bytes": 4445
+    },
+    "verification/gepp-development/attempt-icr6zx3s/result.json": {
+      "sha256": "09cc219a6994ffc667621f8bd3dc21229a191adf0dba4f5761c78fbacb482cfb",
+      "bytes": 8011
+    },
+    "verification/gepp-development/attempt-icr6zx3s/source/NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "verification/gepp-development/attempt-icr6zx3s/source/NLA/IE05/Pivot.lean": {
+      "sha256": "80cbe1d60da9ac2bba54b673cb59970e4a3691b1ada37f3d6d97b28c4ab09213",
+      "bytes": 6344
+    },
+    "verification/gepp-development/attempt-icr6zx3s/source/comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "verification/gepp-development/attempt-icr6zx3s/source/lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "verification/gepp-development/attempt-icr6zx3s/source/lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "verification/gepp-development/attempt-icr6zx3s/source/lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "verification/gepp-development/attempt-icr6zx3s/source/verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/attempt-icr6zx3s/source/verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    },
+    "verification/gepp-development/attempt-op4ol1bg/Definitions.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/gepp-development/attempt-op4ol1bg/GEPP.log": {
+      "sha256": "81c3ec7eae005f8a35d7fe1e04675be10956503116f41a3bb2dfbe9164657bdf",
+      "bytes": 1098
+    },
+    "verification/gepp-development/attempt-op4ol1bg/Pivot.log": {
+      "sha256": "148a7f1ea978bc041922aed7b87c44aee2ab30974be0bda5ece780a3be3ea8d6",
+      "bytes": 529
+    },
+    "verification/gepp-development/attempt-op4ol1bg/result.json": {
+      "sha256": "dc6dcc506a854e5c6cff4063cb3befa0629645a313d47323cef66ab7a989d8d5",
+      "bytes": 9239
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/NLA/IE05/GEPP.lean": {
+      "sha256": "f9cfa58bd03aa49748bfde358147197bf73b165701cb67b58e1af2ec926c8b98",
+      "bytes": 14531
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/NLA/IE05/Pivot.lean": {
+      "sha256": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+      "bytes": 6769
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/attempt-op4ol1bg/source/verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/Definitions.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/GEPP.log": {
+      "sha256": "81c3ec7eae005f8a35d7fe1e04675be10956503116f41a3bb2dfbe9164657bdf",
+      "bytes": 1098
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/Inspect.log": {
+      "sha256": "2568d860411163be6f0b2a5f974d906d14d1e94d932701491b2d00d74e30454b",
+      "bytes": 57145
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/Pivot.log": {
+      "sha256": "148a7f1ea978bc041922aed7b87c44aee2ab30974be0bda5ece780a3be3ea8d6",
+      "bytes": 529
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/result.json": {
+      "sha256": "37a7c1f34e4da9572f1a6115d1eb7d6881b263bad4d158f5be4d154fb8b313d3",
+      "bytes": 10350
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/NLA/IE05/GEPP.lean": {
+      "sha256": "f9cfa58bd03aa49748bfde358147197bf73b165701cb67b58e1af2ec926c8b98",
+      "bytes": 14531
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/NLA/IE05/Pivot.lean": {
+      "sha256": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+      "bytes": 6769
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/verification/gepp-development/Inspect.lean": {
+      "sha256": "7ebe5d8839736904ab897c305345cebd6382587c6ee29f135addc15a7e355df3",
+      "bytes": 7034
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/attempt-rwc8pqg6/source/verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    },
+    "verification/gepp-development/attempt-v0gu6whb/Definitions.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/gepp-development/attempt-v0gu6whb/Pivot.log": {
+      "sha256": "9958325721aec21c3048dbd2567e5d4401e72c45be0a94fdf750509e326c93a9",
+      "bytes": 1145
+    },
+    "verification/gepp-development/attempt-v0gu6whb/result.json": {
+      "sha256": "992fcb6a9c835d4b1789efe55f5f7be075a06f260d411d04c6f41331b9f89143",
+      "bytes": 8315
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/NLA/IE05/GEPP.lean": {
+      "sha256": "d025bca16f2dfec60b0b837a08df086b116f23b83bbcfb9d63949fe3675b0ad4",
+      "bytes": 16268
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/NLA/IE05/Pivot.lean": {
+      "sha256": "38aebf3be75284218849d432e03e7496bd68d00527a1e70d18fb9d7bdcd1603d",
+      "bytes": 8479
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/verification/gepp-development/Inspect.lean": {
+      "sha256": "678dd72b9761506eca5b9f2d2b877354e459e63a906b3caf63fd69b1ffe8d3b8",
+      "bytes": 7513
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/attempt-v0gu6whb/source/verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    },
+    "verification/gepp-development/attempt-zs36ag3u/Definitions.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "verification/gepp-development/attempt-zs36ag3u/GEPP.log": {
+      "sha256": "81c3ec7eae005f8a35d7fe1e04675be10956503116f41a3bb2dfbe9164657bdf",
+      "bytes": 1098
+    },
+    "verification/gepp-development/attempt-zs36ag3u/Inspect.log": {
+      "sha256": "e394b172671e77275604a1affa9cab70e96c9243cd5b7f99636bb78c5725957c",
+      "bytes": 57202
+    },
+    "verification/gepp-development/attempt-zs36ag3u/Pivot.log": {
+      "sha256": "148a7f1ea978bc041922aed7b87c44aee2ab30974be0bda5ece780a3be3ea8d6",
+      "bytes": 529
+    },
+    "verification/gepp-development/attempt-zs36ag3u/result.json": {
+      "sha256": "8828a3c6050b7a2b4e102ebd309d26034d9b68b451d0cf532d0c5f4f885ea101",
+      "bytes": 10020
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/NLA/IE05/Definitions.lean": {
+      "sha256": "aa9a18994bb8d1889af8b30290cb71846af5424436d720afaf15a54184164dfa",
+      "bytes": 7762
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/NLA/IE05/GEPP.lean": {
+      "sha256": "f9cfa58bd03aa49748bfde358147197bf73b165701cb67b58e1af2ec926c8b98",
+      "bytes": 14531
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/NLA/IE05/Pivot.lean": {
+      "sha256": "89a404945ce5fc2c04d06dd971f7a155d7ef1a48c3c331082bdea9df89dc6f69",
+      "bytes": 6769
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/comparator.json": {
+      "sha256": "24bc843f6e0382012e7194c21fa441447cc75f6982b6e1995b81afabb1a5329b",
+      "bytes": 874
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/lake-manifest.json": {
+      "sha256": "f71e7ea13d3c514b8830d802822f4786c6f219c87cd629705678df9a61796235",
+      "bytes": 3884
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/lakefile.toml": {
+      "sha256": "68de99224101390b238dbea288b1fd8ee2534c2d4f8f26a0ead13178fc270959",
+      "bytes": 281
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/lean-toolchain": {
+      "sha256": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71",
+      "bytes": 25
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/verification/gepp-development/Inspect.lean": {
+      "sha256": "1bbf1af65992665ae6ee108de1b83a04a4d87dab3a85c4a885eaadd071f056a4",
+      "bytes": 7058
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/attempt-zs36ag3u/source/verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    },
+    "verification/gepp-development/audit-first-attempt.json": {
+      "sha256": "82fefdacfeab0f2acbc9ce3ceab1c09fb53e70075ef4a33a8fa71eac33379679",
+      "bytes": 405
+    },
+    "verification/gepp-development/audit-result.json": {
+      "sha256": "d643ec911123a5448bf25a9315d2e2eb2c7f1ac87ac73fa70f98a53c35d688d8",
+      "bytes": 12611
+    },
+    "verification/gepp-development/audit_result-first-attempt.py": {
+      "sha256": "2bc766d007fd47564c98714ec61f207bbf4fc3a3d65a205606fcbc7b2f4cbfd0",
+      "bytes": 5709
+    },
+    "verification/gepp-development/audit_result.py": {
+      "sha256": "cdd34b4e2db9be73d26ba91813ee6aeddb313b9fcf63e1dc52041cd9b7bf08f4",
+      "bytes": 6537
+    },
+    "verification/gepp-development/before-namespace-Inspect.lean": {
+      "sha256": "7ebe5d8839736904ab897c305345cebd6382587c6ee29f135addc15a7e355df3",
+      "bytes": 7034
+    },
+    "verification/gepp-development/before-namespace-audit-result.json": {
+      "sha256": "77a4a567c99e0094deb22e8c86b006d98d714278ae032669a3fb5b5465628442",
+      "bytes": 12301
+    },
+    "verification/gepp-development/before-namespace-audit_result.py": {
+      "sha256": "94f0c6e666ac9d57eda51fd58cd92e7ad301988b16b17b34386f6a22e7b2f85d",
+      "bytes": 6534
+    },
+    "verification/gepp-development/before-namespace-expected-type-extraction.json": {
+      "sha256": "cdd3e498433d616a33210aaed4b53676ad6dd9663c1b43801221385e2fb7534f",
+      "bytes": 2625
+    },
+    "verification/gepp-development/before-namespace-generate_inspector.py": {
+      "sha256": "9fc4c28b4f4b9d0e66fc987eb45e7f5b1e9a5bafb9f82c7da12e977768d07dc6",
+      "bytes": 6269
+    },
+    "verification/gepp-development/compile.py": {
+      "sha256": "8cbe100b5449cb301781b65655a5a400a68f3472c5e5a5527e1ba6f2912d47c1",
+      "bytes": 5901
+    },
+    "verification/gepp-development/diagnostic-refinement.json": {
+      "sha256": "11d99401c44f85a0b2404b6632eee139b0fa27fe0df4103ec25fbd64799788be",
+      "bytes": 883
+    },
+    "verification/gepp-development/expected-type-extraction-first-attempt.json": {
+      "sha256": "cff2b22636b243aef9f386b87d4f7aef2eee6377d78129b622f24aaf108996ef",
+      "bytes": 2649
+    },
+    "verification/gepp-development/expected-type-extraction.json": {
+      "sha256": "cdd3e498433d616a33210aaed4b53676ad6dd9663c1b43801221385e2fb7534f",
+      "bytes": 2625
+    },
+    "verification/gepp-development/final-run.json": {
+      "sha256": "855c2dee3d4db4ecb72f4d247e13f47375f9a9f22656aeaf56da412b9fac3f01",
+      "bytes": 302
+    },
+    "verification/gepp-development/gate-and-ownership.json": {
+      "sha256": "fbf9d32781169320345b2d34e20928d57dd807df5dcfb0b4223ec41f82cd761e",
+      "bytes": 709
+    },
+    "verification/gepp-development/generate_inspector-first-attempt.py": {
+      "sha256": "059041df62c88372abca08d60f1b9d758bfa4d6a03f7e953616e6ec17373eaee",
+      "bytes": 6288
+    },
+    "verification/gepp-development/generate_inspector.py": {
+      "sha256": "9fc4c28b4f4b9d0e66fc987eb45e7f5b1e9a5bafb9f82c7da12e977768d07dc6",
+      "bytes": 6269
+    },
+    "verification/gepp-development/latest.json": {
+      "sha256": "f34e479d48ec75dda309cd0107776b065f538cbb458b3d979e929b859515dd02",
+      "bytes": 123
+    },
+    "verification/gepp-development/namespace-adjustment-abandoned.json": {
+      "sha256": "09e11dd302cb5fc61bde1e5546d30d5fb8a4858248c996b37e8c60ac5d990698",
+      "bytes": 806
+    },
+    "verification/gepp-development/namespace-interface-adjustment.json": {
+      "sha256": "be45b41d016ec586fdd12932652ebd9e8bcd3ab92380421e6e8b697bc5fe3898",
+      "bytes": 928
+    },
+    "verification/gepp-development/verify_seal.py": {
+      "sha256": "1ba0e15c10c134619d5fa8eeae63afaaf2b7d5930becf7ed908e82157de2e056",
+      "bytes": 1062
+    },
+    "verification/original-source-inventory.json": {
+      "sha256": "3abf36399d59f39bf9ba3d12a715c63a35cd2d34e333f784b8cf883dcc26cdb2",
+      "bytes": 6405
+    },
+    "verification/proof-start.json": {
+      "sha256": "2a8e4b4029a6ba005856c9ec56178cc7fefc8b8b16e945df27599ce471c95726",
+      "bytes": 2430
+    }
+  },
+  "bound_file_count": 150,
+  "exact_self_exclusion": "verification/gepp-development/EVIDENCE-MANIFEST.json",
+  "inventory_rule": "All files under verification/gepp-development plus the explicitly listed external project bindings; include every nested manifest, excluding only the exact outer manifest itself."
+}

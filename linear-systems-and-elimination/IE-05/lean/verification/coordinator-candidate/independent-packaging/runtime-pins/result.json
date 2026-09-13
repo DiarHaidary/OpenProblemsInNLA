@@ -1,0 +1,54 @@
+{
+  "current_upstream_main": "1c467f88fbf6f6853afe5562e17b81ab421b95a6",
+  "success": true,
+  "files": {
+    "tools/lean/source-lock.json": {
+      "git_blob": "27916ca1e378b13ba1a08f1eb3ecb285fde12408",
+      "sha256": "b3833b07916e5db77579b9cc53ca582282f6a841f36d6a60d693e5b02d342b6b",
+      "bytes": 15982,
+      "working_bytes_equal": true
+    },
+    "tools/lean/requirements.txt": {
+      "git_blob": "1c1b1a8bab053f8c0a746922a673a560f955878f",
+      "sha256": "0b0709dc3105d98b29f4fc6a870c15c0cf42191498384ef8a2a32d3fcf5f34ed",
+      "bytes": 33,
+      "working_bytes_equal": true
+    },
+    "tools/lean/selftest.sh": {
+      "git_blob": "4dc2a05185359f431bd3173ee578dfb7231569cb",
+      "sha256": "1d0459179f9fc4ef30ba322b0cda7286c7a8394c1125a813770a9f10b1fccad9",
+      "bytes": 193,
+      "working_bytes_equal": true
+    },
+    "tools/lean/NOTICE.md": {
+      "git_blob": "abc962637a86ee118b2f16a762859740cfc3bf12",
+      "sha256": "cd8a502ee27a20dfad1895e19ca5a54db5d916461db12d199965903a5a9d20d5",
+      "bytes": 2666,
+      "working_bytes_equal": true
+    },
+    "docs/lean/schema/LICENSE": {
+      "git_blob": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "bytes": 11357,
+      "working_bytes_equal": true
+    }
+  },
+  "command": {
+    "argv": [
+      "git",
+      "-C",
+      "/tmp/nla-lean-ra20-worktree",
+      "cat-file",
+      "--batch"
+    ],
+    "exit_code": 0,
+    "stdout_sha256": "8aad3119a7f82899fd2a82be529ca85c3c17f919450deea852075ed40d7a41fd"
+  },
+  "actual_shared_harness_pins": {
+    "commit": "8d1b0c0545a77b40245e84705aa7d273e6c81e62",
+    "repository": "https://github.com/sgstepaniants/Forsythe",
+    "lean_toolchain": "leanprover/lean4:v4.33.1",
+    "locked_files": 58
+  },
+  "scope": "Static inspection of actual shared source lock, not execution of the Linux checker."
+}

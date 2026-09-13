@@ -1,0 +1,86 @@
+{
+  "Challenge_sha256": "0ccd5424f990587b1bb7170c674cba4645d9427286c916e2e19387234ccf250e",
+  "headers": {
+    "entryMax_semantics": {
+      "header": "theorem entryMax_semantics {n : \u2115} (hn : 1 \u2264 n) (A : Mat n) :\n    0 \u2264 entryMax A \u2227 (\u2200 i j, |A i j| \u2264 entryMax A) \u2227\n      \u2203 i j, entryMax A = |A i j|",
+      "proposition": "\u2200 {n : \u2115} (hn : 1 \u2264 n) (A : Mat n),\n    0 \u2264 entryMax A \u2227 (\u2200 i j, |A i j| \u2264 entryMax A) \u2227\n      \u2203 i j, entryMax A = |A i j|"
+    },
+    "schurStep_bound": {
+      "header": "theorem schurStep_bound {n : \u2115} (S : Mat n) (k p : Fin n)\n    (hp : AdmissiblePivot S k p) :\n    activeMax (schurStep S k p) (k.val + 1) \u2264 2 * activeMax S k.val",
+      "proposition": "\u2200 {n : \u2115} (S : Mat n) (k p : Fin n)\n    (hp : AdmissiblePivot S k p),\n    activeMax (schurStep S k p) (k.val + 1) \u2264 2 * activeMax S k.val"
+    },
+    "gepp_growth_bound": {
+      "header": "theorem gepp_growth_bound {n : \u2115} (hn : 1 \u2264 n) (A : Mat n)\n    (path : PivotPath n) (hp : AdmissiblePath A path) :\n    0 < entryMax A \u2227 1 \u2264 growth A path \u2227 growth A path \u2264 (2 : \u211d) ^ (n - 1)",
+      "proposition": "\u2200 {n : \u2115} (hn : 1 \u2264 n) (A : Mat n)\n    (path : PivotPath n) (hp : AdmissiblePath A path),\n    0 < entryMax A \u2227 1 \u2264 growth A path \u2227 growth A path \u2264 (2 : \u211d) ^ (n - 1)"
+    },
+    "firstPath_semantics": {
+      "header": "theorem firstPath_semantics {n : \u2115} (A : Mat n) (hA : A.det \u2260 0) :\n    FirstAvailablePath A (firstPath A) \u2227\n      (\u2200 k, trajectory A (firstPath A) k = firstTrajectory A k) \u2227\n      \u2200 path, FirstAvailablePath A path \u2192 path = firstPath A",
+      "proposition": "\u2200 {n : \u2115} (A : Mat n) (hA : A.det \u2260 0),\n    FirstAvailablePath A (firstPath A) \u2227\n      (\u2200 k, trajectory A (firstPath A) k = firstTrajectory A k) \u2227\n      \u2200 path, FirstAvailablePath A path \u2192 path = firstPath A"
+    },
+    "orthogonalGrowthSet_bounded": {
+      "header": "theorem orthogonalGrowthSet_bounded (n : \u2115) (hn : 2 \u2264 n) :\n    (orthogonalGrowthSet n).Nonempty \u2227 BddAbove (orthogonalGrowthSet n) \u2227\n      \u2200 r \u2208 orthogonalGrowthSet n, 1 \u2264 r \u2227 r \u2264 (2 : \u211d) ^ (n - 1)",
+      "proposition": "\u2200 (n : \u2115) (hn : 2 \u2264 n),\n    (orthogonalGrowthSet n).Nonempty \u2227 BddAbove (orthogonalGrowthSet n) \u2227\n      \u2200 r \u2208 orthogonalGrowthSet n, 1 \u2264 r \u2227 r \u2264 (2 : \u211d) ^ (n - 1)"
+    },
+    "candidate_positiveQR": {
+      "header": "theorem candidate_positiveQR (n : \u2115) (hn : 2 \u2264 n) :\n    PositiveQR (prescribedLower n) (candidateQ n) (candidateR n) \u2227\n      \u2200 Q R, PositiveQR (prescribedLower n) Q R \u2192\n        Q = candidateQ n \u2227 R = candidateR n",
+      "proposition": "\u2200 (n : \u2115) (hn : 2 \u2264 n),\n    PositiveQR (prescribedLower n) (candidateQ n) (candidateR n) \u2227\n      \u2200 Q R, PositiveQR (prescribedLower n) Q R \u2192\n        Q = candidateQ n \u2227 R = candidateR n"
+    },
+    "scaledColumns_orthogonal": {
+      "header": "theorem scaledColumns_orthogonal {n : \u2115} (H : Mat n) (d : Fin n \u2192 \u211d)\n    (hd : \u2200 j, 0 < d j) (hH : H.transpose * H = Matrix.diagonal d) :\n    Orthogonal (scaledColumns H d)",
+      "proposition": "\u2200 {n : \u2115} (H : Mat n) (d : Fin n \u2192 \u211d)\n    (hd : \u2200 j, 0 < d j) (hH : H.transpose * H = Matrix.diagonal d),\n    Orthogonal (scaledColumns H d)"
+    },
+    "scaledLU_trajectory": {
+      "header": "theorem scaledLU_trajectory {n : \u2115} (L T : Mat n) (d : Fin n \u2192 \u211d)\n    (hL : UnitLower L) (hLb : \u2200 i j, j < i \u2192 |L i j| \u2264 1)\n    (hT : UpperTriangular T) (hTp : \u2200 i, 0 < T i i) (hd : \u2200 j, 0 < d j) :\n    FirstAvailablePath (scaledColumns (L * T) d) (noSwapPath n) \u2227\n      firstPath (scaledColumns (L * T) d) = noSwapPath n \u2227\n      \u2200 k, k \u2264 n \u2192 trajectory (scaledColumns (L * T) d) (noSwapPath n) k =\n        scaledColumns (tailProduct L T k) d",
+      "proposition": "\u2200 {n : \u2115} (L T : Mat n) (d : Fin n \u2192 \u211d)\n    (hL : UnitLower L) (hLb : \u2200 i j, j < i \u2192 |L i j| \u2264 1)\n    (hT : UpperTriangular T) (hTp : \u2200 i, 0 < T i i) (hd : \u2200 j, 0 < d j),\n    FirstAvailablePath (scaledColumns (L * T) d) (noSwapPath n) \u2227\n      firstPath (scaledColumns (L * T) d) = noSwapPath n \u2227\n      \u2200 k, k \u2264 n \u2192 trajectory (scaledColumns (L * T) d) (noSwapPath n) k =\n        scaledColumns (tailProduct L T k) d"
+    },
+    "integer_factor_certificates": {
+      "header": "theorem integer_factor_certificates :\n    \u2200 b : Bool,\n      (integerH b).transpose * integerH b = Matrix.diagonal (integerD b) \u2227\n      integerH b = integerLower b * integerT b \u2227\n      UnitLower (integerLower b) \u2227 UpperTriangular (integerT b) \u2227\n      (\u2200 i j, j < i \u2192 |integerLower b i j| \u2264 1) \u2227\n      (\u2200 i, 0 < integerT b i i) \u2227 (\u2200 j, 0 < integerD b j)",
+      "proposition": "\u2200 b : Bool,\n      (integerH b).transpose * integerH b = Matrix.diagonal (integerD b) \u2227\n      integerH b = integerLower b * integerT b \u2227\n      UnitLower (integerLower b) \u2227 UpperTriangular (integerT b) \u2227\n      (\u2200 i j, j < i \u2192 |integerLower b i j| \u2264 1) \u2227\n      (\u2200 i, 0 < integerT b i i) \u2227 (\u2200 j, 0 < integerD b j)"
+    },
+    "integer_entry_certificates": {
+      "header": "theorem integer_entry_certificates :\n    (\u2200 i j : Fin 8, 5272 * (integerH true i j) ^ 2 \u2264 3969 * integerD true j) \u2227\n    integerD true 7 = 5272 \u2227\n    integerH false 2 2 = 51 \u2227 integerD false 2 = 3286 \u2227\n    (\u2200 k i j : Fin 8, k \u2264 i \u2192 k \u2264 j \u2192\n      (tailProduct (integerLower false) (integerT false) k.val i j) ^ 2 \u2264\n        5462 * integerD false j) \u2227\n    tailProduct (integerLower true) (integerT true) 7 7 7 = 5272",
+      "proposition": "(\u2200 i j : Fin 8, 5272 * (integerH true i j) ^ 2 \u2264 3969 * integerD true j) \u2227\n    integerD true 7 = 5272 \u2227\n    integerH false 2 2 = 51 \u2227 integerD false 2 = 3286 \u2227\n    (\u2200 k i j : Fin 8, k \u2264 i \u2192 k \u2264 j \u2192\n      (tailProduct (integerLower false) (integerT false) k.val i j) ^ 2 \u2264\n        5462 * integerD false j) \u2227\n    tailProduct (integerLower true) (integerT true) 7 7 7 = 5272"
+    },
+    "canonical_integer_identification": {
+      "header": "theorem canonical_integer_identification :\n    candidateQ 8 = normalizedInteger false \u2227\n      firstPath (candidateQ 8) = noSwapPath 8",
+      "proposition": "candidateQ 8 = normalizedInteger false \u2227\n      firstPath (candidateQ 8) = noSwapPath 8"
+    },
+    "witness_orthogonal_path": {
+      "header": "theorem witness_orthogonal_path :\n    Orthogonal witnessQ \u2227 firstPath witnessQ = noSwapPath 8 \u2227\n      FirstAvailablePath witnessQ (noSwapPath 8) \u2227\n      AdmissiblePath witnessQ (noSwapPath 8)",
+      "proposition": "Orthogonal witnessQ \u2227 firstPath witnessQ = noSwapPath 8 \u2227\n      FirstAvailablePath witnessQ (noSwapPath 8) \u2227\n      AdmissiblePath witnessQ (noSwapPath 8)"
+    },
+    "bounded_growth_data": {
+      "header": "theorem bounded_growth_data :\n    entryMax witnessQ \u2264 63 / Real.sqrt 5272 \u2227\n      (5272 : \u211d) / 63 \u2264 firstGrowth witnessQ \u2227\n      51 / Real.sqrt 3286 \u2264 entryMax (candidateQ 8) \u2227\n      0 \u2264 firstGrowth (candidateQ 8) \u2227\n      (firstGrowth (candidateQ 8)) ^ 2 \u2264 (17948132 : \u211d) / 2601",
+      "proposition": "entryMax witnessQ \u2264 63 / Real.sqrt 5272 \u2227\n      (5272 : \u211d) / 63 \u2264 firstGrowth witnessQ \u2227\n      51 / Real.sqrt 3286 \u2264 entryMax (candidateQ 8) \u2227\n      0 \u2264 firstGrowth (candidateQ 8) \u2227\n      (firstGrowth (candidateQ 8)) ^ 2 \u2264 (17948132 : \u211d) / 2601"
+    },
+    "numerical_gap_positive": {
+      "header": "theorem numerical_gap_positive :\n    ((5272 : \u211d) / 63) ^ 2 - (17948132 : \u211d) / 2601 =\n      (117335164 : \u211d) / 1147041 \u2227\n      0 < (117335164 : \u211d) / 1147041",
+      "proposition": "((5272 : \u211d) / 63) ^ 2 - (17948132 : \u211d) / 2601 =\n      (117335164 : \u211d) / 1147041 \u2227\n      0 < (117335164 : \u211d) / 1147041"
+    },
+    "witness_strict_growth": {
+      "header": "theorem witness_strict_growth :\n    firstGrowth (candidateQ 8) < firstGrowth witnessQ",
+      "proposition": "firstGrowth (candidateQ 8) < firstGrowth witnessQ"
+    },
+    "supremum_strict_gap": {
+      "header": "theorem supremum_strict_gap :\n    firstGrowth (candidateQ 8) < orthogonalGrowthSup 8",
+      "proposition": "firstGrowth (candidateQ 8) < orthogonalGrowthSup 8"
+    },
+    "orthogonalExtremizerConjecture": {
+      "header": "theorem orthogonalExtremizerConjecture : \u00ac OrthogonalExtremizerConjecture",
+      "proposition": "\u00ac OrthogonalExtremizerConjecture"
+    }
+  },
+  "method": "Each frozen theorem binder list becomes an explicit forall in a proof-free Prop definition; actual Lean isDefEq compares it to the implementation theorem type.",
+  "alpha_renamed_proof_binders": {
+    "hn": "_hn",
+    "hp": "_hp",
+    "hA": "_hA",
+    "hd": "_hd",
+    "hH": "_hH",
+    "hL": "_hL",
+    "hLb": "_hLb",
+    "hT": "_hT",
+    "hTp": "_hTp"
+  },
+  "alpha_renaming_reason": "Unused proof binders inside proof-free expected Prop expressions receive an underscore; no binder or hypothesis is removed, and actual type equality remains checked."
+}

@@ -1,0 +1,33 @@
+Mathlib/Data/Finset/Lattice/Fold.lean-112-
+Mathlib/Data/Finset/Lattice/Fold.lean-113-@[to_dual inf_le]
+Mathlib/Data/Finset/Lattice/Fold.lean:114:theorem le_sup {b : β} (hb : b ∈ s) : f b ≤ s.sup f :=
+Mathlib/Data/Finset/Lattice/Fold.lean-115-  Finset.sup_le_iff.1 le_rfl _ hb
+Mathlib/Data/Finset/Lattice/Fold.lean-116-
+Mathlib/Data/Finset/Lattice/Fold.lean-117-@[to_dual]
+Mathlib/Data/Finset/Lattice/Fold.lean-118-lemma isLUB_sup : IsLUB (f '' s) (s.sup f) := by
+--
+Mathlib/Data/Finset/Lattice/Fold.lean-749-
+Mathlib/Data/Finset/Lattice/Fold.lean-750-@[to_dual]
+Mathlib/Data/Finset/Lattice/Fold.lean:751:theorem exists_mem_eq_sup' (f : ι → α) : ∃ i, i ∈ s ∧ s.sup' H f = f i := by
+Mathlib/Data/Finset/Lattice/Fold.lean-752-  induction H using Finset.Nonempty.cons_induction with
+Mathlib/Data/Finset/Lattice/Fold.lean-753-  | singleton c => exact ⟨c, mem_singleton_self c, rfl⟩
+Mathlib/Data/Finset/Lattice/Fold.lean-754-  | cons c s hcs hs ih =>
+Mathlib/Data/Finset/Lattice/Fold.lean-755-    rcases ih with ⟨b, hb, h'⟩
+--
+Mathlib/Data/Finset/Lattice/Fold.lean-760-
+Mathlib/Data/Finset/Lattice/Fold.lean-761-@[to_dual]
+Mathlib/Data/Finset/Lattice/Fold.lean:762:theorem exists_mem_eq_sup [OrderBot α] (s : Finset ι) (h : s.Nonempty) (f : ι → α) :
+Mathlib/Data/Finset/Lattice/Fold.lean-763-    ∃ i, i ∈ s ∧ s.sup f = f i :=
+Mathlib/Data/Finset/Lattice/Fold.lean:764:  sup'_eq_sup h f ▸ exists_mem_eq_sup' h f
+Mathlib/Data/Finset/Lattice/Fold.lean-765-
+Mathlib/Data/Finset/Lattice/Fold.lean-766-end LinearOrder
+Mathlib/Data/Finset/Lattice/Fold.lean-767-
+Mathlib/Data/Finset/Lattice/Fold.lean-768-end Finset
+--
+Mathlib/Order/ConditionallyCompleteLattice/Basic.lean-195-
+Mathlib/Order/ConditionallyCompleteLattice/Basic.lean-196-@[to_dual csInf_le]
+Mathlib/Order/ConditionallyCompleteLattice/Basic.lean:197:theorem le_csSup (h₁ : BddAbove s) (h₂ : a ∈ s) : a ≤ sSup s :=
+Mathlib/Order/ConditionallyCompleteLattice/Basic.lean-198-  (isLUB_csSup (nonempty_of_mem h₂) h₁).1 h₂
+Mathlib/Order/ConditionallyCompleteLattice/Basic.lean-199-
+Mathlib/Order/ConditionallyCompleteLattice/Basic.lean-200-@[to_dual le_csInf]
+Mathlib/Order/ConditionallyCompleteLattice/Basic.lean-201-theorem csSup_le (h₁ : s.Nonempty) (h₂ : ∀ b ∈ s, b ≤ a) : sSup s ≤ a :=

@@ -1,0 +1,64 @@
+NLA/IE05/LUTrajectory.lean:65:24: error(lean.unknownIdentifier): Unknown identifier `r.val`
+NLA/IE05/LUTrajectory.lean:65:39: error(lean.unknownIdentifier): Unknown identifier `r`
+NLA/IE05/LUTrajectory.lean:65:45: error(lean.unknownIdentifier): Unknown identifier `r`
+Try this:
+  [apply] ring_nf
+  
+  The `ring` tactic failed to close the goal. Use `ring_nf` to obtain a normal form.
+    
+  Note that `ring` works primarily in *commutative* rings. If you have a noncommutative ring, abelian group or module, consider using `noncomm_ring`, `abel` or `module` instead.
+NLA/IE05/LUTrajectory.lean:92:2: error: unsolved goals
+case pos
+n : ℕ
+L T : Mat n
+d : Fin n → ℝ
+hL : UnitLower L
+hT : UpperTriangular T
+hTp : ∀ (i : Fin n), 0 < T i i
+hd : ∀ (j : Fin n), 0 < d j
+k : Fin n
+hs : √(d k) ≠ 0
+ht : T k k ≠ 0
+i j : Fin n
+hij : k < i ∧ k < j
+hcol : tailProduct L T (↑k) i k = L i k * T k k
+hrow : tailProduct L T (↑k) k j = T k j
+hkk : tailProduct L T (↑k) k k = T k k
+hsplit : tailProduct L T (↑k) i j = L i k * T k j + tailProduct L T (↑k + 1) i j
+hratio : L i k * T k k / √(d k) / (T k k / √(d k)) = L i k
+⊢ (if True ∧ True then tailProduct L T (1 + ↑k) i j * (√(d j))⁻¹ else 0) = tailProduct L T (1 + ↑k) i j * (√(d j))⁻¹
+NLA/IE05/LUTrajectory.lean:100:11: warning: This simp argument is unused:
+  if_pos
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [schurStep, rowSwap, Equiv.swap_self, Equiv.refl_apply, hij, scaledColumns]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+NLA/IE05/LUTrajectory.lean:104:63: warning: This simp argument is unused:
+  hinactive
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [schurStep, rowSwap, hij, scaledColumns, tailProduct]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+'NLA.IE05._proved.tailProduct_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.tailProduct_terminal' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.tailProduct_pivot_row' depends on axioms: [propext, Classical.choice, Quot.sound]
+'NLA.IE05._proved.tailProduct_pivot_column' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/IE05/LUTrajectory.lean:168:21: error: #assert_trust: 'NLA.IE05._proved.tailProduct_split' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.tailProduct_split' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/LUTrajectory.lean:170:21: error: #assert_trust: 'NLA.IE05._proved.scaled_tail_schur' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.scaled_tail_schur' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+'NLA.IE05._proved.scaled_tail_firstAvailable' depends on axioms: [propext, Classical.choice, Quot.sound]
+NLA/IE05/LUTrajectory.lean:174:21: error: #assert_trust: 'NLA.IE05._proved.scaled_noSwap_trajectory' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.scaled_noSwap_trajectory' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+NLA/IE05/LUTrajectory.lean:176:21: error: #assert_trust: 'NLA.IE05._proved.scaledLU_trajectory' depends on sorry or unrecognized axioms
+  foundational: propext, Classical.choice, Quot.sound
+  sorryAx: sorryAx
+'NLA.IE05._proved.scaledLU_trajectory' depends on axioms: [propext, sorryAx, Classical.choice, Quot.sound]

@@ -1,0 +1,600 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in,headheight=14pt]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable}
+\usepackage{xcolor}
+\usepackage{microtype}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\definecolor{ink}{HTML}{17354C}
+\definecolor{pale}{HTML}{F2F5F7}
+\hypersetup{colorlinks=true,linkcolor=ink,citecolor=ink,urlcolor=ink,
+ pdftitle={IE-27: Recovered analysis and certified finite-stage results},
+ pdfauthor={OpenAI ChatGPT}}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\small\textcolor{ink}{IE-27 / Recovery edition}}
+\rhead{\small 12 September 2026}
+\cfoot{\small\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt}
+\setlength{\emergencystretch}{2em}
+\clubpenalty=10000
+\widowpenalty=10000
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Id}{I}
+\newcommand{\spec}{\sigma}
+\newcommand{\norm}[1]{\left\|#1\right\|_2}
+\newcommand{\code}[1]{\texttt{\detokenize{#1}}}
+\begin{document}
+
+{\small\sffamily\bfseries\textcolor{ink}{MATHEMATICAL RECOVERY REPORT}}
+
+{\LARGE\bfseries\textcolor{ink}{IE-27: Recovered analysis and\\[3pt]certified finite-stage results}}
+
+{\large The spectral disk for a Radau stage preconditioner}
+
+12 September 2026 \hfill Reconstruction of an interrupted investigation
+
+\vspace{5pt}
+\fcolorbox{ink}{pale}{\parbox{0.945\linewidth}{
+\textbf{Status. This is not a complete solution of IE-27.}
+The arbitrary-stage disk inequality has not been established in this work.
+The archive contains proved structural statements, exact low-stage arguments,
+and 64 freshly verified finite-stage certificates. The covered stages are
+\(q=2,3,\ldots,64\), together with \(q=80\). Each certificate covers
+\emph{every} positive shift, not a sampled grid.
+}}
+
+\begin{abstract}
+We reconstruct the mathematical content recoverable from an interrupted
+investigation. The original files were absent from the recovery workspace;
+the present files and certificate data have been rebuilt and rechecked.
+We give a self-contained differentiation formula for the inverse Radau
+collocation matrix, prove positivity of every pivot in the specified
+factorization, reduce the spatial pencil exactly to stage matrices, and prove
+a common-energy sufficient condition for the requested disk. We supply a
+closed-form two-stage bound and an explicit three-stage proof in
+\(\Q(\sqrt6)\). Integer-interval verification then establishes the disk for
+64 specified stage numbers. The proof checker requires only Python's standard
+library. A counterexample to a tempting Euclidean resolvent estimate explains
+why the elementary norm argument does not solve the general problem. The
+remaining all-stage requirement is stated explicitly.
+\end{abstract}
+
+\section{Target, notation, and scope}
+
+We use the normalization and symmetric spatial setting of the IE-27 problem
+page~\cite{problem}. Let \(A_q\) be the \(q\)-stage Radau IIA collocation matrix,
+with increasing nodes \(0<c_1<\cdots<c_q=1\), and write
+\begin{equation}\label{eq:factor}
+ D_q=A_q^{-1}=L_qU_q,\qquad N_q=U_q-\Id_q,\qquad B_q=L_q^{-1}.
+\end{equation}
+Here there is no pivoting, \(L_q\) is lower triangular, and \(U_q\) has unit
+diagonal. The stipulated radius is \(r_q=\norm{N_q}<1\).
+For symmetric positive-definite \(M,K\in\R^{n\times n}\) and \(\tau>0\), define
+\begin{equation}\label{eq:pencil}
+ \mathcal A=D_q\otimes M+\tau\Id_q\otimes K,
+ \qquad \mathcal P_L=L_q\otimes M+\tau\Id_q\otimes K.
+\end{equation}
+The target is \(|\nu-1|\le r_q\) for every generalized eigenvalue of
+\(\mathcal A x=\nu\mathcal P_Lx\), uniformly over the admissible data and stage
+number. Related formulations and low-order analyses are in
+\cite{dravi,out,axel}. We make no novelty claim for the two- or three-stage
+cases.
+
+It is essential not to confuse four different assertions: a spectral-radius
+bound, an operator-norm bound, a finite set of stage counts, and an arbitrary
+stage count. The results below prove the requested spectral statement at the
+listed stages and do not replace its all-stage quantifier by numerical evidence.
+Also, establishing \(r_q<1\) for every \(q\) is not the remaining target: IE-27
+already assumes that inequality for the stage number under consideration.
+
+\section{An exact construction of the stage matrices}
+
+Write \(\ell_j\) for the Lagrange cardinal polynomials at the nodes. By definition,
+\begin{equation}\label{eq:A}
+ (A_q)_{ij}=\int_0^{c_i}\ell_j(t)\,dt.
+\end{equation}
+The interior Radau nodes are the roots of
+\begin{equation}\label{eq:J}
+ J_q(t)=\sum_{k=0}^{q-1}(-1)^{q-1-k}
+ \binom{q-1}{k}\binom{q+k}{k}t^k
+       =P_{q-1}^{(1,0)}(2t-1).
+\end{equation}
+In fact, the usual Legendre description and this one are related by
+\(P_q(2t-1)-P_{q-1}(2t-1)=2(t-1)J_q(t)\). This identity follows by comparing
+the coefficient formulas, or by the Legendre recurrence. Formula~\eqref{eq:J}
+is the integer polynomial used to certify every node in the supplied data.
+
+\begin{lemma}[Inverse as a differentiation matrix]\label{lem:diff}
+Let \(R(t)=\prod_{j=1}^q(t-c_j)\) and
+\(v_i=c_iR'(c_i)=c_i\prod_{j\ne i}(c_i-c_j)\). Then \(A_q\) is invertible, and
+\begin{equation}\label{eq:Dentries}
+ (D_q)_{ij}=\frac{v_i}{v_j(c_i-c_j)}\quad(i\ne j),\qquad
+ (D_q)_{ii}=\begin{cases}
+ (2c_i)^{-1},&i<q,\\
+ (q^2+1)/2,&i=q.
+ \end{cases}
+\end{equation}
+\end{lemma}
+\begin{proof}
+For \(p\) of degree at most \(q-1\), put \(f(t)=\int_0^tp(s)\,ds\).
+The vector \((f(c_i))_i\) is \(A_q(p(c_i))_i\). If all \(f(c_i)\) vanish,
+then \(f\), a polynomial of degree at most \(q\), has the \(q+1\) distinct
+zeros \(0,c_1,\ldots,c_q\). Thus \(f=p=0\), proving invertibility.
+
+Interpolation on the space of polynomials of degree at most \(q\) vanishing
+at zero has cardinal basis
+\[
+ \psi_j(t)=\frac{tR(t)}{c_jR'(c_j)(t-c_j)}.
+\]
+Differentiation gives \((D_q)_{ij}=\psi_j'(c_i)\). For \(i\ne j\) this is the
+first formula in~\eqref{eq:Dentries}; for \(i=j\) it gives
+\begin{equation}\label{eq:diag-general}
+ (D_q)_{ii}=\frac1{c_i}+\frac{R''(c_i)}{2R'(c_i)}.
+\end{equation}
+
+For completeness, the coefficients in~\eqref{eq:J} directly satisfy
+\begin{equation}\label{eq:JacobiODE}
+ t(1-t)J_q''+(1-3t)J_q'+(q^2-1)J_q=0.
+\end{equation}
+Indeed, their successive ratio is
+\(- (q-1-k)(q+k+1)/(k+1)^2\), which is exactly the coefficient recurrence
+in this differential identity.
+As \(R\) is a nonzero constant times \((t-1)J_q\), an interior root satisfies
+\[
+ \frac{R''(c_i)}{2R'(c_i)}
+ =\frac1{c_i-1}+\frac{J_q''(c_i)}{2J_q'(c_i)}
+ =-\frac1{2c_i}.
+\]
+At the endpoint, evaluating~\eqref{eq:JacobiODE} at \(t=1\) gives
+\(J_q'(1)/J_q(1)=(q^2-1)/2\). Substituting these expressions in
+\eqref{eq:diag-general} proves both diagonal formulas.
+\end{proof}
+
+\begin{theorem}[Positive pivots for every stage number]\label{thm:pivots}
+For every \(q\ge2\), the factorization~\eqref{eq:factor} exists uniquely with
+the prescribed normalization, and every diagonal entry of \(L_q\) is positive.
+Consequently \(L_q+\mu\Id_q\), and hence \(\Id_q+\mu B_q\), are invertible
+for all \(\mu\ge0\).
+\end{theorem}
+\begin{proof}
+Put \(V=\operatorname{diag}(v_1,\ldots,v_q)\) and \(C=V^{-1}D_qV\).
+Lemma~\ref{lem:diff} shows that \(C_{ij}=1/(c_i-c_j)\) off the diagonal, so
+\[
+ C+C^T=2\operatorname{diag}\left(\frac1{2c_1},\ldots,
+       \frac1{2c_{q-1}},\frac{q^2+1}{2}\right)\succ0.
+\]
+Every leading principal submatrix of \(C\) also has a positive-definite
+symmetric part. If it has an eigenpair \((\lambda,z)\), then
+\(\operatorname{Re}\lambda=\operatorname{Re}(z^*Cz)/(z^*z)>0\).
+Its real eigenvalues are positive and its nonreal eigenvalues occur in
+conjugate pairs with positive products. Its determinant is therefore positive.
+The corresponding leading principal submatrix of \(D_q\) is diagonally
+similar to it, so its determinant is positive as well.
+
+Writing these leading determinants as \(\delta_j>0\), with \(\delta_0=1\),
+Gaussian elimination without pivoting has pivots
+\(\delta_j/\delta_{j-1}>0\). Placing the pivots in the lower factor gives
+precisely the normalization in~\eqref{eq:factor}. Uniqueness is the usual
+uniqueness of triangular factorization with a prescribed unit diagonal.
+The final assertion follows from the positive diagonal entries of the
+triangular matrix \(L_q+\mu\Id_q\).
+\end{proof}
+
+Diagonal similarity in this proof does \emph{not} preserve the Euclidean norm
+of \(N_q\). Thus positivity of the symmetric part of \(C\) cannot simply be
+substituted into a proof with radius \(\norm{N_q}\).
+
+\section{Exact removal of the spatial dimension}
+
+\begin{theorem}[Stage reduction]\label{thm:reduction}
+For the pencil~\eqref{eq:pencil}, its generalized spectrum is the union,
+with algebraic multiplicities, of the spectra of
+\begin{equation}\label{eq:X}
+ X_{q,\mu}=\Id_q+Y_{q,\mu},\qquad
+ Y_{q,\mu}=(\Id_q+\mu B_q)^{-1}N_q,
+\end{equation}
+where \(\mu\) ranges over the eigenvalues of \(\tau M^{-1}K\). These shifts
+are strictly positive.
+\end{theorem}
+\begin{proof}
+Since \(M\) and \(K\) are symmetric positive definite, the symmetric matrix
+\(M^{-1/2}KM^{-1/2}\) has an orthogonal diagonalization
+\(Q\operatorname{diag}(\kappa_1,\ldots,\kappa_n)Q^T\), where \(\kappa_j>0\).
+For \(S=M^{-1/2}Q\) we have
+\(S^TMS=\Id_n\) and \(S^TKS=\operatorname{diag}(\kappa_j)\).
+Congruence of both members of the pencil by \(\Id_q\otimes S\) preserves
+its generalized eigenvalues. A simultaneous permutation then separates it
+into the \(n\) pencils
+\[
+ D_q+\tau\kappa_j\Id_q\quad\hbox{and}\quad L_q+\tau\kappa_j\Id_q.
+\]
+The latter matrices are invertible by Theorem~\ref{thm:pivots}. Using
+\(D_q=L_q(\Id_q+N_q)\), their preconditioned matrices are
+\[
+ (L_q+\mu\Id_q)^{-1}(D_q+\mu\Id_q)
+ =\Id_q+(L_q+\mu\Id_q)^{-1}L_qN_q
+ =\Id_q+(\Id_q+\mu B_q)^{-1}N_q.
+\]
+This proves the assertion including multiplicities.
+\end{proof}
+
+This reduction is consistent with the spectral approaches in
+\cite{dravi,out}; it is supplied here to make the certification implication
+self-contained. In particular, a theorem for all \(\mu>0\) at a fixed stage
+immediately applies to every allowed spatial problem and time step. Since
+\(N_q\) is strictly upper triangular, \(N_qe_1=0\), so every stage block has
+an eigenvalue one. Therefore at least \(n\) eigenvalues of the original
+preconditioned system equal one.
+
+\section{The common-energy certificate}
+
+\begin{theorem}[A sufficient metric condition]\label{thm:energy}
+Let \(B,N\in\R^{q\times q}\), let \(H=H^T\succ0\), and let \(t\ge0\).
+Assume
+\begin{equation}\label{eq:LMIs}
+ HB+B^TH\succeq0,\qquad tH-N^THN\succeq0.
+\end{equation}
+Then, for every \(\mu\ge0\), \(\Id_q+\mu B\) is invertible and
+\begin{equation}\label{eq:energy-result}
+ \rho\big((\Id_q+\mu B)^{-1}N\big)\le\sqrt t.
+\end{equation}
+\end{theorem}
+\begin{proof}
+With \(\|z\|_H^2=z^*Hz\), expansion gives
+\[
+ \|(\Id_q+\mu B)z\|_H^2
+ =\|z\|_H^2+\mu z^*(HB+B^TH)z+\mu^2\|Bz\|_H^2
+ \ge\|z\|_H^2.
+\]
+This proves invertibility and that the inverse is a contraction in the
+\(H\)-norm. More directly, if
+\((\Id_q+\mu B)^{-1}Nz=\lambda z\) with \(z\ne0\), then
+\[
+ |\lambda|^2\|z\|_H^2
+ \le |\lambda|^2\|(\Id_q+\mu B)z\|_H^2
+ =\|Nz\|_H^2\le t\|z\|_H^2.
+\]
+Dividing by the positive quantity \(\|z\|_H^2\) proves the bound.
+\end{proof}
+
+\begin{corollary}[A completely checkable sufficient certificate]\label{cor:cert}
+For the exact \(B_q,N_q\), suppose rational data \(H=H^T\), \(t\), and a
+nonzero rational vector \(v\) satisfy
+\begin{align}\label{eq:cert}
+&H\succ0,\quad HB_q+B_q^TH\succ0,\quad
+ tH-N_q^THN_q\succ0,\quad \Id_q-N_q^TN_q\succ0,\\
+&0<t<1,\qquad \|N_qv\|_2^2-t\|v\|_2^2>0.\nonumber
+\end{align}
+Then for all \(\mu>0\),
+\begin{equation}\label{eq:chain}
+ \rho(Y_{q,\mu})\le\sqrt t<\norm{N_q}<1.
+\end{equation}
+Thus the IE-27 disk assertion holds for this stage number and all admissible
+spatial matrices and time steps.
+\end{corollary}
+\begin{proof}
+The first three matrix inequalities give Theorem~\ref{thm:energy}.
+The Rayleigh quotient of \(N_q^TN_q\) at \(v\) gives \(t<\norm{N_q}^2\).
+The fourth matrix inequality gives \(\norm{N_q}<1\).
+Theorem~\ref{thm:reduction} transfers the result to the original pencil.
+\end{proof}
+
+The strict inequalities are useful for robust interval verification. They are
+stronger than necessary for the spectral conclusion. In particular, this is a
+\emph{sufficient} certificate condition, not a claimed necessary characterization
+of the conjecture.
+
+\section{Exact low-stage arguments}
+
+\subsection{Two stages: a closed-form sharp bound}
+
+For \(q=2\), direct integration and factorization give
+\[
+ A_2=\begin{pmatrix}5/12&-1/12\\3/4&1/4\end{pmatrix},\qquad
+ L_2=\begin{pmatrix}3/2&0\\-9/2&4\end{pmatrix},\quad
+ N_2=\begin{pmatrix}0&1/3\\0&0\end{pmatrix},\quad
+ B_2=\begin{pmatrix}2/3&0\\3/4&1/4\end{pmatrix}.
+\]
+It follows that
+\[
+ Y_{2,\mu}=\begin{pmatrix}
+ 0&\dfrac1{2\mu+3}\\[5pt]
+ 0&-\dfrac{3\mu}{(\mu+4)(2\mu+3)}
+ \end{pmatrix}.
+\]
+The eigenvalues are zero and the lower-right entry. Differentiating its
+absolute value shows that the maximum over \(\mu>0\) occurs at
+\(\mu=\sqrt6\). Hence
+\begin{equation}\label{eq:q2}
+ \sup_{\mu>0}\rho(Y_{2,\mu})
+ =\frac3{11+4\sqrt6}=0.1442449234\ldots <\frac13=\norm{N_2}.
+\end{equation}
+This supplies a direct proof independent of the certificate generator.
+The bundled two-stage certificate uses the looser radius \(\sqrt{21/200}\)
+so that the same checker interface covers every included stage.
+
+\subsection{Three stages: an explicit rational metric}
+
+Put \(s=\sqrt6\). The nodes are \((4-s)/10,(4+s)/10,1\), and the exact factors
+from Lemma~\ref{lem:diff} yield
+\begin{align*}
+ B_3&=\begin{pmatrix}
+ \frac45-\frac{s}{5}&0&0\\[3pt]
+ \frac9{50}+\frac{29s}{200}&\frac3{10}+\frac{3s}{40}&0\\[3pt]
+ \frac49-\frac{s}{36}&\frac49+\frac{s}{36}&\frac19
+ \end{pmatrix},\\
+ N_3&=\begin{pmatrix}
+ 0&-\frac{53}{25}+\frac{76s}{75}&\frac{16}{25}-\frac{22s}{75}\\[3pt]
+ 0&0&\frac2{25}+\frac{3s}{25}\\[3pt]
+ 0&0&0
+ \end{pmatrix}.
+\end{align*}
+Choose the rational data
+\begin{equation}\label{eq:q3-H}
+ H=\begin{pmatrix}1&0&0\\0&6/5&-7/40\\0&-7/40&23/20\end{pmatrix},
+ \qquad t=\frac4{25},\qquad v=(0,1,-1)^T.
+\end{equation}
+Define \(G=HB_3+B_3^TH\), \(F=tH-N_3^THN_3\), and
+\(J=\Id_3-N_3^TN_3\). Table~\ref{tab:minors} gives each leading principal
+minor as \(a+bs\). All are strictly positive. The final column is obtained
+using only the rational enclosure
+\begin{equation}\label{eq:sqrt6}
+ \frac{2449489}{10^6}<\sqrt6<\frac{2449490}{10^6},
+\end{equation}
+whose validity follows by squaring the two positive endpoints.
+Thus Sylvester's criterion proves positivity of all four matrices.
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.6}
+\input{tables/q3_minors.tex}
+\caption{Exact three-stage leading principal minors, written \(a+b\sqrt6\).
+The displayed decimal lower bounds are rounded downward; every bound is positive.}
+\label{tab:minors}
+\end{table}
+
+For the vector in~\eqref{eq:q3-H}, direct calculation gives
+\begin{equation}\label{eq:q3gap}
+ \|N_3v\|_2^2-\frac4{25}\|v\|_2^2
+ =\frac{6613}{375}-\frac{4496\sqrt6}{625}>0,
+\end{equation}
+again certified by~\eqref{eq:sqrt6}. Corollary~\ref{cor:cert} therefore proves
+\begin{equation}\label{eq:q3result}
+ \boxed{\displaystyle
+ \rho(Y_{3,\mu})\le\frac25<\norm{N_3}<1\quad\text{for every }\mu>0.}
+\end{equation}
+This radius is not claimed to be optimal. The independent program
+\code{code/exact_q3.py} performs the matrix identity \(B_3D_3=\Id_3+N_3\),
+all 12 determinant calculations, and the sign tests entirely in
+\(\Q(\sqrt6)\), using Python integer fractions. It uses neither an eigensolver
+nor a symbolic-algebra package.
+
+\section{Fresh finite-stage certification}
+
+\begin{theorem}[Verified finite set]\label{thm:finite}
+Let
+\[
+ \mathcal Q=\{2,3,\ldots,64\}\cup\{80\}.
+\]
+For every \(q\in\mathcal Q\), the certificate included in
+\code{certificates/} satisfies~\eqref{eq:cert}. In particular,
+\(\rho(Y_{q,\mu})\le\sqrt{t_q}<\norm{N_q}<1\) for every \(\mu>0\).
+Consequently the stated IE-27 disk holds at every one of these 64 stages,
+for every admissible \(M,K,n,\tau\).
+\end{theorem}
+\begin{proof}[Proof by integer-interval certificates]
+The supplied data and the accepted execution record in
+\code{results/verified.json} establish~\eqref{eq:cert} as follows.
+
+For each \(q\), the certificate specifies \(q-1\) disjoint, increasing dyadic
+intervals inside \((0,1)\). The checker evaluates the integer polynomial
+\eqref{eq:J} at their endpoints using exact integer Horner evaluation and
+checks strict sign changes. An interval reduced to a point is allowed only
+when exact evaluation is zero. A polynomial of degree \(q-1\) with a root
+in each of these \(q-1\) disjoint intervals has precisely one simple root
+in each, and no remaining roots. Appending the exact node one identifies
+the Radau nodes, not rounded substitutes.
+
+Every subsequent scalar is enclosed by an interval
+\([a/2^{1024},b/2^{1024}]\) with integer endpoints. Addition, multiplication,
+squaring, and division use outward rounding by exact integer floor and ceiling.
+Division is refused whenever the denominator interval contains zero. Substituting
+the node enclosures in~\eqref{eq:Dentries}, the checker performs the normalized
+triangular factorization and forward substitution to enclose the exact
+\(B_q,N_q\). Each lower-factor pivot is also checked to have a strictly
+positive lower bound.
+
+The supplied rational \(H,t,v\) are read exactly. Their dimensions, exact
+symmetry of \(H\), and \(0<t<1\) are checked. The four symmetric exact
+matrices in~\eqref{eq:cert} are then enclosed and tested by interval
+\(LDL^T\) elimination. Every exact pivot is contained in its computed
+interval; strict positivity of all the lower endpoints certifies positive
+definiteness by congruence. Finally the checker computes an interval for
+\(\|N_qv\|_2^2-t\|v\|_2^2\) and requires its lower endpoint to be positive,
+with \(v\ne0\).
+
+All 64 included files pass these tests in the supplied fresh execution.
+No floating-point eigenvalue, optimizer output, or approximate root is used
+as a proof decision. Corollary~\ref{cor:cert} supplies the conclusion for the
+whole half-line of shifts.
+\end{proof}
+
+\begin{table}[htbp]
+\centering
+\small
+\renewcommand{\arraystretch}{1.6}
+\input{tables/certificate_summary.tex}
+\caption{Representative accepted certificates. The last column bounds below the
+smallest \(LDL^T\) pivot of \(HB_q+B_q^TH\), not its smallest eigenvalue.
+The middle decimal column is illustrative only; the proof uses the exact rational \(t_q\).}
+\label{tab:certs}
+\end{table}
+
+Table~\ref{tab:certs} is a selection, not the full verification set.
+Complete machine-readable results appear in the \code{results/} directory,
+in \code{certificates.csv} and \code{verified.json}. They include all 64
+cases and all strict margins. The gaps between stages 64 and 80 are intentional:
+\emph{this archive does not certify stages 65--79}.
+
+\subsection{How candidates were found}
+
+The generator computes approximate stage matrices in a shifted Legendre basis,
+then seeks a symmetric tridiagonal metric. For \(q\ge4\), it takes a rational
+\(t_q\) near \((0.999\,\norm{N_q})^2\), where the norm here is an untrusted
+numerical estimate, and minimizes squared negative eigenvalues of
+\[
+ H-\Id_q,\qquad q(B_q^TH+HB_q)-10^{-3}\Id_q,\qquad
+ t_qH-N_q^THN_q-10^{-3}\Id_q.
+\]
+Multiplication of the energy matrix by the positive scalar \(q\) changes no
+positivity condition. Candidate entries of \(H\) and a numerical right
+singular vector of \(N_q\) are rounded to rational numbers with denominator
+\(10^8\). Integer bisection then supplies the root brackets. The exact
+low-stage choices override the optimizer at \(q=2,3\).
+
+These are only proposal procedures. Their floating-point computations and
+termination flags are not trusted. The independent checker establishes the
+inequalities after rounding, or rejects the candidate. A failed search or a
+failed interval test would not by itself refute the conjecture.
+
+\section{Why the elementary resolvent proof fails}
+
+A tempting argument is
+\[
+ \rho((\Id_q+\mu B_q)^{-1}N_q)
+ \le\norm{(\Id_q+\mu B_q)^{-1}}\,\norm{N_q}
+ \stackrel{?}{\le}\norm{N_q}.
+\]
+The second step would follow from Euclidean accretivity of \(B_q\), but that
+property already fails at three stages.
+
+\begin{proposition}[Failure of Euclidean resolvent contractivity]\label{prop:failure}
+For \(q=3\), \(\norm{(\Id_3+\mu B_3)^{-1}}>1\) for all sufficiently small
+positive \(\mu\).
+\end{proposition}
+\begin{proof}
+For \(w=(0,1,-2)^T\), the explicit matrix above gives
+\[
+ \alpha=w^TB_3w=\frac{-52+7\sqrt6}{360}<0.
+\]
+Set \(\beta=\|B_3w\|_2^2>0\). Whenever \(0<\mu<-2\alpha/\beta\),
+\[
+ \|(\Id_3+\mu B_3)w\|_2^2
+ =\|w\|_2^2+2\mu\alpha+\mu^2\beta<\|w\|_2^2.
+\]
+The matrix is invertible, so applying its inverse to the nonzero vector
+\((\Id_3+\mu B_3)w\) proves the asserted strict norm inequality.
+\end{proof}
+
+This is a counterexample to the \emph{shortcut}, not to IE-27.
+The three-stage spectral disk has just been proved by a different norm.
+Likewise, replacing a matrix by a diagonally similar one can preserve its
+spectrum while changing the particular Euclidean radius in the conjecture.
+Such a change of metric must be justified, not silently identified with
+an orthogonal transformation.
+
+\section{The exact remaining gap}
+
+To turn the common-energy route into an all-stage solution, one possible
+sufficient result would be:
+\begin{quote}
+For every \(q\ge2\) satisfying \(\norm{N_q}<1\), there is a symmetric
+\(H_q\succ0\) such that
+\[
+ H_qB_q+B_q^TH_q\succeq0,\qquad
+ N_q^TH_qN_q\preceq\norm{N_q}^2H_q.
+\]
+\end{quote}
+Theorem~\ref{thm:energy} would then give the desired result immediately.
+\textbf{No proof of this assertion is supplied here.} In particular, the
+tridiagonal optimization successes do not furnish an analytic formula or a
+verified existence argument for all stage numbers.
+
+This sufficient assertion need not be necessary. A direct proof bounding the
+roots of the generalized characteristic polynomial, or a counterexample at an
+admissible stage and positive shift, could settle the target without a common
+metric. Neither has been established by this recovery. Repeated finite
+verification does not eliminate the universal quantifier, and the positive-pivot
+theorem alone does not imply the disk radius.
+
+The precise conclusion of the archive is therefore Theorem~\ref{thm:finite},
+not a declaration that IE-27 has been fully solved.
+
+\section{Reproducibility and trust boundary}
+
+The main commands, run from the extracted archive directory, are
+\begin{verbatim}
+python code/run_checks.py
+python code/exact_q3.py
+python code/verify.py certificates/q080.json
+\end{verbatim}
+The first command executes the 12 regression tests, the independent three-stage
+proof, and every certificate. It writes new results to \code{recheck/}, leaving
+the delivered baseline logs unchanged. Verification needs Python 3.10 or newer
+and no third-party libraries. The optional generator uses NumPy and SciPy;
+the generation environment is recorded in \code{results/environment.txt}.
+
+\code{code/test_verify.py} tests exact fractional enclosure on random rational
+inputs, interval extrema and reciprocals, integer polynomial evaluation,
+positive and nonpositive \(LDL^T\) examples, exact two-stage entries, and rejection
+of deliberately corrupted certificates. All 12 tests passed during recovery.
+The tests are useful safeguards, not a substitute for the mathematical argument
+or a formal proof of the checker implementation.
+
+The trusted components are the formulas proved in this report, the transparent
+interval checker and exact-field checker, and the usual correctness of Python
+integer arithmetic and execution. This is a computer-assisted proof with
+inspectable code, not a proof-assistant formalization. The files
+\code{MANIFEST.sha256} and \code{RECOVERY.md} record integrity and provenance.
+No claim of peer review, exhaustive literature search, or required work duration
+is made. The primary-source references identify the target and its context.
+
+\begingroup
+\small
+\begin{thebibliography}{9}
+\setlength{\itemsep}{3pt}
+\bibitem{problem}
+OpenProblemsInNLA, \emph{IE-27 --- Spectral disk for a Radau stage preconditioner},
+problem README read directly on 12 September 2026.
+\href{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/linear-systems-and-elimination/IE-27/README.md}{Repository problem statement (raw README)}.
+
+\bibitem{dravi}
+I.~Dravins, S.~Serra-Capizzano, and M.~Neytcheva,
+\emph{Fine spectral analysis of preconditioned matrices and matrix-sequences
+arising from stage-parallel implicit Runge-Kutta methods of arbitrarily high
+order}, arXiv:2302.04657v2, 24 February 2023, especially Sections 2 and 4.
+\url{https://arxiv.org/html/2302.04657v2}.
+
+\bibitem{out}
+M.~Outrata, \emph{On the recent advances of spectral analysis for systems
+arising from fully-implicit RK methods}, arXiv:2510.21241v1, 24 October 2025,
+especially Sections 2.1--2.3.
+\url{https://arxiv.org/html/2510.21241v1}.
+
+\bibitem{axel}
+O.~Axelsson, I.~Dravins, and M.~Neytcheva,
+\emph{Stage-parallel preconditioners for implicit Runge-Kutta methods of
+arbitrarily high order, linear problems}, Numerical Linear Algebra with
+Applications 31(1), e2532 (2024). DOI: 10.1002/nla.2532.
+Bibliographic details and conjecture attribution from the problem page;
+a fresh full-text inspection is not claimed.
+\url{https://doi.org/10.1002/nla.2532}.
+\end{thebibliography}
+\endgroup
+
+\end{document}

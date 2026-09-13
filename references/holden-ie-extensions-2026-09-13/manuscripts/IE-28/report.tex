@@ -1,0 +1,750 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage{microtype,fancyhdr,enumitem}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={IE-28: Rigorous Extensions and Exact Certificates},pdfauthor={Sidney Holden},pdfsubject={Partial resolution; the arbitrary-node all-stage statement is not proved}}
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}\fancyhf{}
+\lhead{\small IE-28: rigorous extensions}\rhead{\small Scope-limited results}\cfoot{\thepage}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\setlist{nosep,leftmargin=*}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\diag}{diag}\DeclareMathOperator{\tr}{tr}
+\newcommand{\R}{\mathbb R}\newcommand{\N}{\mathbb N}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\coef}[2]{[#1^{#2}]}
+\title{\textbf{IE-28: Rigorous Extensions\\and Exact Certificates}\\[6pt]
+\large All-stage local existence, an explicit node family,\\and a limitation of the eigenpolynomial construction}
+\author{Sidney Holden\\[3pt]\small Center for Computational Biology, Flatiron Institute\\\small Simons Foundation\\[3pt]\small Prepared with substantial AI assistance}
+\date{12 September 2026}
+\begin{document}
+\maketitle\thispagestyle{empty}
+\begin{abstract}
+For the collocation integration matrix on distinct positive nodes, the target is
+one positive diagonal $D$ for which $I-D^{-1}A$ is nilpotent. We give a
+self-contained all-stage existence theorem for nodes sufficiently close to a
+common positive point. The proof regularizes a determinant at coincident nodes,
+constructs an algebraic confluent seed by a triangular recursion, and applies
+the implicit function theorem with an explicitly nonsingular Jacobian.
+We also characterize the node sets admitting a scalar diagonal: they are scaled
+zeros of the ordinary Laguerre polynomial. Exact integer interval calculations
+prove twelve additional point or uniform-neighborhood assertions in dimensions
+four through seven. A further exact sign certificate shows that, at eleven
+stages near confluence, no eigenpolynomial with all nonnegative coefficients
+can produce the required diagonal, although a positive diagonal does exist.
+The arbitrary-node, arbitrary-stage assertion is \emph{not proved or disproved}
+here. The earlier complete two- and three-stage arguments are retained.
+\end{abstract}
+
+\begin{center}
+\fbox{\begin{minipage}{0.91\textwidth}
+\textbf{Status of the requested full solution.}
+No full solution was obtained. In particular, the local all-stage theorem below
+must not be read as a theorem for every admissible node set. This archive
+contains additional rigorous results and checked computations, not a claimed
+resolution of IE-28. No claim of priority or independent peer review is made.
+\end{minipage}}
+\end{center}
+
+\section*{What is established}
+\begin{tabular}{@{}p{0.26\textwidth}p{0.65\textwidth}@{}}
+\toprule
+Quantifiers & Result and evidence \\
+\midrule
+Every node pair or triple & Complete analytic proofs, Sections~\ref{sec:small} and the preserved prior writeup.\\
+Every stage count; nodes near a common positive point & Analytic existence proof, Theorem~\ref{thm:local}. The neighborhood depends on the stage count.\\
+Every stage count; scaled Laguerre nodes & Explicit scalar diagonal, Theorem~\ref{thm:laguerre}.\\
+Six node sets and six node neighborhoods, $4\le n\le7$ & Exact integer interval certificates, Section~\ref{sec:cert}.\\
+Eleven stages near confluence & Exclusion of a \emph{stronger ansatz}, not of IE-28, Theorem~\ref{thm:obstruction}.\\
+Every admissible node set at every stage count & \textbf{Not established.}\\
+\bottomrule
+\end{tabular}
+
+\bigskip
+{\small\tableofcontents}
+\newpage
+\section{The exact target and useful reductions}\label{sec:target}
+Let $n\ge2$ and $0<c_1<\cdots<c_n\le1$. Define
+\begin{equation}\label{eq:A}
+ \ell_j(t)=\prod_{k\ne j}\frac{t-c_k}{c_j-c_k},\qquad
+ A_{ij}=\int_0^{c_i}\ell_j(t)\,dt.
+\end{equation}
+The target is
+\begin{equation}\label{eq:target}
+ D=\diag(d_1,\ldots,d_n),\quad d_i>0,\qquad
+ (I-D^{-1}A)^n=0.
+\end{equation}
+It is the fixed-diagonal stiff-limit problem stated in IE-28~\cite{entry} and
+in the conjecture of van der Houwen and de Swart~\cite[Section 3.2.1]{houwen}.
+The MIN-SR-S treatment~\cite[Section 2.2.3]{sdc} does not supply a general
+existence theorem. Nilpotence of $A-D$, a triangular preconditioner, or a
+sequence of different diagonal sweep matrices would not solve
+\eqref{eq:target}. No ordering of the $d_i$ is required.
+
+Put $C=\diag(c_i)$ and $V_{ij}=c_i^{j-1}$. Interpolating monomials and integrating
+exactly gives
+\begin{equation}\label{eq:V}
+ A=CV\diag(1,1/2,\ldots,1/n)V^{-1},\qquad
+ \det A=\frac{\prod_i c_i}{n!}>0.
+\end{equation}
+All eigenvalues of $D^{-1}A$ are one if and only if all eigenvalues of its
+inverse $A^{-1}D$ are one. Cayley--Hamilton then gives \eqref{eq:target}.
+Equivalently, with $G=D^{-1}$,
+\begin{equation}\label{eq:char}
+ \det(I-\lambda AG)=(1-\lambda)^n.
+\end{equation}
+Here $AG$ and $GA$ are similar. Coefficient identities, rather than numerical
+eigenvalues near a defective multiple eigenvalue, are used throughout.
+
+For later computation let
+\[
+ w_i=\biggl(\prod_{j\ne i}(c_i-c_j)\biggr)^{-1},\qquad
+ S=\diag(c_i/w_i).
+\]
+Direct differentiation of the interpolation formula gives
+\begin{equation}\label{eq:M}
+ A^{-1}=SMS^{-1},\qquad
+ M_{ij}=\begin{cases}
+ (c_i-c_j)^{-1},&i\ne j,\\
+ c_i^{-1}+\displaystyle\sum_{j\ne i}(c_i-c_j)^{-1},&i=j.
+ \end{cases}
+\end{equation}
+Indeed, if $W_{ij}=c_i^j$ and $W'_{ij}=j c_i^{j-1}$, then
+$A^{-1}=W'W^{-1}$. Equivalently it maps values of a polynomial $q$ of degree
+at most $n$, with $q(0)=0$, to the values of $q'$.
+Applying this to the cardinal polynomials
+$t\ell_j(t)/c_j$ proves \eqref{eq:M}. Diagonal matrices commute with $S$, so
+$A^{-1}D$ is similar to $MD$.
+
+Two immediate necessary identities are
+\begin{equation}\label{eq:traceprod}
+ \prod_i d_i=\frac{\prod_i c_i}{n!},\qquad
+ \tr(MD)=\sum_i\frac{d_i}{c_i}
+       +\sum_{i<j}\frac{d_i-d_j}{c_i-c_j}=n.
+\end{equation}
+They are not sufficient in general.
+
+\begin{lemma}[Eigenpolynomial]\label{lem:eigen}
+If $p$ is a nonzero real polynomial of degree at most $n$, $p(0)=0$, and
+$p'(c_i)\ne0$, then $d_i=p(c_i)/p'(c_i)$ makes one an eigenvalue of
+$A^{-1}D$, provided the vector of sampled values of $p$ is nonzero.
+\end{lemma}
+\begin{proof}
+The polynomial-value identity is $A(p'(c_i))_i=(p(c_i))_i$.
+Thus $D^{-1}A$ fixes the nonzero vector $(p'(c_i))_i$. The stated sampled
+vector is nonzero whenever all $p(c_i)>0$, as in the applications below.
+\end{proof}
+Scaling causes no loss: $A(sc)=sA(c)$ for $s>0$, so $D\mapsto sD$ preserves
+the target when the nodes are scaled by $s$.
+
+\section{Complete small-stage cases}\label{sec:small}
+This section summarizes the complete constructions from the preserved
+\texttt{prior\_work/writeup.pdf}; their short proofs are included here.
+
+\subsection{Two stages}
+Let $c_1=a<c_2=b$ and $r=\sqrt{2ab}$. Set
+\begin{equation}\label{eq:n2}
+ d_i=\frac{c_i(c_i+r)}{2c_i+r},\qquad i=1,2.
+\end{equation}
+The polynomial $p(t)=t(t+r)$ gives eigenvalue one by Lemma~\ref{lem:eigen}.
+Moreover
+\[
+ \frac{2d_1d_2}{ab}=1
+ \quad\Longleftrightarrow\quad
+ 2(a+r)(b+r)=(2a+r)(2b+r)
+ \quad\Longleftrightarrow\quad r^2=2ab.
+\]
+Thus $\det(A^{-1}D)=1$, so its other eigenvalue is also one. Positivity is
+immediate, and Cayley--Hamilton proves the target.
+
+\subsection{Three stages}
+For $r>0$ and $0\le\theta\le1$, use
+\begin{equation}\label{eq:n3ansatz}
+ p(t)=t(t+r)(\theta t+r),\qquad
+ d_i(r,\theta)=\left(\frac1{c_i}+\frac1{c_i+r}
+                         +\frac{\theta}{\theta c_i+r}\right)^{-1}.
+\end{equation}
+There is always an eigenvalue one. Write
+\[
+ H_i(r,\theta)=1+\frac{c_i}{c_i+r}
+                    +\frac{\theta c_i}{\theta c_i+r},\qquad
+ G(r,\theta)=\det(MD)=6\prod_i H_i(r,\theta)^{-1}.
+\]
+For each fixed $\theta$, $G$ is strictly increasing in $r$ and tends to $6$ as
+$r\to\infty$. Its limit as $r\downarrow0$ is $6/27$ for $\theta>0$, and
+$6/8$ for $\theta=0$. Hence there is a unique $r(\theta)>0$ with $G=1$.
+
+This root is continuous on $[0,1]$. To justify continuity at the corner
+$(r,\theta)=(0,0)$, take any $r$ small enough that
+$6\prod_i(1+c_i/(c_i+r))^{-1}<1$; then $G(r,\theta)<1$ for every $\theta$.
+There is also a uniform upper bracket: at $r=4c_3$ every $H_i\le7/5$, so
+$G\ge6/(7/5)^3>1$. Consequently the roots lie in a common compact subinterval
+of $(0,4c_3)$; strict monotonicity and continuity give the claim.
+
+Set $T(\theta)=\tr(MD(r(\theta),\theta))-3$ and let
+$\sigma_1=c_1+c_2+c_3$, $\sigma_2=c_1c_2+c_1c_3+c_2c_3$,
+$\sigma_3=c_1c_2c_3$. At $\theta=0$, substitution in
+\eqref{eq:traceprod} and clearing denominators yields
+\begin{equation}\label{eq:end0}
+ T(0)=\frac{r(3r^2+3\sigma_1r+2\sigma_2)}{\prod_i(2c_i+r)}>0.
+\end{equation}
+At $\theta=1$, write $P_3=\prod_i(3c_i+r)$ and
+\[
+ F_3=6\prod_i(c_i+r)-P_3
+    =5r^3+3\sigma_1r^2-3\sigma_2r-21\sigma_3.
+\]
+The determinant constraint is $F_3=0$, and direct simplification gives
+\begin{equation}\label{eq:end1}
+ P_3T(1)=F_3-2(r^3+3\sigma_3)<0.
+\end{equation}
+Both identities are verified as formal rational identities by the supplied
+symbolic test. The intermediate value theorem supplies $\theta_*$ with $T=0$.
+At this point $A^{-1}D$ has an eigenvalue one, trace three, and determinant
+one. Its other two eigenvalues have sum two and product one, hence are both
+one. This proves \eqref{eq:target} for every node triple.
+
+Finally the denominator in \eqref{eq:n3ansatz} is strictly between $1/c_i$
+and $3/c_i$, and it strictly decreases as $c_i$ increases. Therefore
+\[
+ c_i/3<d_i<c_i,\qquad d_1<d_2<d_3.
+\]
+The use of trace, determinant, and one known eigenvalue in this last spectral
+step is special to three stages; it does not settle four or more stages.
+
+\section{An explicit family at every stage count}\label{sec:laguerre}
+\begin{lemma}[Characteristic polynomial from the node polynomial]\label{lem:chi}
+Let $\pi(t)=\prod_{i=1}^n(t-c_i)$. Then
+\begin{equation}\label{eq:chiA}
+ \det(zI-A)=\frac1{n!}\sum_{j=0}^n\pi^{(j)}(0)z^j
+ =\sum_{k=0}^n(-1)^k\frac{(n-k)!}{n!}e_k(c)z^{n-k},
+\end{equation}
+where $e_k$ is the $k$th elementary symmetric polynomial.
+\end{lemma}
+\begin{proof}
+Identify sampled vectors with polynomials of degree at most $n-1$.
+Integration followed by reduction modulo $\pi$ represents $A$. In the basis
+$1,t,t^2/2!,\ldots,t^{n-1}/(n-1)!$, integration maps each basis vector other
+than the last to the next one. For the last vector it gives $t^n/n!$, which,
+modulo $\pi$, is
+\[
+ -\sum_{j=0}^{n-1}\frac{\pi^{(j)}(0)}{n!}\frac{t^j}{j!}.
+\]
+The representing matrix is a companion matrix with ones on the first
+subdiagonal and these coefficients in its last column. Its characteristic
+polynomial is the first expression in \eqref{eq:chiA}. The second follows by
+expanding $\pi$.
+\end{proof}
+
+Define the ordinary Laguerre polynomial by
+\[
+ L_n(x)=\sum_{j=0}^n(-1)^j\binom nj\frac{x^j}{j!}.
+\]
+\begin{theorem}[Scalar diagonals are exactly the scaled Laguerre case]\label{thm:laguerre}
+Let $x_1<\cdots<x_n$ be the zeros of $L_n$. They are positive and simple.
+For any $\delta>0$ with $\delta x_n\le1$, the nodes $c_i=\delta x_i$ satisfy
+\eqref{eq:target} with
+\begin{equation}\label{eq:scalar}
+ D=\delta I.
+\end{equation}
+Conversely, if a node set admits a scalar positive diagonal $D=\delta I$
+satisfying \eqref{eq:target}, its node polynomial is
+$\pi(t)=(-\delta)^n n!L_n(t/\delta)$.
+\end{theorem}
+\begin{proof}
+For completeness, the Rodrigues identity
+\[
+ e^{-x}L_n(x)=\frac1{n!}\frac{d^n}{dx^n}(e^{-x}x^n)
+\]
+follows by the product rule. Integrating by parts $n$ times shows that $L_n$
+is orthogonal to every polynomial of degree less than $n$ against $e^{-x}$
+on $(0,\infty)$. The boundary terms vanish. If $L_n$ had fewer than $n$
+sign-changing zeros there, multiply the factors corresponding to those zeros
+to obtain a polynomial of degree less than $n$ whose product with $L_n$ has
+one sign and is not zero almost everywhere. Its integral cannot vanish,
+contradicting orthogonality. Thus all $n$ zeros are positive and simple.
+
+For the scaled zeros, the monic node polynomial is
+$\pi(t)=(-\delta)^n n!L_n(t/\delta)$, so
+\[
+ \frac{\pi^{(j)}(0)}{n!}=(-1)^{n+j}\delta^{n-j}\binom nj.
+\]
+Lemma~\ref{lem:chi} gives $\det(zI-A)=(z-\delta)^n$.
+Cayley--Hamilton proves \eqref{eq:scalar}. Conversely the scalar target forces
+that characteristic polynomial, so \eqref{eq:chiA} determines every Taylor
+coefficient of $\pi$ and gives the stated Laguerre expression.
+\end{proof}
+This is an exact all-stage class, not a reduction of arbitrary nodes to this
+class: scaling alone cannot turn an arbitrary node set into Laguerre zeros.
+
+\section{Removing the singularity at coincident nodes}\label{sec:regularization}
+For a polynomial $g$ of degree at most $n-1$ define, initially at distinct nodes,
+\begin{equation}\label{eq:Phi}
+ \Phi(\lambda;c,g)=
+ \frac{\det[jc_i^{j-1}-\lambda g(c_i)c_i^j]_{i,j=1}^n}
+ {n!\,\Delta(c)},\qquad
+ \Delta(c)=\prod_{i<j}(c_j-c_i).
+\end{equation}
+The numerator is alternating in the node variables. In the polynomial ring
+whose other indeterminates are $\lambda$ and the coefficients of $g$, it is
+divisible by each $c_j-c_i$, hence by their product. Consequently $\Phi$ is a
+polynomial and extends across all node collisions.
+
+\begin{lemma}\label{lem:Phi}
+At distinct positive nodes, if $G=\diag(g(c_i))$, then
+\begin{equation}\label{eq:Phieq}
+ \Phi(\lambda;c,g)=\det(I-\lambda AG).
+\end{equation}
+Thus $g(c_i)>0$ and $\Phi=(1-\lambda)^n$ give a solution
+$D=\diag(1/g(c_i))$ of IE-28.
+\end{lemma}
+\begin{proof}
+Use $W,W'$ from Section~\ref{sec:target}. The numerator is
+$\det(W'-\lambda GW)$. Since $A^{-1}=W'W^{-1}$ and
+$\det W'=n!\Delta(c)$, its ratio to $\det W'$ is
+$\det(A^{-1}-\lambda G)/\det A^{-1}$, which is \eqref{eq:Phieq}.
+\end{proof}
+
+A division-free formula is useful both as a check and as a numerical
+implementation. Let $h_m(x_1,\ldots,x_r)$ denote the complete homogeneous
+symmetric polynomial, with $h_0=1$ and $h_m=0$ for $m<0$. The elementary
+monomial divided-difference identity is
+\[
+ [x_1,\ldots,x_{k+1}]t^m=h_{m-k}(x_1,\ldots,x_{k+1}).
+\]
+For $g(t)=\sum_{r=0}^{n-1}g_rt^r$, define, for $0\le k\le n-1$,
+$1\le j\le n$,
+\begin{align}\label{eq:pencil}
+ (B_0)_{k,j-1}&=j h_{j-1-k}(c_1,\ldots,c_{k+1}),\\
+ (B_1)_{k,j-1}&=\sum_{r=0}^{n-1}g_rh_{r+j-k}(c_1,\ldots,c_{k+1}).\nonumber
+\end{align}
+Changing evaluation rows into successive divided-difference rows divides their
+determinant by $\Delta(c)$. Hence
+\begin{equation}\label{eq:pencilidentity}
+ \Phi(\lambda;c,g)=\det(B_0-\lambda B_1)/n!,\qquad \det B_0=n!.
+\end{equation}
+Unlike the defining quotient, this formula can be evaluated at coincident
+nodes without subtracting nearly equal nodes or dividing by node gaps.
+
+\section{All-stage existence near a common positive point}\label{sec:local}
+Parameterize $g$ by $a=(a_1,\ldots,a_n)$ through
+\begin{equation}\label{eq:Ha}
+ H_a(z)=\sum_{j=1}^n a_jz^j,\qquad
+ g_a(t)=-\sum_{j=1}^n j a_j(1-t)^{j-1}.
+\end{equation}
+In particular $g_a(1)=-a_1$ and $\int_1^t g_a(s)\,ds=H_a(1-t)$.
+
+\begin{lemma}[Confluent determinant]\label{lem:confluent}
+At $c_1=\cdots=c_n=1$, the polynomial extension satisfies
+\begin{align}\label{eq:conf}
+ \Phi(\lambda;\mathbf1,g_a)
+ &=\coef{z}{n}\frac{\exp(\lambda H_a(z))}{1-z}
+ =1+\sum_{k=1}^n f_k(a)\lambda^k,\\
+ f_k(a)&=\frac1{k!}\coef{z}{n}\frac{H_a(z)^k}{1-z}.\nonumber
+\end{align}
+Only finite Taylor coefficients are used in this expression.
+\end{lemma}
+\begin{proof}
+The confluent evaluation determinant in \eqref{eq:Phi} has rows consisting
+of the Taylor coefficients of $q'-\lambda g_aq$ of orders $0,\ldots,n-1$
+at $t=1$, with $q$ ranging over $t,t^2,\ldots,t^n$.
+Write $s=t-1$ and $q(t)=\sum_{m=0}^n y_ms^m$. The constraint $q(0)=0$ is
+\begin{equation}\label{eq:boundary}
+ \sum_{m=0}^n(-1)^m y_m=0.
+\end{equation}
+For an arbitrary $y_0$, the equations that the indicated residual coefficients
+vanish form a triangular recursion for $y_1,\ldots,y_n$, with pivots
+$1,2,\ldots,n$. Its solution is
+\[
+ y_m=y_0\coef{s}{m}\exp(\lambda H_a(-s)),\qquad 0\le m\le n.
+\]
+Eliminating $y_1,\ldots,y_n$ from these equations and the boundary equation
+leaves $y_0$ multiplied by
+\[
+ \sum_{m=0}^n\coef{z}{m}\exp(\lambda H_a(z)).
+\]
+To see that this is an identity of determinants, not just an equivalence of
+zero sets, order the augmented equations with \eqref{eq:boundary} first and
+the residual equations next. Their determinant is $n!$ times the displayed
+factor by the triangular elimination. Eliminating $y_0$ using its unit
+coefficient in \eqref{eq:boundary} gives precisely the restricted residual
+matrix. The change from coefficients in $t,t^2,\ldots,t^n$ to
+$y_1,\ldots,y_n$ has determinant one (its entries are $\binom jk$).
+Division by $n!$ therefore gives the normalized determinant in
+\eqref{eq:Phi}. Summing the Taylor coefficients is coefficient extraction
+against $(1-z)^{-1}$, proving \eqref{eq:conf}.
+\end{proof}
+
+\begin{lemma}[Triangular algebraic seed]\label{lem:seed}
+There is a unique $a^*\in\R^n$ with $a_1^*<0$ such that
+$f_k(a^*)=(-1)^k\binom nk$ for $k=1,\ldots,n$. It is given by
+\begin{align}\label{eq:seed}
+ r_n&=(n!)^{1/n},\qquad a_1^*=-r_n,\\
+ a_j^*&=\frac{(k-1)!}{(a_1^*)^{k-1}}
+ \left((-1)^k\binom nk-f_k(a_1^*,\ldots,a_{j-1}^*,0,\ldots,0)\right),
+ \quad k=n-j+1,\quad 2\le j\le n.\nonumber
+\end{align}
+The Jacobian of $a\mapsto(f_n,f_{n-1},\ldots,f_1)$ at this seed is
+nonsingular, with determinant
+\begin{equation}\label{eq:Jac}
+ \frac{(a_1^*)^{n(n-1)/2}}{\prod_{m=0}^{n-1}m!}\ne0.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Since $H_a$ has no constant term, $f_n=a_1^n/n!$, and its required value fixes
+the unique negative $a_1=-r_n$. For $k=n-j+1$, the terms of $H_a^k$ of degree
+at most $n$ involve no coefficient beyond $a_j$. A term containing $a_j$
+can have degree at most $n$ only when it contains $a_jz^j$ exactly once and
+$a_1z$ in all other factors. For $j\ge2$ its coefficient in $f_k$ is therefore
+$a_1^{k-1}/(k-1)!$, nonzero when $a_1\ne0$. This proves the recursion.
+In the reversed row order, the Jacobian is triangular, and its diagonal is
+\[
+ \frac{a_1^{n-1}}{(n-1)!},\frac{a_1^{n-2}}{(n-2)!},\ldots,a_1,1.
+\]
+Their product proves \eqref{eq:Jac}. The first diagonal entry comes by
+differentiating $f_n$ and is consistent with this expression.
+\end{proof}
+
+\begin{theorem}[All-stage clustered-node existence]\label{thm:local}
+For every integer $n\ge2$, there exists $\eps_n>0$ such that all distinct
+nodes with $1-\eps_n<c_1<\cdots<c_n\le1$ admit a positive diagonal satisfying
+\eqref{eq:target}. There is a real-analytic branch, in polynomial coordinates,
+with
+\begin{equation}\label{eq:limit}
+ d_i\longrightarrow(n!)^{-1/n}\qquad(c\longrightarrow\mathbf1).
+\end{equation}
+More generally, nodes sufficiently close to any common $c_*>0$ admit such a
+diagonal, with limiting entry $c_*(n!)^{-1/n}$.
+\end{theorem}
+\begin{proof}
+Let $\mathcal F(a,c)$ be the vector of coefficients of $\lambda^n,\ldots,
+\lambda$ in $\Phi(\lambda;c,g_a)-(1-\lambda)^n$.
+By Section~\ref{sec:regularization}, this is a polynomial map in $(a,c)$,
+including at $c=\mathbf1$. Lemmas~\ref{lem:confluent} and~\ref{lem:seed} give
+$\mathcal F(a^*,\mathbf1)=0$ and an invertible derivative with respect to $a$.
+The real-analytic implicit function theorem yields a solution $a(c)$ for all
+$c$ in some neighborhood of $\mathbf1$.
+
+At the center, $g_{a^*}(1)=r_n>0$. By continuity, after shrinking that
+neighborhood, $g_{a(c)}(c_i)>0$ for every $i$. Set $d_i=1/g_{a(c)}(c_i)$.
+Lemma~\ref{lem:Phi} proves \eqref{eq:target} at all distinct positive nodes
+in the neighborhood. It also gives the limit \eqref{eq:limit}. Scaling from
+Section~\ref{sec:target} proves the assertion at a common point $c_*$.
+\end{proof}
+
+\begin{remark}[What locality means]
+The theorem gives a positive neighborhood for each fixed $n$. It does not
+bound $\eps_n$ uniformly in $n$, does not claim that $\eps_n=1$, and does not
+prove that this branch extends through the entire ordered-node domain.
+The coincident-node matrix $A$ itself is not used: the implicit function
+theorem is applied to its polynomial determinant regularization.
+\end{remark}
+
+\section{An exact obstruction to a stronger ansatz}\label{sec:obstruction}
+A tempting route is to choose
+\begin{equation}\label{eq:strong}
+ p(t)=t\prod_{j=1}^{n-1}(t+\alpha_j),\qquad\alpha_j>0,
+ \quad d_i=p(c_i)/p'(c_i).
+\end{equation}
+It ensures positivity and $c_i/n<d_i<c_i$, but those extra restrictions were
+not required by IE-28. The following result prevents promoting this route to
+an unrestricted all-stage proof.
+
+Define the confluent normalized polynomial
+\begin{equation}\label{eq:pstar}
+ p_*(t)=\sum_{m=0}^n\left(\coef{z}{m}e^{H_{a^*}(z)}\right)(1-t)^m.
+\end{equation}
+Then $p_*(1)=1$, and $p_*(0)=\Phi(1;\mathbf1,g_{a^*})=0$.
+It is the unique polynomial of degree at most $n$ with value one at $1$
+whose residual $p_*'-g_{a^*}p_*$ has zero Taylor coefficients of orders
+$0,\ldots,n-1$ there.
+
+\begin{proposition}[Exact integer sign certificate]\label{prop:sign}
+For $n=11$, the coefficient $\beta_{11}=\coef{t}{11}p_*(t)$ satisfies
+\begin{equation}\label{eq:negative}
+ -1.664575\,10^{-10}<\beta_{11}<-1.664574\,10^{-10}<0.
+\end{equation}
+These inequalities are verified with integer arithmetic, not inferred from
+floating-point roots.
+\end{proposition}
+\begin{proof}[Certificate and its mathematical justification]
+The file \texttt{cluster/certify\_seed.py} brackets $r=(11!)^{1/11}$ between
+consecutive multiples of $10^{-100}$ by comparing integer eleventh powers.
+The strict bracket is checked exactly. It propagates this bracket through
+\eqref{eq:seed} and the truncated exponential in \eqref{eq:pstar}, using
+outward-rounded dyadic intervals at 512 bits. All sums, products, reciprocals,
+and factorial divisions enclose the exact real operations. The denominators
+in \eqref{eq:seed} are nonzero powers of the strictly negative $a_1$.
+Consequently the resulting interval encloses the exact algebraic coefficient
+$(-1)^{11}\coef{z}{11}e^{H_{a^*}(z)}$. Its two endpoints are checked, by
+integer cross multiplication, to lie strictly between the rational endpoints
+in \eqref{eq:negative}. The full rational endpoints and the root bracket are
+saved in \texttt{cluster/seed11\_certificate.json}. This finite verification
+uses Python's standard library only. It is a reproducible computer-assisted
+sign proof; the decimal display printed by the program is not used by the
+proof.
+\end{proof}
+
+\begin{theorem}[No nonnegative-coefficient eigenpolynomial near confluence]\label{thm:obstruction}
+For $n=11$ there exists $\eta>0$ such that, for any distinct nodes
+$1-\eta<c_1<\cdots<c_{11}\le1$, no polynomial $p$ with
+\[
+ p(0)=0,\quad p\ne0,\quad \deg p\le11,
+ \quad\text{all coefficients of $p$ nonnegative}
+\]
+can yield a solution of \eqref{eq:target} by $d_i=p(c_i)/p'(c_i)$.
+In particular, \eqref{eq:strong} cannot solve these node sets. Nevertheless,
+for a sufficiently small such $\eta$, positive diagonals \emph{do} exist by
+Theorem~\ref{thm:local}.
+\end{theorem}
+\begin{proof}
+Suppose to the contrary that there are node vectors $c^{(m)}\to\mathbf1$ and
+such polynomials $p_m$ producing solutions. Normalize $p_m(1)=1$, which does
+not change $p_m/p_m'$. Their coefficients form a compact simplex. Along a
+subsequence they converge coefficientwise to a polynomial $p$ with
+nonnegative coefficients, $p(0)=0$, and $p(1)=1$.
+
+On a fixed real neighborhood of $1$, the $p_m$ are uniformly bounded away
+from zero; for example $p_m(t)\ge2^{-11}$ for $1/2\le t\le1$.
+Their derivatives of all fixed orders converge, so $g_m=p_m'/p_m$ and their
+fixed-order derivatives converge uniformly on a smaller neighborhood.
+Let $\widetilde g_m$ be the polynomial of degree at most ten interpolating
+$g_m$ at $c^{(m)}$. Divided differences converge to derivatives at a repeated
+node; this follows directly from the integral form of a divided difference
+and the uniform derivative convergence. Thus $\widetilde g_m$ converges,
+coefficientwise, to the degree-ten Taylor polynomial of $g=p'/p$ at $1$.
+Call this limit $g_0$.
+
+The solution assumption and Lemma~\ref{lem:Phi} give
+$\Phi(\lambda;c^{(m)},\widetilde g_m)=(1-\lambda)^{11}$.
+Polynomial continuity gives the same identity at $(\mathbf1,g_0)$.
+Moreover $g_0(1)=p'(1)>0$; in fact $1\le p'(1)\le11$ from the normalized
+nonnegative coefficients. By the uniqueness in Lemma~\ref{lem:seed},
+$g_0=g_{a^*}$. The residual $p'-g_0p$ therefore vanishes to order at least
+11 at $1$. Its Taylor recursion, together with $p(1)=1$, forces
+$p=p_*$ from \eqref{eq:pstar}. This contradicts the negative leading
+coefficient in Proposition~\ref{prop:sign}.
+\end{proof}
+
+The theorem does not say that a numerical solver failing to find negative
+roots has disproved IE-28. It proves failure of a specified auxiliary
+construction and separates that failure from the positive-diagonal question.
+
+\section{Exact certificates away from confluence}\label{sec:cert}
+The analytical local theorem does not identify its neighborhood size.
+Independently, the archive supplies exact certificates for specified node
+sets and explicit node boxes. No assertion in this section is based only on
+a small residual.
+
+For $M(c)$ from \eqref{eq:M}, write
+\begin{equation}\label{eq:F}
+ F_k(d,c)=\sum_{\substack{S\subseteq\{1,\ldots,n\}\\|S|=k}}
+              \det M(c)[S,S]\prod_{i\in S}d_i-\binom nk,
+ \quad 1\le k\le n.
+\end{equation}
+Then $F=0$ is exactly the characteristic-coefficient system for $MD$ having
+all eigenvalues one. The Jacobian used by the verifier is the derivative of
+this displayed polynomial with respect to $d$.
+
+\begin{theorem}[Uniform contraction certificate]\label{thm:certificate}
+Let $\mathcal C$ be a closed node box consisting only of separated positive
+nodes with last node at most one, and let
+$X=\{d:\|d-d^0\|_\infty\le r\}$ have strictly positive coordinates.
+Let $R$ be a fixed real $n\times n$ matrix. Suppose rigorous bounds satisfy
+\begin{align}\label{eq:bounds}
+ \|RF(d^0,c)\|_\infty&\le\xi &&(c\in\mathcal C),\\
+ \|I-RF_d(d,c)\|_\infty&\le q<1 &&(d\in X,\ c\in\mathcal C),\nonumber\\
+ \xi+qr&<r.&&\nonumber
+\end{align}
+For every $c\in\mathcal C$ there exists exactly one zero of $F(\cdot,c)$ in
+$X$. It gives a positive diagonal solving \eqref{eq:target}.
+\end{theorem}
+\begin{proof}
+For each fixed $c$, define $T_c(d)=d-RF(d,c)$. The derivative bound and the
+mean-value integral on the convex box $X$ make $T_c$ a contraction with
+constant at most $q$. The first and third bounds show $T_c(X)\subset X$.
+Banach's fixed-point theorem gives a unique fixed point in $X$.
+For any one $d\in X$, $\|I-RF_d(d,c)\|<1$ implies that $RF_d(d,c)$ is
+invertible, so the square matrix $R$ is invertible. Fixed points of $T_c$
+are therefore exactly zeros of $F(\cdot,c)$. Positivity is part of the
+hypothesis on $X$, and the coefficient characterization proves the target.
+Uniqueness is only asserted \emph{inside this diagonal box}.
+\end{proof}
+
+\subsection{What the verifier checks}
+All centers, radii, and preconditioner entries in the JSON certificates are
+exact rational numbers (decimal strings denote exact terminating rationals).
+The verifier uses intervals $[L/2^b,U/2^b]$ with integer endpoints. Addition,
+multiplication, and reciprocals are rounded outward using integer floor and
+ceiling division. Principal determinants are enclosed by division-free
+subset dynamic programming, not by a floating-point factorization.
+At $b=320$, it obtains integer upper bounds $E,Q$ for $2^b\xi,2^bq$.
+For $r=r_N/r_D$, its final self-mapping test is precisely
+\[
+ E r_D+Q r_N<2^b r_N,
+\]
+and its contraction test is $Q<2^b$. Both are integer comparisons. The
+positivity of the diagonal box, separation of every node interval, and the
+upper node bound are also checked. A passing result is an application of
+Theorem~\ref{thm:certificate}; the approximate candidate generator is outside
+the trusted verification path.
+
+\subsection{Certified node neighborhoods}
+In the following table the last node is fixed at one; every other node may
+vary independently by $\pm\delta$ about its listed center. The diagonal
+box is centered at the rational vector in the certificate file and has
+radius $r$. The displayed $q,\xi$ bounds have been rounded \emph{upward}
+for readability; the actual acceptance tests use their exact rational
+versions.
+
+\begin{center}\small
+\begin{tabular}{@{}clrrrr@{}}
+\toprule
+$n$ & Node center & $\delta$ & $r$ & $q$ upper & $\xi$ upper\\
+\midrule
+4 & $(.1,.3,.6,1)$ & $10^{-5}$ & $10^{-3}$ & $.222$ & $.000600$\\
+4 & $c_i=i/4$ & $10^{-4}$ & $10^{-2}$ & $.475$ & $.00436$\\
+5 & $c_i=i/5$ & $10^{-6}$ & $10^{-3}$ & $.139$ & $.000108$\\
+6 & $c_i=i/6$ & $10^{-6}$ & $10^{-3}$ & $.346$ & $.000252$\\
+7 & $c_i=i/7$ & $10^{-7}$ & $10^{-3}$ & $.771$ & $.0000622$\\
+5 & $(.01,.02,.03,.04,1)$ & $10^{-15}$ & $10^{-8}$ & $.228$ & $9.0\,10^{-10}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+All six boxes pass. There is also a separate, much tighter, point certificate
+at each of these centers, using $r=10^{-30}$. Thus twelve certificates pass
+in total. The separated five-node example needs a small box under the
+straightforward interval bounds used here; no claim of a maximal neighborhood
+is made. Scaling the nodes and diagonal extends each normalized assertion to
+its corresponding positive scaling family.
+
+\section{Continuation, checks, and the remaining global gap}\label{sec:gap}
+\subsection{Numerical continuation is explicitly not a proof of global existence}
+The regularization supplies a natural numerical path
+\[
+ c_i(s)=1-s(1-c_i),\quad0\le s\le1,
+\]
+starting at the exact algebraic seed. The supplied program performs damped
+Newton corrections while keeping all sampled $g_a(c_i(s))$ positive.
+For improved conditioning it uses $z_i=1-c_i$ and the polynomial basis
+$q_j(t)=(1-t)^j-1$, which automatically satisfies the boundary condition.
+In this basis the divided-difference derivative matrix is
+\[
+ T_{k,j-1}=-j h_{j-1-k}(z_1,\ldots,z_{k+1}),
+\]
+and the derivative of the $g_aq_j$ matrix with respect to $a_{r+1}$ is
+\[
+ -(r+1)\left(h_{r+j-k}(z_1,\ldots,z_{k+1})
+                     -h_{r-k}(z_1,\ldots,z_{k+1})\right).
+\]
+The normalized pencil is $I-\lambda K(a)$ after left multiplication by
+$T^{-1}$. Its coefficients and their derivatives are evaluated through
+finite matrix recurrences, not by differentiating numerical eigenvalues.
+
+The saved equally spaced examples for $n=8,11,15$ reach $s=1$ with positive
+sampled $g$, using 60, 80, and 90 decimal working digits respectively.
+Their final coefficient residuals are approximately $1.6\,10^{-38}$,
+$4.3\,10^{-49}$, and $7.7\,10^{-49}$. These are high-precision
+\emph{numerical examples only}; they are not among the twelve interval
+certificates. A flag named \texttt{pass} in those numerical JSON files means
+that the numerical stopping tests passed, not that a theorem was proved.
+
+\subsection{Independent checks included}
+The exact regression suite performs 1,500 rational interval-arithmetic trials,
+50 rational determinant comparisons, formal seed-Jacobian checks through
+$n=6$, confluent determinant checks through $n=5$, exact collocation
+characteristic checks through $n=7$, and symbolic Laguerre identities through
+$n=15$. It reruns all twelve certificates and confirms rejection of three
+intentionally corrupted inputs. The previous two- and three-stage symbolic
+identities are checked separately. These tests help detect implementation
+errors; finite tests are not substitutes for the analytical all-stage proofs.
+
+\subsection{What would still be needed for a full solution}
+The missing implication is global:
+\[
+ \forall n\ge4\ \forall\,0<c_1<\cdots<c_n\le1,
+ \quad\exists d\in(0,\infty)^n:\ F(d,c)=0.
+\]
+For the particular continuation route above, one would need a theorem that
+prevents loss of the required solution before $s=1$: for example, a valid
+continuation or degree argument controlling finite escape, approach to the
+boundary of positivity, and singularities of the coefficient Jacobian.
+Those conditions have not been established here. A nonsingular Jacobian at
+$s=0$, or successful Newton tracking for finitely many target node sets,
+does not establish them.
+
+Several shortcuts therefore remain invalid. The trace and determinant
+constraints are insufficient beyond the small-stage argument; generic
+complex multiplicative inverse-eigenvalue theorems~\cite{rosenthal} do not
+guarantee positive real diagonals; and the nonnegative-coefficient
+construction is ruled out near an eleven-stage confluence by
+Theorem~\ref{thm:obstruction}. Earlier low-order algebraic and higher-order
+numerical investigations~\cite{lioen} are valuable context, not an all-node
+proof. The bounded literature search conducted for this attempt did not
+locate a full theorem or a counterexample settling the stated target.
+
+\section{Reproduction and archive map}
+The main proofs are in this document and its editable LaTeX source.
+\texttt{README.md} gives commands for each check. The key commands, run from
+the extracted archive root, are:
+\begin{verbatim}
+python certification/verify.py \
+  certification/point_certificates.json \
+  certification/neighborhood_certificates.json \
+  --report results/verification_report.json
+python cluster/certify_seed.py \
+  --report cluster/seed11_certificate.json
+python tests/test_exact.py
+python prior_work/scripts/check_symbolic.py
+\end{verbatim}
+The first two use the Python standard library only. The symbolic regression
+requires SymPy. Numerical continuation and candidate generation require
+mpmath, and the preserved previous numerical examples also use NumPy.
+Dependencies and the tested environment are recorded in the archive.
+\texttt{prior\_work/} preserves the preceding partial writeup and its sources;
+its status statements describe that earlier version, not the additional
+results proved in the present document.
+
+\begin{thebibliography}{9}
+\bibitem{entry}
+\emph{OpenProblemsInNLA}, IE-28, ``Positive diagonal preconditioning with a
+nilpotent stiff limit.'' Public problem statement, accessed 12 September 2026;
+the entry records a bounded status check dated 11 September 2026.
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/linear-systems-and-elimination/IE-28/README.md}.
+
+\bibitem{houwen}
+P.~J. van der Houwen and J.~J.~B. de Swart,
+``Triangularly implicit iteration methods for ODE-IVP solvers,''
+\emph{SIAM Journal on Scientific Computing} 18(1) (1997), 41--55.
+DOI: \href{https://doi.org/10.1137/S1064827595287456}{10.1137/S1064827595287456}.
+Open copy: \url{https://ir.cwi.nl/pub/2191/2191D.pdf}.
+
+\bibitem{sdc}
+G.~\v{C}aklovi\'{c}, T.~Lunet, S.~G\"otschel, and D.~Ruprecht,
+``Improving efficiency of parallel across the method spectral deferred
+corrections,'' \emph{SIAM Journal on Scientific Computing} 47(1) (2025),
+A430--A453. DOI: \href{https://doi.org/10.1137/24M1649800}{10.1137/24M1649800}.
+Open text: \url{https://epubs.siam.org/doi/10.1137/24M1649800}.
+
+\bibitem{lioen}
+W.~M. Lioen, ``On the diagonal approximation of full matrices,'' CWI report
+NM-R9518 (1995); journal version in \emph{Journal of Computational and Applied
+Mathematics} 75(1) (1996), 35--42.
+Report record: \url{https://ir.cwi.nl/pub/4925};
+PDF: \url{https://ir.cwi.nl/pub/4925/04925D.pdf}.
+
+\bibitem{rosenthal}
+J.~Rosenthal and X.~Wang, ``The multiplicative inverse eigenvalue problem over
+an algebraically closed field,'' \emph{SIAM Journal on Matrix Analysis and
+Applications} 23(2) (2001), 517--523.
+Preprint: \url{https://arxiv.org/abs/math/0009163}.
+Its algebraically closed-field setting is essential and is not a
+positive-real existence theorem for IE-28.
+\end{thebibliography}
+\end{document}

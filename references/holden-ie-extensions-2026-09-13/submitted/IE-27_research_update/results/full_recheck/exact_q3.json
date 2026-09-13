@@ -1,0 +1,104 @@
+{
+  "status": "VERIFIED",
+  "field": "Q(sqrt(6))",
+  "sqrt6_bracket": [
+    "2449489/1000000",
+    "244949/100000"
+  ],
+  "factor_identity": "B D = I+N verified exactly",
+  "leading_principal_minors": {
+    "H": [
+      {
+        "rational_part": "1",
+        "sqrt6_coefficient": "0",
+        "lower_rational_bound": "1",
+        "upper_rational_bound": "1"
+      },
+      {
+        "rational_part": "6/5",
+        "sqrt6_coefficient": "0",
+        "lower_rational_bound": "6/5",
+        "upper_rational_bound": "6/5"
+      },
+      {
+        "rational_part": "2159/1600",
+        "sqrt6_coefficient": "0",
+        "lower_rational_bound": "2159/1600",
+        "upper_rational_bound": "2159/1600"
+      }
+    ],
+    "HB+B^T H": [
+      {
+        "rational_part": "8/5",
+        "sqrt6_coefficient": "-2/5",
+        "lower_rational_bound": "155051/250000",
+        "upper_rational_bound": "1550511/2500000"
+      },
+      {
+        "rational_part": "183637549/648000000",
+        "sqrt6_coefficient": "-112529/40500000",
+        "lower_rational_bound": "373390271743/1350000000000",
+        "upper_rational_bound": "11201708264819/40500000000000"
+      },
+      {
+        "rational_part": "-6814458569/25920000000",
+        "sqrt6_coefficient": "5594378243/51840000000",
+        "lower_rational_bound": "74450830067827/51840000000000000",
+        "upper_rational_bound": "2481880814869/1728000000000000"
+      }
+    ],
+    "tH-N^T HN": [
+      {
+        "rational_part": "4/25",
+        "sqrt6_coefficient": "0",
+        "lower_rational_bound": "4/25",
+        "upper_rational_bound": "4/25"
+      },
+      {
+        "rational_part": "-78476/46875",
+        "sqrt6_coefficient": "32224/46875",
+        "lower_rational_bound": "14260423/1464843750",
+        "upper_rational_bound": "475381/48828125"
+      },
+      {
+        "rational_part": "-6359599/29296875",
+        "sqrt6_coefficient": "2597464/29296875",
+        "lower_rational_bound": "119187329/1220703125000",
+        "upper_rational_bound": "35788667/366210937500"
+      }
+    ],
+    "I-N^T N": [
+      {
+        "rational_part": "1",
+        "sqrt6_coefficient": "0",
+        "lower_rational_bound": "1",
+        "upper_rational_bound": "1"
+      },
+      {
+        "rational_part": "-18104/1875",
+        "sqrt6_coefficient": "8056/1875",
+        "lower_rational_bound": "203635423/234375000",
+        "upper_rational_bound": "6787881/7812500"
+      },
+      {
+        "rational_part": "-19088/1875",
+        "sqrt6_coefficient": "1672/375",
+        "lower_rational_bound": "11581067/15625000",
+        "upper_rational_bound": "3474341/4687500"
+      }
+    ]
+  },
+  "Rayleigh_gap": {
+    "rational_part": "6613/375",
+    "sqrt6_coefficient": "-4496/625",
+    "lower_rational_bound": "164243/11718750",
+    "upper_rational_bound": "1643273/117187500"
+  },
+  "Euclidean_accretivity_counterexample": {
+    "rational_part": "-13/90",
+    "sqrt6_coefficient": "7/360",
+    "lower_rational_bound": "-11617859/120000000",
+    "upper_rational_bound": "-3485357/36000000"
+  },
+  "conclusion": "For q=3 and every mu>0: rho((I+mu B)^-1 N) <= 2/5 < ||N||_2 < 1"
+}

@@ -21,6 +21,12 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### IE-20, IE-27 and IE-28 — reviewed partial results — Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. The [submission record](references/holden-ie-extensions-2026-09-13/README.md) links the attributed manuscripts, unchanged originals, exact checks and three independent informal AI-agent reviews. IE-20 supplies scalar, breakdown and first-step results; its all-parameter sharp precision target remains open. IE-27 certifies 66 specified stage counts for all positive real shifts and all-stage endpoint shift regimes, leaving intermediate shifts at other stages open. IE-28 proves the two-/three-stage, Laguerre-family and clustered-node cases plus twelve local certificates, leaving arbitrary-node all-stage existence open. The two IE-28 bundles form one submission.
+
+The original targets and permanent IDs are retained: [IE-20](linear-systems-and-elimination/IE-20/README.md), [IE-27](linear-systems-and-elimination/IE-27/README.md), [IE-28](linear-systems-and-elimination/IE-28/README.md). Related [IE-11 supporting certificates](linear-systems-and-elimination/IE-11/README.md) leave its status Open. No full resolution, external human peer review or Lean verification is asserted.
+
 ### 🟡 TR-29 — the two-factor W-state rank — Maximilian Behr
 
 **Partially resolved, 13 September 2026.** Maximilian Behr. [Theorem 1.1](references/behr-tr29-2026-09-13/manuscript/TR29_two_factor_rank.pdf) proves $`R(W_{d_1}\otimes W_{d_2})=2(d_1+d_2-2)`$ for all $`d_1,d_2\ge2`$, settling the case $`k=2`$ of [TR-29](tensor-computations/TR-29/README.md); Corollary 5.4 gives the partially symmetric rank of every bihomogeneous binary monomial with positive exponents. The case $`k\ge3`$ remains open.

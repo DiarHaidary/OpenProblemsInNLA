@@ -9,7 +9,7 @@
 | [IE-03](IE-03/README.md) | Cryer's Hadamard complete-pivoting conjecture | **🟡 PARTIAL** | extreme | interesting to the community | [PDF](IE-03/problem.pdf) · [TeX](IE-03/problem.tex) |
 | [IE-06](IE-06/README.md) | The square-root upper bound for Gaussian partial-pivoting growth | **🔵 OPEN** | challenging | interesting to the community | [PDF](IE-06/problem.pdf) · [TeX](IE-06/problem.tex) |
 | [IE-11](IE-11/README.md) | The exact fifth complete-pivoting growth factor | **🔵 OPEN** | challenging | interesting to specialist | [PDF](IE-11/problem.pdf) · [TeX](IE-11/problem.tex) |
-| [IE-20](IE-20/README.md) | Precision required for conjugate gradients to attain backward accuracy in n steps | **🔵 OPEN** | extreme | interesting to the community | [PDF](IE-20/problem.pdf) · [TeX](IE-20/problem.tex) |
+| [IE-20](IE-20/README.md) | Precision required for conjugate gradients to attain backward accuracy in n steps | **🟡 PARTIAL** | extreme | interesting to the community | [PDF](IE-20/problem.pdf) · [TeX](IE-20/problem.tex) |
 | [IE-24](IE-24/README.md) | RILU conditioning for the Neumann problem on smooth planar domains | **🔵 OPEN** | challenging | interesting to the community | [PDF](IE-24/problem.pdf) · [TeX](IE-24/problem.tex) |
 | [IE-25](IE-25/README.md) | Perturbed MILU conditioning for Neumann problems in two and three dimensions | **🔵 OPEN** | challenging | interesting to the community | [PDF](IE-25/problem.pdf) · [TeX](IE-25/problem.tex) |
 | [IE-27](IE-27/README.md) | Spectral disk for a Radau stage preconditioner | **🟡 PARTIAL** | challenging | interesting to specialist | [PDF](IE-27/problem.pdf) · [TeX](IE-27/problem.tex) |

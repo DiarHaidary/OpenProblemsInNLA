@@ -3,8 +3,8 @@
 **Difficulty:** extreme  
 **Importance:** interesting to the community  
 **Topic:** Finite-precision Krylov methods.  
-**Status:** Open  
-**Last checked:** 2026-09-10  
+**Status:** Partially resolved  
+**Last checked:** 2026-09-13  
 
 **Rating rationale:** Extreme reflects a general finite-precision guarantee for exactly n CG steps, beyond standard exact-arithmetic termination; community impact is a foundational reliability question for Krylov solvers.
 
@@ -72,3 +72,15 @@ Checked workshop v3, which explicitly retains Problem 2.17 in its August 2026 up
 ## Audit update — 2026-09-10
 
 Rechecked [the August 2026 workshop revision](https://arxiv.org/html/2602.05394v3), Problem 2.17. It still asks the required precision question. CG backward-accuracy and finite-precision searches located no sharp answer for the explicitly fixed arithmetic model here; those implementation conventions remain an editorial specialization rather than a verbatim source claim.
+
+## Reviewed partial results — 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation.
+
+The [submitted report](../../references/holden-ie-extensions-2026-09-13/manuscripts/IE-20/report.pdf), Theorem 2.1, gives an exact scalar precision threshold. Theorems 3.1–3.2 supply lower-bound constructions, including a joint dimension/conditioning breakdown family, and Theorems 4.1–4.2 give first-step results. These concern the original fixed recurrence, stored inputs and adversarial scalar-error envelope, with success measured using the true residual.
+
+Theorem 7.1 also gives sufficient precision bounds using dimension, Chebyshev and reciprocal-polynomial stopping horizons; Section 8 draws conclusions on specified parameter domains. These upper bounds and their failure-conditioned bootstrap passed the written-proof audit.
+
+See the [independent informal AI-agent review](../../references/holden-ie-extensions-2026-09-13/verification/review-ie11-ie20.md) for the accepted scope and limitations of the longer upper-bound arguments. **Partially resolved:** a sharp worst-case threshold up to universal multiplicative constants for every dimension, condition bound and tolerance is not established. In particular, the supplied bounds do not match in the regime $`K=n^2`$, $`\varepsilon=n^{-2}`$.
+
+[Submission record and verified affiliation](../../references/holden-ie-extensions-2026-09-13/README.md). Substantial AI assistance is disclosed. The review is informal automated review, not external human peer review or formal verification. No Lean verification was performed.

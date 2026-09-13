@@ -1,0 +1,1268 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm,headheight=14pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable}
+\usepackage{xcolor,enumitem,fancyhdr}
+\usepackage[colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black]{hyperref}
+\usepackage{bookmark,xurl}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert_2}
+\newcommand{\abs}[1]{\left|#1\right|}
+\newcommand{\fl}{\operatorname{fl}}
+\newcommand{\PCG}{P_{\mathrm{CG}}}
+\newcommand{\berr}{\operatorname{berr}}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\spanof}{\operatorname{span}}
+\newcommand{\coefnorm}[1]{\left\lVert#1\right\rVert_{\mathrm{coef},1}}
+\newcommand{\energy}[1]{\left\lVert#1\right\rVert_A}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small IE-20: extended precision results}
+\fancyhead[R]{\small Partial resolution}
+\fancyfoot[C]{\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist{itemsep=2pt,topsep=3pt}
+\allowdisplaybreaks[2]
+\hypersetup{pdftitle={IE-20: Exact Scalar Threshold and Extended Precision Bounds},pdfauthor={Sidney Holden},pdfsubject={Extended partial resolution; the uniform matching-bound problem remains unresolved}}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+\vspace*{12mm}
+{\large Numerical linear algebra\par}
+\vspace{7mm}
+{\LARGE\bfseries IE-20: Exact Scalar Threshold\\[3pt]and Extended Precision Bounds\par}
+\vspace{7mm}
+{\large Proofs, exact checks, and the remaining matching problem\par}
+\vspace{10mm}
+\textbf{Sidney Holden}\hfill September 13, 2026\par
+{\small Center for Computational Biology, Flatiron Institute, Simons Foundation\par Prepared with substantial AI assistance\par}
+\vspace{10mm}
+
+\fbox{\begin{minipage}{0.93\textwidth}
+\textbf{Completion status.} This is an \emph{extended partial resolution},
+not a full solution to IE-20. It adds an exact scalar answer, a sharper
+one-step result, a joint dimension/conditioning breakdown family,
+a capped-condition-number upper bound, and two
+finite-precision early-convergence arguments. The upper and lower bounds
+still do not match for all parameter triples. Section~\ref{sec:gap}
+gives a concrete remaining gap. The proofs are not independently refereed
+or proof-assistant verified.
+\end{minipage}}
+
+\vspace{8mm}
+\textbf{Abstract.}
+We study the fixed CG recurrence and adversarial scalar relative-error
+envelope specified by IE-20. The scalar threshold is determined exactly by
+a degree-five rational inequality. A prefix-wise analysis sharpens the
+dimension factor in the local matvec error. In general dimension, set
+\[
+H=\min\{K,64/\eps^2\},\qquad D=1024H^2,
+\]
+and let $m$ be the minimum of the dimension, an explicit Chebyshev horizon
+of order $\sqrt K\log(K/\eps)$, and a backward-error horizon of order
+$\eps^{-2/3}$. We prove the sufficient precision
+\[
+\left\lceil\log_2\frac{1024(n+1)K D^{12m+20}}{\eps^2}\right\rceil.
+\]
+The cap in $H$ follows from the fact that an excessively long step would
+already have small backward error. The early-horizon arguments transfer
+polynomial approximation to the actual rounded recurrence, rather than
+assuming that computed iterates are exact Krylov projections.
+A prefix-wise matvec estimate and a new breakdown family also give
+\[
+\PCG(n,K,\eps)=\log_2(nK)+O_{\eps}(1)
+\]
+for each fixed tolerance, uniformly in $n\ge2$ and $K\ge1$.
+The additive constants are universal when $3/8\le\eps<1/2$.
+There is also a sharp order uniformly for $1\le K\le2$. The previous path/outlier lower
+bound and its exact certificates are preserved in the companion archive.
+
+\vfill
+\small
+The package contains this PDF, editable \LaTeX, standard-library Python
+code, regenerated exact checks, a proof-scope audit, source notes, and the
+previous recovery archive. Finite checks verify their recorded examples,
+not the universal analytic claims.
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\section{Problem, notation, and result map}
+\label{sec:problem}
+
+We use the editorial IE-20 formulation in the repository\cite{ie20}.
+For $n\ge1$, $K\ge1$, and $0<\eps<1/2$, stored inputs are SPD
+$A\in\R^{n\times n}$ and $b\ne0$, with $\kappa_2(A)\le K$ and at most
+$p$ binary significant bits per entry. Exponents are unbounded. Each
+scalar operation satisfies
+\[
+\fl(a\circ b)=(a\circ b)(1+\delta),\qquad |\delta|\le u=2^{-p}.
+\]
+Errors are independently admissible. Products and additions are separate;
+dot products include all indices, accumulated from zero in increasing
+order. Copies and comparisons are exact. The recurrence stops at a zero
+recursive residual or before a zero divisor. Success requires a produced
+iterate of index at most $n$ satisfying
+\begin{equation}\label{eq:eta}
+\eta(x)=\frac{\norm{b-Ax}}{\norm A\norm x+\norm b}\le\eps.
+\end{equation}
+The threshold $\PCG(n,K,\eps)$ must guarantee success at every greater
+precision too, for every admissible input and error schedule.
+
+\paragraph{Interpretation of the error model.}
+The error equations are an envelope, not a correctly rounded binary map.
+An addition of zero may carry an allowed relative error, and an exact
+intermediate may be retained even if it is not a $p$-bit number. Input
+representability is a separate condition. All lower-bound constructions
+and the exact executor use this interpretation. A lower bound here is
+not automatically a lower bound for IEEE round-to-nearest.
+
+We write a search direction as $v_j$, reserving $p$ for precision:
+\begin{align*}
+&x_0=0,\quad r_0=v_0=b,\quad \rho_0=\fl(b^Tb),\\
+&q_j=\fl(Av_j),\quad d_j=\fl(v_j^Tq_j),\quad
+\alpha_j=\fl(\rho_j/d_j),\\
+&x_{j+1}=\fl(x_j+\alpha_jv_j),\quad
+r_{j+1}=\fl(r_j-\alpha_jq_j),\\
+&\rho_{j+1}=\fl(r_{j+1}^Tr_{j+1}),\quad
+\beta_j=\fl(\rho_{j+1}/\rho_j),\quad
+v_{j+1}=\fl(r_{j+1}+\beta_jv_j).
+\end{align*}
+The last line is evaluated only when another step is needed. Every
+product and addition inside a displayed vector expression is separately
+rounded according to the preceding conventions.
+
+\subsection{The strengthened upper bound}
+
+Define the integer horizons
+\begin{align}
+\bar K&=\max\{2,K\},&
+k_C&=\left\lceil\sqrt{\bar K}\right\rceil
+      \left\lceil\log_2\frac{16\bar K}{\eps}\right\rceil,
+\label{eq:kC}\\
+k_U&=\left\lceil(64/\eps)^{2/3}\right\rceil,&
+m&=\min\{n,k_C,k_U\},\label{eq:horizon}\\
+H&=\min\{K,64/\eps^2\},&D&=1024H^2.\label{eq:HD}
+\end{align}
+The main upper-bound theorem, proved in Sections~\ref{sec:bootstrap}--\ref{sec:mainupper}, is
+\begin{equation}\label{eq:mainupper}
+\PCG(n,K,\eps)\le
+\max\left\{2,\left\lceil\log_2
+\frac{1024(n+1)K D^{12m+20}}{\eps^2}\right\rceil\right\}.
+\end{equation}
+Consequently, with universal constants,
+\begin{equation}\label{eq:orderupper}
+\PCG=O\!\left(
+\log\frac{nK}{\eps}+
+\min\!\left\{n,\sqrt K\log\frac K\eps,\eps^{-2/3}\right\}
+\log\!\left(2\min\{K,\eps^{-2}\}\right)\right).
+\end{equation}
+The constants in \eqref{eq:mainupper} are conservative. The integer
+horizon $k_C$ is deliberately larger than the least degree satisfying
+the Chebyshev estimate.
+
+\subsection{What is sharp, and what is not}
+
+For $n=1$, Section~\ref{sec:scalar} gives the exact integer threshold.
+For $n\ge2$, the general lower bound remains
+\begin{equation}\label{eq:generallower}
+\PCG(n,K,\eps)\ge c\left(\log_2\frac n\eps+\log_2K\right).
+\end{equation}
+Combining the new upper arguments with explicit witnesses yields
+\begin{align}
+\PCG(n,K,\eps)&=\Theta(\log_2(n/\eps)),&&1\le K\le2,
+\label{eq:wellcond}\\
+\PCG(n,K,\eps)&=\Theta(\log_2(nK)),&&n\ge2,\quad3/8\le\eps<1/2,
+\label{eq:coarse}\\
+\PCG(2,K,\eps)&=\Theta(\log_2K+\log_2(1/\eps)).
+\label{eq:two}
+\end{align}
+All constants in these displayed $\Theta$ statements are universal on
+the indicated domains. For each fixed tolerance, uniformly in $n\ge2$ and $K\ge1$, we prove
+\begin{equation}\label{eq:fixedtol}
+\PCG(n,K,\eps)=\log_2(nK)+O_{\eps}(1).
+\end{equation}
+In particular, for fixed $n\ge2$ and fixed $\eps$,
+\begin{equation}\label{eq:largeK}
+\PCG(n,K,\eps)=\log_2K+O_{n,\eps}(1).
+\end{equation}
+None of these statements closes the all-parameter gap between
+\eqref{eq:generallower} and \eqref{eq:orderupper}.
+
+\subsection{Relation to the recovered work and recent sources}
+
+The prior manuscript in \path{prior/IE20_recovered.zip} supplied the
+same elementary lower bounds, the $K=1$ and $n=2$ orders, an upper bound
+with $H=K$, $m=n$, and an extra dimension factor in the local error budget, and a path/outlier family requiring order $n\log K$
+on specified joint parameter sequences. This manuscript proves the new
+upper statements directly, while retaining the old archive for the full
+hard-family proof and provenance. No claim of external priority is made.
+
+Derezi\'nski, Nakatsukasa, and Rebrova give an exact-arithmetic reciprocal
+polynomial approximation used in Case 3 of Theorem~\ref{thm:main}\cite{minberr}.
+The transfer to rounded CG iterates is proved here; it is not imported
+as a finite-precision conclusion from their theorem.
+
+Bake, Carson, and Ma establish error estimates at a sufficiently late
+iteration under stated smallness conditions; their theorem does not bound
+that iteration by $n$\cite{bcm}. A September 2026 manuscript by Sinha gives
+a sufficient precision for a specified CG computation with independently
+recomputed residual tests, together with a conditioning obstruction,
+and explicitly retains a quantitative gap\cite{sinha}. These results do
+not supply the missing matching characterization for the present target.
+
+\section{An exact answer in dimension one}
+\label{sec:scalar}
+
+\begin{theorem}[Exact scalar threshold]\label{thm:scalar}
+For every $K\ge1$, define
+\begin{equation}\label{eq:scalarE}
+E_1(u)=\frac{(1+u)^4-(1-u)^5}{(1+u)^4+(1-u)^5}.
+\end{equation}
+Then
+\begin{equation}\label{eq:scalarthreshold}
+\PCG(1,K,\eps)=\min\{p\in\mathbb Z:\ p\ge2,
+\ E_1(2^{-p})\le\eps\}.
+\end{equation}
+In particular, the answer is independent of the supplied condition-number
+bound $K$ and is computable by exact rational comparisons.
+\end{theorem}
+\begin{proof}
+Write $A=[a]$, $a>0$, and $b\ne0$. Exactly nine elementary operations
+contribute to the first iterate: two for $\rho_0$, two for $q_0$, two
+for $d_0$, one for division, and two for the update of $x_1$.
+All relevant divisors are positive because $u\le1/4$.
+After cancellation of the input values,
+\[
+x_1=\frac ba F,
+\]
+where $F$ is a product of five allowed factors $1+\delta$ divided by
+four such factors. Thus
+\[
+F_-:=\frac{(1-u)^5}{(1+u)^4}\le F\le
+F_+:=\frac{(1+u)^5}{(1-u)^4}.
+\]
+For positive $F$, the backward error is $|1-F|/(1+F)$.
+It increases with $|\log F|$, and
+\[
+-\log F_- -\log F_+=-\log(1-u^2)>0.
+\]
+The worse endpoint is therefore $F_-$. Its error is precisely
+\eqref{eq:scalarE}. This endpoint is attained with the admissible inputs
+$a=b=1$, errors $-u$ in the five numerator operations and $+u$ in the
+four denominator operations. The initial iterate has error one.
+Residual-update operations occur after $x_1$ has been produced and cannot
+alter its backward error.
+
+The function $F_-(u)$ is strictly decreasing on $(0,1/4]$, so $E_1(u)$
+is strictly increasing. Consequently the least successful precision also
+guarantees success at every larger precision. This proves the threshold
+quantifier in \eqref{eq:scalarthreshold}.
+\end{proof}
+
+The leading small-$u$ behavior is $E_1(u)=(9/2)u+O(u^2)$, so
+$\PCG(1,K,\eps)=\log_2(1/\eps)+O(1)$. The exact formula, rather than
+this expansion, handles equality cases and integer rounding. The
+companion code exhausts all $2^9$ sign corners at each of three precisions;
+the analytic monotonicity argument covers the entire continuous error box.
+
+\section{Elementary lower bounds retained for comparison}
+\label{sec:lower}
+
+\begin{theorem}\label{thm:lower}
+For every admissible triple,
+\begin{equation}\label{eq:loweridentity}
+\PCG(n,K,\eps)\ge
+\max\left\{2,1+\left\lfloor\log_2\frac{n}{4\eps}\right\rfloor\right\}.
+\end{equation}
+For $n\ge2$ there is also the bound
+\begin{equation}\label{eq:lowerbreakdown}
+\PCG(n,K,\eps)\ge\max\{2,\lfloor\log_2(K+1)\rfloor\}.
+\end{equation}
+Together they imply \eqref{eq:generallower}.
+\end{theorem}
+\begin{proof}
+For \eqref{eq:loweridentity}, choose $A=I_n$ and $b=e_1$.
+Set the error to $+u$ on every addition in the first row of the first
+matrix-vector product, including additions of zero, and set every other
+error to zero. Then $q_0=t e_1$ with $t=(1+u)^n$. The produced iterate
+and recursive residual are $x_1=t^{-1}e_1$ and $r_1=0$. The algorithm
+stops, but its true backward error is $(t-1)/(t+1)$.
+For $u\le1/4$ and $\eps<1/2$,
+\[
+\log(1+u)\ge\tfrac45u,\qquad
+\log\frac{1+\eps}{1-\eps}\le\tfrac83\eps.
+\]
+Hence $u\ge4\eps/n$ gives strict failure. Failure at
+$p=\lfloor\log_2(n/(4\eps))\rfloor\ge2$ forces the threshold to exceed
+$p$. Smaller values are covered by its defining lower bound two.
+
+For \eqref{eq:lowerbreakdown}, at precision $p\ge2$ set $u=2^{-p}$ and
+\[
+A=\begin{pmatrix}1&1-u\\1-u&1\end{pmatrix}\oplus I_{n-2},\qquad
+b=(1,-1,0,\ldots,0)^T.
+\]
+The stored number $1-u$ has exactly $p$ significant bits. The condition
+number is $(2-u)/u=2^{p+1}-1$. Put error $-u$ on the two diagonal
+products in the first matrix-vector product and zero elsewhere. Both
+nonzero rows now sum to zero, so $q_0=d_0=0$. Only $x_0$ is produced,
+and it fails. If $q=\lfloor\log_2(K+1)\rfloor\ge3$, take $p=q-1$;
+then this input has condition number at most $K$ and the threshold is at
+least $q$. The remaining cases again follow from $\PCG\ge2$.
+
+Finally, the maximum of the two logarithmic lower bounds is at least
+half their sum, up to additive constants absorbed by $\PCG\ge2$.
+\end{proof}
+
+
+\begin{theorem}[Joint dimension/conditioning breakdown]\label{thm:jointlower}
+Let $n\ge2$, $K\ge15$, and $a=\lfloor n/2\rfloor$. Then
+\begin{equation}\label{eq:jointinteger}
+\PCG(n,K,\eps)\ge
+1+\left\lfloor\log_2\frac{a(K+1)}2\right\rfloor.
+\end{equation}
+For all $n\ge2$, $K\ge1$, and admissible tolerances, this implies
+\begin{equation}\label{eq:jointlower}
+\PCG(n,K,\eps)\ge\log_2(nK)-5.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Set $p=\lfloor\log_2(a(K+1)/2)\rfloor$, $u=2^{-p}$,
+$t=au$, and $c=1-t$. These choices give
+\[
+p\ge2,\qquad \frac2{K+1}\le t<\frac4{K+1}\le\frac14,
+\qquad nu<1.
+\]
+For the last estimate, use $u<4/[a(K+1)]$ and $a\ge n/4$.
+Put the block $\bigl[\begin{smallmatrix}1&c\\c&1\end{smallmatrix}\bigr]$
+on indices $1$ and $n$, put identity on the remaining indices, and
+choose $b=e_1-e_n$. The condition number is $(2-t)/t\le K$.
+The stored entry $c=(2^p-a)/2^p$ has at most $p$ significant bits.
+
+In each active row, the first nonzero product is followed by $n-1$
+additions before the final column is included. Thus one product and
+$n-1$ additions supply $n$ independently selectable factors. In row 1,
+scale its initial value one down to $c$; in row $n$, scale its initial
+value $c$ up to one. Both scalings are admissible. Indeed,
+\[
+t=au\le\frac{nu}{2}\le\frac{nu}{1+nu},\qquad
+c(1+u)^n\ge c(1+nu)\ge1.
+\]
+Thus $c\ge(1+u)^{-n}\ge(1-u)^n$ as well.
+For an exact rational schedule, repeatedly use factor $1-u$ on the
+first row until the next such factor would undershoot $c$, then use the
+exact factor needed to reach $c$ and subsequently factor one. On the
+last row use the corresponding greedy factors up to $1+u$ toward one.
+Every chosen factor is rational and lies in the permitted interval.
+
+Evaluate the last-column products and additions exactly. They cancel
+$c-c$ in row 1 and $1-1$ in row $n$. All other rows are zero, so
+$q_0=d_0=0$. The run breaks down with only $x_0$ produced. Failure at
+precision $p$ proves \eqref{eq:jointinteger}.
+Since $a\ge n/4$, this lower bound exceeds $\log_2(n(K+1)/8)$.
+For $K<15$, the identity witness and $\eps<1/2$ give
+$\PCG>\log_2(n/2)>\log_2(nK)-5$. Combining the two ranges proves
+\eqref{eq:jointlower}. Together with the identity witness this also gives
+\[
+\PCG(n,K,\eps)\ge
+\log_2\left(n\max\{K,\eps^{-1}\}\right)-5.
+\]
+\end{proof}
+
+\section{The sharp exact first-step envelope}
+\label{sec:first}
+
+\begin{theorem}\label{thm:firstexact}
+For exact arithmetic on real SPD inputs with $n\ge2$ and condition number
+at most $K$, the largest possible first-step backward error is
+\begin{equation}\label{eq:M}
+M(K)=\frac{K-1}{\sqrt{8K(K+1)}}.
+\end{equation}
+This is a real-input extremal statement; exact representability of its
+maximizing vector at a prescribed finite precision is not asserted.
+\end{theorem}
+\begin{proof}
+Normalize $\norm A=\norm b=1$, put $a=1/K$, and write
+$\mu=b^TAb$, $\nu=b^TA^2b$. The exact first iterate is $x=b/\mu$, so
+\[
+\eta(x)^2=\frac{\nu-\mu^2}{(1+\mu)^2}.
+\]
+Every eigenvalue $t\in[a,1]$ satisfies
+$t^2\le(1+a)t-a$. Consequently
+$\nu-\mu^2\le(1-\mu)(\mu-a)$. The identity
+\[
+\frac{(1-a)^2}{8(1+a)}-
+\frac{(1-t)(t-a)}{(1+t)^2}
+=
+\frac{\bigl((a+3)t-(3a+1)\bigr)^2}
+     {8(1+a)(1+t)^2}
+\]
+shows that the maximum occurs at $\mu=(1+3a)/(3+a)$.
+The resulting square root is \eqref{eq:M}.
+For $K>1$, equality is attained by a two-point spectrum $\{a,1\}$ and
+a unit vector whose squared weights are $2/(3+a)$ at $a$ and
+$(1+a)/(3+a)$ at one. Extra coordinates may have zero right-hand-side
+weight. For $K=1$, the error is identically zero.
+\end{proof}
+
+\begin{theorem}[Finite-precision first step]\label{thm:firstfinite}
+If $\eps>M(K)$, then
+\begin{equation}\label{eq:firstprecision}
+\PCG(n,K,\eps)\le
+\max\left\{2,\left\lceil\log_2
+\frac{512(n+1)K}{\eps-M(K)}\right\rceil\right\}.
+\end{equation}
+The conclusion also holds for $n=1$, although Theorem~\ref{thm:scalar}
+is sharper there.
+\end{theorem}
+\begin{proof}
+Continue with $\norm A=\norm b=1$. Set
+$\omega=64(n+1)Ku$ and suppose $\omega\le1/16$.
+The local scalar estimates proved in Lemma~\ref{lem:local} give
+$\alpha_0\mu=1+\theta$, $|\theta|\le\omega$, and ensure a positive
+computed denominator. The separately rounded product and addition in
+$x_1$ then give
+\[
+\norm{x_1-b/\mu}\le\frac{2\omega}{\mu}.
+\]
+Indeed their additional relative deviation is at most $2u+u^2$, and
+$u\le\omega/128$. Perturbing the numerator and denominator of
+\eqref{eq:eta}, with $x^{\rm ex}=b/\mu$, yields
+\[
+\eta(x_1)\le\frac{\eta(x^{\rm ex})+2\omega}{1-2\omega}
+\le M(K)+4\omega.
+\]
+For the last inequality, use $M(K)<1/(2\sqrt2)$ and $2\omega\le1/8$.
+Let $\Delta=\eps-M(K)>0$. The precision in \eqref{eq:firstprecision}
+implies $\omega\le\Delta/8<1/16$, so
+$\eta(x_1)\le M(K)+\Delta/2<\eps$. This holds at all larger precisions
+as well.
+\end{proof}
+
+\begin{corollary}\label{cor:first}
+For $n\ge2$ and $3/8\le\eps<1/2$, \eqref{eq:coarse} holds.
+Also, whenever $n\ge2$ and $\eps\ge2M(K)$,
+\[
+\PCG(n,K,\eps)=\Theta\!\left(\log_2\frac{nK}{\eps}\right)
+\]
+with universal constants on this region.
+\end{corollary}
+\begin{proof}
+Since $1/(2\sqrt2)<23/64$, the coarse-tolerance region has
+$\eps-M(K)\ge1/64$. Equation~\eqref{eq:firstprecision} is then at most
+$\lceil\log_2(32768(n+1)K)\rceil$.
+The joint lower bound below improves this to the explicit additive comparison
+\[
+\log_2(nK)-5\le\PCG(n,K,\eps)\le\log_2(nK)+17.
+\]
+In the second region, $\eps-M(K)\ge\eps/2$, and the same comparison
+proves the stated order.
+\end{proof}
+
+\section{A failure-conditioned bootstrap}
+\label{sec:bootstrap}
+
+This section supplies the common recurrence analysis for all three
+horizons in \eqref{eq:horizon}. The important new point is that $H$ in
+\eqref{eq:HD}, rather than $K$, controls the step lengths while every
+produced iterate fails.
+
+\subsection{Normalization and local error equations}
+
+Homogeneity allows $\norm A=\norm b=1$. To see this without assuming
+representability of normalized inputs, let $a_0=\norm A$ and
+$B_0=\norm b$ and transform an execution by
+\[
+A'=A/a_0,\quad b'=b/B_0,\quad x_j'=a_0x_j/B_0,\quad
+r_j'=r_j/B_0,\quad v_j'=v_j/B_0.
+\]
+Then $\alpha_j'=a_0\alpha_j$, $\rho_j'=\rho_j/B_0^2$, and $\beta_j$
+is unchanged. Every scalar error equation transforms with the same
+$\delta$. The normalized analysis applies to all real inputs, hence also
+to this possibly nonrepresentable normalized input. The backward error
+is invariant. The normalized spectrum lies in $[1/K,1]$.
+
+Set
+\begin{equation}\label{eq:omega}
+\omega=64(n+1)Ku,
+\end{equation}
+and write
+\[
+R_j=\norm{r_j},\quad V_j=\norm{v_j},\quad X_j=\norm{x_j},\quad
+Q_j=v_j^TAv_j.
+\]
+The symbol $Q_j$ here is a scalar quadratic form, not a Lanczos basis.
+
+
+\begin{lemma}[Normwise prefix estimate]\label{lem:prefix}
+For the specified left-to-right matvec, if $nu\le1/2$, then
+\begin{equation}\label{eq:prefixbound}
+\norm{\fl(Av)-Av}\le4nu\norm A\norm v.
+\end{equation}
+The estimate does not replace $A$ by its entrywise absolute value.
+\end{lemma}
+\begin{proof}
+Collect the row accumulators at their common column index $j$ into a
+vector $s_j$. This is an algebraic grouping of a completed execution;
+it does not change the row-by-row evaluation order or its errors.
+Let $A_{:,j}$ be column $j$ and let
+$y_j=\sum_{i=1}^j A_{:,i}v_i$ be its exact prefix. Diagonal matrices
+$D_j^{\rm add},D_j^{\rm mul}$ of norm at most $u$ encode the componentwise
+errors. For $e_j=s_j-y_j$,
+\[
+e_j=D_j^{\rm add}y_j+
+(I+D_j^{\rm add})(e_{j-1}+D_j^{\rm mul}A_{:,j}v_j).
+\]
+Unrolling from $e_0=0$ gives
+\[
+\norm{e_n}\le(1+u)^n u\left(
+\sum_{j=1}^n\norm{y_j}+\sum_{j=1}^n\norm{A_{:,j}}\,|v_j|\right).
+\]
+Each exact prefix has norm at most $\norm A\norm v$, while the second
+sum is at most $\lVert A\rVert_F\norm v\le\sqrt n\norm A\norm v$.
+Since $(1+u)^n\le e^{nu}<2$, the result follows from
+$2(n+\sqrt n)\le4n$. All zero terms remain included.
+\end{proof}
+
+\begin{lemma}[Local envelopes]\label{lem:local}
+Suppose $\omega\le1/2$. Whenever the relevant nonzero residuals and
+directions are available, their computed scalar divisors are positive,
+and the performed operations satisfy
+\begin{align}
+\alpha_jQ_j&=R_j^2(1+\theta_j),&|\theta_j|&\le\omega,\label{eq:localalpha}\\
+\beta_jR_j^2&=R_{j+1}^2(1+\zeta_j),&|\zeta_j|&\le\omega,\label{eq:localbeta}\\
+r_{j+1}&=r_j-\alpha_jAv_j+f_j,&
+\norm{f_j}&\le\omega(R_j+\alpha_jV_j),\label{eq:localr}\\
+x_{j+1}&=x_j+\alpha_jv_j+g_j,&
+\norm{g_j}&\le\omega(X_j+\alpha_jV_j),\label{eq:localx}\\
+v_{j+1}&=r_{j+1}+\beta_jv_j+h_j,&
+\norm{h_j}&\le\omega(R_{j+1}+\beta_jV_j).\label{eq:localv}
+\end{align}
+Equations involving the next direction are used only when it is formed.
+\end{lemma}
+\begin{proof}
+Let $\gamma=(n+1)u/[1-(n+1)u]$. Expanding at most $n+1$ factors
+$1+\delta$ in each dot-product term gives
+$\gamma\le2(n+1)u$. The assumption $\omega\le1/2$ implies
+$(n+1)Ku\le1/128$, so Lemma~\ref{lem:prefix} gives
+\[
+\norm{q_j-Av_j}\le4nuV_j.
+\]
+The subsequent dot product satisfies
+\begin{align*}
+|d_j-Q_j|
+&\le4nuV_j^2+2(n+1)uV_j\norm{q_j}\\
+&\le8(n+1)uV_j^2\le8(n+1)KuQ_j.
+\end{align*}
+Its relative error is at most $\omega/8\le1/16$, so $d_j>0$ for
+$v_j\ne0$. Also $|\rho_j-R_j^2|\le\gamma R_j^2$, with relative error
+at most $\omega/32$, and $\rho_j>0$ for $r_j\ne0$.
+The rounded division has error at most $u\le\omega/128$.
+Taking the two ratios therefore proves \eqref{eq:localalpha} and
+\eqref{eq:localbeta}, with bounds strictly smaller than $\omega$.
+A separately rounded product and vector addition contribute at most
+$3u$ times the sum of the input norms. Combining this observation with
+the matvec estimate proves \eqref{eq:localr}--\eqref{eq:localv}.
+All estimates retain the additions of zero required by the specification.
+\end{proof}
+
+\subsection{Induction statement}
+
+Fix an integer $1\le m\le n$, and use $H,D$ from \eqref{eq:HD}.
+Assume
+\begin{equation}\label{eq:smallness}
+\sigma^2:=\omega D^{12m+20}\le\eps^2/16.
+\end{equation}
+Let $E_j$ be the maximum absolute off-diagonal inner product among
+$r_0,\ldots,r_j$, and the maximum absolute off-diagonal $A$-inner
+product among formed directions through $v_j$. At the endpoint $j=m$,
+include only directions through $v_{m-1}$; $v_m$ is not needed.
+Empty maxima are zero. Put $B=32H$ and
+\[
+w_j=b-Ax_j-r_j,\qquad W_j=\norm{w_j}.
+\]
+
+\begin{lemma}[Bootstrap under total failure]\label{lem:bootstrap}
+Assume that every iterate produced through the horizon fails
+\eqref{eq:eta}. Under \eqref{eq:smallness}, the execution cannot stop
+before producing $x_m$. For $0\le j\le m$, it satisfies
+\begin{align}
+\max\{1,R_j,X_j,V_j\}&\le D^{j+1},\label{eq:Mbound}\\
+E_j&\le\omega D^{8j+8},\label{eq:Ebound}\\
+W_j&\le4\omega D^{j+2}\le\eps/8,\label{eq:Wbound}\\
+R_j&\ge\eps X_j+7\eps/8.\label{eq:failR}
+\end{align}
+The terms involving $V_j$ concern only $j<m$. Every needed coefficient
+obeys
+\begin{equation}\label{eq:abbounds}
+\frac14\le\alpha_j\le8H,\qquad0\le\beta_j\le B,
+\end{equation}
+and the corresponding local errors obey
+\begin{equation}\label{eq:errbounds}
+\norm{f_j},\norm{g_j}\le\omega D^{j+2},\qquad
+\norm{h_j}\le2\omega D^{j+2}.
+\end{equation}
+\end{lemma}
+
+\begin{proof}
+The initial conditions have $R_0=V_0=1$, $X_0=W_0=E_0=0$.
+At each subsequent index, \eqref{eq:Wbound} and failure imply
+\[
+R_j\ge\norm{b-Ax_j}-W_j>
+\eps(X_j+1)-W_j\ge\eps X_j+7\eps/8.
+\]
+Thus $R_j>\sigma$. We establish the remaining estimates in the order
+below; this order is important for excluding breakdown without assuming
+that all steps already exist.
+
+\paragraph{The current direction is nonzero.}
+Expanding \eqref{eq:localv} gives a combination of residuals through
+$r_j$ with coefficient sum at most $2B^j$, plus accumulated local errors.
+Since $B/D\le1/32$, their total norm is at most
+$3\omega D^{j+1}$. Consequently
+\begin{align*}
+|r_j^Tv_j-R_j^2|
+&\le2D^jE_j+3\omega D^{2j+2}\\
+&\le\omega D^{9j+10}\le\sigma^2/8.
+\end{align*}
+For $j<m$, the last comparison follows from \eqref{eq:smallness} and
+$D\ge1024$. Since $R_j>\sigma$, it gives $V_j\ge7R_j/8>0$.
+Lemma~\ref{lem:local} now ensures $d_j>0$, so the next step can legally
+be evaluated.
+
+\paragraph{The upper bound on the step length.}
+If $H=K$, use $Q_j\ge V_j^2/K$ in \eqref{eq:localalpha} to obtain
+$\alpha_j\le8H$.
+Suppose instead that $H=64/\eps^2$. Let $\alpha=\alpha_j$,
+$s=\alpha v_j$, and $S=\norm s$. The induction gives
+$X_j\le R_j/\eps$, $W_j\le R_j/7$, and $S\ge7\alpha R_j/8$.
+If $\alpha>8H=512/\eps^2$, these inequalities imply $X_j/S\le1/4$.
+Also $A^2\preceq A$ and \eqref{eq:localalpha} give
+\[
+\norm{As}\le\sqrt{2\alpha}\,R_j,
+\qquad \norm{g_j}\le\omega(X_j+S).
+\]
+The denominator in the next backward error is at least $S/2$.
+Using $b-Ax_j=r_j+w_j$ in its numerator therefore yields the safe bound
+\begin{equation}\label{eq:largestepsuccess}
+\eta(x_{j+1})\le\frac5\alpha+\frac6{\sqrt\alpha}+3\omega<\eps.
+\end{equation}
+The last inequality follows from $\alpha>512/\eps^2$,
+$\eps<1/2$, and $\omega\le\eps/32$, all consequences of our assumptions.
+This contradicts failure of the newly produced iterate. Hence
+$\alpha_j\le8H$ in the capped case too. The argument has not presumed
+bounds on $f_j,g_j$ beyond the local envelopes, nor presumed existence
+of a later coefficient.
+
+\paragraph{The lower bound on the step length.}
+For $j\ge1$, write $v_j=r_j+\beta_{j-1}v_{j-1}+h_{j-1}$ and expand the
+quadratic form in the opposite direction. With
+$C=v_{j-1}^TAv_j$, this gives
+\begin{align*}
+Q_j={}&r_j^TAr_j+2\beta_{j-1}C-
+\beta_{j-1}^2v_{j-1}^TAv_{j-1}\\
+&+2h_{j-1}^TA(v_j-\beta_{j-1}v_{j-1})-h_{j-1}^TAh_{j-1}\\
+\le{}&R_j^2+2BE_j+
+2\norm{h_{j-1}}(V_j+B V_{j-1})\\
+\le{}&R_j^2+\omega D^{8j+10}
+\le R_j^2+\sigma^2/8\le2R_j^2.
+\end{align*}
+For $j=0$, $Q_0\le R_0^2$ directly. Equation~\eqref{eq:localalpha}
+therefore gives $\alpha_j\ge1/4$.
+
+\paragraph{Next residual and iterate.}
+The two update envelopes imply
+\[
+R_{j+1},X_{j+1}\le(1+\omega)(1+8H)D^{j+1}
+\le\tfrac14D^{j+2},\qquad
+\norm{f_j},\norm{g_j}\le\omega D^{j+2}.
+\]
+Their true-residual gap satisfies $w_{j+1}=w_j-Ag_j-f_j$.
+Summing gives \eqref{eq:Wbound} at the next index. If the new recursive
+residual were zero, this gap bound would already contradict failure.
+Thus a needed next norm-square divisor is positive.
+
+\paragraph{Bounding the next ratio.}
+Using $A^2\preceq A$ and
+$r_j^TAv_j=Q_j-\beta_{j-1}v_{j-1}^TAv_j-h_{j-1}^TAv_j$ in the
+squared residual update gives
+\begin{align*}
+R_{j+1}^2\le{}&R_j^2+(\alpha_j-2)R_j^2(1+\theta_j)
++2\alpha_jB E_j+2\alpha_j\norm{h_{j-1}}V_j\\
+&+2\norm{f_j}(R_j+\alpha_jV_j)+\norm{f_j}^2\\
+\le{}&12H R_j^2+D E_j+\omega D^{2j+4}\\
+\le{}&12H R_j^2+\omega D^{8j+10}\le13H R_j^2.
+\end{align*}
+At $j=0$ the terms with index $-1$ are absent. For explicit constant
+checks, $2\alpha_jB\le D/2$, while the other local terms are bounded by
+$235H^2\omega D^{2j+2}$, which is less than
+$\omega D^{2j+4}$. Equation~\eqref{eq:localbeta} yields
+$\beta_j\le32H=B$. Then
+\[
+V_{j+1}\le(1+\omega)(R_{j+1}+B V_j)
+\le\tfrac32(\tfrac14+\tfrac1{32})D^{j+2}<D^{j+2}.
+\]
+The bound on $h_j$ follows immediately.
+
+\paragraph{Residual orthogonality defects.}
+Put
+$F_j=\max\{E_j,|r_i^Tr_{j+1}|:0\le i\le j\}$.
+For $i<j$, substitute
+$r_i=v_i-\beta_{i-1}v_{i-1}-h_{i-1}$ into
+$r_i^Tr_{j+1}=r_i^Tr_j-\alpha_jr_i^TAv_j+r_i^Tf_j$.
+For $i=j$, use
+\[
+r_j^Tr_{j+1}=R_j^2-\alpha_jQ_j+
+\alpha_j\beta_{j-1}v_{j-1}^TAv_j+
+\alpha_jh_{j-1}^TAv_j+r_j^Tf_j.
+\]
+In each case the coefficient of $E_j$ is below $D$, and the remaining
+terms are bounded by $\omega D^{2j+5}$. Hence
+\begin{equation}\label{eq:Fbound}
+F_j\le D E_j+\omega D^{2j+5}.
+\end{equation}
+
+\paragraph{Direction conjugacy defects.}
+When $v_{j+1}$ is needed, use
+$Av_i=(r_i-r_{i+1}+f_i)/\alpha_i$. For $i<j$, this gives
+\[
+|v_i^TAv_{j+1}|\le8F_j+B E_j+2\omega D^{2j+3}.
+\]
+For the adjacent pair the exact algebraic cancellation is
+\begin{align*}
+\alpha_jv_j^TAv_{j+1}
+={}&r_j^Tr_{j+1}-R_{j+1}^2+f_j^Tr_{j+1}
++\alpha_j\beta_jQ_j+\alpha_jv_j^TAh_j,\\
+\alpha_j\beta_jQ_j
+={}&R_{j+1}^2(1+\theta_j)(1+\zeta_j).
+\end{align*}
+Therefore
+$|v_j^TAv_{j+1}|\le4F_j+2\omega D^{2j+4}$.
+Combining with \eqref{eq:Fbound} proves
+\[
+E_{j+1}\le D^2E_j+\omega D^{2j+7}
+\le\omega\bigl(D^{8j+10}+D^{2j+7}\bigr)
+\le\omega D^{8(j+1)+8}.
+\]
+At the horizon no next direction is required, so \eqref{eq:Fbound}
+alone suffices. This completes the induction and the exclusion of every
+premature stopping mechanism under the failure assumption.
+\end{proof}
+
+\section{Transfer from polynomials to computed spans}
+\label{sec:span}
+
+For a polynomial $\pi(t)=\sum c_it^i$, let
+$\coefnorm{\pi}=\sum|c_i|$. The next lemma is an explicit substitute for
+an unjustified claim that rounded CG spans an exact Krylov space.
+
+\begin{lemma}[Approximate polynomial containment]\label{lem:span}
+Under Lemma~\ref{lem:bootstrap}, fix $1\le k\le m$. If $\deg\pi<k$ and
+$\coefnorm{\pi}\le D^{k+1}$, then $y=\pi(A)b$ has a representation
+\begin{equation}\label{eq:spanv}
+y=\sum_{i=0}^{k-1}c_i v_i+e,\qquad
+\sum|c_i|\le D^{2k},\qquad\norm e\le\omega D^{3k+1}.
+\end{equation}
+There is also a vector $z\in\spanof\{x_1,\ldots,x_k\}$ such that
+\begin{equation}\label{eq:spanx}
+\norm{z-y}\le\omega D^{3k+2}.
+\end{equation}
+Furthermore, for $i<k$,
+\begin{equation}\label{eq:rvorth}
+|r_k^Tv_i|\le\omega D^{9k+10}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+For $i\le k-2$, the local equations give
+\begin{equation}\label{eq:Avspan}
+Av_i=\frac{(1+\beta_i)v_i-\beta_{i-1}v_{i-1}-v_{i+1}}{\alpha_i}
++\frac{f_i+h_i-h_{i-1}}{\alpha_i},
+\end{equation}
+with negative-index terms zero. The coefficient sum is at most
+$8+256H\le D$, and the error norm is at most $\omega D^{i+3}$.
+Inductively,
+\[
+A^t b=\sum_{i=0}^t c_{ti}v_i+e_t,\qquad
+\sum_i|c_{ti}|\le D^t,\qquad
+\norm{e_t}\le2\omega D^{2t+1}.
+\]
+The error induction uses $\norm A=1$:
+$\norm{e_{t+1}}\le2\omega D^{2t+1}+\omega D^{2t+3}
+\le2\omega D^{2t+3}$.
+Combining the monomials of $\pi$ yields \eqref{eq:spanv}.
+
+Next, substitute
+$v_i=(x_{i+1}-x_i-g_i)/\alpha_i$ in the direction representation.
+Since $x_0=0$, the error-free part is in the claimed iterate span. Its
+additional error is at most
+$4D^{2k}\omega D^{k+1}$; together with $e$ this is below
+$\omega D^{3k+2}$.
+
+Finally, expand $v_i$ into earlier residuals as in the bootstrap proof.
+The residual coefficients have sum at most $2D^i$ and the accumulated
+local error has norm at most $3\omega D^{i+1}$. Since $k>i$,
+\[
+|r_k^Tv_i|\le2D^i E_k+3\omega D^{i+1}R_k
+\le\omega D^{9k+10}.
+\]
+\end{proof}
+
+\section{The three termination arguments}
+\label{sec:mainupper}
+
+\begin{theorem}[Capped-condition, early-horizon upper bound]\label{thm:main}
+With the definitions \eqref{eq:kC}--\eqref{eq:HD}, every precision
+satisfying \eqref{eq:smallness} guarantees a successful produced iterate
+by step $m$. Therefore \eqref{eq:mainupper} and \eqref{eq:orderupper} hold.
+\end{theorem}
+
+\begin{proof}
+Assume for contradiction that all produced iterates fail. By
+Lemma~\ref{lem:bootstrap}, every iterate through $m$ exists and the
+bootstrap estimates hold. At least one of the following three cases
+applies to the minimum defining $m$.
+
+\subsection*{Case 1: the dimension horizon $m=n$}
+Normalize $r_0,\ldots,r_n$ to unit vectors. Their Gram matrix has diagonal
+one and off-diagonal entries of magnitude at most
+\[
+\frac{E_n}{\sigma^2}\le D^{-4n-12}.
+\]
+Every off-diagonal row sum is smaller than one. The inequality
+$2|a_i a_j|\le a_i^2+a_j^2$ shows directly that this Gram matrix is
+positive definite. Its rank would be $n+1$, impossible for vectors in
+$\R^n$.
+
+\subsection*{Case 2: the Chebyshev horizon $m=k_C$}
+Put $k=m$, $a=1/\bar K$, and
+\[
+q(t)=\frac{T_k((1+a-2t)/(1-a))}{T_k((1+a)/(1-a))},\qquad
+\pi(t)=\frac{1-q(t)}t.
+\]
+Since $q(0)=1$, $\pi$ is a polynomial of degree less than $k$.
+The affine argument of $T_k$ has coefficient sum at most seven because
+$a\le1/2$. The Chebyshev recurrence gives
+\[
+\coefnorm{T_k((1+a-2t)/(1-a))}\le15^k.
+\]
+Its normalizing denominator is at least one. Thus
+\[
+\coefnorm\pi\le16^k\le D^{k+1}.
+\]
+On the spectrum of $A$,
+\[
+|q(t)|\le2\vartheta^k,\qquad
+\vartheta=\frac{\sqrt{\bar K}-1}{\sqrt{\bar K}+1}.
+\]
+For $x_*=A^{-1}b$ and $y=\pi(A)b$, it follows that
+\begin{equation}\label{eq:exactenergy}
+\energy{x_*-y}^2\le4K\vartheta^{2k}.
+\end{equation}
+
+We now compare $y$ with the actual rounded $x_k$, not an exact CG
+projection. Let $\bar x_k=\sum_{i<k}\alpha_i v_i$, so
+$\norm{x_k-\bar x_k}\le2\omega D^{k+1}$.
+By Lemma~\ref{lem:span}, the difference between the direction
+representation of $y$ and $\bar x_k$ has coefficient sum at most
+$D^{2k+1}$, and the remaining vector error is at most
+$\omega D^{3k+2}$. Combining \eqref{eq:rvorth} with the residual gap
+therefore gives
+\begin{align}
+|(b-Ax_k)^T(y-x_k)|
+&\le\omega D^{11k+11}+\omega D^{4k+3}
+     +8\omega D^{2k+3}\notag\\
+&\le\omega D^{11k+12}.\label{eq:crossbound}
+\end{align}
+For the last gap term, we used
+$\norm y\le\coefnorm\pi\le D^{k+1}$ and $X_k\le D^{k+1}$;
+this bound does not replace the capped $H$ by $K$.
+
+The exact energy identity implies
+\[
+\energy{x_*-x_k}^2
+\le\energy{x_*-y}^2+2|(b-Ax_k)^T(y-x_k)|.
+\]
+Since $A^2\preceq A$, \eqref{eq:exactenergy} and
+\eqref{eq:crossbound} yield
+\[
+\norm{b-Ax_k}^2\le4K\vartheta^{2k}+\omega D^{12k+20}.
+\]
+The chosen $k_C$ makes the first term at most $\eps^2/4$:
+use
+\[
+\vartheta\le\exp(-2/\sqrt{\bar K}),\qquad
+k_C\ge\sqrt{\bar K}\log_2(16\bar K/\eps).
+\]
+The second term is at most $\eps^2/16$. Thus $\norm{b-Ax_k}<\eps$,
+which implies \eqref{eq:eta} because its denominator is at least one.
+This contradicts failure.
+
+\subsection*{Case 3: the universal backward horizon $m=k_U$}
+\label{sec:universal}
+Put $k=m$. We use the following exact polynomial fact. For the even
+integer $\ell\in\{k,k+1\}$, define
+\begin{equation}\label{eq:reciprocalpoly}
+G(t)=\frac{1-T_\ell(2t-1)}{2\ell^2},\qquad
+\pi(t)=\frac{t-G(t)}{t^2}.
+\end{equation}
+The numerator has a double zero at zero; $\pi$ has degree at most
+$\ell-2<k$, is positive on $[0,1]$, and satisfies
+\begin{equation}\label{eq:recipbound}
+\left|t-\frac1{\pi(t)}\right|\le\frac3{k^2-1},\qquad0\le t\le1.
+\end{equation}
+These are Lemmas 12--13 of Derezi\'nski, Nakatsukasa, and
+Rebrova\cite{minberr}. This is the only external approximation lemma
+used in this case. The shifted Chebyshev recurrence gives coefficient
+sum at most $7^\ell$, so
+\[
+\coefnorm\pi\le16^{k+1}\le D^{k+1}.
+\]
+Also \eqref{eq:recipbound} gives $1/\pi(t)\le2$, so $\pi(t)\ge1/2$.
+Therefore $y=\pi(A)b$ satisfies
+\begin{equation}\label{eq:yberr}
+\norm y\ge\tfrac12,\qquad
+\berr(y):=\frac{\norm{b-Ay}}{\norm y}\le\frac3{k^2-1}.
+\end{equation}
+The spectral implication is immediate by applying
+$A-\pi(A)^{-1}$ to $y$.
+
+The failure assumption imposes an incompatible lower bound on every
+vector in the computed-iterate span. Indeed, for
+$z=\sum_{j=1}^k c_jx_j$,
+\begin{equation}\label{eq:spanresidual}
+b-Az=\left(1-\sum_{j=1}^k c_j\right)r_0
+       +\sum_{j=1}^k c_jr_j+\sum_{j=1}^k c_jw_j.
+\end{equation}
+The Gram matrix of normalized $r_0,\ldots,r_k$ has off-diagonal entries
+at most
+\[
+\frac{64E_k}{49\eps^2}\le\frac4{49}D^{-4k-12},
+\]
+so its off-diagonal row sums are below $1/4$.
+In addition, \eqref{eq:Wbound} and \eqref{eq:failR} give
+$W_j/R_j\le1/(8\sqrt k)$. Write
+$Z=(\sum_{j=1}^k c_j^2R_j^2)^{1/2}$.
+The first two terms in \eqref{eq:spanresidual} have norm at least
+$\sqrt{3/4}\,Z$, while the last has norm at most $Z/8$.
+Thus $\norm{b-Az}\ge Z/2$.
+The failure bound $X_j/R_j\le2/\eps$ and Cauchy--Schwarz give
+$\norm z\le2\sqrt k\,Z/\eps$. Every nonzero vector in this span
+therefore satisfies
+\begin{equation}\label{eq:spanberrlower}
+\berr(z)\ge\frac{\eps}{4\sqrt k}.
+\end{equation}
+
+Lemma~\ref{lem:span} supplies a vector in the same span with
+\[
+\norm{z-y}\le\omega D^{3k+2}\le\frac{\eps}{128\sqrt k}.
+\]
+Relative to $\norm y\ge1/2$, this is at most
+$t_0=\eps/(64\sqrt k)$, so $z\ne0$.
+The definition of $k_U$ gives
+\[
+\frac3{k^2-1}\le\frac4{k^2}\le\frac{\eps}{16\sqrt k}.
+\]
+Perturbing \eqref{eq:yberr} now gives
+\[
+\berr(z)\le\frac{\berr(y)+t_0}{1-t_0}
+\le\frac{\eps}{8\sqrt k},
+\]
+contradicting \eqref{eq:spanberrlower}.
+
+\medskip
+All possible minimizers of the horizon lead to a contradiction. Thus a
+successful iterate is produced by $m$. Condition \eqref{eq:smallness}
+is exactly implied by
+\[
+u\le\frac{\eps^2}{1024(n+1)K D^{12m+20}}.
+\]
+Every larger precision satisfies the same inequality, and the argument
+applies to all real normalized inputs. This proves the full threshold
+quantifier, \eqref{eq:mainupper}, and its order form
+\eqref{eq:orderupper}.
+\end{proof}
+
+\section{Consequences with matching bounds}
+\label{sec:consequences}
+
+\begin{corollary}[Bounded conditioning]\label{cor:K2}
+Uniformly for $n\ge1$, $1\le K\le2$, and $0<\eps<1/2$,
+\[
+\PCG(n,K,\eps)=\Theta\!\left(\log_2\frac n\eps\right).
+\]
+\end{corollary}
+\begin{proof}
+Here $H\le2$ and $D\le4096$ are universally bounded.
+Moreover $m\le k_C=2\lceil\log_2(32/\eps)\rceil$.
+Equation~\eqref{eq:mainupper} is therefore
+$O(\log(n/\eps))$. The lower bound is \eqref{eq:loweridentity}.
+\end{proof}
+
+
+\begin{corollary}[Additive characterization at fixed tolerance]\label{cor:fixedtol}
+For every fixed $0<\eps<1/2$, uniformly over all $n\ge2$ and $K\ge1$,
+\[
+\PCG(n,K,\eps)=\log_2(nK)+O_\eps(1).
+\]
+An explicit lower additive constant is $-5$. An upper additive constant
+may be taken as
+\[
+C_\eps=1+\log_2\frac{1536}{\eps^2}
++(12k_U+20)\log_2\left(1024(64/\eps^2)^2\right).
+\]
+\end{corollary}
+\begin{proof}
+The lower inequality is \eqref{eq:jointlower}. For the upper inequality,
+use $H\le64/\eps^2$, $m\le k_U$, and $n+1\le3n/2$ in
+\eqref{eq:mainupper}, and allow one bit for its ceiling. Every term
+remaining after $\log_2(nK)$ depends only on $\eps$.
+\end{proof}
+
+\begin{corollary}[Leading conditioning coefficient]\label{cor:largeK}
+For every fixed $n\ge2$ and fixed $0<\eps<1/2$,
+\[
+\PCG(n,K,\eps)=\log_2K+O_{n,\eps}(1),\qquad
+\lim_{K\to\infty}\frac{\PCG(n,K,\eps)}{\log_2K}=1.
+\]
+\end{corollary}
+\begin{proof}
+Once $K\ge64/\eps^2$, the quantity $H=64/\eps^2$ no longer depends
+on $K$. Since $m\le n$, \eqref{eq:mainupper} is at most
+$\log_2K+C_{n,\eps}$ for a finite constant independent of $K$.
+On the other hand, \eqref{eq:lowerbreakdown} is at least
+$\log_2K-1$. These two inequalities prove both assertions.
+\end{proof}
+
+This fixed-tolerance limit is compatible with the recovered
+$n\log K$ lower family: that family decreases $\eps$ as $K$ increases.
+Interchanging these parameter regimes would give an incorrect conclusion.
+
+\begin{corollary}[Two dimensions and very fine tolerances]\label{cor:two}
+Equation~\eqref{eq:two} holds uniformly. More generally, if $n\ge2$ and
+$\log_2(1/\eps)\ge n\log_2(2K)$, then
+\[
+\PCG(n,K,\eps)=\Theta\!\left(\log_2\frac{nK}{\eps}\right)
+\]
+with universal constants on this region.
+\end{corollary}
+\begin{proof}
+Use $H\le K$ and $m\le n$ in \eqref{eq:mainupper}.
+When $n=2$, its logarithm is $O(\log K+\log(1/\eps))$.
+Under the second displayed condition, the term $n\log(2K)$ is
+absorbed by $\log(1/\eps)$. Theorem~\ref{thm:lower} supplies the
+matching lower bounds.
+\end{proof}
+
+At $K=1$, the tighter first-step estimate from the recovered manuscript
+is $\PCG\le\lceil\log_2(128(n+1)/\eps)\rceil$.
+Together with \eqref{eq:loweridentity}, this yields the additive form
+$\PCG(n,1,\eps)=\log_2(n/\eps)+O(1)$ with universal additive constants.
+The exact scalar result is stronger still when $n=1$.
+
+\section{The retained hard family and the unresolved gap}
+\label{sec:gap}
+
+The recovered manuscript proves the following separate lower-bound
+family. Let $s=n-1$, and let $M_s$ have diagonal $(1,2,\ldots,2)$ and
+adjacent off-diagonal entries $-1$. Its inverse bidiagonal factor gives
+$\lambda_{\min}(M_s)\ge1/s^2$, and $\norm{M_s}<4$.
+Take
+\[
+T=2^\ell,\qquad A=M_s\oplus[T],\qquad b=(e_1,1)^T,
+\qquad p=s\ell.
+\]
+The only nonzero operation error is $+2^{-p}$ on the last addition in
+$\rho_0$. All later operations are exact. In particular the true and
+recursive residuals agree. For each fixed $n\ge2$, the recovered
+recurrence analysis shows that, for all sufficiently large integers
+$\ell$,
+\begin{equation}\label{eq:retainedhard}
+\PCG\!\left(n,s^2 2^\ell,\frac1{64s^2 2^\ell}\right)>s\ell.
+\end{equation}
+The quantifier is fixed $n$, followed by sufficiently large $\ell$;
+no dimension-uniform threshold is supplied. The full proof remains in
+Section 5 of the preserved prior manuscript. Its finite exact witnesses
+have been rerun in this package. The new results do not strengthen the
+quantifier in \eqref{eq:retainedhard}.
+
+\paragraph{A concrete gap still present.}
+Consider $n\ge2$ with
+\begin{equation}\label{eq:gaptriple}
+K=n^2,\qquad\eps=n^{-2}.
+\end{equation}
+The generally applicable lower bound established in this package is
+$\Omega(\log n)$, while its upper bound is $O(n\log n)$.
+The retained large-outlier limit does not close this growing-dimension
+regime. Neither an $\Omega(n\log n)$ lower bound nor an
+$O(\log n)$ upper bound on \eqref{eq:gaptriple} is proved here.
+
+A full solution must supply a universally matching characterization on
+such regimes as well as on the sharp regions already covered. The
+upper bound in this manuscript is not asserted to be sharp everywhere.
+In particular, its reciprocal-polynomial horizon is a sufficient
+precision budget, not a matching lower bound when $n$ exceeds that
+horizon. An interval-polynomial obstruction is also not, by itself, an
+admissible CG execution; the actual recurrence and its spectral weights
+must be checked.
+
+The reason for the partial label is this specific mathematical gap,
+not merely the problem's status in a repository. No full-resolution or
+priority claim is made.
+
+\section{Exact checks, reproducibility, and proof scope}
+\label{sec:checks}
+
+All executable checks use Python's \texttt{fractions.Fraction} and the
+standard library. No approximate square root or floating logarithm is
+used to decide a certificate. The error-envelope executor checks input
+significands, symmetry, exact $LDL^T$ positivity, and every supplied
+operation-error magnitude. It includes the required zero terms and
+separates products from additions.
+
+\subsection{What was checked}
+
+The regenerated reports record:
+\begin{center}
+\begin{tabular}{p{0.70\textwidth}r}
+\toprule
+Check & Count\\
+\midrule
+Scalar first-step sign-corner executions (three precisions) & 1,536\\
+First-step executions at a certified precision (finite inputs/schedules) & 256\\
+Exact reciprocal-polynomial constructions & 31\\
+Rational-grid reciprocal-polynomial inequalities & 3,999\\
+Parameter-triple consistency checks for bound evaluation & 90\\
+Joint dimension/conditioning breakdown witnesses & 14\\
+Dense matvec prefix-bound executions & 24\\
+Retained exact counterexample witnesses & 15\\
+Unit tests, including the retained regression suite & 26\\
+\bottomrule
+\end{tabular}
+\end{center}
+The first-step executions use diagonal SPD inputs with known exact
+spectral norm, dimensions $2,3,5,8$, condition bounds
+$1,2,2^6,2^{20}$, two coarse tolerances, and eight deterministic error
+schedules. These are finite checks, not an exhaustive multivariate
+error search. The scalar corner enumeration is exhaustive only for its
+nine corner signs; its continuous-box validity is proved analytically
+in Theorem~\ref{thm:scalar}.
+
+For known rational $a=\norm A$ and squared norms $R^2,X^2,B^2$, testing
+$\eta\le\eps$ reduces to comparing
+\[
+C=R^2/\eps^2-a^2X^2-B^2
+\quad\text{with}\quad 2a\sqrt{X^2B^2}.
+\]
+If $C<0$, success is strict. If $C\ge0$, compare the squares, retaining
+the zero case separately. This gives exact comparison without extracting
+a square root. The older hard-family verifier uses an independent
+sufficient failure certificate based on
+$(aX+B)^2\le2(a^2X^2+B^2)$.
+
+\subsection{Commands and bound evaluation}
+
+From the package root, run
+\begin{verbatim}
+python -m unittest discover -s code -v
+python code/verify_extended.py
+python code/verify_legacy.py --output results/legacy_checks.json
+python code/bounds.py --n 16 --K 256 --epsilon 1/256
+\end{verbatim}
+Run without \texttt{-O}; the witness scripts reject optimized mode
+because they use assertions. Python 3.10 or later is sufficient.
+
+The scalar evaluator returns the exact integer threshold. The general
+evaluator reports separate lower and upper bounds, not an alleged exact
+answer. To avoid constructing enormous rational powers, its conservative
+integer version of \eqref{eq:mainupper} is
+\[
+\left\lceil\log_2\frac{1024(n+1)K}{\eps^2}\right\rceil
++(12m+20)\lceil\log_2 D\rceil.
+\]
+This can exceed the ceiling in the theorem by at most $12m+20$ bits.
+It remains a valid sufficient bound and has the same stated order.
+The one-step evaluator compares the square of
+$\eps-512(n+1)K2^{-p}$ with $M(K)^2$, after checking the sign.
+
+\subsection{What the checks do not establish}
+
+Passing these checks does not prove the bootstrap for arbitrary inputs,
+the uniform reciprocal-polynomial inequality between grid points, the
+large-outlier asymptotics in arbitrary dimension, or a matching precision
+formula. The bootstrap, transfer arguments, and corollaries are written
+mathematical proofs; the reciprocal-polynomial inequality has a cited
+analytic proof. None is represented as formally verified or independently
+reviewed. The preserved old archive is also explicitly partial.
+
+\appendix
+\section{A compact proof-dependency audit}
+
+The scalar theorem depends only on counting the specified nine operations
+and monotonicity of a rational expression. The first-step theorem depends
+on the moment inequality and local scalar envelopes. The main upper bound
+uses the following chain, with no circular assumption of successful
+termination:
+\begin{center}
+\begin{tabular}{p{0.26\textwidth}p{0.65\textwidth}}
+\toprule
+Stage & Required fact\\
+\midrule
+Local equations & Actual $K$ controls denominator perturbations.\\
+Current step legality & Earlier defect bounds give $r_j^Tv_j>0$.\\
+Capped step length & Failure of the newly produced iterate rules out a long step.\\
+Bootstrap propagation & Coefficient bounds, local errors, and adjacent cancellations.\\
+Horizon contradiction & Rank, Chebyshev energy comparison, or reciprocal-polynomial span comparison.\\
+Threshold conclusion & The same sufficient inequality holds at every larger precision.\\
+\bottomrule
+\end{tabular}
+\end{center}
+The joint breakdown lower bound is separate from this chain: it uses
+exactly representable inputs and rational, greedy accumulation factors.
+
+The only non-elementary external approximation fact used in the new upper
+proof is \eqref{eq:recipbound}. Removing its branch leaves the still-valid
+upper bound with $m=\min\{n,k_C\}$, including the cap, the bounded-$K$
+order, and the leading large-$K$ coefficient.
+
+\begin{thebibliography}{9}
+\bibitem{ie20}
+OpenProblemsInNLA repository.
+\emph{IE-20: Precision required for conjugate gradients to attain backward
+accuracy in n steps}. Specification accessed September 13, 2026.
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/linear-systems-and-elimination/IE-20}.
+Readable source:
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/linear-systems-and-elimination/IE-20/README.md}.
+
+\bibitem{minberr}
+M. Derezi\'nski, Y. Nakatsukasa, and E. Rebrova.
+\emph{Towards Universal Convergence of Backward Error in Linear System Solvers}.
+arXiv:2604.16075v2, May 22, 2026. Lemmas 12--13 and Theorem 9.
+\url{https://arxiv.org/html/2604.16075v2}.
+
+\bibitem{bcm}
+T. Bake, E. Carson, and Y. Ma.
+\emph{Forward and backward error bounds for a mixed precision
+preconditioned conjugate gradient algorithm}.
+arXiv:2510.11379v3, July 21, 2026. Lemma 6 and Theorem 2.
+\url{https://arxiv.org/html/2510.11379v3}.
+
+\bibitem{sinha}
+M. Sinha.
+\emph{Finite-Precision Symmetric Krylov Methods: Exact Rounding Examples,
+Block Paige Identities, and a Variable-Block Lanczos Model}.
+arXiv:2609.08066v1, September 8, 2026. Section 5.
+\url{https://arxiv.org/html/2609.08066v1}.
+\end{thebibliography}
+\end{document}

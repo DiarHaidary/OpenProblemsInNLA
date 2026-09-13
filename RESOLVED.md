@@ -21,6 +21,12 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### RA-01 - tail-envelope pivot-count guarantees - Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorems 4.1, 5.1 and 6.1](references/holden-ra01-2026-09-13/report.pdf) prove the original RPCholesky relative trace-error guarantee with $`C=3`$ for half-geometric tails, $`C=4`$ for inverse-square tails, and a finite exponent-dependent $`C_p`$ for fixed summable power tails. Envelopes are normalized at the first eigenvalue after the target rank; the head spread and complex eigenvectors are unrestricted. **General RA-01 remains open.** The auxiliary clock obstruction and determinant-comparison saturation do not refute its target.
+
+The partial results passed a separate [independent informal Codex AI-agent audit](references/holden-ra01-2026-09-13/independent-review.md). Exact and floating checks passed. No Lean verification, external human peer review or historical novelty claim is asserted. [Retained original target](randomized-and-low-rank-approximation/RA-01/README.md) · [Source, authorship, affiliation and provenance](references/holden-ra01-2026-09-13/README.md). Permanent IDs and the open count are unchanged.
+
 ### RA-11 — partial Kronecker trace-estimation bounds — Sidney Holden
 
 **Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 1.1 and its supporting proofs](references/holden-ra11-2026-09-13/manuscript/ra11_partial_results.pdf) give general bounds, a matched tensor-product subclass characterization, and a matched very-small-error regime. The general unrestricted adaptive target remains open; the source projection-conjecture counterexample is not a resolution of RA-11. [Retained original target](randomized-and-low-rank-approximation/RA-11/README.md) · [Proof source and attribution](references/holden-ra11-2026-09-13/README.md).

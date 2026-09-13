@@ -1,0 +1,533 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={RA-01: Tail-envelope guarantees and a clock obstruction},pdfsubject={Partial results; not a complete resolution of RA-01}}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\rank}{rank}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\Id}{I}
+\title{RA-01: Tail-envelope guarantees and a clock obstruction}
+\author{}\date{}
+\begin{document}
+\begin{center}
+{\Large\bfseries RA-01: Tail-envelope guarantees and a clock obstruction}
+\end{center}
+\vspace{0.4em}
+\begin{abstract}
+The unrestricted RPCholesky optimal-pivot-count question is not resolved in this note. We establish the requested expected relative-error guarantee with the explicit constant $C=3$ when the eigenvalues after the target rank lie below a half-geometric envelope, and with $C=4$ under an inverse-square tail envelope. The leading eigenvalues may have arbitrarily large spread, and all eigenvectors are unrestricted. A further theorem gives a rank-independent constant for every fixed summable power envelope, with its dependence on the envelope exponent displayed explicitly. These results retain a head-product denominator in the determinant-path argument rather than imposing decay on the entire spectrum. We also construct finite rank-one-spike examples disproving every affine expected-count estimate with unit tail-rate coefficient, even when its additive rank coefficient is arbitrarily large. A saturation calculation explains why the determinant comparison used here does not settle the diffuse-tail case. Exact rational checks and real/complex floating-point diagnostics accompany the proofs. The general arguments have not been independently reviewed or proof-assistant verified.
+\end{abstract}
+
+\section{Target, scope, and relation to preceding work}
+Let $A\in\C^{n\times n}$ be Hermitian positive semidefinite, with eigenvalues
+$\lambda_1\ge\cdots\ge\lambda_n\ge0$. Define
+\[
+ \tau_r(A)=\sum_{j>r}\lambda_j(A),\qquad \tau_0(A)=\tr A.
+\]
+RPCholesky starts with $R_0=A$. At a nonzero residual $R$, set $T=\tr R$, choose a coordinate $j$ with probability $R_{jj}/T$, and update
+\begin{equation}
+ R^{(j)}=R-\frac{Re_je_j^*R}{R_{jj}}. \label{eq:update}
+\end{equation}
+A zero residual stays zero. Write $T_k=\tr R_k$ and $f_k(A)=\E T_k$.
+The canonical RA-01 question asks for one absolute $C\ge1$ such that
+\begin{equation}
+ f_{\min\{n,\lceil Cr/\eps\rceil\}}(A)
+ \le (1+\eps)\tau_r(A)
+ \quad(1\le r\le n,\ 0<\eps<1) \label{eq:target}
+\end{equation}
+for every allowed matrix, with exactly the law in \eqref{eq:update}. The repository entry inspected on September 13, 2026 displays \emph{Open}.\footnote{Canonical statement and status: \cite{repo}.}
+
+\begin{center}
+\begin{tabular}{@{}p{0.51\linewidth}p{0.42\linewidth}@{}}
+\toprule
+Scope of the result & Conclusion established here\\
+\midrule
+$\lambda_{r+j}\le\lambda_{r+1}2^{-(j-1)}$ & \eqref{eq:target} with $C=3$.\\[3pt]
+$\lambda_{r+j}\le\lambda_{r+1}j^{-2}$ & \eqref{eq:target} with $C=4$.\\[3pt]
+$\lambda_{r+j}\le\lambda_{r+1}j^{-p}$, fixed $p>1$ & An explicit finite constant $C_p$, independent of rank, dimension, and head spread.\\[3pt]
+All matrices; continuous-time pivot count & No finite $a$ gives $\E N(t)\le ar+t\tau_r(A)$ universally.\\[3pt]
+All matrices; unrestricted RA-01 & No universal upper constant or counterexample to all constants is proved.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The determinant-path framework is due to the cited RPCholesky analyses. Epperly's August 2026 result gives a sufficient count containing an additional $2r\sqrt{\log r}$ term.\footnote{See Corollary 1.3 and the conjecture after (1.5) in \cite{epperly}.} Divan and Gilles give elementary-symmetric-polynomial estimates and convergence rates under decay of the full spectrum.\footnote{See Theorem 3.1, Lemma 3.2, Corollary 3.3, and Appendix A in \cite{divan}.} Here decay is assumed only \emph{after} rank $r$, and the scale is the first tail eigenvalue. The resulting relative-error bounds do not depend on the first $r$ eigenvalues.
+
+The preceding packages contain, among other results, a necessary lower bound $C\ge2$, a bounded-leading-spread upper theorem, and a coordinate-block clock argument. They remain unpublished, not independently reviewed arguments. They are retained for provenance; the present note does not independently re-audit their all-subsets lower bound. No literature-priority claim is made for the results or methods here.
+
+\section{Residual identities and scalar completion}
+\begin{lemma}[Order, rank, and spectral tail]
+Along every realized path, $0\preceq R_{k+1}\preceq R_k\preceq A$. A positive pivot reduces the rank by exactly one. For $0\le k\le n$,
+\begin{equation}
+ T_k\ge\tau_k(A),\qquad \tau_r(R_k)\le\tau_r(A). \label{eq:tailorder}
+\end{equation}
+In particular, $R_k=0$ for $k\ge\rank A$.
+\end{lemma}
+\begin{proof}
+For a positive pivot, put $u=R^{1/2}e_j/\sqrt{R_{jj}}$. Then $u$ is a unit vector in the range of $R$, and $R^{(j)}=R^{1/2}(I-uu^*)R^{1/2}$. This proves the order and rank assertions. The matrix $A-R_k$ is PSD with rank at most $k$ and is bounded above by $A$. Its trace is at most the sum of the first $k$ eigenvalues of $A$, giving the first inequality in \eqref{eq:tailorder}. Eigenvalue monotonicity under PSD order gives the second.
+\end{proof}
+
+\begin{lemma}[Scalar completion]\label{lem:scalar}
+Fix $r\ge1$ and $\tau=\tau_r(A)>0$. If $f_{t_0}\le B\tau$ for $B>1$, then, for every integer $s\ge0$,
+\begin{equation}
+ f_{t_0+s}\le\tau\left(1+
+ \frac{1}{(B-1)^{-1}+s/(rB)}\right). \label{eq:completion}
+\end{equation}
+It suffices to take $s\ge rB(\eps^{-1}-(B-1)^{-1})$ when this quantity is positive. The conservative condition $s\ge rB/\eps$ always suffices.
+\end{lemma}
+\begin{proof}
+For a nonzero residual of trace $T$, averaging \eqref{eq:update} gives
+\begin{equation}
+ \E[T_{k+1}\mid R_k=R]=T-\frac{\tr R^2}{T}. \label{eq:onedrift}
+\end{equation}
+Zero diagonal entries of a PSD matrix have zero columns, so omitting them loses no term. From \eqref{eq:tailorder}, $\tr R^2\ge (T-\tau)_+^2/r$. The function
+\[
+ g(x)=\begin{cases}
+ x,&0\le x\le\tau,\\
+ x-(x-\tau)^2/(rx),&x>\tau
+ \end{cases}
+\]
+is nondecreasing and concave. On the second branch it equals $(1-1/r)x+2\tau/r-\tau^2/(rx)$, and the first derivatives agree at $\tau$. Jensen's inequality yields $f_{k+1}\le g(f_k)$.
+
+Set $u_0=B-1$ and $u_{s+1}=u_s-u_s^2/[r(1+u_s)]$. These numbers are positive and nonincreasing, and monotonicity of $g$ yields $f_{t_0+s}\le\tau(1+u_s)$. Direct calculation gives
+\[
+ \frac1{u_{s+1}}-\frac1{u_s}
+ =\frac1{r+(r-1)u_s}\ge\frac1{rB}.
+\]
+Summation proves \eqref{eq:completion}.
+\end{proof}
+
+\begin{lemma}[Two small-rank starting bounds]\label{lem:small}
+For every PSD matrix,
+\begin{equation}
+ f_k\le(1+1/k)\tau_1(A)\quad(k\ge1),
+ \qquad f_7\le\frac{89}{56}\tau_2(A)<\frac85\tau_2(A). \label{eq:small}
+\end{equation}
+\end{lemma}
+\begin{proof}
+For rank one, let $\lambda=\lambda_1(A)$ and $\tau=\tau_1(A)>0$. Equation \eqref{eq:onedrift} gives $f_1\le\lambda+\tau-\lambda^2/(\lambda+\tau)\le2\tau$. For rank one the scalar map sends $\tau(1+1/k)$ to $\tau(1+1/(k+1))$. Induction proves the first assertion; zero tails are settled by termination.
+
+For completeness, the error-doubling argument needed for rank two can be checked directly.\footnote{This is the mechanism of the established error-doubling lemma, \cite[Lemma 5.5]{chen}.} Let $P$ project onto the first $q$ eigenvectors of a PSD matrix $R$, write $R=H+E$ for its spectral head and tail, and put $\tau=\tr E$, $T=\tr R$. For a pivot $j$ with $c_j=P_{jj}>0$, use $Pe_j/\sqrt{c_j}$ together with an orthonormal basis of $\operatorname{range}(I-P)$ as trial vectors in the variational formula for $\tau_{q-1}(R^{(j)})$. If $h_j=H_{jj}$ and $b_j=E_{jj}$, this gives
+\[
+ \tau_{q-1}(R^{(j)})\le\tau+\frac{h_jb_j}{c_j R_{jj}}.
+\]
+Since $h_j/c_j\le\lambda_1(R)$, the expected second term is at most $\lambda_1(R)\tau/T$. When $c_j=0$, use a leading eigenvector instead; its contribution has the same bound. Thus $\E\tau_{q-1}(R^{(j)})\le2\tau_q(R)$. Applying this with $q=2$ and then the rank-one one-pivot bound gives $f_2\le4\tau_2(A)$.
+
+Normalize $\tau_2(A)=1$. The rank-two scalar map gives the following valid upper comparisons, with deliberate round-ups at steps four and five:
+\[
+\begin{array}{c|rrrrrr}
+ k&2&3&4&5&6&7\\\hline
+ f_k\text{ upper bound}&4&23/8&16/7&2&7/4&89/56.
+\end{array}
+\]
+Indeed $g(23/8)=833/368<16/7$ and $g(16/7)=431/224<2$. This proves the second assertion.
+\end{proof}
+
+\section{A determinant-path bound retaining the head denominator}
+Write $e_j(A)$ for the $j$th elementary symmetric polynomial of the eigenvalues, with $e_0=1$. It is also the sum of all principal minors of order $j$. This follows by expanding $\det(I+zA)$ in two ways.
+
+\begin{proposition}[Path probability and integrated bound]\label{prop:path}
+Fix $\tau=\tau_r(A)>0$, $k=r+m\le n$, and $m\ge1$. Put
+\begin{equation}
+ D_r(A)=\prod_{i=0}^{r-1}\tau_i(A),\qquad
+ M_{r,m}(A)=\frac{k!e_k(A)}{D_r(A)\tau^m}. \label{eq:M}
+\end{equation}
+Then, for $v>0$,
+\begin{equation}
+ \Prob\{T_k>v\tau\}\le M_{r,m}(A)v^{-m}. \label{eq:tailprob}
+\end{equation}
+For $m>1$ this implies
+\begin{equation}
+ \frac{f_k}{\tau}\le\frac{m}{m-1}M_{r,m}(A)^{1/m}. \label{eq:integrated}
+\end{equation}
+\end{proposition}
+\begin{proof}
+A valid ordered path $j_1,\ldots,j_k$, with unordered set $S$, has probability
+\[
+ \prod_{i=0}^{k-1}\frac{(R_i)_{j_{i+1}j_{i+1}}}{T_i}
+ =\frac{\det A_{SS}}{\prod_{i=0}^{k-1}T_i}.
+\]
+The numerator is the product of the Cholesky pivots. On the event $T_k>v\tau$, the first $r$ denominators obey $T_i\ge\tau_i(A)$ and the remaining $m$ obey $T_i\ge T_k>v\tau$. Sum the resulting upper bound over ordered paths. Each $k$-set has at most $k!$ orders, and the sum of its minors is $e_k(A)$, proving \eqref{eq:tailprob}. Terminated paths contribute no bad event.
+
+For $m>1$, integrate $\min\{1,Mv^{-m}\}$ over $v>0$ and split the integral at $M^{1/m}$. The result is $\frac{m}{m-1}M^{1/m}$. If $M=0$, the error is zero.
+\end{proof}
+
+Let $a=\lambda_{r+1}(A)>0$, $P_r=\prod_{i=1}^r\lambda_i(A)$, and let $e_j^{\rm tail}$ denote the symmetric polynomial in the tail eigenvalues. Since $\lambda_i\ge a$ for $i\le r$,
+\begin{equation}
+ e_{r-s}(\lambda_1,\ldots,\lambda_r)
+ \le {r\choose s}P_r a^{-s},\qquad D_r(A)\ge P_r. \label{eq:head}
+\end{equation}
+The expansion
+\begin{equation}
+ e_{r+m}(A)=\sum_{s=0}^r
+ e_{r-s}(\lambda_1,\ldots,\lambda_r)e_{m+s}^{\rm tail} \label{eq:split}
+\end{equation}
+therefore eliminates all head magnitudes from \eqref{eq:M} once the tail coefficients are controlled. This is a spectral estimate on path probabilities in the original coordinates, not a claim that the pivot law is unitarily invariant.
+
+\section{A half-geometric tail gives the constant three}
+\begin{theorem}[Geometric-tail guarantee]\label{thm:geo}
+Suppose $\tau_r(A)>0$, put $a=\lambda_{r+1}(A)$, and assume
+\begin{equation}
+ \lambda_{r+j}(A)\le a\,2^{-(j-1)}
+ \quad(1\le j\le n-r). \label{eq:geoassumption}
+\end{equation}
+Then the original RPCholesky algorithm satisfies \eqref{eq:target} with $C=3$. The first $r$ eigenvalues and all eigenvectors are unrestricted. Zero-tail inputs satisfy the same conclusion by termination.
+\end{theorem}
+
+\begin{lemma}[Geometric coefficients]\label{lem:geocoeff}
+Under \eqref{eq:geoassumption}, for every integer $\ell\ge1$,
+\begin{equation}
+ e_\ell^{\rm tail}\le
+ \frac{a^\ell 2^{-\ell(\ell-1)/2}}{\prod_{j=1}^\ell(1-2^{-j})}
+ <4a^\ell2^{-\ell(\ell-1)/2}. \label{eq:geocoeff}
+\end{equation}
+\end{lemma}
+\begin{proof}
+By coefficientwise monotonicity it suffices to use the infinite sequence $a, a/2,a/4,\ldots$. In the defining sum, write increasing indices as $j_i=i+b_i$, where $0\le b_1\le\cdots\le b_\ell$. Summing over the successive nonnegative gaps between the $b_i$ gives the product of geometric series $\prod_{j=1}^\ell(1-2^{-j})^{-1}$, with the fixed factor $2^{-\ell(\ell-1)/2}$.
+
+The full infinite product has the lower bound
+\[
+ \prod_{j=1}^\infty(1-2^{-j})
+ \ge\frac{21}{64}\left(1-\sum_{j=4}^\infty2^{-j}\right)
+ =\frac{147}{512}>\frac14.
+\]
+Here the inequality $\prod(1-x_j)\ge1-\sum x_j$ follows first for finite products by induction and then by a limit. Every finite product is at least the infinite product.
+\end{proof}
+
+Combining \eqref{eq:head}--\eqref{eq:geocoeff} gives
+\begin{align}
+ e_{r+m}(A)
+ &\le4P_r a^m2^{-m(m-1)/2}
+ \sum_{s=0}^r{r\choose s}2^{-ms-s(s-1)/2}\notag\\
+ &\le4P_r a^m2^{-m(m-1)/2}(1+2^{-m})^r. \label{eq:geoek}
+\end{align}
+Since $a\le\tau_r(A)$, Proposition~\ref{prop:path} now yields
+\begin{equation}
+ \frac{f_{r+m}}{\tau_r(A)}
+ \le\frac{m}{m-1}
+ \bigl[4(r+m)!(1+2^{-m})^r\bigr]^{1/m}
+ 2^{-(m-1)/2}\quad(m>1). \label{eq:geomean}
+\end{equation}
+
+\begin{lemma}[Uniform geometric-tail starting point]\label{lem:geowarm}
+Under \eqref{eq:geoassumption},
+\begin{equation}
+ f_{3r+1}\le\frac85\tau_r(A). \label{eq:geowarm}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Termination handles $n\le3r+1$. Lemma~\ref{lem:small} handles $r=1,2$. For $r\ge3$, take $m=2r+1$ in \eqref{eq:geomean}. Since $r2^{-(2r+1)}\le1/8$,
+\[
+ (1+2^{-(2r+1)})^r\le\frac1{1-r2^{-(2r+1)}}\le\frac87,
+\]
+using ${r\choose j}\le r^j$ and the infinite geometric series. Hence
+\[
+ \frac{f_{3r+1}}{\tau_r(A)}
+ \le\frac{2r+1}{2r}[5(3r+1)!]^{1/(2r+1)}2^{-r}.
+\]
+Put $F_r=(8/5)(2r/(2r+1))2^r$. It is enough to prove
+$5(3r+1)!\le F_r^{2r+1}$ for $r\ge3$. The exact base ratio is
+\[
+ \frac{5\,10!}{(384/35)^7}
+ =\frac{56\,296\,884\,765\,625}{59\,373\,627\,899\,904}<1.
+\]
+Also $F_r\ge2^r$ and $F_{r+1}/F_r>2$. Thus the ratio between successive right sides is greater than $2^{4r+3}$. The factorial ratio on the left is at most $(3r+4)^3\le2^{3r+3}$ for $r\ge3$: the inequality $3r+4\le2^{r+1}$ holds at $r=3$ and is preserved by induction. This proves the required factorial inequality.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:geo}]
+Let $k=\lceil3r/\eps\rceil$. The dimension cap and zero tail are immediate. Otherwise $k<n$, so $n>3r+1$, and $k\ge3r+1$ because $\eps<1$. Use Lemma~\ref{lem:scalar} with $t_0=3r+1$, $B=8/5$. The required extra count, when positive, is
+\[
+ \frac{8r}{5\eps}-\frac{8r}{3}.
+\]
+The available count exceeds it, since
+\[
+ k-(3r+1)-\left(\frac{8r}{5\eps}-\frac{8r}{3}\right)
+ \ge\frac{7r}{5\eps}-\frac r3-1
+ >\frac{16r}{15}-1>0.
+\]
+This proves the stated relative error with the exact prescribed count.
+\end{proof}
+
+\section{An inverse-square tail gives the constant four}
+\begin{theorem}[Inverse-square-tail guarantee]\label{thm:square}
+Suppose $\tau_r(A)>0$ and
+\begin{equation}
+ \lambda_{r+j}(A)\le a j^{-2},\qquad
+ a=\lambda_{r+1}(A),\quad1\le j\le n-r. \label{eq:squareassumption}
+\end{equation}
+Then \eqref{eq:target} holds with $C=4$, with unrestricted leading eigenvalues and eigenvectors.
+\end{theorem}
+\begin{proof}
+The classical infinite product for $\sinh$ gives\footnote{NIST DLMF, equation 4.36.1, \cite{dlmf}.}
+\[
+ \prod_{j=1}^\infty(1+z/j^2)
+ =\frac{\sinh(\pi\sqrt z)}{\pi\sqrt z}
+ =\sum_{\ell=0}^\infty\frac{\pi^{2\ell}z^\ell}{(2\ell+1)!}.
+\]
+The product converges uniformly on compact sets; its coefficients are nonnegative. Thus, under \eqref{eq:squareassumption},
+\[
+ e_\ell^{\rm tail}\le\frac{a^\ell\pi^{2\ell}}{(2\ell+1)!}
+ \le\frac{a^\ell10^\ell}{(2\ell+1)!}.
+\]
+The elementary inequality $\pi<22/7$ suffices for $\pi^2<10$; for example it follows from the positive integral
+$\int_0^1 x^4(1-x)^4/(1+x^2)\,dx=22/7-\pi$.
+
+Using \eqref{eq:split} and the fact that each of the $2s$ additional factorial factors is at least $2m+2$ gives
+\[
+ e_{r+m}(A)\le P_r a^m\frac{10^m}{(2m+1)!}
+ \left(1+\frac{10}{(2m+2)^2}\right)^r.
+\]
+Consequently, for $m>1$,
+\begin{equation}
+ \frac{f_{r+m}}{\tau_r(A)}\le
+ \frac{10m}{m-1}
+ \left[\frac{(r+m)!}{(2m+1)!}
+ \left(1+\frac{10}{(2m+2)^2}\right)^r\right]^{1/m}. \label{eq:squaremean}
+\end{equation}
+
+We claim $f_{3r+1}\le2\tau_r(A)$. As before, termination and Lemma~\ref{lem:small} handle the capped case and ranks one and two. For $r\ge3$, take $m=2r+1$ in \eqref{eq:squaremean}. Since $10r/(4r+4)^2\le5/32$, the same geometric-series estimate gives
+\[
+ \left(1+\frac{10}{(4r+4)^2}\right)^r\le\frac{32}{27}<\frac65.
+\]
+Set $b_r=2r/[5(2r+1)]$ and $L_r=6(3r+1)!/[5(4r+3)!]$. The desired bound is equivalent to $L_r\le b_r^{2r+1}$. At $r=3$ the exact ratio is
+\[
+ \frac{L_3}{b_3^7}=\frac{367\,653\,125}{480\,370\,176}<1.
+\]
+The sequence $b_r$ increases, and
+\[
+ \frac{L_{r+1}}{L_r}
+ =\frac{(3r+2)(3r+3)(3r+4)}{(4r+4)(4r+5)(4r+6)(4r+7)}.
+\]
+At $r=3$ this is $143/7752<(6/35)^2$. For $r\ge4$, use $3r+4\le13(r+1)/4$ to bound the ratio by
+\[
+ \frac{2197}{16384(r+1)}\le\frac{2197}{81920}
+ <\frac{36}{1225}=b_3^2\le b_r^2.
+\]
+The ratio between successive $b_r^{2r+1}$ is greater than $b_r^2$. Induction proves the claim.
+
+Finally set $k=\lceil4r/\eps\rceil$, with an inactive dimension cap. The warm start is at $t_0=3r+1$ with $B=2$. The sufficient additional count is $2r(\eps^{-1}-1)$, and
+\[
+ k-(3r+1)-2r(\eps^{-1}-1)
+ \ge 2r/\eps-r-1>r-1\ge0.
+\]
+Lemma~\ref{lem:scalar} completes the proof. Zero tails terminate exactly.
+\end{proof}
+
+\section{Other fixed summable power envelopes}
+The preceding inverse-square theorem has a much smaller constant than the following general estimate. The latter is included to make the range of the method explicit.
+
+\begin{theorem}[Tail-power envelope]\label{thm:power}
+Fix $p>1$, let
+\[
+ c=\max\{2,\lceil(p-1)^{-1}\rceil\},\qquad
+ d_p=p+1+(p-1)^{-1},\qquad K_p=(3d_p/p)^p,
+\]
+and define
+\begin{align}
+ B_p^0&=\frac{c}{c-1}\frac{K_p(c+1)^{1+1/c}}{c^p}
+             \left(1+\frac{K_p}{c^p}\right)^{1/c},\notag\\
+ C_p&=c+2+B_p^0. \label{eq:Cp}
+\end{align}
+If $\lambda_{r+j}(A)\le a j^{-p}$ for $1\le j\le n-r$, where $a=\lambda_{r+1}(A)>0$, then \eqref{eq:target} holds with $C=C_p$. For fixed $p$, this constant is independent of $n,r,A$, and $\eps$.
+\end{theorem}
+\begin{proof}
+A generating-function coefficient estimate gives, for $z>0$,
+\[
+ e_\ell(1,2^{-p},3^{-p},\ldots)
+ \le z^{-\ell}\prod_{j=1}^\infty(1+zj^{-p}).
+\]
+The logarithm of the product is at most
+\[
+ \int_0^\infty\log(1+zx^{-p})\,dx
+ =z^{1/p}\int_0^\infty\log(1+u^{-p})\,du
+ <d_p z^{1/p}.
+\]
+Indeed, on $(0,1)$ the integrand is bounded by $\log2-p\log u$, and on $(1,\infty)$ it is bounded by $u^{-p}$. Minimize $z^{-\ell}\exp(d_pz^{1/p})$ at $z^{1/p}=p\ell/d_p$ and use $\mathrm e<3$. The result is
+\begin{equation}
+ e_\ell^{\rm tail}\le a^\ell(K_p/\ell^p)^\ell. \label{eq:powercoeff}
+\end{equation}
+This is the usual generating-function estimate, here applied to the tail rather than the full spectrum.
+
+For $m\ge1$, combine \eqref{eq:head}, \eqref{eq:split}, and \eqref{eq:powercoeff} to obtain
+\[
+ e_{r+m}(A)\le P_r a^m(K_p/m^p)^m(1+K_p/m^p)^r.
+\]
+Proposition~\ref{prop:path} yields
+\begin{equation}
+ \frac{f_{r+m}}{\tau_r(A)}\le
+ \frac{m}{m-1}((r+m)!)^{1/m}\frac{K_p}{m^p}
+ (1+K_p/m^p)^{r/m}\quad(m>1). \label{eq:powermean}
+\end{equation}
+Take $m=cr$. Using $(r+m)!\le(r+m)^{r+m}$ and $1+1/c-p\le0$ gives
+\[
+ \frac{f_{(c+1)r}}{\tau_r(A)}\le
+ \frac{c}{c-1}\frac{K_p(c+1)^{1+1/c}}{c^p}
+ (1+K_p/c^p)^{1/c}r^{1+1/c-p}\le B_p^0.
+\]
+Use the larger warm-start constant $B=1+B_p^0>1$. With $C_p=c+1+B$, the count $\lceil C_pr/\eps\rceil$ supplies $(c+1)r$ starting pivots and at least $rB/\eps$ more. Lemma~\ref{lem:scalar} proves the result, with termination handling the dimension cap and a zero tail.
+\end{proof}
+
+\begin{remark}[The tail assumption is not automatic]
+The index $j$ in these hypotheses begins at the first eigenvalue \emph{after} the target rank. For example, the assumption $\lambda_{r+j}\le\lambda_{r+1}j^{-p}$ demands a factor $2^{-p}$ decrease already at $j=2$. A global sequence $\lambda_i=i^{-p}$ need not satisfy that tail-normalized assumption at a large target rank. Nor does an arbitrary finite summable spectrum satisfy it with a fixed $p>1$. The constants above cannot be made universal by silently choosing an input-dependent envelope or exponent.
+\end{remark}
+
+\section{A unit tail-rate clock comparison is impossible}
+Attach to each nonzero residual an independent exponential holding time of rate $T$. At its end use the pivot law \eqref{eq:update}. Equivalently, the transition to $R^{(j)}$ has rate $R_{jj}$. The embedded sequence is exactly RPCholesky. Let $N(t)$ be the number of positive pivots by time $t$.
+
+\begin{theorem}[No affine mean-count bound with unit tail rate]\label{thm:clock}
+For every finite real $a\ge0$, there is a finite real positive-definite matrix with $\tau_1(A)=1$ and a time $t>0$ such that
+\begin{equation}
+ \E N(t)>a+t. \label{eq:clockfailure}
+\end{equation}
+Thus no finite universal $a$ makes $\E N(t)\le ar+t\tau_r(A)$ valid on all inputs. The same obstruction applies to any tail-rate coefficient $b\le1$.
+\end{theorem}
+\begin{proof}
+For an integer $n\ge2$ set
+\begin{equation}
+ \delta=\frac1{n-1},\qquad A=\mathbf1\mathbf1^*+\delta I_n.
+ \label{eq:clockmatrix}
+\end{equation}
+Its eigenvalues are $n+\delta$ and $\delta$ repeated $n-1$ times, so $\tau_1(A)=1$. The Schur complement after any $k<n$ distinct pivots has the unselected block
+\[
+ \delta I_{n-k}+\frac{\delta}{\delta+k}\mathbf1\mathbf1^*.
+\]
+Consequently the holding rates are deterministic:
+\begin{equation}
+ T_k=\delta(n-k)\left(1+\frac1{k+\delta}\right)\quad(0\le k<n),
+ \qquad T_n=0. \label{eq:spikerate}
+\end{equation}
+Every rate after the first pivot is at most $2$. The total count is therefore bounded by one initial pivot plus a rate-two candidate Poisson count; in particular, with $m(t)=\E N(t)$,
+\begin{equation}
+ m(t)\le1+2t. \label{eq:clockupper}
+\end{equation}
+
+For every integer $0\le k\le n$,
+\begin{equation}
+ T_k\ge1+\frac1{k+1}-\frac{k}{n-1}. \label{eq:clocklower}
+\end{equation}
+For $1\le k<n$, use $\delta\le1$ and $(n-k)/(n-1)=1-(k-1)/(n-1)$; the subtracted coefficient is
+$(k-1)(1+1/(k+1))=k-2/(k+1)\le k$. At $k=0$ the assertion is immediate, and at $k=n$ its right side is negative.
+
+The finite-state generator gives $m'(t)=\E T_{N(t)}$. Apply \eqref{eq:clocklower}, Jensen's inequality for $x\mapsto1/(x+1)$, and \eqref{eq:clockupper}:
+\[
+ m'(t)\ge1+\frac1{m(t)+1}-\frac{m(t)}{n-1}
+ \ge1+\frac1{2+2t}-\frac{1+2t}{n-1}.
+\]
+Integration from $m(0)=0$ proves the explicit estimate
+\begin{equation}
+ \boxed{\displaystyle
+ \E N(t)\ge t+\frac12\log(1+t)-\frac{t+t^2}{n-1}.}
+ \label{eq:clockbound}
+\end{equation}
+
+Now choose finite integer parameters
+\begin{equation}
+ J=\lceil4(a+2)\rceil,\qquad t=2^J,\qquad n=t^2+t+2. \label{eq:clockparams}
+\end{equation}
+The last fraction in \eqref{eq:clockbound} is less than one. Also
+$\log2=\int_1^2x^{-1}\,dx>1/2$, so
+$\frac12\log(1+t)>J/4\ge a+2$. Thus $\E N(t)>t+a+1$, proving \eqref{eq:clockfailure}. All matrices in this proof are finite. For $b\le1$, the proposed upper bound $a+bt$ is no larger than $a+t$.
+\end{proof}
+
+For example, $a=1$ gives $J=12$, $t=4096$, and $n=16\,781\,314$. The exact scalar certificate in the archive proves the relevant finite inequalities without allocating that matrix. This is an analytic existence certificate, not a sampled numerical mean.
+
+The third package rules out a leading rank coefficient exactly one even when its tail-rate coefficient is an arbitrary finite positive constant. An additive rank coefficient below one also fails on exact-rank inputs, whose eventual count equals their rank while their spectral tail is zero. Together, these observations show that an affine mean-count comparison of this form would need \emph{both} coefficients strictly greater than one. They do not rule out such comparisons with larger coefficients. Nor do they disprove RA-01: the rank-one matrices \eqref{eq:clockmatrix} satisfy the stronger discrete bound in Lemma~\ref{lem:small}.
+
+\section{Why the determinant comparison does not finish RA-01}
+\begin{proposition}[Saturation on diffuse tails]\label{prop:saturation}
+Fix positive integers $r,m$, and let $k=r+m$. There are diagonal positive-definite inputs for which the coefficient $M_{r,m}(A)$ in \eqref{eq:M} approaches $k!/m!$ arbitrarily closely. Consequently, for a fixed integer $c\ge1$, the integrated bound \eqref{eq:integrated} at $k=(c+1)r$ is not bounded by an absolute multiple of $\tau_r$ as $r$ grows.
+\end{proposition}
+\begin{proof}
+For $N\ge m$ and $L>1$, take
+\[
+ A_{L,N}=\operatorname{diag}
+ \left(L^r,L^{r-1},\ldots,L,
+ \underbrace{1/N,\ldots,1/N}_{N\text{ entries}}\right).
+\]
+Its tail $\tau_r$ is one. Let $P_r=L^{r(r+1)/2}$. For fixed $r,m,N$, each spectral tail $\tau_i$ with $i<r$ is asymptotic to its largest eigenvalue as $L\to\infty$, so $D_r/P_r\to1$. In the head--tail expansion \eqref{eq:split}, every term omitting a head factor vanishes after division by $P_r$. Hence
+\[
+ \lim_{L\to\infty}M_{r,m}(A_{L,N})
+ =k!\binom Nm N^{-m}.
+\]
+Letting $N\to\infty$ gives $k!/m!$. Both limits can be approximated with finite integer parameters.
+
+For $m=cr$ the corresponding root obeys
+\[
+ \left(\frac{((c+1)r)!}{(cr)!}\right)^{1/(cr)}
+ =\left(\prod_{j=1}^{r}(cr+j)\right)^{1/(cr)}
+ \ge(cr)^{1/c}\longrightarrow\infty.
+\]
+The additional factor $m/(m-1)$ in \eqref{eq:integrated} cannot remove this divergence.
+\end{proof}
+
+\textbf{This is a limitation of the displayed upper comparison, not a lower bound on RPCholesky's error.} These are diagonal matrices, and the first package proves the desired diagonal guarantee with $C=2$. In particular, the saturation calculation cannot be used as a counterexample to the algorithm. It explains exactly why the current tail-coefficient argument needs extra tail structure.
+
+The remaining unrestricted assertion is still the existence of absolute $a\ge1$ and $B>1$ such that
+\begin{equation}
+ f_{\min\{n,\lceil ar\rceil\}}(A)\le B\tau_r(A)
+ \quad\text{for every allowed }A,r. \label{eq:gap}
+\end{equation}
+Equation \eqref{eq:target} implies \eqref{eq:gap} by taking $\eps=1/2$. Conversely, \eqref{eq:gap} and Lemma~\ref{lem:scalar} imply \eqref{eq:target}, for example with $C=a+B+1$. Theorems~\ref{thm:geo}, \ref{thm:square}, and \ref{thm:power} prove \eqref{eq:gap} on their stated classes only.
+
+The inverse-arrival-time argument from the third package remains a possible route. A stochastic comparison
+\[
+ N(t)\le_{\rm st}\lceil ar\rceil+\operatorname{Poisson}(b\tau_r(A)t)
+\]
+with absolute coefficients would suffice there. It is not established here. A first-moment count inequality cannot simply be substituted for stochastic domination of all upper tails. No general dense-matrix argument closing \eqref{eq:gap} has been obtained in this package.
+
+\section{Verification, reproduction, and audit limits}
+The standard-library program \texttt{code/verify\_exact.py} uses only rational arithmetic. Its recorded execution passes \textbf{8,500 explicitly counted checks}, organized in the JSON report by purpose. The checks cover eight rational matrix cases, alternate-order agreement of Schur residuals, actual RP pivot probabilities, one-step trace identities, the retained determinant bound and its integrated form, and the tail coefficient estimates. They also cover the rank-two scalar chain, factorial constants for ranks 3 through 100, 90 rank--tolerance pairs, and finite scalar clock and saturation certificates.
+
+The rational matrices have known spectra because they are diagonal or rational Householder conjugates of specified nonnegative diagonal spectra. The program is not a general PSD-certification system. Some small matrices reach the dimension cap before the warm-start count; the JSON explicitly records this. The nontrivial finite probability and coefficient checks remain distinct from a universal theorem.
+
+The optional NumPy program \texttt{code/verify\_floating.py} exhausts the subset distributions of two order-11 matrices, one real and one genuinely complex Hermitian. It also runs 1,200 Monte Carlo trajectories across six additional real or complex matrices. These tests exercise non-capped warm-start counts. They are floating-point diagnostics, not rational certificates, and Monte Carlo means are not used in any proof.
+
+From the archive root:
+\begin{verbatim}
+python code/verify_manifest.py
+python code/verify_exact.py
+# Optional: NumPy required.
+OPENBLAS_NUM_THREADS=1 python code/verify_floating.py
+# Optional: a LaTeX installation is required.
+sh paper/build.sh
+\end{verbatim}
+
+Run the manifest check before rebuilding outputs: timestamps or regenerated timing fields can change bytes without changing mathematical content. The preceding round-three ZIP is retained unchanged in \texttt{provenance/}; it in turn contains the earlier packages. The copied exact pivot engine is attributed to the first package. Source dependencies and the distinction between earlier and current claims are recorded in \texttt{SOURCE\_AUDIT.md}.
+
+\textbf{Audit limit.} No independent human or separate-agent mathematical review, and no Lean, Coq, Isabelle, or other proof-assistant verification was performed. Exact arithmetic verifies the displayed finite calculations, not the quantifiers over all dimensions, the analytic generating-function proofs, or the stochastic arguments. Those claims rest on the written proofs and remain subject to mathematical review. The archive is a partial-results package, not a complete solution of RA-01. No repository files were modified.
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{repo} Open Problems in Numerical Linear Algebra. \emph{RA-01---Optimal pivot count for RPCholesky trace approximation}. Canonical repository entry, accessed September 13, 2026.\newline
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/randomized-and-low-rank-approximation/RA-01/README.md}.
+
+\bibitem{epperly} Ethan N. W. Epperly. \emph{A new analysis of the randomly pivoted Cholesky algorithm}. arXiv:2608.20633v1, posted August 21, 2026. See Section 2, Corollary 1.3, and the conjecture after (1.5).\newline
+\url{https://arxiv.org/html/2608.20633v1}.
+
+\bibitem{chen} Yifan Chen, Ethan N. Epperly, Joel A. Tropp, and Robert J. Webber. \emph{Randomly pivoted Cholesky: Practical approximation of a kernel matrix with few entry evaluations}. Communications on Pure and Applied Mathematics 78(5) (2025), 995--1041. See Algorithm 1 and Lemmas 5.3--5.5.\newline
+\url{https://doi.org/10.1002/cpa.22234}; accessible manuscript:
+\url{https://arxiv.org/html/2207.06503v6}.
+
+\bibitem{divan} Ryan Divan and Marc Aur\`ele Gilles. \emph{Convergence rates of randomly pivoted methods for low-rank approximation}. arXiv:2609.06287v1, September 5, 2026. See Section 3 and Appendix A.\newline
+\url{https://arxiv.org/html/2609.06287v1}.
+
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions. \emph{Section 4.36, Infinite Products and Partial Fractions}, equation 4.36.1. Accessed September 13, 2026.\newline
+\url{https://dlmf.nist.gov/4.36.E1}.
+
+\bibitem{prior} Prior conversation proof packages. \emph{RA-01: Sharp rank-one bounds, diagonal lower bounds, and block-structured guarantees}; \emph{RA-01: Sharp column-selection lower bounds and dense-matrix guarantees}; and \emph{RA-01: Arrival-time bounds and limits of clock comparisons}. Unpublished research notes, not independently reviewed. Preserved through \texttt{provenance/RA01\_round3\_clock\_analysis.zip}.
+\end{thebibliography}
+\end{document}

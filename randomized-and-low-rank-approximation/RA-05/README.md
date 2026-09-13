@@ -7,24 +7,25 @@
 
 **Status:** Partially resolved
 
+## Partial resolution — unrestricted quartic case, 13 September 2026
 
-## Partial resolution — 2026-09-13
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](../../references/holden-ra05-quartic-2026-09-13/README.md).
 
-**Sidney Holden**, Center for Computational Biology, Flatiron Institute, Simons Foundation, proves an all-exponent lower bound in [Theorem 1.1](../../references/holden-ra05-2026-09-13/manuscript/RA05_all_p_lower_bounds.pdf). For every fixed real $`p>2`$, all sufficiently large $`k`$ and every $`0<\varepsilon<1/2`$, the worst-case minimum support obeys
+[Theorem 1.1, proved in Sections 2–8](../../references/holden-ra05-quartic-2026-09-13/manuscript/RA05_unrestricted_quartic.pdf) classifies the optimal size for $`p=4`$, arbitrary input rank, every integer $`k\ge1`$ and every $`0<\varepsilon<1/2`$, up to logarithmic factors:
 
 ```math
-S_p(k,\varepsilon)\ge c_p\frac{k^{p/2}}{\varepsilon^{\beta_p}+(\log k)/k},
-\qquad
-\beta_p=\begin{cases}2,&p\in\{4,6,8,\ldots\},\\2-2/p,&\text{otherwise}.\end{cases}
+S_4(k,\varepsilon)=\widetilde\Theta\!\left(
+\min\left\{\frac{k^2}{\varepsilon^2},
+\frac{k^{5/2}}{\varepsilon}+\frac{k}{\varepsilon^2}\right\}\right).
 ```
 
-One real input per rank, independent of accuracy, witnesses the bound for arbitrary nonnegative original-row weights. Corollary 1.2 gives a **negative answer to the displayed additive formula for every fixed exponent**, even allowing every fixed logarithmic power. Corollary 1.3 matches the cited upper bound up to logarithms for even $`p\ge4`$ when $`\varepsilon\ge\sqrt{(\log k)/k}`$.
+The weights are nonnegative and select original rows; preservation is simultaneous over all subspaces of dimension at most $`k`$, without a restriction on input rank, row count or ambient dimension. The lower bound has no logarithmic loss, the combined upper bound uses at most $`\log^9(2k/\varepsilon)`$, and the second upper branch uses at most the fifth power. [Proof source](../../references/holden-ra05-quartic-2026-09-13/manuscript/RA05_unrestricted_quartic.tex).
 
-**Remaining target:** the optimal joint size for non-even exponents and smaller accuracies, including even exponents, is still undetermined. Thus the full classification remains partially resolved. The original statement is retained below.
+This also disproves the subsidiary displayed upper-bound conjecture below at $`p=4`$: at $`\varepsilon=k^{-1}`$ the lower bound is of order $`k^{7/2}`$, exceeding its proposed order $`k^3`$ times any fixed logarithmic power. **The unrestricted optimal joint classification for fixed real $`p>2`$ other than $`4`$ remains open.** The whole RA-05 entry is therefore Partially resolved, and remains in the open count.
 
-The [separate independent Codex AI-agent audit](../../references/holden-ra05-2026-09-13/verification/independent-review.md) passed the proof at this scope. This is informal automated review, not external human peer review or formal verification; no Lean verification was performed. [Proof source](../../references/holden-ra05-2026-09-13/manuscript/RA05_all_p_lower_bounds.tex) · [Attribution, verified affiliation and reproducibility](../../references/holden-ra05-2026-09-13/README.md).
+The argument passed a separate [independent Codex AI-agent informal audit](../../references/holden-ra05-quartic-2026-09-13/verification/independent-review.md), including primary-source checks of the imported theorems. All 7,621 finite assertions and both exact certificate checkers were rerun successfully. ChatGPT assistance is disclosed; this is not external human peer review or formal verification. No Lean verification was performed. The [earlier all-exponent lower-bound submission, PR #199](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/199), is a separate partial contribution. The original statement, ID, path and prior-source credit are retained below.
 
-## Original target
+## Original question
 
 Fix a real $`p>2`$. For $`A\in\mathbb R^{n\times d}`$, with rows $`a_i^T`$, and a linear subspace $`F\subseteq\mathbb R^d`$, define
 

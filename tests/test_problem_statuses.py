@@ -101,8 +101,8 @@ class ProblemStatusTests(unittest.TestCase):
 
         summary = ("**2 problems with open targets:** 1 open and 1 partially resolved. "
                    "**2 other retained entries**, excluded from the open count.")
-        evidence_before = "**Resolution evidence:** 2 solved (published or independently audited); 0 Lean verified."
-        evidence_after = "**Resolution evidence:** 1 solved (published or independently audited); 1 Lean verified."
+        evidence_before = "**Resolution evidence:** 2 solved (published or independently audited); 0 Solved with Lean verified."
+        evidence_after = "**Resolution evidence:** 1 solved (published or independently audited); 1 Solved with Lean verified."
         for name in ["README.md", "CATALOG.md"]:
             with self.subTest(index=name):
                 self.assertIn(summary, before[name])

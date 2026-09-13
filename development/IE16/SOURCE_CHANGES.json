@@ -1,24 +1,63 @@
 {
-  "scope": "Proof/helper draft repairs only; reviewed Definitions and Challenge unchanged",
-  "compiled": false,
-  "changes": {
-    "Numeric.lean": {
-      "old_sha256": "59e27a61632419ab9e219ed2a165a7dc828ffdbc39b8859183108eafb8e61257",
-      "new_sha256": "750d8b122ce740ec15a3a5e4e5b146db4a735fa193d186c1057d721dd7addbfc"
+  "scope": "Proof/helper and development compiler repairs only; reviewed Definitions, Challenge, formalization boundary and canonical status unchanged",
+  "new_snapshot_compiled": false,
+  "prior_run_id": 34770760353,
+  "prior_run_result": "Numeric failed; LeanCert Verification and Definitions passed; old Minimax skipped",
+  "preserved_prior_snapshot": "history/run-34770760353",
+  "changed_or_new_source": {
+    "NLA/IE16/Minimax.lean": {
+      "old_sha256": "2da43a7f59a13a4ff6408f222489b3d705376047cc2cf031c57fc1ad51e758f8",
+      "new_sha256": "4d2a8c38b3413e716a53ff81b9718089b4dbb48c4f0f1ab2e1ea0a92e87465c5"
     },
-    "Minimax.lean": {
-      "old_sha256": "f7937af6f6333d3c18427517184ea982a364ded4a25fa34734787a62d17ed7a1",
-      "new_sha256": "2da43a7f59a13a4ff6408f222489b3d705376047cc2cf031c57fc1ad51e758f8"
+    "NLA/IE16/Numeric.lean": {
+      "old_sha256": "750d8b122ce740ec15a3a5e4e5b146db4a735fa193d186c1057d721dd7addbfc",
+      "new_sha256": "c90b9378f26691bba31056c333fb92ea8406f21a64a82d4c72ef4f40c79887fa"
+    },
+    "NLA/IE16/WeightedDraft.lean": {
+      "old_sha256": "1e18ba3e3ac619d1e79f84798117c0a32097ed0d4de493236c7cb2706f7669fe",
+      "new_sha256": "1163f0f71fb5ce4f39374f09a1ea452a9580c853f8d1e17aad1b4a7482a21c36"
+    },
+    "NLA/IE16/WeightedBridgeDraft.lean": {
+      "old_sha256": null,
+      "new_sha256": "b082910816dd73ea012d77e2c3c63797b7c7cfee9eaec82fed619a458113c5c5"
+    },
+    "NLA/IE16/FullMinimumDraft.lean": {
+      "old_sha256": null,
+      "new_sha256": "ec971dbdf3cbe7de0c2707eea2facbc62f613d280e384c245478a98105f57ef0"
+    },
+    "NLA/IE16/SubsetBoundsDraft.lean": {
+      "old_sha256": null,
+      "new_sha256": "d88ff86286f881e342ae19f40ea742fd39e3b0b070f0c259f9709e368da95ce2"
+    },
+    "NLA/IE16/SubsetGeometryDraft.lean": {
+      "old_sha256": null,
+      "new_sha256": "a9324fbe3b761aa40a8a79ea8ff3245cc06877fda713ea7f400062ad79fd6bb2"
+    },
+    "NLA/IE16/FinalContractsDraft.lean": {
+      "old_sha256": null,
+      "new_sha256": "5b4bf1715e97677e1cf532990646aa3dea54c6dee58f50b3af7be55815ddbc7a"
+    },
+    "Solution.lean": {
+      "old_sha256": null,
+      "new_sha256": "dea94208561e823f1b76f831b4a8c5c5f419e9214c2b0a10ec5d4abc8612f69c"
+    },
+    "SUBSET_BOUND_OPTIMIZATION.md": {
+      "old_sha256": null,
+      "new_sha256": "fdd4b561e663a87abd5bf361e950186cdf61de4134a401aa9e487ff26e12acdf"
     }
   },
   "repairs": [
-    "Pair-domain injectivity matches explicitL",
-    "Cardinality via card_image_of_injective",
-    "Use membership witness for nonempty subset",
-    "Commutative reassociation before inverse cancellation",
-    "Simplify zero subtraction in nonzero basis factor",
-    "Use pinned Lagrange namespace and explicit value-function argument",
-    "Unfold finite sum in final scalar-factor identity"
-  ],
-  "preserved_initial_snapshot": "history/initial-before-api-fixes"
+    "Expand concrete complex powers before component normalization",
+    "Correct cubic-root linear-combination sign",
+    "Normalize finite-case goals and hypotheses together",
+    "Use explicit polynomial natDegree subtraction and monomial bound",
+    "Normalize powers of sqrt(3) symbolically instead of interval subdivision",
+    "Open scoped complex conjugation and normalize finite index equalities",
+    "Decouple generic Minimax from Numeric",
+    "Reassociate weighted summands before collecting the constant cross-term factor",
+    "Use explicit label/image membership transport",
+    "Compile new full/subset/final drafts and exact public export assembly",
+    "Read direct local imports; skip only descendants of failed modules",
+    "Retain hidden exact input files in subsequent artifacts"
+  ]
 }

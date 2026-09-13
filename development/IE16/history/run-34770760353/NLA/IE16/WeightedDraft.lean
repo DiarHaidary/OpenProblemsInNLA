@@ -9,7 +9,7 @@ import Mathlib.Analysis.Complex.Norm
 
 set_option autoImplicit false
 set_option leancert.trust "kernel"
-open scoped BigOperators Classical ComplexConjugate
+open scoped BigOperators Classical
 noncomputable section
 
 namespace NLA.IE16
@@ -39,14 +39,7 @@ lemma weighted_norm_sq_identity {S : Finset ℂ} {pstar p : Poly}
             (p.eval z - pstar.eval z)).re := by
     intro z hz
     have he : p.eval z = pstar.eval z + (p.eval z - pstar.eval z) := by ring
-    calc
-      ‖p.eval z‖ ^ 2 =
-          ‖pstar.eval z + (p.eval z - pstar.eval z)‖ ^ 2 :=
-        congrArg (fun t : ℂ => ‖t‖ ^ 2) he
-      _ = ‖pstar.eval z‖ ^ 2 + ‖p.eval z - pstar.eval z‖ ^ 2 +
-          2 * (conj (pstar.eval z) *
-            (p.eval z - pstar.eval z)).re :=
-        complex_sq_norm_add _ _
+    rw [he, complex_sq_norm_add]
   calc
     ∑ z in S, w z * ‖p.eval z‖ ^ 2 =
         ∑ z in S, w z *
@@ -60,47 +53,10 @@ lemma weighted_norm_sq_identity {S : Finset ℂ} {pstar p : Poly}
         2 * (∑ z in S,
           w z * (conj (pstar.eval z) *
             (p.eval z - pstar.eval z)).re) := by
-      calc
-        (∑ z in S, w z *
-            (‖pstar.eval z‖ ^ 2 + ‖p.eval z - pstar.eval z‖ ^ 2 +
-              2 * (conj (pstar.eval z) *
-                (p.eval z - pstar.eval z)).re)) =
-            ∑ z in S,
-              (w z * ‖pstar.eval z‖ ^ 2 +
-                (w z * ‖p.eval z - pstar.eval z‖ ^ 2 +
-                  w z * (2 * (conj (pstar.eval z) *
-                    (p.eval z - pstar.eval z)).re))) := by
-          apply Finset.sum_congr rfl
-          intro z hz
-          ring
-        _ = (∑ z in S, w z * ‖pstar.eval z‖ ^ 2) +
-              ((∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2) +
-                (∑ z in S, w z * (2 * (conj (pstar.eval z) *
-                  (p.eval z - pstar.eval z)).re))) := by
-          rw [Finset.sum_add_distrib, Finset.sum_add_distrib]
-        _ = (∑ z in S, w z * ‖pstar.eval z‖ ^ 2) +
-              (∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2) +
-              2 * (∑ z in S,
-                w z * (conj (pstar.eval z) *
-                  (p.eval z - pstar.eval z)).re) := by
-          have hcross :
-              (∑ z in S, w z * (2 * (conj (pstar.eval z) *
-                (p.eval z - pstar.eval z)).re)) =
-                2 * (∑ z in S, w z * (conj (pstar.eval z) *
-                  (p.eval z - pstar.eval z)).re) := by
-            calc
-              (∑ z in S, w z * (2 * (conj (pstar.eval z) *
-                  (p.eval z - pstar.eval z)).re)) =
-                  ∑ z in S, 2 * (w z * (conj (pstar.eval z) *
-                    (p.eval z - pstar.eval z)).re) := by
-                apply Finset.sum_congr rfl
-                intro z hz
-                ring
-              _ = 2 * (∑ z in S, w z * (conj (pstar.eval z) *
-                    (p.eval z - pstar.eval z)).re) := by
-                rw [Finset.mul_sum]
-          rw [hcross]
-          ring
+      simp_rw [mul_add]
+      rw [Finset.sum_add_distrib, Finset.sum_add_distrib]
+      rw [← Finset.sum_mul]
+      ring
     _ = m ^ 2 + ∑ z in S, w z * ‖p.eval z - pstar.eval z‖ ^ 2 := by
       rw [horth]
       have hsquare : ∑ z in S, w z * ‖pstar.eval z‖ ^ 2 = m ^ 2 := by
@@ -131,8 +87,7 @@ theorem weighted_minimum_lower {S : Finset ℂ} {pstar : Poly} {m : ℝ}
   have hR : 0 ≤ maxModulus S p := by
     unfold maxModulus
     simp only [dif_pos hS]
-    obtain ⟨z, hz⟩ := hS
-    exact (norm_nonneg _).trans (Finset.le_sup' _ hz)
+    exact Finset.sup'_le hS (fun z hz => norm_nonneg _)
   have hmax : ∀ z ∈ S, ‖p.eval z‖ ≤ maxModulus S p := by
     intro z hz
     unfold maxModulus

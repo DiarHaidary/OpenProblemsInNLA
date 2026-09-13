@@ -6,9 +6,7 @@
 
   This file is a source-only draft made while the local compiler is paused;
   it is not Lean proof evidence until a pinned direct typecheck succeeds. -/
-import NLA.IE16.Definitions
-import Mathlib.Tactic
-import LeanCert.Tactic.Verification
+import NLA.IE16.Numeric
 import Mathlib.Algebra.Polynomial.Eval.Coeff
 import Mathlib.Algebra.Polynomial.Degree.Defs
 import Mathlib.LinearAlgebra.Lagrange

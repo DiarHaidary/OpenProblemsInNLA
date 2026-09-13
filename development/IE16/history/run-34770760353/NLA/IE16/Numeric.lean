@@ -15,34 +15,21 @@ import LeanCert.Tactic.Verification
 
 set_option autoImplicit false
 set_option leancert.trust "kernel"
-open scoped BigOperators Classical ComplexConjugate
+open scoped BigOperators Classical
 noncomputable section
 
 namespace NLA.IE16
-
-/- Normalize powers of the one real algebraic generator symbolically.
-   This avoids interval subdivision and repeated nonlinear searches. -/
-private lemma sqrt_three_pow_even (n : ℕ) :
-    (Real.sqrt 3) ^ (2 * n) = (3 : ℝ) ^ n := by
-  rw [pow_mul, Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 3)]
-
-private lemma sqrt_three_pow_odd (n : ℕ) :
-    (Real.sqrt 3) ^ (2 * n + 1) = (3 : ℝ) ^ n * Real.sqrt 3 := by
-  rw [pow_succ, pow_mul, Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 3)]
-
 
 /- The cubic-root identities are the only irrational algebra used by the
    finite coordinate calculations.  Keeping them named makes later finite
    `fin_cases` proofs readable and keeps interval/numeric work out of Lean. -/
 lemma omega_sq_add_omega_add_one : omega ^ 2 + omega + 1 = 0 := by
   apply Complex.ext <;>
-    norm_num [omega, Complex.ext_iff, pow_succ] <;>
-    ring_nf <;>
-    norm_num [Real.sq_sqrt]
+    norm_num [omega, Complex.ext_iff, Real.sq_sqrt]
 
 lemma omega_cube : omega ^ 3 = 1 := by
   have hs : omega ^ 2 = -omega - 1 := by
-    linear_combination omega_sq_add_omega_add_one
+    linear_combination -omega_sq_add_omega_add_one
   calc
     omega ^ 3 = omega * (omega ^ 2) := by ring
     _ = omega * (-omega - 1) := by rw [hs]
@@ -62,7 +49,7 @@ lemma clusterPoint_injective :
   have him := congrArg Complex.im h
   have hs : 0 < Real.sqrt 3 := by positivity
   fin_cases a <;> fin_cases b <;> fin_cases c <;> fin_cases d <;>
-    norm_num [clusterPoint, omega, epsilon, Complex.ext_iff, pow_succ, Real.sq_sqrt] at * <;>
+    norm_num [clusterPoint, omega, epsilon, Complex.ext_iff, Real.sq_sqrt] at hre him ⊢ <;>
     nlinarith [Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 3)]
 
 lemma clusterPoint_ne_zero (a b : Fin 3) : clusterPoint a b ≠ 0 := by
@@ -71,8 +58,7 @@ lemma clusterPoint_ne_zero (a b : Fin 3) : clusterPoint a b ≠ 0 := by
   all_goals
     have hr := congrArg Complex.re h
     have hi := congrArg Complex.im h
-    norm_num [clusterPoint, omega, epsilon, Complex.ext_iff, pow_succ, Real.sq_sqrt] at * <;>
-      nlinarith [Real.sq_sqrt (by norm_num : (0 : ℝ) ≤ 3)]
+    norm_num [clusterPoint, omega, epsilon, Complex.ext_iff, Real.sq_sqrt] at hr hi
 
 lemma explicitL_card : explicitL.card = 9 := by
   rw [explicitL, Finset.card_image_of_injective _ clusterPoint_injective]
@@ -86,10 +72,7 @@ lemma explicitL_admissible : admissible explicitL 9 := by
 
 lemma witness_feasible : feasible explicitL 4 witnessPolynomial := by
   constructor
-  · unfold witnessPolynomial
-    refine (Polynomial.natDegree_sub_le _ _).trans (max_le ?_ ?_)
-    · norm_num
-    · exact (Polynomial.natDegree_C_mul_X_pow_le _ 3).trans (by norm_num)
+  · norm_num [witnessPolynomial]
   · simp [witnessPolynomial]
 
 /- The nine norm computations are finite, but retain the square-norm form so
@@ -100,11 +83,7 @@ lemma witness_eval_sq_norm (a b : Fin 3) :
   fin_cases a <;> fin_cases b <;>
     rw [Complex.sq_norm] <;>
     norm_num [witnessPolynomial, clusterPoint, omega, epsilon, denominator,
-      exactFullMinimum, Complex.normSq_apply, pow_succ] <;>
-    ring_nf <;>
-    norm_num [sqrt_three_pow_even 1, sqrt_three_pow_even 2, sqrt_three_pow_even 3, sqrt_three_pow_even 4, sqrt_three_pow_even 5, sqrt_three_pow_even 6, sqrt_three_pow_even 7,
-      sqrt_three_pow_odd 1, sqrt_three_pow_odd 2, sqrt_three_pow_odd 3, sqrt_three_pow_odd 4, sqrt_three_pow_odd 5, sqrt_three_pow_odd 6] <;>
-    ring
+      Complex.normSq_apply, Real.sq_sqrt]
 
 lemma witness_eval_norm (a b : Fin 3) :
     ‖witnessPolynomial.eval (clusterPoint a b)‖ = exactFullMinimum := by
@@ -142,7 +121,7 @@ lemma witnessWeight_pos (a b : Fin 3) : 0 < witnessWeight a b := by
 lemma witnessWeight_sum :
     (∑ a : Fin 3, ∑ b : Fin 3, witnessWeight a b) = 1 := by
   norm_num [witnessWeight, witnessWeightDiagonal, witnessWeightOffDiagonal,
-    Fin.sum_univ_succ, Fin.ext_iff]
+    Fin.sum_univ_succ]
 
 /- Weighted orthogonality is checked in the exact field ℂ.  The four moments
    are the only moments needed for an arbitrary degree-four polynomial whose
@@ -157,10 +136,7 @@ lemma weighted_moment (ell : Fin 4) :
     apply Complex.ext <;>
     norm_num [witnessWeight, witnessWeightDiagonal, witnessWeightOffDiagonal,
       witnessPolynomial, clusterPoint, omega, epsilon, denominator,
-      Fin.sum_univ_succ, Fin.ext_iff, Complex.ext_iff, pow_succ] <;>
-    ring_nf <;>
-    norm_num [sqrt_three_pow_even 1, sqrt_three_pow_even 2, sqrt_three_pow_even 3, sqrt_three_pow_even 4, sqrt_three_pow_even 5, sqrt_three_pow_even 6, sqrt_three_pow_even 7,
-      sqrt_three_pow_odd 1, sqrt_three_pow_odd 2, sqrt_three_pow_odd 3, sqrt_three_pow_odd 4, sqrt_three_pow_odd 5, sqrt_three_pow_odd 6] <;>
+      Fin.sum_univ_succ, Complex.ext_iff, Real.sq_sqrt] <;>
     ring
 
 end NLA.IE16

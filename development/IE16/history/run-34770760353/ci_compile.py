@@ -10,7 +10,6 @@ from pathlib import Path
 import shutil
 import subprocess
 import sys
-import tempfile
 import time
 
 sys.dont_write_bytecode = True
@@ -25,13 +24,7 @@ def sha(path: Path) -> str:
 
 
 def dump(path: Path, value: object) -> None:
-    data = (json.dumps(value, indent=2) + "\n").encode()
-    fd, pending = tempfile.mkstemp(prefix=path.name + ".", dir=path.parent)
-    with os.fdopen(fd, "wb") as stream:
-        stream.write(data)
-        stream.flush()
-        os.fsync(stream.fileno())
-    os.replace(pending, path)
+    path.write_text(json.dumps(value, indent=2) + "\n")
 
 
 def files() -> list[Path]:
@@ -122,51 +115,20 @@ def compile_drafts(logs: Path) -> int:
         cert_output.parent.mkdir(parents=True, exist_ok=True)
         cert_args = ["lake", "env", "lean", "-M4096", "-j1", "-R", str(cert),
                      "-o", str(cert_output), str(cert_source)]
-        cert_status = run(logs, "compile-leancert-verification", cert_args, 120)
-        names = ["Definitions", "Numeric", "Minimax", "WeightedDraft",
-                 "WeightedBridgeDraft", "FullMinimumDraft", "SubsetBoundsDraft",
-                 "SubsetGeometryDraft", "FinalContractsDraft", "Solution"]
-        # Read direct project imports from the exact retained source. A failure
-        # blocks only descendants; independent generic modules are still checked.
-        graph: dict[str, list[str]] = {}
-        for name in names:
-            source = ROOT / ("Solution.lean" if name == "Solution"
-                             else f"NLA/IE16/{name}.lean")
-            imports = [line.split()[1] for line in source.read_text().splitlines()
-                       if line.startswith("import ")]
-            dependencies = []
-            for mod in imports:
-                if mod.startswith("NLA.IE16."):
-                    dep = mod.removeprefix("NLA.IE16.")
-                    if dep not in names or names.index(dep) >= names.index(name):
-                        raise RuntimeError(f"Missing or unordered local import: {name}: {mod}")
-                    dependencies.append(dep)
-                elif mod == "LeanCert.Tactic.Verification":
-                    dependencies.append("LeanCert.Tactic.Verification")
-            graph[name] = dependencies
-        dump(logs / "module-dependencies.json", graph)
-        module_status: dict[str, int | None] = {
-            "LeanCert.Tactic.Verification": cert_status}
-        for name in names:
+        previous = run(logs, "compile-leancert-verification", cert_args, 120)
+        for name in ["Definitions", "Numeric", "Minimax"]:
             label = f"compile-{name}"
-            blocked = [dep for dep in graph[name] if module_status[dep] != 0]
-            if blocked:
-                module_status[name] = None
-                RECORDS.append({"label": label,
-                                "skipped": "Direct dependency compilation failed or was skipped",
-                                "blocking_dependencies": blocked})
+            if previous:
+                RECORDS.append({"label": label, "skipped": "Dependency compilation failed"})
                 dump(logs / "commands.json", RECORDS)
-                print(f"{label}: skipped; dependencies: {', '.join(blocked)}", flush=True)
                 continue
-            source = Path("Solution.lean" if name == "Solution"
-                          else f"NLA/IE16/{name}.lean")
-            output = Path(".lake/build/lib/lean") / source.with_suffix(".olean")
+            source = Path("NLA/IE16") / f"{name}.lean"
+            output = Path(".lake/build/lib/lean/NLA/IE16") / f"{name}.olean"
             (ROOT / output).parent.mkdir(parents=True, exist_ok=True)
-            module_status[name] = run(logs, label,
-                ["lake", "env", "lean", "-M4096", "-j1",
-                 "-o", str(output), str(source)], 120)
-        dump(logs / "module-results.json", module_status)
-        status = 0 if all(value == 0 for value in module_status.values()) else 1
+            previous = run(logs, label,
+                           ["lake", "env", "lean", "-M4096", "-j1",
+                            "-o", str(output), str(source)], 120)
+        status = 0 if previous == 0 else 1
     except Exception as exc:
         reason = f"{type(exc).__name__}: {exc}"
         (logs / "setup-or-driver-error.txt").write_text(reason + "\n")

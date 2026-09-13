@@ -1,0 +1,143 @@
+% Standalone problem document, generated from the adjacent README.md.
+% Compile with XeLaTeX. Mathematical content is maintained in Markdown.
+\documentclass[11pt,a4paper]{article}
+\usepackage[fontsize=10.5pt]{scrextend}
+\usepackage[margin=22mm,headheight=15pt,headsep=9mm,footskip=11mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{texgyrepagella}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\setsansfont{texgyreheros}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic]
+\setmonofont{texgyrecursor}[Extension=.otf,UprightFont=*-regular,BoldFont=*-bold,ItalicFont=*-italic,BoldItalicFont=*-bolditalic,Scale=MatchLowercase]
+\usepackage{amsmath,amssymb}
+\usepackage{unicode-math}
+\setmathfont{texgyrepagella-math.otf}
+\usepackage{xcolor,microtype,enumitem,needspace,fancyhdr}
+\usepackage{bookmark}
+\definecolor{ink}{HTML}{17344B}
+\definecolor{accent}{HTML}{197D80}
+\definecolor{muted}{HTML}{596773}
+\hypersetup{colorlinks=true,linkcolor=accent,urlcolor=accent,pdftitle={IS-02 - Where
+a symmetric stochastic matrix can be spectrally
+unique},pdfauthor={Open Problems in Numerical Linear Algebra}}
+\urlstyle{same}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt minus 1pt}
+\linespread{1.04}
+\setlength{\emergencystretch}{3em}
+\widowpenalty=10000
+\clubpenalty=10000
+\displaywidowpenalty=10000
+\allowdisplaybreaks[1]
+\setlist{nosep,leftmargin=1.5em}
+\providecommand{\tightlist}{\setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\providecommand{\pandocbounded}[1]{#1}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
+\fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}IS-02}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-11}}
+\fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
+\makeatletter
+\renewcommand{\section}{\Needspace{5\baselineskip}\@startsection{section}{1}{0pt}{12pt plus 2pt minus 2pt}{4pt}{\sffamily\bfseries\large\color{ink}}}
+\renewcommand{\subsection}{\Needspace{4\baselineskip}\@startsection{subsection}{2}{0pt}{9pt plus 1pt minus 1pt}{3pt}{\sffamily\bfseries\normalsize\color{ink}}}
+\makeatother
+\setcounter{secnumdepth}{0}
+\begin{document}
+{\sffamily\small\color{muted}Eigenvalues and inverse problems\par}
+\vspace{3pt}
+{\raggedright\hyphenpenalty=10000\exhyphenpenalty=10000\sffamily\bfseries\fontsize{21}{24}\selectfont\color{ink}Where
+a symmetric stochastic matrix can be spectrally unique\par}
+\vspace{7pt}
+{\sffamily\small\textbf{Difficulty:} challenging\quad\textbf{Importance:} interesting
+to specialist\par}
+{\sffamily\small\bfseries\color{accent}Status: Solved\par}
+\vspace{4pt}
+{\color{accent}\hrule height 0.8pt}
+\vspace{6pt}
+\textbf{Rating rationale:} Challenging reflects the geometry of
+isospectral stochastic families in arbitrary dimension; specialist
+impact concerns the narrow property of spectral uniqueness within that
+class.
+
+\subsection{Resolution --- 2026-09-11}\label{resolution-2026-09-11}
+
+\textbf{Negative resolution by Matthew J. Colbrook} (Department of
+Applied Mathematics and Theoretical Physics, University of Cambridge).
+See the
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/IS-02/solution.md}{complete
+manuscript}, \textbf{Theorem IS-02, sections 1--2}
+(\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/IS-02/solution.pdf}{PDF}
+·
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/eigenvalues-and-inverse-problems/IS-02/solution.tex}{LaTeX}),
+prepared 11 September 2026.
+
+The order-four counterexample is real symmetric, nonnegative and
+stochastic, has spectrum \(\{1,1,0,-1\}\) and positive trace, and is
+spectrally unique up to permutation. It lies outside every segment in
+the proposed locus, disproving the universal necessary condition at an
+allowed dimension.
+
+The original proof draft was generated in a ChatGPT conversation. A
+separate Codex agent independently verified the full proof and its match
+to the exact target on 11 September 2026:
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/colbrook-2026-09-11/verification/reviews/IS-02-review.md}{detailed
+PASS review}. The review records a hash of the unchanged proof text.
+This is independent agent verification, not external human peer review
+or formal certification.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/colbrook-2026-09-11/README.md}{The
+submission history and diagnostic record} preserve the initial solution
+claim. The ratings above are historical, and the earlier literature
+checks below are retained.
+
+\subsection{Problem statement}\label{problem-statement}
+
+For \(n\geq4\), put
+\(\mathcal S_n=\{A\in\mathbb R^{n\times n}:A=A^T,\ A\geq0,\ A\mathbf1=\mathbf1\}\)
+and \(C_n=(\mathbf1\mathbf1^T-I)/(n-1)\). A matrix \(A\in\mathcal S_n\)
+is \emph{spectrally unique} if every \(B\in\mathcal S_n\) with the same
+eigenvalues, including multiplicities, satisfies \(B=R^TAR\) for a
+permutation matrix \(R\). Let \([X,Y]=\{(1-t)X+tY:0\leq t\leq1\}\).
+
+Prove or disprove the following necessary condition: every spectrally
+unique \(A\in\mathcal S_n\) with \(\operatorname{tr}A>0\) belongs to
+
+\[
+[I,C_n]\ \cup\!
+\bigcup_{V\in\operatorname{vert}(\mathcal S_n)}
+\bigl([I,V]\cup[C_n,V]\bigr).
+\]
+
+Here a vertex is an extreme point of the indicated convex polytope; it
+need not be a permutation matrix. Only the stated implication is
+asserted. This asks where recovering a nonnegative symmetric stochastic
+matrix from its spectrum can be unique up to relabeling, a different
+issue from mere spectral feasibility.
+
+\newpage
+\subsection{References}\label{references}
+
+Mourad and Abbas, \href{https://arxiv.org/pdf/1310.1273}{2013 preprint},
+definitions in §1 and Conjecture 5.1, p.~10;
+\href{https://doi.org/10.1080/03081087.2014.903590}{published article},
+\emph{Linear and Multilinear Algebra} 63 (2015), 869--881.
+
+\subsection{Earlier status check ---
+2026-09-08}\label{earlier-status-check-2026-09-08}
+
+Searches for the exact title,
+\textit{symmetric doubly stochastic Conjecture 5.1}, and
+author/title combinations with \textit{counterexample} and \textit{2026}
+found no resolution. The source solves order three, which is excluded
+from the remaining statement above.
+
+\subsection{Audit update --- 2026-09-10}\label{audit-update-2026-09-10}
+
+Rechecked \href{https://arxiv.org/pdf/1310.1273}{Mourad--Abbas}, §5,
+Conjecture 5.1, against the trace and locus restrictions here. Searches
+for spectrally unique symmetric stochastic matrices and later work on
+that conjecture found no general answer. The order-three classification
+is outside the displayed unresolved dimensions, so it does not change
+this entry's status. Evidence remains historical rather than a recent
+explicit reaffirmation.
+\end{document}

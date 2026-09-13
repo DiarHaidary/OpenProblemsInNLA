@@ -1,0 +1,63 @@
+{
+  "basis": "Independent standard-library Fraction arithmetic in Q(omega), omega^2+omega+1=0; certified rational square-root intervals at 55 decimal places; no submitted verifier imported.",
+  "all_checks_passed": true,
+  "points": 9,
+  "weights": "9 strictly positive; exact sum one; match source H/(9D),Q/(9D)",
+  "norms_squared": "all nine exactly m^2",
+  "moments": "four exact complex zero sums",
+  "subset_count": 126,
+  "profiles": {
+    "(3, 2, 0)": 18,
+    "(3, 1, 1)": 27,
+    "(2, 2, 1)": 81
+  },
+  "full_minimum": "3003003000/1001003001001",
+  "full_decimal": "0.0029999940030119849820480088800632396816559961145594",
+  "B_interval": [
+    "2000000000000000000000000000000000000000000000000000000/888667722973066863750463345544215254157987835047355465491",
+    "200000000000000000000000000000000000000000000000000000/88866772297306686375046334554421525415798783504735546549"
+  ],
+  "B_decimal_interval": [
+    "0.0022505599655503800020313339363873331418453410720501",
+    "0.0022505599655503800020313339363873331418453410720501"
+  ],
+  "ratio_decimal_interval": [
+    "1.3329989197947582942379426300395472818478197789374",
+    "1.3329989197947582942379426300395472818478197789374"
+  ],
+  "positive_gap_lower": "0.00013449205707543572961683701981080610947452565593504",
+  "maximum_subset_labels": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      2
+    ],
+    [
+      1,
+      0
+    ],
+    [
+      1,
+      2
+    ],
+    [
+      2,
+      0
+    ]
+  ],
+  "checks": [
+    "distinct/nonzero nodes",
+    "source and Lean exact weights agree",
+    "all point/near/far squared bounds",
+    "both rational coefficient margins",
+    "all 126 occupancy disjunctions",
+    "all 630 exact Lagrange squared norms",
+    "every subset minimum interval positive and below 23/10000",
+    "actual subset maximum interval and ratio",
+    "Machin arctangent alternating bounds imply pi>3.14"
+  ],
+  "limitation": "Arithmetic independently checks finite constants and all subset Lagrange values. Analytic minimax/attainment justification comes from source review; this script does not run Lean or reprove Machin identity."
+}

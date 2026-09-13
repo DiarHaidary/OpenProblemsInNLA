@@ -49,8 +49,9 @@ automation:
   methods:
   - method: agent
     framework: OpenAI Codex
-    tool_setup: Two independent statement reviews and two independent final mathematical reviews preceded
-      implementation. LeanCert kernel-trust assertions, exact target contracts and Comparator configuration are retained.
+    tool_setup: Two independent statement reviews preceded implementation. Two independent final mathematical
+      reviews then checked the completed proof. LeanCert kernel-trust assertions, exact target contracts and
+      Comparator configuration are retained.
     prompting_notes: Preserve the full canonical target and all quantifiers; minimize numerical computation by
       using exact finite-dimensional identities and the pinned spectral API, without assuming basis compatibility,
       interval separation, PSD implications or nonannihilation.
@@ -200,13 +201,13 @@ status:
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.KE04.fullPrefix_implies_canonical
-    file: NLA/KE04/Completion.lean
+    file: NLA/KE04/Proof.lean
     sorry_count: 0
     axioms: *id001
     comparator_config: comparator.json
     literature_dependencies: []
   - declaration: NLA.KE04.blockLanczosConjecture
-    file: NLA/KE04/Completion.lean
+    file: NLA/KE04/Proof.lean
     sorry_count: 0
     axioms: *id001
     comparator_config: comparator.json
@@ -214,7 +215,7 @@ status:
   canonical_status: Solved
   whole_problem_verified: false
   actual_linux_comparator: pending
-  independent_packaging_approval: accepted
+  independent_packaging_approval: pending
 review:
   status: agent-reviewed; final-mathematical-approvals-coordinator-accepted; Linux-verification-pending
   reviewers:
@@ -222,7 +223,8 @@ review:
   - 'OpenAI Codex /root/leancert_examples: independent final mathematical referee 2'
   notes: Referee 1 and referee 2 independently re-elaborated the complete proof and all 24 exports from
     the corrected proof freeze. Their reports are retained in reviews/. Source identity correction preserved
-    17 distinct Git snapshots; packaging is complete, but actual Linux Comparator and kernel evidence is pending.
+    17 distinct Git snapshots. Updated packaging still requires independent operational review after the
+    actual Linux Comparator and kernel verification.
   proof_freeze:
     file: reviews/proof-freeze.json
     sha256: 394db25967661b12b107062fb00976dc847817c03942dca44c4725492d4003c4
@@ -230,7 +232,7 @@ reproduction:
   local_development:
     cwd: eigenvalues-and-inverse-problems/KE-04/lean
     command: lake build Solution
-    note: Solution is the default target and imports Proof plus Completion; Challenge is never imported.
+    note: Solution is the default target and imports Proof, which imports Completion; Challenge is never imported.
   authoritative_Linux:
     status: pending
     cwd: repository root
@@ -249,7 +251,12 @@ toolchain:
     mathlib: 0df444a360eaa60ab8c11dca51a86af692955474
     plausible: b7eb3304aeae834b12dda98993a37f6a41f6f0bb
     LeanSearchClient: 5f4d51b81cbd3f6b32b156bfad9056621a040404
-    importGraph: 16f02aa7642864af59a3a58e5e4b3b7e2b7c37b6
+    importGraph: 16f02aa7642864af59f1ff0e384a015994db9118
+    proofwidgets: 4be2e3d5087eeb272cf5a8853b8f9dd025ef5957
+    aesop: 3448c0bcc5ce01b2d1546e483ec3620e32df3d0e
+    Qq: 92c15be17b7caf78c2ad767ec40f89052d908d81
+    batteries: 4488d40d070b9700d4d5a6aa342f0d40c31b2a2d
+    Cli: 6130a47896ce867c6a4a55373441e59e565bad0f
 fidelity:
   divergences: All original dimensions, real symmetric matrices, full-column-rank blocks, largest full
     iteration, arbitrary independent Krylov bases and strict interval indices are retained. The stronger

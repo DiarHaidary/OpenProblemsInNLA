@@ -1,0 +1,219 @@
+{
+  "result": "PASS",
+  "head": "ecd7d63a22e40db0967a9cb8e785555a0fad6ca8",
+  "base": "50838e37dd793830e2cecd1055cfc7e0349490f1",
+  "proof_closure": {
+    "Solution": {
+      "sha256": "4bd85171d2284ab4ef1bcb914d1eae2763d3e5f6a279b120aec2709b0628bf13",
+      "lines": 1,
+      "imports": [
+        "NLA.KE04.Proof"
+      ]
+    },
+    "NLA.KE04.Proof": {
+      "sha256": "f3920f297fdd8de840e88cad46322ce69ddcfd106b6dec51dd92fc386ccc76da",
+      "lines": 217,
+      "imports": [
+        "NLA.KE04.Completion"
+      ]
+    },
+    "NLA.KE04.Completion": {
+      "sha256": "4014011a7c6435c362ce4cf304aed8d7a8ad2e32ffb03448fbf43223c59a3f97",
+      "lines": 80,
+      "imports": [
+        "NLA.KE04.SpectralWindow",
+        "NLA.KE04.Transport",
+        "NLA.KE04.Intersection",
+        "NLA.KE04.Nonannihilation"
+      ]
+    },
+    "NLA.KE04.SpectralWindow": {
+      "sha256": "c59a80ed6a6dff4e879fb6b8ca602a1d0946ef29b61ff400ffba0122bc86760f",
+      "lines": 140,
+      "imports": [
+        "NLA.KE04.Frames",
+        "NLA.KE04.Spectral",
+        "Lean.Elab.Tactic.Omega"
+      ]
+    },
+    "NLA.KE04.Frames": {
+      "sha256": "bfea6b02091db4e999c2c870b4b1f238cb546ad84df010c7d5431fe82904db0b",
+      "lines": 198,
+      "imports": [
+        "NLA.KE04.Definitions",
+        "LeanCert.Tactic.Verification",
+        "Mathlib.Tactic.Ring"
+      ]
+    },
+    "NLA.KE04.Definitions": {
+      "sha256": "ae1baccc0cb622f83103eff8bb4a5efe4cd9a3bae4822ccca38da29554ae9ca4",
+      "lines": 140,
+      "imports": [
+        "Mathlib.Analysis.Matrix.Spectrum",
+        "Mathlib.Analysis.InnerProductSpace.Positive",
+        "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas",
+        "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+        "Mathlib.LinearAlgebra.Matrix.PosDef"
+      ]
+    },
+    "NLA.KE04.Spectral": {
+      "sha256": "64e8255697387e32e65cf591a0cb7dbf7986f471c82b4f1715c9a88a7650e20e",
+      "lines": 116,
+      "imports": [
+        "NLA.KE04.Definitions",
+        "LeanCert.Tactic.Verification",
+        "Mathlib.Tactic.Module"
+      ]
+    },
+    "NLA.KE04.Transport": {
+      "sha256": "f8bbd7a8095c333efe899bc71aae896dd6731002f89cefa2296f09aba7ecddbb",
+      "lines": 163,
+      "imports": [
+        "NLA.KE04.Krylov",
+        "NLA.KE04.Frames",
+        "NLA.KE04.Spectral"
+      ]
+    },
+    "NLA.KE04.Krylov": {
+      "sha256": "4912fc18fe64afafdb77a3dd19647ad623b05ee87d63ce56c4fbdad933d99ef3",
+      "lines": 207,
+      "imports": [
+        "NLA.KE04.Definitions",
+        "Mathlib.LinearAlgebra.Dimension.OrzechProperty",
+        "Mathlib.Data.Nat.Find",
+        "LeanCert.Tactic.Verification"
+      ]
+    },
+    "NLA.KE04.Intersection": {
+      "sha256": "85acdc5925c94da8c48f5840bfce5055b6660ed11529a5554953f8acd598cb95",
+      "lines": 39,
+      "imports": [
+        "NLA.KE04.Krylov"
+      ]
+    },
+    "NLA.KE04.Nonannihilation": {
+      "sha256": "fec6e511329419a04ba4de0bd5c69b1366e851b3ade713a78ab90cd058a866e2",
+      "lines": 139,
+      "imports": [
+        "NLA.KE04.Krylov",
+        "NLA.KE04.Frames",
+        "Mathlib.Algebra.BigOperators.Fin"
+      ]
+    }
+  },
+  "external_direct_imports": [
+    "Lean.Elab.Tactic.Omega",
+    "LeanCert.Tactic.Verification",
+    "Mathlib.Algebra.BigOperators.Fin",
+    "Mathlib.Analysis.InnerProductSpace.Positive",
+    "Mathlib.Analysis.Matrix.Spectrum",
+    "Mathlib.Data.Nat.Find",
+    "Mathlib.LinearAlgebra.Dimension.OrzechProperty",
+    "Mathlib.LinearAlgebra.FiniteDimensional.Lemmas",
+    "Mathlib.LinearAlgebra.Finsupp.LinearCombination",
+    "Mathlib.LinearAlgebra.Matrix.PosDef",
+    "Mathlib.Tactic.Module",
+    "Mathlib.Tactic.Ring"
+  ],
+  "export_signatures_exact_after_whitespace_normalization": 24,
+  "placeholder_count_in_challenge_only": 24,
+  "proof_closure_placeholders_custom_axioms_or_native_decision": 0,
+  "frozen_source_correspondence_sha256": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00",
+  "correspondence_bindings": {
+    "DRAFT-INVENTORY.json": [
+      {
+        "location": "files/SourceCorrespondence.md/sha256",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      }
+    ],
+    "reviews/statement-freeze.json": [
+      {
+        "location": "files/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/reviews/statement-referee-1-evidence/attempt-5t4u9ww4/source/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/reviews/statement-referee-1-evidence/attempt-7tjmj3b0/source/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/reviews/statement-referee-1-evidence/attempt-nglj5yvu/source/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "reviewed_anchor_hashes/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      }
+    ],
+    "reviews/proof-freeze.json": [
+      {
+        "location": "files/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/reviews/statement-referee-1-evidence/attempt-5t4u9ww4/source/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/reviews/statement-referee-1-evidence/attempt-7tjmj3b0/source/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/reviews/statement-referee-1-evidence/attempt-nglj5yvu/source/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/completion-development/attempt-700n3s8e/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/completion-development/attempt-c7o2c3cd/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/spectral-development/attempt-k0z8w9ex/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/spectral-development/attempt-k2z1xc0b/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/spectral-development/attempt-qr384kbx/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/spectral-development/attempt-wzr6ev6d/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/spectral-window-development/attempt-5sd34slq/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/spectral-window-development/attempt-cmujju9q/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/spectral-window-development/attempt-k3h_4ob1/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      },
+      {
+        "location": "files/verification/spectral-window-development/attempt-zq1v44eo/inputs/SourceCorrespondence.md",
+        "value": "399f28847f52a6c5ff309a25b9501c0c6d4bd5a76892de2f5adaa9c25fe80a00"
+      }
+    ]
+  },
+  "canonical_target_byte_identical": true,
+  "retained_original_manuscript_files": {
+    "solution.md": "dd57fdb065f83dd9a5a4ac7946e3cd2801ec495b02c81f66110117f699fbaad6",
+    "solution.tex": "06ef0d4fa338bfc981892856c175c2c9bc828fd48edbdec32b048c752d659c8f",
+    "solution.pdf": "065647ae21679e2e80987b14024881387a5950096fd52f289946fb61630b663c"
+  },
+  "canonical_pdf_sha256": "88c3b7449e63d5b66a676552dbf5aa917502db61d5ccf628d9460c4cfc62be22",
+  "canonical_pdf_pages_visually_inspected": 3,
+  "coverage_limitation": "Source audit only; independent operational agent owns actual CI, Comparator and kernel evidence authentication."
+}

@@ -6,7 +6,12 @@ import re
 from fractions import Fraction as F
 from pathlib import Path
 
-root = Path('/private/tmp/nla-audit-232/linear-systems-and-elimination/IE-05/lean')
+import argparse
+parser = argparse.ArgumentParser(description=__doc__)
+parser.add_argument('--project', type=Path, default=Path(__file__).resolve().parents[2] / 'linear-systems-and-elimination/IE-05/lean')
+parser.add_argument('--output', type=Path, default=Path('/tmp/ie05-independent-checks.json'))
+args = parser.parse_args()
+root = args.project
 source = (root / 'NLA/IE05/Definitions.lean').read_text()
 
 def arrays(name):
@@ -93,5 +98,5 @@ assert expected == ['NLA.IE05.' + name for name in proof]
 assert len(seen) == 13
 
 report = {'result': 'PASS', 'reviewed_head': '5ce3e36cacbebcafda267eb6a9f2a42c461b189b', 'method': 'Independent Python integer/Fraction arithmetic and active-source inspection; not Lean compilation or CI authentication', 'source_hashes': seen, 'active_import_graph': imports, 'statement_text_matches': len(proof), 'arithmetic': results, 'squared_growth_gap': str(gap), 'total_active_entries': sum(r['active_entries_checked'] for r in results.values()), 'canonical_pdf_sha256': hashlib.sha256((root.parent / 'problem.pdf').read_bytes()).hexdigest()}
-Path('/private/tmp/nla-pr232-independent-exact-checks.json').write_text(json.dumps(report, indent=2) + '\n')
+args.output.write_text(json.dumps(report, indent=2) + '\n')
 print(json.dumps({'result':'PASS','source_modules':len(seen),'matching_exports':len(proof),'active_entries':report['total_active_entries'],'squared_growth_gap':str(gap)}))

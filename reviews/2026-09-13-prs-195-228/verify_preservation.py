@@ -181,7 +181,7 @@ def main():
     combined_renderer = edits(combined_renderer, FINAL_RENDER_EDITS)
 
     for pr, head in HEADS.items():
-        meta = json.loads(Path(f'/private/tmp/nla-pr-{pr}.json').read_text())
+        meta = json.loads(Path(__file__).with_name('source-pr-metadata.json').read_text())[str(pr)]
         require(meta['headRefOid'] == head and meta['baseRefOid'] == SOURCE_BASE,
                 f'PR {pr} immutable metadata head/base')
         head_tree = tree(head)

@@ -45,3 +45,5 @@ The optional RA-17 saved-certificate checker had two reproduced false-acceptance
 Final local validation passed all 77 repository tests without skips, the 17 permanent-ID tests, and the 10 checker regressions on the integrated files. Catalog regeneration reports 24 Lean verified, 77 Solved, 46 Open and 70 Partially resolved entries: 217 permanent IDs, with 116 targets still counted as open.
 
 The final [independent preservation review](preservation-review.md) passed on commit `b7495d4cf9442c2e1a12956dbd99edc0b8ad5477`. This final publication commit adds only audit records and this link. The [checker repair cross-review](pr-223-checker-repair-cross-review.md) independently verifies the exact repair and optimized-Python controls.
+
+The preservation script uses the bundled source-PR metadata and Git history; rerun it with `python3 verify_preservation.py --repo /path/to/full/clone --ref COMMIT --output-prefix /tmp/preservation-check`. The [authored-file manifest](authored-file-manifest.json) records every reviewed source file.

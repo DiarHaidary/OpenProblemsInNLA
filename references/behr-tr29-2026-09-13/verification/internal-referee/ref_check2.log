@@ -1,0 +1,70 @@
+== explicit decomposition (numeric), h_Z, Gram rank ==
+p=1 q=1 n=4 support=[(1, 1, 1, 1)] h1=4 h2=4 rankGram=4 ok=True
+p=1 q=2 n=6 support=[(1, 1, 2, 1)] h1=6 h2=4 rankGram=4 ok=True
+p=1 q=3 n=8 support=[(1, 1, 3, 1)] h1=8 h2=4 rankGram=4 ok=True
+p=1 q=4 n=10 support=[(1, 1, 4, 1)] h1=10 h2=4 rankGram=4 ok=True
+p=1 q=5 n=12 support=[(1, 1, 5, 1)] h1=12 h2=4 rankGram=4 ok=True
+p=1 q=6 n=14 support=[(1, 1, 6, 1)] h1=14 h2=4 rankGram=4 ok=True
+p=2 q=1 n=6 support=[(2, 1, 1, 1)] h1=4 h2=6 rankGram=4 ok=True
+p=2 q=2 n=8 support=[(2, 1, 2, 1)] h1=6 h2=6 rankGram=4 ok=True
+p=2 q=3 n=10 support=[(2, 1, 3, 1)] h1=8 h2=6 rankGram=4 ok=True
+p=2 q=4 n=12 support=[(2, 1, 4, 1)] h1=10 h2=6 rankGram=4 ok=True
+p=2 q=5 n=14 support=[(2, 1, 5, 1)] h1=12 h2=6 rankGram=4 ok=True
+p=2 q=6 n=16 support=[(2, 1, 6, 1)] h1=14 h2=6 rankGram=4 ok=True
+p=3 q=1 n=8 support=[(3, 1, 1, 1)] h1=4 h2=8 rankGram=4 ok=True
+p=3 q=2 n=10 support=[(3, 1, 2, 1)] h1=6 h2=8 rankGram=4 ok=True
+p=3 q=3 n=12 support=[(3, 1, 3, 1)] h1=8 h2=8 rankGram=4 ok=True
+p=3 q=4 n=14 support=[(3, 1, 4, 1)] h1=10 h2=8 rankGram=4 ok=True
+p=3 q=5 n=16 support=[(3, 1, 5, 1)] h1=12 h2=8 rankGram=4 ok=True
+p=3 q=6 n=18 support=[(3, 1, 6, 1)] h1=14 h2=8 rankGram=4 ok=True
+p=4 q=1 n=10 support=[(4, 1, 1, 1)] h1=4 h2=10 rankGram=4 ok=True
+p=4 q=2 n=12 support=[(4, 1, 2, 1)] h1=6 h2=10 rankGram=4 ok=True
+p=4 q=3 n=14 support=[(4, 1, 3, 1)] h1=8 h2=10 rankGram=4 ok=True
+p=4 q=4 n=16 support=[(4, 1, 4, 1)] h1=10 h2=10 rankGram=4 ok=True
+p=4 q=5 n=18 support=[(4, 1, 5, 1)] h1=12 h2=10 rankGram=4 ok=True
+p=4 q=6 n=20 support=[(4, 1, 6, 1)] h1=14 h2=10 rankGram=4 ok=True
+p=5 q=1 n=12 support=[(5, 1, 1, 1)] h1=4 h2=12 rankGram=4 ok=True
+p=5 q=2 n=14 support=[(5, 1, 2, 1)] h1=6 h2=12 rankGram=4 ok=True
+p=5 q=3 n=16 support=[(5, 1, 3, 1)] h1=8 h2=12 rankGram=4 ok=True
+p=5 q=4 n=18 support=[(5, 1, 4, 1)] h1=10 h2=12 rankGram=4 ok=True
+p=5 q=5 n=20 support=[(5, 1, 5, 1)] h1=12 h2=12 rankGram=4 ok=True
+p=5 q=6 n=22 support=[(5, 1, 6, 1)] h1=14 h2=12 rankGram=4 ok=True
+p=6 q=1 n=14 support=[(6, 1, 1, 1)] h1=4 h2=14 rankGram=4 ok=True
+p=6 q=2 n=16 support=[(6, 1, 2, 1)] h1=6 h2=14 rankGram=4 ok=True
+p=6 q=3 n=18 support=[(6, 1, 3, 1)] h1=8 h2=14 rankGram=4 ok=True
+p=6 q=4 n=20 support=[(6, 1, 4, 1)] h1=10 h2=14 rankGram=4 ok=True
+p=6 q=5 n=22 support=[(6, 1, 5, 1)] h1=12 h2=14 rankGram=4 ok=True
+p=6 q=6 n=24 support=[(6, 1, 6, 1)] h1=14 h2=14 rankGram=4 ok=True
+== Lemma 4 random test ==
+Lemma 4 violations: 0
+== variant tensors: where does the argument break? ==
+x^{p+1} (x) u^q v (p=2,q=1): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=8; known rank <= 2
+   squarefree low annihilators (Lemma 2/3 fail): [((1, 0), a1), ((1, 1), a1*b0), ((2, 0), a0*a1), ((2, 1), a0*a1*b0)]
+x^p y (x) u^{q+1} (p=2,q=1): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=8; known rank <= 3
+   squarefree low annihilators (Lemma 2/3 fail): [((0, 1), b1), ((1, 1), a0*b1), ((2, 1), a0*a1*b1)]
+(x^p y+y^{p+1}) (x) u^q v (p=2,q=1): rank Cat_(1,q)=4; naive bound 2q+2+2p+2-rankCat=6; known rank <= 4
+   squarefree low annihilators (Lemma 2/3 fail): [((2, 0), -3*a0**2 + a1**2), ((2, 1), -b0*(3*a0**2 - a1**2))]
+tangent x^p y u^{q+1}+x^{p+1}u^q v (p=2,q=1): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=8; known rank <= ?
+   squarefree low annihilators (Lemma 2/3 fail): [((1, 1), -(2*a0*b1 - 3*a1*b0)/3), ((2, 1), -a0*(2*a0*b1 - 3*a1*b0)/3)]
+x^p y (x) (u^q v + v^{q+1}) (p=2,q=1): rank Cat_(1,q)=4; naive bound 2q+2+2p+2-rankCat=6; known rank <= (p+1)*R(G)
+   squarefree low annihilators (Lemma 2/3 fail): NONE
+x^{p+1} (x) u^q v (p=2,q=2): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=10; known rank <= 3
+   squarefree low annihilators (Lemma 2/3 fail): [((1, 0), a1), ((1, 1), a1*b0), ((1, 2), a1*b0*b1), ((2, 0), a0*a1)]
+x^p y (x) u^{q+1} (p=2,q=2): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=10; known rank <= 3
+   squarefree low annihilators (Lemma 2/3 fail): [((0, 1), b1), ((0, 2), b0*b1), ((1, 1), a0*b1), ((1, 2), a0*b0*b1)]
+(x^p y+y^{p+1}) (x) u^q v (p=2,q=2): rank Cat_(1,q)=4; naive bound 2q+2+2p+2-rankCat=8; known rank <= 6
+   squarefree low annihilators (Lemma 2/3 fail): [((2, 0), -3*a0**2 + a1**2), ((2, 1), -b0*(3*a0**2 - a1**2))]
+tangent x^p y u^{q+1}+x^{p+1}u^q v (p=2,q=2): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=10; known rank <= ?
+   squarefree low annihilators (Lemma 2/3 fail): [((1, 1), -a0*b1 + a1*b0), ((1, 2), -b0*(a0*b1 - a1*b0)), ((2, 1), -a0*(a0*b1 - a1*b0))]
+x^p y (x) (u^q v + v^{q+1}) (p=2,q=2): rank Cat_(1,q)=4; naive bound 2q+2+2p+2-rankCat=8; known rank <= (p+1)*R(G)
+   squarefree low annihilators (Lemma 2/3 fail): [((0, 2), -3*b0**2 + b1**2), ((1, 2), -a0*(3*b0**2 - b1**2))]
+x^{p+1} (x) u^q v (p=3,q=2): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=12; known rank <= 3
+   squarefree low annihilators (Lemma 2/3 fail): [((1, 0), a1), ((1, 1), a1*b0), ((1, 2), a1*b0*b1), ((2, 0), a0*a1)]
+x^p y (x) u^{q+1} (p=3,q=2): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=12; known rank <= 4
+   squarefree low annihilators (Lemma 2/3 fail): [((0, 1), b1), ((0, 2), b0*b1), ((1, 1), a0*b1), ((1, 2), a0*b0*b1)]
+(x^p y+y^{p+1}) (x) u^q v (p=3,q=2): rank Cat_(1,q)=4; naive bound 2q+2+2p+2-rankCat=10; known rank <= 9
+   squarefree low annihilators (Lemma 2/3 fail): [((3, 0), -4*a0**3 + a1**3), ((3, 1), -b0*(4*a0**3 - a1**3))]
+tangent x^p y u^{q+1}+x^{p+1}u^q v (p=3,q=2): rank Cat_(1,q)=2; naive bound 2q+2+2p+2-rankCat=12; known rank <= ?
+   squarefree low annihilators (Lemma 2/3 fail): [((1, 1), -(3*a0*b1 - 4*a1*b0)/4), ((1, 2), -b0*(3*a0*b1 - 4*a1*b0)/4), ((2, 1), -a0*(3*a0*b1 - 4*a1*b0)/4), ((3, 1), (3*a0**3*b1 - 4*a0**2*a1*b0 + 28*a0**2*a1*b1 - 12*a0*a1**2*b0 + 16*a0*a1**2*b1 - 36*a1**3*b0 - 8*a1**3*b1)/4)]
+x^p y (x) (u^q v + v^{q+1}) (p=3,q=2): rank Cat_(1,q)=4; naive bound 2q+2+2p+2-rankCat=10; known rank <= (p+1)*R(G)
+   squarefree low annihilators (Lemma 2/3 fail): [((0, 2), -3*b0**2 + b1**2), ((1, 2), -a0*(3*b0**2 - b1**2))]

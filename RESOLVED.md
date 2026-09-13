@@ -21,6 +21,12 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### 🟡 TR-29 — the two-factor W-state rank — Maximilian Behr
+
+**Partially resolved, 13 September 2026.** Maximilian Behr. [Theorem 1.1](references/behr-tr29-2026-09-13/manuscript/TR29_two_factor_rank.pdf) proves $`R(W_{d_1}\otimes W_{d_2})=2(d_1+d_2-2)`$ for all $`d_1,d_2\ge2`$, settling the case $`k=2`$ of [TR-29](tensor-computations/TR-29/README.md); Corollary 5.4 gives the partially symmetric rank of every bihomogeneous binary monomial with positive exponents. The case $`k\ge3`$ remains open.
+
+Two separate [independent AI-agent informal audits](references/behr-tr29-2026-09-13/verification/independent-review.md) passed this partial scope. AI assistance is disclosed; no external human peer review or formal verification is asserted. No Lean verification was performed. [Submission record, checks and reproduction](references/behr-tr29-2026-09-13/README.md).
+
 ### RA-14 — query-complexity partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** [Sidney Holden, verified affiliation and submission record](references/holden-ra14-2026-09-12/README.md). The [research note](references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, establishes the universal rank lower bound, the large-rank regime and a spectral-to-PCA reduction giving matching bounds under a retained polynomial dimension hypothesis. [Independent informal AI-agent review](references/holden-ra14-2026-09-12/independent-review.md). The [original RA-14 target](randomized-and-low-rank-approximation/RA-14/README.md) remains open in the other simultaneous finite-parameter regimes. No full resolution, external human peer review or Lean verification is asserted.

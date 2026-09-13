@@ -14,9 +14,9 @@ project:
   license: Apache-2.0
 repository:
   role: substantive-development
-  note: Reviewable uncommitted candidate package. Exact mathematical sources match the accepted proof
-    freeze. No candidate commit, upstream submission, Linux verification or publication is claimed by
-    this metadata.
+  note: Committed and independently reviewed formalization. Exact mathematical sources match the
+    accepted proof freeze; authoritative Linux/Comparator evidence is archived under
+    verification/linux-2026-09-13/.
 sources:
 - title: IE-05 — Exact extremizers for partial pivoting on orthogonal matrices
   contributors:
@@ -86,10 +86,9 @@ automation:
     Tau Ceti endorsement or source-author priority claim is added.
 status:
   scope: Complete 17-export negative proof of the full original universal orthogonal GEPP extremizer equality.
-    Two independent final mathematical agent approvals and coordinator acceptance are recorded. Independent
-    candidate packaging approval and authoritative Linux default-kernel/Comparator verification with real
-    controls are pending. The canonical mathematical status remains Solved; no Lean-verified status or
-    count change is asserted.
+    Two independent final mathematical agent approvals, independent candidate packaging approval, and
+    authoritative Linux default-kernel/Comparator verification with real controls are recorded. The
+    canonical status is Lean verified; the full original equality is refuted by the order-eight witness.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms: &id001
@@ -199,10 +198,10 @@ status:
     axioms: *id001
     comparator_config: comparator.json
     literature_dependencies: []
-  canonical_status: Solved
-  whole_problem_verified: false
-  actual_linux_comparator: pending
-  independent_packaging_approval: pending
+  canonical_status: Lean verified
+  whole_problem_verified: true
+  actual_linux_comparator: accepted
+  independent_packaging_approval: accepted
 toolchain:
   lean: leanprover/lean4:v4.33.1
   dependency_manifest: lake-manifest.json
@@ -229,23 +228,25 @@ fidelity:
     comments, proof-map phase prose, failed attempts and old wrappers are retained byte-for-byte; the
     live README and correspondence state the completed phase.
 review:
-  status: agent-reviewed; final-mathematical-approvals-coordinator-accepted; independent-packaging-and-actual-Linux-verification-pending
+  status: agent-reviewed; final-mathematical-approvals-coordinator-accepted; independent-packaging-and-Linux-Comparator-accepted
   reviewers:
   - 'OpenAI Codex /root/ie05_statement_referee1: independent historical statement referee 1'
   - 'OpenAI Codex /root/ie05_statement_referee2: independent historical statement referee 2'
   - 'OpenAI Codex /root/ie05_final_math_referee1: independent final mathematical referee 1, subsequently
     candidate packaging author; no independent packaging approval'
   - 'OpenAI Codex /root/mf16_final_referee: independent final mathematical referee 2'
+  - 'OpenAI Codex /root/leancert_examples: independent IE-05 operational evidence reviewer; no proof or candidate contribution'
   notes: The original 733-input statement freeze, 1,800-input proof freeze and all 27 original Git source
     identities are preserved. Both final mathematical seals are accepted by verification/final-review-acceptance.json.
     Each referee compiled the 12 final NLA modules and Solution directly from source with the pinned macOS
     Lean toolchain and read-only existing dependency objects, then compared all 17 actual elaborated types
     in a separate proof-free reference setup, traversed safe/nonpartial actual declaration type/body dependencies,
     and checked only the standard-three transitive axioms. Each recorded 106 successful explicit kernel
-    assertions. Failed reviewer and coordinator attempts remain retained. These source checks are not
-    an actual Linux Comparator/default-kernel sandbox run. The current package has 29 complete historical
-    files inventories, explicit exact-path/hash wrapper archives, and seven small primary library source
-    archives. Packaging checks confer no independent approval.
+    assertions. Failed reviewer and coordinator attempts remain retained. The independent Linux reviewer
+    rehashed all 2,543 committed inputs and uploaded artifacts, checked 17 exports, 89 Linux axiom reports,
+    Comparator/default-kernel replay, controls, sandbox and source-lock identities. The current package
+    has 29 complete historical files inventories, explicit exact-path/hash wrapper archives, and seven
+    small primary library source archives.
   final_math_acceptance:
     file: verification/final-review-acceptance.json
     sha256: 6e1de72e81a0603066544133f7bb52a7217b31bd6f05372a8c1abe109ff03d61
@@ -269,7 +270,7 @@ reproduction:
       requirements in tools/lean/requirements.txt.
     note: Read-only package checks, not mathematical approval or a Lean runtime check.
   authoritative_Linux:
-    status: pending
+    status: accepted
     cwd: repository root
     host: Non-root Ubuntu with the actual pinned harness prerequisites
     commands:
@@ -277,9 +278,9 @@ reproduction:
     - tools/lean/selftest.sh /tmp/nla-ie05-check
     - tools/lean/verify.sh linear-systems-and-elimination/IE-05/lean /tmp/nla-ie05-check
     prerequisites_document: ../../../tools/lean/HARNESS.md
-    note: Future reproduction from the independently approved, exact committed candidate. Actual default-kernel
-      replay, separate-environment Comparator and both real negative-control suites must pass and be independently
-      accepted before a canonical verification claim.
+    note: The recorded Ubuntu run is archived in verification/linux-2026-09-13/ and independently audited.
+      The initial workflow's unrelated MI-06 and RA-07 elan HTTP 500 failures were retried separately; the
+      IE-05 target job itself passed on the original attempt and is the authoritative evidence here.
 alignment:
 - declaration: NLA.IE05.entryMax_semantics
   scope: The actual finite maximum of absolute real matrix entries is nonnegative, dominates each entry

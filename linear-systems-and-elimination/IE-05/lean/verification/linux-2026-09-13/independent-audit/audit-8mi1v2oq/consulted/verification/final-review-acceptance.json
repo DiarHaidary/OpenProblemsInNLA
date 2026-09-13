@@ -1,0 +1,140 @@
+{
+  "utc": "2026-09-13T09:32:14.983590+00:00",
+  "gate": "ACCEPT both independent final mathematical approvals; candidate packaging and actual Linux verification may proceed",
+  "coordinator": "/root",
+  "coordinator_role": "Proof contributor; not an independent final referee",
+  "proof_freeze_sha256": "72d9a694d6c337937c6edd28ee632dc4a92464ac2dc7ba58ef98f5322405f251",
+  "statement_freeze_sha256": "bd329885eb323bd4f3fd40879649b56c201918d8c2bd6f63fbd0e86f48ca770c",
+  "proof_inputs_preserved": 1800,
+  "statement_inputs_preserved": 733,
+  "original_git_objects_preserved": 27,
+  "reviews": [
+    {
+      "number": 1,
+      "report_sha256": "b17e5dc6ab73098183d1ecbe357d6aea51c0242d60c741dbfebdcf707c6eb828",
+      "evidence_sha256": "7c2d9cd5abfadf5cc6833b2e337e00be42f73f440678864c521c3a2151073d07",
+      "bound_files": 2116,
+      "verdict": "APPROVE"
+    },
+    {
+      "number": 2,
+      "report_sha256": "74b8ed57fc1a7594ba47f98b1cbce63a58bb515109fb4dd2dc033115c3aa23cb",
+      "evidence_sha256": "dea47f4f1e04bf12abf99b7b96e9abe5f0be57cb897253e3540105715dcde02d",
+      "bound_files": 2010,
+      "verdict": "APPROVE"
+    }
+  ],
+  "configured_complete_target_exports": [
+    "NLA.IE05.entryMax_semantics",
+    "NLA.IE05.schurStep_bound",
+    "NLA.IE05.gepp_growth_bound",
+    "NLA.IE05.firstPath_semantics",
+    "NLA.IE05.orthogonalGrowthSet_bounded",
+    "NLA.IE05.candidate_positiveQR",
+    "NLA.IE05.scaledColumns_orthogonal",
+    "NLA.IE05.scaledLU_trajectory",
+    "NLA.IE05.integer_factor_certificates",
+    "NLA.IE05.integer_entry_certificates",
+    "NLA.IE05.canonical_integer_identification",
+    "NLA.IE05.witness_orthogonal_path",
+    "NLA.IE05.bounded_growth_data",
+    "NLA.IE05.numerical_gap_positive",
+    "NLA.IE05.witness_strict_growth",
+    "NLA.IE05.supremum_strict_gap",
+    "NLA.IE05.orthogonalExtremizerConjecture"
+  ],
+  "root_review": "Read both complete reports, actual independent inspectors, read-only seal logic, referee2 successful-build classifier, and actual full-target mathematical proof from the author assembly. Rehashed both exact referee scopes including every historical nested manifest and diagnostic; rechecked original Git objects, actual successful source/log bindings, exact type records and standard-three axiom reports. Independently traversed referee1 actual full dependency graph and all26 material body paths. No new Lean compilation is claimed by this gate.",
+  "referee1_actual_source_commands": [
+    {
+      "source": "NLA/IE05/Definitions.lean",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "NLA/IE05/Pivot.lean",
+      "exit_code": 0,
+      "stdout_sha256": "148a7f1ea978bc041922aed7b87c44aee2ab30974be0bda5ece780a3be3ea8d6"
+    },
+    {
+      "source": "NLA/IE05/GEPP.lean",
+      "exit_code": 0,
+      "stdout_sha256": "81c3ec7eae005f8a35d7fe1e04675be10956503116f41a3bb2dfbe9164657bdf"
+    },
+    {
+      "source": "NLA/IE05/Scaling.lean",
+      "exit_code": 0,
+      "stdout_sha256": "c4c46acc5803a1aa8ccdbec3bcc5d32dafc74c4599e0348b2287aa1a296faa74"
+    },
+    {
+      "source": "NLA/IE05/QR.lean",
+      "exit_code": 0,
+      "stdout_sha256": "987cff22fc37c55edaee3a8a81479746f73d8b46cad9225be67b5f057e216092"
+    },
+    {
+      "source": "NLA/IE05/IntegerQR.lean",
+      "exit_code": 0,
+      "stdout_sha256": "725500071067a357681a3b370ed2ec849b23a97a6641345b46d3d2a5f9e8b666"
+    },
+    {
+      "source": "NLA/IE05/LUTrajectory.lean",
+      "exit_code": 0,
+      "stdout_sha256": "4bd03f8d28ee6742c88ac2823be4f20be6628cdc1388212042477073a3ac1f88"
+    },
+    {
+      "source": "NLA/IE05/ExactCertificates.lean",
+      "exit_code": 0,
+      "stdout_sha256": "8865f997e457bca2030ef2021f2b948ad995fbead293944aef26382632184d50"
+    },
+    {
+      "source": "NLA/IE05/Witness.lean",
+      "exit_code": 0,
+      "stdout_sha256": "99cedb2860aa0d62857e19e22bd6f9bf2f21c41eee96cc5da9e30b2c672de99d"
+    },
+    {
+      "source": "NLA/IE05/GrowthBounds.lean",
+      "exit_code": 0,
+      "stdout_sha256": "1e2818e2d471a332a852ffb979cf7e36468a4baf4831ef91209e353bca4df775"
+    },
+    {
+      "source": "NLA/IE05/Growth.lean",
+      "exit_code": 0,
+      "stdout_sha256": "96bd42046b413ce3ac8776a10b6e7e387d0331924f2832fb06df047d529016b6"
+    },
+    {
+      "source": "NLA/IE05/Proof.lean",
+      "exit_code": 0,
+      "stdout_sha256": "de74c5d346e64afa034c762dd076985c9adf14a3826210f3e010c913877df2bb"
+    },
+    {
+      "source": "Solution.lean",
+      "exit_code": 0,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "referee1_export_closure": {
+    "project": 181,
+    "all_declarations": 29594
+  },
+  "referee1_all_literal_source_closure": {
+    "literal_sources": 157,
+    "project": 184,
+    "all_declarations": 29597
+  },
+  "referee2_actual_source_commands": 14,
+  "referee2_all_export_closure": 181,
+  "referee2_final_closure": 152,
+  "referee2_final_material_dependencies": 27,
+  "each_referee_explicit_kernel_assertions": 106,
+  "scope": "Negation of the complete original orthogonal GEPP growth extremizer conjecture at n=8 using its actual positive-diagonal Euclidean QR candidate, all admissible pivot paths, first-row tie convention and genuine bounded nonempty real supremum. Reduced64+204 integer obligations prove the required strict gap.",
+  "independent_referees_requested_no_math_revision": true,
+  "remaining": [
+    "Explicit archive-aware live README/correspondence and Solution-default package",
+    "Truthful v0.4 formalization.yaml and independent candidate audit",
+    "Actual Ubuntu default-kernel and Comparator with real negative controls",
+    "Independent operational acceptance and reviewed canonical publication with an individual upstream main PR"
+  ],
+  "canonical_status": "Solved, unchanged",
+  "actual_linux_comparator": "pending",
+  "whole_problem_verified": false,
+  "count_increment_authorized": false
+}

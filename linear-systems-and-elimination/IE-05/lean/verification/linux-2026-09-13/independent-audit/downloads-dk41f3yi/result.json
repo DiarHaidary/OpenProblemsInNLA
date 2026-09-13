@@ -1,0 +1,256 @@
+{
+  "success": true,
+  "commands": {
+    "ie05-job.log": {
+      "argv": [
+        "/tmp/nla-submission-tools/gh_2.100.0_macOS_arm64/bin/gh",
+        "api",
+        "repos/sgstepaniants/OpenProblemsInNLA/actions/jobs/103708463461/logs",
+        "--allow-escape-sequences"
+      ],
+      "utc_start": "2026-09-13T12:49:18.982293+00:00",
+      "exit_code": 0,
+      "bytes": 101925,
+      "sha256": "00cc49cc5d0737f2dbd0f91cd8a86bc019d96c99b6b815a3c32529782444eb53",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "controls-job.log": {
+      "argv": [
+        "/tmp/nla-submission-tools/gh_2.100.0_macOS_arm64/bin/gh",
+        "api",
+        "repos/sgstepaniants/OpenProblemsInNLA/actions/jobs/103708463293/logs",
+        "--allow-escape-sequences"
+      ],
+      "utc_start": "2026-09-13T12:49:18.982562+00:00",
+      "exit_code": 0,
+      "bytes": 63628,
+      "sha256": "74120d2f445f2bc882962f6e973e46ffb7b5720a1e4fa0281b737ef43a6ef496",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "runlogs.zip": {
+      "argv": [
+        "/tmp/nla-submission-tools/gh_2.100.0_macOS_arm64/bin/gh",
+        "api",
+        "repos/sgstepaniants/OpenProblemsInNLA/actions/runs/34751393873/logs"
+      ],
+      "utc_start": "2026-09-13T12:49:18.983548+00:00",
+      "exit_code": 0,
+      "bytes": 22,
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "ids-jobs.json": {
+      "argv": [
+        "/tmp/nla-submission-tools/gh_2.100.0_macOS_arm64/bin/gh",
+        "api",
+        "repos/sgstepaniants/OpenProblemsInNLA/actions/runs/34751393871/jobs?per_page=100"
+      ],
+      "utc_start": "2026-09-13T12:49:18.984784+00:00",
+      "exit_code": 0,
+      "bytes": 2550,
+      "sha256": "1e40400d57abb19a8f08a826d59387830d9ecb3f008d10b1a514a69efec60943",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lean-IE-05.zip": {
+      "argv": [
+        "/tmp/nla-submission-tools/gh_2.100.0_macOS_arm64/bin/gh",
+        "api",
+        "repos/sgstepaniants/OpenProblemsInNLA/actions/artifacts/10316715133/zip"
+      ],
+      "utc_start": "2026-09-13T12:49:19.509345+00:00",
+      "exit_code": 0,
+      "bytes": 76022,
+      "sha256": "e2740cccc2531b1f4a41b08d885199a1c8488ef2f95b9a3acbc8424525da631a",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "lean-checker-controls.zip": {
+      "argv": [
+        "/tmp/nla-submission-tools/gh_2.100.0_macOS_arm64/bin/gh",
+        "api",
+        "repos/sgstepaniants/OpenProblemsInNLA/actions/artifacts/10316610253/zip"
+      ],
+      "utc_start": "2026-09-13T12:49:19.611017+00:00",
+      "exit_code": 0,
+      "bytes": 8111,
+      "sha256": "b5e5f5491af333ddba936929ede04ab930be234e40720a613b5bc17815c12874",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "archives": {
+    "lean-IE-05.zip": {
+      "sha256": "e2740cccc2531b1f4a41b08d885199a1c8488ef2f95b9a3acbc8424525da631a",
+      "members": {
+        "bootstrap/comparator-build.log": {
+          "sha256": "a2e50320f2ab83052a841fcfc032a3d26524fbfe2408c3bb56441cc9eb72a18f",
+          "bytes": 794,
+          "CRC": 635149860
+        },
+        "bootstrap/elan.log": {
+          "sha256": "b9711b498167d8e7f8fd98d6ec303edfe75693784469d39bb7ec47d487c1420f",
+          "bytes": 129,
+          "CRC": 2726588938
+        },
+        "bootstrap/landrun-build.log": {
+          "sha256": "fddaebb73345274c62a6676a68d959f9ebc573ac991e0240ee276c887e44415b",
+          "bytes": 349,
+          "CRC": 4194467362
+        },
+        "verify-20260913T101713Z-4149/comparator-controls.log": {
+          "sha256": "708da2d9e399a242f26ba0ec6eb4c339edb93b0cc43fffa68f5ab78927ea161d",
+          "bytes": 6680,
+          "CRC": 2049516099
+        },
+        "verify-20260913T101713Z-4149/comparator.log": {
+          "sha256": "805bc38e8f0b16e7bf492ded87f65615e9af8bad6bff577803e7186b476b3c3a",
+          "bytes": 17075,
+          "CRC": 1804954989
+        },
+        "verify-20260913T101713Z-4149/dependencies.log": {
+          "sha256": "740fcb700c777ae28e11ddf7c40e50a87ba79bbe97b1a1e1d21a314fea802b4d",
+          "bytes": 1570,
+          "CRC": 3082744843
+        },
+        "verify-20260913T101713Z-4149/kernel-controls.log": {
+          "sha256": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+          "bytes": 1322,
+          "CRC": 1565039430
+        },
+        "verify-20260913T101713Z-4149/mathlib-cache.log": {
+          "sha256": "5d979edbdad5c3c6a97046fcd82111e3c2df2eff06d81ec4e751f877d48fc976",
+          "bytes": 8504,
+          "CRC": 1618725050
+        },
+        "verify-20260913T101713Z-4149/negative-native.log": {
+          "sha256": "71b68eba62745aa4dc3796b46edf4ff512999c9c5a482aee0920b0ab5ebc5912",
+          "bytes": 2475,
+          "CRC": 896372859
+        },
+        "verify-20260913T101713Z-4149/negative-sorry.log": {
+          "sha256": "69025960fb1e20e76c4f2bba75958b9251d912d20f04b61f0a761e4d21aa9385",
+          "bytes": 2499,
+          "CRC": 745703280
+        },
+        "verify-20260913T101713Z-4149/result.json": {
+          "sha256": "59d5fd35eca07a05d1eed1e92cfa2a77e07704cae8d90b84f8771a462714a0e8",
+          "bytes": 386911,
+          "CRC": 419077460
+        },
+        "verify-20260913T101713Z-4149/sandbox.log": {
+          "sha256": "4c9b69b7509799dfd50c9744ca37092247c45a042c3fae5e3a355a4df3e2188c",
+          "bytes": 4117,
+          "CRC": 2252221563
+        },
+        "verify-20260913T101713Z-4149/user-service.log": {
+          "sha256": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a",
+          "bytes": 1273,
+          "CRC": 1673930224
+        }
+      },
+      "member_count": 13,
+      "artifact_metadata": {
+        "id": 10316715133,
+        "node_id": "MDg6QXJ0aWZhY3QxMDMxNjcxNTEzMw==",
+        "name": "lean-IE-05",
+        "size_in_bytes": 76022,
+        "url": "https://api.github.com/repos/sgstepaniants/OpenProblemsInNLA/actions/artifacts/10316715133",
+        "archive_download_url": "https://api.github.com/repos/sgstepaniants/OpenProblemsInNLA/actions/artifacts/10316715133/zip",
+        "expired": false,
+        "digest": "sha256:e2740cccc2531b1f4a41b08d885199a1c8488ef2f95b9a3acbc8424525da631a",
+        "created_at": "2026-09-13T10:20:25Z",
+        "updated_at": "2026-09-13T10:20:25Z",
+        "expires_at": "2026-12-12T10:15:54Z",
+        "workflow_run": {
+          "id": 34751393873,
+          "repository_id": 1366450423,
+          "head_repository_id": 1366450423,
+          "head_branch": "codex/lean-ie05-orthogonal-extremizer",
+          "head_sha": "71cf72f9db2af0f01b5cfa7f18a69e28310eb52f"
+        }
+      }
+    },
+    "lean-checker-controls.zip": {
+      "sha256": "b5e5f5491af333ddba936929ede04ab930be234e40720a613b5bc17815c12874",
+      "members": {
+        "bootstrap/comparator-build.log": {
+          "sha256": "adebc1b4d0e0b94673994fee5f6bb5764be69a94ab02b10562adf8e6c2d96dd6",
+          "bytes": 795,
+          "CRC": 384483224
+        },
+        "bootstrap/elan.log": {
+          "sha256": "b9711b498167d8e7f8fd98d6ec303edfe75693784469d39bb7ec47d487c1420f",
+          "bytes": 129,
+          "CRC": 2726588938
+        },
+        "bootstrap/landrun-build.log": {
+          "sha256": "baf6c06b231f4e2c2af81c514a62c8194bacce0677b2adb9d8948da24f91c302",
+          "bytes": 349,
+          "CRC": 19134920
+        },
+        "selftest-20260913T101712Z-4114/comparator-controls.log": {
+          "sha256": "090bb6f7255804d604c5416ed418e8cd6139a8fbd8152592d49a744a875febe3",
+          "bytes": 6680,
+          "CRC": 420153972
+        },
+        "selftest-20260913T101712Z-4114/kernel-controls.log": {
+          "sha256": "ac5884a6a9aab533b23369a1a9a4e453f745264bbaeb2e13d60d94569c45a361",
+          "bytes": 1322,
+          "CRC": 1565039430
+        },
+        "selftest-20260913T101712Z-4114/negative-native.log": {
+          "sha256": "0a49426b52b63e4f703ce87914ae2818da52bf738a83e645b5d8471a1845ff49",
+          "bytes": 2475,
+          "CRC": 357873396
+        },
+        "selftest-20260913T101712Z-4114/negative-sorry.log": {
+          "sha256": "f5dabc6927366435206b8e8325218e19805d4a9e75edb315d8147e67141f4273",
+          "bytes": 2499,
+          "CRC": 3031242737
+        },
+        "selftest-20260913T101712Z-4114/result.json": {
+          "sha256": "c9090308b43b38cbd3f5665dce2c84f7042e33b901e79cf1dac529fd8137b113",
+          "bytes": 1220,
+          "CRC": 979933929
+        },
+        "selftest-20260913T101712Z-4114/sandbox.log": {
+          "sha256": "dc1b6b83b71fe33179bf468973f7b4cab3ebc55d12043fefdf7ead6510af93e3",
+          "bytes": 4117,
+          "CRC": 1228444098
+        },
+        "selftest-20260913T101712Z-4114/user-service.log": {
+          "sha256": "4700d2ea9f713793f38154d753a4e1aa1ff05342dc9d3ac4cfd5ffde7d53851a",
+          "bytes": 1273,
+          "CRC": 1673930224
+        }
+      },
+      "member_count": 10,
+      "artifact_metadata": {
+        "id": 10316610253,
+        "node_id": "MDg6QXJ0aWZhY3QxMDMxNjYxMDI1Mw==",
+        "name": "lean-checker-controls",
+        "size_in_bytes": 8111,
+        "url": "https://api.github.com/repos/sgstepaniants/OpenProblemsInNLA/actions/artifacts/10316610253",
+        "archive_download_url": "https://api.github.com/repos/sgstepaniants/OpenProblemsInNLA/actions/artifacts/10316610253/zip",
+        "expired": false,
+        "digest": "sha256:b5e5f5491af333ddba936929ede04ab930be234e40720a613b5bc17815c12874",
+        "created_at": "2026-09-13T10:17:32Z",
+        "updated_at": "2026-09-13T10:17:32Z",
+        "expires_at": "2026-12-12T10:15:54Z",
+        "workflow_run": {
+          "id": 34751393873,
+          "repository_id": 1366450423,
+          "head_repository_id": 1366450423,
+          "head_branch": "codex/lean-ie05-orthogonal-extremizer",
+          "head_sha": "71cf72f9db2af0f01b5cfa7f18a69e28310eb52f"
+        }
+      }
+    },
+    "runlogs.zip": {
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85",
+      "members": {},
+      "member_count": 0
+    }
+  },
+  "earlier_parent_IE05_extraction_matches_all_files": true,
+  "metadata_api_snapshot": "api-jlvyv9bw",
+  "raw_log_note": "Earlier gh API calls refused ANSI bytes. Documented --allow-escape-sequences is used only to capture original bytes to files; no raw terminal rendering."
+}

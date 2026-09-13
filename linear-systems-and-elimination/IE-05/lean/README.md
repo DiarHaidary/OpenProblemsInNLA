@@ -1,11 +1,10 @@
-# IE-05 Lean candidate: exact extremizers for partial pivoting
+# IE-05 Lean verification: exact extremizers for partial pivoting
 
 The complete negative resolution of IE-05 is implemented and has two accepted
-independent final mathematical agent reviews. **Independent candidate packaging
-approval and actual Ubuntu default-kernel/Comparator verification are pending.**
-The canonical problem remains **Solved** by its existing informal counterexample;
-this candidate does not change its permanent ID, canonical pages, or verification
-status.
+independent final mathematical agent reviews. Independent candidate packaging
+approval and the authoritative Ubuntu default-kernel/Comparator verification
+are complete. The canonical problem is now **Lean verified**; its permanent ID,
+canonical target and original attribution are unchanged.
 
 George Stepaniants, Department of Computing and Mathematical Sciences,
 California Institute of Technology, Pasadena, California, USA, is the author of
@@ -57,7 +56,8 @@ intentional reference environment with 17 holes and is never imported by the
 solution. The live proof development has no admissions. Actual transitive axiom
 inspection in both independent source checks found only `propext`,
 `Classical.choice`, and `Quot.sound`, with explicit LeanCert kernel assertions.
-These macOS checks do not substitute for the pending authoritative Linux run.
+The authoritative Linux run and independent operational audit are archived in
+[`verification/linux-2026-09-13/`](verification/linux-2026-09-13/).
 
 From this directory, the following checks only package integrity and metadata;
 it does not run Lean or grant independent approval:
@@ -85,4 +85,4 @@ following [`final referee 1`](reviews/final-referee-1.md) and
 this candidate package and therefore supplies no independent packaging approval.
 That later role does not alter the earlier sealed mathematical review.
 [`verification/candidate-package/HANDOFF.md`](verification/candidate-package/HANDOFF.md)
-records the package boundary and pending gates.
+records the package boundary and the historical candidate selection.

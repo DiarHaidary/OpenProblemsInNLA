@@ -1,0 +1,113 @@
+{
+  "cleanup_id": "IS02-presentation-cleanup-2026-09-13",
+  "proof_compile": "PASS",
+  "compile_prefix": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-is02-proof-typecheck.an46Oh",
+  "command_results": [
+    {
+      "label": "dependency-pins",
+      "exit_code": 0,
+      "log": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-is02-proof-typecheck.an46Oh/logs/dependency-pins.log"
+    },
+    {
+      "label": "lean-version",
+      "exit_code": 0,
+      "log": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-is02-proof-typecheck.an46Oh/logs/lean-version.log"
+    },
+    {
+      "label": "definitions",
+      "exit_code": 0,
+      "log": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-is02-proof-typecheck.an46Oh/logs/definitions.log"
+    },
+    {
+      "label": "proof",
+      "exit_code": 0,
+      "log": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-is02-proof-typecheck.an46Oh/logs/proof.log"
+    },
+    {
+      "label": "solution",
+      "exit_code": 0,
+      "log": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-is02-proof-typecheck.an46Oh/logs/solution.log"
+    },
+    {
+      "label": "source-hashes",
+      "exit_code": 0,
+      "log": "/var/folders/pw/wkdn0vxs0b54swhpwjg6s0x00000gn/T/nla-is02-proof-typecheck.an46Oh/logs/source-hashes.log"
+    }
+  ],
+  "all_commands_exit_zero": true,
+  "dependency_check": {
+    "all_ten_clean_and_pinned": true,
+    "package_count": 10,
+    "packages": [
+      [
+        "leancert",
+        "621a43d7cf21f87872392a01e874f2f1dbddc926",
+        "621a43d7cf21f87872392a01e874f2f1dbddc926"
+      ],
+      [
+        "mathlib",
+        "0df444a360eaa60ab8c11dca51a86af692955474",
+        "0df444a360eaa60ab8c11dca51a86af692955474"
+      ],
+      [
+        "plausible",
+        "b7eb3304aeae834b12dda98993a37f6a41f6f0bb",
+        "b7eb3304aeae834b12dda98993a37f6a41f6f0bb"
+      ],
+      [
+        "LeanSearchClient",
+        "5f4d51b81cbd3f6b32b156bfad9056621a040404",
+        "5f4d51b81cbd3f6b32b156bfad9056621a040404"
+      ],
+      [
+        "importGraph",
+        "16f02aa7642864af59f1ff0e384a015994db9118",
+        "16f02aa7642864af59f1ff0e384a015994db9118"
+      ],
+      [
+        "proofwidgets",
+        "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957",
+        "4be2e3d5087eeb272cf5a8853b8f9dd025ef5957"
+      ],
+      [
+        "aesop",
+        "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e",
+        "3448c0bcc5ce01b2d1546e483ec3620e32df3d0e"
+      ],
+      [
+        "Qq",
+        "92c15be17b7caf78c2ad767ec40f89052d908d81",
+        "92c15be17b7caf78c2ad767ec40f89052d908d81"
+      ],
+      [
+        "batteries",
+        "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d",
+        "4488d40d070b9700d4d5a6aa342f0d40c31b2a2d"
+      ],
+      [
+        "Cli",
+        "6130a47896ce867c6a4a55373441e59e565bad0f",
+        "6130a47896ce867c6a4a55373441e59e565bad0f"
+      ]
+    ]
+  },
+  "public_exports": 9,
+  "solution_axioms_observed": "propext, Classical.choice, Quot.sound for all nine",
+  "sorryAx_observed": false,
+  "public_names_preserved": true,
+  "definitions_and_challenge_unchanged": true,
+  "source_strategy_unchanged": true,
+  "comparator_run": false,
+  "report_files": {
+    "change_map": "CHANGE-MAP.md",
+    "identifier_mapping": "identifier-mapping.json",
+    "final_hashes": "FINAL-HASHES.json",
+    "fresh_evidence": "fresh-proof-typecheck/"
+  },
+  "narrow_public_boundary_check": {
+    "source": "FrozenBoundaryCheck.lean",
+    "exit_code": 0,
+    "result": "all nine approved public contracts typechecked against final Solution",
+    "log": "FrozenBoundaryCheck.log"
+  }
+}

@@ -1,0 +1,14 @@
+--- renamed-old-without-comments
+
++++ new-without-comments
+
+@@ -9,7 +9,7 @@
+
+ 
+ namespace NLA.IS02
+ 
+- theorem counterexample_symmetric_nonnegative_stochastic :
++theorem counterexample_symmetric_nonnegative_stochastic :
+     counterexample ∈ symmetricStochastic 4 := by
+   exact counterexample_membership
+ 

@@ -1,0 +1,64 @@
+--- renamed-old-without-comments
+
++++ new-without-comments
+
+@@ -11,8 +11,8 @@
+
+ noncomputable section
+ open scoped BigOperators Matrix
+ namespace NLA.IS02
+-
+ open Polynomial
++
+ 
+ 
+ set_option maxHeartbeats 800000 in
+@@ -72,6 +72,7 @@
+
+   rw [show C (1 / 2 : ℝ) * X ^ 3 * 2 = X ^ 3 * (C (1 / 2 : ℝ) * 2) by ring]
+   rw [hcHalf]
+   ring
++
+ 
+ 
+ lemma custom_to_hermitian {n : ℕ} {A : Mat n} (hA : symmetric A) : Matrix.IsHermitian A := by
+@@ -247,6 +248,8 @@
+
+         · exact Finset.mem_univ i
+   nlinarith [hsum]
+ 
++ 
++
+ set_option maxHeartbeats 800000 in
+ theorem support_pair_01 {B : Mat 4} {z : Fin 4 → ℝ}
+     (hm : B ∈ symmetricStochastic 4)
+@@ -715,6 +718,8 @@
+
+     simp [hr0, hr1, hr2, hr3, counterexample, Matrix.cons_val_zero,
+       Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three,
+       haa, hbb, hcc', hdd', ha0, ha1, hb0, hb1, h0a, h1a, h0b, h1b, hab, hba, hcd', hdc']
++ 
++
+ set_option maxHeartbeats 800000 in
+ theorem support_single_0 {B : Mat 4} {z : Fin 4 → ℝ}
+     (hm : B ∈ symmetricStochastic 4)
+@@ -843,6 +848,8 @@
+
+   change B 3 0 + (B 3 1 + (B 3 2 + B 3 3)) = 1 at sc
+   rw [hdiagc, h30, h31, h32] at sc
+   linarith [sc]
++ 
++
+ set_option maxHeartbeats 800000 in
+ theorem support_triple_123 {B : Mat 4} {z : Fin 4 → ℝ}
+     (hm : B ∈ symmetricStochastic 4)
+@@ -1152,6 +1159,8 @@
+
+   apply h0
+   linarith [e0, e1, e2]
+ 
++ 
++
+ set_option maxHeartbeats 1200000 in
+ theorem competitor_spectral_uniqueness :
+     spectrallyUnique counterexample := by

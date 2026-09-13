@@ -92,6 +92,13 @@ The full proof passed a separate [independent Codex AI-agent informal audit](ref
 The [separate independent Codex AI-agent informal audit](references/holden-ra04-full-proof-2026-09-13/verification/independent-review.md) passed the full proof. This is not external human peer review or formal verification; no Lean verification was performed. [Submission, attribution and verified affiliation](references/holden-ra04-full-proof-2026-09-13/SUBMISSION.md). Original ID, path, target and source attribution are retained.
 
 
+### ✅ PF-04 — maximum cp-rank in order six — Sidney Holden
+
+**Solved affirmatively, 13 September 2026 (UTC).** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 1.1 and Sections 2–8](references/holden-pf04-2026-09-13/submission/PF04_proposed_proof.pdf) prove that every real order-six completely positive matrix admits a nonnegative factor with at most nine columns; Proposition 8.1 attains nine with a positive-definite example. [Retained PF-04 target](nonnegative-and-positive-factorizations/PF-04/README.md) · [Proof source](references/holden-pf04-2026-09-13/submission/PF04_proposed_proof.tex) · [Submission and verified affiliation](references/holden-pf04-2026-09-13/README.md).
+
+The full proof passed a separate [independent Codex AI-agent informal audit](references/holden-pf04-2026-09-13/independent-review.md), and exact auxiliary checks passed on rerun. AI assistance is disclosed; no external human peer review, formal verification or historical priority certification is asserted. No Lean verification was performed. Original ID, path, target and prior-source attribution are preserved.
+
+
 ### KE-02, SP-08 and SP-09 — spectral partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** Author: Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](references/holden-spectral-2026-09-12/README.md).

@@ -1,0 +1,686 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={A recursive counterexample to the complex extension in RA-18},pdfauthor={Sidney Holden},pdfsubject={Complex square-submatrix inverse norms and a structured real case}}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\C}{\mathbb C}
+\newcommand{\F}{\mathbb F}
+\newcommand{\Id}{\mathrm I}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\bval}{b}
+\newcommand{\T}{\mathcal T}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\title{A recursive counterexample to the complex extension in RA-18}
+\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
+\date{13 September 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+An explicit sequence of complex matrices with orthonormal columns disproves the proposed dimension-independent complex extension in RA-18. The matrices $U_k$ have $2\cdot3^k$ rows and $3^k$ columns, every row has squared norm $1/2$, and every nonsingular square row submatrix satisfies
+\[
+ \norm{U_{k,I}^{-1}}_2^2\ge \frac{3\cdot4^k+1}{2}.
+\]
+Consequently, no absolute constant $\alpha$ can bound all these inverse norms by $\alpha\sqrt n$ after optimal row selection. The proof uses an orthonormal three-phase lift, an exact classification of all nonsingular selections, and one Rayleigh quotient. A stronger analysis gives a scalar recurrence for the exact best inverse norm, the entire singular spectrum of every basis, and an exact count of the nonsingular bases. Separately, weighted orthogonal-complement duality proves the real square-root bound for Parseval frames having at most $r+2$ nonzero row directions, using the established real two-column theorem. The unrestricted real Goreinov--Tyrtyshnikov--Zamarashkin conjecture is not resolved here.
+\end{abstract}
+
+\section{Problem, notation, and scope}
+
+For $\F\in\{\R,\C\}$, an $n\times r$ matrix $U$ is an isometry, or a Parseval frame in row notation, when $U^*U=\Id_r$. Throughout, $*$ means conjugate transpose, and $\norm{\cdot}_2$ is the spectral norm. For a set $I$ of $r$ row indices, let $U_I=U(I,:)$. Define
+\begin{align}
+ \beta(U)&=\max_{|I|=r}\lambda_{\min}(U_I^*U_I), \label{eq:beta}\\
+ b(U)&=\min_{\substack{|I|=r\\\det U_I\ne0}}\norm{U_I^{-1}}_2^2
+       =\frac1{\beta(U)}, \label{eq:b}\\
+ t_\F(r,n)&=\sup_{\substack{U\in\F^{n\times r}\\U^*U=\Id_r}}\sqrt{b(U)}.\label{eq:t}
+\end{align}
+There is at least one nonsingular $U_I$ because $U$ has full column rank. Singular subsets contribute zero to \eqref{eq:beta}; thus including them in the maximum causes no ambiguity. Crucially, $b(U)$ is a \emph{squared} inverse norm.
+
+The real conjecture in RA-18 asks whether $t_\R(r,n)\le\sqrt n$ for every $1\le r<n$. Its separately labeled proposed complex extension asks whether $t_\C(r,n)\le\alpha\sqrt n$ with one constant $\alpha$ independent of both $r$ and $n$. The entry records a partially resolved status, last checked on September 11, 2026.\footnote{OpenProblemsInNLA, RA-18, accessed September 13, 2026; see Reference \cite{ra18}. The two field-dependent questions must not be conflated.}
+
+The sharp real result for two columns is proved in the preprint of Sengupta and Pautov.\footnote{R. Sengupta and M. Pautov, \emph{On the submatrices with the best-bounded inverses}, arXiv:2604.05944v5, 2026, Reference \cite{sp}.} For complex two-column matrices, the sharp universal constant is
+\begin{equation}
+ c_2=\left(2-\frac2{\sqrt3}\right)^{-1/2},
+ \qquad t_\C(2,n)\le c_2\sqrt n,
+ \label{eq:c2}
+\end{equation}
+with equality when $4\mid n$.\footnote{Y. Nesterenko, \emph{Submatrices with the best-bounded inverses: an asymptotically tight upper bound for $\C^{n\times2}$}, arXiv:2604.24087v1, Proposition 1, Reference \cite{complex2}. The earlier $4\times2$ obstruction is in Reference \cite{complex2024}.}
+
+The main theorem below is a negative answer to the proposed \emph{complex} extension. It does not contradict the real two-column result, and it does not establish or refute the unrestricted real conjecture. The growth exponent proved below is a lower bound for the worst-case complex problem, not a claimed optimal exponent.
+
+\section{The counterexample theorem}
+
+Let
+\begin{equation}
+ \omega=e^{2\pi i/3},\qquad
+ a=\frac1{\sqrt3}(1,1,1)^T,\qquad
+ c=\frac1{\sqrt3}(1,\omega,\omega^2)^T.
+ \label{eq:phases}
+\end{equation}
+For any $n\times r$ complex isometry $U$, define the three-phase lift
+\begin{equation}
+ \T(U)=\left[\,U\otimes a\quad \Id_n\otimes c\,\right]
+ \in\C^{3n\times(r+n)}.
+ \label{eq:lift}
+\end{equation}
+Equivalently, if $u_i$ is row $i$ of $U$, the three rows belonging to group $i$ are
+\begin{equation}
+ \T(U)_{(i,j),:}=\frac1{\sqrt3}\bigl(u_i,\omega^j e_i^T\bigr),
+ \qquad j=0,1,2.
+ \label{eq:liftrows}
+\end{equation}
+
+\begin{theorem}[Unbounded complex square-root ratio]\label{thm:main}
+Set
+\[
+ U_0=\frac1{\sqrt2}(1,1)^T,\qquad U_{k+1}=\T(U_k).
+\]
+Then $U_k\in\C^{n_k\times r_k}$, where
+\[
+ n_k=2\cdot3^k,\qquad r_k=3^k,
+\]
+$U_k^*U_k=\Id_{r_k}$, and every row of $U_k$ has squared norm $1/2$. Every nonsingular $r_k\times r_k$ row submatrix obeys
+\begin{equation}
+ \norm{U_{k,I}^{-1}}_2^2\ge\frac{3\cdot4^k+1}{2}.
+ \label{eq:mainlower}
+\end{equation}
+In particular,
+\begin{equation}
+ \frac{t_\C(3^k,2\cdot3^k)}{\sqrt{2\cdot3^k}}
+ \ge \sqrt{\frac{3\cdot4^k+1}{4\cdot3^k}}
+ \longrightarrow\infty.
+ \label{eq:diverge}
+\end{equation}
+Thus the proposed absolute constant $\alpha$ does not exist, even within the equal-row-norm, half-rank class.
+\end{theorem}
+
+The proof occupies the next section and requires no result about the real conjecture or the complex two-column problem.
+
+\section{Proof by exhaustive structural classification}
+
+\subsection{Orthonormality and the row-selection patterns}
+
+\begin{lemma}\label{lem:isometry}
+If $U^*U=\Id_r$, then $\T(U)^*\T(U)=\Id_{r+n}$.
+\end{lemma}
+\begin{proof}
+We have $a^*a=c^*c=1$ and $a^*c=(1+\omega+\omega^2)/3=0$. The two diagonal blocks of the column Gram matrix are therefore $\Id_r$ and $\Id_n$, and the off-diagonal blocks vanish.
+\end{proof}
+
+\begin{lemma}[All nonsingular row selections]\label{lem:bases}
+Let $K$ contain exactly $r+n$ rows of $\T(U)$. The selected square matrix $\T(U)_K$ is nonsingular if and only if both of the following hold: every group contributes one or two rows; and the set $I$ of groups contributing two rows indexes a nonsingular $r\times r$ submatrix $U_I$.
+\end{lemma}
+\begin{proof}
+If a group contributes no row, the corresponding one of the $n$ new columns is zero. If a group contributes all three rows, those three selected rows are linearly dependent: by \eqref{eq:liftrows}, they lie in the span of $(u_i,0)$ and $(0,e_i^T)$, a space of dimension at most two. A nonsingular selection must therefore use one or two rows from each group.
+
+Since the total number of selected rows is $n+r$, exactly $r$ groups contribute two rows. Denote their index set by $I$. To verify the remaining equivalence directly, consider a vector $(x,y)\in\C^r\oplus\C^n$ in the nullspace of the selected matrix. The equations in group $i$ are
+\[
+ u_i x+\omega^j y_i=0
+\]
+for the selected phases $j$. In a doubled group, subtracting the two equations shows $y_i=0$, because the phases are distinct; the remaining equation is $u_i x=0$. Thus $U_Ix=0$. If $U_I$ is invertible, then $x=0$, and every singleton equation forces its $y_i=0$ as well.
+
+Conversely, if $U_Ix=0$ has a nonzero solution, set $y_i=0$ on $I$ and set $y_i=-\omega^{-j}u_i x$ on each singleton group with selected phase $j$. This gives a nonzero null vector for $\T(U)_K$. The classification follows. It includes every square selection, not merely selections of a prescribed product form.
+\end{proof}
+
+\subsection{A phase-independent Gram matrix}
+
+For a legal selection $K$, let $I$ be the doubled groups and write
+\[
+ G=U_I^*U_I,\qquad E_I=\diag(\mathbf1_I),\qquad D=\Id_n+E_I.
+\]
+For each group, define $s_i=\sum_{j:(i,j)\in K}\omega^j$. If the group has one selected phase, $|s_i|=1$. If it has two, its sum is the negative of the missing root, so again $|s_i|=1$.
+
+Direct multiplication gives
+\[
+ \T(U)_K^*\T(U)_K
+ =\frac13\begin{pmatrix}
+  \Id_r+G & U^*\diag(s_i)\\
+  \diag(\overline{s_i})U&D
+ \end{pmatrix}.
+\]
+Conjugate this matrix by the unitary
+$\diag(\Id_r,\diag(\overline{s_i}))$. Its spectrum is that of
+\begin{equation}
+ M_I=\frac13\begin{pmatrix}
+  \Id_r+G&U^*\\ U&D
+ \end{pmatrix}.
+ \label{eq:canonical}
+\end{equation}
+Thus the phases chosen within the groups do not affect the singular values for a fixed parent set $I$.
+
+\subsection{The amplification inequality}
+
+\begin{lemma}[Squared inverse-norm amplification]\label{lem:amplify}
+For every complex isometry $U$ with $n\ge r\ge1$,
+\begin{equation}
+ b(\T(U))\ge4b(U)-\frac32.
+ \label{eq:amplify}
+\end{equation}
+More precisely, every nonsingular lifted selection associated with a parent set $I$ satisfies
+\begin{equation}
+ \norm{\T(U)_K^{-1}}_2^2
+ \ge4\norm{U_I^{-1}}_2^2-\frac32.
+ \label{eq:pointwiseamplify}
+\end{equation}
+\end{lemma}
+\begin{proof}
+By Lemma~\ref{lem:bases}, the parent matrix is invertible. Let $x$ be a unit eigenvector of $G=U_I^*U_I$ for its smallest eigenvalue $g>0$. Since $D^{-1}$ has entries $1/2$ on $I$ and $1$ on its complement,
+\begin{align*}
+ U^*D^{-1}U&=\tfrac12G+(\Id_r-G)=\Id_r-\tfrac12G,\\
+ U^*D^{-2}U&=\tfrac14G+(\Id_r-G)=\Id_r-\tfrac34G.
+\end{align*}
+Use the nonzero test vector
+\[
+ z=\begin{pmatrix}x\\-D^{-1}Ux\end{pmatrix}.
+\]
+Equation \eqref{eq:canonical} yields
+\begin{align*}
+ z^*M_Iz
+ &=\frac13x^*\bigl(\Id_r+G-U^*D^{-1}U\bigr)x
+ =\frac g2,\\
+ z^*z&=1+x^*U^*D^{-2}Ux=2-\frac{3g}{4}.
+\end{align*}
+The Rayleigh principle therefore gives
+\[
+ \lambda_{\min}(M_I)\le\frac{g}{4-\frac32g}.
+\]
+All matrices in this selection are nonsingular, so taking reciprocals is legitimate and proves \eqref{eq:pointwiseamplify}. Since $1/g=\norm{U_I^{-1}}_2^2\ge b(U)$ for every parent basis, minimizing over \emph{all} lifted bases gives \eqref{eq:amplify}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+Lemma~\ref{lem:isometry} proves orthonormality inductively. The dimensions satisfy $n_{k+1}=3n_k$ and $r_{k+1}=r_k+n_k$. Starting from $(n_0,r_0)=(2,1)$ gives $(n_k,r_k)=(2\cdot3^k,3^k)$.
+
+The squared norm of a lifted row is $(\norm{u_i}_2^2+1)/3$. Consequently, squared row norm $1/2$ is preserved. Finally, $b(U_0)=2$, so Lemma~\ref{lem:amplify} gives
+\[
+ b(U_{k+1})-\tfrac12\ge4\bigl(b(U_k)-\tfrac12\bigr),
+ \qquad b(U_k)\ge\tfrac12+\tfrac32\,4^k.
+\]
+This proves \eqref{eq:mainlower}. Division by $n_k$ proves \eqref{eq:diverge}, whose right-hand side is at least
+$\frac{\sqrt3}{2}(2/\sqrt3)^k$ and therefore diverges.
+\end{proof}
+
+\section{An explicit six-by-three example}
+
+The first lift is
+\begin{equation}
+ U_1=
+ \begin{pmatrix}
+  1/\sqrt6&1/\sqrt3&0\\
+  1/\sqrt6&\omega/\sqrt3&0\\
+  1/\sqrt6&\omega^2/\sqrt3&0\\
+  1/\sqrt6&0&1/\sqrt3\\
+  1/\sqrt6&0&\omega/\sqrt3\\
+  1/\sqrt6&0&\omega^2/\sqrt3
+ \end{pmatrix}.
+ \label{eq:u1}
+\end{equation}
+The two triples consisting of an entire row group are singular. All other $18$ triples are nonsingular. Their common column-Gram characteristic polynomial is
+\begin{equation}
+ q_1(\lambda)=\left(\lambda-\frac12\right)
+ \left(\lambda^2-\lambda+\frac19\right).
+ \label{eq:q1}
+\end{equation}
+Thus every nonsingular square submatrix has squared singular values
+\[
+ \frac{3-\sqrt5}{6},\qquad \frac12,\qquad \frac{3+\sqrt5}{6}.
+\]
+In particular,
+\begin{equation}
+ b(U_1)=\frac32(3+\sqrt5),\qquad
+ \frac{\sqrt{b(U_1)}}{\sqrt6}
+ =\sqrt{\frac{3+\sqrt5}{4}}
+ =1.144122805635\ldots.
+ \label{eq:u1value}
+\end{equation}
+This already exceeds the two-column constant $c_2\approx1.08766$. The finite example alone would only rule out constants smaller than \eqref{eq:u1value}; the recursion, not this one example, rules out every finite constant.
+
+\section{Exact spectra, basis counts, and asymptotics}
+
+\subsection{Reduction to a three-by-three matrix}
+
+\begin{proposition}[Exact half-rank spectral lift]\label{prop:spectral}
+Assume $n=2r$. For a nonsingular parent selection $I$, let $g_1,\ldots,g_r$ be the eigenvalues of $G=U_I^*U_I$. Every corresponding nonsingular selection of $\T(U)$ has squared singular spectrum equal to the union, with multiplicity, of the spectra of
+\begin{equation}
+ H(g_j)=\frac13\begin{pmatrix}
+  1+g_j&\sqrt{g_j}&\sqrt{1-g_j}\\
+  \sqrt{g_j}&2&0\\
+  \sqrt{1-g_j}&0&1
+ \end{pmatrix},\qquad 1\le j\le r.
+ \label{eq:H}
+\end{equation}
+\end{proposition}
+\begin{proof}
+Order the bottom $n$ coordinates in \eqref{eq:canonical} with $I$ first and $J=I^c$ second. Both sets have $r$ elements. Choose a unitary $X$ with $X^*GX=\diag(g_j)$. The columns of $U_IX$ are orthogonal with norms $\sqrt{g_j}$; the columns of $U_JX$ are orthogonal with norms $\sqrt{1-g_j}$, because $U_J^*U_J=\Id_r-G$. Hence there are unitaries $L_I,L_J$ with
+\[
+ U_IX=L_I\diag(\sqrt{g_j}),\qquad
+ U_JX=L_J\diag(\sqrt{1-g_j}).
+\]
+Zero columns, if any, are completed to orthonormal bases. Conjugating the three-block matrix by $\diag(X,L_I,L_J)$ and permuting coordinates yields the blocks \eqref{eq:H}.
+\end{proof}
+
+Define
+\begin{equation}
+ R(\lambda)=\frac{\lambda(2-3\lambda)^2}{1-3\lambda+3\lambda^2},
+ \qquad 0\le\lambda\le\frac13.
+ \label{eq:R}
+\end{equation}
+A direct determinant computation gives
+\begin{equation}
+ \det(\lambda\Id_3-H(g))
+ =\frac19\left[\lambda(3\lambda-2)^2-g(3\lambda^2-3\lambda+1)\right].
+ \label{eq:char}
+\end{equation}
+Moreover,
+\begin{equation}
+ R'(\lambda)=
+ \frac{(3\lambda-2)(3\lambda-1)(3\lambda^2-3\lambda+2)}
+ {(3\lambda^2-3\lambda+1)^2}>0
+ \quad(0<\lambda<1/3).
+ \label{eq:Rprime}
+\end{equation}
+Since $R(0)=0$ and $R(1/3)=1$, there is a continuous increasing inverse $f=R^{-1}:[0,1]\to[0,1/3]$.
+
+The matrix $H(g)$ is positive semidefinite for $0\le g\le1$; this follows, for example, by taking the Schur complement of its positive lower diagonal block. Equation \eqref{eq:char} has a unique root in $(0,1/3)$ when $0<g<1$. At the endpoints, $H(0)$ has smallest eigenvalue zero and $H(1)$ has smallest eigenvalue $1/3$. Consequently,
+\begin{equation}
+ \lambda_{\min}(H(g))=f(g),\qquad 0\le g\le1.
+ \label{eq:f}
+\end{equation}
+
+\begin{corollary}\label{cor:exactbeta}
+For every half-rank complex isometry $U$,
+\[
+ \beta(\T(U))=f(\beta(U)).
+\]
+For the sequence in Theorem~\ref{thm:main}, the exact values are
+\begin{equation}
+ g_0=\frac12,\qquad g_{k+1}=f(g_k),\qquad
+ \beta(U_k)=g_k,\qquad b(U_k)=g_k^{-1}.
+ \label{eq:scalarrec}
+\end{equation}
+All nonsingular square submatrices of a fixed $U_k$ have the same entire singular spectrum.
+\end{corollary}
+\begin{proof}
+For a fixed nonsingular parent $I$, Proposition~\ref{prop:spectral} and monotonicity of $f$ show that the smallest lifted squared singular value is $f(\lambda_{\min}(U_I^*U_I))$. Every nonsingular parent has legal lifts, and Lemma~\ref{lem:bases} accounts for every nonsingular lifted set. Taking maxima proves the first claim. The initial basis spectrum is the singleton $\{1/2\}$; Proposition~\ref{prop:spectral} then proves common full spectra by induction.
+\end{proof}
+
+\subsection{Exact basis counts and characteristic polynomials}
+
+Let $B_k$ denote the number of nonsingular square row submatrices of $U_k$. For each nonsingular parent, every row group has exactly three choices: choose its singleton phase or its missing phase. Therefore
+\[
+ B_0=2,\qquad B_{k+1}=3^{n_k}B_k,
+\]
+and hence
+\begin{equation}
+ B_k=2\cdot3^{3^k-1}.
+ \label{eq:basiscount}
+\end{equation}
+Since all these bases have the same singular spectrum, they also have the same Gram determinant. Cauchy--Binet gives
+\begin{equation}
+ \det(U_{k,I}^*U_{k,I})=\frac1{B_k}
+ \quad\text{for every nonsingular }I.
+ \label{eq:detbasis}
+\end{equation}
+This can also be checked recursively from $\det H(g)=g/9$.
+
+Let $q_k$ be the common monic characteristic polynomial of these Gram matrices. With $D(\lambda)=3\lambda^2-3\lambda+1$, equation \eqref{eq:char} gives the exact algebraic recurrence
+\begin{equation}
+ q_0(\lambda)=\lambda-\frac12,
+ \qquad
+ q_{k+1}(\lambda)=
+ \left(\frac{D(\lambda)}9\right)^{3^k}q_k(R(\lambda)).
+ \label{eq:qrec}
+\end{equation}
+The denominators cancel, leaving a monic polynomial of degree $3^{k+1}$. For instance,
+\begin{align}
+ q_2(\lambda)&=\frac{(2\lambda-1)(9\lambda^2-9\lambda+1)}{13122}
+ \bigl(729\lambda^6-2187\lambda^5+2520\lambda^4\notag\\[-2pt]
+ &\hspace{41mm}{}-1395\lambda^3+375\lambda^2-42\lambda+1\bigr).
+ \label{eq:q2}
+\end{align}
+These identities provide exact certificates beyond decimal optimization results.
+
+\subsection{The exact asymptotic constant for this family}
+
+The rational map has the useful identity
+\begin{equation}
+ R(\lambda)=4\lambda-\frac{3\lambda^3}{1-3\lambda+3\lambda^2}.
+ \label{eq:Rexp}
+\end{equation}
+Let $h_k=4^kg_k$. By \eqref{eq:scalarrec} and \eqref{eq:Rexp}, $h_k$ increases strictly. The elementary bound \eqref{eq:mainlower} gives
+\[
+ \frac12\le h_k\le\frac{2\cdot4^k}{3\cdot4^k+1}<\frac23.
+\]
+Thus $h_k\to L$ for a finite positive constant $L$, and
+\begin{equation}
+ \sqrt{b(U_k)}\sim \frac{2^k}{\sqrt L}.
+ \label{eq:asymptotic}
+\end{equation}
+
+A rigorous, simple tail bound is available. Since $D(\lambda)\ge1/3$ on $[0,1/3]$ and $g_{j+1}\le(2/3)4^{-(j+1)}$,
+\begin{align*}
+ 0<h_{j+1}-h_j
+ &=4^j\frac{3g_{j+1}^3}{D(g_{j+1})}
+ \le\frac1{24}\,16^{-j}.
+\end{align*}
+Summing the geometric series proves
+\begin{equation}
+ 0<L-h_k\le\frac2{45}\,16^{-k}.
+ \label{eq:tail}
+\end{equation}
+Exact rational bisection through $k=20$, combined with \eqref{eq:tail}, gives the certified enclosure
+\begin{align*}
+ 0.5097420164997750708232846364
+ &<L\\
+ &<0.5097420164997750708232846733.
+\end{align*}
+The archive records the exact rational endpoints and outward-rounded decimal endpoints. Equation \eqref{eq:asymptotic} concerns this explicit family, not an asserted global extremal asymptotic for $t_\C$.
+
+\begin{table}[ht]
+\centering
+\caption{Exact recurrence evaluated numerically. These are values for the constructed family, and hence lower bounds for the corresponding worst-case $t_\C$.}
+\begin{tabular}{rrrrrr}
+\toprule
+$k$&$n_k$&$r_k$&$g_k$&$\sqrt{b(U_k)}$&$\sqrt{b(U_k)/n_k}$\\
+\midrule
+0&2&1&0.5000000000&1.41421356&1.00000000\\
+1&6&3&0.1273220038&2.80251708&1.14412281\\
+2&18&9&0.03185722185&5.60268299&1.32056505\\
+3&54&27&0.007964693601&11.20509295&1.52482001\\
+4&162&81&0.001991179357&22.41015237&1.76070786\\
+5&486&243&0.0004977949318&44.82030058&2.03309012\\
+6&1458&729&0.0001244487344&89.64060063&2.34761024\\
+8&13122&6561&0.000007778045906&358.56240238&3.13014699\\
+\bottomrule
+\end{tabular}
+\label{tab:values}
+\end{table}
+
+\section{Consequences in other dimensions}
+
+Write
+\[
+ a_0=\log_3 2=0.6309297535\ldots,\qquad
+ \delta=a_0-\frac12>0.
+\]
+Theorem~\ref{thm:main} shows growth at least of order $r^{a_0}$ on the sequence $n=2r$, $r=3^k$. Elementary padding and replication extend this to all dimensions.
+
+\begin{lemma}[Complement, direct sum, and replication]\label{lem:operations}
+The following identities hold over either field.
+
+If $[U\ W]$ is unitary and $I,J$ are complementary row sets with $|I|=r$, then
+\[
+ \lambda_{\min}(U_I^*U_I)=\lambda_{\min}(W_J^*W_J).
+\]
+Consequently, $t_\F(r,n)=t_\F(n-r,n)$.
+
+If $U$ is a direct sum of isometries $U^{(j)}$, then
+$b(U)=\max_j b(U^{(j)})$. If every row of an isometry $V$ is replaced by $\ell$ identical copies divided by $\sqrt\ell$, then the resulting isometry $\widetilde V$ satisfies $b(\widetilde V)=\ell b(V)$. Appending zero rows leaves $b$ unchanged.
+\end{lemma}
+\begin{proof}
+Orthogonal completion gives
+\[
+ U_IU_I^*=\Id_r-W_IW_I^*,\qquad
+ W_J^*W_J=\Id_{n-r}-W_I^*W_I.
+\]
+The smallest eigenvalue of each is $1-\norm{W_I}_2^2$, proving the first assertion.
+
+A nonsingular square selection from a block diagonal isometry must select exactly the column dimension of each block: selecting fewer rows in a block loses column rank, and the fixed total prevents selecting more without a deficit elsewhere. The selected matrix is then block diagonal up to permutations; its inverse norm is the maximum block inverse norm.
+
+In the replicated matrix, a nonsingular selection cannot choose two copies of the same original row. Every nonsingular selection is a parent nonsingular selection divided by $\sqrt\ell$, up to row order, and every parent selection can be so obtained. Zero rows cannot occur in any nonsingular square selection.
+\end{proof}
+
+\begin{corollary}[A dimension-dependent lower bound]\label{cor:alldim}
+For all $1\le r<n$, with $s=\min(r,n-r)$,
+\begin{equation}
+ t_\C(r,n)\ge\sqrt{\frac3{32}}\,\sqrt n\,s^{\delta}.
+ \label{eq:alllower}
+\end{equation}
+For the balanced case, the stronger estimate
+\begin{equation}
+ t_\C(r,2r)\ge\sqrt{\frac38}\,r^{a_0}
+ \label{eq:balancedall}
+\end{equation}
+holds for every positive integer $r$.
+\end{corollary}
+\begin{proof}
+First take any $r$ and choose $m=3^{\lfloor\log_3r\rfloor}$, so $r/3<m\le r$. Use the matrix $U_k$ with $m=3^k$ and take its direct sum with $r-m$ copies of $U_0$. The result $V$ has $2r$ rows and $r$ columns, and
+\[
+ b(V)\ge\frac32\,4^k=\frac32m^{2a_0}
+ \ge\frac38r^{2a_0},
+\]
+because $3^{2a_0}=4$. This proves \eqref{eq:balancedall}.
+
+By complement duality it suffices for \eqref{eq:alllower} to treat $r\le n/2$. Set $\ell=\lfloor n/(2r)\rfloor$, replicate $V$ by $\ell$, and append zero rows to reach $n$. Since $\ell\ge n/(4r)$, Lemma~\ref{lem:operations} gives
+\[
+ b(\widetilde V)\ge\ell\frac38r^{2a_0}
+ \ge\frac3{32}n r^{2a_0-1}.
+\]
+Take square roots and use complement duality for the remaining range.
+\end{proof}
+
+For comparison, the classical maximal-volume upper bound is
+\begin{equation}
+ t_\F(r,n)\le\sqrt{1+r(n-r)}.\label{eq:classical}
+\end{equation}
+It is associated with the original pseudoskeleton-approximation theory.\footnote{S. A. Goreinov, E. E. Tyrtyshnikov, and N. L. Zamarashkin, \emph{A theory of pseudoskeleton approximations}, Linear Algebra and its Applications 261 (1997), 1--21, Reference \cite{gtz}. RA-18 also lists later algorithmic and sampling derivations.}
+For completeness, choose a nonsingular row submatrix $B$ of maximal determinant modulus. In the representation $U=\begin{bmatrix}\Id_r\\C\end{bmatrix}B$ after row permutation, every entry of $C$ has modulus at most one by a single-row determinant replacement. Then
+\[
+ (BB^*)^{-1}=\Id_r+C^*C,
+ \qquad \norm{B^{-1}}_2^2=1+\norm C_2^2
+ \le1+\norm C_F^2\le1+r(n-r).
+\]
+The new lower bound does not close the gap to this upper bound; determining the optimal complex growth remains a separate question.
+
+\section{Weighted duality and a structured real theorem}
+
+This section concerns real progress and is logically independent of the counterexample construction. A row direction means a one-dimensional subspace spanned by a nonzero row; scalar multiples, including opposite signs, belong to the same direction. Zero rows are excluded from the count of directions.
+
+\subsection{Weighted complement equivalence}
+
+\begin{lemma}[Weighted duality]\label{lem:weighted}
+Let $V\in\F^{q\times r}$ be an isometry, let $s=q-r>0$, and let $W\in\F^{q\times s}$ be an orthonormal complement, so $VV^*+WW^*=\Id_q$. Let $m_1,\ldots,m_q$ be positive numbers and choose $\eta>0$ so that $\eta m_i<1$ for every $i$. Write $v_i,w_i$ for the rows of $V,W$, and set
+\begin{align}
+ A_\eta&=\sum_{i=1}^q\frac{\eta m_i}{1-\eta m_i}\,w_i^*w_i,\label{eq:Aeta}\\
+ z_i&=\sqrt{\frac{\eta m_i}{1-\eta m_i}}\;w_iA_\eta^{-1/2}.\label{eq:z}
+\end{align}
+Then $A_\eta$ is positive definite and the matrix $Z$ with rows $z_i$ is an isometry. For $I\subseteq\{1,\ldots,q\}$ of size $r$ and $J=I^c$,
+\begin{equation}
+ \sum_{i\in I}\frac{v_i^*v_i}{m_i}\succeq\eta\Id_r
+ \quad\Longleftrightarrow\quad
+ \sum_{j\in J}\frac{z_j^*z_j}{m_j}\succeq\eta\Id_s.
+ \label{eq:weighted}
+\end{equation}
+\end{lemma}
+\begin{proof}
+The weights in \eqref{eq:Aeta} are strictly positive and $W$ has full column rank, so $A_\eta\succ0$. The definition of $z_i$ gives $Z^*Z=\Id_s$.
+
+Let $D_I=\diag(m_i:i\in I)$, and put $B=D_I^{-1/2}V_I$. Since $B$ is square, $B^*B$ and $BB^*$ have the same eigenvalues. The left side of \eqref{eq:weighted} is therefore equivalent to
+\begin{align*}
+ V_IV_I^*-\eta D_I&\succeq0,\\
+ (\Id_r-\eta D_I)-W_IW_I^*&\succeq0,\\
+ W_I^*(\Id_r-\eta D_I)^{-1}W_I&\preceq\Id_s.
+\end{align*}
+The last equivalence is a Schur-complement identity; $\Id_r-\eta D_I$ is positive definite. Since
+\[
+ \sum_{i=1}^q\frac1{1-\eta m_i}w_i^*w_i=\Id_s+A_\eta,
+\]
+the last inequality is equivalent to
+\[
+ \sum_{j\in J}\frac1{1-\eta m_j}w_j^*w_j\succeq A_\eta.
+\]
+Congruence by $A_\eta^{-1/2}$, followed by multiplication by $\eta$, gives precisely the right side of \eqref{eq:weighted}.
+\end{proof}
+
+\subsection{At most two excess row directions}
+
+\begin{theorem}[Structured real square-root bound]\label{thm:realclass}
+Let $U\in\R^{n\times r}$ satisfy $U^TU=\Id_r$. If its nonzero rows lie in at most $r+2$ one-dimensional subspaces, then some nonsingular square row submatrix satisfies
+\begin{equation}
+ \norm{U_I^{-1}}_2\le\sqrt n.
+ \label{eq:realclass}
+\end{equation}
+\end{theorem}
+\begin{proof}
+Delete zero rows, leaving $N\le n$ nonzero rows in $q$ direction groups. Necessarily $q\ge r$. Let group $i$ have $m_i$ rows, and compress its total Gram contribution into one row $v_i$:
+\[
+ \sum_{\ell\text{ in group }i}u_\ell^Tu_\ell=v_i^Tv_i.
+\]
+The resulting $q\times r$ matrix $V$ is an isometry. In each group, a largest-norm representative has Gram contribution at least $v_i^Tv_i/m_i$.
+
+If $q=r$, then $V$ is square orthogonal. Choosing such a representative from every group gives Gram matrix at least
+\[
+ \sum_{i=1}^r\frac{v_i^Tv_i}{m_i}
+ \succeq\frac1N\sum_{i=1}^r v_i^Tv_i=\frac1N\Id_r.
+\]
+This proves the claim in that case.
+
+Otherwise $s=q-r$ is $1$ or $2$. Apply Lemma~\ref{lem:weighted} with $\eta=1/N$. Its strict assumptions hold because $q\ge2$ and every positive integer $m_i<N$. Replicate each row $z_i$ into $m_i$ identical rows divided by $\sqrt{m_i}$. This produces an $N\times s$ real isometry.
+
+For $s=1$, the largest squared row norm is at least $1/N$. For $s=2$, the real two-column theorem of Sengupta--Pautov gives an $s$-row submatrix with Gram matrix at least $\Id_s/N$. A nonsingular selection cannot repeat one of the replicated row groups. Consequently it determines a set $J$ of $s$ group indices satisfying the right side of \eqref{eq:weighted}. The complement $I$ satisfies the left side. Choose a largest-norm original representative in every group in $I$. Their Gram matrix is at least $\Id_r/N$, and therefore at least $\Id_r/n$. This proves \eqref{eq:realclass}.
+\end{proof}
+
+\begin{remark}[A rank-deficit transfer principle]
+The same proof works with $s=q-r$ whenever a field-specific $N\times s$ selection theorem is available with threshold $\eta=\gamma/N$ and $0<\gamma\le1$. Thus the argument transfers a low-column theorem to a high-column frame with few excess row directions. Over $\C$, taking $s=2$ and $\gamma=2-2/\sqrt3$ gives $\norm{U_I^{-1}}_2\le c_2\sqrt n$ on the analogous structured class. With $s=1$, the constant is one over either field.
+\end{remark}
+
+The real theorem depends on the stated two-column result, whereas the complex counterexample theorem is self-contained. Arbitrary real isometries can have substantially more than $r+2$ row directions; there is no assertion here that they can all be reduced to this class. Related structured real extremal frames arise from weighted series--parallel graphs in Nesterenko's work.\footnote{Y. Nesterenko, \emph{About subspaces the most deviating from the coordinate ones}, arXiv:2511.02387v2, Reference \cite{graphs}. That work gives graph-based extremal constructions and a weighting criterion; no priority claim for all related special cases is made here.}
+
+\section{Sharp real examples for every pair of dimensions}
+
+The following elementary equality construction is useful as a test fixture and shows that the real constant cannot be improved, even in the structured class. It is not presented as a novelty claim independent of the existing literature on extremal subspaces.
+
+\begin{proposition}[Unequally duplicated simplex]\label{prop:sharp}
+For every $1\le r<N$, there is a real $N\times r$ isometry for which every nonsingular square row submatrix has smallest squared singular value exactly $1/N$. In particular, $t_\R(r,N)\ge\sqrt N$.
+\end{proposition}
+\begin{proof}
+Choose any positive integers $m_1,\ldots,m_{r+1}$ with sum $N$, and define a unit vector $z\in\R^{r+1}$ by
+\[
+ z_i=\sqrt{\frac1r\left(1-\frac{m_i}{N}\right)}.
+\]
+Let $V$ be any orthonormal basis matrix for $z^\perp$, so
+$V^TV=\Id_r$ and $VV^T=\Id_{r+1}-zz^T$. Replace row $v_i$ by $m_i$ identical copies of $v_i/\sqrt{m_i}$, obtaining an $N\times r$ isometry $U$.
+
+A nonsingular selection must use $r$ different groups, so it omits one of the $r+1$ groups. For such a set $I$, define
+\[
+ d_i=\frac1{m_i}-\frac1N>0,
+ \qquad D=\diag(d_i:i\in I).
+\]
+The selected row Gram matrix satisfies
+\begin{equation}
+ U_IU_I^T-\frac1N\Id_r
+ =D^{1/2}\left(\Id_r-\frac1r\mathbf1\mathbf1^T\right)D^{1/2}.
+ \label{eq:sharpidentity}
+\end{equation}
+Indeed $z_i/\sqrt{m_i}=\sqrt{d_i/r}$, which verifies every entry. The right side is positive semidefinite and singular, of rank $r-1$. Thus the smallest eigenvalue of $U_IU_I^T$ is exactly $1/N$, and every selection of distinct groups is nonsingular.
+\end{proof}
+
+Combining Proposition~\ref{prop:sharp} and Corollary~\ref{cor:alldim}, a convenient summary of the complex lower bounds is
+\[
+ t_\C(r,n)\ge\sqrt n\,
+ \max\left\{1,\sqrt{\frac3{32}}\,\min(r,n-r)^{\log_3 2-1/2}\right\}.
+\]
+The first term is supplied by real matrices, which are also complex isometries; the second is genuinely complex.
+
+\section{Why this does not settle the real conjecture}
+
+The cancellation $1+\omega+\omega^2=0$, together with unit modulus of every one-phase and two-phase sum, is essential to the lift. Three real numbers of equal nonzero modulus cannot sum to zero. Replacing the phases by real signs therefore does not retain the identities on which Lemma~\ref{lem:amplify} rests. This observation rules out that particular substitution, not every conceivable real construction.
+
+Nor does standard realification preserve the row-selection obstruction. For a complex $n\times r$ matrix, define
+\[
+ \mathcal R(U)=\begin{pmatrix}\Re U&-\Im U\\\Im U&\Re U\end{pmatrix}
+ \in\R^{2n\times2r}.
+\]
+This is an isometry when $U$ is, but arbitrary $2r$-row selections need not correspond to $r$ complex rows taken in real--imaginary pairs. There are additional admissible selections.
+
+For the explicit $U_1$ in \eqref{eq:u1}, a particularly strong illustration is available. Number the rows of $\mathcal R(U_1)$ from $1$ to $12$ in the displayed block order. Selecting rows
+\[
+ \{4,5,6,7,8,9\}
+\]
+gives a square real matrix $B$ with
+\begin{equation}
+ B^TB=\frac12\Id_6.
+ \label{eq:realification}
+\end{equation}
+The identity follows from the orthogonality of the constant, cosine, and sine vectors at the three equally spaced phases. It is also verified symbolically in the archive. In fact every row of $\mathcal R(U_1)$ has squared norm $1/2$, so the trace bound gives $\beta(\mathcal R(U_1))\le1/2$, and \eqref{eq:realification} attains equality. Thus this realification is very far from refuting the real square-root bound.
+
+The remaining real task is to prove or refute $\beta(U)\ge1/n$ for \emph{every} real isometry, without a restriction on row directions. No argument in this manuscript supplies that missing general step. The overall RA-18 entry should not be described as fully solved on the basis of these results.
+
+\section{Reproducibility and verification}
+
+The archive contains the LaTeX source, this PDF, Python code, exact symbolic identities, recorded numerical results, and an audit checklist. The main counterexample proof does not depend on optimization or floating-point computations.
+
+The supplied verification script performs three different types of checks, which should be distinguished. First, exact SymPy computations verify the orthonormality of \eqref{eq:u1}, all $20$ of its square row selections, the common characteristic polynomial of its $18$ nonsingular selections, the determinant identity \eqref{eq:char}, the derivative \eqref{eq:Rprime}, the rational identity \eqref{eq:Rexp}, and the realification identity \eqref{eq:realification}. It also checks the polynomial recurrence through degree nine.
+
+Second, exhaustive floating-point enumeration checks all $48{,}620=\binom{18}{9}$ square row selections of $U_2$. Exactly $13{,}122$ are classified as nonsingular, matching \eqref{eq:basiscount}, and $35{,}498$ are singular. The structural and numerical classifications have zero mismatches. The largest full-spectrum discrepancy from Proposition~\ref{prop:spectral} is less than $1.5\times10^{-15}$; the column-orthonormality error is less than $4.6\times10^{-16}$ in spectral norm. These numerical tolerances are checks, not exact certificates for the infinite family.
+
+The script additionally checks $500$ selected bases of random complex lifts, $200$ sampled bases at level three, $80$ grouped real instances, and $1{,}212$ weighted-duality equivalences. The level-three checks are sampled, not exhaustive. Four unequal-multiplicity real equality fixtures are also enumerated. All these checks passed in the recorded run with random seed $20260913$.
+
+Third, the limit enclosure for $L$ uses exact rational bisection and the rigorous bound \eqref{eq:tail}, not a floating-point extrapolation. The separate recurrence table uses $80$-digit arithmetic and includes levels $0$ through $12$ without constructing the corresponding large dense matrices.
+
+To reproduce the recorded checks, use Python 3.13 and the package versions pinned in \texttt{requirements.txt}, then run from the archive root:
+\begin{verbatim}
+python -m pip install -r requirements.txt
+python code/verify.py
+\end{verbatim}
+The script writes its results under \texttt{results/}. Dense matrix construction is protected by a memory-size guard, and exhaustive enumeration is protected by a subset-count guard. Neither computation is necessary for the symbolic recurrence at large dimensions.
+
+The manuscript is a mathematical proof submission with explicit, inspectable arguments. The archive does not contain a Lean or other proof-assistant formalization, and it does not claim independent peer review. Its precise conclusion is a refutation of the proposed universal complex constant, together with the stated structured real theorem; it is not a full resolution of the unrestricted real conjecture or of the optimal complex growth rate.
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{ra18}
+OpenProblemsInNLA.
+\emph{RA-18: The Goreinov--Tyrtyshnikov--Zamarashkin conjecture on square-submatrix inverse norms}.
+Repository entry, status check September 11, 2026; accessed September 13, 2026.
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/randomized-and-low-rank-approximation/RA-18/README.md}.
+
+\bibitem{gtz}
+S. A. Goreinov, E. E. Tyrtyshnikov, and N. L. Zamarashkin.
+\emph{A theory of pseudoskeleton approximations}.
+Linear Algebra and its Applications \textbf{261} (1997), 1--21.
+\url{https://doi.org/10.1016/S0024-3795(96)00301-1}.
+
+\bibitem{sp}
+R. Sengupta and M. Pautov.
+\emph{On the submatrices with the best-bounded inverses}.
+arXiv:2604.05944v5, April 16, 2026.
+\url{https://arxiv.org/html/2604.05944v5}.
+
+\bibitem{complex2}
+Y. Nesterenko.
+\emph{Submatrices with the best-bounded inverses: an asymptotically tight upper bound for $\C^{n\times2}$}.
+arXiv:2604.24087v1, April 27, 2026.
+\url{https://arxiv.org/html/2604.24087v1}.
+
+\bibitem{complex2024}
+Y. Nesterenko.
+\emph{Submatrices with the best-bounded inverses: Studying $\R^{n\times2}$ and $\C^{n\times2}$}.
+arXiv:2408.16631v1, August 29, 2024.
+\url{https://arxiv.org/html/2408.16631v1}.
+
+\bibitem{graphs}
+Y. Nesterenko.
+\emph{About subspaces the most deviating from the coordinate ones}.
+arXiv:2511.02387v2, 2026 revision of a 2025 preprint.
+\url{https://arxiv.org/html/2511.02387v2}.
+\end{thebibliography}
+\end{document}

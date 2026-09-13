@@ -21,6 +21,13 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### RA-18 — complex extension refuted; structured real cases — Sidney Holden
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation ([verified affiliation](references/holden-ra18-2026-09-13/SUBMISSION.md)). [Theorem 2.1 and Section 3](references/holden-ra18-2026-09-13/manuscript/ra18.pdf) refute the separate proposed dimension-independent complex bound in [RA-18](randomized-and-low-rank-approximation/RA-18/README.md), by an explicit recursive family whose best square-submatrix inverse norm divided by the square root of the row dimension diverges. Sections 5–6 give exact spectral information and dimension-dependent lower bounds. Theorem 7.2 proves the real bound for frames with at most r+2 nonzero row directions, using the cited real two-column theorem.
+
+The [independent informal Codex AI-agent review](references/holden-ra18-2026-09-13/independent-review.md) passed these scopes and reran the supplied checks. [Source, code and provenance](references/holden-ra18-2026-09-13/README.md). The unrestricted real conjecture remains open, so the overall entry is **not Solved** and its open-count membership is unchanged. No Lean verification, external human peer review or novelty certificate is asserted; the original target, ID, canonical path and prior-source credit are retained.
+
+
 ### RA-14 — query-complexity partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** [Sidney Holden, verified affiliation and submission record](references/holden-ra14-2026-09-12/README.md). The [research note](references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, establishes the universal rank lower bound, the large-rank regime and a spectral-to-PCA reduction giving matching bounds under a retained polynomial dimension hypothesis. [Independent informal AI-agent review](references/holden-ra14-2026-09-12/independent-review.md). The [original RA-14 target](randomized-and-low-rank-approximation/RA-14/README.md) remains open in the other simultaneous finite-parameter regimes. No full resolution, external human peer review or Lean verification is asserted.

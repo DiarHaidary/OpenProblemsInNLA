@@ -1,0 +1,150 @@
+{
+  "seed": 20260913,
+  "verification_kind": "symbolic identities plus floating-point checks; not formal proof",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "symbolic": {
+    "identities_passed": true,
+    "U1_realification_orthogonal_basis_verified": true,
+    "exact_U1_square_subsets": 20,
+    "exact_U1_nonsingular_subsets": 18,
+    "exact_U1_singular_subsets": 2,
+    "q1": "(2*x - 1)*(9*x**2 - 9*x + 1)/18",
+    "q2": "x**9 - 9*x**8/2 + 694*x**7/81 - 728*x**6/81 + 4129*x**5/729 - 1597*x**4/729 + 1112*x**3/2187 - 16*x**2/243 + 53*x/13122 - 1/13122",
+    "characteristic_identity": "-g*(3*x**2 - 3*x + 1)/9 + x*(3*x - 2)**2/9",
+    "R_derivative": "(3*x - 2)*(3*x - 1)*(3*x**2 - 3*x + 2)/(3*x**2 - 3*x + 1)**2"
+  },
+  "exhaustive_family": [
+    {
+      "level": 0,
+      "n": 2,
+      "r": 1,
+      "total_subsets": 2,
+      "nonsingular_subsets": 2,
+      "singular_subsets": 0,
+      "structural_numerical_classification_mismatches": 0,
+      "column_orthogonality_error_2norm": 2.220446049250313e-16,
+      "maximum_row_leverage_error": 1.1102230246251565e-16,
+      "maximum_full_spectrum_error": 1.1102230246251565e-16,
+      "maximum_abs_smallest_eigenvalue_singular_subsets": 0.0,
+      "minimum_beta_over_nonsingular_subsets": 0.4999999999999999,
+      "maximum_beta_over_all_subsets": 0.4999999999999999,
+      "best_inverse_norm": 1.4142135623730951,
+      "ratio_to_sqrt_n": 1.0000000000000002
+    },
+    {
+      "level": 1,
+      "n": 6,
+      "r": 3,
+      "total_subsets": 20,
+      "nonsingular_subsets": 18,
+      "singular_subsets": 2,
+      "structural_numerical_classification_mismatches": 0,
+      "column_orthogonality_error_2norm": 1.1734506866746052e-16,
+      "maximum_row_leverage_error": 1.1102230246251565e-16,
+      "maximum_full_spectrum_error": 8.881784197001252e-16,
+      "maximum_abs_smallest_eigenvalue_singular_subsets": 0.0,
+      "minimum_beta_over_nonsingular_subsets": 0.12732200375003475,
+      "maximum_beta_over_all_subsets": 0.12732200375003513,
+      "best_inverse_norm": 2.802517076888146,
+      "ratio_to_sqrt_n": 1.1441228056353683
+    },
+    {
+      "level": 2,
+      "n": 18,
+      "r": 9,
+      "total_subsets": 48620,
+      "nonsingular_subsets": 13122,
+      "singular_subsets": 35498,
+      "structural_numerical_classification_mismatches": 0,
+      "column_orthogonality_error_2norm": 4.550854861761646e-16,
+      "maximum_row_leverage_error": 2.220446049250313e-16,
+      "maximum_full_spectrum_error": 1.2212453270876722e-15,
+      "maximum_abs_smallest_eigenvalue_singular_subsets": 8.912251442916784e-16,
+      "minimum_beta_over_nonsingular_subsets": 0.03185722184842712,
+      "maximum_beta_over_all_subsets": 0.03185722184842878,
+      "best_inverse_norm": 5.602682990855738,
+      "ratio_to_sqrt_n": 1.3205650452242066
+    }
+  ],
+  "random_lift": {
+    "selected_bases_tested": 500,
+    "maximum_phase_conjugacy_error": 4.440892098500626e-16,
+    "minimum_squared_inverse_amplification_slack": 1.150235751015094,
+    "maximum_half_rank_full_spectrum_error": 1.3877787807814457e-15
+  },
+  "level_three_samples": {
+    "sampled_bases": 200,
+    "exhaustive": false,
+    "maximum_full_spectrum_error": 1.3322676295501878e-15
+  },
+  "real_checks": {
+    "grouped_real_instances": 80,
+    "minimum_selection_margin_above_1_over_n": 0.13512609894374014,
+    "weighted_duality_equivalence_tests": 1212,
+    "weighted_duality_mismatches": 0,
+    "sharp_real_fixtures": [
+      {
+        "multiplicities": [
+          1,
+          1
+        ],
+        "n": 2,
+        "r": 1,
+        "nonsingular_subsets": 2,
+        "max_beta_error": 1.1102230246251565e-16
+      },
+      {
+        "multiplicities": [
+          1,
+          2,
+          3
+        ],
+        "n": 6,
+        "r": 2,
+        "nonsingular_subsets": 11,
+        "max_beta_error": 8.326672684688674e-17
+      },
+      {
+        "multiplicities": [
+          2,
+          3,
+          1,
+          4
+        ],
+        "n": 10,
+        "r": 3,
+        "nonsingular_subsets": 50,
+        "max_beta_error": 1.1102230246251565e-16
+      },
+      {
+        "multiplicities": [
+          1,
+          2,
+          1,
+          3,
+          2
+        ],
+        "n": 9,
+        "r": 4,
+        "nonsingular_subsets": 40,
+        "max_beta_error": 1.942890293094024e-16
+      }
+    ]
+  },
+  "rigorous_limit_interval": {
+    "level": 20,
+    "bisection_steps_per_inverse": 220,
+    "method": "exact rational interval propagation plus tail (2/45)*16**(-level)",
+    "L_lower_rational": "1171766050916837459646209644604092211345177341237371199/2298743311298833287537520540725463775428108683275403264",
+    "L_upper_rational": "35152981527505123789386291873423966796814123230527546737/68962299338964998626125616221763913262843260498262097920",
+    "L_lower_decimal_outward": "0.509742016499775070823284636450591891930604798916304027998709",
+    "L_upper_decimal_outward": "0.509742016499775070823284673214174672065168126534468120214569"
+  },
+  "all_checks_passed": true
+}

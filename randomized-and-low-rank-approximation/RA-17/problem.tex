@@ -34,7 +34,7 @@ matrices},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}RA-17}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-12}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -87,39 +87,42 @@ semidefiniteness, or generic-signal exception is required. The problem
 concerns unrestricted real square matrices and unrestricted real linear
 measurements.
 
-\subsection{Partial resolution --- 12 September
-2026}\label{partial-resolution-12-september-2026}
+\subsection{Partial continuation --- 13 September
+2026}\label{partial-continuation-13-september-2026}
 
 \textbf{Author:} Sidney Holden, Center for Computational Biology,
 Flatiron Institute, Simons Foundation
-(\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-2026-09-12/SUBMISSION.md}{verified
-affiliation and submission record}).
-
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-2026-09-12/writeup/RA17_exact_cases_and_bounds.pdf}{Theorem
-1.1 and Sections 5--6} prove \(\mu_{\mathbb R}(4,1)=11\): a
-characteristic-class obstruction excludes ten measurements, and exact
-rational certificates verify both versions of Xu's eleven-measurement
-construction. The manuscript also gives general bounds and exact
-corank-one families, including \(\mu_{\mathbb R}(8,3)=56\) and
-\(\mu_{\mathbb R}(24,11)=568\).
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-2026-09-12/writeup/RA17_exact_cases_and_bounds.tex}{Manuscript
-source} ·
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-2026-09-12/README.md}{Reproducible
-code and certificates}.
+(\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-continuation-2026-09-13/SUBMISSION.md}{verified
+affiliation}).
 
 The
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-2026-09-12/independent-review.md}{independent
-Codex AI-agent audit} assesses these partial results. This is informal
-automated review, not external human peer review or formal verification;
-no Lean verification was performed. Xu and the other cited authors
-retain credit for prior results, and no novelty claim is made.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-continuation-2026-09-13/writeup/RA17_topological_relaxation.pdf}{continuation
+manuscript}, Sections 3--4, characterizes two topological relaxations
+one measurement below the complex generic count: existence of a
+continuous odd nonvanishing map on the low-rank unit link, and existence
+of the corresponding number of independent continuous evaluation-bundle
+sections. Each is equivalent to even complex determinantal degree. These
+do not establish a system of constant linear measurement matrices.
+Section 5 rederives the rank-one index lower bound; Section 2 supplies
+integer upper-bound measurements.
 
-\textbf{Remaining target:} determine the exact count for every allowed
-pair \((d,r)\). Section 9 leaves, for example,
-\(138\leq\mu_{\mathbb R}(12,5)\leq139\) and
-\(246\leq\mu_{\mathbb R}(16,7)\leq247\). These are gaps in the submitted
-arguments, not a claim of literature-wide best bounds. RA-17 remains
-\textbf{Partially resolved} and continues to count as open.
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-continuation-2026-09-13/independent-review.md}{independent
+informal AI-agent review} records the checked scope and arithmetic
+verification.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra17-continuation-2026-09-13/README.md}{Source,
+code and provenance}. No Lean verification or external human peer review
+is asserted. This extends the earlier partial submission in
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/197}{PR
+\#197}; no priority claim is made.
+
+\textbf{Remaining target:} the exact count for every allowed pair. In
+particular, the submission leaves \(19\leq\mu_{\mathbb R}(6,1)\leq20\)
+and \(35\leq\mu_{\mathbb R}(10,1)\leq36\) undecided. Section 7
+identifies the missing existence or impossibility of a 17-dimensional
+real space of six-by-six matrices with every nonzero matrix of rank at
+least three. RA-17 remains \textbf{Partially resolved} and counted as
+open.
 
 \subsection{Why it matters}\label{why-it-matters}
 
@@ -128,7 +131,6 @@ sensing. It distinguishes intrinsic identifiability from the larger
 measurement budgets that particular algorithms or stability guarantees
 may require.
 
-\newpage
 \subsection{References and status
 check}\label{references-and-status-check}
 

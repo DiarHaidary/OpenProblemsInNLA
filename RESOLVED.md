@@ -150,6 +150,10 @@ The proof passed a separate [independent Codex AI-agent informal audit](referenc
 The all-dimension classification remains open; Section 9 gives explicit unresolved intervals. No full solution, priority, external human peer review or formal verification is claimed. No Lean verification was performed. The original ID, path, target, ratings and open-count contribution are preserved.
 
 
+### RA-17 — topological continuation (13 September 2026)
+
+**Partially resolved; still counted as open.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation, gives exact criteria for continuous odd-map and abstract bundle-frame relaxations, with arithmetic checks and explicit integer measurements. These relaxations do not settle the original linear measurement classification. The submitted intervals at (6,1) and (10,1) remain undecided. [Retained target and scope](randomized-and-low-rank-approximation/RA-17/README.md) · [Manuscript and verified affiliation](references/holden-ra17-continuation-2026-09-13/SUBMISSION.md) · [Independent informal AI-agent audit](references/holden-ra17-continuation-2026-09-13/independent-review.md). No Lean verification was performed.
+
 ### RE-03 — sharper HODLR query bounds — Sidney Holden
 
 **Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 1.1 and Corollary 1.2](references/holden-re03-2026-09-13/submission/manuscript/re03_extended_results.pdf) establish lower bound $`c\min\{n,kL/\varepsilon+k/\varepsilon^2\}`$, upper bound $`C\min\{n,kL^2/\varepsilon+kL/\varepsilon^2\}`$, and the full-recovery regime $`q_*=\Theta(n)`$ for $`\varepsilon\le\sqrt{k/n}`$. The factor of depth in the general bounds remains; [RE-03's original target](randomized-and-low-rank-approximation/RE-03/README.md) stays open and retains its permanent ID.

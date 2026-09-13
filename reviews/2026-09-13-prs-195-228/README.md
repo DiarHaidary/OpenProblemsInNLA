@@ -1,6 +1,6 @@
 # Independent audit of PRs #195–#228
 
-This record covers the 25 submitted pull requests listed below. The published integration base is `1c467f88fbf6f6853afe5562e17b81ab421b95a6`; every submitted source branch starts at `5830ed4fb06da0659414a3deb2a40ad327aca052`. Exact reviewed heads appear in the individual reports and source-preservation inventory. The integration retains the source commits as ancestors.
+This record covers the 25 submitted pull requests listed below. The published integration base is `2db1e5857a4813ca627b60b4e30fa9bf6258c1cc`; every submitted source branch starts at `5830ed4fb06da0659414a3deb2a40ad327aca052`. Exact reviewed heads appear in the individual reports and source-preservation inventory. The integration retains the source commits as ancestors.
 
 Independent Codex agents read the mathematical arguments and proof-assistant statements, checked relevant primary sources, and reproduced the stated available computations. Supplied PASS reports were not accepted as proof. Informal mathematical review is distinguished from Lean verification. Original authors retain credit; this record does not claim external human peer review or historical priority.
 
@@ -32,10 +32,14 @@ Independent Codex agents read the mathematical arguments and proof-assistant sta
 | [227](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/227) | RA-09 | Lean proof of concave Frobenius-error transfer | Lean verified |
 | [228](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/228) | RA-20 | Lean proof of the full symmetric rank-two critical count | Lean verified |
 
-Individual reports are named `pr-N-independent-review.md`. MI-16 also received a [second independent review](pr-202-cross-review.md): its finite algebraic prescription meets the retained exact-value target, without claiming an efficient algorithm or a compact structural formula for arbitrary spectra.
+Individual reports are named `pr-N-independent-review.md`. MI-27 received a [second analytic review](pr-195-cross-review.md). MI-16 also received a [second independent review](pr-202-cross-review.md): its finite algebraic prescription meets the retained exact-value target, without claiming an efficient algorithm or a compact structural formula for arbitrary spectra.
 
 The [upstream Lean CI authentication](upstream-lean-ci.json) binds 6,318 complete tracked input hashes and 59 theorem exports to the five reviewed submissions. It checks GitHub artifact digests, checked commit parents and trees, actual default-kernel acceptance, standard-axiom reports, Comparator regressions, admitted/native-proof rejection and Linux sandbox controls. The [source-boundary audit](lean-source-boundaries.json) separately addresses correspondence to the original mathematical targets. Final combined-branch checks are recorded separately; upstream success alone is not the integration merge gate.
 
-Integration retains the earlier MI-16, MI-27, RA-04, RA-05 and RA-14 contributions and credits on their canonical pages. Historical RESOLVED.md records now distinguish their former scopes from later full results. The five combined problem PDFs were regenerated and every page visually inspected. The shared renderer changes concern only page layout. All 217 IDs, canonical paths and original targets are retained.
+Integration retains the earlier MI-16, MI-27, RA-04, RA-05, RA-14 and RA-17 contributions and credits on their canonical pages. Historical RESOLVED.md records now distinguish their former scopes from later full results. The six combined problem PDFs were regenerated and every page visually inspected. The shared renderer changes concern only page layout. All 217 IDs, canonical paths and original targets are retained.
 
 The RE-03 archive lacks some historical continuation test programs. Only its available five smoke cases and twelve fresh implementation regressions were reproduced; the complete mathematical proof and its included appendices were reviewed directly. NM-01, TR-09 and MD-02 supporting results do not establish the original requested target, and those entries remain Open.
+
+The optional RA-17 saved-certificate checker had two reproduced false-acceptance paths. The [maintainer correction](../../references/holden-ra17-continuation-2026-09-13/MAINTAINER_CHECKER_CORRECTION.md) records the tested fix while preserving the original submission manifest and archives.
+
+Final local validation passed all 77 repository tests without skips, the 17 permanent-ID tests, and the 10 checker regressions on the integrated files. Catalog regeneration reports 24 Lean verified, 77 Solved, 46 Open and 70 Partially resolved entries: 217 permanent IDs, with 116 targets still counted as open.

@@ -6,7 +6,7 @@ only after rational ideal-membership and positive-definiteness checks.
 from __future__ import annotations
 from pathlib import Path
 from itertools import combinations,combinations_with_replacement
-import argparse,json,time
+import argparse,ast,json,re,time
 import sympy as s
 ROOT=Path(__file__).resolve().parents[1]
 
@@ -36,17 +36,98 @@ def input_pencil():
     fs=[s.expand(A.extract(I,J).det()) for I,J in ijs]
     return D,xs,A,ijs,fs
 
+def require(condition,message):
+    if not condition:raise ValueError(message)
+
+def rational_entry(value):
+    # Exact decimal integers/fractions only; floats must not silently become
+    # rational approximations, and expression strings are not evaluated.
+    require(type(value) is int or isinstance(value,str),'Gram entries must be rational integers/fractions')
+    text=str(value)
+    require(len(text)<=4096 and re.fullmatch(r'[+-]?\d+(?:/[+-]?\d+)?',text) is not None,
+            'Invalid or oversized rational Gram entry')
+    try:
+        value=s.Rational(text)
+        require(value.is_Rational is True,'Gram entries must be finite rationals')
+        return value
+    except (ValueError,TypeError,ZeroDivisionError) as error:
+        raise ValueError('Invalid rational Gram entry') from error
+
+def polynomial_multiplier(text,xs,max_degree):
+    """Parse rational polynomials without evaluating Python or accepting poles."""
+    require(isinstance(text,str) and len(text)<=100000,'Invalid or oversized multiplier')
+    try:tree=ast.parse(text,mode='eval')
+    except (SyntaxError,RecursionError) as error:raise ValueError('Invalid multiplier syntax') from error
+    require(sum(1 for _ in ast.walk(tree))<=20000,'Multiplier expression is too large')
+    names={str(x):s.Poly(x,*xs,domain=s.QQ) for x in xs}
+    def parse(node):
+        if isinstance(node,ast.Constant) and type(node.value) is int:
+            require(node.value.bit_length()<=16384,'Multiplier integer is too large')
+            result=s.Poly(node.value,*xs,domain=s.QQ)
+        elif isinstance(node,ast.Name) and node.id in names:result=names[node.id]
+        elif isinstance(node,ast.UnaryOp) and isinstance(node.op,(ast.UAdd,ast.USub)):
+            result=parse(node.operand)
+            if isinstance(node.op,ast.USub):result=-result
+        elif isinstance(node,ast.BinOp):
+            left=parse(node.left)
+            if isinstance(node.op,ast.Pow):
+                require(isinstance(node.right,ast.Constant) and type(node.right.value) is int
+                        and 0<=node.right.value<=max_degree,'Invalid polynomial exponent')
+                require(left.total_degree()*node.right.value<=max_degree,
+                        'Polynomial power exceeds the multiplier degree')
+                result=left**node.right.value
+            else:
+                right=parse(node.right)
+                if isinstance(node.op,ast.Add):result=left+right
+                elif isinstance(node.op,ast.Sub):result=left-right
+                elif isinstance(node.op,ast.Mult):result=left*right
+                elif isinstance(node.op,ast.Div):
+                    require(right.total_degree()==0 and not right.is_zero,
+                            'A multiplier denominator must be a nonzero rational constant')
+                    result=left.mul_ground(1/right.TC())
+                else:raise ValueError('Unsupported multiplier operation')
+        else:raise ValueError('Multipliers must be rational polynomials in the pencil variables')
+        require(result.total_degree()<=max_degree,'Multiplier degree exceeds the certificate degree')
+        return result
+    try:poly=parse(tree.body)
+    except RecursionError as error:raise ValueError('Multiplier expression is too deep') from error
+    require(poly.is_zero or all(sum(e)==max_degree for e,c in poly.terms()),
+            'Nonzero multipliers must have the required homogeneous degree')
+    return poly.as_expr()
+
 def verify(path):
     _,xs,A,ijs,fs=input_pencil();D=json.loads(Path(path).read_text())
-    es=[tuple(e) for e in D['monomials']];z=s.Matrix([monomial(xs,e) for e in es])
-    G=s.Matrix([[s.Rational(v) for v in row] for row in D['gram']])
-    assert G==G.T
-    hs=[s.sympify(h,locals={str(x):x for x in xs}) for h in D['multipliers']]
-    assert len(hs)==len(fs)
-    assert s.expand((z.T*G*z)[0]-sum(h*f for h,f in zip(hs,fs)))==0
-    ok,piv=positive_definite(G);assert ok
-    assert all(tuple(D['minor_indices'][i][0])==I and tuple(D['minor_indices'][i][1])==J for i,(I,J) in enumerate(ijs))
-    return {'status':'EXACTLY_VERIFIED','degree':D['degree'],'gram_dimension':len(es),'positive_pivots':list(map(str,piv))}
+    require(isinstance(D,dict),'Certificate must be an object')
+    degree=D.get('degree')
+    require(type(degree) is int and degree in (4,6,8),'Certificate degree must be 4, 6, or 8')
+    raw=D.get('monomials');expected=set(exponents(len(xs),degree//2))
+    require(isinstance(raw,list) and len(raw)==len(expected),'A complete monomial basis is required')
+    es=[]
+    for e in raw:
+        require(isinstance(e,list) and len(e)==len(xs)
+                and all(type(a) is int and 0<=a<=degree//2 for a in e)
+                and sum(e)==degree//2,'Invalid monomial exponent vector')
+        es.append(tuple(e))
+    require(set(es)==expected,'Monomials must list the complete common-degree basis exactly once')
+    z=s.Matrix([monomial(xs,e) for e in es]);q=len(es)
+    gram=D.get('gram')
+    require(isinstance(gram,list) and len(gram)==q
+            and all(isinstance(row,list) and len(row)==q for row in gram),'Invalid Gram dimensions')
+    G=s.Matrix([[rational_entry(v) for v in row] for row in gram])
+    require(G==G.T,'Gram matrix must be symmetric')
+    raw_h=D.get('multipliers')
+    require(isinstance(raw_h,list) and len(raw_h)==len(fs),'Invalid multiplier count')
+    hs=[polynomial_multiplier(h,xs,degree-3) for h in raw_h]
+    indices=D.get('minor_indices')
+    require(isinstance(indices,list) and len(indices)==len(ijs),'Invalid minor-index count')
+    require(all(isinstance(pair,list) and len(pair)==2
+                and all(isinstance(t,list) and all(type(v) is int for v in t) for t in pair)
+                and pair==[list(I),list(J)] for pair,(I,J) in zip(indices,ijs)),
+            'Minor indices do not match the recomputed pencil')
+    require(s.Poly((z.T*G*z)[0]-sum(h*f for h,f in zip(hs,fs)),*xs,domain=s.QQ).is_zero,
+            'Gram form is not the claimed polynomial combination of the minors')
+    ok,piv=positive_definite(G);require(ok,'Gram matrix is not positive definite')
+    return {'status':'EXACTLY_VERIFIED','degree':degree,'gram_dimension':len(es),'positive_pivots':list(map(str,piv))}
 
 def search(degree):
     import numpy as np

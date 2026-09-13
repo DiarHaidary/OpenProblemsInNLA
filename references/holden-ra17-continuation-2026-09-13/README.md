@@ -85,3 +85,7 @@ index, characteristic-class, and obstruction-theory results. The partial results
 Source identifiers, retrieval outcomes, and response hashes are retained in
 `data/source_audit.json`; third-party full-text PDFs are not redistributed.
 `MANIFEST.sha256` concerns file integrity, not mathematical correctness.
+
+## Maintainer checker correction
+
+The integration audit corrected two false-acceptance paths in the optional saved-certificate checker. See the [repair, exact hashes and regression tests](MAINTAINER_CHECKER_CORRECTION.md). The mathematical partial results and original archives are unchanged.

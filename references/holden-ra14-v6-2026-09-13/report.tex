@@ -1,0 +1,860 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage{booktabs,array,longtable}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\setlength{\parskip}{4pt}
+\setlength{\parindent}{0pt}
+\allowdisplaybreaks[2]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\ran}{\operatorname{range}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\pdet}{\operatorname{pdet}}
+\newcommand{\Gr}{\operatorname{Gr}}
+\newcommand{\qsp}{q_{\mathrm{sp}}}
+\newcommand{\qfb}{q_{\mathrm{fb}}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\K}{\mathcal K}
+\title{Weighted Krylov Obstructions and a Shifted-Wishart Posterior}
+\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
+\date{13 September 2026}
+\hypersetup{pdfauthor={Sidney Holden}}
+\begin{document}
+\maketitle
+\vspace{-0.5em}
+\begin{abstract}
+The remaining finite-accuracy transition in RA-14 is not resolved here for unrestricted adaptive matrix--vector queries. The new results isolate two concrete pieces of that problem. First, a weighted Chebyshev interpolation argument proves matching, all-finite-parameter bounds for a precisely defined deterministic-width, full-block span-query class. Its query complexity is
+\[
+\Theta\!\left(\min\left\{n,\frac{k}{\sqrt\varepsilon}\log\frac{en}{k}\right\}\right).
+\]
+The lower proof uses integer spectral multiplicities, an elementary reciprocal-Gaussian-Gram moment, and a rotational argument that permits arbitrary output subspaces. It does not permit arbitrary fresh query directions or selective-column updates. Second, an exact adaptive posterior is derived for a singular Wishart matrix whose positive eigenvalues have a deterministic additive shift. A conditional first-exit formula is given. An elementary Gaussian resolvent identity then shows that this particular shifted law admits a rank-one averaged upper bound at the smaller scale $\varepsilon^{-1/2}\log(1+n\sqrt\varepsilon)$, so it cannot witness a linear lower bound in the missing transition. The unrestricted RA-14 bounds from the preceding note are unchanged. This is a partial research continuation. The new restricted and distribution-specific results passed a separate informal Codex AI-agent review on 13 September 2026; the inherited v5 arguments were outside that review scope. This is not external human peer review or formal verification. The remaining unrestricted inference is not proved.
+\end{abstract}
+\setcounter{tocdepth}{1}
+\begingroup\small
+\setlength{\parskip}{0pt}
+\makeatletter
+\renewcommand*{\l@section}[2]{\@dottedtocline{1}{0em}{2.3em}{#1}{#2}}
+\makeatother
+\tableofcontents
+\endgroup
+\newpage
+
+\section{The problem and the exact status}
+An unknown real matrix $A\in\R^{n\times n}$ is accessible through $Av$ or $A^\top v$. Each individual vector product is one query. All other exact-real computation is free. Queries may be arbitrary measurable functions of earlier replies and independent randomness. For $n\ge2$, $1\le k<n$, and $0<\varepsilon<1/2$, a valid algorithm returns $Z^\top Z=I_k$ with
+\begin{equation}\label{eq:target}
+\Prob\left\{\norm{A(I-ZZ^\top)}_2\le(1+\varepsilon)\sigma_{k+1}(A)\right\}\ge0.99
+\qquad\text{for every fixed }A.
+\end{equation}
+The least worst-case integer budget is $\qsp(n,k,\varepsilon)$. This is the public RA-14 formulation.\footnote{Open Problems in Numerical Linear Algebra, RA-14, problem statement \cite{repo}; consulted September 13, 2026. The all-simultaneous-finite-parameter and individual-vector-query requirements are material.}
+
+Write
+\begin{equation}\label{eq:scales}
+s=\sqrt\varepsilon,\qquad x=\frac nk,\qquad
+F=\frac{k}{s}\log(1+xs),\qquad
+U=\min\left\{n,\frac{k}{s}\log(ex)\right\}.
+\end{equation}
+The preceding v5 note supplies, with a universal positive constant $c$, the claimed bounds
+\begin{equation}\label{eq:inherited}
+\max\{k,cF\}\le\qsp(n,k,\varepsilon)
+\le\min\left\{n,\left\lceil12000\frac{k}{s}\log(ex)\right\rceil\right\}.
+\end{equation}
+That note, including its proof and qualifications, is preserved unchanged in \texttt{package/prior/}. It is an unreviewed generated research argument, not an independently established publication. Its lower-bound chain was read again: singular Gaussian completion, the pseudodeterminant tilt, Grassmann integration, individual-query accounting, the finite-dimensional least-singular-value input, and the charged postprocessor. No strengthening of that chain is asserted in this continuation.
+
+The unresolved unrestricted case remains, for example,
+\begin{equation}\label{eq:critical}
+k=1,\quad \varepsilon=\frac{\log^2n}{n^2},\qquad
+\Omega\!\left(\frac{n\log\log n}{\log n}\right)
+\le\qsp\le n.
+\end{equation}
+All statements about this sequence are asymptotic, with $n$ sufficiently large for admissibility. The ratio between the scales in \eqref{eq:scales}, with $y=xs$ and $\ell=\log(ex)$, is
+\begin{equation}\label{eq:ratio}
+\frac UF=\frac{\min\{y,\ell\}}{\log(1+y)}
+\le\frac{\ell}{\log(1+\ell)}.
+\end{equation}
+The maximum occurs at $y=\ell$: the first branch increases with $y$, and the second decreases. The gap is unbounded and is not hidden by a universal constant.
+
+\subsection{What is new}
+The main new theorem below identifies $U$ as the correct complexity in a restricted full-block class, with no dimension-growth condition. In particular, it proves an $\Omega(n)$ transition lower bound inside that class at \eqref{eq:critical}. This rules out closing the unrestricted gap merely by a sharper analysis of an algorithm that stays in this class.
+
+The other new result is an exact posterior for a different, shifted hard-edge distribution. It applies to arbitrary adaptive queries while the queried compression stays above the shift. This supplies a concrete first-exit problem. A further rank-one averaged upper bound shows that this shifted family is actually too easy to witness the missing linear transition bound. Section~\ref{sec:missing} explains why these results do not complete RA-14.
+
+\section{A restricted class with explicit query charges}\label{sec:model}
+\begin{definition}[Deterministic-width full-block span queries]\label{def:fb}
+Before obtaining any oracle reply, choose a deterministic width $b\in\{1,\ldots,n\}$ from $(n,k,\varepsilon)$ and an initial block $\Omega\in\R^{n\times b}$ independent of $A$. The block may be randomized and need not have full rank. A round consists of exactly $b$ individual vector queries. All query vectors and choices of $A$ or $A^\top$ in a round are selected before any reply in that round is seen. Every query vector belongs to the span of the initial block and all preceding-round replies.
+
+Coefficients, oracle choices, stopping, and the final output may depend arbitrarily and measurably on available data and independent randomness. The final $k$-frame is not required to lie in the queried span. Each executed round costs $b$ queries. There are no new directions outside the specified span between rounds, no selective-column charging, and no within-round adaptation. The width is not randomized or changed in response to the input.
+
+Let $\qfb(n,k,\varepsilon)$ be the least worst-case query budget among algorithms in this class satisfying \eqref{eq:target} on every real input matrix.
+\end{definition}
+
+This is a genuine restriction of RA-14. Ordinary full-width block polynomial computations fit it, but a method with changing block sizes, freshly introduced directions, uncharged deflation, or noncommuting known transformations of query vectors need not. Allowing arbitrary final outputs makes the class larger than one defined solely by a Krylov-output restriction. Small-block analyses that remove singular-value-gap dependence by perturbing the input use an additional mechanism: a known noncommuting perturbation may generate query directions outside the original span. Such algorithms are not automatically in Definition~\ref{def:fb}.\footnote{For the separate role of input perturbations in small-block guarantees, see Chen--Epperly--Meyer--Musco--Rao \cite{blocksize}, Sections 2.1 and 3.5. No theorem from that paper is imported into the restricted lower bound here.}
+
+On a symmetric input, after $d$ rounds every available vector lies in
+\begin{equation}\label{eq:krylov}
+\K_d(A,\Omega)=\ran[\Omega,A\Omega,\ldots,A^d\Omega].
+\end{equation}
+This follows by induction because either oracle is then multiplication by $A$. Granting this full prefix only gives the algorithm additional information.
+
+\begin{theorem}[All-parameter full-block characterization]\label{thm:fb}
+For every admissible finite parameter triple,
+\begin{equation}\label{eq:fb-bound}
+e^{-48}U\le\qfb(n,k,\varepsilon)
+\le\min\left\{n,\left\lceil24000\frac{k}{\sqrt\varepsilon}
+\log\frac{en}{k}\right\rceil\right\}.
+\end{equation}
+Consequently $\qfb=\Theta(U)$, with universal constants. The lower bound allows arbitrary measurable output subspaces, not just Ritz extraction, but it retains every query restriction in Definition~\ref{def:fb}.
+\end{theorem}
+
+The upper bound chooses $b=n$ and queries the columns when exact recovery is cheaper; this is a permitted choice made before observing the input. It does not switch widths during a run. The constant $e^{-48}$ is deliberately weak. It makes the finite threshold and rank cases transparent, not practical.
+
+\section{The exact residual cone}\label{sec:cone}
+Set
+\[
+a=1+2\varepsilon,\qquad \tau=1+\varepsilon,\qquad
+\Delta=a^2-\tau^2=2\varepsilon+3\varepsilon^2\ge2s^2.
+\]
+Consider a diagonal symmetric matrix
+\begin{equation}\label{eq:D}
+D=\diag(aI_k,D_2),\qquad \norm{D_2}_2\le1,
+\quad E=\tau^2I-D_2^2\succ0.
+\end{equation}
+Whenever a tail eigenvalue has magnitude one, $\sigma_{k+1}(D)=1$.
+
+\begin{lemma}[Weighted graph criterion]\label{lem:cone}
+If $Z^\top Z=I_k$ and $\norm{D(I-ZZ^\top)}_2\le\tau$, its leading $k\times k$ block is invertible. Its range is the graph $\ran[I_k;F]$, and
+\begin{equation}\label{eq:graphcone}
+\Delta FF^\top\preceq E
+\quad\Longleftrightarrow\quad
+\Delta F^\top E^{-1}F\preceq I_k.
+\end{equation}
+Conversely, a graph satisfying \eqref{eq:graphcone} has residual at most $\tau$. The same statement holds for any $a>\tau>\norm{D_2}_2$, with $\Delta=a^2-\tau^2$ and $E=\tau^2I-D_2^2$. In particular, every vector $z$ in a successful output subspace satisfies
+\begin{equation}\label{eq:vectorcone}
+\Delta\norm{E^{-1/2}z_{\rm tail}}_2^2\le\norm{z_{\rm top}}_2^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+If the leading block were singular, a nonzero vector supported in the leading eigenspace would be perpendicular to $Z$. Its norm is multiplied by $a>\tau$, a contradiction. The graph representation follows.
+
+The vectors perpendicular to the graph are exactly $(-F^\top y,y)$. Applying the residual inequality to all such vectors yields
+\[
+a^2\norm{F^\top y}^2+\norm{D_2y}^2
+\le\tau^2(\norm{F^\top y}^2+\norm y^2),
+\]
+which is the first matrix inequality in \eqref{eq:graphcone}. Both matrix inequalities say that the largest singular value of $\sqrt\Delta E^{-1/2}F$ is at most one. This also proves the converse. Substituting $z=(v,Fv)$ gives \eqref{eq:vectorcone}.
+\end{proof}
+
+The weights matter. Replacing this cone by an unweighted constant-angle requirement would be false. For example, with $D=\diag(a,0,1)$ and $\alpha^2=1-(\tau/a)^2$, the vector $z=(\alpha,\sqrt{1-\alpha^2},0)$ has residual exactly $\tau$ although its squared leading overlap tends to zero with $\varepsilon$.
+
+\section{Weighted Chebyshev interpolation}\label{sec:interp}
+For an integer $d\ge1$, use the extrema
+\[
+x_j=\cos(j\pi/d),\quad 0\le j\le d,
+\qquad e_j=\tau^2-x_j^2>0.
+\]
+Let $\ell_j$ be the scalar Lagrange cardinal polynomials for these nodes and set
+\begin{equation}\label{eq:L}
+L_d=\sum_{j=0}^d|\ell_j(a)|\sqrt{e_j},\qquad
+H_d=\sum_{j=1}^d\frac1j.
+\end{equation}
+
+\begin{lemma}[Weighted interpolation mass]\label{lem:weighted}
+For every admissible $\varepsilon$ and every $d\ge1$,
+\begin{equation}\label{eq:weightedbound}
+L_d\le10sH_dT_d(a)
+\le10s\log(ed)T_d(a),\qquad T_d(a)\le e^{2ds}.
+\end{equation}
+Here $T_d(\cos\theta)=\cos(d\theta)$ is the Chebyshev polynomial.
+\end{lemma}
+\begin{proof}
+The nodal polynomial can be taken as $W_d(z)=(z^2-1)U_{d-1}(z)$, where $U_{d-1}(\cos\theta)=\sin(d\theta)/\sin\theta$. Its derivative at node $j$ is $d(-1)^j$ at interior nodes and $2d(-1)^j$ at endpoints. Thus, with $\delta_0=\delta_d=1/2$ and all other $\delta_j=1$,
+\[
+|\ell_j(a)|=\frac{W_d(a)}d\frac{\delta_j}{a-x_j},\qquad
+\operatorname{sign}\ell_j(a)=(-1)^j.
+\]
+Interpolating $T_d$, whose node values are $(-1)^j$, gives $\sum_j|\ell_j(a)|=T_d(a)$. Therefore the normalized absolute cardinal weights are
+\begin{equation}\label{eq:J}
+\frac{|\ell_j(a)|}{T_d(a)}=\frac{\delta_j/(a-x_j)}{J},\qquad
+J=\sum_j\frac{\delta_j}{a-x_j}
+=\frac{d\coth(dh)}{\sinh h},\quad h=\operatorname{arcosh}a=2\operatorname{arsinh}s.
+\end{equation}
+The identity for $J$ follows from $W_d(\cosh h)=\sinh h\sinh(dh)$.
+
+The endpoint term gives $J\ge1/(4s^2)$. Since $\sinh h=2s\sqrt{1+s^2}<3s$, also $J\ge d/(3s)$. Further,
+\[
+\sqrt{e_j}\le\sqrt{a^2-x_j^2}\le2\sqrt{a-x_j},
+\qquad 1-x_j\ge2j^2/d^2.
+\]
+The latter follows from $\sin u\ge2u/\pi$ on $[0,\pi/2]$. Hence
+\[
+\sum_{j=0}^d\frac{\delta_j}{\sqrt{a-x_j}}
+\le\frac1{2s}+dH_d.
+\]
+Using the two lower bounds on $J$ separately in the two terms yields
+\[
+\frac{L_d}{T_d(a)}
+\le\frac2J\left(\frac1{2s}+dH_d\right)
+\le4s+6sH_d\le10sH_d.
+\]
+Finally $H_d\le\log(ed)$ and $T_d(a)=\cosh(dh)\le e^{dh}\le e^{2ds}$.
+\end{proof}
+
+The multiplicity allocation below uses this weighted mass, not the unweighted size of the full tail or a minimum eigenvector-overlap estimate. It also uses an expectation of inverse Gram norms rather than a union bound over all spectral nodes.
+
+\section{An elementary reciprocal-Gram estimate}\label{sec:gram}
+\begin{lemma}[Reciprocal smallest singular value]\label{lem:inversegram}
+If $G\in\R^{m\times B}$ is standard Gaussian and $m\ge8B$, then
+\begin{equation}\label{eq:inversegram}
+\E\norm{(G^\top G)^{-1}}_2\le\frac{3000}{m}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $X=\sigma_{\min}(G)/\sqrt m$ and $t_0=1/50$. For $0<t\le t_0$, use a $t^2$-net of the unit sphere in $\R^B$, of size at most $(3/t^2)^B$. On $\norm G\le\sqrt m/(2t)$, a vector attaining $\sigma_{\min}(G)\le t\sqrt m$ has a net neighbor whose image norm is at most $3t\sqrt m/2$.
+
+For a fixed unit vector, the squared image norm is $\chi_m^2$. Its moment-generating function gives
+\[
+\Prob\{\chi_m^2\le u m\}\le(u e^{1-u})^{m/2}\quad(0<u<1).
+\]
+At $u=(3t/2)^2$ this is at most $(3t)^m$. Thus the net contribution is at most
+\[
+3^{m+B}t^{m-2B}\le(25t)^{m/2},
+\]
+using $m\ge8B$ and $t\le1/50$.
+
+For the norm exception, take $1/4$-nets in both dimensions. Approximation of a bilinear maximizing pair gives $\norm G\le2\max_{\rm nets}|u^\top Gv|$. Scalar Gaussian tails therefore yield
+\[
+\Prob\{\norm G>\sqrt m/(2t)\}
+\le2\exp\left(3m-\frac{m}{32t^2}\right)
+\le2\exp\left(-\frac{m}{64t^2}\right).
+\]
+We have proved
+\begin{equation}\label{eq:smallball}
+\Prob\{X\le t\}\le(25t)^{m/2}+2e^{-m/(64t^2)}\qquad(0<t\le1/50).
+\end{equation}
+Integrating the tail of $X^{-2}$, and using the trivial bound above $t_0$, gives
+\begin{align*}
+\E X^{-2}
+&\le2500+2\int_0^{1/50}t^{-3}\Prob\{X\le t\}\,dt\\
+&\le2500+\frac{5000\,2^{-m/2}}{m/2-2}
++\frac{128}{m}e^{-2500m/64}<3000.
+\end{align*}
+The largest displayed nonconstant first term occurs at $m=8$, where it is $156.25$. Since $\norm{(G^\top G)^{-1}}=1/(mX^2)$, the result follows.
+\end{proof}
+
+\begin{lemma}[Leading-block norm]\label{lem:topnorm}
+For a standard Gaussian $G_0\in\R^{k\times B}$,
+\[
+\Prob\{\norm{G_0}_2^2>100(k+B)\}
+\le2e^{(k+B)\log9-100(k+B)/8}<0.001.
+\]
+\end{lemma}
+\begin{proof}
+Use the same two $1/4$-nets and the Gaussian tail at $5\sqrt{k+B}$. Here $k+B\ge2$.
+\end{proof}
+
+\section{A finite-dimensional no-cone theorem}\label{sec:primitive}
+\begin{theorem}[Primitive weighted Krylov obstruction]\label{thm:primitive}
+Let $B,d\ge1$ be integers satisfying
+\begin{align}
+2(8B+1)(d+1)&\le n-k,\label{eq:budgetcondition}\\
+10^9\frac{k+B}{n-k}\log^2(ed)e^{4ds}&\le1.\label{eq:analyticcondition}
+\end{align}
+There is an explicit diagonal $D$ of the form \eqref{eq:D}, with $\sigma_{k+1}(D)=1$, such that for standard Gaussian $\Omega\in\R^{n\times B}$, with probability at least $0.74$, the entire space $\K_d(D,\Omega)$ contains no nonzero vector satisfying \eqref{eq:vectorcone}. In particular it contains no successful rank-$k$ output subspace.
+\end{theorem}
+\begin{proof}
+Use the nodes of Section~\ref{sec:interp}. Write $L=L_d$ and set
+\begin{equation}\label{eq:multiplicity}
+w_j=\frac{|\ell_j(a)|\sqrt{e_j}}{L},\qquad
+M=\frac{n-k}{2},\qquad m_j=8B+\lceil Mw_j\rceil.
+\end{equation}
+All weights are positive and sum to one. Their initial multiplicities obey
+\[
+\sum_jm_j\le(8B+1)(d+1)+M\le n-k.
+\]
+Add all unused multiplicities to $m_0$. Then
+\[
+D=\diag(aI_k,x_0I_{m_0},\ldots,x_dI_{m_d})
+\]
+has exactly the required dimension. In particular $x_0=1$ occurs and $\sigma_{k+1}(D)=1$.
+
+Split the Gaussian block as $G_0\in\R^{k\times B}$ and independent $G_j\in\R^{m_j\times B}$ for tail nodes. Every vector of the full Krylov space has the form
+\[
+z_{\rm top}=G_0p(a),\qquad z_j=G_jp(x_j),
+\]
+where $p$ is a vector polynomial in $\R^B$ of degree at most $d$. Its coefficients may be chosen after all Gaussian entries are known; the inequalities below hold for every such choice simultaneously.
+
+Define
+\begin{equation}\label{eq:S}
+S=\sum_{j=0}^d\ell_j(a)^2e_j\norm{(G_j^\top G_j)^{-1}}_2.
+\end{equation}
+Lagrange interpolation and matrix Cauchy--Schwarz give
+\begin{equation}\label{eq:cauchy}
+\norm{p(a)}^2\le S\sum_{j=0}^d\frac{\norm{G_jp(x_j)}^2}{e_j}.
+\end{equation}
+For clarity, write $p(a)$ as a sum of the products
+\[
+\ell_j(a)\sqrt{e_j}(G_j^\top G_j)^{-1/2}
+\cdot\frac{(G_j^\top G_j)^{1/2}p(x_j)}{\sqrt{e_j}}.
+\]
+The squared norm of the concatenated first matrix is at most $S$, proving \eqref{eq:cauchy}.
+
+Each $m_j\ge8B$, so Lemma~\ref{lem:inversegram} and $m_j\ge Mw_j$ imply
+\begin{equation}\label{eq:ES}
+\E S\le3000\sum_j\frac{\ell_j(a)^2e_j}{m_j}
+\le\frac{6000L^2}{n-k}.
+\end{equation}
+Markov's inequality gives $S\le24000L^2/(n-k)$ with probability at least $3/4$. Intersect this event with Lemma~\ref{lem:topnorm}. The intersection has probability greater than $0.749$, without a union bound over nodes. On it, for every vector in the space,
+\begin{align}
+\norm{z_{\rm top}}^2
+&\le\frac{2.4\cdot10^6(k+B)}{n-k}L^2\norm{E^{-1/2}z_{\rm tail}}^2\notag\\
+&\le2.4\cdot10^8\frac{k+B}{n-k}s^2\log^2(ed)e^{4ds}
+\norm{E^{-1/2}z_{\rm tail}}^2\notag\\
+&\le0.24s^2\norm{E^{-1/2}z_{\rm tail}}^2.\label{eq:pathwise}
+\end{align}
+Because $\Delta\ge2s^2$, this contradicts \eqref{eq:vectorcone} unless the weighted tail is zero. In that case every $G_j$ has full column rank almost surely, so $p$ vanishes at $d+1$ distinct nodes and is the zero vector polynomial. Thus $z=0$ as well. This proves the simultaneous no-cone assertion with the weaker advertised probability $0.74$.
+\end{proof}
+
+The theorem is genuinely finite-dimensional: \eqref{eq:budgetcondition} accounts for all rounding and all Gaussian column ranks. Its constants are sufficient, not sharp. Neither a grid check nor numerical experiments replace \eqref{eq:analyticcondition}.
+
+\section{Arbitrary outputs and conditional rotational symmetry}\label{sec:rotation}
+A space-only lower bound does not immediately cover an algorithm that outputs a vector outside its observed span. The following comparison supplies that missing step for a fixed initial block and a full prefix. Conditional rotational arguments of this general kind also occur in adaptive-query lifting results; the specific comparison used here is proved in full.\footnote{See Bakshi--Narayanan \cite{bn}, Appendix A, for related conditional-rotation machinery. Their general-query simulation has a different query accounting and is not invoked as a cost-preserving reduction here.}
+
+\begin{lemma}[An invariant conditional-law version]\label{lem:conditioning}
+Fix an initial block $\Omega$, let $A=RDR^\top$ with $R$ Haar orthogonal, and observe the full prefix $\mathcal F=(\Omega,A\Omega,\ldots,A^d\Omega)$. Put $W=\ran\mathcal F$. A version of the conditional law of $A$ given $\mathcal F$ is invariant under every orthogonal transformation fixing $W$ pointwise.
+\end{lemma}
+\begin{proof}
+Let $G$ be the compact subgroup fixing $\Omega$. Its Haar probability measure is denoted $\gamma$. The prior law $\mu$ of $A$ is $G$-invariant and the prefix map is equivariant: $\mathcal F(SAS^\top)=S\mathcal F(A)$ for $S\in G$. All spaces involved are standard Borel, so regular conditional laws $\mu_f$ exist.
+
+They can be made equivariant by averaging. For a Borel set $E$ of matrices, define
+\[
+\bar\mu_f(E)=\int_G\mu_{Sf}(SES^\top)\,d\gamma(S).
+\]
+By Fubini's theorem and invariance of the marginal prefix law, integrating this kernel against any prefix event gives the same joint probability as integrating $\mu_f$. It is therefore another conditional-law version. Changing variables $S\mapsto ST^{-1}$ gives
+\[
+\bar\mu_{Tf}(E)=\bar\mu_f(T^\top ET)
+\quad(T\in G).
+\]
+If $T$ fixes the observed prefix pointwise, then $Tf=f$. Such transformations are exactly the orthogonal transformations fixing $W$ pointwise. The displayed identity gives the required conditional invariance. The statements about support and conditional laws hold outside a prefix-null set, which is sufficient for every probability comparison below.
+\end{proof}
+
+\begin{lemma}[Completion by at most $k$ independent starting directions]\label{lem:completion}
+Under Lemma~\ref{lem:conditioning}, let $Z$ be any measurable orthonormal $k$-frame determined by the prefix and an independent seed. Let $G\in\R^{n\times k}$ be independent standard Gaussian. There is a randomized orthonormal $k$-frame $Z'$ with
+\[
+\ran Z'\subset W+\ran G\subset\K_d(A,[\Omega,G])
+\]
+such that $Z'$ has exactly the same average probability of satisfying \eqref{eq:target} as $Z$, under the Haar input law.
+\end{lemma}
+\begin{proof}
+Fix the seed and condition on the prefix. Factor the external component as
+\[
+(I-P_W)Z=Q_{\rm ext}C,
+\]
+where $Q_{\rm ext}$ is an orthonormal frame of rank $r\le k$. If $r=0$, take $Z'=Z$. Otherwise orthogonalize the first $r$ columns of $(I-P_W)G$ to obtain a uniform $r$-frame $Q_{\rm fresh}$ in $W^\perp$. Define
+\[
+Z'=P_WZ+Q_{\rm fresh}C.
+\]
+The two summands have orthogonal ranges and the external Gram matrix is unchanged. Hence $Z'^\top Z'=I_k$. Its range is in $W+\ran G$.
+
+Equivalently, conditionally on the prefix, $Z'$ has the distribution of $TZ$ for a Haar transformation $T$ fixing $W$. The conditional invariance of $A$ and the identity
+\[
+\norm{A(I-(TZ)(TZ)^\top)}_2
+=\norm{T^\top AT(I-ZZ^\top)}_2
+\]
+show equality of the conditional average success probabilities. Integrate over the prefix and the seed.
+\end{proof}
+
+This is an analytical comparison with a larger random space, not an uncharged oracle operation by the original algorithm. It adds starting directions once, only for the final output. It does not justify adding a fresh direction at every query without accounting for the enlarged polynomial family.
+
+\begin{corollary}[Applying the primitive theorem to a full-block algorithm]\label{cor:output}
+Fix a physical width $b$ and a round bound $d$. Set $B=b+k\le n$. If \eqref{eq:budgetcondition}--\eqref{eq:analyticcondition} hold for this $B,d$, no algorithm of Definition~\ref{def:fb} with at most $d$ rounds can satisfy \eqref{eq:target} on every input.
+\end{corollary}
+\begin{proof}
+Choose $D$ from Theorem~\ref{thm:primitive} and a Haar orientation of it. Fix the algorithm's independent seed; complete its initial column space to dimension $b$ if necessary. Its transcript and output are functions of the full degree-$d$ prefix, so Lemma~\ref{lem:completion} applies.
+
+The augmented initial column space has dimension at most $B=b+k$ and is independent of the matrix. Complete it to dimension $B$ if needed. After rotating into the eigenbasis of the Haar input, this space is uniformly distributed on $\Gr(n,B)$. Krylov spaces depend only on the initial column space, not on a chosen basis. It therefore has the same relevant law as a standard Gaussian $n\times B$ block in the fixed eigenbasis. The primitive theorem makes the success probability at most $0.26$. This holds after averaging over the seed too, contradicting a pointwise $0.99$ guarantee.
+\end{proof}
+
+\section{Proof of the full-block lower bound}\label{sec:fblower}
+We first dispose of the small-width obstruction.
+\begin{lemma}[An insufficient fixed starting width]\label{lem:width}
+If $b<\min\{k,n-k\}$, an algorithm of Definition~\ref{def:fb} cannot satisfy \eqref{eq:target} for every input, regardless of how many rounds it executes.
+\end{lemma}
+\begin{proof}
+Use a Haar rank-$k$ orthogonal projector $P$. Since $P^2=P$, all available vectors and all future replies lie in $\ran[\Omega,P\Omega]$. Give the algorithm the full block $P\Omega$ at the start, which can only help, and complete $\Omega$ to rank $b$ if necessary.
+
+Almost surely the two orthogonal spaces $\ran(P\Omega)$ and $\ran((I-P)\Omega)$ both have dimension $b$. Their sum $W$ is known and invariant under $P$. On $W^\perp$, the remaining part of the range is a uniform $(k-b)$-dimensional subspace in dimension $n-2b$, by rotational invariance. Both its dimension and codimension are positive. No measurable output determined by the known data equals this continuously distributed remaining subspace with positive conditional probability.
+
+Since $\sigma_{k+1}(P)=0$, success requires the output range to equal $\ran P$ exactly. Even arbitrary outputs outside $W$ cannot satisfy this with positive average probability.
+\end{proof}
+
+\begin{proof}[Proof of the lower half of Theorem~\ref{thm:fb}]
+The universal lower bound $\qsp\ge k$ is proved in Appendix~\ref{app:rank}. It implies the claimed bound immediately when $k>n/2$, since $U\le n$. Suppose $k\le n/2$. A successful full-block algorithm must then have $b\ge k$, by Lemma~\ref{lem:width}.
+
+Put $x_b=n/b$. If $x_b\le e^{48}$, the algorithm must execute at least one round; zero queries cannot meet the rank-promise requirement. Therefore its worst-case budget is at least
+\[
+b\ge e^{-48}n\ge e^{-48}U.
+\]
+It remains to treat $x_b>e^{48}$. Set
+\begin{equation}\label{eq:chosend}
+B=b+k\le2b,\qquad
+ d=\left\lfloor\min\left\{\frac{x_b}{288},\frac{\log x_b}{16s}\right\}\right\rfloor.
+\end{equation}
+Here $d\ge1$ and $n-k\ge n/2$. The multiplicity condition holds because
+\[
+2(8B+1)(d+1)\le68bd\le\frac{68}{288}n<n-k.
+\]
+Also $k+B\le3b$, $d\le x_b$, and $4ds\le\tfrac14\log x_b$. Thus the left side of \eqref{eq:analyticcondition} is at most
+\begin{equation}\label{eq:threshold}
+6\cdot10^9\log^2(ex_b)x_b^{-3/4}\le1.
+\end{equation}
+To verify the last numerical threshold, put $z=\log x_b\ge48$. Its logarithm is
+\[
+\log(6\cdot10^9)+2\log(1+z)-\tfrac34z.
+\]
+It is negative at $z=48$ and its derivative $2/(1+z)-3/4$ is negative thereafter. This verifies the bound over the continuous domain, not just on a grid.
+
+Corollary~\ref{cor:output} rules out any budget at most $bd$. Since the argument of the floor in \eqref{eq:chosend} exceeds two,
+\begin{align*}
+bd&\ge\min\left\{\frac n{576},\frac{b\log x_b}{32s}\right\}\\
+&\ge\frac1{600}\min\left\{n,\frac b s\log\frac{en}{b}\right\}.
+\end{align*}
+The function $u\mapsto u\log(en/u)$ is nondecreasing on $[1,n]$, because its derivative is $\log(n/u)\ge0$. Since $b\ge k$, the last expression is at least $U/600$. This is stronger than the claimed $e^{-48}U$ bound. The separate rank and small-$x_b$ cases complete the proof for every finite parameter triple.
+\end{proof}
+
+\section{A charged full-block upper bound}\label{sec:fbupper}
+This section reorganizes the preceding v3/v5 construction into Definition~\ref{def:fb}. The scalar approximation and Gaussian range estimates used by that construction are recorded in Appendix~\ref{app:upper}, so the extraction rule is explicit.
+
+Let $M=A^\top A$, so every product with $M$ requires one $A$ and one $A^\top$ query. Take independent Gaussian blocks of widths
+\[
+b_1=256(k+1),\qquad b_2=256k,\qquad b_0=b_1+b_2\le768k.
+\]
+They are concatenated into a single initial block. Define
+\begin{align}
+d_1&=\left\lceil\frac{\log(16n/((k+1)\varepsilon))}{2s}\right\rceil,
+&d_2&=\left\lceil\frac{\log(96n/(k\varepsilon))}{s}\right\rceil,\label{eq:depths}\\
+D_*&=\max\{d_1+1,2d_2\}.&&\notag
+\end{align}
+Before seeing the input, choose exact column recovery with width $n$ if $b_0>n$ or $n\le2b_0D_*$. Otherwise choose width $b_0$ and compute the entire prefix
+\[
+\Omega,M\Omega,\ldots,M^{D_*}\Omega.
+\]
+Each new power uses two full rounds: multiply the current block by $A$, then its returned image by $A^\top$. This obeys the span rule and costs exactly $2b_0D_*$ queries.
+
+The first Gaussian block and degrees through $d_1+1$ give the scale estimate used in Appendix~\ref{app:upper}. The second block and degrees through $2d_2$ give both $H\Omega_2$ and $H^2\Omega_2$, where $H$ is the chosen degree-$d_2$ polynomial in $M$. If $Q=\operatorname{orth}(H\Omega_2)$, its image $HQ$ is a known linear combination of $H^2\Omega_2$. Thus no extra query is needed for the final right-singular-vector extraction. All compression images for the first stage are also in the prefix.
+
+The degree choices imply
+\[
+D_*\le2+\frac2s\log\frac{96(n/k)}\varepsilon,
+\]
+so
+\begin{equation}\label{eq:upperbudget}
+2b_0D_*\le3072k+3072\frac{k}{s}\log\frac{96(n/k)}\varepsilon.
+\end{equation}
+If $s^{-1}\ge n/k$, exact recovery already costs at most the desired capped expression. Otherwise $\log(1/\varepsilon)<2\log(n/k)$, and \eqref{eq:upperbudget} is at most $24000(k/s)\log(en/k)$. The width fallback is also within this bound because $n<b_0\le768k$. This proves the upper half of Theorem~\ref{thm:fb}, including every individual vector product.
+
+\section{An exact shifted-Wishart posterior}\label{sec:shift}
+The full-block result motivates looking beyond a polynomial-span argument for the unrestricted lower bound. The following exact posterior is another result of this continuation. It is separate from Theorem~\ref{thm:fb}; neither theorem relies on an unproved implication from the other.
+
+\subsection{The shifted distribution}
+Put $r=n-k$. Let $Q_0\in\R^{n\times r}$ be a Haar orthonormal frame, and independently let $G\in\R^{r\times(r+1)}$ be standard Gaussian. For $h>0$, define
+\begin{equation}\label{eq:shiftlaw}
+H=Q_0(hI_r+GG^\top)Q_0^\top.
+\end{equation}
+Its kernel has dimension $k$, its positive eigenvalues are at least $h$ deterministically, and its orientation is orthogonally invariant.
+
+For comparison, start from $XX^\top$ with $X$ standard Gaussian of size $n\times r$, and tilt its law by $(\pdet H)^{(1-k)/2}$. This is a finite positive tilt even when $k>1$. Indeed its positive Gram density changes from
+\[
+(\det S)^{(k-1)/2}e^{-\tr S/2}
+\quad\text{to}\quad e^{-\tr S/2}\qquad(S\succ0).
+\]
+This is exactly the Gram law of an $r\times(r+1)$ Gaussian matrix. Conditioning its positive spectrum to lie above $h$ has probability $e^{-rh/2}$ and shifts the positive Gram matrix by $hI_r$, by translation in matrix Lebesgue measure. It therefore gives \eqref{eq:shiftlaw}.
+
+\subsection{Adaptive Schur coordinates}
+After $t<r$ adaptive orthonormal queries, let $V$ be the queried frame and use coordinates beginning with $V$. As in singular Gaussian completion, write
+\begin{equation}\label{eq:schurshift}
+H=\begin{bmatrix}J&B^\top\\B&BJ^{-1}B^\top+S\end{bmatrix},
+\qquad d=n-t,\quad m=d-k.
+\end{equation}
+The blocks $J,B$ are known. They are nonsingular in the required sense almost surely before $t=r$ under the base law and under its absolutely continuous conditioning. Set
+\begin{equation}\label{eq:KR}
+K=BJ^{-2}B^\top,\qquad
+R_h=I_d+BJ^{-1}(J-hI)^{-1}B^\top,
+\end{equation}
+where the second expression is used only when $J\succ hI$. Let $Q$ be an orthonormal $d\times k$ frame for $\ker S$, and let $Q_\perp$ be an orthonormal complement. Define the shorted positive matrix on that complement by
+\begin{equation}\label{eq:short}
+\mathcal S_Q(R_h)=Q_\perp^\top R_hQ_\perp
+-Q_\perp^\top R_hQ(Q^\top R_hQ)^{-1}Q^\top R_hQ_\perp.
+\end{equation}
+Changing either frame changes coordinates but not the quantities in the posterior statement.
+
+\begin{theorem}[Shifted hard-edge posterior]\label{thm:posterior}
+For \eqref{eq:shiftlaw}, condition on an arbitrary adaptive transcript with $t<r$ and $J\succ hI$. Relative to uniform measure on $\Gr(d,k)$, the residual kernel has density proportional to
+\begin{equation}\label{eq:postdensity}
+\det(I_k+Q^\top KQ)^{(1-k)/2}
+\exp\left\{\frac h2\tr\left[(Q^\top R_hQ)^{-1}Q^\top R_h^2Q\right]\right\}.
+\end{equation}
+Conditional on this kernel, the positive block of $S$ has the representation
+\begin{equation}\label{eq:postS}
+Q_\perp^\top SQ_\perp=h\mathcal S_Q(R_h)+YY^\top,
+\qquad Y\in\R^{m\times(m+1)}\ \text{standard Gaussian}.
+\end{equation}
+After choosing a measurable complement frame, $Y$ is fresh and independent of the kernel. The full kernel of $H$ is still the graph
+\begin{equation}\label{eq:fullkernel}
+U=\begin{bmatrix}-J^{-1}B^\top Q\\Q\end{bmatrix}
+(I_k+Q^\top KQ)^{-1/2}.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Under the untilted base Gaussian law, adaptive Schur completion leaves $S=XX^\top$ with $X$ fresh of size $d\times(d-k)$. One proves this inductively by rotating each next predictable query to the first row of the remaining rectangular Gaussian matrix and removing its Schur pivot; the remaining rows and latent columns stay independent Gaussian.
+
+The pseudodeterminant identity is
+\begin{equation}\label{eq:pdetshift}
+\pdet H=\det J\,\pdet S\,\det(I_k+Q^\top KQ).
+\end{equation}
+For example, factor $H=L\diag(J,S)L^\top$ with
+$L=\bigl[\begin{smallmatrix}I&0\\BJ^{-1}&I\end{smallmatrix}\bigr]$ and compare the coefficients of $z^k$ in $\det(H+zI)$. This gives \eqref{eq:pdetshift}; direct multiplication gives \eqref{eq:fullkernel}.
+
+After the negative tilt $(\pdet H)^{(1-k)/2}$, \eqref{eq:pdetshift} shows that the residual kernel has density proportional to $\det(I+Q^\top KQ)^{(1-k)/2}$. Independently, its positive Schur block has matrix density proportional to $e^{-\tr S_+/2}$, namely the $m\times(m+1)$ Gram law. This factorization is a conditional change of measure on the whole input, so arbitrary adaptive choice of the preceding queries is allowed.
+
+It remains to impose the spectral wall. Since $J-hI\succ0$, its elimination from $H-hI$ gives the Schur complement
+\[
+S-hI-B\big[(J-hI)^{-1}-J^{-1}\big]B^\top=S-hR_h.
+\]
+In the coordinates $(Q,Q_\perp)$, the first block is $-hQ^\top R_hQ\prec0$. Eliminating it shows that $H-hI$ has precisely its $k$ forced negative eigenvalues, and no additional negative eigenvalues, exactly when
+\[
+S_+\succeq h\mathcal S_Q(R_h).
+\]
+For the positive Gram density $e^{-\tr S_+/2}$, this conditioning translates $S_+$ by $h\mathcal S_Q(R_h)$, proving \eqref{eq:postS}. Its conditional probability contributes the angular factor $e^{-h\tr\mathcal S_Q(R_h)/2}$.
+
+Finally the shorting identity
+\[
+R_h-Q_\perp\mathcal S_Q(R_h)Q_\perp^\top
+=R_hQ(Q^\top R_hQ)^{-1}Q^\top R_h
+\]
+implies
+\[
+\tr\mathcal S_Q(R_h)=\tr R_h-
+\tr\big[(Q^\top R_hQ)^{-1}Q^\top R_h^2Q\big].
+\]
+The first trace is known from the transcript and independent of $Q$. Removing its density-normalization factor gives \eqref{eq:postdensity}. Every positive matrix in these formulas is nonsingular on the stated domain; the compact angular integral is finite.
+\end{proof}
+
+\subsection{An exact one-query first-exit formula}
+\begin{corollary}[Next compression pivot]\label{cor:exit}
+Under Theorem~\ref{thm:posterior}, let $v$ be the next predictable unit query direction in the remaining $d$-dimensional coordinates. Put
+\[
+\gamma_Q=1-\norm{Q^\top v}^2,
+\qquad \eta_Q=v^\top R_hQ(Q^\top R_hQ)^{-1}Q^\top R_hv.
+\]
+Conditional on $Q$ and the previous transcript, the Schur pivot of the newly queried compression of $H-hI$ has the law
+\begin{equation}\label{eq:exitlaw}
+\gamma_Q\,\chi^2_{m+1}-h\eta_Q.
+\end{equation}
+Thus the conditional probability of first leaving the domain $J\succ hI$ is the posterior average of
+\begin{equation}\label{eq:exitcdf}
+F_{\chi^2_{m+1}}\left(\frac{h\eta_Q}{\gamma_Q}\right),
+\end{equation}
+with the value one on the measure-zero case $\gamma_Q=0$.
+\end{corollary}
+\begin{proof}
+The new scalar pivot is $v^\top(S-hR_h)v$. Substitute \eqref{eq:postS} and the shorting identity from the proof of Theorem~\ref{thm:posterior}. It becomes
+\[
+\norm{Y^\top Q_\perp^\top v}^2-h\eta_Q.
+\]
+The first term is $\gamma_Q\chi^2_{m+1}$ because the columns of $Y$ are independent standard Gaussians. Since the old compression is positive definite after subtracting $hI$, the new compression leaves that domain exactly when this pivot is nonpositive.
+\end{proof}
+
+\subsection{Why the first-exit question is relevant}
+For $0<\varepsilon\le1/16$, take $h=400n\varepsilon$ and $A=I-H/(100n)$. A two-sphere $1/4$-net bound gives
+\[
+\Prob\{\norm G>8\sqrt n\}
+\le2e^{(2n)\log9-8n}<0.01\qquad(n\ge2).
+\]
+On its complement, $\norm H\le64n+25n<100n$. Thus $A$ is positive semidefinite, equals one on its leading $k$-space, and has all tail eigenvalues at most $1-4\varepsilon$.
+
+The charged warm-start theorem in v5 then converts a successful RA-14 output into a $k$-frame $\widehat V$ using at most $k\lceil10/s\rceil$ extra products, with
+\[
+\tr(\widehat V^\top A\widehat V)\ge(1-\varepsilon/200)k,
+\qquad
+\tr(\widehat V^\top H\widehat V)\le\frac{hk}{800}.
+\]
+Appending at most $k$ charged output directions forces the query span to have a Rayleigh quotient for $H$ below $h$. Therefore successful runs must leave the domain of Theorem~\ref{thm:posterior} within the composed budget.
+
+This is only a necessary stopping event. No useful universal lower bound for its occurrence time is established here. In fact, the next section gives an explicit rank-one algorithm on this law at the smaller scale $F$, so this ensemble does not witness the desired linear transition obstruction. For growing $k$, controlling just the first exit would also be insufficient to obtain the full rank factor; one would need an appropriate multiple-direction version.
+
+\section{The shifted ensemble is too easy at the rank-one transition}\label{sec:ensembleupper}
+An exact posterior need not describe a hard enough distribution. In fact the shifted ensemble just analyzed admits an averaged upper bound at the smaller scale $F$ when $k=1$. This is a statement about that specific distribution, not a worst-case RA-14 upper bound.
+
+\begin{lemma}[A Gaussian resolvent identity]\label{lem:resolvent}
+Let $G\in\R^{r\times(r+1)}$ be standard Gaussian, $W=GG^\top$, and $t>0$. Put $R=(W+tI)^{-1}$ and $S=\tr R$. Then
+\begin{equation}\label{eq:resolventid}
+r=t\E S+t\E\tr(R^2)+t\E S^2,
+\qquad \E\tr(W+tI)^{-1}\le\sqrt{r/t}.
+\end{equation}
+Moreover, $\Prob\{\lambda_{\min}(W)>u\}=e^{-ru/2}$ for $u\ge0$.
+\end{lemma}
+\begin{proof}
+For a Gaussian matrix with $N$ columns, apply entrywise Gaussian integration by parts to the field $(RG)_{i\alpha}$. Since
+$\partial R=-R(e_i g_\alpha^\top+g_\alpha e_i^\top)R$, summing the derivatives gives
+\[
+\E\tr(WR)=N\E S-\E\tr(RWR)-\E[(\tr WR)S].
+\]
+Here $g_\alpha$ is the indicated column of $G$. Substitute $WR=I-tR$ and $RWR=R-tR^2$ to obtain
+\[
+r=(N-r-1+t)\E S+t\E\tr(R^2)+t\E S^2.
+\]
+All derivatives are integrable because $R\preceq t^{-1}I$ and the Gaussian entries have finite moments. Taking $N=r+1$, discarding nonnegative terms, and applying Jensen's inequality proves \eqref{eq:resolventid}.
+
+The positive Gram matrix in these dimensions has density proportional to $e^{-\tr W/2}$ on the positive definite cone, with respect to matrix Lebesgue measure. Translating the event $W\succ uI$ by $uI$ multiplies its integral by exactly $e^{-ru/2}$. This proves the last assertion without an asymptotic random-matrix theorem.
+\end{proof}
+
+\begin{theorem}[Averaged rank-one upper bound for the shifted law]\label{thm:ensembleupper}
+Let $n\ge8$, $k=1$, $0<\varepsilon\le1/16$, $h=400n\varepsilon$, and let $H$ have law \eqref{eq:shiftlaw}. On the input $A=I-H/(100n)$ there is an algorithm making at most
+\begin{equation}\label{eq:ensemblebudget}
+\min\left\{n,\left\lceil5\varepsilon^{-1/2}\log(1+n\sqrt\varepsilon)\right\rceil\right\}
+\end{equation}
+individual queries and satisfying the RA-14 residual inequality with probability at least $0.99$, where the probability averages over both this input law and the algorithm's Gaussian start. The guarantee is not pointwise over every real matrix.
+\end{theorem}
+\begin{proof}
+Put $s=\sqrt\varepsilon$, $y=ns$, $r=n-1$, and $b=1-4\varepsilon$. If $y<2$, use exact column recovery. Otherwise set
+\begin{equation}\label{eq:ensembledegree}
+d=\left\lceil\frac{\log(1+2\cdot10^{12}y)}{8s}\right\rceil.
+\end{equation}
+Use exact recovery also when $d\ge n$. In the remaining branch choose one independent standard Gaussian vector $g$ and return the normalization of
+\[
+z=p_d(A)g,\qquad p_d(u)=T_d(2u/b-1).
+\]
+On the null event $z=0$, return a fixed unit vector; this makes the output rule total. The three-term Chebyshev recurrence requires exactly $d$ individual products with $A$. The procedure uses $n,\varepsilon$, the known form of the input law, and oracle replies; it never consults the hidden kernel or eigenvalues.
+
+Write $w_i$ for the eigenvalues of the positive Gram block $W$. Except with probability at most $2e^{(2\log9-8)n}$, the two-net bound from the preceding section gives $\norm G\le8\sqrt n$. On this event $A\succeq0$, its top eigenvalue is one, and its tail eigenvalues are
+\[
+\mu_i=b-\frac{w_i}{100n}\in[0,b].
+\]
+By Lemma~\ref{lem:resolvent}, except with probability at most $e^{-25y^2/4}$,
+\[
+w_{\min}\le25n\varepsilon,
+\qquad \sigma_2(A)\ge b-\varepsilon/4.
+\]
+The probability bound uses $r\ge n/2$. Since $y\ge2$, it is smaller than $e^{-25}$.
+
+Set the analysis-only threshold $\tau_0=(1+\varepsilon/2)b$ and $\Delta_0=1-\tau_0^2>0$. On the norm event, define $E_i=\tau_0^2-\mu_i^2$. Direct inequalities for $0<\varepsilon\le1/16$ give
+\begin{equation}\label{eq:ensembleconeweights}
+\Delta_0\le8\varepsilon,
+\qquad E_i\ge\frac14\left(\varepsilon+\frac{w_i}{100n}\right).
+\end{equation}
+For the second bound, use $\tau_0-\mu_i=\varepsilon b/2+w_i/(100n)$, $\tau_0+\mu_i\ge b\ge3/4$. Also
+\begin{equation}\label{eq:thresholdtransfer}
+\tau_0\le(1+\varepsilon)(b-\varepsilon/4)\le(1+\varepsilon)\sigma_2(A)
+\end{equation}
+on the two spectral events: the first difference is $\varepsilon(1-9\varepsilon)/4\ge0$.
+
+In the eigenbasis, $g=(g_0,g_1,\ldots,g_r)$ still has independent standard Gaussian entries. The residual-cone quantity before filtering satisfies
+\begin{align*}
+\E\left[\boldsymbol1_{\mathrm{norm\ event}}\Delta_0
+\sum_{i=1}^r\frac{g_i^2}{E_i}\right]
+&\le3200n\varepsilon\E\tr(W+100n\varepsilon I)^{-1}\\
+&\le3200n\varepsilon\sqrt{\frac{r}{100n\varepsilon}}
+\le320y.
+\end{align*}
+Markov's inequality makes the bracketed nonnegative quantity at most $320000y$, except with probability $0.001$. Independently of whether the spectral events occur, $\Prob\{g_0^2<10^{-6}\}\le\sqrt{2/\pi}\,10^{-3}<0.0008$.
+
+On $[0,b]$, $|p_d|\le1$. At the leading eigenvalue,
+\[
+\operatorname{arcosh}(2/b-1)=2\operatorname{artanh}(2s)\ge4s,
+\quad p_d(1)^2\ge\tfrac14e^{8ds}\ge5\cdot10^{11}y.
+\]
+Consequently, on all the stated good events,
+\[
+\Delta_0\sum_i\frac{g_i^2p_d(\mu_i)^2}{E_i}
+\le320000y<g_0^2p_d(1)^2.
+\]
+The rank-one graph criterion in Lemma~\ref{lem:cone} gives residual at most $\tau_0$. Equation~\eqref{eq:thresholdtransfer} supplies the actual target with the true $\sigma_2(A)$. The sum of the four exceptional probabilities is below $0.002$ for $n\ge8$ and $y\ge2$, stronger than required. Exact-recovery branches have no failure.
+
+Finally, $y<2$ gives $n\le2s^{-1}\log(1+y)$. For $y\ge2$, use
+$\log(1+2\cdot10^{12}y)\le27\log(1+y)$, since $\log(2\cdot10^{12})<26\log3$. Since $s\le1/4$, the ceiling in \eqref{eq:ensembledegree} is absorbed by the constant five in \eqref{eq:ensemblebudget}. Each branch costs at most $n$. This proves the finite query bound and the averaged guarantee.
+\end{proof}
+
+At $\varepsilon=(\log n/n)^2$, Theorem~\ref{thm:ensembleupper} costs
+$O(n\log\log n/\log n)=o(n)$ on this shifted rank-one law. Thus this particular averaged input distribution cannot witness a linear transition lower bound. The deterministic-width worst-case theorem and the distribution-specific theorem are consistent: their input distributions are different. Conditioning the shifted law on a rare, harder event would be a different distribution and would require a fresh posterior and probability analysis. No such construction is supplied here.
+
+\section{The unrestricted gap and failed transfers}\label{sec:missing}
+Theorems~\ref{thm:fb}, \ref{thm:posterior}, and \ref{thm:ensembleupper} do not change \eqref{eq:inherited}. In particular, \eqref{eq:critical} is still unresolved for $\qsp$. The following distinctions are essential.
+
+\paragraph{A full-block budget is not an arbitrary-query budget.}
+The induction into $\K_d(A,\Omega)$ spends exactly $b$ queries per round and prohibits fresh directions. An unrestricted algorithm can apply $A$ to selected combinations, introduce a new direction, change its working width, or use coordinate-dependent transformations. The proof does not simulate all such actions in a degree-$q/b$ prefix. In fact, an arbitrary independent initial span of dimension $n$ would already contain every output vector before any queries; a mere space-containment statement cannot describe how an unrestricted algorithm learns which one to choose.
+
+\paragraph{General rotational lifting is not cost preserving.}
+The adaptive-to-Krylov simulation in Bakshi--Narayanan grants a triangular family of Gaussian starts and powers; it has quadratic-sized oracle information and an explicit dimension condition.\footnote{Bakshi--Narayanan \cite{bn}, Lemma 6.3 and its application in Section 6.2. The statement grants powers indexed by a triangular set and assumes the corresponding quadratic dimension fits.} Substituting roughly $B=q+k$ and $d=q$ into Theorem~\ref{thm:primitive} would require, already from multiplicities, $n-k\ge2(8(q+k)+1)(q+1)$. This does not reach the near-linear transition. It cannot be dropped by invoking an exact-learning upper cap.
+
+\paragraph{Randomizing the width is not included.}
+The hard spectrum in Theorem~\ref{thm:fb} may depend on the chosen deterministic width. A single input distribution covering a randomized mixture of all widths is not supplied. A minimax exchange across that extra random choice is not implicit in the proof.
+
+\paragraph{A posterior identity is not a stopping-time lower bound.}
+The distribution in \eqref{eq:postdensity} depends on transcript matrices that can become ill-conditioned near first exit. The expression \eqref{eq:exitcdf} is not a proved lower bound on the stopping time. Theorem~\ref{thm:ensembleupper} shows that a linear-time obstruction would be false for this averaged rank-one ensemble in the critical regime. Moreover, the posterior formula has the explicit domain $J\succ hI$.
+
+\paragraph{No all-parameter optimal expression is claimed.}
+Both $F$ and $U$ remain candidates for the unrestricted scale; this continuation proves neither $\qsp=\Theta(F)$ nor $\qsp=\Theta(U)$. It also does not rule out a different expression between them. The main restricted result says that attaining $F$ uniformly cannot be done by any one algorithm satisfying Definition~\ref{def:fb}; it does not rule out algorithms outside that definition.
+
+\section{Verification and reproducibility}\label{sec:checks}
+The accompanying code is a diagnostic implementation of the identities used above. It is not an unrestricted RA-14 solver or a formal lower-bound verifier.
+
+The actual recorded run passed all 45 new component tests and the unchanged 28 v5, 20 v4, and 17 v3 tests: 110 tests in total. The tests include high-precision checks of weighted interpolation at very small accuracies, exact query accounting, graph/residual equivalence, integer multiplicities, reciprocal-moment constants, the conditional rotation geometry, the shifted-posterior shorting identity, the first-exit pivot identity, the Gaussian resolvent divergence, scalar resolvent quadrature, and the ensemble-specific polynomial query count. A finite test suite does not prove any statement quantified over all adaptive algorithms.
+
+\begin{center}
+\begin{tabular}{@{}p{.52\textwidth}r@{}}
+\toprule
+Recorded diagnostic & Count\\
+\midrule
+Whole-prefix weighted-cone trials & 72\\
+Numerical no-cone outcomes & 42\\
+Outcomes where the cone was not excluded & 30\\
+Trials meeting the conservative analytic condition & 0\\
+Reciprocal-Gram sampling draws & 12,000\\
+Weighted scalar grid cases & 42\\
+Shifted-posterior geometry cases & 45\\
+Shifted rank-one algorithm trials & 96\\
+Resolvent sampling draws (initial and holdout) & 508,000\\
+\bottomrule
+\end{tabular}
+\end{center}
+The 72 Krylov diagnostics include both transition and fixed-accuracy examples. They evaluate the maximum top-to-weighted-tail quotient over the whole coefficient space by a QR-based singular-value computation. The smallest recorded quotient divided by $\Delta$ was approximately $2.76\cdot10^{-7}$; the largest was approximately $9.22\cdot10^{35}$. All outcomes are retained. The largest weighted-tail feature condition number was approximately $7.90\cdot10^3$. These are floating-point calculations, not interval certificates.
+
+None of these small numerical spectra meets the deliberately conservative sufficient condition \eqref{eq:analyticcondition}. Their purpose is to check algebra and show both possible diagnostic outcomes, not to instantiate the universal constants experimentally. The continuous estimates and finite-threshold proof above, rather than these trials, supply the theorem.
+
+In the shifted-posterior geometry tests, all 45 sampled compressions happened to satisfy the stated domain; the maximum trace-identity error was approximately $2.85\cdot10^{-14}$. The diagnostic code checks algebra on sampled matrices. It does not infer the posterior density from a finite sample of zero-probability conditioning events.
+
+All 96 shifted rank-one algorithm trials met their actual-target diagnostic: 64 used the polynomial branch and 32 used exact columns. The largest query count divided by $F$ was approximately $2.30$. These trials use the specific input law in Theorem~\ref{thm:ensembleupper}, not arbitrary matrices. They do not constitute a worst-case RA-14 upper bound.
+
+The resolvent experiments retain a conspicuous finite-sample discrepancy. At $r=4,t=0.004$, the initial 2,000-draw mean of the identity's right side was $2.55$ against its exact expectation $4$. A separately seeded 250,000-draw holdout gave $4.006$ with sample standard error $0.051$; both results are kept. The corresponding $r=1$ holdout gave $1.015$ with sample standard error $0.053$ against expectation one. Near-singular contributions make small samples unreliable. Neither initial nor holdout expectations are assigned a statistical pass/fail certificate; Lemma~\ref{lem:resolvent} is proved by integration by parts.
+
+
+To reproduce from the extracted archive:
+\begin{verbatim}
+python verify_manifest.py
+python -m pip install -r requirements.txt
+OPENBLAS_NUM_THREADS=1 python run_checks.py
+pdflatex -interaction=nonstopmode -halt-on-error report.tex
+pdflatex -interaction=nonstopmode -halt-on-error report.tex
+\end{verbatim}
+The stored environment was Python 3.13.5, NumPy 2.3.5, and SciPy 1.17.0. Rerunning checks changes timestamps and result files, so the archived manifest is intended to verify the original extracted package before regeneration; rebuilding requires a refreshed manifest. No priority claim, independent peer review, or proof-assistant verification is made.
+
+\appendix
+\section{The universal rank lower bound}\label{app:rank}
+For completeness, the elementary rank fact used in Section~\ref{sec:fblower} is reproduced from the prior note.
+\begin{proposition}\label{prop:rank}
+For every admissible parameter triple, $\qsp(n,k,\varepsilon)\ge k$. Exactly $k$ queries suffice on the promise $\operatorname{rank}A\le k$.
+\end{proposition}
+\begin{proof}
+Let $G\in\R^{n\times k}$ be standard Gaussian and use the nonsymmetric input $A=[G^\top;0]$. Its two query directions reveal respectively $G^\top v$ and $Gc$, where $c$ is the first $k$ coordinates of the queried vector. Almost surely the input has rank $k$, so success requires $\ran Z=\ran G$ exactly.
+
+For a deterministic adaptive procedure, let $C\subset\R^k$ and $X\subset\R^n$ span the column and row query vectors, with dimensions $r$ and $t$. Conditional on its transcript,
+\[
+G=\bar G+P_{X^\perp}\widetilde G P_{C^\perp},
+\qquad
+\bar G=P_XG+GP_C-P_XGP_C,
+\]
+where the remaining rectangular block is fresh standard Gaussian. This follows inductively: a new predictable row or column query can be rotated to the first remaining coordinate and reveals just that Gaussian row or column. The other rows and columns remain independent.
+
+Before $k$ total queries, $\operatorname{rank}(G^\top X)=t$ almost surely. Indeed, a new row response has a nondegenerate Gaussian component in $C^\perp$, whose dimension $k-r$ exceeds the number of preceding independent row responses. Its probability of lying in their span is zero.
+
+Fix a transcript after fewer than $k$ queries and the proposed output space $S$. If $X^\perp\not\subset S$, a nonzero unrevealed column combination has affine Gaussian support parallel to $X^\perp$ and lies in $S$ with probability zero. If $X^\perp\subset S$, the row-response rank fact gives $P_X\ran G=X$, so $\ran G+X^\perp=\R^n$. Both cannot lie in the $k$-dimensional $S$. Thus success has probability zero under this distribution, for each fixed algorithmic seed. Averaging contradicts a pointwise $0.99$ guarantee.
+
+Under the rank promise, query $A^\top$ on $k$ independent Gaussian vectors. Their images span the row space almost surely. Orthonormalize and extend to dimension $k$ if necessary. The residual is zero.
+\end{proof}
+
+\section{The upper-bound certificates used in Section~\ref{sec:fbupper}}\label{app:upper}
+This appendix reproduces the mathematical certificates from v5 needed to justify the reorganized upper algorithm; the larger prefix only changes query accounting.
+
+\subsection{Gaussian oversampling}
+For $n\ge256r$, split an $n\times256r$ standard Gaussian block into $\Omega_1$ with $r$ rows and $\Omega_2$ with $n-r$ rows, in a fixed eigenbasis. Except with probability at most $2e^{-9r}+2e^{-4n}$,
+\begin{equation}\label{eq:gaussevent}
+\operatorname{rank}\Omega_1=r,\qquad
+\norm{\Omega_2\Omega_1^\dagger}_2\le\sqrt{n/r}.
+\end{equation}
+Here are sufficient elementary constants. A $1/8$-net in $\R^r$ has at most $17^r$ points. The $\chi^2_{256r}$ tail coefficients at squared ratios $9/16$ and $25/16$ exceed $1/20$. Net approximation then gives
+\[
+\norm{\Omega_1}\le\tfrac{10}{7}\sqrt{256r},\qquad
+\sigma_{\min}(\Omega_1)\ge\tfrac47\sqrt{256r}
+\]
+outside probability $2e^{-9r}$. For $\Omega_2$, two nets and scalar Gaussian tails at $\sqrt{20n}$ give $\norm{\Omega_2}\le\tfrac43\sqrt{20n}$ outside probability $2e^{-4n}$. Dividing these bounds yields $\tfrac{7\sqrt{20}}{48}\sqrt{n/r}<\sqrt{n/r}$.
+
+\subsection{Estimating the spectral scale}
+Let $M=A^\top A$, $r=k+1$, $\delta=\varepsilon/4$, and use the first block of width $256r$. Let $\mu$ be the $r$th Ritz eigenvalue in its degree-$d_1$ Krylov space. If $c=\lambda_r(M)>0$, then on \eqref{eq:gaussevent},
+\begin{equation}\label{eq:mu}
+(1-\delta)c\le\mu\le c.
+\end{equation}
+To prove the lower bound, put $t=(1-\delta)c$ and use the analysis-only polynomial $\pi(z)=T_{d_1}(2z/t-1)$. It is bounded by one on $[0,t]$, is positive and increasing beyond $c$, and
+\[
+\pi(c)^2\ge\tfrac14 e^{4d_1\sqrt\delta}\ge n/(r\delta),
+\]
+since $\operatorname{arcosh}((1+\delta)/(1-\delta))=2\operatorname{artanh}\sqrt\delta\ge2\sqrt\delta$. The graph
+\[
+Y=\pi(M)\Omega\Omega_1^\dagger\pi(\Lambda_1)^{-1}=[I;F]
+\]
+obeys $Y^\top(M-tI)Y\succeq0$: the leading margin is at least $\delta c$, tail coordinates above $t$ are nonnegative, and the negative tail contribution is at most $t\norm{\Omega_2\Omega_1^\dagger}^2/\pi(c)^2\le\delta c$. Min--max proves the lower bound in \eqref{eq:mu}; Ritz interlacing proves the upper.
+
+The compression and its image are computed from degrees through $d_1+1$. If $c=0$, $M\Omega$ spans $\ran M$ almost surely. Conversely, $c>0$ makes the $r$th Ritz value positive almost surely. Thus the exact test $\mu=0$ gives a legitimate rank-promise branch, returning $\ran(M\Omega)$ completed to dimension $k$.
+
+\subsection{Polynomial surrogate and extraction}
+On $\mu>0$, put $b_* =\mu/(1-\delta)$, so $c\le b_*\le c/(1-\delta)$. Set $\eta=\varepsilon/4$, $R_*^2=3n/k$, and
+\[
+H=T_{d_2}(2M/b_*-I).
+\]
+Use the independent second Gaussian block to form $Q=\operatorname{orth}(H\Omega_2)$, and return the top $k$ right singular vectors of $Q^\top H=(HQ)^\top$. All but the first $k$ eigenvalues of $H$ have magnitude at most one. In their eigenbasis, a direct range-approximation comparison gives
+\[
+\norm{(I-QQ^\top)H}_2^2\le1+\norm{\Omega_{\rm tail}\Omega_{\rm top}^\dagger}_2^2.
+\]
+Indeed the error of $H\Omega\Omega_{\rm top}^\dagger[I\ 0]$ has lower blocks $[-H_2\Omega_{\rm tail}\Omega_{\rm top}^\dagger\ \ H_2]$, whose squared norm is at most $1+\norm{\Omega_{\rm tail}\Omega_{\rm top}^\dagger}^2$. No inverse of the leading eigenvalue block of $H$ is needed.
+
+Also $\sigma_{k+1}(Q^\top H)\le1$, so the prescribed truncation satisfies $\norm{QQ^\top H(I-ZZ^\top)}\le1$. The two left ranges are orthogonal. Their squared actions therefore add, giving
+\begin{equation}\label{eq:Hresid}
+\norm{H(I-ZZ^\top)}^2\le2+n/k\le R_*^2.
+\end{equation}
+Algebraic Ritz extraction would not justify this step for the possibly indefinite $H$; right singular vectors are used deliberately.
+
+For all $z\ge0$, the degree choice guarantees
+\begin{equation}\label{eq:scalarupper}
+z\le1+\eta+\frac{\eta}{R_*^2}T_{d_2}(2z-1)^2.
+\end{equation}
+It is immediate for $z\le1+\eta$. Above that point, $T_d(2z-1)^2/z$ is nondecreasing: writing $u=\operatorname{arcosh}(2z-1)$ gives $(2z-1)T_d'(2z-1)/T_d(2z-1)=d\coth u\tanh(du)\ge1$. At the threshold,
+\[
+T_{d_2}(1+2\eta)^2\ge\tfrac14e^{2d_2\sqrt\eta}
+\ge2R_*^2/\eta,
+\]
+using $\operatorname{arcosh}(1+2\eta)=2\operatorname{arsinh}\sqrt\eta\ge\sqrt\eta$. This proves \eqref{eq:scalarupper}.
+
+Functional calculus and \eqref{eq:Hresid} now give
+\[
+\norm{A(I-ZZ^\top)}^2\le(1+2\eta)b_*
+\le\frac{1+\varepsilon/2}{1-\varepsilon/4}c
+\le(1+\varepsilon)^2c.
+\]
+The two Gaussian events fail with total probability less than $0.001$ on the nonexact branch. They concern independent blocks, with the second event conditioned on the first scale estimate. This proves the required pointwise success probability. Section~\ref{sec:fbupper} supplies the complete full-round query accounting.
+
+\begingroup\small\raggedright
+\begin{thebibliography}{9}
+\bibitem{repo} Open Problems in Numerical Linear Algebra. \emph{RA-14: Optimal query complexity of spectral rank-$k$ approximation}. Public problem statement, consulted September 13, 2026. \url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/randomized-and-low-rank-approximation/RA-14}.
+\bibitem{v5} \emph{RA-14: Finite-Accuracy Lower Bounds. Continuation 5}. Prior generated research note, September 2026. Original PDF and ZIP preserved unchanged in \texttt{package/prior/}. Partial, unreviewed; its unrestricted bounds are inherited without strengthening here.
+\bibitem{bn} Ainesh Bakshi and Shyam Narayanan. \emph{Krylov Methods are (nearly) Optimal for Low-Rank Approximation}. arXiv:2304.03191v1, 2023. \url{https://arxiv.org/abs/2304.03191v1}. Relevant context: Sections 5--6 and Appendix A. The general lifting is not treated as a same-cost reduction.
+\bibitem{tropp} Joel A. Tropp. \emph{Randomized block Krylov methods for approximating extreme eigenvalues}. Preprint, revised October 1, 2021. \url{https://tropp.caltech.edu/papers/Tro21-Randomized-Block-preprint.pdf}. Context for full block-Krylov spaces; no lower-bound theorem is imported.
+\bibitem{urschel} John C. Urschel. \emph{Uniform Error Estimates for the Lanczos Method}. arXiv:2003.09362, 2020. \url{https://arxiv.org/abs/2003.09362}. Related finite-dimensional polynomial lower estimates concern different error and probability statements; no priority comparison is asserted.
+\bibitem{bhsw} Mark Braverman, Elad Hazan, Max Simchowitz, and Blake Woodworth. \emph{The gradient complexity of linear regression}. COLT 2020; arXiv:1911.02212v3, 2021. \url{https://arxiv.org/abs/1911.02212v3}. Antecedent Wishart Schur-complement methodology; the shifted posterior stated here is derived explicitly.
+\bibitem{musco} Cameron Musco and Christopher Musco. \emph{Randomized Block Krylov Methods for Stronger and Faster Approximate Singular Value Decomposition}. arXiv:1504.05477, 2015. \url{https://arxiv.org/abs/1504.05477}. Context for the preceding upper-bound construction.
+\bibitem{blocksize} Tyler Chen, Ethan N. Epperly, Raphael A. Meyer, Christopher Musco, and Akash Rao. \emph{Does block size matter in randomized block Krylov low-rank approximation?} arXiv:2508.06486v2, October 21, 2025. \url{https://arxiv.org/abs/2508.06486v2}. Context for small-block guarantees and input perturbations; no all-adaptive lower bound is imported.
+\end{thebibliography}
+\endgroup
+\end{document}

@@ -1,0 +1,161 @@
+{
+  "status": "PARTIAL",
+  "claims": [
+    {
+      "id": "V6-C1",
+      "location": "Theorem 2.2",
+      "claim": "All-parameter matching U bounds for q_fb",
+      "kind": "New written proof, unreviewed",
+      "scope": "Definition 2.1 only; deterministic width; every round fully charged; arbitrary output permitted",
+      "dependencies": [
+        "V6-C2",
+        "V6-C3",
+        "V6-C4",
+        "V6-C5",
+        "V6-C6",
+        "V6-C7"
+      ],
+      "not_claimed": "An unrestricted q_sp lower bound."
+    },
+    {
+      "id": "V6-C2",
+      "location": "Lemma 3.1",
+      "claim": "Exact weighted residual graph criterion",
+      "kind": "Elementary deterministic proof",
+      "scope": "a>tau>||D_tail||; equal leading eigenvalue a of multiplicity k",
+      "dependencies": []
+    },
+    {
+      "id": "V6-C3",
+      "location": "Lemma 4.1",
+      "claim": "Weighted interpolation mass <=10 sqrt(epsilon) H_d T_d(1+2 epsilon)",
+      "kind": "Elementary polynomial proof",
+      "scope": "Every d>=1,0<epsilon<1/2",
+      "dependencies": []
+    },
+    {
+      "id": "V6-C4",
+      "location": "Lemmas 5.1-5.2; Theorem 6.1",
+      "claim": "Finite-dimensional Gaussian all-polynomial no-cone event",
+      "kind": "Written probabilistic proof",
+      "scope": "Both explicit multiplicity and analytic sufficient conditions; success obstruction probability >=0.74",
+      "dependencies": [
+        "V6-C2",
+        "V6-C3"
+      ],
+      "not_claimed": "Small diagnostics instantiate the conservative constants."
+    },
+    {
+      "id": "V6-C5",
+      "location": "Lemmas 7.1-7.2; Corollary 7.3",
+      "claim": "Arbitrary-output completion by k independent starts",
+      "kind": "Conditional rotation proof",
+      "scope": "Haar-conjugated input, fixed initial block, observed full prefix",
+      "dependencies": [],
+      "not_claimed": "A free fresh start at every arbitrary oracle query."
+    },
+    {
+      "id": "V6-C6",
+      "location": "Section 8; Appendix A",
+      "claim": "Fixed-width necessity, finite thresholds, rank lower bound",
+      "kind": "Written proof with exact constants",
+      "scope": "Deterministic width; separate large-rank and finite-threshold branches",
+      "dependencies": [
+        "V6-C4",
+        "V6-C5"
+      ]
+    },
+    {
+      "id": "V6-C7",
+      "location": "Section 9; Appendix B",
+      "claim": "Fully charged fixed-width prefix implementation with upper constant 24000",
+      "kind": "Reorganization of prior upper proof",
+      "scope": "All real matrices with pointwise success >=0.99",
+      "dependencies": [
+        "V5-UPPER"
+      ]
+    },
+    {
+      "id": "V6-C8",
+      "location": "Theorem 10.1",
+      "claim": "Exact shifted singular-Wishart residual-kernel posterior",
+      "kind": "Written conditional-distribution proof",
+      "scope": "t<n-k,J>hI; determinant exponent (1-k)/2; shifted r by r+1 Gaussian positive Gram",
+      "dependencies": [
+        "Pseudodeterminant identity",
+        "Adaptive Gaussian Schur completion",
+        "Schur inertia and positive-cone translation"
+      ],
+      "not_claimed": "A first-exit stopping-time lower bound."
+    },
+    {
+      "id": "V6-C9",
+      "location": "Corollary 10.2",
+      "claim": "Exact next compression pivot gamma chi-square_(m+1)-h eta",
+      "kind": "Conditional-distribution consequence",
+      "scope": "Domain of Theorem 10.1",
+      "dependencies": [
+        "V6-C8"
+      ]
+    },
+    {
+      "id": "V6-C10",
+      "location": "Lemma 11.1",
+      "claim": "Gaussian resolvent expectation identity and exponential smallest-eigenvalue law",
+      "kind": "Gaussian integration-by-parts and matrix-translation proof",
+      "scope": "G is r by r+1, t>0",
+      "dependencies": [],
+      "not_claimed": "The expectation identity holds pointwise."
+    },
+    {
+      "id": "V6-C11",
+      "location": "Theorem 11.2",
+      "claim": "Averaged rank-one O(F) algorithm on the shifted law",
+      "kind": "New written proof, unreviewed",
+      "scope": "n>=8,k=1,epsilon<=1/16,h=400n epsilon; average over that law and Gaussian start",
+      "dependencies": [
+        "V6-C2",
+        "V6-C10"
+      ],
+      "not_claimed": "An all-input unrestricted O(F) algorithm."
+    },
+    {
+      "id": "V6-C12",
+      "location": "Section 12",
+      "claim": "The unrestricted logarithmic transition remains unresolved in this package",
+      "kind": "Scope statement",
+      "scope": "All RA-14 parameters",
+      "dependencies": [
+        "V5-LOWER",
+        "V5-UPPER"
+      ],
+      "not_claimed": "Either F or U is the globally optimal scale."
+    },
+    {
+      "id": "V5-LOWER",
+      "location": "prior/RA14_finite_accuracy_v5.pdf, Theorem 1.1",
+      "claim": "Universal unrestricted cF lower bound",
+      "kind": "Inherited, unreviewed prior proof",
+      "scope": "Every finite RA-14 parameter triple",
+      "dependencies": [
+        "Rudelson-Vershynin Theorem 1.1 as specialized in v5",
+        "v5 tilted posterior and Grassmann estimate",
+        "v5 charged warm start"
+      ],
+      "strengthened_in_v6": false
+    },
+    {
+      "id": "V5-UPPER",
+      "location": "prior/RA14_finite_accuracy_v5.pdf, Appendix B",
+      "claim": "Universal unrestricted upper bound with constant 12000",
+      "kind": "Inherited prior proof; certificates reproduced",
+      "scope": "Every finite RA-14 parameter triple",
+      "dependencies": [
+        "Oversampled Gaussian range event",
+        "Charged scale estimation",
+        "Polynomial functional calculus"
+      ],
+      "strengthened_in_v6": false
+    }
+  ]
+}

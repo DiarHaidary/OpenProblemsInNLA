@@ -1,0 +1,49 @@
+{
+  "problem": "RA-14",
+  "version": "v6",
+  "status": "PARTIAL",
+  "full_RA14_solved": false,
+  "unrestricted_bounds_improved_in_this_round": false,
+  "query_model": "Exact individual Ax or A^T x products; arbitrary measurable adaptivity for q_sp; pointwise success >= 0.99.",
+  "inherited_bounds": {
+    "lower": "max(k, c*k/sqrt(epsilon)*log(1+n*sqrt(epsilon)/k)) with universal c>0",
+    "upper": "min(n, ceil(12000*k/sqrt(epsilon)*log(e*n/k)))",
+    "source": "prior/RA14_finite_accuracy_v5.pdf",
+    "review_status": "Unreviewed prior generated proof"
+  },
+  "new_restricted_characterization": {
+    "theorem": "2.2",
+    "quantity": "q_fb",
+    "rate": "Theta(min(n,k/sqrt(epsilon)*log(e*n/k)))",
+    "lower_constant": "exp(-48)",
+    "upper_constant": 24000,
+    "scope": "Deterministic-width fully charged block rounds, no fresh directions, span-restricted queries, arbitrary outputs.",
+    "all_finite_parameters": true,
+    "covers_unrestricted_adaptive_queries": false
+  },
+  "new_posterior": {
+    "theorem": "10.1",
+    "domain": "t<n-k and J>hI; empty-transcript convention included",
+    "all_adaptive_conditioning": true,
+    "implies_new_global_query_lower_bound": false
+  },
+  "new_shifted_rank_one_upper": {
+    "theorem": "11.2",
+    "parameters": "n>=8, k=1, 0<epsilon<=1/16",
+    "rate": "min(n, ceil(5/sqrt(epsilon)*log(1+n*sqrt(epsilon))))",
+    "probability": "At least 0.99 averaged over the specified shifted-Wishart input law and the Gaussian starting vector.",
+    "pointwise_all_matrix_guarantee": false,
+    "consequence": "This input law is too easy to witness an Omega(n) lower bound at epsilon=(log n/n)^2."
+  },
+  "remaining_example": {
+    "k": 1,
+    "epsilon": "(log(n)/n)^2",
+    "lower": "Omega(n*log(log(n))/log(n))",
+    "upper": "n",
+    "gap_unbounded": true
+  },
+  "external_repository_modified": false,
+  "independently_peer_reviewed": false,
+  "proof_assistant_verified": false,
+  "priority_claim": false
+}

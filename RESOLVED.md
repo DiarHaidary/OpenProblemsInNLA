@@ -21,6 +21,11 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### RA-14 — Restricted Krylov and shifted-posterior continuation
+
+**Partially resolved, 13 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 2.2](references/holden-ra14-v6-2026-09-13/report.pdf) gives matching finite-parameter bounds only for the deterministic-width fully charged block span-query class; Theorems 10.1 and 11.2 concern a conditional posterior and an ensemble-average rank-one algorithm. These new scopes passed an [independent informal Codex AI-agent review](references/holden-ra14-v6-2026-09-13/independent-review.md). The unrestricted finite-accuracy gap and [original target](randomized-and-low-rank-approximation/RA-14/README.md) remain unchanged. [Submission, authorship and verified affiliation](references/holden-ra14-v6-2026-09-13/README.md). No Lean verification or external human peer review is claimed.
+
+
 ### RA-14 — query-complexity partial results — Sidney Holden
 
 **Partially resolved, 12 September 2026.** [Sidney Holden, verified affiliation and submission record](references/holden-ra14-2026-09-12/README.md). The [research note](references/holden-ra14-2026-09-12/package/report.pdf), Theorems 1.1, 1.2 and 5.1, establishes the universal rank lower bound, the large-rank regime and a spectral-to-PCA reduction giving matching bounds under a retained polynomial dimension hypothesis. [Independent informal AI-agent review](references/holden-ra14-2026-09-12/independent-review.md). The [original RA-14 target](randomized-and-low-rank-approximation/RA-14/README.md) remains open in the other simultaneous finite-parameter regimes. No full resolution, external human peer review or Lean verification is asserted.

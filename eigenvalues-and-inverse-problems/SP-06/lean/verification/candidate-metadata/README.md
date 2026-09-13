@@ -1,10 +1,11 @@
-# SP-06 complete Lean formalization
+# SP-06 Lean proof candidate
 
-This package verifies the complete negative resolution of the original
-finite Toeplitz spectrum implication. All twenty exports passed independent
-mathematical reviews and actual non-root Linux Comparator, permitted-axiom
-and default-kernel checks. The [Linux record](verification/linux-2026-09-13/README.md)
-retains the raw evidence and independent operational audit.
+This package implements the complete negative resolution of the original
+SP-06 finite Toeplitz spectrum implication. All twenty exported theorems
+pass local Lean elaboration and LeanCert kernel trust checks. Two independent
+final reviews have approved the complete proof; authoritative Linux Comparator
+verification remains pending;
+the canonical problem has not been promoted to Lean verified.
 
 Read `NUMERICAL_TARGETS.md`, `NLA/SP06/Definitions.lean` and `Challenge.lean`
 in that order. `SOURCE_MAP.md` records immutable canonical sources. All
@@ -50,5 +51,5 @@ California Institute of Technology, Pasadena, California, USA. Substantial
 AI assistance is disclosed; no email is added for George Stepaniants.
 
 To check package hashes and metadata from a full repository checkout, run
-`python3 verification/verify_publication.py` with the shared metadata requirements
+`python3 verification/verify_package.py` with the shared metadata requirements
 installed. This integrity check is separate from mathematical verification.

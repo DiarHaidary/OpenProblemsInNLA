@@ -2,13 +2,14 @@
 version: v0.4
 project:
   name: 'SP-06: a real Jordan-curve symbol with a nonreal finite Toeplitz spectrum'
-  description: Complete negative resolution of the original finite-Toeplitz-spectrum implication, independently
-    reviewed and verified by the actual Linux sandbox, Comparator, permitted-axiom audit and default kernel.
+  description: Complete independently reviewed proof candidate for the negative finite-Toeplitz-spectrum
+    implication. Local Lean and LeanCert kernel trust checks and two independent final reviews
+    pass; authoritative Linux verification remains pending.
   authors:
   - George Stepaniants
   affiliations:
-    George Stepaniants: Department of Computing and Mathematical Sciences, California Institute of Technology,
-      Pasadena, California, USA
+    George Stepaniants: Department of Computing and Mathematical Sciences, California Institute
+      of Technology, Pasadena, California, USA
   responsible_maintainers:
   - George Stepaniants
   license: Apache-2.0
@@ -40,19 +41,19 @@ automation:
   methods:
   - method: agent
     framework: OpenAI Codex
-    tool_setup: Lean 4.33.1 with pinned LeanCert kernel trust assertions. Exact algebra and a uniform
-      scalar root-separation bound avoid interval subdivision. Separate local checks and actual non-root
-      Linux Comparator verification passed.
-    prompting_notes: Retain genuine unit-circle continuity and injectivity, arbitrary complex Laurent
-      coefficients in the target, the actual complex matrix spectrum, and the full negative implication
-      without an assumed existence or continuity bridge.
-  notes: Two independent statement approvals preceded implementation. Two independent final mathematical
-    reviews, actual Ubuntu verification and an independent operational audit passed. Twenty deliberate
-    Challenge placeholders are isolated from Solution. All twenty exports pass the permitted standard
-    axiom closure and default-kernel gate.
+    tool_setup: Lean 4.33.1 with pinned LeanCert kernel trust assertions. Exact algebra and
+      a uniform scalar root-separation bound avoid interval subdivision. Local direct compilation
+      reuses pinned dependency objects; authoritative Linux Comparator remains pending.
+    prompting_notes: Retain genuine unit-circle continuity and injectivity, arbitrary complex
+      Laurent coefficients in the target, the actual complex matrix spectrum, and the full
+      negative implication without an assumed existence or continuity bridge.
+  notes: AI-assisted proof implementation followed two independent statement approvals. The
+    twenty deliberate Challenge placeholders are isolated from Solution. Two independent final
+    reviews accepted the complete proof. All twenty actual Solution exports locally elaborate
+    with the standard three axioms; no successful Linux or Comparator run is yet claimed.
 status:
-  scope: Complete original negative target, including the entire continuous injective Jordan curve and
-    an actual nonreal finite Toeplitz spectral point.
+  scope: Complete original negative target proved locally and independently reviewed twice;
+    authoritative Linux/Comparator gates pending. Canonical status remains Solved.
   sorry_count: 0
   sorry_in_definitions: 0
   axioms:
@@ -240,23 +241,26 @@ status:
     - Quot.sound
     comparator_config: comparator.json
     literature_dependencies: []
-  whole_problem_verified: true
+  whole_problem_verified: false
 review:
-  status: Two statement and two final mathematical reviews accepted; actual Linux verification and independent
-    operational audit passed
+  status: Two independent statement and two independent final proof reviews accepted; Linux/Comparator
+    pending
   reviewers:
   - OpenAI Codex independent statement referee /root/lean_ie17_next (AI)
   - OpenAI Codex independent statement referee /root/lean_iv01_next (AI)
   - OpenAI Codex independent final referee /root/lean_ie15_next (AI)
   - OpenAI Codex independent final referee /root/lean_ie17_next (AI)
-  notes: reviews/STATEMENT-ACCEPTANCE.json and reviews/FINAL-ACCEPTANCE.json bind the unchanged mathematical
-    boundary. verification/linux-2026-09-13 retains the actual raw Linux result and independent operational
-    audit. AI-agent review is not external human peer review or official Tau Ceti endorsement.
+  notes: reviews/STATEMENT-ACCEPTANCE.json binds the approved unchanged mathematical boundary
+    and closes the sole metadata portability correction. reviews/statement-referee-1 and reviews/statement-referee-2
+    retain selected reports and raw records. Final proof review and actual Linux verification
+    remain distinct required gates. reviews/FINAL-ACCEPTANCE.json binds both final reports
+    to the complete source, contracts and corrected Lake configuration. No actual Linux/Comparator
+    acceptance is claimed yet.
 fidelity:
-  divergences: The proof parameterizes the actual complex unit circle directly rather than via a periodic
-    real angle. One nonreal spectral point suffices to refute the original universal implication; the
-    source additionally gives both order-two eigenvalues and enclosure of zero, which are not separately
-    claimed here.
+  divergences: The proof parameterizes the actual complex unit circle directly rather than
+    via a periodic real angle. One nonreal spectral point suffices to refute the original
+    universal implication; the source additionally gives both order-two eigenvalues and enclosure
+    of zero, which are not separately claimed here.
 toolchain:
   lean: leanprover/lean4:v4.33.1
   dependency_manifest: lake-manifest.json
@@ -275,26 +279,16 @@ reproduction:
   statement_boundary:
     status: passed locally on macOS using pre-existing pinned dependency objects
     command: SP06_DEP_ROOT=/path/to/existing/.lake/packages python3 verification/statement-typecheck.py
-    evidence_prefix: The command creates and prints a fresh temporary directory containing the raw command
-      results and elaboration logs.
-    note: All ten dependency revisions and clean tracked sources checked; direct Lean elaboration succeeded
-      with twenty intentional Challenge warnings. This is not a dependency object rebuild or a mathematical
-      proof.
+    evidence_prefix: The command creates and prints a fresh temporary directory containing
+      the raw command results and elaboration logs.
+    note: All ten dependency revisions and clean tracked sources checked; direct Lean elaboration
+      succeeded with twenty intentional Challenge warnings. This is not a dependency object
+      rebuild or a mathematical proof.
   local_proof:
     status: passed locally on macOS; existing pinned dependency objects reused, not rebuilt
     command: SP06_DEP_ROOT=/path/to/existing/.lake/packages python3 verification/compile_development.py
       Solution
     evidence: verification/local-2026-09-13/CHECKS.json
-    notes: Five proof modules elaborate, all twenty exports have only propext, Classical.choice and Quot.sound.
-      New objects and logs are created in a fresh temporary prefix. This is not Linux Comparator acceptance.
-  linux:
-    status: passed on actual non-root Ubuntu Linux
-    verified_commit: 3122d69460b0ed6dda3ea00dfaa899f93411ce2f
-    run: https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34765629739
-    evidence: verification/linux-2026-09-13/README.md
-    command: tools/lean/verify.sh eigenvalues-and-inverse-problems/SP-06/lean /tmp/nla-lean-tools
-    note: Run from the repository root after bootstrap with the prerequisites in tools/lean/HARNESS.md.
-      Fresh project verification uses the trusted pinned Mathlib cache.
-  integrity:
-    command: python3 verification/verify_publication.py
-    scope: Offline current package and original verified-input correspondence; no new Lean run is implied.
+    notes: Five proof modules elaborate, all twenty exports have only propext, Classical.choice
+      and Quot.sound. New objects and logs are created in a fresh temporary prefix. This is
+      not Linux Comparator acceptance.

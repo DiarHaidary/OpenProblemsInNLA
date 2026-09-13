@@ -1,0 +1,100 @@
+{
+  "passed": true,
+  "rows": 12,
+  "input_rank": 8,
+  "query_rank": 2,
+  "retained_rows": 6,
+  "scope": "Exact finite data/projector/cost certificate; optimality follows from the proved covariance/Jensen argument, not from sampled queries.",
+  "powers": [
+    {
+      "p": 4,
+      "queries": [
+        {
+          "label": "positive",
+          "original_cost": "232/5",
+          "weighted_cost": "648/25",
+          "relative_error": "64/145"
+        },
+        {
+          "label": "negative",
+          "original_cost": "232/5",
+          "weighted_cost": "1672/25",
+          "relative_error": "64/145"
+        }
+      ],
+      "optimal_head_cost": "12"
+    },
+    {
+      "p": 6,
+      "queries": [
+        {
+          "label": "positive",
+          "original_cost": "14024/125",
+          "weighted_cost": "5832/125",
+          "relative_error": "1024/1753"
+        },
+        {
+          "label": "negative",
+          "original_cost": "14024/125",
+          "weighted_cost": "22216/125",
+          "relative_error": "1024/1753"
+        }
+      ],
+      "optimal_head_cost": "12"
+    },
+    {
+      "p": 8,
+      "queries": [
+        {
+          "label": "positive",
+          "original_cost": "36712/125",
+          "weighted_cost": "52488/625",
+          "relative_error": "16384/22945"
+        },
+        {
+          "label": "negative",
+          "original_cost": "36712/125",
+          "weighted_cost": "314632/625",
+          "relative_error": "16384/22945"
+        }
+      ],
+      "optimal_head_cost": "12"
+    },
+    {
+      "p": 10,
+      "queries": [
+        {
+          "label": "positive",
+          "original_cost": "2569544/3125",
+          "weighted_cost": "472392/3125",
+          "relative_error": "262144/321193"
+        },
+        {
+          "label": "negative",
+          "original_cost": "2569544/3125",
+          "weighted_cost": "4666696/3125",
+          "relative_error": "262144/321193"
+        }
+      ],
+      "optimal_head_cost": "12"
+    },
+    {
+      "p": 12,
+      "queries": [
+        {
+          "label": "positive",
+          "original_cost": "7561192/3125",
+          "weighted_cost": "4251528/15625",
+          "relative_error": "4194304/4725745"
+        },
+        {
+          "label": "negative",
+          "original_cost": "7561192/3125",
+          "weighted_cost": "71360392/15625",
+          "relative_error": "4194304/4725745"
+        }
+      ],
+      "optimal_head_cost": "12"
+    }
+  ]
+}

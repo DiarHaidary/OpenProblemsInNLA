@@ -21,6 +21,10 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### RA-05 — further even-power high-accuracy partial result, Sidney Holden, 2026-09-13
+
+**Partially resolved.** [Theorems 1.1–1.2 and Corollary 1.3](references/holden-ra05-even-power-2026-09-13/manuscript.pdf) prove $`S_{2s}(k,\varepsilon)=\widetilde\Theta_s(k^{s-1}/\varepsilon^2)`$ for each fixed integer $`s\ge2`$ when $`\varepsilon\le k^{-(s+1)/2}`$, with arbitrary input rank and nonnegative original-row weights. The [canonical page](randomized-and-low-rank-approximation/RA-05/README.md) records the all-accuracy upper bound and remaining gaps. A separate [independent informal AI-agent review](references/holden-ra05-even-power-2026-09-13/verification/independent-review.md) passed this partial scope. No Lean verification or external human peer review is asserted. [Author, verified affiliation, provenance and reproduction](references/holden-ra05-even-power-2026-09-13/README.md). Earlier partial results are retained; the full joint classification remains open.
+
 ### 🟡 TR-29 — the two-factor W-state rank — Maximilian Behr
 
 **Partially resolved, 13 September 2026.** Maximilian Behr. [Theorem 1.1](references/behr-tr29-2026-09-13/manuscript/TR29_two_factor_rank.pdf) proves $`R(W_{d_1}\otimes W_{d_2})=2(d_1+d_2-2)`$ for all $`d_1,d_2\ge2`$, settling the case $`k=2`$ of [TR-29](tensor-computations/TR-29/README.md); Corollary 5.4 gives the partially symmetric rank of every bihomogeneous binary monomial with positive exponents. The case $`k\ge3`$ remains open.

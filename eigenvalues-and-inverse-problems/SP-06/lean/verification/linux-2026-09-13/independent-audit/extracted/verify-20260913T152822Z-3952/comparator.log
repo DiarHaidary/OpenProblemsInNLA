@@ -1,0 +1,39 @@
+$ systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-ju4kq3o4/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+Building Challenge
+✔ [2330/2332] Built NLA.SP06.Definitions (1.4s)
+⚠ [2331/2332] Built Challenge (1.2s)
+warning: Challenge.lean:14:8: declaration uses `sorry`
+warning: Challenge.lean:17:8: declaration uses `sorry`
+warning: Challenge.lean:21:8: declaration uses `sorry`
+warning: Challenge.lean:26:8: declaration uses `sorry`
+warning: Challenge.lean:30:8: declaration uses `sorry`
+warning: Challenge.lean:36:8: declaration uses `sorry`
+warning: Challenge.lean:40:8: declaration uses `sorry`
+warning: Challenge.lean:47:8: declaration uses `sorry`
+warning: Challenge.lean:50:8: declaration uses `sorry`
+warning: Challenge.lean:54:8: declaration uses `sorry`
+warning: Challenge.lean:58:8: declaration uses `sorry`
+warning: Challenge.lean:62:8: declaration uses `sorry`
+warning: Challenge.lean:67:8: declaration uses `sorry`
+warning: Challenge.lean:71:8: declaration uses `sorry`
+warning: Challenge.lean:74:8: declaration uses `sorry`
+warning: Challenge.lean:78:8: declaration uses `sorry`
+warning: Challenge.lean:82:8: declaration uses `sorry`
+warning: Challenge.lean:85:8: declaration uses `sorry`
+warning: Challenge.lean:88:8: declaration uses `sorry`
+warning: Challenge.lean:91:8: declaration uses `sorry`
+Build completed successfully (2332 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.SP06.witness_admissible, NLA.SP06.witness_composition, NLA.SP06.radial_lower_endpoint, NLA.SP06.radial_upper_endpoint, NLA.SP06.radial_uniform_slope, NLA.SP06.radial_root_exists_unique, NLA.SP06.radial_roots_lipschitz, NLA.SP06.continuous_radius_exists, NLA.SP06.radial_curve_continuous, NLA.SP06.radial_curve_injective, NLA.SP06.radial_curve_nonzero, NLA.SP06.auxiliary_radial_im, NLA.SP06.radial_curve_symbol_real, NLA.SP06.witness_real_jordan_curve, NLA.SP06.witness_toeplitz_two, NLA.SP06.witness_eigenvalue_mem, NLA.SP06.witness_eigenvalue_im, NLA.SP06.witness_nonreal_finite_spectrum, NLA.SP06.witness_counterexample, NLA.SP06.not_targetImplication, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+✔ [2332/2337] Built LeanCert.Tactic.Verification (1.4s)
+✔ [2333/2337] Built NLA.SP06.Numeric (3.0s)
+✔ [2334/2337] Built NLA.SP06.Curve (1.8s)
+✔ [2335/2337] Built NLA.SP06.Proof (1.5s)
+✔ [2336/2337] Built Solution (1.4s)
+Build completed successfully (2337 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.SP06.witness_admissible, NLA.SP06.witness_composition, NLA.SP06.radial_lower_endpoint, NLA.SP06.radial_upper_endpoint, NLA.SP06.radial_uniform_slope, NLA.SP06.radial_root_exists_unique, NLA.SP06.radial_roots_lipschitz, NLA.SP06.continuous_radius_exists, NLA.SP06.radial_curve_continuous, NLA.SP06.radial_curve_injective, NLA.SP06.radial_curve_nonzero, NLA.SP06.auxiliary_radial_im, NLA.SP06.radial_curve_symbol_real, NLA.SP06.witness_real_jordan_curve, NLA.SP06.witness_toeplitz_two, NLA.SP06.witness_eigenvalue_mem, NLA.SP06.witness_eigenvalue_im, NLA.SP06.witness_nonreal_finite_spectrum, NLA.SP06.witness_counterexample, NLA.SP06.not_targetImplication, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+
+EXIT_STATUS=0

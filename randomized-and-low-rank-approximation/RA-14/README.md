@@ -67,3 +67,18 @@ q_{\mathrm{sp}}(n,k,\varepsilon)\ge c\frac{k}{\sqrt{\varepsilon}}\log\left(1+\fr
 Together with the reproduced upper bound, this gives matching universal-factor bounds when $`\varepsilon\le(k/n)^2`$ and when $`\varepsilon\ge k/n`$, including $`q_{\mathrm{sp}}(n,1,1/n)=\Theta(\sqrt n\log n)`$ for $`n>2`$. Sections 3–10 prove the new lower bound; Appendices A and B reproduce the charged reduction and upper bound. [Proof source](../../references/holden-ra14-v5-2026-09-13/report.tex).
 
 The stated partial result passed a separate [independent informal Codex AI-agent audit](../../references/holden-ra14-v5-2026-09-13/independent-review.md). **RA-14 remains Partially resolved:** at $`k=1`$ and $`\varepsilon=(\log n/n)^2`$, the bounds still leave $`\Omega(n\log\log n/\log n)`$ versus $`O(n)`$, an unbounded factor. The full simultaneous universal-factor target is unchanged. No Lean verification, external human peer review or priority claim is asserted. This continues the earlier partial submission [PR #190](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/190); it does not duplicate a previously pushed full solution.
+
+
+## Restricted Krylov and posterior continuation — 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission and verified affiliation](../../references/holden-ra14-v6-2026-09-13/README.md).
+
+[Theorem 2.2](../../references/holden-ra14-v6-2026-09-13/report.pdf) characterizes the deterministic-width, fully charged block span-query class of Definition 2.1, with no fresh directions or within-round adaptation, but arbitrary outputs:
+
+```math
+q_{\mathrm{fb}}(n,k,\varepsilon)=\Theta\!\left(\min\left\{n,\frac{k}{\sqrt\varepsilon}\log\frac{en}{k}\right\}\right).
+```
+
+The constants are universal and the statement covers all original finite parameters **inside this restricted class**. Theorem 10.1 gives an adaptive shifted singular-Wishart posterior only on its stated domain. Theorem 11.2 gives a rank-one upper bound averaged over that particular input law and the Gaussian start; it is not a pointwise guarantee for every matrix. [Proof source](../../references/holden-ra14-v6-2026-09-13/report.tex).
+
+These new partial scopes passed a separate [independent informal Codex AI-agent review](../../references/holden-ra14-v6-2026-09-13/independent-review.md). **RA-14 remains Partially resolved.** This continuation does not improve the unrestricted bounds above, and the same finite-accuracy transition gap remains. No Lean verification or external human peer review is asserted. Earlier partial submissions [#190](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/190) and [#220](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/220) remain credited; this is not a duplicate of a previously pushed full solution.

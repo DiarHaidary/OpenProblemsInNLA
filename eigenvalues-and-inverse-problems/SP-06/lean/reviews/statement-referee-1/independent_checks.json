@@ -1,0 +1,33 @@
+{
+  "composition_coefficients": {
+    "-1": 8,
+    "1": -8,
+    "2": -63,
+    "-2": -64,
+    "0": -128,
+    "3": -16,
+    "4": -1
+  },
+  "endpoint_values": {
+    "F(1/2,1)": "-23/32",
+    "F(2,-1)": "1"
+  },
+  "slope_bracket_vertices": [
+    "9/16",
+    "15/16",
+    "3/4"
+  ],
+  "toeplitz_trace": -256,
+  "toeplitz_determinant": 16448,
+  "discriminant": -256,
+  "eigenvalues": [
+    "-128+8i",
+    "-128-8i"
+  ],
+  "analytic_bridges": [
+    "strict positive slope gives existence/uniqueness by IVT and monotonicity",
+    "slope separation plus s^3/4 <= 2 gives |rho(c)-rho(d)| <= 8|c-d|",
+    "unique root plus Lipschitz dependence gives continuous radius on Circle",
+    "positive radius and unit-circle directions give injective nonzero radial curve"
+  ]
+}

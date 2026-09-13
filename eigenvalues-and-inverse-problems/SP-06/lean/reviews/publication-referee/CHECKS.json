@@ -1,0 +1,144 @@
+{
+  "authorship_privacy": {
+    "George_name": true,
+    "Matthew_original_credit": true,
+    "affiliation": "California Institute of Technology",
+    "department": "Department of Computing and Mathematical Sciences",
+    "no_George_email": true
+  },
+  "candidate": {
+    "branch": "codex/lean-sp06-jordan-curve",
+    "verified_commit": "3122d69460b0ed6dda3ea00dfaa899f93411ce2f"
+  },
+  "historical_records": {
+    "FINAL_ACCEPTANCE_preLinux_pending_phase_retained": true,
+    "NUMERICAL_TARGETS_statement_stage_heading_retained": true,
+    "candidate_metadata_snapshots_explicitly_archived": true
+  },
+  "linux_evidence": {
+    "all_control_markers_present": true,
+    "artifact_zip_13_safe_entries": true,
+    "audit_manifest_hashes": true,
+    "configured_exports": 20,
+    "control_markers": {
+      "comparator-controls.log": true,
+      "comparator.log": true,
+      "kernel-controls.log": true,
+      "negative-native.log": true,
+      "negative-sorry.log": true,
+      "sandbox.log": true
+    },
+    "corrected_wording_pins": true,
+    "job_id": 103745998196,
+    "local_axiom_records_34": true,
+    "local_axiom_records_allowed": true,
+    "operational_review_sha256": "8be74df4c72817a96377c3b68d89a4fce78aaa298304470f64df88fa1ebf9d5c",
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "result": "comparator-accepted",
+    "run_id": 34765629739,
+    "run_job_success_and_commit": true,
+    "single_export_line_with_all_20": true
+  },
+  "live_status": {
+    "SP06_README_Lean_verified": true,
+    "catalog_and_category_Lean_verified": true,
+    "resolved_authorship": true,
+    "summary_counts": true
+  },
+  "package": {
+    "all_verified_input_hashes_bound": true,
+    "candidate_mapping_exact_three_metadata_files": true,
+    "expected_and_actual_files": 96,
+    "publication_checker": "PASS (run with pinned metadata venv)",
+    "verified_input_sha256_count": 61
+  },
+  "permanent_identity": {
+    "SP-06_path": "eigenvalues-and-inverse-problems/SP-06/README.md",
+    "path_exact": true,
+    "problem_ids_sha256": "d7f9925a483d40030ef266917bc8e413dac6d45530ad5515da506ffe9583e763",
+    "unchanged_from_HEAD": true
+  },
+  "presentation": {
+    "diff_check_note": "Two intentional Markdown hard-break trailing spaces on SP-06 README status/date lines; no other findings",
+    "pdf_pages": 3,
+    "root_visual_inspection_recorded": true
+  },
+  "proof_core": {
+    "all_unchanged_from_verified_commit": true,
+    "files": {
+      "Challenge.lean": true,
+      "LICENSE": true,
+      "NLA/SP06/Curve.lean": true,
+      "NLA/SP06/Definitions.lean": true,
+      "NLA/SP06/Numeric.lean": true,
+      "NLA/SP06/Proof.lean": true,
+      "NUMERICAL_TARGETS.md": true,
+      "SOURCE_MAP.md": true,
+      "Solution.lean": true,
+      "comparator.json": true,
+      "lake-manifest.json": true,
+      "lakefile.toml": true,
+      "lean-toolchain": true
+    }
+  },
+  "reviewer": {
+    "agent": "/root/lean_ie15_next",
+    "did_not_edit_worktree": true,
+    "independent_of_SP06_proof_author": true,
+    "no_new_Lean_run": true
+  },
+  "solutions": {
+    "all_unchanged": true,
+    "files": {
+      "eigenvalues-and-inverse-problems/SP-06/solution.md": {
+        "HEAD": "c7adb8f97238049b20e82044d8527b70301779ba041169f74fe603a88ea1ae7a",
+        "current": "c7adb8f97238049b20e82044d8527b70301779ba041169f74fe603a88ea1ae7a",
+        "unchanged": true
+      },
+      "eigenvalues-and-inverse-problems/SP-06/solution.pdf": {
+        "HEAD": "211db86b7f107db18b373fd1eafcb114cf7ed93a53616c6d3a9a7fd11bef7f82",
+        "current": "211db86b7f107db18b373fd1eafcb114cf7ed93a53616c6d3a9a7fd11bef7f82",
+        "unchanged": true
+      },
+      "eigenvalues-and-inverse-problems/SP-06/solution.tex": {
+        "HEAD": "b7340bf85e0b776ed49a4303af64820b72708eb249fbdc885b9179945e60ffc9",
+        "current": "b7340bf85e0b776ed49a4303af64820b72708eb249fbdc885b9179945e60ffc9",
+        "unchanged": true
+      }
+    }
+  },
+  "source_map": {
+    "all_pinned_bytes_match": true,
+    "commit": "50838e37dd793830e2cecd1055cfc7e0349490f1",
+    "files": {
+      "eigenvalues-and-inverse-problems/SP-06/README.md": {
+        "blob": true,
+        "sha256": true
+      },
+      "eigenvalues-and-inverse-problems/SP-06/problem.tex": {
+        "blob": true,
+        "sha256": true
+      },
+      "eigenvalues-and-inverse-problems/SP-06/solution.md": {
+        "blob": true,
+        "sha256": true
+      },
+      "eigenvalues-and-inverse-problems/SP-06/solution.tex": {
+        "blob": true,
+        "sha256": true
+      }
+    }
+  },
+  "target": {
+    "current_problem_pdf_sha256": "46b1f62bd20a8fb2d84d51c1f868175561e8003b6cd959ce986dd24253625784",
+    "current_problem_tex_sha256": "32f015614592ce73de5995f5de7ec469baf21e32e2169f3b9d1040fa2702646f",
+    "normalized_problem_statement_equal_to_HEAD": true,
+    "pass": true,
+    "rendered_text_matches_root_snapshot": true,
+    "rendered_text_mode": "pdftotext without -layout"
+  }
+}

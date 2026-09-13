@@ -1,0 +1,181 @@
+$ systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-snwzgrpr/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+Building Challenge
+✔ [1748/1750] Built NLA.IS02.Definitions (1.9s)
+⚠ [1749/1750] Built Challenge (1.8s)
+warning: Challenge.lean:14:8: declaration uses `sorry`
+warning: Challenge.lean:18:8: declaration uses `sorry`
+warning: Challenge.lean:22:8: declaration uses `sorry`
+warning: Challenge.lean:26:8: declaration uses `sorry`
+warning: Challenge.lean:34:8: declaration uses `sorry`
+warning: Challenge.lean:39:8: declaration uses `sorry`
+warning: Challenge.lean:43:8: declaration uses `sorry`
+warning: Challenge.lean:47:8: declaration uses `sorry`
+warning: Challenge.lean:50:8: declaration uses `sorry`
+Build completed successfully (1750 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.IS02.counterexample_symmetric_nonnegative_stochastic, NLA.IS02.counterexample_trace, NLA.IS02.counterexample_positive_trace, NLA.IS02.counterexample_spectrum, NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq, NLA.IS02.counterexample_spectral_uniqueness, NLA.IS02.counterexample_outside_locus, NLA.IS02.counterexample_claim, NLA.IS02.not_targetNecessaryCondition, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+Building Solution
+✔ [2636/2639] Built LeanCert.Tactic.Verification (2.6s)
+⚠ [2637/2639] Built NLA.IS02.Proof (14s)
+warning: NLA/IS02/Proof.lean:67:2: Unused tactic linter: `norm_num` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: NLA/IS02/Proof.lean:322:10: This simp argument is unused:
+  Equiv.Perm.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.swap_apply_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:322:32: This simp argument is unused:
+  Equiv.swap_apply_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.Perm.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:324:10: This simp argument is unused:
+  Equiv.Perm.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.swap_apply_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:324:32: This simp argument is unused:
+  Equiv.swap_apply_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.Perm.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:326:10: This simp argument is unused:
+  Equiv.Perm.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.swap_apply_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:326:32: This simp argument is unused:
+  Equiv.swap_apply_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.Perm.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:328:10: This simp argument is unused:
+  Equiv.Perm.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.swap_apply_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:328:32: This simp argument is unused:
+  Equiv.swap_apply_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.Perm.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:400:10: This simp argument is unused:
+  Equiv.Perm.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.swap_apply_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:402:10: This simp argument is unused:
+  Equiv.Perm.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.swap_apply_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:402:32: This simp argument is unused:
+  Equiv.swap_apply_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.Perm.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:404:10: This simp argument is unused:
+  Equiv.Perm.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.swap_apply_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:404:32: This simp argument is unused:
+  Equiv.swap_apply_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.Perm.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:406:10: This simp argument is unused:
+  Equiv.Perm.mul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.swap_apply_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:482:32: This simp argument is unused:
+  Equiv.swap_apply_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.Perm.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:556:32: This simp argument is unused:
+  Equiv.swap_apply_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Equiv.Perm.mul_apply]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:1308:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: NLA/IS02/Proof.lean:1322:58: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [counterexample, flatMatrix, Matrix.cons_val_zero, Matrix.cons_val_two, Matrix.cons_val_three] at e0 e2
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:1322:100: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [counterexample, flatMatrix, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two] at e0 e2
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:1345:58: This simp argument is unused:
+  Matrix.cons_val_one
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [counterexample, flatMatrix, Matrix.cons_val_zero, Matrix.cons_val_two, Matrix.cons_val_three] at e02
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: NLA/IS02/Proof.lean:1345:100: This simp argument is unused:
+  Matrix.cons_val_three
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [counterexample, flatMatrix, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two] at e02
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ℹ [2638/2639] Built Solution (2.5s)
+info: Solution.lean:57:0: 'NLA.IS02.counterexample_symmetric_nonnegative_stochastic' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:59:0: 'NLA.IS02.counterexample_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:61:0: 'NLA.IS02.counterexample_positive_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:63:0: 'NLA.IS02.counterexample_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:65:0: 'NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:67:0: 'NLA.IS02.counterexample_spectral_uniqueness' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:69:0: 'NLA.IS02.counterexample_outside_locus' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:71:0: 'NLA.IS02.counterexample_claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+info: Solution.lean:73:0: 'NLA.IS02.not_targetNecessaryCondition' depends on axioms: [propext, Classical.choice, Quot.sound]
+Build completed successfully (2639 jobs).
+Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.IS02.counterexample_symmetric_nonnegative_stochastic, NLA.IS02.counterexample_trace, NLA.IS02.counterexample_positive_trace, NLA.IS02.counterexample_spectrum, NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq, NLA.IS02.counterexample_spectral_uniqueness, NLA.IS02.counterexample_outside_locus, NLA.IS02.counterexample_claim, NLA.IS02.not_targetNecessaryCondition, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+Running Lean default kernel on solution.
+Lean default kernel accepts the solution
+Your solution is okay!
+
+EXIT_STATUS=0

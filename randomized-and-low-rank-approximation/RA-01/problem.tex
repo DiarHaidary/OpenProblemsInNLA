@@ -34,7 +34,7 @@ approximation},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}RA-01}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-10}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -51,7 +51,7 @@ pivot count for RPCholesky trace approximation\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} challenging\quad\textbf{Importance:} interesting
 to the community\par}
-{\sffamily\small\bfseries\color{accent}Status: Open\par}
+{\sffamily\small\bfseries\color{accent}Status: Partially resolved\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
@@ -60,16 +60,61 @@ pivot count must exploit adaptive residual structure; community impact
 is efficient kernel and PSD matrix approximation.\\
 \textbf{Topic:} randomized low-rank approximation; kernel matrices
 
+\subsection{Partial resolution - 13 September
+2026}\label{partial-resolution---13-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra01-2026-09-13/README.md}{Submission
+and verified affiliation}.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra01-2026-09-13/report.pdf}{Theorems
+4.1, 5.1 and 6.1} prove the displayed pivot-count guarantee for the
+original exact-arithmetic RPCholesky law under these additional tail
+assumptions. With \(a=\lambda_{r+1}(A)>0\), for every tail index
+\(1\le j\le n-r\):
+
+\begin{itemize}
+\tightlist
+\item
+  \(\lambda_{r+j}(A)\le a2^{-(j-1)}\) gives \(C=3\).
+\item
+  \(\lambda_{r+j}(A)\le a/j^2\) gives \(C=4\).
+\item
+  \(\lambda_{r+j}(A)\le a/j^p\) for a fixed \(p>1\) gives an explicit
+  finite \(C_p\) depending only on \(p\).
+\end{itemize}
+
+Leading eigenvalues and complex eigenvectors are unrestricted; zero
+tails and the dimension cap are handled by exact termination. These are
+tail-normalized hypotheses after rank \(r\), not automatic consequences
+of global spectral decay. \textbf{The unrestricted RA-01 target remains
+open:} no universal constant for all PSD inputs, or counterexample to
+all such constants, is established. Theorem 7.1 rules out an auxiliary
+continuous-time count bound with unit tail-rate coefficient; Proposition
+8.1 shows a limitation of the determinant upper comparison. Neither is a
+counterexample to RA-01.
+
+The stated partial results passed a separate
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra01-2026-09-13/independent-review.md}{independent
+Codex AI-agent informal mathematical audit}.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra01-2026-09-13/report.tex}{Proof
+source}. Exact finite checks and optional floating diagnostics passed;
+these do not replace the general proof. AI assistance in review and
+submission preparation is disclosed. No Lean verification, external
+human peer review or historical novelty claim is asserted. The original
+statement and prior-source credit are retained below.
+
+\newpage
+
 \subsection{Context and notation}\label{context-and-notation}
 
 For a Hermitian positive-semidefinite \(A\in\mathbb C^{n\times n}\),
 define the exact-arithmetic RPCholesky residuals by \(R_0=A\).
 Conditional on \(R_t\ne0\), select \(j\) with probability
-\((R_t)_{jj}/\operatorname{tr}(R_t)\) and set
+\((R_t)_{jj}/\mathop{\mathrm{tr}}\nolimits(R_t)\) and set
 
-\[
-R_{t+1}=R_t-\frac{R_t(:,j)R_t(j,:)}{(R_t)_{jj}}.
-\]
+\[R_{t+1}=R_t-\frac{R_t(:,j)R_t(j,:)}{(R_t)_{jj}}.\]
 
 If \(R_t=0\), keep all subsequent residuals zero. Eigenvalues are
 ordered \(\lambda_1(A)\geq\cdots\geq\lambda_n(A)\geq0\), and
@@ -78,7 +123,7 @@ Epperly, Tropp, and Webber,
 \href{https://doi.org/10.1002/cpa.22234}{\emph{Randomly pivoted
 Cholesky: Practical approximation of a kernel matrix with few entry
 evaluations}}, Algorithm 1; their Lemma 5.5 gives the current comparison
-\(\mathbb E\operatorname{tr}(R_r)\leq2^r\tau_r(A)\).
+\(\mathbb E\mathop{\mathrm{tr}}\nolimits(R_r)\leq2^r\tau_r(A)\).
 
 \subsection{Problem statement}\label{problem-statement}
 
@@ -87,10 +132,8 @@ Does there exist a universal constant \(C\geq1\) such that, for every
 \(A\in\mathbb C^{n\times n}\), every integer \(1\leq r\leq n\), and
 every \(0<\varepsilon<1\), RPCholesky satisfies
 
-\[
-\mathbb E\operatorname{tr}(R_k)\leq(1+\varepsilon)\tau_r(A),
-\qquad k=\min\{n,\lceil Cr/\varepsilon\rceil\}?
-\]
+\[\mathbb E\mathop{\mathrm{tr}}\nolimits(R_k)\leq(1+\varepsilon)\tau_r(A),
+\qquad k=\min\{n,\lceil Cr/\varepsilon\rceil\}?\]
 
 The expectation is over the algorithm's adaptive pivots. The constant
 must be independent of dimension, spectrum, rank, and tolerance. The

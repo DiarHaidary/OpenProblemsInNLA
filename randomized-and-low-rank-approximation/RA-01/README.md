@@ -8,8 +8,40 @@
 **Importance:** interesting to the community  
 **Rating rationale:** Challenging because a uniform near-optimal pivot count must exploit adaptive residual structure; community impact is efficient kernel and PSD matrix approximation.  
 **Topic:** randomized low-rank approximation; kernel matrices  
-**Last checked:** 2026-09-10  
-**Status:** Open  
+**Last checked:** 2026-09-13  
+**Status:** Partially resolved  
+
+## Partial resolution - 13 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute,
+Simons Foundation. [Submission and verified affiliation](../../references/holden-ra01-2026-09-13/README.md).
+
+[Theorems 4.1, 5.1 and 6.1](../../references/holden-ra01-2026-09-13/report.pdf)
+prove the displayed pivot-count guarantee for the original exact-arithmetic
+RPCholesky law under these additional tail assumptions. With
+$`a=\lambda_{r+1}(A)>0`$, for every tail index $`1\le j\le n-r`$:
+
+- $`\lambda_{r+j}(A)\le a2^{-(j-1)}`$ gives $`C=3`$.
+- $`\lambda_{r+j}(A)\le a/j^2`$ gives $`C=4`$.
+- $`\lambda_{r+j}(A)\le a/j^p`$ for a fixed $`p>1`$ gives an explicit finite $`C_p`$ depending only on $`p`$.
+
+Leading eigenvalues and complex eigenvectors are unrestricted; zero tails and
+the dimension cap are handled by exact termination. These are tail-normalized
+hypotheses after rank $`r`$, not automatic consequences of global spectral decay.
+**The unrestricted RA-01 target remains open:** no universal constant for all
+PSD inputs, or counterexample to all such constants, is established.
+Theorem 7.1 rules out an auxiliary continuous-time count bound with unit
+tail-rate coefficient; Proposition 8.1 shows a limitation of the determinant
+upper comparison. Neither is a counterexample to RA-01.
+
+The stated partial results passed a separate
+[independent Codex AI-agent informal mathematical audit](../../references/holden-ra01-2026-09-13/independent-review.md).
+[Proof source](../../references/holden-ra01-2026-09-13/report.tex).
+Exact finite checks and optional floating diagnostics passed; these do not
+replace the general proof. AI assistance in review and submission preparation
+is disclosed. No Lean verification, external human peer review or historical
+novelty claim is asserted. The original statement and prior-source credit
+are retained below.
 
 ## Context and notation
 

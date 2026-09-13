@@ -1,0 +1,11 @@
+Independent final-referee exact arithmetic checks (Python fractions, no candidate imports):
+- Laurent dictionary multiplication verifies a-a^2 has coefficients
+  {-2:-64, -1:8, 0:-128, 1:-8, 2:-63, 3:-16, 4:-1}.
+- F(1/2,1) = -23/32 and F(2,-1) = 1.
+- For c >= -1, the slope bracket is bounded below by
+  Q(r,s)=r+s-(r^2+r*s+s^2)/4 on the triangle 1/2 <= s <= r <= 2.
+  Q is concave, so its minimum is at a vertex; values at
+  (1/2,1/2), (2,1/2), (2,2) are 13/16, 19/16, 1, respectively,
+  all greater than 1/4.
+- Direct determinant substitution for T2=[[-128,8],[-8,-128]]
+  verifies lambda=-128+8i is a root.

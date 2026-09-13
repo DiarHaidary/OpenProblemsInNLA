@@ -4,8 +4,16 @@
 **Importance:** interesting to the community  
 **Rating rationale:** Extreme because optimal adaptive information bounds remain unknown even across exponential tensor-order scales; community impact is reliable computation with tensor-structured matrix access.  
 **Topic:** Structured randomized trace estimation.  
-**Last checked:** 2026-09-10  
-**Status:** Open  
+**Last checked:** 2026-09-13  
+**Status:** Partially resolved  
+
+## Partial results — Sidney Holden, 13 September 2026
+
+**The general RA-11 target remains open.** Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies [partial results](../../references/holden-ra11-2026-09-13/manuscript/ra11_partial_results.pdf), with [proof source](../../references/holden-ra11-2026-09-13/manuscript/ra11_partial_results.tex), [verified affiliation and submission record](../../references/holden-ra11-2026-09-13/README.md), and a separate [independent informal Codex AI-agent audit](../../references/holden-ra11-2026-09-13/independent-review.md).
+
+Theorem 1.1 gives general upper and lower bounds that do not match throughout the parameter range. It yields $`Q(n,q,\varepsilon)=\Theta(n^q)`$ when $`\varepsilon\le n^{-q}`$. Under the additional promise that the unknown matrix is a tensor product of PSD factors, the manuscript establishes $`\Theta(\min\{n,\sqrt q/\varepsilon\})`$ queries. It also gives a $`q+1`$-call real simulation of a complex product query, promised low-rank recovery, and a counterexample to the source's Conjecture 23. That counterexample does not settle RA-11.
+
+The audit passed these partial scopes; exact and numerical checks were rerun. The surviving question is the unrestricted adaptive complexity for arbitrary PSD matrices, uniformly in all three parameters. No full resolution, external human peer review, novelty certification or formal verification is claimed. No Lean verification was performed. The original target follows unchanged.
 
 Let $`n,q\ge2`$ be integers and $`0<\varepsilon<1/2`$. An unknown real symmetric PSD matrix $`M\in\mathbb R^{n^q\times n^q}`$ is accessible only through an exact oracle which, on input $`v_1,\ldots,v_q\in\mathbb R^n`$, returns
 

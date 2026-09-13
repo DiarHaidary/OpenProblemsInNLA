@@ -1,0 +1,1051 @@
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	﻿2026-09-13T15:38:13.0909439Z Current runner version: '2.337.0'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0935964Z ##[group]Runner Image Provisioner
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0936893Z Hosted Compute Agent
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0937678Z Version: 20260828.587
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0938573Z Commit: abac92662cab4cc7352de4f9f9d2e2419aad9c29
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0939374Z Build Date: 2026-08-28T16:44:25Z
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0940120Z Worker ID: {02f27fb4-59ba-4514-b380-9d7d5d640330}
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0940886Z Azure Region: northcentralus
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0941567Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0943425Z ##[group]Operating System
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0944140Z Ubuntu
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0945266Z 24.04.5
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0945878Z LTS
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0946423Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0947051Z ##[group]Runner Image
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0947975Z Image: ubuntu-24.04
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0948767Z Version: 20260907.300.1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0950560Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260907.300/images/ubuntu/Ubuntu2404-Readme.md
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0952350Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260907.300
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0953379Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0954694Z ##[group]GITHUB_TOKEN Permissions
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0957091Z Contents: read
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0957881Z Metadata: read
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0958574Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0961584Z Secret source: Actions
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0962689Z Cache mode: write
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.0963731Z Prepare workflow directory
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.1314624Z Prepare all required actions
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.1363939Z Getting action download info
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.4257445Z Download action repository 'actions/checkout@11d5960a326750d5838078e36cf38b85af677262' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.5135838Z Download action repository 'actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16' (SHA:924ae3a1cded613372ab5595356fb5720e22ba16)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:13.8601920Z Download action repository 'leanprover/lean-action@96e06131c0e9943c780388fd166f55d1e2fa0433' (SHA:96e06131c0e9943c780388fd166f55d1e2fa0433)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.0263665Z Download action repository 'actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02' (SHA:ea165f8d65b6e75b540449e92b4886f43607fa02)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.2697019Z Getting action download info
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.3947808Z Download action repository 'actions/cache@v5' (SHA:caa296126883cff596d87d8935842f9db880ef25)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.5988666Z Complete job name: verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7011019Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7027114Z ##[group]Run actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7029105Z with:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7029891Z   persist-credentials: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7030895Z   repository: sgstepaniants/OpenProblemsInNLA
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7039071Z   token: ***
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7039843Z   ssh-strict: true
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7040605Z   ssh-user: git
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7041338Z   clean: true
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7042135Z   sparse-checkout-cone-mode: true
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7043094Z   fetch-depth: 1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7043867Z   fetch-tags: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7044655Z   show-progress: true
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7045528Z   lfs: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7046248Z   submodules: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7047035Z   set-safe-directory: true
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7048128Z   allow-unsafe-pr-checkout: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.7049371Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8245438Z Syncing repository: sgstepaniants/OpenProblemsInNLA
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8249766Z ##[group]Getting Git version info
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8251437Z Working directory is '/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8254173Z [command]/usr/bin/git version
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8295593Z git version 2.55.0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8319986Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8340500Z Temporarily overriding HOME='/home/runner/work/_temp/76e690ee-d32f-4f98-856e-b218d10a96e7' before making global git config changes
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8344725Z Adding repository directory to the temporary git global config as a safe directory
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8348857Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8403428Z Deleting the contents of '/home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8408617Z ##[group]Initializing the repository
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8414817Z [command]/usr/bin/git init /home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8508028Z hint: Using 'master' as the name for the initial branch. This default branch name
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8510981Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8514209Z hint: to use in all of your new repositories, which will suppress this warning,
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8516601Z hint: call:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8518067Z hint:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8519979Z hint: 	git config --global init.defaultBranch <name>
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8522008Z hint:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8524121Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8526719Z hint: 'development'. The just-created branch can be renamed via this command:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8529380Z hint:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8530392Z hint: 	git branch -m <name>
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8531658Z hint:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8533204Z hint: Disable this message with "git config set advice.defaultBranchName false"
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8535285Z Initialized empty Git repository in /home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA/.git/
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8539038Z [command]/usr/bin/git remote add origin https://github.com/sgstepaniants/OpenProblemsInNLA
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8580913Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8583011Z ##[group]Disabling automatic garbage collection
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8585140Z [command]/usr/bin/git config --local gc.auto 0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8623906Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8626183Z ##[group]Setting up auth
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8632274Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.8675413Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.9032899Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.9076175Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.9378267Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.9417083Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.9681160Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.9727008Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.9728732Z ##[group]Fetching the repository
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:14.9738081Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +522f091b9f0d39d4846f5939bcafc1549ba16a55:refs/remotes/origin/codex/lean-is02-spectral-uniqueness
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.6880703Z From https://github.com/sgstepaniants/OpenProblemsInNLA
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.6882414Z  * [new ref]         522f091b9f0d39d4846f5939bcafc1549ba16a55 -> origin/codex/lean-is02-spectral-uniqueness
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.6888289Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.6889895Z ##[group]Determining the checkout info
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.6890769Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.6896651Z [command]/usr/bin/git sparse-checkout disable
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.6964237Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.7008563Z ##[group]Checking out the ref
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:18.7014433Z [command]/usr/bin/git checkout --progress --force -B codex/lean-is02-spectral-uniqueness refs/remotes/origin/codex/lean-is02-spectral-uniqueness
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.7314702Z Updating files:  55% (13257/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.7474419Z Updating files:  56% (13267/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.7608651Z Updating files:  57% (13504/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.7738161Z Updating files:  58% (13741/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.7872639Z Updating files:  59% (13978/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.7994029Z Updating files:  60% (14214/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.8178246Z Updating files:  61% (14451/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.8321531Z Updating files:  62% (14688/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.8451186Z Updating files:  63% (14925/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.8591804Z Updating files:  64% (15162/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.8759103Z Updating files:  65% (15399/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.8873220Z Updating files:  66% (15636/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.9030141Z Updating files:  67% (15873/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.9141543Z Updating files:  68% (16110/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.9264951Z Updating files:  69% (16347/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.9466979Z Updating files:  70% (16583/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.9591345Z Updating files:  71% (16820/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.9795175Z Updating files:  72% (17057/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:19.9913090Z Updating files:  73% (17294/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.0070201Z Updating files:  74% (17531/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.0231354Z Updating files:  75% (17768/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.0439176Z Updating files:  76% (18005/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.0550072Z Updating files:  77% (18242/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.0688185Z Updating files:  78% (18479/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.0856367Z Updating files:  79% (18716/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.1054860Z Updating files:  80% (18952/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.1356624Z Updating files:  81% (19189/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.1592363Z Updating files:  82% (19426/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.1719958Z Updating files:  83% (19663/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.1982722Z Updating files:  84% (19900/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.3573644Z Updating files:  85% (20137/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.3898103Z Updating files:  86% (20374/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.4234394Z Updating files:  87% (20611/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.4450609Z Updating files:  88% (20848/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.4828521Z Updating files:  89% (21085/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.5507982Z Updating files:  90% (21321/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.6136911Z Updating files:  91% (21558/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.6484096Z Updating files:  92% (21795/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.6682619Z Updating files:  93% (22032/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.6861213Z Updating files:  94% (22269/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.7100999Z Updating files:  95% (22506/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.7286682Z Updating files:  96% (22743/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.7306696Z Updating files:  97% (22980/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.7486397Z Updating files:  97% (23024/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.7605919Z Updating files:  98% (23217/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.7749756Z Updating files:  99% (23454/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.7750284Z Updating files: 100% (23690/23690)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.7750710Z Updating files: 100% (23690/23690), done.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8046330Z Switched to a new branch 'codex/lean-is02-spectral-uniqueness'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8050069Z branch 'codex/lean-is02-spectral-uniqueness' set up to track 'origin/codex/lean-is02-spectral-uniqueness'.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8115311Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8166633Z [command]/usr/bin/git log -1 --format=%H
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8199089Z 522f091b9f0d39d4846f5939bcafc1549ba16a55
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8209889Z ##[group]Removing auth
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8214429Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8255427Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8539624Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8576730Z http.https://github.com/.extraheader
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8585306Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8627162Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8907811Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.8947775Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.9222409Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.9455395Z ##[group]Run python3 -m pip install -r tools/lean/requirements.txt
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.9455981Z ^[[36;1mpython3 -m pip install -r tools/lean/requirements.txt^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.9456435Z ^[[36;1mpython3 tools/lean/validate_manifest.py "$LEAN_PROJECT"^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.9502528Z shell: /usr/bin/bash -e {0}
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.9502806Z env:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.9503101Z   LEAN_PROJECT: eigenvalues-and-inverse-problems/IS-02/lean
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:20.9503456Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.3433137Z Defaulting to user installation because normal site-packages is not writeable
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.6812841Z Collecting PyYAML==6.0.3 (from -r tools/lean/requirements.txt (line 1))
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.7192351Z   Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.4 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.7565540Z Collecting jsonschema==4.26.0 (from -r tools/lean/requirements.txt (line 2))
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.7600147Z   Downloading jsonschema-4.26.0-py3-none-any.whl.metadata (7.6 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.7775284Z Requirement already satisfied: attrs>=22.2.0 in /usr/lib/python3/dist-packages (from jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2)) (23.2.0)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.7945174Z Collecting jsonschema-specifications>=2023.03.6 (from jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2))
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.7981319Z   Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl.metadata (2.9 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.8331656Z Collecting referencing>=0.28.4 (from jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2))
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:21.8365536Z   Downloading referencing-0.37.0-py3-none-any.whl.metadata (2.8 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.1238023Z Collecting rpds-py>=0.25.0 (from jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2))
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.1272838Z   Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (4.1 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.1602556Z Requirement already satisfied: typing-extensions>=4.4.0 in /usr/lib/python3/dist-packages (from referencing>=0.28.4->jsonschema==4.26.0->-r tools/lean/requirements.txt (line 2)) (4.10.0)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.1665968Z Downloading pyyaml-6.0.3-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (807 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.1877352Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 807.9/807.9 kB 43.1 MB/s eta 0:00:00
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.1909768Z Downloading jsonschema-4.26.0-py3-none-any.whl (90 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.1948921Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 90.6/90.6 kB 37.5 MB/s eta 0:00:00
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.1982978Z Downloading jsonschema_specifications-2025.9.1-py3-none-any.whl (18 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.2033867Z Downloading referencing-0.37.0-py3-none-any.whl (26 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.2083014Z Downloading rpds_py-2026.6.3-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (366 kB)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.2155210Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 366.2/366.2 kB 67.2 MB/s eta 0:00:00
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.4924561Z Installing collected packages: rpds-py, PyYAML, referencing, jsonschema-specifications, jsonschema
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.7393756Z Successfully installed PyYAML-6.0.3 jsonschema-4.26.0 jsonschema-specifications-2025.9.1 referencing-0.37.0 rpds-py-2026.6.3
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:22.9955202Z Manifest schema and comparator coverage: PASS (9 declarations)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.0201340Z ##[group]Run actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.0201754Z with:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.0201964Z   go-version: 1.27.1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.0202192Z   cache: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.0202403Z   check-latest: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.0204909Z   token: ***
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.0205118Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.1497882Z Setup go version spec 1.27.1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.1510034Z Attempting to download 1.27.1...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.7095477Z matching 1.27.1...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:23.7122664Z Acquiring 1.27.1 from https://github.com/actions/go-versions/releases/download/1.27.1-33583469715/go-1.27.1-linux-x64.tar.gz
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:24.2249119Z Extracting Go...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:24.2390431Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/b9cb8578-6f22-41b7-9ea1-a0726240b008 -f /home/runner/work/_temp/ff80e71f-7a43-4ac2-bbfd-4078f00aa285
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:26.2240410Z Successfully extracted go to /home/runner/work/_temp/b9cb8578-6f22-41b7-9ea1-a0726240b008
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:26.2241093Z Adding to the cache ...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:31.9497006Z Successfully cached go to /opt/hostedtoolcache/go/1.27.1/x64
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:31.9498810Z Added go to the path
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:31.9501275Z Successfully set up Go version 1.27.1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:31.9755013Z go version go1.27.1 linux/amd64
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:31.9755254Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:31.9755665Z ##[group]go env
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0995209Z AR='ar'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0995558Z CC='gcc'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0995914Z CGO_CFLAGS='-O2 -g'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0996272Z CGO_CPPFLAGS=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0996513Z CGO_CXXFLAGS='-O2 -g'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0996752Z CGO_ENABLED='1'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0997002Z CGO_FFLAGS='-O2 -g'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0997222Z CGO_LDFLAGS='-O2 -g'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0997440Z CXX='g++'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0997821Z GCCGO='gccgo'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0998035Z GO111MODULE=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0998236Z GOAMD64='v1'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0998429Z GOARCH='amd64'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0998638Z GOAUTH='netrc'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0998853Z GOBIN='/home/runner/go/bin'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0999130Z GOCACHE='/home/runner/.cache/go-build'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0999415Z GOCACHEPROG=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0999617Z GODEBUG=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.0999830Z GOENV='/home/runner/.config/go/env'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1000083Z GOEXE=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1000323Z GOEXPERIMENT=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1000545Z GOFIPS140='off'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1000756Z GOFLAGS=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1001449Z GOGCCFLAGS='-fPIC -m64 -pthread -Wl,--no-gc-sections -fmessage-length=0 -ffile-prefix-map=/tmp/go-build3020477340=/tmp/go-build -gno-record-gcc-switches'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1002130Z GOHOSTARCH='amd64'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1002347Z GOHOSTOS='linux'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1002554Z GOINSECURE=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1002759Z GOMOD='/dev/null'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1002995Z GOMODCACHE='/home/runner/go/pkg/mod'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1003259Z GONOPROXY=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1003456Z GONOSUMDB=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1003646Z GOOS='linux'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1003849Z GOPACKAGESDRIVER=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1004077Z GOPATH='/home/runner/go'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1004302Z GOPRIVATE=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1004561Z GOPROXY='https://proxy.golang.org,direct'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1004898Z GOROOT='/opt/hostedtoolcache/go/1.27.1/x64'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1005191Z GOSUMDB='sum.golang.org'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1005416Z GOTELEMETRY='local'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1005678Z GOTELEMETRYDIR='/home/runner/.config/go/telemetry'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1005979Z GOTMPDIR=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1006489Z GOTOOLCHAIN='local'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1006808Z GOTOOLDIR='/opt/hostedtoolcache/go/1.27.1/x64/pkg/tool/linux_amd64'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1007171Z GOVCS=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1007365Z GOVERSION='go1.27.1'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1007791Z GOWORK=''
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1008004Z PKG_CONFIG='pkg-config'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1008151Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1008591Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1444959Z ##[group]Run leanprover/lean-action@96e06131c0e9943c780388fd166f55d1e2fa0433
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1445371Z with:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1445714Z   lake-package-directory: eigenvalues-and-inverse-problems/IS-02/lean
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1446108Z   auto-config: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1446326Z   build: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1446521Z   test: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1446714Z   lint: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1446926Z   use-mathlib-cache: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1447177Z   use-github-cache: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1447409Z   mk_all-check: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1447964Z   check-reservoir-eligibility: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1448263Z   leanchecker: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1448533Z   lean4checker: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1448799Z   nanoda: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1449015Z   nanoda-allow-sorry: true
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1449245Z   axiom-audit: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1449533Z   axiom-audit-allow: propext,Classical.choice,Quot.sound
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1449952Z   reinstall-transient-toolchain: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1450220Z env:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1450410Z   GOTOOLCHAIN: local
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1450621Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1518043Z ##[start-action display=install elan;id=__leanprover_lean-action.__run]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1544762Z ##[group]Run : Install Elan
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1545072Z ^[[36;1m: Install Elan^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1545367Z ^[[36;1m${GITHUB_ACTION_PATH}/scripts/install_elan.sh^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1590362Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1590735Z env:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1591015Z   GOTOOLCHAIN: local
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1591268Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.1691049Z ##[group]Elan Installation Output
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.2135702Z info: downloading installer
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:32.8254275Z info: downloading https://releases.lean-lang.org/lean4/v4.33.1/lean-4.33.1-linux.tar.zst
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:35.9416631Z info: installing /home/runner/.elan/toolchains/leanprover--lean4---v4.33.1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4347882Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, commit 819816b2e0a3bf405af45ae5c7af2491d8f5bee6, Release)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4802912Z Lake version 5.0.0-src+819816b (Lean version 4.33.1)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4842760Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4842996Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4861248Z ##[end-action id=__leanprover_lean-action.__run;outcome=success;conclusion=success;duration_ms=11334]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4866086Z ##[start-action display=configure `lean-action`;id=__leanprover_lean-action.config]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4882397Z ##[group]Run : Configure Lean Action
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4882726Z ^[[36;1m: Configure Lean Action^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4883039Z ^[[36;1m${GITHUB_ACTION_PATH}/scripts/config.sh^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4923362Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4923733Z env:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4923941Z   GOTOOLCHAIN: local
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4924169Z   AUTO_CONFIG: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4924376Z   BUILD: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4924593Z   TEST: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4924789Z   LINT: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.4924981Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5072173Z ##[group]Configure lean-action
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5131794Z ##[end-action id=__leanprover_lean-action.config;outcome=success;conclusion=success;duration_ms=26]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5136908Z ##[start-action display=reinstall transient toolchain;id=__leanprover_lean-action.__run_2]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5143385Z ##[end-action id=__leanprover_lean-action.__run_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5146120Z ##[start-action display=ensure all files are imported;id=__leanprover_lean-action.mk_all]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5150298Z ##[end-action id=__leanprover_lean-action.mk_all;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5152226Z ##[start-action display=Run actions/cache/restore@v5;id=__leanprover_lean-action.__actions_cache]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5155809Z ##[end-action id=__leanprover_lean-action.__actions_cache;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5157962Z ##[start-action display=detect mathlib;id=__leanprover_lean-action.detect-mathlib]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5161581Z ##[end-action id=__leanprover_lean-action.detect-mathlib;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5163364Z ##[start-action display=get mathlib cache;id=__leanprover_lean-action.__run_3]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5180508Z ##[end-action id=__leanprover_lean-action.__run_3;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5207895Z ##[start-action display=build sgstepaniants/OpenProblemsInNLA;id=__leanprover_lean-action.build]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5212666Z ##[end-action id=__leanprover_lean-action.build;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5214630Z ##[start-action display=Run actions/cache/save@v5;id=__leanprover_lean-action.__actions_cache_2]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5218316Z ##[end-action id=__leanprover_lean-action.__actions_cache_2;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5221884Z ##[start-action display=test sgstepaniants/OpenProblemsInNLA;id=__leanprover_lean-action.test]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5226096Z ##[end-action id=__leanprover_lean-action.test;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5229012Z ##[start-action display=lint sgstepaniants/OpenProblemsInNLA;id=__leanprover_lean-action.lint]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5233270Z ##[end-action id=__leanprover_lean-action.lint;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5235078Z ##[start-action display=check reservoir eligibility;id=__leanprover_lean-action.__run_4]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5238606Z ##[end-action id=__leanprover_lean-action.__run_4;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5241109Z ##[start-action display=check environment with leanchecker;id=__leanprover_lean-action.__run_5]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5245762Z ##[end-action id=__leanprover_lean-action.__run_5;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5248244Z ##[start-action display=check environment with nanoda;id=__leanprover_lean-action.nanoda]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5251765Z ##[end-action id=__leanprover_lean-action.nanoda;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5254001Z ##[start-action display=audit axioms with axiom-audit;id=__leanprover_lean-action.axiom-audit]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5257171Z ##[end-action id=__leanprover_lean-action.axiom-audit;outcome=skipped;conclusion=skipped;duration_ms=0]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5311154Z ##[group]Run sudo apt-get update
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5311487Z ^[[36;1msudo apt-get update^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5311824Z ^[[36;1msudo apt-get install -y bubblewrap dbus-user-session^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5312269Z ^[[36;1msudo sysctl -w kernel.apparmor_restrict_unprivileged_userns=0^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5312664Z ^[[36;1msudo loginctl enable-linger "$(id -un)"^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5313007Z ^[[36;1msudo systemctl start "user@$(id -u).service"^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5313388Z ^[[36;1mecho "XDG_RUNTIME_DIR=/run/user/$(id -u)" >> "$GITHUB_ENV"^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5313891Z ^[[36;1mecho "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$(id -u)/bus" >> "$GITHUB_ENV"^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5353779Z shell: /usr/bin/bash -e {0}
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5354039Z env:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5354245Z   GOTOOLCHAIN: local
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.5354469Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.6296788Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.6716080Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.6721135Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.6733617Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.6778411Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.6813806Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.7160869Z Get:7 https://dl.google.com/linux/chrome-stable/deb stable InRelease [2548 B]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.8248186Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [463 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.8409077Z Get:9 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [414 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.8851914Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1263 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.8928140Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [292 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.8952671Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Components [181 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.8975350Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1690 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.9073677Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Components [388 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.9105517Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1544 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.9189879Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [354 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.9219683Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Components [940 B]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.9558973Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-backports/main amd64 Components [5772 B]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:43.9569030Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-backports/universe amd64 Components [12.6 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:44.0791609Z Get:20 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1006 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:44.0865881Z Get:21 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [213 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:44.0898621Z Get:22 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Components [46.4 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:44.0939735Z Get:23 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1206 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:44.0983061Z Get:24 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Components [76.3 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:44.1000455Z Get:25 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [1445 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:44.1080742Z Get:26 http://azure.archive.ubuntu.com/ubuntu noble-security/restricted Translation-en [336 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:44.1283602Z Get:27 https://dl.google.com/linux/chrome-stable/deb stable/main amd64 Packages [1408 B]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:50.4377985Z Fetched 11.3 MB in 1s (8095 kB/s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.3272904Z Reading package lists...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.3608987Z Reading package lists...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.6251798Z Building dependency tree...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.6260063Z Reading state information...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.8557351Z dbus-user-session is already the newest version (1.14.10-4ubuntu4.1).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.8558493Z dbus-user-session set to manually installed.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.8559134Z The following NEW packages will be installed:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.8572180Z   bubblewrap
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.8798723Z 0 upgraded, 1 newly installed, 0 to remove and 50 not upgraded.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.8799164Z Need to get 50.2 kB of archives.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.8799545Z After this operation, 133 kB of additional disk space will be used.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.8800071Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:51.9661564Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 bubblewrap amd64 0.9.0-1ubuntu0.1 [50.2 kB]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.2928779Z Fetched 50.2 kB in 0s (338 kB/s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3150858Z Selecting previously unselected package bubblewrap.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3374480Z (Reading database ... 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3374925Z (Reading database ... 5%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3375315Z (Reading database ... 10%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3375687Z (Reading database ... 15%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3376070Z (Reading database ... 20%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3376428Z (Reading database ... 25%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3376795Z (Reading database ... 30%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3377170Z (Reading database ... 35%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3377715Z (Reading database ... 40%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3378100Z (Reading database ... 45%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3378478Z (Reading database ... 50%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.3421098Z (Reading database ... 55%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.4439890Z (Reading database ... 60%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.6003065Z (Reading database ... 65%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.7906321Z (Reading database ... 70%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:52.9011986Z (Reading database ... 75%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.0184042Z (Reading database ... 80%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.1549026Z (Reading database ... 85%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.2652283Z (Reading database ... 90%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.3589082Z (Reading database ... 95%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.3589564Z (Reading database ... 100%
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.3590147Z (Reading database ... 201818 files and directories currently installed.)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.3635534Z Preparing to unpack .../bubblewrap_0.9.0-1ubuntu0.1_amd64.deb ...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.3662302Z Unpacking bubblewrap (0.9.0-1ubuntu0.1) ...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.4100781Z Setting up bubblewrap (0.9.0-1ubuntu0.1) ...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.4150560Z Processing triggers for man-db (2.12.0-4build2) ...
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:53.4169101Z Not building database; man-db/auto-update is not 'true'.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0286655Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0287422Z Running kernel seems to be up-to-date.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0288551Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0288743Z No services need to be restarted.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0289019Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0289243Z No containers need to be restarted.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0289501Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0289707Z No user sessions are running outdated binaries.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0290054Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:54.0290381Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3153584Z kernel.apparmor_restrict_unprivileged_userns = 0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3512138Z ##[group]Run ulimit -n 65536
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3512453Z ^[[36;1mulimit -n 65536^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3512782Z ^[[36;1mtools/lean/bootstrap.sh "$RUNNER_TEMP/nla-lean-tools"^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3513245Z ^[[36;1mtools/lean/verify.sh "$LEAN_PROJECT" "$RUNNER_TEMP/nla-lean-tools"^[[0m
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3554094Z shell: /usr/bin/bash -e {0}
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3554366Z env:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3554570Z   GOTOOLCHAIN: local
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3554822Z   XDG_RUNTIME_DIR: /run/user/1001
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3555142Z   DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1001/bus
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3555542Z   LEAN_PROJECT: eigenvalues-and-inverse-problems/IS-02/lean
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.3555882Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.6620888Z Running elan toolchain install leanprover/lean4:v4.33.1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.6621590Z Log: /home/runner/work/_temp/nla-lean-tools/logs/bootstrap/elan.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.6643883Z info: toolchain 'leanprover/lean4:v4.33.1' is already installed
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.7515595Z Running go build -mod=readonly -buildvcs=false -o /home/runner/work/_temp/nla-lean-tools/.tools/bin/landrun ./cmd/landrun
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.7516794Z Log: /home/runner/work/_temp/nla-lean-tools/logs/bootstrap/landrun-build.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.7565322Z go: downloading github.com/urfave/cli/v3 v3.6.2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.7707037Z go: downloading github.com/landlock-lsm/go-landlock v0.9.0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.8372222Z go: downloading golang.org/x/sys v0.40.0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:38:55.8376665Z go: downloading kernel.org/pub/linux/libs/security/libcap/psx v1.2.77
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:04.9660990Z Running lake build lean4export comparator
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:04.9661811Z Log: /home/runner/work/_temp/nla-lean-tools/logs/bootstrap/comparator-build.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:05.5123104Z ✔ [3/20] Built Comparator.Util (463ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:05.7125387Z ✔ [4/20] Built Comparator.Util:c.o (185ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:07.0169002Z ✔ [5/20] Built Export.Parse (1.0s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:07.7219387Z ✔ [6/20] Built Comparator.Axioms (710ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:08.2168872Z ✔ [7/20] Built Comparator.Axioms:c.o (514ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:08.5208963Z ✔ [8/20] Built Export (3.5s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:08.6189214Z ✔ [9/20] Built Comparator.Compare (868ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:09.2189756Z ✔ [10/20] Built Comparator.Compare:c.o (655ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:09.7228948Z ✔ [11/20] Built Comparator (459ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:09.8216573Z ✔ [12/20] Built Comparator:c.o (89ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:10.0239518Z ✔ [13/20] Built Main (1.4s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:10.2220848Z ✔ [14/20] Built Main:c.o (295ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:12.0265472Z ✔ [15/20] Built Main (2.2s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:12.1270815Z ✔ [16/20] Built Export:c.o (3.6s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:12.3266793Z ✔ [17/20] Built Export.Parse:c.o (5.3s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:13.2295206Z ✔ [18/20] Built lean4export:exe (1.1s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:13.3296890Z ✔ [19/20] Built Main:c.o (1.3s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.0314895Z ✔ [20/20] Built comparator:exe (733ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.0319837Z Build completed successfully (20 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.3433126Z Tools built; isolation and checker controls run during verify. Receipt: /home/runner/work/_temp/nla-lean-tools/bootstrap.json
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.7943677Z Running /usr/bin/timeout --kill-after=5s 45s systemd-run -p RuntimeMaxSec=40 --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp /usr/bin/true
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.7948989Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/user-service.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.8272135Z Running python3 /home/runner/work/_temp/nla-lean-tools/reproduction/checks/sandbox_probe_ci.py
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.8273000Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/sandbox.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.8662631Z START sandbox mode: build
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:14.9734960Z START sandbox mode: export
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.0682718Z START sandbox negative case: unknown option
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.1105254Z START sandbox negative case: unexpected --rw
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.1628957Z START sandbox negative case: unexpected --rwx
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2077340Z START sandbox negative case: relative --rwx
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2569488Z MODE build: exit=0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2570200Z Running as unit: run-u2.service; invocation ID: 3a2d77fec40b47d0a003e60fda2b231f
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2570945Z PASS outside .lake write-open: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2571488Z PASS outside .lake truncate: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2572357Z PASS outside .lake read-only truncate-open: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2573039Z PASS symlink from .lake to outside write: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2573554Z PASS outside .lake creation: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2573880Z PASS build .lake write: allowed
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2589890Z PASS user namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2590954Z PASS pid namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2591362Z PASS mnt namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2591750Z PASS net namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2592150Z PASS ipc namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2592534Z PASS uts namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2592969Z PASS host parent: absent from private /proc
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2593503Z PASS host parent signal lookup: denied errno=3
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2594049Z PASS host loopback listener: unreachable errno=13
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2594588Z PASS AF_UNIX socket creation: denied errno=97
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2595085Z PASS effective capabilities: none
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2595364Z PASS no_new_privs: set
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2595592Z Sandbox UID: 1001
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2595867Z PASS nested namespace write attempt: rejected exit=1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2596236Z bwrap: setting up uid map: Permission denied
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2596545Z Finished with result: success
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2596848Z Main processes terminated with: code=exited/status=0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2597172Z Service runtime: 82ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2597397Z CPU time consumed: 83ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2597891Z Memory peak: 256.0K
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2598161Z Memory swap peak: 0B
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2598294Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2598396Z MODE export: exit=0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2598755Z Running as unit: run-u3.service; invocation ID: 3e8dd92cb47f4817b95252249e6868a5
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2599199Z PASS outside .lake write-open: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2599527Z PASS outside .lake truncate: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2599890Z PASS outside .lake read-only truncate-open: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2600300Z PASS symlink from .lake to outside write: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2600648Z PASS outside .lake creation: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2600955Z PASS export .lake write-open: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2601267Z PASS export .lake truncate: denied errno=30
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2601565Z PASS user namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2601829Z PASS pid namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2602070Z PASS mnt namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2602304Z PASS net namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2602792Z PASS ipc namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2603034Z PASS uts namespace: private
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2603309Z PASS host parent: absent from private /proc
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2603624Z PASS host parent signal lookup: denied errno=3
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2603958Z PASS host loopback listener: unreachable errno=13
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2604292Z PASS AF_UNIX socket creation: denied errno=97
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2604597Z PASS effective capabilities: none
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2604862Z PASS no_new_privs: set
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2605089Z Sandbox UID: 1001
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2605357Z PASS nested namespace write attempt: rejected exit=1
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2605692Z bwrap: setting up uid map: Permission denied
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2605984Z Finished with result: success
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2606288Z Main processes terminated with: code=exited/status=0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2606597Z Service runtime: 81ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2606825Z CPU time consumed: 82ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2607051Z Memory peak: 256.0K
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2607272Z Memory swap peak: 0B
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2607405Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2607752Z NEGATIVE unknown option: exit=2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2608158Z Running as unit: run-u4.service; invocation ID: 4515c67ae47b4f2e87e17aaff23f544e
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2608752Z strict Comparator sandbox: unsupported Comparator Landrun option: --unrestricted-filesystem
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2609220Z Finished with result: exit-code
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2609526Z Main processes terminated with: code=exited/status=2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2609847Z Service runtime: 30ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2610077Z CPU time consumed: 29ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2610306Z Memory peak: 256.0K
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2610522Z Memory swap peak: 0B
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2610645Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2610784Z NEGATIVE unexpected --rw: exit=2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2611173Z Running as unit: run-u5.service; invocation ID: 308dff7059a44623b6aa94c57d1c8921
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2611865Z strict Comparator sandbox: only private /dev may be passed with --rw
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2612254Z Finished with result: exit-code
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2612559Z Main processes terminated with: code=exited/status=2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2612874Z Service runtime: 29ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2613109Z CPU time consumed: 28ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2613340Z Memory peak: 256.0K
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2613562Z Memory swap peak: 0B
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2613687Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2613804Z NEGATIVE unexpected --rwx: exit=2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2614189Z Running as unit: run-u6.service; invocation ID: 91b8304d9c784a0291666541557173bd
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2614717Z strict Comparator sandbox: only this project's existing .lake may be writable
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2615123Z Finished with result: exit-code
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2615438Z Main processes terminated with: code=exited/status=2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2615756Z Service runtime: 30ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2615992Z CPU time consumed: 29ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2616229Z Memory peak: 256.0K
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2616462Z Memory swap peak: 0B
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2616587Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2616702Z NEGATIVE relative --rwx: exit=2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2617080Z Running as unit: run-u7.service; invocation ID: 90d189e3c49443d7839215fcd25d3fb4
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2617832Z strict Comparator sandbox: only this project's existing .lake may be writable
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2618238Z Finished with result: exit-code
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2618531Z Main processes terminated with: code=exited/status=2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2618834Z Service runtime: 29ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2619058Z CPU time consumed: 29ms
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2619283Z Memory peak: 256.0K
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2619498Z Memory swap peak: 0B
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2619620Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2619881Z Outer and export fixture contents unchanged; only designated build fixture written.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2642436Z Running bash /home/runner/work/_temp/nla-lean-tools/reproduction/checks/run_replay.sh
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.2643482Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/kernel-controls.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.3378707Z Replay probe: RestrictAddressFamilies=~AF_UNIX (deny AF_UNIX sockets).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.4041701Z Lean (version 4.33.1, x86_64-unknown-linux-gnu, Release)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.4422692Z /home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Init.olean
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.4423649Z /home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/lib/lean/Init.olean
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:15.4424585Z /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/lib/lean/Main.olean
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8277464Z Trusted base fixture: 11 constants
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8278249Z BEGIN honest_with_inductives_and_quotients
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8278736Z Running Lean default kernel on solution.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8279203Z Lean default kernel accepts the solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8279726Z RETURN honest_with_inductives_and_quotients: accepted
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8280277Z BEGIN invalid_raw_proof
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8280660Z Running Lean default kernel on solution.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8281108Z Lean default kernel rejects the solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8281853Z RETURN invalid_raw_proof: rejected: while replaying declaration 'PinnedReplayProbe.invalid':
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8282476Z (kernel) declaration type mismatch, 'PinnedReplayProbe.invalid' has type
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8282860Z   True
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8283073Z but it is expected to have type
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8283320Z   False
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8283535Z BEGIN quotient_postcheck_mismatch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8283821Z Running Lean default kernel on solution.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8284110Z Lean default kernel accepts the solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8284410Z Quotient post-check rejects the solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8284842Z RETURN quotient_postcheck_mismatch: rejected: Quotient constant mismatch on: Quot.lift
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.8285414Z PASS: all three actual Comparator.runBuiltinKernel cases behaved as required
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.9256442Z Running python3 /home/runner/work/_temp/nla-lean-tools/reproduction/checks/comparator_regressions.py
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.9257277Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/comparator-controls.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.9619288Z Comparator regressions: RestrictAddressFamilies=~AF_UNIX; .tools/env.sh selects the real strict sandbox.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.9627707Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:16.9627919Z CASE simple_match
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1090879Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1091671Z info: toolchain not updated; already up-to-date
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1092085Z Building Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1092596Z ⚠ [2/3] Built Challenge (249ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1092932Z warning: Challenge.lean:1:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1093280Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1094649Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1095895Z Building Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1096165Z ✔ [2/3] Built Solution (266ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1096439Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1098042Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1100132Z Running Lean default kernel on solution.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1100615Z Lean default kernel accepts the solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1101056Z Your solution is okay!
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1101481Z PASS simple_match: exit 0, expected 0; required phase: Your solution is okay!
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1101793Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:19.1102169Z CASE simple_mismatch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0539353Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0540132Z info: toolchain not updated; already up-to-date
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0540632Z Building Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0541324Z ⚠ [2/3] Built Challenge (260ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0541847Z warning: Challenge.lean:1:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0542400Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0544793Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0547034Z Building Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0547724Z ✔ [2/3] Built Solution (241ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0548281Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0549938Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0551342Z uncaught exception: Challenge and solution constant kind don't match: 'comm'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0552278Z PASS simple_mismatch: exit 1, expected 1; required phase: Challenge and solution constant kind don't match: 'comm'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0552750Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:21.0552855Z CASE simple_axiom_issue
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9756434Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9757857Z info: toolchain not updated; already up-to-date
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9758372Z Building Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9759086Z ⚠ [2/3] Built Challenge (258ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9759597Z warning: Challenge.lean:1:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9760148Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9762526Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9766810Z Building Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9767303Z ✔ [2/3] Built Solution (258ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9767893Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9769914Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9772288Z uncaught exception: Illegal axiom detected: 'helper'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9773112Z PASS simple_axiom_issue: exit 1, expected 1; required phase: Illegal axiom detected: 'helper'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9773708Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:22.9773868Z CASE simple_kind_mismatch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8804156Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8804691Z info: toolchain not updated; already up-to-date
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8805021Z Building Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8805531Z ⚠ [2/3] Built Challenge (264ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8805860Z warning: Challenge.lean:1:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8806246Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8808156Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8809943Z Building Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8810242Z ✔ [2/3] Built Solution (264ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8810535Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8812471Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, comm, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8813744Z uncaught exception: Illegal axiom detected: 'helper'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8814275Z PASS simple_kind_mismatch: exit 1, expected 1; required phase: Illegal axiom detected: 'helper'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8814647Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:24.8814740Z CASE type_mismatch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8001064Z info: ComparatorRegression: no previous manifest, creating one from scratch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8001756Z info: toolchain not updated; already up-to-date
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8002084Z Building Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8002593Z ✔ [2/3] Built Challenge (257ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8002888Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8004246Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8005925Z Building Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8006200Z ✔ [2/3] Built Solution (255ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8006473Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8008124Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, propext, Quot.sound, Classical.choice, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8009495Z uncaught exception: Challenge and solution theorem statement do not match: 'checked'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8010193Z PASS type_mismatch: exit 1, expected 1; required phase: Challenge and solution theorem statement do not match: 'checked'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8038484Z PASS: all five Comparator regressions
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8111165Z Running systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-axiom-pdpg02ht /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8116091Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/negative-sorry.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8686153Z info: NlaAxiomFixture: no previous manifest, creating one from scratch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.8687047Z info: toolchain not updated; already up-to-date
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:26.9413844Z Building Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:28.0411893Z ✔ [2/3] Built Challenge (928ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:28.0414759Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:29.1341460Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, Classical.choice, Quot.sound, propext, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:29.1343413Z Building Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:30.1305384Z ⚠ [2/3] Built Solution (887ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:30.1306031Z warning: Solution.lean:2:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:30.1308765Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:31.2665910Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, Classical.choice, Quot.sound, propext, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:31.2668507Z uncaught exception: Illegal axiom detected: 'sorryAx'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:31.2781647Z Running systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-axiom-ty5ysws9 /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:31.2786926Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/negative-native.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:31.4339330Z info: NlaAxiomFixture: no previous manifest, creating one from scratch
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:31.4340254Z info: toolchain not updated; already up-to-date
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:31.5139383Z Building Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:32.6075121Z ✔ [2/3] Built Challenge (925ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:32.6078512Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:33.6449233Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, Classical.choice, Quot.sound, propext, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:33.6450625Z Building Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:34.7450559Z ✔ [2/3] Built Solution (930ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:34.7454040Z Build completed successfully (3 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:35.8882616Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, checked, Classical.choice, Quot.sound, propext, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:35.8885150Z uncaught exception: Illegal axiom detected: 'checked._native.native_decide.ax_1_1'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:36.1265611Z Running lake env true
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:36.1266223Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/dependencies.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:36.1724987Z info: leancert: cloning https://github.com/alerad/leancert
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:37.0654715Z info: leancert: checking out revision '621a43d7cf21f87872392a01e874f2f1dbddc926'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:39:37.1035846Z info: mathlib: cloning https://github.com/leanprover-community/mathlib4.git
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:09.1062716Z info: mathlib: checking out revision '0df444a360eaa60ab8c11dca51a86af692955474'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:11.0748209Z info: plausible: cloning https://github.com/leanprover-community/plausible
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:11.4724731Z info: plausible: checking out revision 'b7eb3304aeae834b12dda98993a37f6a41f6f0bb'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:11.4877140Z info: LeanSearchClient: cloning https://github.com/leanprover-community/LeanSearchClient
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:11.8356253Z info: LeanSearchClient: checking out revision '5f4d51b81cbd3f6b32b156bfad9056621a040404'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:11.8505513Z info: importGraph: cloning https://github.com/leanprover-community/import-graph
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:12.2622011Z info: importGraph: checking out revision '16f02aa7642864af59f1ff0e384a015994db9118'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:12.2797216Z info: proofwidgets: cloning https://github.com/leanprover-community/ProofWidgets4
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:13.3927456Z info: proofwidgets: checking out revision '4be2e3d5087eeb272cf5a8853b8f9dd025ef5957'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:14.0935436Z info: aesop: cloning https://github.com/leanprover-community/aesop
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:14.9240719Z info: aesop: checking out revision '3448c0bcc5ce01b2d1546e483ec3620e32df3d0e'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:14.9452954Z info: Qq: cloning https://github.com/leanprover-community/quote4
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:15.3926735Z info: Qq: checking out revision '92c15be17b7caf78c2ad767ec40f89052d908d81'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:15.4078879Z info: batteries: cloning https://github.com/leanprover-community/batteries
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:17.9249669Z info: batteries: checking out revision '4488d40d070b9700d4d5a6aa342f0d40c31b2a2d'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:17.9537139Z info: Cli: cloning https://github.com/leanprover/lean4-cli
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:18.3815337Z info: Cli: checking out revision '6130a47896ce867c6a4a55373441e59e565bad0f'
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:18.4992114Z Running lake exe cache get
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:18.4993052Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/mathlib-cache.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:19.8635072Z ✔ [1/5] Built Cache.Cli (393ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:19.9636146Z ✔ [2/5] Built Cache.Lean (458ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:20.2654039Z ✔ [6/26] Built Cache.Cli:c.o (184ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:20.2654949Z ✔ [7/26] Built Cache.Lean:c.o (244ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:20.5658435Z ✔ [8/26] Built Cache.Infra (502ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:20.7660796Z ✔ [9/26] Built Cache.Infra:c.o (220ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:21.1666219Z ✔ [10/26] Built Batteries.Tactic.OpenPrivate (1.1s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:22.5683876Z ✔ [11/26] Built Batteries.Tactic.OpenPrivate:c.o (1.4s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:22.7687049Z ✔ [12/26] Built Cache.IO (1.6s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:23.5701920Z ✔ [13/26] Built Cache.Hashing (877ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:24.0708547Z ✔ [14/26] Built Cache.Hashing:c.o (462ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:24.5715484Z ✔ [15/26] Built Cache.IO:c.o (1.8s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:25.8729487Z ✔ [16/26] Built Cache.Requests (2.2s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:26.5728152Z ✔ [17/26] Built Cache.Marker (682ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:26.6729578Z ✔ [18/26] Built Cache.Marker:c.o (165ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:27.3726921Z ✔ [19/26] Built Cache.Query (855ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:27.6727807Z ✔ [20/26] Built Cache.Query:c.o (320ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:28.2742047Z ✔ [21/26] Built Cache.Warning (868ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:28.5746147Z ✔ [22/26] Built Cache.Warning:c.o (276ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:29.0751499Z ✔ [23/26] Built Cache.Requests:c.o (3.2s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:29.5757955Z ✔ [24/26] Built Cache.Main (1.3s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:30.4768934Z ✔ [25/26] Built Cache.Main:c.o (938ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:31.2783552Z ✔ [26/26] Built cache:exe (762ms)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:34.4928921Z Current branch: HEAD
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:34.4929524Z Using cache from origin: (some leanprover-community/mathlib4)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:34.4930376Z Attempting to download 8690 file(s) from leanprover-community/mathlib4 cache at https://lakecache.blob.core.windows.net/mathlib4-master
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:35.6352540Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:35.7388084Z Downloaded: 1 file(s) [attempted 1/8690 = 0%, 17 KB/s], Decompressed: 0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:35.8388886Z Downloaded: 147 file(s) [attempted 147/8690 = 1%, 401 KB/s], Decompressed: 9
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:35.9380769Z Downloaded: 328 file(s) [attempted 328/8690 = 3%, 1052 KB/s], Decompressed: 45
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.0386738Z Downloaded: 513 file(s) [attempted 513/8690 = 5%, 1579 KB/s], Decompressed: 45
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.1412217Z Downloaded: 731 file(s) [attempted 731/8690 = 8%, 879 KB/s], Decompressed: 45
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.2450947Z Downloaded: 935 file(s) [attempted 935/8690 = 10%, 1106 KB/s], Decompressed: 45
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.3547264Z Downloaded: 1136 file(s) [attempted 1136/8690 = 13%, 1631 KB/s], Decompressed: 45
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.4510738Z Downloaded: 1326 file(s) [attempted 1326/8690 = 15%, 4233 KB/s], Decompressed: 45
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.5531004Z Downloaded: 1542 file(s) [attempted 1542/8690 = 17%, 6033 KB/s], Decompressed: 45
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.6532690Z Downloaded: 1742 file(s) [attempted 1742/8690 = 20%, 1048 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.7520195Z Downloaded: 1920 file(s) [attempted 1920/8690 = 22%, 11607 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.8559721Z Downloaded: 2094 file(s) [attempted 2094/8690 = 24%, 506 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:36.9518150Z Downloaded: 2270 file(s) [attempted 2270/8690 = 26%, 211 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.0539215Z Downloaded: 2457 file(s) [attempted 2457/8690 = 28%, 3200 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.1593023Z Downloaded: 2647 file(s) [attempted 2647/8690 = 30%, 4194 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.2592217Z Downloaded: 2837 file(s) [attempted 2837/8690 = 32%, 1512 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.3631566Z Downloaded: 3020 file(s) [attempted 3020/8690 = 34%, 1652 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.4650325Z Downloaded: 3203 file(s) [attempted 3203/8690 = 36%, 2018 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.5679960Z Downloaded: 3406 file(s) [attempted 3406/8690 = 39%, 1325 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.6670343Z Downloaded: 3619 file(s) [attempted 3619/8690 = 41%, 558 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.7668067Z Downloaded: 3812 file(s) [attempted 3812/8690 = 43%, 2327 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.8676038Z Downloaded: 3985 file(s) [attempted 3985/8690 = 45%, 878 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:37.9729471Z Downloaded: 4204 file(s) [attempted 4204/8690 = 48%, 1406 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.0681845Z Downloaded: 4419 file(s) [attempted 4419/8690 = 50%, 1852 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.1682261Z Downloaded: 4634 file(s) [attempted 4634/8690 = 53%, 472 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.2682148Z Downloaded: 4816 file(s) [attempted 4816/8690 = 55%, 558 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.3709716Z Downloaded: 5034 file(s) [attempted 5034/8690 = 57%, 21693 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.4693276Z Downloaded: 5265 file(s) [attempted 5265/8690 = 60%, 492 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.5709075Z Downloaded: 5487 file(s) [attempted 5487/8690 = 63%, 1627 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.6710382Z Downloaded: 5702 file(s) [attempted 5702/8690 = 65%, 848 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.7714130Z Downloaded: 5892 file(s) [attempted 5892/8690 = 67%, 1333 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.8695274Z Downloaded: 6107 file(s) [attempted 6107/8690 = 70%, 7010 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:38.9733788Z Downloaded: 6313 file(s) [attempted 6313/8690 = 72%, 1794 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.0760340Z Downloaded: 6518 file(s) [attempted 6518/8690 = 75%, 6842 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.1741652Z Downloaded: 6710 file(s) [attempted 6710/8690 = 77%, 1084 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.2740568Z Downloaded: 6907 file(s) [attempted 6907/8690 = 79%, 1238 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.3743345Z Downloaded: 7092 file(s) [attempted 7092/8690 = 81%, 4311 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.4754515Z Downloaded: 7286 file(s) [attempted 7286/8690 = 83%, 1546 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.5760714Z Downloaded: 7456 file(s) [attempted 7456/8690 = 85%, 667 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.6810273Z Downloaded: 7638 file(s) [attempted 7638/8690 = 87%, 726 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.7773773Z Downloaded: 7835 file(s) [attempted 7835/8690 = 90%, 10113 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.8899227Z Downloaded: 8066 file(s) [attempted 8066/8690 = 92%, 3978 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:39.9887372Z Downloaded: 8240 file(s) [attempted 8240/8690 = 94%, 1665 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:40.0899548Z Downloaded: 8455 file(s) [attempted 8455/8690 = 97%, 3669 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:40.1910429Z Downloaded: 8626 file(s) [attempted 8626/8690 = 99%, 1238 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:40:40.1920320Z Downloaded: 8690 file(s) [attempted 8690/8690 = 100%, 1238 KB/s], Decompressed: 230
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:02.7577018Z Decompressed 8690 file(s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:02.7578050Z Already decompressed 8690 file(s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:02.8193292Z Running systemd-run --user --quiet --wait --pipe --collect -p 'RestrictAddressFamilies=~AF_UNIX' --working-directory /home/runner/work/_temp/nla-lean-tools/.verification-tmp/nla-fresh-proof-snwzgrpr/project /usr/bin/env -i PATH=/home/runner/.elan/toolchains/leanprover--lean4---v4.33.1/bin:/home/runner/.elan/bin:/home/runner/go/bin:/opt/hostedtoolcache/go/1.27.1/x64/bin:/snap/bin:/home/runner/.local/bin:/opt/pipx_bin:/home/runner/.cargo/bin:/home/runner/.config/composer/vendor/bin:/usr/local/.ghcup/bin:/home/runner/.dotnet/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin HOME=/home/runner LANG=C.UTF-8 XDG_RUNTIME_DIR=/run/user/1001 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1001/bus GIT_TERMINAL_PROMPT=0 GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null COMPARATOR_BIN=/home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator COMPARATOR_LEAN4EXPORT=/home/runner/work/_temp/nla-lean-tools/.tools/lean4export/.lake/build/bin/lean4export COMPARATOR_LANDRUN=/home/runner/work/_temp/nla-lean-tools/scripts/strict_landrun.py XDG_CACHE_HOME=/home/runner/work/_temp/nla-lean-tools/.tools/cache TMPDIR=/home/runner/work/_temp/nla-lean-tools/.verification-tmp lake env /home/runner/work/_temp/nla-lean-tools/.tools/comparator/.lake/build/bin/comparator comparator.json
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:02.8198402Z Log: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215/comparator.log
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:03.8360679Z Building Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:07.3278408Z ✔ [1748/1750] Built NLA.IS02.Definitions (1.9s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1287278Z ⚠ [1749/1750] Built Challenge (1.8s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1288249Z warning: Challenge.lean:14:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1288974Z warning: Challenge.lean:18:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1289571Z warning: Challenge.lean:22:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1290168Z warning: Challenge.lean:26:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1290840Z warning: Challenge.lean:34:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1291425Z warning: Challenge.lean:39:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1292468Z warning: Challenge.lean:43:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1293090Z warning: Challenge.lean:47:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1293784Z warning: Challenge.lean:50:8: declaration uses `sorry`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:09.1381922Z Build completed successfully (1750 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:13.7934361Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.IS02.counterexample_symmetric_nonnegative_stochastic, NLA.IS02.counterexample_trace, NLA.IS02.counterexample_positive_trace, NLA.IS02.counterexample_spectrum, NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq, NLA.IS02.counterexample_spectral_uniqueness, NLA.IS02.counterexample_outside_locus, NLA.IS02.counterexample_claim, NLA.IS02.not_targetNecessaryCondition, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Challenge
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:13.7939425Z Building Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:18.6421122Z ✔ [2636/2639] Built LeanCert.Tactic.Verification (2.6s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4659905Z ⚠ [2637/2639] Built NLA.IS02.Proof (14s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4660592Z warning: NLA/IS02/Proof.lean:67:2: Unused tactic linter: `norm_num` does nothing
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4661308Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4661748Z Note: This linter can be disabled with `set_option linter.unusedTactic false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4662557Z warning: NLA/IS02/Proof.lean:322:10: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4663273Z   Equiv.Perm.mul_apply
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4663503Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4663697Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4664206Z   [apply] simp [Equiv.swap_apply_def]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4664864Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4665114Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4665625Z warning: NLA/IS02/Proof.lean:322:32: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4665995Z   Equiv.swap_apply_def
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4666133Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4666260Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4666580Z   [apply] simp [Equiv.Perm.mul_apply]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4666760Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4666987Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4667461Z warning: NLA/IS02/Proof.lean:324:10: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4668070Z   Equiv.Perm.mul_apply
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4668211Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4668332Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4668645Z   [apply] simp [Equiv.swap_apply_def]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4668817Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4669039Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4669510Z warning: NLA/IS02/Proof.lean:324:32: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4669856Z   Equiv.swap_apply_def
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4669994Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4670107Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4670403Z   [apply] simp [Equiv.Perm.mul_apply]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4670573Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4670779Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4671264Z warning: NLA/IS02/Proof.lean:326:10: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4671606Z   Equiv.Perm.mul_apply
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4671736Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4671844Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4672136Z   [apply] simp [Equiv.swap_apply_def]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4672304Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4672505Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4672951Z warning: NLA/IS02/Proof.lean:326:32: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4673290Z   Equiv.swap_apply_def
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4673413Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4673527Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4674002Z   [apply] simp [Equiv.Perm.mul_apply]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4674166Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4674380Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4674820Z warning: NLA/IS02/Proof.lean:328:10: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4675163Z   Equiv.Perm.mul_apply
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4675394Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4675555Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4675949Z   [apply] simp [Equiv.swap_apply_def]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4676113Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4676324Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4676764Z warning: NLA/IS02/Proof.lean:328:32: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4677098Z   Equiv.swap_apply_def
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4677220Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4677344Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4677848Z   [apply] simp [Equiv.Perm.mul_apply]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4678019Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4678231Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4678675Z warning: NLA/IS02/Proof.lean:400:10: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4679015Z   Equiv.Perm.mul_apply
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4679138Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4679254Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4679543Z   [apply] simp [Equiv.swap_apply_def]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4679701Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4679909Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4680351Z warning: NLA/IS02/Proof.lean:402:10: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4680696Z   Equiv.Perm.mul_apply
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4680831Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4680944Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4681248Z   [apply] simp [Equiv.swap_apply_def]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4681586Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4681811Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4682283Z warning: NLA/IS02/Proof.lean:402:32: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4682625Z   Equiv.swap_apply_def
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4682754Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4682872Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4683171Z   [apply] simp [Equiv.Perm.mul_apply]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4683341Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4683547Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4683994Z warning: NLA/IS02/Proof.lean:404:10: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4684329Z   Equiv.Perm.mul_apply
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4684458Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4684571Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4684866Z   [apply] simp [Equiv.swap_apply_def]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4685029Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4685238Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4685685Z warning: NLA/IS02/Proof.lean:404:32: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4686019Z   Equiv.swap_apply_def
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4686154Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4686262Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4686554Z   [apply] simp [Equiv.Perm.mul_apply]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4686720Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4686922Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4687367Z warning: NLA/IS02/Proof.lean:406:10: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4687940Z   Equiv.Perm.mul_apply
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4688066Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4688185Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4688479Z   [apply] simp [Equiv.swap_apply_def]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4688645Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4688847Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4689287Z warning: NLA/IS02/Proof.lean:482:32: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4689628Z   Equiv.swap_apply_def
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4689758Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4689873Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4690306Z   [apply] simp [Equiv.Perm.mul_apply]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4690470Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4690680Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4691121Z warning: NLA/IS02/Proof.lean:556:32: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4691455Z   Equiv.swap_apply_def
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4691586Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4691695Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4691986Z   [apply] simp [Equiv.Perm.mul_apply]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4692152Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4692354Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4692892Z warning: NLA/IS02/Proof.lean:1308:24: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4693244Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4693506Z Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4694005Z warning: NLA/IS02/Proof.lean:1322:58: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4694366Z   Matrix.cons_val_one
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4694503Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4694617Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4695202Z   [apply] simp [counterexample, flatMatrix, Matrix.cons_val_zero, Matrix.cons_val_two, Matrix.cons_val_three] at e0 e2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4695626Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4695848Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4696325Z warning: NLA/IS02/Proof.lean:1322:100: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4696685Z   Matrix.cons_val_three
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4696818Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4696935Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4697719Z   [apply] simp [counterexample, flatMatrix, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two] at e0 e2
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4698426Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4698678Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4699182Z warning: NLA/IS02/Proof.lean:1345:58: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4699549Z   Matrix.cons_val_one
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4699689Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4699812Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4700405Z   [apply] simp [counterexample, flatMatrix, Matrix.cons_val_zero, Matrix.cons_val_two, Matrix.cons_val_three] at e02
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4700815Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4701046Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4701525Z warning: NLA/IS02/Proof.lean:1345:100: This simp argument is unused:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4701891Z   Matrix.cons_val_three
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4702033Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4702149Z Hint: Omit it from the simp argument list.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4702717Z   [apply] simp [counterexample, flatMatrix, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two] at e02
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4703121Z 
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:30.4703343Z Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9666959Z ℹ [2638/2639] Built Solution (2.5s)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9668394Z info: Solution.lean:57:0: 'NLA.IS02.counterexample_symmetric_nonnegative_stochastic' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9669772Z info: Solution.lean:59:0: 'NLA.IS02.counterexample_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9671166Z info: Solution.lean:61:0: 'NLA.IS02.counterexample_positive_trace' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9672378Z info: Solution.lean:63:0: 'NLA.IS02.counterexample_spectrum' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9673789Z info: Solution.lean:65:0: 'NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9675232Z info: Solution.lean:67:0: 'NLA.IS02.counterexample_spectral_uniqueness' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9676905Z info: Solution.lean:69:0: 'NLA.IS02.counterexample_outside_locus' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9678229Z info: Solution.lean:71:0: 'NLA.IS02.counterexample_claim' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9679240Z info: Solution.lean:73:0: 'NLA.IS02.not_targetNecessaryCondition' depends on axioms: [propext, Classical.choice, Quot.sound]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:41:32.9838752Z Build completed successfully (2639 jobs).
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:37.1789148Z Exporting #[Quot, Quot.mk, Quot.lift, Quot.ind, NLA.IS02.counterexample_symmetric_nonnegative_stochastic, NLA.IS02.counterexample_trace, NLA.IS02.counterexample_positive_trace, NLA.IS02.counterexample_spectrum, NLA.IS02.sameSpectrum_iff_realEigenvalueMultiset_eq, NLA.IS02.counterexample_spectral_uniqueness, NLA.IS02.counterexample_outside_locus, NLA.IS02.counterexample_claim, NLA.IS02.not_targetNecessaryCondition, propext, Classical.choice, Quot.sound, Nat.add, Nat.sub, Nat.mul, Nat.pow, Nat.gcd, Nat.div, Nat.mod, Nat.beq, Nat.ble, Nat.land, Nat.lor, Nat.xor, Nat.shiftLeft, Nat.shiftRight, String.ofList, Char.ofNat, List, eagerReduce, Nat, String, String.mk, Char, optParam, autoParam, semiOutParam, outParam] from Solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:37.1793287Z Running Lean default kernel on solution.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:37.1793747Z Lean default kernel accepts the solution
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:37.1794138Z Your solution is okay!
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5402653Z PASS: fresh Comparator run and all controls. Evidence: /home/runner/work/_temp/nla-lean-tools/logs/verify-20260913T153914Z-4215
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5576523Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5578208Z ##[group]Run actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5578592Z with:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5578788Z   name: lean-IS-02
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5579046Z   path: /home/runner/work/_temp/nla-lean-tools/logs/
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5579350Z   if-no-files-found: warn
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5579586Z   compression-level: 6
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5579803Z   overwrite: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5580025Z   include-hidden-files: false
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5580256Z env:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5580437Z   GOTOOLCHAIN: local
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5580653Z   XDG_RUNTIME_DIR: /run/user/1001
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5580982Z   DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1001/bus
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.5581287Z ##[endgroup]
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.8309086Z (node:5935) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.8310349Z (Use `node --trace-deprecation ...` to show where the warning was created)
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.8415736Z With the provided path, there will be 13 files uploaded
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.8422466Z Artifact name is valid!
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:42.8423785Z Root directory input is valid!
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.0794100Z Beginning upload of artifact content to blob storage
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.1210893Z (node:5935) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.2501080Z Uploaded bytes 17029
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.2841077Z Finished uploading artifact content to blob storage!
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.2842214Z SHA256 digest of uploaded artifact zip is 27171071d0a2087eaa63cfac39d95529f7037e7c007084852b01fae72d2afeca
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.2843594Z Finalizing artifact upload
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.4795050Z Artifact lean-IS-02.zip successfully finalized. Artifact ID 10320941744
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.4795917Z Artifact lean-IS-02 has been successfully uploaded! Final size is 17029 bytes. Artifact ID is 10320941744
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.4802179Z Artifact download URL: https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34766178560/artifacts/10320941744
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.5006340Z Post job cleanup.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.6487896Z Node 20 is being deprecated. This workflow is running with Node 24 by default. If you need to temporarily use Node 20, you can set the ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true environment variable. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.6490061Z Post job cleanup.
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.7508959Z [command]/usr/bin/git version
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.7538612Z git version 2.55.0
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.7599720Z Temporarily overriding HOME='/home/runner/work/_temp/562aa228-3438-4e8f-99c4-ad0d6d407a17' before making global git config changes
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.7608830Z Adding repository directory to the temporary git global config as a safe directory
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.7610251Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/OpenProblemsInNLA/OpenProblemsInNLA
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.7643030Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.7700782Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.8074571Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.8122296Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.8424398Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.8473553Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.8931353Z Cleaning up orphan processes
+verify (IS-02, eigenvalues-and-inverse-problems/IS-02/lean)	UNKNOWN STEP	2026-09-13T15:42:43.9351868Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@11d5960a326750d5838078e36cf38b85af677262, actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

@@ -51,7 +51,7 @@ singular-value gaps in randomized block Krylov approximation\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} hard\quad\textbf{Importance:} interesting
 to specialist\par}
-{\sffamily\small\bfseries\color{accent}Status: Partially resolved\par}
+{\sffamily\small\bfseries\color{accent}Status: Solved\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
@@ -59,26 +59,28 @@ to specialist\par}
 refinement of an established Krylov bound; specialist impact reflects
 the source's assessment that its practical gain is limited.
 
-\subsection{Partial results ---
-2026-09-13}\label{partial-results-2026-09-13}
+\subsection{Resolution --- affirmative, 13 September
+2026}\label{resolution-affirmative-13-september-2026}
 
-Sidney Holden (Center for Computational Biology, Flatiron Institute,
-Simons Foundation) supplies
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-continuation-2026-09-13/README.md}{further
-partial results and verified affiliation}. The
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-continuation-2026-09-13/report.md}{report,
-Sections 3--8}, proves narrow-band convergence and exact recovery with
-few distinct lower eigenvalues. A
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-continuation-2026-09-13/verification/independent-review.md}{separate
-AI-agent audit} passes these restricted scopes; imported results retain
-credit. No Lean verification was performed.
+\textbf{Sidney Holden}, Center for Computational Biology, Flatiron
+Institute, Simons Foundation.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-full-proof-2026-09-13/report.pdf}{Theorem
+1.1, Theorem 6.4 and Section 7} settle the exact target below, including
+both norm guarantees, right singular-vector energies and boundary cases,
+without additional spectral assumptions.
 
-\textbf{Remaining:} Arbitrary spectra outside these regimes remain
-unresolved. The general bound retains an extra logarithmic factor; no
-full proof or counterexample is established. The original target and
-open count are preserved.
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-full-proof-2026-09-13/verification/independent-review.md}{independent
+Codex AI-agent informal audit} passed, supporting \textit{Solved} under
+repository policy. No external human peer review or formal verification
+is asserted; no Lean was performed.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-full-proof-2026-09-13/README.md}{Source,
+reproduction and review} ·
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-full-proof-2026-09-13/SUBMISSION.md}{Affiliation,
+provenance and earlier partial submissions}. Ratings are historical; the
+original target is retained.
 
-\subsection{Original problem}\label{original-problem}
+\subsection{Original target (retained)}\label{original-target-retained}
 
 Let \(A\in\mathbb R^{n\times d}\) have singular values
 \(\sigma_1\geq\sigma_2\geq\cdots\). Fix integers \(1\leq b\leq k\), set

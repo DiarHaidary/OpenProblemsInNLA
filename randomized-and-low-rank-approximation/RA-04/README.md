@@ -5,15 +5,16 @@
 **Rating rationale:** Hard because this is a focused spectral-gap refinement of an established Krylov bound; specialist impact reflects the source's assessment that its practical gain is limited.  
 **Last checked:** 2026-09-13
 
-**Status:** Partially resolved
+**Status:** Solved
 
-## Partial results — 2026-09-13
 
-Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies [further partial results and verified affiliation](../../references/holden-ra04-continuation-2026-09-13/README.md). The [report, Sections 3–8](../../references/holden-ra04-continuation-2026-09-13/report.md), proves narrow-band convergence and exact recovery with few distinct lower eigenvalues. A [separate AI-agent audit](../../references/holden-ra04-continuation-2026-09-13/verification/independent-review.md) passes these restricted scopes; imported results retain credit. No Lean verification was performed.
+## Resolution — affirmative, 13 September 2026
 
-**Remaining:** Arbitrary spectra outside these regimes remain unresolved. The general bound retains an extra logarithmic factor; no full proof or counterexample is established. The original target and open count are preserved.
+**Sidney Holden**, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Theorem 1.1, Theorem 6.4 and Section 7](../../references/holden-ra04-full-proof-2026-09-13/report.pdf) settle the exact target below, including both norm guarantees, right singular-vector energies and boundary cases, without additional spectral assumptions.
 
-## Original problem
+The [independent Codex AI-agent informal audit](../../references/holden-ra04-full-proof-2026-09-13/verification/independent-review.md) passed, supporting `Solved` under repository policy. No external human peer review or formal verification is asserted; no Lean was performed. [Source, reproduction and review](../../references/holden-ra04-full-proof-2026-09-13/README.md) · [Affiliation, provenance and earlier partial submissions](../../references/holden-ra04-full-proof-2026-09-13/SUBMISSION.md). Ratings are historical; the original target is retained.
+
+## Original target (retained)
 
 Let $`A\in\mathbb R^{n\times d}`$ have singular values $`\sigma_1\geq\sigma_2\geq\cdots`$. Fix integers $`1\leq b\leq k`$, set $`t=\lceil k/b\rceil`$, and set $`k'=bt\leq\mathop{\mathrm{rank}}\nolimits(A)`$. Define
 

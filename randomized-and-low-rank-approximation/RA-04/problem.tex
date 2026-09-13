@@ -34,7 +34,7 @@ approximation},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}RA-04}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-12}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -60,52 +60,25 @@ refinement of an established Krylov bound; specialist impact reflects
 the source's assessment that its practical gain is limited.
 
 \subsection{Partial results ---
-2026-09-12}\label{partial-results-2026-09-12}
+2026-09-13}\label{partial-results-2026-09-13}
 
-\textbf{Author:} Sidney Holden, Center for Computational Biology,
-Flatiron Institute, Simons Foundation
-(\href{https://www.simonsfoundation.org/people/sidney-holden/}{verified
-affiliation}). The
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/RA04_partial_results.pdf}{complete
-report} and
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/src/report.tex}{editable
-source} establish the following partial results, with \(m=k'=bt\) and
-\(\Delta=\Delta_{k'}^{(b)}\).
+Sidney Holden (Center for Computational Biology, Flatiron Institute,
+Simons Foundation) supplies
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-continuation-2026-09-13/README.md}{further
+partial results and verified affiliation}. The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-continuation-2026-09-13/report.md}{report,
+Sections 3--8}, proves narrow-band convergence and exact recovery with
+few distinct lower eigenvalues. A
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-continuation-2026-09-13/verification/independent-review.md}{separate
+AI-agent audit} passes these restricted scopes; imported results retain
+credit. No Lean verification was performed.
 
-Theorem 5.3 proves all three requested guarantees for every admissible
-input with
+\textbf{Remaining:} Arbitrary spectra outside these regimes remain
+unresolved. The general bound retains an extra logarithmic factor; no
+full proof or counterexample is established. The original target and
+open count are preserved.
 
-\[q=O\!\left(\frac{t\log(2m/\Delta)+\log(n/(\delta\varepsilon))}{\sqrt\varepsilon}\right).\]
-
-This has an extra \(t\log m\) term. The requested iteration order holds
-when \(\Delta\leq1/m\) (Corollary 5.4), when the leading spectrum
-consists of exactly \(t\) levels each repeated \(b\) times (Theorem
-6.1), when \(t=2\) with arbitrary admissible leading spectra (Theorem
-7.1), and at the endpoints \(b=1\) and \(b=k\) (Theorem 6.1 and
-Corollary 6.2). Proposition 8.1 gives almost-sure exact optimal
-approximation when \(\mathop{\mathrm{rank}}\nolimits(A)=m\) after
-\(t+1\) blocks. Theorem 4.1 supplies an alternative all-input bound with
-leading term \((m-b+1)\log(3/\Delta)\).
-
-\textbf{Remaining target:} the displayed original bound for arbitrary
-growing \(b,t\), nonzero-width leading clusters and \(\Delta>1/m\) is
-neither proved nor disproved. The report's sufficient interpolation
-estimate (IE) remains unproved. Its raw-monomial conditioning
-counterexample (Proposition 9.1) does not refute RA-04, whose algorithm
-depends on the Krylov subspace.
-
-A
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/verification/independent-review.md}{separate
-independent Codex agent review} passed the partial arguments and checked
-the imported convergence theorem against the primary source. This is
-informal AI-agent review, not external human peer review or formal
-verification. It does not meet the complete-resolution requirement for
-\textbf{Solved}.
-\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-ra04-2026-09-12/README.md}{Submission
-and reproduction record}.
-
-\subsection{Original problem
-(retained)}\label{original-problem-retained}
+\subsection{Original problem}\label{original-problem}
 
 Let \(A\in\mathbb R^{n\times d}\) have singular values
 \(\sigma_1\geq\sigma_2\geq\cdots\). Fix integers \(1\leq b\leq k\), set

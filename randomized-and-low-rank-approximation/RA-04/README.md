@@ -3,27 +3,17 @@
 **Difficulty:** hard  
 **Importance:** interesting to specialist  
 **Rating rationale:** Hard because this is a focused spectral-gap refinement of an established Krylov bound; specialist impact reflects the source's assessment that its practical gain is limited.  
-**Last checked:** 2026-09-12
+**Last checked:** 2026-09-13
 
 **Status:** Partially resolved
 
-## Partial results — 2026-09-12
+## Partial results — 2026-09-13
 
-**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation ([verified affiliation](https://www.simonsfoundation.org/people/sidney-holden/)). The [complete report](../../references/holden-ra04-2026-09-12/RA04_partial_results.pdf) and [editable source](../../references/holden-ra04-2026-09-12/src/report.tex) establish the following partial results, with $`m=k'=bt`$ and $`\Delta=\Delta_{k'}^{(b)}`$.
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies [further partial results and verified affiliation](../../references/holden-ra04-continuation-2026-09-13/README.md). The [report, Sections 3–8](../../references/holden-ra04-continuation-2026-09-13/report.md), proves narrow-band convergence and exact recovery with few distinct lower eigenvalues. A [separate AI-agent audit](../../references/holden-ra04-continuation-2026-09-13/verification/independent-review.md) passes these restricted scopes; imported results retain credit. No Lean verification was performed.
 
-Theorem 5.3 proves all three requested guarantees for every admissible input with
+**Remaining:** Arbitrary spectra outside these regimes remain unresolved. The general bound retains an extra logarithmic factor; no full proof or counterexample is established. The original target and open count are preserved.
 
-```math
-q=O\!\left(\frac{t\log(2m/\Delta)+\log(n/(\delta\varepsilon))}{\sqrt\varepsilon}\right).
-```
-
-This has an extra $`t\log m`$ term. The requested iteration order holds when $`\Delta\leq1/m`$ (Corollary 5.4), when the leading spectrum consists of exactly $`t`$ levels each repeated $`b`$ times (Theorem 6.1), when $`t=2`$ with arbitrary admissible leading spectra (Theorem 7.1), and at the endpoints $`b=1`$ and $`b=k`$ (Theorem 6.1 and Corollary 6.2). Proposition 8.1 gives almost-sure exact optimal approximation when $`\mathop{\mathrm{rank}}\nolimits(A)=m`$ after $`t+1`$ blocks. Theorem 4.1 supplies an alternative all-input bound with leading term $`(m-b+1)\log(3/\Delta)`$.
-
-**Remaining target:** the displayed original bound for arbitrary growing $`b,t`$, nonzero-width leading clusters and $`\Delta>1/m`$ is neither proved nor disproved. The report's sufficient interpolation estimate (IE) remains unproved. Its raw-monomial conditioning counterexample (Proposition 9.1) does not refute RA-04, whose algorithm depends on the Krylov subspace.
-
-A [separate independent Codex agent review](../../references/holden-ra04-2026-09-12/verification/independent-review.md) passed the partial arguments and checked the imported convergence theorem against the primary source. This is informal AI-agent review, not external human peer review or formal verification. It does not meet the complete-resolution requirement for **Solved**. [Submission and reproduction record](../../references/holden-ra04-2026-09-12/README.md).
-
-## Original problem (retained)
+## Original problem
 
 Let $`A\in\mathbb R^{n\times d}`$ have singular values $`\sigma_1\geq\sigma_2\geq\cdots`$. Fix integers $`1\leq b\leq k`$, set $`t=\lceil k/b\rceil`$, and set $`k'=bt\leq\mathop{\mathrm{rank}}\nolimits(A)`$. Define
 

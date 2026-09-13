@@ -1,0 +1,153 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/mathlib-initiative/formalization.yaml/99c678e569c7c4c0772db297c5ddd5e4c9b6322e/schema/v0.4.schema.json
+version: v0.4
+project:
+  name: 'NR-03: quadratic correlation matrix nonnegative rank'
+  description: Statement-first Lean boundary plus a 58-module source proof candidate for the complete prescribed real Boolean matrix and the n = 7 width-127 counterexample obligation; the certificate wrapper uses a reviewed seven-path bridge overlay and its lightweight bridge module has a conditional Linux diagnostic receipt.
+  authors:
+  - George Stepaniants
+  affiliations:
+    George Stepaniants: Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA
+  responsible_maintainers:
+  - George Stepaniants
+  license: Apache-2.0
+repository:
+  role: substantive-development
+sources:
+- title: 'NR-03 — Full nonnegative rank of the quadratic correlation matrix'
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/50838e37dd793830e2cecd1055cfc7e0349490f1/nonnegative-and-positive-factorizations/NR-03/README.md
+  type: web-post
+  location: Complete original target, including every Boolean row/column and every prescribed entry
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: The target is encoded over all `Fin n → Bool`; subtraction in the square is real subtraction.
+- title: 'The quadratic correlation matrix need not have full nonnegative rank'
+  authors:
+  - Sidney Holden
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/50838e37dd793830e2cecd1055cfc7e0349490f1/references/holden-nr03-2026-09-13/NR03_counterexample.tex
+  type: manuscript
+  location: Complete negative resolution and exact n = 7 integer certificate
+  relationship: formalizes
+  author_endorsement: not-contacted
+  note: The retained JSON is source data only; Lean must prove the full scaled identity and denominator bridge.
+- title: 'NR-03 fixed three-bit exact rank partial result'
+  authors:
+  - Matthew J. Colbrook
+  id: https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/50838e37dd793830e2cecd1055cfc7e0349490f1/references/colbrook-factorization-2026-09-11/manuscripts/NR-03_n3_exact_rank.tex
+  type: manuscript
+  location: Historical partial result retained by the canonical page
+  relationship: background
+  author_endorsement: not-contacted
+  note: This formalization does not erase or reassign the earlier partial-result credit.
+related_formalizations:
+- id: https://github.com/sgstepaniants/Forsythe/tree/8d1b0c0545a77b40245e84705aa7d273e6c81e62/lean-proof
+  relationship: other
+  note: Structural example for statement-first LeanCert and Comparator packaging; no Forsythe theorem is imported.
+- id: https://github.com/jaumededios/Schiffer/tree/2938e277969c329caf154e48a3d8823f3635c7f1
+  relationship: other
+  note: Structural example for separating target definitions from proof implementation; no Schiffer theorem is imported.
+automation:
+  methods:
+  - method: agent
+    framework: OpenAI Codex
+    tool_setup: Direct Lean 4.33.1 elaboration with pinned Mathlib/LeanCert objects, then independent Tau Ceti-adapted statement reviews and later Comparator/kernel checks.
+    prompting_notes: Preserve all Boolean vectors and real subtraction; prove the integer certificate entrywise or prove the generic atom-family identity; never trust Python data as a correctness premise; formalize any mask bridge before consuming masks. The bridge overlay only isolates unconditional algebra from the complete row-family premises.
+  notes: AI-assisted formalization requested by George Stepaniants. Two independent statement reviews are retained. The modular proof graph has no placeholder or native evaluator tokens in its active source bodies. The reviewed certificate bridge has a conditional Linux diagnostic receipt, but the complete graph has not yet passed authoritative LeanCert/Comparator elaboration or independent final reviews.
+status:
+  scope: Full canonical target plus complete n = 7 counterexample and rank-minimum bridges, with a zero-placeholder 58-module candidate and reviewed certificate bridge awaiting complete authoritative compilation
+  sorry_count: 0
+  sorry_in_definitions: 0
+  axioms: &id001
+  - propext
+  - Classical.choice
+  - Quot.sound
+  notes: The active modular proof graph has zero literal proof placeholders. The bridge-only diagnostic observed the three listed standard axioms; the same axiom boundary and all full-graph claims remain pending the actual complete LeanCert and Comparator run. The ten intentional Challenge.lean placeholders are excluded by the formalization.yaml schema and comparator boundary.
+  main_results:
+  - declaration: NLA.NR03.cMatrix_nonnegative
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.boolVec_seven_card
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.nonnegative_rank_attained_minimal
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.rank_le_of_factorization
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.scaled_certificate_gives_factorization
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.witness_scaled_certificate
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.witness_factorization
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.witness_rank_upper_bound
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.witness_not_full_rank
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  - declaration: NLA.NR03.not_targetStatement
+    file: NLA/NR03/Rank.lean
+    sorry_count: 0
+    axioms: *id001
+    comparator_config: comparator.json
+    literature_dependencies: []
+  whole_problem_verified: false
+fidelity:
+  divergences: The public statement uses all Boolean vectors directly rather than masks. The proof candidate introduces a seven-bit mask representation only after defining and proving its Boolean-vector correspondence. The formalization retains the full real square `(1 - boolDot a b)^2`, all `n ≥ 3`, the exact 128-by-127 n = 7 dimensions, integer W/V/denominator certificate obligation, and genuine real minimum semantics. No entry is omitted. The target subtraction is real. The implementation uses guarded or positive-part natural subtraction in its integer helpers; natSquareOneMinus_cast proves that the guarded square agrees with the full real square.
+review:
+  status: statement-approved; proof-candidate-review-pending
+  reviewers:
+  - statement-referee-1
+  - statement-referee-2
+  notes: The statement boundary has two independent approvals. The modular proof candidate still requires authoritative Linux LeanCert/default-kernel/Comparator checks and two independent final reviews before Lean-verified status. Its finite family scope is the complete 128-by-128-by-3 row graph described in FULL-ROW-COVERAGE.md; the certificate bridge adds no row restriction or new public hypothesis.
+toolchain:
+  lean: leanprover/lean4:v4.33.1
+  dependency_manifest: lake-manifest.json
+  dependencies:
+    leancert: 621a43d7cf21f87872392a01e874f2f1dbddc926
+    mathlib: 0df444a360eaa60ab8c11dca51a86af692955474
+    plausible: b7eb3304aeae834b12dda98993a37f6a41f6f0bb
+    LeanSearchClient: 5f4d51b81cbd3f6b32b156bfad9056621a040404
+    importGraph: 16f02aa7642864af59f1ff0e384a015994db9118
+    proofwidgets: 4be2e3d5087eeb272cf5a8853b8f9dd025ef5957
+    aesop: 3448c0bcc5ce01b2d1546e483ec3620e32df3d0e
+    Qq: 92c15be17b7caf78c2ad767ec40f89052d908d81
+    batteries: 4488d40d070b9700d4d5a6aa342f0d40c31b2a2d
+    Cli: 6130a47896ce867c6a4a55373441e59e565bad0f
+reproduction:
+  statement_boundary:
+    status: passed locally on macOS using pre-existing pinned dependency objects
+    command: NR03_DEP_ROOT=/path/to/existing/.lake/packages python3 verification/statement-typecheck.py
+    evidence_prefix: The command creates and prints a fresh temporary directory containing the raw command results and elaboration logs.
+    note: All ten dependency revisions and clean tracked sources checked; direct Lean elaboration succeeded with ten intentional Challenge warnings. This is not a dependency object rebuild, mathematical proof, Linux run, or Comparator result.

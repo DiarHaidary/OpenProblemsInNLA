@@ -1,0 +1,535 @@
+{
+  "purpose": "NR-03 canonical source package; modular proof candidate pending authoritative verification",
+  "status": "source-only; conditional bridge diagnostic recorded; complete graph has no Lean/Lake/Comparator verification claim",
+  "author": "George Stepaniants",
+  "affiliation": "Department of Computing and Mathematical Sciences, California Institute of Technology, Pasadena, California, USA",
+  "email_published": false,
+  "mathematical_author": "Sidney Holden",
+  "historical_partial_credit": "Matthew J. Colbrook retained in canonical source correspondence",
+  "repository": "sgstepaniants/OpenProblemsInNLA",
+  "source_commit": "3b3eb8f3fa384e4b3bf640d48bca87cf40db9565",
+  "active_driver": {
+    "source_path": "development/NR03/ci_compile.py",
+    "sha256": "1d8747a8c91038865cecd4e4e2a6bc167e609c15fbebcbcebaff3437b50c5e1e",
+    "included_in_canonical_draft": false,
+    "role": "provenance only; its development-specific path and remote controls are not advertised as a canonical reproduction command",
+    "base_sha256": "55335f7a7338a7da6bf898b185873a5c16e7729772621fff45b063dec106ea5a",
+    "overlay": "certificate-bridge"
+  },
+  "active_module_count": 58,
+  "active_module_groups": {
+    "foundations": [
+      "NLA/NR03/Definitions.lean",
+      "NLA/NR03/Encoding.lean",
+      "NLA/NR03/FamilyDefs.lean",
+      "NLA/NR03/Index.lean",
+      "NLA/NR03/Core.lean"
+    ],
+    "row_certificate_modules": 48,
+    "assembly_and_exports": [
+      "NLA/NR03/FamilyIdentities.lean",
+      "NLA/NR03/Certificate.lean",
+      "NLA/NR03/Rank.lean",
+      "Solution.lean"
+    ],
+    "certificate_support_modules": [
+      "NLA/NR03/CertificateBridge.lean"
+    ]
+  },
+  "active_modules": [
+    {
+      "path": "NLA/NR03/Definitions.lean",
+      "source_path": "development/NR03/NLA/NR03/Definitions.lean",
+      "sha256": "5157fd499d2f63d218012f96bee43f30e5f57e5a2353fde13878af46d30fda04",
+      "bytes": 3846
+    },
+    {
+      "path": "NLA/NR03/Encoding.lean",
+      "source_path": "development/NR03/NLA/NR03/Encoding.lean",
+      "sha256": "4408496c44153ff61a6ca89f87a243d2bbb908c1ef9e20bf2384720a44391657",
+      "bytes": 4702
+    },
+    {
+      "path": "NLA/NR03/FamilyDefs.lean",
+      "source_path": "development/NR03/NLA/NR03/FamilyDefs.lean",
+      "sha256": "1e01f68f20dafa07be2e2a3beca832f0a3925b90a0e1fcc496d087082bdf9415",
+      "bytes": 4213
+    },
+    {
+      "path": "NLA/NR03/Index.lean",
+      "source_path": "development/NR03/NLA/NR03/Index.lean",
+      "sha256": "c404d36ba7ce9888f5bf31ac959ccc78be2a380d628b83972f6c8940cb709370",
+      "bytes": 3311
+    },
+    {
+      "path": "NLA/NR03/Core.lean",
+      "source_path": "development/NR03/NLA/NR03/Core.lean",
+      "sha256": "1e61cc3df229557d8d12e4c3608d15007a89b786f5270da2985fd5a84aed7ea5",
+      "bytes": 5132
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block00.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block00.lean",
+      "sha256": "de06fa4cd43fc6ad6982ebf821958f6c8267106d50dda8ce9d9b3cfec5913d61",
+      "bytes": 1903
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block01.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block01.lean",
+      "sha256": "f092d372933088c042d140413a238b32f630810d39fe880262dff30f83f017d0",
+      "bytes": 1949
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block02.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block02.lean",
+      "sha256": "9293dec609a90b25884e7b6488da69072ceb97245f3d18bd34e997a3448c177e",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block03.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block03.lean",
+      "sha256": "143274fbbfbde939085c9b37b7ef20966813f44a5afc6b24d74574deffff2e4b",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block04.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block04.lean",
+      "sha256": "f80ff26a2aa1fb86ae4cd59f57a49e916656c2ab50d572aef5a988462ce71d28",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block05.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block05.lean",
+      "sha256": "76876af51590835038837ebbedfd8963f2d514f8162e871b9cdc8653a6799d15",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block06.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block06.lean",
+      "sha256": "dbea7d8edfe49408c6442cb1f7c536ee0e4d86391be78aeb86d32a52621585c4",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block07.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block07.lean",
+      "sha256": "af55aa164e07c06050fb1862f92b0e6a23f950e9a6e33ae5a8680c8dc245621d",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block08.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block08.lean",
+      "sha256": "47a1c810bf1088f4f364ebfd75a9090f1550a32efcc350f4fe58ed206b9d24c6",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block09.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block09.lean",
+      "sha256": "797f23a6d42e101dee622acd3a7df0b35c21e0e7b7a796de51765e8c97e3761e",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block10.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block10.lean",
+      "sha256": "4332d0f3e70b34bcc047ae7e78537627bab6fddcb2180b6c793ac0931c36cc07",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block11.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block11.lean",
+      "sha256": "6ccfa9ce029fe61deb72c2198b9646ba298efc42a56de1158f37e45acf569764",
+      "bytes": 1957
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block12.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block12.lean",
+      "sha256": "711dc5ebfed0c4c8ae5600fd659d943768fa106115e239f9f397cde23dcc145b",
+      "bytes": 1973
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block13.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block13.lean",
+      "sha256": "9dc6961bc34f0496eb65403888d4e342f1c20d0398100cbe7a5210509ffbf618",
+      "bytes": 1989
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block14.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block14.lean",
+      "sha256": "8f1a93acca83c5a2a9f9ecff3b1697ba80288a969ea34eb7136f2f9ece93013e",
+      "bytes": 1989
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Singleton/Block15.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Singleton/Block15.lean",
+      "sha256": "bb417e14367b068e28174b3a2869a47a0945f4833b439c1215b74604adfa6944",
+      "bytes": 1989
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block00.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block00.lean",
+      "sha256": "b79f22173a1dedf9478561976b34de2551b01e9e76afa3d43c34269d03937993",
+      "bytes": 1795
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block01.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block01.lean",
+      "sha256": "cf858d4232535d02fb4d162e64816d832a910869250656da9b3ba0c4750aab2d",
+      "bytes": 1814
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block02.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block02.lean",
+      "sha256": "1d5247c1ca46504ecd7ab585a12bcbdbfa347ca60c242d057fd47e1643fb6b4e",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block03.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block03.lean",
+      "sha256": "d95e7bb8709d5f000bb61a92074cf9160cea53a1f2894e7e491c5df384730b4d",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block04.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block04.lean",
+      "sha256": "743c60c863391b3e0f253ffe5de3194988fa121fb258ed63b4f5a70d86f30655",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block05.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block05.lean",
+      "sha256": "7cffa3bc8c74278da598a7695b9f3fd96e3f847a50d5b6e7bf0fc418b6cdeb51",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block06.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block06.lean",
+      "sha256": "149b3c3d82f0eb02f04140e39d3167d24d9e7e3f3ebef4e42f5daa0bb9134a1d",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block07.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block07.lean",
+      "sha256": "69aaba7da3f6f2e747b72c345a5b62c41a36f82ec20983e31e183860657f4a55",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block08.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block08.lean",
+      "sha256": "2fd52c986852f1d8d457d19c0e89b63600c4b86e66d9f3a20592b75050ac577f",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block09.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block09.lean",
+      "sha256": "0334d8faa53ae47388cdc90c0f090dce265ffa1242c01fc0e29be10d187c3612",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block10.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block10.lean",
+      "sha256": "3b43ca67c12597b6e9340028df7c6235278ba90f571121d05f53a5a8915ae2c1",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block11.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block11.lean",
+      "sha256": "2e6da70b667a7bacbdd768bb90eef82633c26e1c066308d3fba0332e40cf457b",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block12.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block12.lean",
+      "sha256": "ea32035cdd452eee117dd9b19d76448878504e618898ec4c197d3af00276dd4f",
+      "bytes": 1838
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block13.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block13.lean",
+      "sha256": "3bcaae822d8c2e06324fb5904253e0c693c5dd13fea55fc1283bfaeb8fa859cd",
+      "bytes": 1854
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block14.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block14.lean",
+      "sha256": "3c6258955331769cbe18a0c75656c4d84e7ad04dea9ac477fd1551ab8e342ad7",
+      "bytes": 1854
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Pair/Block15.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Pair/Block15.lean",
+      "sha256": "ed4f0f3125528d843621ee6b127996702ddd146400a4423948eed0629f70ddc1",
+      "bytes": 1854
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block00.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block00.lean",
+      "sha256": "a43707705632f40f408440e3fd1bee24c27cf4c3401a51388ac36a0ee042f5bc",
+      "bytes": 1790
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block01.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block01.lean",
+      "sha256": "a485ca8012cef2a0f1805405456c1f5833a239af8ac087c6ea4161e26d781368",
+      "bytes": 1814
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block02.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block02.lean",
+      "sha256": "ac881c24bc2731c5681c2e171d08c2d9653c88fcdb11b2d14eb80fcac07bd6fc",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block03.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block03.lean",
+      "sha256": "6cdcbc3b790dc1184ffc3892c1911fd633d1c710085bbdb80a17833f9fcb8d08",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block04.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block04.lean",
+      "sha256": "4d63a0ad31b2f577b8d1ca04ab632e0b0c9605373fa4cd97a05f60a0080aabee",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block05.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block05.lean",
+      "sha256": "f1f5fabbe981666d5318c61aee881f2cc4ae04fb80eab7b26b76fbbce55e1bfd",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block06.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block06.lean",
+      "sha256": "bbf486b448a4c3d738e7237f6ff9474352f2886fedf61c151710396012336d69",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block07.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block07.lean",
+      "sha256": "358a86b85ceeba6db3ca10834c0b77bcdaf7f5164312090ca2a6a007da2917a5",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block08.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block08.lean",
+      "sha256": "6c2436cae31570c2e76f362dbdfc53a9649d64f9ff5ef53d45a617eaa584bbcb",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block09.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block09.lean",
+      "sha256": "f4c421e0082bf84ea1c4eada8b6c56340f9a260ee01b61fc2b380a7ed3c11ace",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block10.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block10.lean",
+      "sha256": "65e445c3e879079d686ac8cc01c61af9bca0534f059dbf41a47495e7e8eab1f1",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block11.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block11.lean",
+      "sha256": "625aff3fd3d278a8292a8472ededc751793f72a779b0f38a4bfedc136f3a04cd",
+      "bytes": 1822
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block12.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block12.lean",
+      "sha256": "e0cff5ab40f32edda9389b25e63a2401659eaca2067485a7c2fddf72c677fb7f",
+      "bytes": 1838
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block13.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block13.lean",
+      "sha256": "6258b117a10dc3a73f736ff206a71de1e5f1acd742c5689ef60b3f5b87f6af01",
+      "bytes": 1854
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block14.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block14.lean",
+      "sha256": "42d4cc2ed30b60631a2835e7fe6ae30eeda8c385c5c459d11eeb7975c4deced4",
+      "bytes": 1854
+    },
+    {
+      "path": "NLA/NR03/RowCertificate/Four/Block15.lean",
+      "source_path": "development/NR03/NLA/NR03/RowCertificate/Four/Block15.lean",
+      "sha256": "fd0f46cc382069bc780c4a8d3fd1a1b7902860ca0b55b2efaebffdd2dd0ce862",
+      "bytes": 1854
+    },
+    {
+      "path": "NLA/NR03/FamilyIdentities.lean",
+      "source_path": "development/NR03/NLA/NR03/FamilyIdentities.lean",
+      "sha256": "9772ad9df0c7e2953a28a415b35d3b831332f309ed6cea5b94861be9f9f04dfa",
+      "bytes": 18135
+    },
+    {
+      "path": "NLA/NR03/CertificateBridge.lean",
+      "source_path": "development/NR03/NLA/NR03/CertificateBridge.lean",
+      "sha256": "96e7f3d3611fd91b06080cf1d096cb6b9df8b73b69786c7599f703c496ebcc2b",
+      "bytes": 5816,
+      "overlay": "certificate-bridge"
+    },
+    {
+      "path": "NLA/NR03/Certificate.lean",
+      "source_path": "development/NR03/NLA/NR03/Certificate.lean",
+      "sha256": "05cd28513d8e2e7285f1e2039db944cd8beffface3c72df7fc4079555e624fdc",
+      "bytes": 1188,
+      "overlay": "certificate-bridge"
+    },
+    {
+      "path": "NLA/NR03/Rank.lean",
+      "source_path": "development/NR03/NLA/NR03/Rank.lean",
+      "sha256": "3db45d0fb2688edf93460ea9fa24c3f8fa219574c0a5962c519c08c8930fc876",
+      "bytes": 4051
+    },
+    {
+      "path": "Solution.lean",
+      "source_path": "development/NR03/Solution.lean",
+      "sha256": "4a0ae10fcd53d4a894a7e72b9d39c4fad8da1e814428b9df16648d85abb9ddb1",
+      "bytes": 1665
+    }
+  ],
+  "row_coverage": {
+    "families": [
+      "Singleton",
+      "Pair",
+      "Four"
+    ],
+    "rows_per_family": 128,
+    "columns_per_family": 128,
+    "ordered_pairs_per_family": 16384,
+    "literal_row_lemmas": 384,
+    "sequential_blocks": 48,
+    "blocks_per_family": 16,
+    "rows_per_block": 8,
+    "total_family_entry_obligations": 49152,
+    "target_scope": "complete finite family graph; no row or column restriction"
+  },
+  "supplementary_data": {
+    "path": "NLA/NR03/CertificateData.lean",
+    "sha256": "115f4cd2fea23404b18c7a5a24862590b95bcfb3c3ff3a5aca8e227d99675787",
+    "imported_by_active_solution": false,
+    "role": "retained comparison/source data only; not a correctness premise or formal bridge"
+  },
+  "frozen_boundary": {
+    "Definitions.lean": "5157fd499d2f63d218012f96bee43f30e5f57e5a2353fde13878af46d30fda04",
+    "Challenge.lean": "4f1764cf9c604f33ed6f285e83ca32ebd1ae1fb1fd8f763a1c4a719ef068c335",
+    "comparator.json": "ea1cea90b8e25535a31dca7fc620494ded851587609bb1473c651d07757f40bd",
+    "lakefile.toml": "48067e84ad4450090a93dc620da10e670360a459ead81c97b71557ff24c704e4",
+    "lake-manifest.json": "71e8401646a361d36b841337a9e08cbe0633fbbbce8e5ce9b5db0e10dfefbb5c",
+    "lean-toolchain": "3aac669c7a910ec2389f4e4f921b605adf6ebf2d1e0c9b9cd0be4d33f3f5db71"
+  },
+  "excluded_development_material": [
+    "development/NR03/NLA/NR03/Probe*.lean",
+    "development/NR03/family-probe/",
+    "development/NR03/grouped-row-probe/",
+    "development/NR03/single-row-probe/",
+    "development/NR03/modular-diagnostic-20260913/",
+    "development/NR03/repairs/",
+    "development/NR03/row-certificates/",
+    "development/NR03/ci_compile.py",
+    ".github/workflows/lean-nr03-development.yml"
+  ],
+  "claims": {
+    "lean_compiled": false,
+    "leancert_verified": false,
+    "comparator_executed": false,
+    "default_kernel_checked": false,
+    "whole_problem_verified": false,
+    "solved_status": false,
+    "conditional_bridge_diagnostic": true,
+    "full_graph_compiled": false,
+    "diagnostic_run_id": 34782819568
+  },
+  "self_exclusion": "This manifest is intentionally excluded from its own hash inventory.",
+  "documentation_corrections": {
+    "formalization.yaml": {
+      "canonical_before_sha256": "85d7ce0848ddbab18e492c794c9c55661b088272873984f4141ff0081fa17abe",
+      "reviewed_correction_sha256": "8a7dc0b78d77d1ee34e0894cef069df8d945d3224a829bf4a3a6b1e111743d10",
+      "draft_final_sha256": "68255b570a9128c421c7143341b7a20dfc41903ff8d7d69b23a0417d2d4cac04",
+      "scope": "metadata wording only: real target subtraction plus guarded natural-helper cast bridge; modular status/defining-file paths; bridge package records the reviewed seven-path overlay and 58-module graph",
+      "bridge_draft_sha256": "0570a120d52e2033060863ad4b75e502ffb5aac93efdfccc7434e1196de08569"
+    },
+    "NLA/NR03/CertificateData.lean": {
+      "canonical_before_sha256": "6d6dd3e4ad2265ff94b42e6f21d0f08a00a0ad2f0f7b6480dd7877fb41eb6206",
+      "reviewed_correction_sha256": "115f4cd2fea23404b18c7a5a24862590b95bcfb3c3ff3a5aca8e227d99675787",
+      "draft_final_sha256": "115f4cd2fea23404b18c7a5a24862590b95bcfb3c3ff3a5aca8e227d99675787",
+      "scope": "header only: supplementary comparison data, not imported or treated as a formal bridge/correctness oracle"
+    }
+  },
+  "bridge_overlay": {
+    "base_commit": "fe4140cced3fc4b4efdd4ef4e202d27156a1cd4f",
+    "status": "reviewed source overlay; conditional bridge diagnostic passed; full canonical verification pending",
+    "exact_path_count": 7,
+    "paths": [
+      {
+        "source_path": "development/NR03/NLA/NR03/Certificate.lean",
+        "kind": "replaced",
+        "source_sha256": "05cd28513d8e2e7285f1e2039db944cd8beffface3c72df7fc4079555e624fdc",
+        "package_path": "NLA/NR03/Certificate.lean",
+        "package_sha256": "05cd28513d8e2e7285f1e2039db944cd8beffface3c72df7fc4079555e624fdc"
+      },
+      {
+        "source_path": "development/NR03/NLA/NR03/CertificateBridge.lean",
+        "kind": "added",
+        "source_sha256": "96e7f3d3611fd91b06080cf1d096cb6b9df8b73b69786c7599f703c496ebcc2b",
+        "package_path": "NLA/NR03/CertificateBridge.lean",
+        "package_sha256": "96e7f3d3611fd91b06080cf1d096cb6b9df8b73b69786c7599f703c496ebcc2b"
+      },
+      {
+        "source_path": "development/NR03/SOURCE_INPUTS.json",
+        "kind": "changed",
+        "source_sha256": "21f3a6874d6eef74fb4b821219c50656f337824e234c1ec2d8eee486a584bf4b",
+        "package_path": null,
+        "package_sha256": null
+      },
+      {
+        "source_path": "development/NR03/certificate-bridge/DISCHARGE-GRAPH.json",
+        "kind": "added",
+        "source_sha256": "bd37bf43c3cf2aa87697bc4004f21cdd208a2e93144cf6c5474e80d7570feadc",
+        "package_path": "certificate-bridge/DISCHARGE-GRAPH.json",
+        "package_sha256": "bd37bf43c3cf2aa87697bc4004f21cdd208a2e93144cf6c5474e80d7570feadc"
+      },
+      {
+        "source_path": "development/NR03/certificate-bridge/INTERFACES.md",
+        "kind": "added",
+        "source_sha256": "ee9cb2c0e6d7c71fa10b70ce8879e78a4cfcfd8dae975c9389ede70355b1ae2d",
+        "package_path": "certificate-bridge/INTERFACES.md",
+        "package_sha256": "ee9cb2c0e6d7c71fa10b70ce8879e78a4cfcfd8dae975c9389ede70355b1ae2d"
+      },
+      {
+        "source_path": "development/NR03/certificate-bridge/PROVENANCE.md",
+        "kind": "added",
+        "source_sha256": "c7997979c68819588167d9d74e8444dcbde5174d896f03d156bab5c67827ea56",
+        "package_path": "certificate-bridge/PROVENANCE.md",
+        "package_sha256": "c7997979c68819588167d9d74e8444dcbde5174d896f03d156bab5c67827ea56"
+      },
+      {
+        "source_path": "development/NR03/ci_compile.py",
+        "kind": "changed",
+        "source_sha256": "1d8747a8c91038865cecd4e4e2a6bc167e609c15fbebcbcebaff3437b50c5e1e",
+        "package_path": null,
+        "package_sha256": null
+      }
+    ],
+    "active_effect": [
+      "NLA/NR03/Certificate.lean",
+      "NLA/NR03/CertificateBridge.lean"
+    ],
+    "non_active_development_changes": [
+      "development/NR03/SOURCE_INPUTS.json",
+      "development/NR03/ci_compile.py"
+    ],
+    "review_receipt": "certificate-bridge/PROVENANCE.md",
+    "integration_receipt": "certificate-bridge/INTEGRATION-PATHS.json",
+    "diagnostic": {
+      "run_id": 34782819568,
+      "job_id": 103792798110,
+      "commit": "3b3eb8f3fa384e4b3bf640d48bca87cf40db9565",
+      "conclusion": "conditional bridge-only success",
+      "receipt": "reviews/bridge-diagnostic/RECEIPT.json",
+      "full_graph_compiled": false,
+      "comparator_executed": false,
+      "whole_problem_verified": false
+    }
+  }
+}

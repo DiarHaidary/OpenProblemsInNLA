@@ -1,0 +1,59 @@
+{
+  "scope": "Actual Linux conditional helper diagnostic; implementer operational audit, not independent full mathematical acceptance",
+  "run_id": 34782819568,
+  "job_id": 103792798110,
+  "commit": "3b3eb8f3fa384e4b3bf640d48bca87cf40db9565",
+  "conclusion": "success",
+  "job_elapsed_seconds": 139.0,
+  "observed_data_types": [
+    "NLA.NR03.genericW : Matrix (BoolVec 7) (Fin 127) \u2115",
+    "NLA.NR03.genericV : Matrix (Fin 127) (BoolVec 7) \u2115",
+    "NLA.NR03.genericD : BoolVec 7 \u2192 \u2115"
+  ],
+  "observed_axioms": {
+    "NLA.NR03.genericD_positive": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.CertificateBridge.full_sum_decomposition": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.CertificateBridge.full_identity_of_components": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "NLA.NR03.CertificateBridge.scaled_identity_of_full": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "all_four_helper_theorems_compiled": true,
+  "six_module_timings_seconds": {
+    "compile-leancert-verification": 3.16,
+    "compile-Definitions": 2.251,
+    "compile-Encoding": 3.605,
+    "compile-FamilyDefs": 3.356,
+    "compile-Index": 3.573,
+    "compile-CertificateBridge": 3.242
+  },
+  "raw_bridge_stdout_sha256": "103425e369d91b638542af2a2363bb04ce87b5ff076a8d04f830ec7917973f30",
+  "raw_bridge_stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "reviewed_source_snapshot_matches_all_107_actual_inputs": true,
+  "source_review_report_sha256": "f50de91e27abd5ccf98800f1adb80c53c1f5e6942302c37968ec3b07aefd216d",
+  "unchanged_limits": {
+    "module_memory_mib": 4096,
+    "module_threads": 1,
+    "module_timeout_seconds": 120,
+    "workflow_timeout_minutes": 30
+  },
+  "full_original_NR03_verified": false,
+  "final_Certificate_Rank_Solution_compiled": false,
+  "Comparator_executed": false,
+  "default_kernel_and_sandbox_controls_executed": false,
+  "local_Lean_Lake_executed": false
+}

@@ -1,0 +1,20 @@
+{
+  "provenance": "Exact inline Python source transcribed from the actual earlier tool-call command text; not runtime-captured stdin. Original recorded outputs and receipts unchanged. Navigation only; material checks subsequently repeated by final standalone verifier.",
+  "commands": {
+    "inventory-shapes": {
+      "receipt": "receipts/inventory-shapes.json",
+      "stdin_utf8_source": "from pathlib import Path\nimport json,shutil\nP=Path('randomized-and-low-rank-approximation/RA-20/lean');E=P/'verification/publication-preparation-2026-09-13'\nfor n in ['EVIDENCE-MANIFEST.json','PREFLIGHT.json','DOCUMENT-CHECKS.json','CHECKS.json','pdf-operation-result.json']:\n p=E/n\n if not p.exists():continue\n d=json.loads(p.read_text());print(n)\n print(json.dumps({k:v for k,v in d.items() if k not in ['files','project_baseline','commands','relative_paths_and_links','outputs']},indent=2))\n if 'files' in d:print('sample',list(d['files'].items())[:2])\nfor n in sorted(P.rglob('EVIDENCE-MANIFEST.json')):\n if E in n.parents:continue\n d=json.loads(n.read_text());print(str(n.relative_to(P)),json.dumps({k:v for k,v in d.items() if k not in ['files','source_files','source_git_blobs']}), 'first_files',list(d['files'].items())[:2])\nprint('render tools',[(x,shutil.which(x)) for x in ['pdftoppm','pdfinfo','pdftotext']])\n",
+      "stdin_sha256": "790efc4eaadd5f14c30737d53e8fb3b519dc098bec04a06959f6bcbcc7380724"
+    },
+    "evidence-source-list": {
+      "receipt": "receipts/evidence-source-list.json",
+      "stdin_utf8_source": "from pathlib import Path\nimport json\nP=Path('randomized-and-low-rank-approximation/RA-20/lean')\nfor root in ['verification/publication-preparation-2026-09-13','verification/linux-run-2026-09-13']:\n e=P/root\n print(root)\n for p in sorted(e.iterdir()):print(p.name)\nprint('STATEMENT PACKAGE')\nd=json.loads((P/'reviews/statement-package-manifest.json').read_text());print({k:v for k,v in d.items() if k!='files'})\nprint('CHECKS COMMANDS')\nd=json.loads((P/'verification/publication-preparation-2026-09-13/CHECKS.json').read_text())\nfor x in d['commands']:print(json.dumps(x))\n",
+      "stdin_sha256": "c9e050694b2c35a70ce51de863d5ab57c62027c1cef6688c3d306bbe4d73a19d"
+    },
+    "exact-membership-shapes": {
+      "receipt": "receipts/exact-membership-shapes.json",
+      "stdin_utf8_source": "from pathlib import Path\nimport json\nP=Path('randomized-and-low-rank-approximation/RA-20/lean').resolve();A=P/'verification/publication-preparation-2026-09-13'\nb=json.loads((A/'PREFLIGHT.json').read_text());prior={P/n for n in b['project_baseline']}\nfor item in json.loads((A/'VALIDATION.json').read_text())['accepted_prior_inventories']:\n p=P/item['file'];m=json.loads(p.read_text());base=P if p.name=='statement-package-manifest.json' else p.parent\n bound={(base/k).resolve() for k in m['files']}\n if p.name=='statement-package-manifest.json':\n  frozen=set(json.loads((P/'reviews/statement-freeze.json').read_text())['files']);print('statementpackage vs freeze68',sorted(set(m['files'])-frozen),sorted(frozen-set(m['files'])))\n  continue\n own={x for x in prior if x.is_relative_to(p.parent) and x!=p};declared={x for x in bound if x.is_relative_to(p.parent)}\n print(item['file'],'own',len(own),'bound',len(declared),'missing',sorted(str(x.relative_to(P)) for x in own-declared),'extra',sorted(str(x.relative_to(P)) for x in declared-own))\n",
+      "stdin_sha256": "9e780c6590382f3a3422b8fa516d3481cd5d2a8f4210e46946516939765fa6bc"
+    }
+  }
+}

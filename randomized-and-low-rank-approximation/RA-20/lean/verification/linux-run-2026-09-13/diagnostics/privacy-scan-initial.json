@@ -1,0 +1,13 @@
+{
+  "scope": "Reviewer-only overly broad address-shaped-token diagnostic; no private address values were displayed or evidence bytes changed.",
+  "failed_assertion": "assert not matches, 'Address-like tokens require safe inspection before publication; no address values displayed'",
+  "exit_code": 1,
+  "reported_paths_only": [
+    "remaining-artifacts-retrieval.json",
+    "whole-run-verification.json",
+    "commands/source-003/stdout",
+    "commands/020-artifact-10312939576/stdout::verify-20260913T065357Z-4152/result.json"
+  ],
+  "raw_traceback": "Traceback (most recent call last):\n  File \"<stdin>\", line 22, in <module>\nAssertionError: Address-like tokens require safe inspection before publication; no address values displayed\n",
+  "resolution": "The four distinct matches are the exact Homebrew Python-version path token and the three exact pinned action-name/commit.txt filename tokens. These are paths, not email addresses. The final scanner recognizes only these exact four source-derived tokens and rejects every other match. All original raw and compressed artifact bytes remain unchanged."
+}

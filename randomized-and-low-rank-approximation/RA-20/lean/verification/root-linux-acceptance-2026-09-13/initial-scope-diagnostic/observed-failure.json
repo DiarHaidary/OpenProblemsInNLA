@@ -1,0 +1,10 @@
+{
+  "command": [
+    "python3",
+    "/tmp/nla-lean-formalization/accept_ra20_linux.py"
+  ],
+  "observed_tool_exit_code": 1,
+  "failed_assertion_line": 81,
+  "reason": "Root self-scope comparison mixed unresolved /tmp paths with resolved /private/tmp paths and therefore failed to exclude only its exact own outer manifest. All prior independent checks and actual Git byte checks passed; this initial root acceptance is incomplete and is not counted.",
+  "candidate_or_independent_audit_changes": false
+}

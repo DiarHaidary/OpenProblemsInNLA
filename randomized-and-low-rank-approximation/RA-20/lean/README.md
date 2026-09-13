@@ -1,13 +1,13 @@
-# RA-20 Lean proof — Linux verification candidate
+# RA-20 Lean proof and accepted verification
 
 The complete twelve-export proof **refutes the original joint critical-count
-conjecture**: the generic count at the allowed parameters `n=s=3` is three,
-whereas the conjecture predicts four. Two independent final mathematical
-referees approved the frozen proof, and the [coordinator accepted both
-reports](verification/final-review-acceptance.json) on 13 September 2026.
-**Canonical status remains Solved.** Independent candidate packaging review,
-actual non-root Ubuntu Comparator/default-kernel/control verification,
-independent operational acceptance and canonical publication are still pending.
+conjecture**: the genuine generic count at the allowed parameters `n=s=3` is
+three, whereas its formula predicts four. Two independent final mathematical
+reviews, independent candidate packaging and operational reviews, and the
+[coordinator's accepted Linux verification](verification/root-linux-acceptance-2026-09-13/ROOT-ACCEPTANCE.json)
+support **Lean verified** status. Publication review and upstream integration
+are separate from these accepted mathematical and Linux checks. This document
+does not claim an upstream merge.
 
 Formalization author: **George Stepaniants**, Department of Computing and
 Mathematical Sciences, California Institute of Technology, Pasadena, California,
@@ -72,7 +72,7 @@ Hessian theorem proves nondegeneracy. No separate scheme-theoretic
 intersection-multiplicity theorem is claimed; the canonical target counts
 distinct generic smooth critical points.
 
-## Statements, reviews and retained evidence
+## Reviewed evidence
 
 [Numerical and mathematical targets](NUMERICAL_TARGETS.md), the unchanged
 [Challenge](Challenge.lean) and Definitions were fixed before implementation.
@@ -106,11 +106,53 @@ diagnostics remain retained.
 
 The accepted [final-review gate](verification/final-review-acceptance.json)
 has SHA-256 `a1c7ffebd2c0db8159b9861adf3663051b8e03346b776393553773d97e0abbbb`.
-This documentation was subsequently prepared by `/root/ra20_final_referee1`.
-That document-author role adds no independent mathematical or packaging
-approval. A different reviewer must inspect this concrete installation before
-a candidate commit and Linux run. No candidate Git revision or Linux run is
-asserted at this stage.
+The [independent candidate packaging review](reviews/candidate-packaging-referee-2026-09-13.md)
+preceded the committed candidate. After its independent mathematical review,
+`/root/ra20_final_referee1` authored the candidate documents and later these
+publication documents; that author role adds no
+independent approval of its own packaging or publication.
+
+## Actual Ubuntu verification - 13 September 2026
+
+[Immutable proof revision](https://github.com/sgstepaniants/OpenProblemsInNLA/tree/43603b173beb294c2588d83f936a8a96246fd5f0/randomized-and-low-rank-approximation/RA-20/lean)
+`43603b173beb294c2588d83f936a8a96246fd5f0` passed
+[run 34743832047](https://github.com/sgstepaniants/OpenProblemsInNLA/actions/runs/34743832047),
+attempt 1, on non-root Ubuntu 24.04. All 17 workflow jobs succeeded, including
+the RA-20 job and separate checker-controls job. The actual default Lean kernel
+replayed the exported solution, and the real Comparator matched all twelve
+frozen contracts with no definition exceptions. This catalog ran that Linux
+workflow and reviewed its original artifacts; no local macOS Comparator
+execution is claimed.
+
+The actual source build passed **61 LeanCert kernel assertions** and printed
+**57 axiom reports covering 45 distinct declaration names**. Every report
+contains only `propext`, `Classical.choice`, and `Quot.sound`. The additional
+twelve diagnostic prints in each earlier local review account for its 69
+reports and are not part of the authoritative source run. Challenge's
+deliberate reference admissions are isolated from Solution.
+
+Both the standalone checker and RA-20 preproof controls passed: two sandbox
+modes, four unsupported-option rejections, three raw default-kernel controls,
+five Comparator fixtures and two forbidden-axiom controls. The invalid proof,
+quotient mismatch, statement/kind/helper mismatch, `sorry` and native-execution
+fixtures fail at their intended gates. In the nested-namespace check, bwrap
+ran but UID-map setup was denied before the inner write; no executed inner
+write syscall is claimed. The original control and isolation logs are retained.
+
+The fresh project compiled the proof using all ten pinned dependencies and
+**8,690 official matching Mathlib cache files**. This was not a from-source
+rebuild of all Mathlib. The toolchain, dependency objects, trusted Challenge,
+exporter, default kernel and checker infrastructure remain the disclosed trust
+boundary. Exact algebra removes numerical interval computations.
+
+The [independent operational report](reviews/linux-operational-referee-2026-09-13.md)
+and [complete original runtime evidence](verification/linux-run-2026-09-13/runtime-verification.json)
+bind all **1,092 candidate Git inputs**, every artifact and all source/line
+axiom records. The operational seal has 1,589 entries. The coordinator rechecked
+and accepted it in the [root acceptance](verification/root-linux-acceptance-2026-09-13/ROOT-ACCEPTANCE.json),
+SHA-256 `a2c3a74eb858edb859d34d8bd2985dc54710e31816412d285c32a547e080e57e`;
+its complete seal binds 1,604 files. These are accepted mechanical verification
+results, not an additional independent mathematical approval.
 
 The exact earlier [statement-stage README](verification/pre-candidate-README.md)
 is archived with SHA-256
@@ -119,8 +161,16 @@ It, [SourceCorrespondence](SourceCorrespondence.md), PROOF_MAP and frozen source
 phase notices retain their dated descriptions. This README and the accepted
 gates supply the current status without rewriting those historical records.
 The [candidate installation record](verification/linux-candidate-2026-09-13/HANDOFF.md)
-and its verifier preserve the complete prior inventory through that one
-archived README; historical manifests bind their original version.
+is a dated record. The exact checked candidate
+[README](verification/publication-preparation-2026-09-13/archive/candidate-README.md)
+and [metadata](verification/publication-preparation-2026-09-13/archive/candidate-formalization.yaml)
+are now archived at their original SHA-256 values. The
+[publication handoff and read-only verifier](verification/publication-preparation-2026-09-13/HANDOFF.md)
+check every historical manifest with strict exact-path plus expected-hash
+archive mappings, including both old README versions and the canonical page.
+No proof, frozen statement, dependency pin or previous review/evidence file
+was changed for publication. Older pending-phase notices are superseded by the
+accepted gates and this current documentation.
 
 ## Pinned tools and reproduction
 
@@ -142,11 +192,12 @@ lake build Solution
 
 The historical Lake default still selects Challenge, so a bare `lake build`
 is not the proof check. The retained fresh direct-source reviewer logs describe
-their actual method; this candidate-document task ran no new Lean build.
+their actual method; candidate-document and publication preparation ran no new Lean build.
 
-After independent packaging review and a clean committed candidate, run the
-authoritative commands **from the repository root on non-root Ubuntu**, with
-the [Linux prerequisites and isolation](../../../tools/lean/HARNESS.md) ready:
+To reproduce the accepted run, use a clean checkout of immutable revision
+`43603b173beb294c2588d83f936a8a96246fd5f0`. Run the authoritative commands
+**from the repository root on non-root Ubuntu**, with the
+[Linux prerequisites and isolation](../../../tools/lean/HARNESS.md) ready:
 
 ```
 tools/lean/bootstrap.sh /tmp/nla-ra20-check
@@ -156,11 +207,13 @@ tools/lean/verify.sh \
   /tmp/nla-ra20-check
 ```
 
-These commands are **pending**, not a report of execution. They must use the
-actual pinned exporter/default kernel and [Lean Comparator](https://github.com/leanprover/comparator),
-real isolation and the complete rejection/control suite. Independent
-operational review and reviewed canonical Markdown/TeX/PDF/index changes must
-follow before any `Lean verified` status or upstream publication claim.
+These are the repository commands whose actual Linux workflow result is
+recorded above. They use the pinned exporter/default kernel and
+[Lean Comparator](https://github.com/leanprover/comparator), real isolation and
+the complete rejection/control suite. Publication of the canonical
+Markdown/TeX/PDF, metadata and indexes is reviewed separately from the immutable
+proof. Submission and upstream merging do not follow from kernel acceptance
+alone; no upstream merge is claimed here.
 
 [formalization.yaml](formalization.yaml) uses the pinned
 [v0.4 metadata schema](../../../docs/lean/schema/README.md); schema validation

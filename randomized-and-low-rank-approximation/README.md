@@ -37,7 +37,7 @@
 | [RA-12](RA-12/README.md) | Relative-error threshold for extremal Gaussian trace bounds | **✅ SOLVED** | challenging | interesting to the community | [PDF](RA-12/problem.pdf) · [TeX](RA-12/problem.tex) |
 | [RA-13](RA-13/README.md) | Absolute-error threshold for extremal Gaussian trace bounds | **✅ SOLVED** | challenging | interesting to the community | [PDF](RA-13/problem.pdf) · [TeX](RA-13/problem.tex) |
 | [RA-19](RA-19/README.md) | Critical-point count for corank-one approximation with a fixed zero | **✅ SOLVED** | challenging | interesting to specialist | [PDF](RA-19/problem.pdf) · [TeX](RA-19/problem.tex) |
-| [RA-20](RA-20/README.md) | Critical-point counts for symmetric rank-two approximation with diagonal zeros | **✅ SOLVED** | challenging | interesting to specialist | [PDF](RA-20/problem.pdf) · [TeX](RA-20/problem.tex) |
+| [RA-20](RA-20/README.md) | Critical-point counts for symmetric rank-two approximation with diagonal zeros | **🏆 LEAN VERIFIED** | challenging | interesting to specialist | [PDF](RA-20/problem.pdf) · [TeX](RA-20/problem.tex) |
 | [RE-05](RE-05/README.md) | Pure relative error for approximation by a linear matrix family | **✅ SOLVED** | challenging | interesting to the community | [PDF](RE-05/problem.pdf) · [TeX](RE-05/problem.tex) |
 | [TR-01](TR-01/README.md) | Optimal dimension for a rerandomized Hadamard embedding | **🏆 LEAN VERIFIED** | challenging | interesting to the community | [PDF](TR-01/problem.pdf) · [TeX](TR-01/problem.tex) |
 | [TR-07](TR-07/README.md) | Random column subsets of arbitrary fixed-sparsity matrices | **✅ SOLVED** | challenging | interesting to the community | [PDF](TR-07/problem.pdf) · [TeX](TR-07/problem.tex) |

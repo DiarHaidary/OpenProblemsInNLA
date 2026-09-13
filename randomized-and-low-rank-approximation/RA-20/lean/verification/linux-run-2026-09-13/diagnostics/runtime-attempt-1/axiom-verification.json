@@ -1,0 +1,580 @@
+{
+  "status": "PASS",
+  "source_occurrences": 57,
+  "distinct_names": 45,
+  "source_kernel_assertions": 61,
+  "four_unprinted_assertions": 4,
+  "records": [
+    {
+      "file": "NLA/RA20/SmoothTransport.lean",
+      "line": 44,
+      "declaration": "NLA.RA20.smoothLocus_comap_algEquiv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Generic.lean",
+      "line": 97,
+      "declaration": "NLA.RA20.symmetricParameter_isSymm",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Generic.lean",
+      "line": 99,
+      "declaration": "NLA.RA20.symmetricParameter_reconstruct",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Generic.lean",
+      "line": 101,
+      "declaration": "NLA.RA20.eval_rename_symmetricParameter",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Generic.lean",
+      "line": 103,
+      "declaration": "NLA.RA20.generic_data_intersection_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Differential.lean",
+      "line": 160,
+      "declaration": "NLA.RA20.full_frobenius_differential_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Differential.lean",
+      "line": 161,
+      "declaration": "NLA.RA20.hollow_distance_semantics_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Differential.lean",
+      "line": 162,
+      "declaration": "NLA.RA20.component_hessians_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Algebra.lean",
+      "line": 111,
+      "declaration": "NLA.RA20.hollow_variety_semantics_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Algebra.lean",
+      "line": 226,
+      "declaration": "NLA.RA20.reduced_coordinate_ring_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Tangent.lean",
+      "line": 141,
+      "declaration": "NLA.RA20.polyDirectional_hollowPullback",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Tangent.lean",
+      "line": 142,
+      "declaration": "NLA.RA20.algebraic_tangent_space_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Smooth.lean",
+      "line": 81,
+      "declaration": "NLA.RA20.triple_product_not_formallySmooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Smooth.lean",
+      "line": 152,
+      "declaration": "NLA.RA20.formallySmooth_of_retraction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Smooth.lean",
+      "line": 217,
+      "declaration": "NLA.RA20.abc_local_not_smooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Smooth.lean",
+      "line": 358,
+      "declaration": "NLA.RA20.abc_local_smooth",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Smooth.lean",
+      "line": 409,
+      "declaration": "NLA.RA20.abc_smooth_locus_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Smooth.lean",
+      "line": 411,
+      "declaration": "NLA.RA20.abcPoint_comap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Smooth.lean",
+      "line": 472,
+      "declaration": "NLA.RA20.reducedPoint_comap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Smooth.lean",
+      "line": 474,
+      "declaration": "NLA.RA20.algebraic_smooth_locus_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 50,
+      "declaration": "NLA.RA20.hollow_frobenius_differential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 52,
+      "declaration": "NLA.RA20.generic_candidate_injective",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 144,
+      "declaration": "NLA.RA20.smoothCritical_hollow_iff",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 146,
+      "declaration": "NLA.RA20.critical_first_plane",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 148,
+      "declaration": "NLA.RA20.critical_second_plane",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 150,
+      "declaration": "NLA.RA20.critical_third_plane",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 198,
+      "declaration": "NLA.RA20.generic_candidate_critical",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 200,
+      "declaration": "NLA.RA20.generic_critical_exhaustion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Critical.lean",
+      "line": 202,
+      "declaration": "NLA.RA20.generic_critical_locus_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Count.lean",
+      "line": 57,
+      "declaration": "NLA.RA20.critical_count_three",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Count.lean",
+      "line": 58,
+      "declaration": "NLA.RA20.generic_count_three_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Count.lean",
+      "line": 59,
+      "declaration": "NLA.RA20.generic_count_not_four_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Count.lean",
+      "line": 60,
+      "declaration": "NLA.RA20.not_criticalCountConjecture_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 24,
+      "declaration": "NLA.RA20.hollow_variety_semantics_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 26,
+      "declaration": "NLA.RA20.reduced_coordinate_ring_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 28,
+      "declaration": "NLA.RA20.algebraic_smooth_locus_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 30,
+      "declaration": "NLA.RA20.algebraic_tangent_space_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 32,
+      "declaration": "NLA.RA20.full_frobenius_differential_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 34,
+      "declaration": "NLA.RA20.hollow_distance_semantics_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 36,
+      "declaration": "NLA.RA20.generic_critical_locus_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 38,
+      "declaration": "NLA.RA20.component_hessians_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 40,
+      "declaration": "NLA.RA20.generic_data_intersection_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 42,
+      "declaration": "NLA.RA20.generic_count_three_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 44,
+      "declaration": "NLA.RA20.generic_count_not_four_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "NLA/RA20/Proof.lean",
+      "line": 46,
+      "declaration": "NLA.RA20.not_criticalCountConjecture_proved",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 94,
+      "declaration": "NLA.RA20.hollow_variety_semantics",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 96,
+      "declaration": "NLA.RA20.reduced_coordinate_ring",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 98,
+      "declaration": "NLA.RA20.algebraic_smooth_locus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 100,
+      "declaration": "NLA.RA20.algebraic_tangent_space",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 102,
+      "declaration": "NLA.RA20.full_frobenius_differential",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 104,
+      "declaration": "NLA.RA20.hollow_distance_semantics",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 106,
+      "declaration": "NLA.RA20.generic_critical_locus",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 108,
+      "declaration": "NLA.RA20.component_hessians",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 110,
+      "declaration": "NLA.RA20.generic_data_intersection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 112,
+      "declaration": "NLA.RA20.generic_count_three",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 114,
+      "declaration": "NLA.RA20.generic_count_not_four",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "file": "Solution.lean",
+      "line": 116,
+      "declaration": "NLA.RA20.not_criticalCountConjecture",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "multiplicity_scope": "Several supporting theorem names print in their defining modules and again in Proof; source file/line occurrences, not unique names, are matched exactly. Twelve final-referee diagnostic exports are absent from this official source run."
+}

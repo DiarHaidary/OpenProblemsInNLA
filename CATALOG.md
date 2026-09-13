@@ -2,7 +2,7 @@
 
 **125 problems with open targets:** 53 open and 72 partially resolved. **92 other retained entries**, excluded from the open count.
 
-**Resolution evidence:** 76 solved (published or independently audited); 16 Lean verified.
+**Resolution evidence:** 75 solved (published or independently audited); 17 Lean verified.
 
 Each entry records its own literature-check date. Literature checks are bounded; ratings are editorial. “Impact” uses the canonical `Importance` field.
 
@@ -153,7 +153,7 @@ Retained entries outside the open count:
 | [RA-12](randomized-and-low-rank-approximation/RA-12/README.md) | Relative-error threshold for extremal Gaussian trace bounds | **✅ SOLVED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/RA-12/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-12/problem.tex) |
 | [RA-13](randomized-and-low-rank-approximation/RA-13/README.md) | Absolute-error threshold for extremal Gaussian trace bounds | **✅ SOLVED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/RA-13/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-13/problem.tex) |
 | [RA-19](randomized-and-low-rank-approximation/RA-19/README.md) | Critical-point count for corank-one approximation with a fixed zero | **✅ SOLVED** | challenging | interesting to specialist | [PDF](randomized-and-low-rank-approximation/RA-19/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-19/problem.tex) |
-| [RA-20](randomized-and-low-rank-approximation/RA-20/README.md) | Critical-point counts for symmetric rank-two approximation with diagonal zeros | **✅ SOLVED** | challenging | interesting to specialist | [PDF](randomized-and-low-rank-approximation/RA-20/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-20/problem.tex) |
+| [RA-20](randomized-and-low-rank-approximation/RA-20/README.md) | Critical-point counts for symmetric rank-two approximation with diagonal zeros | **🏆 LEAN VERIFIED** | challenging | interesting to specialist | [PDF](randomized-and-low-rank-approximation/RA-20/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RA-20/problem.tex) |
 | [RE-05](randomized-and-low-rank-approximation/RE-05/README.md) | Pure relative error for approximation by a linear matrix family | **✅ SOLVED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/RE-05/problem.pdf) · [TeX](randomized-and-low-rank-approximation/RE-05/problem.tex) |
 | [TR-01](randomized-and-low-rank-approximation/TR-01/README.md) | Optimal dimension for a rerandomized Hadamard embedding | **🏆 LEAN VERIFIED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/TR-01/problem.pdf) · [TeX](randomized-and-low-rank-approximation/TR-01/problem.tex) |
 | [TR-07](randomized-and-low-rank-approximation/TR-07/README.md) | Random column subsets of arbitrary fixed-sparsity matrices | **✅ SOLVED** | challenging | interesting to the community | [PDF](randomized-and-low-rank-approximation/TR-07/problem.pdf) · [TeX](randomized-and-low-rank-approximation/TR-07/problem.tex) |

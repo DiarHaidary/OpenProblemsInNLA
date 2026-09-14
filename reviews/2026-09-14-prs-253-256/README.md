@@ -31,7 +31,7 @@ Catalog regeneration combines the two status transitions: **42 Open, 73 Partiall
 
 ## Checks and reproduction
 
-Permanent-ID validation preceded catalog generation; all 17 ID safeguard tests pass. All **77 repository tests**, including renderer, status, selection and proof-harness gates, pass after the final layout correction. Global math formatting and git whitespace checks pass. [Lean project selection](lean-selection.json) is empty, correctly reflecting the absence of formalization changes. Detailed mathematical replays are linked above; original checker code remains in the exact source packages.
+Permanent-ID validation preceded catalog generation; all 17 ID safeguard tests pass. All **77 repository tests**, including renderer, status, selection and proof-harness gates, pass after the final layout correction. Global math formatting passes. A full diff against the published base reports Markdown hard-break spaces and whitespace in retained submission/evidence files; these are preserved to keep the source payloads and raw evidence exact. The working tree is clean. [Lean project selection](lean-selection.json) is empty, correctly reflecting the absence of formalization changes. Detailed mathematical replays are linked above; original checker code remains in the exact source packages.
 
 All relevant publication and canonical PDF pages were rasterized and visually inspected by the assigned reviewers. [Final root PDF hashes and QA](root-pdf-qa.json) cover the combined and edited outputs; other reports include their own QA evidence. NM-01's initial mostly empty page was corrected and the final two-page version rechecked.
 

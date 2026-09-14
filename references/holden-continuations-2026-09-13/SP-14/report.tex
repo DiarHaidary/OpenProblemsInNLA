@@ -1,0 +1,642 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={SP-14: inverse corners and deterministic canonical subsequences},pdfsubject={Seventh research note; universal full-sequence conjecture unresolved},pdfauthor={}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}[theorem]{Example}
+\newcommand{\T}{\mathbb T}
+\newcommand{\C}{\mathbb C}
+\newcommand{\D}{\mathbb D}
+\newcommand{\N}{\mathbb N}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathcal E}
+\newcommand{\dd}{\,\mathrm d}
+\newcommand{\norm}[1]{\left\lVert #1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert #1\right\rvert}
+\newcommand{\wind}{\operatorname{wind}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\diag}{\operatorname{diag}}
+\title{SP-14: inverse corners and deterministic canonical subsequences}
+\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
+\date{13 September 2026}
+\hypersetup{pdfauthor={Sidney Holden}}
+\begin{document}
+\maketitle
+\vspace{-2.4em}
+\textbf{Status.} This note does not establish full-sequence convergence for every symbol in SP-14, and does not give a counterexample. It proves an exact inverse-corner test for one-sided annular extension and uses it to obtain an actual canonical subsequence for \emph{every} continuous admissible symbol with Jordan-curve range and winding number $+1$ or $-1$. This is not a probability, category, perturbation, or iterated-limit statement. The distinction between a subsequence and the full sequence is retained throughout.
+
+\begin{abstract}
+For a continuous nonvanishing zero-index symbol, geometric decay of all sufficiently large top-right inverse corners is equivalent to an inner-annulus extension. The proof of the difficult implication uses an exact bordering identity: summable corner increments control the first inverse row. Exponential control gives an analytic row-generating function, and a Hardy-space localization argument forces exponential decay of the appropriate Fourier tail. The argument does not assume that Riesz projections preserve continuity.
+
+At every off-range spectral parameter with winding $+1$, inner nonextension consequently forces the normalized logarithmic determinant to attain its canonical value in the limsup. The reflected assertion holds at winding $-1$. The same conclusion is expressed in terms of the least singular value, with explicit finite comparison constants. Potential theory then proves canonical subsequences for all continuous unit-winding Jordan-range symbols; rational approximation permits positive-area Jordan curves as well. Conversely, an extension in the direction selected by a nonzero winding produces a strictly positive limiting lower energy deficit. For unit-winding Jordan ranges, this gives an exact characterization of the existence of a canonical subsequence. What remains unproved is that all subsequences must be canonical under nonextension.
+\end{abstract}
+
+\textit{Seventh research note, 13 September 2026. The sixth archive is preserved byte-for-byte in \texttt{previous/}, including its nested predecessors. No novelty, independent-referee, or proof-assistant verification claim is made.}
+\newpage
+\tableofcontents
+\newpage
+
+\section{The target and the quantifiers}
+Let $m$ be normalized arclength on $\T$. For $a\in C(\T;\C)$, put
+\begin{equation}
+ a_k=\int_\T a(z)z^{-k}\dd m(z),\qquad
+ A_n=T_n(a)=(a_{i-j})_{i,j=0}^{n-1},\qquad
+ C(a)=\int_\T |a|^2\dd m.
+ \label{eq:notation}
+\end{equation}
+Positive Fourier indices occur below the diagonal. All eigenvalues include algebraic multiplicity. Define
+\begin{equation}
+ \mu_n(a)=\frac1n\sum_{j=1}^n\delta_{\lambda_j(A_n)},\qquad
+ \nu_a=a_*m,\qquad
+ \E_n(a)=C(a)-\frac1n\sum_{j=1}^n|\lambda_j(A_n)|^2.
+ \label{eq:energy}
+\end{equation}
+The public problem statement asks whether
+\begin{equation}
+ \rho_+(a)=\rho_-(a)=1
+ \quad\Longrightarrow\quad
+ \mu_n(a)\Rightarrow\nu_a,\qquad
+ \rho_\pm(a)=\limsup_{k\to\infty}|a_{\pm k}|^{1/k}.
+ \label{eq:SP14}
+\end{equation}
+The two Fourier conditions are precisely the absence of both one-sided annular analytic extensions. The repository records the universal problem as partially resolved; the historical annulus formulation is also recorded in the primary-source restatement \cite{repo,bogoya}. Neither source supplies the missing implication in this note.
+
+Here and below an inner extension is holomorphic on $r<|z|<1$ for some $r<1$, continuous to $\T$ with boundary values $a$. The outer definition uses $1<|z|<R$, $R>1$. Laurent coefficient integration proves that an inner extension implies $\rho_-<1$. Conversely, when $\rho_-<1$, the negative Fourier series is analytic across an inner collar and converges uniformly on $\T$. Subtracting it leaves a continuous function with no negative Fourier coefficients. Its Fej\'er polynomials and the maximum principle give a disk-algebra extension. Reflection proves the outer equivalence with $\rho_+<1$.
+
+The preceding note \cite{round6} bounded the unperturbed deficit under additional eigenvalue-branching conditions. Those conditions were not deduced from \eqref{eq:SP14}. The new conclusion proved here is different:
+\begin{equation}
+ \begin{gathered}
+ \rho_+=\rho_-=1,\quad a(\T)\text{ a Jordan curve},\\
+ |\wind(a-w,0)|=1\text{ in its bounded complementary component}
+ \end{gathered}
+ \quad\Longrightarrow\quad \liminf_n\E_n(a)=0.
+ \label{eq:newscope}
+\end{equation}
+There is no regularity requirement beyond continuity, no restriction on Fourier phases or gaps, and no area-zero assumption in \eqref{eq:newscope}. It is nevertheless a \emph{liminf} conclusion. Replacing it by $\E_n\to0$ would be an unsupported change of quantifier.
+
+\section{Inverse corners detect one-sided extension}
+We begin with the operator facts used below. Write $P_+$ for the nonnegative Fourier projection on $L^2(\T)$, and identify $H^2$ with $\ell^2(\N_0)$.
+
+\begin{lemma}[Compression and singular-value limits]\label{lem:calculus}
+For continuous $b,c$, $\norm{T_n(b)}\le\norm b_\infty$ and
+\[
+ \norm{T_n(b)T_n(c)-T_n(bc)}_1=o(n).
+\]
+Here $\norm{\cdot}_1$ is matrix trace norm. Fixed normalized trace words have their canonical limits. In particular, for every continuous $g$ on $[0,\norm b_\infty]$,
+\begin{equation}
+ \frac1n\sum_{j=1}^n g(s_j(T_n(b)))\longrightarrow\int_\T g(|b|)\dd m.
+ \label{eq:svlimit}
+\end{equation}
+If $b$ is nonvanishing, then, with $\log0=-\infty$,
+\begin{equation}
+ \limsup_n\frac1n\log|\det T_n(b)|\le\int_\T\log|b|\dd m.
+ \label{eq:detupper}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Toeplitz matrices compress multiplication by the symbol to $\operatorname{span}\{1,z,\ldots,z^{n-1}\}$, giving the norm bound. For fixed Laurent polynomials, the product defect has bounded norm and is supported in a fixed number of boundary rows, hence has trace norm $O(1)$. Uniform approximation and $\norm X_1\le n\norm X$ give the $o(n)$ statement for continuous symbols. Iterate it and take traces to obtain the word limits. Alternating words in $T_n(b)$ and $T_n(b)^*=T_n(\overline b)$ give the moments of $T_n(b)^*T_n(b)$. Polynomial approximation of $x\mapsto g(\sqrt x)$ yields \eqref{eq:svlimit}. Finally bound each logarithm of a singular value by $\log\max(s,\epsilon)$, with $0<\epsilon<\min|b|$, and use the determinant product identity and \eqref{eq:svlimit}.
+\end{proof}
+
+\begin{lemma}[Zero-index finite-section stability]\label{lem:stability}
+If $c\in C(\T)$ is nonvanishing and $\wind(c,0)=0$, then $C_N=T_N(c)$ is invertible for all sufficiently large $N$ and
+\begin{equation}
+ \sup_{N\ge N_0}\norm{C_N^{-1}}\le K<\infty,
+ \qquad
+ \frac1N\log|\det C_N|\longrightarrow U_c:=\int_\T\log|c|\dd m.
+ \label{eq:stable}
+\end{equation}
+\end{lemma}
+A proof with both finite-section boundaries is given in Appendix~\ref{sec:stability}. It uses the scalar Toeplitz kernel argument, rather than assuming that Fredholm index zero alone implies invertibility.
+
+For such a symbol define, for all sufficiently large $n$,
+\begin{equation}
+ \kappa_n(c)=(C_{n+1}^{-1})_{0,n},\qquad
+ \widetilde\kappa_n(c)=(C_{n+1}^{-1})_{n,0}.
+ \label{eq:corners}
+\end{equation}
+Omitting finitely many undefined terms has no effect on any root limsup.
+
+\begin{lemma}[Exact first-row increment]\label{lem:increment}
+Let $C_n$ and $C_{n+1}$ be invertible and write
+\[
+ C_{n+1}=\begin{pmatrix}C_n&u_n\\v_n&c_0\end{pmatrix}.
+\]
+Let $y^{(n)}=e_0^T C_n^{-1}$ be its first row, padded by zeros when it is viewed in $\ell^2$. Then
+\begin{equation}
+ y^{(n+1)}-(y^{(n)},0)
+ =\kappa_n(c)\,(-v_n C_n^{-1},1).
+ \label{eq:increment}
+\end{equation}
+In particular, under \eqref{eq:stable}, with $M=\norm c_\infty$ and $L=\sqrt{1+K^2M^2}$,
+\begin{equation}
+ \norm{y^{(n+1)}-y^{(n)}}_2\le L|\kappa_n(c)|.
+ \label{eq:rowbound}
+\end{equation}
+If $\sum_{n\ge N_0}|\kappa_n(c)|<\infty$, the rows converge in $\ell^2$ to a nonzero row $y$, and
+\begin{equation}
+ \norm{y-y^{(N)}}_2\le L\sum_{n\ge N}|\kappa_n(c)|,
+ \qquad
+ \norm{(y_j)_{j\ge N}}_2\le L\sum_{n\ge N}|\kappa_n(c)|.
+ \label{eq:rowtail}
+\end{equation}
+\end{lemma}
+\begin{proof}
+Write the first row of $C_{n+1}^{-1}$ as $(z,\kappa_n)$. The first $n$ entries of $(z,\kappa_n)C_{n+1}=e_0^T$ give
+$zC_n+\kappa_n v_n=e_0^T$, proving \eqref{eq:increment}. The norm of the increment is exactly
+$|\kappa_n|\sqrt{1+\norm{v_nC_n^{-1}}_2^2}$. Compression bounds $\norm{v_n}_2$ by $M$, giving \eqref{eq:rowbound}. Telescoping proves \eqref{eq:rowtail}. Finally $1=\norm{y^{(N)}C_N}_2\le M\norm{y^{(N)}}_2$, so the limit has norm at least $1/M$ and is nonzero.
+\end{proof}
+
+\begin{lemma}[Analytic localization without a continuity assumption on $P_+b$]\label{lem:localization}
+Let $b\in L^2(\T)$. Suppose that a nonzero function $f$ is holomorphic on $|z|<R$ for some $R>1$, and
+\begin{equation}
+ P_+(bf)=P
+ \label{eq:projection}
+\end{equation}
+for a polynomial $P$. Then the nonnegative Fourier part $b_+$ extends holomorphically to a disk of radius greater than one. Consequently, if $b$ is continuous, it has an outer-annulus extension.
+\end{lemma}
+\begin{proof}
+Decompose $b=b_++b_-$ in $L^2$, with $b_-$ strictly negative. Fix $1<s<R$ and bound the Taylor coefficients of $f$ by $|f_j|\le F_s s^{-j}$. For $k\ge0$ the coefficient of $h=P_+(fb_-)$ is
+\[
+ h_k=\sum_{\ell\ge1}b_{-\ell}f_{k+\ell},\qquad
+ |h_k|\le \frac{F_s\norm{b_-}_2}{\sqrt{s^2-1}}s^{-k}.
+\]
+The formula follows first for polynomial truncations of $b_-$ and then by $L^2$ convergence; multiplication by $f$ is bounded on the circle. Thus $h$ is holomorphic on $|z|<R$. Since $fb_+\in H^2$, \eqref{eq:projection} gives
+\begin{equation}
+ b_+(z)=\frac{P(z)-h(z)}{f(z)}\qquad(|z|<1).
+ \label{eq:quotient}
+\end{equation}
+The quotient is meromorphic on $|z|<R$. Its apparent poles strictly inside the unit disk cancel because $b_+\in H^2$ is holomorphic there. A pole at a point $\zeta\in\T$ cannot occur either: the Hardy-space bound
+\[
+ |b_+(r\zeta)|\le \norm{b_+}_2(1-r^2)^{-1/2}
+\]
+contradicts the growth of a nonzero finite-order pole as $r\uparrow1$. All apparent poles on the closed disk therefore cancel. Zeros of the nonzero analytic function $f$ are discrete, so some slightly larger closed disk has no uncancelled poles. This proves the asserted extension of $b_+$. Its Fourier coefficients decay geometrically. When $b$ is continuous, the one-sided Fourier test from Section~1 supplies the outer extension.
+\end{proof}
+
+\begin{theorem}[Exact inverse-corner extension test]\label{thm:inverse-test}
+Let $c\in C(\T)$ be nonvanishing and have winding zero. Then
+\begin{align}
+ c\text{ has an inner-annulus extension}
+ &\ \Longleftrightarrow\ 
+ \limsup_{n\to\infty}|\kappa_n(c)|^{1/n}<1,\label{eq:inner-corner}\\
+ c\text{ has an outer-annulus extension}
+ &\ \Longleftrightarrow\ 
+ \limsup_{n\to\infty}|\widetilde\kappa_n(c)|^{1/n}<1.\label{eq:outer-corner}
+\end{align}
+In particular, absence of the inner extension implies
+\begin{equation}
+ \limsup_n|\kappa_n(c)|^{1/n}=1.
+ \label{eq:corner-limsup}
+\end{equation}
+No positive lower bound at each order is asserted.
+\end{theorem}
+\begin{proof}
+Suppose first that the root limsup in \eqref{eq:inner-corner} is less than one. Choose $r<1$ and $A<\infty$ with $|\kappa_n|\le Ar^n$ for all sufficiently large $n$. Lemma~\ref{lem:increment} gives a nonzero limit row $y$, and $|y_j|\le A' r^j$. Thus
+$f(z)=\sum_{j\ge0}y_jz^j$ is holomorphic on $|z|<1/r$.
+
+For each fixed column $\ell$, the identities $y^{(N)}C_N=e_0^T$ pass to the limit by Cauchy--Schwarz, since the shifted coefficient sequence of $c$ is square summable. Hence
+\[
+ \sum_{j\ge0}y_jc_{j-\ell}=\delta_{0\ell}\qquad(\ell\ge0).
+\]
+With $\widetilde c(z)=c(z^{-1})$, this says $T(\widetilde c)f=1$, or $P_+(\widetilde c f)=1$. Lemma~\ref{lem:localization} makes the positive Fourier coefficients of $\widetilde c$ decay geometrically. These are the negative coefficients of $c$. The inner-annulus test proves the desired extension. Notice that no conjugation of the first inverse row was made.
+
+For the converse, let $\mathcal C$ be an inner extension of $c$. By nonvanishing of its boundary values and continuity, there is $r_0<1$ such that $\mathcal C$ is nonzero on $r_0\le|z|\le1$. Put $a(z)=zc(z)$ on $\T$, and fix $r_0<r<1$. Radial Laurent coefficient integration shows
+\[
+ T_n(a_r)=D_rT_n(a)D_r^{-1},\qquad
+ a_r(z)=rz\mathcal C(rz),\qquad D_r=\diag(1,r,\ldots,r^{n-1}).
+\]
+Since $\mathcal C$ is nonvanishing with index zero throughout the collar, the angular mean of $\log|\mathcal C(rz)|$ is $U_c$. Indeed its derivative with respect to $\log r$ is the argument-principle integral, equal to the winding zero. Therefore $\int\log|a_r|=U_c+\log r$. By \eqref{eq:detupper},
+\[
+ \limsup_n\frac1n\log|\det T_n(a)|\le U_c+\log r.
+\]
+Deleting row $n$ and column zero of $C_{n+1}$ leaves $T_n(a)$, so the inverse-cofactor identity gives
+\begin{equation}
+ \det T_n(a)=(-1)^n\det C_{n+1}\,\kappa_n(c).
+ \label{eq:cofactor}
+\end{equation}
+The bulk factor has normalized logarithm tending to $U_c$ by \eqref{eq:stable}. Consequently $\limsup n^{-1}\log|\kappa_n|\le\log r<0$, proving geometric decay. Reflection transposes every Toeplitz matrix, interchanges the two corners and the two extension directions, and proves \eqref{eq:outer-corner}. Finally $|\kappa_n|\le K$, so the root limsup is at most one; if it were smaller under nonextension, the first implication would give a contradiction.
+\end{proof}
+
+\begin{remark}[The exponential rate is not the Fourier radius]
+The equivalence concerns whether the rate is strictly less than one, not equality of two numerical radii. For $c(z)=1-rz^{-1}$, $0<r<1$, one has $\rho_-(c)=0$ but $\kappa_n(c)=r^n$. This distinction also prevents an unsupported quantitative continuation-radius claim.
+\end{remark}
+
+\section{Logarithmic determinants and the finite boundary obstruction}
+Write
+\[
+ U_a(w)=\int_\T\log|a(z)-w|\dd m(z),\qquad
+ U_n(w)=\frac1n\log|\det(T_n(a)-wI)|.
+\]
+Off $a(\T)$ the first function is finite and harmonic on each complementary component.
+
+\begin{theorem}[Determinant limsup at a unit-index point]\label{thm:limsup}
+Let $a\in C(\T)$ and $w\notin a(\T)$.
+If $\wind(a-w,0)=1$ and $a$ has no inner-annulus extension, then
+\begin{equation}
+ \limsup_{n\to\infty}U_n(w)=U_a(w).
+ \label{eq:detlimsup}
+\end{equation}
+If $\wind(a-w,0)=-1$, the same conclusion follows from absence of an outer-annulus extension. No condition on the area or topology of the full range is needed for this pointwise assertion.
+\end{theorem}
+\begin{proof}
+For winding $+1$, put $c=z^{-1}(a-w)$. It is continuous, nonvanishing and has index zero. An inner extension of $c$ would give one for $a=zc+w$, so Theorem~\ref{thm:inverse-test} gives $\limsup n^{-1}\log|\kappa_n(c)|=0$. The cofactor identity and stability give
+\[
+ U_n(w)=\frac1n\log|\det T_{n+1}(c)|+\frac1n\log|\kappa_n(c)|,
+ \qquad \frac1n\log|\det T_{n+1}(c)|\longrightarrow U_a(w).
+\]
+This proves \eqref{eq:detlimsup}, including possible $-\infty$ terms in the sequence. Reflect $a(z)$ to $a(z^{-1})$ for negative winding. Reflection leaves the eigenvalues and determinants unchanged and reverses the index and the extension direction.
+\end{proof}
+
+\begin{lemma}[A finite corner/least-singular-value comparison]\label{lem:comparison}
+Let $C$ be an invertible $(n+1)\times(n+1)$ matrix. Delete its last row and first column to obtain $A$, and put $\kappa=(C^{-1})_{0,n}$. If $\norm C\le M$ and $\norm{C^{-1}}\le K$, then
+\begin{equation}
+ \frac{|\kappa|}{2K^2}\le s_{\min}(A)\le2M^2|\kappa|.
+ \label{eq:singularsandwich}
+\end{equation}
+The inequalities include $\kappa=0$.
+\end{lemma}
+\begin{proof}
+Move the first column of $C$ to the last position, so the resulting matrix is
+$\widehat C=\begin{pmatrix}A&u\\v&\alpha\end{pmatrix}$ and the bottom-right entry of $\widehat C^{-1}$ is $\kappa$. When $\kappa\ne0$, block inversion gives
+$A^{-1}=X-y\kappa^{-1}z$, with $X,y,z$ subblocks of $\widehat C^{-1}$. Hence
+$\norm{A^{-1}}\le K+K^2/|\kappa|$. Since $|\kappa|\le K$, this yields the lower bound.
+
+For the upper bound set $x=\widehat C^{-1}e_n=(x',\kappa)^T$. Then $\norm x\ge1/M$ and $Ax'+u\kappa=0$. If $|\kappa|\le1/(2M)$, then $\norm{x'}\ge\sqrt3/(2M)$, and the Rayleigh quotient gives $s_{\min}(A)\le2M^2|\kappa|/\sqrt3$. If $|\kappa|>1/(2M)$, use $s_{\min}(A)\le M<2M^2|\kappa|$. At $\kappa=0$ the same vector has $x'\ne0$ and proves singularity of $A$.
+\end{proof}
+
+\begin{corollary}[No full-sequence exponential envelope at unit index]\label{cor:smin}
+At an off-range point with winding $+1$,
+\begin{equation}
+ a\text{ has no inner extension}
+ \quad\Longleftrightarrow\quad
+ \limsup_n s_{\min}(T_n(a)-wI)^{1/n}=1.
+ \label{eq:svroot}
+\end{equation}
+For winding $-1$, replace ``inner'' by ``outer.'' In particular, under the applicable nonextension, there are no constants $C<\infty$, $0<r<1$, and $N$ for which
+$s_{\min}(T_n(a)-wI)\le Cr^n$ for every $n\ge N$.
+\end{corollary}
+\begin{proof}
+Use $C=T_{n+1}(z^{-1}(a-w))$ and the uniform constants from Lemma~\ref{lem:stability}. Taking root limsups in \eqref{eq:singularsandwich} identifies the root limsup with that of the corner. Apply Theorem~\ref{thm:inverse-test}. Reflection proves the other orientation.
+\end{proof}
+
+\begin{corollary}[A finite unperturbed certificate for unit-circle symbols]\label{cor:certificate}
+Suppose $|a|=1$ and $\wind(a,0)=1$. Put $c=z^{-1}a$, and for an order with invertible $T_{n+1}(c)$ let $\gamma_n>0$ be any lower bound for its least singular value. Define
+\[
+ \beta_N(c)=\sum_{k\in\mathbb Z}\min\{1,|k|/N\}|c_k|^2.
+\]
+If $\kappa_n(c)\ne0$, then
+\begin{equation}
+ 0\le\E_n(a)\le
+ \frac{n+1}{n\gamma_n^2}\beta_{n+1}(c)
+ +\frac2n\log^+\frac1{|\kappa_n(c)|}.
+ \label{eq:certificate}
+\end{equation}
+For winding $-1$ use reflection. When $C_1(c)=\sum_k|k||c_k|^2<\infty$, the first term is at most $C_1(c)/(n\gamma_n^2)$. If $C_1(c)<1$, every order is invertible and one may take the explicit uniform bound $\gamma_n^2=1-C_1(c)$.
+\end{corollary}
+\begin{proof}
+The singular values of $T_N(c)$ are at most one, because $c$ is unimodular. Counting Toeplitz diagonals gives
+$\sum_j(1-s_j^2)=N\beta_N(c)$. For $\gamma_n^2\le x\le1$, $-\log x\le(1-x)/\gamma_n^2$. Thus
+\[
+ -2\log|\det T_{n+1}(c)|\le
+ \frac{n+1}{\gamma_n^2}\beta_{n+1}(c).
+\]
+All eigenvalue moduli of $A_n$ are at most one, and are nonzero when the cofactor is nonzero. Apply $1-r^2\le-2\log r$, sum over eigenvalues, and use \eqref{eq:cofactor}. Replacing $-\log|\kappa_n|$ by its positive part proves \eqref{eq:certificate}. Finally $N\beta_N\le C_1(c)$, and the positive semidefinite matrix $I-T_N(c)^*T_N(c)$ has norm at most its trace. If $C_1(c)<1$, this gives $s_{\min}(T_N(c))^2\ge1-C_1(c)$ directly, without an unknown stability constant.
+\end{proof}
+
+If the relevant annular extension is absent, Theorem~\ref{thm:inverse-test} guarantees infinitely many orders with $|\kappa_n|\ge e^{-\epsilon n}$ for each $\epsilon>0$. Formula~\eqref{eq:certificate}, with the eventual uniform stability bound, then gives arbitrarily small unperturbed deficits at arbitrarily large orders. It supplies no upper bound on the gap to the next such order.
+
+The following fixed-dimensional reduction states precisely what is not covered by the scalar corner argument when the index has larger magnitude.
+
+\begin{proposition}[Boundary minors and the number of small singular values]\label{prop:generalindex}
+Suppose $w\notin a(\T)$ and $\wind(a-w,0)=p>0$. Set $b=a-w$, $c=z^{-p}b$ and $C=T_{n+p}(c)$. For large $n$, let
+\[
+ K_{n,p}=(C^{-1})_{\{0,\ldots,p-1\},\{n,\ldots,n+p-1\}}.
+\]
+Then
+\begin{equation}
+ \det T_n(b)=(-1)^{np}\det C\,\det K_{n,p}.
+ \label{eq:jacobi}
+\end{equation}
+If singular values of $T_n(b)$ are in increasing order, there is $\gamma>0$ independent of $n$ such that
+\begin{equation}
+ s_{p+1}(T_n(b))\ge\gamma\quad(n>p\text{ sufficiently large}),\qquad
+ s_p(T_n(b))\longrightarrow0.
+ \label{eq:psplit}
+\end{equation}
+Consequently
+\begin{equation}
+ \frac1n\sum_{j=p+1}^n\log s_j(T_n(b))\longrightarrow U_a(w).
+ \label{eq:bulkminus}
+\end{equation}
+The negative-index version follows by reflection.
+\end{proposition}
+\begin{proof}
+The matrix $T_n(b)$ consists of rows $0,\ldots,n-1$ and columns $p,\ldots,n+p-1$ of $C$. Jacobi's complementary-minor identity gives \eqref{eq:jacobi}; the row-plus-column index sum has parity $np$. The identity follows directly from the Schur-complement determinant formula when the selected minor is invertible, and extends to singular selected minors by polynomial continuity.
+
+Stability gives $s_{\min}(C)\ge\gamma$. In the $n$-dimensional input coordinate space of the selected columns, impose that the last $p$ coordinates of $Cx$ vanish. This imposes at most $p$ linear constraints, leaving a space of dimension at least $n-p$ on which $\norm{T_n(b)x}=\norm{Cx}\ge\gamma\norm x$. Min--max proves the first assertion in \eqref{eq:psplit}.
+
+The half-line Toeplitz operator with reflected symbol $\widetilde b$ has a kernel of dimension $p$: its index is $p$ and the scalar kernel argument removes the cokernel. These facts are proved in Appendix~\ref{sec:stability}. Truncate an orthonormal basis of that finite-dimensional kernel to the first $n$ coordinates. Its Gram matrix tends to the identity, and
+$T_n(\widetilde b)P_nu=-P_nT(\widetilde b)(I-P_n)u\to0$
+for each basis vector. Uniformity on their finite-dimensional span and min--max give $s_p(T_n(\widetilde b))\to0$. Reflection preserves singular values, proving the second assertion. Choose a fixed cutoff $\epsilon<\min(\gamma,\min|b|)$ in \eqref{eq:svlimit}. Eventually the first $p$ singular values are below the cutoff and all others are above it. Subtracting $p\log\epsilon/n$ gives \eqref{eq:bulkminus}.
+\end{proof}
+
+\begin{remark}[A determinant of a block is a separate problem]
+For $p=1$, Theorem~\ref{thm:inverse-test} controls the root limsup of the remaining scalar. For $p>1$, individual entries of $K_{n,p}$ do not bound its determinant below. No implication from annular nonextension to a unit root limsup for this block determinant is proved here. Similarly, pointwise limsups at different spectral parameters need not be realized by a common subsequence.
+\end{remark}
+
+\section{Canonical subsequences for every unit-winding Jordan symbol}
+The potential arguments are included to make clear that a determinant limsup has not been mistaken for full-sequence weak convergence.
+
+\begin{lemma}[Finite energy coupling]\label{lem:coupling}
+For every continuous $a$ and every $n$,
+\begin{equation}
+ 0\le W_2(\mu_n(a),\nu_a)^2\le\E_n(a).
+ \label{eq:coupling}
+\end{equation}
+Thus, along any sequence of matrix orders, canonical convergence is equivalent to convergence of the corresponding energy deficits to zero.
+\end{lemma}
+\begin{proof}
+Take a unitary Schur factorization $Q^*A_nQ=\Lambda+R$ and set
+$p_j(z)=\sum_{k=0}^{n-1}Q_{kj}z^k$. Compression and unitarity give
+\[
+ \int|p_j|^2\dd m=1,\qquad \int a|p_j|^2\dd m=\lambda_j,
+ \qquad\sum_j|p_j(z)|^2=n.
+\]
+The measure $n^{-1}\sum_j\delta_{\lambda_j}\otimes a_*(|p_j|^2m)$ has marginals $\mu_n(a)$ and $\nu_a$, and its quadratic cost is exactly \eqref{eq:energy}. All measures have support in the disk of radius $\norm a_\infty$. Vanishing transport cost implies weak convergence; conversely test weak convergence with a continuous compactly supported function equal to $|w|^2$ on that disk.
+\end{proof}
+
+\begin{lemma}[Potentials and a pointwise upper comparison]\label{lem:potential}
+If compactly supported probability measures $\sigma_j$ converge weakly to $\sigma$ with common bounded support, their logarithmic potentials converge in $L^1_{\rm loc}$. If $\mu_{n_j}(a)\Rightarrow\mu$, then
+\begin{equation}
+ U_\mu\le U_a\quad\text{almost everywhere}.
+ \label{eq:pot-upper}
+\end{equation}
+Moreover $\limsup_j U_{\mu_{n_j}}(w)\le U_\mu(w)$ at every fixed $w$.
+\end{lemma}
+\begin{proof}
+The kernel truncation $\log\max(|w-z|,\epsilon)-\log|w-z|$ is nonnegative and has full planar integral $\pi\epsilon^2/2$, uniformly in $z$. This follows by integrating $2\pi\int_0^\epsilon r\log(\epsilon/r)\dd r$. At a fixed cutoff the potentials converge locally uniformly by weak convergence and a common Lipschitz bound. Letting the cutoff decrease proves $L^1_{\rm loc}$ convergence and uniform integrability.
+
+For \eqref{eq:pot-upper}, the normalized sum of cutoff logarithms of the singular values of $T_n(a)-wI$ converges locally uniformly to $\int\log\max(|a-w|,\epsilon)\dd m$, by Lemma~\ref{lem:calculus} and singular-value Lipschitz continuity in $w$. It bounds $U_n$ above. Pass to an almost-everywhere subsequence of the potential convergence, then let a countable sequence of cutoffs decrease. Finally the sub-mean inequality on a small disk bounds each central potential by its disk average. Pass to the $L^1$ limit and then decrease the disk radius to obtain the stated pointwise limsup inequality.
+\end{proof}
+
+Let $R(K)$ be the uniform closure on $K$ of rational functions with poles off $K$.
+\begin{lemma}[Uniqueness from the complementary components]\label{lem:uniqueness}
+Suppose $\supp\nu\subset K$ and $U_\mu=U_\nu$ on $\C\setminus K$. Then $\supp\mu\subset K$. If either $K$ has planar area zero or $R(K)=C(K)$, then $\mu=\nu$.
+\end{lemma}
+\begin{proof}
+The distributional identity $\Delta U_\sigma=2\pi\sigma$ shows that $\mu$ has no mass off $K$. If $K$ has area zero, equality of potentials almost everywhere yields equality of their Laplacians. In the rational case, differentiating the equal potentials off $K$ gives equal Cauchy transforms. Repeated differentiation and expansion at infinity give all negative powers with poles off $K$ and all polynomial moments. Partial fractions and uniform approximation then determine the measure on $K$.
+\end{proof}
+
+\begin{theorem}[One nonzero unit-index component]\label{thm:onecomponent}
+Let $a\in C(\T)$ and $K=a(\T)$. Suppose exactly one component $D$ of $\C\setminus K$ has nonzero winding, that winding is $+1$, and $a$ has no inner-annulus extension. Suppose also that $K$ has area zero or $R(K)=C(K)$. Then
+\begin{equation}
+ \liminf_{n\to\infty}\E_n(a)=0,
+ \qquad \mu_{n_j}(a)\Rightarrow a_*m
+ \text{ for some increasing }n_j.
+ \label{eq:subsequence}
+\end{equation}
+For winding $-1$, use absence of an outer extension. If every complementary component has index zero, full canonical convergence holds under the same uniqueness assumption.
+\end{theorem}
+\begin{proof}
+Choose $w_0\in D$. Theorem~\ref{thm:limsup} supplies $n_j\to\infty$ with $U_{n_j}(w_0)\to U_a(w_0)$. Take any weakly convergent further subsequence with limit $\mu$ and potential $V$. Such subsequences exist by the common compact support. Lemma~\ref{lem:potential} gives $V\le U_a$ almost everywhere and $V(w_0)\ge U_a(w_0)$. On $D$, $V-U_a$ is subharmonic. The sub-mean inequality promotes its nonpositivity to every point, and the maximum principle gives $V=U_a$ throughout $D$.
+
+In any other component, the index is zero. Lemma~\ref{lem:stability}, applied to $a-w$ at each fixed point there, gives $U_n(w)\to U_a(w)$ along the entire sequence. The same subharmonic evaluation inequality gives $V\ge U_a$ there, while the upper comparison gives the reverse inequality. Thus $V=U_a$ off $K$. Lemma~\ref{lem:uniqueness} proves $\mu=\nu_a$. Every further cluster law of the chosen sequence is the same, so $\mu_{n_j}\Rightarrow\nu_a$. Lemma~\ref{lem:coupling} proves the liminf statement. If all indices are zero, the argument starts from any weakly convergent subsequence, so it proves full convergence.
+\end{proof}
+
+\begin{corollary}[Every continuous unit-winding Jordan-range symbol]\label{cor:Jordan}
+Let $a\in C(\T)$ have Jordan-curve range $\Gamma$. Suppose its winding number in the bounded component is $+1$ and $a$ has no inner extension, or the winding is $-1$ and $a$ has no outer extension. Then \eqref{eq:subsequence} holds. In particular it holds for every SP-14-admissible symbol with such range and winding. The curve may have positive planar area; the parametrization need not be one-to-one.
+\end{corollary}
+\begin{proof}
+A Jordan curve has precisely one bounded complementary component and index zero in the unbounded component. Walsh's approximation theorem gives $R(\Gamma)=C(\Gamma)$ without rectifiability or area-zero assumptions \cite[Section~4, printed p.~9]{walsh}. Apply Theorem~\ref{thm:onecomponent}.
+\end{proof}
+
+\begin{corollary}[What existence of a full weak limit would settle]\label{cor:existinglimit}
+Under Corollary~\ref{cor:Jordan}, if the entire sequence $\mu_n(a)$ has a weak limit, that limit is necessarily $a_*m$. More generally, this conclusion holds under the uniqueness assumption of Lemma~\ref{lem:uniqueness} if every complementary index is in $\{-1,0,1\}$ and both annular extensions are absent.
+\end{corollary}
+\begin{proof}
+In the Jordan case the canonical subsequence determines any existing full limit. In the general case let $\mu$ be the full limit. At each fixed unit-index point, Theorem~\ref{thm:limsup} and subharmonic evaluation give $U_\mu\ge U_a$; at index zero use stability. The upper comparison and sub-mean inequality give equality everywhere off the range. Apply Lemma~\ref{lem:uniqueness}.
+\end{proof}
+
+\begin{corollary}[Exact repeated parametrizations]\label{cor:powerparam}
+If $b$ satisfies Corollary~\ref{cor:Jordan} and $a(z)=b(z^d)$ for an integer $d\ge1$, then $a$ has a canonical subsequence, even though its nonzero winding has magnitude $d$.
+\end{corollary}
+\begin{proof}
+The Fourier coefficients of $a$ vanish outside $d\mathbb Z$ and $a_{dk}=b_k$. Permuting coordinates by residue modulo $d$ makes $T_{dm}(a)$ the direct sum of $d$ copies of $T_m(b)$. Thus $\mu_{dm}(a)=\mu_m(b)$ and $a_*m=b_*m$. Lift a canonical subsequence of $b$. This is a special exact composition, not a theorem for arbitrary winding $d$.
+\end{proof}
+
+\section{An extension in the winding direction produces a strict deficit}
+The converse to the canonical-subsequence result can also be proved. This clarifies exactly what has been characterized.
+
+\begin{theorem}[A quantitative obstruction from an annular extension]\label{thm:extension-obstruction}
+Suppose $a$ has an inner extension and some complementary component has winding $p>0$. Then
+\begin{equation}
+ \liminf_{n\to\infty}\E_n(a)>0.
+ \label{eq:positive-liminf}
+\end{equation}
+More precisely, choose a closed disk $B$ of positive radius in that component. For $r<1$ sufficiently close to one that the extended curves between radii $r$ and $1$ avoid $B$, one has
+\begin{equation}
+ \liminf_n\E_n(a)\ge \frac{2\operatorname{area}(B)}{\pi}\,p\log(1/r)>0.
+ \label{eq:explicitgap}
+\end{equation}
+An outer extension and a negative winding $p<0$ give the corresponding lower bound with $|p|\log r$ at a radius $r>1$.
+\end{theorem}
+\begin{proof}
+Let $a_r(z)$ be the extension evaluated at $rz$. Uniform continuity to the boundary allows $r$ close enough that all intermediate curves avoid $B$. Radial coefficient integration gives $T_n(a_r)=D_rT_n(a)D_r^{-1}$, so the two sequences have \emph{identical} empirical eigenvalue measures. For $w\in B$ the argument principle gives
+\begin{equation}
+ U_{a_r}(w)=U_a(w)+p\log r.
+ \label{eq:radialpotential}
+\end{equation}
+To see this directly, differentiate the angular logarithmic mean at an interior radius $s$ with respect to $\log s$. The derivative is the real part of the contour integral of the logarithmic derivative, equal to the winding $p$. Integrate from $r$ to $1$ and use the boundary continuity.
+
+Take any weak cluster measure $\mu$ of the common finite spectra. Apply Lemma~\ref{lem:potential} both to $a$ and to the fixed symbol $a_r$. Thus $U_a-U_\mu\ge0$ almost everywhere in the plane, and by \eqref{eq:radialpotential}, $U_a-U_\mu\ge p\log(1/r)$ almost everywhere on $B$.
+
+For any probability measure $\sigma$ supported in a disk of radius less than $R$,
+\begin{equation}
+ \int_{|w|<R}U_\sigma(w)\dd A(w)
+ =\pi R^2\bigl(\log R-\tfrac12\bigr)+\frac\pi2\int|z|^2\dd\sigma(z).
+ \label{eq:areaenergy}
+\end{equation}
+This follows by integrating the circular mean $\log\max(r,|z|)$ of a point-mass kernel and then using Fubini. Choose $R$ containing all supports and $B$. Subtract the formulas for $\nu_a$ and $\mu$. The nonnegative potential difference and its lower bound on $B$ give \eqref{eq:explicitgap} for the energy deficit of every cluster law. Compactness and continuity of the second moment prove the liminf inequality for the full sequence. Reflection handles the outer case.
+\end{proof}
+
+\begin{corollary}[An exact subsequential dichotomy]\label{cor:dichotomy}
+For a continuous Jordan-range symbol of winding $+1$,
+\begin{equation}
+ \boxed{\begin{aligned}
+ a\text{ has no inner-annulus extension}
+ &\ \Longleftrightarrow\ \liminf_n\E_n(a)=0\\
+ &\ \Longleftrightarrow\ \nu_a\text{ is a weak cluster law.}
+ \end{aligned}}
+ \label{eq:dichotomy}
+\end{equation}
+For winding $-1$, replace inner by outer. If the corresponding extension exists, the liminf is strictly positive. The zero-winding Jordan case has full canonical convergence by Theorem~\ref{thm:onecomponent}.
+\end{corollary}
+\begin{proof}
+The nonextension implication is Corollary~\ref{cor:Jordan}; the converse is Theorem~\ref{thm:extension-obstruction}. Lemma~\ref{lem:coupling} identifies the energy and measure formulations.
+\end{proof}
+
+\section{Examples and the limits of the limsup theorem}
+\begin{example}[A plateau with an atom and a nonzero winding]\label{ex:plateau}
+In angular coordinates $0\le t\le2\pi$, let
+\begin{equation}
+ a(e^{it})=\begin{cases}e^{2it},&0\le t\le\pi,\\1,&\pi\le t\le2\pi.\end{cases}
+ \label{eq:plateau}
+\end{equation}
+The values match at the joins, $a(\T)=\T$, its winding is $+1$, and
+\[
+ a_*m=\tfrac12 m_\T+\tfrac12\delta_1,\qquad C(a)=1.
+\]
+It has neither annular extension: $a-1$ is nonzero but vanishes on an open arc. An analytic extension from either side with zero continuous boundary values on an arc would extend by zero across that arc, by Morera's theorem, and then vanish identically by the identity theorem.
+
+Corollary~\ref{cor:Jordan} therefore proves an actual canonical subsequence, with the indicated atom included. This example is an illustration of the theorem, not a claim that full convergence is false or that no other theorem could prove it. Its exact coefficients are
+\begin{equation}
+ a_0=a_2=\tfrac12,\qquad
+ a_k=\frac{2i}{\pi k(2-k)}\ (k\text{ odd}),\qquad
+ a_k=0\ (k\text{ even},\ k\ne0,2).
+ \label{eq:plateaucoeff}
+\end{equation}
+They follow by separately integrating the two parameter intervals, and show both root limsups directly. For $c=z^{-1}a$ the coefficients satisfy $c_1=c_{-1}=1/2$, $c_0=2i/\pi$, and $c_{2j}=2i/[\pi(1-4j^2)]$ for $j\ne0$, with other odd coefficients zero. The telescoping sum
+\[
+ \sum_{j\ge1}\frac{j}{(4j^2-1)^2}
+ =\frac18\sum_{j\ge1}\left(\frac1{(2j-1)^2}-\frac1{(2j+1)^2}\right)=\frac18
+\]
+gives $C_1(c)=1/2+2/\pi^2<1$. Therefore at every order with nonzero corner,
+\begin{equation}
+ \E_n(a)\le
+ \frac{\frac12+2/\pi^2}{n(\frac12-2/\pi^2)}
+ +\frac2n\log^+\frac1{|\kappa_n(c)|}.
+ \label{eq:plateau-certificate}
+\end{equation}
+The lower singular-value bound in this formula is analytic, not inferred from the diagnostic table. The numerical table in Section~\ref{sec:checks} uses these coefficients, not a discretized jump approximation.
+\end{example}
+
+\begin{example}[Smooth arbitrary-phase lacunary symbols]\label{ex:lacunary}
+Let $N_j\ge\max(4,j^2)$ be strictly increasing integers and let $\theta_j,\phi_j$ be arbitrary real numbers. Set
+\[
+ \epsilon_j=2^{-j-10}e^{-\sqrt{N_j}},\qquad
+ a(z)=z+\sum_{j\ge1}\epsilon_j
+   (e^{i\theta_j}z^{N_j}+e^{i\phi_j}z^{-N_j}).
+\]
+Every differentiated Fourier series converges uniformly, because $N^q e^{-\sqrt N}$ is bounded for each $q$. The coefficients at $\pm N_j$ have root limsup one, since $j/N_j\to0$. For $v(z)=z^{-1}a(z)-1$,
+\[
+ \norm v_\infty\le\frac1{512},\qquad
+ \norm{\partial_t v(e^{it})}_\infty
+ \le2\sum_jN_j\epsilon_j\le\frac1{128e^2}<\frac1{512}.
+\]
+In particular $\norm{\partial_t v}_\infty<1-\norm v_\infty$. A continuous logarithm of $1+v$ exists, and the argument of $a(e^{it})$ has strictly positive derivative. It increases by $2\pi$, proving a smooth star-shaped Jordan range of winding one. Hence every such fixed choice has a canonical subsequence. No density assumption on the frequencies and no phase condition is needed. For this whole class, full convergence is \emph{not} claimed in the present note.
+\end{example}
+
+\begin{example}[A limsup cannot be replaced by an all-order lower bound]\label{ex:zeros}
+Consider the same stable smooth symbol used inside the earlier defective example,
+\[
+ c(z)=1+\frac1{128}\sum_{j\ge1}\frac{e^{-\sqrt j}}{j^2}(z^{3j}+z^{-3j}),
+ \qquad a(z)=zc(z).
+\]
+It is strictly positive on $\T$, since $\norm{c-1}_\infty<1/32$, and has both Fourier root limsups one. The matrices $T_{n+1}(c)$ split by residue modulo three, as do their inverses. Thus
+\begin{equation}
+ \kappa_n(c)=0\quad\text{whenever }n\not\equiv0\pmod3,
+ \qquad
+ \limsup_n|\kappa_n(c)|^{1/n}=1.
+ \label{eq:zero-warning}
+\end{equation}
+The second assertion follows here directly from Theorem~\ref{thm:inverse-test}. The symbol $a$ has Jordan range and winding one, so zero is off its range but lies in its bounded component. Its logarithmic determinant is $-\infty$ at zero for those infinitely many sizes. Full canonical convergence for this particular symbol was proved in the third package \cite{round3}; it is not inferred from a false all-order lower bound. This demonstrates why a fixed exceptional spectral point cannot decide weak convergence on its own.
+\end{example}
+
+\section{The unresolved full-sequence step}
+For a Jordan-range symbol in the exact SP-14 class with winding $+1$ or $-1$, this note proves
+\[
+ 0=\liminf_n\E_n(a)\le\limsup_n\E_n(a).
+\]
+It does not prove that the limsup is zero. A noncanonical weak cluster law along another sequence of orders is not excluded. Such a law cannot be the limit of the \emph{entire} sequence, by Corollary~\ref{cor:existinglimit}. It could still coexist with the canonical cluster law.
+
+The inverse-row argument requires a geometric bound on \emph{every sufficiently large} corner in order to telescope an exponentially small tail. A bound only along an arbitrarily sparse subsequence does not provide that estimate. In particular the proof cannot turn a hypothetical noncanonical subsequence into an annular extension. Equation~\eqref{eq:zero-warning} makes the danger of substituting a pointwise limit for a limsup explicit.
+
+For larger absolute winding, Proposition~\ref{prop:generalindex} leaves a fixed-size inverse boundary determinant rather than a scalar corner. Nonextension has not been converted into its required lower estimate. For several nonzero-index components, even separate anchor limsups do not automatically synchronize their good matrix orders. General continuous ranges may also fail the measure-uniqueness conditions used here. These are distinct issues, and none is removed by the new subsequential dichotomy.
+
+The universal target remains exactly
+\[
+ \boxed{a\in C(\T),\quad \rho_+(a)=\rho_-(a)=1
+ \quad\Longrightarrow\quad \E_n(a)\longrightarrow0.}
+\]
+No theorem in this note proves this displayed implication for every symbol, and no fixed admissible symbol with positive limsup deficit is constructed. The earlier numerical percentage estimate of progress is not used as a mathematical assessment: the existence of several reductions does not assign a percentage to an unproved central implication.
+
+\section{Executed checks and reproduction}\label{sec:checks}
+\input{validation_summary.tex}
+The machine-readable report separates exact symbolic identities, 100-decimal-digit calculations, ordinary floating-point consistency tests, labelled diagnostics, and software input validation. The principal results above rest on the written arguments, not on finite trends.
+
+The exact checks verify both orientations of the inverse-corner identities, the bordering row formula including its transpose convention, Jacobi signs for boundary blocks of sizes one through three, radial diagonal similarity, and geometric or finitely supported corners in analytic models. Exact structural zeros are additionally checked on a rational congruence proxy, which is not identified with the infinite smooth example. High-precision calculations verify exponentially small corners and singular-value comparisons, and integrate the plateau coefficients independently. Floating-point checks verify the singular-value splitting and the finite comparison bounds with stated roundoff allowances. The plateau certificate is also checked using the analytic bound $C_1(c)=1/2+2/\pi^2$; its telescoping identity is verified symbolically. The floating-point corner itself is not a certified lower enclosure.
+
+\begin{table}[ht]
+\centering
+\input{plateau_table.tex}
+\caption{Diagnostics for the actual plateau symbol \eqref{eq:plateau}, using its exact coefficient formula. The theorem guarantees a canonical subsequence, not that this table proves full convergence. No least-singular-value logarithm near floating-point zero is used as a proof.}
+\end{table}
+
+Run \texttt{python code/validate.py} from the extracted package root to regenerate the new checks. Run \texttt{bash build.sh} to run them and compile the manuscript twice. The six preceding suites were rerun separately in extracted working copies: 373/373, 560/560, 464/464, 309/309, 178/178, and 53/53 checks passed. Their archived hashes were unchanged. These counts are not included in the new count, and the reruns are not independent verification of the mathematical claims. The source-access ledger, precise claim audit, execution record, and SHA-256 manifest are included. No independent referee review, formal proof-assistant verification, or certified general asymptotic computation is claimed.
+
+\appendix
+\section{Half-line index and two-boundary stability}\label{sec:stability}
+This appendix supplies the operator assertions needed for Lemma~\ref{lem:stability} and Proposition~\ref{prop:generalindex}. On $\ell^2(\N_0)$ define
+\[
+ T(b)=(b_{i-j})_{i,j\ge0},\qquad H(b)=(b_{i+j+1})_{i,j\ge0},
+ \qquad\widetilde b(z)=b(z^{-1}).
+\]
+Let $P_n$ project on the first $n$ coordinates, $Q_n=I-P_n$, and $J_n$ reverse those $n$ coordinates and vanish elsewhere. Compression of Laurent multiplication gives boundedness of these operators. Direct convolution and uniform approximation give
+\begin{align}
+ T(b)T(c)&=T(bc)-H(b)H(\widetilde c),\label{eq:halfproduct}\\
+ T_n(b)T_n(c)&=T_n(bc)-P_nH(b)H(\widetilde c)P_n
+              -J_nH(\widetilde b)H(c)J_n.\label{eq:finiteproduct}
+\end{align}
+The two terms in \eqref{eq:finiteproduct} account for indices below zero and at least $n$, respectively. Continuous-symbol Hankel operators are compact because Laurent-polynomial Hankel operators have finite rank and converge to them in norm.
+
+If $b$ is continuous and nonvanishing, \eqref{eq:halfproduct} with $c=1/b$ gives a two-sided inverse modulo compact operators. Thus $T(b)$ is Fredholm. One elementary justification includes the closed-range point: otherwise unit vectors orthogonal to the kernel whose images tend to zero would, through a compact parametrix error, have a convergent subsequence with a nonzero limit both in the kernel and orthogonal to it. Kernel and cokernel are finite-dimensional by the compact errors.
+
+Let $k=\wind(b,0)$. There is a continuous logarithm $h$ such that $b=z^ke^h$. The path $T(z^ke^{th})$, $0\le t\le1$, is norm-continuous and Fredholm, so its index is constant, equal to that of the unilateral shift power $T(z^k)$, namely $-k$. Local constancy follows by splitting domain and range into kernel/cokernel and their complements; the invertible complementary block remains invertible under a small perturbation and the residual finite matrix has fixed dimension difference.
+
+The scalar kernel argument excludes simultaneous nonzero kernels of $T(b)$ and $T(\overline b)$. Indeed if $f,g\in H^2$ are nonzero and belong to these kernels, then
+\[
+ bf=\overline z\,\overline u,\qquad
+ \overline b\,g=\overline z\,\overline v\qquad(u,v\in H^2).
+\]
+Multiply the first equality by $\overline g$ and the conjugate of the second by $f$ to obtain
+\[
+ \overline z\,\overline{ug}=zfv.
+\]
+Both sides belong to $L^1$. The first has only strictly negative Fourier modes and the second only strictly positive ones, so both vanish. The analytic product $fv$ is zero; since $f\ne0$, $v=0$, and nonvanishing of $b$ forces $g=0$, a contradiction. Polynomial approximation in $H^2$ justifies the Fourier-support assertions via $L^2\cdot L^2\subset L^1$. Therefore for $k>0$ the kernel has dimension zero and the cokernel dimension $k$; for $k<0$ the kernel has dimension $|k|$ and the cokernel is zero. For $k=0$, $T(b)$ and $T(\widetilde b)$ are invertible.
+
+Assume now $k=0$. Put $c=1/b$ and
+\[
+ K=T(b)^{-1}-T(c),\qquad L=T(\widetilde b)^{-1}-T(\widetilde c).
+\]
+Both are compact, by \eqref{eq:halfproduct}. On the first $n$ coordinates set
+\[
+ B_n=T_n(c)+P_nKP_n+J_nLJ_n.
+\]
+These matrices have uniformly bounded norms. Using \eqref{eq:finiteproduct}, $T_n(b)J_n=J_nT_n(\widetilde b)$, and the defining equations for $K,L$ gives
+\[
+ T_n(b)B_n-I=-P_nT(b)Q_nKP_n-J_nT(\widetilde b)Q_nLJ_n\longrightarrow0
+\]
+in operator norm. Compactness implies $\norm{Q_nK}+\norm{Q_nL}\to0$. A Neumann series gives eventual invertibility of $T_n(b)$ and a uniform inverse bound. Finally apply \eqref{eq:svlimit} with a fixed continuous cutoff logarithm below both the eventual least singular value and $\min|b|$. The determinant product identity proves the bulk limit in \eqref{eq:stable}.
+
+\begin{thebibliography}{9}
+\bibitem{repo} OpenProblemsInNLA contributors. \emph{SP-14: Widom's canonical distribution conjecture for Toeplitz eigenvalues}. Public problem statement and status record, accessed 13 September 2026.
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/eigenvalues-and-inverse-problems/SP-14/README.md}.
+\bibitem{bogoya} J. M. Bogoya, A. B\"ottcher and S. M. Grudsky. \emph{Asymptotics of individual eigenvalues of a class of large Hessenberg Toeplitz matrices}. Operator Theory: Advances and Applications 220 (2012), 77--95. Author manuscript, introduction, p.~2, for the annulus formulation.
+\url{https://www.math.cinvestav.mx/~grudsky/Papers/116.pdf}.
+\bibitem{walsh} J. L. Walsh. \emph{Approximation by polynomials in the complex domain}. M\'emorial des sciences math\'ematiques 73 (1935). Section~4, printed p.~9 (PDF page~12), for rational approximation on an arbitrary Jordan curve.
+\url{https://www.numdam.org/item/MSM_1935__73__1_0.pdf}.
+\bibitem{round6} \emph{SP-14: eigenvalue branching, an unperturbed criterion, and a polynomial-composition obstruction}. Sixth research note in this conversation, 13 September 2026. Preserved unchanged in \texttt{previous/sp14\_round6\_research\_original.zip}.
+\bibitem{round3} \emph{SP-14: canonical smooth symbols, interior determinant tests, and fixed-symbol randomization}. Third research note, 13 September 2026. Section~6 proves canonical convergence for the smooth congruence example. Preserved in the nested prior archives; this prior conclusion is used only to contextualize Example~\ref{ex:zeros}, not to prove the new inverse-corner or subsequence theorems.
+\end{thebibliography}
+\end{document}

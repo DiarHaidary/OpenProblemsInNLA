@@ -34,7 +34,7 @@ interval},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}SP-08}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-12}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -58,6 +58,32 @@ to the community\par}
 \textbf{Rating rationale:} Challenging reflects an all-dimensions rank
 structure for global spread maximizers; community impact is an extremal
 spectral problem for entry-bounded symmetric matrices.
+
+\subsection{Reviewed continuation --- 13 September
+2026}\label{reviewed-continuation-13-september-2026}
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute,
+Simons Foundation) supplies a proof for the unrestricted strip
+\(-1\le a\le-1+(1+\sqrt2)/n^2\) in every dimension, with a rank-two
+endpoint maximizer. The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/SP-08/report.pdf}{continuation
+report}, Theorems 1--2 and the boundary-strip proof, also bounds all
+endpoint matrices whose centered sign matrix has rank at most two. Its
+nonnegative-parameter case includes exact rational polynomial-positivity
+certificates.
+
+Status remains \textbf{Partially resolved}: outside the strip, arbitrary
+centered sign matrices of rank at least three remain untreated. Rank at
+most two for the centered sign matrix is not a hypothesis available for
+every maximizer.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/verification/SP-08/review.md}{independent
+informal Codex AI-agent review} records its accepted scope and checks.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/README.md}{Submission,
+original package, reproduction and verified affiliation}. This is not
+external human peer review or formal verification; no Lean verification
+was performed.
 
 \subsection{Further partial results --- 12 September
 2026}\label{further-partial-results-12-september-2026}

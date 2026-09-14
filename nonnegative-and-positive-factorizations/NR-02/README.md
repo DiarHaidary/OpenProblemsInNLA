@@ -9,7 +9,16 @@
 **Rating rationale:** Extreme because additivity across arbitrary polytopes is a general structural barrier for extension complexity; community importance links optimal factorizations with compositional linear optimization models.  
 **Status:** Partially resolved  
 **Area:** nonnegative rank and polyhedral optimization  
-**Last checked:** 2026-09-10  
+**Last checked:** 2026-09-13
+
+## Reviewed continuation — 13 September 2026
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies a computer-assisted proof that $`\mathop{\mathrm{xc}}\nolimits(P\times Q)=12`$ whenever both factors are polygons of extension complexity six. The [fourth-round report](../../references/holden-continuations-2026-09-13/NR-02/report.pdf), main theorem and geometry-to-Boolean reduction, reduces this statement to ten exact LRAT refutations. The broader inherited all-polytopes corollary in the package was not independently re-audited in this submission.
+
+Status remains **Partially resolved**: arbitrary higher-complexity factors and unrestricted Cartesian-product additivity are not settled.
+
+The [independent informal Codex AI-agent review](../../references/holden-continuations-2026-09-13/verification/NR-02/review.md) records its accepted scope and checks. [Submission, original package, reproduction and verified affiliation](../../references/holden-continuations-2026-09-13/README.md). This is not external human peer review or formal verification; no Lean verification was performed.
+
 
 ## Context and notation
 

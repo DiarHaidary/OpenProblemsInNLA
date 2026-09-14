@@ -7,9 +7,18 @@
 **Difficulty:** extreme  
 **Importance:** interesting to the community  
 **Status:** Open  
-**Last checked:** 2026-09-12  
+**Last checked:** 2026-09-13
 
 **Rating rationale:** Extreme reflects a longstanding sharp-constant problem beyond the false constant-one conjecture; community impact is eigenvalue matching and perturbation theory for normal matrices.
+
+## Reviewed continuation — 13 September 2026
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies an exact rational seven-dimensional normal pair proving $`C_{\rm normal}>1.03077`$; see the [continuation report](../../references/holden-continuations-2026-09-13/SP-07/report.pdf), Section 3, Theorem 3.1. A Hall obstruction supplies the matching lower bound and exact positive-definiteness certifies the full operator-norm upper bound. The report also proves restricted dimension reductions in Sections 6–8.
+
+Status remains **Open**: this certified lower bound and the restricted reductions do not determine the exact universal constant or a matching upper bound. No global extremality or finite-dimensional stabilization is asserted.
+
+The [independent informal Codex AI-agent review](../../references/holden-continuations-2026-09-13/verification/SP-07/review.md) records its accepted scope and checks. [Submission, original package, reproduction and verified affiliation](../../references/holden-continuations-2026-09-13/README.md). This is not external human peer review or formal verification; no Lean verification was performed.
+
 
 ## Supporting subclass lemma — 12 September 2026
 

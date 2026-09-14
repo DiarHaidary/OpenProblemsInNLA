@@ -1,0 +1,1493 @@
+{
+  "passed": 246,
+  "failed": 0,
+  "total": 246,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "certification_boundary": "Written arguments establish the infinite claims; these tests do not. Floating-point eigenvalues are not certified.",
+  "checks": [
+    {
+      "name": "exact bordering row n=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact cofactor n=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact reflection n=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact bordering row n=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact cofactor n=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact reflection n=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact bordering row n=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact cofactor n=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact reflection n=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact bordering row n=4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact cofactor n=4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact reflection n=4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact bordering row n=5",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact cofactor n=5",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact reflection n=5",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact bordering row n=6",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact cofactor n=6",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact reflection n=6",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=2 p=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=3 p=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=5 p=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=2 p=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=3 p=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=5 p=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=2 p=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=3 p=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact Jacobi n=5 p=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "geometric corner n=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "shifted nilpotent determinant n=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "reciprocal-symbol corner n=1",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "geometric corner n=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "shifted nilpotent determinant n=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "reciprocal-symbol corner n=2",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "geometric corner n=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "shifted nilpotent determinant n=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "reciprocal-symbol corner n=3",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "geometric corner n=5",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "shifted nilpotent determinant n=5",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "reciprocal-symbol corner n=5",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "geometric corner n=8",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "shifted nilpotent determinant n=8",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "reciprocal-symbol corner n=8",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "geometric corner n=12",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "shifted nilpotent determinant n=12",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "reciprocal-symbol corner n=12",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "proxy congruence inverse zero n=1",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence determinant zero n=1",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence inverse zero n=2",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence determinant zero n=2",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence inverse zero n=4",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence determinant zero n=4",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence inverse zero n=5",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence determinant zero n=5",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence inverse zero n=7",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence determinant zero n=7",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence inverse zero n=8",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence determinant zero n=8",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence inverse zero n=10",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence determinant zero n=10",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence inverse zero n=11",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "proxy congruence determinant zero n=11",
+      "passed": true,
+      "category": "exact symbolic proxy"
+    },
+    {
+      "name": "numeric row update trial=0 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 5.822240594640245e-17,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=0 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.2197274440461925e-19,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=0 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 4.4305531777088696e-05,
+      "smin": 0.0004001169493511425,
+      "roundoff_allowance": 7.063309768978159e-13
+    },
+    {
+      "name": "stable core trial=0 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.471677523432374
+    },
+    {
+      "name": "numeric row update trial=0 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 6.310999612949225e-18,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=0 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 2.2499312661442353e-22,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=0 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 9.789912212894503e-08,
+      "smin": 8.841133545303115e-07,
+      "roundoff_allowance": 7.063309768978159e-13
+    },
+    {
+      "name": "stable core trial=0 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.471677523432374
+    },
+    {
+      "name": "numeric row update trial=0 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 4.0776503845818873e-19,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=0 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.3722393218500545e-25,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=0 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 6.572702069910579e-13,
+      "smin": 5.9355151891465084e-12,
+      "roundoff_allowance": 7.063309768978159e-13
+    },
+    {
+      "name": "stable core trial=0 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.471677523432374
+    },
+    {
+      "name": "numeric row update trial=0 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 3.4562903524443695e-29,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=0 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 5.172175143618065e-36,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=0 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 3.635956140854326e-22,
+      "smin": 1.225679472998808e-16,
+      "roundoff_allowance": 7.063309768978159e-13
+    },
+    {
+      "name": "stable core trial=0 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.471677523432374
+    },
+    {
+      "name": "at most p small singular values trial=0 p=1",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.832286069639805,
+      "analytic_lower_bound": 2.471677523432374
+    },
+    {
+      "name": "numeric Jacobi trial=0 p=1",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 4.414463986117197e-19,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "at most p small singular values trial=0 p=2",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.833141617877085,
+      "analytic_lower_bound": 2.471677523432374
+    },
+    {
+      "name": "numeric Jacobi trial=0 p=2",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 3.210704865600462e-32,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "at most p small singular values trial=0 p=3",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.8341236612773795,
+      "analytic_lower_bound": 2.471677523432374
+    },
+    {
+      "name": "numeric Jacobi trial=0 p=3",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 3.0250296862810077e-46,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "numeric row update trial=1 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 3.2057940090629424e-17,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=1 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 5.421010862427522e-20,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=1 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 0.00038096372576802836,
+      "smin": 0.0034253195182976973,
+      "roundoff_allowance": 6.675174184340591e-13
+    },
+    {
+      "name": "stable core trial=1 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.665745315751158
+    },
+    {
+      "name": "numeric row update trial=1 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 8.581650852231637e-18,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=1 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 2.117582368135751e-22,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=1 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 6.651461893425695e-07,
+      "smin": 5.98043144693314e-06,
+      "roundoff_allowance": 6.675174184340591e-13
+    },
+    {
+      "name": "stable core trial=1 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.665745315751158
+    },
+    {
+      "name": "numeric row update trial=1 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.0976949333817414e-18,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=1 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 3.877409121342317e-26,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=1 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 1.6076387923265098e-11,
+      "smin": 1.4454537603164124e-10,
+      "roundoff_allowance": 6.675174184340591e-13
+    },
+    {
+      "name": "stable core trial=1 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.665745315751158
+    },
+    {
+      "name": "numeric row update trial=1 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.1255569680037282e-26,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=1 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 6.500013562306921e-34,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=1 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 1.1201301518753771e-19,
+      "smin": 5.4254785423730683e-17,
+      "roundoff_allowance": 6.675174184340591e-13
+    },
+    {
+      "name": "stable core trial=1 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.665745315751158
+    },
+    {
+      "name": "at most p small singular values trial=1 p=1",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.8560456373059178,
+      "analytic_lower_bound": 2.665745315751158
+    },
+    {
+      "name": "numeric Jacobi trial=1 p=1",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 3.302815098613731e-17,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "at most p small singular values trial=1 p=2",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.8570181571414315,
+      "analytic_lower_bound": 2.665745315751158
+    },
+    {
+      "name": "numeric Jacobi trial=1 p=2",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 4.8987245957751116e-30,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "at most p small singular values trial=1 p=3",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.858173026315915,
+      "analytic_lower_bound": 2.665745315751158
+    },
+    {
+      "name": "numeric Jacobi trial=1 p=3",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 4.320305986780459e-41,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "numeric row update trial=2 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 2.4418399304374505e-18,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=2 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 5.421010862427522e-20,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=2 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 0.0001726837522642412,
+      "smin": 0.00155178572446074,
+      "roundoff_allowance": 6.770179902808453e-13
+    },
+    {
+      "name": "stable core trial=2 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.6182424565172266
+    },
+    {
+      "name": "numeric row update trial=2 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 4.3950489417289597e-17,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=2 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 4.235164736271502e-22,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=2 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 2.0504649600344654e-06,
+      "smin": 1.842604730330452e-05,
+      "roundoff_allowance": 6.770179902808453e-13
+    },
+    {
+      "name": "stable core trial=2 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.6182424565172266
+    },
+    {
+      "name": "numeric row update trial=2 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 4.1190597667012884e-19,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=2 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 2.5849394142282115e-26,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=2 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 1.30999753061805e-10,
+      "smin": 1.1772005439637157e-09,
+      "roundoff_allowance": 6.770179902808453e-13
+    },
+    {
+      "name": "stable core trial=2 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.6182424565172266
+    },
+    {
+      "name": "numeric row update trial=2 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.5692321308797847e-26,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=2 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 7.703719777548943e-34,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=2 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 4.351396806419052e-18,
+      "smin": 1.7271899984865263e-16,
+      "roundoff_allowance": 6.770179902808453e-13
+    },
+    {
+      "name": "stable core trial=2 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.6182424565172266
+    },
+    {
+      "name": "at most p small singular values trial=2 p=1",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.788152284985928,
+      "analytic_lower_bound": 2.6182424565172266
+    },
+    {
+      "name": "numeric Jacobi trial=2 p=1",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.0408340855860843e-17,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "at most p small singular values trial=2 p=2",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.7890164200981458,
+      "analytic_lower_bound": 2.6182424565172266
+    },
+    {
+      "name": "numeric Jacobi trial=2 p=2",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 2.6562163797445803e-27,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "at most p small singular values trial=2 p=3",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.7900268182905146,
+      "analytic_lower_bound": 2.6182424565172266
+    },
+    {
+      "name": "numeric Jacobi trial=2 p=3",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.7989446227777923e-38,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "numeric row update trial=3 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 3.2226689053939542e-18,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=3 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.3552527156068805e-20,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=3 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 0.00011246127620870164,
+      "smin": 0.0010137733770895965,
+      "roundoff_allowance": 6.57695485931351e-13
+    },
+    {
+      "name": "stable core trial=3 n=4",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.714854978264699
+    },
+    {
+      "name": "numeric row update trial=3 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.6747527453275272e-17,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=3 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 5.293955920339377e-23,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=3 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 8.788522543965218e-08,
+      "smin": 7.922343105752701e-07,
+      "roundoff_allowance": 6.57695485931351e-13
+    },
+    {
+      "name": "stable core trial=3 n=9",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.714854978264699
+    },
+    {
+      "name": "numeric row update trial=3 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 5.9227433752324376e-21,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=3 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.7670484276950664e-28,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=3 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 1.2491865304522437e-13,
+      "smin": 1.1262821335895418e-12,
+      "roundoff_allowance": 6.57695485931351e-13
+    },
+    {
+      "name": "stable core trial=3 n=17",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.714854978264699
+    },
+    {
+      "name": "numeric row update trial=3 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.3765916310758233e-30,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "numeric row norm trial=3 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 5.877471754111438e-38,
+      "tolerance": 2e-12
+    },
+    {
+      "name": "corner-singular sandwich trial=3 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "corner_abs": 2.131454571608131e-23,
+      "smin": 5.656106669274494e-17,
+      "roundoff_allowance": 6.57695485931351e-13
+    },
+    {
+      "name": "stable core trial=3 n=31",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 2.714854978264699
+    },
+    {
+      "name": "at most p small singular values trial=3 p=1",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.9528607587985998,
+      "analytic_lower_bound": 2.714854978264699
+    },
+    {
+      "name": "numeric Jacobi trial=3 p=1",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.0164395367051604e-20,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "at most p small singular values trial=3 p=2",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.953205675158474,
+      "analytic_lower_bound": 2.714854978264699
+    },
+    {
+      "name": "numeric Jacobi trial=3 p=2",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.1355741723132504e-34,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "at most p small singular values trial=3 p=3",
+      "passed": true,
+      "category": "floating-point consistency",
+      "s_p_plus_one": 2.9535923819817493,
+      "analytic_lower_bound": 2.714854978264699
+    },
+    {
+      "name": "numeric Jacobi trial=3 p=3",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 5.834822229624623e-47,
+      "tolerance": 2e-11
+    },
+    {
+      "name": "exact radial similarity n=2 radius=3/4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact radial similarity n=2 radius=5/4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact radial similarity n=4 radius=3/4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact radial similarity n=4 radius=5/4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact radial similarity n=7 radius=3/4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "exact radial similarity n=7 radius=5/4",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "100-digit geometric corner n=12",
+      "passed": true,
+      "category": "100-digit calculation"
+    },
+    {
+      "name": "100-digit singular sandwich n=12",
+      "passed": true,
+      "category": "100-digit calculation",
+      "corner": "0.000003379220508056640625",
+      "smin": "0.0000029652659961721080246249517199268728"
+    },
+    {
+      "name": "100-digit geometric corner n=30",
+      "passed": true,
+      "category": "100-digit calculation"
+    },
+    {
+      "name": "100-digit singular sandwich n=30",
+      "passed": true,
+      "category": "100-digit calculation",
+      "corner": "2.0991396429661901749543146230280399e-14",
+      "smin": "1.841995036702831878522411102974478e-14"
+    },
+    {
+      "name": "plateau Fourier coefficient k=-7",
+      "passed": true,
+      "category": "100-digit quadrature",
+      "error": 9.131997837475194e-103,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "plateau Fourier coefficient k=-3",
+      "passed": true,
+      "category": "100-digit quadrature",
+      "error": 6.938893903907228e-18,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "plateau Fourier coefficient k=-1",
+      "passed": true,
+      "category": "100-digit quadrature",
+      "error": 9.132026161324962e-103,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "plateau Fourier coefficient k=0",
+      "passed": true,
+      "category": "100-digit quadrature",
+      "error": 2.2356142295797736e-109,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "plateau Fourier coefficient k=1",
+      "passed": true,
+      "category": "100-digit quadrature",
+      "error": 9.132031088094852e-103,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "plateau Fourier coefficient k=2",
+      "passed": true,
+      "category": "100-digit quadrature",
+      "error": 2.3273769865351747e-110,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "plateau Fourier coefficient k=3",
+      "passed": true,
+      "category": "100-digit quadrature",
+      "error": 9.132002510873022e-103,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "plateau Fourier coefficient k=6",
+      "passed": true,
+      "category": "100-digit quadrature",
+      "error": 9.13822108203482e-103,
+      "tolerance": 1e-13
+    },
+    {
+      "name": "plateau log cofactor n=8",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 0.0,
+      "tolerance": 1.1722050808628766e-09
+    },
+    {
+      "name": "plateau Schur energy n=8",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "energy": 0.4986633840232997
+    },
+    {
+      "name": "plateau determinant energy bound n=8",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "plateau log cofactor n=16",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.7763568394002505e-15,
+      "tolerance": 1.5414716776312131e-09
+    },
+    {
+      "name": "plateau Schur energy n=16",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "energy": 0.5605384362055451
+    },
+    {
+      "name": "plateau determinant energy bound n=16",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "plateau log cofactor n=32",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.7763568394002505e-15,
+      "tolerance": 1.9195365958910046e-09
+    },
+    {
+      "name": "plateau Schur energy n=32",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "energy": 0.6551427821472418
+    },
+    {
+      "name": "plateau determinant energy bound n=32",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "plateau log cofactor n=64",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.7763568394002505e-15,
+      "tolerance": 2.3041451719855175e-09
+    },
+    {
+      "name": "plateau Schur energy n=64",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "energy": 0.7602995668133345
+    },
+    {
+      "name": "plateau determinant energy bound n=64",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "plateau log cofactor n=128",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 3.552713678800501e-15,
+      "tolerance": 2.6933344961614572e-09
+    },
+    {
+      "name": "plateau Schur energy n=128",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "energy": 0.8470077509185316
+    },
+    {
+      "name": "plateau determinant energy bound n=128",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "plateau log cofactor n=256",
+      "passed": true,
+      "category": "floating-point consistency",
+      "error": 1.9539925233402755e-14,
+      "tolerance": 3.0858326943896813e-09
+    },
+    {
+      "name": "plateau Schur energy n=256",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "energy": 0.9080665961258791
+    },
+    {
+      "name": "plateau determinant energy bound n=256",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "plateau Hankel sum telescoping identity",
+      "passed": true,
+      "category": "exact symbolic"
+    },
+    {
+      "name": "plateau finite Hankel sum N=1",
+      "passed": true,
+      "category": "exact rational"
+    },
+    {
+      "name": "plateau finite Hankel sum N=2",
+      "passed": true,
+      "category": "exact rational"
+    },
+    {
+      "name": "plateau finite Hankel sum N=7",
+      "passed": true,
+      "category": "exact rational"
+    },
+    {
+      "name": "plateau finite Hankel sum N=20",
+      "passed": true,
+      "category": "exact rational"
+    },
+    {
+      "name": "plateau explicit stability constant positive",
+      "passed": true,
+      "category": "scalar consistency"
+    },
+    {
+      "name": "plateau uniform squared stability n=8",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 0.29735763271532445
+    },
+    {
+      "name": "plateau leakage bounded by C1 n=8",
+      "passed": true,
+      "category": "floating-point consistency",
+      "leakage": 0.7017925203652879,
+      "c1": 0.7026423672846756
+    },
+    {
+      "name": "plateau finite unperturbed certificate n=8",
+      "passed": true,
+      "category": "floating-point consistency",
+      "bound": 1.6541426908524113,
+      "energy_deficit": 0.5013366159767003
+    },
+    {
+      "name": "plateau certificate remains diagnostic n=8",
+      "passed": true,
+      "category": "software status check"
+    },
+    {
+      "name": "plateau uniform squared stability n=16",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 0.29735763271532445
+    },
+    {
+      "name": "plateau leakage bounded by C1 n=16",
+      "passed": true,
+      "category": "floating-point consistency",
+      "leakage": 0.7024073576193999,
+      "c1": 0.7026423672846756
+    },
+    {
+      "name": "plateau finite unperturbed certificate n=16",
+      "passed": true,
+      "category": "floating-point consistency",
+      "bound": 1.0578332432572115,
+      "energy_deficit": 0.4394615637944549
+    },
+    {
+      "name": "plateau certificate remains diagnostic n=16",
+      "passed": true,
+      "category": "software status check"
+    },
+    {
+      "name": "plateau uniform squared stability n=32",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 0.29735763271532445
+    },
+    {
+      "name": "plateau leakage bounded by C1 n=32",
+      "passed": true,
+      "category": "floating-point consistency",
+      "leakage": 0.7025802493415796,
+      "c1": 0.7026423672846756
+    },
+    {
+      "name": "plateau finite unperturbed certificate n=32",
+      "passed": true,
+      "category": "floating-point consistency",
+      "bound": 0.6470569859935054,
+      "energy_deficit": 0.34485721785275825
+    },
+    {
+      "name": "plateau certificate remains diagnostic n=32",
+      "passed": true,
+      "category": "software status check"
+    },
+    {
+      "name": "plateau uniform squared stability n=64",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 0.29735763271532445
+    },
+    {
+      "name": "plateau leakage bounded by C1 n=64",
+      "passed": true,
+      "category": "floating-point consistency",
+      "leakage": 0.7026263736708103,
+      "c1": 0.7026423672846756
+    },
+    {
+      "name": "plateau finite unperturbed certificate n=64",
+      "passed": true,
+      "category": "floating-point consistency",
+      "bound": 0.3836228850556614,
+      "energy_deficit": 0.23970043318666545
+    },
+    {
+      "name": "plateau certificate remains diagnostic n=64",
+      "passed": true,
+      "category": "software status check"
+    },
+    {
+      "name": "plateau uniform squared stability n=128",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 0.29735763271532445
+    },
+    {
+      "name": "plateau leakage bounded by C1 n=128",
+      "passed": true,
+      "category": "floating-point consistency",
+      "leakage": 0.7026383077956382,
+      "c1": 0.7026423672846756
+    },
+    {
+      "name": "plateau finite unperturbed certificate n=128",
+      "passed": true,
+      "category": "floating-point consistency",
+      "bound": 0.2222167662237356,
+      "energy_deficit": 0.15299224908146836
+    },
+    {
+      "name": "plateau certificate remains diagnostic n=128",
+      "passed": true,
+      "category": "software status check"
+    },
+    {
+      "name": "plateau uniform squared stability n=256",
+      "passed": true,
+      "category": "floating-point consistency",
+      "analytic_lower_bound": 0.29735763271532445
+    },
+    {
+      "name": "plateau leakage bounded by C1 n=256",
+      "passed": true,
+      "category": "floating-point consistency",
+      "leakage": 0.7026413445796038,
+      "c1": 0.7026423672846756
+    },
+    {
+      "name": "plateau finite unperturbed certificate n=256",
+      "passed": true,
+      "category": "floating-point consistency",
+      "bound": 0.12644033215759756,
+      "energy_deficit": 0.09193340387412086
+    },
+    {
+      "name": "plateau certificate remains diagnostic n=256",
+      "passed": true,
+      "category": "software status check"
+    },
+    {
+      "name": "100-digit plateau stability margin",
+      "passed": true,
+      "category": "100-digit scalar"
+    },
+    {
+      "name": "reject certificate moment -1",
+      "passed": true,
+      "category": "software input validation"
+    },
+    {
+      "name": "reject certificate moment 1",
+      "passed": true,
+      "category": "software input validation"
+    },
+    {
+      "name": "reject certificate moment nan",
+      "passed": true,
+      "category": "software input validation"
+    },
+    {
+      "name": "actual smooth congruence zero n=8",
+      "passed": true,
+      "category": "structural zero with floating-point coefficients"
+    },
+    {
+      "name": "actual smooth stable core n=8",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth visible corner n=9",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "corner_abs": 0.00015087494324323437
+    },
+    {
+      "name": "actual smooth stable core n=9",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth congruence zero n=10",
+      "passed": true,
+      "category": "structural zero with floating-point coefficients"
+    },
+    {
+      "name": "actual smooth stable core n=10",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth congruence zero n=17",
+      "passed": true,
+      "category": "structural zero with floating-point coefficients"
+    },
+    {
+      "name": "actual smooth stable core n=17",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth visible corner n=18",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "corner_abs": 1.8461581749012835e-05
+    },
+    {
+      "name": "actual smooth stable core n=18",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth congruence zero n=19",
+      "passed": true,
+      "category": "structural zero with floating-point coefficients"
+    },
+    {
+      "name": "actual smooth stable core n=19",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth congruence zero n=35",
+      "passed": true,
+      "category": "structural zero with floating-point coefficients"
+    },
+    {
+      "name": "actual smooth stable core n=35",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth visible corner n=36",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "corner_abs": 1.678279486373743e-06
+    },
+    {
+      "name": "actual smooth stable core n=36",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth congruence zero n=37",
+      "passed": true,
+      "category": "structural zero with floating-point coefficients"
+    },
+    {
+      "name": "actual smooth stable core n=37",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth congruence zero n=71",
+      "passed": true,
+      "category": "structural zero with floating-point coefficients"
+    },
+    {
+      "name": "actual smooth stable core n=71",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth visible corner n=72",
+      "passed": true,
+      "category": "floating-point diagnostic",
+      "corner_abs": 1.0011490740932477e-07
+    },
+    {
+      "name": "actual smooth stable core n=72",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "actual smooth congruence zero n=73",
+      "passed": true,
+      "category": "structural zero with floating-point coefficients"
+    },
+    {
+      "name": "actual smooth stable core n=73",
+      "passed": true,
+      "category": "floating-point consistency"
+    },
+    {
+      "name": "reject invalid matrix order 0",
+      "passed": true,
+      "category": "software input validation"
+    },
+    {
+      "name": "reject invalid matrix order -1",
+      "passed": true,
+      "category": "software input validation"
+    },
+    {
+      "name": "reject invalid matrix order 2.5",
+      "passed": true,
+      "category": "software input validation"
+    }
+  ]
+}

@@ -1,0 +1,1117 @@
+{
+  "status": "CHECKED_PARTIAL_RESEARCH_PROOF_PACK",
+  "unrestricted_NR02_solved": false,
+  "new_standalone_result": "Every product of two complexity-six polygons has extension complexity twelve.",
+  "geometric_reduction_proof_assistant_verified": false,
+  "independent_peer_review": false,
+  "environment": {
+    "python": "3.12.14",
+    "sympy": "1.14.0",
+    "numpy": "2.3.5"
+  },
+  "deep_rup_requested": false,
+  "checks": [
+    {
+      "check": "package_integrity",
+      "status": "PASS",
+      "files": 68
+    },
+    {
+      "check": "checker_positive_and_negative_controls",
+      "status": "PASS",
+      "details": {
+        "valid_refutations_accepted": 20,
+        "invalid_or_incomplete_refutations_rejected": 23,
+        "toy_assignments_checked_exhaustively": 150,
+        "checkers": [
+          "python_positive_lrat",
+          "lrat_check",
+          "rup_check",
+          "rup_scan_check"
+        ]
+      }
+    },
+    {
+      "check": "certificate_6_6",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          6,
+          6
+        ],
+        "regenerated_source_sha256": "ca83c8d1158ee98596efb8e24334c19576059edbc4b2cb86f3f7f5e3caad8b6f",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 7940,
+          "source_clauses": 45643,
+          "checked_additions": 5439,
+          "checked_hint_references": 346981,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 7940,
+          "source_clauses": 45643,
+          "checked_additions": 5439,
+          "checked_hint_references": 346981,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 7940,
+          "source_clauses": 45643,
+          "checked_additions": 5439,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 24462149,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_6_7",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          6,
+          7
+        ],
+        "regenerated_source_sha256": "7fd1c0dc0a63ca5813d35495513ce844b1c93511b8505b613a08f5af513e8de8",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 10117,
+          "source_clauses": 55510,
+          "checked_additions": 9614,
+          "checked_hint_references": 703887,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 10117,
+          "source_clauses": 55510,
+          "checked_additions": 9614,
+          "checked_hint_references": 703887,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 10117,
+          "source_clauses": 55510,
+          "checked_additions": 9614,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 52792333,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_6_8",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          6,
+          8
+        ],
+        "regenerated_source_sha256": "e2a7dc634857f45fe1ef204e7db2748e3b182ed8f5efc4c20162317e7984d80b",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 12558,
+          "source_clauses": 66457,
+          "checked_additions": 7093,
+          "checked_hint_references": 428745,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 12558,
+          "source_clauses": 66457,
+          "checked_additions": 7093,
+          "checked_hint_references": 428745,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 12558,
+          "source_clauses": 66457,
+          "checked_additions": 7093,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 39161173,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_6_9",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          6,
+          9
+        ],
+        "regenerated_source_sha256": "8bb5de2b1077e2165e00b7ea90c9ecd9c44851b7590d5aca3e328915b6f84065",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 15263,
+          "source_clauses": 78484,
+          "checked_additions": 7019,
+          "checked_hint_references": 533361,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 15263,
+          "source_clauses": 78484,
+          "checked_additions": 7019,
+          "checked_hint_references": 533361,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 15263,
+          "source_clauses": 78484,
+          "checked_additions": 7019,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 43810745,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_7_7",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          7,
+          7
+        ],
+        "regenerated_source_sha256": "dcf0885727b527793f7a190e9c052e07463e7ccc7feeedd4c38d41bdb3f0a866",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 12800,
+          "source_clauses": 67425,
+          "checked_additions": 15447,
+          "checked_hint_references": 1048486,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 12800,
+          "source_clauses": 67425,
+          "checked_additions": 15447,
+          "checked_hint_references": 1048486,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 12800,
+          "source_clauses": 67425,
+          "checked_additions": 15447,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 112887530,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_7_8",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          7,
+          8
+        ],
+        "regenerated_source_sha256": "d0fc49eb23bac15b83a2f1d862ca4e38a819da84c9593023471bb8b9661b7a39",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 15791,
+          "source_clauses": 80600,
+          "checked_additions": 9987,
+          "checked_hint_references": 757969,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 15791,
+          "source_clauses": 80600,
+          "checked_additions": 9987,
+          "checked_hint_references": 757969,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 15791,
+          "source_clauses": 80600,
+          "checked_additions": 9987,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 71400718,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_7_9",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          7,
+          9
+        ],
+        "regenerated_source_sha256": "7123eb3975b6b8ea2c76af03ec435ea5ced256f67c81efcdda0d92fa4cc74e86",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 19090,
+          "source_clauses": 95035,
+          "checked_additions": 13920,
+          "checked_hint_references": 1111358,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 19090,
+          "source_clauses": 95035,
+          "checked_additions": 13920,
+          "checked_hint_references": 1111358,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 19090,
+          "source_clauses": 95035,
+          "checked_additions": 13920,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 110182952,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_8_8",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          8,
+          8
+        ],
+        "regenerated_source_sha256": "70bea3d4337ccaedc5e4922cbef62bcfeb70eadf3ac796cc012b4feb9f623e46",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 19376,
+          "source_clauses": 96183,
+          "checked_additions": 8144,
+          "checked_hint_references": 826076,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 19376,
+          "source_clauses": 96183,
+          "checked_additions": 8144,
+          "checked_hint_references": 826076,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 19376,
+          "source_clauses": 96183,
+          "checked_additions": 8144,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 58125934,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_8_9",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          8,
+          9
+        ],
+        "regenerated_source_sha256": "08ed7402e5abf6682b6d29579129c04085fc0af02c17cb83ea019854b321255f",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 23313,
+          "source_clauses": 113206,
+          "checked_additions": 7462,
+          "checked_hint_references": 851199,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 23313,
+          "source_clauses": 113206,
+          "checked_additions": 7462,
+          "checked_hint_references": 851199,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 23313,
+          "source_clauses": 113206,
+          "checked_additions": 7462,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 68379813,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "certificate_9_9",
+      "status": "PASS",
+      "details": {
+        "polygon_sizes": [
+          9,
+          9
+        ],
+        "regenerated_source_sha256": "5eea217a5b3103dd875bbd1953394a4d2776a77164f9c70b313f16ca2b2a03d6",
+        "python_lrat": {
+          "status": "VERIFIED_UNSAT_BY_POSITIVE_LRAT",
+          "source_variables": 27932,
+          "source_clauses": 132997,
+          "checked_additions": 12161,
+          "checked_hint_references": 1140406,
+          "empty_clause_checked": true,
+          "normalization_skips": 0
+        },
+        "cpp_lrat": {
+          "status": "VERIFIED_UNSAT_BY_CPP_POSITIVE_LRAT",
+          "source_variables": 27932,
+          "source_clauses": 132997,
+          "checked_additions": 12161,
+          "checked_hint_references": 1140406,
+          "empty_clause_checked": true
+        },
+        "independent_rup": {
+          "status": "VERIFIED_UNSAT_BY_RUP",
+          "source_variables": 27932,
+          "source_clauses": 132997,
+          "checked_additions": 12161,
+          "duplicate_or_source_additions": 0,
+          "ignored_deletions": 0,
+          "input_trace_lines": 0,
+          "watched_clause_visits": 117983118,
+          "empty_clause_checked": true
+        }
+      }
+    },
+    {
+      "check": "exact_octagon_and_square",
+      "status": "PASS",
+      "details": {
+        "polygon_vertices": 8,
+        "polygon_facets": 8,
+        "extension_dimension": 3,
+        "extension_facets": 6,
+        "slack_shape": [
+          8,
+          8
+        ],
+        "slack_ordinary_rank": 3,
+        "left_factor_rank": 5,
+        "right_factor_rank": 4,
+        "square_slack_shape": [
+          16,
+          64
+        ],
+        "square_ordinary_rank": 5,
+        "square_factorization_size": 12,
+        "all_polygon_vertices_and_extension_vertices_enumerated_exactly": true,
+        "nonnegative_rank_lower_bounds_are_written_proofs_not_numerical_tests": true
+      }
+    },
+    {
+      "check": "encoding_semantics",
+      "status": "PASS",
+      "details": {
+        "truth_tables": {
+          "and_assignments": 254,
+          "prefix_gate_assignments": 16,
+          "cardinality_assignments": 6144,
+          "lexicographic_pairs": 5460
+        },
+        "full_model_primary_assignments": 600,
+        "constraint_group_comparisons": 5400,
+        "per_case": [
+          {
+            "polygon_sizes": [
+              6,
+              6
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              6,
+              7
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              6,
+              8
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              6,
+              9
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              7,
+              7
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              7,
+              8
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              7,
+              9
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              8,
+              8
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              8,
+              9
+            ],
+            "primary_assignments": 60
+          },
+          {
+            "polygon_sizes": [
+              9,
+              9
+            ],
+            "primary_assignments": 60
+          }
+        ],
+        "exact_twelve_term_control": "PASS",
+        "higher_complexity_satisfying_support_control": "PASS"
+      }
+    },
+    {
+      "check": "higher_complexity_support_barrier",
+      "status": "PASS",
+      "details": {
+        "support_constraints": "SAT_BY_EXACT_INTEGER_CHECK",
+        "forced_active_columns_by_octagon_vertex": [
+          [
+            1,
+            3,
+            4,
+            7,
+            8,
+            11
+          ],
+          [
+            1,
+            3,
+            5,
+            7,
+            9,
+            11
+          ],
+          [
+            1,
+            2,
+            5,
+            7,
+            9,
+            10
+          ],
+          [
+            1,
+            2,
+            4,
+            7,
+            8,
+            10
+          ],
+          [
+            0,
+            2,
+            4,
+            6,
+            8,
+            10
+          ],
+          [
+            0,
+            2,
+            5,
+            6,
+            9,
+            10
+          ],
+          [
+            0,
+            3,
+            5,
+            6,
+            9,
+            11
+          ],
+          [
+            0,
+            3,
+            4,
+            6,
+            8,
+            11
+          ]
+        ],
+        "witnesses": [
+          {
+            "octagon_row": 0,
+            "octagon_vertex": 2,
+            "active_columns": [
+              2,
+              10
+            ],
+            "forced_hexagon_antipodes": [
+              1,
+              5
+            ]
+          },
+          {
+            "octagon_row": 1,
+            "octagon_vertex": 0,
+            "active_columns": [
+              4,
+              8
+            ],
+            "forced_hexagon_antipodes": [
+              2,
+              4
+            ]
+          }
+        ],
+        "forced_antipodal_pairs_alternate": false,
+        "geometric_infeasibility": "FOLLOWS_FROM_THE_WRITTEN_CYCLIC_NORMAL_PROOF",
+        "this_is_not_an_NR02_counterexample": true
+      }
+    },
+    {
+      "check": "preserved_rounds_three_two_one",
+      "status": "PASS",
+      "details": {
+        "status": "PARTIAL_RESEARCH_REPRODUCIBILITY_AUDIT",
+        "unrestricted_NR02_solved": false,
+        "proof_assistant_verified": false,
+        "environment": {
+          "python": "3.12.14",
+          "sympy": "1.14.0",
+          "platform": "macOS-26.5-arm64-arm-64bit"
+        },
+        "checks": [
+          {
+            "check": "package_integrity",
+            "status": "PASS",
+            "files": 36
+          },
+          {
+            "check": "exact_combinatorics_and_examples",
+            "status": "PASS",
+            "details": {
+              "sign_incidence_python": {
+                "max_total": 8,
+                "sign_patterns_up_to_group_permutations": 805,
+                "subsets_checked": 19109,
+                "largest_object_set": 10,
+                "violations": 0
+              },
+              "one_block_graphs": {
+                "vertices": 6,
+                "graphs": 32768,
+                "graph_mixed_subsets": 38309,
+                "mixed_components_checked": 7971,
+                "isolated_mixed_pair_occurrences": 2145,
+                "violations": 0
+              },
+              "gale_sign_configurations": {
+                "directions": [
+                  [
+                    1,
+                    0
+                  ],
+                  [
+                    1,
+                    1
+                  ],
+                  [
+                    0,
+                    1
+                  ],
+                  [
+                    -1,
+                    1
+                  ],
+                  [
+                    -1,
+                    0
+                  ],
+                  [
+                    -1,
+                    -1
+                  ],
+                  [
+                    0,
+                    -1
+                  ],
+                  [
+                    1,
+                    -1
+                  ],
+                  [
+                    0,
+                    0
+                  ]
+                ],
+                "orders": [
+                  {
+                    "n": 6,
+                    "multisets_checked": 3003,
+                    "depth_two_rank_two": 36,
+                    "zero_cases": 0,
+                    "antipodal_cases": 20,
+                    "no_zero_no_antipode_cases": 16,
+                    "violations": 0
+                  },
+                  {
+                    "n": 7,
+                    "multisets_checked": 6435,
+                    "depth_two_rank_two": 284,
+                    "zero_cases": 36,
+                    "antipodal_cases": 192,
+                    "no_zero_no_antipode_cases": 56,
+                    "violations": 0
+                  },
+                  {
+                    "n": 8,
+                    "multisets_checked": 12870,
+                    "depth_two_rank_two": 1199,
+                    "zero_cases": 284,
+                    "antipodal_cases": 787,
+                    "no_zero_no_antipode_cases": 128,
+                    "violations": 0
+                  },
+                  {
+                    "n": 9,
+                    "multisets_checked": 24310,
+                    "depth_two_rank_two": 3703,
+                    "zero_cases": 1199,
+                    "antipodal_cases": 2264,
+                    "no_zero_no_antipode_cases": 240,
+                    "violations": 0
+                  }
+                ],
+                "five_vector_exception_has_disjoint_circuits": false
+              },
+              "ridge_table": {
+                "ridge_type_instances": 5950,
+                "simplex_ridge_instances": 730,
+                "apex_mass_checks": 498,
+                "one_apex_base_checks": 24,
+                "violations": 0
+              },
+              "exact_matrix_examples": {
+                "star_shape": [
+                  7,
+                  10
+                ],
+                "star_terms_before": 8,
+                "star_terms_after_merge": 7,
+                "triple_pentagon_shape": [
+                  15,
+                  125
+                ],
+                "triple_pentagon_ordinary_rank": 7,
+                "triple_pentagon_upper_terms": 15,
+                "all_equalities_exact": true
+              },
+              "failed_search_record": {
+                "candidate_terms": 11,
+                "positive_entries": 288,
+                "uncovered_positive_entries": 6,
+                "max_row_degree": 3,
+                "max_slice_omissions": 5,
+                "exact_factorization": false,
+                "solver_infeasibility_certificate": false
+              }
+            }
+          },
+          {
+            "check": "rational_projection_audit",
+            "status": "PASS",
+            "details": {
+              "seed": 9021317,
+              "arithmetic": "exact integer determinants",
+              "types": [
+                {
+                  "m": 2,
+                  "n": 4,
+                  "t": 0,
+                  "examples": 30,
+                  "attempts": 30,
+                  "simplex_facet_subsets_checked": 468,
+                  "vertex_count_range": [
+                    6,
+                    8
+                  ],
+                  "facet_count_range": [
+                    5,
+                    8
+                  ],
+                  "simplex_facet_count_range": [
+                    2,
+                    4
+                  ],
+                  "violations": 0
+                },
+                {
+                  "m": 3,
+                  "n": 3,
+                  "t": 0,
+                  "examples": 30,
+                  "attempts": 30,
+                  "simplex_facet_subsets_checked": 464,
+                  "vertex_count_range": [
+                    8,
+                    9
+                  ],
+                  "facet_count_range": [
+                    7,
+                    9
+                  ],
+                  "simplex_facet_count_range": [
+                    3,
+                    4
+                  ],
+                  "violations": 0
+                },
+                {
+                  "m": 2,
+                  "n": 3,
+                  "t": 1,
+                  "examples": 30,
+                  "attempts": 30,
+                  "simplex_facet_subsets_checked": 2256,
+                  "vertex_count_range": [
+                    6,
+                    7
+                  ],
+                  "facet_count_range": [
+                    6,
+                    9
+                  ],
+                  "simplex_facet_count_range": [
+                    4,
+                    8
+                  ],
+                  "violations": 0
+                },
+                {
+                  "m": 2,
+                  "n": 2,
+                  "t": 2,
+                  "examples": 30,
+                  "attempts": 30,
+                  "simplex_facet_subsets_checked": 3648,
+                  "vertex_count_range": [
+                    5,
+                    6
+                  ],
+                  "facet_count_range": [
+                    6,
+                    8
+                  ],
+                  "simplex_facet_count_range": [
+                    6,
+                    8
+                  ],
+                  "violations": 0
+                }
+              ]
+            }
+          },
+          {
+            "check": "nine_vertex_rational_certificate",
+            "status": "PASS",
+            "details": {
+              "vertices": 9,
+              "facets": 9,
+              "dimension": 3,
+              "ordinary_slack_rank": 4,
+              "extension_facets": 6,
+              "extension_dimension": 4,
+              "left_factor_rank": 5,
+              "product_shape": [
+                18,
+                81
+              ],
+              "product_ordinary_rank": 7,
+              "product_upper_terms": 12,
+              "nonnegative_products_exact": true,
+              "vertex_extremality_witnesses": 9
+            }
+          },
+          {
+            "check": "independent_cpp_sign_incidence",
+            "status": "PASS",
+            "details": {
+              "max_total": 12,
+              "sign_patterns_up_to_group_permutations": 7058,
+              "subsets_checked": 2312572,
+              "largest_object_set": 18,
+              "violations": 0
+            },
+            "independent_python_agreement": true
+          },
+          {
+            "check": "preserved_second_pack_and_first_pack",
+            "status": "PASS",
+            "details": {
+              "status": "ALL EXECUTED REPRODUCIBILITY CHECKS PASSED",
+              "scope": "Finite exact checks and prior regression; NOT formal theorem verification; NOT unrestricted NR-02.",
+              "environment": {
+                "python": "3.12.14",
+                "sympy": "1.14.0"
+              },
+              "checks": [
+                {
+                  "check": "new_exact_python_checks",
+                  "status": "PASS",
+                  "details": {
+                    "independent_graph_orders": [
+                      2,
+                      3,
+                      4,
+                      5
+                    ],
+                    "row_patterns": 128,
+                    "zonogon_triples": 13824,
+                    "polygon_gluing_patterns": 2016,
+                    "hexagon_row_patterns": 256,
+                    "plane_zero_set_triples": 1771,
+                    "polygon_triple_coactivity_cases": 680
+                  }
+                },
+                {
+                  "check": "cpp_graph_enumeration",
+                  "status": "PASS",
+                  "details": {
+                    "six_vertex_assignment_space": 14348907,
+                    "admissible": 76265,
+                    "violations": 0,
+                    "independent_python_agreement": true
+                  }
+                },
+                {
+                  "check": "preserved_first_pack_regression",
+                  "status": "PASS",
+                  "details": {
+                    "status": "ALL EXECUTED REPRODUCIBILITY CHECKS PASSED",
+                    "scope": "Finite combinatorics, explicit matrices, saved residuals. NOT formal theorem verification; NOT a full NR-02 solution.",
+                    "environment": {
+                      "python": "3.12.14",
+                      "numpy": "2.3.5",
+                      "sympy": "1.14.0"
+                    },
+                    "checks": [
+                      {
+                        "check": "exact_finite_combinatorics",
+                        "status": "PASS",
+                        "details": {
+                          "gluing_patterns": 32,
+                          "surviving_patterns": [
+                            0
+                          ],
+                          "hexagon_paired_supports": 36,
+                          "middle_facet_cases": 18,
+                          "integer_count_solutions": [
+                            [
+                              6,
+                              6
+                            ]
+                          ]
+                        }
+                      },
+                      {
+                        "check": "hexagon_t",
+                        "status": "PASS",
+                        "details": {
+                          "vertices": 6,
+                          "facets": 6,
+                          "ordinary_rank": 3,
+                          "facet_zero_pattern": "exact consecutive-vertex incidences",
+                          "concurrence_determinants": [
+                            -16560,
+                            21420,
+                            -4860,
+                            -16560,
+                            21420,
+                            -4860,
+                            4860,
+                            16560,
+                            -21420,
+                            4860,
+                            16560,
+                            -21420
+                          ]
+                        }
+                      },
+                      {
+                        "check": "hexagon_u",
+                        "status": "PASS",
+                        "details": {
+                          "vertices": 6,
+                          "facets": 6,
+                          "ordinary_rank": 3,
+                          "facet_zero_pattern": "exact consecutive-vertex incidences",
+                          "concurrence_determinants": [
+                            -34800,
+                            42000,
+                            -7200,
+                            -34800,
+                            42000,
+                            -7200,
+                            7200,
+                            34800,
+                            -42000,
+                            7200,
+                            34800,
+                            -42000
+                          ]
+                        }
+                      },
+                      {
+                        "check": "pentagon",
+                        "status": "PASS",
+                        "details": {
+                          "vertices": 5,
+                          "facets": 5,
+                          "ordinary_rank": 3,
+                          "facet_zero_pattern": "exact consecutive-vertex incidences"
+                        }
+                      },
+                      {
+                        "check": "exact_solved_instance",
+                        "status": "PASS",
+                        "details": {
+                          "product_shape": [
+                            11,
+                            30
+                          ],
+                          "ordinary_rank": 5,
+                          "upper_factorization": "I_11 times C, exact",
+                          "lower_bound": "Depends on the written proof and cited classification; not machine-formalized."
+                        }
+                      },
+                      {
+                        "check": "support_only_warning_example",
+                        "status": "PASS",
+                        "details": {
+                          "rectangles": 7,
+                          "ordinary_ranks": [
+                            4,
+                            7
+                          ],
+                          "warning": "This Boolean cover is NOT a nonnegative factorization or a full-slack counterexample."
+                        }
+                      },
+                      {
+                        "check": "saved_numerical_search_same",
+                        "status": "PASS",
+                        "details": {
+                          "recorded_seeds": 30,
+                          "relative_residual": 0.00416622420643337,
+                          "interpretation": "Verifies saved residual only; neither existence nor nonexistence certified."
+                        }
+                      },
+                      {
+                        "check": "saved_numerical_search_different",
+                        "status": "PASS",
+                        "details": {
+                          "recorded_seeds": 30,
+                          "relative_residual": 0.004317632999191191,
+                          "interpretation": "Verifies saved residual only; neither existence nor nonexistence certified."
+                        }
+                      },
+                      {
+                        "check": "independent_cpp_enumeration",
+                        "status": "PASS",
+                        "details": {
+                          "patterns_per_pentagon_facet": 36,
+                          "unpruned_assignments": 60466176,
+                          "positive_top_entries": 120,
+                          "nodes_by_depth": [
+                            1,
+                            36,
+                            1296,
+                            46656,
+                            3672,
+                            1494
+                          ],
+                          "degree_prunes": 3906,
+                          "coverage_prunes": 51570,
+                          "feasible_assignments": 0,
+                          "arithmetic": "exact unsigned integers and bit sets"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+

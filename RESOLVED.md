@@ -21,6 +21,35 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### 🏆 MI-32 — the Latała–Świątkowski upper comparison — Diar Heidary
+
+**Lean verified — 2026-09-14. Formalization: Diar Heidary**, unaffiliated,
+with AI-agent assistance. The complete original target of [MI-32](matrix-inequalities-and-norms/MI-32/README.md)
+is proved: for every $`\alpha\ge1`$ there is $`C_\alpha>0`$, independent of the
+dimension and of the entry laws, with
+$`\mathbb E\|X\|_2\le C_\alpha(M(X)+D(X))`$ for every square matrix of
+independent mean-zero entries satisfying the displayed moment-doubling
+condition at every real order $`r\ge1`$. The
+[immutable proof source](https://github.com/DiarHaidary/Spectral-norms-of-independent-entries-with-regular-moment-growth/tree/762bd5ec5050a96f5e6ba3926b6cda4816fcd4b0)
+exports the single declaration `MI32.main_upper` and is registered as
+[Palomar entry PALOMAR-2026-09-14-000006, version 1](https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-14-000006&version=1),
+which preserves an archival fork of that commit. Palomar's
+[Linux Comparator, NanoDa and sandboxed kernel run 34852526384](https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/34852526384)
+accepted the frozen statement and replayed the solution, admitting only
+`propext`, `Classical.choice` and `Quot.sound`; the entry records trust level
+`high` and an editorial review outcome of `neutral`. The arbitrary probability
+space, the single shared deterministic deletion set on both axes, and the
+subunit order $`\ln2`$ at $`k=1`$ are all retained literally, and the hypothesis
+class is separately shown to be non-vacuous. The
+[canonical verification evidence](matrix-inequalities-and-norms/MI-32/README.md#lean-proof-and-verification-evidence--2026-09-14)
+records the toolchain, dependency pins, definition correspondence, reproduction
+commands and axiom report. Conjecture credit remains with Rafał Latała and
+Witold Świątkowski (Conjecture 4.3, EJP 27 (2022), paper 80); their Theorem 4.1
+reverse inequality is credited and is outside the formalized scope. AI
+assistance and AI review are disclosed; this catalog reviewed a public
+verification record rather than rerunning the checks, and no external human peer
+review is claimed.
+
 ### SP-03, SP-07 and SP-09 — further supporting and partial results — Sidney Holden
 
 **Recorded 14 September 2026 (UTC).** [Submission, author affiliation and three independent informal AI-agent reviews](references/holden-sp-continuations-2026-09-14/README.md). SP-03 adds Stein reductions, parity and finite root certificates; SP-07 adds completion barriers and a stationary model; SP-09 adds a first-order splitting theorem with a dimension-dependent remainder bound. These do not settle the full original targets. SP-03 is Partially resolved on the new parity theorem; SP-07 remains Open and SP-09 remains Partially resolved. Original statements and IDs are unchanged. No Lean verification or external human peer review is claimed.

@@ -2,7 +2,7 @@
 
 [← All categories](../README.md) · [Full catalog](../CATALOG.md) · [Solved and claimed solutions](../RESOLVED.md)
 
-**17 problems with open targets.** 15 retained entries are excluded from the open count.
+**16 problems with open targets.** 16 retained entries are excluded from the open count.
 
 | ID | Problem | Status | Difficulty | Impact | Read / source |
 | --- | --- | --- | --- | --- | --- |
@@ -22,7 +22,6 @@
 | [MI-25](MI-25/README.md) | Dimension-independent Hlawka constants for Schatten norms | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](MI-25/problem.pdf) · [TeX](MI-25/problem.tex) |
 | [MI-30](MI-30/README.md) | Product inequality for disjoint principal minors of Wishart matrices | **🟡 PARTIAL** | challenging | interesting to specialist | [PDF](MI-30/problem.pdf) · [TeX](MI-30/problem.tex) |
 | [MI-31](MI-31/README.md) | Sharp parameter dependence for structured Gaussian operator norms | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](MI-31/problem.pdf) · [TeX](MI-31/problem.tex) |
-| [MI-32](MI-32/README.md) | Spectral norms of independent entries with regular moment growth | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](MI-32/problem.pdf) · [TeX](MI-32/problem.tex) |
 
 ## Retained entries outside the open count
 
@@ -43,5 +42,6 @@
 | [MI-27](MI-27/README.md) | Constant one in the logarithmic commutator inequality | **✅ SOLVED** | challenging | broadly interesting | [PDF](MI-27/problem.pdf) · [TeX](MI-27/problem.tex) |
 | [MI-28](MI-28/README.md) | Ghabries's determinant comparison for arbitrary nonnegative base powers | **✅ SOLVED** | challenging | interesting to specialist | [PDF](MI-28/problem.pdf) · [TeX](MI-28/problem.tex) |
 | [MI-29](MI-29/README.md) | Modulus-order determinant comparison with an arbitrary base power | **🏆 LEAN VERIFIED** | challenging | interesting to specialist | [PDF](MI-29/problem.pdf) · [TeX](MI-29/problem.tex) |
+| [MI-32](MI-32/README.md) | Spectral norms of independent entries with regular moment growth | **🏆 LEAN VERIFIED** | challenging | interesting to the community | [PDF](MI-32/problem.pdf) · [TeX](MI-32/problem.tex) |
 
 Ratings are editorial; each entry explains both ratings and the scope of its status evidence. [Definitions](../README.md#problem-status).

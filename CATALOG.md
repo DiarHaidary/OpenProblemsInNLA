@@ -1,8 +1,8 @@
 # All problems and their status
 
-**115 problems with open targets:** 42 open and 73 partially resolved. **102 other retained entries**, excluded from the open count.
+**114 problems with open targets:** 42 open and 72 partially resolved. **103 other retained entries**, excluded from the open count.
 
-**Resolution evidence:** 72 solved (published or independently audited); 30 solved with Lean verification.
+**Resolution evidence:** 72 solved (published or independently audited); 31 solved with Lean verification.
 
 Each entry records its own literature-check date. Literature checks are bounded; ratings are editorial. “Impact” uses the canonical `Importance` field.
 
@@ -239,7 +239,6 @@ Retained entries outside the open count:
 | [MI-25](matrix-inequalities-and-norms/MI-25/README.md) | Dimension-independent Hlawka constants for Schatten norms | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](matrix-inequalities-and-norms/MI-25/problem.pdf) · [TeX](matrix-inequalities-and-norms/MI-25/problem.tex) |
 | [MI-30](matrix-inequalities-and-norms/MI-30/README.md) | Product inequality for disjoint principal minors of Wishart matrices | **🟡 PARTIAL** | challenging | interesting to specialist | [PDF](matrix-inequalities-and-norms/MI-30/problem.pdf) · [TeX](matrix-inequalities-and-norms/MI-30/problem.tex) |
 | [MI-31](matrix-inequalities-and-norms/MI-31/README.md) | Sharp parameter dependence for structured Gaussian operator norms | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](matrix-inequalities-and-norms/MI-31/problem.pdf) · [TeX](matrix-inequalities-and-norms/MI-31/problem.tex) |
-| [MI-32](matrix-inequalities-and-norms/MI-32/README.md) | Spectral norms of independent entries with regular moment growth | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](matrix-inequalities-and-norms/MI-32/problem.pdf) · [TeX](matrix-inequalities-and-norms/MI-32/problem.tex) |
 
 Retained entries outside the open count:
 
@@ -260,6 +259,7 @@ Retained entries outside the open count:
 | [MI-27](matrix-inequalities-and-norms/MI-27/README.md) | Constant one in the logarithmic commutator inequality | **✅ SOLVED** | challenging | broadly interesting | [PDF](matrix-inequalities-and-norms/MI-27/problem.pdf) · [TeX](matrix-inequalities-and-norms/MI-27/problem.tex) |
 | [MI-28](matrix-inequalities-and-norms/MI-28/README.md) | Ghabries's determinant comparison for arbitrary nonnegative base powers | **✅ SOLVED** | challenging | interesting to specialist | [PDF](matrix-inequalities-and-norms/MI-28/problem.pdf) · [TeX](matrix-inequalities-and-norms/MI-28/problem.tex) |
 | [MI-29](matrix-inequalities-and-norms/MI-29/README.md) | Modulus-order determinant comparison with an arbitrary base power | **🏆 LEAN VERIFIED** | challenging | interesting to specialist | [PDF](matrix-inequalities-and-norms/MI-29/problem.pdf) · [TeX](matrix-inequalities-and-norms/MI-29/problem.tex) |
+| [MI-32](matrix-inequalities-and-norms/MI-32/README.md) | Spectral norms of independent entries with regular moment growth | **🏆 LEAN VERIFIED** | challenging | interesting to the community | [PDF](matrix-inequalities-and-norms/MI-32/problem.pdf) · [TeX](matrix-inequalities-and-norms/MI-32/problem.tex) |
 
 
 ## [Frames and matrix designs](frames-and-matrix-designs/README.md)

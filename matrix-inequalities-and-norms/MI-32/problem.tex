@@ -34,7 +34,7 @@ growth},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}MI-32}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-11}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-14}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -51,11 +51,22 @@ norms of independent entries with regular moment growth\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} challenging\quad\textbf{Importance:} interesting
 to the community\par}
-{\sffamily\small\bfseries\color{accent}Status: Partially resolved\par}
+{\sffamily\small\bfseries\color{accent}Status: Lean verified\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
 \textbf{Topic:} Expected spectral norms of inhomogeneous random matrices
+
+\textbf{Lean verified --- 2026-09-14. Formalization: Diar Heidary,
+unaffiliated.} The upper comparison displayed below, which is the whole
+of the conjecture stated in this entry, is proved in Lean 4 and
+machine-checked. The proof source, its mechanical verification and its
+transitive axiom report are recorded in
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/matrix-inequalities-and-norms/MI-32\#lean-proof-and-verification-evidence--2026-09-14}{Lean
+proof and verification evidence} below. The conjecture remains credited
+to Latała and Świątkowski, and the reverse inequality quoted in this
+entry remains their Theorem 4.1 and is not formalized. AI assistance is
+disclosed; no external human peer review is claimed.
 
 \textbf{Rating rationale:} The missing upper estimate must account for
 localized random fluctuations across all variance profiles. Even
@@ -75,18 +86,14 @@ entries with finite absolute moments of every order, satisfying
 
 Set \([n]=\{1,\ldots,n\}\) and
 
-\[
-M(X)=\max_i\left(\sum_j\mathbb E X_{ij}^2\right)^{1/2}
-+\max_j\left(\sum_i\mathbb E X_{ij}^2\right)^{1/2},
-\]
+\[M(X)=\max_i\left(\sum_j\mathbb E X_{ij}^2\right)^{1/2}
++\max_j\left(\sum_i\mathbb E X_{ij}^2\right)^{1/2},\]
 
-\[
-D(X)=\max_{1\le k\le n}\;
+\[D(X)=\max_{1\le k\le n}\;
 \min_{\substack{I\subseteq[n]\\|I|\le k}}
 \sup_{\substack{s,t\in\mathbb R^n\\\|s\|_2,\|t\|_2\le1}}
 \left\|\sum_{\substack{i\notin I\\j\notin I}}X_{ij}s_it_j
-\right\|_{L_{\ln(k+1)}}.
-\]
+\right\|_{L_{\ln(k+1)}}.\]
 
 \textbf{Conjecture (Latała--Świątkowski).} For every \(\alpha\ge1\)
 there is a constant \(C_\alpha>0\) such that, for every \(n\ge1\) and
@@ -106,7 +113,199 @@ proved, so the target is equivalent to the source's two-sided
 comparison. No identical-distribution or symmetry assumption is imposed
 on the entries.
 
-\newpage
+\subsection{Lean proof and verification evidence ---
+2026-09-14}\label{lean-proof-and-verification-evidence-2026-09-14}
+
+\subsubsection{Proof source, toolchain and pinned
+dependencies}\label{proof-source-toolchain-and-pinned-dependencies}
+
+The formalization is the Lean 4 project
+\href{https://github.com/DiarHaidary/Spectral-norms-of-independent-entries-with-regular-moment-growth}{DiarHaidary/Spectral-norms-of-independent-entries-with-regular-moment-growth}
+at the immutable revision
+\href{https://github.com/DiarHaidary/Spectral-norms-of-independent-entries-with-regular-moment-growth/tree/762bd5ec5050a96f5e6ba3926b6cda4816fcd4b0}{\textit{762bd5ec5050a96f5e6ba3926b6cda4816fcd4b0}}.
+That exact commit is registered with the Palomar registry as
+\href{https://palomar-registry.org/entry.html?id=PALOMAR-2026-09-14-000006&version=1}{PALOMAR-2026-09-14-000006,
+version 1}, which also preserves an archival fork of it.
+
+\begin{itemize}
+\tightlist
+\item
+  Lean toolchain: \textit{leanprover/lean4:v4.33.0}.
+\item
+  \textit{mathlib} pinned at
+  \textit{db584cd6d46c92f209a44c0f1c829460d327499d}; the remaining eight
+  Lake dependencies are pinned to exact commits in the committed
+  \textit{lake-manifest.json}.
+\item
+  \textit{Challenge.lean} imports Mathlib only.
+\end{itemize}
+
+\subsubsection{Compared declaration and its correspondence to this
+entry}\label{compared-declaration-and-its-correspondence-to-this-entry}
+
+Comparator selects the single declaration \textit{MI32.main\_upper},
+with \textit{definition\_names} empty, so no part of the statement is a
+replaceable hole. Its literal Lean text is in
+\href{https://github.com/DiarHaidary/Spectral-norms-of-independent-entries-with-regular-moment-growth/blob/762bd5ec5050a96f5e6ba3926b6cda4816fcd4b0/Challenge.lean}{\textit{Challenge.lean}},
+the file a reader is expected to audit. In the notation of this entry it
+asserts
+
+\[\forall\,\alpha\ge1\quad\exists\,C>0\quad\text{such that}\quad
+\mathbb E\|X\|_2\le C\bigl(M(X)+D(X)\bigr)\]
+
+for every \(n\ge1\) and every admissible \(X\). The correspondence
+between the displayed quantities and the definitions in that file is:
+
+\begin{itemize}
+\tightlist
+\item
+  \(\|Z\|_{L_r}\) is \textit{moment}, defined as \((\int|Z|^r)^{1/r}\)
+  with a \emph{real} exponent. It is therefore the displayed functional
+  also when \(r<1\), so the order \(\ln2\) at \(k=1\) is kept literally
+  and is not replaced by one.
+\item
+  The hypotheses on \(X\) are \textit{RegularEntries}: entry
+  measurability; joint independence of the family indexed by ordered
+  pairs, as \textit{iIndepFun}; each entry has Bochner integral zero;
+  \(|X_{ij}|^p\) is integrable for every real \(p>0\); and
+  \(\|X_{ij}\|_{L_{2r}}\le\alpha\|X_{ij}\|_{L_r}\) for every real
+  \(r\ge1\). Neither identical distribution nor symmetry is assumed.
+\item
+  \(\|X\|_2\) is \textit{spectralNorm}, the operator norm of the
+  Euclidean linear map of the matrix.
+\item
+  \(M(X)\) is \textit{varianceScale}, the supremum of the row standard
+  deviations plus the supremum of the column standard deviations.
+\item
+  The inner supremum over \(\|s\|_2,\|t\|_2\le1\) after deleting \(I\)
+  is \textit{weakMoment}: a real supremum, over deterministic test
+  vectors, of the scalar moment of \textit{deletedBilinear}. That
+  bilinear form sums over \textit{Finset.univ \textbackslash{}\ I} on
+  both axes, so one and the same deterministic set deletes rows and
+  columns, and the supremum sits outside the random-variable moment.
+\item
+  \(D(X)\) is \textit{deletionScale}, the supremum over \(1\le k\le n\)
+  of the infimum, over index sets of cardinality at most \(k\), of
+  \textit{weakMoment} at the order \(\ln(k+1)\).
+\item
+  The conjectured inequality is \textit{UpperBoundAt}, quantified over
+  every \(n\ge1\), every type, every measurable space on it, every
+  probability measure and every such \(X\). The constant is bound before
+  all of those, so it depends only on \(\alpha\) and not on the
+  dimension or the entry laws.
+\end{itemize}
+
+The probability space is an arbitrary type rather than a finite one, and
+no estimate enters as a hypothesis or as a custom axiom. The constant is
+explicit: \textit{SymmetricDeletion.deletionConstant} evaluated at
+\(2\alpha\), times \(e\). It is conservative and is not claimed to be
+sharp.
+
+The hypothesis class is not vacuous.
+\textit{MI32.RegularWitness.exists\_regularEntries} exhibits an
+independent fair-sign matrix satisfying the hypotheses at \(\alpha=1\)
+with \(M(X)=\sqrt n>0\), so the displayed bound is a genuine constraint
+rather than a statement about an empty class.
+
+\subsubsection{Verification record}\label{verification-record}
+
+This catalog \textbf{reviewed a public verification record}; it did not
+rerun the checks itself. Palomar's mechanical verification of the
+registered commit ran on Palomar's own Linux infrastructure on
+2026-09-14T14:07:31Z:
+
+\begin{itemize}
+\tightlist
+\item
+  \href{https://github.com/PalomarRegistry/PalomarSubmission/actions/runs/34852526384}{workflow
+  run 34852526384} in \textit{PalomarRegistry/PalomarSubmission};
+\item
+  Comparator at \textit{575674928e239f5bc452aab72d1dd7b0f1326494},
+  checking that the Solution declaration proves the Challenge statement
+  in a separate environment;
+\item
+  an independent NanoDa kernel replay at
+  \textit{68d5ca9db226849b41a6fff59d796ff19d0a8840};
+\item
+  \textit{lean4export} at
+  \textit{15f6055e299ad5b89345e533cc2192f4cc00f659} and the
+  \textit{landrun} sandbox at
+  \textit{811cfff51ceaf3d9843708aa6d22e9b84ccac8b4}.
+\end{itemize}
+
+The registry entry records trust level \textit{high}, and its AI
+editorial review returned outcome \textit{neutral}, meaning that no
+blocking problem was identified.
+
+The author's own local checks are reproducible from the repository root
+with:
+
+\begin{verbatim}
+lake exe cache get
+lake build
+lake env lean Audit.lean
+lake build Challenge Solution
+lake env lean FullTargetAudit.lean
+python3 scripts/verify.py
+\end{verbatim}
+
+The last of these exits zero only when the whole gate passes, and writes
+a dated record to \textit{verification/status.json}. A successful build
+is not on its own evidence of the result; the Comparator and
+kernel-replay run above is.
+
+\subsubsection{Transitive axiom report}\label{transitive-axiom-report}
+
+\begin{verbatim}
+'MI32.main_upper' depends on axioms: [propext, Classical.choice, Quot.sound]
+\end{verbatim}
+
+produced by \textit{lake env lean FullTargetAudit.lean} and retained
+at \textit{verification/full-target-axioms.log}. The Comparator
+configuration permits only those three axioms and the mechanical run
+enforced that. There is no \textit{sorryAx}, no custom axiom and no
+reliance on native execution. \textit{Challenge.lean} retains a
+deliberate \textit{sorry}, which is the Challenge hole by construction
+and is never imported by the proof.
+
+\subsubsection{Scope, attribution and
+limits}\label{scope-attribution-and-limits}
+
+\begin{itemize}
+\tightlist
+\item
+  \textbf{Scope.} Only the upper comparison displayed in this entry is
+  formalized. The reverse inequality, Theorem 4.1 of
+  Latała--Świątkowski, is quoted in this entry for context and is not
+  formalized or selected. No quantile or two-sided statement is claimed,
+  and no claim is made about the sharpness of the constant's dependence
+  on \(\alpha\).
+\item
+  \textbf{Mathematical attribution.} The conjecture is Conjecture 4.3 of
+  Latała--Świątkowski. The proof argument and its formalization are by
+  Diar Heidary. The manuscript is
+  \href{https://github.com/DiarHaidary/Spectral-norms-of-independent-entries-with-regular-moment-growth/blob/bd00df8dca9c6128cf528591d3485f8ca9eecd88/docs/manuscript/MI32.pdf}{MI32.pdf},
+  with its
+  \href{https://github.com/DiarHaidary/Spectral-norms-of-independent-entries-with-regular-moment-growth/blob/bd00df8dca9c6128cf528591d3485f8ca9eecd88/docs/manuscript/MI32.tex}{LaTeX
+  source}; its formal-verification section tabulates, statement by
+  statement, which Lean declaration carries each numbered result.
+\item
+  \textbf{Deliberate divergences from the manuscript}, recorded in the
+  project's \textit{docs/SOURCE\_FIDELITY.md}: the formal far-remainder
+  estimate avoids the variance-envelope input of Latała--van
+  Handel--Youssef by raising the screening threshold and using an
+  elementary centered-Gram second moment, and the formal decomposition
+  runs on the original rectangular matrix rather than on the
+  matrix-symmetric dilation.
+\item
+  \textbf{AI assistance is disclosed.} The proof, the Lean development
+  and the exposition were produced with substantial AI-agent assistance
+  under the author's direction. The statement-fidelity review and the
+  registry's editorial review are AI reviews. Neither is human peer
+  review and none is claimed. Registration with Palomar is not
+  acceptance, endorsement or a novelty claim.
+\end{itemize}
+
 \subsection{Known cases and numerical
 significance}\label{known-cases-and-numerical-significance}
 

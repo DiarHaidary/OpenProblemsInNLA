@@ -1,0 +1,379 @@
+
+=== Exact all-odd-order polygon formulas ===
+{
+  "status": "PASS",
+  "arithmetic": "integers and fractions only",
+  "orders_checked": 500,
+  "first_order": {
+    "p": 3,
+    "compressed_norm_over_R": "2/3",
+    "completed_norm_squared_over_R_squared": "4/3"
+  },
+  "last_order": {
+    "p": 1001,
+    "compressed_norm_over_R": "2/1001",
+    "completed_norm_squared_over_R_squared": "4/1001"
+  },
+  "seconds": 1.7411164239999835,
+  "scope": "Exact formula checks; general completion proof is in the report"
+}
+
+=== Rational stationary-model enclosure ===
+{
+  "b": "296277/500000",
+  "c": "74553/200000",
+  "integral_lower": "1407778368214629257299050744444169819487/340282366920938463463374607431768211456",
+  "integral_upper": "703889184107314628709895476612599405513/170141183460469231731687303715884105728",
+  "pi_lower": "267257146016241686964920093290467695825/85070591730234615865843651857942052864",
+  "pi_upper": "1069028584064966747859680373161870783301/340282366920938463463374607431768211456",
+  "T_lower": "1407778368214629257299050744444169819487/1069028584064966747859680373161870783301",
+  "T_upper": "703889184107314628709895476612599405513/534514292032483373929840186580935391650",
+  "formal_ratio_lower": "176488371367685344830828477027871693749/170141183460469231731687303715884105728",
+  "formal_ratio_upper": "176488371367685344832856488964828656143/170141183460469231731687303715884105728",
+  "actual_infinite_ratio_lower": "119739026234254940202764948906146751989/170141183460469231731687303715884105728",
+  "actual_infinite_ratio_upper": "239478052468509880411508241467227376425/340282366920938463463374607431768211456",
+  "quadrature": {
+    "cells": 32,
+    "binomial_degree": 12,
+    "bits": 128,
+    "largest_relative_cell_variation": "95843742617111097/2625755218039338439",
+    "largest_integrated_series_tail": "57587594073494940161907480376417117854446006370549377322987864083592027620568432180584052956948624196661843070805536462175011083454174841086328555384090625091001640383222086054008082609742686539026310653517900121247781977/135870813551670397032144055715114064684069818084782068573889854377081366431307689884331944692799727186061368736429284000459561862560657477668349385073112806826419796091376963199677029905912687321722100207171012706528110885913846182984084391"
+  },
+  "paper_integral_lower": "413708879761528711367/100000000000000000000",
+  "paper_integral_upper": "103427219940382177851/25000000000000000000",
+  "paper_pi_lower": "157079632679489661923/50000000000000000000",
+  "paper_pi_upper": "314159265358979323847/100000000000000000000",
+  "status": "PASS",
+  "verified_strict_formal_lower": "5186527088213/5000000000000",
+  "verified_strict_formal_upper": "2593263544107/2500000000000",
+  "scope": "Chosen stationary-model parameters only; not a finite SP-07 bound",
+  "seconds": 0.12988423499996316
+}
+
+=== Exact and corrupted-input rejection tests ===
+test_bad_polygon_orders (test_exact.ExactTests.test_bad_polygon_orders) ... ok
+test_explicit_checks_not_assert_statements (test_exact.ExactTests.test_explicit_checks_not_assert_statements) ... ok
+test_false_lower_rejected (test_exact.ExactTests.test_false_lower_rejected) ... ok
+test_false_upper_rejected (test_exact.ExactTests.test_false_upper_rejected) ... ok
+test_invalid_domains_rejected (test_exact.ExactTests.test_invalid_domains_rejected) ... ok
+test_model_certificate (test_exact.ExactTests.test_model_certificate) ... ok
+test_pi_and_arctangent (test_exact.ExactTests.test_pi_and_arctangent) ... ok
+test_polygon_orders (test_exact.ExactTests.test_polygon_orders) ... ok
+test_refinement_compatible (test_exact.ExactTests.test_refinement_compatible) ... ok
+test_square_root_enclosures (test_exact.ExactTests.test_square_root_enclosures) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.685s
+
+OK
+
+=== Rejection tests with Python optimization enabled ===
+test_bad_polygon_orders (test_exact.ExactTests.test_bad_polygon_orders) ... ok
+test_explicit_checks_not_assert_statements (test_exact.ExactTests.test_explicit_checks_not_assert_statements) ... ok
+test_false_lower_rejected (test_exact.ExactTests.test_false_lower_rejected) ... ok
+test_false_upper_rejected (test_exact.ExactTests.test_false_upper_rejected) ... ok
+test_invalid_domains_rejected (test_exact.ExactTests.test_invalid_domains_rejected) ... ok
+test_model_certificate (test_exact.ExactTests.test_model_certificate) ... ok
+test_pi_and_arctangent (test_exact.ExactTests.test_pi_and_arctangent) ... ok
+test_polygon_orders (test_exact.ExactTests.test_polygon_orders) ... ok
+test_refinement_compatible (test_exact.ExactTests.test_refinement_compatible) ... ok
+test_square_root_enclosures (test_exact.ExactTests.test_square_root_enclosures) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.678s
+
+OK
+
+=== Numerical regression diagnostics ===
+test_all_angle_minimum (test_numerical.NumericalTests.test_all_angle_minimum) ... ok
+test_canonical_attainment (test_numerical.NumericalTests.test_canonical_attainment) ... ok
+test_compressed_optimizer (test_numerical.NumericalTests.test_compressed_optimizer) ... ok
+test_explicit_twirl_dilation (test_numerical.NumericalTests.test_explicit_twirl_dilation) ... ok
+test_invalid_inputs (test_numerical.NumericalTests.test_invalid_inputs) ... ok
+test_noncirculant_twirl (test_numerical.NumericalTests.test_noncirculant_twirl) ... ok
+test_phase_multiplier_identity (test_numerical.NumericalTests.test_phase_multiplier_identity) ... ok
+test_random_complement_lower_bound (test_numerical.NumericalTests.test_random_complement_lower_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.170s
+
+OK
+
+=== Separate symbolic reconstruction ===
+{
+  "status": "PASS",
+  "checks": [
+    "compressed-optimal: reflection symmetry",
+    "compressed-optimal: reflection involution",
+    "compressed-optimal: pinching commutation",
+    "compressed-optimal: exact Gram characteristic polynomial",
+    "compressed-optimal: complementary normality is not assumed",
+    "completion-optimal: reflection symmetry",
+    "completion-optimal: reflection involution",
+    "completion-optimal: pinching commutation",
+    "completion-optimal: exact Gram characteristic polynomial",
+    "completion-optimal: complementary normality is not assumed",
+    "Pauli singular-value polynomial",
+    "Rationalized integral quartic",
+    "Height-balance strict-convexity identity"
+  ],
+  "check_count": 13,
+  "examples": [
+    {
+      "name": "compressed-optimal",
+      "Gram_characteristic_polynomial": "x*(3*x - 4)**2*(9*x - 4)**2/729"
+    },
+    {
+      "name": "completion-optimal",
+      "Gram_characteristic_polynomial": "x*(x - 1)**4"
+    }
+  ],
+  "seconds": 0.19355022400009148,
+  "sympy_version": "1.14.0",
+  "scope": "Independent symbolic reconstruction; not an external referee audit"
+}
+
+=== Stationary-model numerical exploration ===
+{
+  "b": 0.592554,
+  "c": 0.372765,
+  "I": 4.137088797615288,
+  "T": 1.3168762643011578,
+  "B": 0.7803202979167083,
+  "C": 0.4908853806622211,
+  "y_selected": 0.6356028392894647,
+  "y_complement": 0.1447174586272436,
+  "formal_ratio": 1.0373054176427006,
+  "actual_infinite_ratio": 0.7037627445566418,
+  "endpoint_error": 0.0,
+  "h_coefficients": [
+    0.5641710993399256,
+    0.07883117023907721,
+    0.019405871248767134,
+    0.006711706919563051,
+    0.0029361587336784803,
+    0.0015131599586757638,
+    0.0008757958312657632,
+    0.0005514097073306828,
+    0.00036965084572347304,
+    0.0002600141540097106
+  ],
+  "g_coefficients": [
+    0.41312405377637473,
+    0.06449200335951057,
+    0.014446620995523225,
+    0.004426962243366951,
+    0.001697084524655567,
+    0.0007662080851224343,
+    0.0003908157800029087,
+    0.00021870569231532706,
+    0.00013150524659161396,
+    8.36906860341444e-05
+  ],
+  "local_optimizations": [
+    {
+      "start": [
+        0.59,
+        0.37
+      ],
+      "parameters": [
+        0.5925540347219178,
+        0.3727654827496958
+      ],
+      "formal_ratio": 1.0373054176438066,
+      "success": true,
+      "iterations": 60,
+      "scope": "Local numerical optimum only"
+    },
+    {
+      "start": [
+        0.4,
+        0.5
+      ],
+      "parameters": [
+        0.5925540246785324,
+        0.37276549340268905
+      ],
+      "formal_ratio": 1.0373054176438066,
+      "success": true,
+      "iterations": 73,
+      "scope": "Local numerical optimum only"
+    },
+    {
+      "start": [
+        0.75,
+        0.18
+      ],
+      "parameters": [
+        0.5925540739533384,
+        0.37276544280673984
+      ],
+      "formal_ratio": 1.0373054176438066,
+      "success": true,
+      "iterations": 77,
+      "scope": "Local numerical optimum only"
+    }
+  ],
+  "finite_bulk_fit": {
+    "source": "research/inputs/n193_prior_search_candidate.npz",
+    "source_sha256": "fbe60417ddce919c604bf5732d2eff3361d758bb0499f04d6ad450aa37245d4e",
+    "n": 193,
+    "selected_first_21_max_error": 0.0014737175982970866,
+    "complement_first_21_max_error": 0.00023942023332498472,
+    "selected_all_max_error": 0.24558931557827637,
+    "complement_all_max_error": 0.025772569223659062,
+    "prior_candidate_float_norm": 1.9281023547311886,
+    "model_rescaled_norm": 1.9280724519351726,
+    "coefficients": [
+      {
+        "k": 0,
+        "model_h": 0.5641710993399256,
+        "finite_h": 0.5642483160013977,
+        "model_g": 0.41312405377637473,
+        "finite_g": 0.41309421628594106
+      },
+      {
+        "k": 1,
+        "model_h": 0.07883117023907721,
+        "finite_h": 0.07890844207275621,
+        "model_g": 0.06449200335951057,
+        "finite_g": 0.0644345120489592
+      },
+      {
+        "k": 2,
+        "model_h": 0.019405871248767134,
+        "finite_h": 0.019449535903369685,
+        "model_g": 0.014446620995523225,
+        "finite_g": 0.014413725837916894
+      },
+      {
+        "k": 3,
+        "model_h": 0.006711706919563051,
+        "finite_h": 0.0067618970741555595,
+        "model_g": 0.004426962243366951,
+        "finite_g": 0.004391042053316939
+      },
+      {
+        "k": 4,
+        "model_h": 0.0029361587336784803,
+        "finite_h": 0.0029452216009089992,
+        "model_g": 0.001697084524655567,
+        "finite_g": 0.0016870073836493702
+      },
+      {
+        "k": 5,
+        "model_h": 0.0015131599586757638,
+        "finite_h": 0.0015231512897837323,
+        "model_g": 0.0007662080851224343,
+        "finite_g": 0.0007564329353423473
+      },
+      {
+        "k": 6,
+        "model_h": 0.0008757958312657632,
+        "finite_h": 0.0008903137502933328,
+        "model_g": 0.0003908157800029087,
+        "finite_g": 0.0003862911833285973
+      },
+      {
+        "k": 7,
+        "model_h": 0.0005514097073306828,
+        "finite_h": 0.0005642391664627785,
+        "model_g": 0.00021870569231532706,
+        "finite_g": 0.0002162737144305844
+      },
+      {
+        "k": 8,
+        "model_h": 0.00036965084572347304,
+        "finite_h": 0.0003795558212319007,
+        "model_g": 0.00013150524659161396,
+        "finite_g": 0.00012922750992477237
+      },
+      {
+        "k": 9,
+        "model_h": 0.0002600141540097106,
+        "finite_h": 0.00026920871960837636,
+        "model_g": 8.36906860341444e-05,
+        "finite_g": 8.221328157163533e-05
+      }
+    ],
+    "scope": "Fit to the inherited floating-point search candidate, not a convergence proof"
+  },
+  "seconds": 0.10326011799998014,
+  "scope": "Stationary model diagnostics only. No new finite lower or unrestricted upper bound."
+}
+
+=== Inherited rank-one exact certificate ===
+{
+  "status": "PASS",
+  "arithmetic": "integers and fractions only",
+  "amgm": {
+    "polynomial_identities": 4,
+    "positive_monomials": 35,
+    "negative_monomials": 3,
+    "amgm_groups": 3,
+    "nonzero_allocations": 43,
+    "all_weight_and_exponent_equalities_exact": true,
+    "unique_positive_equality_point": [
+      1,
+      1,
+      1
+    ]
+  },
+  "extremizer": {
+    "normality_from_diagonal_and_reflection": true,
+    "squared_matching_distance": "4",
+    "squared_singular_values": [
+      "27/7",
+      "27/7",
+      "4/7"
+    ],
+    "squared_ratio": "28/27",
+    "all_six_permutation_costs": [
+      "52/7",
+      "4",
+      "4",
+      "4",
+      "4",
+      "52/7"
+    ],
+    "squared_distance_table": [
+      [
+        "4",
+        "4",
+        "12/7"
+      ],
+      [
+        "4",
+        "52/7",
+        "12/7"
+      ],
+      [
+        "12/7",
+        "12/7",
+        "4/7"
+      ]
+    ]
+  }
+}
+
+=== Inherited rank-one exact rejection tests ===
+test_exact_certificate (test_exact.ExactTests.test_exact_certificate) ... ok
+test_exact_extremizer (test_exact.ExactTests.test_exact_extremizer) ... ok
+test_polynomial_operations (test_exact.ExactTests.test_polynomial_operations) ... ok
+test_reject_changed_exponent (test_exact.ExactTests.test_reject_changed_exponent) ... ok
+test_reject_changed_polynomial (test_exact.ExactTests.test_reject_changed_polynomial) ... ok
+test_reject_changed_weight (test_exact.ExactTests.test_reject_changed_weight) ... ok
+test_reject_missing_group (test_exact.ExactTests.test_reject_missing_group) ... ok
+test_reject_negative_weight (test_exact.ExactTests.test_reject_negative_weight) ... ok
+test_success_flag_is_not_trusted (test_exact.ExactTests.test_success_flag_is_not_trusted) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.105s
+
+OK
+
+=== Inherited n=193 certificate by both exact positivity methods ===
+PASS n193: d=2, norm<19281027/10000000, ratio>20000000/19281027
+PASS 1 rational certificates by both positivity methods.
+
+PASS all requested checks.

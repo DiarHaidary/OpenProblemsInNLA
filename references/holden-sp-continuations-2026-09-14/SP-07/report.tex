@@ -1,0 +1,545 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable,needspace}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\arraystretch}{1.16}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert_{\op}}
+\newcommand{\Cstar}{C_{\mathrm{normal}}}
+\newcommand{\dd}{\,\mathrm{d}}
+\newcommand{\ii}{\mathrm{i}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\esssup}{\operatorname*{ess\,sup}}
+\newcommand{\Rformal}{\mathcal R}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries SP-07: Exact completion barriers\\[4pt] and a two-line variational model}
+\\[10pt] Sidney Holden\\[3pt]{\small Center for Computational Biology, Flatiron Institute, Simons Foundation}
+\end{center}
+
+\textbf{Status.} The unrestricted sharp constant is not determined. This continuation solves a reflection-completion relaxation for every odd regular polygon and solves the phase optimization in a stationary two-line model. It does not improve the inherited finite lower bound or the literature upper bound. In particular, the number near $1.0373054$ below is \emph{not} a new bound for SP-07.
+
+\begin{abstract}
+For a regular odd polygon of selected spectral values, we obtain an exact formula for the least anticommutator norm over all Hermitian-unitary completions of a prescribed circulant overlap. A norm-preserving orbit dilation removes the circulant assumption from the resulting obstruction: whenever the selected compression has an eigenvalue $+1$ or $-1$, the selected pair-sum separation cannot exceed the full anticommutator norm. Thus this geometry cannot produce a greater-than-one selected Hall quotient, in arbitrary completion dimension.
+
+An explicit sequence of compressed optima has quotient tending to $\pi/2$, while its best completed selected quotient tends to zero. Separately, a bounded anticommutator of an unbounded normal two-line operator reduces to a scalar speed-control problem with an exact integral solution. Rational arithmetic certifies its formal selected quotient at one parameter pair between $1.0373054176426$ and $1.0373054176428$. An explicit infinite matching, however, has a ratio below one. This identifies the finite Hall deficit and its boundary realization as essential missing ingredients, rather than silently transferring an infinite or compressed optimum to SP-07.
+\end{abstract}
+
+\section{The target and the inherited baseline}
+For normal matrices $A,B\in\mathbb C^{n\times n}$, list their eigenvalues with multiplicity as $\alpha_i,\beta_i$ and put
+\[
+ d_\infty(A,B)=\min_{\pi\in S_n}\max_i|\alpha_i-\beta_{\pi(i)}|,
+ \qquad
+ \Cstar=\sup_{n\ge2}\sup_{A\ne B\text{ normal}}
+ \frac{d_\infty(A,B)}{\norm{A-B}}.
+\]
+SP-07 asks for one sharp constant valid in all dimensions, with a matching construction or limiting sharpness argument \cite{sp07}. Neither a sharp subclass result nor an optimum of a relaxation answers that question.
+
+The preceding package proves the exact rank-one-reflection constant $\sqrt{28/27}$ and a finite-order reduction $n\le 3r^2+7r-1$ at each fixed negative reflection rank $r$ \cite{prior4}. It does not give a rank cutoff. The earlier real-reflection embedding shows that arbitrary normal pairs are represented, without changing their ratio, within real reflection anti-pairs after increasing dimension. These inherited results remain distinct from the new completion calculations below.
+
+The strongest inherited rational example has order $193$, matching distance exactly $2$, and perturbation norm strictly below $19281027/10^7$. It has been rerun in this continuation by both of its exact positivity methods. With the upper bound reported in Tang's versioned preprint \cite{tang}, the bracket remains
+\begin{equation}\label{eq:bracket}
+ \boxed{\quad \frac{20000000}{19281027}<\Cstar<2.9038872828.\quad}
+\end{equation}
+Only the lower endpoint is backed here by a retained finite arithmetic certificate; the upper endpoint is a cited literature bound, not rederived. No new finite lower endpoint is claimed.
+
+\section{An exact fixed-overlap completion formula}
+Fix an odd integer $p\ge3$, a radius $R>0$, and $\omega=e^{2\pi\ii/p}$. The selected normal block is
+\[
+ D_s=R\diag(1,\omega,\ldots,\omega^{p-1}).
+\]
+Its selected pair-sum separation is
+\begin{equation}\label{eq:polygon-gap}
+ \delta_p=\min_{i,j}|(D_s)_{ii}+(D_s)_{jj}|
+ =2R\sin\frac{\pi}{2p}.
+\end{equation}
+Indeed, the relevant moduli are $2R|\cos(\pi(i-j)/p)|$, and $p$ is odd.
+
+Let $X$ be a Hermitian circulant contraction on the selected space, with $X\mathbf1=\mathbf1$. For the unitary Fourier matrix
+\[
+ F_{jk}=p^{-1/2}\omega^{jk},\qquad 0\le j,k<p,
+\]
+write $F^*XF=\diag(\lambda_0,\ldots,\lambda_{p-1})$, where $\lambda_0=1$ and $-1\le\lambda_j\le1$. In this basis $F^*D_sF=RT$, where $T a_j=a_{j+1\bmod p}$.
+
+We allow a Hermitian-unitary completion $U$ of $X$ in any finite dimension, and a block-diagonal extension $D=D_s\oplus C$. \textbf{The complementary matrix $C$ is arbitrary; it is not required to be normal.} This relaxation is useful for lower-bounding the norm of every normal completion, but a minimizer in the relaxed class is not automatically a normal-matrix example.
+
+\begin{lemma}[Reduction to the defect space]\label{lem:defect}
+Every such completion admits a compression, followed if necessary by adding zero complementary coordinates, to the canonical form on $2p-1$ coordinates
+\[
+ U a_0=a_0,\qquad
+ U\big|_{\operatorname{span}\{a_j,b_j\}}=
+ \begin{pmatrix}\lambda_j&\sqrt{1-\lambda_j^2}\\
+ \sqrt{1-\lambda_j^2}&-\lambda_j\end{pmatrix},\quad 1\le j<p.
+\]
+The compressed diagonal block is still $RT$, the remaining block is arbitrary, and the anticommutator norm does not increase.
+\end{lemma}
+\begin{proof}
+In selected Fourier coordinates write $U=\left(\begin{smallmatrix}\Lambda&Y\\Y^*&Z\end{smallmatrix}\right)$. The identity $U^2=I$ gives $YY^*=I-\Lambda^2$. For each $s_j=\sqrt{1-\lambda_j^2}>0$, set $b_j=Y^*a_j/s_j$. These vectors are orthonormal. The off-diagonal identity and $U^2=I$ give
+\[
+ U a_j=\lambda_j a_j+s_j b_j,\qquad U b_j=s_j a_j-\lambda_j b_j.
+\]
+For example, the component of $Zb_j$ in the defect space is $-\lambda_jb_j$, while $\|Zb_j\|_2^2=\lambda_j^2$, leaving no orthogonal component. Coordinates with $s_j=0$ are already eigenvectors of $U$.
+
+Thus the selected space plus the defect space reduces $U$. If $K$ denotes this subspace, then
+\[
+ P_K(DU+UD)|_K=D_KU_K+U_KD_K.
+\]
+Compression cannot increase the operator norm. The compression of $D$ is still $RT$ on the entire selected space and an arbitrary matrix on the defect space. For any missing $b_j$, add a zero coordinate to $D$ and the scalar $-\lambda_j$ to $U$. This adds a zero anticommutator block and gives the displayed form, including endpoint eigenvalues.
+\end{proof}
+
+\begin{theorem}[Exact completion norm]\label{thm:completion}
+Set $\theta_j=\tfrac12\arccos\lambda_j\in[0,\pi/2]$ for $1\le j<p$. Then the minimum over all allowed completions and all complementary matrices is
+\begin{equation}\label{eq:completion}
+ \boxed{\inf\norm{DU+UD}=2R\max\left\{
+ \cos\theta_1,\ \cos\theta_{p-1},\
+ \max_{1\le j\le p-2}|\cos(\theta_j+\theta_{j+1})|
+ \right\}.}
+\end{equation}
+The infimum is attained in dimension $2p-1$.
+\end{theorem}
+\begin{proof}
+Use Lemma~\ref{lem:defect}. Let $W a_j=\omega^j a_j$ and $W b_j=\omega^j b_j$. This diagonal unitary commutes with the canonical $U$. Since $W^*TW=\omega^{-1}T$, the average
+\[
+ \Phi(D)=\frac1p\sum_{k=0}^{p-1}\omega^k W^{*k}DW^k
+\]
+keeps the selected block $RT$ fixed. The anticommutator norm cannot increase: every summand of its anticommutator is a unitary conjugate of $DU+UD$, multiplied by a scalar of modulus one. On the complementary coordinates, the average retains only entries $b_j\mapsto z_jb_{j+1}$, $1\le j\le p-2$. Thus it suffices for a lower bound to consider a broken forward shift.
+
+For $j\ge1$, positive and negative eigenvectors of $U$ are
+\[
+ p_j=\cos\theta_j\,a_j+\sin\theta_j\,b_j,\qquad
+ n_j=-\sin\theta_j\,a_j+\cos\theta_j\,b_j,
+\]
+with the additional positive vector $p_0=a_0$. If $P_+,P_-$ are the two spectral projections of $U$, then
+\begin{equation}\label{eq:pinching}
+ DU+UD=2P_+DP_+-2P_-DP_-,\qquad
+ \norm{DU+UD}=2\max\{\norm{P_+DP_+},\norm{P_-DP_-}\}.
+\end{equation}
+The positive compression is a weighted cyclic shift; the negative compression is a weighted broken shift. Their norms are their largest edge moduli. The positive boundary edges are $R\cos\theta_1$ and $R\cos\theta_{p-1}$. On an internal edge, put
+\[
+ A_j=\cos\theta_j\cos\theta_{j+1},\qquad
+ B_j=\sin\theta_j\sin\theta_{j+1}.
+\]
+The two weights are $RA_j+z_jB_j$ and $RB_j+z_jA_j$. For nonnegative $A,B$ and arbitrary complex $z$,
+\begin{equation}\label{eq:edge}
+ \max\{|RA+zB|,|RB+zA|\}\ge R|A-B|.
+\end{equation}
+When $A+B>0$, subtracting $B$ times the second expression from $A$ times the first proves this by the triangle inequality; when $A+B=0$ it is immediate. Equality is attained simultaneously on every edge by choosing $z_j=-R$. Since $A_j-B_j=\cos(\theta_j+\theta_{j+1})$, the formula follows. The same canonical completion and this broken shift attain it.
+\end{proof}
+
+The averaging step is permitted precisely because $C$ was not required to remain normal. At the displayed minimizer, $C=-RS_{p-1}$ is a nonzero nilpotent shift and is not normal. This is a norm-completion theorem, not a newly constructed normal pair.
+
+\section{The polygon obstruction without a circulant assumption}
+\begin{proposition}[Minimizing over the overlap]\label{prop:angles}
+The minimum of the right side of \eqref{eq:completion}, over all allowed Fourier eigenvalues, is $\delta_p$.
+\end{proposition}
+\begin{proof}
+Let $M$ be the maximum inside \eqref{eq:completion}, and write $M=\sin\gamma$ with $0\le\gamma\le\pi/2$. The boundary terms imply
+\[
+ \theta_1,\theta_{p-1}\ge\frac\pi2-\gamma.
+\]
+The internal terms imply
+\[
+ \frac\pi2-\gamma\le\theta_j+\theta_{j+1}\le\frac\pi2+\gamma.
+\]
+Because $p$ is odd, the alternating sum of the $p-2$ internal sums equals $\theta_1+\theta_{p-1}$. It has one more positive than negative term. Therefore
+\[
+ \pi-2\gamma\le\theta_1+\theta_{p-1}
+ \le\frac\pi2+(p-2)\gamma,
+\]
+so $\gamma\ge\pi/(2p)$.
+
+For equality, take $\gamma=\pi/(2p)$ and
+\begin{equation}\label{eq:optimal-angles}
+ \theta_j=\begin{cases}\pi/2-j\gamma,&j\text{ odd},\\j\gamma,&j\text{ even}.
+ \end{cases}
+\end{equation}
+Both boundary angles are $\pi/2-\gamma$, and the internal sums alternate between $\pi/2+\gamma$ and $\pi/2-\gamma$. Every relevant modulus is $\sin\gamma$.
+\end{proof}
+
+\begin{theorem}[Arbitrary-overlap polygon obstruction]\label{thm:polygon}
+Let $U$ be any finite-dimensional Hermitian unitary, with leading selected block $X$ of size $p$, where $p\ge3$ is odd. Let $D=D_s\oplus C$, with $C$ arbitrary. If $X$ has an eigenvalue $+1$ or $-1$, then
+\begin{equation}\label{eq:polygon-obstruction}
+ \boxed{\quad\norm{DU+UD}\ge 2R\sin\frac\pi{2p}=\delta_p.\quad}
+\end{equation}
+No circulant, realness, or fixed-completion-dimension assumption is required. The bound is sharp in the class with arbitrary complementary matrices.
+\end{theorem}
+\begin{proof}
+Replace $U$ by $-U$ if necessary and choose a selected unit vector $v$ with $Xv=v$. The completion identity implies $U(v,0)=(v,0)$: its complementary component has squared norm $v^*(I-X^2)v=0$.
+
+Let $P$ cyclically permute the selected polygon coordinates, so $P D_sP^*=\omega^{-1}D_s$, and extend it as the identity on the complementary coordinates. For $0\le g<p$, form
+\[
+ U_g=P^gUP^{*g},\qquad D_g=\omega^gP^gDP^{*g}=D_s\oplus\omega^g C.
+\]
+Each anticommutator has exactly the original norm. Their direct sum also has that norm, and fixes the vector consisting of the $p$ copies $P^gv/\sqrt p$ on the selected coordinates.
+
+For each selected spectral value indexed by $i$, let $J_i$ have, in copy $g$, the single selected coordinate $i$ with amplitude $v_{i-g}$, with indices interpreted modulo $p$. The $J_i$ are orthonormal because
+$\sum_g|v_{i-g}|^2=1$. Their span reduces the direct-sum $D$: each $J_i$ is an eigenvector with eigenvalue $(D_s)_{ii}$, and it lies in a reducing selected eigenspace. The selected compression of the direct-sum reflection in this basis is
+\begin{equation}\label{eq:twirl}
+ \widetilde X_{ij}=\sum_{g=0}^{p-1}\overline{v_{i-g}}\,
+ X_{i-g,j-g}\,v_{j-g}.
+\end{equation}
+It is a Hermitian contraction. The cyclic change of summation index makes it circulant. Moreover, the fixed direct-sum vector equals $p^{-1/2}\sum_iJ_i$, so $\widetilde X\mathbf1=\mathbf1$.
+
+In the orthogonal decomposition beginning with the $J_i$, the direct-sum pair is therefore an allowed completion of a circulant overlap, with selected block still $D_s$. Theorems~\ref{thm:completion} and Proposition~\ref{prop:angles} give the lower bound. The example in \eqref{eq:optimal-angles}, completed by the broken shift, attains it in the relaxed class.
+\end{proof}
+
+\begin{corollary}[Consequence for selected Hall witnesses]\label{cor:hall}
+In a reflection anti-pair $D,-UDU$ of order $2p-1$, a selected regular odd polygon of size $p$ cannot yield a selected Hall quotient greater than one. This remains true with an arbitrary normal complementary block, or even without its normality.
+\end{corollary}
+\begin{proof}
+At least one eigenspace of the Hermitian unitary $U$ has dimension at least $p$. It intersects the $p$-dimensional selected coordinate space nontrivially. Consequently $X$ has eigenvalue $+1$ or $-1$, and Theorem~\ref{thm:polygon} applies. Also $(D+UDU)U=DU+UD$, so the denominator is the actual perturbation norm whenever the pair is normal.
+\end{proof}
+
+This is a statement about the \emph{specified selected witness}. Other Hall witnesses of a completed pair can have different numerators; the corollary does not assert a constant-one bound for its entire matching distance.
+
+\section{Compressed optima approaching $\pi/2$ do not transfer}
+\begin{theorem}[An exact family of misleading compressed quotients]\label{thm:misleading}
+For the circulant problem above,
+\[
+ \min_{X\mathbf1=\mathbf1,\ X=X^*,\ \norm X\le1}
+ \norm{D_sX+XD_s}=\frac{2R}{p},
+\]
+where the minimum here is over circulant $X$. It is attained by
+\begin{equation}\label{eq:compressed-optimal}
+ \lambda_j=(-1)^j\left(1-\frac{2j}{p}\right),\qquad 0\le j<p.
+\end{equation}
+For this same overlap, the exact least full completion norm is $2R/\sqrt p$.
+\end{theorem}
+\begin{proof}
+In the Fourier basis the compressed anticommutator is a weighted cyclic shift with weights $R(\lambda_j+\lambda_{j+1})$. Odd alternating telescoping gives
+\[
+ 2\lambda_0=\sum_{j=0}^{p-1}(-1)^j(\lambda_j+\lambda_{j+1})=2,
+\]
+so its largest weight modulus is at least $2R/p$. Formula~\eqref{eq:compressed-optimal} lies in $[-1,1]$ and gives every adjacent sum equal to $(-1)^j2/p$, including the wraparound edge.
+
+For the completed problem, both boundary cosines in \eqref{eq:completion} equal $1/\sqrt p$. On an internal edge, direct substitution into the half-angle identities gives, with $q=j(p-j-1)\ge0$,
+\[
+ |\cos(\theta_j+\theta_{j+1})|
+ =\frac{\sqrt{q+p}-\sqrt q}{p}
+ =\frac1{\sqrt{q+p}+\sqrt q}\le\frac1{\sqrt p}.
+\]
+The exact completion formula proves the claim.
+\end{proof}
+
+Thus the compressed selected quotient and the best completed selected quotient for the same overlap are, respectively,
+\begin{equation}\label{eq:contrasting-limits}
+ p\sin\frac\pi{2p}\longrightarrow\frac\pi2,
+ \qquad
+ \sqrt p\sin\frac\pi{2p}\longrightarrow0.
+\end{equation}
+The following decimals merely illustrate these exact formulas.
+\begin{center}
+\begin{tabular}{rrr}
+\toprule
+$p$&Compressed selected quotient&Best completed selected quotient\\\midrule
+3&1.500000&0.866025\\
+5&1.545085&0.690983\\
+9&1.562834&0.520945\\
+17&1.568562&0.380432\\
+33&1.570203&0.273337\\\bottomrule
+\end{tabular}
+\end{center}
+For $p=3$, \eqref{eq:compressed-optimal} recovers the preceding package's overlap with eigenvalues $1,-1/3,-1/3$; the full optimum $2R/\sqrt3$ recovers its completion obstruction. The result here proves the exact all-odd-order family and removes symmetry from the constant-one obstruction, rather than simply retesting the three-dimensional example.
+
+\section{A stationary normal operator on two spectral lines}
+The large inherited finite examples suggest a two-line bulk pattern. To investigate it without treating it as a finite certificate, work on
+$\mathcal H=L^2(\mathbb R/2\pi\mathbb Z;\mathbb C^2)$ and define the normal operator
+\begin{equation}\label{eq:D-infinite}
+ \mathcal D=-\ii\frac{\mathrm d}{\mathrm d\vartheta}+\frac14I+\ii Y,
+ \qquad Y=\diag(y_s,y_c),
+\end{equation}
+with domain the periodic Sobolev space $H^1$. The derivative part is self-adjoint, and it commutes with the constant self-adjoint $Y$, proving normality. The two labeled spectral ladders are
+\[
+ m+\frac14+\ii y_s,\qquad m+\frac14+\ii y_c,\qquad m\in\mathbb Z.
+\]
+Write $B=y_s+y_c\ge0$ and $C=y_s-y_c\ge0$.
+
+Let $\phi$ be locally Lipschitz, odd, and satisfy $\phi(\vartheta+2\pi)=\phi(\vartheta)+\pi$. Define
+\[
+ V(\vartheta)=e^{-\ii\vartheta/2}
+ \bigl(\ii\sin\phi(\vartheta)I+\cos\phi(\vartheta)\sigma_x\bigr),
+ \quad \sigma_x=\begin{pmatrix}0&1\\1&0\end{pmatrix},
+ \quad (Jf)(\vartheta)=f(-\vartheta).
+\]
+The matrix $V$ is periodic, unitary and symmetric, and $V(-\vartheta)=\overline{V(\vartheta)}$. Therefore $\mathcal U=VJ$ is a self-adjoint unitary. Since $V$ is Lipschitz, it preserves the domain needed for the following computation.
+
+\begin{proposition}[Exact multiplier norm]\label{prop:multiplier}
+The anticommutator, initially defined on $H^1$, extends to a bounded operator and satisfies
+\begin{equation}\label{eq:model-norm}
+ \boxed{\norm{\mathcal D\mathcal U+\mathcal U\mathcal D}
+ =\esssup_\vartheta\left(\sqrt{\phi'(\vartheta)^2+B^2}
+ +C|\sin\phi(\vartheta)|\right).}
+\end{equation}
+The same is the norm of the bounded perturbation $\mathcal D+\mathcal U\mathcal D\mathcal U$.
+\end{proposition}
+\begin{proof}
+The derivative terms cancel against reflection of the angular variable. The anticommutator is
+\[
+ \left[-\ii V'+\frac12V+\ii(YV+VY)\right]J.
+\]
+Multiplying the matrix factor on the right by $V^*$ gives
+\[
+ -\ii V'V^*+\frac12I+\ii(Y+VYV^*)
+ =\phi'\sigma_x+\ii\bigl(BI+C\sin\phi\,N(\phi)\bigr),
+\]
+where $N(\phi)=\sin\phi\,\sigma_z-\cos\phi\,\sigma_y$ is a Hermitian involution anticommuting with $\sigma_x$. For real $t,d,B$, the squared singular values of
+$t\sigma_x+\ii(BI+dN)$ are
+\[
+ \bigl(\sqrt{t^2+B^2}\pm |d|\bigr)^2.
+\]
+This follows by multiplying by the adjoint, or by the quadratic characteristic polynomial recorded in the symbolic audit. The norm of a bounded multiplication operator is the essential supremum of its pointwise norms. Finally, right multiplication by $\mathcal U$ preserves the norm and gives the stated perturbation identity on the common domain.
+\end{proof}
+
+\Needspace{20\baselineskip}
+\section{The phase optimization is an exact integral problem}
+Fix $B,C>0$ and impose $\phi(0)=0$, $\phi(\pi)=\pi/2$. Paths on this interval need not be monotone.
+\begin{theorem}[Exact optimal phase cost]\label{thm:phase}
+The least essential supremum in \eqref{eq:model-norm} is the unique number $T>B+C$ satisfying
+\begin{equation}\label{eq:time-integral}
+ \int_0^{\pi/2}\frac{\dd u}{\sqrt{(T-C\sin u)^2-B^2}}=\pi.
+\end{equation}
+It is attained by the increasing solution of
+\begin{equation}\label{eq:ode}
+ \phi'=\sqrt{(T-C|\sin\phi|)^2-B^2},\qquad \phi(0)=0,
+\end{equation}
+extended to the real line. This extension has exactly the symmetries required in Section~5.
+\end{theorem}
+\begin{proof}
+For $T>B+C$, the integral in \eqref{eq:time-integral} is continuous and strictly decreasing in $T$. It tends to zero at infinity and diverges as $T\downarrow B+C$: near $u=\pi/2$ the denominator is bounded above by a constant times the square root of $T-B-C+(\pi/2-u)^2$. Hence there is one solution.
+
+For any path with cost strictly below a proposed $T>B+C$, the norm constraint gives
+$|\phi'|\le\sqrt{(T-C|\sin\phi|)^2-B^2}$ almost everywhere. Composing $\phi$ with the increasing primitive of the reciprocal right side and integrating yields
+\[
+ \int_0^{\pi/2}\frac{\dd u}{\sqrt{(T-C\sin u)^2-B^2}}\le\pi.
+\]
+The argument uses an absolute derivative bound and remains valid for nonmonotone paths. Every admissible path has cost at least $B+C$, since it reaches $\pi/2$. Applying the displayed inequality for all larger $T$ also excludes cost exactly $B+C$ by divergence. Monotonicity of the integral proves the lower bound.
+
+For the unique solution $T$, the positive ODE speed in \eqref{eq:ode} takes exactly time $\pi$ to reach $\pi/2$. The speed is even in $\phi$ and $\pi$-periodic. Consequently the solution is odd and advances by $\pi$ in time $2\pi$. Its pointwise cost is exactly $T$, proving attainment and the required periodicity of $V$.
+\end{proof}
+
+Normalize $b=B/T$, $c=C/T$, so $b,c\ge0$ and $b+c<1$, and define
+\begin{equation}\label{eq:I}
+ I(b,c)=\int_0^{\pi/2}\frac{\dd u}{\sqrt{(1-c\sin u)^2-b^2}}.
+\end{equation}
+Then $T=I(b,c)/\pi$. The selected-line pair-sum separation is
+$\sqrt{1/4+(B+C)^2}$, giving the \emph{formal selected-gap quotient}
+\begin{equation}\label{eq:formal}
+ \Rformal(b,c)=\sqrt{(b+c)^2+\left(\frac{\pi}{2I(b,c)}\right)^2}.
+\end{equation}
+This is not yet a matching distance; Section~7 computes the actual infinite matching explicitly.
+
+\begin{proposition}[Unique height balance at fixed sum]\label{prop:convex}
+Fix $s=b+c\in(0,1)$ and vary $c\in[0,s]$. The function $I(s-c,c)$ is strictly convex. Its unique minimum is at $c=0$ when $s\le2/\pi$, and at a unique interior point when $s>2/\pi$. Thus the maximum of \eqref{eq:formal} at fixed $s$ has the same unique choice. The optimized formal quotient equals one on $s\le2/\pi$, exceeds one on $s>2/\pi$, and tends to one as $s\uparrow1$.
+\end{proposition}
+\begin{proof}
+Put $z=\sin u$ and
+\[
+ Q=1-s^2+2c(s-z)-c^2(1-z^2)>0,\qquad g=s-z-c(1-z^2).
+\]
+The second derivative of the integrand is
+\[
+ \frac{\partial^2}{\partial c^2}Q^{-1/2}
+ =3g^2Q^{-5/2}+(1-z^2)Q^{-3/2},
+\]
+whose integral is strictly positive. At $c=0$ the first derivative of the integral is
+$[1-(\pi/2)s]/(1-s^2)^{3/2}$. At $c=s$ it is
+$\int_0^{\pi/2}z(1-sz)^{-2}\dd u>0$. These signs and strict convexity prove the minimizer assertions. At $c=0$, $I=\pi/(2\sqrt{1-s^2})$, so the formal quotient equals one; decreasing $I$ makes it larger.
+
+For the endpoint limit, write $v=\pi/2-u$. Factoring $Q$ gives, uniformly for $0\le c\le s$,
+\[
+ Q=(1-s+c(1-z))(1+s-c(1+z))\le2(1-s)+v^2.
+\]
+Hence $I(s-c,c)\ge\operatorname{arsinh}(\pi/(2\sqrt{2(1-s)}))\to\infty$ uniformly. Formula~\eqref{eq:formal} proves the limit.
+\end{proof}
+This reduces the height balance to a unique scalar minimization at each $s$, but does not prove uniqueness or a certified value of the final maximum over $s$. The reported numerical optimizer is not substituted for such a proof.
+
+\section{A certified model number and the lost Hall obstruction}
+For the fixed rational parameters
+\begin{equation}\label{eq:chosen}
+ b=\frac{296277}{500000}=0.592554,\qquad
+ c=\frac{74553}{200000}=0.372765,
+\end{equation}
+the standard-library checker proves
+\begin{equation}\label{eq:certified-model}
+ \boxed{1.0373054176426<\Rformal(b,c)<1.0373054176428.}
+\end{equation}
+These inequalities concern this parameter pair only. Three local numerical searches gave values near $1.0373054176438066$, but neither that last number nor uniqueness of the parameter optimum has been certified.
+
+The finite arithmetic proof of \eqref{eq:certified-model} is described in Appendix~A. The substitution $t=\tan(u/2)$ converts the integral to
+\begin{equation}\label{eq:rational-integral}
+ I(b,c)=2\int_0^1\frac{\dd t}{\sqrt{Q(t)}},\quad
+ Q(t)=(1+t^2-2ct)^2-b^2(1+t^2)^2.
+\end{equation}
+The checker uses 32 cells, a degree-12 binomial expansion on each cell, exact integrated polynomials, and a geometric remainder bound. Square roots and accumulation are rounded outward at rational dyadic endpoints. A Machin-series enclosure supplies $\pi$. No floating-point comparison decides either bound. The width of the computed integral enclosure is less than $2\cdot10^{-23}$; the stated decimal interval deliberately leaves a larger margin.
+
+\begin{proposition}[The actual infinite matching has ratio below one]\label{prop:actual-matching}
+For the two labeled spectral ladders in Section~5 and their negatives, define the bottleneck using all bijections between the countable labeled lists. Its value is exactly
+\begin{equation}\label{eq:actual-distance}
+ d_{\infty,\mathbb Z}=\sqrt{\frac14+B^2}.
+\end{equation}
+For the optimal phase with $B,C>0$,
+\[
+ \frac{d_{\infty,\mathbb Z}}{\norm{\mathcal D\mathcal U+\mathcal U\mathcal D}}
+ <1.
+\]
+At \eqref{eq:chosen}, this actual ratio is approximately $0.703762744557$, not $1.037305417643$.
+\end{proposition}
+\begin{proof}
+Match the selected point with index $m$ to the negative complementary point with index $-m$, and conversely. Each displacement is $1/2+\ii(y_s+y_c)$, so this is a bijection of cost $\sqrt{1/4+B^2}$.
+
+For the reverse bound, every selected point is at least this distance from every negative complementary point: their real displacement lies in $\mathbb Z+1/2$, and their imaginary displacement is $B$. Its distance to a negative selected point is at least $\sqrt{1/4+(B+C)^2}$, which is no smaller. Thus no bijection can have smaller cost.
+
+In the phase equation, the integrand is strictly larger, except at an endpoint, than $1/\sqrt{T^2-B^2}$ because $C>0$. Therefore
+\[
+ \pi=\int_0^{\pi/2}\frac{\dd u}{\sqrt{(T-C\sin u)^2-B^2}}
+ >\frac{\pi}{2\sqrt{T^2-B^2}},
+\]
+which gives $T>\sqrt{1/4+B^2}$. The numerical value is separately enclosed by the same rational integral audit.
+\end{proof}
+
+This is the exact reason that the formal selected gap cannot simply be called a matching distance. In a finite example with $p$ selected vertices and $p-1$ complementary vertices, a cross-channel matching leaves a cardinality deficit. In the two bilateral infinite ladders, the displayed cross-channel bijection has no such deficit. Passing to an infinite bulk discards this combinatorial information.
+
+\section{Comparison with the retained finite example}
+The numerical model was compared with the \emph{floating-point search candidate} retained in the prior archive, not substituted for its exact rational certificate. For the chosen parameters, let $y_s=(b+c)T/2$, $y_c=(b-c)T/2$. After normalizing the selected entry of index zero to one, the proposed spectral pattern is
+\[
+ a_m=1+\frac{m}{1/4+\ii y_s},\qquad
+ c_m=\frac{1/4+\ii y_c+m}{1/4+\ii y_s},
+\]
+with indices ordered $0,-1,1,-2,2,\ldots$. This explains the nearly affine two-line bulk observed in the prior search. It is not an assertion that the finite example lies exactly on those lines.
+
+The Fourier coefficients of the two entries of $V$ are
+\[
+ h_k=\frac1\pi\int_0^\pi\sin\phi(\vartheta)
+             \sin((k+1/2)\vartheta)\dd\vartheta,\quad
+ g_k=\frac1\pi\int_0^\pi\cos\phi(\vartheta)
+             \cos((k+1/2)\vartheta)\dd\vartheta.
+\]
+Selected rows of the inherited overlap agree closely with these coefficients after the sign convention documented in the diagnostic source. The following are floating-point diagnostics, not certificates.
+\begin{center}
+\begin{tabular}{rrrrr}
+\toprule
+$k$&Model $h_k$&Finite $h_k$&Model $g_k$&Finite $g_k$\\\midrule
+0&0.56426524&0.56423928&0.41306541&0.41309974\\
+1&0.07891353&0.07891353&0.06440656&0.06442765\\
+2&0.01945124&0.01945229&0.01443338&0.01444997\\\bottomrule
+\end{tabular}
+\end{center}
+The largest spectral discrepancy among the first 21 selected coordinates is approximately $0.00148$, and among the first 21 complementary coordinates it is approximately $0.00140$. Over all coordinates, these discrepancies rise to approximately $0.246$ and $0.0449$, respectively. The boundary deformation is therefore not uniformly negligible in the recorded example.
+
+The retained candidate's floating-point perturbation norm is about $1.92810235454$. The model norm after rescaling its selected gap to two is about $1.92807245246$. Their proximity motivates the model but proves neither convergence nor extremality. The rational $193\times193$ certificate, reverified independently of this fit, continues to establish only the unchanged lower endpoint in \eqref{eq:bracket}.
+
+A valid finite transfer theorem would have to construct actual finite normal diagonal matrices $D_N$, Hermitian-unitary reflections $U_N$, and selected sets of size $p_N$ in dimension $2p_N-1$, with
+\[
+ \min_{i,j\in S_N}|(D_N)_{ii}+(D_N)_{jj}|\ge\delta-o(1),
+ \qquad \norm{D_NU_N+U_ND_N}\le T+o(1).
+\]
+That would prove the corresponding finite lower bound $\Cstar\ge\delta/T$. A pointwise bulk fit or strong operator limit alone does not give the necessary norm upper bound at the finite boundary. No such transfer theorem is proved here. Even a successful transfer would establish a lower bound, not the missing unrestricted upper bound.
+
+\section{Verification, scope, and the remaining theorem}
+The delivered programs distinguish exact arithmetic from numerical diagnostics. The current execution record contains the following checks.
+
+The standard-library polygon audit checks the rational eigenvalue and cyclic-sum identities, the exact angle-coefficient telescoping, and the square-root comparison identities for all 500 odd orders from 3 through 1001. These finite checks supplement the general proofs in Sections~2--4. The model checker recomputes the rational integral and the strict comparisons in \eqref{eq:certified-model}. Ten exact regression and rejection-test methods pass, including 1,200 square-root enclosure cases, deliberately false claimed intervals, invalid parameters, and repeat execution with Python optimization enabled.
+
+Eight numerical regression groups pass. They include 120 canonical attainment cases, 150 arbitrary complementary matrices, 250 random angle sets in addition to 25 exact-formula specializations, 25 compressed-optimum examples, 120 noncirculant orbit compressions, 15 explicit orbit dilations, and 600 multiplier-norm checks. These are finite diagnostics and do not certify a universal inequality by themselves. A separate SymPy reconstruction passes 13 checks, including the full $5\times5$ radical examples, their exact Gram characteristic polynomials, the Pauli singular-value identity, and the strict-convexity derivative identity.
+
+The retained rank-one arithmetic certificate and its nine exact rejection tests pass again. The inherited $193\times193$ normal pair passes both original exact positivity routes: congruence diagonal dominance and outward-rounded interval $LDL$ elimination. The two routes share parts of the enclosure code and are not an independent external mathematical review.
+
+From the extracted archive root, the new exact checks require only Python's standard library:
+\begin{verbatim}
+python -S verify_polygon.py
+python -S verify_model.py
+python verify_all.py
+\end{verbatim}
+Optional numerical, symbolic, and inherited checks are run with
+\begin{verbatim}
+python verify_all.py --numerical --prior
+\end{verbatim}
+The prior ZIP is retained unchanged. Source code, chosen-parameter data, the inherited search candidate used for the fit, executed logs, optional dependency versions, and a file-hash manifest are included. None of the numerical optimizer stopping flags is treated as a proof of a global maximum.
+
+\textbf{The unrestricted gap.} Using the inherited real-reflection reduction, a full solution still needs an explicit $L$ and the inequality
+\begin{equation}\label{eq:missing}
+ \min_{1\le i,j\le k+1}|a_i+a_j|
+ \le L\norm{DU+UD}
+\end{equation}
+for every $k$, every complex diagonal $D=\diag(a_1,\ldots,a_{2k+1})$, and every real symmetric orthogonal $U$ of inertia $(k+1,k)$, together with constructions attaining or approaching the same $L$. Section~3 proves a constant-one statement for a particular geometry, not for arbitrary diagonal data. Sections~5--7 optimize a stationary phase model, not the supremum in \eqref{eq:missing}.
+
+The new work rules out a broad compressed-polygon shortcut and identifies exactly why the apparent stationary quotient is not an infinite matching ratio. It does not determine $\Cstar$, the exact rank-two constant, a uniform rank bound, or the extremal geometry. The repository status should not be changed to solved on the basis of this package \cite{guidelines}. No repository content was modified. Historical priority, external peer review, and proof-assistant verification are not claimed.
+
+\appendix
+\section{Exact quadrature certificate}
+For the rational $b,c$ in \eqref{eq:chosen}, expand \eqref{eq:rational-integral} as
+\[
+ Q(t)=(1-b^2)-4ct+(2+4c^2-2b^2)t^2-4ct^3+(1-b^2)t^4.
+\]
+On a cell centered at $m$ with half-width $h$, put $t=m+hy$ and write
+\[
+ Q(m+hy)=q_0(1+u(y)),\qquad
+ u(y)=u_1y+u_2y^2+u_3y^3+u_4y^4.
+\]
+Every coefficient is rational. The checker verifies $q_0>0$ and
+$r=\sum_{j=1}^4|u_j|<1$. For $|y|\le1$, the binomial expansion has coefficients
+$c_k=(-1)^k\binom{2k}{k}/4^k$, with $|c_k|\le1$. Consequently
+\[
+ \left|(1+u)^{-1/2}-\sum_{k=0}^{K}c_ku^k\right|
+ \le\frac{r^{K+1}}{1-r}.
+\]
+Integrating the polynomial exactly over $[-1,1]$ uses only its even coefficients, since $\int_{-1}^1y^{2j}\dd y=2/(2j+1)$. The integrated error is at most $2r^{K+1}/(1-r)$. Multiplication by $2h/\sqrt{q_0}$ gives a rigorous cell enclosure for $I$.
+
+For a positive rational $q=n/d$ and scale $S=2^b$, the integer
+$k=\lfloor\sqrt{\lfloor nS^2/d\rfloor}\rfloor$ satisfies
+$k/S\le\sqrt q\le(k+1)/S$; equality is checked separately. This supplies outward rational square-root and reciprocal bounds. Cell endpoints are rounded outward before summation, avoiding an unbounded product of unrelated rational denominators. The delivered calculation uses $K=12$, 32 cells, and 128-bit output endpoints, with additional internal square-root bits.
+
+For $\pi$, use the alternating series for $\arctan x$ with its next-term remainder and Machin's identity
+\[
+ \pi=16\arctan(1/5)-4\arctan(1/239).
+\]
+The tangent addition identity is checked exactly: $\tan(4\arctan(1/5))=120/119$, and subtracting $\arctan(1/239)$ gives tangent one in the first quadrant. The alternating-series intervals therefore give rational lower and upper bounds for $\pi$.
+
+The recomputed enclosure also yields the simpler rational interval
+\[
+ \frac{413708879761528711367}{10^{20}}<I(b,c)<\frac{413708879761528711404}{10^{20}}.
+\]
+Together with $314159265358979323846/10^{20}<\pi<314159265358979323847/10^{20}$, these coarser rational endpoints alone suffice for the advertised model-ratio comparisons; the checker verifies both squared comparisons by exact cross-multiplication.
+
+Finally, monotonicity in the positive quantities gives
+\[
+ (b+c)^2+\left(\frac{\pi_-}{2I_+}\right)^2
+ \le\Rformal(b,c)^2\le
+ (b+c)^2+\left(\frac{\pi_+}{2I_-}\right)^2.
+\]
+A last outward square-root enclosure proves the stated strict decimal comparisons. Replacing $(b+c)^2$ by $b^2$ encloses the actual infinite matching ratio from Proposition~\ref{prop:actual-matching}. The verifier recomputes these inequalities rather than trusting stored interval endpoints or a success flag.
+
+\begin{thebibliography}{9}
+\bibitem{sp07} Open Problems in Numerical Linear Algebra.
+\emph{SP-07: The sharp spectral-matching constant for normal matrices.}
+Canonical public problem statement, read during this continuation.
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/eigenvalues-and-inverse-problems/SP-07/README.md}.
+
+\bibitem{tang} Qiyue Tang.
+\emph{A Truncated Singular-Value Bound for Spectral Variation of Normal Matrices.}
+arXiv:2609.09177v1, introduction and Section 3. The HTML and the PDF introduction were checked; the quoted universal upper bound is reported there.
+\url{https://arxiv.org/html/2609.09177v1}.
+
+\bibitem{prior4} \emph{SP-07: A sharp rank-one-reflection theorem.}
+Preceding continuation supplied in this conversation. Its unchanged archive is retained as
+\path{prior/SP-07_round4_sharp_subclass.zip}. The earlier real-reflection reductions and the exact $193\times193$ certificate remain nested inside that archive. New results are not attributed to an external audit of these prior packages.
+
+\bibitem{guidelines} Open Problems in Numerical Linear Algebra.
+\emph{Contribution and status guidelines.} Read during this continuation.
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/CONTRIBUTING.md}.
+\end{thebibliography}
+\end{document}

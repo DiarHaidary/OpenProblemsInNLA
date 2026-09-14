@@ -1,0 +1,474 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={SP-09: First-order invariance under independent spectral splitting},pdfsubject={A further partial result, not a resolution of general SP-09}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.42em}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\U}{\mathcal U}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\Herm}{\operatorname{Herm}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\Ree}{\operatorname{Re}}
+\newcommand{\dd}{\delta}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\gauge}{\mathfrak g}
+\newcommand{\trans}{\mathcal S}
+\newcommand{\smallo}{\mathcal O}
+\title{SP-09: First-order invariance under\\independent spectral splitting}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-1.5em}
+\begin{abstract}
+\noindent\textbf{Status: a further partial result. General SP-09 is not proved or disproved here.}
+At the previously certified nonmatching three-point pair, all eigenvalues in an arbitrary finite repetition may be split independently. The first-order change of the squared unitary-orbit distance is exactly the minimum largest eigenvalue of a sum of four Hermitian unitary orbits, with explicitly verified coefficients. A classical Horn block-averaging theorem makes that first-order quantity invariant under every finite amplification. For each fixed base repetition and amplification, the resulting squared-distance gain is bounded by $O(t^{3/2})$ as the splitting parameter $t$ tends to zero. The bound is not uniform in amplification size and does not assert equality at any nonzero splitting. The proof combines the prior quantitative rigidity theorem, an exact positive curvature $1/52$, a local unitary slice, and a Schur-complement argument. Exact finite-identity verifiers, negative tests, a constructive numerical illustration, and the complete previous proof pack accompany this manuscript.
+\end{abstract}
+
+\section{The problem and the result established here}
+For $A,B\in M_n(\C)$, set
+\[
+ \dd_n(A,B)=\min_{U\in\U(n)}\norm{A-UBU^*}.
+\]
+Every unlabelled norm is the operator norm. The minimum exists by compactness. SP-09 asks whether
+\begin{equation}\label{eq:SP09}
+ \dd_{nk}(A\otimes I_k,B\otimes I_k)=\dd_n(A,B)
+\end{equation}
+for every normal pair and every positive integer $k$. Tensoring a minimizing unitary proves the inequality $\le$. The repository's recorded two-point subclass and the distinction between the finite-normal question and other amplification questions do not supply the reverse inequality in general.\footnote{OpenProblemsInNLA, \emph{SP-09: Unitary-orbit distance under finite block repetition}, current problem statement, source [1]. See also Marcoux, Sarkowicz, and Zhang, source [3], for the amplification context.}
+
+Put $s=i\sqrt3$ and
+\begin{equation}\label{eq:reference}
+ a^0=\left(1,\frac{4+5s}{13},\frac{-1+2s}{13}\right),\qquad
+ A_0=\diag(a^0),\qquad \gamma=\frac{27}{13}.
+\end{equation}
+The retained prior pack proves exact amplification invariance and equality rigidity for $(A_0,-A_0)$, as well as invariance on an open neighborhood of its six scalar eigenvalues. It explicitly does not cover independently splitting all repeated eigenvalues in dimension $3r$.\footnote{\emph{SP-09: Local Amplification Invariance and Quantitative Rigidity}, retained as \texttt{prior\_round2/}, especially Theorems 1.1--1.2 and its included preceding certificate; source [4].}
+
+Fix any $r\ge1$ and six normal matrices $H_i,K_i\in M_r(\C)$, $1\le i\le3$. Define
+\begin{equation}\label{eq:paths}
+ A_r(t)=\bigoplus_{i=1}^3(a_i^0 I_r+tH_i),\qquad
+ B_r(t)=\bigoplus_{i=1}^3(-a_i^0 I_r+tK_i),\qquad t\ge0.
+\end{equation}
+These matrices are normal. Taking each direction diagonal permits all $6r$ complex eigenvalue directions to be chosen independently. There is no requirement that $B_r(t)=-A_r(t)$.
+
+For any matrix $X$, write $\Ree X=(X+X^*)/2$. Introduce
+\begin{equation}\label{eq:coefficients}
+ c_1=\frac{153-45s}{364},\qquad c_2=\frac{225-135s}{364},\qquad c_3=0
+\end{equation}
+and four Hermitian matrices
+\begin{equation}\label{eq:Z}
+ Z_1=2\Ree(c_1H_1),\quad Z_2=2\Ree(c_2H_2),\quad
+ Z_3=-2\Ree(c_1K_1),\quad Z_4=-2\Ree(c_2K_2).
+\end{equation}
+For a finite Hermitian list, use the notation
+\begin{equation}\label{eq:m}
+ m_r(Z_1,\ldots,Z_q)=\min_{V_1,\ldots,V_q\in\U(r)}
+ \lambda_{\max}\!\left(\sum_{j=1}^q V_j Z_j V_j^*\right).
+\end{equation}
+This is a compact finite-dimensional optimization problem. It involves independently chosen unitary conjugations.
+
+\begin{theorem}[Independent splitting: exact first-order term]\label{thm:main}
+For every fixed $r$ and every six normal directions in \eqref{eq:paths}, there are finite constants $C_-,C_+$ and $t_0>0$ such that, for $0\le t\le t_0$,
+\begin{equation}\label{eq:expansion}
+ \gamma+t\,m_r(Z_1,Z_2,Z_3,Z_4)-C_-t^{3/2}
+ \le \dd_{3r}(A_r(t),B_r(t))^2
+ \le \gamma+t\,m_r(Z_1,Z_2,Z_3,Z_4)+C_+t^2.
+\end{equation}
+In particular the right derivative of the squared distance at zero exists and equals $m_r(Z_1,Z_2,Z_3,Z_4)$.
+\end{theorem}
+
+\begin{corollary}[No first-order gain at a fixed amplification]\label{cor:gap}
+For every fixed $r,k$ and the fixed directions above, there are finite $C_{r,k}$ and $t_{r,k}>0$ such that
+\begin{align}\label{eq:gap}
+0\le {}&\dd_{3r}(A_r(t),B_r(t))^2\\[0em]
+ &\quad-\dd_{3rk}(A_r(t)\otimes I_k,B_r(t)\otimes I_k)^2
+ \le C_{r,k}t^{3/2}\qquad(0\le t\le t_{r,k}).\notag
+\end{align}
+Both squared distances have the same right derivative, namely the quantity in Theorem~\ref{thm:main}.
+\end{corollary}
+
+The constants and radii are existential, and can depend on dimension and the directions. No uniform estimate as $k\to\infty$ is asserted. A positive gain of order $t^{3/2}$ or smaller is not excluded. Thus \eqref{eq:gap} is not \eqref{eq:SP09} at a nonzero $t$. Negative one-sided perturbations are treated by replacing all six directions by their negatives.
+
+\section{A classical Hermitian deamplification input}
+The first-order problem has an exact cancellation property that is available from Horn theory. The following argument identifies precisely the external theorem used.
+
+\begin{lemma}[Block-averaged triples]\label{lem:averages}
+Let $X,Y,Z\in M_{rk}(\C)$ be Hermitian and satisfy $X+Y+Z=0$. For a Hermitian matrix $T$, let
+\[
+ \beta_j(T)=\frac1k\sum_{h=(j-1)k+1}^{jk}\lambda_h(T),\qquad 1\le j\le r,
+\]
+where eigenvalues are in decreasing order. There are Hermitian $x,y,z\in M_r(\C)$ with eigenvalue lists $\beta(X),\beta(Y),\beta(Z)$, respectively, and $x+y+z=0$.
+\end{lemma}
+\begin{proof}
+Embed $M_{rk}$ trace-preservingly into a finite factor and apply the block-integral conclusion of Theorem 0.2 of Bercovici, Collins, Dykema, Li, and Timotin.\footnote{Bercovici et al., \emph{Intersections of Schubert varieties and eigenvalue inequalities in an arbitrary finite factor}, arXiv:0805.4817v1, Theorem 0.2; source [2]. The paper defines block \emph{integrals}. Multiplying all three output matrices by $r$ gives the block \emph{averages} used here.} The spectral functions of the embedded matrices have $rk$ equal trace steps. An interval of length $1/r$ therefore contains exactly $k$ steps. After multiplying all three output matrices by $r$, their spectra are the stated averages and their sum is still zero.
+\end{proof}
+
+\begin{proposition}[Hermitian sums cancel finite repetitions]\label{prop:Horn}
+For any finite Hermitian list $Z_1,\ldots,Z_q\in M_r(\C)$ and any $k\ge1$,
+\begin{equation}\label{eq:Horn}
+ m_{rk}(Z_1\otimes I_k,\ldots,Z_q\otimes I_k)=m_r(Z_1,\ldots,Z_q).
+\end{equation}
+\end{proposition}
+\begin{proof}
+The inequality $\le$ follows by tensoring. For the other direction, take arbitrary amplified conjugates $T_j$ of $Z_j\otimes I_k$ and put $S_j=T_1+\cdots+T_j$. Let $\beta_j$ be the decreasing list of consecutive $k$-eigenvalue averages of $S_j$.
+
+For each $j\ge2$, apply Lemma~\ref{lem:averages} to
+\[
+ S_{j-1}+T_j-S_j=0.
+\]
+It gives an $r$-dimensional triple whose first member has spectrum $\beta_{j-1}$, whose second has the spectrum of $Z_j$, and whose sum has spectrum $\beta_j$. The sign in the third member is harmless: block averaging of a decreasing negative spectrum gives the negative reversed list, so negating that member recovers $\beta_j$.
+
+Start with an $r$-dimensional conjugate of $Z_1$; its spectrum is $\beta_1$. Inductively conjugate all previously constructed summands together so that their partial sum equals the first member of the next triple. Such a conjugation exists because two Hermitian matrices with the same eigenvalue list are unitarily equivalent. Add the second member of that triple. This constructs conjugates of all $Z_j$ with sum spectrum $\beta_q$.
+
+Its largest eigenvalue is the average of the $k$ largest eigenvalues of $S_q$, and is therefore at most $\lambda_{\max}(S_q)$. Taking the infimum over all amplified conjugates proves $\ge$ in \eqref{eq:Horn}.
+\end{proof}
+
+This is a consequence of established Hermitian spectral theory, not a new Horn theorem. It does not deamplify the full normal-matrix problem: the latter couples real and imaginary parts through the \emph{same} conjugating unitary. Proposition~\ref{prop:Horn} will be applied only after the first-order reduction has been proved.
+
+\section{Reference rigidity and exact local algebra}
+\subsection{The imported reference theorem}
+Let
+\begin{equation}\label{eq:R}
+ v=\left(\sqrt{5/8},\sqrt{1/4},\sqrt{1/8}\right)^T,\qquad R=I-2vv^*.
+\end{equation}
+For $m\ge1$, let $\mathcal M_m$ be the compact set
+\[
+ \mathcal M_m=\{V(R\otimes I_m)W:V,W\text{ are block diagonal in three }m\text{-dimensional blocks}\}.
+\]
+The retained exact proof establishes
+\begin{equation}\label{eq:prior-rigidity}
+ \dd_{3m}(A_0\otimes I_m,-A_0\otimes I_m)^2=\gamma,
+ \qquad\{
+ \text{minimizing unitaries}\}=\mathcal M_m.
+\end{equation}
+It also gives, for $\tau=\Tr/(3m)$,
+\begin{equation}\label{eq:prior-stability}
+ \operatorname{dist}_{2,\tau}(U,\mathcal M_m)
+ \le 2{,}705{,}974\sqrt{
+ \norm{A_0\otimes I_m+U(A_0\otimes I_m)U^*}^{\,2}-\gamma}.
+\end{equation}
+These are imported proved statements, not conclusions of the new floating-point experiments. Their complete trace certificate, equality argument, and verifiers are retained in \texttt{prior\_round2/}. For fixed $m$, \eqref{eq:prior-stability} implies operator-norm distance $O(\sqrt\varepsilon)$ because $\norm X\le\sqrt{3m}\norm X_{2,\tau}$. This conversion is one reason the present error bounds are not uniform in dimension.
+
+\subsection{The active singular space}
+Set
+\[
+ C_0=RA_0R,\qquad D_0=A_0+C_0,\qquad H_0=D_0^*D_0,\qquad
+ E=\frac{13H_0-4I}{23},\quad F=I-E.
+\]
+The squared singular values of $D_0$ are $\gamma,\gamma,4/13$. Hence
+\begin{equation}\label{eq:gap-ref}
+ H_0=\gamma E+\ell F,\qquad \ell=4/13,\qquad \gamma-\ell=23/13,
+\end{equation}
+with $\rank E=2$. Put $P_v=vv^*$ and
+\begin{equation}\label{eq:rho}
+ \rho=\frac5{28}P_v+\frac{23}{28}(E-P_v).
+\end{equation}
+The two summands use orthogonal rank-one projections in $E$. Thus $\Tr\rho=1$ and $\rho$ is strictly positive on $E\C^3$.
+
+For a skew-Hermitian $X$, define
+\begin{align}\label{eq:taylor}
+ D_1(X)&=[X,C_0],&D_2(X)&=\tfrac12[X,[X,C_0]],\notag\\
+ H_1(X)&=D_0^*D_1(X)+D_1(X)^*D_0,\notag\\
+ H_2(X)&=D_1(X)^*D_1(X)+D_0^*D_2(X)+D_2(X)^*D_0,\\
+ L(X)&=EH_1(X)E.\notag
+\end{align}
+These are the linear and quadratic coefficients for $D(X)=A_0+e^X C_0e^{-X}$ and $D(X)^*D(X)$.
+
+\begin{proposition}[Verified finite identities]\label{prop:geometry}
+The real-linear map $L:\mathfrak u(3)\to\Herm(E\C^3)$ has rank three and
+\begin{equation}\label{eq:stationarity}
+ \Tr(\rho L(X))=0\qquad(X\in\mathfrak u(3)).
+\end{equation}
+The gauge tangent space
+\[
+ \gauge=\{J+RKR:J,K\text{ are diagonal and skew-Hermitian}\}
+\]
+has dimension five and lies in $\ker L$. There is a skew-Hermitian $X_*$ with
+\begin{equation}\label{eq:kernel}
+ \ker L=\gauge\oplus\R X_*.
+\end{equation}
+Define its second-order Schur coefficient by
+\begin{equation}\label{eq:Q}
+ Q(X)=EH_2(X)E+\frac{13}{23}EH_1(X)F H_1(X)E.
+\end{equation}
+Then
+\begin{equation}\label{eq:curvature}
+ \Tr(\rho Q(X_*))=\frac1{52}>0.
+\end{equation}
+Finally, for $P_i=E_{ii}$,
+\begin{equation}\label{eq:ci-trace}
+ \Tr(\rho D_0^*P_i)=\Tr(\rho D_0^*RP_iR)=c_i,
+\end{equation}
+with the coefficients in \eqref{eq:coefficients}.
+\end{proposition}
+
+\begin{proof}[Exact verification and explicit coordinates]
+All identities are recomputed with rational arithmetic over $\Q(s)$, $s^2=-3$, by \texttt{certificate/first\_order\_geometry.py}. Here are coordinates specifying the calculation without radical approximations. Put $w=(5/8,1/4,1/8)$, $S_w=\diag(\sqrt{w_i})$, and use the similarity $X\mapsto S_w^{-1}XS_w$. The adjoint in these coordinates is $X^\dagger=W^{-1}\overline X^{\,T}W$, $W=\diag(w)$. The reflection is $\overline R=I-2\mathbf1w^T$.
+
+The nine real tangent directions are $sP_1,sP_2,sP_3$, followed by $X_{12},X_{13},X_{23}$ with $(X_{ij})_{ij}=w_j$ and $(X_{ij})_{ji}=-w_i$, followed by the three directions with entries $sw_j,sw_i$ in those positions. In these weighted coordinates, choose
+\begin{equation}\label{eq:flat-explicit}
+ \overline X_*=-\frac35X_{12}+\frac25X_{13}+X_{23}
+ =\begin{pmatrix}
+ 0&-3/20&1/20\\ 3/8&0&1/8\\ -1/4&-1/4&0
+ \end{pmatrix}.
+\end{equation}
+The physical matrix is $S_w\overline X_*S_w^{-1}$.
+
+The checker verifies that the nine face images have rank three, the six displayed gauge generators have rank five and zero face image, adding $X_*$ raises their span to rank six, and adding tangent directions with zero-based indices $3,4,6$ raises the span to rank nine. It verifies the spectral projection identities and the positive density decomposition \eqref{eq:rho}, then multiplies out \eqref{eq:curvature} and \eqref{eq:ci-trace} exactly.
+
+In particular, $\Tr(\rho H_2(X_*))=19/2080$; this is \emph{not} the required curvature. The positive Schur correction in \eqref{eq:Q} changes it to $1/52$. The fixed rational witness file records all values and ranks. The checker compares that file to recomputation and uses explicit exceptions rather than removable Python assertions.
+\end{proof}
+
+\section{Tensor lifting and local coordinates}
+\subsection{The lifted face map}
+Fix a real three-dimensional complement $\trans$ on which $L$ is injective, using the transverse directions specified above. Then
+\[
+ \mathfrak u(3)=\gauge\oplus\R X_*\oplus\trans.
+\]
+Every skew-Hermitian matrix in dimension $3r$ can be uniquely expanded in a real scalar skew-Hermitian basis with Hermitian $r\times r$ coefficient matrices. Consequently
+\begin{equation}\label{eq:lift-decomposition}
+ \mathfrak u(3r)=\gauge_r\oplus
+ \{X_*\otimes T:T\in\Herm(r)\}\oplus\trans_r,
+\end{equation}
+where the first space is precisely the tangent space of $\mathcal M_r$ at $R\otimes I_r$, expressed on its left. Its dimension is $5r^2$, and $\dim\trans_r=3r^2$.
+
+Let $E_r=E\otimes I_r$. On Hermitian matrices supported in $E_r$, define the unital completely positive map
+\begin{equation}\label{eq:Phi}
+ \Phi_r(Y)=\Tr_{E\C^3}((\rho\otimes I_r)Y).
+\end{equation}
+If $\rho$ is diagonalized on its two-dimensional support with eigenvalues $p_1,p_2$, then $\Phi_r(Y)=p_1Y_{11}+p_2Y_{22}$. Thus this notation does not require $Y$ to commute with $\rho\otimes I_r$.
+
+The lifted derivative is $L_r(X)=E_rH_1(X)E_r$, with scalar reference matrices tensored by $I_r$. Tensor expansion and \eqref{eq:stationarity} imply
+\begin{equation}\label{eq:range}
+ \Phi_r(L_r(X))=0,\qquad \ran L_r=\ker\Phi_r.
+\end{equation}
+For the second equality, $L_r$ has real rank $3r^2$, while $\Phi_r$ maps the $4r^2$-dimensional Hermitian space onto $\Herm(r)$, since $\Phi_r(E\otimes Y)=Y$. Its kernel has dimension $3r^2$.
+
+On $\trans_r$, $L_r$ therefore has a bounded inverse onto its range. All boundedness assertions below are for fixed dimension. In particular, the coordinates in \eqref{eq:lift-decomposition} are bounded linear functions of $X$.
+
+\begin{lemma}[One-sided control of a traceless face]\label{lem:face-bound}
+If $J\in\Herm(E_r\C^{3r})$, $\Phi_r(J)=0$, and $J\le aE_r$ for $a\ge0$, then $\norm J\le C_\rho a$, for a finite constant depending only on $\rho$.
+\end{lemma}
+\begin{proof}
+Set $Y=aE_r-J\ge0$. Then $\Phi_r(Y)=aI_r$. In a basis diagonalizing $\rho$, positivity gives $p_iY_{ii}\le aI_r$, hence $Y_{ii}\le a/p_i$. A positive two-by-two operator block matrix satisfies
+\[
+ Y\le2\diag(Y_{11},Y_{22});
+\]
+this follows by bounding the cross quadratic form by the sum of the diagonal ones. Therefore $\norm Y\le2a/\min(p_1,p_2)$, and $J=aE_r-Y$ gives the claim. No commutativity of the $r\times r$ blocks is used.
+\end{proof}
+
+\subsection{A slice through the equality orbit}
+\begin{lemma}[Local gauge removal]\label{lem:slice}
+For fixed $r$, every unitary sufficiently close to $\mathcal M_r$ admits a representation
+\begin{equation}\label{eq:slice}
+ U=V e^X(R\otimes I_r)W,\qquad
+ X=X_*\otimes T+S,\quad T\in\Herm(r),\ S\in\trans_r,
+\end{equation}
+with $V,W$ spectral-block diagonal. The representation can be chosen with
+\[
+ \norm X\le C_r\operatorname{dist}(U,\mathcal M_r).
+\]
+\end{lemma}
+\begin{proof}
+The compact group of left and right spectral-block unitaries acts smoothly on $\U(3r)$. Its orbit through $R\otimes I_r$ is $\mathcal M_r$. Its infinitesimal image is $\gauge_r$. The intersection of the left and right block algebras after conjugation by $R\otimes I_r$ is $I_3\otimes M_r$: equivalently, in the scalar calculation the two diagonal algebras intersect only in scalars after this conjugation, and tensor expansion preserves that assertion. Thus the stabilizer has dimension $r^2$ and the orbit dimension is $5r^2$.
+
+Choose $5r^2$ independent gauge parameter directions. The derivative of the map formed from their left/right exponentials and $e^X$, with $X$ in the last two summands of \eqref{eq:lift-decomposition}, is an isomorphism at the reference unitary. The finite-dimensional inverse function theorem gives a local chart and a locally bounded inverse derivative. To apply it near any point of $\mathcal M_r$, first translate that point to $R\otimes I_r$ by its block unitaries. These translations are isometries. Choosing a closest orbit point and using compactness gives the displayed control. This argument requires neither a unique minimizing unitary for the perturbed problem nor differentiability of its choice.
+\end{proof}
+
+\section{The lower expansion}
+Fix the directions and $r$, and write
+\[
+ f_r(t)=\dd_{3r}(A_r(t),B_r(t))^2.
+\]
+Constants in this section are independent of $t$ and of the chosen minimizing unitary, but may depend on $r$ and on the fixed directions.
+
+\subsection{Every perturbed minimizer is close to the equality orbit}
+For any unitary, changing the spectral pair from $t=0$ to $t$ changes its residual norm by at most $Mt$, where
+\[
+ M=\max_i\norm{H_i}+\max_i\norm{K_i}.
+\]
+Taking minima shows $\dd_{3r}(A_r(t),B_r(t))=\sqrt\gamma+O(t)$. If $U_t$ is a true minimizer at $t$, its reference residual norm is at most $\sqrt\gamma+2Mt$. Hence its squared excess in \eqref{eq:prior-stability} is $O(t)$. That estimate and Lemma~\ref{lem:slice} imply a representation \eqref{eq:slice} with
+\begin{equation}\label{eq:X-rate}
+ \norm X=O(\sqrt t),\qquad \norm T+\norm S=O(\sqrt t),\qquad f_r(t)=\gamma+O(t).
+\end{equation}
+
+Conjugate the residual by $V^*$ and use that both gauges commute with the reference blocks. The directions become
+\[
+ \widetilde H_i=V_i^*H_iV_i,\qquad \widetilde K_i=W_iK_iW_i^*.
+\]
+They are independently conjugated and range over compact sets. With $J_A=\bigoplus\widetilde H_i$, $J_B=\bigoplus\widetilde K_i$, and $R_r=R\otimes I_r$, the residual is
+\begin{equation}\label{eq:residual}
+ D(X,t)=A_0\otimes I_r+e^X(C_0\otimes I_r)e^{-X}
+       +t\bigl(J_A-e^X R_rJ_BR_re^{-X}\bigr).
+\end{equation}
+Let
+\[
+ J=J_A-R_rJ_BR_r,\qquad
+ G=E_r\bigl((D_0^*\otimes I_r)J+J^*(D_0\otimes I_r)\bigr)E_r.
+\]
+The exact coefficient identities give
+\begin{equation}\label{eq:Gamma}
+ \Phi_r(G)=\Gamma
+ =\sum_{i=1}^3 2\Ree(c_i\widetilde H_i)
+  -\sum_{i=1}^3 2\Ree(c_i\widetilde K_i).
+\end{equation}
+Because $c_3=0$, this is a sum of four independently conjugated matrices from \eqref{eq:Z}. Consequently $\lambda_{\max}(\Gamma)\ge m_r(Z_1,Z_2,Z_3,Z_4)$.
+
+\subsection{Schur expansion at the actual largest eigenvalue}
+Write $\mathcal H=D(X,t)^*D(X,t)$ and $\mu=f_r(t)=\lambda_{\max}(\mathcal H)$. Let $F_r=F\otimes I_r$. The lower reference block has the strictly separated eigenvalue $\ell$. By \eqref{eq:X-rate}, for small $t$ the matrix $\mu F_r-F_r\mathcal H F_r$ is positive definite on $F_r$. The inequality $\mathcal H\le\mu I$ and the Schur complement give
+\begin{equation}\label{eq:Schur}
+ \mathcal K_\mu:=(\mathcal H)_{EE}
+ +\mathcal H_{EF}\bigl(\mu I_F-\mathcal H_{FF}\bigr)^{-1}\mathcal H_{FE}
+ \le\mu E_r.
+\end{equation}
+
+Taylor expansion of \eqref{eq:residual} gives
+\[
+ \mathcal H=H_0\otimes I_r+H_1(X)+t\mathcal G+H_2(X)+O(t^{3/2}),
+\]
+where $E_r\mathcal G E_r=G$. Indeed, the omitted terms have norm bounded by a constant times $\norm X^3+t\norm X+t^2$. The resolvent in \eqref{eq:Schur} is
+\[
+ (\gamma-\ell)^{-1}I_F+O(\sqrt t).
+\]
+The leading off-diagonal block is $E_rH_1(X)F_r=O(\sqrt t)$, with an $O(t)$ remainder. Multiplying these estimates, using the gap in \eqref{eq:gap-ref}, proves
+\begin{equation}\label{eq:Schur-expansion}
+ \mathcal K_\mu=\gamma E_r+L_r(X)+tG+Q_r(X)+O(t^{3/2}),
+\end{equation}
+where $Q_r$ is the tensor-lifted quadratic expression \eqref{eq:Q}. In particular $\norm{Q_r(X)}=O(t)$. All remainders here are operator-norm estimates and are uniform over the compact gauge choices.
+
+\subsection{The transverse coordinate is smaller than the flat coordinate}
+Since $L_r(X)=L_r(S)$, equations \eqref{eq:Schur}--\eqref{eq:Schur-expansion} first imply $L_r(S)\le CtE_r$. Equation \eqref{eq:range} and Lemma~\ref{lem:face-bound} then imply $\norm{L_r(S)}=O(t)$. The bounded inverse on $\trans_r$ yields
+\begin{equation}\label{eq:S-rate}
+ \norm S=O(t).
+\end{equation}
+This step is important: the initial rigidity bound alone only gave $O(\sqrt t)$ and would not remove all transverse quadratic terms.
+
+The quadratic expression is built from scalar reference matrices and multiplication. Thus, without any commutativity assumption among the coefficient blocks,
+\begin{equation}\label{eq:Q-lift}
+ Q_r(X)=Q(X_*)\otimes T^2+O(t^{3/2}).
+\end{equation}
+The mixed terms have norm $O(\norm T\norm S)=O(t^{3/2})$, and the pure transverse terms have norm $O(t^2)$. The remaining pure flat term has exactly $T^2$ because the same Hermitian coefficient $T$ occurs twice.
+
+Apply the unital positive map $\Phi_r$ to \eqref{eq:Schur}. Use \eqref{eq:stationarity}, \eqref{eq:curvature}, \eqref{eq:Gamma}, and \eqref{eq:Q-lift}. The result is
+\begin{equation}\label{eq:key-lower}
+ \mu I_r\ge\gamma I_r+t\Gamma+\frac1{52}T^2-Ct^{3/2}I_r.
+\end{equation}
+The extra quadratic term is positive semidefinite. Dropping it and taking the largest eigenvalue gives
+\[
+ f_r(t)\ge\gamma+t\lambda_{\max}(\Gamma)-Ct^{3/2}
+ \ge\gamma+t\,m_r(Z_1,Z_2,Z_3,Z_4)-Ct^{3/2}.
+\]
+This proves the lower half of Theorem~\ref{thm:main}. In particular, noncommuting matrix-valued tangent directions were retained throughout, not replaced by scalar directions or by commuting approximations.
+
+\section{The upper expansion and amplification consequence}
+Choose four unitary conjugations attaining the minimum in \eqref{eq:m}, and select the corresponding block gauges for $\widetilde H_1,\widetilde H_2,\widetilde K_1,\widetilde K_2$. Such gauges exist because conjugation commutes with $\Ree(cX)$. Choose any gauges for the third blocks. These choices fix $G$ and $\Gamma$ with $\lambda_{\max}(\Gamma)=m_r$.
+
+By \eqref{eq:range}, the Hermitian matrix $E\otimes\Gamma-G$ lies in the range of $L_r$: its image under $\Phi_r$ is zero. There is therefore an $S_0\in\trans_r$ satisfying
+\begin{equation}\label{eq:upper-correction}
+ L_r(S_0)=E\otimes\Gamma-G.
+\end{equation}
+Use the genuine unitary $U(t)=Ve^{tS_0}R_rW$. Its squared residual has expansion $H_0\otimes I_r+t\mathcal J+O(t^2)$, and its active first-order compression is
+\[
+ E_r\mathcal J E_r=L_r(S_0)+G=E\otimes\Gamma.
+\]
+The fixed gap $\gamma-\ell>0$ implies
+\begin{equation}\label{eq:upper-spectral}
+ \lambda_{\max}\bigl(H_0\otimes I_r+t\mathcal J+O(t^2)\bigr)
+ =\gamma+t\lambda_{\max}(E_r\mathcal J E_r)+O(t^2).
+\end{equation}
+For completeness, the lower inequality follows by restricting the Rayleigh quotient to $E_r$. For the upper inequality, the lower block remains separated; its off-diagonal coupling is $O(t)$, so its Schur contribution is $O(t^2)$. This proves \eqref{eq:upper-spectral} without requiring a simple largest eigenvalue inside $E_r$.
+
+The constructed unitary yields $f_r(t)\le\gamma+tm_r+Ct^2$, proving the upper half of Theorem~\ref{thm:main}.
+
+To prove Corollary~\ref{cor:gap}, apply that theorem once in repetition $r$ and once in repetition $rk$, with directions $H_i\otimes I_k,K_i\otimes I_k$. Proposition~\ref{prop:Horn} makes the two first-order coefficients identical. Subtract the amplified lower estimate from the base upper estimate, and absorb $t^2$ into $t^{3/2}$ for $0\le t\le1$. Nonnegativity of the difference follows by tensoring a base minimizing unitary. This completes the proof.
+
+\section{A closed first-order formula in dimension six}
+When $r=2$, the first-order optimization needs no general Horn computation. Let the two eigenvalues of $Z_j$ be $z_j^+\ge z_j^-$, and put
+\[
+ b_j=\frac{z_j^++z_j^-}{2},\qquad l_j=\frac{z_j^+-z_j^-}{2}\ge0.
+\]
+\begin{corollary}\label{cor:two}
+For the six-dimensional paths \eqref{eq:paths},
+\begin{equation}\label{eq:polygon}
+ \left.\frac{d}{dt}\right|_{0+}\dd_6(A_2(t),B_2(t))^2
+ =\sum_{j=1}^4 b_j+
+ \max\left(0,\,2\max_j l_j-\sum_{j=1}^4l_j\right).
+\end{equation}
+The same derivative holds after every finite amplification of this six-dimensional pair.
+\end{corollary}
+\begin{proof}
+A Hermitian $2\times2$ matrix of these eigenvalues has form $b_jI+l_j\,u_j\cdot\sigma$, with a unit vector $u_j\in\R^3$ and the Pauli matrices $\sigma$. Unitary conjugation permits every such unit vector. The largest eigenvalue of the sum is $\sum b_j+|\sum l_ju_j|$.
+
+The triangle inequality gives the minimum resultant length at least $\max(0,2\max l_j-\sum l_j)$. When the longest length exceeds the sum of the others, place all shorter vectors opposite it. Otherwise a closed planar polygon with the four side lengths exists, giving zero resultant. The latter follows, for example, by joining two pairs: the possible resultant lengths of a pair are the interval between the difference and the sum of its lengths, and the polygon inequalities make the two intervals intersect. Thus the bound is attained. Theorem~\ref{thm:main} and Proposition~\ref{prop:Horn} finish the proof.
+\end{proof}
+
+As a concrete choice, take
+\begin{align*}
+ H_1&=\diag(1,-1),& H_2&=\diag(0,2),&H_3&=\diag(-1,1),\\
+ K_1&=\diag(-2,1),& K_2&=\diag(1,-1),&K_3&=\diag(0,3).
+\end{align*}
+The four radii, with common denominator $364$, are $306,450,459,450$. They satisfy the closed-polygon condition. The sum of the centers is $603/364$. Therefore, for every fixed $k$,
+\begin{equation}\label{eq:example}
+ \dd_{6k}(A_2(t)\otimes I_k,B_2(t)\otimes I_k)^2
+ =\frac{27}{13}+\frac{603}{364}t+O_k(t^{3/2}).
+\end{equation}
+The constructive demonstration in \texttt{experiments/first\_order\_witness\_demo.py} chooses an explicit closed polygon, realizes its four orientations by $2\times2$ unitaries, solves \eqref{eq:upper-correction}, and evaluates $Ve^{tS_0}R_2W$. It checks feasible upper bounds; it is not used for the lower proof. Some computed values are shown below.
+\begin{center}
+\begin{tabular}{@{}rrr@{}}
+\toprule
+$t$ & Constructed squared norm & $(\text{squared norm}-\gamma-t\,603/364)/t^2$\\
+\midrule
+$0.0100$ & $2.0973095597$ & $38.2055$\\
+$0.0010$ & $2.0786173788$ & $37.7084$\\
+$0.0001$ & $2.0770891128$ & $37.6570$\\
+\bottomrule
+\end{tabular}
+\end{center}
+These are floating-point evaluations of an explicit witness, not estimates of the exact minimum. Their bounded second-order remainder illustrates the upper construction only.
+
+\section{Verification, scope, and remaining obstruction}
+\subsection{What the checks establish}
+The new exact checker recomputes the reference spectral identities, the rank-three face derivative, the rank-five gauge tangent, its one-dimensional nongauge flat complement, the transverse basis, all first-order coefficients, and the positive Schur curvature over $\Q(i\sqrt3)$. The negative tests alter eight witness entries or lists and separately alter the reference residual matrix. Each alteration is rejected. Both the new tests and the eight retained prior exact programs are run with Python optimization enabled.
+
+The exact programs verify finite algebra and data integrity. The local slice argument, uniform Taylor estimates in a fixed dimension, Schur-complement proof, and Horn input are mathematical arguments in the manuscript, not mechanically formalized statements. Passing the programs does not by itself verify every line of the analytic proof. No independent human peer review or proof-assistant formalization is claimed.
+
+The archive also retains one newly checked $n=7,k=2$ numerical comparison. Its best base feasible norm and its available amplified feasible norm were both approximately $1.4126107335852258$. This is neither a proof of equality nor a counterexample. The stored data and audit distinguish upper-bound witnesses from certified lower bounds.
+
+\subsection{What is not established}
+Theorem~\ref{thm:main} removes the first-order obstruction for independent linear splitting of all repeated eigenvalues at the reference model. It does not continue the earlier positive certificate through arbitrary spectral parameter space. It does not rule out a smaller amplified distance at a fixed nonzero splitting, nor does it control a sequence of amplifications whose size grows as $t$ tends to zero.
+
+The unsupplied general step remains
+\[
+ \dd_{nk}(A\otimes I_k,B\otimes I_k)\ge\dd_n(A,B)
+ \quad\text{for arbitrary normal }A,B.
+\]
+A resolution would require an exact deamplification argument beyond the first-order Hermitian reduction, or an explicit amplified witness accompanied by a rigorous strictly larger base-dimensional lower bound. Neither is provided here. Consequently the correct status of this deliverable is \textbf{PARTIAL}.
+
+\section*{Sources}
+\begin{enumerate}
+\item OpenProblemsInNLA. \emph{SP-09: Unitary-orbit distance under finite block repetition}. Repository problem statement, checked during this work.\\
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/eigenvalues-and-inverse-problems/SP-09/README.md}
+\item H. Bercovici, B. Collins, K. Dykema, W. S. Li, and D. Timotin. \emph{Intersections of Schubert varieties and eigenvalue inequalities in an arbitrary finite factor}. arXiv:0805.4817v1 (2008), especially Theorem 0.2.\\
+\url{https://arxiv.org/html/0805.4817v1}
+\item L. W. Marcoux, P. Sarkowicz, and Y. Zhang. \emph{Kaplansky's problem and unitary orbits in matrix amplifications}. arXiv:2508.13834v1 (2025). Context only; not a substitute for the normal finite-dimensional inequality.\\
+\url{https://arxiv.org/html/2508.13834v1}
+\item \emph{SP-09: Local Amplification Invariance and Quantitative Rigidity}. Prior proof pack supplied with this conversation, including its preceding exact reference-pair certificate. Retained in full under \texttt{prior\_round2/}. The corresponding source manuscripts, fixed data, and all exact verifiers accompany the PDFs.
+\end{enumerate}
+\end{document}

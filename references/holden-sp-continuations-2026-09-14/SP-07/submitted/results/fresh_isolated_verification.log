@@ -1,0 +1,87 @@
+
+=== Exact all-odd-order polygon formulas ===
+{
+  "status": "PASS",
+  "arithmetic": "integers and fractions only",
+  "orders_checked": 500,
+  "first_order": {
+    "p": 3,
+    "compressed_norm_over_R": "2/3",
+    "completed_norm_squared_over_R_squared": "4/3"
+  },
+  "last_order": {
+    "p": 1001,
+    "compressed_norm_over_R": "2/1001",
+    "completed_norm_squared_over_R_squared": "4/1001"
+  },
+  "seconds": 1.743166041999757,
+  "scope": "Exact formula checks; general completion proof is in the report"
+}
+
+=== Rational stationary-model enclosure ===
+{
+  "b": "296277/500000",
+  "c": "74553/200000",
+  "integral_lower": "1407778368214629257299050744444169819487/340282366920938463463374607431768211456",
+  "integral_upper": "703889184107314628709895476612599405513/170141183460469231731687303715884105728",
+  "pi_lower": "267257146016241686964920093290467695825/85070591730234615865843651857942052864",
+  "pi_upper": "1069028584064966747859680373161870783301/340282366920938463463374607431768211456",
+  "T_lower": "1407778368214629257299050744444169819487/1069028584064966747859680373161870783301",
+  "T_upper": "703889184107314628709895476612599405513/534514292032483373929840186580935391650",
+  "formal_ratio_lower": "176488371367685344830828477027871693749/170141183460469231731687303715884105728",
+  "formal_ratio_upper": "176488371367685344832856488964828656143/170141183460469231731687303715884105728",
+  "actual_infinite_ratio_lower": "119739026234254940202764948906146751989/170141183460469231731687303715884105728",
+  "actual_infinite_ratio_upper": "239478052468509880411508241467227376425/340282366920938463463374607431768211456",
+  "quadrature": {
+    "cells": 32,
+    "binomial_degree": 12,
+    "bits": 128,
+    "largest_relative_cell_variation": "95843742617111097/2625755218039338439",
+    "largest_integrated_series_tail": "57587594073494940161907480376417117854446006370549377322987864083592027620568432180584052956948624196661843070805536462175011083454174841086328555384090625091001640383222086054008082609742686539026310653517900121247781977/135870813551670397032144055715114064684069818084782068573889854377081366431307689884331944692799727186061368736429284000459561862560657477668349385073112806826419796091376963199677029905912687321722100207171012706528110885913846182984084391"
+  },
+  "paper_integral_lower": "413708879761528711367/100000000000000000000",
+  "paper_integral_upper": "103427219940382177851/25000000000000000000",
+  "paper_pi_lower": "157079632679489661923/50000000000000000000",
+  "paper_pi_upper": "314159265358979323847/100000000000000000000",
+  "status": "PASS",
+  "verified_strict_formal_lower": "5186527088213/5000000000000",
+  "verified_strict_formal_upper": "2593263544107/2500000000000",
+  "scope": "Chosen stationary-model parameters only; not a finite SP-07 bound",
+  "seconds": 0.1320992429996295
+}
+
+=== Exact and corrupted-input rejection tests ===
+test_bad_polygon_orders (test_exact.ExactTests.test_bad_polygon_orders) ... ok
+test_explicit_checks_not_assert_statements (test_exact.ExactTests.test_explicit_checks_not_assert_statements) ... ok
+test_false_lower_rejected (test_exact.ExactTests.test_false_lower_rejected) ... ok
+test_false_upper_rejected (test_exact.ExactTests.test_false_upper_rejected) ... ok
+test_invalid_domains_rejected (test_exact.ExactTests.test_invalid_domains_rejected) ... ok
+test_model_certificate (test_exact.ExactTests.test_model_certificate) ... ok
+test_pi_and_arctangent (test_exact.ExactTests.test_pi_and_arctangent) ... ok
+test_polygon_orders (test_exact.ExactTests.test_polygon_orders) ... ok
+test_refinement_compatible (test_exact.ExactTests.test_refinement_compatible) ... ok
+test_square_root_enclosures (test_exact.ExactTests.test_square_root_enclosures) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.668s
+
+OK
+
+=== Rejection tests with Python optimization enabled ===
+test_bad_polygon_orders (test_exact.ExactTests.test_bad_polygon_orders) ... ok
+test_explicit_checks_not_assert_statements (test_exact.ExactTests.test_explicit_checks_not_assert_statements) ... ok
+test_false_lower_rejected (test_exact.ExactTests.test_false_lower_rejected) ... ok
+test_false_upper_rejected (test_exact.ExactTests.test_false_upper_rejected) ... ok
+test_invalid_domains_rejected (test_exact.ExactTests.test_invalid_domains_rejected) ... ok
+test_model_certificate (test_exact.ExactTests.test_model_certificate) ... ok
+test_pi_and_arctangent (test_exact.ExactTests.test_pi_and_arctangent) ... ok
+test_polygon_orders (test_exact.ExactTests.test_polygon_orders) ... ok
+test_refinement_compatible (test_exact.ExactTests.test_refinement_compatible) ... ok
+test_square_root_enclosures (test_exact.ExactTests.test_square_root_enclosures) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.662s
+
+OK
+
+PASS all requested checks.

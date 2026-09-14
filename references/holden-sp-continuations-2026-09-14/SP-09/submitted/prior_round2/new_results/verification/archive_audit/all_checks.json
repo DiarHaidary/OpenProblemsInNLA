@@ -1,0 +1,55 @@
+{
+  "result": "PASS",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "checks": [
+    {
+      "script": "prior/certificate/verify_certificate.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.9785899419998714,
+      "result": "PASS"
+    },
+    {
+      "script": "prior/certificate/verify_witness_and_rigidity.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.0785384499999964,
+      "result": "PASS"
+    },
+    {
+      "script": "prior/certificate/test_verifiers.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.3165384929998254,
+      "result": "PASS"
+    },
+    {
+      "script": "new_results/certificate/local_geometry.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.2230043249996925,
+      "result": "PASS"
+    },
+    {
+      "script": "new_results/certificate/rank_witness.py",
+      "returncode": 0,
+      "elapsed_seconds": 0.8883479670002998,
+      "result": "PASS"
+    },
+    {
+      "script": "new_results/certificate/exact_minor.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.113578798999697,
+      "result": "PASS"
+    },
+    {
+      "script": "new_results/certificate/quantitative_rigidity.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.391304210999806,
+      "result": "PASS"
+    },
+    {
+      "script": "new_results/certificate/test_new_certificates.py",
+      "returncode": 0,
+      "elapsed_seconds": 2.2837384360000215,
+      "result": "PASS"
+    }
+  ],
+  "scope": "Local amplification invariance and reference quantitative rigidity, not universal SP-09."
+}

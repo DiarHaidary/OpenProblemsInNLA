@@ -21,6 +21,11 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### SP-03, SP-07 and SP-09 — further supporting and partial results — Sidney Holden
+
+**Recorded 14 September 2026 (UTC).** [Submission, author affiliation and three independent informal AI-agent reviews](references/holden-sp-continuations-2026-09-14/README.md). SP-03 adds Stein reductions, parity and finite root certificates; SP-07 adds completion barriers and a stationary model; SP-09 adds a first-order splitting theorem with a dimension-dependent remainder bound. These do not settle the full original targets. SP-03 is Partially resolved on the new parity theorem; SP-07 remains Open and SP-09 remains Partially resolved. Original statements and IDs are unchanged. No Lean verification or external human peer review is claimed.
+
+
 ### RA-05, TR-03, RA-11, SP-10 and RA-14 — further submissions — Sidney Holden
 
 **14 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission, verified affiliation and provenance](references/holden-further-2026-09-14/README.md). Separate independent Codex AI-agent audits passed the scopes listed below; this is informal review, with ChatGPT assistance disclosed. No Lean verification, external human peer review, formal verification or novelty claim is asserted.

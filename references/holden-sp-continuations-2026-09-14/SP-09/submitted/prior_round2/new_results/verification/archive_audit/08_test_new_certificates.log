@@ -1,0 +1,33 @@
+{
+  "valid_geometry": "PASS",
+  "valid_modular_rank": "PASS",
+  "valid_integer_rank": "PASS",
+  "valid_stability_constant": "PASS",
+  "integer_elimination_regressions": "PASS",
+  "corruption_tests": [
+    {
+      "corruption": "duplicate_minor_column",
+      "rejected": true
+    },
+    {
+      "corruption": "incorrect_modular_determinant",
+      "rejected": true
+    },
+    {
+      "corruption": "composite_modulus",
+      "rejected": true
+    },
+    {
+      "corruption": "incorrect_coordinate_order",
+      "rejected": true
+    },
+    {
+      "corruption": "loss_of_degree_one_normalization",
+      "rejected": true
+    },
+    {
+      "corruption": "changed_local_kernel",
+      "rejected": true
+    }
+  ]
+}

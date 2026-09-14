@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "all_passed": true,
+  "steps": [
+    {
+      "name": "Exact all-odd-order polygon formulas",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-S",
+        "verify_polygon.py"
+      ],
+      "returncode": 0,
+      "seconds": 2.2878804169999998
+    },
+    {
+      "name": "Rational stationary-model enclosure",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-S",
+        "verify_model.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.2971024999999998
+    },
+    {
+      "name": "Exact and corrupted-input rejection tests",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-S",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 1.3133992500000002
+    },
+    {
+      "name": "Rejection tests with Python optimization enabled",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-S",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 1.4357530420000004
+    },
+    {
+      "name": "Inherited rank-one exact certificate",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-S",
+        "verify_rank_one.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.09089770899999916
+    },
+    {
+      "name": "Inherited rank-one exact rejection tests",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-S",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.17601312500000077
+    },
+    {
+      "name": "Inherited n=193 certificate by both exact positivity methods",
+      "command": [
+        "/Library/Developer/CommandLineTools/usr/bin/python3",
+        "-S",
+        "verify_all.py",
+        "--only",
+        "n193",
+        "--ldl"
+      ],
+      "returncode": 0,
+      "seconds": 41.506972292
+    }
+  ],
+  "seconds": 47.216679083,
+  "numerical_enabled": false,
+  "inherited_checks_enabled": true
+}

@@ -1,0 +1,129 @@
+{
+  "status": "PASS",
+  "sha256_files_checked": 22
+}
+{
+  "status": "PASS",
+  "exact_assertions": 135,
+  "rows": 81,
+  "support": 45,
+  "input_rank": 3,
+  "query_rank": 1,
+  "moments_per_degree": {
+    "2": 6,
+    "4": 15,
+    "6": 28,
+    "8": 45
+  },
+  "exact_costs": {
+    "2": "1395/2",
+    "4": "40557/4",
+    "6": "1530571/8",
+    "8": "67473645/16"
+  },
+  "scope": "Finite exact original-row certificate; not a formalization of the asymptotic proof."
+}
+{
+  "status": "PASS",
+  "new_assertions": 87932,
+  "categories": {
+    "monomial_rank_identities": 86450,
+    "rate_regimes": 520,
+    "exact_polarization": 54,
+    "feature_state": 25,
+    "mixed_factorization": 105,
+    "structured_query_maps": 210,
+    "output_isometry": 105,
+    "polynomial_homogeneity": 105,
+    "coefficient_projection": 36,
+    "full_covariance_protection": 72,
+    "left_variance_contraction": 18,
+    "structured_gaussian_moments": 54,
+    "projected_trace_identity": 18,
+    "condition_change": 40,
+    "gaussian_mgf_algebra": 120
+  },
+  "worst_scaled_residuals": {
+    "feature_state": 2.907611554444878e-15,
+    "mixed_factorization": 2.956347947267091e-17,
+    "structured_query_maps": 6.661338147750939e-16,
+    "output_isometry": 1.598093619652077e-15,
+    "polynomial_homogeneity": 2.7025970368445984e-16,
+    "coefficient_projection": 7.838624483909109e-16,
+    "full_covariance_protection": 3.184467377654466e-14,
+    "left_variance_contraction": 0.0,
+    "projected_trace_identity": 1.0802932235147215e-15,
+    "condition_change": 2.2006434077583053e-16,
+    "gaussian_mgf_algebra": 1.644774851296528e-16
+  },
+  "finite_feature_instances": [
+    {
+      "s": 2,
+      "p": 4,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 32,
+      "tested_covariance_families": 2,
+      "head_optimality": "not asserted; these checks do not use optimality"
+    },
+    {
+      "s": 3,
+      "p": 6,
+      "head_dimension": 3,
+      "tail_dimension": 2,
+      "rows": 32,
+      "tested_covariance_families": 4,
+      "head_optimality": "not asserted; these checks do not use optimality"
+    },
+    {
+      "s": 4,
+      "p": 8,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 32,
+      "tested_covariance_families": 4,
+      "head_optimality": "not asserted; these checks do not use optimality"
+    },
+    {
+      "s": 5,
+      "p": 10,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 32,
+      "tested_covariance_families": 4,
+      "head_optimality": "not asserted; these checks do not use optimality"
+    },
+    {
+      "s": 6,
+      "p": 12,
+      "head_dimension": 2,
+      "tail_dimension": 2,
+      "rows": 32,
+      "tested_covariance_families": 4,
+      "head_optimality": "not asserted; these checks do not use optimality"
+    }
+  ],
+  "separate_exact_certificate": {
+    "status": "PASS",
+    "exact_assertions": 135,
+    "rows": 81,
+    "support": 45,
+    "input_rank": 3,
+    "query_rank": 1,
+    "moments_per_degree": {
+      "2": 6,
+      "4": 15,
+      "6": 28,
+      "8": 45
+    },
+    "exact_costs": {
+      "2": "1395/2",
+      "4": "40557/4",
+      "6": "1530571/8",
+      "8": "67473645/16"
+    },
+    "scope": "Finite exact original-row certificate; not a formalization of the asymptotic proof."
+  },
+  "seed": 13090526,
+  "scope": "Finite algebra and implementation checks only. Counts are not independent proof audits. The structured probability theorem, arbitrary-norm net, and all asymptotic results rest on the manuscript proofs."
+}

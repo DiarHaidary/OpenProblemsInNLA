@@ -1,0 +1,155 @@
+{
+  "status": "EXACT_NONZERO_MINOR_CERTIFICATE",
+  "n": 12,
+  "k": 1,
+  "q": 3,
+  "epsilon": "1/100",
+  "spectrum_scale": 50,
+  "scaled_diagonal": [
+    51,
+    50,
+    50,
+    50,
+    25,
+    25,
+    25,
+    -25,
+    -25,
+    -25,
+    -50,
+    -50
+  ],
+  "starting_matrix": [
+    [
+      2,
+      2,
+      -4,
+      0
+    ],
+    [
+      4,
+      3,
+      2,
+      0
+    ],
+    [
+      3,
+      1,
+      -1,
+      4
+    ],
+    [
+      -2,
+      0,
+      -2,
+      -3
+    ],
+    [
+      0,
+      4,
+      -2,
+      0
+    ],
+    [
+      -3,
+      -3,
+      1,
+      3
+    ],
+    [
+      4,
+      -3,
+      1,
+      2
+    ],
+    [
+      1,
+      -1,
+      4,
+      3
+    ],
+    [
+      3,
+      4,
+      0,
+      -4
+    ],
+    [
+      4,
+      -4,
+      -3,
+      2
+    ],
+    [
+      -4,
+      3,
+      1,
+      -1
+    ],
+    [
+      1,
+      -3,
+      -1,
+      -1
+    ]
+  ],
+  "seed": 0,
+  "actual_full_rank": 7,
+  "actual_tail_rank": 7,
+  "prefix_rank": 12,
+  "actual_feature_columns": 7,
+  "prefix_feature_columns": 16,
+  "actual_tail_minor": {
+    "rows": [
+      0,
+      1,
+      2,
+      4,
+      3,
+      5,
+      6
+    ],
+    "columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "determinant": "-272687500"
+  },
+  "prefix_minor": {
+    "rows": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "columns": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11
+    ],
+    "determinant": "-94034903247070312500000000"
+  },
+  "scope": "An exact separation between actual-query and full-prefix spaces, not a probabilistic adaptive lower bound."
+}

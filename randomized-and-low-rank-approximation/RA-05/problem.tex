@@ -34,7 +34,7 @@ coresets},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}RA-05}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-14}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -52,13 +52,65 @@ coresets\par}
 \vspace{7pt}
 {\sffamily\small\textbf{Difficulty:} challenging\quad\textbf{Importance:} interesting
 to the community\par}
-{\sffamily\small\bfseries\color{accent}Status: Partially resolved\par}
+{\sffamily\small\bfseries\color{accent}Status: Solved\par}
 \vspace{4pt}
 {\color{accent}\hrule height 0.8pt}
 \vspace{6pt}
 \textbf{Rating rationale:} Challenging because simultaneous control of
 all subspaces must match joint rank and accuracy lower bounds; community
 impact is compact robust low-rank fitting.
+
+\subsection{Full resolution --- even/non-even classification, 14
+September
+2026}\label{full-resolution-evennon-even-classification-14-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/README.md}{Verified
+affiliation and submission record}.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/RA-05/manuscript.pdf}{Part
+I, Theorem 1.1, and Part II, Theorem 1.1} classify the optimal
+worst-case strong original-row coreset size for every fixed real
+\(p>2\), all \(k\ge1\) and \(0<\varepsilon<1/2\), with arbitrary input
+rank and ambient dimension. Writing \(S_p(k,\varepsilon)\) for that
+size, the result is
+
+\[S_p(k,\varepsilon)=\widetilde\Theta_p\!\left(
+\begin{cases}
+k^{p/2}\varepsilon^{-2},&p\notin2\mathbb Z,\\
+\min\{k^{p/2}\varepsilon^{-2},\ k^{(p+1)/2}\varepsilon^{-1}+k^{p/2-1}\varepsilon^{-2}\},&p\in2\mathbb Z.
+\end{cases}\right)\]
+
+The hidden factors are logarithmic in \(2k/\varepsilon\); constants may
+depend only on the fixed exponent. Weights are nonnegative and supported
+on original rows, and the guarantee holds simultaneously for every
+fitted subspace of dimension at most \(k\). The displayed additive
+proposal in the retained problem is false for every fixed \(p>2\). This
+completes the broader classification as well as its subsidiary truth
+question. The general upper bound for non-even powers is credited to
+Lin--Mirrokni--Woodruff; the manuscript credits Li--Wang--Woodruff for
+the antecedent Fourier mechanism.
+
+Both complete proof parts passed a separate
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/reviews/2026-09-14-further-submissions/RA-05-review.md}{independent
+Codex AI-agent informal audit}, including the new uniform estimates and
+primary-source dependency checks. This meets the repository's
+\textbf{Solved} policy. The exact cubic certificate passed 17,575
+assertions; optional numerical diagnostics were not rerun because their
+dependencies were unavailable. The proof audit, rather than those finite
+checks, supports the universal result.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/RA-05/part-1.tex}{Part
+I source} ·
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/RA-05/part-2.tex}{Part
+II source}.
+
+ChatGPT assistance is disclosed. No Lean verification, external human
+peer review, formal verification or priority certification is asserted.
+The earlier partial results and historical open-status checks below are
+retained as history; this dated full resolution supersedes their
+remaining-gap statements. Original ID, canonical path and mathematical
+target are unchanged.
 
 \subsection{Further partial resolution --- even-power high accuracy, 13
 September

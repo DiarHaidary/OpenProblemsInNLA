@@ -7,9 +7,21 @@
 **Difficulty:** extreme  
 **Importance:** interesting to the community  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-10
+**Last checked:** 2026-09-14
 
 **Rating rationale:** Extreme reflects a longstanding bound over all symmetric sparsity patterns, still beyond the available general rank estimates. Community impact comes from its central role in graph inverse eigenvalue problems and complementary low-rank realizations.
+
+
+## Further partial resolution — bipartite degree-four class, 14 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Verified affiliation and submission record](../../references/holden-further-2026-09-14/README.md).
+
+[Theorem 4.1](../../references/holden-further-2026-09-14/SP-10/manuscript.pdf) proves the stronger positive-semidefinite rank-sum bound, and hence the original real symmetric bound, for every bipartite graph with all degrees at most four on one specified side. Theorem 2.1 constructs a faithful complement Gram representation in dimension $`d+1`$ when that side has degrees at most $`d`$; Theorem 3.1 gives a four-dimensional complement representation for partial 2-trees. Theorem 5.1 supplies an open-set obstruction to exact support in one proposed SDP route, not a counterexample to the graph complement conjecture.
+
+A separate [independent Codex AI-agent audit](../../reviews/2026-09-14-further-submissions/SP-10-review.md) passed Sections 2–5, including the standard minor-monotonicity dependency used in Theorem 4.1. All 16 unit tests and 524 exact complement-only witness checks passed, with the defective SDP pair correctly rejected. These witnesses are not 524 full graph/complement rank-pair certificates. The optional SymPy crosscheck was unavailable and is not claimed as rerun. Section 6 and inherited archives are outside this fresh audit.
+
+**The arbitrary-graph inequality remains unresolved**, so status remains Partially resolved. [Proof text](../../references/holden-further-2026-09-14/SP-10/manuscript.md). AI assistance is disclosed; no Lean verification, external human peer review, formal verification or novelty claim is asserted. The original problem and prior-source credit below are unchanged.
+
 
 ## Problem statement
 

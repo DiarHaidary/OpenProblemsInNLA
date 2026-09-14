@@ -1,0 +1,707 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=25mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+\emergencystretch=3em
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prb}{\mathbb P}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\St}{\operatorname{St}}
+\newcommand{\op}{\mathrm{op}}
+\newcommand{\F}{\mathrm F}
+\newcommand{\X}{\mathcal X}
+\newcommand{\Err}{\mathcal E}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\cstar}{c_*}
+\title{TR-03: an all-spectrum upper bound}
+\author{Sidney Holden\\{\small Center for Computational Biology}\\{\small Flatiron Institute, Simons Foundation}}\date{14 September 2026}
+\hypersetup{pdfauthor={Sidney Holden}}
+\begin{document}
+\begin{titlepage}
+\thispagestyle{empty}
+{\LARGE\bfseries TR-03 submission}\par\bigskip
+{\Large Sidney Holden}\par\medskip
+Center for Computational Biology, Flatiron Institute, Simons Foundation.\par\medskip
+14 September 2026\par\bigskip
+\textbf{Submission disposition.} Partially resolved. Theorem 1.1 gives an all-positive-spectrum upper bound. The sharp joint dependence on dimension and subset size remains open; no matching growing lower bound is proved.\par\bigskip
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/reviews/2026-09-14-further-submissions/TR-03-review.md}{Independent informal Codex AI-agent review}.\par\medskip
+ChatGPT assistance is disclosed. No Lean verification, external human peer review or formal verification is claimed. This dated notice supersedes historical statements about pending review. Inherited claims are accepted only within the linked review scope.\par\bigskip
+The mathematical body and its references are retained from the submitted source.\par
+\end{titlepage}
+
+\maketitle
+\begin{abstract}
+For the real isospectral Nystr\"om minimax problem TR-03, an oversampled limiting-profile estimate is proved and used to obtain an upper bound for every positive finite spectrum:
+\[
+ R_{n,k}\le \min\{k+1,n-k,C\sqrt{k}\},\qquad 2\le k\le n-2,
+\]
+with the explicit universal constant $C=2^{34}e^{2560}$. The argument closes the conditional upper-bound reduction in the preceding research package. Its main ingredients are a clipping inequality, rectangular Gaussian inverse-trace small-ball estimates, a common orthogonal rotation for all subsets, and an exact-spectrum grouping construction with additional observations granted to the selector. Every construction chooses the orientation before the subset. Singular limiting precision blocks are assigned infinite inverse-trace cost.
+
+This is a partial result, not a resolution of TR-03. No matching dimension-growing lower bound for $R_{n,k}$ is established, and the sharp joint dependence on $n,k$ remains undetermined. The very large displayed constant is retained to make the probability estimates explicit, not for numerical use.
+\end{abstract}
+\tableofcontents
+\newpage
+
+\section{Problem and main results}
+Let $1\le k<n$, $m=n-k$, and let $\lambda_1\ge\cdots\ge\lambda_n>0$. For a real positive-definite matrix $K$ and a $k$-element coordinate set $I$, write
+\[
+ \Err_I(K)=\tr\bigl(K-K_{:I}K_{II}^{-1}K_{I:}\bigr).
+\]
+The quantities in TR-03 are
+\begin{align*}
+ x_k(\lambda)&=\max_{U\in O(n)}\min_{|I|=k}
+ \Err_I\bigl(U\diag(\lambda)U^T\bigr),\\
+ y_k(\lambda)&=(k+1)\frac{e_{k+1}(\lambda)}{e_k(\lambda)},\\
+ R_{n,k}&=\sup_{\lambda>0}\frac{y_k(\lambda)}{x_k(\lambda)}.
+\end{align*}
+where $e_i$ is the elementary symmetric polynomial. The requested problem is to determine the joint order of $R_{n,k}$ up to universal multiplicative constants.\footnote{The original problem is TR-03 in the Open Problems in Numerical Linear Algebra repository; see Source 1. The three preceding research archives supplied with this report are Sources 2--4.}
+
+The maximum is outside the minimum: one orientation must work against every subset. Replacing it by a subset-dependent orientation changes the problem.
+
+\begin{theorem}[All finite positive spectra]\label{th:main}
+For every $2\le k\le n-2$ and every positive spectrum,
+\[
+ x_k(\lambda)\ge \frac{\cstar}{16\sqrt{k}}y_k(\lambda),
+ \qquad \cstar=2^{-30}e^{-2560}.
+\]
+Consequently,
+\[
+ R_{n,k}\le\min\{k+1,n-k,2^{34}e^{2560}\sqrt{k}\}.
+\]
+\end{theorem}
+
+The main new ingredient is a bound for oversampled limiting profiles. Put
+\[
+ j=k-q,\qquad d=m+q=n-j,\qquad
+ \sigma_1\ge\cdots\ge\sigma_d>0,
+ \qquad \tau=\sum_{i=q+1}^d\sigma_i.
+\]
+For $0\le q<k$, define
+\[
+ \X_{n,k,q}(\sigma)
+ =\lim_{L\to\infty}x_k(L^{[j]},\sigma).
+\]
+Existence and the appropriate singular convention are proved below.
+
+\begin{theorem}[Robust oversampled profile]\label{th:robust}
+For $0\le q<k/4$, with $s=\min(k,m)$,
+\[
+ \boxed{\displaystyle
+ \X_{n,k,q}(\sigma)\ge
+ \cstar\,\frac{k+1}{q+\sqrt{s}}\,\tau.}
+\]
+The constant is independent of $n,k,q$ and of all entries of $\sigma$.
+\end{theorem}
+
+The preceding reduction addendum stated a hypothesis of this form with denominator $q+\sqrt{k}$ but did not prove it. Theorem~\ref{th:robust} proves the stronger limiting statement with $\sqrt{\min(k,m)}$. The finite-spectrum consequence established here is nevertheless only $O(\sqrt{k})$: the counting argument in Section~\ref{sec:reduction} does not automatically transfer the stronger limiting denominator to an all-spectrum $O(\sqrt m)$ bound.
+
+\section{Deterministic identities and limiting profiles}
+\subsection{Schur complements and monotonicity}
+For $J=I^c$, block inversion gives
+\begin{equation}\label{eq:schur}
+ \Err_I(K)=\tr\bigl((K^{-1})_{JJ}^{-1}\bigr).
+\end{equation}
+In particular, if $K_1\succeq K_0\succ0$, then $\Err_I(K_1)\ge\Err_I(K_0)$ for every $I$. One may also see this from
+\[
+ \Err_I(K)=\min_A\tr\bigl((I-A S_I)K(I-A S_I)^T\bigr),
+\]
+where $S_I$ selects the coordinates in $I$. This formulation extends monotonically to positive-semidefinite auxiliary matrices, with the Moore--Penrose inverse used for their covariance conditioning. Adding observed coordinates can only decrease the minimum.
+
+These two uses of a pseudoinverse must not be confused: a singular \emph{limiting precision block} in~\eqref{eq:schur} has infinite inverse-trace cost, not pseudoinverse cost.
+
+The bordered-minor identity is
+\[
+ \det(K_{II})\Err_I(K)
+ =\sum_{a\notin I}\det K_{I\cup\{a\},I\cup\{a\}}.
+\]
+Summing over $I$ shows that $y_k$ is the determinant-weighted average error. Thus $x_k\le y_k$. If $\tau_k=\sum_{i>k}\lambda_i$, every rank-$k$ approximation leaves trace error at least $\tau_k$, and
+\begin{equation}\label{eq:baseline}
+ \tau_k\le x_k\le y_k\le(k+1)\tau_k.
+\end{equation}
+The final inequality follows because every $(k+1)$-set contains a tail index, so $e_{k+1}(\lambda)\le \tau_k e_k(\lambda)$.
+
+\subsection{A harmonic-block certificate}
+\begin{lemma}\label{le:harmonic}
+For $H_r=\sum_{i=1}^r\lambda_i^{-1}$ and $\tau_r=\sum_{i>r}\lambda_i$,
+\[
+ x_k(\lambda)\ge
+ \max_{k\le r\le n}\left\{\tau_r+\frac{r(r-k)}{H_r}\right\}.
+\]
+\end{lemma}
+\begin{proof}
+Choose a real symmetric positive-definite $r$-by-$r$ matrix $B$ with eigenvalues $\lambda_1^{-1},\ldots,\lambda_r^{-1}$ and constant diagonal $H_r/r$. Such a matrix follows by successive real plane rotations; equivalently, choose a unit vector with Rayleigh quotient equal to the mean and induct in its orthogonal complement. Take
+\[
+ K=B^{-1}\oplus\diag(\lambda_{r+1},\ldots,\lambda_n).
+\]
+Suppose $I$ uses $h$ coordinates outside the first block. The unselected coordinates inside it have size $r-k+h$. Their precision block has trace $(r-k+h)H_r/r$, so the arithmetic--harmonic mean inequality makes their error at least $(r-k+h)r/H_r$. The outside residual is at least $\tau_r-h r/H_r$, since every outside eigenvalue is at most the harmonic mean $r/H_r$ of the first $r$ eigenvalues. Adding proves the assertion for every $I$ under this one orientation.
+\end{proof}
+Taking $r=k+1$ and using
+\[
+ (n-k)e_k
+ =\sum_{|S|=k+1}\lambda_S\sum_{i\in S}\lambda_i^{-1}
+ \ge H_{k+1}e_{k+1}
+\]
+gives $R_{n,k}\le n-k$. Together with~\eqref{eq:baseline}, this proves the two elementary terms in Theorem~\ref{th:main}.
+
+\subsection{The limiting frame problem}
+Let $S=\diag(\sigma)$ and let $Q\in\St(n,d)$, meaning $Q^TQ=I_d$. Define
+\[
+ G_J(Q,S)=\tr\bigl((Q_J S^{-1}Q_J^T)^{-1}\bigr),\qquad |J|=m,
+\]
+with value $+\infty$ when the block is singular.
+\begin{lemma}\label{le:limit}
+The limit defining $\X$ exists, is finite, and equals
+\begin{equation}\label{eq:profile}
+ \X_{n,k,q}(\sigma)
+ =\max_{Q\in\St(n,d)}\min_{|J|=m}G_J(Q,S).
+\end{equation}
+Moreover $\X\ge\tau$, and $\X$ is increasing in every eigenvalue of $\sigma$.
+\end{lemma}
+\begin{proof}
+For a fixed $Q$, put $P=I-QQ^T$. The covariance with leading level $L$ has precision
+\[
+ L^{-1}P+Q S^{-1}Q^T.
+\]
+Its subset error increases with $L$. If its limiting $J$-block is singular, a kernel vector of that block satisfies $Q_J^Tv=0$ and $v^TP_{JJ}v=\|v\|^2$, so the inverse trace diverges. Otherwise it converges to $G_J$.
+
+There are finitely many subsets. Their minimum therefore converges to the minimum of their extended limits. Some $m$ rows of $Q$ are independent because $d\ge m$, so this minimum is finite. It is continuous in $Q$: finite branches are locally continuous, and singular branches diverge on approach to their singular points. Consequently the maximum in~\eqref{eq:profile} is attained. Evaluating the finite-$L$ problem at a maximizing frame proves interchange of this maximum and the increasing limit; the reverse inequality is pointwise.
+
+The determinant-average upper bound converges to $(k+1)e_{q+1}(\sigma)/e_q(\sigma)$, which is finite. The lower bound and monotonicity follow from~\eqref{eq:baseline} and covariance monotonicity.
+\end{proof}
+
+\begin{lemma}[Finite-to-infinite comparison]\label{le:finite}
+For $j=k-q\ge1$, set $\sigma=(\lambda_{j+1},\ldots,\lambda_n)$. If $0<a\le\lambda_j$, then
+\begin{equation}\label{eq:finite}
+ x_k(\lambda)\ge
+ \frac{a\X_{n,k,q}(\sigma)}{a+\X_{n,k,q}(\sigma)}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use a maximizing frame in~\eqref{eq:profile}. Reducing its leading eigenvalues to $a$ only decreases errors. For each $J$ the resulting precision is bounded above by $B+a^{-1}I_m$, where $B=Q_JS^{-1}Q_J^T$. If $B$ is nonsingular and $z_i$ are its inverse eigenvalues, its error is at least
+\[
+ \sum_i\frac{a z_i}{a+z_i}
+ \ge\frac{a\sum_i z_i}{a+\sum_i z_i}.
+\]
+If $B$ is singular, the error is at least $a$, which also suffices. Finally $\sum z_i\ge\X$ for every nonsingular subset under the chosen frame.
+\end{proof}
+
+\section{Clipping an arbitrary positive tail}\label{sec:clip}
+For a decreasing positive vector $\sigma$ of length $m+q$, define
+\[
+ a_* =\max_{1\le t\le m}
+ \frac{t}{\sum_{i=1}^{q+t}\sigma_i^{-1}}.
+\]
+\begin{lemma}[Clipping lemma]\label{le:clip}
+With $\tau=\sum_{i>q}\sigma_i$,
+\begin{align}
+ \sum_{i>q}(\sigma_i-a_*)_+&\le q a_*,\label{eq:clip1}\\
+ \sum_{i>q}\min(\sigma_i,b)&\ge\tau-q a_*
+ \quad(b\ge a_*).\label{eq:clip2}
+\end{align}
+Also
+\begin{equation}\label{eq:harmonicprofile}
+ \X_{n,k,q}(\sigma)\ge(k+1)a_*.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Let $t$ count the tail entries strictly larger than $a_*$. If $t=0$ the clipping assertion is immediate. Otherwise the definition gives
+\[
+ \sum_{i=q+1}^{q+t}\left(\frac1{a_*}-\frac1{\sigma_i}\right)
+ \le\sum_{i=1}^{q}\frac1{\sigma_i}
+ \le\frac{q}{\sigma_{q+1}}.
+\]
+Each summand is nonnegative. Multiplying each by $\sigma_i\le\sigma_{q+1}$ and summing gives
+$\sum_{i=q+1}^{q+t}(\sigma_i/a_*-1)\le q$, proving~\eqref{eq:clip1}. Increasing the cap can only reduce the discarded mass, giving~\eqref{eq:clip2}.
+
+Apply Lemma~\ref{le:harmonic} to $(L^{[k-q]},\sigma)$ with $r=k+t$ and let $L\to\infty$. The resulting term is at least
+\[
+ \frac{(k+t)t}{\sum_{i=1}^{q+t}\sigma_i^{-1}}
+ \ge (k+1)\frac{t}{\sum_{i=1}^{q+t}\sigma_i^{-1}}.
+\]
+Maximize over $t$.
+\end{proof}
+
+\section{Gaussian estimates with explicit constants}\label{sec:gaussian}
+Fix throughout
+\begin{equation}\label{eq:constants}
+ \delta=e^{-256},\qquad a=2^{-20}\delta,\qquad d_0=2^{20}.
+\end{equation}
+All Gaussian matrices below have independent standard real normal entries. Unsubscripted matrix norms are operator norms; the Frobenius norm is denoted by $\|\cdot\|_\F$.
+
+\subsection{Elementary rectangular norm bounds}
+\begin{lemma}\label{le:nets}
+For an $R$-by-$h$ Gaussian matrix $A$, with $h\le R$,
+\[
+ \Prb\{\|A\|>32\sqrt R\}\le2e^{-123R}.
+\]
+If $h\le R/2$, then
+\[
+ \Prb\{A^TA\not\succeq\delta R I_h\}\le3e^{-60R}.
+\]
+\end{lemma}
+\begin{proof}
+Use $1/4$-nets in both spheres, of sizes at most $9^R$ and $9^h$. A norm exceeding $32\sqrt R$ forces one bilinear form on the nets to exceed $16\sqrt R$ in absolute value. The standard normal tail gives
+$2\,9^{R+h}e^{-128R}\le2e^{-123R}$.
+
+On the norm event, a singular value below $\sqrt{\delta R}$ forces some point of a $\sqrt\delta/32$-net in the $h$-sphere to have image norm at most $2\sqrt{\delta R}$. This net has size at most $(65/\sqrt\delta)^h$. For a fixed point, the squared image norm is $\chi_R^2$, and its lower tail at $4\delta R$ is at most $(4e\delta)^{R/2}$. For $h\le R/2$ the product has exponent at most
+\[
+ R\left(\tfrac12\log65+\tfrac12\log(4e)+\tfrac14\log\delta\right)<-60R.
+\]
+Adding the norm failure proves the claim.
+\end{proof}
+
+\subsection{Augmenting the kernel}
+\begin{lemma}\label{le:augmentation}
+Let $W$ be $d$-by-$(d+q)$ Gaussian and let $p\ge1$. Let $A$ be $(d+q)$-by-$(p+q)$ Gaussian. For $T>0$,
+\begin{align*}
+ \Prb\{\tr(WW^T)^{-1}\le T\}
+ &\le2\Prb\{A^TA\not\succeq\delta(d+q)I\}\\
+ &\quad+2\Prb\left\{\chi^2_{p(p+q)}\ge\frac{\delta(d+q)p}{2T}\right\}.
+\end{align*}
+\end{lemma}
+\begin{proof}
+Append an independent $d$-by-$p$ Gaussian matrix $Z$. Conditional on $W$,
+\[
+ \E\|W^\dagger Z\|_\F^2=p\tr(WW^T)^{-1}.
+\]
+If the trace is at most $T$, Markov's inequality makes the minimum-norm solution of $WX=-Z$ have squared norm at most $2pT$ with probability at least $1/2$.
+
+The kernel of $[W\ Z]$ is a uniform $(p+q)$-dimensional subspace. It has the same law as the column space of $[A^T\ B^T]^T$, where $B$ is $p$-by-$(p+q)$ Gaussian. Solutions have the form $X=AY$, $BY=-I_p$. On the stated good event for $A$,
+\[
+ \min_{BY=-I}\|AY\|_\F^2
+ \ge\delta(d+q)\|B^\dagger\|_\F^2
+ \ge\frac{\delta(d+q)p^2}{\|B\|_\F^2}.
+\]
+The last denominator is $\chi^2_{p(p+q)}$. The union bound and the conditional factor $1/2$ finish the proof.
+\end{proof}
+
+\subsection{A shift of Wishart density}
+For $q\ge1$, the density of $WW^T$ is proportional to
+\[
+ (\det H)^{(q-1)/2}e^{-\tr H/2},\qquad H\succ0.
+\]
+For completeness, this density can be obtained without an inverse-moment formula: the change $H\mapsto C H C^T$ on symmetric matrices has Jacobian $|\det C|^{d+1}$, as seen first for diagonal $C$ and then by orthogonal invariance. Its Laplace transform is therefore a constant times $\det(I+2T)^{-(d+q)/2}$, matching the product of $d+q$ Gaussian-vector transforms. Normalization and uniqueness of the Laplace transform identify the density. The density is integrable here; Cholesky coordinates reduce its integral to Gaussian and gamma integrals with positive parameters.
+
+Since the determinant exponent is nonnegative, changing variables $U=H+I$ gives
+\begin{equation}\label{eq:shift}
+ \Prb\{\tr(WW^T+I)^{-1}\le T\}
+ \le e^{d/2}\Prb\{\tr(WW^T)^{-1}\le T\}.
+\end{equation}
+When $q=0$, append one Gaussian column first. The inverse trace decreases, and~\eqref{eq:shift} then applies with $q=1$.
+
+\begin{lemma}[Rectangular inverse-trace small ball]\label{le:smallball}
+If $d\ge d_0$ and $0\le q\le d/3$, then
+\begin{equation}\label{eq:smallball}
+ \Prb\left\{\tr(WW^T+I)^{-1}
+ <\frac{a d}{q+\sqrt d}\right\}\le8e^{-50d}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $v=\max(q,1)$, $p=\lceil32\sqrt d\rceil$, $R=d+v$, and
+$T=a d/(q+\sqrt d)$. The possible appended column is included in $v$. The inequalities
+\[
+ p\le33\sqrt d,\quad p+v\le34(q+\sqrt d),\quad p+v\le R/2
+\]
+hold for $d\ge d_0$. Apply Lemmas~\ref{le:augmentation} and~\ref{le:nets} with excess $v$. The chi-square threshold divided by its number of degrees of freedom is
+\[
+ \frac{\delta R}{2T(p+v)}
+ \ge\frac{2^{19}}{34}>3.
+\]
+There are $p(p+v)\ge1024d$ degrees of freedom. The exponential-moment bound
+\[
+ \Prb\{\chi_N^2\ge3N\}
+ \le\exp\{-N(2-\log3)/2\}\le e^{-400d}
+\]
+therefore applies. The unregularized probability is at most $8e^{-60d}$. Multiply by the shift factor $e^{d/2}$ and weaken the exponent to $-50d$.
+\end{proof}
+
+\section{A common rotation for weighted compression}\label{sec:haar}
+\begin{lemma}[Weighted Haar small ball]\label{le:haar}
+Let $S,M$ be nonzero positive-semidefinite $d$-by-$d$ matrices. Set
+\[
+ u=\frac{\tr S}{\|S\|},\qquad v=\frac{\tr M}{\|M\|}.
+\]
+If $u,v\ge16$ and $O$ is Haar orthogonal, then, for $\eps=e^{-2048}$,
+\begin{equation}\label{eq:haar}
+ \Prb\left\{\tr(SOMO^T)\le
+ \eps\frac{\tr S\tr M}{d}\right\}\le e^{-3uv}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Normalize both operator norms to one. Scale each matrix down to a positive contraction of integer trace $\lfloor u\rfloor$ or $\lfloor v\rfloor$. A contraction of integer trace is a convex combination of orthogonal projections of that rank: diagonalize and use the vertices of the polytope $\{z\in[0,1]^d:\sum z_i=r\}$. Convexity of the negative exponential, first in one matrix and then the other, bounds its moment by the moment for two projections of those ranks.
+
+Cap each rank at $\lfloor d/2\rfloor$, interchange the two ranks if necessary, and halve the smaller rank, rounding down. Passing to nested subprojections can only increase this negative-exponential moment. The resulting ranks $P,Q$ satisfy
+\[
+ P\ge2Q,\qquad P,Q\le d/2,\qquad PQ\ge uv/128.
+\]
+For example, flooring loses at most a factor two for each trace, capping loses at most a factor three for each rank, and halving with rounding loses at most a factor three. The combined factor $108$ is smaller than $128$; all ranks before the last halving are at least eight.
+
+Take a fixed $P$-dimensional subspace and reveal the columns $v_1,\ldots,v_Q$ of a uniform orthonormal $Q$-frame. At step $i$, its intersection with the orthogonal complement of the previous columns has dimension at least $P-Q$. Put $\ell=P-Q\ge P/2$. Conditional on the preceding columns, the squared projection onto any $\ell$-dimensional subspace of that intersection is
+\[
+ Z\sim\mathrm{Beta}\bigl(\ell/2,(D-\ell)/2\bigr),\qquad D=d-i+1.
+\]
+It is no larger than the squared projection onto the fixed $P$-space. This beta law follows by writing a uniform sphere point as a Gaussian vector divided by its norm.
+
+For $\theta\ge1$, the beta integral, extended from $[0,1]$ to $[0,\infty)$ after dropping its factor $(1-z)^{(D-\ell)/2-1}\le1$, gives
+\[
+ \E e^{-\theta dZ}\le
+ \frac{\Gamma(D/2)}{\Gamma((D-\ell)/2)}(\theta d)^{-\ell/2}
+ \le(2\theta)^{-\ell/2}.
+\]
+The gamma-ratio bound follows from $\psi(x)\le\log x$, which itself follows by applying Jensen's inequality to the logarithm of a gamma random variable, and integrating from $(D-\ell)/2$ to $D/2$. The beta exponent that was dropped is nonnegative because $P,Q\le d/2$.
+
+Iterating conditional expectations bounds the negative-exponential moment by
+\[
+ (2\theta)^{-PQ/4}\le(2\theta)^{-uv/512}.
+\]
+Markov's inequality at threshold $\eps uv/d$, with $\theta=e^{2048}$, now gives exponent
+\[
+ uv\left(1-\frac{2048+\log2}{512}\right)<-3uv.
+\]
+Restoring the operator norms proves~\eqref{eq:haar}.
+\end{proof}
+
+\begin{lemma}[Harmonic compression]\label{le:compression}
+Let $R\in\St(d,m)$, $q=d-m$, and $S=\diag(\sigma_1,\ldots,\sigma_d)$ with decreasing positive entries. For $O\in O(d)$, put
+\[
+ C(O)=\bigl(R^T O S^{-1}O^T R\bigr)^{-1}.
+\]
+Then
+\[
+ \tr C(O)\ge\sum_{i=q+1}^d\sigma_i,\qquad
+ \|C(O)\|\le\sigma_1.
+\]
+For Haar $O$, the law of $C(O)$ is invariant under conjugation by $O(m)$.
+\end{lemma}
+\begin{proof}
+Compression interlacing for $S^{-1}$, followed by inversion, gives
+$\sigma_i\ge\lambda_i(C)\ge\sigma_{q+i}$ in decreasing order. For an orthogonal $Z$ on $\R^m$, extend it to $E=RZR^T+(I-RR^T)$ on $\R^d$. Then $C(EO)=ZC(O)Z^T$, and $EO$ is Haar whenever $O$ is.
+\end{proof}
+
+For a full-row-rank $Q_J$, take a thin singular-value decomposition $Q_J=L D R^T$. The limiting cost is
+\begin{equation}\label{eq:weightedcost}
+ G_J(QO,S)=\tr\bigl(D^{-2}C(O)\bigr).
+\end{equation}
+Since $Q$ is an isometry, $D^2\preceq I_m$. The regularized matrix
+\begin{equation}\label{eq:Mj}
+ M_J=\bigl(n^{-1}I_m+(1-n^{-1})D^2\bigr)^{-1}
+ \preceq D^{-2},\qquad \|M_J\|\le n
+\end{equation}
+can therefore replace $D^{-2}$ in a lower bound. The conjugation invariance in Lemma~\ref{le:compression} permits applying Lemma~\ref{le:haar} to $C(O)$ and $M_J$. This does not assume independence between the eigenvalues and eigenvectors of a matrix with repeated eigenvalues: one can average an additional independent Haar conjugation, use the deterministic trace and norm bounds for every $C$, and then use invariance to remove that additional rotation.
+
+\section{Hard rectangular frames in comparable dimensions}\label{sec:frames}
+Define
+\begin{equation}\label{eq:frameconstants}
+ c_2=\delta a/64,\qquad A=128/c_2.
+\end{equation}
+\begin{lemma}\label{le:frame}
+Suppose $m\le3k$, $0\le q<k/4$, $s=\min(k,m)$, and
+\begin{equation}\label{eq:feasibility}
+ m\ge(A-1)(q+\sqrt{s}).
+\end{equation}
+If $k\ge2d_0$, there is $Q\in\St(n,m+q)$ such that, for every full-row-rank $m$-row subset,
+\begin{equation}\label{eq:framebound}
+ \tr M_J\ge c_2\frac{nm}{q+\sqrt{s}},\qquad \|M_J\|\le n.
+\end{equation}
+Up to identical row types and permutations, there are at most $2^{4m}$ different constraints. Singular subsets need no bound of this kind because their limiting cost is infinite.
+\end{lemma}
+\begin{proof}
+Write $d=m+q$ and $j=k-q$. Feasibility implies $q<m/3$ and $m\ge d_0$.
+
+\textbf{Case 1: $2d\le n$.} Here $s=m$. Draw a $2d$-by-$d$ Gaussian matrix $G$. By Lemma~\ref{le:nets}, $G^TG\succeq\delta(2d)I$ except on an event of probability at most $3e^{-120d}$. Every choice of $m$ different rows produces an $m$-by-$(m+q)$ Gaussian matrix $W$. Lemma~\ref{le:smallball} and a union bound make all of them satisfy
+\[
+ \tr(WW^T+I)^{-1}\ge\frac{am}{q+\sqrt m}
+\]
+with failure probability at most $8\,2^{2d}e^{-50m}$. The two failure probabilities sum to less than one, since $d<4m/3$ and $m\ge d_0$.
+
+Normalize $Q_*=G(G^TG)^{-1/2}$. Repeat each of its rows $h=\lfloor n/(2d)\rfloor$ times, divided by $\sqrt h$, and append zero rows to reach $n$. This preserves orthonormal columns. A full-row-rank subset uses different nonzero row types, and
+\[
+ Q_JQ_J^T\preceq (\delta 2dh)^{-1}WW^T.
+\]
+Since $\delta 2dh\le n$, its regularized Gram matrix is at most
+$(\delta 2dh)^{-1}(WW^T+I)$. Also $2dh\ge n/2$. Inversion gives
+\[
+ \tr M_J\ge\frac{\delta a}{2}\frac{nm}{q+\sqrt m}.
+\]
+There are at most $2^{2d}\le2^{4m}$ distinct row-type constraints.
+
+\textbf{Case 2: $2d>n$.} Draw an $n$-by-$j$ Gaussian matrix $G$, let $U=G(G^TG)^{-1/2}$, and let $Q$ be an orthogonal complement. Here $j<n/2$ and $n\le4k<16j/3$. Apply Lemma~\ref{le:smallball} to $W^T$ for every $k$-row submatrix $W=G_I$, with row dimension $j$ and excess $q<j/3$. Since $j>3k/4\ge d_0$, the total failure probability, including $G^TG\succeq\delta n I$, is at most
+\[
+ 8\,2^n e^{-50j}+3e^{-60n}<1.
+\]
+Choose a successful realization. The ordered eigenvalues of $U_I^TU_I$ are at most those of $(\delta n)^{-1}W^TW$. To justify this without a false noncommuting comparison, use
+$W(G^TG)^{-1}W^T\preceq(\delta n)^{-1}WW^T$ and then compare its nonzero eigenvalues. It is not necessary, and is generally false, that the corresponding column Gram matrices obey the same Loewner inequality.
+
+For $f(t)=[n^{-1}+(1-n^{-1})t]^{-1}$, this gives
+\[
+ \tr f(U_I^TU_I)\ge
+ T:=\delta a\frac{nj}{q+\sqrt j}.
+\]
+The complementary compression identity is
+\begin{equation}\label{eq:complement}
+ \tr f(Q_JQ_J^T)=m-j+\tr f(U_I^TU_I).
+\end{equation}
+Indeed, $Q_JQ_J^T=I_m-U_JU_J^T$ and $U_I^TU_I=I_j-U_J^TU_J$ have the same non-unit eigenvalues, with their unit-eigenvalue multiplicities differing by $m-j$; moreover $f(1)=1$.
+
+If $m\ge j$, then $j/m\ge1/4$ and $s\ge j$, so $T\ge(\delta a/4)nm/(q+\sqrt s)$. If $m<j$, then $s=m$ and $T\ge\delta a nm/(q+\sqrt m)$. In this latter case $j-m<q<j/3$, so $2(j-m)<m$. When $T\ge2(j-m)$, subtracting $j-m$ in~\eqref{eq:complement} loses at most a factor two. When $T<2(j-m)$, the baseline $\tr f(Q_JQ_J^T)\ge m>T$ suffices instead. The constant $c_2=\delta a/64$ is smaller than all resulting constants.
+
+Finally, $n<2d<4m$, so the number of subsets is at most $2^n\le2^{4m}$.
+\end{proof}
+
+\begin{proposition}[Comparable-dimensional profiles]\label{pr:comparable}
+If $m\le3k$ and $0\le q<k/4$, then
+\begin{equation}\label{eq:comparable}
+ \X_{n,k,q}(\sigma)\ge
+ c_{\mathrm{cmp}}\frac{k+1}{q+\sqrt{\min(k,m)}}\tau,
+ \qquad c_{\mathrm{cmp}}=\eps\delta a/256.
+\end{equation}
+\end{proposition}
+\begin{proof}
+If $k<2d_0$, the baseline $\X\ge\tau$ suffices, because the displayed constant times $(k+1)/(q+\sqrt{\min(k,m)})$ is below one. Assume $k\ge2d_0$, write $s=\min(k,m)$, and put
+\[
+ b=\frac{\tau}{A(q+\sqrt s)}.
+\]
+If the clipping threshold satisfies $a_*\ge b$, Lemma~\ref{le:clip} gives the result with constant $1/A$, which is larger than $c_{\mathrm{cmp}}$.
+
+Otherwise cap every entry of $\sigma$ at $b$. Monotonicity permits this decrease. Its residual mass $\tau'$ obeys
+\[
+ \tau'\ge\tau-q a_*>\tau-qb\ge(1-1/A)\tau.
+\]
+Because $\tau'\le mb$, this entails feasibility~\eqref{eq:feasibility}. Use the frame of Lemma~\ref{le:frame}. For each nonsingular subset, harmonic compression of the capped spectrum satisfies
+\[
+ u=\frac{\tr C}{\|C\|}\ge\frac{\tau'}b
+ \ge(A-1)(q+\sqrt s),
+ \quad
+ v=\frac{\tr M_J}{\|M_J\|}\ge\frac{c_2m}{q+\sqrt s}.
+\]
+Thus $u,v\ge16$ and $uv\ge c_2(A-1)m>100m$. Lemma~\ref{le:haar}, compression invariance, and a union bound over at most $2^{4m}$ constraints show that one common $O$ satisfies, for every nonsingular subset,
+\[
+ G_J(QO,S)\ge\eps\frac{\tau'\tr M_J}{m}
+ \ge\frac{\eps c_2}{2}\frac{n\tau}{q+\sqrt s}.
+\]
+Singular subsets already have infinite cost. Since $n\ge k+1$, the weaker constant $\eps c_2/4=c_{\mathrm{cmp}}$ proves the assertion.
+\end{proof}
+
+\section{Exact-spectrum grouping for long tails}\label{sec:grouping}
+It remains to remove the restriction $m\le3k$. The difficulty is not merely to append small eigenvalues: every entry of the prescribed tail must be retained, and selections that place several coordinates in one group must be handled uniformly.
+
+\subsection{A contrast block with calibrated diagonal}
+\begin{lemma}\label{le:contrast}
+Given positive numbers $\alpha_1,\ldots,\alpha_{t-1}$ and $c=\sum\alpha_i$, there are a positive-semidefinite $t$-by-$t$ matrix $B$ with spectrum $(\alpha_1,\ldots,\alpha_{t-1},0)$ and a unit kernel vector $u$, all of whose coordinates are nonzero, such that
+\begin{equation}\label{eq:calibrated}
+ B_{ii}=c u_i^2.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Use real equal-diagonal conjugation on the trace-zero spectrum $(\alpha_1,\ldots,\alpha_{t-1},-c)$ to obtain a symmetric matrix $H$ with zero diagonal. Let $u$ be its unit eigenvector at $-c$, and put $B=H+c uu^T$. This has the stated spectrum, kernel, and diagonal. If $u_i=0$, then $B_{ii}=0$, so positivity gives $Be_i=0$. The one-dimensional kernel would force $e_i$ to be a multiple of $u$, contradicting $u_i=0$.
+\end{proof}
+
+\subsection{The spectrum-preserving construction}
+Suppose $m\ge3k$, hence $n\ge4k$. Put $N=2k$ and $j=k-q$. Reserve the first $k+q=N-j$ tail eigenvalues for a core, and put
+\[
+ \tau_0=\sum_{i=q+1}^{k+q}\sigma_i.
+\]
+Distribute the remaining $n-2k$ eigenvalues in decreasing order, round-robin among $N$ groups. Every group gets at least one eigenvalue. For group $g$, apply Lemma~\ref{le:contrast}, obtaining $B_g,u_g$ and the eigenvalue sum $c_g$. Embed $u_g$ on its group of coordinates to form the $g$th column of an isometry $T:\R^N\to\R^n$.
+
+Choose complementary isometries $[U_0\ V_0]\in O(N)$ with $U_0$ having $j$ columns, and set
+\begin{align}
+ U&=T U_0,\nonumber\\
+ B_{\mathrm{tail}}
+ &=T V_0\diag(\sigma_1,\ldots,\sigma_{k+q})V_0^TT^T
+   +\bigoplus_{g=1}^N B_g,\label{eq:groupcov}\\
+ K_L&=L UU^T+B_{\mathrm{tail}}.\nonumber
+\end{align}
+The contrast blocks annihilate $T$, and the displayed subspaces are orthogonal. Thus $K_L$ has exactly the spectrum $(L^{[j]},\sigma)$, including all of the reserved and distributed eigenvalues.
+
+Round-robin distribution has the useful spread estimate
+\begin{equation}\label{eq:spread}
+ \sum_g c_g=\tau-\tau_0,
+ \qquad \max_g c_g-\min_g c_g\le\sigma_{k+q+1}.
+\end{equation}
+To verify it, write the remaining decreasing sequence as $\rho$. The largest-minus-smallest sum is $\sum_{\ell\ge0}(\rho_{1+\ell N}-\rho_{N+\ell N})$, with missing entries taken as zero. Since $\rho_{N+\ell N}\ge\rho_{1+(\ell+1)N}$, the differences telescope to at most $\rho_1$.
+
+\subsection{The case of substantial core mass}
+If $\tau_0\ge\tau/4$, choose $U_0,V_0$ from Proposition~\ref{pr:comparable} for dimension $N=2k$, selected size $k$, and the reserved tail. Drop the positive-semidefinite contrast term in~\eqref{eq:groupcov}. A selected coordinate in group $g$ then reveals precisely a nonzero multiple of core coordinate $g$. Any $k$ selected coordinates therefore reveal at most $k$ different core coordinates.
+
+Since $T$ is an isometry, the trace error for the embedded covariance equals the error for those core observations. Adding core observations up to size $k$ can only lower it. Hence the best $k$-coordinate error in the full construction is at least the best $k$-coordinate error of the core. Taking $L\to\infty$ gives
+\begin{equation}\label{eq:corecase}
+ \X_{n,k,q}(\sigma)
+ \ge\frac{c_{\mathrm{cmp}}}{4}
+ \frac{k+1}{q+\sqrt k}\tau.
+\end{equation}
+This comparison uses an auxiliary singular covariance only for monotonicity; the original $K_L$ remains positive definite with the exact required spectrum.
+
+\subsection{The case of substantial contrast mass}
+Suppose instead $\tau_0<\tau/4$. Since the $k$ entries in $\tau_0$ are all at least $\sigma_{k+q+1}$, equation~\eqref{eq:spread} yields
+\begin{equation}\label{eq:cmin}
+ c_{\min}\ge\frac{\tau-\tau_0}{2k}-\frac{\tau_0}{k}
+ >\frac{\tau}{8k}.
+\end{equation}
+For $k<2d_0$ the baseline $\X\ge\tau$ again proves Theorem~\ref{th:robust}, so assume $k\ge2d_0$.
+
+Draw an $N$-by-$j$ Gaussian matrix $G$, put $H=G^TG$, and set $U_0=GH^{-1/2}$. We will choose one realization that is good for all coordinate selections. Drop the positive core-tail term in~\eqref{eq:groupcov}, retaining the auxiliary covariance
+\begin{equation}\label{eq:auxgroup}
+ \widetilde K_L=L(TU_0)(TU_0)^T+\bigoplus_g B_g.
+\end{equation}
+It is the covariance of $TU_0\theta+\eta$, with $\theta\sim N(0,L I_j)$ and independent group contrasts $\eta_g$ of covariance $B_g$.
+
+Consider any selection of $k$ coordinates. Let $d'$ be the number of groups it touches, $u=k-d'$ the number of excess selections, and $h$ the number of groups touched at least twice. Call those groups heavy; let $\mathcal H$ and $\mathcal S$ denote the heavy and singleton group sets.
+
+Grant the selector \emph{all} coordinates in every heavy group. This additional information can only reduce its error. The full group reveals its exact mean $U_{0,g}\theta$, because $u_g^T\eta_g=0$. A singleton coordinate $i$ in group $g$, divided by its nonzero $u_{g,i}$, reveals
+\[
+ U_{0,g}\theta+\xi_g,\qquad \operatorname{Var}(\xi_g)=c_g
+\]
+by~\eqref{eq:calibrated}. The singleton noises are independent across groups, and the additional heavy-group contrasts are independent of the leading variable and of these noises.
+
+Write $\alpha=H^{-1/2}\theta$. Let $Z_{\mathcal H}$ be an orthonormal basis of $\ker G_{\mathcal H}$. The freely varying leading coordinates after the exact heavy observations have dimension
+\[
+ \begin{gathered}
+ r=j-h,\qquad W=G_{\mathcal S}Z_{\mathcal H},\qquad
+ H_Z=Z_{\mathcal H}^T H Z_{\mathcal H},\\
+ D=\diag(c_g:g\in\mathcal S).
+ \end{gathered}
+\]
+The trace of their contribution to the posterior covariance of $\theta$ is exactly
+\begin{equation}\label{eq:posterior}
+ \tr\left[H_Z\left(L^{-1}H_Z+W^TD^{-1}W\right)^{-1}\right].
+\end{equation}
+To derive this expression, restrict the precision $L^{-1}H$ of $\alpha$ to the nullspace of the exact observations, add the singleton-observation precision, then transform back to $\theta=H^{1/2}\alpha$. The trace error of the full vector is at least this projected error, because $TU_0$ is an isometry and its orthogonal projection annihilates all contrasts.
+
+If $d'<j$, too few independent group means have been observed; the leading posterior has an unobserved direction and~\eqref{eq:posterior} diverges with $L$. Otherwise
+\[
+ 0\le h\le u\le q,
+ \qquad |\mathcal S|=r+(q-u),
+ \qquad r\ge k-2q>k/2,
+ \qquad 0\le q-u<r/3.
+\]
+The last inequality follows from
+$r-3(q-u)=k-4q+3u-h>0$.
+Conditional on $G_{\mathcal H}$, the matrix $W$ has independent standard normal entries, with $r$ columns and $r+(q-u)$ rows. This is because the singleton Gaussian rows are independent of the heavy rows and $Z_{\mathcal H}$ is an isometry determined by the latter.
+
+There are at most $3^{2k}$ disjoint assignments of groups as heavy, singleton, or unused. Lemma~\ref{le:smallball} and a union bound show that, simultaneously for every admissible assignment with $d'\ge j$,
+\begin{equation}\label{eq:allpatterns}
+ \tr(W^TW)^{-1}\ge\tr(W^TW+I)^{-1}
+ \ge\frac{a r}{q-u+\sqrt r}
+ \ge\frac{a k}{2(q+\sqrt k)}.
+\end{equation}
+Their total failure probability is at most $8\,3^{2k}e^{-25k}$. The event $H\succeq\delta(2k)I$ fails with probability at most $3e^{-120k}$. These probabilities sum to less than one. Choose a single successful realization of $G$; all finitely many relevant Gaussian row sets are also full rank almost surely. This choice occurs before any coordinate selection.
+
+For a full-rank $W$, let $L\to\infty$ in~\eqref{eq:posterior}. Since $H_Z\succeq\delta(2k)I$ and $D\succeq c_{\min}I$, the limiting trace is at least
+\begin{align*}
+ \delta(2k)c_{\min}\tr(W^TW)^{-1}
+ &\ge\frac{\delta a k}{8(q+\sqrt k)}\tau\\
+ &\ge\frac{\delta a}{16}\frac{k+1}{q+\sqrt k}\tau.
+\end{align*}
+The comparisons used to reach this lower bound---dropping a positive covariance term, granting extra observations, and taking an orthogonal projection---all favor the selector. Thus the same lower bound holds for the original errors, under the exact-spectrum orientation~\eqref{eq:groupcov}, for every subset.
+
+\subsection{Conclusion of the limiting theorem}
+For $m\le3k$, Proposition~\ref{pr:comparable} gives constant $c_{\mathrm{cmp}}$. For $m\ge3k$, equations~\eqref{eq:corecase} and~\eqref{eq:allpatterns} with the posterior bound give constants $c_{\mathrm{cmp}}/4$ and $\delta a/16$. Small $k$ was covered by the baseline. Therefore the common choice
+\[
+ \cstar=\frac{c_{\mathrm{cmp}}}{4}
+ =\frac{\eps\delta a}{1024}
+ =2^{-30}e^{-2560}
+\]
+proves Theorem~\ref{th:robust} in every case.
+
+\section{The all-spectrum reduction}\label{sec:reduction}
+\begin{lemma}[Spectral counting]\label{le:counting}
+Put $t=e_{k+1}(\lambda)/e_k(\lambda)$, $v=e_{k-1}(\lambda)/e_k(\lambda)$, and $\tau=\sum_{i>k}\lambda_i$. Then
+\begin{equation}\label{eq:counting}
+ \sum_{i=1}^k\frac{t}{\lambda_i+t}
+ \le\tau v\le\frac{\tau}{t}.
+\end{equation}
+Consequently, for $b>0$,
+\begin{equation}\label{eq:count}
+ \#\{i\le k:\lambda_i\le b\}
+ \le\frac{\tau(b+t)}{t^2}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Sample a $k$-subset $S$ with probability proportional to $\prod_{i\in S}\lambda_i$. Write $E_r=e_r(\lambda_{-i})$. The exclusion probability for index $i$ is
+\[
+ \frac{E_k}{E_k+\lambda_i E_{k-1}}\ge\frac{t}{\lambda_i+t},
+\]
+because $E_{k+1}E_{k-1}\le E_k^2$ implies
+$t=(E_{k+1}+\lambda_i E_k)/(E_k+\lambda_i E_{k-1})\le E_k/E_{k-1}$. The inclusion probability is at most $\lambda_i v$. The number of missing indices among the first $k$ equals the number included in the tail. Taking expectations proves the first inequality in~\eqref{eq:counting}. Elementary-symmetric log-concavity gives $tv\le1$, proving the second. These log-concavity inequalities also follow directly from the real negative roots of $\prod_i(1+\lambda_i z)$ and Rolle's theorem applied to successive derivatives (Newton's inequalities, even without their stronger binomial factors).
+
+Each term indexed by $\lambda_i\le b$ is at least $t/(b+t)$. This proves~\eqref{eq:count}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{th:main}]
+Set $b=y_k(\lambda)/\sqrt k=(k+1)t/\sqrt k$. If $\tau\ge b/16$, then $x_k\ge\tau\ge \cstar b/16$.
+
+Otherwise $\tau<b/16$. Let $q$ count the first $k$ eigenvalues strictly below $b$. Lemma~\ref{le:counting} gives
+\begin{align*}
+ q&\le\frac{\tau}{b}
+ \left(\frac{(k+1)^2}{k}+\frac{k+1}{\sqrt k}\right)
+ \le4k\frac{\tau}{b}<k/4.
+\end{align*}
+The scalar bound in the middle holds for every $k\ge2$. Put $j=k-q$ and $\sigma=(\lambda_{j+1},\ldots,\lambda_n)$. Then $\lambda_j\ge b$, and the residual mass of $\sigma$ after its first $q$ entries is exactly $\tau$.
+
+Since $y_k\le(k+1)\tau$, we also have $\sqrt k\le(k+1)\tau/b$. Hence
+\[
+ q+\sqrt k\le5(k+1)\tau/b.
+\]
+Theorem~\ref{th:robust}, weakened by $\sqrt{\min(k,m)}\le\sqrt k$, gives
+\[
+ \X_{n,k,q}(\sigma)\ge\cstar b/5.
+\]
+Apply Lemma~\ref{le:finite} with $a=b$:
+\[
+ x_k(\lambda)\ge\frac{b\X}{b+\X}
+ \ge\frac{\cstar b}{5+\cstar}\ge\frac{\cstar b}{6}.
+\]
+The weaker constant $\cstar/16$ covers both cases. The elementary bounds proved in Section 2 complete the minimum in the theorem.
+\end{proof}
+
+\section{What this proves, and what remains missing}
+The new theorem is an upper bound on the original worst-case ratio, not merely on a two-level spectral family. The robust profile theorem handles all $q<k/4$ and all positive residual spectra, closing the specific unproved hypothesis in the preceding reduction addendum.
+
+It does not establish a matching lower bound. In particular, define the square-frame minimax
+\[
+ \mathcal F(n,r)=\max_{Q^TQ=I_r}
+ \min_{|J|=r}\tr\bigl((Q_JQ_J^T)^{-1}\bigr),
+\]
+again with infinite cost at singular blocks. The flat-tail limiting family gives
+\[
+ R_{n,k}\ge\frac{(k+1)(n-k)}{\mathcal F(n,n-k)}.
+\]
+A \emph{lower} bound for $\mathcal F$ does not give a growing lower bound for $R_{n,k}$ through this formula: the direction is the opposite. An upper bound of the needed order for $\mathcal F$, or a different family demonstrating a matching gap, has not been proved here.
+
+The earlier archives contain a dimension-independent interior gap and an exact $n=4,k=2$ two-level computation. Those files are preserved as prior work; this report does not upgrade their lower bounds to a growing order. Nor does the present reduction prove $R_{n,k}=O(\sqrt{n-k})$ for arbitrary finite spectra when $k\gg n-k$. Thus no assertion of $\Theta(\sqrt{\min(k,n-k)})$, or any other sharp joint order, is justified by this package.
+
+The constants are intentionally conservative. The bound $C=2^{34}e^{2560}$ establishes a universal asymptotic estimate but should not be read as a practically useful numerical approximation ratio. Optimizing it would not by itself close the missing lower-bound argument.
+
+\section{Verification and audit}
+The accompanying executable suite tests exact-rational clipping and spectral-counting inequalities; real equal-diagonal conjugation; harmonic-block bounds over all subsets of small examples; harmonic compression and its rotation law; regularized complementary-frame identities; the correct ordered-eigenvalue normalization comparison; finite-to-infinite comparisons including singular limits; exact grouped spectra; the round-robin spread bound; and granted-information posterior identities.
+
+A high-precision deterministic check evaluates the margins in the Gaussian and Haar constant choices. It does not attempt Monte Carlo estimation of probabilities as small as those in the proofs. The JSON and text records in \texttt{results/} are the authoritative account of the executed checks. A test log is a record of finite computations, not a proof of a universal theorem. The proofs above have not been certified by a proof assistant or independently peer reviewed.
+
+The main audit distinctions are substantive. The orientation is fixed before subsets are considered. Singular limiting precision blocks have infinite cost. Covariance pseudoinverses occur only in explicitly auxiliary positive-semidefinite conditioning. A row-Gram Loewner comparison, followed by ordered eigenvalues, is used instead of a false noncommuting column-Gram comparison. The grouping argument preserves the exact original spectrum before positive-semidefinite terms are dropped for a lower bound. Finally, frame lower bounds and ratio lower bounds are never interchanged.
+
+\section*{Sources}
+\addcontentsline{toc}{section}{Sources}
+\begin{enumerate}[label={[\arabic*]}]
+\item Open Problems in Numerical Linear Algebra. ``TR-03,'' randomized and low-rank approximation collection. Problem statement:
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/randomized-and-low-rank-approximation/TR-03}.
+Raw statement:
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/randomized-and-low-rank-approximation/TR-03/README.md}.
+\item Prior supplied research archive, \texttt{TR03\_analysis.zip}. Contains the original partial report, including the exact four-dimensional two-level calculation. Preserved byte-for-byte in \texttt{prior/}.
+\item Prior supplied research archive, \texttt{TR03\_continuation.zip}. Contains square-frame and regularized constructions, weighted-tail arguments, verification records, and its own completion-status qualifications. Preserved byte-for-byte in \texttt{prior/}.
+\item Prior supplied research archive, \texttt{TR03\_reduction\_addendum.zip}. Contains the harmonic-block certificate, spectral-counting inequality, finite-to-infinite comparison, and the previously conditional all-spectrum reduction. Preserved byte-for-byte in \texttt{prior/}.
+\end{enumerate}
+
+\end{document}

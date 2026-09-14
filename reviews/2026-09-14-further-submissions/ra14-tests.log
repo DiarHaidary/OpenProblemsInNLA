@@ -1,0 +1,47 @@
+test_actual_free_dimension_matches_deficits (test_capacity.CapacityTests) ... ok
+test_allocation_rejects_insufficient_dimension (test_capacity.CapacityTests) ... ok
+test_anisotropic_leading_excess (test_capacity.CapacityTests) ... ok
+test_cardinal_weights_interpolate_monomials (test_capacity.CapacityTests) ... ok
+test_continuous_threshold_at_sixteen (test_capacity.CapacityTests) ... ok
+test_dimension_saturation_implies_pure_top (test_capacity.CapacityTests) ... ok
+test_energy_minimum_is_loewner (test_capacity.CapacityTests) ... ok
+test_every_top_direction_can_be_free (test_capacity.CapacityTests) ... ok
+test_first_moment_bound_is_exact_expression (test_capacity.CapacityTests) ... ok
+test_full_rank_optimal_coefficients (test_capacity.CapacityTests) ... ok
+test_householder_fixes_preexisting_span (test_capacity.CapacityTests) ... ok
+test_householder_maps_and_preserves_orthogonality (test_capacity.CapacityTests) ... ok
+test_infinite_inverse_moment_is_rejected (test_capacity.CapacityTests) ... ok
+test_integer_allocation_spends_exact_dimension (test_capacity.CapacityTests) ... ok
+test_known_span_queries_do_not_require_new_start (test_capacity.CapacityTests) ... ok
+test_nodal_formula_matches_feature_matrix (test_capacity.CapacityTests) ... ok
+test_pure_top_dimension_deficits (test_capacity.CapacityTests) ... ok
+test_rank_deficient_top_is_rejected (test_capacity.CapacityTests) ... ok
+test_reciprocal_chi_square_gamma_identity (test_capacity.CapacityTests) ... ok
+test_rotating_simulator_preserves_complete_transcript (test_capacity.CapacityTests) ... ok
+test_singular_tail_free_direction (test_capacity.CapacityTests) ... ok
+test_successful_graph_has_target_residual (test_capacity.CapacityTests) ... ok
+test_unsuccessful_graph_violates_target (test_capacity.CapacityTests) ... ok
+test_weighted_mass_bound (test_capacity.CapacityTests) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.085s
+
+OK
+
+{
+  "status": "PASS",
+  "tests_run": 24,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "capacity_trials": 360,
+  "contains_success": 103,
+  "does_not_contain_success": 257,
+  "rotation_checks": 24,
+  "max_transcript_error": 1.0851926808155273e-15,
+  "max_span_error": 1.502267525475573e-15,
+  "python": "3.9.6",
+  "numpy": "2.0.2",
+  "prior_suites_rerun": false,
+  "limitation": "Component and floating-point diagnostics only; no universal probability or adaptive lower-bound proof is certified by these tests."
+}

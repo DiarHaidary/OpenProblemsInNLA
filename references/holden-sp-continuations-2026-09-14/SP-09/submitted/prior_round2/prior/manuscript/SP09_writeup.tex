@@ -1,0 +1,581 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array,longtable}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={SP-09: An Exact Three-Point Amplification Theorem},pdfsubject={Partial resolution, exact arithmetic certificate, and equality rigidity}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\U}{\mathcal U}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\dd}{\delta}
+\newcommand{\dm}{d_\infty}
+\newcommand{\Id}{I}
+\newcommand{\Bwords}{\mathcal B}
+\newcommand{\Lwords}{\mathcal L}
+\title{SP-09: An Exact Three-Point\\Amplification Theorem}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-1.4em}
+\begin{abstract}
+\noindent\textbf{Status: partial resolution, not a proof or disproof of the universal SP-09 statement.}
+For the classical three-point Krause example, an exact trace sum-of-squares certificate proves that the unitary-orbit distance is $\sqrt{27/13}$ in every finite amplification. The bottleneck eigenvalue-matching distance is $\sqrt{28/13}$, so the result is genuinely outside the regime in which orbit distance equals spectral matching. The certificate also yields equality rigidity: every optimal amplified unitary is the same three-dimensional reflection, tensored with an identity, up to basis changes within spectral eigenspaces. The proof-critical verification uses only arbitrary-precision integers and rational arithmetic; numerical optimization is used only to discover a certificate. Additional geometric special cases, an amplification-independent lower bound, and a necessary noncommutativity condition for a smallest counterexample are established. The reverse inequality for arbitrary normal pairs remains unproved here.
+\end{abstract}
+
+\section{The question and the scope of the result}
+For $A,B\in M_n(\C)$, define
+\[
+ \dd_n(A,B)=\min_{U\in\U(n)}\norm{A-UBU^*}.
+\]
+All unlabelled norms are operator norms. The minimum exists by compactness of $\U(n)$. Replacing $UBU^*$ by $U^*BU$ does not change the minimum. Write $A_k=A\otimes I_k$. A fixed permutation unitarily identifies $A\otimes I_k$ with $I_k\otimes A$, so this convention is equivalent to the repository's block-repetition convention.
+
+SP-09 asks whether
+\begin{equation}\label{eq:target}
+ \dd_{nk}(A_k,B_k)=\dd_n(A,B)
+ \qquad\text{for all normal }A,B\in M_n(\C),\ n\ge3,\ k\ge2.
+\end{equation}
+The source statement and its recorded partial scope are in \cite{repo}. The amplification literature distinguishes this question from both the self-adjoint case and statements concerning zero orbit distance; these distinctions matter here \cite{msz}.
+
+For every pair of matrices, repeating a base minimizer gives
+\begin{equation}\label{eq:easy}
+ \dd_{nk}(A_k,B_k)\le\dd_n(A,B).
+\end{equation}
+The missing universal direction is the reverse inequality for an arbitrary unitary in $\U(nk)$, not merely a block-diagonal or tensor-product unitary.
+
+For normal inputs with eigenvalue lists $a_1,\ldots,a_n$ and $b_1,\ldots,b_n$, let
+\[
+ \dm(A,B)=\min_{\pi\in S_n}\max_i|a_i-b_{\pi(i)}|.
+\]
+Aligning eigenbases proves $\dd_n(A,B)\le\dm(A,B)$. Equality is false in general. In particular, invariance of $\dm$ under repetition does not establish \eqref{eq:target}.
+
+The supplied prior proof covers pairs for which at least one spectrum has at most two distinct points \cite{holden}. The main theorem below covers a particular pair with three distinct points on each side, proves its exact distance at every amplification, and characterizes all equality cases. It does not cover arbitrary three-point spectra, let alone arbitrary normal spectra.
+
+\section{The exact three-point theorem}
+Set
+\begin{equation}\label{eq:A}
+ A=\diag\left(1,\frac{4+5i\sqrt3}{13},\frac{-1+2i\sqrt3}{13}\right),
+ \qquad B=-A,
+\end{equation}
+and define
+\begin{equation}\label{eq:R}
+ v=\begin{pmatrix}\sqrt{10}/4\\1/2\\\sqrt2/4\end{pmatrix},\qquad
+ R=I-2vv^*=
+ \begin{pmatrix}
+ -1/4&-\sqrt{10}/4&-\sqrt5/4\\
+ -\sqrt{10}/4&1/2&-\sqrt2/4\\
+ -\sqrt5/4&-\sqrt2/4&3/4
+ \end{pmatrix}.
+\end{equation}
+The classical example and its nonmatching norm witness are discussed in \cite{tang}. A norm witness alone gives an upper bound on orbit distance. The lower bound and equality classification here are supplied by the exact certificate.
+
+\begin{theorem}\label{thm:main}
+For the matrices \eqref{eq:A}, every integer $k\ge1$ satisfies
+\begin{equation}\label{eq:main}
+ \dd_{3k}(A\otimes I_k,-A\otimes I_k)=\sqrt{\frac{27}{13}}
+ <\sqrt{\frac{28}{13}}
+ =\dm(A\otimes I_k,-A\otimes I_k).
+\end{equation}
+Let $P_i=E_{ii}\otimes I_k$. A unitary $U\in\U(3k)$ attains the left-hand minimum if and only if
+\begin{equation}\label{eq:rigidityform}
+ U=V(R\otimes I_k)W,
+\end{equation}
+where $V$ and $W$ commute with $P_1,P_2,P_3$.
+\end{theorem}
+
+Thus the optimizing freedom is exactly the freedom to change bases within equal-eigenvalue subspaces on the two sides of the displayed reflection. The theorem also applies to any input already consisting of several repeated copies of \eqref{eq:A}, and to simultaneous translations and nonzero complex scalings of both inputs.
+
+\subsection{The explicit upper bound and matching gap}
+Since $v^*v=1$, the matrix $R$ is a self-adjoint unitary. Direct multiplication gives, for $D=A+RAR$,
+\begin{equation}\label{eq:singulars}
+ \spec(D^*D)=\left\{\frac{27}{13},\frac{27}{13},\frac4{13}\right\}.
+\end{equation}
+One exact way to verify this is to check
+\[
+ (13D^*D-27I)(13D^*D-4I)=0,\qquad
+ \Tr(D^*D)=\frac{58}{13}.
+\]
+The supplied witness verifier checks these identities rationally in a similar, weighted-inner-product representation. Equation \eqref{eq:singulars} gives the upper bound in \eqref{eq:main}; tensoring $R$ with $I_k$ preserves it.
+
+The squared matching costs between $\spec(A)$ and $\spec(-A)$ are
+\begin{equation}\label{eq:costmatrix}
+ \bigl[|a_i+a_j|^2\bigr]_{i,j=1}^3=
+ \begin{pmatrix}
+ 4&28/13&12/13\\
+ 28/13&28/13&12/13\\
+ 12/13&12/13&4/13
+ \end{pmatrix}.
+\end{equation}
+Every permutation must use an entry in the upper-left $2\times2$ rectangle: two rows cannot both be assigned to the one remaining column. Each such entry is at least $28/13$. Swapping the first two indices and fixing the third attains this bound. Consequently $\dm(A,-A)^2=28/13$. Repetition does not change this value by Lemma~\ref{lem:matching} below.
+
+The substantive missing ingredient is therefore the lower bound $\dd_{3k}\ge\sqrt{27/13}$ for every $k$. The next two sections prove it and then establish rigidity.
+
+\section{A dimension-independent trace certificate}
+\subsection{The algebraic statement}
+Let $\tau$ be a normalized tracial state on a unital $C^*$-algebra. Let $P_1,P_2,Q_1,Q_2$ be self-adjoint projections satisfying
+\begin{equation}\label{eq:projrelations}
+ P_1P_2=P_2P_1=0,\qquad Q_1Q_2=Q_2Q_1=0,
+ \qquad \tau(P_i)=\tau(Q_i)=\frac13.
+\end{equation}
+No commutation between a $P_i$ and a $Q_j$ is assumed. Put $s=i\sqrt3$, $\gamma=27/13$, and
+\begin{equation}\label{eq:calD}
+ \mathcal D=\frac{(-2+4s)I+(14-2s)(P_1+Q_1)+(5+3s)(P_2+Q_2)}{13}.
+\end{equation}
+For the matrix problem, take $P_i=E_{ii}\otimes I_k$, $Q_i=UP_iU^*$, and $\tau=\Tr/(3k)$. Then $\mathcal D=A_k+UA_kU^*$.
+
+\begin{proposition}\label{prop:tracial}
+Every tuple satisfying \eqref{eq:projrelations} obeys
+\[
+ \norm{\mathcal D}^2\ge\gamma=\frac{27}{13}.
+\]
+\end{proposition}
+
+The certificate proving this proposition is specialized to \eqref{eq:calD}, but is independent of the size of a matrix representation. In particular, the verification does not impose rank-one conditions or polynomial identities peculiar to $M_3$.
+
+\subsection{Words and local moment matrices}
+Use letters $0,1,2,3$ for $P_1,P_2,Q_1,Q_2$, respectively. Reduced words alternate between the two projection families. Adjacent identical letters collapse, and adjacent different letters from the same family give zero. Include the empty word $1$. Order words first by length and then lexicographically.
+
+Let $\Bwords$ be the reduced words of length at most four and $\Lwords$ those of length at most three. Their sizes are
+\[
+ |\Bwords|=1+4+8+16+32=61,\qquad |\Lwords|=1+4+8+16=29.
+\]
+Define
+\[
+ h_1=\gamma I-\mathcal D^*\mathcal D,
+ \qquad h_2=\gamma I-\mathcal D\mathcal D^*,
+\]
+and the scalar-valued moment matrices
+\begin{align*}
+ M_0&=[\tau(u^*v)]_{u,v\in\Bwords},\\
+ M_1&=[\tau(u^*h_1v)]_{u,v\in\Lwords},\\
+ M_2&=[\tau(u^*h_2v)]_{u,v\in\Lwords}.
+\end{align*}
+Always $M_0\succeq0$. Whenever $\norm{\mathcal D}^2\le\gamma$, both $M_1$ and $M_2$ are positive semidefinite as well.
+
+The distinguished polynomial is
+\begin{equation}\label{eq:q}
+ q=\frac{(-114-18s)I+(372+120s)(P_1+Q_1)+(381-93s)(P_2+Q_2)}{388}.
+\end{equation}
+Its normalized trace is exactly one, because
+\[
+ (-114-18s)+\frac23\bigl[(372+120s)+(381-93s)\bigr]=388.
+\]
+Let $c\in\C^{29}$ be its coefficient vector in $\Lwords$.
+
+\subsection{The finite certificate}
+The file \texttt{certificate/krause\_certificate.json}, included as part of this proof, supplies matrices over $\mathbb Q(s)$:
+\[
+ K_0\in M_{61,52},\quad K_1,K_2\in M_{29,26},\qquad
+ Z_0\in M_{52},\quad Z_1,Z_2\in M_{26}.
+\]
+The entries of $K_j$ and $Z_j$ are integer pairs representing $a+bs$. Each $Z_j$ is Hermitian positive definite. The positive common denominator is
+\begin{equation}\label{eq:N}
+ N=3486275656126774358249373768351227504091171225600000000000000000.
+\end{equation}
+Set
+\begin{align}
+ Y_0&=\frac{K_0Z_0K_0^*}{388^2N},\nonumber\\
+ Y_1&=\frac{K_1Z_1K_1^*}{388^2N}+cc^*,\label{eq:GramY}\\
+ Y_2&=\frac{K_2Z_2K_2^*}{388^2N}.\nonumber
+\end{align}
+The exact identity is
+\begin{equation}\label{eq:certificate}
+ \Tr(Y_0M_0)+\Tr(Y_1M_1)+\Tr(Y_2M_2)=0.
+\end{equation}
+Here $\Tr$ denotes the ordinary trace of the scalar coefficient matrices, whereas $\tau$ is the normalized trace on the represented algebra.
+
+Identity \eqref{eq:certificate} holds for every tuple \eqref{eq:projrelations}, without any norm assumption. Its verification expands the three expressions into traces of words, applies only the orthogonal-projection relations and trace cyclicity, and then substitutes the four trace values in \eqref{eq:projrelations}. Every resulting coefficient is exactly zero. Section~\ref{sec:verification} explains the positive-definiteness and identity checks in detail.
+
+\begin{proof}[Proof of Proposition~\ref{prop:tracial}]
+Suppose that $\norm{\mathcal D}^2<\gamma$, and put $\varepsilon=\gamma-\norm{\mathcal D}^2>0$. Both $h_1$ and $h_2$ dominate $\varepsilon I$. Thus all terms in \eqref{eq:certificate} are nonnegative. Moreover, the distinguished part of its middle term satisfies
+\[
+ \Tr(cc^*M_1)=\tau(q^*h_1q)
+ \ge\varepsilon\tau(q^*q)
+ \ge\varepsilon|\tau(q)|^2=\varepsilon.
+\]
+The last inequality is Cauchy--Schwarz for the positive functional $\tau$. This contradicts \eqref{eq:certificate}. Hence $\norm{\mathcal D}^2\ge\gamma$.
+\end{proof}
+
+Applying this proposition with the normalized matrix trace proves the lower bound in Theorem~\ref{thm:main}. Together with the reflection witness, it proves the exact distance in every amplification. No limiting assertion about a semidefinite hierarchy is needed.
+
+\section{Equality rigidity}
+This section uses faithfulness of the normalized trace on a full matrix algebra. The lower-bound argument above did not need that additional property.
+
+\subsection{The verified relation kernel}
+Evaluate the projection letters at the three-dimensional model
+\[
+ P_1=E_{11},\quad P_2=E_{22},\qquad Q_1=RE_{11}R,\quad Q_2=RE_{22}R.
+\]
+The following nine words have linearly independent evaluations and therefore form a basis of $M_3(\C)$:
+\begin{equation}\label{eq:ninewords}
+ 1,\ P_1,\ P_2,\ Q_1,\ Q_2,\ P_1Q_1,\ P_1Q_2,\ P_2Q_1,\ P_2Q_2.
+\end{equation}
+All have degree at most two. The evaluation map from the $61$-dimensional span of $\Bwords$ onto $M_3$ has a $52$-dimensional kernel. The columns of $K_0$ are a basis for this kernel.
+
+These assertions are checked exactly by \texttt{verify\_witness\_and\_rigidity.py}. To avoid square roots in the calculation, conjugate the model by $S=\diag(v_1,v_2,v_3)$. In these coordinates
+\[
+ S^{-1}RS=I-2\mathbf1w^T,\qquad w=(5/8,1/4,1/8)^T,
+\]
+so all four projection matrices have rational entries. The checker verifies rank nine for the evaluations of \eqref{eq:ninewords}, annihilation by all columns of $K_0$, and the explicit free-coordinate block $768I_{52}$ in $K_0$. This proves that no relation directions have been omitted.
+
+\subsection{Why equality forces a three-dimensional representation}
+Suppose $\norm{A_k+UA_kU^*}^2=\gamma$. Then $M_0,M_1,M_2$ are positive semidefinite. Equation \eqref{eq:certificate} forces
+\[
+ \Tr(Y_0M_0)=0.
+\]
+Since $Z_0$ is positive definite, \eqref{eq:GramY} implies $K_0^*M_0K_0=0$. If $r_j$ is the noncommutative polynomial whose coefficient vector is the $j$th column of $K_0$, then
+\[
+ \tau(r_j^*r_j)=0.
+\]
+Faithfulness of the matrix trace gives $r_j=0$ for every column. Consequently every degree-four relation of the reference model holds in the equality representation.
+
+Define a linear map from $M_3$ to the represented algebra by sending the evaluated basis words \eqref{eq:ninewords} to the same words in the actual projections. It is unital. It preserves multiplication because products of basis words have degree at most four, and all their reference relations have just been forced. It preserves adjoints for the same reason. Thus it is a unital $*$-homomorphism
+\[
+ \Phi:M_3(\C)\longrightarrow M_{3k}(\C).
+\]
+Every such representation is unitarily equivalent to $X\mapsto X\otimes I_k$. This also follows directly by applying $\Phi$ to matrix units: the three diagonal matrix units have equal ranks, and the off-diagonal ones give unitary identifications between their ranges.
+
+Choose $V$ with $\Phi(X)=V(X\otimes I_k)V^*$. Since $\Phi(E_{ii})=P_i=E_{ii}\otimes I_k$, the unitary $V$ commutes with all $P_i$. Therefore
+\[
+ UP_iU^*=V(R\otimes I_k)P_i(R\otimes I_k)^*V^*.
+\]
+It follows that $W=(R\otimes I_k)^*V^*U$ also commutes with every $P_i$, proving \eqref{eq:rigidityform}.
+
+Conversely, if $U=V(R\otimes I_k)W$ with $V,W$ commuting with the $P_i$, then they commute with $A_k$. Conjugating the residual by $V^*$ reduces its norm to
+\[
+ \norm{(A+RAR)\otimes I_k}=\sqrt{27/13}.
+\]
+This proves the equality classification and completes Theorem~\ref{thm:main}.
+
+\section{What the exact verification establishes}\label{sec:verification}
+The certificate is large enough that its matrices are provided as machine-readable integers rather than printed in the manuscript. They are not unspecified existence variables: the JSON file fixes every coefficient. Its SHA-256 fingerprint is
+\begin{center}\small\ttfamily
+bf91710c72d22f5b88de5405e2bc68ec\\
+ef39ae14326e742650fb7fe4c6b7b30b
+\end{center}
+(the two lines concatenate to one digest).
+
+\subsection{Positive definiteness without numerical eigenvalues}
+For each integer-pair matrix $Z_j$, the certificate gives a square integer-pair matrix $T_j$. The verifier computes the congruence $G_j=T_j^*Z_jT_j$ exactly and checks, for every row,
+\begin{equation}\label{eq:ddcheck}
+ (G_j)_{ii}>\sum_{\ell\ne i}
+ \left(\left|\operatorname{Re}_s(G_j)_{i\ell}\right|
+       +2\left|\operatorname{Im}_s(G_j)_{i\ell}\right|\right).
+\end{equation}
+Here $\operatorname{Re}_s(a+bs)=a$ and $\operatorname{Im}_s(a+bs)=b$. Since $|a+bs|\le |a|+2|b|$, strict diagonal dominance and Hermiticity make $G_j$ positive definite. This forces $T_j$ invertible and then $Z_j$ positive definite. All comparisons in \eqref{eq:ddcheck} are comparisons of integers. The stored descriptive margins are not trusted; the verifier recomputes them.
+
+\begin{center}
+\begin{tabular}{@{}lrrl@{}}
+\toprule
+Block & Moment size & Gram size & Exact checks\\
+\midrule
+$M_0,Y_0$ &61&52&52 positive row margins\\
+$M_1,Y_1-cc^*$ &29&26&26 positive row margins\\
+$M_2,Y_2$ &29&26&26 positive row margins\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{The identity and the distinction from discovery}
+The checker expands $\Tr(Y_jM_j)$ with the coefficient convention
+\[
+ \Tr(YM)=\sum_{u,v}Y_{vu}\,\tau(u^*hv).
+\]
+Multiplication in $\mathbb Q(s)$ uses
+\[
+ (a+bs)(c+ds)=(ac-3bd)+(ad+bc)s.
+\]
+The sparse expansion checks $113$ cyclic-word labels, including the constant and four fixed singleton traces. After the permitted reductions, all coefficients vanish exactly. No dimension-dependent identities or extra commutation relations are supplied to this check.
+
+The certificate was found using a numerical feasibility search and then reconstructed over $\mathbb Q(s)$. A rational correction enforces the complete linear identity exactly. That numerical discovery is not the proof: the proof is the fixed coefficient identity, the exact positivity witnesses, and the argument in Proposition~\ref{prop:tracial}. In particular, neither a small numerical residual nor a successful optimizer termination is used for acceptance.
+
+Both verification programs have been run successfully. Their logical checks use explicit exceptions rather than Python assertions and remain enabled under \texttt{python -O}. Deliberately changing the trace polynomial, destroying a positivity witness, and changing one Gram diagonal entry are all rejected by the regression tests. The optional reconstruction pipeline was also rerun successfully from its source scripts. This is exact computer-assisted verification, not a claim of proof-assistant formalization or independent peer review.
+
+\section{Additional exact subclasses}
+These results clarify substantial regions of \eqref{eq:target}; they are not asserted to be novel geometric theorems. The relevant spectral-variation background includes \cite{bhatia}.
+
+\begin{lemma}[Matching and repetition]\label{lem:matching}
+For any two complex eigenvalue multisets,
+\[
+ \dm(A_k,B_k)=\dm(A,B).
+\]
+\end{lemma}
+\begin{proof}
+At a threshold $t$, form the bipartite graph whose edges satisfy $|a_i-b_j|\le t$. If the base graph has a perfect matching, repeat it. Conversely, if it has no perfect matching, Hall's theorem gives a set $S$ of left indices with $|N(S)|<|S|$. Its $k$-fold repetition has $k|S|$ vertices and only $k|N(S)|$ neighbors, so the repeated graph has no perfect matching either. Thus the feasible thresholds agree.
+\end{proof}
+
+\subsection{One spectrum with at most two points}
+The prior theorem \cite{holden} says that if $\spec(A)\subseteq\{a,b\}$ with multiplicities $p,n-p$, then $\dd_n=\dm$. Their common value is the least $t$ for which every eigenvalue of $B$ lies in the union of the two closed radius-$t$ disks and the two disk counts are at least $p,n-p$, respectively. The necessity follows from eigenvectors and an intersection of spectral subspaces whose dimensions sum to more than $n$. The sufficiency assigns points lying in only one disk first and then fills the remaining capacities with points lying in both. Repetition multiplies every count and capacity by $k$ and preserves the threshold. This already supplied result includes the scalar and $2\times2$ normal cases; it is credited rather than counted as a new theorem here.
+
+\subsection{Parallel lines}
+\begin{proposition}\label{prop:parallel}
+Suppose, after a common translation and rotation, that
+\[
+ A=H+i\alpha I,\qquad B=K+i\beta I,
+\]
+where $H,K$ are Hermitian and $\alpha,\beta\in\mathbb R$. If $h_i,k_i$ are their eigenvalues in increasing order, then
+\[
+ \dd_n(A,B)^2=(\alpha-\beta)^2+\max_i|h_i-k_i|^2.
+\]
+Consequently amplification preserves the distance.
+\end{proposition}
+\begin{proof}
+For any unitary $U$, put $X=H-UKU^*$. Since $X$ is Hermitian,
+\[
+ \norm{X+i(\alpha-\beta)I}^2=\norm{X}^2+(\alpha-\beta)^2.
+\]
+The Hermitian min--max principle gives $\min_U\norm{H-UKU^*}=\max_i|h_i-k_i|$: the lower bound is the ordered-eigenvalue perturbation inequality, and aligning ordered eigenvectors attains it. Repetition leaves the ordered maximum unchanged.
+\end{proof}
+
+\subsection{Perpendicular lines}
+\begin{proposition}\label{prop:perpendicular}
+Suppose that, after a common translation and rotation, $A=H$ and $B=iK$ with $H,K$ Hermitian. Let
+\[
+ x_1\le\cdots\le x_n,\qquad y_1\le\cdots\le y_n
+\]
+be the eigenvalues of $H^2$ and $K^2$. Then
+\begin{equation}\label{eq:perp}
+ \dd_n(H,iK)^2=\max_{1\le i\le n}(x_i+y_{n+1-i}).
+\end{equation}
+This is also the squared bottleneck matching distance and is unchanged by amplification.
+\end{proposition}
+\begin{proof}
+Put $K'=UKU^*$ and $E=H-iK'$. The two positive matrices $E^*E$ and $EE^*$ are bounded by $\norm E^2 I$, and
+\[
+ \frac12(E^*E+EE^*)=H^2+(K')^2.
+\]
+For each $i$, the high-eigenvalue subspaces of $H^2$ above $x_i$ and of $(K')^2$ above $y_{n+1-i}$ have dimensions at least $n-i+1$ and $i$. Their intersection is nonzero, giving
+\[
+ \norm E^2\ge\lambda_{\max}(H^2+(K')^2)\ge x_i+y_{n+1-i}.
+\]
+For the reverse bound, align eigenvectors of $H$ and $K$ so that their squared eigenvalues occur in opposite orders. The resulting difference is diagonal, and its squared entry moduli are exactly the sums in \eqref{eq:perp}. The construction is a spectral matching. Repetition repeats the same oppositely ordered sums.
+\end{proof}
+
+\subsection{Concentric circles}
+\begin{proposition}\label{prop:circles}
+Suppose $A=cI+rV$ and $B=cI+sW$, with $V,W$ unitary and $r,s\ge0$. Then
+\[
+ \dd_n(A,B)^2=(r-s)^2+rs\,\dd_n(V,W)^2
+            =(r-s)^2+rs\,\dm(V,W)^2.
+\]
+Hence the distance equals spectral matching and is amplification invariant.
+\end{proposition}
+\begin{proof}
+For unitaries $V,W'$,
+\[
+ (rV-sW')^*(rV-sW')=(r-s)^2I+rs(V-W')^*(V-W').
+\]
+Taking norms and minimizing proves the first equality. For completeness, the standard unitary spectral-matching inequality can be seen from a short unitary path. If $d=\norm{V-W'}<2$, choose $H=H^*$ with $V^*W'=e^{iH}$ and $\norm H\le2\arcsin(d/2)$. Along $Ve^{itH}$, continuous eigenangle branches can be chosen with absolute speed at most $\norm H$; at simple eigenvalues their speeds are Rayleigh quotients of $H$, and at crossings the same bound follows by diagonalizing the compressed generator. Matching the endpoint branches gives chordal displacement at most $2\sin(\norm H/2)\le d$. For $d=2$ the bound is immediate. Aligning eigenvectors gives the reverse inequality. This is the unitary spectral-variation argument also discussed in \cite{bhatia}.
+
+Finally, each scalar matching cost satisfies $|rv-sw|^2=(r-s)^2+rs|v-w|^2$. Its monotonicity in $|v-w|$ identifies the displayed expression with matching for $A,B$. Lemma~\ref{lem:matching} completes the amplification claim. Zero radii cause no difficulty.
+\end{proof}
+
+\subsection{The separated-disk regime}
+For a nonscalar normal matrix, let
+\[
+ g(A)=\min\{|a-a'|:a,a'\in\spec(A),\ a\ne a'\}.
+\]
+\begin{proposition}\label{prop:local}
+If $\dm(A,B)<g(A)/2$, then for every $k\ge1$,
+\[
+ \dd_{nk}(A_k,B_k)=\dd_n(A,B)=\dm(A,B).
+\]
+The same conclusion holds with $A$ and $B$ interchanged.
+\end{proposition}
+\begin{proof}
+By \eqref{eq:easy}, an amplified minimizing residual has norm $t<g(A)/2$. Write its endpoint as $C=UB_kU^*=A_k+E$. For $0\le u\le1$, normality of $A_k$ implies that every eigenvalue of $A_k+uE$ lies within $u\norm E\le t$ of $\spec(A_k)$. Indeed, outside these disks the resolvent bound for a normal matrix and a Neumann-series argument give invertibility.
+
+Choose $\rho$ with $t<\rho<g(A)/2$. The disjoint radius-$\rho$ circles around the distinct eigenvalues of $A$ avoid the spectrum throughout the path. The number of eigenvalues inside each circle, with algebraic multiplicity, is therefore constant. At the endpoint it equals the original multiplicity multiplied by $k$, and every such eigenvalue lies within distance $t$ of that center. This gives a matching at distance $t$. Hence $\dm(A,B)=\dm(A_k,B_k)\le t$, while the reverse inequality follows from eigenbasis alignment. 
+\end{proof}
+
+Unlike the line and circle conditions, this last regime includes open sets of completely general noncollinear spectra with arbitrarily many distinct points. The Krause pair is not in this small-distance regime.
+
+\section{General amplification-independent bounds}
+\subsection{A Hall-subspace bound}
+The following estimate is elementary and remains valid at every repetition factor. Its compression argument is related to the truncated singular-value method in \cite{tang}, but the explicit bound here is uniform in the amplification factor.
+
+\begin{theorem}\label{thm:hallbound}
+Let $A,B$ be normal with eigenvalue lists $(a_i)$ and $(b_j)$. For index sets $S,T\subseteq\{1,\ldots,n\}$ with $|S|+|T|>n$, put
+\[
+ r=|S|+|T|-n,\quad m=\min(|S|,|T|),\quad d_{S,T}=\min_{i\in S,j\in T}|a_i-b_j|.
+\]
+Then, for every $k\ge1$,
+\begin{equation}\label{eq:hallbound}
+ \dd_{nk}(A_k,B_k)\ge d_{S,T}\sqrt{\frac r m}.
+\end{equation}
+In particular,
+\begin{equation}\label{eq:universalweak}
+ \frac{\dm(A,B)}{\sqrt{\lfloor(n+1)/2\rfloor}}
+ \le\dd_{nk}(A_k,B_k)\le\dd_n(A,B)\le\dm(A,B).
+\end{equation}
+\end{theorem}
+\begin{proof}
+Diagonalize the inputs and let $U\in\U(nk)$. Let $P$ select the $k|S|$ row coordinates indexed by $S$, and let $Q$ select the $k|T|$ column coordinates indexed by $T$. Write
+\[
+ X=PUQ,\qquad F=P(A_kU-UB_k)Q.
+\]
+The subspaces $\operatorname{ran}P$ and $U\operatorname{ran}Q$ have an intersection of dimension at least $kr$. Consequently $X$ has at least $kr$ singular values equal to one, and $\norm X_F^2\ge kr$.
+
+In the eigenvalue block coordinates, $F_{ij}=(a_i-b_j)X_{ij}$. Thus
+\[
+ \norm F_F^2\ge d_{S,T}^2\norm X_F^2\ge kr\,d_{S,T}^2.
+\]
+On the other hand, $\rank F\le km$ and $\norm F\le\norm{A_kU-UB_k}$, so
+\[
+ \norm F_F^2\le km\,\norm{A_kU-UB_k}^2.
+\]
+Combining these inequalities and minimizing gives \eqref{eq:hallbound}.
+
+Hall's theorem also gives
+\[
+ \dm(A,B)=\max_{|S|+|T|=n+1}d_{S,T}.
+\]
+To see this, failure of a threshold matching gives $T$ equal to the complement of the neighbors of a deficient $S$; subsets may then be reduced to total size $n+1$. Conversely such sets obstruct every smaller threshold. For a maximizing pair, $r=1$ and $m\le\lfloor(n+1)/2\rfloor$, proving \eqref{eq:universalweak}.
+\end{proof}
+
+The factor in \eqref{eq:universalweak} is not claimed to be sharp. In particular, a uniform-in-$k$ lower bound is not the same as the exact reverse inequality required by SP-09.
+
+\subsection{Quantitative neighborhoods of solved pairs}
+\begin{proposition}\label{prop:lipschitz}
+Define the amplification defect
+\[
+ \Delta_k(A,B)=\dd_n(A,B)-\dd_{nk}(A_k,B_k)\ge0.
+\]
+If a pair $(A_0,B_0)$ is amplification invariant and
+$\eta=\norm{A-A_0}+\norm{B-B_0}$, then
+\[
+ 0\le\Delta_k(A,B)\le2\eta.
+\]
+For a normal matrix, define its best two-point spectral covering error by
+\[
+ e_2(A)=\inf_{z_1,z_2\in\C}\max_{a\in\spec(A)}\min(|a-z_1|,|a-z_2|).
+\]
+Then normal $A,B$ satisfy
+\[
+ 0\le\Delta_k(A,B)\le2\min\{e_2(A),e_2(B)\}.
+\]
+\end{proposition}
+\begin{proof}
+The triangle inequality, followed by minimization in both directions, gives
+\[
+ |\dd_n(A,B)-\dd_n(A_0,B_0)|\le\eta.
+\]
+The identical estimate holds after amplification because tensoring with $I_k$ preserves the operator norm. Subtract and use invariance of the reference pair. For the second assertion, replace the eigenvalues of one input by their nearest two centers in a fixed eigenbasis. This produces a normal two-point matrix at the stated covering error. Apply the supplied two-point theorem to that input and the unchanged other input, then take the infimum and use symmetry.
+\end{proof}
+
+\section{A necessary condition on a smallest counterexample}
+\begin{proposition}\label{prop:ancilla}
+Write an amplified unitary as an $n\times n$ array of $k\times k$ blocks $U_{ij}$. If these blocks generate an abelian $C^*$-algebra, then
+\[
+ \norm{A_kU-UB_k}\ge\dd_n(A,B).
+\]
+More generally, fix a pair $(A,B)$ for which a strict amplification decrease exists, and let $k$ be the smallest repetition factor exhibiting one. Every unitary that certifies a strict decrease at that factor has block coefficients generating all of $M_k(\C)$.
+\end{proposition}
+\begin{proof}
+An abelian block coefficient algebra is simultaneously diagonalizable. After an ancillary basis change and a tensor permutation, $U$ is a direct sum of $k$ scalar $n\times n$ unitaries. The residual norm is the maximum of their residual norms, proving the first claim.
+
+For the second, any finite-dimensional unital $C^*$-subalgebra of $M_k$ is unitarily equivalent to
+\[
+ \bigoplus_\ell(M_{d_\ell}\otimes I_{m_\ell}),\qquad
+ \sum_\ell d_\ell m_\ell=k.
+\]
+The block unitary and its residual decompose accordingly. Each resulting residual is an amplification of factor $d_\ell$ and has norm at least $\dd_{nd_\ell}(A_{d_\ell},B_{d_\ell})$. If the coefficient algebra is proper, every $d_\ell<k$. Minimality of $k$, together with \eqref{eq:easy}, makes all these distances equal to $\dd_n(A,B)$, contradicting a strict decrease. Thus the coefficient algebra must be $M_k$.
+\end{proof}
+
+This is a necessary obstruction, not a deamplification theorem for arbitrary block unitaries. The existence of noncommuting blocks by itself does not imply any improvement.
+
+\section{Exploration, checks, and the remaining gap}
+\subsection{The saved numerical search}
+The package records $60$ joint spectrum/unitary searches with base dimension four and repetition factor two. Initial spectra were constructed near a Krause example with a common scalar padding; a selected Hall obstruction was retained during the spectrum search. The unitary variables used an exponential chart, and the operator-norm objective was approximated by a smooth maximum of squared singular values. Base-size optimization used multiple starts. This is a targeted search, not a uniform sample of all normal pairs.
+
+The largest difference between the reported base and amplified numerical estimates was approximately $3.14\times10^{-10}$; no candidate gap above $10^{-6}$ was found. Recomputed values agree with the saved records to approximately $3.4\times10^{-16}$, and the largest saved unitarity residual was approximately $5.9\times10^{-13}$. These numbers are diagnostics, not exact mathematical certificates. In particular, neither numerical optimization was proved globally optimal.
+
+The exact theorem does not rely on those observations. Its certificate and its upper-bound witness were checked separately. Floating-point calculations occur in discovery and exploration, whereas all acceptance steps for the principal lower bound, witness, and rigidity relations are exact.
+
+\subsection{What still must be proved or refuted}
+The universal claim \eqref{eq:target} has not been established here. The lower-bound certificate fixes the eigenvalues in \eqref{eq:A} and the normalized projection traces $1/3$. There is no argument in this package allowing those coefficients to be replaced by arbitrary spectral data while preserving the trace identity and positivity.
+
+The general Hall-subspace estimate can be strictly weaker than the desired bound. The geometric theorems require their stated geometric or gap hypotheses. The block-algebra obstruction applies only to restricted candidate unitaries or to a hypothetical smallest counterexample. None of these results supplies the missing reverse inequality for all normal pairs.
+
+A full affirmative resolution still needs a dimension-independent deamplification argument valid for every normal spectral pair. A full negative resolution needs a normal pair and an amplified unitary together with a rigorous separation from the entire base unitary orbit. Comparing two numerical minima is not such a separation. The current package provides neither universal conclusion, and its appropriate status is therefore \emph{partial} under the repository's distinction between special-case and full resolutions \cite{contributing}.
+
+\appendix
+\section{Reproduction and file guide}
+The proof-critical commands, run from the package root, are
+\begin{verbatim}
+python -m pip install -r requirements.txt
+python -O certificate/verify_certificate.py
+python -O certificate/verify_witness_and_rigidity.py
+python -O certificate/test_verifiers.py
+\end{verbatim}
+The exact checkers need NumPy as an array container. Their proof-critical matrix products have object dtype and therefore use arbitrary-precision integers; rational witness calculations use Python fractions. The supplied runs used Python 3.13.5 and NumPy 2.3.5.
+
+The optional reconstruction requires SciPy and SymPy in addition:
+\begin{verbatim}
+python -m pip install -r reconstruction/requirements.txt
+python reconstruction/rebuild.py --work-dir reconstruction_work
+\end{verbatim}
+It starts with numerical certificate discovery, constructs rational sparse kernel bases, rationalizes and exactly corrects the Gram matrices, produces integer positivity witnesses, and then calls both exact verifiers. The supplied reconstruction was tested with SciPy 1.17.0 and SymPy 1.14.0. A different numerical stack may produce different coefficients; a reconstructed certificate is accepted only if the exact checks pass.
+
+\begin{center}
+\begin{tabular}{@{}p{0.38\linewidth}p{0.56\linewidth}@{}}
+\toprule
+Location & Contents\\
+\midrule
+\texttt{certificate/} & Fixed integer-pair certificate, format specification, exact verifiers, corruption tests.\\
+\texttt{verification/} & Recorded exact-check results, successful reconstruction log, numerical-search summary.\\
+\texttt{reconstruction/} & Complete optional numerical-to-exact construction scripts.\\
+\texttt{experiments/} & Targeted-search source, all 60 saved spectral pairs and unitary estimates, audit program.\\
+\texttt{manuscript/} & Editable \LaTeX\ source of this write-up.\\
+\texttt{STATUS.md} & Exact boundary between established and unresolved claims.\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Attribution and review status}
+The example and its original nonmatching witness are classical; they are not claimed as discoveries of this package. The two-point theorem was supplied in the repository and is credited to that record. The geometric results are standard-looking spectral-variation consequences and carry no priority claim. The exact lower-bound and rigidity certificate is the additional result established here. A comprehensive prior-art determination and independent peer review have not been completed. No repository files were edited.
+
+\clearpage
+\begin{thebibliography}{9}
+\bibitem{repo}
+OpenProblemsInNLA, \emph{SP-09: finite-normal amplification invariance}, repository statement, accessed 13 September 2026.\\
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/eigenvalues-and-inverse-problems/SP-09}
+
+\bibitem{holden}
+S. Holden, \emph{SP-09 / SP-07: Exact orbit distance when one spectrum has two points}, 12 September 2026, supplied repository proof.\\
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/references/holden-spectral-2026-09-12/SP-09/proof.md}
+
+\bibitem{msz}
+L. W. Marcoux, P. Sarkowicz, and Y. Zhang, \emph{Kaplansky's problem and unitary orbits in matrix amplifications}, arXiv:2508.13834, version accessed 13 September 2026.\\
+\url{https://arxiv.org/abs/2508.13834}
+
+\bibitem{bhatia}
+R. Bhatia, \emph{Spectral Variation, Normal Matrices, and Finsler Geometry}, Indian Statistical Institute preprint isid/ms/2007/03, 16 March 2007.\\
+\url{https://repository.ias.ac.in/2530/1/318.pdf}
+
+\bibitem{tang}
+Q. Tang, \emph{A Truncated Singular-Value Bound for Spectral Variation of Normal Matrices}, arXiv:2609.09177, accessed 13 September 2026.\\
+\url{https://arxiv.org/abs/2609.09177}
+
+\bibitem{contributing}
+OpenProblemsInNLA, \emph{CONTRIBUTING.md}, accessed 13 September 2026.\\
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/CONTRIBUTING.md}
+\end{thebibliography}
+\end{document}

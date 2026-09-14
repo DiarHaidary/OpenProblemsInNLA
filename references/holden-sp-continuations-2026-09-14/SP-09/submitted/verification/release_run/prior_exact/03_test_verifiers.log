@@ -1,0 +1,18 @@
+{
+  "valid_certificate": "PASS",
+  "valid_witness_and_rigidity": "PASS",
+  "corruption_tests": [
+    {
+      "corruption": "trace",
+      "rejected": true
+    },
+    {
+      "corruption": "positivity",
+      "rejected": true
+    },
+    {
+      "corruption": "identity",
+      "rejected": true
+    }
+  ]
+}

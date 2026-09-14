@@ -13,7 +13,7 @@
 | [KE-02](KE-02/README.md) | Construct a separating diagonal perturbation in nearly linear time | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](KE-02/problem.pdf) · [TeX](KE-02/problem.tex) |
 | [SP-01](SP-01/README.md) | The sharp generic threshold for spectral-subspace rotation | **🔵 OPEN** | challenging | interesting to the community | [PDF](SP-01/problem.pdf) · [TeX](SP-01/problem.tex) |
 | [SP-02](SP-02/README.md) | The sharp off-diagonal threshold for spectral-subspace rotation | **🔵 OPEN** | challenging | interesting to the community | [PDF](SP-02/problem.pdf) · [TeX](SP-02/problem.tex) |
-| [SP-03](SP-03/README.md) | The Euclidean distance degree of the real symplectic group | **🔵 OPEN** | challenging | interesting to specialist | [PDF](SP-03/problem.pdf) · [TeX](SP-03/problem.tex) |
+| [SP-03](SP-03/README.md) | The Euclidean distance degree of the real symplectic group | **🟡 PARTIAL** | challenging | interesting to specialist | [PDF](SP-03/problem.pdf) · [TeX](SP-03/problem.tex) |
 | [SP-07](SP-07/README.md) | The sharp spectral-matching constant for normal matrices | **🔵 OPEN** | extreme | interesting to the community | [PDF](SP-07/problem.pdf) · [TeX](SP-07/problem.tex) |
 | [SP-08](SP-08/README.md) | Rank-two maximizers of spectral spread on an entry interval | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](SP-08/problem.pdf) · [TeX](SP-08/problem.tex) |
 | [SP-09](SP-09/README.md) | Unitary-orbit distance under finite block repetition | **🟡 PARTIAL** | challenging | interesting to specialist | [PDF](SP-09/problem.pdf) · [TeX](SP-09/problem.tex) |

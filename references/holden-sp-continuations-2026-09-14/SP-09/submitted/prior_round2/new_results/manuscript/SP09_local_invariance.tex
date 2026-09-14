@@ -1,0 +1,512 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage{booktabs,array}
+\usepackage{microtype}
+\usepackage{xurl}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{pdftitle={SP-09: Local Amplification Invariance and Quantitative Rigidity},pdfsubject={An open-neighborhood theorem and exact stability certificate; partial resolution of the universal problem}}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.45em}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}
+\newcommand{\R}{\mathbb R}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\U}{\mathcal U}
+\newcommand{\Tr}{\operatorname{Tr}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\spec}{\operatorname{spec}}
+\newcommand{\Herm}{\operatorname{Herm}}
+\newcommand{\ev}{\operatorname{ev}}
+\newcommand{\ran}{\operatorname{ran}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\hs}[1]{\left\lVert#1\right\rVert_{2,\tau}}
+\newcommand{\Bwords}{\mathcal B}
+\newcommand{\Lwords}{\mathcal L}
+\newcommand{\calC}{\mathcal C}
+\title{SP-09: Local Amplification Invariance\\and Quantitative Rigidity}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-1.4em}
+\begin{abstract}
+\noindent\textbf{Status: a further partial resolution, not a proof or disproof of the universal SP-09 statement.}
+The previously certified three-point example is extended to an open neighborhood in the space of six independently variable complex eigenvalues. Throughout this neighborhood, unitary-orbit distance is unchanged by every finite amplification; every amplified minimizer is a repeated scalar minimizer up to spectral-block basis changes. The neighborhood may be chosen so that orbit distance remains strictly smaller than bottleneck eigenvalue matching. The proof transports a strictly positive trace sum-of-squares certificate. Exact rank calculations establish the compatibility required for that transport: the coefficient map has rank $107$ in a $109$-dimensional real trace space, and the unique reference optimality density has positive eigenvalues $5/28$ and $23/28$. Separately, an explicit dimension-independent normalized Hilbert--Schmidt estimate controls all near-minimizers of the original example, with verified constant $2{,}705{,}974$. The neighborhood is existential; no numerical radius is asserted. All finite algebraic checks and the prior proof pack are included.
+\end{abstract}
+
+\section{The question and the new conclusions}
+For $A,B\in M_n(\C)$, put
+\[
+ \delta_n(A,B)=\min_{U\in\U(n)}\norm{A-UBU^*}.
+\]
+Unlabelled norms are operator norms. SP-09 asks whether, for all normal inputs and all finite $k\ge2$,
+\begin{equation}\label{eq:universal}
+ \delta_{nk}(A\otimes I_k,B\otimes I_k)=\delta_n(A,B).
+\end{equation}
+The equivalent convention $I_k\otimes A$ is used in the repository. Its recorded partial result covers the case in which at least one spectrum has at most two distinct points.\footnote{OpenProblemsInNLA, \emph{SP-09: Unitary-orbit distance under finite block repetition}, accessed 13 September 2026; source [1] below. The cited two-point proof is source [3].} The amplification literature also distinguishes the finite-normal positive-distance question from results about zero distance or unrestricted, possibly nonnormal, matrices.\footnote{Marcoux, Sarkowicz, and Zhang, \emph{Kaplansky's problem and unitary orbits in matrix amplifications}, especially Corollary 3.5 and the discussion of normal elements; source [2].}
+
+Set $s=i\sqrt3$ and
+\begin{equation}\label{eq:reference}
+ a^0=\left(1,\frac{4+5s}{13},\frac{-1+2s}{13}\right),\qquad
+ A_0=\diag(a^0),\qquad B_0=-A_0,\qquad \gamma=\frac{27}{13}.
+\end{equation}
+The reference reflection is
+\begin{equation}\label{eq:R}
+ R=I-2vv^*,\qquad
+ v=\left(\sqrt{\frac58},\sqrt{\frac14},\sqrt{\frac18}\right)^T.
+\end{equation}
+The earlier proof pack, retained under \texttt{prior/}, proves
+\begin{equation}\label{eq:old}
+ \delta_{3k}(A_0\otimes I_k,-A_0\otimes I_k)=\sqrt{\gamma}
+ <\sqrt{\frac{28}{13}}=d_\infty(A_0,-A_0)
+ \quad(k\ge1),
+\end{equation}
+where $d_\infty$ is bottleneck eigenvalue-matching distance. It also proves that all minimizing unitaries are $V(R\otimes I_k)W$, with $V,W$ block diagonal in the three spectral subspaces. These earlier claims are used with their included exact verifiers, not inferred from numerical optimization.
+
+\begin{theorem}[An open neighborhood with no amplification improvement]\label{thm:open}
+There is an open neighborhood $\mathcal N$ of $(a^0,-a^0)$ in $\C^3\times\C^3$ such that the following statements hold for every $(\alpha,\beta)\in\mathcal N$. Write $A=\diag(\alpha)$ and $B=\diag(\beta)$.
+
+For every integer $k\ge1$,
+\begin{equation}\label{eq:local-invariance}
+ \delta_{3k}(A\otimes I_k,B\otimes I_k)=\delta_3(A,B).
+\end{equation}
+There is a scalar minimizing unitary $U_{\alpha,\beta}\in\U(3)$, unique up to multiplication on the left and right by diagonal unitaries. Every amplified minimizing unitary has precisely the form
+\begin{equation}\label{eq:local-rigidity}
+ V(U_{\alpha,\beta}\otimes I_k)W,
+\end{equation}
+where $V,W$ commute with $E_{11}\otimes I_k,E_{22}\otimes I_k,E_{33}\otimes I_k$. The neighborhood can also be chosen so that
+\[
+ \delta_3(A,B)<d_\infty(A,B).
+\]
+\end{theorem}
+The six complex entries may vary independently. In particular, the theorem is not restricted to $B=-A$, a common affine transformation of the reference spectra, or a prescribed one-parameter curve. Unitary diagonalization gives the corresponding statement for normal $3\times3$ pairs. The neighborhood has not been assigned a certified numerical radius.
+
+For the next result, $\tau=\Tr/(3k)$ and $\hs{X}=\tau(X^*X)^{1/2}$. This is a normalized Hilbert--Schmidt norm, not the operator norm.
+
+\begin{theorem}[Explicit stability of the reference minimizers]\label{thm:stability}
+For every $k\ge1$ and $U\in\U(3k)$, set
+\[
+ \varepsilon=\norm{A_0\otimes I_k+U(A_0\otimes I_k)U^*}^{\,2}-\gamma\ge0.
+\]
+Then
+\begin{equation}\label{eq:stability}
+ \inf_{\substack{V,W\\\text{block diagonal}}}
+ \hs{U-V(R\otimes I_k)W}
+ \le 2{,}705{,}974\,\sqrt{\varepsilon}.
+\end{equation}
+The infimum is over the spectral-block unitaries in \eqref{eq:local-rigidity}. The constant is conservative and is not claimed optimal.
+\end{theorem}
+Theorem~\ref{thm:open} is proved in Sections 2--6; Theorem~\ref{thm:stability} is proved in Section 7. Neither theorem establishes \eqref{eq:universal} for arbitrary normal spectra or arbitrary base dimension.
+
+\section{The exact reference certificate}
+\subsection{Universal projection relations}
+Use four self-adjoint projection letters $P_1,P_2,Q_1,Q_2$, with
+\begin{equation}\label{eq:universal-relations}
+ P_1P_2=P_2P_1=0,\qquad Q_1Q_2=Q_2Q_1=0,
+ \qquad \tau(P_i)=\tau(Q_i)=\frac13.
+\end{equation}
+Put $P_3=I-P_1-P_2$ and $Q_3=I-Q_1-Q_2$. No commutation between the $P$ and $Q$ families is assumed. For a pair of spectral lists, define the universal polynomial
+\begin{equation}\label{eq:universal-D}
+ \mathcal D_{\alpha,\beta}=\sum_{i=1}^3\alpha_iP_i-\sum_{j=1}^3\beta_jQ_j.
+\end{equation}
+An amplified unitary is represented by $P_i=E_{ii}\otimes I_k$ and $Q_i=UP_iU^*$ with normalized matrix trace. The relations \eqref{eq:universal-relations} are independent of $k$.
+
+A reduced word alternates between the two projection families; adjacent equal letters collapse, and distinct adjacent letters in the same family give zero. Let $\Bwords$ be the reduced words of length at most four and $\Lwords$ those of length at most three, ordered first by length and then lexicographically. Their sizes are $61$ and $29$. For a real $t>0$, put
+\[
+ h_1=t^2I-\mathcal D^*\mathcal D,\qquad h_2=t^2I-\mathcal D\mathcal D^*,
+\]
+and define
+\[
+ M_0=[\tau(u^*v)]_{u,v\in\Bwords},\qquad
+ M_j=[\tau(u^*h_jv)]_{u,v\in\Lwords}\quad(j=1,2).
+\]
+The first matrix is always positive semidefinite. All three are positive semidefinite whenever $\norm{\mathcal D}\le t$.
+
+\subsection{What is imported from the prior pack}
+At \eqref{eq:reference}, $t^2=\gamma$ and
+\[
+ \mathcal D_0=\frac{(-2+4s)I+(14-2s)(P_1+Q_1)+(5+3s)(P_2+Q_2)}{13}.
+\]
+The fixed file \texttt{prior/certificate/krause\_certificate.json} gives full-column-rank matrices
+\[
+ K_0\in M_{61,52}(\Q(s)),\qquad K_1,K_2\in M_{29,26}(\Q(s))
+\]
+and positive definite Hermitian matrices $Z_0,Z_1,Z_2$ of orders $52,26,26$. After absorbing their positive common denominator into the $Z_j$, its universal identity is
+\begin{equation}\label{eq:reference-certificate}
+ \Tr(Z_0K_0^*M_0K_0)+\sum_{j=1}^2\Tr(Z_jK_j^*M_jK_j)
+ +\tau(q_0^*h_1q_0)=0,
+\end{equation}
+where
+\begin{equation}\label{eq:q0}
+ q_0=\frac{(-114-18s)I+(372+120s)(P_1+Q_1)+(381-93s)(P_2+Q_2)}{388}.
+\end{equation}
+In particular, $q_0$ has degree at most one and \emph{universal} trace one under \eqref{eq:universal-relations}.
+
+The identity is checked by expanding into cyclic traces of words, using only \eqref{eq:universal-relations} and trace cyclicity. Positivity is checked by exact integer congruences and strict diagonal dominance. The source file's SHA-256 digest is
+\begin{center}\small\ttfamily
+bf91710c72d22f5b88de5405e2bc68ec\\
+ef39ae14326e742650fb7fe4c6b7b30b
+\end{center}
+with the lines concatenated. The full coefficient matrices are fixed data, not unspecified semidefinite feasibility variables.
+
+At the reference model $Q_i=RE_{ii}R$, the columns of $K_0$ form the entire kernel of evaluation of $\Bwords$ in $M_3$. The columns of $K_j$ form the kernel of $p\mapsto h_jp$ evaluated on $\Lwords$. The first nine words
+\begin{equation}\label{eq:nine}
+ I,P_1,P_2,Q_1,Q_2,P_1Q_1,P_1Q_2,P_2Q_1,P_2Q_2
+\end{equation}
+have linearly independent evaluations. They form a basis of $M_3$ and all have degree at most two.
+
+\begin{lemma}[Why such a certificate proves a lower bound]\label{lem:certificate-lower}
+Suppose an identity of the form \eqref{eq:reference-certificate} holds universally, with positive semidefinite Gram matrices and with a polynomial $q$ satisfying universal trace one. Then every representation of \eqref{eq:universal-relations} satisfies $\norm{\mathcal D}\ge t$.
+\end{lemma}
+\begin{proof}
+If $\norm{\mathcal D}^2<t^2$, both localizing polynomials dominate $\eta I$ for some $\eta>0$. All terms in the identity are nonnegative, whereas
+\[
+ \tau(q^*h_1q)\ge\eta\tau(q^*q)\ge\eta|\tau(q)|^2=\eta.
+\]
+This contradicts the zero identity. Only positivity and Cauchy--Schwarz for the tracial state are used.
+\end{proof}
+
+The earlier equality argument will also be reused. If $Z_0$ is positive definite and equality in the norm bound occurs in a matrix algebra, every polynomial in the columns of $K_0$ evaluates to zero. When \eqref{eq:nine} is a basis and $K_0$ is the full degree-four evaluation kernel, these relations identify a unital copy of $M_3$ in the equality representation. Section 6 gives the precise consequence for the perturbed models.
+
+\section{Exact local geometry at the reflection}
+\subsection{A rational weighted representation}
+All new finite calculations avoid radicals by a similarity. Let
+\[
+ w=(5/8,1/4,1/8),\qquad S=\diag(\sqrt{w_1},\sqrt{w_2},\sqrt{w_3}),\qquad W=S^*S.
+\]
+In the coordinates $X\mapsto S^{-1}XS$, the reflection is
+\[
+ \overline R=I-2\mathbf1w^T,
+\]
+with rational entries. The Hilbert-space adjoint becomes
+\[
+ X^\dagger=W^{-1}\overline X^{\,T}W.
+\]
+Calculations over $\Q(s)$ with this involution are exactly similar to the physical matrix calculations. In particular, ordinary trace and algebraic rank are unchanged. Below, formulas are written in physical coordinates unless the weighted coordinates are specified.
+
+Let
+\[
+ D_0=A_0+RA_0R,\qquad H_0=D_0^*D_0,
+ \qquad E=\frac{13H_0-4I}{23}.
+\]
+The reference squared singular values are $\gamma,\gamma,4/13$, so $E$ is the rank-two top right singular projection. Also let $P_v=vv^*=(I-R)/2$. Exact multiplication gives $EP_v=P_v$.
+
+\begin{proposition}[Ranks and the reference optimality density]\label{prop:geometry}
+For $U(t)=e^{tX}R$, $X^*=-X$, define
+\[
+ \dot D=[X,RA_0R],\qquad
+ \dot H=D_0^*\dot D+\dot D^*D_0.
+\]
+The real-linear map $X\mapsto E\dot H E$ has rank $3$. Its unique trace-one positive semidefinite annihilating density is
+\begin{equation}\label{eq:rho}
+ \rho_0=\frac5{28}P_v+\frac{23}{28}(E-P_v).
+\end{equation}
+Thus $\rho_0$ is positive definite on $\ran E$.
+
+The derivative of the normalized cyclic moment vector defined below has rank $4$. Moreover, the degree-one maps $p\mapsto h_jp$ at the model have complex rank $3$, and the evaluation map on $\Lwords$ has complex rank $9$.
+\end{proposition}
+\begin{proof}
+The program \texttt{local\_geometry.py} checks the displayed projection relations, stationarity $\Tr(\rho_0\dot H)=0$ in nine independent anti-Hermitian directions, and the ranks by rational elimination. The two projections in \eqref{eq:rho} are orthogonal and have rank one. Its two stated positive weights prove positivity without a numerical eigenvalue test. Rank three in the four-dimensional real space $\Herm(\ran E)$ makes the annihilator one-dimensional; its trace-one element is therefore unique.
+
+For clarity, the nine directions used in weighted coordinates are $sE_{ii}$, the three real matrices with entries $X_{ij}=w_j$, $X_{ji}=-w_i$, and the three matrices with entries $X_{ij}=sw_j$, $X_{ji}=sw_i$, for $i<j$. They span the anti-$\dagger$-Hermitian matrices over $\R$. Multiplication uses
+\[
+ (a+bs)(c+ds)=(ac-3bd)+(ad+bc)s.
+\]
+The local evaluation ranks are checked over $\Q(s)$ by realification, including the $s$ multiples of the three independent images of $I,P_1,P_2$.
+\end{proof}
+
+\subsection{The 109 real trace coordinates}
+All Gram expressions above involve words of length at most eight. Reduce by the projection relations, identify cyclic rotations, pair reversed words by complex conjugation, and substitute the four singleton traces $1/3$. Use the constant coordinate and, for each remaining reversal pair, $\operatorname{Re}\tau(w)$ and $\operatorname{Im}\tau(w)/\sqrt3$; a self-reversing cyclic word needs only its real coordinate. This gives a fixed $109$-dimensional real coefficient space. The complete ordered coordinate inventory is in \path{local_rank_witness.json}.
+
+Write $m(U)$ for this moment vector evaluated at $P_i=E_{ii}$, $Q_i=UE_{ii}U^*$ and $\tau=\Tr/3$. Its first coordinate is one. Left and right diagonal phase changes of $U$ do not change $m(U)$. Near $R$, all entries of $U$ are nonzero; the phase orbit has real dimension five. Consequently $\rank(dm_U)\le4$. The exact rank-four calculation makes equality hold near $R$.
+
+An explicit direction is useful as an additional check. If $X_{12},X_{13},X_{23}$ denote the three real weighted directions above, then
+\begin{equation}\label{eq:flat-tangent}
+ X_*=-\frac35X_{12}+\frac25X_{13}+X_{23}
+\end{equation}
+satisfies $E\dot H E=0$, while
+\begin{equation}\label{eq:nonzero-moment}
+ \frac{d}{dt}\bigg|_{t=0}\frac13\Tr(P_1Q_1(t))=-\frac1{48}.
+\end{equation}
+Thus this direction is not a phase-gauge direction. Both statements are checked exactly.
+
+\section{The coefficient-map rank}
+For a model $(\alpha,\beta,U,t)$ with top singular multiplicity two, choose kernel bases $K_0,K_1,K_2$ as in Section 2. Define the real-linear coefficient map
+\begin{equation}\label{eq:Cmap}
+ \calC:\Herm(52)\oplus\Herm(26)\oplus\Herm(26)\longrightarrow\R^{109}
+\end{equation}
+by expanding
+\[
+ \Tr(Z_0K_0^*M_0K_0)+\Tr(Z_1K_1^*M_1K_1)
+ +\Tr(Z_2K_2^*M_2K_2)
+\]
+in the universal trace coordinates. The domain has real dimension $52^2+26^2+26^2=4056$. The coefficient expansion uses no rank-one identities: the rank-one model is used to \emph{choose coefficients}, but the identity is checked only in the universal tracial relations.
+
+\begin{proposition}[Exact reference rank]\label{prop:rank107}
+At $(a^0,-a^0,R,\sqrt\gamma)$, the coefficient map \eqref{eq:Cmap} has real rank exactly $107$.
+\end{proposition}
+\begin{proof}
+The lower bound is a finite exact certificate. The file \path{local_rank_witness.json} specifies $107$ columns and $107$ rows, denoted $\mathcal J$ and $\mathcal R$. Clearing both the localizing denominator and the singleton-trace denominator gives the exact integer determinant
+\begin{equation}\label{eq:exactdet}
+ \det\bigl(507\,\calC_{\mathcal R,\mathcal J}\bigr)
+ =-2^{1740}3^{342}5^{14}\cdot7\cdot13^{215}\cdot59\ne0.
+\end{equation}
+The program \texttt{exact\_minor.py} recomputes this $939$-digit integer by fraction-free elimination and checks the displayed factorization. As an arithmetic cross-check, after clearing only the localizing denominator by using $169h_j$ and $169I$, the same minor has determinant
+\begin{equation}\label{eq:moddet}
+ \det\equiv308373\pmod{1000003}.
+\end{equation}
+The modulus is prime and is not a divisor of the remaining denominator $3$. Hence the rational minor is nonzero. The verifier recomputes every entry from the prior integer kernels and the universal word-reduction rules before modular elimination. Of the selected columns, $104$ come from the ordinary Gram block and $3$ from the first localizing block.
+
+For the upper bound, evaluation at the model annihilates every column: ordinary kernel polynomials vanish, and local kernel polynomials satisfy $h_jr=0$. Thus $m(R)$ is in the left kernel. Differentiate along \eqref{eq:flat-tangent}. For an ordinary Gram entry, both polynomial factors vanish, so its derivative is zero. For a local entry,
+\[
+ \frac{d}{dt}\tau(r_u^*h_jr_v)
+ =\tau(r_u^*\dot h_jr_v),
+\]
+because the two terms involving derivatives of $r_u,r_v$ vanish at the model. Their ranges lie in the kernel of $h_j$. The compressed derivative is zero along $X_*$. The left and right singular-space versions agree under the singular isometry $D_0/\sqrt\gamma$, so this argument applies to both $j=1,2$.
+
+It follows that $\dot m(X_*)$ is also in the left kernel. It is nonzero by \eqref{eq:nonzero-moment}, has zero constant coordinate, and is therefore independent of $m(R)$. The left kernel has dimension at least two, giving rank at most $109-2=107$.
+\end{proof}
+
+The same reasoning shows that the ordinary Gram block alone has rank $104$: its $104$ selected columns are independent, while the model moment and the four independent moment derivatives annihilate it. This identifies the three extra constraints contributed by the localizing blocks.
+
+\section{Persistence of the active singular face}
+\begin{lemma}[Nearby base minimizers remain near the phase orbit]\label{lem:compact}
+As $(\alpha,\beta)\to(a^0,-a^0)$, every minimizing unitary for the base $3\times3$ problem approaches the phase orbit of $R$.
+\end{lemma}
+\begin{proof}
+Unitary groups are compact, and
+\[
+ |\delta_3(A,B)-\delta_3(A',B')|\le\norm{A-A'}+\norm{B-B'}.
+\]
+Any limit of minimizers for converging spectral pairs is therefore a minimizer for the reference pair. The prior equality classification identifies its phase orbit. A contrary sequence staying a positive distance from that orbit would have a convergent subsequence, a contradiction.
+\end{proof}
+
+\begin{lemma}[The top singular multiplicity stays two]\label{lem:multiplicity}
+For every sufficiently close pair, every base minimizing unitary has exactly two equal largest squared singular values, with the third strictly smaller.
+\end{lemma}
+\begin{proof}
+After phase adjustment, a sequence of nearby minimizers converges to $R$. The reference gap between $\gamma$ and $4/13$ excludes multiplicity three for all sufficiently close minimizers.
+
+Suppose instead that there are arbitrarily close minimizers with a simple largest squared singular value. At such a minimizer, the largest-eigenvalue function of $H=D^*D$ is differentiable. Its derivative in every unitary tangent direction is $\Tr(\rho\dot H)$, where $\rho$ is the trace-one rank-one spectral projection of the top eigenvalue. Since this is a minimum, those derivatives vanish.
+
+Choose a convergent subsequence of these densities. Its limit is still trace-one and rank one, is supported on the reference top space, and annihilates the reference face derivative map. Proposition~\ref{prop:geometry} says that the unique such trace-one density is \eqref{eq:rho}, of rank two. This contradiction excludes simple top singular values.
+\end{proof}
+
+At a minimum with top multiplicity two, a positive semidefinite trace-one density supported on the top space annihilates all first derivatives. One elementary justification is to take the convex hull of the tangent gradients associated with unit top vectors. If zero were outside this compact convex set, a separating tangent direction would make all top Rayleigh-quotient derivatives strictly negative, and hence would decrease the largest eigenvalue. This contradicts minimality.
+
+For a nearby minimizer, the face derivative has rank at least three by Proposition~\ref{prop:geometry} and continuity, and at most three by the preceding stationary density. Thus its rank is exactly three. The moment derivative still has rank four. Its kernel is precisely the five-dimensional phase tangent space, which is also killed by the face derivative. It follows that there exists a tangent direction $X$ satisfying
+\begin{equation}\label{eq:near-flat}
+ E\dot H E=0,\qquad \dot m(X)\ne0.
+\end{equation}
+This is the nearby counterpart of \eqref{eq:flat-tangent}; an explicit formula for it is not required.
+
+\section{Transport of the certificate and proof of Theorem~\ref{thm:open}}
+\subsection{Continuous kernels and a universally normalized polynomial}
+Fix a nearby spectral pair and a true base minimizer $U$. By Lemma~\ref{lem:compact}, phase changes make $U$ close to $R$. Set $t=\norm{A-UBU^*}$.
+
+The evaluation of the first nine words \eqref{eq:nine} remains invertible, so evaluation on $\Bwords$ and $\Lwords$ has rank nine. Lemma~\ref{lem:multiplicity} makes each $h_j$ have matrix rank one. Therefore the kernel dimensions remain $52,26,26$. There is an explicit continuous choice matching the old bases. For $K_0$, keep its free block $768I_{52}$ fixed and solve for the first nine coefficients using the invertible evaluation of \eqref{eq:nine}. For each $K_j$, keep the free block $4992I_{26}$ fixed and solve for the first three coefficients using the independent local images of $I,P_1,P_2$. A fixed nonsingular three-row minor supplies this solve; since the complete local image has rank three, satisfying these three rows satisfies all rows. Thus only $9\times9$ and $3\times3$ complex linear solves are required to choose the kernels.
+
+The degree-one local map
+\[
+ \operatorname{span}_{\C}\{I,P_1,P_2,Q_1,Q_2\}\longrightarrow M_3,
+ \qquad p\longmapsto h_1p
+\]
+has rank three near the reference point. Its kernel consequently varies continuously and has dimension two. Keep the $Q_1,Q_2$ coefficients of $q_0$ fixed, and solve for its $I,P_1,P_2$ coefficients with the same three-row local minor. This gives a degree-one polynomial in the new local kernel, tending to $q_0$. Normalize it using the fixed linear functional
+\begin{equation}\label{eq:universal-trace-q}
+ L(c_0I+c_1P_1+c_2P_2+c_3Q_1+c_4Q_2)
+ =c_0+\frac{c_1+c_2+c_3+c_4}{3}.
+\end{equation}
+At the reference point this functional has value one, so it stays nonzero after sufficiently small perturbation. We obtain a continuous degree-one polynomial $q$ satisfying $h_1q=0$ at the model and \emph{universal} $\tau(q)=1$. Merely normalizing a higher-degree polynomial by its model trace would not give this property; the degree-one construction is essential.
+
+\subsection{Compatibility in the two-dimensional left kernel}
+Let $b\in\R^{109}$ be the coefficient vector of $\tau(q^*h_1q)$. The desired universal identity is
+\begin{equation}\label{eq:linear-solve}
+ \calC z=-b,
+\end{equation}
+where $z$ lists the real coordinates of the three Hermitian Gram matrices.
+
+The nonzero minor in Proposition~\ref{prop:rank107} and continuity give $\rank\calC\ge107$ near the reference model. On the other hand, the moment $m(U)$ and the nonzero derivative in \eqref{eq:near-flat} annihilate all columns of $\calC$, by the same value-and-derivative argument used for the upper rank bound. They are independent because their constant coordinates are one and zero. Consequently
+\[
+ \rank\calC=107,\qquad
+ \ker\calC^T=\operatorname{span}_{\R}\{m(U),\dot m(X)\}.
+\]
+The fixed term $b$ is annihilated by both vectors as well. Its model value is zero because $h_1q=0$. Its derivative along $X$ is $\tau(q^*\dot h_1q)=0$ because the range of $q$ lies in the active singular space and the compressed derivative is zero. Therefore $-b$ belongs to the range of $\calC$, proving consistency of \eqref{eq:linear-solve}.
+
+\subsection{Strict positivity survives the exact solve}
+Let $z_0$ be the positive definite reference Gram solution, including its positive denominator. Use exactly the row and column sets $\mathcal R,\mathcal J$ of the fixed minor. A nearby solution is
+\begin{equation}\label{eq:selected-solve}
+ z=z_0+\iota_{\mathcal J}
+  (\calC_{\mathcal R,\mathcal J})^{-1}
+  (-b-\calC z_0)_{\mathcal R},
+\end{equation}
+where $\iota_{\mathcal J}$ inserts the $107$ correction coordinates and sets all other correction coordinates to zero. Indeed, the residual is in $\ran\calC$, the selected columns span that range, and restriction to the selected rows is injective on it. Matching those rows therefore matches every row.
+
+The inverse in \eqref{eq:selected-solve} is continuous because its fixed minor remains nonzero. The correction tends to zero, since the reference identity holds. Each reference Gram matrix is strictly positive definite, so all three transported matrices are positive definite after the neighborhood is made smaller. Only $104$ coordinates of $Z_0$ and $3$ coordinates of $Z_1$ need be adjusted; $Z_2$ can be left fixed. This gives a finite linear-solve recipe rather than an unspecified choice of a nearby feasible Gram point.
+
+This argument does not assume that the optimizer is a differentiable function of the spectral parameters. It is applied to each nearby true optimizer after phase adjustment. Compactness and the uniform limiting statements above give a single neighborhood on which it works for all of them. Nor does it rely on a numerical global-minimum claim: the base minimum exists by compactness, and all subsequent arguments concern that exact minimum.
+
+The transported solution gives the universal identity \eqref{eq:reference-certificate} with the new $h_j,K_j,Z_j,q$. Lemma~\ref{lem:certificate-lower} supplies the lower bound $t$ in every finite amplification. Tensoring the base minimizer supplies the upper bound $t$. This proves \eqref{eq:local-invariance}.
+
+\subsection{Equality representations and uniqueness}
+At equality in an amplified matrix algebra, all terms of the identity are nonnegative. Strict positivity of $Z_0$ forces every polynomial in the $52$-dimensional kernel $K_0$ to evaluate to zero, by faithfulness of matrix trace.
+
+Map the nine basis matrices \eqref{eq:nine}, evaluated at the scalar model, to the same words in the amplified equality model. All products of two basis words have degree at most four; all their scalar model relations are in $K_0$. The map therefore preserves multiplication, adjoints, and the identity. It is a unital $*$-homomorphism
+\[
+ \Phi:M_3\longrightarrow M_{3k}.
+\]
+Using matrix units, every such homomorphism is unitarily equivalent to $X\mapsto X\otimes I_k$. Since $\Phi(E_{ii})=E_{ii}\otimes I_k$, the implementing unitary $V$ commutes with all three fixed spectral projections. Applying this conclusion to the scalar $Q_j=U_{\alpha,\beta}E_{jj}U_{\alpha,\beta}^*$ gives
+\[
+ UP_jU^*=V(U_{\alpha,\beta}\otimes I_k)P_j(U_{\alpha,\beta}^*\otimes I_k)V^*.
+\]
+Hence $(U_{\alpha,\beta}^*\otimes I_k)V^*U$ commutes with every $P_j$, proving \eqref{eq:local-rigidity}. The converse follows directly by conjugating the residual. At $k=1$, this also proves uniqueness up to diagonal phases.
+
+Finally, both orbit distance and bottleneck matching distance are continuous in the spectral lists. Their strict reference gap in \eqref{eq:old} persists after further shrinking the neighborhood. For example, if $\eta=\max_i|\alpha_i-a_i^0|+\max_j|\beta_j+a_j^0|$, their gap is at least the reference gap minus $2\eta$. This completes Theorem~\ref{thm:open}.
+
+\begin{remark}[What openness does not imply]
+No continuation argument across the whole spectral parameter space has been established. At a boundary, singular-value multiplicity, coefficient-map rank, or strict Gram positivity can change. A nonempty open set of invariant pairs, even together with closedness of the invariant locus, does not prove the universal statement. Also, independently splitting repeated eigenvalues in dimension $3k$ is not the same as perturbing the six scalar eigenvalues in Theorem~\ref{thm:open}.
+\end{remark}
+
+\section{A quantitative bound for near-minimizers}
+This section uses the \emph{fixed reference} certificate, not its existential transported versions. Write its unabsorbed denominator as
+\[
+ \Delta=388^2N,\qquad
+ N=3486275656126774358249373768351227504091171225600000000000000000.
+\]
+Thus $Y_0=K_0Z_0K_0^*/\Delta$, and the two local Gram matrices include the same denominator and the additional $q_0$ term as in the prior pack.
+
+\subsection{The certificate controls all model relations}
+Let $U\in\U(3k)$ be arbitrary, and let $\varepsilon$ be as in Theorem~\ref{thm:stability}. Put
+\[
+ T=\Tr(Y_0M_0)\ge0,\qquad
+ M_L=[\tau(u^*v)]_{u,v\in\Lwords}.
+\]
+Both $h_j+\varepsilon I$ are positive semidefinite. Adding their contributions to the zero certificate gives
+\begin{equation}\label{eq:Tbound}
+ 0\le T\le\varepsilon\Tr((Y_1+Y_2)M_L)
+ \le B\varepsilon,\qquad B=29\Tr(Y_1+Y_2).
+\end{equation}
+The last inequality follows because all words are contractions, so $M_L\succeq0$ and $\Tr(M_L)\le29$, hence $M_L\preceq29I$.
+
+For a relation polynomial $r$ with coefficient vector $K_0c$,
+\begin{equation}\label{eq:relation-estimate}
+ \tau(r^*r)\le\Delta\,(c^*Z_0^{-1}c)\,T.
+\end{equation}
+Indeed, $cc^*\preceq(c^*Z_0^{-1}c)Z_0$ and $K_0^*M_0K_0\succeq0$.
+
+The original positivity certificate supplies an integer-pair matrix $S_0$ such that $G=S_0^*Z_0S_0$ is strictly diagonally dominant. If
+\[
+ m=\min_i\left(G_{ii}-\sum_{j\ne i}(|\operatorname{Re}_sG_{ij}|+2|\operatorname{Im}_sG_{ij}|)\right)>0,
+\]
+then $G\succeq mI$ and $Z_0^{-1}\preceq S_0S_0^*/m$. Consequently
+\begin{equation}\label{eq:exact-G-r}
+ \tau(r^*r)\le G_r\varepsilon,\qquad
+ G_r=\frac{\Delta B}{m}\norm{S_0^*c}^{\,2}.
+\end{equation}
+Every quantity on the right is an explicitly computed rational number. The estimate uses $|a+bs|\le|a|+2|b|$ and integer comparisons, not numerical spectral bounds.
+
+\subsection{Four relations suffice for rounding}
+The squares of the entries of the first column of $R$ are
+\[
+ p_1=\frac1{16},\qquad p_2=\frac{10}{16},\qquad p_3=\frac5{16}.
+\]
+Use the four relations
+\begin{align}
+ r_i&=P_iQ_1P_i-p_iP_i,\quad i=1,2,3,\label{eq:r123}\\
+ r_4&=Q_2-10C_0Q_1C_0,\qquad
+ C_0=P_1-\frac15P_2+\frac15P_3.\label{eq:r4}
+\end{align}
+They vanish at the reflection model and have degree at most three. The program \path{quantitative_rigidity.py} checks their exact membership in $K_0$. More explicitly, if $v_r$ is the $61$-word coefficient vector, the free-coordinate block $768I_{52}$ gives $c=(v_r)_{9:}/768$, and the checker recomputes $K_0c=v_r$.
+
+Let $G_1,G_2,G_3,G_4$ be the exact constants in \eqref{eq:exact-G-r} for these relations, and set
+\[
+ S_b=\sum_{i=1}^3\frac{G_i}{p_i}.
+\]
+Write $U$ as a $3\times3$ matrix of $k\times k$ blocks. A polar decomposition of $U_{i1}$, extended to a unitary if it is singular, gives a unitary $V_i$ such that
+\[
+ \hs{U_{i1}-R_{i1}V_i}^{\,2}
+ \le\frac1{p_i}\hs{U_{i1}U_{i1}^*-p_iI_k}^{\,2}
+ \le\frac{G_i}{p_i}\varepsilon.
+\]
+Here rectangular and block Hilbert--Schmidt norms use the same denominator $3k$. The scalar inequality is $|\sigma-\sqrt{p_i}|\le|\sigma^2-p_i|/\sqrt{p_i}$ for each singular value $\sigma$.
+
+Put $V=\diag(V_1,V_2,V_3)$ and $Q_j'=V(R\otimes I_k)P_j(R\otimes I_k)^*V^*$. Comparing the first column isometries gives
+\[
+ \hs{Q_1-Q_1'}\le a\sqrt\varepsilon,\qquad a=2\sqrt{S_b}.
+\]
+Because $V$ commutes with $C_0$, the exact reference relation gives $Q_2'=10C_0Q_1'C_0$. Since $\norm{C_0}=1$, \eqref{eq:r4} yields
+\[
+ \hs{Q_2-Q_2'}\le b\sqrt\varepsilon,\qquad b=10a+\sqrt{G_4}.
+\]
+The third projection difference is bounded by $(a+b)\sqrt\varepsilon$.
+
+If two isometries have range projections $Q,Q'$, polar alignment of their cross-Gram matrix gives a unitary change of domain basis whose squared Hilbert--Schmidt error is no greater than $\hs{Q-Q'}^2$. In singular-value notation this is the elementary inequality $2\sum(1-\sigma_j)\le2\sum(1-\sigma_j^2)$ for $0\le\sigma_j\le1$. Apply it to each of the three column isometries. A block diagonal $W$ then satisfies
+\begin{align*}
+ \hs{U-V(R\otimes I_k)W}
+ &\le\sqrt{a^2+b^2+(a+b)^2}\,\sqrt\varepsilon\\
+ &\le\left(44\sqrt{S_b}+2\sqrt{G_4}\right)\sqrt\varepsilon.
+\end{align*}
+The exact checker rounds each square root upward using integer arithmetic and verifies
+\[
+ 44\left\lceil\sqrt{S_b}\right\rceil+2\left\lceil\sqrt{G_4}\right\rceil
+ =2{,}705{,}974.
+\]
+The complete rational values of $B,m,G_i,S_b$ are retained in the verification JSON. This proves Theorem~\ref{thm:stability}. The rounding proof is dimension-independent, but does not assert operator-norm closeness to a minimizer.
+
+\section{Verification, scope, and reproducibility}
+\subsection{Proof-critical files}
+Run the following commands from the package root:
+\begin{verbatim}
+python -m pip install -r requirements.txt
+python -O prior/certificate/verify_certificate.py
+python -O prior/certificate/verify_witness_and_rigidity.py
+python -O new_results/certificate/local_geometry.py
+python -O new_results/certificate/rank_witness.py
+python -O new_results/certificate/exact_minor.py
+python -O new_results/certificate/quantitative_rigidity.py
+\end{verbatim}
+The new exact checks use Python arbitrary-precision integers and fractions, with NumPy as an array container. The modular determinant is computed with a prime below $2^{20}$ and reductions at every multiplication/elimination step; the vectorized products stay within signed 64-bit range. No floating-point rank tolerance or approximate positive-semidefinite test is an acceptance criterion.
+
+\begin{center}
+\begin{tabular}{@{}p{0.43\linewidth}p{0.49\linewidth}@{}}
+\toprule
+File & Proof role\\
+\midrule
+\texttt{local\_geometry.py} & Exact tangent ranks, positive optimality density, explicit flat tangent, local kernels, and universal degree-one normalization.\\
+\path{local_rank_witness.json} & The fixed $107\times107$ minor and complete $109$-coordinate inventory.\\
+\texttt{exact\_minor.py} & Recomputes the integer minor determinant by exact fraction-free elimination and checks its prime-power factorization.\\
+\texttt{rank\_witness.py} & Rebuilds the minor from universal coefficients and verifies its nonzero determinant modulo a checked prime.\\
+\path{quantitative_rigidity.py} & Exact relation coordinates and rational bounds leading to the stated integer stability constant.\\
+\texttt{prior/} & The entire earlier coefficient certificate, exact verifiers, manuscript, and recorded work on the reference example.\\
+\bottomrule
+\end{tabular}
+\end{center}
+The modular witness can be regenerated with \texttt{rank\_witness.py --discover}. Discovery is not required for proof verification. The continuous transport argument is a mathematical proof using the checked finite ranks; it does not claim that a radius has been numerically certified or that every nearby optimizer has been explicitly calculated.
+
+\subsection{Boundary of the result}
+The new results replace an isolated spectral example by an open family of independently perturbed three-point pairs and quantify stability at the reference pair. This is stronger than merely observing small numerical residuals or restating the reference certificate.
+
+The universal reverse inequality in \eqref{eq:universal} has not been proved here. No finite-dimensional normal counterexample has been certified. The transport proof depends on the stated reference ranks, the top-singular-value structure, and strict positive definiteness of a specific Gram solution. Their persistence is proved only locally. The appropriate scope of this package remains partial under the repository's distinction between special-case and full resolutions; no repository file has been edited.\footnote{OpenProblemsInNLA, \emph{CONTRIBUTING.md}, accessed 13 September 2026; source [4].}
+
+The included computations are exact computer-assisted checks, not a claim of proof-assistant formalization or independent human peer review. The reference example and the previously supplied two-point theorem retain their prior attribution; no comprehensive priority determination is asserted for the new local and quantitative statements.
+
+\begin{thebibliography}{9}
+\bibitem{repo} OpenProblemsInNLA. \emph{SP-09: Unitary-orbit distance under finite block repetition}. Accessed 13 September 2026.\\
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/eigenvalues-and-inverse-problems/SP-09}
+\bibitem{msz} L. W. Marcoux, P. Sarkowicz, and Y. Zhang. \emph{Kaplansky's problem and unitary orbits in matrix amplifications}. arXiv:2508.13834, version accessed 13 September 2026.\\
+\url{https://arxiv.org/html/2508.13834v1}
+\bibitem{holden} S. Holden. \emph{SP-09 / SP-07: Exact orbit distance when one spectrum has two points}. Supplied repository proof, 12 September 2026.\\
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/references/holden-spectral-2026-09-12/SP-09/proof.md}
+\bibitem{contributing} OpenProblemsInNLA. \emph{CONTRIBUTING.md}. Accessed 13 September 2026.\\
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/CONTRIBUTING.md}
+\bibitem{prior} \emph{SP-09: An Exact Three-Point Amplification Theorem}. Earlier proof pack, retained in full under \texttt{prior/} in this archive. Its fixed coefficient certificate and verifiers are explicit dependencies of the present results.
+\end{thebibliography}
+\end{document}

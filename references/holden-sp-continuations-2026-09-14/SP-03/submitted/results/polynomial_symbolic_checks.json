@@ -1,0 +1,43 @@
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "rank": 1,
+      "equations_checked": 4,
+      "Jacobian_entries_checked": 16,
+      "all_exact_equations_and_derivatives_agree": true,
+      "quadratic_Hessian_bounds_checked": true,
+      "maximum_quadratic_bound": 8,
+      "allowed_global_bound": 8
+    },
+    {
+      "rank": 2,
+      "equations_checked": 16,
+      "Jacobian_entries_checked": 256,
+      "all_exact_equations_and_derivatives_agree": true,
+      "quadratic_Hessian_bounds_checked": true,
+      "maximum_quadratic_bound": 16,
+      "allowed_global_bound": 16
+    },
+    {
+      "rank": 3,
+      "equations_checked": 36,
+      "Jacobian_entries_checked": 1296,
+      "all_exact_equations_and_derivatives_agree": true,
+      "quadratic_Hessian_bounds_checked": true,
+      "maximum_quadratic_bound": 24,
+      "allowed_global_bound": 24
+    },
+    {
+      "rank": 4,
+      "equations_checked": 64,
+      "Jacobian_entries_checked": 4096,
+      "all_exact_equations_and_derivatives_agree": true,
+      "quadratic_Hessian_bounds_checked": true,
+      "maximum_quadratic_bound": 32,
+      "allowed_global_bound": 32
+    }
+  ],
+  "seconds": 7.638451785000143,
+  "scope": "finite exact implementation checks; not an all-rank formal proof"
+}

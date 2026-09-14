@@ -1,6 +1,6 @@
 # All problems and their status
 
-**116 problems with open targets:** 43 open and 73 partially resolved. **101 other retained entries**, excluded from the open count.
+**116 problems with open targets:** 42 open and 74 partially resolved. **101 other retained entries**, excluded from the open count.
 
 **Resolution evidence:** 71 solved (published or independently audited); 30 solved with Lean verification.
 
@@ -56,7 +56,7 @@ Retained entries outside the open count:
 | [KE-02](eigenvalues-and-inverse-problems/KE-02/README.md) | Construct a separating diagonal perturbation in nearly linear time | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](eigenvalues-and-inverse-problems/KE-02/problem.pdf) · [TeX](eigenvalues-and-inverse-problems/KE-02/problem.tex) |
 | [SP-01](eigenvalues-and-inverse-problems/SP-01/README.md) | The sharp generic threshold for spectral-subspace rotation | **🔵 OPEN** | challenging | interesting to the community | [PDF](eigenvalues-and-inverse-problems/SP-01/problem.pdf) · [TeX](eigenvalues-and-inverse-problems/SP-01/problem.tex) |
 | [SP-02](eigenvalues-and-inverse-problems/SP-02/README.md) | The sharp off-diagonal threshold for spectral-subspace rotation | **🔵 OPEN** | challenging | interesting to the community | [PDF](eigenvalues-and-inverse-problems/SP-02/problem.pdf) · [TeX](eigenvalues-and-inverse-problems/SP-02/problem.tex) |
-| [SP-03](eigenvalues-and-inverse-problems/SP-03/README.md) | The Euclidean distance degree of the real symplectic group | **🔵 OPEN** | challenging | interesting to specialist | [PDF](eigenvalues-and-inverse-problems/SP-03/problem.pdf) · [TeX](eigenvalues-and-inverse-problems/SP-03/problem.tex) |
+| [SP-03](eigenvalues-and-inverse-problems/SP-03/README.md) | The Euclidean distance degree of the real symplectic group | **🟡 PARTIAL** | challenging | interesting to specialist | [PDF](eigenvalues-and-inverse-problems/SP-03/problem.pdf) · [TeX](eigenvalues-and-inverse-problems/SP-03/problem.tex) |
 | [SP-07](eigenvalues-and-inverse-problems/SP-07/README.md) | The sharp spectral-matching constant for normal matrices | **🔵 OPEN** | extreme | interesting to the community | [PDF](eigenvalues-and-inverse-problems/SP-07/problem.pdf) · [TeX](eigenvalues-and-inverse-problems/SP-07/problem.tex) |
 | [SP-08](eigenvalues-and-inverse-problems/SP-08/README.md) | Rank-two maximizers of spectral spread on an entry interval | **🟡 PARTIAL** | challenging | interesting to the community | [PDF](eigenvalues-and-inverse-problems/SP-08/problem.pdf) · [TeX](eigenvalues-and-inverse-problems/SP-08/problem.tex) |
 | [SP-09](eigenvalues-and-inverse-problems/SP-09/README.md) | Unitary-orbit distance under finite block repetition | **🟡 PARTIAL** | challenging | interesting to specialist | [PDF](eigenvalues-and-inverse-problems/SP-09/problem.pdf) · [TeX](eigenvalues-and-inverse-problems/SP-09/problem.tex) |

@@ -7,9 +7,15 @@
 **Difficulty:** extreme  
 **Importance:** interesting to the community  
 **Status:** Open  
-**Last checked:** 2026-09-12  
+**Last checked:** 2026-09-14  
 
 **Rating rationale:** Extreme reflects a longstanding sharp-constant problem beyond the false constant-one conjecture; community impact is eigenvalue matching and perturbation theory for normal matrices.
+
+## Supporting completion barriers and stationary model — 14 September 2026
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation). The [report](../../references/holden-sp-continuations-2026-09-14/SP-07/report.pdf), Sections 2–7, proves odd-polygon completion barriers and solves a stationary two-line variational model. The formal quotient near 1.0373054 is not a finite normal-matrix lower bound. The inherited order-193 rational certificate was rerun by both exact positivity methods. Neither this continuation nor that certificate determines the unrestricted sharp constant; status stays Open.
+
+See the [independent informal Codex AI-agent review](../../references/holden-sp-continuations-2026-09-14/SP-07/independent-review.md) for the exact audited scope and checks, and the [submission record](../../references/holden-sp-continuations-2026-09-14/README.md) for verified affiliation, original materials and reproduction details. No full resolution, external human peer review, formal verification or historical novelty is claimed. No Lean verification was performed.
 
 ## Supporting subclass lemma — 12 September 2026
 

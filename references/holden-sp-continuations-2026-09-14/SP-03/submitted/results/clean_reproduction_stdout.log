@@ -1,0 +1,655 @@
+g++ -O3 -std=c++17 -fPIC -shared verify/exact_backend.cpp -o verify/exact_backend.so
+In file included from verify/exact_backend.cpp:4:
+In member function 'void boost::multiprecision::backends::cpp_int_base<MinBits, MaxBits, boost::multiprecision::signed_magnitude, Checked, Allocator, false>::resize(std::size_t, std::size_t) [with long unsigned int MinBits = 0; long unsigned int MaxBits = 18446744073709551615; boost::multiprecision::cpp_int_check_type Checked = boost::multiprecision::unchecked; Allocator = std::allocator<long long unsigned int>]',
+    inlined from 'constexpr typename std::enable_if<(std::is_same<A, long long unsigned int>::value && (! std::integral_constant<bool, boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value>::value)), boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&>::type boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>::operator=(A) [with A = long long unsigned int; long unsigned int MinBits = 0; long unsigned int MaxBits = 0; boost::multiprecision::cpp_integer_type SignType = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked = boost::multiprecision::unchecked; Allocator = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int.hpp:1551:19,
+    inlined from 'void boost::multiprecision::backends::left_shift_byte(Int&, boost::multiprecision::double_limb_type) [with Int = cpp_int_backend<>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:347:14,
+    inlined from 'constexpr typename std::enable_if<(! boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value)>::type boost::multiprecision::backends::eval_left_shift(cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&, boost::multiprecision::double_limb_type) [with long unsigned int MinBits1 = 0; long unsigned int MaxBits1 = 0; boost::multiprecision::cpp_integer_type SignType1 = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked1 = boost::multiprecision::unchecked; Allocator1 = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:500:22,
+    inlined from 'constexpr typename std::enable_if<(! boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value)>::type boost::multiprecision::backends::eval_left_shift(cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&, boost::multiprecision::double_limb_type) [with long unsigned int MinBits1 = 0; long unsigned int MaxBits1 = 0; boost::multiprecision::cpp_integer_type SignType1 = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked1 = boost::multiprecision::unchecked; Allocator1 = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:464:1,
+    inlined from 'constexpr typename std::enable_if<boost::multiprecision::detail::is_integral<V>::value, boost::multiprecision::number<Backend, ExpressionTemplates>&>::type boost::multiprecision::number<Backend, ExpressionTemplates>::operator<<=(V) [with V = int; Backend = boost::multiprecision::backends::cpp_int_backend<>; boost::multiprecision::expression_template_option ExpressionTemplates = boost::multiprecision::et_on]' at /usr/include/boost/multiprecision/number.hpp:825:22,
+    inlined from 'boost::multiprecision::cpp_int scaled(double, int)' at verify/exact_backend.cpp:33:94:
+/usr/include/boost/multiprecision/cpp_int.hpp:382:21: warning: 'void* memcpy(void*, const void*, size_t)' writing between 24 and 268435455 bytes into a region of size 8 [-Wstringop-overflow=]
+  382 |          std::memcpy(pl, limbs(), size() * sizeof(limbs()[0]));
+      |          ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /usr/include/x86_64-linux-gnu/c++/14/bits/c++allocator.h:33,
+                 from /usr/include/c++/14/bits/allocator.h:46,
+                 from /usr/include/c++/14/string:43,
+                 from /usr/include/c++/14/bits/locale_classes.h:40,
+                 from /usr/include/c++/14/bits/ios_base.h:41,
+                 from /usr/include/c++/14/ios:44,
+                 from /usr/include/c++/14/ostream:40,
+                 from /usr/include/c++/14/iostream:41,
+                 from /usr/include/boost/multiprecision/cpp_int.hpp:13:
+In member function '_Tp* std::__new_allocator<_Tp>::allocate(size_type, const void*) [with _Tp = long long unsigned int]',
+    inlined from 'void boost::multiprecision::backends::cpp_int_base<MinBits, MaxBits, boost::multiprecision::signed_magnitude, Checked, Allocator, false>::resize(std::size_t, std::size_t) [with long unsigned int MinBits = 0; long unsigned int MaxBits = 18446744073709551615; boost::multiprecision::cpp_int_check_type Checked = boost::multiprecision::unchecked; Allocator = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int.hpp:381:48,
+    inlined from 'constexpr typename std::enable_if<(std::is_same<A, long long unsigned int>::value && (! std::integral_constant<bool, boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value>::value)), boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&>::type boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>::operator=(A) [with A = long long unsigned int; long unsigned int MinBits = 0; long unsigned int MaxBits = 0; boost::multiprecision::cpp_integer_type SignType = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked = boost::multiprecision::unchecked; Allocator = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int.hpp:1551:19,
+    inlined from 'void boost::multiprecision::backends::left_shift_byte(Int&, boost::multiprecision::double_limb_type) [with Int = cpp_int_backend<>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:347:14,
+    inlined from 'constexpr typename std::enable_if<(! boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value)>::type boost::multiprecision::backends::eval_left_shift(cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&, boost::multiprecision::double_limb_type) [with long unsigned int MinBits1 = 0; long unsigned int MaxBits1 = 0; boost::multiprecision::cpp_integer_type SignType1 = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked1 = boost::multiprecision::unchecked; Allocator1 = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:500:22,
+    inlined from 'constexpr typename std::enable_if<(! boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value)>::type boost::multiprecision::backends::eval_left_shift(cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&, boost::multiprecision::double_limb_type) [with long unsigned int MinBits1 = 0; long unsigned int MaxBits1 = 0; boost::multiprecision::cpp_integer_type SignType1 = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked1 = boost::multiprecision::unchecked; Allocator1 = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:464:1,
+    inlined from 'constexpr typename std::enable_if<boost::multiprecision::detail::is_integral<V>::value, boost::multiprecision::number<Backend, ExpressionTemplates>&>::type boost::multiprecision::number<Backend, ExpressionTemplates>::operator<<=(V) [with V = int; Backend = boost::multiprecision::backends::cpp_int_backend<>; boost::multiprecision::expression_template_option ExpressionTemplates = boost::multiprecision::et_on]' at /usr/include/boost/multiprecision/number.hpp:825:22,
+    inlined from 'boost::multiprecision::cpp_int scaled(double, int)' at verify/exact_backend.cpp:33:94:
+/usr/include/c++/14/bits/new_allocator.h:151:55: note: destination object of size 8 allocated by 'operator new'
+  151 |         return static_cast<_Tp*>(_GLIBCXX_OPERATOR_NEW(__n * sizeof(_Tp)));
+      |                                                       ^
+In member function 'void boost::multiprecision::backends::cpp_int_base<MinBits, MaxBits, boost::multiprecision::signed_magnitude, Checked, Allocator, false>::resize(std::size_t, std::size_t) [with long unsigned int MinBits = 0; long unsigned int MaxBits = 18446744073709551615; boost::multiprecision::cpp_int_check_type Checked = boost::multiprecision::unchecked; Allocator = std::allocator<long long unsigned int>]',
+    inlined from 'constexpr typename std::enable_if<(std::is_same<A, long long unsigned int>::value && (! std::integral_constant<bool, boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value>::value)), boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&>::type boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>::operator=(A) [with A = long long unsigned int; long unsigned int MinBits = 0; long unsigned int MaxBits = 0; boost::multiprecision::cpp_integer_type SignType = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked = boost::multiprecision::unchecked; Allocator = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int.hpp:1551:19,
+    inlined from 'void boost::multiprecision::backends::left_shift_byte(Int&, boost::multiprecision::double_limb_type) [with Int = cpp_int_backend<>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:347:14,
+    inlined from 'constexpr typename std::enable_if<(! boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value)>::type boost::multiprecision::backends::eval_left_shift(cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&, boost::multiprecision::double_limb_type) [with long unsigned int MinBits1 = 0; long unsigned int MaxBits1 = 0; boost::multiprecision::cpp_integer_type SignType1 = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked1 = boost::multiprecision::unchecked; Allocator1 = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:500:22,
+    inlined from 'constexpr typename std::enable_if<(! boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value)>::type boost::multiprecision::backends::eval_left_shift(cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&, boost::multiprecision::double_limb_type) [with long unsigned int MinBits1 = 0; long unsigned int MaxBits1 = 0; boost::multiprecision::cpp_integer_type SignType1 = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked1 = boost::multiprecision::unchecked; Allocator1 = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:464:1,
+    inlined from 'constexpr typename std::enable_if<(boost::multiprecision::detail::is_integral<Arithmetic>::value && (boost::multiprecision::number_category<Num>::value == boost::multiprecision::number_kind_integer)), boost::multiprecision::number<Backend, boost::multiprecision::et_on> >::type boost::multiprecision::operator<<(number<Backend, boost::multiprecision::et_on>&&, const I&) [with B = backends::cpp_int_backend<>; I = int]' at /usr/include/boost/multiprecision/detail/et_ops.hpp:1367:19,
+    inlined from 'bool sum_less(const std::vector<Term>&, int)' at verify/exact_backend.cpp:41:41:
+/usr/include/boost/multiprecision/cpp_int.hpp:382:21: warning: 'void* memcpy(void*, const void*, size_t)' writing between 24 and 2305843009213693952 bytes into a region of size 8 [-Wstringop-overflow=]
+  382 |          std::memcpy(pl, limbs(), size() * sizeof(limbs()[0]));
+      |          ~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+In member function '_Tp* std::__new_allocator<_Tp>::allocate(size_type, const void*) [with _Tp = long long unsigned int]',
+    inlined from 'void boost::multiprecision::backends::cpp_int_base<MinBits, MaxBits, boost::multiprecision::signed_magnitude, Checked, Allocator, false>::resize(std::size_t, std::size_t) [with long unsigned int MinBits = 0; long unsigned int MaxBits = 18446744073709551615; boost::multiprecision::cpp_int_check_type Checked = boost::multiprecision::unchecked; Allocator = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int.hpp:381:48,
+    inlined from 'constexpr typename std::enable_if<(std::is_same<A, long long unsigned int>::value && (! std::integral_constant<bool, boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value>::value)), boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&>::type boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>::operator=(A) [with A = long long unsigned int; long unsigned int MinBits = 0; long unsigned int MaxBits = 0; boost::multiprecision::cpp_integer_type SignType = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked = boost::multiprecision::unchecked; Allocator = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int.hpp:1551:19,
+    inlined from 'void boost::multiprecision::backends::left_shift_byte(Int&, boost::multiprecision::double_limb_type) [with Int = cpp_int_backend<>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:347:14,
+    inlined from 'constexpr typename std::enable_if<(! boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value)>::type boost::multiprecision::backends::eval_left_shift(cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&, boost::multiprecision::double_limb_type) [with long unsigned int MinBits1 = 0; long unsigned int MaxBits1 = 0; boost::multiprecision::cpp_integer_type SignType1 = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked1 = boost::multiprecision::unchecked; Allocator1 = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:500:22,
+    inlined from 'constexpr typename std::enable_if<(! boost::multiprecision::backends::is_trivial_cpp_int<boost::multiprecision::backends::cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator> >::value)>::type boost::multiprecision::backends::eval_left_shift(cpp_int_backend<MinBits, MaxBits, SignType, Checked, Allocator>&, boost::multiprecision::double_limb_type) [with long unsigned int MinBits1 = 0; long unsigned int MaxBits1 = 0; boost::multiprecision::cpp_integer_type SignType1 = boost::multiprecision::signed_magnitude; boost::multiprecision::cpp_int_check_type Checked1 = boost::multiprecision::unchecked; Allocator1 = std::allocator<long long unsigned int>]' at /usr/include/boost/multiprecision/cpp_int/bitwise.hpp:464:1,
+    inlined from 'constexpr typename std::enable_if<(boost::multiprecision::detail::is_integral<Arithmetic>::value && (boost::multiprecision::number_category<Num>::value == boost::multiprecision::number_kind_integer)), boost::multiprecision::number<Backend, boost::multiprecision::et_on> >::type boost::multiprecision::operator<<(number<Backend, boost::multiprecision::et_on>&&, const I&) [with B = backends::cpp_int_backend<>; I = int]' at /usr/include/boost/multiprecision/detail/et_ops.hpp:1367:19,
+    inlined from 'bool sum_less(const std::vector<Term>&, int)' at verify/exact_backend.cpp:41:41:
+/usr/include/c++/14/bits/new_allocator.h:151:55: note: destination object of size 8 allocated by 'operator new'
+  151 |         return static_cast<_Tp*>(_GLIBCXX_OPERATOR_NEW(__n * sizeof(_Tp)));
+      |                                                       ^
+python verify/test_backend.py
+[
+  {
+    "rank": 1,
+    "root_index": 1,
+    "pass_exact_comparison": true,
+    "seconds": 0.00038431500070146285
+  },
+  {
+    "rank": 1,
+    "root_index": 2,
+    "pass_exact_comparison": true,
+    "seconds": 6.900100015627686e-05
+  },
+  {
+    "rank": 1,
+    "root_index": 0,
+    "pass_exact_comparison": true,
+    "seconds": 5.405999945651274e-05
+  },
+  {
+    "rank": 1,
+    "root_index": 3,
+    "pass_exact_comparison": true,
+    "seconds": 5.243699979473604e-05
+  },
+  {
+    "rank": 2,
+    "root_index": 18,
+    "pass_exact_comparison": true,
+    "seconds": 0.00039599199953954667
+  },
+  {
+    "rank": 2,
+    "root_index": 17,
+    "pass_exact_comparison": true,
+    "seconds": 0.00037444000008690637
+  },
+  {
+    "rank": 2,
+    "root_index": 9,
+    "pass_exact_comparison": true,
+    "seconds": 0.0003460279995124438
+  },
+  {
+    "rank": 2,
+    "root_index": 13,
+    "pass_exact_comparison": true,
+    "seconds": 0.0003973640004915069
+  },
+  {
+    "rank": 2,
+    "root_index": 22,
+    "pass_exact_comparison": true,
+    "seconds": 0.0004033330005768221
+  },
+  {
+    "rank": 2,
+    "root_index": 6,
+    "pass_exact_comparison": true,
+    "seconds": 0.0004928449998260476
+  },
+  {
+    "rank": 2,
+    "root_index": 19,
+    "pass_exact_comparison": true,
+    "seconds": 0.0004443540001375368
+  },
+  {
+    "rank": 2,
+    "root_index": 4,
+    "pass_exact_comparison": true,
+    "seconds": 0.00043236500005150447
+  },
+  {
+    "rank": 3,
+    "root_index": 244,
+    "pass_exact_comparison": true,
+    "seconds": 0.005108540999572142
+  },
+  {
+    "rank": 3,
+    "root_index": 439,
+    "pass_exact_comparison": true,
+    "seconds": 0.0024581340003351215
+  },
+  {
+    "rank": 3,
+    "root_index": 449,
+    "pass_exact_comparison": true,
+    "seconds": 0.004796883000381058
+  },
+  {
+    "rank": 3,
+    "root_index": 426,
+    "pass_exact_comparison": true,
+    "seconds": 0.0024775729998509632
+  },
+  {
+    "rank": 3,
+    "root_index": 177,
+    "pass_exact_comparison": true,
+    "seconds": 0.003959360999942874
+  },
+  {
+    "rank": 3,
+    "root_index": 67,
+    "pass_exact_comparison": true,
+    "seconds": 0.002555066000240913
+  },
+  {
+    "rank": 3,
+    "root_index": 403,
+    "pass_exact_comparison": true,
+    "seconds": 0.003973962999225478
+  },
+  {
+    "rank": 3,
+    "root_index": 288,
+    "pass_exact_comparison": true,
+    "seconds": 0.0030753419996472076
+  }
+]
+python verify/test_factorization.py
+{
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "rank": 1,
+      "trial": 0,
+      "passed": true,
+      "determinant": "-6"
+    },
+    {
+      "rank": 1,
+      "trial": 1,
+      "passed": true,
+      "determinant": "-6"
+    },
+    {
+      "rank": 1,
+      "trial": 2,
+      "passed": true,
+      "determinant": "3"
+    },
+    {
+      "rank": 1,
+      "trial": 3,
+      "passed": true,
+      "determinant": "2"
+    },
+    {
+      "rank": 1,
+      "trial": 4,
+      "passed": true,
+      "determinant": "-2"
+    },
+    {
+      "rank": 2,
+      "trial": 0,
+      "passed": true,
+      "determinant": "-4"
+    },
+    {
+      "rank": 2,
+      "trial": 1,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 2,
+      "trial": 2,
+      "passed": true,
+      "determinant": "-72"
+    },
+    {
+      "rank": 2,
+      "trial": 3,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 2,
+      "trial": 4,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 3,
+      "trial": 0,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 3,
+      "trial": 1,
+      "passed": true,
+      "determinant": "-3136"
+    },
+    {
+      "rank": 3,
+      "trial": 2,
+      "passed": true,
+      "determinant": "-2743488"
+    },
+    {
+      "rank": 3,
+      "trial": 3,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 3,
+      "trial": 4,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 4,
+      "trial": 0,
+      "passed": true,
+      "determinant": "-6252480"
+    },
+    {
+      "rank": 4,
+      "trial": 1,
+      "passed": true,
+      "determinant": "-4311479744"
+    },
+    {
+      "rank": 4,
+      "trial": 2,
+      "passed": true,
+      "determinant": "296338176"
+    },
+    {
+      "rank": 4,
+      "trial": 3,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 4,
+      "trial": 4,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 5,
+      "trial": 0,
+      "passed": true,
+      "determinant": "21596887070484480"
+    },
+    {
+      "rank": 5,
+      "trial": 1,
+      "passed": true,
+      "determinant": "-345420200587651200"
+    },
+    {
+      "rank": 5,
+      "trial": 2,
+      "passed": true,
+      "determinant": "555016733519360"
+    },
+    {
+      "rank": 5,
+      "trial": 3,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 5,
+      "trial": 4,
+      "passed": true,
+      "determinant": "0"
+    },
+    {
+      "rank": 2,
+      "symbolic_identity_in_eight_indeterminates": true
+    },
+    {
+      "rank": 1,
+      "nondiagonal_spectral_identity": true
+    },
+    {
+      "rank": 2,
+      "nondiagonal_spectral_identity": true
+    },
+    {
+      "rank": 3,
+      "nondiagonal_spectral_identity": true
+    },
+    {
+      "rank": 4,
+      "nondiagonal_spectral_identity": true
+    },
+    {
+      "rank": 5,
+      "nondiagonal_spectral_identity": true
+    }
+  ],
+  "seconds": 0.40043266900011076,
+  "scope": "Finite exact checks and a rank-two symbolic identity; the all-rank proof is written separately."
+}
+python verify/test_stein_form.py
+{
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "rank": 1,
+      "trial": 0,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "trial": 1,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "trial": 2,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "identity": "both normalized determinant factorizations",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "identity": "general invertible-Ua determinant formula",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "identity": "Stein solutions, potential, gradient directional derivative",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "identity": "Q-isometric data normalization",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "trial": 0,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "trial": 1,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "trial": 2,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "identity": "both normalized determinant factorizations",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "identity": "general invertible-Ua determinant formula",
+      "passed": true
+    },
+    {
+      "rank": 2,
+      "identity": "Stein solutions, potential, gradient directional derivative",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "trial": 0,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "trial": 1,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "trial": 2,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "identity": "both normalized determinant factorizations",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "identity": "general invertible-Ua determinant formula",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "identity": "Stein solutions, potential, gradient directional derivative",
+      "passed": true
+    },
+    {
+      "rank": 3,
+      "identity": "Q-isometric data normalization",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "trial": 0,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "trial": 1,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "trial": 2,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "identity": "both normalized determinant factorizations",
+      "passed": true
+    },
+    {
+      "rank": 4,
+      "identity": "general invertible-Ua determinant formula",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "trial": 0,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "trial": 1,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "trial": 2,
+      "identity": "general Stein bilinear form",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "identity": "both normalized determinant factorizations",
+      "passed": true
+    },
+    {
+      "rank": 5,
+      "identity": "general invertible-Ua determinant formula",
+      "passed": true
+    },
+    {
+      "rank": 1,
+      "identity": "fully symbolic scalar derivative",
+      "passed": true
+    }
+  ],
+  "euler_characteristics": [
+    1,
+    -1,
+    3,
+    -13,
+    75,
+    -541,
+    4683,
+    -47293,
+    545835,
+    -7087261,
+    102247563,
+    -1622632573,
+    28091567595
+  ]
+}
+
+python verify/test_boundary.py
+{
+  "all_checks_passed": true,
+  "checks": [
+    {
+      "rank": 1,
+      "homogenized_identity_checked": true,
+      "leading_determinant_power_checked": true,
+      "scalar_direction_asymptotic_checked": true
+    },
+    {
+      "rank": 2,
+      "homogenized_identity_checked": true,
+      "leading_determinant_power_checked": true,
+      "scalar_direction_asymptotic_checked": true
+    },
+    {
+      "rank": 3,
+      "homogenized_identity_checked": true,
+      "leading_determinant_power_checked": true,
+      "scalar_direction_asymptotic_checked": true
+    },
+    {
+      "rank": 4,
+      "homogenized_identity_checked": true,
+      "leading_determinant_power_checked": true,
+      "scalar_direction_asymptotic_checked": true
+    },
+    {
+      "rank": 5,
+      "homogenized_identity_checked": true,
+      "leading_determinant_power_checked": true,
+      "scalar_direction_asymptotic_checked": true
+    }
+  ]
+}
+python verify/test_selection.py
+{'all_checks_passed': True, 'random_trials': 100, 'mandatory_prefix_preserved': True, 'late_mandatory_revocation_test_passed': True, 'closed_ball_touching_test_passed': True}
+python verify/test_polynomial_system.py
+{"rank": 1, "equations_checked": 4, "Jacobian_entries_checked": 16, "all_exact_equations_and_derivatives_agree": true, "quadratic_Hessian_bounds_checked": true, "maximum_quadratic_bound": 8, "allowed_global_bound": 8}
+{"rank": 2, "equations_checked": 16, "Jacobian_entries_checked": 256, "all_exact_equations_and_derivatives_agree": true, "quadratic_Hessian_bounds_checked": true, "maximum_quadratic_bound": 16, "allowed_global_bound": 16}
+{"rank": 3, "equations_checked": 36, "Jacobian_entries_checked": 1296, "all_exact_equations_and_derivatives_agree": true, "quadratic_Hessian_bounds_checked": true, "maximum_quadratic_bound": 24, "allowed_global_bound": 24}
+{"rank": 4, "equations_checked": 64, "Jacobian_entries_checked": 4096, "all_exact_equations_and_derivatives_agree": true, "quadratic_Hessian_bounds_checked": true, "maximum_quadratic_bound": 32, "allowed_global_bound": 32}
+python verify/test_zero_coupling.py
+{
+  "all_passed": true,
+  "checks": [
+    {
+      "rank": 1,
+      "regular_zero_coupling_roots_checked": 2,
+      "expected": 2,
+      "all_simple_and_in_domain": true,
+      "non_diagonal_scaling_identity": true
+    },
+    {
+      "rank": 2,
+      "regular_zero_coupling_roots_checked": 4,
+      "expected": 4,
+      "all_simple_and_in_domain": true,
+      "non_diagonal_scaling_identity": true
+    },
+    {
+      "rank": 3,
+      "regular_zero_coupling_roots_checked": 8,
+      "expected": 8,
+      "all_simple_and_in_domain": true,
+      "non_diagonal_scaling_identity": true
+    },
+    {
+      "rank": 4,
+      "regular_zero_coupling_roots_checked": 16,
+      "expected": 16,
+      "all_simple_and_in_domain": true,
+      "non_diagonal_scaling_identity": true
+    },
+    {
+      "rank": 5,
+      "regular_zero_coupling_roots_checked": 32,
+      "expected": 32,
+      "all_simple_and_in_domain": true,
+      "non_diagonal_scaling_identity": true
+    }
+  ],
+  "seconds": 0.1130496959995071,
+  "scope": "exact finite checks supporting the written all-rank argument"
+}
+{
+  "rank": 4,
+  "certified_distinct_simple_roots": 31183,
+  "certificate_sha256": "2126da41dabc9e2bf92993dba888bc855c45ab9178177feb3e65a79d383c7768",
+  "completeness_proved": false,
+  "certificate_arithmetic": "exact multiprecision integers",
+  "separation": {
+    "distinct": true,
+    "balls": 31183,
+    "overlap_pairs_checked": 0,
+    "arithmetic": "exact Python integers and fractions"
+  },
+  "maximum_radius_exponent": -22,
+  "maximum_eta": 5.539211412021313e-08,
+  "maximum_z0": 0.20503068655997697,
+  "maximum_z2": 15397024168.913351,
+  "verification_seconds": 123.05189681600041
+}
+

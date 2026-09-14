@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "checks": [
+    "compressed-optimal: reflection symmetry",
+    "compressed-optimal: reflection involution",
+    "compressed-optimal: pinching commutation",
+    "compressed-optimal: exact Gram characteristic polynomial",
+    "compressed-optimal: complementary normality is not assumed",
+    "completion-optimal: reflection symmetry",
+    "completion-optimal: reflection involution",
+    "completion-optimal: pinching commutation",
+    "completion-optimal: exact Gram characteristic polynomial",
+    "completion-optimal: complementary normality is not assumed",
+    "Pauli singular-value polynomial",
+    "Rationalized integral quartic",
+    "Height-balance strict-convexity identity"
+  ],
+  "check_count": 13,
+  "examples": [
+    {
+      "name": "compressed-optimal",
+      "Gram_characteristic_polynomial": "x*(3*x - 4)**2*(9*x - 4)**2/729"
+    },
+    {
+      "name": "completion-optimal",
+      "Gram_characteristic_polynomial": "x*(x - 1)**4"
+    }
+  ],
+  "seconds": 0.21077031000004354,
+  "sympy_version": "1.14.0",
+  "scope": "Independent symbolic reconstruction; not an external referee audit"
+}

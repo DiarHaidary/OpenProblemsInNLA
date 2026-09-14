@@ -1,0 +1,38 @@
+
+RUN dual_certificate.py
+setup 4 [52, 26, 26] rank 107 incompatibility 2.1761066977116872e-14 seconds 0.26772884399997565
+iteration 0 error 1.4061528994705508 linear 8.88945446416826 norm 0.4033177053355079 seconds 0.2694183339999654
+iteration 5000 error 2.0320629691916355e-13 linear 4.520941027199111e-13 norm 180.16178071438273 seconds 5.029623510999954
+
+RUN exact_reconstruct.py
+K 0 (61, 52) den 768 max 1000 pivots [0, 1, 2, 3, 4, 5, 6, 7, 8]
+K 1 (29, 26) den 4992 max 4992 pivots [0, 1, 2]
+K 2 (29, 26) den 4992 max 4992 pivots [0, 1, 2]
+system (109, 4056) max 291564748800 rhsmax 488097792
+
+RUN initial_coordinates.py
+
+RUN rationalize_certificate.py
+rank 107 condition 207.03817189566922 seconds 0.04494309199981217
+integer residual max 286551143424 seconds 0.058402011999987735
+solved exact correction den digits 1144 seconds 2.935211640999796
+max correction 4.465872116554692e-14 full exact residual ZERO seconds 2.9569674409999607
+saved denominator digits 64 seconds 2.958695968999791
+
+RUN package_certificate.py
+block 0 minimum normalized diagonal-dominance margin 0.9999999933234691 time 0.045863312999927075
+block 1 minimum normalized diagonal-dominance margin 0.9999999990320205 time 0.056695335999847885
+block 2 minimum normalized diagonal-dominance margin 0.9999999991436825 time 0.06668843699981153
+saved certificate 0.07515102200000001
+PASS: the distinguished polynomial q has normalized trace exactly 1.
+PASS: block 0 is positive definite (all 52 integer margins positive).
+PASS: block 1 is positive definite (all 26 integer margins positive).
+PASS: block 2 is positive definite (all 26 integer margins positive).
+PASS: every coefficient in the universal cyclic trace identity is exactly zero.
+CERTIFICATE VERIFIED. This is not a proof of SP-09 for arbitrary spectra.
+PASS: the witness squared singular values are 27/13, 27/13, 4/13.
+PASS: exhaustive exact matching gives bottleneck squared distance 28/13.
+PASS: the first nine words span M_3; the 52 columns give the entire degree-four relation kernel.
+EQUALITY RIGIDITY VERIFIED together with the positive Gram block in verify_certificate.py.
+
+Exact certificate rebuilt and verified: /mnt/data/sp09_rebuild_test/krause_certificate.json

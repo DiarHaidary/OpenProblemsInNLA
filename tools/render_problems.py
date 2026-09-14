@@ -94,9 +94,9 @@ def render(source):
             'MI-09', 'MI-19', 'MI-23', 'MI-27', 'MI-28', 'MI-29', 'NM-01', 'NM-03', 'PF-05',
             'RA-02', 'RA-06', 'RA-08', 'RA-09', 'RA-10', 'RA-11', 'RA-12',
             'RA-14', 'RA-15', 'RE-01', 'RE-02', 'RE-06', 'SP-04',
-            'SP-05', 'SP-06', 'SP-07', 'SP-09', 'SP-12', 'TR-11', 'TR-20', 'TR-21',
+            'SP-05', 'SP-06', 'SP-09', 'SP-12', 'TR-11', 'TR-20', 'TR-21',
             'TR-24', 'TR-26', 'TR-30',
-            'IE-27', 'MF-24', 'MI-30', 'MI-31', 'SP-14',
+            'IE-27', 'MF-24', 'MI-30', 'MI-31',
         }:
             tex = re.sub(r"\\subsection\{References?(?:\s+and\s+status\s+check)?\}",
                          lambda m: "\\newpage\n" + m[0], tex, count=1)

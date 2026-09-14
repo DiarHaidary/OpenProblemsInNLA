@@ -1,0 +1,79 @@
+$ python3 tools/validate_problem_ids.py --base-ref origin/main
+Validated 217 permanent problem IDs against origin/main
+$ python3 tools/validate_problem_ids.py --base-ref upstream/main
+Validated 217 permanent problem IDs against upstream/main
+$ python3 tools/update_catalog.py --base-ref origin/main
+Indexed 217 entries: Lean verified=30, Open=43, Partially resolved=73, Solved=71
+$ python3 tools/format_math.py --check
+Need formatting: 0 pages
+$ python3 -m unittest discover -s tests -p test_problem_ids.py -v
+test_append_only_and_large_suffixes (test_problem_ids.PermanentIDTests) ... ok
+test_cannot_fill_historical_gap (test_problem_ids.PermanentIDTests) ... ok
+test_cannot_reassign_registered_path (test_problem_ids.PermanentIDTests) ... ok
+test_cannot_remove_page_and_registry_record_together (test_problem_ids.PermanentIDTests) ... ok
+test_committed_branch_renumber_detected_against_published_branch (test_problem_ids.PermanentIDTests) ... ok
+test_current_registry_and_status_changes (test_problem_ids.PermanentIDTests) ... ok
+test_duplicate_heading_id (test_problem_ids.PermanentIDTests) ... ok
+test_duplicate_json_keys (test_problem_ids.PermanentIDTests) ... ok
+test_first_registry_protects_already_published_ids (test_problem_ids.PermanentIDTests) ... ok
+test_heading_rename_and_malformed_ids (test_problem_ids.PermanentIDTests) ... ok
+test_indexer_does_not_write_when_validation_fails (test_problem_ids.PermanentIDTests) ... ok
+test_invalid_base_is_not_silently_ignored (test_problem_ids.PermanentIDTests) ... ok
+test_missing_registered_page (test_problem_ids.PermanentIDTests) ... ok
+test_paths_cannot_escape_or_alias (test_problem_ids.PermanentIDTests) ... ok
+test_symlinked_canonical_page (test_problem_ids.PermanentIDTests) ... ok
+test_symlinked_registry (test_problem_ids.PermanentIDTests) ... ok
+test_unregistered_entry (test_problem_ids.PermanentIDTests) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 1.103s
+
+OK
+$ python3 -m unittest discover -s tests -p test_problem_statuses.py -v
+test_promotion_preserves_counts_and_canonical_identity (test_problem_statuses.ProblemStatusTests) ... ok
+test_read_problem_accepts_lean_verified (test_problem_statuses.ProblemStatusTests) ... ok
+test_read_problem_rejects_unknown_status (test_problem_statuses.ProblemStatusTests) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.303s
+
+OK
+$ python3 -m unittest discover -s tests -p test_format_math.py -v
+test_angle_sanitizer_collisions_are_spaced_only_in_math (test_format_math.GitHubMathFormattingTests) ... ok
+test_code_and_currency_are_not_rewritten (test_format_math.GitHubMathFormattingTests) ... ok
+test_code_span_requires_an_exact_length_closing_run (test_format_math.GitHubMathFormattingTests) ... ok
+test_display_is_a_separate_fence_with_no_stray_dollars (test_format_math.GitHubMathFormattingTests) ... ok
+test_indented_math_fence_becomes_standalone_displaystyle (test_format_math.GitHubMathFormattingTests) ... ok
+test_list_indentation_and_equation_body_survive (test_format_math.GitHubMathFormattingTests) ... ok
+test_math_at_emphasis_boundary_requires_manual_separation (test_format_math.GitHubMathFormattingTests) ... ok
+test_matrix_rows_are_not_markdown_escapes (test_format_math.GitHubMathFormattingTests) ... ok
+test_multiline_inline_and_escaped_dollar (test_format_math.GitHubMathFormattingTests) ... ok
+test_norms_sets_and_geometric_mean_are_protected (test_format_math.GitHubMathFormattingTests) ... ok
+test_number_led_math_is_not_mistaken_for_currency (test_format_math.GitHubMathFormattingTests) ... ok
+test_operator_spacing_and_subscript_placement (test_format_math.GitHubMathFormattingTests) ... ok
+test_pdf_directives_are_removed_only_for_known_pages (test_format_math.GitHubMathFormattingTests) ... ok
+test_pdf_directives_in_code_examples_are_preserved (test_format_math.GitHubMathFormattingTests) ... ok
+test_unclosed_display_and_unknown_operators_fail (test_format_math.GitHubMathFormattingTests) ... ok
+test_unmatched_backtick_does_not_hide_later_math (test_format_math.GitHubMathFormattingTests) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.001s
+
+OK
+$ python3 -m unittest discover -s tests -p test_render_math.py -v
+test_currency_and_literal_code_are_untouched (test_render_math.PandocMathTests) ... ok
+test_displaystyle_with_prose_remains_inline (test_render_math.PandocMathTests) ... ok
+test_fenced_math_stays_in_ordered_and_bullet_lists (test_render_math.PandocMathTests) ... ok
+test_legacy_math_and_raw_page_directives_are_untouched (test_render_math.PandocMathTests) ... ok
+test_multiline_fence_preserves_aligned_rows (test_render_math.PandocMathTests) ... ok
+test_protected_inline_preserves_macros_and_norm_backslashes (test_render_math.PandocMathTests) ... ok
+test_protected_math_is_parsed_in_title_metadata (test_render_math.PandocMathTests) ... ok
+test_standalone_displaystyle_is_promoted_inside_nested_lists (test_render_math.PandocMathTests) ... ok
+test_standalone_inline_without_displaystyle_is_not_promoted (test_render_math.PandocMathTests) ... ok
+test_protected_math_title_has_no_wrapper_backticks (test_render_math.PdfMetadataAndLayoutTests) ... ok
+test_removed_public_layout_commands_return_at_original_headings (test_render_math.PdfMetadataAndLayoutTests) ... ok
+
+----------------------------------------------------------------------
+Ran 11 tests in 2.888s
+
+OK

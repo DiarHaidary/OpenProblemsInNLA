@@ -1,0 +1,456 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,mathtools}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype,booktabs}
+\usepackage[hidelinks]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\Fid}{\operatorname{Fid}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\N}{\mathcal N}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\title{MI-20, Round Four\\An Exact Universal Bound and a Positive Power-System Reduction}
+\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
+\date{13 September 2026}
+\hypersetup{pdfauthor={Sidney Holden}}
+\begin{document}\maketitle
+\begin{abstract}
+For the dimension-independent constant in MI-20, we prove the computer-assisted bound
+\(C_{4/3}(2)\le(861/800)^{1/4}\).
+An exact rational certificate excludes an entire parameter interval in a positive cubic system, using 184 coefficient identities and 44 positive-definite Gram multipliers. Its preceding bound is verified as a dependency, not assumed from an earlier final message. We also give a positive power-system characterization at every exponent \(1<p<2\), prove two order constraints on those systems, and derive improved interpolation bounds for two summands. The exact function \(C_p(m)\) is not determined. In particular, the characterization is not presented as an evaluation of the requested supremum, and no construction matches the new upper bound.
+\end{abstract}
+\begin{center}\fbox{\parbox{0.91\linewidth}{\textbf{Status.} This is a partial research result, not a full solution of MI-20. The written mathematical reductions and the exact arithmetic checks have not received independent peer review or proof-assistant verification.}}\end{center}
+\tableofcontents
+
+\section{Problem and results}
+For a matrix \(A\), write \(|A|=(A^*A)^{1/2}\), and let \(\norm A_p\) denote its Schatten \(p\)-norm. The requested sharp constant is
+\begin{equation}\label{def:C}
+ C_p(m)=\sup_{n\ge1}\ \sup_{\sum_j|A_j|\ne0}
+ \frac{\norm{\sum_{j=1}^m A_j}_p}{\norm{\sum_{j=1}^m|A_j|}_p},
+ \qquad m\ge2,\quad1<p<2.
+\end{equation}
+The problem statement is retained through the public reference \cite{problem}. Put
+\[
+ b=\frac{861}{800},\qquad a=\frac{1+\sqrt2}{2}.
+\]
+The principal new bound is
+\begin{equation}\label{eq:mainbound}
+ \boxed{C_{4/3}(2)\le b^{1/4}=1.0185404734532257\ldots.}
+\end{equation}
+The retained lower certificate implies, conservatively rounding its accepted target downward,
+\begin{equation}\label{eq:enclosure}
+ 1.018371575<C_{4/3}(2)\le b^{1/4}.
+\end{equation}
+The predecessor universal upper bound was \((43983/40000)^{1/4}\); its exact chain is rechecked in this package. No fixed-moduli upper endpoint is used as a universal bound.
+
+The interpolation consequences of \eqref{eq:mainbound} are
+\begin{equation}\label{eq:allp}
+ C_p(2)\le
+ \begin{cases}
+ b^{1-1/p},&1<p\le4/3,\\
+ b^{1/p-1/2}a^{3/2-2/p},&4/3\le p<2.
+ \end{cases}
+\end{equation}
+A separate characterization, valid for every permitted \(p,m\), is proved below. It identifies a positive-matrix system whose feasible values have supremum \(C_p(m)\). Evaluating that supremum over noncommuting matrices and unbounded orders remains the missing step.
+
+\section{Positive duality and cyclic blocks}
+Throughout this section, \(q=p/(p-1)\). For positive matrices define
+\[
+ \Fid(A,B)=\tr\bigl(A^{1/2}BA^{1/2}\bigr)^{1/2}.
+\]
+We use the elementary variational identity
+\begin{equation}\label{eq:fidelity}
+ \Fid(A,B)=\frac12\inf_{K>0}\bigl\{\tr(AK^{-1})+\tr(BK)\bigr\}.
+\end{equation}
+For positive-definite \(A,B\), it follows by setting \(K=A^{1/2}YA^{1/2}\) and minimizing \(\tr Y^{-1}+\tr(A^{1/2}BA^{1/2}Y)\). Singular cases follow by approximation. The same identity proves concavity in \(B\).
+
+\begin{lemma}[Positive duality]\label{lem:duality}
+For fixed positive \(X_1,\ldots,X_m\),
+\[
+ \max_{U_j\ \mathrm{unitary}}\norm{\sum_jU_jX_j}_p
+ =\max_{R\ge0,\ \norm R_q=1}\sum_j\norm{RX_j}_1.
+\]
+\end{lemma}
+\begin{proof}
+Apply Schatten duality to the norm of the sum and then maximize each unitary independently. For a dual matrix \(Z\), unitary maximization gives \(\sum_j\norm{X_jZ^*}_1\). A polar decomposition of \(Z\) reduces this to a positive \(R\) without changing its Schatten norm. Partial polar isometries extend to unitaries in the finite square setting. Taking real parts in the trace duality makes each term's maximizing phase consistent.
+\end{proof}
+
+Choose square matrices \(L_1,\ldots,L_m\) of order \(k\), let \(F\) be their column stack, and put
+\[
+ \Omega=\diag(I,\omega I,\ldots,\omega^{m-1}I),\qquad \omega=e^{2\pi i/m},
+ \qquad X_\ell=m^{-1}\Omega^\ell FF^*\Omega^{-\ell}.
+\]
+Then \(\sum_\ell X_\ell=\diag(L_jL_j^*)\). Set
+\[
+ a_j=L_j^*L_j,\quad A=\sum_ja_j,\quad
+ t=q/2>1,\quad r=\frac{t}{t-1}=\frac p{2-p}.
+\]
+By Lemma~\ref{lem:duality}, the optimal numerator for these moduli is
+\begin{equation}\label{eq:cyclicN}
+ \N(a)=\max_{\substack{T_j\ge0\\\sum_j\tr T_j^t\le1}}
+ \Fid\left(A,\sum_ja_j^{1/2}T_ja_j^{1/2}\right).
+\end{equation}
+Indeed, write \(Q=R^2\). The unitary average of \(Q\) under \(\Omega\) is block diagonal, does not increase its Schatten \(t\)-norm, and does not decrease the average fidelity by concavity. The polar factors of the square \(L_j\) can then be absorbed into \(T_j\). The denominator is \((\sum_j\tr a_j^p)^{1/p}\).
+
+\begin{proposition}[Exact cyclic reduction]\label{prop:cyclic}
+The constant in \eqref{def:C} equals
+\begin{equation}\label{eq:cyclicsup}
+ \sup_{k\ge1}\ \sup_{a_j\ge0,\ A\ne0}
+ \frac{\N(a)}{(\sum_j\tr a_j^p)^{1/p}}.
+\end{equation}
+\end{proposition}
+\begin{proof}
+Cyclic tuples are feasible in the original problem, proving one inequality. For the reverse inequality, start with arbitrary positive \(X_j\), put \(S=\sum_jX_j\), and normalize \(\norm S_p=\norm R_q=1\) in Lemma~\ref{lem:duality}. Work on the support of \(S\). Write
+\[
+ E_j=S^{-1/2}X_jS^{-1/2},\qquad V=\operatorname{col}(E_j^{1/2}).
+\]
+The map \(V\) is an isometry. With coordinate projections \(P_j\), define
+\(\widetilde S=VSV^*\) and \(\widetilde R=VRV^*\). Then
+\(\widetilde S^{1/2}P_j\widetilde S^{1/2}=VX_jV^*\).
+Let \(U=\sum_j\omega^jP_j\), and choose the square cyclic blocks
+\[
+ L_\ell=\widetilde S^{1/2}U^\ell,\qquad
+ T_\ell=m^{-2/q}U^{-\ell}\widetilde R^2U^\ell.
+\]
+The \(T_\ell\) satisfy the constraint in \eqref{eq:cyclicN}. The Fourier sums pinch both arguments of the fidelity into the \(P_j\) blocks. Consequently their fidelity is
+\[
+ m^{1-1/q}\sum_j\norm{RX_j}_1.
+\]
+Here one may verify each block identity by comparing the nonzero spectra in \(Y^*Y\) and \(YY^*\). The denominator of the resulting cyclic tuple is \(m^{1/p}\), since \(\norm{\widetilde S}_p=1\). The factors cancel because \(1-1/q=1/p\). Singular cases follow by support compression or approximation. Thus a cyclic quotient is at least the given positive-dual quotient.
+\end{proof}
+
+\begin{lemma}[Strictly convex inner problem]\label{lem:inner}
+When \(A>0\),
+\begin{equation}\label{eq:inner}
+ \begin{aligned}
+ \N(a)&=\min_{K>0}\frac{\alpha(K)+\beta(K)}2,\\
+ \alpha(K)&=\tr(AK^{-1}),\\
+ \beta(K)&=\left(\sum_j\tr(K^{1/2}a_jK^{1/2})^r\right)^{1/r}.
+ \end{aligned}
+\end{equation}
+The minimizer is unique, positive definite, and satisfies \(\alpha=\beta=\N(a)\).
+\end{lemma}
+\begin{proof}
+The first term is strictly convex: in a nonzero Hermitian direction, its second derivative is a positive weighted trace of a square. The second term is convex because it is the Schatten \(r\)-norm of the block diagonal linear image \(\diag(a_j^{1/2}Ka_j^{1/2})\). If the least eigenvalue of \(K\) tends to zero, \(\alpha\) diverges. If its largest eigenvalue tends to infinity, \(\beta\) diverges, since \(\beta\ge(mk)^{1/r-1}\tr(AK)\). Thus the minimum exists and is unique. Differentiation along a scalar multiple of \(K\) gives \(\alpha=\beta\).
+
+Equation~\eqref{eq:fidelity} and positive Schatten duality show that the right side of \eqref{eq:inner} is an upper bound on \eqref{eq:cyclicN}. At its minimizer put
+\[
+ T_j=\beta^{1-r}(a_j^{1/2}Ka_j^{1/2})^{r-1},\qquad
+ B=\sum_ja_j^{1/2}T_ja_j^{1/2}.
+\]
+Since \((r-1)t=r\), these matrices satisfy \(\sum_j\tr T_j^t=1\). The first-order equation for \(K\) is \(B=K^{-1}AK^{-1}\). It makes \(K\) a fidelity minimizer as well, and therefore \(\Fid(A,B)=\alpha=\beta\). This constructs equality without assuming a minimax interchange.
+\end{proof}
+
+\section{A positive power system at every exponent}
+Define
+\[
+ \kappa=\frac p{2(p-1)}>1,\qquad d=2\kappa-1=\frac1{p-1},
+ \qquad r=\frac\kappa{\kappa-1}.
+\]
+All powers below are functional-calculus powers of positive-definite matrices.
+
+\begin{theorem}[Power-system characterization]\label{thm:power}
+For \(D,H_j>0\), write \(G_j=D^{1/2}H_jD^{1/2}\). Consider
+\begin{align}
+ (D+H_j)^{2\kappa-1}
+ &=\Lambda D^{1/2}G_j^{\kappa-1}D^{1/2},\quad 1\le j\le m,
+ \label{eq:power1}\\
+ \sum_jG_j^\kappa&=D\left(\sum_jG_j^{\kappa-1}\right)D.
+ \label{eq:power2}
+\end{align}
+Then
+\begin{equation}\label{eq:powerC}
+ C_p(m)=
+ \sup_{\substack{\text{finite positive systems}\\\text{satisfying \eqref{eq:power1}--\eqref{eq:power2}}}}
+ \left(\frac{\Lambda}{2^{2\kappa-1}}\right)^{1/(2\kappa)}.
+\end{equation}
+Every such system reconstructs a feasible cyclic tuple with exactly the displayed quotient. Conversely, fixed-order maximizers of \eqref{eq:cyclicsup}, after support compression, produce such systems.
+\end{theorem}
+\begin{proof}
+Normalize \(\sum_j\tr a_j^p=1\). For fixed order the feasible set is compact, and \eqref{eq:cyclicN} makes continuity of \(\N\) explicit. Compress the common kernel so that \(A>0\). In fact every block at a maximizer is positive definite. To see this, suppose \(a_jv=0\) for a unit vector \(v\), and replace \(a_j\) by \(a_j+\varepsilon vv^*\). The derivative of the minimum in Lemma~\ref{lem:inner} is obtained from its unique minimizer. Its \(a_j\)-gradient has the strictly positive contribution \(K^{-1}/2\). Thus the numerator increases to first order, while the constraint increases only by \(\varepsilon^p\). Renormalization gives a strictly larger quotient for sufficiently small \(\varepsilon>0\), a contradiction. The differentiability used here also follows directly from continuity of the unique minimizing \(K\), local coercivity when \(A>0\), and differentiability of \(\tr X^r\) on positive semidefinite matrices for \(r>1\).
+
+Let \(N=\N(a)\), let \(K\) be the inner minimizer, and set
+\begin{equation}\label{eq:Hdef}
+ D=K^{-1},\qquad
+ H_j=N^{1-r}D^{-1/2}
+       (D^{-1/2}a_jD^{-1/2})^{r-1}D^{-1/2}.
+\end{equation}
+Homogeneity and the outer Lagrange multiplier equation give
+\begin{equation}\label{eq:outer}
+ D+H_j=2N a_j^{p-1}.
+\end{equation}
+Indeed, the gradient of \(N\) in \(a_j\) is \((D+H_j)/2\), and pairing with all \(a_j\) shows that the multiplier of \(\sum_j\tr a_j^p\) is \(N/p\).
+
+The definition of \(G_j\) now implies
+\[
+ a_j=N D^{1/2}G_j^{\kappa-1}D^{1/2}.
+\]
+Raising \eqref{eq:outer} to the power \(d\) yields \eqref{eq:power1} with
+\(\Lambda=2^{2\kappa-1}N^{2\kappa}\). The inner first-order equation is equivalently
+\(\sum_ja_jH_j=D\sum_ja_j\). Substitution yields \eqref{eq:power2}. One way to verify that equivalence without commuting any factors is the identity
+\[
+ a_j^{1/2}(a_j^{1/2}D^{-1}a_j^{1/2})^{r-1}a_j^{1/2}
+ =D^{1/2}(D^{-1/2}a_jD^{-1/2})^rD^{1/2},
+\]
+which follows from the polar decomposition of \(D^{-1/2}a_j^{1/2}\).
+
+Conversely, start with a positive system and define
+\[
+ a_j=D^{1/2}G_j^{\kappa-1}D^{1/2},\qquad
+ T=\sum_jG_j^{\kappa-1},\qquad z=\tr(D^2T)=\sum_j\tr G_j^\kappa>0.
+\]
+For the inner problem take \(K_*=z^{1/(2\kappa)}D^{-1}\). Equation~\eqref{eq:power2}, together with the same polar-power identity, proves the first-order equation in Lemma~\ref{lem:inner}. Directly,
+\[
+ \alpha(K_*)=\beta(K_*)=z^{(2\kappa-1)/(2\kappa)}=z^{1/p}.
+\]
+Strict convexity therefore gives \(\N(a)=z^{1/p}\). Equation~\eqref{eq:power1} implies \(a_j^{p-1}=\Lambda^{-1/d}(D+H_j)\), whence
+\[
+ \sum_j\tr a_j^p
+ =\Lambda^{-1/d}\sum_j\tr(a_jD+a_jH_j)
+ =2z\Lambda^{-1/d}.
+\]
+The quotient in \eqref{eq:cyclicsup} is exactly
+\(\Lambda^{1/(2\kappa)}/2^{(2\kappa-1)/(2\kappa)}\). This proves both directions, using Proposition~\ref{prop:cyclic}.
+\end{proof}
+
+For integer \(\kappa\ge2\), the system is polynomial:
+\begin{align*}
+ (D+H_j)^{2\kappa-1}&=\Lambda D(H_jD)^{\kappa-1},\\
+ \sum_jH_j(DH_j)^{\kappa-1}&=\sum_jD(H_jD)^{\kappa-1}.
+\end{align*}
+In particular, \(p=4/3\) gives \(\kappa=2\), and \(p=6/5\) gives \(\kappa=3\). No fifth-degree universal certificate is claimed here.
+
+\section{Dimension-independent order constraints}
+We first record a simple comparison principle. If an order-preserving map \(\Phi\) on positive-definite matrices is homogeneous of degree \(0<\theta<1\), \(\Phi(X)=X\), and \(Y\le\Phi(Y)\), then \(Y\le X\). Indeed, the least scalar \(c>0\) with \(Y\le cX\) satisfies \(Y\le\Phi(Y)\le c^\theta X\), so \(c\le c^\theta\) and \(c\le1\).
+
+\begin{theorem}[Sum bound]\label{thm:sum}
+Every positive system in Theorem~\ref{thm:power} satisfies \(\sum_jH_j\le mD\).
+\end{theorem}
+\begin{proof}
+Put \(S=\sum_jG_j\). For \(1<\kappa\le2\), operator Jensen inequalities give
+\[
+ m^{1-\kappa}S^\kappa\le\sum_jG_j^\kappa,
+ \qquad \sum_jG_j^{\kappa-1}\le m^{2-\kappa}S^{\kappa-1}.
+\]
+Together with \eqref{eq:power2}, they imply \(S^\kappa\le mDS^{\kappa-1}D\). Apply the comparison principle to
+\(\Phi(Y)=(mDY^{\kappa-1}D)^{1/\kappa}\), whose fixed point is \(mD^2\). Thus \(S\le mD^2\).
+
+For \(\kappa\ge2\), put \(T=\sum_jG_j^{\kappa-1}\) and \(\alpha=\kappa/(\kappa-1)\in(1,2]\). Jensen gives
+\(T^\alpha\le m^{\alpha-1}DTD\). Apply the comparison principle to \((m^{\alpha-1}DYD)^{1/\alpha}\), with fixed point \(mD^{2\kappa-2}\). Hence \(T\le mD^{2\kappa-2}\). The concavity and order monotonicity of the power \(1/(\kappa-1)\) then give
+\[
+ S\le m^{1-1/(\kappa-1)}T^{1/(\kappa-1)}\le mD^2.
+\]
+In either case, congruence by \(D^{-1/2}\) proves the assertion. The operator Jensen facts used here are standard consequences of operator convexity on exponents \([1,2]\) and operator concavity on \([0,1]\); see \cite{jensen}.
+\end{proof}
+
+\begin{theorem}[Individual root bound]\label{thm:individual}
+Let \(h\) be the least scalar with \(H_j\le hD\) for a given block. Then
+\begin{equation}\label{eq:h}
+ (1+h)^{2\kappa-1}\le\Lambda h^{\kappa-1}.
+\end{equation}
+Thus \(H_j\le h_+(\Lambda)D\), where \(h_+(\Lambda)\) is the upper positive root of equality in \eqref{eq:h}.
+\end{theorem}
+\begin{proof}
+We have \(G_j\le hD^2\). If \(1<\kappa\le2\), apply the operator-monotone power \(\kappa-1\) and then the operator-monotone power \(1/(2\kappa-1)\). This gives
+\begin{equation}\label{eq:furutause}
+ (D^{1/2}G_j^{\kappa-1}D^{1/2})^{1/(2\kappa-1)}
+ \le h^{(\kappa-1)/(2\kappa-1)}D.
+\end{equation}
+For \(\kappa>2\), the same conclusion follows from the following form of Furuta's inequality \cite[Theorem F(ii)]{furuta}:
+\[
+ \begin{gathered}
+ A\ge B\ge0\ \Longrightarrow\
+ (A^{u/2}B^vA^{u/2})^{1/w}\le A^{(v+u)/w},\\
+ u,v\ge0,\qquad w\ge1,\qquad(1+u)w\ge v+u.
+ \end{gathered}
+\]
+Use \(A=hD^2\), \(B=G_j\), \(u=1/2\), \(v=\kappa-1\), and \(w=2\kappa-1\), and cancel the scalar factor. Taking the \(1/(2\kappa-1)\) power in \eqref{eq:power1} and applying \eqref{eq:furutause} yields
+\(D+H_j\le\Lambda^{1/(2\kappa-1)}h^{(\kappa-1)/(2\kappa-1)}D\).
+The minimality of \(h\) proves \eqref{eq:h}. Finally, \((1+h)^{2\kappa-1}/h^{\kappa-1}\) decreases and then increases, with minimum at \(h=(\kappa-1)/\kappa\), so the upper-root formulation follows.
+\end{proof}
+
+\section{The exact cubic certificate}
+At \(p=4/3\), Theorem~\ref{thm:power} becomes
+\begin{align}
+ g_j(\Lambda)&=(D+H_j)^3-\Lambda DH_jD=0,\quad j=1,2,
+ \label{eq:cubicg}\\
+ f&=H_1DH_1+H_2DH_2-D(H_1+H_2)D=0.
+ \label{eq:cubicf}
+\end{align}
+Its associated quotient is \((\Lambda/8)^{1/4}\). The sum and individual constraints are
+\[
+ H_1+H_2\le2D,\qquad (1+h)^3\le\Lambda h.
+\]
+If \(\Lambda\le u\), a rational \(h>1/2\) with \((1+h)^3/h>u\) therefore justifies \(H_j\le hD\).
+
+\subsection{Gram matrices of ordered trace words}
+Let the alphabet \(0,1,2\) stand for \(D,H_1,H_2\). A word means an ordered matrix product. The trace coordinates identify cyclic rotations and reversal, but \emph{not arbitrary permutations}. It suffices to work with real symmetric matrices: realification of complex Hermitian matrices preserves positivity, products, and the equations and doubles all real traces.
+
+A main moment matrix has entries \(\tr(v_i^*v_j)\) for an ordered word list \(v_i\), and is positive semidefinite. If \(W_a,W_b\ge0\), the matrix
+\begin{equation}\label{eq:localgram}
+ M_{ab}(i,j)=\tr(v_i^*W_av_jW_b)
+\end{equation}
+is also positive semidefinite: it is the Gram matrix of \(W_a^{1/2}v_jW_b^{1/2}\) in the Hilbert--Schmidt inner product. We use the six weights
+\[
+ D,\quad H_1,\quad H_2,\quad 2D-H_1-H_2,\quad hD-H_1,\quad hD-H_2.
+\]
+There are 21 unordered pairs with repetition. Pairing any such moment matrix with a positive semidefinite coefficient matrix gives a nonnegative number. The retained exact verifiers check all coefficient matrices by rational positive-definiteness tests, a sufficient stronger condition.
+
+\subsection{The preceding eight-stage bound}
+The preceding chain is included as an actual proof dependency. The quadratic endpoint \cite{quadratic} is
+\(C_2(m)=\sqrt{(1+\sqrt m)/2}\), while \(C_1(m)=1\). The interpolation argument in Section~\ref{sec:interpolation}, independently of the new certificate, gives the initial cap
+\[
+ \Lambda\le4(1+\sqrt2)<483/50.
+\]
+For each rational stage, use all nine two-letter words in the main Gram matrix and all three one-letter words in each localizing matrix. There are 22 matrices and 21 degree-four trace coordinates. The normalization is
+\[
+ z=\tr(D^3(H_1+H_2))>0,
+\]
+not \(\tr D^4\). The stage identity is
+\begin{equation}\label{eq:oldidentity}
+ \sum_s\langle Z_s,M_s\rangle
+ =\sum_{j=1}^2\sum_{i=0}^2c_{ji}\tr(X_i g_j(\lambda_0))
+   +\sum_{i=0}^2v_i\tr(X_i f)-z.
+\end{equation}
+Here $(X_0,X_1,X_2)=(D,H_1,H_2)$. For an actual solution, its right side is \((\Lambda-\lambda_0)S-z\). Put
+\[
+ a_j=\tr(D^3H_j),\quad t_j=\tr(DH_jDH_j),\quad x=\tr(DH_1DH_2).
+\]
+All are nonnegative. Equation~\eqref{eq:cubicf} gives
+\(a_1+a_2=t_1+t_2=z\). Also, writing \(C=H_1+H_2\le2D\), positivity gives
+\[
+ z+2x=\tr(DCDC)\le2\tr(D^3C)=2z,
+ \qquad 0\le x\le z/2.
+\]
+Here
+\[
+ S=c_{10}a_1+c_{20}a_2+c_{11}t_1+c_{22}t_2+(c_{12}+c_{21})x.
+\]
+Consequently \(Lz\le S\le Uz\), with
+\begin{align*}
+ U&=\max(c_{10},c_{20})+\max(c_{11},c_{22})
+       +\tfrac12\max(0,c_{12}+c_{21}),\\
+ L&=\min(c_{10},c_{20})+\min(c_{11},c_{22})
+       +\tfrac12\min(0,c_{12}+c_{21}).
+\end{align*}
+The verifier requires \(U\le0\), \(L<0\). For \(\Lambda\ge\lambda_0\), the right side of \eqref{eq:oldidentity} is negative. For \(\Lambda<\lambda_0\), it is at most \([(\Lambda-\lambda_0)L-1]z\). Nonnegativity of the left side therefore gives
+\[
+ \Lambda\le\lambda_0+1/L<\lambda_0.
+\]
+The next stage uses this exact rational cap to justify its smaller \(h\). The eight accepted stages give a final cap no greater than
+\begin{equation}\label{eq:oldcap}
+ u=43983/5000.
+\end{equation}
+Each stage checks the coefficient identity, all Gram multipliers, the bounds on \(S\), and the justification of \(h\). The final outward rounding to \eqref{eq:oldcap} is checked as well. The data are in \texttt{certificates/predecessor\_cubic\_chain.json}; the unchanged inherited acceptance routine is in \texttt{code/legacy/}.
+
+\subsection{An entire-interval exclusion}
+Set
+\begin{equation}\label{eq:interval}
+ \ell=861/100,\qquad u=43983/5000,\qquad h=2371/2000.
+\end{equation}
+The rational checks include \(h>1/2\) and \((1+h)^3/h>u\), so all six weights are positive semidefinite for any solution in \([\ell,u]\).
+
+There are 92 degree-six trace coordinates. At each endpoint, the main Gram uses the degree-three word basis specified in the exact model, and the 21 localizing Grams use all nine degree-two words. The specific rational coefficient matrices are retained in
+\texttt{certificates/interval\_d6\_861\_100.json}.
+For the 27 ordered degree-three words \(w\), their exact identities have the form
+\begin{align}
+ \sum_s\langle Z_s^\ell,M_s\rangle
+ &=\sum_{j,w}c_{jw}\tr(wg_j(\ell))
+   +\sum_wv_w^\ell\tr(wf)-\tr D^6,
+ \label{eq:left}\\
+ \sum_s\langle Z_s^u,M_s\rangle
+ &=\sum_{j,w}c_{jw}\tr(wg_j(u))
+   +\sum_wv_w^u\tr(wf)-\tr D^6.
+ \label{eq:right}
+\end{align}
+The \(54\) cubic multipliers \(c_{jw}\) are \emph{shared} between the endpoints. There are separate sets of \(27\) stationarity multipliers and one common normalizing multiplier \(-1\), for a total of \(109\). The verifier checks all \(184\) coefficients of \eqref{eq:left}--\eqref{eq:right} and all \(44\) positive-definite Gram multipliers by exact arithmetic.
+
+Suppose an actual solution has \(\Lambda=\theta\ell+(1-\theta)u\), \(0\le\theta\le1\). Multiply \eqref{eq:left} and \eqref{eq:right} by these weights and add. The shared cubic coefficients and the affine dependence of \(g_j\) on its parameter give
+\[
+ \sum_s\langle\theta Z_s^\ell+(1-\theta)Z_s^u,M_s\rangle=-\tr D^6<0,
+\]
+which is impossible since the left side is nonnegative. Thus the whole closed interval \([\ell,u]\), including both endpoints, is excluded. This is not numerical sampling in \(\Lambda\).
+
+By the preceding cap, any fixed-order maximizing system has \(\Lambda<\ell\). Taking the supremum over orders yields
+\[
+ C_{4/3}(2)\le(\ell/8)^{1/4}=(861/800)^{1/4}.
+\]
+The final inequality is not asserted to be strict: a limit of excluded finite-order endpoint values can still have that supremum.
+
+\section{Interpolation with the sum of moduli checked explicitly}\label{sec:interpolation}
+For \(1\le p_0<p_1\le2\) and \(1/p=(1-\theta)/p_0+\theta/p_1\), we prove
+\begin{equation}\label{eq:interpolation}
+ C_p(m)\le C_{p_0}(m)^{1-\theta}C_{p_1}(m)^\theta.
+\end{equation}
+This assertion is not based on treating \(\norm{\sum|A_j|}_p\) as a linear interpolation norm.
+
+Write \(A_j=U_jX_j\), let \(S=\sum_jX_j>0\), and normalize \(\norm S_p=1\). Put
+\[
+ K_j=S^{-1/2}X_jS^{-1/2},\qquad
+ \gamma(z)=p\left(\frac{1-z}{p_0}+\frac z{p_1}\right),\qquad
+ F_j(z)=U_jS^{\gamma(z)/2}K_jS^{\gamma(z)/2}.
+\]
+Then \(\sum_jK_j=I\), and \(F_j(\theta)=A_j\). On either boundary line \(z=k+iy\), \(k\in\{0,1\}\), write \(\gamma(z)=\alpha+i\beta\), \(P=S^{\alpha/2}\), \(V=S^{i\beta/2}\). Since \(\alpha=p/p_k\),
+\[
+ F_j(z)=(U_jV)(PK_jP)V,\qquad
+ \sum_j|F_j(z)|=V^*P^2V=S^{p/p_k}.
+\]
+The Schatten \(p_k\)-norm of this sum is one. The endpoint inequalities therefore bound \(\norm{\sum_jF_j(k+iy)}_{p_k}\) by \(C_{p_k}(m)\). Complex interpolation of Schatten norms applied to this analytic matrix-valued family proves \eqref{eq:interpolation}. The family is bounded on the strip because its imaginary powers are unitary. Singular \(S\) follows by positive approximation.
+
+The endpoint \(C_1(m)=1\) follows from the trace-norm triangle inequality and scalar equality. The quadratic endpoint is quoted from the paper linked in the problem statement \cite{quadratic}. Using the new bound at \(4/3\), interpolation first on \([1,4/3]\) and then on \([4/3,2]\) gives exactly \eqref{eq:allp}.
+
+\section{Lower certificates, audit, and reproduction}
+The retained lower certificates use rational cyclic blocks \(L_j\), their stack \(F\), and a positive rational diagonal dual matrix \(R=\diag(r_i)\). Their quotient is bounded below using
+\[
+ \frac{\norm{RFF^*}_1}
+ {\bigl(\sum_i r_i^q\bigr)^{1/q}
+  \bigl(\sum_j\tr(L_jL_j^*)^p\bigr)^{1/p}},
+ \qquad q\in\{3,4,6\},\quad p=\frac q{q-1}.
+\]
+A rational trace witness \(W/a\), with \(\norm{W/a}_\infty\le1\) checked by an exact row-sum bound for \(W^*W\), gives a rational positive numerator lower bound \(\nu\). For a positive denominator block \(M\), a proposed rational spectral basis \(Z\) and diagonal \(E\ge0\) are independently checked through
+\[
+ \delta=\norm{Z^*Z-I}_{\rm row}<1,\qquad
+ e_0=\norm{M-ZEZ^*}_{\rm row},\qquad
+ \eta=e_0+\delta(2+\delta)\norm E_\infty.
+\]
+The orthogonal polar factor \(V\) of \(Z\) satisfies \(\norm{Z-V}_\infty\le\delta\), so \(\norm{M-VEV^*}_\infty\le\eta\). Eigenvalue perturbation bounds and integer power comparisons then provide a rational upper bound \(B\) for \(\sum_j\tr(L_jL_j^*)^p\). A strict lower target \(c\) is accepted only when
+\[
+ \nu^q>c^q\left(\sum_i r_i^q\right)B^{q-1}
+\]
+holds exactly. In particular, no floating-point eigenvalue or eigenvector is trusted. The supplied \(p=4/3,m=2\) data imply the lower side of \eqref{eq:enclosure}. Other retained examples and their fixed-moduli intervals are listed in the machine-readable verification record. Their fixed-moduli upper bounds do not apply to unrestricted MI-20.
+
+\subsection{What the exact checks establish}
+The acceptance code uses Python's standard-library integers and fractions for decision inequalities. It checks coefficient identities, positive definiteness, parameter coverage, the inherited chain, and the lower witnesses. Negative regression tests reject corrupted matrices, coefficients, normalizations, parameter coverage, and other invalid input. Separate ordered-product tests compare the trace-word model with literal products of noncommuting rational matrices; only cyclic trace invariance and reversal are permitted.
+
+The proof remains partly mathematical: the interpretation of these finite checks as an all-dimensional bound depends on the reductions and inequalities proved above. Successful execution is not a substitute for review of those arguments. Optional numerical proposal and consistency scripts are not acceptance authorities.
+
+\subsection{Reproduction commands}
+From the extracted package directory, run
+\begin{verbatim}
+python -B -S code/check_hashes.py
+python -B -S code/verify_all.py
+python -B -S code/test_exact.py
+\end{verbatim}
+The aggregate verifier checks the eight-stage bound before passing its proved cap into the new interval verifier. Results and actual test counts are recorded in \texttt{verification/release\_summary.json}. The manifest checks integrity, not mathematical correctness. Numerical proposal builders require optional dependencies and should be run in a copy because regenerated files change the manifest.
+
+The predecessor's stronger certificate was accepted when invoked directly, but its old aggregate command omitted it. Several old negative tests expected a different exception type. These are separated from failures of positive certificate acceptance. The separately supplied round-three PDF was a short summary, whereas a fuller report was stored in its ZIP; both are distinguished in the retained provenance. Preservation of predecessor files is not a blanket endorsement of every claim in those files.
+
+\section{The remaining mathematical gap}
+The power-system characterization is exact, but its supremum over noncommuting positive matrices and arbitrary finite orders has not been evaluated. The universal upper bound \eqref{eq:mainbound} does not match the certified lower construction. No theorem in this report determines the full function \(C_p(m)\), and no numerical search is presented as evidence of equality. These are the precise limitations of this submission.
+
+\begin{thebibliography}{9}
+\bibitem{problem} MI-20 problem statement, \emph{Open Problems in Numerical Linear Algebra}, public repository, accessed 13 September 2026.\newline
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/matrix-inequalities-and-norms/MI-20/README.md}
+\bibitem{quadratic} Quadratic-endpoint paper linked from the MI-20 problem statement, arXiv:2608.17565 (2026).\newline
+\url{https://arxiv.org/html/2608.17565}
+\bibitem{jensen} F.~Hansen and G.~K.~Pedersen, \emph{Jensen's Operator Inequality}, arXiv:math/0204049.\newline
+\url{https://arxiv.org/abs/math/0204049}
+\bibitem{furuta} T.~Furuta, T.~Yamazaki, and M.~Yanagida, \emph{Operator functions implying generalized Furuta inequality}, Mathematical Inequalities \& Applications \textbf{1}(1), 123--130 (1998), Theorem F(ii).\newline
+\url{https://files.ele-math.com/articles/mia-01-10.pdf}
+\end{thebibliography}
+\end{document}

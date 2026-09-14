@@ -34,7 +34,7 @@ eigenvalues},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}SP-14}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-11}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -62,29 +62,51 @@ whose Toeplitz spectra follow their values from the markedly different
 behavior of analytic symbols. This is a longstanding obstacle in the
 spectral analysis of nonnormal structured matrices.
 
+\subsection{Reviewed continuation --- 13 September
+2026}\label{reviewed-continuation-13-september-2026}
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute,
+Simons Foundation) supplies an inverse-corner criterion for one-sided
+annular extension and determinant limsup results. For continuous symbols
+with Jordan-curve range and winding \(+1\) (respectively \(-1\)),
+absence of inner (respectively outer) extension yields a canonically
+distributed subsequence of the actual unperturbed Toeplitz eigenvalue
+measures; see the
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/SP-14/report.pdf}{seventh-round
+report}, Theorem 2.5, Theorem 3.1 and Corollary 4.5. The Jordan-curve
+argument includes positive-area curves.
+
+Status remains \textbf{Partially resolved}: subsequence convergence does
+not establish the displayed full-sequence conclusion, and the
+unrestricted continuous-symbol case remains unresolved.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/verification/SP-14/review.md}{independent
+informal Codex AI-agent review} records its accepted scope and checks.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/README.md}{Submission,
+original package, reproduction and verified affiliation}. This is not
+external human peer review or formal verification; no Lean verification
+was performed.
+
 \subsection{Statement}\label{statement}
 
 Let \(\mathbb T=\{z\in\mathbb C:|z|=1\}\) and
 \(a\in C(\mathbb T;\mathbb C)\). Define
 
-\[
-a_k=\frac1{2\pi}\int_0^{2\pi}a(e^{it})e^{-ikt}\,dt,
-\qquad T_n(a)=(a_{j-k})_{j,k=0}^{n-1}.
-\]
+\[a_k=\frac1{2\pi}\int_0^{2\pi}a(e^{it})e^{-ikt}\,dt,
+\qquad T_n(a)=(a_{j-k})_{j,k=0}^{n-1}.\]
 
 Say that \(a\) extends analytically to an inner annulus if, for some
-\(0<r<1\), there is a holomorphic function on \(r<|z|<1\) extending
+\(0< r<1\), there is a holomorphic function on \(r<|z|<1\) extending
 continuously to \(|z|=1\) with boundary value \(a\). Define extension to
-an outer annulus analogously using \(1<|z|<R\) for some \(R>1\).
+an outer annulus analogously using \(1<|z|< R\) for some \(R>1\).
 
 \textbf{Conjecture (Widom).} If \(a\) has neither such inner nor such
 outer extension, then for every continuous compactly supported
 \(F:\mathbb C\to\mathbb C\),
 
-\[
-\lim_{n\to\infty}\frac1n\sum_{j=1}^n F(\lambda_j(T_n(a)))
-=\frac1{2\pi}\int_0^{2\pi}F(a(e^{it}))\,dt.
-\]
+\[\lim_{n\to\infty}\frac1n\sum_{j=1}^n F(\lambda_j(T_n(a)))
+=\frac1{2\pi}\int_0^{2\pi}F(a(e^{it}))\,dt.\]
 
 Eigenvalues are counted with algebraic multiplicity. This conclusion is
 called \emph{canonical eigenvalue distribution}. The conjecture asserts
@@ -108,7 +130,6 @@ structured eigensolvers. It is distinct from
 which asks for real spectra in every finite order, and from
 individual-eigenvalue expansion problems.
 
-\newpage
 \subsection{References and status
 check}\label{references-and-status-check}
 

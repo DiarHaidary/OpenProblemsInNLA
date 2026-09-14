@@ -1,0 +1,450 @@
+\documentclass[11pt,letterpaper]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype,amsmath,amssymb,amsthm,mathtools,booktabs,array,longtable}
+\usepackage{graphicx,xcolor,hyperref,fancyhdr}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,urlcolor=blue!45!black,citecolor=blue!45!black,pdftitle={SP-07: Certified stronger lower bounds and dimension reductions},pdfauthor={Research record prepared in this conversation}}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small SP-07: certified continuation}\fancyhead[R]{\small 13 September 2026}\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parskip}{4pt}\setlength{\parindent}{0pt}
+\newtheorem{theorem}{Theorem}[section]\newtheorem{lemma}[theorem]{Lemma}\newtheorem{proposition}[theorem]{Proposition}\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\newcommand{\C}{\mathbb C}\newcommand{\R}{\mathbb R}\newcommand{\cn}{C_{\mathrm{normal}}}\newcommand{\din}{d_{\infty}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert_2}\newcommand{\abs}[1]{\left|#1\right|}\newcommand{\diag}{\operatorname{diag}}\newcommand{\rank}{\operatorname{rank}}
+\input{generated_data.tex}
+\title{\vspace{-1.3cm}SP-07: Certified stronger lower bounds\\and dimension reductions}
+\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
+\date{13 September 2026}
+\hypersetup{pdfauthor={Sidney Holden}}
+\begin{document}
+\maketitle
+\begin{center}\fbox{\parbox{.92\linewidth}{\textbf{Completion status: partial.} This report does not determine the sharp universal constant requested in SP-07. It proves stronger lower bounds, including $\cn>1.03077$, and proves dimension-reduction results. No matching universal upper bound is asserted.}}\end{center}
+\begin{abstract}
+The earlier archive verified the classical ratio $\sqrt{28/27}$ and left its possible universal extremality unresolved. This continuation supplies exact rational normal-matrix pairs with larger ratios. The strongest displayed certificate has dimension seven and proves $\cn>103077/100000$. Its proof consists of an exact orthogonal-reflection construction, a deficient matching block, and an exact positive-definite Gram certificate. The arithmetic is checked by two separate implementations, one using only Python's standard library and one using SymPy. Thus the proposed universal coefficient $\sqrt{28/27}$ is refuted, not merely left unproved.
+
+The report also proves that arbitrary-dimensional rank-one reflection examples are dominated by size-three examples; that Hall witnesses involving at most two spectral values on each side admit size-three normal compressions; and that the truncated singular-value estimate can be refined using the numbers of distinct spectral values. These statements do not determine the remaining finite-dimensional or universal sharp constants. The package retains all \SearchRuns\ new campaign records, their audit, \NumericalChecks\ numerical consistency checks, the exact certificates, and the original archive's contents.
+\end{abstract}
+
+\section{The target and the change from the earlier attempt}
+For normal $A,B\in\C^{n\times n}$, let $\alpha_1,\ldots,\alpha_n$ and $\beta_1,\ldots,\beta_n$ be their eigenvalues, with multiplicities retained. Define
+\begin{equation}\label{eq:distance}
+\din(A,B)=\min_{\pi\in S_n}\max_{1\le i\le n}\abs{\alpha_i-\beta_{\pi(i)}}.
+\end{equation}
+The repository asks for the exact value of
+\begin{equation}\label{eq:target}
+\cn=\sup_{n\ge2}\ \sup_{\substack{A,B\text{ normal}\\A\ne B}}
+\frac{\din(A,B)}{\norm{A-B}}.
+\end{equation}
+Write $c_n$ for the inner supremum in a fixed dimension. This is a multiplicity-sensitive matching problem, not a Hausdorff-distance problem \cite{repository}.
+
+The supplied archive verified Krause's established example with squared distance $28/13$ and squared norm $27/13$. Tang records this lower bound and the classical upper estimate $\cn<2.9038872828$ \cite{Tang}. The present certificates give the rigorously justified interval
+\begin{equation}\label{eq:interval}
+\boxed{\qquad 1.03077<\cn<2.9038872828.\qquad}
+\end{equation}
+The upper endpoint is a cited input, not a result of this continuation. The strict lower endpoint is proved below without relying on a numerical eigensolver.
+
+\begin{center}
+\begin{tabular}{@{}lcl@{}}\toprule
+Construction & Dimension & Established ratio bound\\\midrule
+Classical Krause example, verified in prior archive & 3 & $\sqrt{28/27}$\\
+First rational continuation certificate & 5 & $>1.019558$\\
+Stronger rational continuation certificate & 5 & $>1.02671$\\
+Strongest displayed rational certificate & 7 & $>1.03077$\\\bottomrule
+\end{tabular}
+\end{center}
+These are bounds supplied by particular examples. They are not claimed to equal $c_3,c_5$, or $c_7$. In particular, improving on the displayed Krause example in a larger dimension does not prove that the best possible size-three ratio is smaller than the new examples.
+
+\subsection{An old proof obligation is now refuted}
+The previous report isolated the proposed inequality
+\begin{equation}\label{eq:oldcandidate}
+\norm{D_\alpha U-UD_\beta}^{2}
+\stackrel{?}{\ge}\frac{27}{28}
+\min_{i\in I,j\in J}\abs{\alpha_i-\beta_j}^{2},
+\qquad |I|+|J|=n+1,
+\end{equation}
+for arbitrary unitary $U$ and spectral lists. It explicitly did not claim that inequality was true. The certificate in Section~\ref{sec:seven} disproves it: set $\alpha=z$, $\beta=-z$, and $U=S$ from that construction. Right multiplication by $S$ preserves the norm and turns $D_zS+SD_z$ into $D_z+SD_zS$. Its Hall gap $\delta$ and norm satisfy $\delta>q t$ and $\norm{D_z+SD_zS}<t$, where $q=1.03077$ and $q^2>28/27$. Thus
+\[
+\norm{D_zS+SD_z}^2<t^2<\frac{27}{28}\delta^2.
+\]
+Consequently, $\sqrt{28/27}$ is not the universal sharp constant. This disposes of that particular candidate; it does not evaluate \eqref{eq:target}.
+
+\section{Exact normal-pair certificates}\label{sec:certificates}
+The following construction separates the numerical discovery process from the proof. All its inputs can be rational.
+
+\begin{lemma}[Rational reflection certificate]\label{lem:certificate}
+Let $z\in\C^n$ have rational real and imaginary parts, let $X\in\R^{(n-r)\times r}$ have rational entries, and put
+\begin{equation}\label{eq:construction}
+Y=\begin{pmatrix}I_r\\X\end{pmatrix},\qquad
+P=Y(Y^TY)^{-1}Y^T,\qquad S=I_n-2P,\qquad
+A=D_z,\quad B=-SD_zS.
+\end{equation}
+Let $t,q>0$ be rational. Suppose $I,J\subseteq\{1,\ldots,n\}$ satisfy $|I|+|J|>n$, and that
+\begin{equation}\label{eq:checks}
+H=t^2I_n-(D_z+SD_zS)^*(D_z+SD_zS)>0,
+\qquad
+\min_{i\in I,j\in J}|z_i+z_j|^2>q^2t^2.
+\end{equation}
+Then $A,B$ are normal and $\din(A,B)/\norm{A-B}>q$. Hence $c_n>q$ and $\cn>q$.
+\end{lemma}
+\begin{proof}
+The leading identity block makes $Y$ full column rank. Therefore $P$ is a real orthogonal projection, so $S^T=S$ and $S^2=I_n$. The diagonal matrix $A$ is normal. Since $B$ is orthogonally similar to $-D_z$, it is normal and its eigenvalues are $-z_1,\ldots,-z_n$.
+
+For any permutation $\pi$, the sets $\pi(I)$ and $J$ intersect because their cardinalities sum to more than $n$. Hence every matching uses a pair $(i,j)\in I\times J$. The second inequality in \eqref{eq:checks} gives $\din(A,B)>qt$. The first says every eigenvalue of $(A-B)^*(A-B)$ is strictly less than $t^2$, so $\norm{A-B}<t$. Dividing proves the assertion. In particular, the positive matching distance ensures $A\ne B$.
+\end{proof}
+
+This procedure does \emph{not} round an orthogonal matrix and then treat it as exactly orthogonal. It rounds the parameters $z$ and $X$, and constructs $P$ and $S$ from those rational parameters exactly. Thus normality is algebraic, not an inference from a small floating-point residual.
+
+\subsection{A finite exact check of positive definiteness}
+For Hermitian $H$, compute a unit lower triangular $L$ and real pivots $d_k$ by
+\begin{align}
+ d_k&=H_{kk}-\sum_{j<k}L_{kj}d_j\overline{L_{kj}},\label{eq:ldl1}\\
+ L_{ik}&=\frac{H_{ik}-\sum_{j<k}L_{ij}d_j\overline{L_{kj}}}{d_k},\qquad i>k.\label{eq:ldl2}
+\end{align}
+All operations take place in $\mathbb Q(i)$. If every $d_k$ is positive, these formulas give
+\begin{equation}\label{eq:ldl}
+H=L\diag(d_1,\ldots,d_n)L^*>0.
+\end{equation}
+The verifiers additionally reconstruct every entry of the right-hand side and test equality with $H$ exactly. Positivity is tested as a sign of a rational numerator, not with a floating-point tolerance. Rational intervals for the pivots are also checked by integer cross-multiplication.
+
+\section{The seven-dimensional certificate}\label{sec:seven}
+\begin{theorem}\label{thm:seven}
+There are explicitly specified normal $7\times7$ matrices satisfying
+\[
+\frac{\din(A,B)}{\norm{A-B}}>\frac{103077}{100000}=1.03077.
+\]
+\end{theorem}
+Every decimal in the next two displays is an \textbf{exact terminating rational}. Set $r=3$ and use construction \eqref{eq:construction} with the following spectral list:
+\begin{center}
+\begin{tabular}{@{}crr@{}}\toprule
+$i$ & $\operatorname{Re}z_i$ & $\operatorname{Im}z_i$\\\midrule
+\SevenZRows
+\bottomrule\end{tabular}
+\end{center}
+The rational graph matrix is
+\begin{equation}\label{eq:sevenX}
+X=\begin{pmatrix}\SevenX\end{pmatrix}.
+\end{equation}
+Choose
+\begin{equation}\label{eq:sevenchoices}
+I=J=\{1,3,4,5\},\qquad
+q=\frac{103077}{100000},\qquad
+ t=\frac{10000001}{10000000}.
+\end{equation}
+
+\subsection{Exact matching obstruction}
+Each coordinate of $z$ has denominator dividing $10^{12}$. Consequently every squared cross-distance has denominator dividing $10^{24}$. Direct integer arithmetic over the sixteen entries of $I\times J$ gives
+\begin{align}
+\delta^2&:=\min_{i\in I,j\in J}|z_i+z_j|^2
+=\frac{1062488691325671649394413}{10^{24}},\label{eq:seven-gap}\\
+q^2t^2&=\frac{1062487005397369204867929}{10^{24}}.\label{eq:seven-threshold}
+\end{align}
+The minimum is attained at $(i,j)=(1,5)$ and its transpose. The strict comparison has the positive integer margin
+\begin{equation}\label{eq:margin}
+10^{24}(\delta^2-q^2t^2)=1685928302444526484>0.
+\end{equation}
+Because $|I|+|J|=8>7$, every perfect matching must cross this block. This proves $\din(A,B)>qt$ without identifying an optimal permutation.
+
+\subsection{Exact norm certificate}
+Form $M=D_z+SD_zS$ and $H=t^2I_7-M^*M$. Applying \eqref{eq:ldl1}--\eqref{eq:ldl2} in the displayed coordinate order gives rational pivots satisfying
+\begin{equation}\label{eq:pivotintervals}
+\frac{\ell_k}{10^{18}}<d_k<\frac{\ell_k+1}{10^{18}},
+\end{equation}
+where the following integers are all strictly positive:
+\begin{center}
+\begin{tabular}{@{}cr@{}}\toprule
+$k$ & $\ell_k$\\\midrule
+\SevenPivotRows
+\bottomrule\end{tabular}
+\end{center}
+The interval inequalities and the identity $H=L\diag(d_k)L^*$ are exact rational checks. Hence $H>0$, giving $\norm{A-B}<t$. Lemma~\ref{lem:certificate} and \eqref{eq:margin} prove Theorem~\ref{thm:seven}.
+
+\subsection{Independent reproduction and interpretation}
+The complete input is the file \texttt{certificate\_seven.json} in \texttt{results/}. Two accompanying records contain the standard-library verification and the independent symbolic audit. The first implementation uses Python's rational-number type and elementary Gaussian-rational arithmetic; the second uses SymPy's rational matrix operations. Their exact pivots and Hall gaps agree. The standard-library checker also succeeds with Python's site-package loading disabled.
+
+For orientation only, an 80-digit numerical calculation on these same rational matrices gives
+\begin{align*}
+\norm{A-B}&\approx0.999999998892015657368310444507,\\
+\delta&\approx1.030770920877025735565589519714,\\
+\delta/\norm{A-B}&\approx1.030770922019103778002786756159.
+\end{align*}
+These approximations are not the proof and are not asserted to be an optimal value of $c_7$. The exact lower bound remains the simpler rational number in Theorem~\ref{thm:seven}.
+
+Adding a sufficiently distant common scalar block to both matrices preserves their norm difference and matching distance: any matching at the old optimal threshold must match the new scalar to itself. Thus $c_n>1.03077$ for every $n\ge7$ as well.
+
+\section{The two five-dimensional certificates}\label{sec:five}
+The first continuation certificate used $n=5,r=2$, $q=1.019558$, $t=1$, and $I=J=\{1,2,3\}$. Its rational data are hard-coded in both \texttt{certify\_five.py} and the independent \texttt{check\_five\_stdlib.py}. These scripts verify exact orthogonality, exact Gram positivity, and all $5!=120$ matching costs. Its existence already refutes universal extremality of $\sqrt{28/27}$.
+
+A subsequent size-five example gives a stronger bound.
+\begin{theorem}\label{thm:five}
+There exist normal $5\times5$ matrices with $\din(A,B)/\norm{A-B}>1.02671$.
+\end{theorem}
+Its full rational input is in \texttt{certificate\_five\_stronger.json}; for a standalone specification it is also displayed in Appendix~\ref{app:five}. In its displayed order, $I=J=\{2,4,5\}$, $t=1.0000001$, and $q=1.02671$. The exact comparison is
+\[
+\min_{i,j\in I}|z_i+z_j|^2
+=\frac{1054149921058638081418065}{10^{24}}
+>\frac{1054133634926695361334241}{10^{24}}=q^2t^2.
+\]
+Its five LDL pivots have the positive rational intervals recorded in the appendix. Theorem~\ref{thm:five} follows from the same certificate lemma, with separate standard-library and SymPy checks. An 80-digit numerical check gives a ratio approximately $1.026718034874776767464037588121$ for its Hall gap divided by its norm.
+
+The stronger size-five and size-seven examples were initially encountered in larger numerical matrices with nearly decoupled blocks. Removing such a block numerically was used only to produce a new starting guess. A smaller valid reflection pair was reconstructed, reoptimized, rationalized, and independently certified. No theorem about discarding a merely \emph{approximately} decoupled block is used in either lower-bound proof.
+
+\section{Matching and spectral-subspace preliminaries}\label{sec:prelim}
+The reduction arguments below use two elementary facts, restated to make their proofs self-contained.
+\begin{lemma}[Hall min--max formula]\label{lem:hall}
+For spectral lists $\alpha,\beta\in\C^n$,
+\begin{equation}\label{eq:hall}
+\din(\alpha,\beta)=
+\max_{\substack{I,J\ne\varnothing\\|I|+|J|=n+1}}
+\ \min_{i\in I,j\in J}|\alpha_i-\beta_j|.
+\end{equation}
+Repeated eigenvalues are distinct vertices in this formula.
+\end{lemma}
+\begin{proof}
+Let $h$ be the right-hand side. Every permutation crosses every permitted $I\times J$, so its largest distance is at least the gap of that block. This gives $\din\ge h$.
+
+At threshold $h$, connect a row and a column when their distance is at most $h$. If this graph had no perfect matching, Hall's theorem would supply a row set $I$ whose neighbor set has cardinality less than $|I|$. With $J$ the complementary columns, $|I|+|J|\ge n+1$ and every cross-distance is strictly greater than $h$. Deleting indices to make the cardinality sum exactly $n+1$ preserves that strict inequality, contradicting the definition of $h$. Thus $\din\le h$.
+\end{proof}
+
+\begin{lemma}[Normal Hausdorff bound]\label{lem:hausdorff}
+If $A,B$ are normal and $\varepsilon=\norm{A-B}$, every eigenvalue of either matrix is within $\varepsilon$ of some eigenvalue of the other.
+\end{lemma}
+\begin{proof}
+For a unit eigenvector $x$ of $A$ with eigenvalue $a$,
+\[
+\norm{(B-aI)x}=\norm{(B-A)x}\le\varepsilon.
+\]
+Normality of $B$ implies $\norm{(B-aI)x}\ge\min_j|\beta_j-a|$. Interchanging $A$ and $B$ gives the other direction.
+\end{proof}
+For $n=2$, every Hall witness in \eqref{eq:hall} has one singleton side, so Lemma~\ref{lem:hausdorff} proves $\din\le\norm{A-B}$. In general it does not give multiplicity-sensitive matching by itself.
+
+\section{Rank-one reflections reduce to dimension three}\label{sec:rankone}
+For a diagonal normal $D=D_z$, a unit vector $v$, and $P=vv^*$, put
+\[
+Q=I-P,\qquad S=I-2P,\qquad
+ t=\max\{|v^*Dv|,\norm{QDQ}\}.
+\]
+The two orthogonal diagonal blocks give
+\begin{equation}\label{eq:pinching}
+D+SDS=2(PDP+QDQ),\qquad \norm{D+SDS}=2t.
+\end{equation}
+\begin{theorem}\label{thm:rankone}
+Every rank-one reflection pair $(D,-SDS)$ whose matching-to-norm ratio exceeds one is dominated by a rank-one reflection pair of size three: the new matching distance is no smaller and its norm difference is no larger. Consequently the supremum over all dimensions in this rank-one-reflection subclass equals its size-three supremum.
+\end{theorem}
+\begin{proof}
+Assume $d:=\din(D,-D)>2t$. At most two entries of $z$ have modulus greater than $t$. Otherwise let $E$ be the coordinate subspace of three such entries. There is a nonzero $x\in E$ satisfying the two linear equations $v^*x=0$ and $v^*Dx=0$. Then $QDQx=Dx$ while $\norm{Dx}>t\norm{x}$, contradicting the definition of $t$.
+
+By Lemma~\ref{lem:hausdorff}, every $z_i$ has a partner $z_j$ with $|z_i+z_j|\le2t$. If no entry is outside the radius-$t$ disk, self-match every entry to its negative. If there is one exterior entry, exchange it with such a partner and self-match all the others. Either case gives a matching of distance at most $2t$, contrary to the assumption. Thus there are exactly two exterior entries, call them $a,b$.
+
+Set
+\[
+ h=\min\{2|a|,2|b|,|a+b|\}.
+\]
+We claim $d\le\max\{2t,h\}$. If $h=|a+b|$, exchange the two exterior entries. If $h=2|a|$, self-match $a$ and exchange $b$ with a covered partner. That partner cannot be $b$, since $|b|>t$. If it is $a$, exchange $a,b$ instead, at cost at most $2t$. All remaining entries self-match at cost at most $2t$. The case $h=2|b|$ is symmetric. The claim gives $h\ge d>2t$.
+
+Let $v_0$ be the component of $v$ outside the two exterior coordinates. It is nonzero. Otherwise the pair splits into a two-dimensional normal pair and scalar pairs whose distances are at most $2t$; the size-two result from Section~\ref{sec:prelim} would give $d\le2t$.
+
+Define the isometry
+\[
+T=\begin{pmatrix}e_a&e_b&v_0/\norm{v_0}\end{pmatrix}.
+\]
+Its range contains $v$. Consequently, for $v'=T^*v$ and $S'=I_3-2v'v'^*$, one has $ST=TS'$. The compression $D'=T^*DT$ is diagonal: its first two entries are $a,b$, and its third is the weighted mean of the remaining $z_i$ with weights proportional to $|v_i|^2$. Therefore
+\begin{equation}\label{eq:rankonecompression}
+D'+S'D'S'=T^*(D+SDS)T,
+\end{equation}
+so the new norm is at most $2t$. Its two-by-two Hall block on $a,b$ has gap $h$, proving $\din(D',-D')\ge h\ge d$. This establishes domination.
+
+Every size-three rank-one pair is already in the all-dimensional class, and the prior Krause example has ratio greater than one. The reverse inclusion of suprema and the domination argument prove equality of the two suprema.
+\end{proof}
+This theorem does not determine the rank-one supremum. It also does not establish that all normal pairs, or all reflection pairs, admit a rank-one realization with as good a ratio.
+
+\section{Small spectral supports in Hall witnesses}\label{sec:types}
+\begin{theorem}[Two spectral values on each Hall side]\label{thm:twobytwo}
+Let $E,F$ be spectral subspaces of normal $A,B\in\C^{n\times n}$ with $\dim E+\dim F>n$. Suppose $A|_E$ and $B|_F$ each have at most two distinct spectral values, and every cross-distance between these values is at least $\delta>\norm{A-B}$. There are normal $3\times3$ compressions $A',B'$ with
+\[
+\norm{A'-B'}\le\norm{A-B},\qquad \din(A',B')\ge\delta.
+\]
+\end{theorem}
+\begin{proof}
+Choose a unit $x\in E\cap F$. Its $A$-spectral decomposition has exactly two nonzero components. Indeed, if $Ax=ax$, then, since $x\in F$, normality of $B$ and the separated spectra would give
+\[
+\norm{(A-B)x}^2=\norm{(aI-B)x}^2\ge\delta^2,
+\]
+contrary to $\delta>\norm{A-B}$. The same reasoning applies to the $B$-decomposition. Write
+\[
+x=x_1+x_2=y_1+y_2
+\]
+with nonzero orthogonal $A$-eigencomponents $x_1,x_2$ and nonzero orthogonal $B$-eigencomponents $y_1,y_2$. The subspace
+\[
+\mathcal L=\operatorname{span}\{x_1,x_2,y_1,y_2\}
+\]
+has dimension at most three because of the displayed linear relation.
+
+Both compressions to $\mathcal L$ are normal. For $A$, the normalized vectors $x_1,x_2$ remain orthogonal eigenvectors. They also remain eigenvectors of the adjoint compression, since $A$ is normal. Their complement in $\mathcal L$ is reducing and has dimension at most one. Thus $A|_{\mathcal L}$, interpreted as a compression, is unitarily diagonalizable. The same argument uses $y_1,y_2$ for $B$.
+
+Compression cannot increase the norm of the difference. Both compressed spectra retain their two separated spectral values, yielding a two-by-two Hall block of gap at least $\delta$. Dimension two is impossible by the size-two constant-one result. Hence $\dim\mathcal L=3$, and the two-by-two block is a Hall obstruction in that dimension. The asserted inequalities follow.
+\end{proof}
+
+\begin{corollary}\label{cor:threetypes}
+The supremum of $\din(A,B)/\norm{A-B}$ over normal pairs in arbitrary dimensions for which \emph{each} matrix has at most three distinct eigenvalues is exactly $c_3$.
+\end{corollary}
+\begin{proof}
+The class contains all size-three normal pairs. Conversely, consider a pair in the class with ratio greater than one and choose a maximizing Hall witness from Lemma~\ref{lem:hall}. Its $A$ side cannot include every distinct $A$-value: any $B$-value on the opposite side has an $A$-value within $\norm{A-B}$ by Lemma~\ref{lem:hausdorff}, contrary to the witness gap. The same argument applies to its $B$ side. Each witness side therefore uses at most two distinct values. Theorem~\ref{thm:twobytwo} gives a dominating size-three pair. Ratios at most one do not change the supremum because $c_3>1$.
+\end{proof}
+Multiplicity is unrestricted in this corollary. The conclusion is an exact reduction to an unevaluated constant, not a proof of Krause's extremality in dimension three.
+
+\section{A distinct-value refinement of the truncated estimate}\label{sec:truncated}
+Write $s_1(M)\ge s_2(M)\ge\cdots$ for the singular values of $M$.
+\begin{theorem}\label{thm:distinct}
+Let $A,B$ be normal of size $n\ge2$, with respectively $k_A,k_B$ distinct eigenvalues. Define
+\begin{equation}\label{eq:rtypes}
+r=\max\left\{1,\min\left(\left\lfloor\frac{n+1}{2}\right\rfloor,k_A-1,k_B-1\right)\right\}.
+\end{equation}
+Then
+\begin{equation}\label{eq:typesbound}
+\boxed{\qquad \din(A,B)^2\le\sum_{j=1}^{r}s_j(A-B)^2.\qquad}
+\end{equation}
+\end{theorem}
+\begin{proof}
+If $\din(A,B)\le s_1(A-B)$, the conclusion follows immediately since $r\ge1$. Otherwise let $d=\din(A,B)>\norm{A-B}$ and choose a maximizing Hall witness $I,J$ with $|I|+|J|=n+1$. The associated spectral subspaces intersect nontrivially; choose a unit vector $x$ in the intersection.
+
+Group the nonzero $A$-eigencomponents of $x$ according to their distinct eigenvalues and normalize each component. Collect these orthonormal vectors as the columns of $V$. Do the same for $B$ to obtain an isometry $W$. Let their column counts be $a,b$. As in Corollary~\ref{cor:threetypes}, the witness cannot contain every spectral value of either matrix. Hence
+\[
+a\le k_A-1,\qquad b\le k_B-1,\qquad a+b\le |I|+|J|=n+1.
+\]
+Both column spaces contain $x$, so $X:=V^*W$ has norm one. For completeness, writing $x=Vu=Ww$ with unit $u,w$ gives $Xw=u$; $X$ is also a contraction.
+
+Let $\lambda_i,\mu_j$ be the eigenvalues associated with those columns. Since $A,B$ are normal,
+\[
+[V^*(A-B)W]_{ij}=(\lambda_i-\mu_j)X_{ij}.
+\]
+All these cross-distances are at least $d$. Therefore
+\[
+\|V^*(A-B)W\|_F^2
+\ge d^2\|X\|_F^2\ge d^2.
+\]
+Singular values cannot increase under left or right multiplication by a contraction, so
+\[
+\|V^*(A-B)W\|_F^2
+\le\sum_{j=1}^{\min(a,b)}s_j(A-B)^2
+\le\sum_{j=1}^r s_j(A-B)^2.
+\]
+This proves \eqref{eq:typesbound}.
+\end{proof}
+The familiar dimension-based truncation is stated by Tang \cite{Tang}; the argument here retains the extra restriction supplied by distinct-value counts. When either matrix has at most two distinct eigenvalues, \eqref{eq:typesbound} gives the sharp coefficient one. With unbounded spectral complexity, its spectral-norm consequence $\din\le\sqrt r\,\norm{A-B}$ still does not evaluate the universal constant.
+
+\section{Discovery, validation, and reproducibility}\label{sec:computation}
+\subsection{Numerical search spaces}
+The reflection search parameterizes a rank-$r$ projection by
+\[
+Y=O\begin{pmatrix}I_r\\X\end{pmatrix},\qquad P=Y(Y^*Y)^{-1}Y^*,
+\]
+where $O$ is a fixed unitary basis for a local chart and $X$ is real or complex. Spectral variables and projection coordinates are optimized jointly. Constraints force a selected Hall block's squared distances to exceed an auxiliary $\delta^2$. The objective maximizes $\delta$, while a full-matrix spectral-norm constraint controls $D+SDS$.
+
+For differentiability during local optimization, the largest Gram eigenvalue is upper-approximated by
+\[
+f_\rho(M)=\rho^{-1}\log\sum_j\exp\bigl(\rho\lambda_j(M^*M)\bigr).
+\]
+The scripts use increasing $\rho$. Exact feasibility of $f_\rho(M)\le1$ would imply $\norm M\le1$; finite-precision solver tolerances do not certify such feasibility. Accordingly, the scripts recompute the true full norm and actual bottleneck distance for every saved point, and the eventual proofs use separately rationalized data and exact inequalities.
+
+Further searches release both spectral lists and the unitary change of eigenbasis. Some use the earlier archive's real or complex Givens coordinates; an independent campaign uses off-diagonal skew-Hermitian Cayley coordinates. Seeds include paired extensions, contact-chain extensions, and separated zigzag spectra. A Cauchy-multiplier iteration is used only to propose an overlap block in the latter campaign. It is then completed to a full unitary matrix and supplied with auxiliary spectral values; the full normal pair, not the rectangular relaxation, is optimized and tested.
+
+None of these charts, initialization families, bounded parameter domains, or local solver runs constitute an exhaustive search or a global upper-bound argument.
+
+\subsection{Saved campaigns and numerical audit}
+\begin{center}\small
+\begin{tabular}{@{}p{.44\linewidth}p{.20\linewidth}rr@{}}\toprule
+Campaign & Dimensions & Runs & Success\\\midrule
+\CampaignRows
+\midrule
+Total & & \SearchRuns & \SearchSuccesses\\\bottomrule
+\end{tabular}
+\end{center}
+The \SearchNonSuccesses\ runs whose final optimizer status was not success remain in the records. The audit independently reconstructs each full normal-pair difference and recomputes its norm, Hall gap, matching distance, and ratio; it does not rerun an optimizer. It also checks unitarity, projection identities where applicable, and normality residuals. The two polished smaller examples are audited separately from the campaign totals.
+
+The largest audit residuals are below $6\times10^{-14}$, and recomputed ratios agree to within $3\times10^{-15}$. These are numerical consistency statements, not exact normality proofs for the saved floating-point matrices. Exact normality and exact ratio lower bounds are provided only by the rational constructions and their verifiers.
+
+The reduction test suite passes \NumericalChecks\ numerical assertions across 384 cases: 72 rank-one examples, 60 arbitrary-multiplicity three-value examples, and 252 instances of the distinct-value truncated inequality. The written proofs, rather than those tests, establish the theorems.
+
+\subsection{Reproducing the exact proof without numerical libraries}
+From the package root, the strongest certificate can be checked using only the Python standard library:
+\begin{verbatim}
+python -S code/check_certificate.py \
+  results/certificate_seven.json \
+  results/rechecked_seven.json
+\end{verbatim}
+Do not run proof checks with Python's assertion-disabling \texttt{-O} option. The independent symbolic cross-check is
+\begin{verbatim}
+python code/crosscheck_symbolic.py \
+  results/certificate_seven.json \
+  results/rechecked_seven_symbolic.json
+\end{verbatim}
+The symbolic script also compares its exact pivots with the shipped standard-library verification record. Equivalent commands for the size-five certificate, the audit, the tests, and the report build are in the root \texttt{Makefile}. Numerical libraries are needed only for the searches, numerical tests, audit, and high-precision cross-check; SymPy is needed for the second arithmetic implementation.
+
+\section{The remaining universal problem}\label{sec:remaining}
+The continuation closes the old proposed bound \eqref{eq:oldcandidate} in the negative. It does not replace it with a sharp universal inequality. In particular, neither the rational number $1.03077$ nor the numerical ratio $1.030770922\ldots$ is asserted to be the value of $\cn$.
+
+The reflection formulation itself does not justify restricting the rank. To see the issue explicitly, take arbitrary normal $A,B$ and choose a real $c$ large enough to separate two spectral clusters. Set
+\[
+D=\begin{pmatrix}A+cI&0\\0&-B-cI\end{pmatrix},\qquad
+S=\begin{pmatrix}0&I\\I&0\end{pmatrix}.
+\]
+Then $D$ is normal, $S$ is a self-adjoint unitary of balanced signature, and
+\[
+D+SDS=(A-B)\oplus(A-B).
+\]
+The spectra of $D$ and $-D$ consist of two widely separated groups, within which the matching problems reproduce the original one and its negative. Cross-group matches are too long to be optimal when $c$ is sufficiently large. Thus every original ratio has a reflected realization, but the rank of $(I-S)/2$ grows with the original dimension. The rank-one reduction of Theorem~\ref{thm:rankone} therefore does not reduce the full problem to dimension three.
+
+Likewise, replacing a deficient block of $D_\alpha U-UD_\beta$ by an arbitrary norm-one rectangular matrix is a relaxation. A small Sylvester-image norm for that block does not guarantee a full unitary completion and compatible normal matrices with the same small full difference norm. The earlier archive contains an exact example illustrating this obstruction. The independent Cauchy-based starting campaign does not assume away that issue: it tests the actual completed normal pair and then separately certifies any claimed bound.
+
+A full solution still needs a constant valid for \emph{every} dimension and normal pair, together with matching sharpness evidence. Even a proof of optimality of the best displayed size-seven example would require a separate dimension-uniform argument. No finite-dimensional stabilization theorem, global interval cover, sum-of-squares upper-bound certificate, or formal proof of such an upper bound has been obtained here.
+
+\appendix
+\section{Standalone data for the stronger size-five example}\label{app:five}
+Use \eqref{eq:construction} with $n=5,r=2$ and the exact rational data below:
+\begin{center}
+\begin{tabular}{@{}crr@{}}\toprule
+$i$ & $\operatorname{Re}z_i$ & $\operatorname{Im}z_i$\\\midrule
+\FiveZRows
+\bottomrule\end{tabular}
+\end{center}
+\[
+X=\begin{pmatrix}\FiveX\end{pmatrix}.
+\]
+Take $I=J=\{2,4,5\}$, $t=1.0000001$, and $q=1.02671$. Its exact LDL pivots for $t^2I-(D_z+SD_zS)^*(D_z+SD_zS)$ satisfy \eqref{eq:pivotintervals} with
+\begin{center}
+\begin{tabular}{@{}cr@{}}\toprule
+$k$ & $\ell_k$\\\midrule
+\FivePivotRows
+\bottomrule\end{tabular}
+\end{center}
+Together with the exact gap comparison in Section~\ref{sec:five}, these positive intervals prove Theorem~\ref{thm:five}. The index order here is the certificate's order; it need not match the unpermuted numerical discovery record.
+
+\section{Archive map and provenance}
+\begin{center}\small
+\begin{tabular}{@{}p{.31\linewidth}p{.64\linewidth}@{}}\toprule
+Location & Purpose\\\midrule
+\texttt{paper/} & This report, editable LaTeX source, and generated exact-data tables.\\
+\texttt{code/check\_certificate.py} & General standard-library rational verifier for the displayed reflection certificates.\\
+\texttt{code/crosscheck\_symbolic.py} & Independent SymPy arithmetic cross-check.\\
+\texttt{code/certify\_five.py} and \texttt{check\_five\_stdlib.py} & Two implementations for the first size-five certificate.\\
+\texttt{code/search*.py} & Seeded local search implementations, with the full norm used throughout.\\
+\texttt{results/} & Rational inputs, exact verification records, full numerical campaign records, selected polished examples, audit, and tests.\\
+\texttt{notes/} & Source attribution and proof-status notes.\\
+\texttt{prior/sp07\_partial\_results/} & The supplied prior archive, retained for provenance and shared search/matching code. Its historical status statements are not updated in place.\\
+\texttt{STATUS.json} & Machine-readable distinction between the certified results and the missing universal solution.\\
+\texttt{MANIFEST.sha256} & Integrity hashes for shipped files, excluding the manifest itself.\\\bottomrule
+\end{tabular}
+\end{center}
+The repository and preprint were read as public websites; no GitHub connector was used. The package contains generated exposition, code, and data, not copies of third-party papers. No independent human peer review or proof-assistant formalization is claimed. The exact certificates, written proofs, local numerical evidence, and unresolved claims are deliberately kept separate.
+
+\begin{thebibliography}{9}
+\bibitem{repository}
+\emph{Open Problems in Numerical Linear Algebra}, SP-07: The sharp spectral-matching constant for normal matrices. Public repository entry, accessed 13 September 2026.\\
+\url{https://raw.githubusercontent.com/ajt60gaibb/OpenProblemsInNLA/main/eigenvalues-and-inverse-problems/SP-07/README.md}
+\bibitem{Tang}
+Qiyue Tang, \emph{A Truncated Singular-Value Bound for Spectral Variation of Normal Matrices}, arXiv:2609.09177v1, 2026. Public HTML version accessed 13 September 2026.\\
+\url{https://arxiv.org/html/2609.09177v1}
+\bibitem{prior}
+\emph{SP-07: exact certificates and partial results}, the user-supplied archive \texttt{SP07\_partial\_results.zip} and report \texttt{SP07\_report.pdf}. Retained in the present package's \texttt{prior/} directory.
+\end{thebibliography}
+\end{document}

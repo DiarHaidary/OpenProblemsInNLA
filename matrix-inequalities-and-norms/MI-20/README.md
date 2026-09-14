@@ -7,9 +7,18 @@
 **Difficulty:** challenging  
 **Importance:** interesting to the community  
 **Status:** Open  
-**Last checked:** 2026-09-12
+**Last checked:** 2026-09-13
 
 **Rating rationale:** Determining a sharp two-parameter function after the proposed formula failed is challenging; matrix-sum bounds affect norm estimates used across NLA.
+
+## Reviewed continuation — 13 September 2026
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies the uniform bound $`C_{4/3}(2)\le(861/800)^{1/4}`$ and interpolated two-summand bounds in the [corrected fourth-round report](../../references/holden-continuations-2026-09-13/MI-20/report.pdf), interval certificate and interpolation sections. Exact rational certificates cover a full parameter interval in every matrix order; numerical optimizers are not the proof. The independent review identified and corrected the conjugation in the cyclic-reduction construction before accepting the publication version.
+
+Status remains **Open**: the bounds do not match, and the exact function for every $`m\ge2`$ and $`1< p<2`$ remains undetermined. The positive power-system characterization is a reduction, not an evaluation of that function.
+
+The [independent informal Codex AI-agent review](../../references/holden-continuations-2026-09-13/verification/MI-20/review.md) records its accepted scope and checks. [Submission, original package, reproduction and verified affiliation](../../references/holden-continuations-2026-09-13/README.md). This is not external human peer review or formal verification; no Lean verification was performed.
+
 
 ## Audited dual and projective reductions — 12 September 2026
 

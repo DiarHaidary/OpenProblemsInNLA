@@ -7,9 +7,18 @@
 **Difficulty:** challenging  
 **Importance:** interesting to the community  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-12  
+**Last checked:** 2026-09-13
 
 **Rating rationale:** Challenging reflects an all-dimensions rank structure for global spread maximizers; community impact is an extremal spectral problem for entry-bounded symmetric matrices.
+
+## Reviewed continuation — 13 September 2026
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies a proof for the unrestricted strip $`-1\le a\le-1+(1+\sqrt2)/n^2`$ in every dimension, with a rank-two endpoint maximizer. The [continuation report](../../references/holden-continuations-2026-09-13/SP-08/report.pdf), Theorems 1–2 and the boundary-strip proof, also bounds all endpoint matrices whose centered sign matrix has rank at most two. Its nonnegative-parameter case includes exact rational polynomial-positivity certificates.
+
+Status remains **Partially resolved**: outside the strip, arbitrary centered sign matrices of rank at least three remain untreated. Rank at most two for the centered sign matrix is not a hypothesis available for every maximizer.
+
+The [independent informal Codex AI-agent review](../../references/holden-continuations-2026-09-13/verification/SP-08/review.md) records its accepted scope and checks. [Submission, original package, reproduction and verified affiliation](../../references/holden-continuations-2026-09-13/README.md). This is not external human peer review or formal verification; no Lean verification was performed.
+
 
 ## Further partial results — 12 September 2026
 

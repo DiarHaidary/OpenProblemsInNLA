@@ -1,0 +1,473 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[hidelinks]{hyperref}
+\usepackage{microtype}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\spn}{\operatorname{spread}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\R}{\mathbb R}
+\newcommand{\J}{J}
+\title{SP-08: Centered Rank-Two Sign Matrices}
+\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
+\date{13 September 2026}
+\hypersetup{pdfauthor={Sidney Holden}}
+\begin{document}
+\maketitle
+\begin{abstract}
+This continuation proves the conjectured rank-two candidate bound for every
+endpoint matrix whose centered sign matrix has rank at most two, in every
+dimension and throughout the normalized interval $-1\le a<1$. An analytic
+monotonicity lemma retains integer block sizes, avoiding a fractional-mass
+relaxation. The negative-parameter comparison is analytic; the nonnegative
+comparison is certified by exact rational polynomial identities with an
+independent standard-library verifier. A consequence is the unrestricted strip
+$-1\le a\le-1+(1+\sqrt2)/n^2$, improving the coefficient $1/3$ in the supplied
+boundary-strip argument. \textbf{The unrestricted SP-08 conjecture is not
+proved here.} Higher-rank indefinite deficits remain outside the argument.
+\end{abstract}
+
+\section{Problem, candidate, and status}
+Let $\mathcal S_n[a,1]$ be the real symmetric $n\times n$ matrices all of whose
+entries, including diagonal entries, belong to $[a,1]$. Here $n\ge2$ and
+$-1\le a<1$. For a symmetric matrix,
+\[
+ \spn(A)=\lambda_{\max}(A)-\lambda_{\min}(A).
+\]
+SP-08 asks whether an endpoint matrix of rank two always attains the maximum
+spread over this box~\cite{sp08}. Convexity gives an endpoint maximizer, but does
+not give its rank.
+
+Put $d=1-a$. If $z$ indicates a $k$-element subset, the matrix
+$B_k=J-dzz^T$, $1\le k<n$, has two nonzero eigenvalues of opposite signs.
+Its squared spread is
+\begin{align}
+ F(k)&=n^2+d\{2nk-(a+3)k^2\},\label{eq:F}\\
+ M_n(a)^2&=\max_{1\le k<n,\ k\in\mathbb Z} F(k).
+\end{align}
+Completing the square gives
+\begin{equation}\label{eq:round}
+ F(t)=\frac{4n^2}{a+3}-d(a+3)\left(t-\frac{n}{a+3}\right)^2.
+\end{equation}
+An allowed integer nearest $n/(a+3)$ is optimal in this family. In particular,
+\begin{equation}\label{eq:U}
+ M_n(a)^2\ge U:=\frac{4n^2}{a+3}-\frac{d(a+3)}4.
+\end{equation}
+The term subtracted in \eqref{eq:U} is essential: the continuous optimum alone
+would not establish the finite-dimensional conjecture.
+
+\begin{theorem}[Centered sign rank at most two]\label{thm:centered}
+Set $c=(1+a)/2$ and $r=(1-a)/2$. If $A\in\mathcal S_n[a,1]$ is an endpoint
+matrix and its sign matrix $S=(A-cJ)/r$ has rank at most two, then
+$\spn(A)\le M_n(a)$.
+\end{theorem}
+
+\begin{theorem}[Unrestricted boundary strip]\label{thm:strip}
+For every $n\ge2$ and
+\[
+ -1\le a\le -1+\frac{1+\sqrt2}{n^2},
+\]
+$B_{\lfloor n/2\rfloor}$ maximizes spread over all of $\mathcal S_n[a,1]$.
+There is no rank or inertia restriction in this statement.
+\end{theorem}
+Theorem~\ref{thm:strip} uses only the analytic, negative-parameter portion of
+Theorem~\ref{thm:centered}; it does not depend on a numerical test or the
+nonnegative-parameter certificate.
+
+\section{Classification and compression}
+A symmetric rank-two sign matrix is indefinite and has both positive and
+negative diagonal entries. Indeed, if all diagonal signs were equal, every
+principal $2\times2$ minor would vanish; their sum, the product of the two
+nonzero eigenvalues, cannot vanish. Choose a positive and a negative diagonal
+position and switch one sign so that their principal matrix is
+\[
+ H_2=\begin{pmatrix}1&1\\1&-1\end{pmatrix},\qquad H_2^{-1}=H_2/2.
+\]
+The vanishing Schur complement classifies all columns by their two entries
+on these positions: they are $\pm(1,1)^T$ or $\pm(1,-1)^T$. Consequently,
+up to permutation,
+\begin{equation}\label{eq:class}
+ S=\Delta\begin{pmatrix}J_p&J_{p,q}\\J_{q,p}&-J_q\end{pmatrix}\Delta,
+ \qquad p+q=n,\quad p,q\ge1,
+\end{equation}
+where $\Delta$ is diagonal with entries $\pm1$.
+Let $P$ and $Q$ be the sums of these switching signs in the two groups. Thus
+$|P|\le p$, $|Q|\le q$, $P\equiv p\pmod2$, and $Q\equiv q\pmod2$.
+Define
+\[
+ R_0=n-\frac{P^2}{p}-\frac{Q^2}{q},\qquad K=P^2+2PQ-Q^2.
+\]
+The nonzero spectrum of $A=cJ+rS$ is contained in the spectrum of
+\begin{equation}\label{eq:compression}
+ T=r\begin{pmatrix}p&\sqrt{pq}&0\\\sqrt{pq}&-q&0\\0&0&0\end{pmatrix}
+      +cvv^T,
+ \quad v=\begin{pmatrix}P/\sqrt p\\Q/\sqrt q\\\sqrt{R_0}\end{pmatrix}.
+\end{equation}
+A zero added in forming this compression can only increase the spread bound.
+We also use \eqref{eq:compression} as a continuous family for real $P,Q$ in
+the indicated rectangle. This relaxation is used to move to a particular
+integer endpoint, not to discard the integer constraint.
+
+For $c,r,R_0>0$ the eigenvalues have the form
+$\lambda\ge\eta>0>-\mu$. The characteristic polynomial is
+\begin{align}
+ f(z)&=z^3-tz^2+e_2z+D,\label{eq:cubic}\\
+ t&=cn+r(p-q),\nonumber\\
+ e_2&=-2r^2pq+cr\{n(p-q)-K\},\qquad D=2cr^2pqR_0.\nonumber
+\end{align}
+Degenerate cases, including a possibly positive semidefinite rank-two limit,
+are handled by continuity of the three-dimensional spread.
+
+\section{An integer-preserving monotonicity reduction}
+At fixed $R_0$, increasing $K$ decreases $e_2$ and increases both extreme
+magnitudes:
+\[
+ \frac{\partial\lambda}{\partial K}
+  =\frac{cr\lambda}{(\lambda+\mu)(\lambda-\eta)},\qquad
+ \frac{\partial\mu}{\partial K}
+  =\frac{cr\mu}{(\lambda+\mu)(\mu+\eta)}.
+\]
+As $e_2$ decreases the extreme roots move outwards and the middle positive
+root moves downwards, so the relevant real-root branch does not collide.
+Replacing $(P,Q)$ by $(|P|,|Q|)$ therefore cannot decrease spread. Assume below
+that $P,Q\ge0$.
+
+\begin{lemma}\label{lem:negative}
+If $P+Q>0$, then $\mu\ge rqP/(P+Q)$.
+\end{lemma}
+\begin{proof}
+Let $\gamma$ be minus the smallest eigenvalue of the sign part compressed
+orthogonally to the all-ones vector. The $cJ$ term vanishes there, so
+Rayleigh's principle gives $\mu\ge r\gamma$. For the continuous family
+\eqref{eq:compression}, use $v^\perp$ in $\R^3$ in place of the all-ones
+orthogonal complement; $\|v\|^2=n$, and the identical calculation applies.
+The two potentially nonzero eigenvalues of this compression have trace
+$p-q-K/n$ and product $-2pqR_0/n$. Thus $\gamma$ is the positive root of
+\[
+ h(g)=g^2+\left(p-q-\frac Kn\right)g-\frac{2pqR_0}{n}.
+\]
+Put $g_0=qP/(P+Q)$, $x=p-P$, $y=q-Q$, and $N=P+Q$. Direct expansion gives
+$nN^2h(g_0)=-\mathcal R$, where
+\begin{align*}
+\mathcal R={}&P^2NQ^2
+ +PQ(2P^2+5PQ+4Q^2)x
+ +PQ(4P^2+9PQ+6Q^2)y\\
+&+NQ(P+2Q)x^2+P(P^2+4PQ+5Q^2)y^2\\
+&+2(P^3+4P^2Q+6PQ^2+2Q^3)xy\\
+&+N(P+2Q)x^2y+(P^2+4PQ+2Q^2)xy^2+PQy^3.
+\end{align*}
+Every term is nonnegative. Hence $h(g_0)\le0$, $\gamma\ge g_0$, and the claim
+follows. The identity is also checked by the supplied symbolic audit.
+\end{proof}
+
+\begin{lemma}\label{lem:monotone}
+At fixed $p,q,Q\ge0$, the spread in \eqref{eq:compression} is nondecreasing
+as $P$ runs from $0$ to $p$.
+\end{lemma}
+\begin{proof}
+Write $s=\lambda+\mu$ and
+\[
+ C=2\lambda\mu+\eta(\lambda-\mu),\qquad W=\lambda-\mu-2\eta.
+\]
+Differentiating \eqref{eq:cubic} gives
+\begin{equation}\label{eq:derivative}
+ \frac{ds}{dP}=\frac{2cr\{C(P+Q)-2rqPW\}}
+ {s(\lambda-\eta)(\mu+\eta)}.
+\end{equation}
+The denominator is positive. Also $C>0$: when $\lambda<\mu$, use
+$\eta\le\lambda$ to see $C\ge\lambda\mu+\lambda\eta>0$.
+If $W\le0$, the numerator is nonnegative. If $W>0$, then $\lambda>\mu$,
+so Lemma~\ref{lem:negative} gives
+\[
+ C(P+Q)\ge2\lambda\mu(P+Q)\ge2\lambda rqP\ge2rqPW.
+\]
+The result follows; boundary points follow by continuity.
+\end{proof}
+
+We can therefore set $P=p$ while leaving $Q$ unchanged. Since $Q$ retains its
+original parity and integrality, the numbers
+\[
+ y=\frac{q+Q}{2},\qquad z=\frac{q-Q}{2}
+\]
+are integers. The resulting endpoint matrix has base
+\begin{equation}\label{eq:typeA}
+ K_A(a)=\begin{pmatrix}1&1&a\\1&a&1\\a&1&a\end{pmatrix}
+\end{equation}
+and multiplicities $(p,y,z)$. When $z=0$ it is $B_q$. Otherwise $p,z\ge1$
+and $y\ge1$. Its deficit has rank three when $p,y,z>0$; it is not a case of
+the earlier rank-at-most-two deficit theorem.
+
+\section{A three-type comparison for negative parameters}
+For \eqref{eq:typeA}, let $q=y+z$, $n=p+q$, $b=1+a$, $d=1-a$, and $t=p+aq$.
+The characteristic coefficients are
+\[
+ e_2=-dpq+dbz(p-q+z),\qquad e_3=-bd^2pyz.
+\]
+Write its eigenvalues as $\lambda\ge\eta\ge0>-\mu$ and $s=\lambda+\mu$.
+An exact identity is
+\begin{equation}\label{eq:etaidentity}
+ s^2=F(q)-4dbz(p-q+z)+2t\eta-3\eta^2.
+\end{equation}
+
+\begin{lemma}\label{lem:eta}
+For $-1\le a<1$, the middle eigenvalue satisfies $\eta\le dbz$.
+\end{lemma}
+\begin{proof}
+Set $h_0=dbz$. The principal compression on the $p$ and $z$ groups is
+\[
+ R=\begin{pmatrix}p&a\sqrt{pz}\\a\sqrt{pz}&az\end{pmatrix},\quad
+ g(w)=w^2-(p+az)w+adpz.
+\]
+Its smaller eigenvalue is at most $h_0$. For $a\le0$ this follows from its
+nonpositive determinant. For $a\ge0$, a Rayleigh quotient orthogonal to
+$(\sqrt p,\sqrt z)^T$ gives
+$\lambda_{\min}(R)\le dpz/(p+z)\le dz\le dbz$.
+Interlacing gives $\eta\le\lambda_{\max}(R)$, while direct substitution gives
+\[
+ f(h_0)=h_0\{g(h_0)-db^2yz\}.
+\]
+If $0<h_0<\eta$, then $g(h_0)\le0$ by its location between the eigenvalues
+of $R$. This contradicts $f(h_0)>0$ between zero and the first positive root
+of $f$. Degenerate cases follow by continuity.
+\end{proof}
+
+Suppose $-1\le a\le0$, so $0\le b\le1$. If $t\ge0$, define
+$V=(1-b)F(q)+bF(y)$. Equation~\eqref{eq:etaidentity} gives
+\[
+ V-s^2=2t(dbz-\eta)+d^2bz^2+3\eta^2\ge0.
+\]
+Thus $s^2$ is bounded by a convex combination of candidate values. If $t<0$,
+then $p<q$. With $\delta=q-p$, another exact identity gives
+\[
+ F(p)-s^2=db\left\{4\left(z-\frac\delta2\right)^2+2p\delta\right\}
+           -2t\eta+3\eta^2\ge0.
+\]
+Consequently
+\begin{equation}\label{eq:negativebound}
+ s^2\le\max\{F(p),F(q),F(y)\},\qquad -1\le a\le0.
+\end{equation}
+For integer multiplicities these are candidate values. The harmless case
+$y=0$ uses $F(0)=n^2\le M_n(a)^2$.
+
+\section{An exact nonnegative-parameter certificate}
+\begin{theorem}\label{thm:typeA}
+For real $p,z\ge1$, $y\ge0$, and $0\le a<1$, the squared spread of the
+three-dimensional compression of \eqref{eq:typeA} is at most
+\[
+ U=\frac{4(p+y+z)^2}{a+3}-\frac{(1-a)(a+3)}4.
+\]
+For integer multiplicities it is therefore at most $M_n(a)^2$.
+\end{theorem}
+
+\subsection{The spectral criterion}
+Let $t,e_2,e_3$ be the characteristic coefficients of a real symmetric
+$3\times3$ matrix. Put
+\[
+ D_0=t^2-3e_2,
+\]
+\[
+ \mathcal D=t^2e_2^2-4e_2^3-4t^3e_3-27e_3^2+18te_2e_3.
+\]
+The three squared pairwise eigenvalue differences are the roots of
+\[
+ q(u)=u(u-D_0)^2-\mathcal D.
+\]
+Their largest value $s^2$ is at least $D_0$. Since
+$q'(u)=(u-D_0)(3u-D_0)\ge0$ for $u\ge D_0$, it suffices to prove
+\begin{equation}\label{eq:criterion}
+ U\ge D_0,\qquad U(U-D_0)^2\ge\mathcal D.
+\end{equation}
+The relevant three-type coefficients are
+\[
+ t=p+a(y+z),\quad
+ e_2=(1-a)\{-py+apz-(1+a)yz\},\quad
+ e_3=-(1+a)(1-a)^2pyz.
+\]
+
+\subsection{Polynomial certificates and domain coverage}
+Define the polynomials
+\[
+ B=\frac{4(a+3)(U-D_0)}{1-a},\qquad
+ Q=\frac{64(a+3)^3\{U(U-D_0)^2-\mathcal D\}}{(1-a)^2}.
+\]
+All prefactors have positive sign on the parameter domain. Introduce
+$a=T/(1+T)$ with $T\ge0$. The domain is covered by two charts:
+\begin{center}
+\begin{tabular}{llll}
+\toprule
+Chart & $p$ & $y$ & $z$\\
+\midrule
+Plus & $(a+2)v+u$ & $v$ & $1+w$\\
+Minus & $1+v$ & $(1+v+u)/(a+2)$ & $1+w$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Here $u,v,w\ge0$. The plus chart covers $p\ge(a+2)y$; the minus chart covers
+$p\le(a+2)y$, $p\ge1$. After clearing the recorded positive denominators,
+the plus-chart polynomials have positive coefficients. The minus-chart
+polynomials are explicit sums of binomial squares with nonnegative monomial
+multipliers and positive-coefficient remainders.
+
+Every square entry $(\alpha,\beta,\gamma,k,w)$ represents
+\[
+ w\{4^kX^\alpha+4^{-k}X^\beta-2X^\gamma\},\qquad
+ \alpha+\beta=2\gamma,\quad w>0.
+\]
+If $m=\min(\alpha,\beta)$ coordinatewise, this is exactly
+\[
+ wX^m\left(2^kX^{(\alpha-m)/2}-2^{-k}X^{(\beta-m)/2}\right)^2.
+\]
+All half-exponents are nonnegative integers and all coefficients are rational.
+The positive-coefficient remainders are retained, not estimated numerically.
+This proves \eqref{eq:criterion} and Theorem~\ref{thm:typeA}.
+
+\subsection{Independent reconstruction}
+The program \texttt{code/verify\_typeA\_certificate.py} uses only standard-library
+integer and rational arithmetic. It does not import the generator or optimizer.
+It independently reconstructs the spectral polynomials as follows. Let
+$L=1+T$, $R=3+4T$, and express $p=p_N/m$, $y=y_N/m$, $z=z_N/m$ in either chart.
+Define
+\begin{align*}
+ t_N&=Lp_N+T(y_N+z_N),\\
+ e_{2,N}&=-Lp_Ny_N+Tp_Nz_N-(L+T)y_Nz_N,\\
+ e_{3,N}&=-(L+T)p_Ny_Nz_N,\\
+ D_N&=t_N^2-3e_{2,N},\\
+ U_N&=16L^3(p_N+y_N+z_N)^2-m^2R^2,\\
+ W_N&=U_N-4RD_N.
+\end{align*}
+Let $\mathcal D_N$ be the cubic discriminant evaluated at these numerator
+coefficients. The independently reconstructed numerators are
+\[
+ Q_N=U_NW_N^2-64R^3\mathcal D_N,\qquad B_N=W_N.
+\]
+For the plus chart $m=L$, the certificate polynomials satisfy
+$Q_N=L^3Q_+$ and $B_N=LB_+$. For the minus chart $m=2+3T$, they satisfy
+$Q_N=m^2Q_-$ and $B_N=mB_-$. The verifier checks these identities before
+checking every square and remainder coefficient. Thus it does not merely
+trust that a supplied polynomial is the required spectral expression.
+
+Floating-point linear programming was used only in searching for squares.
+Its output was rationalized and independently checked exactly. The numerical
+sweeps in the archive are supplementary audits, not premises of a proof.
+
+\section{Completion of the centered-rank-two theorem}
+Lemmas~\ref{lem:negative}--\ref{lem:monotone} reduce rank-two sign matrices
+to \eqref{eq:typeA} with integer multiplicities. Equation~\eqref{eq:negativebound}
+handles negative parameters; Theorem~\ref{thm:typeA} handles nonnegative ones.
+If $S$ has rank one, write $S=\pm ss^T$ with $s_i\in\{-1,1\}$.
+For the positive sign, $A=cJ+rss^T$ is positive semidefinite with trace $n$,
+so its spread is at most $n$. For the negative sign its squared two-dimensional
+spread is $n^2-4cr(\mathbf1^Ts)^2\le n^2$; degenerate cases also have spread
+at most $n$. Since $F(1)>n^2$, neither case exceeds $M_n(a)$.
+This proves Theorem~\ref{thm:centered}.
+
+\section{Proof of the improved unrestricted strip}
+Let $S$ be a symmetric sign matrix with rank at least three. Choose a nonsingular
+$3\times3$ submatrix $T$. Such a sign matrix has singular values $2,2,1$.
+To see this, its determinant is a nonzero multiple of four and is bounded in
+absolute value by $\sqrt{27}$, so its absolute determinant is four. The Gram
+matrix has diagonal entries three and off-diagonal entries $\pm1$; its
+determinant forces eigenvalues $4,4,1$.
+
+For any rank-at-most-two matrix $X$, the corresponding submatrix $R$ has a unit
+null vector $v$. Hence
+\[
+ \|S-X\|_F^2\ge\|T-R\|_F^2\ge\|(T-R)v\|^2=\|Tv\|^2\ge1.
+\]
+Choose $X$ to retain the two extreme eigenvalues of $S$. The middle spectral
+energy is at least one, whence
+\[
+ \spn(S)^2\le2(n^2-1).
+\]
+Write $L=\sqrt{2n^2-2}$ and $A=cJ+rS$. Subadditivity gives
+$\spn(A)\le cn+rL$.
+For $\epsilon=n\bmod2$ and $k=(n-\epsilon)/2$,
+\[
+ \spn(B_k)^2=n^2+r^2(n-\epsilon)^2+2r\epsilon(n-\epsilon).
+\]
+Put $C_\epsilon=(n-\epsilon)^2-(L-n)^2$. An exact comparison is
+\begin{equation}\label{eq:stripidentity}
+ \spn(B_k)^2-(cn+rL)^2=r\{(2-\epsilon)-cC_\epsilon\}.
+\end{equation}
+For even $n$, write $\beta=L/n$. Then
+$C_0=n^2\beta(2-\beta)\le n^2$. For odd $n$,
+\[
+ C_1=2nL-2n^2-2n+3<2(\sqrt2-1)n^2.
+\]
+In both cases \eqref{eq:stripidentity} is nonnegative if
+$c\le(1+\sqrt2)/(2n^2)$. Matrices with sign rank at most two are already
+covered by Theorem~\ref{thm:centered}. Within this strip,
+\[
+ 0\le\frac n2-\frac{n}{2+2c}
+       =\frac{nc}{2(1+c)}\le\frac{1+\sqrt2}{4n}<\frac12,
+\]
+so $\lfloor n/2\rfloor$ is an allowed nearest integer in \eqref{eq:round}.
+Thus the balanced candidate attains $M_n(a)$. Convexity extends the endpoint
+comparison to every matrix in the entry box, proving Theorem~\ref{thm:strip}.
+
+For $n\ge3$, the same calculation gives the sharper sufficient thresholds
+\[
+ c\le\begin{cases}
+ \displaystyle\frac{2}{2n\sqrt{2n^2-2}-2n^2+2},& n\text{ even},\\[6pt]
+ \displaystyle\frac{1}{2n\sqrt{2n^2-2}-2n^2-2n+3},& n\text{ odd}.
+ \end{cases}
+\]
+They may be used with $a\le0$ so that the comparison remains entirely analytic.
+
+\section{Relation to the supplied work and remaining gap}
+The supplied earlier manuscripts treat continuous positive-semidefinite
+deficits $J-A\succeq0$, binary deficits of rank at most two, and a narrower
+boundary strip. They are retained verbatim under \texttt{provenance/}, not
+silently rewritten as a complete solution. An inherited dimension-11
+verification report is present, but the large certificate to which it refers
+was not supplied. That finite enumeration is not represented as independently
+reproduced by the present archive.
+
+The new theorem concerns the rank of the \emph{centered sign matrix}
+$S=(A-cJ)/r$, not the rank of the deficit $H=(J-A)/d$. These are distinct
+conditions. Combining the present result with the supplied low-deficit-rank
+results still leaves matrices for which both ranks are at least three and
+the deficit is indefinite.
+
+The missing universal inequality is
+\[
+ \boxed{\spn\bigl(J-(1-a)H\bigr)\le M_n(a)
+ \quad\text{for every symmetric binary }H,
+ \quad n\ge2,\quad -1\le a<1.}
+\]
+No argument here forces an unrestricted maximizer into the covered classes.
+In particular, the rank-two Rayleigh difference $xx^T-yy^T$ does not force
+its entrywise sign matrix to have rank two. Nested-neighborhood merging is
+also not generally spread-increasing; the numerical exploration records
+counterexamples to that proposed reduction, not counterexamples to SP-08.
+
+\section{Reproducibility}
+The archive includes this manuscript and PDF, Markdown proofs, exact
+certificates, their independently checked rational identities, supplementary
+numerical tests, search scripts, and inherited source files. The file
+\texttt{STATUS.json} states the partial status explicitly. Start with
+\begin{quote}\ttfamily
+python code/verify\_typeA\_certificate.py
+\end{quote}
+which has no third-party dependencies. The symbolic audits use SymPy; the
+numerical tests use NumPy. SciPy is needed only to rerun the certificate
+search, not to validate its output. The machine-readable reports distinguish
+exact verification from floating-point testing.
+
+\begin{thebibliography}{9}
+\bibitem{sp08} OpenProblemsInNLA contributors.
+\emph{SP-08, eigenvalues and inverse problems}. Public problem statement:
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/eigenvalues-and-inverse-problems/SP-08}.
+\bibitem{supplied} Supplied research archive,
+\emph{SP08\_partial\_results\_and\_proofs.zip}, and supplied manuscripts
+\emph{sp08.tex}, \emph{boundary\_strip.tex}, and \emph{finite\_certificates.tex}.
+Preserved in the archive's provenance directory. These are prior research
+materials, not an assertion that unrestricted SP-08 is solved.
+\end{thebibliography}
+\end{document}

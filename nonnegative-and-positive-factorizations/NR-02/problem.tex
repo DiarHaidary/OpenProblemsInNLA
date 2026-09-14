@@ -34,7 +34,7 @@ matrices},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}NR-02}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-10}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -63,15 +63,37 @@ linear optimization models.
 
 \textbf{Area:} nonnegative rank and polyhedral optimization
 
+\subsection{Reviewed continuation --- 13 September
+2026}\label{reviewed-continuation-13-september-2026}
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute,
+Simons Foundation) supplies a computer-assisted proof that
+\(\mathop{\mathrm{xc}}\nolimits(P\times Q)=12\) whenever both factors
+are polygons of extension complexity six. The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/NR-02/report.pdf}{fourth-round
+report}, main theorem and geometry-to-Boolean reduction, reduces this
+statement to ten exact LRAT refutations. The broader inherited
+all-polytopes corollary in the package was not independently re-audited
+in this submission.
+
+Status remains \textbf{Partially resolved}: arbitrary higher-complexity
+factors and unrestricted Cartesian-product additivity are not settled.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/verification/NR-02/review.md}{independent
+informal Codex AI-agent review} records its accepted scope and checks.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/README.md}{Submission,
+original package, reproduction and verified affiliation}. This is not
+external human peer review or formal verification; no Lean verification
+was performed.
+
 \subsection{Context and notation}\label{context-and-notation}
 
 All factorizations are over the real numbers. For
 \(X\in\mathbb R_{\ge0}^{m\times n}\), define
 
-\[
-\operatorname{rank}_+(X)=\min\{r\ge0:X=WH,\quad
-W\in\mathbb R_{\ge0}^{m\times r},\ H\in\mathbb R_{\ge0}^{r\times n}\}.
-\]
+\[\mathop{\mathrm{rank}}\nolimits_+(X)=\min\{r\ge0:X=WH,\quad
+W\in\mathbb R_{\ge0}^{m\times r},\ H\in\mathbb R_{\ge0}^{r\times n}\}.\]
 
 \subsection{Problem statement}\label{problem-statement}
 
@@ -85,17 +107,13 @@ left-hand side of that facet inequality at that vertex. Construct
 \(C\in\mathbb R_{\ge0}^{(m+p)\times nq}\) by giving it one column for
 each pair \((i,j)\) of vertices:
 
-\[
-C[:,(i,j)]=\begin{pmatrix}S[:,i]\\T[:,j]\end{pmatrix}.
-\]
+\[C[:,(i,j)]=\begin{pmatrix}S[:,i]\\T[:,j]\end{pmatrix}.\]
 
 \subsubsection{Question}\label{question}
 
 Is
 
-\[
-\operatorname{rank}_+(C)=\operatorname{rank}_+(S)+\operatorname{rank}_+(T)
-\]
+\[\mathop{\mathrm{rank}}\nolimits_+(C)=\mathop{\mathrm{rank}}\nolimits_+(S)+\mathop{\mathrm{rank}}\nolimits_+(T)\]
 
 always true? The hypotheses that \(S,T\) are polytope slack matrices are
 part of the question. Through the slack-factorization theorem, this also

@@ -73,6 +73,16 @@ conjecture; it does not assert an equivalence with exact factor recovery.
 
 ## References
 
+Fu, Huang, Sidiropoulos, and Ma,
+[*Nonnegative Matrix Factorization for Signal and Data Analytics: Identifiability,
+Algorithms, and Applications*](https://doi.org/10.1109/MSP.2018.2877582),
+IEEE Signal Processing Magazine **36**(2), 59–80 (2019), §VIII;
+[accepted manuscript](https://arxiv.org/abs/1803.01257).
+This earlier discussion asks whether additional practical assumptions can make
+NMF and volume-minimization problems solvable with high probability. It motivates
+the solvability question; it does not state the precise rational-input SSC
+promise problem formulated above.
+
 Gillis, [*Nonnegative Matrix Factorization*](https://doi.org/10.1137/1.9781611976410),
 §4.3.3.6, pp. 148–149, with Definitions 4.15 and 4.42 and Theorem 4.43;
 [author-hosted book](https://orbi.umons.ac.be/bitstream/20.500.12907/42337/1/NMFbook_SIAM_reprint.pdf).

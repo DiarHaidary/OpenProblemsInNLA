@@ -7,9 +7,15 @@
 **Difficulty:** challenging  
 **Importance:** interesting to specialist  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-12  
+**Last checked:** 2026-09-14  
 
 **Rating rationale:** Challenging reflects preservation of a nontrivial spectral-norm orbit distance under larger unitary mixing; specialist impact concerns finite matrix amplification and operator-algebraic nearness.
+
+## Further partial result: first-order spectral splitting — 14 September 2026
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation). The [report](../../references/holden-sp-continuations-2026-09-14/SP-09/report.pdf) proves first-order finite-amplification invariance under independent spectral splitting about fixed repetitions of the certified three-point pair. The squared amplification gain is nonnegative and at most $`C_{r,k}t^{3/2}`$ for sufficiently small nonnegative $`t`$. The constants and radius can depend on dimensions and splitting directions. This is not exact equality at nonzero perturbation and is not uniform in amplification. General normal pairs remain unresolved; status stays Partially resolved.
+
+See the [independent informal Codex AI-agent review](../../references/holden-sp-continuations-2026-09-14/SP-09/independent-review.md) for the exact audited scope and checks, and the [submission record](../../references/holden-sp-continuations-2026-09-14/README.md) for verified affiliation, original materials and reproduction details. No full resolution, external human peer review, formal verification or historical novelty is claimed. No Lean verification was performed.
 
 ## Further partial result — 12 September 2026
 

@@ -1,0 +1,90 @@
+{
+  "problem_id": "SP-03",
+  "package_status": "PARTIAL",
+  "complete_solution": false,
+  "all_rank_formula_proved": false,
+  "all_rank_formula_refuted": false,
+  "target": "D_m = 2^(m^2) + 2^(2*m-1) for every positive integer m",
+  "metric": "ordinary-transpose Frobenius bilinear distance in the fixed standard symplectic embedding",
+  "new_mathematical_arguments": [
+    {
+      "reference": "Theorem 3.1",
+      "statement": "Exact symmetric/skew denominator factorization"
+    },
+    {
+      "reference": "Theorems 4.1 and 4.2",
+      "statement": "Universal Stein domain and exact generic-degree matrix map"
+    },
+    {
+      "reference": "Lemma 4.4",
+      "statement": "Projective boundary leading equation and singular directions of nonzero-data escaping families"
+    },
+    {
+      "reference": "Theorem 4.5",
+      "statement": "Exactly 2^m simple regular zero-coupling points, with all other branches approaching poles or singular infinity"
+    },
+    {
+      "reference": "Theorem 5.1",
+      "statement": "chi_c(Omega_m) = (-1)^m sum_{r=0}^m r! S(m,r)"
+    },
+    {
+      "reference": "Theorem 6.1 and Corollary 6.2",
+      "statement": "D_m is even; q certified simple points imply D_m >= 2 ceil(q/2)"
+    }
+  ],
+  "new_mathematical_arguments_review_status": "Written proofs; not formally verified or externally refereed; no literature novelty priority claim",
+  "certified_distinct_simple_roots": {
+    "1": 4,
+    "2": 24,
+    "3": 543,
+    "4": 31183
+  },
+  "lower_bounds_including_proved_parity": {
+    "1": 4,
+    "2": 24,
+    "3": 544,
+    "4": 31184
+  },
+  "rank_four_upper_bound_inherited_from_prior_report": 12310528,
+  "rank_four_proposed_value": 65664,
+  "rank_three_lower_bound_uses_published_544_as_input": false,
+  "certificates_are_completeness_certificates": false,
+  "all_final_centers_passed_cpp_exact_contraction_and_exact_separation": true,
+  "all_final_centers_passed_separate_python_integer_fraction_contraction_recheck": true,
+  "independent_python_check_scope": "No C++ backend call. Exact system and Jacobian reconstructed by reference.py. The numerical inverse-proposal routine and the exact separation helper are shared.",
+  "certificate_files": {
+    "1": {
+      "path": "certificates/rank1.npz",
+      "sha256": "f11c9eae46a9bda451c6008ed54964b7acd7cd50b7f4bcfd385ecfe4b42c7e2a",
+      "cpp_verification": "results/final_rank1_verification.json",
+      "python_verification": "results/independent_rank1_all.json"
+    },
+    "2": {
+      "path": "certificates/rank2.npz",
+      "sha256": "9ba6cca852e3d22a2e4c2755972649d11324905b621cfd00ee31f6755e34e4d5",
+      "cpp_verification": "results/final_rank2_verification.json",
+      "python_verification": "results/independent_rank2_all.json"
+    },
+    "3": {
+      "path": "certificates/rank3.npz",
+      "sha256": "c3ca3ab27df838772c699bd07b57694cfa5f46fe7d999e985dc6d3e816c32a22",
+      "cpp_verification": "results/final_rank3_verification.json",
+      "python_verification": "results/independent_rank3_all.json"
+    },
+    "4": {
+      "path": "certificates/rank4.npz",
+      "sha256": "2126da41dabc9e2bf92993dba888bc855c45ab9178177feb3e65a79d383c7768",
+      "cpp_verification": "results/final_rank4_verification.json",
+      "python_verification": "results/independent_rank4_all.json"
+    }
+  },
+  "prior_archive_sha256": "27c3952f591035957cf38c434216a8de0696685e37cfdcfd5391b466f24e706b",
+  "outstanding_step": "Evaluate the generic fiber degree of Psi_(b,c): Omega_m -> Mat_m, including contributions near the excluded Stein divisor and projective infinity, or prove a degree discrepancy at a specific rank.",
+  "numerical_plateau_used_as_completeness_evidence": false,
+  "repository_status_edited": false,
+  "verification_record_compiled_utc": "2026-09-14T02:54:31.650001+00:00",
+  "clean_directory_build_and_core_tests_passed": true,
+  "clean_directory_rank_four_reverification_passed": true,
+  "clean_reproduction_record": "results/clean_reproduction_status.json",
+  "clean_rank_four_reverification_record": "results/clean_rank4_verification.json"
+}

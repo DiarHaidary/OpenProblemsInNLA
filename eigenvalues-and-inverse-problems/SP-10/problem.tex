@@ -34,7 +34,7 @@ rank},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}SP-10}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-10}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-14}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -60,19 +60,57 @@ all symmetric sparsity patterns, still beyond the available general rank
 estimates. Community impact comes from its central role in graph inverse
 eigenvalue problems and complementary low-rank realizations.
 
+\subsection{Further partial resolution --- bipartite degree-four class,
+14 September
+2026}\label{further-partial-resolution-bipartite-degree-four-class-14-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/README.md}{Verified
+affiliation and submission record}.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/SP-10/manuscript.pdf}{Theorem
+4.1} proves the stronger positive-semidefinite rank-sum bound, and hence
+the original real symmetric bound, for every bipartite graph with all
+degrees at most four on one specified side. Theorem 2.1 constructs a
+faithful complement Gram representation in dimension \(d+1\) when that
+side has degrees at most \(d\); Theorem 3.1 gives a four-dimensional
+complement representation for partial 2-trees. Theorem 5.1 supplies an
+open-set obstruction to exact support in one proposed SDP route, not a
+counterexample to the graph complement conjecture.
+
+A separate
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/reviews/2026-09-14-further-submissions/SP-10-review.md}{independent
+Codex AI-agent audit} passed Sections 2--5, including the standard
+minor-monotonicity dependency used in Theorem 4.1. All 16 unit tests and
+524 exact complement-only witness checks passed, with the defective SDP
+pair correctly rejected. These witnesses are not 524 full
+graph/complement rank-pair certificates. The optional SymPy crosscheck
+was unavailable and is not claimed as rerun. Section 6 and inherited
+archives are outside this fresh audit.
+
+\textbf{The arbitrary-graph inequality remains unresolved}, so status
+remains Partially resolved.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/SP-10/manuscript.md}{Proof
+text}. AI assistance is disclosed; no Lean verification, external human
+peer review, formal verification or novelty claim is asserted. The
+original problem and prior-source credit below are unchanged.
+
 \subsection{Problem statement}\label{problem-statement}
 
 For a finite simple undirected graph \(G\) with vertex set
-\(\{1,\ldots,n\}\), \(n\ge1\), define \[
-\mathcal S(G)=\{A\in\mathbb R^{n\times n}:A=A^T,\ \mathcal G(A)=G\},
+\(\{1,\ldots,n\}\), \(n\ge1\), define
+
+\[\mathcal S(G)=\{A\in\mathbb R^{n\times n}:A=A^T,\ \mathcal G(A)=G\},
 \qquad
-\operatorname{mr}(G)=\min_{A\in\mathcal S(G)}\operatorname{rank}A.
-\] Here \(\mathcal G(A)\) has an edge \(\{i,j\}\) exactly when
-\(i\ne j\) and \(a_{ij}\ne0\). Diagonal entries are unrestricted. Let
-\(G^c\) have exactly the complementary edges between distinct vertices.
-Does every such graph satisfy \[
-\operatorname{mr}(G)+\operatorname{mr}(G^c)\le n+2?
-\]
+\mathop{\mathrm{mr}}\nolimits(G)=\min_{A\in\mathcal S(G)}\mathop{\mathrm{rank}}\nolimits A.\]
+
+Here \(\mathcal G(A)\) has an edge \(\{i,j\}\) exactly when \(i\ne j\)
+and \(a_{ij}\ne0\). Diagonal entries are unrestricted. Let \(G^c\) have
+exactly the complementary edges between distinct vertices. Does every
+such graph satisfy
+
+\[\mathop{\mathrm{mr}}\nolimits(G)+\mathop{\mathrm{mr}}\nolimits(G^c)\le n+2?\]
 
 \subsection{Relevance and ratings}\label{relevance-and-ratings}
 

@@ -1,0 +1,909 @@
+{
+  "status": "passed",
+  "parameters": {
+    "n": 2,
+    "q": 8,
+    "N": 256,
+    "epsilon": 0.45
+  },
+  "full_vector_trials": 72,
+  "summary_by_matrix_family": {
+    "identity": {
+      "trials": 12,
+      "successes": 12,
+      "max_relative_error": 0.0
+    },
+    "diagonal": {
+      "trials": 12,
+      "successes": 12,
+      "max_relative_error": 4.440892098500627e-16
+    },
+    "rank_one_product": {
+      "trials": 12,
+      "successes": 12,
+      "max_relative_error": 0.2902685535107801
+    },
+    "rank_one_unstructured": {
+      "trials": 12,
+      "successes": 11,
+      "max_relative_error": 0.7217769349653574
+    },
+    "rank_twelve": {
+      "trials": 12,
+      "successes": 12,
+      "max_relative_error": 0.1484675076772919
+    },
+    "identity_plus_product": {
+      "trials": 12,
+      "successes": 12,
+      "max_relative_error": 0.14513427675539003
+    }
+  },
+  "query_hash_invariance_checked": true,
+  "zero_input_checked": true,
+  "prequery_budget_guard_checked": true,
+  "nonpower_of_two_diagnostic": {
+    "estimate": 45.0,
+    "calls": 10,
+    "branch": "diagonal_control",
+    "m": 5,
+    "query_hash": "19d877b6cc23ce357a152d8ec0dac9519809db3149fa9d7bcbde152c5dca305a",
+    "relative_variance_bound": 0.72,
+    "forced_diagnostic_count": true
+  },
+  "trials": [
+    {
+      "family": "identity",
+      "seed": 0,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "45c449749e9720124819fcccedd89a661d11dba2244daacd24875c9abdfacd14"
+    },
+    {
+      "family": "identity",
+      "seed": 1,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "111125f87d9692ffcea5dfff0cf421efec15a0ebd1cc67e399230640b651a05c"
+    },
+    {
+      "family": "identity",
+      "seed": 2,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "708fc1a2387b20c82ec6936a7a08089aeb8af0f671015f240673a7e63265219d"
+    },
+    {
+      "family": "identity",
+      "seed": 3,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "5c1d70318e9fb5ce1b4a7e1cb4d5c300b1306348cbb8bd95f6254f5c01e0a98e"
+    },
+    {
+      "family": "identity",
+      "seed": 4,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8bb540c9726aa495a3d13e79dd1cb58501a8884f9de317606d87fe6a6d1cade6"
+    },
+    {
+      "family": "identity",
+      "seed": 5,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "542622b49065dd787e443a608b81539c52583a0749cd46919f1ee8cc8ef092eb"
+    },
+    {
+      "family": "identity",
+      "seed": 6,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "04cfda868a698fd61a81eac9787ccd8d964588fd2862a703f3b504851232180f"
+    },
+    {
+      "family": "identity",
+      "seed": 7,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "ae284a3086a8389493cabf33ae8d50effefada2724ce67a8125dd14f1c71b23b"
+    },
+    {
+      "family": "identity",
+      "seed": 8,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "167987a4fe57a6df7ad80c93b81a1b5913162f5e5312c77ecea99b6259db8e36"
+    },
+    {
+      "family": "identity",
+      "seed": 9,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "bef9a59fcbb928e88d6f7822b2de3ba8e9ebe1f7e032a90dfb4b8df1e62adaed"
+    },
+    {
+      "family": "identity",
+      "seed": 10,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8ed441070ec95415cfe4d327666db52e14cd214df6f58600618093f1140589cc"
+    },
+    {
+      "family": "identity",
+      "seed": 11,
+      "relative_error": 0.0,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "a3edf4e2b71f009c46e25c8e8256ca8d3649fe880854e47d6976fe161116abe2"
+    },
+    {
+      "family": "diagonal",
+      "seed": 0,
+      "relative_error": 1.1102230246251568e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "45c449749e9720124819fcccedd89a661d11dba2244daacd24875c9abdfacd14"
+    },
+    {
+      "family": "diagonal",
+      "seed": 1,
+      "relative_error": 1.1102230246251568e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "111125f87d9692ffcea5dfff0cf421efec15a0ebd1cc67e399230640b651a05c"
+    },
+    {
+      "family": "diagonal",
+      "seed": 2,
+      "relative_error": 2.2204460492503136e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "708fc1a2387b20c82ec6936a7a08089aeb8af0f671015f240673a7e63265219d"
+    },
+    {
+      "family": "diagonal",
+      "seed": 3,
+      "relative_error": 1.1102230246251568e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "5c1d70318e9fb5ce1b4a7e1cb4d5c300b1306348cbb8bd95f6254f5c01e0a98e"
+    },
+    {
+      "family": "diagonal",
+      "seed": 4,
+      "relative_error": 1.1102230246251568e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8bb540c9726aa495a3d13e79dd1cb58501a8884f9de317606d87fe6a6d1cade6"
+    },
+    {
+      "family": "diagonal",
+      "seed": 5,
+      "relative_error": 2.2204460492503136e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "542622b49065dd787e443a608b81539c52583a0749cd46919f1ee8cc8ef092eb"
+    },
+    {
+      "family": "diagonal",
+      "seed": 6,
+      "relative_error": 2.2204460492503136e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "04cfda868a698fd61a81eac9787ccd8d964588fd2862a703f3b504851232180f"
+    },
+    {
+      "family": "diagonal",
+      "seed": 7,
+      "relative_error": 2.2204460492503136e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "ae284a3086a8389493cabf33ae8d50effefada2724ce67a8125dd14f1c71b23b"
+    },
+    {
+      "family": "diagonal",
+      "seed": 8,
+      "relative_error": 1.1102230246251568e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "167987a4fe57a6df7ad80c93b81a1b5913162f5e5312c77ecea99b6259db8e36"
+    },
+    {
+      "family": "diagonal",
+      "seed": 9,
+      "relative_error": 1.1102230246251568e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "bef9a59fcbb928e88d6f7822b2de3ba8e9ebe1f7e032a90dfb4b8df1e62adaed"
+    },
+    {
+      "family": "diagonal",
+      "seed": 10,
+      "relative_error": 2.2204460492503136e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8ed441070ec95415cfe4d327666db52e14cd214df6f58600618093f1140589cc"
+    },
+    {
+      "family": "diagonal",
+      "seed": 11,
+      "relative_error": 4.440892098500627e-16,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "a3edf4e2b71f009c46e25c8e8256ca8d3649fe880854e47d6976fe161116abe2"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 0,
+      "relative_error": 0.0023851297383173926,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "45c449749e9720124819fcccedd89a661d11dba2244daacd24875c9abdfacd14"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 1,
+      "relative_error": 0.07603375416157786,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "111125f87d9692ffcea5dfff0cf421efec15a0ebd1cc67e399230640b651a05c"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 2,
+      "relative_error": 0.07404968738583804,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "708fc1a2387b20c82ec6936a7a08089aeb8af0f671015f240673a7e63265219d"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 3,
+      "relative_error": 0.07245209561665754,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "5c1d70318e9fb5ce1b4a7e1cb4d5c300b1306348cbb8bd95f6254f5c01e0a98e"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 4,
+      "relative_error": 0.1795898318169755,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8bb540c9726aa495a3d13e79dd1cb58501a8884f9de317606d87fe6a6d1cade6"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 5,
+      "relative_error": 0.15990829975341045,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "542622b49065dd787e443a608b81539c52583a0749cd46919f1ee8cc8ef092eb"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 6,
+      "relative_error": 0.13982733568461134,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "04cfda868a698fd61a81eac9787ccd8d964588fd2862a703f3b504851232180f"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 7,
+      "relative_error": 0.2902685535107801,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "ae284a3086a8389493cabf33ae8d50effefada2724ce67a8125dd14f1c71b23b"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 8,
+      "relative_error": 0.20662309334656742,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "167987a4fe57a6df7ad80c93b81a1b5913162f5e5312c77ecea99b6259db8e36"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 9,
+      "relative_error": 0.03442981056526095,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "bef9a59fcbb928e88d6f7822b2de3ba8e9ebe1f7e032a90dfb4b8df1e62adaed"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 10,
+      "relative_error": 0.2503176966728226,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8ed441070ec95415cfe4d327666db52e14cd214df6f58600618093f1140589cc"
+    },
+    {
+      "family": "rank_one_product",
+      "seed": 11,
+      "relative_error": 0.04804561126198757,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "a3edf4e2b71f009c46e25c8e8256ca8d3649fe880854e47d6976fe161116abe2"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 0,
+      "relative_error": 0.2151136858180913,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "45c449749e9720124819fcccedd89a661d11dba2244daacd24875c9abdfacd14"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 1,
+      "relative_error": 0.10365306077785644,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "111125f87d9692ffcea5dfff0cf421efec15a0ebd1cc67e399230640b651a05c"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 2,
+      "relative_error": 0.18770854887589689,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "708fc1a2387b20c82ec6936a7a08089aeb8af0f671015f240673a7e63265219d"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 3,
+      "relative_error": 0.30136061398615666,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "5c1d70318e9fb5ce1b4a7e1cb4d5c300b1306348cbb8bd95f6254f5c01e0a98e"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 4,
+      "relative_error": 0.7217769349653574,
+      "success": false,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8bb540c9726aa495a3d13e79dd1cb58501a8884f9de317606d87fe6a6d1cade6"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 5,
+      "relative_error": 0.35360588902514745,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "542622b49065dd787e443a608b81539c52583a0749cd46919f1ee8cc8ef092eb"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 6,
+      "relative_error": 0.16360716344914444,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "04cfda868a698fd61a81eac9787ccd8d964588fd2862a703f3b504851232180f"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 7,
+      "relative_error": 0.08242702365270863,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "ae284a3086a8389493cabf33ae8d50effefada2724ce67a8125dd14f1c71b23b"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 8,
+      "relative_error": 0.11357439249699101,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "167987a4fe57a6df7ad80c93b81a1b5913162f5e5312c77ecea99b6259db8e36"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 9,
+      "relative_error": 0.09295156147142794,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "bef9a59fcbb928e88d6f7822b2de3ba8e9ebe1f7e032a90dfb4b8df1e62adaed"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 10,
+      "relative_error": 0.27626928286112484,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8ed441070ec95415cfe4d327666db52e14cd214df6f58600618093f1140589cc"
+    },
+    {
+      "family": "rank_one_unstructured",
+      "seed": 11,
+      "relative_error": 0.29502045751298767,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "a3edf4e2b71f009c46e25c8e8256ca8d3649fe880854e47d6976fe161116abe2"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 0,
+      "relative_error": 0.07741830107896897,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "45c449749e9720124819fcccedd89a661d11dba2244daacd24875c9abdfacd14"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 1,
+      "relative_error": 0.1373408984772524,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "111125f87d9692ffcea5dfff0cf421efec15a0ebd1cc67e399230640b651a05c"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 2,
+      "relative_error": 0.1484675076772919,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "708fc1a2387b20c82ec6936a7a08089aeb8af0f671015f240673a7e63265219d"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 3,
+      "relative_error": 0.027447814113224833,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "5c1d70318e9fb5ce1b4a7e1cb4d5c300b1306348cbb8bd95f6254f5c01e0a98e"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 4,
+      "relative_error": 0.1295942256855791,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8bb540c9726aa495a3d13e79dd1cb58501a8884f9de317606d87fe6a6d1cade6"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 5,
+      "relative_error": 0.04843493806733812,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "542622b49065dd787e443a608b81539c52583a0749cd46919f1ee8cc8ef092eb"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 6,
+      "relative_error": 0.02418067999561102,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "04cfda868a698fd61a81eac9787ccd8d964588fd2862a703f3b504851232180f"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 7,
+      "relative_error": 0.0320018548633334,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "ae284a3086a8389493cabf33ae8d50effefada2724ce67a8125dd14f1c71b23b"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 8,
+      "relative_error": 0.05478202227793738,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "167987a4fe57a6df7ad80c93b81a1b5913162f5e5312c77ecea99b6259db8e36"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 9,
+      "relative_error": 0.0832580293926729,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "bef9a59fcbb928e88d6f7822b2de3ba8e9ebe1f7e032a90dfb4b8df1e62adaed"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 10,
+      "relative_error": 0.04140164535404922,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8ed441070ec95415cfe4d327666db52e14cd214df6f58600618093f1140589cc"
+    },
+    {
+      "family": "rank_twelve",
+      "seed": 11,
+      "relative_error": 0.11312793587578152,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "a3edf4e2b71f009c46e25c8e8256ca8d3649fe880854e47d6976fe161116abe2"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 0,
+      "relative_error": 0.001192564869158863,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "45c449749e9720124819fcccedd89a661d11dba2244daacd24875c9abdfacd14"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 1,
+      "relative_error": 0.038016877080788936,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "111125f87d9692ffcea5dfff0cf421efec15a0ebd1cc67e399230640b651a05c"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 2,
+      "relative_error": 0.03702484369291925,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "708fc1a2387b20c82ec6936a7a08089aeb8af0f671015f240673a7e63265219d"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 3,
+      "relative_error": 0.03622604780832872,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "5c1d70318e9fb5ce1b4a7e1cb4d5c300b1306348cbb8bd95f6254f5c01e0a98e"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 4,
+      "relative_error": 0.0897949159084881,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8bb540c9726aa495a3d13e79dd1cb58501a8884f9de317606d87fe6a6d1cade6"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 5,
+      "relative_error": 0.07995414987670513,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "542622b49065dd787e443a608b81539c52583a0749cd46919f1ee8cc8ef092eb"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 6,
+      "relative_error": 0.0699136678423058,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "04cfda868a698fd61a81eac9787ccd8d964588fd2862a703f3b504851232180f"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 7,
+      "relative_error": 0.14513427675539003,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "ae284a3086a8389493cabf33ae8d50effefada2724ce67a8125dd14f1c71b23b"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 8,
+      "relative_error": 0.10331154667328368,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "167987a4fe57a6df7ad80c93b81a1b5913162f5e5312c77ecea99b6259db8e36"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 9,
+      "relative_error": 0.0172149052826307,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "bef9a59fcbb928e88d6f7822b2de3ba8e9ebe1f7e032a90dfb4b8df1e62adaed"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 10,
+      "relative_error": 0.12515884833641144,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "8ed441070ec95415cfe4d327666db52e14cd214df6f58600618093f1140589cc"
+    },
+    {
+      "family": "identity_plus_product",
+      "seed": 11,
+      "relative_error": 0.024022805630993682,
+      "success": true,
+      "calls": 124,
+      "m": 62,
+      "query_hash": "a3edf4e2b71f009c46e25c8e8256ca8d3649fe880854e47d6976fe161116abe2"
+    }
+  ],
+  "empirical_average_scalar_experiments": [
+    {
+      "q": 8,
+      "exponential_rate": 0.11314718055994528,
+      "samples_per_repetition": 3,
+      "repetitions": 40,
+      "median_estimate": 0.4076944777184543,
+      "success_fraction_epsilon_quarter": 0.05,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 8,
+      "exponential_rate": 0.1931471805599453,
+      "samples_per_repetition": 5,
+      "repetitions": 40,
+      "median_estimate": 0.7123660436627299,
+      "success_fraction_epsilon_quarter": 0.175,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 8,
+      "exponential_rate": 0.2731471805599453,
+      "samples_per_repetition": 9,
+      "repetitions": 40,
+      "median_estimate": 0.745737985099524,
+      "success_fraction_epsilon_quarter": 0.225,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 16,
+      "exponential_rate": 0.11314718055994528,
+      "samples_per_repetition": 7,
+      "repetitions": 40,
+      "median_estimate": 0.11015842385901391,
+      "success_fraction_epsilon_quarter": 0.025,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 16,
+      "exponential_rate": 0.1931471805599453,
+      "samples_per_repetition": 22,
+      "repetitions": 40,
+      "median_estimate": 0.370780635059864,
+      "success_fraction_epsilon_quarter": 0.075,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 16,
+      "exponential_rate": 0.2731471805599453,
+      "samples_per_repetition": 80,
+      "repetitions": 40,
+      "median_estimate": 0.7091953787696231,
+      "success_fraction_epsilon_quarter": 0.25,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 24,
+      "exponential_rate": 0.11314718055994528,
+      "samples_per_repetition": 16,
+      "repetitions": 40,
+      "median_estimate": 0.10521255143938217,
+      "success_fraction_epsilon_quarter": 0.0,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 24,
+      "exponential_rate": 0.1931471805599453,
+      "samples_per_repetition": 104,
+      "repetitions": 40,
+      "median_estimate": 0.4893982983203714,
+      "success_fraction_epsilon_quarter": 0.125,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 24,
+      "exponential_rate": 0.2731471805599453,
+      "samples_per_repetition": 704,
+      "repetitions": 40,
+      "median_estimate": 0.6563434886764135,
+      "success_fraction_epsilon_quarter": 0.3,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 32,
+      "exponential_rate": 0.11314718055994528,
+      "samples_per_repetition": 38,
+      "repetitions": 40,
+      "median_estimate": 0.07009451902116406,
+      "success_fraction_epsilon_quarter": 0.025,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 32,
+      "exponential_rate": 0.1931471805599453,
+      "samples_per_repetition": 484,
+      "repetitions": 40,
+      "median_estimate": 0.4485805812521789,
+      "success_fraction_epsilon_quarter": 0.075,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 32,
+      "exponential_rate": 0.2731471805599453,
+      "samples_per_repetition": 6253,
+      "repetitions": 40,
+      "median_estimate": 0.7298380249195318,
+      "success_fraction_epsilon_quarter": 0.2,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 40,
+      "exponential_rate": 0.11314718055994528,
+      "samples_per_repetition": 93,
+      "repetitions": 40,
+      "median_estimate": 0.08346632978876511,
+      "success_fraction_epsilon_quarter": 0.025,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 40,
+      "exponential_rate": 0.1931471805599453,
+      "samples_per_repetition": 2267,
+      "repetitions": 40,
+      "median_estimate": 0.48780622951883634,
+      "success_fraction_epsilon_quarter": 0.15,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    },
+    {
+      "q": 40,
+      "exponential_rate": 0.2731471805599453,
+      "samples_per_repetition": 55598,
+      "repetitions": 40,
+      "median_estimate": 0.8093818650327669,
+      "success_fraction_epsilon_quarter": 0.4,
+      "interpretation": "Scalar Gamma-law empirical-average diagnostic only."
+    }
+  ],
+  "floating_bound_comparisons": [
+    {
+      "n": 2,
+      "q": 32,
+      "epsilon": 0.25,
+      "p": 2.0,
+      "log_unrounded_query_bound": 17.95982925195125,
+      "D_n": 0.1931471805599453,
+      "finite_bit_factor_included": true,
+      "note": "Floating-point evaluation; final ceilings not included."
+    },
+    {
+      "n": 2,
+      "q": 64,
+      "epsilon": 0.25,
+      "p": 1.789179988193764,
+      "log_unrounded_query_bound": 27.669436326353818,
+      "D_n": 0.1931471805599453,
+      "finite_bit_factor_included": true,
+      "note": "Floating-point evaluation; final ceilings not included."
+    },
+    {
+      "n": 2,
+      "q": 128,
+      "epsilon": 0.25,
+      "p": 1.5208060353450488,
+      "log_unrounded_query_bound": 44.88468344684041,
+      "D_n": 0.1931471805599453,
+      "finite_bit_factor_included": true,
+      "note": "Floating-point evaluation; final ceilings not included."
+    },
+    {
+      "n": 2,
+      "q": 256,
+      "epsilon": 0.25,
+      "p": 1.3512968303470598,
+      "log_unrounded_query_bound": 76.198107550619,
+      "D_n": 0.1931471805599453,
+      "finite_bit_factor_included": true,
+      "note": "Floating-point evaluation; final ceilings not included."
+    },
+    {
+      "n": 2,
+      "q": 512,
+      "epsilon": 0.25,
+      "p": 1.2404451636714124,
+      "log_unrounded_query_bound": 134.6850606888532,
+      "D_n": 0.1931471805599453,
+      "finite_bit_factor_included": true,
+      "note": "Floating-point evaluation; final ceilings not included."
+    },
+    {
+      "n": 2,
+      "q": 1024,
+      "epsilon": 0.25,
+      "p": 1.1662137214819372,
+      "log_unrounded_query_bound": 246.08039506811767,
+      "D_n": 0.1931471805599453,
+      "finite_bit_factor_included": true,
+      "note": "Floating-point evaluation; final ceilings not included."
+    }
+  ],
+  "limitations": [
+    "No floating-point stability theorem.",
+    "Finite tests do not establish the universal probability guarantee.",
+    "Scalar empirical-mean diagnostics are not unrestricted oracle lower bounds."
+  ],
+  "elapsed_seconds": 2.170752763748169
+}

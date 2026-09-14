@@ -1,0 +1,209 @@
+PASS: 208 SHA-256 file hashes.
+
+=== retained_eight_exact_programs ===
+PASS: 163 file hashes match the manifest.
+
+=== prior/certificate/verify_certificate.py ===
+PASS: the distinguished polynomial q has normalized trace exactly 1.
+PASS: block 0 is positive definite (all 52 integer margins positive).
+PASS: block 1 is positive definite (all 26 integer margins positive).
+PASS: block 2 is positive definite (all 26 integer margins positive).
+PASS: every coefficient in the universal cyclic trace identity is exactly zero.
+CERTIFICATE VERIFIED. This is not a proof of SP-09 for arbitrary spectra.
+
+=== prior/certificate/verify_witness_and_rigidity.py ===
+PASS: the witness squared singular values are 27/13, 27/13, 4/13.
+PASS: exhaustive exact matching gives bottleneck squared distance 28/13.
+PASS: the first nine words span M_3; the 52 columns give the entire degree-four relation kernel.
+EQUALITY RIGIDITY VERIFIED together with the positive Gram block in verify_certificate.py.
+
+=== prior/certificate/test_verifiers.py ===
+{
+  "valid_certificate": "PASS",
+  "valid_witness_and_rigidity": "PASS",
+  "corruption_tests": [
+    {
+      "corruption": "trace",
+      "rejected": true
+    },
+    {
+      "corruption": "positivity",
+      "rejected": true
+    },
+    {
+      "corruption": "identity",
+      "rejected": true
+    }
+  ]
+}
+
+=== new_results/certificate/local_geometry.py ===
+PASS: active-face tangent rank = 3; tracial moment tangent rank = 4; joint rank = 4.
+PASS: the unique KKT density has positive eigenvalues 5/28 and 23/28; an explicit nongauge flat tangent is verified.
+PASS: both local kernels have full complex dimension 26; degree-one local evaluation rank = 3.
+
+=== new_results/certificate/rank_witness.py ===
+PASS: the exact coefficient map has rank at least 107 (minor determinant 308373 modulo prime 1000003).
+
+=== new_results/certificate/exact_minor.py ===
+PASS: exact fraction-free determinant is nonzero (939 decimal digits) and agrees with the modular calculation.
+
+=== new_results/certificate/quantitative_rigidity.py ===
+PASS: all four rigidity relations have exact kernel coordinates.
+PASS: the explicit dimension-independent stability constant is C = 2705974
+
+=== new_results/certificate/test_new_certificates.py ===
+{
+  "valid_geometry": "PASS",
+  "valid_modular_rank": "PASS",
+  "valid_integer_rank": "PASS",
+  "valid_stability_constant": "PASS",
+  "integer_elimination_regressions": "PASS",
+  "corruption_tests": [
+    {
+      "corruption": "duplicate_minor_column",
+      "rejected": true
+    },
+    {
+      "corruption": "incorrect_modular_determinant",
+      "rejected": true
+    },
+    {
+      "corruption": "composite_modulus",
+      "rejected": true
+    },
+    {
+      "corruption": "incorrect_coordinate_order",
+      "rejected": true
+    },
+    {
+      "corruption": "loss_of_degree_one_normalization",
+      "rejected": true
+    },
+    {
+      "corruption": "changed_local_kernel",
+      "rejected": true
+    }
+  ]
+}
+
+ALL EXACT CHECKS PASSED. Universal SP-09 is not claimed solved.
+
+=== new_exact_geometry ===
+{
+  "result": "PASS",
+  "finite_algebra": {
+    "field": "Q(s), s^2=-3; a pair [x,y] denotes x+y*s",
+    "gamma": "27/13",
+    "lower_squared_singular_value": "4/13",
+    "spectral_gap": "23/13",
+    "rho_positive_eigenvalues": [
+      "5/28",
+      "23/28"
+    ],
+    "A_coefficients": [
+      [
+        "153/364",
+        "-45/364"
+      ],
+      [
+        "225/364",
+        "-135/364"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "B_coefficients_before_subtraction": [
+      [
+        "153/364",
+        "-45/364"
+      ],
+      [
+        "225/364",
+        "-135/364"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ],
+    "face_rank": 3,
+    "gauge_rank": 5,
+    "gauge_plus_flat_rank": 6,
+    "full_tangent_rank": 9,
+    "transverse_direction_indices_zero_based": [
+      3,
+      4,
+      6
+    ],
+    "flat_direction_coefficients": [
+      "0",
+      "0",
+      "0",
+      "-3/5",
+      "2/5",
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    "flat_schur_curvature": [
+      "1/52",
+      "0"
+    ],
+    "flat_unreduced_H2_density_trace": [
+      "19/2080",
+      "0"
+    ]
+  },
+  "scope": "Finite identities only. The analytic proof and Horn input are in the manuscript."
+}
+
+=== new_negative_tests ===
+{
+  "result": "PASS",
+  "unmodified_witness": "PASS",
+  "negative_tests": [
+    {
+      "corruption": "changed_A_coefficient",
+      "rejected": true
+    },
+    {
+      "corruption": "nonzero_third_coefficient",
+      "rejected": true
+    },
+    {
+      "corruption": "wrong_B_sign",
+      "rejected": true
+    },
+    {
+      "corruption": "missing_Schur_correction",
+      "rejected": true
+    },
+    {
+      "corruption": "negative_curvature",
+      "rejected": true
+    },
+    {
+      "corruption": "rank_one_density",
+      "rejected": true
+    },
+    {
+      "corruption": "wrong_gauge_rank",
+      "rejected": true
+    },
+    {
+      "corruption": "wrong_transverse_basis",
+      "rejected": true
+    },
+    {
+      "corruption": "changed_reference_residual",
+      "rejected": true
+    }
+  ],
+  "scope": "Exact finite-identity and data-integrity regression tests, not formalization of the analytic proof."
+}
+
+ALL REQUESTED CHECKS PASSED. General SP-09 remains unproved in this archive.

@@ -34,7 +34,7 @@ matrices},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}MI-20}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-12}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -58,6 +58,33 @@ to the community\par}
 \textbf{Rating rationale:} Determining a sharp two-parameter function
 after the proposed formula failed is challenging; matrix-sum bounds
 affect norm estimates used across NLA.
+
+\subsection{Reviewed continuation --- 13 September
+2026}\label{reviewed-continuation-13-september-2026}
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute,
+Simons Foundation) supplies the uniform bound
+\(C_{4/3}(2)\le(861/800)^{1/4}\) and interpolated two-summand bounds in
+the
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/MI-20/report.pdf}{corrected
+fourth-round report}, interval certificate and interpolation sections.
+Exact rational certificates cover a full parameter interval in every
+matrix order; numerical optimizers are not the proof. The independent
+review identified and corrected the conjugation in the cyclic-reduction
+construction before accepting the publication version.
+
+Status remains \textbf{Open}: the bounds do not match, and the exact
+function for every \(m\ge2\) and \(1< p<2\) remains undetermined. The
+positive power-system characterization is a reduction, not an evaluation
+of that function.
+
+The
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/verification/MI-20/review.md}{independent
+informal Codex AI-agent review} records its accepted scope and checks.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-continuations-2026-09-13/README.md}{Submission,
+original package, reproduction and verified affiliation}. This is not
+external human peer review or formal verification; no Lean verification
+was performed.
 
 \subsection{Audited dual and projective reductions --- 12 September
 2026}\label{audited-dual-and-projective-reductions-12-september-2026}

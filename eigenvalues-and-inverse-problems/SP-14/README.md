@@ -8,9 +8,18 @@
 **Difficulty:** extreme  
 **Importance:** interesting to the community  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-11
+**Last checked:** 2026-09-13
 
 **Rating rationale:** A general theorem must distinguish symbols whose Toeplitz spectra follow their values from the markedly different behavior of analytic symbols. This is a longstanding obstacle in the spectral analysis of nonnormal structured matrices.
+
+## Reviewed continuation — 13 September 2026
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation) supplies an inverse-corner criterion for one-sided annular extension and determinant limsup results. For continuous symbols with Jordan-curve range and winding $`+1`$ (respectively $`-1`$), absence of inner (respectively outer) extension yields a canonically distributed subsequence of the actual unperturbed Toeplitz eigenvalue measures; see the [seventh-round report](../../references/holden-continuations-2026-09-13/SP-14/report.pdf), Theorem 2.5, Theorem 3.1 and Corollary 4.5. The Jordan-curve argument includes positive-area curves.
+
+Status remains **Partially resolved**: subsequence convergence does not establish the displayed full-sequence conclusion, and the unrestricted continuous-symbol case remains unresolved.
+
+The [independent informal Codex AI-agent review](../../references/holden-continuations-2026-09-13/verification/SP-14/review.md) records its accepted scope and checks. [Submission, original package, reproduction and verified affiliation](../../references/holden-continuations-2026-09-13/README.md). This is not external human peer review or formal verification; no Lean verification was performed.
+
 
 ## Statement
 

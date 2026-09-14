@@ -1,0 +1,496 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,array,microtype}
+\usepackage[margin=1in]{geometry}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\usepackage{enumitem}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{0pt}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\DeclareMathOperator{\tr}{tr}
+\DeclareMathOperator{\Sp}{Sp}
+\DeclareMathOperator{\Sym}{Sym}
+\DeclareMathOperator{\Mat}{Mat}
+\DeclareMathOperator{\GL}{GL}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Conf}{Conf}
+\DeclareMathOperator{\ED}{ED}
+\newcommand{\CC}{\mathbb C}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\rankfourroots}{31\,183}
+\newcommand{\rankfourbound}{31\,184}
+\newcommand{\rankthreeroots}{543}
+\title{SP-03: Stein normal form and certified critical points}
+\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}\date{}
+\begin{document}
+\maketitle
+\begin{abstract}
+The proposed all-rank formula for the Euclidean distance degree of the standard real symplectic group is neither proved nor refuted in this report. Building on the supplied regular $m^2$-variable reduction, we identify its denominator exactly and put the full generic critical-point problem on a universal discrete-Lyapunov domain. The two auxiliary symmetric variables solve explicit Stein equations. We compute the compactly supported Euler characteristic of that domain and prove that every symplectic Euclidean distance degree is even. Exact integer-arithmetic contraction checks and exact separation checks certify \rankthreeroots\ distinct simple rank-three critical points and \rankfourroots\ distinct simple rank-four critical points. The parity theorem therefore gives $D_3\ge544$ and $D_4\ge\rankfourbound$, without using the published rank-three count as a lower-bound input. The zero-coupling specialization has only $2^m$ regular points; all other branches must approach excluded poles or singular directions at infinity. The outstanding step is the generic degree of an explicit rational matrix map; none of the numerical searches supplies a completeness certificate.
+\end{abstract}
+
+\section{Target, conventions, and scope}
+Put $N=2m$ and
+\[
+J=\begin{pmatrix}0&I_m\\-I_m&0\end{pmatrix},\qquad
+G_m=\Sp_{2m}(\CC)=\{X\in\CC^{N\times N}:X^TJX=J\}.
+\]
+Every transpose below is an ordinary transpose, with no complex conjugation. For a Zariski-generic data matrix $U$, let $D_m$ be the number of critical points on $G_m$ of
+\[
+f_U(X)=\tr((X-U)^T(X-U)).
+\]
+The SP-03 target is the identity
+\begin{equation}\label{eq:target}
+D_m\stackrel{?}{=}2^{m^2}+2^{2m-1}\qquad(m\ge1).
+\end{equation}
+Baaijens and Draisma report the small-rank values $4,24,544$ and propose the displayed pattern; the next prediction is $D_4=65\,664$.\footnote{J. A. Baaijens and J. Draisma, \emph{Euclidean distance degrees of real algebraic groups}, Section 5, p.~187 \cite{BD}; the precise repository statement is \cite{repo}.} A count for a Hermitian metric, a different embedding, only real critical points, or a special class of data would not settle this target.
+
+The supplied predecessor package \cite{prior} proves a regular rational reduction to $m^2$ variables, supermultiplicativity, and an algebraic-degree upper bound. Its root certificates establish lower bounds $4,24,542$ at ranks one, two, and three. Those results are retained, not relabeled as new. Sections~\ref{sec:denominator}--\ref{sec:parity} give the additional mathematical arguments in this continuation. Sections~\ref{sec:certificates}--\ref{sec:audit} describe the enlarged exact computational evidence.
+
+The status of this package is \emph{partial}. The written proofs are not a proof-assistant formalization, and no independent external referee review is claimed. The exact root checks are computer-assisted proofs of the assertions they test, subject to the usual correctness assumptions on the supplied source, compiler, and integer arithmetic. They are not proofs that a fiber has no further points.
+
+\section{Critical incidence and the preceding reduction}\label{sec:incidence}
+Let $\mathfrak g_m=\{H:H^TJ+JH=0\}$ and let $\mathfrak a_N$ be the space of skew-symmetric $N\times N$ matrices. The tangent space at $X$ is $X\mathfrak g_m$, and its Frobenius-normal space is
+\[
+N_XG_m=\{JXK:K\in\mathfrak a_N\}.
+\]
+For example, pair the differential of $X^TJX-J$ with an arbitrary skew matrix; the resulting gradients have this form. The map $K\mapsto JXK$ is injective, and $\dim\mathfrak a_N=N(N-1)/2$ is the codimension of the group. Thus criticality is equivalent to
+\begin{equation}\label{eq:incidence}
+U=X+JXK,\qquad X\in G_m,\quad K^T=-K.
+\end{equation}
+The multiplier is unique when $X$ is fixed.
+
+\begin{lemma}\label{lem:generic}
+The map $\Phi:G_m\times\mathfrak a_N\to\Mat_N$, $(X,K)\mapsto X+JXK$, is dominant and generically finite with reduced generic fiber. A generic fiber avoids any fixed proper closed subset of its source.
+\end{lemma}
+\begin{proof}
+The source is smooth and irreducible, of dimension $N^2$. At $(I,0)$ its differential sends $(Y,K)$ to $Y+JK$. Over the reals, these are the tangent and normal spaces for a positive definite inner product, and they are complementary. Their complexifications remain complementary. Thus the differential is invertible and the map is dominant and generically finite. In characteristic zero the generic finite fiber is reduced. A proper closed subset of the source has dimension at most $N^2-1$, and the closure of its image has at most that dimension; generic data avoid that image. Nonsingularity of the projection differential at a critical pair is equivalent, in local coordinates, to nonsingularity of the critical Hessian.
+\end{proof}
+The multiplier reduction to saturated quartics in $m(2m-1)$ variables appears in the repository's preceding proof note \cite{holden}. It is not needed for the new denominator calculation, but it gives an independent comparison of critical equations.
+
+\subsection{The metric-compatible big cell}
+Set
+\[
+P=\frac1{\sqrt2}\begin{pmatrix}I&iI\\iI&I\end{pmatrix},\qquad
+Q=\begin{pmatrix}0&I\\I&0\end{pmatrix}.
+\]
+Then $P^TJP=J$ and $P^TP=iQ$. The change $X\mapsto P^{-1}XP$ preserves the symplectic constraint and changes the ambient pairing to
+\[
+\langle Y,Z\rangle_Q=\tr(QY^TQZ).
+\]
+This is the coordinate change used in the symplectic discussion of \cite{BD}. In the rest of this section, and through Section~\ref{sec:euler}, data and points are in these $Q$-metric coordinates. Write $U=\left(\begin{smallmatrix}U_a&U_b\\U_c&U_d\end{smallmatrix}\right)$.
+
+Every symplectic point with invertible upper-left block has a unique representation
+\begin{equation}\label{eq:chart}
+X(A,S,T)=\begin{pmatrix}A&AS\\TA&TAS+A^{-T}\end{pmatrix},
+\qquad A\in\GL_m,\quad S^T=S,\quad T^T=T.
+\end{equation}
+The constraints $AB^T=BA^T$ and $A^TC=C^TA$ give symmetry of $A^{-1}B$ and $CA^{-1}$; the remaining block equation then determines the lower-right block. Direct multiplication proves the converse.
+
+Let $k=m(m+1)/2$ and let $E_1,\dots,E_k$ be the unnormalized symmetric basis $E_{ii}$, $E_{ij}+E_{ji}$ for $i<j$. If $S=\sum s_iE_i$, $T=\sum t_jE_j$, the distance differs by a constant and a factor of two from
+\begin{align}\label{eq:F}
+F_U(A,S,T)={}&2\tr(ASA^TT)-\tr(TASU_a^T)-\tr(AU_d^T)
+-\tr(U_aA^{-1})\notag\\
+&-\tr(ASU_c^T)-\tr(TAU_b^T).
+\end{align}
+Indeed $\tr(QX^TQX)=2m+4\tr(BC^T)$ on the group. Define
+\begin{align}\label{eq:L}
+L_{ij}(A)&=2\tr(AE_iA^TE_j)-\tr(E_jAE_iU_a^T),\notag\\
+b_i(A)&=\tr(AE_iU_c^T),\qquad c_j(A)=\tr(E_jAU_b^T),\notag\\
+h(A)&=-\tr(AU_d^T)-\tr(U_aA^{-1}).
+\end{align}
+Then $F_U=s^TLt-b^Ts-c^Tt+h$.
+
+\begin{lemma}[Regular reduction from the predecessor package]\label{lem:oldreduction}
+On $\det A\det L(A)\ne0$, the complete stationary scheme is equivalent to the stationary scheme of
+\begin{equation}\label{eq:phi}
+\phi_U(A)=h(A)-c(A)^TL(A)^{-1}b(A).
+\end{equation}
+The reconstruction is $t=L^{-1}b$, $s=L^{-T}c$, followed by \eqref{eq:chart}. Every critical point for generic data is in this regular chart.
+\end{lemma}
+\begin{proof}
+The auxiliary derivatives are $Lt-b$ and $L^Ts-c$. Moreover
+\[
+F_U=(s-L^{-T}c)^TL(t-L^{-1}b)+\phi_U(A).
+\]
+Eliminating these invertible linear equations gives an equivalence of localized stationary schemes. At the reconstructed auxiliary variables, the derivatives of the displayed bilinear term vanish. Generic coverage follows from Lemma~\ref{lem:generic}: the locus $\det A=0$ is proper, and on its complement the locus $\det L=0$ is proper as well. At $X=U=I$ one has $A=U_a=I$ and $L_{ij}=\tr(E_iE_j)$, an invertible diagonal Gram matrix. The closure of the second bad locus is therefore proper in the irreducible incidence.
+\end{proof}
+For later use, direct differentiation of \eqref{eq:F} at the reconstructed variables gives
+\begin{equation}\label{eq:oldgradient}
+\nabla_A\phi_U=T(4A-U_a)S-U_cS-TU_b-U_d+A^{-T}U_a^TA^{-T}.
+\end{equation}
+Derivatives of $S(A)$ and $T(A)$ make no additional contribution because their first derivatives in $F_U$ vanish.
+
+\section{Exact factorization of the denominator}\label{sec:denominator}
+The polynomial $\det L$ has a structured factorization not visible from its entrywise definition. All determinants of operators in this section are coordinate determinants; no orthonormality of a matrix basis is assumed.
+
+\begin{theorem}\label{thm:factor}
+Put $B=2A-U_a$. On skew-symmetric $m\times m$ matrices define
+\[
+\mathcal K_{A,B}(Z)=AZB^T+BZA^T.
+\]
+Using the basis $E_{ij}-E_{ji}$, its determinant satisfies
+\begin{equation}\label{eq:general-factor}
+\boxed{\det L=\det A\,\det B\,\det\mathcal K_{A,B}.}
+\end{equation}
+For $m=1$ the last determinant is the determinant of a zero-dimensional operator, equal to one. The identity holds as a polynomial identity, including singular $A$ or $B$.
+\end{theorem}
+\begin{proof}
+First suppose $A$ is invertible and put $M=A^{-1}B$. The pairing represented by $L$ is
+\[
+\tr(A S B^T T)=\tr\left(A\frac{SM^T+MS}{2}A^T T\right),\qquad S,T\in\Sym_m.
+\]
+Write $r=m(m-1)/2$. The Gram determinant of the chosen symmetric basis for $\tr(ST)$ is $2^r$. The determinant of congruence $S\mapsto ASA^T$ on $\Sym_m$ is $(\det A)^{m+1}$. If $\mu_1,\dots,\mu_m$ are the eigenvalues of $M$, the half-Lyapunov operator $(SM^T+MS)/2$ has determinant
+\[
+\prod_i\mu_i\prod_{i<j}\frac{\mu_i+\mu_j}{2}.
+\]
+These statements follow directly for diagonal matrices and extend by similarity and polynomial density. Consequently
+\begin{equation}\label{eq:spectralL}
+\det L=(\det A)^{m+1}\prod_i\mu_i\prod_{i<j}(\mu_i+\mu_j).
+\end{equation}
+On skew matrices the determinant of congruence is $(\det A)^{m-1}$, and the operator $Z\mapsto ZM^T+MZ$ has determinant $\prod_{i<j}(\mu_i+\mu_j)$. Thus
+\[
+\det\mathcal K_{A,B}=(\det A)^{m-1}\prod_{i<j}(\mu_i+\mu_j).
+\]
+Multiplication by $\det A\det B=(\det A)^2\prod_i\mu_i$ gives \eqref{eq:spectralL}. Both sides of \eqref{eq:general-factor} are polynomials, so equality extends from the dense open set of invertible $A$ to all $A$.
+\end{proof}
+
+The exact symbolic implementation checks the constants as well as the zero sets. In particular, replacing the skew-coordinate determinant by a skew Gram determinant would introduce an erroneous power of two. The factorization does not by itself count stationary points: the degree of a denominator is not the degree of the gradient map.
+
+\section{A universal Stein normal form}\label{sec:stein}
+\subsection{Normalizing the data}
+If $U_a$ is invertible, left multiplication by
+\[
+G=\diag(U_a^{-1},U_a^T)
+\]
+is both symplectic and $Q$-orthogonal. Therefore it preserves the problem while changing the data to
+\begin{equation}\label{eq:normalized-data}
+\widetilde U=GU=\begin{pmatrix}I&b\\c&d\end{pmatrix},\qquad
+b=U_a^{-1}U_b,\quad c=U_a^TU_c,\quad d=U_a^TU_d.
+\end{equation}
+The corresponding upper-left block is $\widetilde A=U_a^{-1}A$. This is not a restriction to nongeneric original data: the open data set $\det U_a\ne0$ is algebraically a product of $\GL_m$ with the normalized data space, and the fibers in each $\GL_m$ factor are isometric. We henceforth drop the tildes and assume $U_a=I$.
+
+Set
+\begin{equation}\label{eq:C}
+C=4A-I,
+\end{equation}
+and let $\mathcal S_C$ be the operator $Z\mapsto CZC^T$ on $\Sym_m$. Define
+\begin{equation}\label{eq:delta}
+\Delta_m(C)=\det(\mathcal S_C-I),\qquad
+\Omega_m=\{C\in\Mat_m:\Delta_m(C)\ne0\}.
+\end{equation}
+Here $\mathcal S_C$ is the symmetric-square representation in congruence coordinates.
+
+\begin{theorem}[Universal denominator]\label{thm:stein-denom}
+For normalized data,
+\begin{align}\label{eq:stein-factor}
+\det L&=2^{-m(m+2)}\Delta_m(C),\notag\\
+\Delta_m(C)&=\det(C-I)\det(C+I)\det(\wedge^2 C-I).
+\end{align}
+Equivalently, with eigenvalues $\lambda_i$ of $C$, counted with multiplicity,
+\[
+\Delta_m(C)=\prod_{i\le j}(\lambda_i\lambda_j-1).
+\]
+The original regularity condition $\det A\det L\ne0$ is exactly $C\in\Omega_m$. For unnormalized invertible $U_a$, the identity is
+\begin{equation}\label{eq:unnormalizedStein}
+\det L=2^{-m(m+2)}(\det U_a)^{m+1}
+\Delta_m(4U_a^{-1}A-I).
+\end{equation}
+\end{theorem}
+\begin{proof}
+For $C_0=4A-U_a$, expansion and symmetry of $E_i,E_j$ give
+\[
+8L_{ij}=\tr((C_0E_iC_0^T-U_aE_iU_a^T)E_j).
+\]
+When $U_a=I$, the right side is the trace pairing of $(\mathcal S_C-I)E_i$ with $E_j$. Its determinant is $2^r\Delta_m(C)$, where $r=m(m-1)/2$ is the number of off-diagonal symmetric basis elements. There are $k=m(m+1)/2$ rows, so
+\[
+\det L=8^{-k}2^r\Delta_m(C)=2^{-m(m+2)}\Delta_m(C).
+\]
+For diagonal $C$, the eigenvalues of $\mathcal S_C$ are $\lambda_i\lambda_j$ for $i\le j$, whereas those of $\wedge^2 C$ are the products for $i<j$. Separating the diagonal factors proves the second identity on a dense set; polynomial density proves it everywhere. In particular $\Delta_m$ contains $\det(C+I)$, which is a nonzero scalar multiple of $\det A$. This proves the assertion about the regular domain. Finally $C_0=U_a(4U_a^{-1}A-I)$, and congruence by $U_a$ on $\Sym_m$ has determinant $(\det U_a)^{m+1}$, proving \eqref{eq:unnormalizedStein}.
+\end{proof}
+The domain $\Omega_m$ is independent of $b,c,d$. Its excluded divisor consists of matrices with two eigenvalues, allowing repetition, whose product is one. This includes eigenvalues $1$ and $-1$ and distinct reciprocal pairs. Eigenvalue zero is allowed.
+
+\subsection{The matrix map whose degree remains to be counted}
+A Stein equation here means a discrete Lyapunov equation, with ordinary transpose. On $\Omega_m$, define the unique symmetric solutions
+\begin{align}\label{eq:Stein}
+CSC^T-S&=(C+I)b^T+b(C+I)^T,\notag\\
+C^TTC-T&=c^T(C+I)+(C+I)^Tc.
+\end{align}
+Uniqueness follows from $\Delta_m(C)\ne0$, also for the transposed congruence operator.
+
+\begin{theorem}[Exact generic degree problem]\label{thm:map}
+Define the regular map on $\Omega_m$
+\begin{equation}\label{eq:Psi}
+\boxed{\Psi_{b,c}(C)=TCS-cS-Tb+16\bigl((C+I)^{-T}\bigr)^2,}
+\end{equation}
+where $S,T$ are given by \eqref{eq:Stein}. For generic $b,c$, the map is dominant and generically finite, of degree $D_m$. Its generic fiber over $d$ reconstructs all critical points for normalized data \eqref{eq:normalized-data} by
+\[
+A=(C+I)/4,\qquad X=X(A,S,T).
+\]
+The square in \eqref{eq:Psi} denotes matrix multiplication, not entrywise squaring. The potential is
+\begin{align}\label{eq:psi}
+\psi_{b,c,d}(C)={}&-\frac14\tr((C+I)d^T)-4\tr((C+I)^{-1})\notag\\
+&-\frac14\tr(T(C)(C+I)b^T),
+\end{align}
+and its Frobenius gradient is $(\Psi_{b,c}(C)-d)/4$.
+\end{theorem}
+\begin{proof}
+The bilinear term in \eqref{eq:F} becomes $\tr(T(CSC^T-S))/8$. Taking the symmetric $T$ derivative, and then the symmetric $S$ derivative, gives \eqref{eq:Stein}, including the displayed factors. At the auxiliary stationary point, the bilinear term cancels one of the two linear auxiliary terms. Substituting $A=(C+I)/4$ into \eqref{eq:phi} gives \eqref{eq:psi}.
+
+In \eqref{eq:oldgradient}, the matrix $4A-U_a$ is now $C$, and $A^{-T}=4(C+I)^{-T}$. The $A$ gradient is therefore $\Psi_{b,c}(C)-d$, and the affine change of variables divides it by four. Lemma~\ref{lem:oldreduction} and Theorem~\ref{thm:stein-denom} prove equivalence of localized stationary schemes on precisely $\Omega_m$.
+
+Generic coverage in the normalized family follows from the product normalization of the open original data space and its fiberwise isometries. There is a nonempty Zariski-open set of triples $(b,c,d)$ on which the number of simple reconstructed critical points is $D_m$. For generic $(b,c)$ its intersection with the $d$-fiber is a nonempty open set. This is exactly dominance and generic degree $D_m$ for \eqref{eq:Psi}.
+\end{proof}
+
+\begin{remark}[Scalar consistency check]
+For $m=1$, the stationary equation simplifies to
+\[
+\frac{4bc}{(C-1)^2}+\frac{16}{(C+1)^2}-d=0,\qquad C\ne\pm1.
+\]
+Clearing the two squared denominators gives a generic quartic. The constants and both poles are consistent with $D_1=4$. The higher-rank system is not a collection of independent scalar equations.
+\end{remark}
+
+
+\subsection{Where an escaping family can go}
+\begin{lemma}[Projective boundary]\label{lem:infinity}
+The degree-$m(m+1)$ homogenization of $\Delta_m$ is
+\[
+\Delta_m^h(C,z)=\det(\mathcal S_C-z^2I)
+=\det(C-zI)\det(C+zI)\det(\wedge^2C-z^2I).
+\]
+At the hyperplane at infinity it satisfies
+\begin{equation}\label{eq:infinity}
+\boxed{\Delta_m^h(C,0)=(\det C)^{m+1}.}
+\end{equation}
+More precisely, suppose $b_\nu,c_\nu,d_\nu$ converge to finite limits with $d_\nu\to d_0\ne0$, and $C_\nu\in\Omega_m$ obeys $\Psi_{b_\nu,c_\nu}(C_\nu)=d_\nu$ and $\|C_\nu\|\to\infty$. Every limiting projective direction $C_\nu/\|C_\nu\|\to C_\infty$ is singular. In contrast, zero is an asymptotic value of $\Psi_{b,c}$ for every fixed $b,c$: one can take $C=tI$ with $t\to\infty$.
+\end{lemma}
+\begin{proof}
+The homogenization follows because congruence is quadratic in $C$; the factorization follows from Theorem~\ref{thm:stein-denom}. The determinant of congruence on $\Sym_m$ is $(\det C)^{m+1}$, giving \eqref{eq:infinity}.
+
+For the assertion about escaping families, put $t_\nu=\|C_\nu\|$ and assume a limiting direction $C_\infty$ is invertible. After division by $t_\nu^2$, the two Stein operators converge to invertible congruence operators. Their right sides are $O(t_\nu)$. Hence $S_\nu,T_\nu=O(t_\nu^{-1})$ and $(C_\nu+I)^{-1}=O(t_\nu^{-1})$. Formula~\eqref{eq:Psi} then gives $d_\nu=O(t_\nu^{-1})$, a contradiction.
+
+Finally $C=tI$ belongs to $\Omega_m$ for $t\ne\pm1$. Its Stein solutions are
+\[
+S=\frac{b+b^T}{t-1},\qquad T=\frac{c+c^T}{t-1}.
+\]
+Substitution into \eqref{eq:Psi} shows $\Psi_{b,c}(tI)\to0$ while $tI$ escapes to infinity. This also shows why global properness of the rational map cannot simply be assumed.
+\end{proof}
+
+\subsection{The zero-coupling specialization is not a degree shortcut}
+\begin{theorem}[Zero coupling and escaping branches]\label{thm:zero-coupling}
+Fix generic $b,c,d$ and replace $b,c$ by $\varepsilon b,\varepsilon c$. If $S,T$ denote the Stein solutions for the unscaled $b,c$, then
+\begin{equation}\label{eq:coupling}
+\Psi_{\varepsilon b,\varepsilon c}(C)
+=16\bigl((C+I)^{-T}\bigr)^2+
+\varepsilon^2\bigl(TCS-cS-Tb\bigr).
+\end{equation}
+At $\varepsilon=0$, the fiber over generic $d$ has exactly $2^m$ points in $\Omega_m$, all simple. These yield $2^m$ holomorphic local branches of the nearby critical fiber. Every other branch must approach the excluded divisor $\Delta_m=0$, or escape to infinity in a singular matrix direction. Thus the count at zero coupling is not the generic degree $D_m$.
+\end{theorem}
+\begin{proof}
+The two Stein equations are linear in their right sides, so the scaled auxiliary solutions are $\varepsilon S$ and $\varepsilon T$. This proves \eqref{eq:coupling}.
+
+At zero coupling put $Y=(C+I)^{-T}$. The equation is $16Y^2=d$. For generic $d$ its eigenvalues are distinct and nonzero. Every solution $Y$ commutes with $d$, and therefore is diagonal in the same eigenbasis. Each eigenvalue has exactly two square-root choices, giving $2^m$ matrices $Y$, all invertible. For generic $d$ the corresponding $C$ also lie in $\Omega_m$. To verify that this additional condition is genuinely nonempty, choose $d$ diagonal with eigenvalues $16/a_i^2$ for distinct positive integers $a_i\ge5$. The eigenvalues of each resulting $C$ are $\pm a_i-1$; no pair, including repetition, has product one.
+
+The derivative of the square map at $Y$ is $H\mapsto YH+HY$. Its eigenvalues in the matrix-unit eigenbasis are all sums $y_i+y_j$, which are nonzero when the eigenvalues of $d$ are distinct and nonzero. The change $C\mapsto Y$ is invertible on $\det(C+I)\ne0$. Thus all $2^m$ points are simple and the implicit-function theorem gives the stated local branches, in fact holomorphic in $\varepsilon^2$.
+
+A bounded sequence of other fiber points with a limit in $\Omega_m$ would limit, by \eqref{eq:coupling}, to one of those $2^m$ points. Local uniqueness would put it on the corresponding branch, a contradiction. Hence any finite limit of the other points is on $\Delta_m=0$. Lemma~\ref{lem:infinity}, applied with bounded $\varepsilon b,\varepsilon c$ and nonzero fixed $d$, proves the assertion for escaping sequences. For generic $b,c,d$ the nonzero-$\varepsilon$ fibers are generic outside finitely many parameter values, because the good data locus is Zariski open and contains the chosen triple at $\varepsilon=1$. No conservation of degree at the nongeneric zero-coupling fiber is assumed. Finally, the predecessor's supermultiplicativity and $D_1=4$ give $D_m\ge4^m>2^m$, confirming that the zero-coupling count is strictly smaller.
+\end{proof}
+
+\section{Euler characteristic of the universal domain}\label{sec:euler}
+Let $S(n,r)$ denote a Stirling number of the second kind and let
+\[
+F_m=\sum_{r=0}^m r!S(m,r)
+\]
+be the ordered Bell number, with $F_0=1$. Throughout this section $\chi_c$ is compactly supported topological Euler characteristic of a complex algebraic variety. We use its additivity, multiplicativity, and multiplicativity for finite coverings; these also follow by compatible finite stratifications and cell decompositions in the constructions below.
+
+\begin{theorem}\label{thm:euler}
+The universal regular domain satisfies
+\begin{equation}\label{eq:euler}
+\boxed{\chi_c(\Omega_m)=(-1)^mF_m
+=\sum_{r=0}^m S(m+1,r+1)(-2)^r r!.}
+\end{equation}
+In ranks zero through six the values are $1,-1,3,-13,75,-541,4683$.
+\end{theorem}
+\begin{proof}
+First stratify $\Mat_m$ by the support of its off-diagonal entries. Fix a support and form its underlying undirected graph on $m$ vertices, with an edge when at least one corresponding directed entry is nonzero. Suppose this graph has $q$ connected components. Choose a spanning forest, choose one nonzero directed entry for every forest edge, and choose a root vertex in each component.
+
+Diagonal conjugation $C\mapsto DCD^{-1}$, with diagonal entries of $D$ equal to one at the root vertices, uniquely normalizes every chosen forest entry to one. Its other diagonal entries are Laurent monomials in the chosen nonzero entries. Consequently this support stratum is algebraically a product of $(\CC^*)^{m-q}$ with the normalized slice. The polynomial $\Delta_m$ is invariant under similarity, so intersection with $\Omega_m$ preserves this product decomposition. If there is any off-diagonal support, $m-q>0$ and the Euler characteristic is zero. Additivity over the finitely many supports shows that only diagonal matrices contribute.
+
+Thus it remains to count the Euler characteristic of the set of tuples $(\lambda_1,\dots,\lambda_m)$ with $\lambda_i\lambda_j\ne1$ for all $i\le j$. Partition the indices into blocks of equal nonzero values, and collect all zero entries in a block containing an additional dummy index. If there are $r$ nonzero-value blocks, there are $S(m+1,r+1)$ such partitions. The nonzero blocks can be ordered canonically by their least index.
+
+Their ordered values are distinct elements of $\CC^*\setminus\{1,-1\}$, with no two reciprocal. The map $z\mapsto z+z^{-1}$ is an unramified two-sheeted covering from $\CC^*\setminus\{1,-1\}$ to $\CC\setminus\{2,-2\}$. It therefore gives a $2^r$-sheeted covering of the ordered configuration space of $r$ distinct points of $\CC\setminus\{2,-2\}$. The latter has Euler characteristic
+\[
+(-1)(-2)\cdots(-r)=(-1)^r r!.
+\]
+For instance, forgetting the last point is a locally trivial fibration with fiber a line minus $r+1$ points, whose Euler characteristic is $-r$. This proves the finite sum in \eqref{eq:euler}.
+
+Finally its exponential generating function is
+\[
+\sum_{m\ge0}\sum_{r=0}^m S(m+1,r+1)(-2)^r r!\frac{t^m}{m!}
+=\frac{e^t}{1+2(e^t-1)}=\frac1{2-e^{-t}}.
+\]
+The exponential generating function of the ordered Bell numbers is $1/(2-e^t)$. Replacing $t$ by $-t$ proves the remaining identity.
+\end{proof}
+
+\begin{remark}[This is not the Euclidean distance degree]
+Already $\chi_c(\Omega_1)=-1$, whereas $D_1=4$. There is no established identification of $D_m$ with $(-1)^{m^2}\chi_c(\Omega_m)$, or with the number of factors of $\Delta_m$. The particular rational potential and its behavior near the excluded divisor and infinity matter. Theorem~\ref{thm:euler} is an exact invariant of the new regular domain, not a solution of \eqref{eq:target}.
+\end{remark}
+
+\section{Parity of every symplectic distance degree}\label{sec:parity}
+Return to ordinary Frobenius coordinates. The following parity statement makes a certified lower bound slightly stronger without asserting the existence of an additional certified center in the same data fiber.
+
+\begin{theorem}\label{thm:parity}
+For every $m\ge1$, the integer $D_m$ is even.
+\end{theorem}
+\begin{proof}
+Choose a real data matrix outside the proper complex algebraic exceptional locus for finiteness and nondegeneracy of the critical fiber. Such a choice exists because real affine space is Zariski dense in complex affine space. The real distance function on $\Sp_{2m}(\RR)$ is bounded below and proper: its sublevel sets are closed subsets of bounded Euclidean balls. It has finitely many critical points and each has nonsingular real Hessian.
+
+Proper Morse theory gives a CW complex homotopy equivalent to $\Sp_{2m}(\RR)$ with one cell for each real critical point.\footnote{J. Milnor, \emph{Morse Theory}, Theorem 3.5, p.~20 \cite{Milnor}. The properness and finite-critical-set hypotheses needed here are verified in the preceding paragraph.} Reducing the alternating cell count modulo two shows
+\[
+\#\{\text{real critical points}\}\equiv\chi(\Sp_{2m}(\RR))\pmod2.
+\]
+We check that this Euler characteristic is zero. If $X\in\Sp_{2m}(\RR)$, then $H=X^TX$ is symmetric positive definite and symplectic. The relation $HJ=JH^{-1}$ implies $H^sJ=JH^{-s}$ for real $s$ by the spectral functional calculus. Therefore
+\[
+X\longmapsto XH^{-t/2},\qquad 0\le t\le1,
+\]
+is a deformation retraction through symplectic matrices onto $K=\Sp_{2m}(\RR)\cap O(2m)$. It fixes $K$ pointwise. Identifying $J$ with the complex structure identifies $K$ with $U(m)$. The free central circle action on $U(m)$ makes it a principal $S^1$ bundle over the compact manifold $PU(m)$, so $\chi(U(m))=\chi(S^1)\chi(PU(m))=0$.
+
+Thus the number of real critical points is even. The nonreal points of the complex critical fiber occur in conjugate pairs, because the data and defining equations are real. Adding those pairs proves $D_m\equiv0\pmod2$.
+\end{proof}
+
+\begin{corollary}\label{cor:rounding}
+If $q$ distinct simple critical points are certified at any complex data matrix, then
+\[
+D_m\ge 2\left\lceil\frac q2\right\rceil.
+\]
+In particular the supplied certificates imply $D_3\ge544$ and $D_4\ge\rankfourbound$.
+\end{corollary}
+\begin{proof}
+The implicit-function theorem preserves the $q$ distinct simple points under sufficiently small full-data perturbations. A generic data matrix occurs in such a neighborhood, so $D_m\ge q$. Apply Theorem~\ref{thm:parity}.
+\end{proof}
+The conclusion $D_3\ge544$ is independent of the published rank-three number. It does not establish a self-contained upper bound of $544$, nor does it add a 544th root center to the certificate file.
+
+\section{Exact root certificates}\label{sec:certificates}
+\subsection{The full polynomial system}
+Certification avoids the rational chart. In the $N^2$ entries of an ordinary-coordinate matrix $X$, define a square polynomial system $\mathcal F_U$ by the strict upper entries of
+\[
+X^TJX-J
+\]
+and the upper entries, including the diagonal, of
+\begin{equation}\label{eq:certsystem}
+R+R^T,\qquad R=(U-X)^TXJ.
+\end{equation}
+There are $N(N-1)/2+N(N+1)/2=N^2$ equations. The first group forces $X$ to be symplectic, hence invertible. Since $\mathfrak g_m=\{JS:S^T=S\}$, the second group is precisely orthogonality of $U-X$ to every tangent vector $XJS$. Thus the zeros are exactly the ED critical points. No pole saturation or division is involved in this system.
+
+Every stored binary64 real and imaginary component is interpreted as an \emph{exact dyadic rational}. In particular, the data in the full-coordinate certificate file are exact data; they are not claimed to be rounded representations of an unspecified generic matrix. The search used rounded $Q$-coordinate transformations only to generate proposals. The subsequent full-coordinate refinement and verification use the immutable ordinary-coordinate data stored with the certificates.
+
+\subsection{An integer-arithmetic contraction test}
+Let $x$ be a proposed center and let $B$ be a proposed inverse Jacobian, of size $N^2\times N^2$. The vector norm is the complex maximum norm. Form exact rational upper bounds
+\begin{equation}\label{eq:bounds}
+\eta\ge\|B\mathcal F_U(x)\|_\infty,\quad
+z_0\ge\|I-BD\mathcal F_U(x)\|_\infty,\quad
+z_2=4N\|B\|_{\infty,1},
+\end{equation}
+where $\|B\|_{\infty,1}$ is the maximum row sum using $|\Re z|+|\Im z|$ as an upper bound for $|z|$. The same real-plus-imaginary bound is used for the other two quantities.
+
+\begin{lemma}\label{lem:cert}
+If a positive dyadic $r$ satisfies the exact inequalities
+\begin{equation}\label{eq:contraction}
+\eta+z_0r+\frac12z_2r^2<r,\qquad z_0+z_2r<1,
+\end{equation}
+then the closed maximum-norm ball of radius $r$ around $x$ contains a unique zero of $\mathcal F_U$, and that zero is simple.
+\end{lemma}
+\begin{proof}
+Each equation of the first group is a sum of $N$ signed quadratic products, so its second derivative has bilinear norm at most $2N$. Each equation in \eqref{eq:certsystem} is a sum of $2N$ such products plus linear terms, giving bound $4N$. Thus
+\[
+\|BD^2\mathcal F_U[h,k]\|_\infty\le z_2\|h\|_\infty\|k\|_\infty.
+\]
+The map $\mathcal T(z)=z-B\mathcal F_U(z)$ maps the closed ball strictly into itself by Taylor's formula and the first inequality in \eqref{eq:contraction}. Its Lipschitz constant there is at most $z_0+z_2r<1$. The contraction theorem supplies a unique fixed point. Also $\|I-BD\mathcal F_U(z)\|_\infty<1$ throughout the ball, so $B$ and the Jacobian there are invertible. Hence the fixed point is a zero, that zero is simple, and any zero in the ball is that fixed point.
+\end{proof}
+
+The C++ checker decodes each binary64 component into an integer mantissa and a binary exponent. It reconstructs $\mathcal F_U$ and its Jacobian with arbitrary-precision integers, computes the products in \eqref{eq:bounds}, and clears powers of two in both inequalities. All acceptance decisions use integers only. Floating-point inverse calculations, quad-precision Newton steps, and diagnostic decimal bounds are proposals or displays, not proof inequalities.
+
+\subsection{Exact distinctness and reproducibility}
+The verifier separately proves that the certified closed balls are pairwise disjoint. It sweeps exact rational intervals in the first real coordinate. For overlapping intervals, it selects another real or imaginary coordinate and checks its gap against the sum of the two radii using exact integers or fractions. A floating-point calculation may select a coordinate to try; the separating inequality is always exact. Failure to separate two balls is treated conservatively, never as evidence of two distinct roots.
+
+To keep the files compact, the $N^2\times N^2$ proposed inverse matrices are not stored for every root. The verifier recomputes an inverse proposal from each stored center and then independently rebuilds the exact system and exact Jacobian in the integer checker. A different numerical platform may produce a different proposal, but cannot pass an incorrect contraction inequality merely because it produced a small numerical residual. The included successful rerun is recorded separately from certificate generation.
+
+\section{Computational results and audit}\label{sec:audit}
+The exact certificate counts and their logical consequences are:
+\begin{center}
+\begin{tabular}{@{}rrrr@{}}\toprule
+Rank & Simple roots & Bound with parity & Proposed $D_m$\\\midrule
+1 & 4 (predecessor) & 4 & 4\\
+2 & 24 (predecessor) & 24 & 24\\
+3 & \rankthreeroots & 544 & 544\\
+4 & \rankfourroots & \rankfourbound & 65\,664\\\bottomrule
+\end{tabular}
+\end{center}
+The first two counts are inherited from the predecessor package; copies of their centers and data are also included in the main certificate directory. The new rank-three and rank-four files contain ordinary-coordinate centers and the exact dyadic data used for their checks. Separate verification summaries record that every included contraction test and every separation test passed. Neither summary contains a completeness assertion.
+
+\subsection{What is checked independently}
+Every final stored center at all four ranks passed both a fresh multiprecision C++ contraction check and a separate pure-Python integer/fraction contraction recheck. The latter does not call the C++ checker. The implementations share the numerical inverse-proposal routine, which is not trusted by either exact contraction checker, and the exact separation helper. The test suite additionally compares the two contraction implementations on selected high-condition-number rank-four examples. It also checks rejection of perturbed centers and invalid inverse proposals, and tests exact separation on duplicates, touching intervals, and nearby representable coordinates. These are implementation tests; the contraction proof is Lemma~\ref{lem:cert}.
+
+Exact SymPy checks validate the denominator factorization on examples through rank five, including singular matrices, and symbolically in rank two. Further exact checks validate the Stein bilinear identity, normalized and unnormalized determinant constants, both Stein equations, the scalar potential, and its directional gradient. Direct symbolic differentiation separately checks every entry of the full polynomial Jacobian through rank four, and its quadratic coefficients check the global second-derivative bound used in certification. The fully symbolic rank-one gradient agrees with the scalar formula after Theorem~\ref{thm:map}. These finite checks support the written all-rank proofs; they do not replace them.
+
+\subsection{Why a numerical plateau was not used as a count}
+The exploratory search used the smaller rational system, with Newton correction and numerical monodromy. A numerical candidate count includes candidates that may converge to the same full-coordinate root or fail exact verification. The full-coordinate certificate stage therefore refines, tests, and proves separation independently.
+
+Conditioning is materially relevant. In a check of the original 542 certified rank-three points, conversion to the reduced chart caused a strict reduced residual test to reject 21 genuine certified roots. Some reduced Hessians had condition numbers on the order of $10^{13}$. Therefore a stalled monodromy search, a small residual threshold, or a rounded deduplication criterion cannot establish completeness. One later rank-three search produced 553 numerical candidates, but its exact refinement/separation stage retained only 543 distinct certified points. A further checkpoint with 557 candidates still yielded only 543 separated certificates. The higher raw count was not an additional ED-degree lower bound. The final rank-four batch contained 31\,225 numerical proposals; exact refinement and conservative ball selection retained \rankfourroots{} certified points. The final merge preserved all 28\,811 previously certified centers. Unseparated proposals were excluded, not counted as additional roots.
+
+Search logs disclose path failures and numerical candidate counts. The exact certificate data and fresh verification outputs are the basis of the stated lower bounds; no trace test, certified exhaustive path tracking, or algebraic upper count closing the gap is supplied.
+
+\section{Consequences and the remaining step}\label{sec:gap}
+The predecessor package proves
+\begin{equation}\label{eq:priorbounds}
+D_{a+b}\ge D_aD_b,\qquad
+D_m\le 2^m\delta_m,\qquad
+\delta_m=\det\!\left[\binom{2i+2j-2}{2i-1}\right]_{i,j=1}^m.
+\end{equation}
+The determinant formula is the ordinary algebraic degree of the symplectic group, from Brandt, Bruce, Brysiewicz, Krone, and Robeva; it is not an ED-degree formula.\footnote{\emph{The degree of $\mathrm{SO}(n)$}, Section 3, symplectic-group degree calculation \cite{degree}; the factor $2^m$ bound and supermultiplicativity are proved in the archived predecessor report \cite{prior}.}
+For rank four, \eqref{eq:priorbounds} and this package give
+\begin{equation}\label{eq:rank4interval}
+\boxed{\rankfourbound\ \le D_4\le12\,310\,528.}
+\end{equation}
+This interval contains the conjectured $65\,664$. The enlarged lower bound also propagates to higher ranks by supermultiplicativity. For example $D_{4q}\ge(\rankfourbound)^q$; multiplying by the certified/parity lower bounds at ranks one, two, and three handles the other residues modulo four. These are lower bounds, not asymptotic formulas.
+
+Theorem~\ref{thm:map} identifies the precise surviving enumerative problem:
+\[
+\deg\bigl(\Psi_{b,c}:\Omega_m\longrightarrow\Mat_m\bigr)
+\stackrel{?}{=}2^{m^2}+2^{2m-1}
+\quad\text{for generic }b,c.
+\]
+It is necessary to determine this generic fiber degree, not merely the number of variables, the degree of $\Delta_m$, or the Euler characteristic of $\Omega_m$. An elimination or intersection-theoretic count must account for the excluded Stein divisor and components at projective infinity. Lemma~\ref{lem:infinity} identifies the possible directions of escaping families with nonzero limiting $d$ as singular matrices; the multiplicity $(\det C)^{m+1}$ at infinity still has to be resolved in the count. A counterexample would instead require a rigorous degree discrepancy, for example a certified lower bound exceeding the proposed number at some rank. Neither is provided by the present computations.
+
+The package therefore supports a stronger partial mathematical record and a substantially stronger rank-four lower bound. It does not support a complete-resolution claim for SP-03. Repository status was not edited.
+
+\appendix
+\section{Reproduction commands and file roles}
+From the root of the delivered archive, a C++17 compiler and Boost headers build the exact checker:
+\begin{verbatim}
+make backend
+python verify/verify_roots.py certificates/rank3.npz --workers 4
+python verify/verify_roots.py certificates/rank4.npz --workers 4
+python verify/reference_check.py certificates/rank4.npz --all --workers 4
+make tests
+\end{verbatim}
+Python dependencies are listed in \texttt{requirements.txt}. The optional quad-precision proposal helper uses GCC and \texttt{libquadmath}; it is not required to verify the final stored centers. \texttt{Makefile} also includes its separate build target. The document can be rebuilt with \texttt{make report}.
+
+\texttt{claims.json} separates mathematical statements, exact certificate counts, and unresolved claims. \texttt{results/} contains the successful verification and implementation-test summaries. \texttt{experiments/} contains exploratory source and selected raw logs; its numerical counts are not proof counts. \texttt{prior/SP03\_verified\_partial.zip} is the unmodified predecessor archive. \texttt{SHA256SUMS} identifies the delivered files; it is an integrity manifest, not a mathematical correctness certificate.
+
+{\small
+\begin{thebibliography}{9}
+\bibitem{repo} OpenProblemsInNLA. \emph{SP-03: The Euclidean distance degree of the real symplectic group}. Repository statement, accessed September 13--14, 2026. \url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/eigenvalues-and-inverse-problems/SP-03}.
+\bibitem{BD} J. A. Baaijens and J. Draisma. \emph{Euclidean distance degrees of real algebraic groups}. Linear Algebra and its Applications 467 (2015), 174--187. DOI: 10.1016/j.laa.2014.11.012. Section 5, especially p.~187. \url{https://arxiv.org/abs/1405.0422}.
+\bibitem{holden} S. Holden. \emph{SP-03 supporting skew-multiplier reduction}. Repository proof note, September 12, 2026. \url{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-spectral-2026-09-12/SP-03/proof.md}.
+\bibitem{prior} \emph{SP-03: reduction, bounds, and certificates}. Supplied predecessor report and proof package, September 13, 2026. Eleven-page PDF and source in \texttt{prior/SP03\_verified\_partial.zip}. No public publication or independent referee status is asserted for this supplied report.
+\bibitem{degree} M. Brandt, D. J. Bruce, T. Brysiewicz, R. Krone, and E. Robeva. \emph{The degree of $\mathrm{SO}(n)$}. arXiv:1701.03200v2 (2017), Section 3. \url{https://arxiv.org/abs/1701.03200}.
+\bibitem{Milnor} J. Milnor. \emph{Morse Theory}. Annals of Mathematics Studies 51, Princeton University Press, 1963. Theorem 3.5, p.~20. Consulted copy: \url{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/milnmors.pdf}.
+\bibitem{guidelines} OpenProblemsInNLA. \emph{Contributing guidelines}, especially ``Reporting a resolution'' and the scope of partial results. Accessed September 13--14, 2026. \url{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/CONTRIBUTING.md}.
+\end{thebibliography}
+}
+\end{document}

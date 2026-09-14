@@ -4,8 +4,24 @@
 **Importance:** interesting to the community  
 **Rating rationale:** Extreme because optimal adaptive information bounds remain unknown even across exponential tensor-order scales; community impact is reliable computation with tensor-structured matrix access.  
 **Topic:** Structured randomized trace estimation.  
-**Last checked:** 2026-09-13  
+**Last checked:** 2026-09-14  
 **Status:** Partially resolved  
+
+
+## Further partial results — probability-sensitive probes, 14 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Verified affiliation and submission record](../../references/holden-further-2026-09-14/README.md).
+
+[Theorems 2.1–2.2 and Corollary 2.3](../../references/holden-further-2026-09-14/RA-11/manuscript.pdf) give new upper bounds for every real PSD input in the original full-vector real product-query model. In particular, with $`N=n^q`$,
+
+```math
+Q(n,q,\varepsilon)\le\min\{N,2\lceil\sqrt{6N}/\varepsilon\rceil\}.
+```
+
+The constant $`6`$ improves to $`3`$ when $`N`$ is a power of two. The diagonal-control construction uses bounded-fair-bit, nonadaptive real product queries. The fractional-moment branch has fixed-accuracy exponential rate $`D_n=\log n+1-H_n`$ in tensor order, where $`H_n=\sum_{j=1}^n1/j`$. Its sharpness is only for the specified empirical-average estimator; it is not an unrestricted oracle lower bound. A finite-bit version exists, with no efficient discretization implementation claimed.
+
+The new partial results passed a separate [independent Codex AI-agent audit](../../reviews/2026-09-14-further-submissions/RA-11-review.md). Exact diagonal and complex-response interpolation checks and a floating moment grid passed; the numerical simulation suite was not rerun. **The unrestricted joint minimax characterization remains open**, so status remains Partially resolved. Inherited bounds in the manuscript are outside this fresh audit; the prior independently reviewed contribution below is retained. [Proof text](../../references/holden-further-2026-09-14/RA-11/manuscript.md). AI assistance is disclosed; no Lean verification, external human peer review, formal verification or novelty claim is asserted.
+
 
 ## Partial results — Sidney Holden, 13 September 2026
 

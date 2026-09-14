@@ -21,6 +21,24 @@ result is formalized in Lean.
 
 ## Resolved catalog entries
 
+### SP-03, SP-07 and SP-09 — further supporting and partial results — Sidney Holden
+
+**Recorded 14 September 2026 (UTC).** [Submission, author affiliation and three independent informal AI-agent reviews](references/holden-sp-continuations-2026-09-14/README.md). SP-03 adds Stein reductions, parity and finite root certificates; SP-07 adds completion barriers and a stationary model; SP-09 adds a first-order splitting theorem with a dimension-dependent remainder bound. These do not settle the full original targets. SP-03 is Partially resolved on the new parity theorem; SP-07 remains Open and SP-09 remains Partially resolved. Original statements and IDs are unchanged. No Lean verification or external human peer review is claimed.
+
+
+### RA-05, TR-03, RA-11, SP-10 and RA-14 — further submissions — Sidney Holden
+
+**14 September 2026.** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Submission, verified affiliation and provenance](references/holden-further-2026-09-14/README.md). Separate independent Codex AI-agent audits passed the scopes listed below; this is informal review, with ChatGPT assistance disclosed. No Lean verification, external human peer review, formal verification or novelty claim is asserted.
+
+- **Solved — [RA-05](randomized-and-low-rank-approximation/RA-05/README.md)**: [Part I, Theorem 1.1, and Part II, Theorem 1.1](references/holden-further-2026-09-14/RA-05/manuscript.pdf) classify the optimal strong original-row coreset size, up to logarithms, for every fixed real power greater than two and all allowed ranks and accuracies. The full target passes the [independent review](reviews/2026-09-14-further-submissions/RA-05-review.md). Historical partial notices below are superseded for this target.
+- **Partially resolved — [TR-03](randomized-and-low-rank-approximation/TR-03/README.md)**: [Theorem 1.1](references/holden-further-2026-09-14/TR-03/manuscript.pdf) gives the all-positive-spectrum upper bound; the sharp joint order remains open. [Review](reviews/2026-09-14-further-submissions/TR-03-review.md).
+- **Partially resolved — [RA-11](randomized-and-low-rank-approximation/RA-11/README.md)**: [Theorems 2.1–2.2 and Corollary 2.3](references/holden-further-2026-09-14/RA-11/manuscript.pdf) give probability-sensitive and diagonal-control upper bounds; the unrestricted minimax gap remains. [Review](reviews/2026-09-14-further-submissions/RA-11-review.md).
+- **Partially resolved — [SP-10](eigenvalues-and-inverse-problems/SP-10/README.md)**: [Sections 2–5, especially Theorem 4.1](references/holden-further-2026-09-14/SP-10/manuscript.pdf) cover bipartite graphs with degree at most four on one side and supporting constructions; arbitrary graphs remain open. [Review](reviews/2026-09-14-further-submissions/SP-10-review.md).
+- **Partially resolved — [RA-14](randomized-and-low-rank-approximation/RA-14/README.md)**: [Sections 2–7](references/holden-further-2026-09-14/RA-14/manuscript.pdf) provide exact capacity and innovation-qualified results; the unrestricted finite-parameter gap remains. [Review](reviews/2026-09-14-further-submissions/RA-14-review.md).
+
+The repeated RA-01 tail-analysis package is excluded because its identical proof already merged in [PR #237](https://github.com/ajt60gaibb/OpenProblemsInNLA/pull/237). All original targets, permanent IDs, canonical paths and prior-source credit are preserved.
+
+
 ### RA-05 — further even-power high-accuracy partial result, Sidney Holden, 2026-09-13
 
 **Partially resolved.** [Theorems 1.1–1.2 and Corollary 1.3](references/holden-ra05-even-power-2026-09-13/manuscript.pdf) prove $`S_{2s}(k,\varepsilon)=\widetilde\Theta_s(k^{s-1}/\varepsilon^2)`$ for each fixed integer $`s\ge2`$ when $`\varepsilon\le k^{-(s+1)/2}`$, with arbitrary input rank and nonnegative original-row weights. The [canonical page](randomized-and-low-rank-approximation/RA-05/README.md) records the all-accuracy upper bound and remaining gaps. A separate [independent informal AI-agent review](references/holden-ra05-even-power-2026-09-13/verification/independent-review.md) passed this partial scope. No Lean verification or external human peer review is asserted. [Author, verified affiliation, provenance and reproduction](references/holden-ra05-even-power-2026-09-13/README.md). Earlier partial results are retained; the full joint classification remains open.

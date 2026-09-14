@@ -2,10 +2,16 @@
 
 **Difficulty:** challenging  
 **Importance:** interesting to specialist  
-**Status:** Open  
-**Last checked:** 2026-09-12  
+**Status:** Partially resolved  
+**Last checked:** 2026-09-14  
 
 **Rating rationale:** Challenging reflects an all-ranks algebraic critical-point count with only low-rank computations; specialist impact concerns the algebraic complexity of symplectic matrix nearness.
+
+## Supporting Stein reduction and critical-point certificates — 14 September 2026
+
+Sidney Holden (Center for Computational Biology, Flatiron Institute, Simons Foundation). The [report](../../references/holden-sp-continuations-2026-09-14/SP-03/report.pdf), Sections 3–8, supplies the reciprocal-eigenvalue denominator factorization, Stein normal form, Euler-characteristic and parity arguments, and zero-coupling boundary analysis. These supporting results do not evaluate the generic degree in all ranks. The submitted certificates report 543 simple rank-three roots and 31,183 rank-four roots; parity yields lower bounds 544 and 31,184, not completeness. The independent audit distinguishes complete low-rank reruns from sampled rank-four checking. The new all-rank parity theorem is recorded as partial progress. The proposed all-rank formula remains open; status is Partially resolved.
+
+See the [independent informal Codex AI-agent review](../../references/holden-sp-continuations-2026-09-14/SP-03/independent-review.md) for the exact audited scope and checks, and the [submission record](../../references/holden-sp-continuations-2026-09-14/README.md) for verified affiliation, original materials and reproduction details. No full resolution, external human peer review, formal verification or historical novelty is claimed. No Lean verification was performed.
 
 ## Supporting algebraic reduction — 12 September 2026
 

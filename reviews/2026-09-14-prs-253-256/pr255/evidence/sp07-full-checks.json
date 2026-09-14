@@ -1,0 +1,104 @@
+{
+  "status": "PASS",
+  "all_passed": true,
+  "steps": [
+    {
+      "name": "Exact all-odd-order polygon formulas",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "verify_polygon.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.8580418329802342
+    },
+    {
+      "name": "Rational stationary-model enclosure",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "verify_model.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.10113587498199195
+    },
+    {
+      "name": "Exact and corrupted-input rejection tests",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.4070552500197664
+    },
+    {
+      "name": "Rejection tests with Python optimization enabled",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.5220793330227025
+    },
+    {
+      "name": "Inherited rank-one exact certificate",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "verify_rank_one.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.03212304197950289
+    },
+    {
+      "name": "Inherited rank-one exact rejection tests",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.09562833298696205
+    },
+    {
+      "name": "Inherited n=193 certificate by both exact positivity methods",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "verify_all.py",
+        "--only",
+        "n193",
+        "--ldl"
+      ],
+      "returncode": 0,
+      "seconds": 26.4322333339951
+    }
+  ],
+  "seconds": 28.51890749996528,
+  "numerical_enabled": false,
+  "inherited_checks_enabled": true
+}

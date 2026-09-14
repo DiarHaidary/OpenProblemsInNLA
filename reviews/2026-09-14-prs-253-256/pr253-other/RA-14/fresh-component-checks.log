@@ -1,0 +1,47 @@
+test_actual_free_dimension_matches_deficits (test_capacity.CapacityTests.test_actual_free_dimension_matches_deficits) ... ok
+test_allocation_rejects_insufficient_dimension (test_capacity.CapacityTests.test_allocation_rejects_insufficient_dimension) ... ok
+test_anisotropic_leading_excess (test_capacity.CapacityTests.test_anisotropic_leading_excess) ... ok
+test_cardinal_weights_interpolate_monomials (test_capacity.CapacityTests.test_cardinal_weights_interpolate_monomials) ... ok
+test_continuous_threshold_at_sixteen (test_capacity.CapacityTests.test_continuous_threshold_at_sixteen) ... ok
+test_dimension_saturation_implies_pure_top (test_capacity.CapacityTests.test_dimension_saturation_implies_pure_top) ... ok
+test_energy_minimum_is_loewner (test_capacity.CapacityTests.test_energy_minimum_is_loewner) ... ok
+test_every_top_direction_can_be_free (test_capacity.CapacityTests.test_every_top_direction_can_be_free) ... ok
+test_first_moment_bound_is_exact_expression (test_capacity.CapacityTests.test_first_moment_bound_is_exact_expression) ... ok
+test_full_rank_optimal_coefficients (test_capacity.CapacityTests.test_full_rank_optimal_coefficients) ... ok
+test_householder_fixes_preexisting_span (test_capacity.CapacityTests.test_householder_fixes_preexisting_span) ... ok
+test_householder_maps_and_preserves_orthogonality (test_capacity.CapacityTests.test_householder_maps_and_preserves_orthogonality) ... ok
+test_infinite_inverse_moment_is_rejected (test_capacity.CapacityTests.test_infinite_inverse_moment_is_rejected) ... ok
+test_integer_allocation_spends_exact_dimension (test_capacity.CapacityTests.test_integer_allocation_spends_exact_dimension) ... ok
+test_known_span_queries_do_not_require_new_start (test_capacity.CapacityTests.test_known_span_queries_do_not_require_new_start) ... ok
+test_nodal_formula_matches_feature_matrix (test_capacity.CapacityTests.test_nodal_formula_matches_feature_matrix) ... ok
+test_pure_top_dimension_deficits (test_capacity.CapacityTests.test_pure_top_dimension_deficits) ... ok
+test_rank_deficient_top_is_rejected (test_capacity.CapacityTests.test_rank_deficient_top_is_rejected) ... ok
+test_reciprocal_chi_square_gamma_identity (test_capacity.CapacityTests.test_reciprocal_chi_square_gamma_identity) ... ok
+test_rotating_simulator_preserves_complete_transcript (test_capacity.CapacityTests.test_rotating_simulator_preserves_complete_transcript) ... ok
+test_singular_tail_free_direction (test_capacity.CapacityTests.test_singular_tail_free_direction) ... ok
+test_successful_graph_has_target_residual (test_capacity.CapacityTests.test_successful_graph_has_target_residual) ... ok
+test_unsuccessful_graph_violates_target (test_capacity.CapacityTests.test_unsuccessful_graph_violates_target) ... ok
+test_weighted_mass_bound (test_capacity.CapacityTests.test_weighted_mass_bound) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 0.028s
+
+OK
+
+{
+  "status": "PASS",
+  "tests_run": 24,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "capacity_trials": 360,
+  "contains_success": 103,
+  "does_not_contain_success": 257,
+  "rotation_checks": 24,
+  "max_transcript_error": 1.0851926808155273e-15,
+  "max_span_error": 1.502267525475573e-15,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "prior_suites_rerun": false,
+  "limitation": "Component and floating-point diagnostics only; no universal probability or adaptive lower-bound proof is certified by these tests."
+}

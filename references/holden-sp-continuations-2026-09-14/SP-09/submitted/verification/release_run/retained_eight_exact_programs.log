@@ -1,0 +1,87 @@
+PASS: 163 file hashes match the manifest.
+
+=== prior/certificate/verify_certificate.py ===
+PASS: the distinguished polynomial q has normalized trace exactly 1.
+PASS: block 0 is positive definite (all 52 integer margins positive).
+PASS: block 1 is positive definite (all 26 integer margins positive).
+PASS: block 2 is positive definite (all 26 integer margins positive).
+PASS: every coefficient in the universal cyclic trace identity is exactly zero.
+CERTIFICATE VERIFIED. This is not a proof of SP-09 for arbitrary spectra.
+
+=== prior/certificate/verify_witness_and_rigidity.py ===
+PASS: the witness squared singular values are 27/13, 27/13, 4/13.
+PASS: exhaustive exact matching gives bottleneck squared distance 28/13.
+PASS: the first nine words span M_3; the 52 columns give the entire degree-four relation kernel.
+EQUALITY RIGIDITY VERIFIED together with the positive Gram block in verify_certificate.py.
+
+=== prior/certificate/test_verifiers.py ===
+{
+  "valid_certificate": "PASS",
+  "valid_witness_and_rigidity": "PASS",
+  "corruption_tests": [
+    {
+      "corruption": "trace",
+      "rejected": true
+    },
+    {
+      "corruption": "positivity",
+      "rejected": true
+    },
+    {
+      "corruption": "identity",
+      "rejected": true
+    }
+  ]
+}
+
+=== new_results/certificate/local_geometry.py ===
+PASS: active-face tangent rank = 3; tracial moment tangent rank = 4; joint rank = 4.
+PASS: the unique KKT density has positive eigenvalues 5/28 and 23/28; an explicit nongauge flat tangent is verified.
+PASS: both local kernels have full complex dimension 26; degree-one local evaluation rank = 3.
+
+=== new_results/certificate/rank_witness.py ===
+PASS: the exact coefficient map has rank at least 107 (minor determinant 308373 modulo prime 1000003).
+
+=== new_results/certificate/exact_minor.py ===
+PASS: exact fraction-free determinant is nonzero (939 decimal digits) and agrees with the modular calculation.
+
+=== new_results/certificate/quantitative_rigidity.py ===
+PASS: all four rigidity relations have exact kernel coordinates.
+PASS: the explicit dimension-independent stability constant is C = 2705974
+
+=== new_results/certificate/test_new_certificates.py ===
+{
+  "valid_geometry": "PASS",
+  "valid_modular_rank": "PASS",
+  "valid_integer_rank": "PASS",
+  "valid_stability_constant": "PASS",
+  "integer_elimination_regressions": "PASS",
+  "corruption_tests": [
+    {
+      "corruption": "duplicate_minor_column",
+      "rejected": true
+    },
+    {
+      "corruption": "incorrect_modular_determinant",
+      "rejected": true
+    },
+    {
+      "corruption": "composite_modulus",
+      "rejected": true
+    },
+    {
+      "corruption": "incorrect_coordinate_order",
+      "rejected": true
+    },
+    {
+      "corruption": "loss_of_degree_one_normalization",
+      "rejected": true
+    },
+    {
+      "corruption": "changed_local_kernel",
+      "rejected": true
+    }
+  ]
+}
+
+ALL EXACT CHECKS PASSED. Universal SP-09 is not claimed solved.

@@ -1,0 +1,141 @@
+{
+  "status": "PASS",
+  "all_passed": true,
+  "steps": [
+    {
+      "name": "Exact all-odd-order polygon formulas",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "verify_polygon.py"
+      ],
+      "returncode": 0,
+      "seconds": 1.773130824999953
+    },
+    {
+      "name": "Rational stationary-model enclosure",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "verify_model.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.16327759900013916
+    },
+    {
+      "name": "Exact and corrupted-input rejection tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.734969695000018
+    },
+    {
+      "name": "Rejection tests with Python optimization enabled",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.893370091999941
+    },
+    {
+      "name": "Numerical regression diagnostics",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_numerical.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.7893186149999565
+    },
+    {
+      "name": "Separate symbolic reconstruction",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "src/symbolic_audit.py"
+      ],
+      "returncode": 0,
+      "seconds": 1.271799498000064
+    },
+    {
+      "name": "Stationary-model numerical exploration",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "research/stationary_fit.py",
+        "--optimize",
+        "--output",
+        "/tmp/sp07-model-d71s8hpv/fit.json"
+      ],
+      "returncode": 0,
+      "seconds": 0.9151397000000543
+    },
+    {
+      "name": "Inherited rank-one exact certificate",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "verify_rank_one.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.04224772300017321
+    },
+    {
+      "name": "Inherited rank-one exact rejection tests",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.1528857829998742
+    },
+    {
+      "name": "Inherited n=193 certificate by both exact positivity methods",
+      "command": [
+        "/opt/pyvenv/bin/python",
+        "-S",
+        "verify_all.py",
+        "--only",
+        "n193",
+        "--ldl"
+      ],
+      "returncode": 0,
+      "seconds": 34.112420608999855
+    }
+  ],
+  "seconds": 40.97540642099989,
+  "numerical_enabled": true,
+  "inherited_checks_enabled": true
+}

@@ -3,9 +3,31 @@
 **Difficulty:** challenging  
 **Importance:** interesting to the community  
 **Rating rationale:** Challenging because simultaneous control of all subspaces must match joint rank and accuracy lower bounds; community impact is compact robust low-rank fitting.  
-**Last checked:** 2026-09-13
+**Last checked:** 2026-09-14
 
-**Status:** Partially resolved
+**Status:** Solved
+
+
+## Full resolution — even/non-even classification, 14 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Verified affiliation and submission record](../../references/holden-further-2026-09-14/README.md).
+
+[Part I, Theorem 1.1, and Part II, Theorem 1.1](../../references/holden-further-2026-09-14/RA-05/manuscript.pdf) classify the optimal worst-case strong original-row coreset size for every fixed real $`p>2`$, all $`k\ge1`$ and $`0<\varepsilon<1/2`$, with arbitrary input rank and ambient dimension. Writing $`S_p(k,\varepsilon)`$ for that size, the result is
+
+```math
+S_p(k,\varepsilon)=\widetilde\Theta_p\!\left(
+\begin{cases}
+k^{p/2}\varepsilon^{-2},&p\notin2\mathbb Z,\\
+\min\{k^{p/2}\varepsilon^{-2},\ k^{(p+1)/2}\varepsilon^{-1}+k^{p/2-1}\varepsilon^{-2}\},&p\in2\mathbb Z.
+\end{cases}\right)
+```
+
+The hidden factors are logarithmic in $`2k/\varepsilon`$; constants may depend only on the fixed exponent. Weights are nonnegative and supported on original rows, and the guarantee holds simultaneously for every fitted subspace of dimension at most $`k`$. The displayed additive proposal in the retained problem is false for every fixed $`p>2`$. This completes the broader classification as well as its subsidiary truth question. The general upper bound for non-even powers is credited to Lin–Mirrokni–Woodruff; the manuscript credits Li–Wang–Woodruff for the antecedent Fourier mechanism.
+
+Both complete proof parts passed a separate [independent Codex AI-agent informal audit](../../reviews/2026-09-14-further-submissions/RA-05-review.md), including the new uniform estimates and primary-source dependency checks. This meets the repository's **Solved** policy. The exact cubic certificate passed 17,575 assertions; optional numerical diagnostics were not rerun because their dependencies were unavailable. The proof audit, rather than those finite checks, supports the universal result. [Part I source](../../references/holden-further-2026-09-14/RA-05/part-1.tex) · [Part II source](../../references/holden-further-2026-09-14/RA-05/part-2.tex).
+
+ChatGPT assistance is disclosed. No Lean verification, external human peer review, formal verification or priority certification is asserted. The earlier partial results and historical open-status checks below are retained as history; this dated full resolution supersedes their remaining-gap statements. Original ID, canonical path and mathematical target are unchanged.
+
 
 ## Further partial resolution — even-power high accuracy, 13 September 2026
 

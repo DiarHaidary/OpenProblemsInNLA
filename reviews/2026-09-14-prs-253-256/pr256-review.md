@@ -1,0 +1,9 @@
+# Independent review of PR256: NM-01 reference
+
+Reviewed source head `b84772b48cd26a2e763ecc52a6243e8f0c34681f` against published base `deb549fa9ddd6b119e6c59016f268237e645dfa2`, 14 September 2026.
+
+**Accept with the integration clarification and regenerated canonical PDF.** [IEEE's publication record](https://ieeexplore.ieee.org/document/8653529) confirms Fu, Huang, Sidiropoulos and Ma, *Nonnegative Matrix Factorization for Signal and Data Analytics: Identifiability, Algorithms, and Applications*, IEEE Signal Processing Magazine 36(2), 59-80, 2019, DOI 10.1109/MSP.2018.2877582. [The accepted manuscript](https://arxiv.org/abs/1803.01257), Section VIII, PDF pages 16-17, explicitly discusses additional assumptions that could make NMF and volume-minimization problems solvable with high probability.
+
+The reference is relevant earlier motivation. That discussion is broader than the canonical rational-input SSC promise problem; it does not assert that exact decision formulation, an equivalence with factor recovery, or its resolution. The integration preserves the citation, replaces the long quotation with a short accurate paraphrase and states this scope distinction. It does not claim a certified earliest origin. Original problem, SSC version, computational model, status, difficulty, impact and previous credit are retained.
+
+PR256 changed only README, so the integration regenerates its canonical TeX/PDF. Visual inspection found an obsolete forced reference-page break leaving a mostly empty middle page; removing NM-01 from that layout list restores two clean pages. Both final pages were re-rendered and visually inspected. The numerical/mathematical target is unchanged; no special proof test is warranted for the bibliographic edit. The full repository test suite and permanent-ID validator are recorded separately.

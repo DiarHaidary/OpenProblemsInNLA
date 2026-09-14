@@ -1,0 +1,51 @@
+{
+  "result": "PASS",
+  "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+  "hashed_files": null,
+  "exact_programs": 10,
+  "new_negative_tests": 9,
+  "numerical_programs": 2,
+  "checks": [
+    {
+      "name": "retained_eight_exact_programs",
+      "script": "prior_round2/verify_all.py",
+      "kind": "prior",
+      "returncode": 0,
+      "result": "PASS",
+      "elapsed_seconds": 7.46881031199996
+    },
+    {
+      "name": "new_exact_geometry",
+      "script": "certificate/first_order_geometry.py",
+      "kind": "new",
+      "returncode": 0,
+      "result": "PASS",
+      "elapsed_seconds": 0.5842633889999433
+    },
+    {
+      "name": "new_negative_tests",
+      "script": "certificate/test_first_order_geometry.py",
+      "kind": "new",
+      "returncode": 0,
+      "result": "PASS",
+      "elapsed_seconds": 5.316096954000045
+    },
+    {
+      "name": "constructive_Taylor_demo",
+      "script": "experiments/first_order_witness_demo.py",
+      "kind": "numerical",
+      "returncode": 0,
+      "result": "PASS",
+      "elapsed_seconds": 0.8423497769999813
+    },
+    {
+      "name": "saved_candidate_audit",
+      "script": "experiments/verify_candidate34.py",
+      "kind": "numerical",
+      "returncode": 0,
+      "result": "PASS",
+      "elapsed_seconds": 0.5715734690001
+    }
+  ],
+  "scope": "Partial SP-09 result: first-order splitting invariance. General SP-09 is not claimed solved."
+}

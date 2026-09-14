@@ -1,0 +1,815 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,longtable,array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{microtype,fancyhdr,xurl}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=MidnightBlue]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\newcommand{\xc}{\operatorname{xc}}
+\newcommand{\rankp}{\operatorname{rank}_{+}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\conv}{\operatorname{conv}}
+\newcommand{\aff}{\operatorname{aff}}
+\newcommand{\R}{\mathbb R}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small NR-02: Cartesian-product slack matrices}
+\fancyhead[R]{\small Fourth pack: partial}
+\fancyfoot[C]{\thepage}
+\setlength{\headheight}{14pt}
+\hypersetup{pdftitle={NR-02: Certified complexity-six polygon products},pdfauthor={Sidney Holden}}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+{\LARGE\bfseries NR-02: Cartesian-product slack matrices\par}
+\vspace{9pt}
+{\Large Certified complexity-six polygon products\par}
+\vspace{9pt}
+Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}\\
+Research note prepared with ChatGPT\\
+September 13, 2026 (America/New\_York)
+\end{center}
+\vspace{8pt}
+\noindent\fcolorbox{MidnightBlue}{MidnightBlue!4}{\parbox{0.94\textwidth}{
+\textbf{Status: PARTIAL for unrestricted NR-02.} This pack gives a complete
+computer-assisted argument for every pair of polygons of extension complexity
+six, resolving the earlier hexagon value eleven versus twelve. It does not
+prove additivity for arbitrary polytopes and does not give a counterexample.
+The geometry-to-Boolean reduction is a written proof, not a proof-assistant
+formalization. Independent peer review has not occurred. No novelty or
+priority claim is made.}}
+\begin{abstract}
+Let $P,Q$ be convex polygons with $\xc(P)=\xc(Q)=6$. We prove
+$\xc(P\times Q)=12$ by a finite, certificate-based support argument. Every such
+polygon has between six and nine vertices. A hypothetical eleven-term
+nonnegative factorization of the complete product slack matrix must satisfy
+explicit row-degree, vertex-slice, edge-slice, pure-column, and coverage
+conditions. These conditions give ten Boolean formulas, one for each unordered
+pair of polygon sizes. Each formula has a deletion-free positive-hint LRAT
+refutation checked by separate Python and C++ implementations; a further
+checker recomputes unit propagation without using the hints. In total the
+archived formulas contain 831,540 clauses, and the trimmed refutations contain
+96,286 added clauses with 7,748,468 propagation hints. This is an exact
+refutation, not a timeout or failed numerical search.
+
+Together with the proofs preserved from the preceding packs, the result gives
+additivity for every pair of polytopes with individual extension complexities
+at most six. We supply an integer octagon of complexity six, its exact
+six-term slack factorization, and a twelve-term factorization of its square.
+We also exhibit a feasible higher-complexity support pattern that cannot admit
+numerical weights: it would force incompatible antipodal facet-normal pairs.
+That obstruction explains a specific limit of the present Boolean relaxation;
+it does not resolve the unrestricted problem.
+\end{abstract}
+\textbf{Reading guide.} Sections~\ref{sec:support}--\ref{sec:certificate} are the
+new lower-bound proof. Section~\ref{sec:octagon} is an exact geometric example.
+Section~\ref{sec:barrier} records a genuine higher-complexity obstruction rather
+than treating a support assignment as a factorization.
+\clearpage
+\tableofcontents
+\clearpage
+
+\section{Target and scope}
+Let $P\subset\R^d$ and $Q\subset\R^e$ be full-dimensional bounded polytopes,
+with complete facet--vertex slack matrices $S$ and $T$. Every irredundant facet
+inequality is a row, and every vertex is a column. Define
+\begin{equation}\label{eq:product}
+ C_{:,(i,j)}=\begin{pmatrix}S_{:,i}\\T_{:,j}\end{pmatrix}.
+\end{equation}
+All factors and ranks in this note are real and nonnegative. NR-02 asks whether
+\begin{equation}\label{eq:target}
+ \rankp(C)=\rankp(S)+\rankp(T),
+ \qquad\text{equivalently}\qquad
+ \xc(P\times Q)=\xc(P)+\xc(Q).
+\end{equation}
+Here $\xc$ counts inequalities in a linear extension; affine equations are
+free. The equivalence is the slack-factorization theorem, recalled in
+\cite{twz}. The construction from two separate factorizations always gives
+\begin{equation}\label{eq:upper}
+ \xc(P\times Q)\le\xc(P)+\xc(Q).
+\end{equation}
+The repository entry rechecked for this work labels unrestricted NR-02
+\emph{Partially resolved}, with a September 10, 2026 status check. It records
+the proved pyramid-factor case, not a general equality \cite{repo,twz}.
+This note does not alter that target or substitute arbitrary nonnegative
+matrices for complete slacks.
+
+\begin{theorem}[New standalone polygon result]\label{thm:main}
+For any two convex polygons $P,Q$ with $\xc(P)=\xc(Q)=6$,
+\[
+ \boxed{\xc(P\times Q)=12.}
+\]
+The lower bound is computer-assisted, with the entire finite refutation
+included in the accompanying files.
+\end{theorem}
+
+\begin{corollary}[Using the preserved previous proofs]\label{cor:small}
+For any two nonempty polytopes $P,Q$ with $\xc(P),\xc(Q)\le6$,
+\[
+ \xc(P\times Q)=\xc(P)+\xc(Q).
+\]
+Points are allowed, with $\xc(\text{point})=0$.
+\end{corollary}
+
+The new standalone theorem does not depend on the previous universal
+low-excess theorem. The broader corollary does use it, together with the
+previous complexity-five polygon results; Section~\ref{sec:corollaries}
+spells out that dependence. All source proofs are preserved in
+\path{previous/NR-02_round3_proof_pack.zip}, which itself preserves the
+second and first packs \cite{round3,round2}.
+
+In particular, the unresolved interval from the preceding work,
+$11\le\xc(P\times Q)\le12$ for two complexity-six hexagons, is now reduced to
+$12$. The theorem also covers complexity-six heptagons, octagons, and nonagons
+without imposing a particular realization. It does \emph{not} say that every
+octagon or nonagon has complexity six.
+
+\section{Why only ten polygon-size cases are required}\label{sec:finite}
+We first justify the finite range without a numerical classification of
+polygon realizations.
+
+\begin{lemma}[A bounded optimal extension may be used]\label{lem:bounded}
+A complete polytope slack matrix of nonnegative rank $r$ has a bounded
+extension with at most $r$ facets.
+\end{lemma}
+\begin{proof}
+Write the affine slack space as $\mathcal A=\{b-Ax:x\in\R^d\}$, so
+$\mathcal A\cap\R^m_{\ge0}$ is affinely isomorphic to $P$. Boundedness gives
+a strictly positive vector $\lambda$ with
+$\lambda^Ts=1$ for every $s\in\mathcal A$. One way to see this is to translate
+an interior point to zero, take a strictly positive dependence of the facet
+normals, and normalize the resulting positive combination of right-hand sides.
+The normals positively span the ambient space; summing representations of
+their negatives gives a dependence with every coefficient strictly positive.
+
+For a minimum factorization $S=WH$, every column of $W$ is nonzero. Set
+\[
+ E=\{h\in\R^r_{\ge0}:Wh\in\mathcal A\}.
+\]
+Its image is contained in the slack polytope, and the columns of $H$ lift every
+vertex, so its image equals the slack polytope. Each entry of $\lambda^TW$ is
+strictly positive. Consequently $\lambda^TWh=1$ bounds every coordinate of
+$h$. Thus $E$ is bounded and uses at most $r$ inequalities in its affine hull.
+\end{proof}
+
+\begin{lemma}[The six-facet vertex bound]\label{lem:nine}
+A polygon of extension complexity six has between six and nine vertices.
+\end{lemma}
+\begin{proof}
+The lower bound follows from $\xc(P)\le\#\operatorname{vert}(P)$. Choose a
+bounded optimal extension $E$ with six facets and dimension $h$. Since it
+projects onto a polygon, $h\ge2$; boundedness gives $h\le5$.
+
+If $h=2$, there are six vertices. If $h=3$, Euler's relation and minimum
+vertex degree three give
+$2f_1\ge3f_0$ and $f_0-f_1+f_2=2$, hence $f_0\le2f_2-4=8$.
+If $h=5$, six facets force a simplex, with six vertices.
+
+For $h=4$, the polar of $E$ has six vertices in four dimensions. The unique
+one-dimensional space of affine dependences partitions the six indices into
+$p$ positive, $q$ negative, and $t$ zero entries. Here $p,q\ge2$ and
+$p+q+t=6$. A single positive entry, for example, would express that polar
+vertex as a convex combination of the others, which is impossible.
+The facets of the polar, and hence the vertices of $E$, correspond to the
+minimal positive dependences of this one-dimensional Gale configuration.
+They are exactly the opposite-sign pairs and the zero singletons. Thus
+\[
+ \#\operatorname{vert}(E)=pq+t\le9.
+\]
+For completeness, the Gale correspondence in this special case follows by
+viewing a nonnegative affine function on the six polar vertices as a vector
+$u\ge0$ orthogonal to the affine-dependence vector. Inclusion-minimal nonzero
+supports of such vectors give maximal proper zero faces, namely facets.
+Those minimal supports are precisely the pairs and singletons just counted.
+The general few-facet description is also discussed in \cite{padrol}.
+
+An affine image cannot have more vertices than its source: the inverse face
+of each image vertex contains a source vertex. The upper bound nine follows
+in all four dimensions.
+\end{proof}
+
+The possibilities are therefore $m,n\in\{6,7,8,9\}$. Interchanging the
+factors permits $m\le n$, leaving ten cases. This is an exhaustive range for
+complexity-six polygons, not a cutoff selected for computational convenience.
+
+\section{Necessary supports of a saving factorization}\label{sec:support}
+Fix $m,n\in\{6,7,8,9\}$. Number polygon edges and vertices cyclically so that
+edge $f$ of $P$ contains vertices $f,f+1$, and similarly for $Q$. Indices in
+one polygon are always taken modulo its size.
+
+Suppose an eleven-term factorization of \eqref{eq:product} exists:
+\[
+ C=WH,\qquad W=\begin{pmatrix}A\\B\end{pmatrix},\qquad W,H\ge0.
+\]
+All eleven columns of $W$ may be assumed nonzero. Indeed, delete zero terms;
+if the size is below eleven, split nonzero rank-one terms into positive
+multiples until it is eleven. All the necessary inequalities below apply to
+this padded exact factorization as well. Thus excluding eleven terms excludes
+every size at most eleven.
+
+For $f=0,\ldots,m-1$ and $g=0,\ldots,n-1$, put
+\[
+ K_f=\{k:A_{fk}>0\},\quad L_g=\{k:B_{gk}>0\},\quad
+ \mathcal P=\bigcup_fK_f,\quad\mathcal Q=\bigcup_gL_g.
+\]
+The factor-index universe is $[11]=\{1,\ldots,11\}$. Define
+\[
+ D_P=[11]\setminus\mathcal Q,\qquad
+ D_Q=[11]\setminus\mathcal P.
+\]
+Because every left column is nonzero, $D_P$ consists of the $P$-only columns
+and $D_Q$ of the $Q$-only columns. In particular
+\begin{equation}\label{eq:used}
+ \mathcal P\cup\mathcal Q=[11].
+\end{equation}
+No numerical entry of $W$ is fixed by this notation.
+
+\subsection{The prism bound and individual rows}
+We use the established disjoint-facet inequality
+\[
+ \xc(R)\ge\min\{\xc(F_1),\xc(F_2)\}+2
+\]
+for disjoint facets of a polytope \cite{gps}. Together with the product upper
+bound this gives, for every polytope $R$,
+\begin{equation}\label{eq:prism}
+ \xc(R\times[0,1])=\xc(R)+2.
+\end{equation}
+In particular, an edge times either polygon in this section has complexity
+eight.
+
+\begin{lemma}[Row supports]\label{lem:row}
+Every row support is nonempty and has size at most three:
+\begin{equation}\label{eq:row}
+ 1\le |K_f|\le3,\qquad 1\le|L_g|\le3.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Every facet slack row is nonzero. On the product vertices whose $P$ coordinate
+lies on edge $f$, all coefficients indexed by $K_f$ vanish. Retain the two
+neighboring $P$ rows $f-1,f+1$ and all $Q$ rows. The two retained $P$ rows are
+positive multiples of the two endpoint slacks of a segment. After row scaling,
+this is a complete slack matrix of $[0,1]\times Q$, of nonnegative rank eight.
+It uses at most $11-|K_f|$ terms. Thus $|K_f|\le3$. Interchange the factors
+for the other inequality.
+\end{proof}
+
+\subsection{Pure columns and vertex restrictions}
+\begin{lemma}[Pure-column caps]\label{lem:pure}
+A saving factorization satisfies
+\begin{equation}\label{eq:pure}
+ |D_P|\le4,\qquad |D_Q|\le4.
+\end{equation}
+\end{lemma}
+\begin{proof}
+If every column were pure, the two blocks would need at least six columns
+each, contradicting a size of eleven. Thus some column $k$ is mixed. Choose
+a $P$ facet whose row is positive in this column and a vertex on that facet.
+For this fixed $P$ vertex, coefficient row $k$ vanishes for all $Q$ vertices.
+The factorization of $T$ also omits all $P$-only columns, so
+$6\le11-|D_P|-1$. The mixed column is not in $D_P$, so the omissions are
+distinct. This proves the first cap, and the second is symmetric.
+\end{proof}
+
+\begin{lemma}[Vertex slices]\label{lem:vertex}
+For every vertex index,
+\begin{equation}\label{eq:vertex}
+ |K_{i-1}\cup K_i\cup D_P|\le5,
+ \qquad
+ |L_{j-1}\cup L_j\cup D_Q|\le5.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Fix a vertex $i$ of $P$ and retain the $Q$ rows. Both incident $P$ slacks are
+zero, so coefficients in $K_{i-1}\cup K_i$ vanish. The columns in $D_P$ are
+absent from the retained block. All these omissions together still leave a
+factorization of the rank-six matrix $T$, giving the first bound. The other
+one is identical with the factors exchanged.
+\end{proof}
+
+\subsection{The strengthened edge restriction}
+\begin{lemma}[Invisible and twice-killed terms]\label{lem:edge}
+For every $P$ edge $f$,
+\begin{equation}\label{eq:edge}
+ \left|K_f\ \cup\ (K_{f-1}\cap K_{f+1})\ \cup\
+ \bigl(D_P\setminus(K_{f-1}\cup K_{f+1})\bigr)\right|\le3.
+\end{equation}
+The analogous assertion holds for the $L$ supports and $D_Q$.
+\end{lemma}
+\begin{proof}
+Use the edge test from Lemma~\ref{lem:row}, retaining only the neighboring
+$P$ rows and all $Q$ rows. Terms in $K_f$ vanish throughout the test. A term
+in both neighboring supports has zero coefficient at each of the two
+endpoints: one neighbor forces it to zero at one endpoint and the other
+neighbor does so at the other. Finally, a $P$-only column absent from both
+neighbors is zero on every retained row, whether or not its coefficient
+vanishes. The union of these three sets can therefore be omitted. The
+remaining matrix has nonnegative rank eight, so at most three terms are
+omitted. Counting a union is essential; overlapping reasons are not added
+as separate losses.
+\end{proof}
+
+\subsection{Positive-entry coverage and mixed facet unions}
+For a product vertex $(i,j)$ define its forced-zero support union
+\[
+ Z_{ij}=K_{i-1}\cup K_i\cup L_{j-1}\cup L_j.
+\]
+Every positive entry of the product must be contributed by some index outside
+this union. Consequently,
+\begin{align}
+ K_f\setminus Z_{ij}&\ne\varnothing
+       &&\text{if }i\notin\{f,f+1\},\label{eq:coverageP}\\
+ L_g\setminus Z_{ij}&\ne\varnothing
+       &&\text{if }j\notin\{g,g+1\}.\label{eq:coverageQ}
+\end{align}
+These assertions are necessary even though a coefficient outside $Z_{ij}$
+need not actually be positive. Allowing all such coefficients enlarges the
+feasible support family and is therefore safe for an impossibility proof.
+
+\begin{lemma}[Cross-union restriction]\label{lem:cross}
+For every pair $K_f,L_g$, their union contains no third facet-row support:
+\begin{equation}\label{eq:cross}
+ K_h\not\subseteq K_f\cup L_g\ (h\ne f),\qquad
+ L_t\not\subseteq K_f\cup L_g\ (t\ne g).
+\end{equation}
+\end{lemma}
+\begin{proof}
+At a point of $\operatorname{relint}(F_f)\times\operatorname{relint}(G_g)$,
+exactly the named two product facet slacks vanish. Express the point as a
+convex combination of product vertices and use the same combination of
+coefficient columns as a nonnegative lift. Every coefficient indexed by
+$K_f\cup L_g$ is zero. A third support contained in the union would force a
+third slack to vanish, a contradiction.
+\end{proof}
+
+This last condition is redundant with full positive-entry coverage, but
+including it provides useful short deductions in the finite proof. Its use
+does not add a geometric hypothesis.
+
+\section{The exact Boolean formulas}\label{sec:encoding}
+Let $x_{fk}$ be a Boolean variable indicating membership of factor index $k$
+in combined left row $f$, with the $m$ rows of $P$ followed by the $n$ rows
+of $Q$. The primary variables number $11(m+n)$. The function
+\texttt{build(m,n)} in \texttt{code/support\_cnf.py} encodes exactly the
+necessary conditions of Section~\ref{sec:support}, plus column-permutation
+symmetry. Its default arguments are $a=b=6$, $r=11$, and no fixed row degree.
+The optional generalized arguments are used only in the explicitly labeled
+controls and higher-complexity experiments.
+
+\subsection{Gates, bounds, and witnesses}
+For a Boolean output $y=\bigwedge_{s=1}^t\ell_s$, where the $\ell_s$ are signed
+literals, the encoder uses
+\[
+ (\neg y\lor\ell_s)\quad(s=1,\ldots,t),\qquad
+ (y\lor\neg\ell_1\lor\cdots\lor\neg\ell_t).
+\]
+OR gates use the negation of an AND of the negated inputs. Empty AND inputs
+mean true. All gate clauses are exact equivalences.
+
+The constraint that at most $k$ of $\ell_1,\ldots,\ell_r$ hold is encoded
+by the clause $\bigvee_{s\in I}\neg\ell_s$ for every $(k+1)$-element subset
+$I$. At the proof parameters, $r=11$ and the relevant caps are three, four,
+and five. These are explicit cardinality clauses, not a floating-point
+integer-programming relaxation.
+
+For a positive entry, a witness $y_k$ implies its row membership and the
+absence of the four forced-zero row memberships at index $k$. The encoder
+requires $\bigvee_k y_k$. The reverse implications into a witness are not
+needed: whenever the underlying set condition holds, choose a valid witness.
+The cross-union exclusions use the same construction with two excluded rows.
+
+\subsection{Column symmetry and equisatisfiability}
+Factor columns may be permuted freely. We sort their complete binary row
+incidence vectors in lexicographically nonincreasing order, reading row zero
+first. Equal support vectors are permitted.
+
+For adjacent columns with current bits $a,b$ and a Boolean $e$ saying that
+all previous bits agreed, the order condition is
+$\neg e\lor a\lor\neg b$. A new exact gate records
+$e'=e\wedge(a=b)$; the initial prefix is true. The supplied six-clause
+implementation of this step is checked by exhaustive small comparator tests.
+
+Every genuine factorization satisfying the hypotheses can have its columns
+sorted, producing a primary assignment satisfying these constraints. Set all
+gate variables to their defining values and choose valid positive witnesses;
+this extends it to a satisfying assignment of the full CNF. Conversely, the
+gate clauses and witness implications recover every stated set condition
+from any satisfying assignment. Hence the encoding neither loses a possible
+factorization through its auxiliary variables nor presumes numerical weights
+for a merely feasible support assignment.
+
+The method needs only the forward implication from a factorization to a
+satisfying Boolean assignment. It never asserts the converse from Boolean
+supports to a nonnegative factorization.
+
+\section{The finite refutations and their verification}\label{sec:certificate}
+\begin{proposition}[Certified finite support exclusion]\label{prop:finite}
+For each $6\le m\le n\le9$, the default formula generated by
+\texttt{build(m,n)} is unsatisfiable.
+\end{proposition}
+\begin{proof}[Computer-assisted proof]
+For each pair, \texttt{proofs/polygon\_m\_n/instance.cnf} is the exact generated
+formula, and \texttt{proof.lrat} is a complete deletion-free positive-hint
+refutation. The following are the checked certificate sizes. Each row ends
+with a checked empty clause.
+\begin{center}\small
+\begin{tabular}{@{}ccrrrr@{}}\toprule
+$m$&$n$&Variables&Source clauses&Added clauses&Unit hints\\\midrule
+6&6&7,940&45,643&5,439&346,981\\
+6&7&10,117&55,510&9,614&703,887\\
+6&8&12,558&66,457&7,093&428,745\\
+6&9&15,263&78,484&7,019&533,361\\
+7&7&12,800&67,425&15,447&1,048,486\\
+7&8&15,791&80,600&9,987&757,969\\
+7&9&19,090&95,035&13,920&1,111,358\\
+8&8&19,376&96,183&8,144&826,076\\
+8&9&23,313&113,206&7,462&851,199\\
+9&9&27,932&132,997&12,161&1,140,406\\\midrule
+\multicolumn{3}{r}{Totals}&831,540&96,286&7,748,468\\\bottomrule
+\end{tabular}
+\end{center}
+The Python and C++ direct-hint checkers independently accepted every step.
+A further C++ checker discarded the hints and recomputed reverse unit
+propagation for all added clauses. The separate occurrence-list checker gives
+another propagation implementation. The verifier also regenerates every CNF
+and compares it byte-for-byte, rather than trusting an unrelated Boolean
+file with the same title.
+
+Here is the precise proof rule. To check an added clause $D$, temporarily
+assume all literals of $D$ false. Each positive hint names an earlier source
+or proved clause. After the current assignments, that clause must be unit
+or empty. In the unit case, assign its last literal true; in the empty case,
+a contradiction has been reached. A step without a contradiction is rejected.
+Every hinted clause must already exist, so forward references and new axioms
+are forbidden. The proof must eventually add the empty clause.
+
+This rule is sound: any model of the preceding clauses that falsified $D$
+would have to satisfy each unit implication in sequence, and hence would
+satisfy a contradiction. Therefore the preceding formula entails $D$.
+Induction over the added clauses proves that a checked empty clause implies
+unsatisfiability of the original formula. The archived proof contains only
+this positive-hint fragment of LRAT \cite{lrat}; no RAT step or deletion is
+needed for the final verification.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:main}]
+The product upper bound gives twelve. If the product had nonnegative rank at
+most eleven, pad an exact factorization to eleven nonzero terms as described
+in Section~\ref{sec:support}. Lemma~\ref{lem:nine} puts its polygon sizes in
+one of the ten cases, after exchanging the factors if necessary.
+Every support constraint follows from that factorization. Sorting its columns
+and assigning the auxiliary variables would satisfy the corresponding CNF.
+Proposition~\ref{prop:finite} contradicts this. Thus the nonnegative rank is
+at least twelve, giving equality.
+\end{proof}
+
+\subsection{What is and is not trusted}
+The discovery solver and the proof-trimming producer are not needed to verify
+the archived conclusion. Their outputs are checked using the original CNF
+and explicit clauses. Some preliminary discovery traces did not pass our
+restrictive RUP-only checker; they were discarded, not treated as proofs.
+Only accepted traces were converted, trimmed, and checked again.
+
+The two direct-hint implementations were written separately in this work,
+but they are not independent human reviews or formally verified programs.
+The geometric implication from a slack factorization to the Boolean formula
+is the written proof in Section~\ref{sec:support}, not a Lean theorem. A
+correct refutation of a wrongly encoded problem would not prove the desired
+mathematical claim. For this reason the package includes the encoder,
+independent set-condition audits, positive controls, negative checker tests,
+and a detailed proof-audit checklist.
+
+Unlike the earlier bounded searches, Proposition~\ref{prop:finite} is an
+exhaustive deduction: every possible Boolean assignment is excluded by a
+checked refutation. It is not an inference from failure to find an assignment
+or from a small residual in numerical optimization.
+
+\section{Consequences and their dependencies}\label{sec:corollaries}
+\begin{corollary}[All hexagon pairs]
+For every two convex hexagons,
+$\xc(P\times Q)=\xc(P)+\xc(Q)$.
+\end{corollary}
+\begin{proof}
+A hexagon has complexity five or six. If both values are six, apply
+Theorem~\ref{thm:main}. The cases involving a value five were proved in the
+second pack, Corollaries 7.3 and 7.6, whose complete proofs are preserved
+\cite{round2}.
+\end{proof}
+
+\begin{proof}[Proof of Corollary~\ref{cor:small}]
+A point or segment is additive with every factor. If either factor has
+dimension at least three, its complexity at most six is at most its dimension
+plus three. The universal low-excess theorem from the third pack applies
+\cite{round3}.
+
+It remains to consider polygons of complexities three through six. A triangle
+is a pyramid and is universally additive \cite{twz}. A complexity-four polygon
+is a quadrilateral. Two disjoint edge-product facets and the prism bound give
+universal additivity for a quadrilateral as well.
+
+A complexity-five polygon has five or six vertices: a bounded five-facet
+extension has at most six vertices, by the dimension-two, three, and four
+counts used below. Thus it is a pentagon or a complexity-five hexagon. The
+second pack proves pentagon additivity against any factor of complexity at
+most seven, and complexity-five-hexagon additivity against any factor of
+complexity at most eight \cite{round2}. These cover every remaining pair with
+at least one value five. Finally the pair of values six is
+Theorem~\ref{thm:main}.
+\end{proof}
+
+The small-complexity corollary excludes a counterexample with both individual
+complexities at most six. It does not make complexity-six polygons universally
+additive against arbitrary other factors. Nor does pairwise additivity justify
+arbitrary powers: after multiplying two complexity-six factors the intermediate
+complexity is twelve, outside the hypothesis. The previous arbitrary-pentagon-
+product theorem remains a separate result \cite{round3}.
+
+\section{An integer octagon and its exact square}\label{sec:octagon}
+The following example gives an eight-vertex member of the new theorem without
+assuming a general polygon classification. Let $P$ have the cyclic vertices
+\begin{equation}\label{eq:octvertices}
+\begin{split}
+&(-64,-64),\ (-32,-57),\ (32,-41),\ (64,-32),\\
+&(64,32),\ (32,41),\ (-32,57),\ (-64,64).
+\end{split}
+\end{equation}
+In coordinates $(v,w)$ its eight facet slacks are the rows of
+\[
+ F\begin{pmatrix}1\\v\\w\end{pmatrix},\qquad
+ F=\begin{pmatrix}
+1600&-7&32\\196&-1&4\\1600&-9&32\\64&-1&0\\
+1600&-9&-32\\196&-1&-4\\1600&-7&-32\\64&1&0
+\end{pmatrix}.
+\]
+At the listed vertices every slack is nonnegative and exactly the two incident
+facet slacks are zero. The verifier also enumerates all feasible pairwise
+facet intersections, obtaining exactly these eight vertices.
+
+\subsection{A six-facet extension}
+In coordinates $(t,v,w)$, take the six nonnegative affine functions
+\begin{align*}
+ h_0&=1+t,& h_1&=1-t,\\
+ h_2&=48-16t+v,& h_3&=48-16t-v,\\
+ h_4&=194+2t-v+4w,& h_5&=194+2t-v-4w.
+\end{align*}
+Their simultaneous nonnegativity defines a bounded three-dimensional
+polytope $E$. Indeed $-1\le t\le1$, $|v|\le48-16t$, and
+$4|w|\le194+2t-v$. The last right-hand side is strictly positive throughout
+the first two bounds. Successive endpoint choices give precisely eight
+vertices; direct enumeration of all triples of facet equations confirms this.
+Each of the six inequalities defines a genuine facet.
+
+Project by $(t,v,w)\mapsto(v,w)$. The lifts of \eqref{eq:octvertices} use
+$t=-1$ at $v=\pm64$ and $t=1$ at $v=\pm32$. Thus the image is exactly $P$,
+showing $\xc(P)\le6$.
+
+For the reverse inequality, any bounded extension with at most five facets
+has dimension at most four. In dimension two it has at most five vertices;
+in dimension three the Euler bound gives at most six; in dimension four it
+is a simplex with five vertices. None can project to eight vertices.
+Lemma~\ref{lem:bounded} therefore yields
+\[
+ \boxed{\xc(P)=6.}
+\]
+
+\subsection{Exact slack factors}
+Let $H$ consist of the six extension slacks evaluated at the eight lifts, in
+the order of \eqref{eq:octvertices}. The polygon slack matrix is $S=WH$ with
+\[
+ W=\begin{pmatrix}
+0&0&1&0&8&0\\
+0&2&0&0&1&0\\
+0&0&0&1&8&0\\
+16&0&0&1&0&0\\
+0&0&0&1&0&8\\
+0&2&0&0&0&1\\
+0&0&1&0&0&8\\
+16&0&1&0&0&0
+\end{pmatrix}.
+\]
+All entries of $W,H,S$ are integers. The exact computed ranks are
+$\rank(S)=3$, $\rank(W)=5$, and $\rank(H)=4$; they are not substitutes for the
+nonnegative-rank lower bound just proved.
+
+The complete square-product slack matrix $C$ has size $16\times64$, with
+\[
+ C_{:,(i,j)}=\begin{pmatrix}S_{:,i}\\S_{:,j}\end{pmatrix},\qquad
+ W_{\square}=\operatorname{diag}(W,W),\qquad
+ (H_{\square})_{:,(i,j)}=\begin{pmatrix}H_{:,i}\\H_{:,j}\end{pmatrix}.
+\]
+The data file gives every entry and verifies $W_{\square}H_{\square}=C$
+exactly. The ordinary rank is five. Theorem~\ref{thm:main} gives the matching
+nonnegative-rank lower bound, so
+\[
+ \boxed{\rankp(C)=\xc(P\times P)=12.}
+\]
+This is a solved exact instance beyond the original hexagon examples.
+
+\section{A higher-complexity support pattern is not a counterexample}\label{sec:barrier}
+The same necessary conditions can be generated with assumed individual
+complexities $a,b$ and a saving size $r=a+b-1$. The row caps become
+$a-3$ and $b-3$, vertex omission caps become $a-1$ and $b-1$, and the pure-column
+caps become $a-2$ and $b-2$. The strengthened edge formula is unchanged apart
+from those corresponding caps.
+
+For a putative hexagon of complexity six and an octagon of complexity seven,
+with $r=12$, this generalized support system is satisfiable. The saved Boolean
+model has each hexagon row supported on its own pair of columns
+$\{2g,2g+1\}$, $g=0,\ldots,5$. The two octagon supports of those columns are
+as follows, using zero-based row labels:
+\begin{center}
+\begin{tabular}{@{}ccc@{}}\toprule
+Hexagon label $g$&Octagon support of $2g$&Octagon support of $2g+1$\\\midrule
+0&$\{0,1,2\}$&$\{4,5,6\}$\\
+1&$\{0,6,7\}$&$\{2,3,4\}$\\
+2&$\{1,5\}$&$\{3,7\}$\\
+3&$\{0,1,2\}$&$\{4,5,6\}$\\
+4&$\{1,5\}$&$\{3,7\}$\\
+5&$\{0,6,7\}$&$\{2,3,4\}$\\\bottomrule
+\end{tabular}
+\end{center}
+The package verifies every generalized support condition for this pattern
+using integer bit sets. Nevertheless the pattern cannot be assigned positive
+left-factor weights for any complete hexagon--octagon slack product.
+
+\begin{proposition}[Nonalternating forced antipodes]\label{prop:barrier}
+There is no product slack factorization with exactly the positive left-column
+supports in the preceding table and the indicated hexagon pairs.
+\end{proposition}
+\begin{proof}
+Normalize each left column so its single positive hexagon-block entry equals
+one. For every hexagon facet $g$, the two coefficient rows then satisfy
+\[
+ H_{2g,(i,j)}+H_{2g+1,(i,j)}=S_{g,i}.
+\]
+For every octagon vertex $j$, the zero octagon rows kill exactly one member
+of each pair, as a direct reading of the table shows. Thus the other member
+is forced to equal $S_{g,i}$; the split is not a free numerical variable.
+
+At octagon vertex $j=2$, row zero receives contributions only from columns
+$2$ and $10$. Therefore, for some $\alpha,\beta>0$,
+\[
+ T_{0,2}=\alpha S_{1,i}+\beta S_{5,i}\quad\text{for every }i.
+\]
+At octagon vertex $j=0$, row one similarly gives
+\[
+ T_{1,0}=\gamma S_{2,i}+\delta S_{4,i}\quad\text{for every }i,
+ \qquad\gamma,\delta>0.
+\]
+Both left-hand sides are strictly positive constants. Since the hexagon
+vertices affinely span the plane, these equalities extend to affine identities.
+Writing its facet slacks as $s_f(x)=b_f-n_f^Tx$ yields
+\[
+ \alpha n_1+\beta n_5=0,\qquad
+ \gamma n_2+\delta n_4=0.
+\]
+Thus the two facet-normal pairs $(1,5)$ and $(2,4)$ must be antipodal.
+Outward normal rays of an irredundant convex polygon are distinct and occur
+in strict cyclic facet order. Two distinct antipodal pairs must alternate
+in that order. These pairs do not: their order is $1,2,4,5$. More explicitly,
+choose angles with $\theta_1<\theta_2<\theta_4<\theta_5<\theta_1+2\pi$.
+Antipodality would require $\theta_5=\theta_1+\pi$ and
+$\theta_4=\theta_2+\pi>\theta_5$, a contradiction.
+\end{proof}
+
+The proposition excludes this particular satisfying support assignment, not
+all size-twelve candidates at assumed ranks $(6,7)$. A second support-only
+assignment at assumed ranks $(7,7)$ is also recorded, without a numerical
+realization certificate. Neither is an NR-02 counterexample.
+
+This supplies a concrete boundary of the method: the lower-complexity
+refutations close the support problem completely, but support feasibility at
+the next complexities may still violate geometric identities. A general proof
+or counterexample needs control of these numerical and geometric conditions,
+not just a larger unweighted cover search.
+
+\section{Reproducibility and verification scope}\label{sec:verification}
+The full command from the extracted archive is
+\begin{verbatim}
+python -m pip install -r requirements.txt
+python code/verify_all.py --require-cpp
+\end{verbatim}
+The LRAT checker itself requires only Python's standard library. SymPy is
+used for exact geometric data, and NumPy is required by the preserved older
+packs. No SAT solver or network access is used in verification.
+
+The optional deeper propagation check is
+\begin{verbatim}
+python code/verify_all.py --require-cpp --deep-rup
+\end{verbatim}
+It additionally uses the independently written occurrence-list RUP checker
+on every refutation, instead of trusting either the hints or the watched-
+literal implementation. Required checks fail rather than being silently
+reported as passed. Run without Python's optimization flag because the older
+packs use exact assertions.
+
+The accompanying tests include the following distinct layers:
+\begin{center}\small
+\begin{tabular}{@{}p{0.30\textwidth}p{0.63\textwidth}@{}}\toprule
+Layer&Exact scope\\\midrule
+Finite lower bound&All ten CNF formulas and their complete checked refutations;
+96,286 added clauses ending in ten empty clauses.\\
+Encoding truth tables&254 AND-gate assignments; 16 prefix-gate assignments;
+6,144 cardinality assignments;
+5,460 comparator pairs.\\
+Set/CNF comparison&600 complete primary assignments and 5,400 individual
+constraint-group comparisons across all ten formula sizes.\\
+Positive encoding controls&A genuine twelve-term octagon-square factorization
+satisfies the nonsaving control formula; the higher-rank support assignment
+satisfies its generalized formula.\\
+Checker controls&20 valid toy refutations accepted and 23 false, malformed or
+incomplete refutations rejected by the available implementations; 150 toy
+assignments checked exhaustively.\\
+Exact geometric data&All octagon and extension vertices/facets, $WH=S$,
+$W_{\square}H_{\square}=C$, and exact ordinary ranks.\\
+Earlier work&The third pack's verifier, including the second pack and all first-
+pack checks, is rerun from the unchanged preserved archive.\\\bottomrule
+\end{tabular}
+\end{center}
+The finite sample checks in the encoding audit do not replace the universal
+encoding argument. Likewise, matrix multiplication checks establish the upper
+factorizations, not their nonnegative-rank lower bounds. The latter come from
+the geometric vertex count and the finite support refutations.
+
+\texttt{SHA256SUMS.txt} detects altered package files. It is not a proof of
+mathematical truth. The archive includes source and data, not compiled
+executables or font files. The final PDF source is rebuildable with two
+\texttt{pdflatex} passes.
+
+\section{What remains unresolved}\label{sec:remaining}
+The general equality \eqref{eq:target} is still not established. The new result
+settles the previously identified complexity-six hexagon pair and the broader
+bounded-complexity class, but it gives no reduction of arbitrary polytopes to
+that class.
+
+In particular, the earlier pentagon-factor residual regime remains:
+\[
+ a=\xc(P)\ge\max\{8,\dim P+6\},\qquad
+ \xc(P\times Q)=a+4
+\]
+for a pentagon $Q$, with the paired form and higher-dimensional slice fibers
+from the second pack. The complexity-five-hexagon residual regime is also
+unchanged. The general geometry of dense factor rows and high-dimensional
+optimal extensions is not eliminated here.
+
+The higher-complexity models in Section~\ref{sec:barrier} are not weighted
+factorizations and therefore are not counterexamples. Conversely, the
+nonalternating-antipodes argument proves only that one of those support
+patterns is unrealizable; it is not a universal lower bound at ranks $(6,7)$.
+
+A full negative resolution still requires complete slack matrices, an exact
+saving factorization, and rigorous individual nonnegative-rank lower bounds.
+A full positive resolution still requires a lower-bound mechanism covering
+all factor complexities and dimensions. Neither is supplied in this pack.
+The appropriate unrestricted status remains a partial contribution, with a
+complete computer-assisted proof of the stated restricted theorem. The
+repository's distinction between partial contributions, claimed resolutions,
+and proof-assistant verification should be maintained \cite{guidelines}.
+
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{References}
+\begin{thebibliography}{9}
+\bibitem{repo} OpenProblemsInNLA. NR-02, ``Additivity for Cartesian-product slack
+matrices.'' Entry rechecked September 13, 2026; recorded status check
+September 10, 2026.
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/nonnegative-and-positive-factorizations/NR-02/README.md}.
+\bibitem{twz} H. R. Tiwary, S. Weltge, and R. Zenklusen. Extension complexities
+of Cartesian products involving a pyramid. \emph{Information Processing
+Letters} 128 (2017), 11--13. The slack-factorization theorem is recalled in
+Section 2; the product theorem concerns a pyramid factor.
+\url{https://arxiv.org/abs/1702.01959}.
+\bibitem{gps} F. Grande, A. Padrol, and R. Sanyal. Extension complexity and
+realization spaces of hypersimplices. arXiv:1601.02416v2 (2017). Lemma 2.3 and
+Corollary 2.4 supply the disjoint-facet and prism bounds.
+\url{https://arxiv.org/html/1601.02416v2}.
+\bibitem{padrol} A. Padrol. Extension complexity of polytopes with few vertices
+or facets. arXiv:1602.06894v2 (2016). The few-facet discussion provides the
+relevant one-dimensional Gale description.
+\url{https://arxiv.org/html/1602.06894v2}.
+\bibitem{lrat} L. Cruz-Filipe, M. J. H. Heule, W. A. Hunt Jr., M. Kaufmann,
+and P. Schneider-Kamp. Efficient certified RAT verification.
+arXiv:1612.02353 (2016/2017).
+\url{https://arxiv.org/abs/1612.02353}.
+The present checkers use only positive unit-propagation hints; the formally
+verified checkers described in that paper were not run in this work.
+\bibitem{round3} \emph{NR-02: Universal low-excess factors and additive face
+envelopes}. Third research note prepared in this conversation, September 13,
+2026. Preserved unchanged in \path{previous/NR-02_round3_proof_pack.zip}.
+This is prior author-side work, not an independent publication.
+\bibitem{round2} \emph{NR-02: Stronger pentagon bounds and sparse-factor
+obstructions}. Second research note prepared in this conversation, September
+13, 2026. Preserved within the third pack, together with the first pack.
+\bibitem{guidelines} OpenProblemsInNLA. Contribution and reporting guidance.
+\url{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/CONTRIBUTING.md}.
+\end{thebibliography}
+\end{document}

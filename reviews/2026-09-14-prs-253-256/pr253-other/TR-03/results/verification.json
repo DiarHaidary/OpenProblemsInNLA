@@ -1,0 +1,105 @@
+{
+  "all_checks_passed": true,
+  "check_groups": 16,
+  "checks": [
+    {
+      "name": "exact rational clipping inequality",
+      "passed": true,
+      "instances": 3168
+    },
+    {
+      "name": "exact spectral counting inequality",
+      "passed": true,
+      "instances": 1650
+    },
+    {
+      "name": "real equal-diagonal construction",
+      "passed": true,
+      "instances": 168,
+      "max_error": 1.6653345369377348e-15
+    },
+    {
+      "name": "harmonic-block bound for every subset",
+      "passed": true,
+      "instances": 6864,
+      "min_numeric_margin": -2.220446049250313e-15
+    },
+    {
+      "name": "harmonic compression interlacing",
+      "passed": true,
+      "instances": 1248
+    },
+    {
+      "name": "harmonic compression conjugation equivariance",
+      "passed": true,
+      "instances": 1248
+    },
+    {
+      "name": "regularized complementary-frame identity",
+      "passed": true,
+      "instances": 676
+    },
+    {
+      "name": "ordered eigenvalues instead of invalid Loewner comparison",
+      "passed": true,
+      "instances": 260,
+      "counterexamples_to_stronger_false_statement": 260
+    },
+    {
+      "name": "finite-to-infinite comparison",
+      "passed": true,
+      "instances": 26340
+    },
+    {
+      "name": "singular limiting block convention",
+      "passed": true,
+      "instances": 44
+    },
+    {
+      "name": "grouped covariance exact prescribed spectrum",
+      "passed": true,
+      "instances": 32
+    },
+    {
+      "name": "round-robin contrast spread",
+      "passed": true,
+      "instances": 32
+    },
+    {
+      "name": "granted-information leading posterior identity",
+      "passed": true,
+      "instances": 1120
+    },
+    {
+      "name": "PSD and additional-observation comparisons",
+      "passed": true,
+      "instances": 1120
+    },
+    {
+      "name": "analytic probability constants in high precision",
+      "passed": true,
+      "instances": 20,
+      "net_exponent": -60.71965918449224,
+      "log_C": 2583.567004139038,
+      "limitation": "Analytic margins, not Monte Carlo verification of rare probabilities"
+    },
+    {
+      "name": "finite-spectrum reduction scalar constants",
+      "passed": true,
+      "instances": 9998
+    }
+  ],
+  "seed": 20260913,
+  "elapsed_seconds": 1.4185541669721715,
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "scipy": "1.17.0",
+    "mpmath": "1.3.0"
+  },
+  "limitations": [
+    "Finite tests do not prove universal statements.",
+    "No formal proof-assistant certification or independent peer review.",
+    "The sharp joint n,k order in TR-03 remains unestablished."
+  ]
+}

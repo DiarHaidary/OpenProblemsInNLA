@@ -8,8 +8,20 @@
 **Importance:** broadly interesting  
 **Rating rationale:** Extreme because matching information bounds for every adaptive algorithm and growing rank is a fundamental barrier; broad impact includes large-scale spectral computation and data analysis.  
 **Source:** Bakshi–Narayanan, Open Question 1.10.  
-**Last checked:** 2026-09-13  
+**Last checked:** 2026-09-14  
 **Status:** Partially resolved  
+
+
+## Further partial results — exact capacity and adaptive innovations, 14 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Verified affiliation and submission record](../../references/holden-further-2026-09-14/README.md).
+
+[Sections 2–7](../../references/holden-further-2026-09-14/RA-14/manuscript.pdf) give exact minimum-energy certificates, including singular tail features, a Gaussian nodal-capacity formula, a first-moment success bound, and an innovation-qualified adaptive-query tradeoff. An innovation is a query direction outside the span of previous queries and responses. The probability bound applies to success together with a bounded number of innovations; it does not bound every unrestricted algorithm's total query count. The linear-size reduction keeps adaptive dependence, and the full-prefix saturation result explains a limitation of that enlarged comparison space.
+
+A separate [independent Codex AI-agent audit](../../reviews/2026-09-14-further-submissions/RA-14-review.md) passed these new, explicitly qualified partial results. All 24 component tests and the exact rank certificate passed; finite diagnostics supplement the written probability arguments. Earlier packages' unrestricted bounds are outside this fresh audit, and their prior canonical notices remain separate. **The simultaneous finite-parameter characterization remains open**: the continuation does not close the transition gap at $`k=1`$, $`\varepsilon=(\log n/n)^2`$. Status remains Partially resolved.
+
+[Proof source](../../references/holden-further-2026-09-14/RA-14/manuscript.tex). AI assistance is disclosed; no Lean verification, external human peer review, formal verification or novelty claim is asserted. Original assumptions, quantifiers, target, ID and path are preserved.
+
 
 ## Problem statement
 

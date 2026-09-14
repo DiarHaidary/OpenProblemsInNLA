@@ -1,0 +1,208 @@
+# SP-10: a bipartite degree-four theorem and an exact duality obstruction
+
+**Status: partial results. The universal graph complement conjecture is neither proved nor disproved in this report.**
+
+The required inequality is
+\[
+ \operatorname{mr}(G)+\operatorname{mr}(\overline G)\le n+2.
+\]
+Here the diagonal entries of the admissible real symmetric matrices are free, while every edge must receive a nonzero off-diagonal entry and every nonedge must receive zero. A rank estimate without these support conditions does not answer the problem.
+
+This delivery preserves the available preceding archives, and, when present in the runtime, the files from the interrupted fourth continuation. The present report supplies complete proofs of the specific additional statements below. It does not describe them as a complete solution or claim priority over the literature. The stored second-round report contains a withdrawn degeneracy premise; the third-round correction remains in force.
+
+## 1. Definitions and dependencies
+
+Let \(\mathcal S(G)\) be the set of real symmetric matrices with the prescribed off-diagonal support. Let \(\operatorname{mr}_+(G)\) denote its minimum positive-semidefinite rank. A faithful Gram representation of \(G\) consists of vectors \(x_v\) such that, for distinct vertices,
+\[
+ \langle x_u,x_v\rangle\ne0\quad\Longleftrightarrow\quad uv\in E(G).
+\]
+Write \(\rho(G)\) for the minimum dimension when every vector must be nonzero. Isolated vertices may use zero vectors for ordinary minimum PSD rank, but not for \(\rho\). Consequently \(\rho(G)=\operatorname{mr}_+(G)+i(G)\), where \(i(G)\) counts the isolated vertices. In particular
+\[
+ \operatorname{mr}(G)\le\operatorname{mr}_+(G)\le\rho(G).
+\]
+
+The polynomial and duality theorems in this report are elementary and independent of Hall's theorem. The bipartite degree-four conclusion uses the standard minor-monotonicity of the positive-semidefinite Strong-Arnold parameter \(\nu\), not Hall's new minimum-degree result. Specifically, the only parameter facts needed are
+\[
+ H\text{ a minor of }G\ \Longrightarrow\ \nu(H)\le\nu(G),\qquad
+ \nu(G)\le n-\operatorname{mr}_+(G),\qquad \nu(K_t)=t-1\quad(t\ge2).
+\]
+The last equality follows directly from the all-ones matrix and positive rank. These standard definitions and minor monotonicity are also recorded in Hall's primary manuscript [1, Section 3]. The dependency is explicit: no independent proof of general minor monotonicity is claimed here.
+
+The elementary graph arguments below use Menger's theorem in its familiar three-fan form: in a 3-connected graph a vertex has three internally disjoint paths to a cycle not containing it, with distinct ends on the cycle. All remaining steps of the partial-2-tree reduction are included.
+
+## 2. An explicit polynomial complement representation
+
+**Theorem 2.1.** Let \(G\) be bipartite with specified parts \(A=\{a_1,\ldots,a_p\}\) and \(B\). Suppose every vertex of \(B\) has degree at most \(d\). If the graph has at least one vertex, then
+\[
+ \boxed{\rho(\overline G)\le d+1.}
+\]
+When one part is empty, the graph is edgeless and dimension one suffices directly.
+
+**Proof.** Choose distinct positive integers \(t_1,\ldots,t_p\), and assign to \(a_i\) the vector
+\[
+ u_i=(1,t_i,t_i^2,\ldots,t_i^d)\in\mathbb Z^{d+1}.
+\]
+For \(b\in B\), let \(k_b=|N_G(b)|\) and define the monic polynomial
+\[
+ p_b(t)=t^{d-k_b}\prod_{a_i\in N_G(b)}(t-t_i).
+\]
+Let \(v_b\in\mathbb Z^{d+1}\) be its coefficient vector, in increasing powers of \(t\). Then
+\[
+ \langle u_i,v_b\rangle=p_b(t_i).
+\]
+Since every \(t_i\) is positive and distinct, this is zero exactly when \(a_i\in N_G(b)\). These are exactly the required cross-part zeros for \(\overline G\).
+
+For two different vertices of \(A\),
+\[
+ \langle u_i,u_j\rangle=\sum_{h=0}^d(t_i t_j)^h>0.
+\]
+For a coefficient in degree \(h\), the sign of its nonzero value in every \(p_b\) is \((-1)^{d-h}\): the nonzero roots are positive, and the remaining roots are zero. Thus the products of corresponding coefficients of any two \(p_b\)'s are nonnegative. Their leading coefficients are both one. Therefore
+\[
+ \langle v_b,v_c\rangle\ge1
+\]
+for distinct \(b,c\). All within-part edges of the complement are present. Every vector is nonzero, since \(u_i\) has first coordinate one and \(v_b\) has last coordinate one. This proves the theorem. The argument includes isolated vertices and degrees strictly less than \(d\). \(\square\)
+
+The factor \(t^{d-k_b}\) is important. Without it, polynomials of different degrees would not have the same coefficient-sign pattern, and the within-\(B\) nonzero products would not be justified by this argument.
+
+The construction is deterministic, integral, and involves no small-singular-value tolerance. It supplies a complement witness, not a claim that the displayed dimension is always minimal.
+
+## 3. A four-dimensional construction for partial 2-trees
+
+**Theorem 3.1.** Suppose \(G\) is a subgraph of a graph \(F\) with an ordering in which every vertex's earlier neighbors in \(F\) form a clique of size at most two. Then
+\[
+ \boxed{\rho(\overline G)\le4.}
+\]
+
+**Proof.** In the given ordering, construct vectors in \(\mathbb R^4\) with orthogonality exactly at the edges of \(G\). Maintain the following invariants among the assigned vectors: every vector is nonzero; every two distinct vectors are independent; and whenever \(ij\) is an edge of \(F\), the vectors \(x_i,x_j,x_z\) are independent for every other assigned vertex \(z\).
+
+At the next vertex \(v\), let \(S\) be its set of earlier neighbors in \(F\), and \(T\subseteq S\) its earlier neighbors in \(G\). The permitted space is
+\[
+ L=\operatorname{span}\{x_t:t\in T\}^{\perp}.
+\]
+It has dimension \(4-|T|\ge2\). An earlier nonneighbor \(z\notin T\) must have nonzero product with the new vector. The forbidden hyperplane \(x_z^\perp\) cannot contain \(L\). Otherwise \(x_z\) lies in the span of the \(T\)-vectors. For \(|T|\le1\) this violates pairwise independence; for \(|T|=2\), the pair \(T=S\) is an edge of \(F\), and the triple-independence invariant gives the contradiction.
+
+To maintain pairwise independence, exclude the line of each earlier vector. To maintain the invariant for an old edge \(ij\in E(F)\), exclude \(\operatorname{span}(x_i,x_j)\). If \(|T|\le1\), the permitted space has dimension at least three and cannot be contained in this plane. If \(|T|=2\), containment would be equality of two planes. If the pairs \(\{i,j\}\) and \(T\) intersect, equality is impossible because a nonzero vector cannot belong both to a space and its orthogonal complement. If they are disjoint, equality implies that both \(x_i,x_j\) are perpendicular to both vectors of \(T\). The established support conditions then give all four cross edges in \(G\), hence in \(F\). Together with the edge \(ij\) and the edge on \(T\), this would make a \(K_4\) subgraph of \(F\). Such a subgraph is impossible: its latest vertex would have three earlier neighbors.
+
+There are also new edges \(vw\) of \(F\), where \(w\in S\). To ensure independence of \(x_v,x_w,x_z\), exclude \(\operatorname{span}(x_w,x_z)\) for every earlier \(z\ne w\). Again a permitted space of dimension at least three cannot be contained in such a plane. In the remaining case \(|T|=2\), we have \(T=S\), so \(L\subseteq x_w^\perp\); this plane cannot equal a plane containing the nonzero vector \(x_w\).
+
+Every excluded subspace is therefore proper in \(L\). A finite union of proper linear subspaces cannot cover \(L\). Choose a vector outside their union. This satisfies all support requirements and all induction invariants. Starting from the empty assignment completes the construction. Since all constraints and previous vectors can be rational, rational choices are possible at each stage. \(\square\)
+
+For completeness, the graph condition used here covers every graph with no \(K_4\) minor. One can obtain the required ordering by repeatedly deleting a vertex of degree at most two and filling its neighbor pair with an edge. When the degree is two, the filled graph after deletion is a minor of the preceding graph: contract one incident edge. Hence it still has no \(K_4\) minor.
+
+Here is a proof that a \(K_4\)-minor-free graph always has an available vertex of degree at most two. A 3-connected graph has a \(K_4\) minor: choose a vertex and a cycle avoiding it, use three disjoint paths from the vertex to the cycle, and contract the cycle arcs and the paths. In a 2-connected \(K_4\)-minor-free graph of order at least four, there is consequently a separating pair \(x,y\). For each component after deleting that pair, take its torso with \(x,y\) and add the edge \(xy\). Each torso is a smaller 2-connected minor, using a path through another component to supply the added edge. Induction shows that each torso is either a triangle or has two nonadjacent degree-two vertices. Since \(x,y\) are adjacent in a torso, an interior degree-two vertex is available in either case. Taking such vertices from two components gives two nonadjacent degree-two vertices in the original graph. Triangles are the base case. Finally, in a graph with cut vertices, an end block has an interior vertex of degree at most two by this assertion, or is a single edge. Disconnected graphs are handled componentwise.
+
+Reversing the deletion-and-fill order gives exactly the clique-of-size-at-most-two ordering used in Theorem 3.1. Thus the four-dimensional representation follows without an unproved generic-position assertion.
+
+## 4. The bipartite degree-four conclusion
+
+**Theorem 4.1.** Let \(G\) be a bipartite graph for which one specified part has all degrees at most four. Then
+\[
+ \boxed{\operatorname{mr}_+(G)+\operatorname{mr}_+(\overline G)\le n+2.}
+\]
+In particular, \(G\) satisfies SP-10. There is no bound on its order or on the degrees in the other part.
+
+**Proof.** If \(G\) contains a \(K_4\) minor, minor monotonicity of \(\nu\) gives \(n-\operatorname{mr}_+(G)\ge3\). Theorem 2.1 gives \(\operatorname{mr}_+(\overline G)\le5\). Their sum is at most \(n-3+5=n+2\).
+
+If \(G\) has no \(K_4\) minor but contains a cycle, it has a \(K_3\) minor, giving \(\operatorname{mr}_+(G)\le n-2\). Theorem 3.1 and the accompanying graph reduction give \(\operatorname{mr}_+(\overline G)\le4\). Again the sum is at most \(n+2\).
+
+If \(G\) is a nonempty forest with \(c\) components, its component Laplacians give a PSD matrix of rank \(n-c\le n-1\). The complement of any forest has a nonzero Gram representation in dimension at most three. To see this directly, order each tree from its root so that each vertex has at most one earlier neighbor. In \(\mathbb R^3\), choose the new vector perpendicular to that neighbor, when it exists, and avoid zero products with all earlier nonneighbors and parallelism with every earlier vector. The permitted plane has dimension two; pairwise nonparallelism makes every unwanted orthogonality a proper line, and the parallelism conditions also exclude at most lines. A finite union of lines does not cover the plane. Roots impose no perpendicularity and can be chosen in the whole space. Thus the rank sum is at most \(n-1+3=n+2\). For the empty vertex set both ranks are zero. \(\square\)
+
+The same proof covers one-side degree at most three with only the cycle/forest distinction. At degree four, the \(K_4\)-minor/partial-2-tree distinction is the additional ingredient. Degree five is not covered by simply reusing this argument: the polynomial bound becomes six, and a \(K_4\) minor saves only three ranks.
+
+## 5. Why the rank-two SDP shortcut is not a proof
+
+A natural proposed route is to optimize a rank-two objective over a sparse correlation-matrix spectrahedron. A primal matrix \(X\) and dual slack \(S\) satisfy \(XS=0\), so their ranks sum to at most \(n\). Adding a rank-two objective matrix \(C\) to \(S\) gives \(B=S+C\), with rank at most \(\operatorname{rank}S+2\). The dual constraints can make \(B\) supported on the complement. This yields the attractive rank count
+\[
+ \operatorname{rank}X+\operatorname{rank}B\le n+2.
+\]
+But it proves GCC only if **both** matrices have the exact required support. Genericity cannot simply be asserted to repair this problem.
+
+**Theorem 5.1 (open-set support failure).** For the path \(1-2-3-4\), consider
+\[
+ \max\{\langle C,X\rangle:X\succeq0,\ X_{ii}=1,\ X_{13}=X_{14}=X_{24}=0\}.
+\]
+Write \(a=C_{12}\), \(b=C_{23}\), \(c=C_{34}\). If
+\[
+ a>0,\qquad c>0,\qquad ac>b^2,
+\]
+then the unique optimizer is
+\[
+ X_0=\begin{pmatrix}1&1&0&0\\1&1&0&0\\0&0&1&1\\0&0&1&1\end{pmatrix}.
+\]
+It loses the required edge \(23\). These conditions hold on a nonempty open set of positive-semidefinite rank-two objectives.
+
+**Proof.** Put \(q_1=(1,-1,0,0)^T\), \(q_2=(0,0,1,-1)^T\), and
+\[
+ S=[q_1\ q_2]\begin{pmatrix}a&b\\b&c\end{pmatrix}[q_1\ q_2]^T.
+\]
+Then \(S\succeq0\), has rank two, and its entries on the three path edges are \(-a,-b,-c\). For every feasible \(X\), the quantity \(\langle C+S,X\rangle\) is constant: all free off-diagonal entries have zero coefficients in \(C+S\), and the diagonal is fixed. Since \(\langle S,X\rangle\ge0\), a feasible matrix with \(SX=0\) is optimal. The matrix \(X_0\) is such a matrix.
+
+Any optimizer must satisfy \(\langle S,X\rangle=0\), hence \(SX=0\). Thus its range lies in
+\[
+ \ker S=\operatorname{span}\{(1,1,0,0)^T,(0,0,1,1)^T\}.
+\]
+The prescribed unit diagonal forces each diagonal two-by-two block to be all ones. Every cross-block entry must have the same value; the constraint \(X_{13}=0\) makes that value zero. This proves uniqueness.
+
+For an explicit rank-two example, take
+\[
+ V=\begin{pmatrix}1&0\\1&1/4\\1/4&1\\1/8&1\end{pmatrix},\qquad C=VV^T.
+\]
+Then \(a=1\), \(b=1/2\), \(c=33/32\), and \(ac-b^2=25/32>0\). The strict inequalities and full column rank persist under sufficiently small perturbations of \(V\), so this is an open-set phenomenon within the rank-two PSD objective family. \(\square\)
+
+In this explicit example \(B=C+S\) has exactly the support of the complementary path: its nonedge-of-the-path entries are \(B_{13}=3/4\), \(B_{14}=-3/8\), \(B_{24}=7/8\), and its path-edge entries vanish. Its rank is four: \(C\) and \(S\) are PSD rank-two matrices whose ranges together span \(\mathbb R^4\). For example, the two sums of the rows of \(V\) in the two path-pairs are \((2,1/4)\) and \((3/8,2)\), with determinant \(125/32\ne0\); this makes the common kernel of \(C,S\) trivial. Hence the tempting pair has ranks \(2+4=6=n+2\), while the first matrix is not admissible for the path.
+
+This is a counterexample to the asserted automatic support recovery, **not** to SP-10, not to the existence of some better objective, and not to all semidefinite approaches. An alternative rank-two objective selection rule would need a separate existence proof for faithful support on both sides.
+
+## 6. The corrected universal bound and its limitation
+
+The previously withdrawn statement concerned degeneracies, not ranks. The false premise
+\[
+ d(G)+d(\overline G)\ge\left\lceil\frac{2n-2}{3}\right\rceil
+\]
+is not used here. The explicit counterexamples in the third archive remain valid.
+
+One can still recover the numerical rank bound from two different inputs. Hall's minimum-degree theorem together with minor monotonicity gives \(\rho(G)\le n-d(G)\). The elementary degeneracy construction gives \(\rho(\overline G)\le2d(G)+1\). These imply
+\[
+ 2\rho(G)+\rho(\overline G)\le2n+1.
+\]
+Swap the graphs and add:
+\[
+ \boxed{\rho(G)+\rho(\overline G)\le\left\lfloor\frac{4n+2}{3}\right\rfloor.}
+\]
+This subsection imports Hall's new theorem [1]; Sections 2, 3, and 5 do not. The original proof of the elementary degeneracy construction is retained in the preceding reports: in dimension \(2d+1\), keep every set of at most \(d+1\) vectors independent and follow a degeneracy ordering.
+
+The Strong-Arnold refinement investigated in the interrupted continuation requires the stronger faithful-SAP version of the degeneracy bound, attributed there to Mitchell. When that external input is used, it should be stated at its correct parameter: \(\nu(\overline G)\ge n-2d(G)-1\), rather than the false degeneracy-sum inequality. Together with Hall it yields
+\[
+ 2\nu(G)+\nu(\overline G)\ge n-1,
+\quad
+ \nu(G)+\nu(\overline G)\ge\left\lceil\frac{2n-2}{3}\right\rceil.
+\]
+The source audit and exact bibliographic record, when present among the recovered fourth-continuation files, are preserved rather than guessed. None of the new class proofs relies on this additional refinement.
+
+Even the valid universal upper bound has coefficient \(4/3\), not one. At \(n=100\) it gives 134 rather than 102. Those numbers describe the gap in the estimate, not a graph violating SP-10.
+
+## 7. Exact supplemental checks
+
+The supplemental code generates polynomial complement witnesses for all labeled bipartite patterns with two prescribed parts of size three, for the explicit half-graph examples, and for a larger one-sided degree-four fixture. Every support condition is checked using rational arithmetic, and every recorded rank is recomputed by elimination. A separate unit test checks the defective path SDP pair: the complement matrix is accepted, while the primal matrix is required to fail at its missing middle edge. A test expecting rejection is a soundness test, not a successful graph-complement certificate.
+
+The proofs, not the finite fixtures, establish the all-order theorems. The polynomial files certify the complement alone unless an explicit admissible matrix for the other graph is separately supplied. In particular this report does not reclassify them as successful rank-pair certificates.
+
+Current execution results are written to `results/supplemental_checks.json`. Recovered logs are stored separately with the recovered files. Their historical tests are not silently reported as rerun by the supplemental program.
+
+## 8. What is still needed for a complete solution
+
+For an arbitrary graph one must construct two exactly supported symmetric matrices of total rank at most \(n+2\), or prove the equivalent maximum-nullity inequality. No structural reduction to the degree-four bipartite family has been established. Arbitrary graphs are not necessarily bipartite; a bipartite graph can also have degrees at least five in both parts.
+
+The SDP rank count removes neither difficulty: exact support can fail on an open set, even for a four-vertex path. The successful module theorems from preceding rounds likewise do not decompose an arbitrary graph into the required modules. Finally, the valid universal estimate has the wrong coefficient. These are precise mathematical gaps; no claim of a complete proof, counterexample, formal proof-assistant verification, or independent referee approval is made.
+
+## References and provenance
+
+[1] H. Tracy Hall, *The Delta Theorem: A dimension bound for faithful orthogonal graph representations*, arXiv:2601.01211v1, January 2026. https://arxiv.org/html/2601.01211v1 . The minor-monotonicity background and the newer Delta Theorem are separate dependencies in this report.
+
+[2] F. Barioli, S. M. Fallat, H. Gupta, Z. Li, *The weak version of the graph complement conjecture and partial results for the delta conjecture*, arXiv:2505.24577v1. https://arxiv.org/html/2505.24577v1 . Background on the degeneracy approach; not cited as a proof of the full conjecture.
+
+[3] C. Erickson, L. Gan, J. Kritschgau, J. C.-H. Lin, S. Spiro, *Complementary Vanishing Graphs*, arXiv:2207.07294v1. https://arxiv.org/html/2207.07294v1 . Background on complementary matrices and the importance of not identifying auxiliary properties with GCC.
+
+[4] User-specified SP-10 repository: https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/eigenvalues-and-inverse-problems/SP-10 . This report does not assert an unverified repository status or modify the repository.
+
+[5] Prior conversation artifacts: `SP10_partial_results.zip`, `SP10_round2_results.zip`, and `SP10_round3_research.zip`, preserved when available. The third archive corrects the erroneous degeneracy premise in the second. See `provenance/recovery.json` for the inventory of the recovered interrupted continuation.

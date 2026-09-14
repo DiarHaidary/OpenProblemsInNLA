@@ -1,0 +1,149 @@
+{
+  "status": "passed",
+  "exact_arithmetic": "fractions.Fraction",
+  "diagonal_checks": [
+    {
+      "n": 2,
+      "q": 1,
+      "N": 2,
+      "enumerated_training_probes": 4,
+      "enumerated_training_coordinate_pairs": 8,
+      "mean_squared_diagonal_error": "162",
+      "single_training_single_correction_variance": "0",
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 2,
+      "N": 4,
+      "enumerated_training_probes": 16,
+      "enumerated_training_coordinate_pairs": 64,
+      "mean_squared_diagonal_error": "496",
+      "single_training_single_correction_variance": "584",
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 3,
+      "N": 8,
+      "enumerated_training_probes": 64,
+      "enumerated_training_coordinate_pairs": 512,
+      "mean_squared_diagonal_error": "3826",
+      "single_training_single_correction_variance": "26100",
+      "passed": true
+    },
+    {
+      "n": 3,
+      "q": 1,
+      "N": 3,
+      "enumerated_training_probes": 8,
+      "enumerated_training_coordinate_pairs": 24,
+      "mean_squared_diagonal_error": "422",
+      "single_training_single_correction_variance": "520",
+      "passed": true
+    },
+    {
+      "n": 3,
+      "q": 2,
+      "N": 9,
+      "enumerated_training_probes": 64,
+      "enumerated_training_coordinate_pairs": 576,
+      "mean_squared_diagonal_error": "4478",
+      "single_training_single_correction_variance": "34852",
+      "passed": true
+    }
+  ],
+  "interpolation_checks": [
+    {
+      "n": 2,
+      "q": 1,
+      "N": 2,
+      "real_product_calls": 2,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 2,
+      "N": 4,
+      "real_product_calls": 3,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 3,
+      "N": 8,
+      "real_product_calls": 4,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 4,
+      "N": 16,
+      "real_product_calls": 5,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 5,
+      "N": 32,
+      "real_product_calls": 6,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 6,
+      "N": 64,
+      "real_product_calls": 7,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 7,
+      "N": 128,
+      "real_product_calls": 8,
+      "passed": true
+    },
+    {
+      "n": 2,
+      "q": 8,
+      "N": 256,
+      "real_product_calls": 9,
+      "passed": true
+    },
+    {
+      "n": 3,
+      "q": 1,
+      "N": 3,
+      "real_product_calls": 2,
+      "passed": true
+    },
+    {
+      "n": 3,
+      "q": 2,
+      "N": 9,
+      "real_product_calls": 3,
+      "passed": true
+    },
+    {
+      "n": 3,
+      "q": 3,
+      "N": 27,
+      "real_product_calls": 4,
+      "passed": true
+    },
+    {
+      "n": 3,
+      "q": 4,
+      "N": 81,
+      "real_product_calls": 5,
+      "passed": true
+    }
+  ],
+  "moment_diagnostics": {
+    "inequality_grid_points": 6300,
+    "largest_floating_slack": -4.151103907343465e-08,
+    "note": "Grid inequalities are floating-point diagnostics; interpolation and diagonal checks are exact.",
+    "passed": true
+  },
+  "elapsed_seconds": 0.1088099479675293
+}

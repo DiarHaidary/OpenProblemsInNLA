@@ -8,7 +8,23 @@
 **Importance:** interesting to the community  
 **Rating rationale:** Challenging because the adversarial eigenvector choice and optimal subset must be compared sharply; community impact is spectrum-sensitive Nyström and column selection.  
 **Status:** Partially resolved  
-**Last checked:** 2026-09-12  
+**Last checked:** 2026-09-14  
+
+
+## Further partial resolution — all positive spectra, 14 September 2026
+
+**Author:** Sidney Holden, Center for Computational Biology, Flatiron Institute, Simons Foundation. [Verified affiliation and submission record](../../references/holden-further-2026-09-14/README.md).
+
+[Theorem 1.1](../../references/holden-further-2026-09-14/TR-03/manuscript.pdf) proves, for every positive spectrum and $`2\le k\le n-2`$,
+
+```math
+R_{n,k}\le\min\{k+1,n-k,2^{34}e^{2560}\sqrt{k}\}.
+```
+
+The limiting-profile estimate and exact-spectrum reduction retain the real orthogonal model and the original maximum-before-minimum quantifiers. The enormous universal constant is an asymptotic bound, not a practical estimate. **The sharp joint dependence on $`n,k`$ remains open:** no matching growing lower bound or all-spectrum square-root-complement-size bound in the strongly unbalanced regime is established.
+
+A separate [independent Codex AI-agent audit](../../reviews/2026-09-14-further-submissions/TR-03-review.md) passed this partial theorem, and 16 diagnostic groups passed in a documented scratch rerun. **Status remains Partially resolved.** The existing one-column result and original target below are retained. [Proof source](../../references/holden-further-2026-09-14/TR-03/manuscript.tex). AI assistance is disclosed; no Lean verification, external human peer review, formal verification or novelty claim is asserted.
+
 
 ## Partial resolution: the one-column case, 12 September 2026
 

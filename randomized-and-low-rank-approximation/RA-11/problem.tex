@@ -34,7 +34,7 @@ queries},pdfauthor={Open Problems in Numerical Linear Algebra}}
 \fancyhf{}
 \fancyhead[L]{\sffamily\footnotesize\color{muted}OPEN PROBLEMS IN NUMERICAL LINEAR ALGEBRA}
 \fancyhead[R]{\sffamily\bfseries\footnotesize\color{accent}RA-11}
-\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-13}}
+\fancyfoot[L]{\parbox[b]{0.9\textwidth}{\sffamily\fontsize{8}{10}\selectfont\color{muted}Editorial ratings; a bounded search cannot certify that a problem remains unsolved.\\Literature check: 2026-09-14}}
 \fancyfoot[R]{\sffamily\footnotesize\color{muted}\thepage}
 \renewcommand{\headrulewidth}{0.3pt}
 \renewcommand{\headrule}{\hbox to\headwidth{\color{accent}\leaders\hrule height \headrulewidth\hfill}}
@@ -60,6 +60,43 @@ bounds remain unknown even across exponential tensor-order scales;
 community impact is reliable computation with tensor-structured matrix
 access.\\
 \textbf{Topic:} Structured randomized trace estimation.
+
+\subsection{Further partial results --- probability-sensitive probes, 14
+September
+2026}\label{further-partial-results-probability-sensitive-probes-14-september-2026}
+
+\textbf{Author:} Sidney Holden, Center for Computational Biology,
+Flatiron Institute, Simons Foundation.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/README.md}{Verified
+affiliation and submission record}.
+
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/RA-11/manuscript.pdf}{Theorems
+2.1--2.2 and Corollary 2.3} give new upper bounds for every real PSD
+input in the original full-vector real product-query model. In
+particular, with \(N=n^q\),
+
+\[Q(n,q,\varepsilon)\le\min\{N,2\lceil\sqrt{6N}/\varepsilon\rceil\}.\]
+
+The constant \(6\) improves to \(3\) when \(N\) is a power of two. The
+diagonal-control construction uses bounded-fair-bit, nonadaptive real
+product queries. The fractional-moment branch has fixed-accuracy
+exponential rate \(D_n=\log n+1-H_n\) in tensor order, where
+\(H_n=\sum_{j=1}^n1/j\). Its sharpness is only for the specified
+empirical-average estimator; it is not an unrestricted oracle lower
+bound. A finite-bit version exists, with no efficient discretization
+implementation claimed.
+
+The new partial results passed a separate
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/reviews/2026-09-14-further-submissions/RA-11-review.md}{independent
+Codex AI-agent audit}. Exact diagonal and complex-response interpolation
+checks and a floating moment grid passed; the numerical simulation suite
+was not rerun. \textbf{The unrestricted joint minimax characterization
+remains open}, so status remains Partially resolved. Inherited bounds in
+the manuscript are outside this fresh audit; the prior independently
+reviewed contribution below is retained.
+\href{https://github.com/ajt60gaibb/OpenProblemsInNLA/blob/main/references/holden-further-2026-09-14/RA-11/manuscript.md}{Proof
+text}. AI assistance is disclosed; no Lean verification, external human
+peer review, formal verification or novelty claim is asserted.
 
 \subsection{Partial results --- Sidney Holden, 13 September
 2026}\label{partial-results-sidney-holden-13-september-2026}
@@ -121,7 +158,6 @@ for tight trace-estimation bounds. It would quantify the cost of
 exploiting rank-one tensor queries when ordinary matrix access is
 unavailable.
 
-\newpage
 \subsection{References}\label{references}
 
 \begin{enumerate}

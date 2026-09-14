@@ -1,0 +1,553 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,amsthm,mathtools,booktabs,array}
+\usepackage[hidelinks]{hyperref}
+\usepackage{enumitem}
+\setlist{nosep,leftmargin=*}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\allowdisplaybreaks[2]
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\R}{\mathbb R}
+\newcommand{\E}{\mathbb E}
+\newcommand{\Prob}{\mathbb P}
+\newcommand{\ran}{\operatorname{range}}
+\newcommand{\rank}{\operatorname{rank}}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\diag}{\operatorname{diag}}
+\newcommand{\spn}{\operatorname{span}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\K}{\mathcal K}
+\title{RA-14: Exact Subspace Certificates and Adaptive Innovation Bounds}
+\author{}
+\date{}
+\begin{document}
+\maketitle
+\vspace{-2em}
+\begin{abstract}
+An exact minimum-energy criterion characterizes when a given linear feature space contains a valid spectral rank-$k$ approximation. It includes singular tail features and unequal leading singular values. For Gaussian block-Krylov features on interpolation nodes, the criterion becomes a $k\times k$ random matrix inequality. An exact reciprocal-Gram first moment replaces the earlier product of operator-norm bounds and gives an explicit success-probability bound.
+
+A conditional-rotation simulation then applies this bound to fully adaptive, individually charged queries, provided that the number of queries introducing directions outside the previous query-and-response span is controlled. The resulting theorem is a probability tradeoff for unrestricted algorithms, not a new unconditional bound on their total query complexity. A complementary algebraic theorem shows that the enlarged full-prefix space contains the exact leading eigenspace once its Gaussian feature dimension saturates the ambient dimension. Consequently, that enlargement cannot simply be used to eliminate the innovation qualifier.
+
+The unrestricted finite-parameter characterization requested by RA-14 is \textbf{not completed}. The inherited bounds remain unchanged. This is a partial, unreviewed mathematical continuation; no independent certification, proof-assistant verification, or percentage-completion claim is made.
+\end{abstract}
+\setcounter{tocdepth}{1}
+\tableofcontents
+\newpage
+
+\section{Problem, scope, and the remaining gap}
+For $n\ge2$, $1\le k<n$, and $0<\varepsilon<1/2$, an unknown real matrix $A\in\R^{n\times n}$ is accessible through individual products $Av$ or $A^\top v$. Each product costs one query. Other exact-real computation is free. Query vectors can be arbitrary measurable functions of previous replies and an independent random seed. The output must satisfy
+\begin{equation}\label{eq:target}
+ Z^\top Z=I_k,\qquad
+ \Prob\{\norm{A(I-ZZ^\top)}_2\le(1+\varepsilon)\sigma_{k+1}(A)\}\ge0.99
+ \quad\text{for every fixed }A.
+\end{equation}
+The least worst-case integer budget is $q_{\rm sp}(n,k,\varepsilon)$. The repository explicitly requests matching universal-factor bounds for all simultaneous finite parameter choices, not only for a dimension-growth regime or a prescribed iterative algorithm.\footnote{RA-14 problem statement, Open Problems in Numerical Linear Algebra; source details in \cite{repo}.}
+
+Put
+\[
+ s=\sqrt\varepsilon,\qquad
+ F=\frac{k}{s}\log\left(1+\frac{ns}{k}\right),\qquad
+ U=\min\left\{n,\frac{k}{s}\log\frac{en}{k}\right\}.
+\]
+The preceding generated packages claim
+\begin{equation}\label{eq:inherited}
+ \max\{k,cF\}\le q_{\rm sp}(n,k,\varepsilon)
+ \le\min\left\{n,\left\lceil12000\frac{k}{s}\log\frac{en}{k}\right\rceil\right\}
+\end{equation}
+for a universal $c>0$. These are inherited unreviewed arguments, not established literature. Their original proofs and qualifications are preserved through the unchanged v6 archive.\footnote{The v5 all-parameter lower argument and v6 scope register are preserved in the prior package \cite{prior}. No strengthening of their unrestricted conclusion is inferred here.}
+
+At the explicit transition
+\begin{equation}\label{eq:transition}
+ k=1,\qquad \varepsilon=(\log n/n)^2,
+\end{equation}
+they leave
+\[
+ \Omega(n\log\log n/\log n)\le q_{\rm sp}\le n.
+\]
+This continuation does not close that interval. Its new results concern the exact geometry of successful subspaces and the number of fresh query directions a faster algorithm would have to use.
+
+\subsection{The new finite-parameter tradeoff}
+On a symmetric input, let
+\[
+ W_{t-1}=\spn\{v_i,Av_i:1\le i<t\}.
+\]
+A query is an \emph{innovation} if its vector has a nonzero component in $W_{t-1}^{\perp}$. The count does not include the algorithm's random vectors unless they actually enter a query outside the already known span. Coordinate-dependent transformations, selective updates, arbitrary coefficients, and within-run adaptivity are all allowed in this definition.
+
+Here is the principal consequence proved below. Let $q\ge1$ and $h\ge0$ be integers, set $B=h+k$ and $N=n-k$, and suppose
+\begin{equation}\label{eq:tradeoff-hyp}
+ 2(B+3)(q+1)\le N,\qquad
+ 400\frac{B}{N}\log^2(eq)e^{4q\sqrt\varepsilon}\le1.
+\end{equation}
+There is one explicitly specified diagonal spectrum $D$, depending only on these parameters, such that every algorithm using at most $q$ queries satisfies
+\begin{equation}\label{eq:tradeoff-intro}
+ \Prob\{\text{success and at most }h\text{ innovations}\}\le\frac14
+ \quad\text{on }A=RDR^\top,\ R\text{ Haar}.
+\end{equation}
+The probability includes the algorithm's independent seed. Thus an algorithm satisfying the pointwise guarantee \eqref{eq:target} must make more than $h$ innovations with probability at least $0.74$ on this input law.
+
+The qualifier cannot be removed: an unrestricted algorithm may make an innovation on every query. The dimension requirement in \eqref{eq:tradeoff-hyp} would then involve a quadratic product. Section~\ref{sec:saturation} proves that the full-prefix enlargement actually contains the exact answer in the relevant saturation case; this is not just an artifact of a loose norm estimate.
+
+\section{An exact minimum-energy certificate}\label{sec:certificate}
+This section is deterministic. It is an analysis of a supplied feature space, not an oracle procedure that knows the hidden singular basis for free.
+
+Work in right singular coordinates, so the residual norm can be evaluated using the diagonal singular-value matrix. More generally, let
+\[
+ D=\diag(D_1,D_2),\qquad
+ \Gamma=D_1^\top D_1-\tau^2 I_k\succ0,\qquad
+ E=\tau^2 I-D_2^\top D_2\succ0.
+\]
+The matrices $D_1,D_2$ may be diagonal; only the two displayed strict inequalities are needed. Let a feature space be the range of
+\[
+ X=\begin{bmatrix}T\\ B_2\end{bmatrix},\qquad
+ T\in\R^{k\times p},\quad B_2\in\R^{(n-k)\times p},
+\]
+and write $W=E^{-1/2}B_2$, $G=W^\top W$.
+
+\begin{lemma}[Exact graph condition]\label{lem:graph}
+A successful $k$-space has an invertible leading block and can be written as $\ran[I_k;F]$. Its residual is at most $\tau$ if and only if
+\begin{equation}\label{eq:graph}
+ F\Gamma F^\top\preceq E
+ \quad\Longleftrightarrow\quad
+ \Gamma^{1/2}F^\top E^{-1}F\Gamma^{1/2}\preceq I_k.
+\end{equation}
+\end{lemma}
+\begin{proof}
+If the leading block of an orthonormal output had rank less than $k$, a nonzero vector supported in the leading coordinates would be perpendicular to the output. Its squared norm under $D$ is strictly larger than $\tau^2$ times its squared norm, a contradiction. The graph representation follows. Its perpendicular vectors are exactly $(-F^\top y,y)$. The residual bound for every such vector is
+\[
+ y^\top F D_1^\top D_1F^\top y+y^\top D_2^\top D_2y
+ \le\tau^2(y^\top FF^\top y+y^\top y),
+\]
+which is the first inequality. The equivalent inequality says that the largest singular value of $E^{-1/2}F\Gamma^{1/2}$ is at most one. The same calculation proves the converse.
+\end{proof}
+
+\begin{theorem}[Nonsingular tail-feature certificate]\label{thm:fullcertificate}
+Suppose $G\succ0$. Define
+\begin{equation}\label{eq:capacity}
+ C=T G^{-1}T^\top.
+\end{equation}
+The space $\ran X$ contains a rank-$k$ output with residual at most $\tau$ if and only if
+\begin{equation}\label{eq:criterion}
+ C\succeq\Gamma.
+\end{equation}
+When this condition holds, coefficients
+\[
+ L_* = G^{-1}T^\top C^{-1}
+\]
+produce the graph $XL_*=[I_k;B_2L_*]$.
+\end{theorem}
+\begin{proof}
+A graph in $\ran X$ is described by some $p\times k$ coefficient matrix $L$ with $TL=I_k$. This requires $\rank T=k$. If that rank condition holds, $C\succ0$ and $TL_*=I_k$. For any other feasible $L=L_*+J$, we have $TJ=0$, and hence
+\[
+ L^\top G L=C^{-1}+J^\top GJ\succeq C^{-1}.
+\]
+The cross terms vanish because $GL_*=T^\top C^{-1}$. Therefore $C^{-1}$ is a minimum in Loewner order, not merely a minimum trace or a collection of unrelated scalar minimizers. Lemma~\ref{lem:graph} shows that feasibility is equivalent to $\Gamma^{1/2}C^{-1}\Gamma^{1/2}\preceq I_k$, which is equivalent to $C\succeq\Gamma$. If $T$ is rank deficient, a successful graph is impossible, and so is \eqref{eq:criterion} because $\Gamma\succ0$.
+\end{proof}
+
+\subsection{Singular features and exact zero-cost directions}
+Inverting a singular tail Gram matrix would discard precisely the directions that can make an enlarged Krylov space too powerful. The following version retains them.
+
+Let $N_0$ have orthonormal columns spanning $\ker W$. Put
+\[
+ S_0=\ran(TN_0)\subset\R^k,
+\]
+and let $R$ have orthonormal columns spanning $S_0^\perp$. Write $G^\dagger$ for the Moore--Penrose inverse. When $R$ has positive column dimension, set
+\begin{equation}\label{eq:projected-capacity}
+ C_R=R^\top T G^\dagger T^\top R.
+\end{equation}
+
+\begin{theorem}[Certificate with singular tail features]\label{thm:singular}
+If $\rank T<k$, there is no successful rank-$k$ graph. Suppose $\rank T=k$. Then $C_R$ is positive definite when nonempty, and the exact criterion is
+\begin{equation}\label{eq:singularcriterion}
+ C_R\succeq R^\top\Gamma R.
+\end{equation}
+When $S_0=\R^k$, this condition is vacuous and the exact leading eigenspace is already in $\ran X$. In general the minimum possible matrix $L^\top GL$, under $TL=I_k$, is
+\begin{equation}\label{eq:minimumenergy}
+ P=R C_R^{-1}R^\top,
+\end{equation}
+with $P=0$ when $R$ is empty.
+\end{theorem}
+\begin{proof}
+The projected map $R^\top T$ annihilates $\ker G=\ker W$. Because $T$ is onto, $R^\top T G^{\dagger/2}$ is onto its $(k-\dim S_0)$-dimensional target. Thus its Gram matrix $C_R$ is positive definite.
+
+Put $L_0=G^\dagger T^\top P$. The matrix $I_k-TL_0$ has range in $S_0$, since multiplication by $R^\top$ gives zero. Thus a correction in $\ker G$ exists:
+\[
+ L_*=L_0+N_0(TN_0)^\dagger(I_k-TL_0),\qquad TL_*=I_k.
+\]
+Moreover $GL_*=T^\top P$ and $L_*^\top GL_*=P$. To justify the first identity, $T^\top R$ belongs to $\ran G$ because it is perpendicular to $\ker G$. For any feasible difference $J$ with $TJ=0$, the same cross-term calculation as before gives
+\[
+ (L_*+J)^\top G(L_*+J)=P+J^\top GJ\succeq P.
+\]
+Now $\Gamma^{1/2}P\Gamma^{1/2}\preceq I$ is equivalent, by the equality of the nonzero singular values of a matrix and its transpose, to
+\[
+ C_R^{-1/2}R^\top\Gamma R C_R^{-1/2}\preceq I.
+\]
+This is \eqref{eq:singularcriterion}. The empty-$R$ case follows directly from $\ran(TN_0)=\R^k$ and has zero weighted tail.
+\end{proof}
+
+\section{Gaussian polynomial features give an exact small matrix}\label{sec:gaussian}
+Fix $d+1$ distinct real tail nodes $x_0,\ldots,x_d$, all of magnitude less than $\tau$, and take a repeated leading eigenvalue $a>\tau$. Let $\ell_j$ be the Lagrange cardinal polynomials for these nodes. Suppose the input spectrum is
+\[
+ D=\diag(aI_k,x_0I_{m_0},\ldots,x_dI_{m_d}),\qquad
+ e_j=\tau^2-x_j^2>0,\qquad \Delta=a^2-\tau^2>0.
+\]
+Partition a standard Gaussian starting block with $B$ columns into independent matrices $G_{\mathrm{top}}\in\R^{k\times B}$ and $G_j\in\R^{m_j\times B}$ at the tail nodes. The leading block is independent of all the tail blocks; a sum over $j$ refers only to tail blocks.
+
+Every vector in the full degree-$d$ Krylov space is generated by a vector polynomial $p:\R\to\R^B$ of degree at most $d$:
+\[
+ z_{\rm top}=G_{\mathrm{top}}p(a),\qquad z_j=G_jp(x_j).
+\]
+The values $u_j=p(x_j)$ are independent coefficient variables: evaluation on $d+1$ distinct nodes is an invertible linear map. Interpolation gives $p(a)=\sum_j\ell_j(a)u_j$.
+
+\begin{theorem}[Exact Gaussian Krylov certificate]\label{thm:gaussiancertificate}
+Suppose every $G_j$ has full column rank. Define
+\begin{equation}\label{eq:nodal-capacity}
+ S=\sum_{j=0}^d\ell_j(a)^2e_j(G_j^\top G_j)^{-1},\qquad
+ C=G_{\mathrm{top}}S G_{\mathrm{top}}^\top.
+\end{equation}
+The entire Krylov space $\K_d(D,\Omega)$ contains a valid rank-$k$ output at threshold $\tau$ if and only if
+\begin{equation}\label{eq:nodalcriterion}
+ C\succeq\Delta I_k.
+\end{equation}
+This includes arbitrary, data-dependent choices of polynomial coefficients and arbitrary extraction within that space.
+\end{theorem}
+\begin{proof}
+In node-value coordinates, the top feature matrix is
+\[
+ T=[\ell_0(a)G_{\mathrm{top}}\ \cdots\ \ell_d(a)G_{\mathrm{top}}],
+\]
+and the weighted-tail feature matrix is block diagonal with blocks $G_j/\sqrt{e_j}$. Consequently $T(W^\top W)^{-1}T^\top$ is exactly \eqref{eq:nodal-capacity}. Apply Theorem~\ref{thm:fullcertificate} with $\Gamma=\Delta I_k$.
+\end{proof}
+
+\subsection{An exact reciprocal-Gram moment}
+\begin{lemma}\label{lem:moment}
+If $G\in\R^{m\times B}$ is standard Gaussian and $m>B+1$, then
+\begin{equation}\label{eq:moment}
+ \E(G^\top G)^{-1}=\frac{1}{m-B-1}I_B.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Separate the first column from the other $B-1$ columns. Schur inversion gives
+\[
+ [(G^\top G)^{-1}]_{11}
+ =\frac{1}{g_1^\top(I-P_{G_{-1}})g_1}.
+\]
+Conditionally on the other columns, the denominator has a chi-squared law with $m-B+1$ degrees of freedom. Integrating its density gives $\E X^{-1}=1/(m-B-1)$. The same calculation holds for every diagonal entry. For an inverse positive definite matrix, $|H_{ij}|\le(H_{ii}+H_{jj})/2$, so off-diagonal entries are integrable. A column sign change reverses each off-diagonal expectation while preserving the law, proving that those expectations are zero.
+\end{proof}
+
+\begin{corollary}[Success probability from a first moment]\label{cor:moment}
+When all $m_j>B+1$,
+\begin{equation}\label{eq:exactprob}
+ \Prob\{\K_d(D,\Omega)\text{ contains a successful }k\text{-space}\}
+ \le \min\left\{1,\frac{B}{\Delta}
+ \sum_{j=0}^d\frac{\ell_j(a)^2e_j}{m_j-B-1}\right\}.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Success implies $\tr C\ge k\Delta$. Independence and $\E G_{\mathrm{top}}^\top G_{\mathrm{top}}=kI_B$ give
+\[
+ \E\tr C=kB\sum_j\frac{\ell_j(a)^2e_j}{m_j-B-1}.
+\]
+Markov's inequality proves the claim. There is no product of random operator-norm estimates and no union bound over spectral nodes.
+\end{proof}
+
+For fixed positive continuous excess multiplicities $v_j=m_j-B-1$ with sum $V$, Cauchy--Schwarz gives
+\[
+ \sum_j\frac{\ell_j(a)^2e_j}{v_j}
+ \ge\frac{\big(\sum_j|\ell_j(a)|\sqrt{e_j}\big)^2}{V},
+\]
+with equality when $v_j$ is proportional to $|\ell_j(a)|\sqrt{e_j}$. Thus this allocation is exactly optimal for the displayed first-moment objective before integer rounding. This is not a statement that the resulting distribution is optimal for unrestricted RA-14.
+
+\section{A finite spectrum with a quantitative probability bound}\label{sec:primitive}
+Set $s=\sqrt\varepsilon$, $a=1+2\varepsilon$, $\tau=1+\varepsilon$, and $\Delta=2\varepsilon+3\varepsilon^2$. Use Chebyshev extrema
+\[
+ x_j=\cos(j\pi/d),\quad 0\le j\le d,\qquad
+ L_d=\sum_j|\ell_j(a)|\sqrt{\tau^2-x_j^2}.
+\]
+The following estimate was developed in v6; its proof is included so the new probability bound is self-contained.
+
+\begin{lemma}[Weighted interpolation mass]\label{lem:mass}
+For $d\ge1$ and $0<\varepsilon<1/2$,
+\begin{equation}\label{eq:mass}
+ L_d\le10s\log(ed)e^{2ds}.
+\end{equation}
+\end{lemma}
+\begin{proof}
+Put $u=\operatorname{arcosh}a=2\operatorname{arsinh}s$ and let $\delta_0=\delta_d=1/2$, with other $\delta_j=1$. The nodal polynomial $(z^2-1)U_{d-1}(z)$ has derivatives $d(-1)^j$ at interior nodes and $2d(-1)^j$ at endpoints. Therefore $\ell_j(a)$ has sign $(-1)^j$. Interpolating $T_d$ gives
+\[
+ \sum_j|\ell_j(a)|=T_d(a),\quad
+ \frac{|\ell_j(a)|}{T_d(a)}=\frac{\delta_j/(a-x_j)}{J},\quad
+ J=\frac{d\coth(du)}{\sinh u}.
+\]
+The endpoint term gives $J\ge1/(4s^2)$, while $\sinh u=2s\sqrt{1+s^2}<3s$ gives $J\ge d/(3s)$. Also
+\[
+ \sqrt{\tau^2-x_j^2}\le2\sqrt{a-x_j},\qquad
+ 1-x_j\ge2j^2/d^2.
+\]
+Consequently, with $H_d=\sum_{j=1}^d1/j$,
+\[
+ \sum_j\frac{\delta_j}{\sqrt{a-x_j}}\le\frac{1}{2s}+dH_d,
+\]
+and using the two lower bounds on $J$ separately gives
+\[
+ L_d/T_d(a)\le4s+6sH_d\le10sH_d.
+\]
+Finally $H_d\le\log(ed)$ and $T_d(a)=\cosh(du)\le e^{2ds}$.
+\end{proof}
+
+\begin{theorem}[Integer-multiplicity probability bound]\label{thm:primitive}
+Let $B\ge k$, $d\ge1$, and $N=n-k$. If
+\begin{equation}\label{eq:multiplicity-hyp}
+ 2(B+3)(d+1)\le N,
+\end{equation}
+there is an explicit $n\times n$ diagonal $D$ with top eigenvalues $a=1+2\varepsilon$ repeated $k$ times and $\sigma_{k+1}(D)=1$ such that
+\begin{equation}\label{eq:primitive-prob}
+ \Prob\{\K_d(D,\Omega)\text{ contains a successful rank-}k\text{ output}\}
+ \le\min\left\{1,100\frac{B}{N}\log^2(ed)e^{4ds}\right\}.
+\end{equation}
+Here $\Omega$ is standard Gaussian with $B$ columns, and success means residual at most $1+\varepsilon$.
+\end{theorem}
+\begin{proof}
+For the nodes above, put $e_j=\tau^2-x_j^2$, $M=N/2$, and
+\[
+ w_j=\frac{|\ell_j(a)|\sqrt{e_j}}{L_d},\qquad
+ m_j=B+2+\lceil Mw_j\rceil.
+\]
+The positive weights sum to one. Thus $\sum m_j\le(B+3)(d+1)+M\le N$. Add the unused integer multiplicities to node zero. This gives exactly $n$ eigenvalues; node $x_0=1$ occurs, so $\sigma_{k+1}=1$. Every inverse moment is finite, and $m_j-B-1\ge Mw_j$. Corollary~\ref{cor:moment} gives
+\[
+ \Prob(\text{successful space})
+ \le\frac{B L_d^2}{M\Delta}
+ \le100\frac{B}{N}\log^2(ed)e^{4ds},
+\]
+because $\Delta\ge2s^2$. All rounding and all Gaussian ranks have been paid for in \eqref{eq:multiplicity-hyp}.
+\end{proof}
+
+This bounds the existence of a whole successful rank-$k$ output. It does not claim the stronger event that the enlarged space contains no nonzero vector in the weighted cone. That distinction is the reason a trace first moment suffices.
+
+\section{Conditional rotations for adaptive innovations}\label{sec:rotation}
+We now account for fully adaptive queries at their actual individual cost. Only the subsequent enlargement to a full polynomial prefix loses information.
+
+\begin{lemma}[Adaptive conditional invariance]\label{lem:invariance}
+Let $A=RDR^\top$ have a Haar-conjugated fixed spectrum and fix a deterministic algorithm's independent seed. After an adaptive transcript of query--response pairs, a version of the conditional input law is invariant under every orthogonal transformation fixing the span of those pairs pointwise.
+\end{lemma}
+\begin{proof}
+Initially the input law is orthogonally invariant. Suppose the assertion holds for the current history, with known span $W$. The next query $v$ is fixed conditionally on that history. Restrict the invariant group to transformations fixing $W+\spn\{v\}$. Under that group, $A\mapsto Av$ is equivariant. Conditioning on the next answer $w$ therefore leaves an invariant conditional-law version for the subgroup fixing $W+\spn\{v,w\}$.
+
+Here is a precise conditional-version construction. For a fixed current history and its compact stabilizer group $G$, let $\mu_f$ be a regular conditional law for the equivariant observation $f$. Average it as
+\[
+ \bar\mu_f(E)=\int_G\mu_{Sf}(SES^\top)\,d\gamma(S),
+\]
+where $\gamma$ is Haar probability on $G$. Invariance and Fubini show that this is another regular conditional-law version. A change of variables gives $\bar\mu_{Tf}(E)=\bar\mu_f(T^\top ET)$. Transformations stabilizing the observed value consequently preserve this conditional law. Stabilizer groups depending on the past can be represented using a measurable orthonormal completion of $W$; this makes the displayed averaging a measurable probability kernel. Induction over the finite number of queries proves the claim outside a transcript-null set, which suffices for all probability statements.
+\end{proof}
+
+\begin{theorem}[Linear-size reduction without an innovation restriction]\label{thm:linear}
+For an arbitrary $q$-query algorithm on a Haar-conjugated symmetric input with the spectral separation of Section~\ref{sec:certificate}, let $V$ collect its actual query vectors and let $G_k$ be an independent standard Gaussian block. Form the known-space enlargement
+\[
+ X=[V\ \ AV\ \ G_k],\qquad \dim\ran X\le2q+k.
+\]
+There is an output in $\ran X$ with the same averaged success probability as the original output. Consequently the original averaged success probability is at most the probability that the exact criterion of Theorem~\ref{thm:singular}, evaluated for $X$ in the hidden spectral coordinates, holds.
+
+There is no innovation bound in this statement and no quadratic-sized prefix. However, the feature columns $V,AV$ depend on the adaptive transcript. Their distribution is not replaced by independent Gaussian features.
+\end{theorem}
+\begin{proof}
+Condition on the actual complete transcript and fix the independent original seed. Its conditional input law is invariant under the group fixing $W=\ran[V\ AV]$, by Lemma~\ref{lem:invariance}. Write the component of the original output outside $W$ as $Q_{\rm ext}C$. Replace $Q_{\rm ext}$ by a uniform frame in $W^\perp$, obtained from the projection of $G_k$. The Gram matrix is unchanged, so the new output is orthonormal. Equivalently, apply an independent conditional rotation fixing $W$ to the original output. Conditional invariance preserves its averaged success probability. The rotated output belongs to $W+\ran G_k=\ran X$. Theorem~\ref{thm:singular} is an exact existence criterion for a successful graph in this space, so it is a necessary event for this output's success. Integrate over transcripts and seeds.
+\end{proof}
+
+This theorem identifies a linear-size target for a future all-adaptive lower bound. The missing step is a probability estimate for its \emph{adaptively dependent} capacity matrix. Applying the independent-node formula from Section~\ref{sec:gaussian} directly to these columns would be unjustified.
+
+\begin{lemma}[Innovation-count lifting]\label{lem:lifting}
+Suppose an algorithm makes at most $q$ queries on a symmetric input and at most $h$ innovations on every run. Its output may be any measurable orthonormal $k$-frame, including one outside its observed span. Under any Haar-conjugated fixed-spectrum input law, there is a simulation with the same averaged success probability whose output belongs to
+\begin{equation}\label{eq:lifting}
+ \K_q(A,G),\qquad G\in\R^{n\times(h+k)}\text{ standard Gaussian independent of }A.
+\end{equation}
+The simulation itself uses at most $q$ matrix--vector products. The full space on the right is an analytical enlargement, not an assertion that all its powers were obtained for $q$ queries.
+\end{lemma}
+\begin{proof}
+Fix the algorithm's original seed. Draw the physical input $A$ and an independent sequence of Gaussian vectors. Maintain an orthogonal map $O$ from the algorithm's virtual coordinates to physical coordinates. Previously observed virtual pairs $(v_i,w_i)$ have physical counterparts $(Ov_i,Ow_i)$. Let $W$ be their physical span. Updating $O$ by a transformation fixing $W$ preserves all previous pairs.
+
+Inductively, condition on the simulator's history. Its virtual input $O^\top AO$ has the original conditional input law given the virtual transcript. In particular, Lemma~\ref{lem:invariance} implies that the conditional physical input law is invariant under transformations fixing $W$.
+
+For the next virtual query $v$, decompose $Ov$ into its part in $W$ and its perpendicular part. If the latter vanishes, make the corresponding physical query without changing $O$. Otherwise let $u$ be its normalized direction. Draw the next unused independent Gaussian $g$ and normalize its projection onto $W^\perp$ to obtain $u'$. That projection is nonzero almost surely whenever the complement is nontrivial. Choose an orthogonal transformation $S$ fixing $W$ and sending $u$ to $u'$. For example, the Householder reflection with normal $u-u'$ does so, with the identity used when $u=u'$. Replace $O$ by $SO$.
+
+Conditionally on the past and this new Gaussian, $S$ is independent of the unknown remainder of $A$. Invariance under $S$ therefore preserves the virtual conditional input law. The new physical query lies in $W+\spn\{g\}$. Its physical response is returned in virtual coordinates using the updated $O$. This is exactly one matrix--vector product. Conditioning on this response gives the original next virtual posterior, so the induction continues. The used Gaussian belongs to the enlarged known span after the query, because its perpendicular part is proportional to the newly added query component. Thus including used Gaussian vectors in the simulator's history does not reduce the stabilizer below the group fixing its known span.
+
+At most $h$ Gaussians are used for queries. By induction on the products, the physical query-and-response span after $q$ queries is contained in $\K_q(A,G_h)$. Every multiplication can raise the maximum polynomial degree by at most one; no block-round assumption is involved.
+
+Finally, condition on the complete transcript. Factor the physical output's external component as $Q_{\rm ext}C$, where $Q_{\rm ext}$ is an orthonormal frame in $W^\perp$ of rank at most $k$. Using at most $k$ further independent Gaussians, construct a uniform frame $Q_{\rm fresh}$ in that complement. A measurable orthogonal transformation fixing $W$ can send $Q_{\rm ext}$ to $Q_{\rm fresh}$. Apply it to the output and update $O$ accordingly. The external Gram matrix is preserved, and conditional invariance preserves the averaged success probability. The output now lies in $W+\ran G_k'$, hence in the space \eqref{eq:lifting}.
+
+These final Gaussians are free random directions, not uncharged products with $A$. The construction does not evaluate their images. Unused Gaussian columns can be sampled in advance; they remain independent of $A$ until first used. Averaging over the original seed proves the randomized statement.
+\end{proof}
+
+\begin{remark}
+This does not say that a $q$-query algorithm can be simulated by a degree-$q/(h+k)$ block prefix. The safe degree is $q$. Nor does it say that a full prefix with $(h+k)(q+1)$ feature columns is equivalent to $q$ observed products. Losing these distinctions would invalidate the resulting lower bound.
+\end{remark}
+
+\section{A probability tradeoff for unrestricted algorithms}\label{sec:tradeoff}
+\begin{theorem}[Fresh-direction tradeoff]\label{thm:tradeoff}
+Let $q\ge1$, $h\ge0$, $B=h+k$, and $N=n-k$ satisfy \eqref{eq:tradeoff-hyp}. There is a fixed spectrum $D$ such that every randomized algorithm using at most $q$ queries obeys
+\[
+ \Prob_{A=RDR^\top,\,\text{seed}}
+ \{\text{success and innovation count}\le h\}\le\frac14.
+\]
+If the algorithm satisfies the pointwise RA-14 success guarantee, then on this input distribution
+\begin{equation}\label{eq:innovationnecessity}
+ \Prob\{\text{innovation count}>h\}\ge0.74.
+\end{equation}
+\end{theorem}
+\begin{proof}
+Use Theorem~\ref{thm:primitive} with degree $d=q$ and width $B$. First consider an algorithm that never exceeds $h$ innovations. Lemma~\ref{lem:lifting} preserves its averaged success probability and puts its output in $\K_q(A,G_B)$. Rotating into the eigenbasis of $A=RDR^\top$ converts the independent starting block to $R^\top G_B$, which is again standard Gaussian. Theorem~\ref{thm:primitive} and the second inequality of \eqref{eq:tradeoff-hyp} bound the success probability by $1/4$.
+
+For a general algorithm, truncate it immediately before its $(h+1)$st innovation, should that occur, and give the truncated procedure an arbitrary measurable orthonormal output. Its successful runs that never exceeded $h$ innovations include all successful original runs counted in the stated event. The truncated algorithm satisfies the innovation bound, so that event has probability at most $1/4$.
+
+A pointwise success probability of $0.99$ integrates to at least $0.99$ on the specified Haar input law. Splitting successful runs by the innovation event yields $0.99\le1/4+\Prob\{\text{count}>h\}$, proving \eqref{eq:innovationnecessity}. The chosen spectrum depends only on $n,k,\varepsilon,q,h$, not on a realized seed, query path, or reply.
+\end{proof}
+
+\subsection{A linear transition lower bound for bounded innovations}
+Let $q_h$ denote the minimum worst-case query budget of algorithms satisfying RA-14 and having at most $h$ innovations on every symmetric input and every run. A class with no such algorithm has $q_h=+\infty$.
+
+\begin{lemma}[Exact recovery with at most $k$ innovations]\label{lem:exact-innovation}
+For every fixed real input matrix, an algorithm using at most $2n$ individual queries and at most $k$ innovations returns an exact best spectral rank-$k$ right subspace with probability one. Here innovations may be counted relative to all previous query--response pairs even on nonsymmetric inputs.
+\end{lemma}
+\begin{proof}
+Draw a standard Gaussian block of width $k$. Build its invariant block-Krylov space for $M=A^\top A$, orthogonalizing each new frontier. Process each resulting orthonormal basis vector once: one product with $A$, followed by one with $A^\top$, supplies its image under $M$. Retain these images for the final compressed eigenproblem. Stop when the space is invariant. There are at most $n$ independent basis vectors, hence at most $2n$ original products.
+
+Every query vector lies in the span of the initial Gaussian block and previous replies. Let that initial span be $S_0$, of dimension at most $k$. Whenever a query introduces a new direction, write it as $s+w$ with $s\in S_0$ and $w$ in the previous query--response span. Then $s$ was not in that known span, and adding the query puts it there. The dimension of the intersection of the known span with $S_0$ therefore increases by at least one per innovation. There can be at most $k$ such queries.
+
+For each eigenspace of $M$ of dimension $m$, the Gaussian block's projection has rank $\min\{m,k\}$ almost surely. The invariant Krylov space contains each such projection, by polynomial interpolation on the finitely many distinct eigenvalues. Every eigenspace strictly above the rank-$k$ cutoff has dimension at most $k$ and is captured in full; at the cutoff the space contains as many independent vectors as are needed. Its top $k$ Ritz vectors therefore give an exact best right subspace. If the rank is below $k$, the entire row space is captured and the output can be completed orthonormally without further queries. This is a pointwise probability-one statement for each fixed input, as required.
+\end{proof}
+
+\begin{corollary}\label{cor:bounded}
+Put $R=(n-k)/(h+k+3)$. When $R\ge e^{16}$,
+\begin{equation}\label{eq:bounded}
+ q_h\ge\frac1{32}\min\left\{R,\frac{\log R}{\sqrt\varepsilon}\right\}.
+\end{equation}
+When $h\ge k$, Lemma~\ref{lem:exact-innovation} also gives $q_h\le2n$. In particular, at \eqref{eq:transition}, every fixed innovation limit $h\ge1$ gives $q_h=\Theta_h(n)$. The matching upper bound is the separately charged invariant-space algorithm, not an unqualified transfer of the exact-column algorithm.
+\end{corollary}
+\begin{proof}
+Choose
+\[
+ d=\left\lfloor\min\{R/8,\log R/(16s)\}\right\rfloor.
+\]
+The argument of the floor is greater than one, so $d\ge1$ and the floor loses at most a factor two. Since $d+1\le2d$, the multiplicity inequality follows from $d\le R/8$. Also
+\[
+ 400\frac{h+k}{n-k}\log^2(ed)e^{4ds}
+ \le400\log^2(eR)R^{-3/4}\le1.
+\]
+For the last inequality, write $z=\log R\ge16$. The logarithm of its left side is $\log400+2\log(1+z)-3z/4$, which is negative at $16$ and has negative derivative thereafter. Theorem~\ref{thm:tradeoff} rules out a valid bounded-innovation algorithm of budget at most $d$. Finally
+\[
+ d\ge\min\{R/16,\log R/(32s)\}
+ \ge\frac1{32}\min\{R,\log R/s\}.
+\]
+For fixed $h$, $k=1$, and \eqref{eq:transition}, $R$ is a fixed positive fraction of $n$, while $s^{-1}\log R$ is of order $n$. This proves the asserted linear lower bound.
+\end{proof}
+
+\paragraph{Clarification of the corollary.}
+The matching statement retains the bound on innovations. An unrestricted algorithm need not satisfy that bound. The upper algorithm was checked explicitly in Lemma~\ref{lem:exact-innovation}; the usual $n$-query column algorithm would not by itself justify a bounded-innovation upper bound.
+
+\subsection{How many innovations a smaller-scale algorithm would need}
+Consider \eqref{eq:transition}, and fix any constant $C>0$. Suppose a candidate algorithm has budget
+\[
+ q\le C\frac{n\log\log n}{\log n}
+\]
+for all sufficiently large $n$. Let $Q$ be the ceiling of the right side and choose
+\[
+ h=\left\lfloor\frac{n-1}{4(Q+1)}\right\rfloor-4.
+\]
+For sufficiently large $n$, $h\ge0$ and $h\asymp_C\log n/\log\log n$. With $k=1$, the first condition in \eqref{eq:tradeoff-hyp} holds with room to spare. The second holds eventually as well: its logarithm has a $-\log n$ term and only $O_C(\log\log n)$ positive terms, because $Qs=O_C(\log\log n)$.
+
+Theorem~\ref{thm:tradeoff} therefore constructs a Haar-conjugated input law on which such a pointwise-correct algorithm must introduce more than $h$ new directions with probability at least $0.74$. This is a necessary design constraint. It does not exclude the algorithm, since the unrestricted model permits far more than this many innovations.
+
+\section{Exact saturation of the enlarged polynomial space}\label{sec:saturation}
+There is an algebraic reason not to extrapolate the preceding theorem to arbitrary $h$. It remains even if every inverse-Gram estimate is replaced by an exact calculation.
+
+\begin{theorem}[Pure leading-space dimension]\label{thm:saturation}
+Use $d+1$ distinct tail nodes and degree at most $d$, with positive integer multiplicities $m_j$. For a Gaussian block of width $B$, the dimension of the part of $\K_d(D,\Omega)$ lying entirely in the leading $k$-space is almost surely
+\begin{equation}\label{eq:freedimension}
+ \min\left\{k,B,\sum_{j=0}^d(B-m_j)_+\right\}.
+\end{equation}
+If $B\ge k$ and $(d+1)B\ge n$, the enlarged Krylov space contains the entire exact leading $k$-space almost surely.
+\end{theorem}
+\begin{proof}
+Use the node-value coordinates $u_j=p(x_j)$. The tail vanishes exactly when $u_j\in\ker G_j$ for every node. All cardinal values $\ell_j(a)$ are nonzero because $a$ is outside the node interval. Thus the possible coefficient vectors at $a$ form
+\[
+ N_* =\sum_{j=0}^d\ker G_j\subset\R^B.
+\]
+Independent Gaussian node blocks have independent uniformly oriented nullspaces of dimensions $(B-m_j)_+$. Their sum is in general position and has dimension $\min\{B,\sum_j(B-m_j)_+\}$ almost surely. One elementary justification is that failure of maximal rank is the vanishing of nonidentically-zero minors; the Gaussian law is absolutely continuous, and coordinate subspaces exhibit a maximal-rank configuration. Independence of $G_{\mathrm{top}}$ then gives
+\[
+ \dim(G_{\mathrm{top}}N_*)=\min\{k,\dim N_*\}
+\]
+almost surely, proving \eqref{eq:freedimension}.
+
+Finally $\sum_jm_j=n-k$ and
+\[
+ \sum_j(B-m_j)_+\ge(d+1)B-(n-k)\ge k.
+\]
+When $B\ge k$, the dimension in \eqref{eq:freedimension} is $k$, so every leading vector is available with exactly zero tail.
+\end{proof}
+
+For the generic lifting with one possible fresh direction per query, $B=q+k$ and $d=q$. In the nodal family used above, $(q+1)(q+k)\ge n$ makes the enlarged space contain the exact target. A proof that only excludes successful vectors from this whole space is then impossible for that family. This does \emph{not} mean the original $q$-query algorithm has learned which vectors constitute the answer. The enlargement has discarded the cost of obtaining the separate powers and choosing the relevant coefficients from actual replies.
+
+This theorem concerns the stated nodal construction and its relaxation. It does not prove a universal impossibility theorem for all adaptive lower-bound techniques, nor does it supply an unrestricted fast algorithm.
+
+\subsection{An exact finite rank separation}
+The package includes an integer-arithmetic certificate with $n=12$, $k=1$, $q=3$, four independent starting columns for the enlarged comparison, and four distinct tail nodes. Its diagonal spectrum is
+\[
+ D=\frac1{50}\diag(51,50,50,50,25,25,25,-25,-25,-25,-50,-50).
+\]
+Thus $\varepsilon=1/100$, the leading value is $1+2\varepsilon$, and the tail singular threshold is one. Let $G$ be the explicitly recorded $12\times4$ integer matrix. After querying only its first three columns, the linear-size output enlargement is
+\[
+ X_{\rm actual}=[G_{[:,1:3]}\ \ DG_{[:,1:3]}\ \ G_{[:,4]}].
+\]
+The supplied nonzero minors certify that its full rank and tail rank are both seven. It therefore contains no nonzero vector supported only in the leading coordinate. In contrast,
+\[
+ X_{\rm prefix}=[G\ \ DG\ \ D^2G\ \ D^3G]
+\]
+has rank twelve, so the enlarged prefix contains the exact answer. The certificate records the integer matrix, minor indices, and exact nonzero determinants; column powers are scaled by $50$ so every verification uses integer input.
+
+This finite example is not an adaptive lower bound or a claim about approximate success. It verifies a specific informational distinction: an exact answer can exist in the full-prefix enlargement without existing in the actual three-query span, even after one free output direction is added. It is therefore unsafe to identify those spaces.
+
+\section{What would be needed for a full RA-14 theorem}
+The unrestricted interval \eqref{eq:inherited} is unchanged. A complete argument still needs one of the following mathematical additions: a lower-bound method retaining the information in the actual adaptively generated, selectively queried space without granting all cross-powers; or a pointwise all-input algorithm matching the smaller lower scale; or a different matching pair of bounds.
+
+The exact certificate supplies a useful target for the first route. For an actual feature matrix, successful output requires a specific matrix capacity inequality, including its free directions. It does not suffice to bound that matrix for independent features if the actual coefficients were chosen using the same replies. A cost-aware analysis must preserve that dependence.
+
+The innovation theorem supplies a necessary constraint on the second route. At the difficult transition, a candidate $O(F)$ algorithm must use an increasing number of fresh query directions on a specified hard distribution. It cannot remain a bounded-innovation method. But an unrestricted algorithm is allowed to do exactly that, so this is not a contradiction.
+
+No numerical percentage measures the remaining proof. The earlier completion estimate is not used as a mathematical premise. The gap in \eqref{eq:transition} is still unbounded and is still sufficient to prevent a full solution.
+
+\section{Verification, artifact contents, and limitations}
+The supplied Python module implements the minimum-energy certificate, its singular extension, nodal Gram formula, integer multiplicities, and algebraic checks of the rotating-query simulation. These routines use spectral information in their diagnostics; they are not a hidden-eigenbasis implementation of an RA-14 oracle algorithm.
+
+The recorded tests check feasible coefficient matrices, Loewner minimality, exact graph/residual comparisons in well-conditioned finite examples, nullspace dimensions, interpolation identities, reciprocal chi-squared moments, and transcript consistency of a rotating simulator. Separate Gaussian capacity trials retain both outcomes: spaces that contain successful outputs and spaces that do not. The rotation diagnostic checks that the final virtual matrix agrees with every virtual query--response pair. It does not infer equality of conditional probability laws from a finite sample.
+
+\input{results/verification_summary.tex}
+
+The prior test suites are preserved through the prior archive, but they are not described as rerun in this continuation. Passing component tests do not certify a universal adaptive lower-bound theorem, an exact probability, or a measure-theoretic disintegration argument. Those claims stand or fall with the written proofs and require independent review.
+
+The archive contains this PDF, its editable source, a scope audit, machine-readable claims, the diagnostic source and tests, recorded results, source records, and a byte-integrity manifest. The original v6 archive is copied without modification when present. The manifest verifies file contents, not mathematical correctness.
+
+To reproduce the new checks and the PDF:
+\begin{verbatim}
+python -m pip install -r requirements.txt
+OPENBLAS_NUM_THREADS=1 python run_checks.py
+pdflatex -interaction=nonstopmode -halt-on-error report.tex
+pdflatex -interaction=nonstopmode -halt-on-error report.tex
+\end{verbatim}
+Regenerating results changes the file bytes. Verify the archived manifest before rerunning, or regenerate it afterward.
+
+\begingroup\small\raggedright
+\begin{thebibliography}{9}
+\bibitem{repo} Open Problems in Numerical Linear Algebra. \emph{RA-14: Optimal query complexity of spectral rank-$k$ approximation}. Repository problem statement. \url{https://github.com/ajt60gaibb/OpenProblemsInNLA/tree/main/randomized-and-low-rank-approximation/RA-14}. A raw-source copy is included when retrieval succeeds; the retrieval status is recorded, not inferred.
+\bibitem{prior} \emph{Weighted Krylov Obstructions and a Shifted-Wishart Posterior}. Prior generated RA-14 continuation v6, with \texttt{PROOF\_AUDIT.md} and nested v5 materials. Unreviewed partial research argument. Preserved archive: \texttt{prior/RA14\_krylov\_transition\_v6.zip}. The weighted interpolation estimate is reproduced here, while the unrestricted bounds are inherited without strengthening.
+\bibitem{bn} Ainesh Bakshi and Shyam Narayanan. \emph{Krylov Methods are (nearly) Optimal for Low-Rank Approximation}. arXiv:2304.03191, 2023. \url{https://arxiv.org/abs/2304.03191}. Background for conditional-rotation and adaptive-to-polynomial comparisons. No published simulation is imported as a same-cost full-prefix theorem; Lemma~\ref{lem:lifting} states and proves the precise comparison used here.
+\end{thebibliography}
+\endgroup
+\end{document}

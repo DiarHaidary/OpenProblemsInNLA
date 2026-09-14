@@ -1,0 +1,119 @@
+{
+  "status": "PASS",
+  "base": "deb549fa9ddd6b119e6c59016f268237e645dfa2",
+  "reviewed_ref": "ee0971c7492a55c641181081cb73175156236ff2",
+  "tree": "501067925dc0b88aeaa7bb9f7ca1abf83f329732",
+  "source_prs": {
+    "253": {
+      "head": "43183e8254d121aa4b365fdd34643cc4c91d8503",
+      "added_files": 160,
+      "modified_files": [
+        "CATALOG.md",
+        "README.md",
+        "RESOLVED.md",
+        "eigenvalues-and-inverse-problems/SP-10/README.md",
+        "eigenvalues-and-inverse-problems/SP-10/problem.pdf",
+        "eigenvalues-and-inverse-problems/SP-10/problem.tex",
+        "randomized-and-low-rank-approximation/RA-05/README.md",
+        "randomized-and-low-rank-approximation/RA-05/problem.pdf",
+        "randomized-and-low-rank-approximation/RA-05/problem.tex",
+        "randomized-and-low-rank-approximation/RA-11/README.md",
+        "randomized-and-low-rank-approximation/RA-11/problem.pdf",
+        "randomized-and-low-rank-approximation/RA-11/problem.tex",
+        "randomized-and-low-rank-approximation/RA-14/README.md",
+        "randomized-and-low-rank-approximation/RA-14/problem.pdf",
+        "randomized-and-low-rank-approximation/RA-14/problem.tex",
+        "randomized-and-low-rank-approximation/README.md",
+        "randomized-and-low-rank-approximation/TR-03/README.md",
+        "randomized-and-low-rank-approximation/TR-03/problem.pdf",
+        "randomized-and-low-rank-approximation/TR-03/problem.tex",
+        "tools/render_problems.py"
+      ],
+      "exactly_preserved_added_files": 160
+    },
+    "254": {
+      "head": "0ea258baa0bde427540dfb64fee7dfff95e6498c",
+      "added_files": 60,
+      "modified_files": [
+        "eigenvalues-and-inverse-problems/SP-07/README.md",
+        "eigenvalues-and-inverse-problems/SP-07/problem.pdf",
+        "eigenvalues-and-inverse-problems/SP-07/problem.tex",
+        "eigenvalues-and-inverse-problems/SP-08/README.md",
+        "eigenvalues-and-inverse-problems/SP-08/problem.pdf",
+        "eigenvalues-and-inverse-problems/SP-08/problem.tex",
+        "eigenvalues-and-inverse-problems/SP-14/README.md",
+        "eigenvalues-and-inverse-problems/SP-14/problem.pdf",
+        "eigenvalues-and-inverse-problems/SP-14/problem.tex",
+        "matrix-inequalities-and-norms/MI-20/README.md",
+        "matrix-inequalities-and-norms/MI-20/problem.pdf",
+        "matrix-inequalities-and-norms/MI-20/problem.tex",
+        "nonnegative-and-positive-factorizations/NR-02/README.md",
+        "nonnegative-and-positive-factorizations/NR-02/problem.pdf",
+        "nonnegative-and-positive-factorizations/NR-02/problem.tex",
+        "tools/render_problems.py"
+      ],
+      "exactly_preserved_added_files": 59
+    },
+    "255": {
+      "head": "ecc57b82bbcb33aa37dd403530669f74bdf2ec30",
+      "added_files": 392,
+      "modified_files": [
+        "CATALOG.md",
+        "README.md",
+        "RESOLVED.md",
+        "eigenvalues-and-inverse-problems/README.md",
+        "eigenvalues-and-inverse-problems/SP-03/README.md",
+        "eigenvalues-and-inverse-problems/SP-03/problem.pdf",
+        "eigenvalues-and-inverse-problems/SP-03/problem.tex",
+        "eigenvalues-and-inverse-problems/SP-07/README.md",
+        "eigenvalues-and-inverse-problems/SP-07/problem.pdf",
+        "eigenvalues-and-inverse-problems/SP-07/problem.tex",
+        "eigenvalues-and-inverse-problems/SP-09/README.md",
+        "eigenvalues-and-inverse-problems/SP-09/problem.pdf",
+        "eigenvalues-and-inverse-problems/SP-09/problem.tex"
+      ],
+      "exactly_preserved_added_files": 392
+    },
+    "256": {
+      "head": "b84772b48cd26a2e763ecc52a6243e8f0c34681f",
+      "added_files": 0,
+      "modified_files": [
+        "nonnegative-and-positive-factorizations/NM-01/README.md"
+      ],
+      "exactly_preserved_added_files": 0
+    }
+  },
+  "base_paths_retained": 24984,
+  "new_source_files_retained": 612,
+  "exact_source_addition_exception": "Only the MI-20 reference README disclosure is corrected; original ZIP and proof are unchanged.",
+  "old_reference_files_unchanged": 3464,
+  "permanent_ids": 217,
+  "prior_canonical_sections_retained_verbatim": 1035,
+  "changed_canonical_pages": 13,
+  "status_transitions": {
+    "RA-05": [
+      "Partially resolved",
+      "Solved"
+    ],
+    "SP-03": [
+      "Open",
+      "Partially resolved"
+    ]
+  },
+  "status_counts": {
+    "Solved": 72,
+    "Open": 42,
+    "Partially resolved": 73,
+    "Lean verified": 30
+  },
+  "all_prior_and_new_resolved_records_retained": true,
+  "both_sp07_updates_retained": true,
+  "lean_projects_and_harness_unchanged": true,
+  "renderer_only_removes_reference_breaks": [
+    "NM-01",
+    "RA-11",
+    "RA-14",
+    "SP-07",
+    "SP-14"
+  ]
+}

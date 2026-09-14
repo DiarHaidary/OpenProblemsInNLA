@@ -1,0 +1,43 @@
+{
+  "result": "PASS",
+  "unmodified_witness": "PASS",
+  "negative_tests": [
+    {
+      "corruption": "changed_A_coefficient",
+      "rejected": true
+    },
+    {
+      "corruption": "nonzero_third_coefficient",
+      "rejected": true
+    },
+    {
+      "corruption": "wrong_B_sign",
+      "rejected": true
+    },
+    {
+      "corruption": "missing_Schur_correction",
+      "rejected": true
+    },
+    {
+      "corruption": "negative_curvature",
+      "rejected": true
+    },
+    {
+      "corruption": "rank_one_density",
+      "rejected": true
+    },
+    {
+      "corruption": "wrong_gauge_rank",
+      "rejected": true
+    },
+    {
+      "corruption": "wrong_transverse_basis",
+      "rejected": true
+    },
+    {
+      "corruption": "changed_reference_residual",
+      "rejected": true
+    }
+  ],
+  "scope": "Exact finite-identity and data-integrity regression tests, not formalization of the analytic proof."
+}

@@ -1,0 +1,64 @@
+{
+  "status": "PASS",
+  "all_passed": true,
+  "steps": [
+    {
+      "name": "Exact all-odd-order polygon formulas",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "verify_polygon.py"
+      ],
+      "returncode": 0,
+      "seconds": 1.1789875839604065
+    },
+    {
+      "name": "Rational stationary-model enclosure",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "verify_model.py"
+      ],
+      "returncode": 0,
+      "seconds": 0.13119187497068197
+    },
+    {
+      "name": "Exact and corrupted-input rejection tests",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.5541869580047205
+    },
+    {
+      "name": "Rejection tests with Python optimization enabled",
+      "command": [
+        "/private/tmp/nla-batch-python/bin/python",
+        "-S",
+        "-O",
+        "-m",
+        "unittest",
+        "discover",
+        "-s",
+        "tests",
+        "-p",
+        "test_exact.py",
+        "-v"
+      ],
+      "returncode": 0,
+      "seconds": 0.6952199169900268
+    }
+  ],
+  "seconds": 2.5597687079571187,
+  "numerical_enabled": false,
+  "inherited_checks_enabled": false
+}

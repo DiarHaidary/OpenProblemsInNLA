@@ -1,0 +1,27 @@
+{
+  "scope": "Included exact identities and subclass certificates only; not unrestricted SP-08.",
+  "status": "PASS",
+  "results": [
+    {
+      "script": "verify_typeA_certificate.py",
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.17,
+      "script_sha256": "0eef7f712b0e6efa60d16f1f484609b6cb858b09321c84527c4847ba788d6606"
+    },
+    {
+      "script": "check_analytic_identities.py",
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.263,
+      "script_sha256": "b365a072bf0f150dafdd086c98223cf10bbcf62c02203c6d1fe20c2f719a9d5a"
+    },
+    {
+      "script": "check_improved_boundary_strip.py",
+      "status": "PASS",
+      "returncode": 0,
+      "seconds": 0.191,
+      "script_sha256": "59a8f755823d0b85bef1c2aeed66a3541119794b913e7eadb901cc31082e92aa"
+    }
+  ]
+}

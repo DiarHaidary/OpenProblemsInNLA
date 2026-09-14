@@ -1,0 +1,99 @@
+--- NR-02/original
++++ NR-02/publication
+@@ -27,7 +27,7 @@
+ \fancyhead[R]{\small Fourth pack: partial}
+ \fancyfoot[C]{\thepage}
+ \setlength{\headheight}{14pt}
+-\hypersetup{pdftitle={NR-02: Certified complexity-six polygon products},pdfauthor={Research note prepared with ChatGPT}}
++\hypersetup{pdftitle={NR-02: Certified complexity-six polygon products},pdfauthor={Sidney Holden}}
+ \begin{document}
+ \thispagestyle{empty}
+ \begin{center}
+@@ -35,6 +35,7 @@
+ \vspace{9pt}
+ {\Large Certified complexity-six polygon products\par}
+ \vspace{9pt}
++Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}\\
+ Research note prepared with ChatGPT\\
+ September 13, 2026 (America/New\_York)
+ \end{center}
+--- SP-07/original
++++ SP-07/publication
+@@ -13,8 +13,9 @@
+ \newcommand{\norm}[1]{\left\lVert#1\right\rVert_2}\newcommand{\abs}[1]{\left|#1\right|}\newcommand{\diag}{\operatorname{diag}}\newcommand{\rank}{\operatorname{rank}}
+ \input{generated_data.tex}
+ \title{\vspace{-1.3cm}SP-07: Certified stronger lower bounds\\and dimension reductions}
+-\author{Continuation of the supplied partial-results archive}
++\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
+ \date{13 September 2026}
++\hypersetup{pdfauthor={Sidney Holden}}
+ \begin{document}
+ \maketitle
+ \begin{center}\fbox{\parbox{.92\linewidth}{\textbf{Completion status: partial.} This report does not determine the sharp universal constant requested in SP-07. It proves stronger lower bounds, including $\cn>1.03077$, and proves dimension-reduction results. No matching universal upper bound is asserted.}}\end{center}
+--- MI-20/original
++++ MI-20/publication
+@@ -15,8 +15,9 @@
+ \newtheorem{proposition}[theorem]{Proposition}
+ \theoremstyle{remark}\newtheorem{remark}[theorem]{Remark}
+ \title{MI-20, Round Four\\An Exact Universal Bound and a Positive Power-System Reduction}
+-\author{Research proof submission with reproducible rational certificates}
++\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
+ \date{13 September 2026}
++\hypersetup{pdfauthor={Sidney Holden}}
+ \begin{document}\maketitle
+ \begin{abstract}
+ For the dimension-independent constant in MI-20, we prove the computer-assisted bound
+@@ -114,7 +115,7 @@
+ Let \(U=\sum_j\omega^jP_j\), and choose the square cyclic blocks
+ \[
+  L_\ell=\widetilde S^{1/2}U^\ell,\qquad
+- T_\ell=m^{-2/q}\widetilde R^2.
++ T_\ell=m^{-2/q}U^{-\ell}\widetilde R^2U^\ell.
+ \]
+ The \(T_\ell\) satisfy the constraint in \eqref{eq:cyclicN}. The Fourier sums pinch both arguments of the fidelity into the \(P_j\) blocks. Consequently their fidelity is
+ \[
+--- SP-08/original
++++ SP-08/publication
+@@ -15,8 +15,9 @@
+ \newcommand{\R}{\mathbb R}
+ \newcommand{\J}{J}
+ \title{SP-08: Centered Rank-Two Sign Matrices}
+-\author{}
+-\date{}
++\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
++\date{13 September 2026}
++\hypersetup{pdfauthor={Sidney Holden}}
+ \begin{document}
+ \maketitle
+ \begin{abstract}
+--- SP-14/original
++++ SP-14/publication
+@@ -29,8 +29,9 @@
+ \newcommand{\supp}{\operatorname{supp}}
+ \newcommand{\diag}{\operatorname{diag}}
+ \title{SP-14: inverse corners and deterministic canonical subsequences}
+-\author{}
+-\date{}
++\author{Sidney Holden\\{\small Center for Computational Biology, Flatiron Institute}\\{\small Simons Foundation}}
++\date{13 September 2026}
++\hypersetup{pdfauthor={Sidney Holden}}
+ \begin{document}
+ \maketitle
+ \vspace{-2.4em}
+@@ -571,14 +572,14 @@
+ No theorem in this note proves this displayed implication for every symbol, and no fixed admissible symbol with positive limsup deficit is constructed. The earlier numerical percentage estimate of progress is not used as a mathematical assessment: the existence of several reductions does not assign a percentage to an unproved central implication.
+ 
+ \section{Executed checks and reproduction}\label{sec:checks}
+-\input{../results/validation_summary.tex}
++\input{validation_summary.tex}
+ The machine-readable report separates exact symbolic identities, 100-decimal-digit calculations, ordinary floating-point consistency tests, labelled diagnostics, and software input validation. The principal results above rest on the written arguments, not on finite trends.
+ 
+ The exact checks verify both orientations of the inverse-corner identities, the bordering row formula including its transpose convention, Jacobi signs for boundary blocks of sizes one through three, radial diagonal similarity, and geometric or finitely supported corners in analytic models. Exact structural zeros are additionally checked on a rational congruence proxy, which is not identified with the infinite smooth example. High-precision calculations verify exponentially small corners and singular-value comparisons, and integrate the plateau coefficients independently. Floating-point checks verify the singular-value splitting and the finite comparison bounds with stated roundoff allowances. The plateau certificate is also checked using the analytic bound $C_1(c)=1/2+2/\pi^2$; its telescoping identity is verified symbolically. The floating-point corner itself is not a certified lower enclosure.
+ 
+ \begin{table}[ht]
+ \centering
+-\input{../results/plateau_table.tex}
++\input{plateau_table.tex}
+ \caption{Diagnostics for the actual plateau symbol \eqref{eq:plateau}, using its exact coefficient formula. The theorem guarantees a canonical subsequence, not that this table proves full convergence. No least-singular-value logarithm near floating-point zero is used as a proof.}
+ \end{table}
+ 
